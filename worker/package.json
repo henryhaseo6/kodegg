@@ -1,0 +1,13 @@
+{
+  "name": "patchday-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Contoh worker penarik data untuk PatchDay (game online). Jalankan terjadwal (cron) untuk menghasilkan JSON cache yang dibaca situs.",
+  "scripts": {
+    "fetch:codes": "node fetch-codes.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

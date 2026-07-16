@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    body { margin:0; background:#090C12; -webkit-font-smoothing:antialiased; }
+    ::selection { background:#CBFF46; color:#090C12; }
+    .bp h2 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:26px; letter-spacing:-0.02em; color:#EEF1F6; margin:0 0 8px; }
+    .bp h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; color:#EEF1F6; margin:0 0 6px; }
+    .bp p { font-size:15px; line-height:1.7; color:#98A2B3; margin:0 0 14px; }
+    .bp code { font-family:'Space Mono',monospace; font-size:12.5px; color:#CBFF46; background:#0E121B; border:1px solid rgba(255,255,255,0.08); border-radius:6px; padding:2px 6px; }
+    .bp table { width:100%; border-collapse:collapse; }
+    .bp th, .bp td { text-align:left; padding:11px 14px; border-bottom:1px solid rgba(255,255,255,0.08); font-size:13.5px; vertical-align:top; }
+    .bp th { font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:#5B6472; font-weight:500; }
+    .bp td { color:#C6CDD8; }
+  </style>
+</helmet>
+<div data-screen-label="Cetak Biru Pipeline" class="bp" style="--bg:#090C12; --surface:#151B27; --surface2:#1C2331; --line:rgba(255,255,255,0.08); --txt:#EEF1F6; --muted:#98A2B3; --faint:#5B6472; --acc:#CBFF46; --acc2:#8B6BFF; --ink:#090C12; --ok:#37E38B; --warn:#FFB13C; font-family:'Satoshi',system-ui,sans-serif; color:var(--txt); min-height:100vh; background:radial-gradient(1100px 560px at 82% -12%, rgba(139,107,255,0.13), transparent 60%), radial-gradient(1000px 520px at -5% 0%, rgba(203,255,70,0.06), transparent 55%), var(--bg); padding:56px 24px 96px;">
+  <div style="max-width:900px; margin:0 auto;">
+
+    <!-- HEADER -->
+    <header style="border-bottom:1px solid var(--line); padding-bottom:32px; margin-bottom:44px;">
+      <div style="display:flex; align-items:center; gap:11px; margin-bottom:22px;">
+        <span style="width:32px; height:32px; border-radius:9px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:20px; color:var(--acc); letter-spacing:-0.04em;">GG</span>
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span>
+        <span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Dok. Teknis · Juli 2026</span>
+      </div>
+      <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:var(--acc); margin-bottom:14px;">CETAK BIRU PIPELINE</div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:44px; line-height:1.05; letter-spacing:-0.03em; color:#fff; margin:0 0 16px;">Bikin situsnya jalan otomatis</h1>
+      <p style="font-size:17px; line-height:1.65; color:var(--muted); margin:0; max-width:64ch;">Panduan arsitektur untuk developer: gimana front-end yang sudah jadi ini disambungkan ke worker terjadwal supaya konten (kode redeem, event, tier, berita) terisi & terupdate otomatis tanpa disentuh manual.</p>
+    </header>
+
+    <!-- MENTAL MODEL -->
+    <section style="margin-bottom:48px;">
+      <h2>1 · Model mental</h2>
+      <p>Situs = <strong>pembaca cache</strong>, bukan penarik data. Yang bikin "otomatis" adalah <strong>worker terjadwal</strong> di sisi server yang rutin menarik sumber, merapikan, lalu menaruh hasilnya sebagai JSON/DB yang dibaca situs. Front-end tidak pernah memanggil API pihak ketiga langsung (hindari rate-limit, CORS, & kunci API bocor).</p>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:22px 0 8px;">
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px;"><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--acc); margin-bottom:8px;">01 · TARIK</div><div style="font-size:13px; line-height:1.5; color:var(--muted);">Worker panggil tiap sumber sesuai jadwalnya.</div></div>
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px;"><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--acc); margin-bottom:8px;">02 · NORMALISASI</div><div style="font-size:13px; line-height:1.5; color:var(--muted);">Gabung ke satu skema konsisten + tag game/genre/bahasa.</div></div>
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px;"><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--acc); margin-bottom:8px;">03 · CACHE</div><div style="font-size:13px; line-height:1.5; color:var(--muted);">Simpan JSON/DB + aset (icon/gambar) di server sendiri.</div></div>
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px;"><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--acc); margin-bottom:8px;">04 · TAYANG</div><div style="font-size:13px; line-height:1.5; color:var(--muted);">Build ulang halaman statis; situs baca cache.</div></div>
+      </div>
+    </section>
+
+    <!-- CADENCE -->
+    <section style="margin-bottom:48px;">
+      <h2>2 · Jadwal penarikan (cron)</h2>
+      <p>Beda konten beda frekuensi. Yang cepat basi ditarik sering; metadata yang jarang berubah cukup harian.</p>
+      <div style="background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-top:8px;">
+        <table>
+          <thead><tr><th>Konten</th><th>Interval</th><th>Sumber utama</th></tr></thead>
+          <tbody>
+            <tr><td>Kode redeem</td><td><code>~1 jam</code></td><td>hoyo-codes, GamerPower, channel resmi</td></tr>
+            <tr><td>Event &amp; banner</td><td><code>~3 jam</code></td><td>HoYoLAB, Paimon.moe, situs resmi game</td></tr>
+            <tr><td>Berita (RSS)</td><td><code>~30 mnt</code></td><td>RSS: Pocket Tactics, Dot Esports, dll</td></tr>
+            <tr><td>Tier list &amp; guide</td><td><code>harian</code></td><td>Prydwen, Game8 (kurasi, tulis ulang)</td></tr>
+            <tr><td>Data karakter/skill</td><td><code>per patch</code></td><td>StarRailRes, Enka, Data Dragon</td></tr>
+            <tr><td>Katalog game</td><td><code>harian</code></td><td>RAWG, FreeToGame</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SOURCE MAP -->
+    <section style="margin-bottom:48px;">
+      <h2>3 · Peta sumber → fitur</h2>
+      <p>Detail endpoint, lisensi, & atribusi ada di dokumen <strong>"Riset Sumber Data"</strong>. Ringkasnya: API gratis (hoyo-codes, GamerPower, FreeToGame, Data Dragon), API perlu key (RAWG, PandaScore), dan sumber referensi (Prydwen/Game8 — kurasi, jangan salin mentah).</p>
+    </section>
+
+    <!-- TECH STACK -->
+    <section style="margin-bottom:48px;">
+      <h2>4 · Saran tech stack</h2>
+      <div style="display:flex; flex-direction:column; gap:12px; margin-top:8px;">
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px;"><h3>Worker / scheduler</h3><p style="margin:0;">Serverless cron (Cloudflare Workers Cron, Vercel Cron, atau GitHub Actions terjadwal) menjalankan skrip Node/TS penarik. Idempoten &amp; retry-safe.</p></div>
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px;"><h3>Penyimpanan</h3><p style="margin:0;">JSON statis di object storage/CDN (mis. R2/S3) untuk yang read-heavy; database (Postgres/SQLite/KV) untuk arsip kode &amp; query. Kode expired <strong>diarsipkan, bukan dihapus</strong>.</p></div>
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px;"><h3>Aset</h3><p style="margin:0;">Icon &amp; gambar di-mirror ke server/CDN sendiri saat ditarik — jangan hotlink permanen ke Fandom/CDN pihak ketiga (bisa mati/berubah).</p></div>
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px;"><h3>Front-end</h3><p style="margin:0;">Halaman statis (SSG) yang di-rebuild saat cache berubah — cepat &amp; ramah SEO. Countdown tetap dihitung real-time di klien dari <code>data-deadline</code>.</p></div>
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px;"><h3>Halaman game auto-generate</h3><p style="margin:0;">Saat worker mendeteksi game baru (online/live-service), generate halaman dari template <code>Game Genshin.dc.html</code> + daftarkan ke navigasi, sitemap, &amp; mapping cross-link.</p></div>
+      </div>
+    </section>
+
+    <!-- SCALE & FILTER -->
+    <section style="margin-bottom:48px;">
+      <h2>5 · Filter cakupan &amp; skala</h2>
+      <p>Worker <strong>hanya proses game online / live-service</strong> — yang punya event berkala &amp; kode redeem. Game offline/single-player di-skip (tak cocok model auto-update). Saat game makin banyak: search jadi pintu utama, filter + pagination jaga halaman ringan, tiap game punya halaman + arsip sendiri.</p>
+    </section>
+
+    <!-- BILINGUAL & SEO -->
+    <section style="margin-bottom:48px;">
+      <h2>6 · Bilingual &amp; SEO</h2>
+      <p>Toggle ID/EN di klien buat kenyamanan, tapi <strong>SEO butuh halaman per-bahasa</strong>: generate URL terpisah (<code>/id/…</code> &amp; <code>/en/…</code>) yang di-render statis, plus tag <code>hreflang</code> antar versi. Konten disimpan dua bahasa di cache (ID resmi jika ada; kalau tidak, terjemahkan — <strong>kecuali jargon teknis</strong> yang dibiarkan asli). Sertakan <code>sitemap.xml</code> per bahasa.</p>
+    </section>
+
+    <!-- FIDELITY & LEGAL -->
+    <section style="margin-bottom:48px;">
+      <h2>7 · Fidelitas &amp; legal</h2>
+      <p>Data faktual (skill, stat, reward, nama/durasi event) diambil <strong>verbatim</strong> dari sumber — jangan diparafrase; jargon tanpa terjemahan resmi dibiarkan bahasa aslinya. Verifikasi status kode sebelum tayang. Patuhi atribusi tiap lisensi (RAWG, GamerPower, FreeToGame), tampilkan disclaimer "not endorsed by Riot Games", hormati robots.txt &amp; rate limit, dan <strong>jaga situs bersih dari judol</strong>.</p>
+    </section>
+
+    <!-- PHASES -->
+    <section style="margin-bottom:16px;">
+      <h2>8 · Urutan bangun</h2>
+      <ol style="margin:8px 0 0; padding-left:22px; color:var(--muted); font-size:15px; line-height:1.9;">
+        <li><strong>Kode redeem</strong> — hoyo-codes + GamerPower (API gratis, paling dicari). Sambungkan cache → halaman Kode.</li>
+        <li><strong>Katalog game</strong> — RAWG + FreeToGame → Jelajah Game + kartu.</li>
+        <li><strong>Berita</strong> — RSS aggregator → halaman Berita + Artikel.</li>
+        <li><strong>Event &amp; countdown</strong> — HoYoLAB/Paimon → halaman Event + per-game.</li>
+        <li><strong>Tier &amp; data karakter</strong> — StarRailRes/Enka/Data Dragon → Tier List + modal.</li>
+        <li><strong>Auto-generate halaman game</strong> + sitemap + i18n per-bahasa.</li>
+      </ol>
+    </section>
+
+    <footer style="border-top:1px solid var(--line); padding-top:24px; margin-top:44px;">
+      <p style="font-family:'Space Mono',monospace; font-size:11px; line-height:1.6; color:var(--faint); margin:0;">Front-end (semua halaman .dc.html) sudah siap sebagai "cangkang" dengan slot data yang jelas. Yang tersisa adalah membangun worker + cache dan menyambungkannya sesuai dokumen ini. Referensi endpoint & lisensi: "Riset Sumber Data".</p>
+    </footer>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:960,&quot;height&quot;:1200}}"></script>
+</body>
+</html>

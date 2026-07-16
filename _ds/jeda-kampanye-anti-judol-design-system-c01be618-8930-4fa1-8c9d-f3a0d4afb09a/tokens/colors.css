@@ -1,0 +1,110 @@
+/* ============================================================
+   JEDA — Color tokens
+   Anti-judol awareness campaign. The palette is the deliberate
+   OPPOSITE of gambling-site visuals (neon, gold, kilau palsu):
+   warm paper, calm deep teal, honest signal colors. No gold.
+   ============================================================ */
+
+:root {
+  /* --- Neutral ink (warm, teal-tinted near-black → soft) --- */
+  --ink-950: #0B1A1C; /* primary text, near-black */
+  --ink-900: #122729;
+  --ink-800: #1C383A;
+  --ink-700: #2B4D4F;
+  --ink-600: #436163;
+  --ink-500: #5E7A7B;
+  --ink-400: #87A0A0;
+  --ink-300: #B4C4C3;
+  --ink-200: #D7E0DD;
+  --ink-100: #E9EFEB;
+  --ink-50:  #F2F6F2;
+
+  /* --- Paper / warm neutrals (page + surfaces) --- */
+  --canvas:    #F4F0E6; /* page background — warm "kertas" */
+  --canvas-2:  #ECE6D6; /* recessed sections, alt bands */
+  --surface:   #FCFAF4; /* card surface — warm white */
+  --surface-2: #FFFFFF; /* crisp white surface */
+
+  /* --- Brand teal "Tenang" (calm, trust, steadiness) --- */
+  --teal-900: #07332E;
+  --teal-800: #0A463F;
+  --teal-700: #0E5C53; /* primary brand */
+  --teal-600: #137267;
+  --teal-500: #1E8E7E;
+  --teal-400: #50B3A2;
+  --teal-300: #8FD2C5;
+  --teal-200: #C2E7DF;
+  --teal-100: #DEF0EB;
+
+  /* --- Signal red "Bahaya" (danger, the cost of judol) --- */
+  --red-800: #931F1B;
+  --red-700: #B5302A;
+  --red-600: #D14034; /* danger */
+  --red-500: #E1564A;
+  --red-200: #F6CFC9;
+  --red-100: #FBE4DF;
+
+  /* --- Amber "Sinyal" (warning, attention, highlight) --- */
+  --amber-700: #B86B16;
+  --amber-600: #D98324;
+  --amber-500: #EFA13C; /* highlight / warm CTA */
+  --amber-300: #F6C988;
+  --amber-100: #FBEBD2;
+
+  /* --- Green "Pulih" (recovery, hope, help is here) --- */
+  --green-700: #2C7A4F;
+  --green-600: #3C9463; /* success / support */
+  --green-500: #54AB7B;
+  --green-300: #9AD3B0;
+  --green-100: #DDF0E4;
+
+  /* ==========================================================
+     SEMANTIC ALIASES — use these in components, not raw scales
+     ========================================================== */
+
+  /* Backgrounds & surfaces */
+  --color-bg:          var(--canvas);
+  --color-bg-alt:      var(--canvas-2);
+  --color-surface:     var(--surface);
+  --color-surface-raised: var(--surface-2);
+  --color-ink-section: var(--ink-950);   /* dark "night" sections */
+
+  /* Text */
+  --text-strong:  var(--ink-950);
+  --text-body:    var(--ink-800);
+  --text-muted:   var(--ink-500);
+  --text-faint:   var(--ink-400);
+  --text-on-dark: #EAF1ED;
+  --text-on-dark-muted: #9DB4B0;
+  --text-on-fill: #FCFAF4;
+  --text-link:    var(--teal-700);
+
+  /* Brand */
+  --brand:        var(--teal-700);
+  --brand-strong: var(--teal-900);
+  --brand-soft:   var(--teal-100);
+  --brand-mid:    var(--teal-500);
+
+  /* Status / signal */
+  --danger:       var(--red-600);
+  --danger-strong:var(--red-800);
+  --danger-soft:  var(--red-100);
+  --warning:      var(--amber-500);
+  --warning-strong: var(--amber-700);
+  --warning-soft: var(--amber-100);
+  --success:      var(--green-600);
+  --success-strong: var(--green-700);
+  --success-soft: var(--green-100);
+  --info:         var(--teal-600);
+  --info-soft:    var(--teal-100);
+
+  /* Lines & borders */
+  --border:        var(--ink-200);
+  --border-strong: var(--ink-300);
+  --border-ink:    var(--ink-950);
+  --divider:       rgba(11, 26, 28, 0.10);
+
+  /* Interaction */
+  --focus-ring:    var(--teal-500);
+  --selection-bg:  var(--amber-300);
+}

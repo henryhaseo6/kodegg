@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    body { margin:0; background:#090C12; -webkit-font-smoothing:antialiased; }
+    ::selection { background:#CBFF46; color:#090C12; }
+    .gg-nav:hover { color:#EEF1F6 !important; }
+    .gg-card { transition:transform .22s cubic-bezier(.2,.7,.3,1), box-shadow .22s, border-color .22s; }
+    .gg-card:hover { transform:translateY(-4px); border-color:rgba(203,255,70,0.4) !important; box-shadow:0 16px 40px rgba(0,0,0,0.5); }
+    .gg-src:hover { background:#CBFF46 !important; color:#090C12 !important; border-color:#CBFF46 !important; }
+    .gg-article p { font-size:16.5px; line-height:1.75; color:#C6CDD8; margin:0 0 20px; }
+    .gg-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:24px; letter-spacing:-0.02em; color:#EEF1F6; margin:34px 0 14px; }
+    @media (max-width:860px){ .gg-headnav{ display:none !important; } .gg-artgrid{ grid-template-columns:1fr !important; } }
+  </style>
+</helmet>
+<div data-screen-label="Artikel Berita" style="--bg:#090C12; --bg2:#0E121B; --surface:#151B27; --surface2:#1C2331; --line:rgba(255,255,255,0.08); --line2:rgba(255,255,255,0.15); --txt:#EEF1F6; --muted:#98A2B3; --faint:#5B6472; --acc:#CBFF46; --acc2:#8B6BFF; --ink:#090C12; --ok:#37E38B; --warn:#FFB13C; --danger:#FF5C77; font-family:'Satoshi',system-ui,sans-serif; color:var(--txt); min-height:100vh; background:radial-gradient(1100px 560px at 82% -12%, rgba(139,107,255,0.13), transparent 60%), radial-gradient(1000px 520px at -5% 0%, rgba(203,255,70,0.06), transparent 55%), var(--bg);">
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:60; background:rgba(9,12,18,0.72); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 28px; height:70px; display:flex; align-items:center; gap:30px;">
+      <a href="Beranda%20v2.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+        <span style="width:34px; height:34px; border-radius:10px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; box-shadow:0 0 24px rgba(203,255,70,0.35); font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:22px; color:var(--acc); letter-spacing:-0.04em;">GG</span>
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.01em; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span>
+      </a>
+      <nav class="gg-headnav" style="display:flex; align-items:center; gap:24px; margin-left:6px;">
+        <a href="Jelajah%20Game.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Jelajah" data-en="Discover">Jelajah</a>
+        <a href="Favorit.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Favorit" data-en="Saved">Favorit</a>
+        <a href="Kode%20Redeem.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Kode</a>
+        <a href="Event.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Event" data-en="Events">Event</a>
+        <a href="Tier%20List.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Tier List</a>
+        <a href="Berita.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--acc); text-decoration:none;" data-id="Berita" data-en="News">Berita</a>
+      </nav>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:14px;">
+        <div style="display:flex; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:2px;">
+          <button data-lang-btn="id" onClick="{{ setLang }}" data-lang="id" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:var(--surface2); color:var(--txt);">ID</button>
+          <button data-lang-btn="en" onClick="{{ setLang }}" data-lang="en" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:transparent; color:var(--faint);">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div style="max-width:820px; margin:0 auto; padding:26px 28px 0;">
+    <div style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);"><a href="Beranda%20v2.dc.html" style="color:var(--faint); text-decoration:none;">Home</a> <span style="opacity:0.5;">/</span> <a href="Berita.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Berita" data-en="News">Berita</a> <span style="opacity:0.5;">/</span> <span style="color:var(--muted);">Honkai: Star Rail</span></div>
+  </div>
+
+  <!-- ARTICLE -->
+  <article style="max-width:820px; margin:0 auto; padding:20px 28px 8px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+      <span style="font-family:'Space Mono',monospace; font-size:10.5px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.14); border:1px solid rgba(139,107,255,0.3); padding:4px 9px; border-radius:7px;">Honkai: Star Rail</span>
+      <span style="font-family:'Space Mono',monospace; font-size:11.5px; color:var(--faint);">HoYoLAB · 16 Jul 2026 · <span data-id="2 jam lalu" data-en="2 hours ago">2 jam lalu</span></span>
+    </div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:38px; line-height:1.1; letter-spacing:-0.03em; color:#fff; margin:0 0 16px;">HSR 4.4 umumkan banner Castorice, mode endgame baru &amp; rework relic</h1>
+    <p style="font-size:18px; line-height:1.6; color:var(--muted); margin:0 0 24px;">Special Program versi 4.4 membeberkan dua karakter limited, event story utama, dan penyesuaian besar pada sistem relic yang sudah lama diminta komunitas.</p>
+
+    <div style="position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line2); aspect-ratio:16/9; margin-bottom:14px; background:var(--surface2);">
+      <div style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(139,107,255,0.25), rgba(9,12,18,0.5));"></div>
+      <img src="https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes/image/character_preview/1402.png" alt="" referrerpolicy="no-referrer" onError="{{ imgFallback }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+    </div>
+    <div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint); margin-bottom:28px;" data-id="Ilustrasi: The Herta · via StarRailRes" data-en="Art: The Herta · via StarRailRes">Ilustrasi: The Herta · via StarRailRes</div>
+
+    <div class="gg-article">
+      <p>Dalam Special Program terbaru, HoYoverse mengonfirmasi kedatangan karakter limited baru pada paruh pertama versi 4.4. Banner utama akan menampilkan rate-up untuk karakter bintang lima yang sudah dinanti, berbarengan dengan light cone signature-nya.</p>
+      <h2>Karakter &amp; banner</h2>
+      <p>Fase pertama menghadirkan rate-up dua karakter limited, sementara fase kedua akan mengulang beberapa favorit komunitas. Detail persis jadwal banner diperbarui otomatis begitu server resmi mengumumkan tanggalnya.</p>
+      <h2>Mode endgame baru</h2>
+      <p>Versi ini juga membuka mode endgame baru dengan mekanik unik dan reward Stellar Jade mingguan. Mode ini dirancang untuk komposisi tim yang lebih beragam ketimbang konten endgame sebelumnya.</p>
+      <h2>Rework sistem relic</h2>
+      <p>Perubahan yang paling ditunggu: penyesuaian pada sistem relic, termasuk peningkatan kualitas hidup pada proses farming dan penguncian sub-stat. Rincian teknis lengkap akan mengikuti patch notes resmi.</p>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:18px 0; margin:8px 0 28px;">
+      <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);" data-id="Ringkasan otomatis — baca detail lengkap di sumber resmi." data-en="Auto-summary — read the full detail at the official source.">Ringkasan otomatis — baca detail lengkap di sumber resmi.</span>
+      <a href="https://www.hoyolab.com/circles/6/official" target="_blank" rel="noopener" class="gg-src" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--acc); background:transparent; border:1px solid var(--acc); border-radius:10px; padding:9px 15px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:all .15s;" data-id="Baca di HoYoLAB →" data-en="Read on HoYoLAB →">Baca di HoYoLAB →</a>
+    </div>
+  </article>
+
+  <!-- RELATED -->
+  <section style="max-width:820px; margin:0 auto; padding:8px 28px 8px;">
+    <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; letter-spacing:-0.02em; color:var(--txt); margin:0 0 16px;" data-id="Berita terkait" data-en="Related news">Berita terkait</h2>
+    <div class="gg-artgrid" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px;">
+      <a href="Artikel.dc.html" class="gg-card" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="padding:15px 16px; display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:center; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Genshin</span><span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint);">Pocket Tactics · 5j</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14.5px; line-height:1.3; color:var(--txt);">Neverness to Everness rilis global — panduan reroll</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="padding:15px 16px; display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:center; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Wuthering Waves</span><span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint);">Dot Esports · 8j</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14.5px; line-height:1.3; color:var(--txt);">Wuthering Waves 2.4: semua karakter & senjata baru</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="padding:15px 16px; display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:center; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">ZZZ</span><span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint);">HoYoLAB · 1h</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14.5px; line-height:1.3; color:var(--txt);">ZZZ 2.1 hadirkan agent baru & mode challenge</div>
+        </div>
+      </a></div>
+  </section>
+
+  <footer style="border-top:1px solid var(--line); background:var(--bg); margin-top:44px;">
+    <div style="max-width:1280px; margin:0 auto; padding:52px 28px 40px;">
+      <div class="gg-footcols" style="display:grid; grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr)); gap:32px; padding-bottom:34px; border-bottom:1px solid var(--line);">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;"><span style="width:30px; height:30px; border-radius:9px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:19px; color:var(--acc); letter-spacing:-0.04em;">GG</span><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span></div>
+          <p style="font-size:13.5px; line-height:1.6; color:var(--faint); margin:0; max-width:38ch;" data-id="Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait." data-en="An always-updated Android online-game portal — automated, honest, no clickbait.">Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait.</p>
+        </div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="KONTEN" data-en="CONTENT">KONTEN</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Kode%20Redeem.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kode Redeem" data-en="Redeem Codes">Kode Redeem</a><a href="Event.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Event" data-en="Events">Event</a><a href="Tier%20List.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tier List" data-en="Tier List">Tier List</a><a href="Berita.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Berita" data-en="News">Berita</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="SUMBER DATA" data-en="DATA SOURCES">SUMBER DATA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="https://rawg.io" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">RAWG</a><a href="https://www.hoyolab.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">HoYoLAB</a><a href="https://www.gamerpower.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">GamerPower</a><a href="https://www.freetogame.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">FreeToGame</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="LAINNYA" data-en="MORE">LAINNYA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Jelajah%20Game.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Jelajah Game" data-en="Discover Games">Jelajah Game</a><a href="Tentang.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tentang" data-en="About">Tentang</a><a href="Kontak.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kontak" data-en="Contact">Kontak</a></div></div>
+      </div>
+      <div style="padding-top:22px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center;">
+        <p style="font-family:'Space Mono',monospace; font-size:11px; line-height:1.6; color:var(--faint); margin:0; max-width:72ch;" data-id="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games." data-en="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — attributed per license. KodeGG is not affiliated with any publisher; all trademarks &amp; game assets belong to their owners. Not endorsed by Riot Games.">Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games.</p>
+        <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">© 2026 KodeGG · kodegg.com</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      imgFallback: (e) => { e.currentTarget.style.display = "none"; },
+      setLang: (e) => {
+        const l = e.currentTarget.getAttribute("data-lang");
+        document.querySelectorAll("[data-en]").forEach((el) => { el.textContent = l === "en" ? el.getAttribute("data-en") : el.getAttribute("data-id"); });
+        document.querySelectorAll("[data-lang-btn]").forEach((b) => { const on = b.getAttribute("data-lang-btn") === l; b.style.background = on ? "var(--surface2)" : "transparent"; b.style.color = on ? "var(--txt)" : "var(--faint)"; });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    body { margin:0; background:#090C12; -webkit-font-smoothing:antialiased; }
+    ::selection { background:#CBFF46; color:#090C12; }
+    @keyframes glowPulse { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
+    .gg-nav:hover { color:#EEF1F6 !important; }
+    .gg-card { transition:transform .22s cubic-bezier(.2,.7,.3,1), box-shadow .22s, border-color .22s; }
+    .gg-card:hover { transform:translateY(-4px); border-color:rgba(203,255,70,0.4) !important; box-shadow:0 16px 40px rgba(0,0,0,0.5); }
+    .gg-feat:hover { border-color:rgba(203,255,70,0.4) !important; }
+    .gg-more:hover { background:#1C2331 !important; border-color:rgba(203,255,70,0.5) !important; }
+    .gg-fchip:hover { border-color:rgba(203,255,70,0.5) !important; color:#EEF1F6 !important; }
+    .gg-in::placeholder { color:#5B6472; }
+    .gg-sug:hover { background:#1C2331 !important; }
+    .gg-sel { appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2398A2B3' stroke-width='3' stroke-linecap='round'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat:no-repeat; background-position:right 12px center; }
+    @media (max-width:860px){ .gg-headnav{ display:none !important; } .gg-feat{ grid-template-columns:1fr !important; } }
+  </style>
+</helmet>
+<div data-screen-label="Berita" style="--bg:#090C12; --bg2:#0E121B; --surface:#151B27; --surface2:#1C2331; --line:rgba(255,255,255,0.08); --line2:rgba(255,255,255,0.15); --txt:#EEF1F6; --muted:#98A2B3; --faint:#5B6472; --acc:#CBFF46; --acc2:#8B6BFF; --ink:#090C12; --ok:#37E38B; --warn:#FFB13C; --danger:#FF5C77; font-family:'Satoshi',system-ui,sans-serif; color:var(--txt); min-height:100vh; background:radial-gradient(1100px 560px at 82% -12%, rgba(139,107,255,0.13), transparent 60%), radial-gradient(1000px 520px at -5% 0%, rgba(203,255,70,0.06), transparent 55%), var(--bg);">
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:60; background:rgba(9,12,18,0.72); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 28px; height:70px; display:flex; align-items:center; gap:30px;">
+      <a href="Beranda%20v2.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+        <span style="width:34px; height:34px; border-radius:10px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; box-shadow:0 0 24px rgba(203,255,70,0.35); font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:22px; color:var(--acc); letter-spacing:-0.04em;">GG</span>
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.01em; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span>
+      </a>
+      <nav class="gg-headnav" style="display:flex; align-items:center; gap:24px; margin-left:6px;">
+        <a href="Jelajah%20Game.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Jelajah" data-en="Discover">Jelajah</a>
+        <a href="Favorit.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Favorit" data-en="Saved">Favorit</a>
+        <a href="Kode%20Redeem.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Kode</a>
+        <a href="Event.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Event" data-en="Events">Event</a>
+        <a href="Tier%20List.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Tier List</a>
+        <a href="#" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--acc); text-decoration:none;" data-id="Berita" data-en="News">Berita</a>
+      </nav>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:14px;">
+        <div style="display:flex; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:2px;">
+          <button data-lang-btn="id" onClick="{{ setLang }}" data-lang="id" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:var(--surface2); color:var(--txt);">ID</button>
+          <button data-lang-btn="en" onClick="{{ setLang }}" data-lang="en" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:transparent; color:var(--faint);">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px; margin:0 auto; padding:48px 28px 8px;">
+    <div style="display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:var(--acc); margin-bottom:14px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span> <span data-id="DARI FEED RESMI · REALTIME" data-en="FROM OFFICIAL FEEDS · REALTIME">DARI FEED RESMI · REALTIME</span></div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:48px; line-height:1.02; letter-spacing:-0.03em; color:#fff; margin:0 0 14px;" data-id="Berita game" data-en="Game news">Berita game</h1>
+    <p style="font-size:16.5px; line-height:1.55; color:var(--muted); margin:0 0 8px; max-width:60ch;" data-id="Update patch, banner, dan pengumuman resmi — dikumpulkan otomatis dari feed publisher & media game tepercaya." data-en="Patch updates, banners, and official announcements — auto-aggregated from publisher feeds & trusted game media.">Update patch, banner, dan pengumuman resmi — dikumpulkan otomatis dari feed publisher & media game tepercaya.</p>
+  </section>
+
+  <!-- FILTER CHIPS -->
+  <section style="max-width:1280px; margin:0 auto; padding:16px 28px 4px;">
+    <div class="gg-controls" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <div style="position:relative; flex:1; min-width:240px;">
+        <span style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--faint); pointer-events:none;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></span>
+        <input class="gg-in" data-search-input type="text" autocomplete="off" onInput="{{ onSearch }}" onKeyDown="{{ onSearchKey }}" placeholder="Cari berita atau game…" style="width:100%; box-sizing:border-box; font-family:'Satoshi',sans-serif; font-size:14.5px; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 14px 13px 40px; outline:none;">
+        <div data-suggest style="display:none; position:absolute; z-index:40; top:calc(100% + 6px); left:0; right:0; background:var(--surface); border:1px solid var(--line2); border-radius:12px; overflow:hidden; box-shadow:0 20px 44px rgba(0,0,0,0.55);"></div>
+      </div>
+      <select class="gg-sel" data-game-select onChange="{{ onGame }}" style="font-family:'Satoshi',sans-serif; font-size:14px; font-weight:600; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 38px 13px 14px; cursor:pointer; outline:none; min-width:180px;">
+        <option value="all">Semua game</option>
+        <option value="gi">Genshin Impact</option>
+        <option value="hsr">Honkai: Star Rail</option>
+        <option value="zzz">Zenless Zone Zero</option>
+        <option value="wuwa">Wuthering Waves</option>
+      </select>
+      <button data-esports-btn onClick="{{ toggleEsports }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:12px; padding:13px 16px;">Esports</button>
+    </div>
+    <div style="margin-top:14px; font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);"><span data-count>0</span> <span data-id="berita ditampilkan" data-en="news shown">berita ditampilkan</span></div>
+  </section>
+
+  <!-- FEATURED -->
+  <section style="max-width:1280px; margin:0 auto; padding:22px 28px 8px;">
+    <a href="Artikel.dc.html" class="gg-feat" data-news data-cat="hsr" style="display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:0; background:var(--surface); border:1px solid var(--line2); border-radius:22px; overflow:hidden; text-decoration:none;">
+      <div style="position:relative; min-height:300px;">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="news-hero" shape="rect" placeholder="Drop gambar berita utama" hint-size="100%,100%"></x-import>
+        <div style="position:absolute; inset:0; background:linear-gradient(120deg, transparent, rgba(9,12,18,0.4)); pointer-events:none;"></div>
+      </div>
+      <div style="padding:34px 34px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;"><span style="font-family:'Space Mono',monospace; font-size:10.5px; font-weight:700; color:var(--ink); background:var(--acc); padding:4px 9px; border-radius:7px;" data-id="UTAMA" data-en="FEATURED">UTAMA</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">HoYoLAB · 2 jam lalu</span></div>
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:30px; line-height:1.12; letter-spacing:-0.02em; color:#fff; margin:0 0 14px;" data-id="HSR 4.4 umumkan banner Castorice, mode endgame baru & rework relic" data-en="HSR 4.4 reveals Castorice banner, new endgame mode & relic rework">HSR 4.4 umumkan banner Castorice, mode endgame baru & rework relic</h2>
+        <p style="font-size:15px; line-height:1.6; color:var(--muted); margin:0 0 18px;" data-id="Special Program membeberkan dua karakter limited, event story utama, dan penyesuaian besar pada sistem relic yang sudah lama diminta komunitas." data-en="The Special Program unveiled two limited characters, a main story event, and long-requested changes to the relic system.">Special Program membeberkan dua karakter limited, event story utama, dan penyesuaian besar pada sistem relic yang sudah lama diminta komunitas.</p>
+        <span style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--acc);" data-id="Baca selengkapnya →" data-en="Read more →">Baca selengkapnya →</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- NEWS GRID -->
+  <section style="max-width:1280px; margin:0 auto; padding:20px 28px 8px;">
+    <div data-news-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;">
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="gi" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n1" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Genshin</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Pocket Tactics · 5 jam lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">Neverness to Everness rilis global — panduan reroll & tier awal</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="wuwa" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n2" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Wuthering Waves</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Dot Esports · 8 jam lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">Wuthering Waves 2.4: semua karakter, senjata & event baru</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="gi" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n3" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Genshin</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Genshin · 1 hari lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">Hasil survei versi 6.6 & bocoran arah meta wilayah Nod-Krai</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="zzz" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n4" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">ZZZ</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">HoYoLAB · 1 hari lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">ZZZ 2.1 hadirkan agent baru & mode combat challenge</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="esports" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n5" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--warn); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Esports</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Dot Esports · 2 hari lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">Jadwal playoff MLBB MPL musim ini — bracket lengkap</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="hsr" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n6" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Star Rail</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">HoYoLAB · 2 hari lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">Preview relic set 4.4 & rekomendasi build karakter meta</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="wuwa" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n7" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Wuthering Waves</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Pocket Tactics · 3 hari lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">Kuro Games ungkap kolaborasi & roadmap Wuthering Waves</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="gi" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n8" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Genshin</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">IGN · 3 hari lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">Genshin umumkan region baru & fitur open-world 6.7</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="esports" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n9" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--warn); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">Esports</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Dot Esports · 4 hari lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">Hasil grand final turnamen Free Fire regional Asia Tenggara</div>
+        </div>
+      </a>
+      <a href="Artikel.dc.html" class="gg-card" data-news data-cat="zzz" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:16/9; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="n10" shape="rect" placeholder="Gambar" hint-size="100%,100%"></x-import></div>
+        <div style="padding:16px 17px; display:flex; flex-direction:column; gap:9px; flex:1;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.12); border:1px solid rgba(139,107,255,0.25); padding:3px 7px; border-radius:6px;">ZZZ</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Game8 · 4 hari lalu</span></div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; line-height:1.25; color:var(--txt);">Tier list ZZZ 2.1 diperbarui: pergeseran meta besar</div>
+        </div>
+      </a></div>
+    <div style="display:flex; justify-content:center; margin-top:28px;">
+      <button data-loadmore class="gg-more" onClick="{{ loadMore }}" style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; font-family:'Satoshi',sans-serif; font-size:14px; font-weight:700; color:var(--txt); background:var(--surface); border:1px solid var(--line2); border-radius:12px; padding:13px 24px; transition:all .18s;"><span data-id="Muat lebih banyak" data-en="Load more">Muat lebih banyak</span> <span style="color:var(--acc);">↓</span></button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid var(--line); background:var(--bg); margin-top:44px;">
+    <div style="max-width:1280px; margin:0 auto; padding:52px 28px 40px;">
+      <div class="gg-footcols" style="display:grid; grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr)); gap:32px; padding-bottom:34px; border-bottom:1px solid var(--line);">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;"><span style="width:30px; height:30px; border-radius:9px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:19px; color:var(--acc); letter-spacing:-0.04em;">GG</span><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span></div>
+          <p style="font-size:13.5px; line-height:1.6; color:var(--faint); margin:0; max-width:38ch;" data-id="Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait." data-en="An always-updated Android online-game portal — automated, honest, no clickbait.">Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait.</p>
+        </div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="KONTEN" data-en="CONTENT">KONTEN</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Kode%20Redeem.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kode Redeem" data-en="Redeem Codes">Kode Redeem</a><a href="Event.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Event" data-en="Events">Event</a><a href="Tier%20List.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tier List" data-en="Tier List">Tier List</a><a href="Berita.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Berita" data-en="News">Berita</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="SUMBER DATA" data-en="DATA SOURCES">SUMBER DATA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="https://rawg.io" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">RAWG</a><a href="https://www.hoyolab.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">HoYoLAB</a><a href="https://www.gamerpower.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">GamerPower</a><a href="https://www.freetogame.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">FreeToGame</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="LAINNYA" data-en="MORE">LAINNYA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Jelajah%20Game.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Jelajah Game" data-en="Discover Games">Jelajah Game</a><a href="Tentang.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tentang" data-en="About">Tentang</a><a href="Kontak.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kontak" data-en="Contact">Kontak</a></div></div>
+      </div>
+      <div style="padding-top:22px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center;">
+        <p style="font-family:'Space Mono',monospace; font-size:11px; line-height:1.6; color:var(--faint); margin:0; max-width:72ch;" data-id="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games." data-en="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — attributed per license. KodeGG is not affiliated with any publisher; all trademarks &amp; game assets belong to their owners. Not endorsed by Riot Games.">Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games.</p>
+        <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">© 2026 KodeGG · kodegg.com</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { limit: 6, game: "all", q: "", esports: false, sugIdx: -1 };
+  componentDidMount() {
+    this._games = [
+      { id: "gi", name: "Genshin Impact" }, { id: "hsr", name: "Honkai: Star Rail" },
+      { id: "zzz", name: "Zenless Zone Zero" }, { id: "wuwa", name: "Wuthering Waves" },
+    ];
+    document.addEventListener("click", this._closeSug = (e) => {
+      if (!e.target.closest("[data-search-input]") && !e.target.closest("[data-suggest]")) this._hideSug();
+    });
+    this.applyView();
+  }
+  componentWillUnmount() { document.removeEventListener("click", this._closeSug); }
+  applyView() {
+    const cards = [...document.querySelectorAll("[data-news-grid] [data-news]")];
+    const q = this.state.q.trim().toLowerCase();
+    let filt = cards.filter((c) => {
+      if (this.state.esports) return c.dataset.cat === "esports";
+      const okG = this.state.game === "all" || c.dataset.cat === this.state.game;
+      const okQ = !q || (c.textContent || "").toLowerCase().includes(q);
+      return okG && okQ;
+    });
+    cards.forEach((c) => { c.style.display = "none"; });
+    filt.forEach((c, i) => { c.style.display = i < this.state.limit ? "flex" : "none"; });
+    const btn = document.querySelector("[data-loadmore]");
+    if (btn) btn.style.display = filt.length > this.state.limit ? "inline-flex" : "none";
+    const cnt = document.querySelector("[data-count]"); if (cnt) cnt.textContent = filt.length;
+  }
+  _hideSug() { const s = document.querySelector("[data-suggest]"); if (s) s.style.display = "none"; if (this.state.sugIdx !== -1) this.setState({ sugIdx: -1 }); }
+  _renderSug() {
+    const box = document.querySelector("[data-suggest]"); if (!box) return;
+    const q = this.state.q.trim().toLowerCase();
+    if (!q) { this._hideSug(); return; }
+    const hits = this._games.filter((g) => g.name.toLowerCase().includes(q)).slice(0, 4);
+    if (!hits.length) { this._hideSug(); return; }
+    box.innerHTML = hits.map((g, i) => '<div class="gg-sug" data-sug="' + g.id + '" style="padding:11px 14px; cursor:pointer; font-size:14px; font-weight:600; color:var(--txt);' + (i === this.state.sugIdx ? "background:#1C2331;" : "") + '">' + g.name + "</div>").join("");
+    box.querySelectorAll("[data-sug]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const id = el.getAttribute("data-sug");
+        const sel = document.querySelector("[data-game-select]"); if (sel) sel.value = id;
+        const inp = document.querySelector("[data-search-input]"); if (inp) inp.value = "";
+        this.setState({ game: id, q: "", esports: false, limit: 6 }, () => { this.applyView(); this._syncEsportsBtn(); });
+        this._hideSug();
+      });
+    });
+    box.style.display = "block";
+  }
+  _syncEsportsBtn() {
+    const b = document.querySelector("[data-esports-btn]"); if (!b) return;
+    const on = this.state.esports;
+    b.style.background = on ? "var(--acc)" : "var(--surface)";
+    b.style.color = on ? "var(--ink)" : "var(--muted)";
+    b.style.borderColor = on ? "var(--acc)" : "var(--line)";
+  }
+  renderVals() {
+    return {
+      onSearch: (e) => { this.setState({ q: e.currentTarget.value, esports: false, limit: 6, sugIdx: -1 }, () => { this.applyView(); this._renderSug(); this._syncEsportsBtn(); }); },
+      onSearchKey: (e) => {
+        const box = document.querySelector("[data-suggest]");
+        const items = box ? [...box.querySelectorAll("[data-sug]")] : [];
+        if (e.key === "ArrowDown" && items.length) { e.preventDefault(); this.setState({ sugIdx: Math.min(this.state.sugIdx + 1, items.length - 1) }, () => this._renderSug()); }
+        else if (e.key === "ArrowUp" && items.length) { e.preventDefault(); this.setState({ sugIdx: Math.max(this.state.sugIdx - 1, 0) }, () => this._renderSug()); }
+        else if (e.key === "Enter" && this.state.sugIdx >= 0 && items[this.state.sugIdx]) { e.preventDefault(); items[this.state.sugIdx].click(); }
+        else if (e.key === "Escape") { this._hideSug(); }
+      },
+      onGame: (e) => { this.setState({ game: e.currentTarget.value, esports: false, limit: 6 }, () => { this.applyView(); this._syncEsportsBtn(); }); },
+      toggleEsports: () => { this.setState({ esports: !this.state.esports, limit: 6 }, () => { this.applyView(); this._syncEsportsBtn(); }); },
+      loadMore: () => { this.setState({ limit: this.state.limit + 6 }, () => this.applyView()); },
+      setLang: (e) => {
+        const l = e.currentTarget.getAttribute("data-lang");
+        document.querySelectorAll("[data-en]").forEach((el) => { el.textContent = l === "en" ? el.getAttribute("data-en") : el.getAttribute("data-id"); });
+        document.querySelectorAll("[data-lang-btn]").forEach((b) => { const on = b.getAttribute("data-lang-btn") === l; b.style.background = on ? "var(--surface2)" : "transparent"; b.style.color = on ? "var(--txt)" : "var(--faint)"; });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

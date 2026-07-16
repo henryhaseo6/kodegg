@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    body { margin:0; background:#090C12; -webkit-font-smoothing:antialiased; }
+    ::selection { background:#CBFF46; color:#090C12; }
+    @keyframes glowPulse { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
+    .gg-nav:hover { color:#EEF1F6 !important; }
+    .gg-card { transition:transform .22s cubic-bezier(.2,.7,.3,1), box-shadow .22s, border-color .22s; }
+    .gg-card:hover { border-color:rgba(203,255,70,0.4) !important; box-shadow:0 12px 34px rgba(0,0,0,0.45); }
+    .gg-fchip:hover { border-color:rgba(203,255,70,0.5) !important; color:#EEF1F6 !important; }
+    .gg-more:hover { background:#1C2331 !important; border-color:rgba(203,255,70,0.5) !important; }
+    .gg-in::placeholder { color:#5B6472; }
+    .gg-sug:hover { background:#1C2331 !important; }
+    .gg-sel { appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2398A2B3' stroke-width='3' stroke-linecap='round'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat:no-repeat; background-position:right 12px center; }
+    details > summary { list-style:none; cursor:pointer; }
+    details > summary::-webkit-details-marker { display:none; }
+    details[open] .gg-chev { transform:rotate(180deg); }
+    @media (max-width:860px){ .gg-headnav{ display:none !important; } .gg-evbody{ grid-template-columns:1fr !important; } }
+  </style>
+</helmet>
+<div data-screen-label="Event" style="--bg:#090C12; --bg2:#0E121B; --surface:#151B27; --surface2:#1C2331; --line:rgba(255,255,255,0.08); --line2:rgba(255,255,255,0.15); --txt:#EEF1F6; --muted:#98A2B3; --faint:#5B6472; --acc:#CBFF46; --acc2:#8B6BFF; --ink:#090C12; --ok:#37E38B; --warn:#FFB13C; --danger:#FF5C77; font-family:'Satoshi',system-ui,sans-serif; color:var(--txt); min-height:100vh; background:radial-gradient(1100px 560px at 82% -12%, rgba(139,107,255,0.13), transparent 60%), radial-gradient(1000px 520px at -5% 0%, rgba(203,255,70,0.06), transparent 55%), var(--bg);">
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:60; background:rgba(9,12,18,0.72); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 28px; height:70px; display:flex; align-items:center; gap:30px;">
+      <a href="Beranda%20v2.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+        <span style="width:34px; height:34px; border-radius:10px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; box-shadow:0 0 24px rgba(203,255,70,0.35); font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:22px; color:var(--acc); letter-spacing:-0.04em;">GG</span>
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.01em; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span>
+      </a>
+      <nav class="gg-headnav" style="display:flex; align-items:center; gap:24px; margin-left:6px;">
+        <a href="Jelajah%20Game.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Jelajah" data-en="Discover">Jelajah</a>
+        <a href="Favorit.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Favorit" data-en="Saved">Favorit</a>
+        <a href="Kode%20Redeem.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Kode</a>
+        <a href="#" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--acc); text-decoration:none;">Event</a>
+        <a href="Tier%20List.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Tier List</a>
+        <a href="Berita.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Berita" data-en="News">Berita</a>
+      </nav>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:14px;">
+        <div style="display:flex; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:2px;">
+          <button data-lang-btn="id" onClick="{{ setLang }}" data-lang="id" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:var(--surface2); color:var(--txt);">ID</button>
+          <button data-lang-btn="en" onClick="{{ setLang }}" data-lang="en" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:transparent; color:var(--faint);">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px; margin:0 auto; padding:48px 28px 8px;">
+    <div style="display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:var(--acc); margin-bottom:14px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span> <span data-id="DARI SEMUA GAME · COUNTDOWN REALTIME" data-en="ACROSS ALL GAMES · REALTIME COUNTDOWN">DARI SEMUA GAME · COUNTDOWN REALTIME</span></div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:48px; line-height:1.02; letter-spacing:-0.03em; color:#fff; margin:0 0 14px;" data-id="Event & banner" data-en="Events & banners">Event & banner</h1>
+    <p style="font-size:16.5px; line-height:1.55; color:var(--muted); margin:0 0 8px; max-width:60ch;" data-id="Semua event & banner yang lagi berjalan dari game online. Klik kartu untuk detail reward & periode. Jadwal ditarik dari sumber resmi." data-en="Every live event & banner across online games. Click a card for rewards & schedule. Pulled from official sources.">Semua event & banner yang lagi berjalan dari game online. Klik kartu untuk detail reward & periode. Jadwal ditarik dari sumber resmi.</p>
+  </section>
+
+  <!-- CONTROLS -->
+  <section style="max-width:1280px; margin:0 auto; padding:16px 28px 4px;">
+    <div class="gg-controls" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <div style="position:relative; flex:1; min-width:240px;">
+        <span style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--faint); pointer-events:none;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></span>
+        <input class="gg-in" data-search-input type="text" autocomplete="off" onInput="{{ onSearch }}" onKeyDown="{{ onSearchKey }}" placeholder="Cari event atau game…" style="width:100%; box-sizing:border-box; font-family:'Satoshi',sans-serif; font-size:14.5px; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 14px 13px 40px; outline:none;">
+        <div data-suggest style="display:none; position:absolute; z-index:40; top:calc(100% + 6px); left:0; right:0; background:var(--surface); border:1px solid var(--line2); border-radius:12px; overflow:hidden; box-shadow:0 20px 44px rgba(0,0,0,0.55);"></div>
+      </div>
+      <select class="gg-sel" data-game-select onChange="{{ onGame }}" style="font-family:'Satoshi',sans-serif; font-size:14px; font-weight:600; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 38px 13px 14px; cursor:pointer; outline:none; min-width:180px;">
+        <option value="all"><span data-id="Semua game" data-en="All games">Semua game</span></option>
+        <option value="gi">Genshin Impact</option>
+        <option value="hsr">Honkai: Star Rail</option>
+        <option value="zzz">Zenless Zone Zero</option>
+        <option value="wuwa">Wuthering Waves</option>
+      </select>
+      <select class="gg-sel" data-type-select onChange="{{ onType }}" style="font-family:'Satoshi',sans-serif; font-size:14px; font-weight:600; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 38px 13px 14px; cursor:pointer; outline:none; min-width:150px;">
+        <option value="all"><span data-id="Semua tipe" data-en="All types">Semua tipe</span></option>
+        <option value="banner">Banner</option>
+        <option value="event">Event</option>
+      </select>
+    </div>
+    <div style="margin-top:14px; font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);"><span data-count>0</span> <span data-id="event berjalan · diurutkan berakhir tercepat" data-en="live events · sorted by ending soonest">event berjalan · diurutkan berakhir tercepat</span></div>
+  </section>
+
+  <!-- EVENT GRID -->
+  <section style="max-width:1280px; margin:0 auto; padding:12px 28px 8px;">
+    <div data-ev-grid style="display:flex; flex-direction:column; gap:14px;">
+      <details class="gg-card" data-ev-card data-game="gi" data-type="banner" data-end="1785322800000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+        <summary style="display:flex; align-items:center; gap:14px; padding:16px 18px;">
+          <span style="width:44px; height:44px; border-radius:11px; overflow:hidden; flex:0 0 44px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/gensin-impact/images/8/80/Genshin_Impact.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.14); border:1px solid rgba(139,107,255,0.3); padding:2px 7px; border-radius:6px;">Banner</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Genshin Impact · v6.6 fase 1</span></div>
+            <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.25;">Neuvillette (rerun) + karakter baru Nod-Krai</div>
+          </div>
+          <span data-deadline="2026-07-29T18:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn); background:rgba(255,177,60,0.12); padding:6px 10px; border-radius:9px; white-space:nowrap;">—</span>
+          <span class="gg-chev" style="color:var(--muted); transition:transform .2s; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+        </summary>
+        <div class="gg-evbody" style="border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:0;">
+          <div style="position:relative; min-height:170px; border-right:1px solid var(--line); background:var(--surface2);"><img src="https://enka.network/ui/UI_Gacha_AvatarImg_Neuvillette.png" alt="" referrerpolicy="no-referrer" onError="{{ imgFallback }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;"><div style="position:absolute; inset:0; background:linear-gradient(to top, var(--surface) 4%, transparent 55%);"></div></div>
+          <div style="padding:18px 20px; display:flex; flex-direction:column; gap:13px;">
+            <p style="font-size:13.5px; line-height:1.6; color:var(--muted); margin:0;">Rate-up 5★ Neuvillette (rerun) bersama karakter limited baru Nod-Krai, plus rate-up 4★ dan senjata signature.</p>
+            <div><div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint); margin-bottom:7px;"><span data-id="Reward utama" data-en="Main rewards">Reward utama</span></div><div style="display:flex; flex-wrap:wrap; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Neuvillette (Hydro)</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Karakter baru</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Senjata ★5</span></div></div>
+            <div style="display:flex; flex-wrap:wrap; gap:18px; border-top:1px solid var(--line); padding-top:12px;">
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Periode" data-en="Period">Periode</span></div><div style="font-size:12.5px; font-weight:600; color:var(--txt); margin-top:2px;">15 Jul – 29 Jul 2026</div></div>
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Sumber" data-en="Source">Sumber</span></div><div style="margin-top:3px;"><a href="https://www.hoyolab.com/circles/2/official?page_type=2&game_id=2" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace; font-size:11px; font-weight:600; color:var(--acc); text-decoration:none; display:inline-flex; align-items:center; gap:5px;">HoYoLAB resmi <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="gg-card" data-ev-card data-game="hsr" data-type="banner" data-end="1785150000000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+        <summary style="display:flex; align-items:center; gap:14px; padding:16px 18px;">
+          <span style="width:44px; height:44px; border-radius:11px; overflow:hidden; flex:0 0 44px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/e8/Honkai_Star_Rail_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.14); border:1px solid rgba(139,107,255,0.3); padding:2px 7px; border-radius:6px;">Banner</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Honkai: Star Rail · v4.4</span></div>
+            <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.25;">Castorice + mode endgame baru</div>
+          </div>
+          <span data-deadline="2026-07-27T18:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn); background:rgba(255,177,60,0.12); padding:6px 10px; border-radius:9px; white-space:nowrap;">—</span>
+          <span class="gg-chev" style="color:var(--muted); transition:transform .2s; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+        </summary>
+        <div class="gg-evbody" style="border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:0;">
+          <div style="position:relative; min-height:170px; border-right:1px solid var(--line); background:var(--surface2);"><img src="https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes/image/character_preview/1402.png" alt="" referrerpolicy="no-referrer" onError="{{ imgFallback }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;"><div style="position:absolute; inset:0; background:linear-gradient(to top, var(--surface) 4%, transparent 55%);"></div></div>
+          <div style="padding:18px 20px; display:flex; flex-direction:column; gap:13px;">
+            <p style="font-size:13.5px; line-height:1.6; color:var(--muted); margin:0;">Banner karakter limited baru versi 4.4 berbarengan dengan pembukaan mode endgame baru.</p>
+            <div><div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint); margin-bottom:7px;"><span data-id="Reward utama" data-en="Main rewards">Reward utama</span></div><div style="display:flex; flex-wrap:wrap; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Castorice</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Light Cone ★5</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Stellar Jade</span></div></div>
+            <div style="display:flex; flex-wrap:wrap; gap:18px; border-top:1px solid var(--line); padding-top:12px;">
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Periode" data-en="Period">Periode</span></div><div style="font-size:12.5px; font-weight:600; color:var(--txt); margin-top:2px;">16 Jul – 27 Jul 2026</div></div>
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Sumber" data-en="Source">Sumber</span></div><div style="margin-top:3px;"><a href="https://www.hoyolab.com/circles/6/official" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace; font-size:11px; font-weight:600; color:var(--acc); text-decoration:none; display:inline-flex; align-items:center; gap:5px;">HoYoLAB resmi <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="gg-card" data-ev-card data-game="wuwa" data-type="event" data-end="1785556800000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+        <summary style="display:flex; align-items:center; gap:14px; padding:16px 18px;">
+          <span style="width:44px; height:44px; border-radius:11px; overflow:hidden; flex:0 0 44px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/wutheringwaves/images/2/2f/Wuthering_Waves_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:2px 7px; border-radius:6px;">Event</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Wuthering Waves · Update 2.4</span></div>
+            <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.25;">Event "Tidebreaker" — reward Astrite gratis</div>
+          </div>
+          <span data-deadline="2026-08-01T11:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn); background:rgba(255,177,60,0.12); padding:6px 10px; border-radius:9px; white-space:nowrap;">—</span>
+          <span class="gg-chev" style="color:var(--muted); transition:transform .2s; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+        </summary>
+        <div class="gg-evbody" style="border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:0;">
+          <div style="position:relative; min-height:170px; border-right:1px solid var(--line); background:var(--surface2);"></div>
+          <div style="padding:18px 20px; display:flex; flex-direction:column; gap:13px;">
+            <p style="font-size:13.5px; line-height:1.6; color:var(--muted); margin:0;">Event utama patch 2.4 dengan tantangan bertema laut. Kumpulkan Astrite, Shell Credit, dan material upgrade gratis.</p>
+            <div><div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint); margin-bottom:7px;"><span data-id="Reward utama" data-en="Main rewards">Reward utama</span></div><div style="display:flex; flex-wrap:wrap; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Astrite</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Shell Credit</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Upgrade material</span></div></div>
+            <div style="display:flex; flex-wrap:wrap; gap:18px; border-top:1px solid var(--line); padding-top:12px;">
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Periode" data-en="Period">Periode</span></div><div style="font-size:12.5px; font-weight:600; color:var(--txt); margin-top:2px;">18 Jul – 1 Agu 2026</div></div>
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Sumber" data-en="Source">Sumber</span></div><div style="margin-top:3px;"><a href="https://wutheringwaves.kurogames.com/en/main/news" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace; font-size:11px; font-weight:600; color:var(--acc); text-decoration:none; display:inline-flex; align-items:center; gap:5px;">Wuthering Waves resmi <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="gg-card" data-ev-card data-game="zzz" data-type="banner" data-end="1784858400000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+        <summary style="display:flex; align-items:center; gap:14px; padding:16px 18px;">
+          <span style="width:44px; height:44px; border-radius:11px; overflow:hidden; flex:0 0 44px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6e/Zenless_Zone_Zero_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.14); border:1px solid rgba(139,107,255,0.3); padding:2px 7px; border-radius:6px;">Banner</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Zenless Zone Zero · Patch 2.1</span></div>
+            <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.25;">Agent baru + rerun S-rank favorit</div>
+          </div>
+          <span data-deadline="2026-07-24T09:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn); background:rgba(255,177,60,0.12); padding:6px 10px; border-radius:9px; white-space:nowrap;">—</span>
+          <span class="gg-chev" style="color:var(--muted); transition:transform .2s; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+        </summary>
+        <div class="gg-evbody" style="border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:0;">
+          <div style="position:relative; min-height:170px; border-right:1px solid var(--line); background:var(--surface2);"></div>
+          <div style="padding:18px 20px; display:flex; flex-direction:column; gap:13px;">
+            <p style="font-size:13.5px; line-height:1.6; color:var(--muted); margin:0;">Channel eksklusif menghadirkan agent S-rank baru dan rerun favorit komunitas untuk patch 2.1.</p>
+            <div><div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint); margin-bottom:7px;"><span data-id="Reward utama" data-en="Main rewards">Reward utama</span></div><div style="display:flex; flex-wrap:wrap; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Agent S-rank</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">W-Engine</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Polychrome</span></div></div>
+            <div style="display:flex; flex-wrap:wrap; gap:18px; border-top:1px solid var(--line); padding-top:12px;">
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Periode" data-en="Period">Periode</span></div><div style="font-size:12.5px; font-weight:600; color:var(--txt); margin-top:2px;">9 Jul – 24 Jul 2026</div></div>
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Sumber" data-en="Source">Sumber</span></div><div style="margin-top:3px;"><a href="https://www.hoyolab.com/circles/8/official" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace; font-size:11px; font-weight:600; color:var(--acc); text-decoration:none; display:inline-flex; align-items:center; gap:5px;">HoYoLAB resmi <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="gg-card" data-ev-card data-game="gi" data-type="event" data-end="1785877200000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+        <summary style="display:flex; align-items:center; gap:14px; padding:16px 18px;">
+          <span style="width:44px; height:44px; border-radius:11px; overflow:hidden; flex:0 0 44px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/gensin-impact/images/8/80/Genshin_Impact.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:2px 7px; border-radius:6px;">Event</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Genshin Impact · v6.6</span></div>
+            <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.25;">Echoing Tides — mini-game + reward Primogem</div>
+          </div>
+          <span data-deadline="2026-08-05T04:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn); background:rgba(255,177,60,0.12); padding:6px 10px; border-radius:9px; white-space:nowrap;">—</span>
+          <span class="gg-chev" style="color:var(--muted); transition:transform .2s; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+        </summary>
+        <div class="gg-evbody" style="border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:0;">
+          <div style="position:relative; min-height:170px; border-right:1px solid var(--line); background:var(--surface2);"></div>
+          <div style="padding:18px 20px; display:flex; flex-direction:column; gap:13px;">
+            <p style="font-size:13.5px; line-height:1.6; color:var(--muted); margin:0;">Event utama versi 6.6 dengan mini-game eksplorasi laut. Selesaikan tantangan harian untuk Primogem & material.</p>
+            <div><div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint); margin-bottom:7px;"><span data-id="Reward utama" data-en="Main rewards">Reward utama</span></div><div style="display:flex; flex-wrap:wrap; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">420 Primogem</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Talent material</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Namecard</span></div></div>
+            <div style="display:flex; flex-wrap:wrap; gap:18px; border-top:1px solid var(--line); padding-top:12px;">
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Periode" data-en="Period">Periode</span></div><div style="font-size:12.5px; font-weight:600; color:var(--txt); margin-top:2px;">22 Jul – 5 Agu 2026</div></div>
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Sumber" data-en="Source">Sumber</span></div><div style="margin-top:3px;"><a href="https://www.hoyolab.com/circles/2/official?page_type=2&game_id=2" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace; font-size:11px; font-weight:600; color:var(--acc); text-decoration:none; display:inline-flex; align-items:center; gap:5px;">HoYoLAB resmi <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="gg-card" data-ev-card data-game="hsr" data-type="event" data-end="1785358800000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+        <summary style="display:flex; align-items:center; gap:14px; padding:16px 18px;">
+          <span style="width:44px; height:44px; border-radius:11px; overflow:hidden; flex:0 0 44px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/e8/Honkai_Star_Rail_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:2px 7px; border-radius:6px;">Event</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Honkai: Star Rail · v4.4</span></div>
+            <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.25;">Pure Fiction rotasi baru — bonus Jade</div>
+          </div>
+          <span data-deadline="2026-07-30T04:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn); background:rgba(255,177,60,0.12); padding:6px 10px; border-radius:9px; white-space:nowrap;">—</span>
+          <span class="gg-chev" style="color:var(--muted); transition:transform .2s; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+        </summary>
+        <div class="gg-evbody" style="border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:0;">
+          <div style="position:relative; min-height:170px; border-right:1px solid var(--line); background:var(--surface2);"></div>
+          <div style="padding:18px 20px; display:flex; flex-direction:column; gap:13px;">
+            <p style="font-size:13.5px; line-height:1.6; color:var(--muted); margin:0;">Rotasi baru mode Pure Fiction dengan blessing dan musuh baru. Bersihkan untuk Stellar Jade tambahan.</p>
+            <div><div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint); margin-bottom:7px;"><span data-id="Reward utama" data-en="Main rewards">Reward utama</span></div><div style="display:flex; flex-wrap:wrap; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Stellar Jade</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Relic Remains</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Credit</span></div></div>
+            <div style="display:flex; flex-wrap:wrap; gap:18px; border-top:1px solid var(--line); padding-top:12px;">
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Periode" data-en="Period">Periode</span></div><div style="font-size:12.5px; font-weight:600; color:var(--txt); margin-top:2px;">21 Jul – 30 Jul 2026</div></div>
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Sumber" data-en="Source">Sumber</span></div><div style="margin-top:3px;"><a href="https://www.hoyolab.com/circles/6/official" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace; font-size:11px; font-weight:600; color:var(--acc); text-decoration:none; display:inline-flex; align-items:center; gap:5px;">HoYoLAB resmi <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="gg-card" data-ev-card data-game="gi" data-type="banner" data-end="1787050800000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+        <summary style="display:flex; align-items:center; gap:14px; padding:16px 18px;">
+          <span style="width:44px; height:44px; border-radius:11px; overflow:hidden; flex:0 0 44px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/gensin-impact/images/8/80/Genshin_Impact.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.14); border:1px solid rgba(139,107,255,0.3); padding:2px 7px; border-radius:6px;">Banner</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Genshin Impact · v6.6 fase 2</span></div>
+            <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.25;">Banner fase 2: Mavuika + Arlecchino (perkiraan)</div>
+          </div>
+          <span data-deadline="2026-08-18T18:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn); background:rgba(255,177,60,0.12); padding:6px 10px; border-radius:9px; white-space:nowrap;">—</span>
+          <span class="gg-chev" style="color:var(--muted); transition:transform .2s; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+        </summary>
+        <div class="gg-evbody" style="border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:0;">
+          <div style="position:relative; min-height:170px; border-right:1px solid var(--line); background:var(--surface2);"><img src="https://enka.network/ui/UI_Gacha_AvatarImg_Mavuika.png" alt="" referrerpolicy="no-referrer" onError="{{ imgFallback }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;"><div style="position:absolute; inset:0; background:linear-gradient(to top, var(--surface) 4%, transparent 55%);"></div></div>
+          <div style="padding:18px 20px; display:flex; flex-direction:column; gap:13px;">
+            <p style="font-size:13.5px; line-height:1.6; color:var(--muted); margin:0;">Fase kedua versi 6.6 dengan rate-up karakter meta terbaru. Jadwal pasti diperbarui otomatis saat diumumkan.</p>
+            <div><div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint); margin-bottom:7px;"><span data-id="Reward utama" data-en="Main rewards">Reward utama</span></div><div style="display:flex; flex-wrap:wrap; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Mavuika (Pyro)</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Arlecchino (rerun)</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Senjata event</span></div></div>
+            <div style="display:flex; flex-wrap:wrap; gap:18px; border-top:1px solid var(--line); padding-top:12px;">
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Periode" data-en="Period">Periode</span></div><div style="font-size:12.5px; font-weight:600; color:var(--txt); margin-top:2px;">29 Jul – 18 Agu 2026</div></div>
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Sumber" data-en="Source">Sumber</span></div><div style="margin-top:3px;"><a href="https://paimon.moe/timeline" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace; font-size:11px; font-weight:600; color:var(--acc); text-decoration:none; display:inline-flex; align-items:center; gap:5px;">Paimon.moe (perkiraan) <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="gg-card" data-ev-card data-game="wuwa" data-type="banner" data-end="1786161600000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+        <summary style="display:flex; align-items:center; gap:14px; padding:16px 18px;">
+          <span style="width:44px; height:44px; border-radius:11px; overflow:hidden; flex:0 0 44px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/wutheringwaves/images/2/2f/Wuthering_Waves_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;"><span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--acc2); background:rgba(139,107,255,0.14); border:1px solid rgba(139,107,255,0.3); padding:2px 7px; border-radius:6px;">Banner</span><span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Wuthering Waves · Update 2.4</span></div>
+            <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.25;">Banner resonator limited baru</div>
+          </div>
+          <span data-deadline="2026-08-08T11:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn); background:rgba(255,177,60,0.12); padding:6px 10px; border-radius:9px; white-space:nowrap;">—</span>
+          <span class="gg-chev" style="color:var(--muted); transition:transform .2s; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+        </summary>
+        <div class="gg-evbody" style="border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:0;">
+          <div style="position:relative; min-height:170px; border-right:1px solid var(--line); background:var(--surface2);"></div>
+          <div style="padding:18px 20px; display:flex; flex-direction:column; gap:13px;">
+            <p style="font-size:13.5px; line-height:1.6; color:var(--muted); margin:0;">Convene rate-up untuk resonator 5★ baru beserta senjata signature-nya di patch 2.4.</p>
+            <div><div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint); margin-bottom:7px;"><span data-id="Reward utama" data-en="Main rewards">Reward utama</span></div><div style="display:flex; flex-wrap:wrap; gap:7px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Resonator ★5</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Weapon ★5</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:5px 9px;">Astrite</span></div></div>
+            <div style="display:flex; flex-wrap:wrap; gap:18px; border-top:1px solid var(--line); padding-top:12px;">
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Periode" data-en="Period">Periode</span></div><div style="font-size:12.5px; font-weight:600; color:var(--txt); margin-top:2px;">18 Jul – 8 Agu 2026</div></div>
+              <div><div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase;"><span data-id="Sumber" data-en="Source">Sumber</span></div><div style="margin-top:3px;"><a href="https://wutheringwaves.kurogames.com/en/main/news" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace; font-size:11px; font-weight:600; color:var(--acc); text-decoration:none; display:inline-flex; align-items:center; gap:5px;">Wuthering Waves resmi <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div>
+            </div>
+          </div>
+        </div>
+      </details></div>
+    <div data-empty style="display:none; text-align:center; padding:60px 20px; color:var(--faint); font-family:'Space Mono',monospace; font-size:13px;"><span data-id="Tidak ada event yang cocok." data-en="No matching events.">Tidak ada event yang cocok.</span></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid var(--line); background:var(--bg); margin-top:44px;">
+    <div style="max-width:1280px; margin:0 auto; padding:52px 28px 40px;">
+      <div class="gg-footcols" style="display:grid; grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr)); gap:32px; padding-bottom:34px; border-bottom:1px solid var(--line);">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;"><span style="width:30px; height:30px; border-radius:9px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:19px; color:var(--acc); letter-spacing:-0.04em;">GG</span><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span></div>
+          <p style="font-size:13.5px; line-height:1.6; color:var(--faint); margin:0; max-width:38ch;" data-id="Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait." data-en="An always-updated Android online-game portal — automated, honest, no clickbait.">Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait.</p>
+        </div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="KONTEN" data-en="CONTENT">KONTEN</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Kode%20Redeem.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kode Redeem" data-en="Redeem Codes">Kode Redeem</a><a href="Event.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Event" data-en="Events">Event</a><a href="Tier%20List.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tier List" data-en="Tier List">Tier List</a><a href="Berita.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Berita" data-en="News">Berita</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="SUMBER DATA" data-en="DATA SOURCES">SUMBER DATA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="https://rawg.io" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">RAWG</a><a href="https://www.hoyolab.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">HoYoLAB</a><a href="https://www.gamerpower.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">GamerPower</a><a href="https://www.freetogame.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">FreeToGame</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="LAINNYA" data-en="MORE">LAINNYA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Jelajah%20Game.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Jelajah Game" data-en="Discover Games">Jelajah Game</a><a href="Tentang.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tentang" data-en="About">Tentang</a><a href="Kontak.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kontak" data-en="Contact">Kontak</a></div></div>
+      </div>
+      <div style="padding-top:22px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center;">
+        <p style="font-family:'Space Mono',monospace; font-size:11px; line-height:1.6; color:var(--faint); margin:0; max-width:72ch;" data-id="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games." data-en="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — attributed per license. KodeGG is not affiliated with any publisher; all trademarks &amp; game assets belong to their owners. Not endorsed by Riot Games.">Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games.</p>
+        <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">© 2026 KodeGG · kodegg.com</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;liveCountdowns&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  state = { game: "all", type: "all", q: "", sugIdx: -1 };
+  componentDidMount() {
+    const live = this.props.liveCountdowns ?? true;
+    this._fmt = (ms) => {
+      if (ms <= 0) return "Berakhir";
+      const d = Math.floor(ms / 86400000), h = Math.floor((ms % 86400000) / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
+      if (d > 0) return d + "h " + h + "j " + m + "m";
+      return String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+    };
+    this._tick = () => {
+      const now = Date.now();
+      document.querySelectorAll("[data-deadline]").forEach((el) => { const t = Date.parse(el.getAttribute("data-deadline")); if (!isNaN(t)) el.textContent = this._fmt(t - now); });
+    };
+    this._tick();
+    if (live) this._iv = setInterval(this._tick, 1000);
+    // sort by ending soonest once
+    const grid = document.querySelector("[data-ev-grid]");
+    if (grid) {
+      [...grid.querySelectorAll("[data-ev-card]")]
+        .sort((a, b) => parseFloat(a.dataset.end || "9e15") - parseFloat(b.dataset.end || "9e15"))
+        .forEach((c) => grid.appendChild(c));
+    }
+    this._games = [
+      { id: "gi", name: "Genshin Impact" }, { id: "hsr", name: "Honkai: Star Rail" },
+      { id: "zzz", name: "Zenless Zone Zero" }, { id: "wuwa", name: "Wuthering Waves" },
+    ];
+    document.addEventListener("click", this._closeSug = (e) => {
+      if (!e.target.closest("[data-search-input]") && !e.target.closest("[data-suggest]")) this._hideSug();
+    });
+    this.applyView();
+  }
+  componentWillUnmount() { if (this._iv) clearInterval(this._iv); document.removeEventListener("click", this._closeSug); }
+  _hideSug() { const s = document.querySelector("[data-suggest]"); if (s) s.style.display = "none"; if (this.state.sugIdx !== -1) this.setState({ sugIdx: -1 }); }
+  _renderSug() {
+    const box = document.querySelector("[data-suggest]"); if (!box) return;
+    const q = this.state.q.trim().toLowerCase();
+    if (!q) { this._hideSug(); return; }
+    const hits = this._games.filter((g) => g.name.toLowerCase().includes(q)).slice(0, 4);
+    if (!hits.length) { this._hideSug(); return; }
+    box.innerHTML = hits.map((g, i) => '<div class="gg-sug" data-sug="' + g.id + '" style="padding:11px 14px; cursor:pointer; font-size:14px; font-weight:600; color:var(--txt);' + (i === this.state.sugIdx ? "background:#1C2331;" : "") + '">' + g.name + "</div>").join("");
+    box.querySelectorAll("[data-sug]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const id = el.getAttribute("data-sug");
+        const sel = document.querySelector("[data-game-select]"); if (sel) sel.value = id;
+        const inp = document.querySelector("[data-search-input]"); if (inp) inp.value = "";
+        this.setState({ game: id, q: "" }, () => this.applyView());
+        this._hideSug();
+      });
+    });
+    box.style.display = "block";
+  }
+  applyView() {
+    const cards = [...document.querySelectorAll("[data-ev-card]")];
+    let shown = 0;
+    const q = this.state.q.trim().toLowerCase();
+    cards.forEach((c) => {
+      const okG = this.state.game === "all" || c.dataset.game === this.state.game;
+      const okT = this.state.type === "all" || c.dataset.type === this.state.type;
+      const okQ = !q || (c.textContent || "").toLowerCase().includes(q);
+      const ok = okG && okT && okQ;
+      c.style.display = ok ? "block" : "none";
+      if (ok) shown++;
+    });
+    const cnt = document.querySelector("[data-count]"); if (cnt) cnt.textContent = shown;
+    const empty = document.querySelector("[data-empty]"); if (empty) empty.style.display = shown === 0 ? "block" : "none";
+  }
+  renderVals() {
+    return {
+      onSearch: (e) => { this.setState({ q: e.currentTarget.value, sugIdx: -1 }, () => { this.applyView(); this._renderSug(); }); },
+      onSearchKey: (e) => {
+        const box = document.querySelector("[data-suggest]");
+        const items = box ? [...box.querySelectorAll("[data-sug]")] : [];
+        if (e.key === "ArrowDown" && items.length) { e.preventDefault(); this.setState({ sugIdx: Math.min(this.state.sugIdx + 1, items.length - 1) }, () => this._renderSug()); }
+        else if (e.key === "ArrowUp" && items.length) { e.preventDefault(); this.setState({ sugIdx: Math.max(this.state.sugIdx - 1, 0) }, () => this._renderSug()); }
+        else if (e.key === "Enter" && this.state.sugIdx >= 0 && items[this.state.sugIdx]) { e.preventDefault(); items[this.state.sugIdx].click(); }
+        else if (e.key === "Escape") { this._hideSug(); }
+      },
+      onGame: (e) => { this.setState({ game: e.currentTarget.value }, () => this.applyView()); },
+      onType: (e) => { this.setState({ type: e.currentTarget.value }, () => this.applyView()); },
+      imgFallback: (e) => { e.currentTarget.style.display = "none"; },
+      setLang: (e) => {
+        const l = e.currentTarget.getAttribute("data-lang");
+        document.querySelectorAll("[data-en]").forEach((el) => { el.textContent = l === "en" ? el.getAttribute("data-en") : el.getAttribute("data-id"); });
+        document.querySelectorAll("[data-lang-btn]").forEach((b) => { const on = b.getAttribute("data-lang-btn") === l; b.style.background = on ? "var(--surface2)" : "transparent"; b.style.color = on ? "var(--txt)" : "var(--faint)"; });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

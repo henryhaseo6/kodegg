@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    body { margin:0; background:#090C12; -webkit-font-smoothing:antialiased; }
+    ::selection { background:#CBFF46; color:#090C12; }
+    @keyframes glowPulse { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
+    .gg-nav:hover { color:#EEF1F6 !important; }
+    .gg-card { transition:transform .22s cubic-bezier(.2,.7,.3,1), box-shadow .22s, border-color .22s; }
+    .gg-card:hover { transform:translateY(-4px); border-color:rgba(203,255,70,0.4) !important; box-shadow:0 16px 40px rgba(0,0,0,0.5); }
+    .gg-copy:hover { background:#CBFF46 !important; color:#090C12 !important; border-color:#CBFF46 !important; }
+    .gg-more:hover { background:#1C2331 !important; border-color:rgba(203,255,70,0.5) !important; }
+    .gg-ac-input::placeholder { color:#5B6472; }
+    .gg-sel { appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2398A2B3' stroke-width='3' stroke-linecap='round'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat:no-repeat; background-position:right 12px center; }
+    .gg-sug:hover { background:#1C2331 !important; }
+    details > summary { list-style:none; cursor:pointer; }
+    details > summary::-webkit-details-marker { display:none; }
+    details[open] .gg-acc-plus { transform:rotate(45deg); }
+    details[open] .gg-arch-chev { transform:rotate(180deg); }
+    @media (max-width:1024px){ .gg-search{ display:none !important; } }
+    @media (max-width:720px){ .gg-headnav{ display:none !important; } .gg-controls{ flex-direction:column !important; align-items:stretch !important; } }
+  </style>
+</helmet>
+<div data-screen-label="Kode Redeem" style="--bg:#090C12; --bg2:#0E121B; --surface:#151B27; --surface2:#1C2331; --line:rgba(255,255,255,0.08); --line2:rgba(255,255,255,0.15); --txt:#EEF1F6; --muted:#98A2B3; --faint:#5B6472; --acc:#CBFF46; --acc2:#8B6BFF; --ink:#090C12; --ok:#37E38B; --warn:#FFB13C; --danger:#FF5C77; font-family:'Satoshi',system-ui,sans-serif; color:var(--txt); min-height:100vh; background:radial-gradient(1100px 560px at 82% -12%, rgba(139,107,255,0.13), transparent 60%), radial-gradient(1000px 520px at -5% 0%, rgba(203,255,70,0.06), transparent 55%), var(--bg);">
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:60; background:rgba(9,12,18,0.72); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 28px; height:70px; display:flex; align-items:center; gap:30px;">
+      <a href="Beranda%20v2.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+        <span style="width:34px; height:34px; border-radius:10px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; box-shadow:0 0 24px rgba(203,255,70,0.35); font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:22px; color:var(--acc); letter-spacing:-0.04em;">GG</span>
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.01em; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span>
+      </a>
+      <nav class="gg-headnav" style="display:flex; align-items:center; gap:24px; margin-left:6px;">
+        <a href="Beranda%20v2.dc.html#trending" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Jelajah" data-en="Discover">Jelajah</a>
+        <a href="Favorit.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Favorit" data-en="Saved">Favorit</a>
+        <a href="#" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--acc); text-decoration:none;">Kode</a>
+        <a href="Event.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Event" data-en="Events">Event</a>
+        <a href="Tier%20List.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Tier List</a>
+        <a href="Berita.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Berita" data-en="News">Berita</a>
+      </nav>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:14px;">
+        <div style="display:flex; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:2px;">
+          <button data-lang-btn="id" onClick="{{ setLang }}" data-lang="id" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:var(--surface2); color:var(--txt);">ID</button>
+          <button data-lang-btn="en" onClick="{{ setLang }}" data-lang="en" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:transparent; color:var(--faint);">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px; margin:0 auto; padding:48px 28px 8px;">
+    <div style="display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:var(--acc); margin-bottom:14px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span> <span data-id="LIVE · DIVERIFIKASI HARIAN" data-en="LIVE · VERIFIED DAILY">LIVE · DIVERIFIKASI HARIAN</span></div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:48px; line-height:1.02; letter-spacing:-0.03em; color:#fff; margin:0 0 14px;" data-id="Semua kode redeem" data-en="All redeem codes">Semua kode redeem</h1>
+    <p style="font-size:16.5px; line-height:1.55; color:var(--muted); margin:0 0 24px; max-width:60ch;" data-id="Kode aktif dari ratusan game, dicek tiap hari. Kode kadaluarsa tidak dihapus — diarsipkan jadi database lengkap." data-en="Active codes from hundreds of games, checked daily. Expired codes aren't deleted — archived into a full database.">Kode aktif dari ratusan game, dicek tiap hari. Kode kadaluarsa tidak dihapus — diarsipkan jadi database lengkap.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:22px; margin-bottom:6px;">
+      <div style="display:flex; align-items:baseline; gap:8px;"><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; color:var(--acc);">1.240</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint); text-transform:uppercase; letter-spacing:0.06em;"><span data-id="kode aktif" data-en="active codes">kode aktif</span></span></div>
+      <div style="display:flex; align-items:baseline; gap:8px;"><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; color:var(--txt);">428</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint); text-transform:uppercase; letter-spacing:0.06em;">game</span></div>
+      <div style="display:flex; align-items:baseline; gap:8px;"><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; color:var(--txt);">3.6<span style="font-size:14px; color:var(--faint);">rb</span></span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint); text-transform:uppercase; letter-spacing:0.06em;"><span data-id="kode diarsip" data-en="archived codes">kode diarsip</span></span></div>
+    </div>
+  </section>
+
+  <!-- CONTROLS: SEARCH + GAME + SORT -->
+  <section style="max-width:1280px; margin:0 auto; padding:20px 28px 4px;">
+    <div class="gg-controls" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <div style="position:relative; flex:1; min-width:240px;">
+        <span style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--faint); pointer-events:none;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></span>
+        <input class="gg-ac-input" data-search-input type="text" autocomplete="off" onInput="{{ onSearch }}" onKeyDown="{{ onSearchKey }}" placeholder="Cari game, reward, atau kode…" style="width:100%; box-sizing:border-box; font-family:'Satoshi',sans-serif; font-size:14.5px; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 14px 13px 40px; outline:none;">
+        <div data-suggest style="display:none; position:absolute; z-index:40; top:calc(100% + 6px); left:0; right:0; background:var(--surface); border:1px solid var(--line2); border-radius:12px; overflow:hidden; box-shadow:0 20px 44px rgba(0,0,0,0.55);"></div>
+      </div>
+      <select class="gg-sel" data-game-select onChange="{{ onGame }}" style="font-family:'Satoshi',sans-serif; font-size:14px; font-weight:600; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 38px 13px 14px; cursor:pointer; outline:none; min-width:180px;">
+        <option value="all"><span data-id="Semua game" data-en="All games">Semua game</span></option>
+        <option value="hsr">Honkai: Star Rail</option>
+        <option value="gi">Genshin Impact</option>
+        <option value="zzz">Zenless Zone Zero</option>
+        <option value="wuwa">Wuthering Waves</option>
+        <option value="mlbb">Mobile Legends</option>
+        <option value="ff">Free Fire</option>
+      </select>
+      <select class="gg-sel" data-sort-select onChange="{{ onSort }}" style="font-family:'Satoshi',sans-serif; font-size:14px; font-weight:600; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 38px 13px 14px; cursor:pointer; outline:none; min-width:168px;">
+        <option value="new"><span data-id="Terbaru" data-en="Newest">Terbaru</span></option>
+        <option value="expiring"><span data-id="Berakhir segera" data-en="Ending soon">Berakhir segera</span></option>
+        <option value="az"><span data-id="Nama A–Z" data-en="Name A–Z">Nama A–Z</span></option>
+      </select>
+    </div>
+    <div style="margin-top:14px; font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);"><span data-count>0</span> <span data-id="kode aktif ditampilkan" data-en="active codes shown">kode aktif ditampilkan</span></div>
+  </section>
+
+  <!-- ACTIVE CODE GRID -->
+  <section style="max-width:1280px; margin:0 auto; padding:12px 28px 8px;">
+    <div data-code-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;">
+      <div class="gg-card" data-code-card data-game="hsr" data-name="Honkai: Star Rail" data-search="honkai: star rail 100 stellar jade · 50.000 credit wak84u29vlyp" data-added="120" data-expiry="1784361600000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/e8/Honkai_Star_Rail_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Honkai: Star Rail</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Livestream 4.4</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">100 Stellar Jade · 50.000 Credit</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">WAK84U29VLYP</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="WAK84U29VLYP" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-18T15:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="hsr" data-name="Honkai: Star Rail" data-search="honkai: star rail 50 stellar jade · 5 traveler's guide ht3qmcj9u4jb" data-added="119" data-expiry="1784361600000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/e8/Honkai_Star_Rail_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Honkai: Star Rail</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Livestream 4.4</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">50 Stellar Jade · 5 Traveler's Guide</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">HT3QMCJ9U4JB</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="HT3QMCJ9U4JB" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-18T15:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="gi" data-name="Genshin Impact" data-search="genshin impact 60 primogem · 10.000 mora genshingift" data-added="10" data-expiry="9e15" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/gensin-impact/images/8/80/Genshin_Impact.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Genshin Impact</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Permanen</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">60 Primogem · 10.000 Mora</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">GENSHINGIFT</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="GENSHINGIFT" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berlaku" data-en="Valid">Berlaku</span></span><span style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--ok);"><span data-id="Tanpa batas" data-en="No expiry">Tanpa batas</span></span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="gi" data-name="Genshin Impact" data-search="genshin impact 100 primogem genshin6x6" data-added="118" data-expiry="1784437200000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/gensin-impact/images/8/80/Genshin_Impact.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Genshin Impact</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Livestream 6.6</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">100 Primogem</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">GENSHIN6X6</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="GENSHIN6X6" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-19T12:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="zzz" data-name="Zenless Zone Zero" data-search="zenless zone zero 100 polychrome · 2 booster zzzwelcome" data-added="100" data-expiry="1784685600000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6e/Zenless_Zone_Zero_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Zenless Zone Zero</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Patch 2.1</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">100 Polychrome · 2 Booster</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">ZZZWELCOME</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="ZZZWELCOME" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-22T09:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="wuwa" data-name="Wuthering Waves" data-search="wuthering waves astrite · 40.000 shell credit wuwa24launch" data-added="117" data-expiry="1784952000000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/wutheringwaves/images/2/2f/Wuthering_Waves_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Wuthering Waves</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Update 2.4</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">Astrite · 40.000 Shell Credit</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">WUWA24LAUNCH</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="WUWA24LAUNCH" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-25T11:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="wuwa" data-name="Wuthering Waves" data-search="wuthering waves 80 astrite wutheringgift" data-added="90" data-expiry="1785171600000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/wutheringwaves/images/2/2f/Wuthering_Waves_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Wuthering Waves</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Special</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">80 Astrite</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">WUTHERINGGIFT</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="WUTHERINGGIFT" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-28T00:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="ff" data-name="Free Fire" data-search="free fire diamond royale voucher ffbooyah26" data-added="110" data-expiry="1784307540000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/freefire/images/2/2e/Garena_Free_Fire.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Free Fire</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Booyah Day</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">Diamond Royale voucher</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">FFBOOYAH26</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="FFBOOYAH26" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-17T23:59:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="gi" data-name="Genshin Impact" data-search="genshin impact 40 primogem · 5 hero wit genshinweb66" data-added="112" data-expiry="1784826000000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/gensin-impact/images/8/80/Genshin_Impact.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Genshin Impact</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Web Event</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">40 Primogem · 5 Hero Wit</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">GENSHINWEB66</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="GENSHINWEB66" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-24T00:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="hsr" data-name="Honkai: Star Rail" data-search="honkai: star rail 30 stellar jade starrailweb44" data-added="108" data-expiry="1784998800000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/e8/Honkai_Star_Rail_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Honkai: Star Rail</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Web Event</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">30 Stellar Jade</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">STARRAILWEB44</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="STARRAILWEB44" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-26T00:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="zzz" data-name="Zenless Zone Zero" data-search="zenless zone zero 50 polychrome zzzfairy26" data-added="95" data-expiry="1785344400000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6e/Zenless_Zone_Zero_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Zenless Zone Zero</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Special</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">50 Polychrome</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">ZZZFAIRY26</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="ZZZFAIRY26" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-30T00:00:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div>
+      <div class="gg-card" data-code-card data-game="mlbb" data-name="Mobile Legends" data-search="mobile legends 50 diamond · battle emote mlbbjuly26" data-added="105" data-expiry="1784653140000" style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div style="display:flex; align-items:center; gap:11px;"><span style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Mobile_Legends_Bang_Bang.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2;">Mobile Legends</div><div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Weekly</div></div></div>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"><span data-id="AKTIF" data-en="ACTIVE">AKTIF</span></span>
+        </div>
+        <div style="font-size:13px; color:var(--muted);">50 Diamond · Battle Emote</div>
+        <div style="display:flex; align-items:center; gap:9px;"><code style="flex:1; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center;">MLBBJULY26</code><button class="gg-copy" onClick="{{ copyCode }}" data-code="MLBBJULY26" data-label="Salin" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;">Salin</button></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;"><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);"><span data-id="Berakhir dalam" data-en="Ends in">Berakhir dalam</span></span><span data-deadline="2026-07-21T23:59:00" style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span></div>
+      </div></div>
+    <div data-empty style="display:none; text-align:center; padding:60px 20px; color:var(--faint); font-family:'Space Mono',monospace; font-size:13px;"><span data-id="Tidak ada kode yang cocok. Coba kata kunci lain." data-en="No matching codes. Try another keyword.">Tidak ada kode yang cocok. Coba kata kunci lain.</span></div>
+    <div style="display:flex; justify-content:center; margin-top:28px;">
+      <button data-loadmore class="gg-more" onClick="{{ loadMore }}" style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; font-family:'Satoshi',sans-serif; font-size:14px; font-weight:700; color:var(--txt); background:var(--surface); border:1px solid var(--line2); border-radius:12px; padding:13px 24px; transition:all .18s;"><span data-id="Muat lebih banyak" data-en="Load more">Muat lebih banyak</span> <span style="color:var(--acc);">↓</span></button>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section style="max-width:1280px; margin:0 auto; padding:40px 28px 8px;">
+    <details style="background:var(--bg2); border:1px solid var(--line); border-radius:20px; overflow:hidden;">
+      <summary style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:22px 24px;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="width:40px; height:40px; border-radius:11px; background:var(--surface2); border:1px solid var(--line); display:flex; align-items:center; justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v13H3V8"></path><path d="M1 3h22v5H1z"></path><path d="M10 12h4"></path></svg></span>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; color:var(--txt); letter-spacing:-0.01em;"><span data-id="Arsip kode kadaluarsa" data-en="Expired code archive">Arsip kode kadaluarsa</span></div>
+            <div style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint); margin-top:2px;"><span data-arch-count>0</span> <span data-id="kode tersimpan · database lengkap sejak rilis" data-en="codes stored · full database since launch">kode tersimpan · database lengkap sejak rilis</span></div>
+          </div>
+        </div>
+        <span class="gg-arch-chev" style="color:var(--muted); transition:transform .2s; flex:0 0 auto;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+      </summary>
+      <div style="padding:4px 24px 24px;">
+        <div data-archive-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px;">
+        <div data-arch-card style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 16px; display:flex; flex-direction:column; gap:10px; opacity:0.72;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:30px; height:30px; border-radius:8px; overflow:hidden; flex:0 0 30px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Mobile_Legends_Bang_Bang.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:13px; font-weight:700; color:var(--muted); line-height:1.15;">Mobile Legends</div><div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Event 515</div></div></div>
+            <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.25); padding:3px 7px; border-radius:7px;">EXPIRED</span>
+          </div>
+          <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--faint); background:var(--bg); border:1px dashed var(--line); border-radius:9px; padding:8px 10px; text-align:center; text-decoration:line-through;">MLBB515GG</code>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Berakhir 15 Mei 2026</div>
+        </div>
+        <div data-arch-card style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 16px; display:flex; flex-direction:column; gap:10px; opacity:0.72;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:30px; height:30px; border-radius:8px; overflow:hidden; flex:0 0 30px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/gensin-impact/images/8/80/Genshin_Impact.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:13px; font-weight:700; color:var(--muted); line-height:1.15;">Genshin Impact</div><div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Livestream 6.5</div></div></div>
+            <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.25); padding:3px 7px; border-radius:7px;">EXPIRED</span>
+          </div>
+          <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--faint); background:var(--bg); border:1px dashed var(--line); border-radius:9px; padding:8px 10px; text-align:center; text-decoration:line-through;">GENSHIN6X5AB</code>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Berakhir 2 Jun 2026</div>
+        </div>
+        <div data-arch-card style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 16px; display:flex; flex-direction:column; gap:10px; opacity:0.72;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:30px; height:30px; border-radius:8px; overflow:hidden; flex:0 0 30px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/e8/Honkai_Star_Rail_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:13px; font-weight:700; color:var(--muted); line-height:1.15;">Honkai: Star Rail</div><div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Livestream 4.3</div></div></div>
+            <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.25); padding:3px 7px; border-radius:7px;">EXPIRED</span>
+          </div>
+          <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--faint); background:var(--bg); border:1px dashed var(--line); border-radius:9px; padding:8px 10px; text-align:center; text-decoration:line-through;">HSR43LIVEXYZ</code>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Berakhir 20 Jun 2026</div>
+        </div>
+        <div data-arch-card style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 16px; display:flex; flex-direction:column; gap:10px; opacity:0.72;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:30px; height:30px; border-radius:8px; overflow:hidden; flex:0 0 30px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/freefire/images/2/2e/Garena_Free_Fire.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:13px; font-weight:700; color:var(--muted); line-height:1.15;">Free Fire</div><div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Anniversary</div></div></div>
+            <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.25); padding:3px 7px; border-radius:7px;">EXPIRED</span>
+          </div>
+          <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--faint); background:var(--bg); border:1px dashed var(--line); border-radius:9px; padding:8px 10px; text-align:center; text-decoration:line-through;">FFANNIV2026</code>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Berakhir 8 Jul 2026</div>
+        </div>
+        <div data-arch-card style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 16px; display:flex; flex-direction:column; gap:10px; opacity:0.72;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:30px; height:30px; border-radius:8px; overflow:hidden; flex:0 0 30px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6e/Zenless_Zone_Zero_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:13px; font-weight:700; color:var(--muted); line-height:1.15;">Zenless Zone Zero</div><div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Patch 2.0</div></div></div>
+            <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.25); padding:3px 7px; border-radius:7px;">EXPIRED</span>
+          </div>
+          <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--faint); background:var(--bg); border:1px dashed var(--line); border-radius:9px; padding:8px 10px; text-align:center; text-decoration:line-through;">ZZZ20LAUNCH</code>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Berakhir 25 Jun 2026</div>
+        </div>
+        <div data-arch-card style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 16px; display:flex; flex-direction:column; gap:10px; opacity:0.72;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:30px; height:30px; border-radius:8px; overflow:hidden; flex:0 0 30px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/wutheringwaves/images/2/2f/Wuthering_Waves_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:13px; font-weight:700; color:var(--muted); line-height:1.15;">Wuthering Waves</div><div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Update 2.3</div></div></div>
+            <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.25); padding:3px 7px; border-radius:7px;">EXPIRED</span>
+          </div>
+          <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--faint); background:var(--bg); border:1px dashed var(--line); border-radius:9px; padding:8px 10px; text-align:center; text-decoration:line-through;">WUWA23GIFT</code>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Berakhir 1 Jul 2026</div>
+        </div>
+        <div data-arch-card style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 16px; display:flex; flex-direction:column; gap:10px; opacity:0.72;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:30px; height:30px; border-radius:8px; overflow:hidden; flex:0 0 30px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/gensin-impact/images/8/80/Genshin_Impact.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:13px; font-weight:700; color:var(--muted); line-height:1.15;">Genshin Impact</div><div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Web Event 6.5</div></div></div>
+            <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.25); padding:3px 7px; border-radius:7px;">EXPIRED</span>
+          </div>
+          <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--faint); background:var(--bg); border:1px dashed var(--line); border-radius:9px; padding:8px 10px; text-align:center; text-decoration:line-through;">GIWEB65OLD</code>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Berakhir 10 Jun 2026</div>
+        </div>
+        <div data-arch-card style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 16px; display:flex; flex-direction:column; gap:10px; opacity:0.72;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:30px; height:30px; border-radius:8px; overflow:hidden; flex:0 0 30px; background:var(--surface2); border:1px solid var(--line); display:block;"><img src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/e8/Honkai_Star_Rail_App_Icon.png" referrerpolicy="no-referrer" alt="" style="width:100%; height:100%; object-fit:cover; display:block;"></span><div><div style="font-size:13px; font-weight:700; color:var(--muted); line-height:1.15;">Honkai: Star Rail</div><div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Web Event 4.3</div></div></div>
+            <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.25); padding:3px 7px; border-radius:7px;">EXPIRED</span>
+          </div>
+          <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--faint); background:var(--bg); border:1px dashed var(--line); border-radius:9px; padding:8px 10px; text-align:center; text-decoration:line-through;">HSRWEB43OLD</code>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Berakhir 18 Jun 2026</div>
+        </div></div>
+      </div>
+    </details>
+  </section>
+
+  <!-- HOW TO REDEEM -->
+  <section style="max-width:1280px; margin:0 auto; padding:44px 28px 8px;">
+    <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:26px; letter-spacing:-0.02em; color:var(--txt); margin:0 0 16px;"><span data-id="Cara pakai kode" data-en="How to redeem">Cara pakai kode</span></h2>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <details style="background:var(--surface); border:1px solid var(--line); border-radius:14px; overflow:hidden;" open><summary style="display:flex; align-items:center; justify-content:space-between; padding:16px 18px; font-size:15px; font-weight:700; color:var(--txt);">HoYoverse (Genshin · HSR · ZZZ)<span class="gg-acc-plus" style="color:var(--acc); font-size:20px; transition:transform .2s;">+</span></summary><div style="padding:0 18px 18px; font-size:14px; line-height:1.6; color:var(--muted);"><span data-id="Buka situs redeem resmi → login → pilih server → tempel kode → klaim. Reward masuk ke inbox in-game. Butuh Adventure Rank/Trailblaze Level minimal." data-en="Open the official redeem site → log in → pick server → paste code → claim. Rewards arrive in your in-game inbox. Requires a minimum Adventure Rank/Trailblaze Level.">Buka situs redeem resmi → login → pilih server → tempel kode → klaim. Reward masuk ke inbox in-game. Butuh Adventure Rank/Trailblaze Level minimal.</span></div></details>
+      <details style="background:var(--surface); border:1px solid var(--line); border-radius:14px; overflow:hidden;"><summary style="display:flex; align-items:center; justify-content:space-between; padding:16px 18px; font-size:15px; font-weight:700; color:var(--txt);">Wuthering Waves<span class="gg-acc-plus" style="color:var(--acc); font-size:20px; transition:transform .2s;">+</span></summary><div style="padding:0 18px 18px; font-size:14px; line-height:1.6; color:var(--muted);"><span data-id="Menu → Settings → Other → Redemption Code. Tempel kode dan konfirmasi; reward dikirim via mail in-game." data-en="Menu → Settings → Other → Redemption Code. Paste the code and confirm; rewards are sent via in-game mail.">Menu → Settings → Other → Redemption Code. Tempel kode dan konfirmasi; reward dikirim via mail in-game.</span></div></details>
+      <details style="background:var(--surface); border:1px solid var(--line); border-radius:14px; overflow:hidden;"><summary style="display:flex; align-items:center; justify-content:space-between; padding:16px 18px; font-size:15px; font-weight:700; color:var(--txt);">Mobile Legends · Free Fire<span class="gg-acc-plus" style="color:var(--acc); font-size:20px; transition:transform .2s;">+</span></summary><div style="padding:0 18px 18px; font-size:14px; line-height:1.6; color:var(--muted);"><span data-id="Buka situs redemption resmi game → masukkan Player ID → tempel kode → klaim. Cek in-game mail untuk hadiah." data-en="Open the official game redemption site → enter your Player ID → paste code → claim. Check in-game mail for rewards.">Buka situs redemption resmi game → masukkan Player ID → tempel kode → klaim. Cek in-game mail untuk hadiah.</span></div></details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid var(--line); background:var(--bg); margin-top:44px;">
+    <div style="max-width:1280px; margin:0 auto; padding:52px 28px 40px;">
+      <div class="gg-footcols" style="display:grid; grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr)); gap:32px; padding-bottom:34px; border-bottom:1px solid var(--line);">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;"><span style="width:30px; height:30px; border-radius:9px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:19px; color:var(--acc); letter-spacing:-0.04em;">GG</span><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span></div>
+          <p style="font-size:13.5px; line-height:1.6; color:var(--faint); margin:0; max-width:38ch;" data-id="Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait." data-en="An always-updated Android online-game portal — automated, honest, no clickbait.">Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait.</p>
+        </div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="KONTEN" data-en="CONTENT">KONTEN</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Kode%20Redeem.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kode Redeem" data-en="Redeem Codes">Kode Redeem</a><a href="Event.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Event" data-en="Events">Event</a><a href="Tier%20List.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tier List" data-en="Tier List">Tier List</a><a href="Berita.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Berita" data-en="News">Berita</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="SUMBER DATA" data-en="DATA SOURCES">SUMBER DATA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="https://rawg.io" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">RAWG</a><a href="https://www.hoyolab.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">HoYoLAB</a><a href="https://www.gamerpower.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">GamerPower</a><a href="https://www.freetogame.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">FreeToGame</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="LAINNYA" data-en="MORE">LAINNYA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Jelajah%20Game.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Jelajah Game" data-en="Discover Games">Jelajah Game</a><a href="Tentang.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tentang" data-en="About">Tentang</a><a href="Kontak.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kontak" data-en="Contact">Kontak</a></div></div>
+      </div>
+      <div style="padding-top:22px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center;">
+        <p style="font-family:'Space Mono',monospace; font-size:11px; line-height:1.6; color:var(--faint); margin:0; max-width:72ch;" data-id="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games." data-en="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — attributed per license. KodeGG is not affiliated with any publisher; all trademarks &amp; game assets belong to their owners. Not endorsed by Riot Games.">Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games.</p>
+        <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">© 2026 KodeGG · kodegg.com</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;liveCountdowns&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  state = { limit: 6, sort: "new", game: "all", q: "", sugIdx: -1 };
+
+  componentDidMount() {
+    const live = this.props.liveCountdowns ?? true;
+    this._games = [
+      { id: "hsr", name: "Honkai: Star Rail" }, { id: "gi", name: "Genshin Impact" },
+      { id: "zzz", name: "Zenless Zone Zero" }, { id: "wuwa", name: "Wuthering Waves" },
+      { id: "mlbb", name: "Mobile Legends" }, { id: "ff", name: "Free Fire" },
+    ];
+    this._fmt = (ms) => {
+      if (ms <= 0) return "Berakhir";
+      const d = Math.floor(ms / 86400000), h = Math.floor((ms % 86400000) / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
+      if (d > 0) return d + "h " + h + "j " + m + "m";
+      return String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+    };
+    this._tick = () => {
+      const now = Date.now();
+      document.querySelectorAll("[data-deadline]").forEach((el) => {
+        const t = Date.parse(el.getAttribute("data-deadline"));
+        if (!isNaN(t)) el.textContent = this._fmt(t - now);
+      });
+    };
+    this._tick();
+    if (live) this._iv = setInterval(this._tick, 1000);
+    const ac = document.querySelector("[data-arch-count]");
+    if (ac) ac.textContent = document.querySelectorAll("[data-archive-grid] [data-arch-card]").length;
+    document.addEventListener("click", this._closeSug = (e) => {
+      if (!e.target.closest("[data-search-input]") && !e.target.closest("[data-suggest]")) this._hideSug();
+    });
+    this.applyView();
+  }
+  componentWillUnmount() { if (this._iv) clearInterval(this._iv); document.removeEventListener("click", this._closeSug); }
+
+  applyView() {
+    const grid = document.querySelector("[data-code-grid]");
+    if (!grid) return;
+    const cards = [...grid.querySelectorAll("[data-code-card]")];
+    const q = this.state.q.trim().toLowerCase();
+    let filt = cards.filter((c) => {
+      const okG = this.state.game === "all" || c.dataset.game === this.state.game;
+      const okQ = !q || (c.dataset.search || "").includes(q);
+      return okG && okQ;
+    });
+    const by = this.state.sort;
+    filt.sort((a, b) => {
+      if (by === "az") return a.dataset.name.localeCompare(b.dataset.name);
+      if (by === "expiring") return (parseFloat(a.dataset.expiry || "9e15")) - (parseFloat(b.dataset.expiry || "9e15"));
+      return (parseFloat(b.dataset.added || "0")) - (parseFloat(a.dataset.added || "0"));
+    });
+    cards.forEach((c) => { c.style.display = "none"; });
+    filt.forEach((c, i) => { c.style.display = i < this.state.limit ? "flex" : "none"; grid.appendChild(c); });
+    const btn = document.querySelector("[data-loadmore]");
+    if (btn) btn.style.display = filt.length > this.state.limit ? "inline-flex" : "none";
+    const empty = document.querySelector("[data-empty]");
+    if (empty) empty.style.display = filt.length === 0 ? "block" : "none";
+    const cnt = document.querySelector("[data-count]");
+    if (cnt) cnt.textContent = filt.length;
+  }
+
+  _hideSug() { const s = document.querySelector("[data-suggest]"); if (s) s.style.display = "none"; this.setState({ sugIdx: -1 }); }
+  _renderSug() {
+    const box = document.querySelector("[data-suggest]");
+    if (!box) return;
+    const q = this.state.q.trim().toLowerCase();
+    if (!q) { this._hideSug(); return; }
+    const hits = this._games.filter((g) => g.name.toLowerCase().includes(q)).slice(0, 6);
+    if (!hits.length) { this._hideSug(); return; }
+    box.innerHTML = hits.map((g, i) =>
+      `<div class="gg-sug" data-sug="${g.id}" style="padding:11px 14px; cursor:pointer; font-size:14px; font-weight:600; color:var(--txt); display:flex; align-items:center; gap:10px; ${i === this.state.sugIdx ? "background:#1C2331;" : ""}"><span style="width:22px; height:22px; border-radius:6px; background:var(--surface2); border:1px solid var(--line); color:var(--acc); font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:10px; display:flex; align-items:center; justify-content:center;">${g.name.replace(/[^A-Za-z]/g, "").slice(0, 2).toUpperCase()}</span>${g.name}</div>`
+    ).join("");
+    box.querySelectorAll("[data-sug]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const id = el.getAttribute("data-sug");
+        const sel = document.querySelector("[data-game-select]");
+        if (sel) sel.value = id;
+        const inp = document.querySelector("[data-search-input]");
+        if (inp) inp.value = "";
+        this.setState({ game: id, q: "", limit: 6 }, () => this.applyView());
+        this._hideSug();
+      });
+    });
+    box.style.display = "block";
+  }
+
+  renderVals() {
+    return {
+      copyCode: (e) => {
+        const btn = e.currentTarget, code = btn.getAttribute("data-code");
+        try { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(code); } else { const ta = document.createElement("textarea"); ta.value = code; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.focus(); ta.select(); document.execCommand("copy"); document.body.removeChild(ta); } } catch (err) {}
+        const label = btn.getAttribute("data-label") || "Salin";
+        btn.textContent = "Tersalin ✓"; btn.style.background = "var(--acc)"; btn.style.color = "var(--ink)"; btn.style.borderColor = "var(--acc)";
+        setTimeout(() => { btn.textContent = label; btn.style.background = "var(--surface2)"; btn.style.color = "var(--txt)"; btn.style.borderColor = "var(--line2)"; }, 1400);
+      },
+      onSearch: (e) => { this.setState({ q: e.currentTarget.value, limit: 6, sugIdx: -1 }, () => { this.applyView(); this._renderSug(); }); },
+      onSearchKey: (e) => {
+        const box = document.querySelector("[data-suggest]");
+        const items = box ? [...box.querySelectorAll("[data-sug]")] : [];
+        if (e.key === "ArrowDown" && items.length) { e.preventDefault(); this.setState({ sugIdx: Math.min(this.state.sugIdx + 1, items.length - 1) }, () => this._renderSug()); }
+        else if (e.key === "ArrowUp" && items.length) { e.preventDefault(); this.setState({ sugIdx: Math.max(this.state.sugIdx - 1, 0) }, () => this._renderSug()); }
+        else if (e.key === "Enter" && this.state.sugIdx >= 0 && items[this.state.sugIdx]) { e.preventDefault(); items[this.state.sugIdx].click(); }
+        else if (e.key === "Escape") { this._hideSug(); }
+      },
+      onGame: (e) => { this.setState({ game: e.currentTarget.value, limit: 6 }, () => this.applyView()); },
+      onSort: (e) => { this.setState({ sort: e.currentTarget.value }, () => this.applyView()); },
+      loadMore: () => { this.setState({ limit: this.state.limit + 6 }, () => this.applyView()); },
+      setLang: (e) => {
+        const l = e.currentTarget.getAttribute("data-lang");
+        document.querySelectorAll("[data-en]").forEach((el) => { el.textContent = l === "en" ? el.getAttribute("data-en") : el.getAttribute("data-id"); });
+        document.querySelectorAll("[data-lang-btn]").forEach((b) => { const on = b.getAttribute("data-lang-btn") === l; b.style.background = on ? "var(--surface2)" : "transparent"; b.style.color = on ? "var(--txt)" : "var(--faint)"; });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

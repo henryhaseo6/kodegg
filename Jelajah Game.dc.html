@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    body { margin:0; background:#090C12; -webkit-font-smoothing:antialiased; }
+    ::selection { background:#CBFF46; color:#090C12; }
+    .gg-nav:hover { color:#EEF1F6 !important; }
+    .gg-card { transition:transform .22s cubic-bezier(.2,.7,.3,1), box-shadow .22s, border-color .22s; }
+    .gg-card:hover { transform:translateY(-4px); border-color:rgba(203,255,70,0.4) !important; box-shadow:0 16px 40px rgba(0,0,0,0.5); }
+    .gg-fchip:hover { border-color:rgba(203,255,70,0.5) !important; color:#EEF1F6 !important; }
+    .gg-more:hover { background:#1C2331 !important; border-color:rgba(203,255,70,0.5) !important; }
+    .gg-in::placeholder { color:#5B6472; }
+    @media (max-width:860px){ .gg-headnav{ display:none !important; } }
+      .gg-sel { appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2398A2B3' stroke-width='3' stroke-linecap='round'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat:no-repeat; background-position:right 12px center; }
+      .gg-fav:hover{ border-color:rgba(203,255,70,0.6)!important; color:var(--acc)!important; }
+  </style>
+</helmet>
+<div data-screen-label="Jelajah Game" style="--bg:#090C12; --bg2:#0E121B; --surface:#151B27; --surface2:#1C2331; --line:rgba(255,255,255,0.08); --line2:rgba(255,255,255,0.15); --txt:#EEF1F6; --muted:#98A2B3; --faint:#5B6472; --acc:#CBFF46; --acc2:#8B6BFF; --ink:#090C12; --ok:#37E38B; --warn:#FFB13C; --danger:#FF5C77; font-family:'Satoshi',system-ui,sans-serif; color:var(--txt); min-height:100vh; background:radial-gradient(1100px 560px at 82% -12%, rgba(139,107,255,0.13), transparent 60%), radial-gradient(1000px 520px at -5% 0%, rgba(203,255,70,0.06), transparent 55%), var(--bg);">
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:60; background:rgba(9,12,18,0.72); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 28px; height:70px; display:flex; align-items:center; gap:30px;">
+      <a href="Beranda%20v2.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+        <span style="width:34px; height:34px; border-radius:10px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; box-shadow:0 0 24px rgba(203,255,70,0.35); font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:22px; color:var(--acc); letter-spacing:-0.04em;">GG</span>
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.01em; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span>
+      </a>
+      <nav class="gg-headnav" style="display:flex; align-items:center; gap:24px; margin-left:6px;">
+        <a href="#" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--acc); text-decoration:none;" data-id="Jelajah" data-en="Discover">Jelajah</a>
+        <a href="Favorit.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Favorit" data-en="Saved">Favorit</a>
+        <a href="Kode%20Redeem.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Kode</a>
+        <a href="Event.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Event" data-en="Events">Event</a>
+        <a href="Tier%20List.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Tier List</a>
+        <a href="Berita.dc.html" class="gg-nav" style="font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;" data-id="Berita" data-en="News">Berita</a>
+      </nav>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:14px;">
+        <div style="display:flex; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:2px;">
+          <button data-lang-btn="id" onClick="{{ setLang }}" data-lang="id" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:var(--surface2); color:var(--txt);">ID</button>
+          <button data-lang-btn="en" onClick="{{ setLang }}" data-lang="en" style="border:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:5px 9px; border-radius:8px; background:transparent; color:var(--faint);">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px; margin:0 auto; padding:48px 28px 8px;">
+    <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:var(--acc); margin-bottom:14px;"><span data-id="DATABASE · 428 GAME · RAWG" data-en="DATABASE · 428 GAMES · RAWG">DATABASE · 428 GAME · RAWG</span></div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:48px; line-height:1.02; letter-spacing:-0.03em; color:#fff; margin:0 0 14px;" data-id="Jelajah game" data-en="Discover games">Jelajah game</h1>
+    <p style="font-size:16.5px; line-height:1.55; color:var(--muted); margin:0 0 8px; max-width:60ch;" data-id="Temukan game berdasarkan genre, platform, atau nama. Tiap game punya halaman kode, event, dan tier list sendiri." data-en="Find games by genre, platform, or name. Each game has its own codes, events, and tier list page.">Temukan game berdasarkan genre, platform, atau nama. Tiap game punya halaman kode, event, dan tier list sendiri.</p>
+  </section>
+
+  <!-- CONTROLS -->
+  <section style="max-width:1280px; margin:0 auto; padding:16px 28px 4px;">
+    <div style="position:relative; max-width:520px; margin-bottom:16px;">
+      <span style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--faint); pointer-events:none;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></span>
+      <input class="gg-in" type="text" onInput="{{ onSearch }}" placeholder="Cari nama game…" style="width:100%; box-sizing:border-box; font-family:'Satoshi',sans-serif; font-size:14.5px; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 14px 13px 40px; outline:none;">
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:9px;"><button class="gg-fchip" data-fc="all" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--acc); background:var(--acc); color:var(--ink); border-radius:10px; padding:8px 14px;" data-id="Semua" data-en="All">Semua</button><button class="gg-fchip" data-fc="rpg" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">RPG</button><button class="gg-fchip" data-fc="gacha" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">Gacha</button><button class="gg-fchip" data-fc="moba" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">MOBA</button><button class="gg-fchip" data-fc="br" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">Battle Royale</button><button class="gg-fchip" data-fc="mmorpg" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">MMORPG</button><button class="gg-fchip" data-fc="strategy" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">Strategy</button><button class="gg-fchip" data-fc="idle" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">Idle</button><button class="gg-fchip" data-fc="shooter" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">Shooter</button><button class="gg-fchip" data-fc="card" onClick="{{ filterGenre }}" style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">Card / TCG</button></div>
+    <div style="margin-top:14px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);"><span data-count>0</span> <span data-id="game ditampilkan" data-en="games shown">game ditampilkan</span></div>
+      <select class="gg-sel" data-sort-select onChange="{{ onSort }}" style="font-family:'Satoshi',sans-serif; font-size:13.5px; font-weight:600; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:10px 34px 10px 13px; cursor:pointer; outline:none;">
+        <option value="pop" data-id="Urutkan: Populer" data-en="Sort: Popular">Urutkan: Populer</option>
+        <option value="new" data-id="Urutkan: Terbaru" data-en="Sort: Newest">Urutkan: Terbaru</option>
+        <option value="rating" data-id="Urutkan: Rating" data-en="Sort: Rating">Urutkan: Rating</option>
+        <option value="az" data-id="Urutkan: A–Z" data-en="Sort: A–Z">Urutkan: A–Z</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section style="max-width:1280px; margin:0 auto; padding:12px 28px 8px;">
+    <div data-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px;">
+      <a href="#" class="gg-card" data-game-card data-genre="rpg gacha" data-name="Wuthering Waves" data-pop="0" data-rating="4.4" data-new="23" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg0" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Wuthering Waves" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Wuthering Waves</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">RPG · Gacha · ★ 4.4</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="rpg gacha" data-name="Zenless Zone Zero" data-pop="1" data-rating="4.5" data-new="24" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg1" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Zenless Zone Zero" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Zenless Zone Zero</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">RPG · Gacha · ★ 4.5</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="rpg gacha" data-name="Honkai: Star Rail" data-pop="2" data-rating="4.7" data-new="22" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg2" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Honkai: Star Rail" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Honkai: Star Rail</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">RPG · Gacha · ★ 4.7</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="moba" data-name="Mobile Legends" data-pop="3" data-rating="4.2" data-new="6" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg3" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Mobile Legends" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Mobile Legends</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">MOBA · ★ 4.2</div>
+        </div>
+      </a>
+      <a href="Game%20Genshin.dc.html" class="gg-card" data-game-card data-genre="rpg gacha" data-name="Genshin Impact" data-pop="4" data-rating="4.6" data-new="20" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg4" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Genshin Impact" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Genshin Impact</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">RPG · Gacha · ★ 4.6</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="br shooter" data-name="Free Fire" data-pop="5" data-rating="4.1" data-new="4" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg5" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Free Fire" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Free Fire</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Battle Royale · Shooter · ★ 4.1</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="gacha" data-name="Reverse: 1999" data-pop="6" data-rating="4.4" data-new="19" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg6" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Reverse: 1999" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Reverse: 1999</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Gacha · ★ 4.4</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="gacha rpg" data-name="NIKKE" data-pop="7" data-rating="4.2" data-new="18" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg7" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="NIKKE" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">NIKKE</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Gacha · RPG · ★ 4.2</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="gacha strategy" data-name="Blue Archive" data-pop="8" data-rating="4.5" data-new="14" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg8" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Blue Archive" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Blue Archive</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Gacha · Strategy · ★ 4.5</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="moba" data-name="Wild Rift" data-pop="9" data-rating="4.3" data-new="12" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg9" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Wild Rift" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Wild Rift</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">MOBA · ★ 4.3</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="moba" data-name="Honor of Kings" data-pop="10" data-rating="4.1" data-new="8" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg10" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Honor of Kings" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Honor of Kings</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">MOBA · ★ 4.1</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="moba" data-name="Arena of Valor" data-pop="11" data-rating="4.0" data-new="5" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg11" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Arena of Valor" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Arena of Valor</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">MOBA · ★ 4.0</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="br shooter" data-name="PUBG Mobile" data-pop="12" data-rating="4.0" data-new="7" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg12" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="PUBG Mobile" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">PUBG Mobile</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Battle Royale · Shooter · ★ 4.0</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="br shooter" data-name="Call of Duty Mobile" data-pop="13" data-rating="4.2" data-new="9" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg13" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Call of Duty Mobile" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Call of Duty Mobile</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Battle Royale · Shooter · ★ 4.2</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="mmorpg gacha" data-name="Tower of Fantasy" data-pop="14" data-rating="4.0" data-new="15" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg14" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Tower of Fantasy" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Tower of Fantasy</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">MMORPG · Gacha · ★ 4.0</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="mmorpg" data-name="Toram Online" data-pop="15" data-rating="4.1" data-new="3" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg15" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Toram Online" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Toram Online</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">MMORPG · ★ 4.1</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="strategy" data-name="Whiteout Survival" data-pop="16" data-rating="4.0" data-new="21" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg16" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Whiteout Survival" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Whiteout Survival</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Strategy · ★ 4.0</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="strategy" data-name="Last War: Survival" data-pop="17" data-rating="3.9" data-new="25" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg17" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><span style="position:absolute; top:9px; left:9px; z-index:2; font-family:'Space Mono',monospace; font-weight:700; font-size:10px; color:var(--ink); background:var(--acc); padding:3px 7px; border-radius:6px;">NEW</span><button class="gg-fav" data-fav-id="Last War: Survival" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Last War: Survival</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Strategy · ★ 3.9</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="idle rpg" data-name="AFK Journey" data-pop="18" data-rating="4.3" data-new="17" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg18" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="AFK Journey" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">AFK Journey</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Idle · RPG · ★ 4.3</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="idle rpg" data-name="AFK Arena" data-pop="19" data-rating="4.1" data-new="10" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg19" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="AFK Arena" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">AFK Arena</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Idle · RPG · ★ 4.1</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="card" data-name="Yu-Gi-Oh! Master Duel" data-pop="20" data-rating="4.2" data-new="13" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg20" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Yu-Gi-Oh! Master Duel" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Yu-Gi-Oh! Master Duel</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Card / TCG · ★ 4.2</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="card" data-name="Marvel Snap" data-pop="21" data-rating="4.3" data-new="16" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg21" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><button class="gg-fav" data-fav-id="Marvel Snap" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Marvel Snap</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">Card / TCG · ★ 4.3</div>
+        </div>
+      </a>
+      <a href="#" class="gg-card" data-game-card data-genre="rpg gacha" data-name="Neverness to Everness" data-pop="22" data-rating="4.3" data-new="26" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; text-decoration:none;">
+        <div style="position:relative; aspect-ratio:3/4; background:var(--surface2);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jg22" shape="rect" placeholder="Cover" hint-size="100%,100%"></x-import><span style="position:absolute; top:9px; left:9px; z-index:2; font-family:'Space Mono',monospace; font-weight:700; font-size:10px; color:var(--ink); background:var(--acc); padding:3px 7px; border-radius:6px;">NEW</span><button class="gg-fav" data-fav-id="Neverness to Everness" onClick="{{ toggleFav }}" title="Favorit" style="position:absolute; top:8px; right:8px; z-index:4; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg></button></div>
+        <div style="padding:12px 13px; display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2;">Neverness to Everness</div>
+          <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">RPG · Gacha · ★ 4.3</div>
+        </div>
+      </a>
+    </div>
+    <div data-empty style="display:none; text-align:center; padding:60px 20px; color:var(--faint); font-family:'Space Mono',monospace; font-size:13px;"><span data-id="Tidak ada game yang cocok." data-en="No matching games.">Tidak ada game yang cocok.</span></div>
+    <div style="display:flex; justify-content:center; margin-top:28px;">
+      <button data-loadmore class="gg-more" onClick="{{ loadMore }}" style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; font-family:'Satoshi',sans-serif; font-size:14px; font-weight:700; color:var(--txt); background:var(--surface); border:1px solid var(--line2); border-radius:12px; padding:13px 24px; transition:all .18s;"><span data-id="Muat lebih banyak" data-en="Load more">Muat lebih banyak</span> <span style="color:var(--acc);">↓</span></button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid var(--line); background:var(--bg); margin-top:44px;">
+    <div style="max-width:1280px; margin:0 auto; padding:52px 28px 40px;">
+      <div class="gg-footcols" style="display:grid; grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr)); gap:32px; padding-bottom:34px; border-bottom:1px solid var(--line);">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;"><span style="width:30px; height:30px; border-radius:9px; background:#0E121B; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:19px; color:var(--acc); letter-spacing:-0.04em;">GG</span><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; color:var(--txt);">KODE<span style="color:var(--acc);">GG</span></span></div>
+          <p style="font-size:13.5px; line-height:1.6; color:var(--faint); margin:0; max-width:38ch;" data-id="Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait." data-en="An always-updated Android online-game portal — automated, honest, no clickbait.">Portal info game online Android yang selalu update — otomatis, jujur, tanpa clickbait.</p>
+        </div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="KONTEN" data-en="CONTENT">KONTEN</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Kode%20Redeem.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kode Redeem" data-en="Redeem Codes">Kode Redeem</a><a href="Event.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Event" data-en="Events">Event</a><a href="Tier%20List.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tier List" data-en="Tier List">Tier List</a><a href="Berita.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Berita" data-en="News">Berita</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="SUMBER DATA" data-en="DATA SOURCES">SUMBER DATA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="https://rawg.io" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">RAWG</a><a href="https://www.hoyolab.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">HoYoLAB</a><a href="https://www.gamerpower.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">GamerPower</a><a href="https://www.freetogame.com" target="_blank" rel="noopener" style="color:var(--faint); text-decoration:none;">FreeToGame</a></div></div>
+        <div><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--txt); margin-bottom:14px;" data-id="LAINNYA" data-en="MORE">LAINNYA</div><div style="display:flex; flex-direction:column; gap:9px; font-size:13.5px;"><a href="Jelajah%20Game.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Jelajah Game" data-en="Discover Games">Jelajah Game</a><a href="Tentang.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Tentang" data-en="About">Tentang</a><a href="Kontak.dc.html" style="color:var(--faint); text-decoration:none;" data-id="Kontak" data-en="Contact">Kontak</a></div></div>
+      </div>
+      <div style="padding-top:22px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center;">
+        <p style="font-family:'Space Mono',monospace; font-size:11px; line-height:1.6; color:var(--faint); margin:0; max-width:72ch;" data-id="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games." data-en="Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — attributed per license. KodeGG is not affiliated with any publisher; all trademarks &amp; game assets belong to their owners. Not endorsed by Riot Games.">Data via RAWG, HoYoLAB, GamerPower, FreeToGame &amp; PandaScore — atribusi sesuai lisensi. KodeGG tidak berafiliasi dengan publisher mana pun; seluruh merek &amp; aset game milik pemiliknya. Not endorsed by Riot Games.</p>
+        <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">© 2026 KodeGG · kodegg.com</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { limit: 12, genre: "all", q: "", sort: "pop" };
+  componentDidMount() { this.applyView(); this._syncFav(); }
+  _syncFav() {
+    let favs = [];
+    try { favs = JSON.parse(localStorage.getItem("kodegg_favs") || "[]"); } catch (x) {}
+    document.querySelectorAll("[data-fav-id]").forEach((b) => {
+      const on = favs.indexOf(b.getAttribute("data-fav-id")) >= 0;
+      b.style.background = on ? "var(--acc)" : "rgba(9,12,18,0.72)";
+      b.style.color = on ? "var(--ink)" : "var(--muted)";
+      b.style.borderColor = on ? "var(--acc)" : "var(--line2)";
+    });
+  }
+  applyView() {
+    const cards = [...document.querySelectorAll("[data-grid] [data-game-card]")];
+    const q = this.state.q.trim().toLowerCase();
+    let filt = cards.filter((c) => {
+      const okG = this.state.genre === "all" || (c.dataset.genre || "").split(" ").includes(this.state.genre);
+      const okQ = !q || (c.dataset.name || "").toLowerCase().includes(q);
+      return okG && okQ;
+    });
+    const by = this.state.sort;
+    filt.sort((a, b) => {
+      if (by === "az") return a.dataset.name.localeCompare(b.dataset.name);
+      if (by === "rating") return parseFloat(b.dataset.rating || "0") - parseFloat(a.dataset.rating || "0");
+      if (by === "new") return parseFloat(b.dataset.new || "0") - parseFloat(a.dataset.new || "0");
+      return parseFloat(a.dataset.pop || "0") - parseFloat(b.dataset.pop || "0");
+    });
+    const grid = document.querySelector("[data-grid]");
+    cards.forEach((c) => { c.style.display = "none"; });
+    filt.forEach((c, i) => { c.style.display = i < this.state.limit ? "flex" : "none"; if (grid) grid.appendChild(c); });
+    const btn = document.querySelector("[data-loadmore]");
+    if (btn) btn.style.display = filt.length > this.state.limit ? "inline-flex" : "none";
+    const empty = document.querySelector("[data-empty]");
+    if (empty) empty.style.display = filt.length === 0 ? "block" : "none";
+    const cnt = document.querySelector("[data-count]");
+    if (cnt) cnt.textContent = filt.length;
+  }
+  renderVals() {
+    return {
+      toggleFav: (e) => {
+        e.preventDefault(); e.stopPropagation();
+        const id = e.currentTarget.getAttribute("data-fav-id");
+        let favs = [];
+        try { favs = JSON.parse(localStorage.getItem("kodegg_favs") || "[]"); } catch (x) {}
+        const i = favs.indexOf(id);
+        if (i >= 0) favs.splice(i, 1); else favs.push(id);
+        try { localStorage.setItem("kodegg_favs", JSON.stringify(favs)); } catch (x) {}
+        this._syncFav();
+      },
+      onSearch: (e) => { this.setState({ q: e.currentTarget.value, limit: 12 }, () => this.applyView()); },
+      filterGenre: (e) => {
+        const g = e.currentTarget.getAttribute("data-fc");
+        this.setState({ genre: g, limit: 12 }, () => this.applyView());
+        document.querySelectorAll("[data-fc]").forEach((b) => { const on = b.getAttribute("data-fc") === g; b.style.background = on ? "var(--acc)" : "var(--surface)"; b.style.color = on ? "var(--ink)" : "var(--muted)"; b.style.borderColor = on ? "var(--acc)" : "var(--line)"; });
+      },
+      onSort: (e) => { this.setState({ sort: e.currentTarget.value, limit: 12 }, () => this.applyView()); },
+      loadMore: () => { this.setState({ limit: this.state.limit + 12 }, () => this.applyView()); },
+      setLang: (e) => {
+        const l = e.currentTarget.getAttribute("data-lang");
+        document.querySelectorAll("[data-en]").forEach((el) => { el.textContent = l === "en" ? el.getAttribute("data-en") : el.getAttribute("data-id"); });
+        document.querySelectorAll("[data-lang-btn]").forEach((b) => { const on = b.getAttribute("data-lang-btn") === l; b.style.background = on ? "var(--surface2)" : "transparent"; b.style.color = on ? "var(--txt)" : "var(--faint)"; });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

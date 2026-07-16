@@ -1,0 +1,61 @@
+{
+  "updatedAt": "2026-07-16T09:00:00Z",
+  "counts": { "active": 3, "archived": 2 },
+  "active": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "WAK84U29VLYP",
+      "reward": "100 Stellar Jade · 50.000 Credit",
+      "status": "active",
+      "perm": false,
+      "endsAt": "2026-07-18T15:00:00Z",
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hsr.hoyoverse.com/gift"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "code": "GENSHINGIFT",
+      "reward": "60 Primogem · 10.000 Mora",
+      "status": "active",
+      "perm": true,
+      "endsAt": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://genshin.hoyoverse.com/en/gift"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "code": "ZZZWELCOME",
+      "reward": "100 Polychrome · 2 Booster",
+      "status": "active",
+      "perm": false,
+      "endsAt": "2026-07-22T09:00:00Z",
+      "source": "hoyo-codes",
+      "sourceUrl": "https://zzz.hoyoverse.com/redemption"
+    }
+  ],
+  "archive": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "code": "GENSHIN6X5AB",
+      "reward": "100 Primogem",
+      "status": "expired",
+      "expiredAt": "2026-06-02T00:00:00Z",
+      "source": "hoyo-codes",
+      "sourceUrl": "https://genshin.hoyoverse.com/en/gift"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "HSR43LIVEXYZ",
+      "reward": "50 Stellar Jade",
+      "status": "expired",
+      "expiredAt": "2026-06-20T00:00:00Z",
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hsr.hoyoverse.com/gift"
+    }
+  ]
+}

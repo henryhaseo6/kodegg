@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/jeda-kampanye-anti-judol-design-system-c01be618-8930-4fa1-8c9d-f3a0d4afb09a/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/jeda-kampanye-anti-judol-design-system-c01be618-8930-4fa1-8c9d-f3a0d4afb09a/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/jeda-kampanye-anti-judol-design-system-c01be618-8930-4fa1-8c9d-f3a0d4afb09a/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/jeda-kampanye-anti-judol-design-system-c01be618-8930-4fa1-8c9d-f3a0d4afb09a/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/jeda-kampanye-anti-judol-design-system-c01be618-8930-4fa1-8c9d-f3a0d4afb09a/tokens/elevation.css">
+  <link rel="stylesheet" href="_ds/jeda-kampanye-anti-judol-design-system-c01be618-8930-4fa1-8c9d-f3a0d4afb09a/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/jeda-kampanye-anti-judol-design-system-c01be618-8930-4fa1-8c9d-f3a0d4afb09a/tokens/base.css">
+  <link rel="stylesheet" href="_ds/jeda-kampanye-anti-judol-design-system-c01be618-8930-4fa1-8c9d-f3a0d4afb09a/styles.css">
+  <script src="_ds/jeda-kampanye-anti-judol-design-system-c01be618-8930-4fa1-8c9d-f3a0d4afb09a/_ds_bundle.js"></script>
+  <style>
+    body { margin: 0; -webkit-font-smoothing: antialiased; }
+    a { color: var(--teal-700); text-decoration: none; }
+    a:hover { color: var(--teal-900); text-decoration: underline; }
+  </style>
+</helmet>
+<div style="background:var(--canvas); min-height:100vh; font-family:var(--font-sans); color:var(--ink-800); padding:56px 24px 96px;">
+  <div style="max-width:1080px; margin:0 auto;">
+
+    <!-- HEADER -->
+    <header style="border-bottom:1px solid var(--border); padding-bottom:40px;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brand); font-weight:500; margin-bottom:18px;">Riset Sumber Data · Juli 2026</div>
+      <h1 style="font-family:var(--font-display); font-weight:800; font-size:52px; line-height:1.04; letter-spacing:-0.03em; color:var(--ink-950); margin:0 0 20px; max-width:16ch;">Dari mana kontennya datang</h1>
+      <p style="font-family:var(--font-serif); font-size:20px; line-height:1.6; color:var(--ink-700); margin:0; max-width:60ch;">Peta sumber data real & up-to-date untuk situs info game Android kamu — guide, tier list, kode redeem, event, berita, dan database. Semua bisa langsung ditarik jadi konten. Tidak ada yang dikarang.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:24px;">
+        <span style="font-family:var(--font-mono); font-size:12px; color:var(--ink-500); border:1px solid var(--border); border-radius:999px; padding:5px 12px;">Portal multi-game</span>
+        <span style="font-family:var(--font-mono); font-size:12px; color:var(--ink-500); border:1px solid var(--border); border-radius:999px; padding:5px 12px;">Bilingual (ID / EN)</span>
+        <span style="font-family:var(--font-mono); font-size:12px; color:var(--ink-500); border:1px solid var(--border); border-radius:999px; padding:5px 12px;">Gacha · MOBA · RPG · Idle</span>
+      </div>
+    </header>
+
+    <!-- REALITA / OTOMATIS -->
+    <section style="margin-top:64px;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brand); font-weight:500; margin-bottom:10px;">Realita "otomatis"</div>
+      <h2 style="font-family:var(--font-display); font-weight:800; font-size:32px; letter-spacing:-0.03em; color:var(--ink-950); margin:0 0 12px;">Situs sendiri tidak update. Pipeline-nya yang update.</h2>
+      <p style="font-size:16px; line-height:1.6; color:var(--ink-700); margin:0 0 28px; max-width:64ch;">Halaman web statis tidak bisa menarik data sendiri 24 jam. Yang membuatnya "otomatis" adalah sebuah <strong>worker terjadwal</strong> (cron / serverless) yang rutin memanggil sumber-sumber di bawah, menyimpannya, lalu situs tinggal membaca hasilnya.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-bottom:32px;">
+        <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.StatCard" value="15+" label="Sumber real siap dipakai" tone="brand" align="left" hint-size="100%,auto"></x-import>
+        <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.StatCard" value="Gratis" label="Mayoritas sumber (cukup atribusi)" tone="success" align="left" hint-size="100%,auto"></x-import>
+        <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.StatCard" value="1 pipeline" label="Worker → cache → situs baca" tone="ink" align="left" hint-size="100%,auto"></x-import>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-bottom:28px;">
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:20px;">
+          <div style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:999px; background:var(--teal-100); color:var(--teal-700); font-family:var(--font-mono); font-weight:600; font-size:15px; margin-bottom:14px;">1</div>
+          <h4 style="font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--ink-950); margin:0 0 6px;">Tarik</h4>
+          <p style="font-size:13.5px; line-height:1.5; color:var(--ink-600); margin:0;">Worker memanggil tiap API pada interval-nya (mis. tiap jam untuk kode redeem).</p>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:20px;">
+          <div style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:999px; background:var(--teal-100); color:var(--teal-700); font-family:var(--font-mono); font-weight:600; font-size:15px; margin-bottom:14px;">2</div>
+          <h4 style="font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--ink-950); margin:0 0 6px;">Normalisasi</h4>
+          <p style="font-size:13.5px; line-height:1.5; color:var(--ink-600); margin:0;">Gabungkan semua ke satu format JSON / database yang konsisten.</p>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:20px;">
+          <div style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:999px; background:var(--teal-100); color:var(--teal-700); font-family:var(--font-mono); font-weight:600; font-size:15px; margin-bottom:14px;">3</div>
+          <h4 style="font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--ink-950); margin:0 0 6px;">Cache</h4>
+          <p style="font-size:13.5px; line-height:1.5; color:var(--ink-600); margin:0;">Situs baca cache itu — cepat, dan tidak kena rate limit sumber.</p>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:20px;">
+          <div style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:999px; background:var(--teal-100); color:var(--teal-700); font-family:var(--font-mono); font-weight:600; font-size:15px; margin-bottom:14px;">4</div>
+          <h4 style="font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--ink-950); margin:0 0 6px;">Cadence beda</h4>
+          <p style="font-size:13.5px; line-height:1.5; color:var(--ink-600); margin:0;">Kode redeem ~1 jam · tier list harian · katalog game on-demand.</p>
+        </div>
+      </div>
+
+      <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Callout" tone="info" title="Yang gw kerjakan vs yang butuh backend" hint-size="100%,auto">
+        <p style="margin:0; line-height:1.6;">Gw bangun <strong>front-end situs + slot data</strong> yang jelas di mana konten auto-update masuk. Pipeline penariknya (worker cron / serverless) adalah bagian backend terpisah — arsitekturnya sudah dipetakan di sini, tinggal disambungkan ke sumber-sumber di bawah.</p>
+      </x-import>
+    </section>
+
+    <!-- KATEGORI A: KODE REDEEM -->
+    <section style="margin-top:72px;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brand); font-weight:500; margin-bottom:10px;">A · Kode Redeem</div>
+      <h2 style="font-family:var(--font-display); font-weight:800; font-size:30px; letter-spacing:-0.03em; color:var(--ink-950); margin:0 0 10px;">Kode redeem</h2>
+      <p style="font-size:15px; line-height:1.6; color:var(--ink-600); margin:0; max-width:64ch;">Paling sering dicari & paling cepat basi — kandidat kuat untuk jadi jualan utama. Verifikasi status kode (aktif/kadaluarsa) sebelum tayang.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:16px; margin-top:24px;">
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">hoyo-codes (seriaati)</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="success" variant="soft" size="sm" hint-size="auto,22px">API · Gratis</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Kode gift untuk semua game HoYoverse, sudah diverifikasi status aktif/kadaluarsanya lewat HoYoLAB. Open-source — bisa di-self-host kalau mau anti-mati.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Endpoint</span><span style="font-family:var(--font-mono); font-size:12px; color:var(--teal-700); background:var(--teal-100); padding:2px 6px; border-radius:6px; word-break:break-all;">hoyo-codes.seria.moe/codes?game=genshin</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Game</span><span style="font-size:13.5px; color:var(--ink-800);">Genshin, Honkai: Star Rail (hkrpg), ZZZ (nap)</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Update</span><span style="font-size:13.5px; color:var(--ink-800);">Nyaris real-time · komunitas (tak resmi)</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">GamerPower API</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="success" variant="soft" size="sm" hint-size="auto,22px">API · Gratis</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Giveaway, beta key, dan in-game loot lintas platform (PC / konsol / mobile). Bagus untuk section "Freebies / hadiah gratis".</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Endpoint</span><span style="font-family:var(--font-mono); font-size:12px; color:var(--teal-700); background:var(--teal-100); padding:2px 6px; border-radius:6px; word-break:break-all;">gamerpower.com/api/giveaways</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Lisensi</span><span style="font-size:13.5px; color:var(--ink-800);">Gratis, wajib atribusi GamerPower</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Update</span><span style="font-size:13.5px; color:var(--ink-800);">Harian, otomatis</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">BlueStacks · Pocket Tactics · Game8</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="warning" variant="soft" size="sm" hint-size="auto,22px">Scrape / Kurasi</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Tidak ada API, tapi menutup <strong>ratusan game mobile</strong> (MOBA / RPG / idle) yang tak punya feed resmi. Untuk cakupan "semua game", ini tulang punggungnya — lewat kurasi/scrape yang etis.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Cakupan</span><span style="font-size:13.5px; color:var(--ink-800);">Free Fire, MLBB, COD Mobile, ratusan idle/RPG</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Catatan</span><span style="font-size:13.5px; color:var(--ink-800);">Konten hak cipta — tulis ulang + kredit, jangan salin mentah</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KATEGORI B: KATALOG & METADATA -->
+    <section style="margin-top:72px;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brand); font-weight:500; margin-bottom:10px;">B · Katalog & Metadata</div>
+      <h2 style="font-family:var(--font-display); font-weight:800; font-size:30px; letter-spacing:-0.03em; color:var(--ink-950); margin:0 0 10px;">Katalog & metadata game</h2>
+      <p style="font-size:15px; line-height:1.6; color:var(--ink-600); margin:0; max-width:64ch;">Tulang punggung database: nama, cover art, genre, tanggal rilis, rating, screenshot. Untuk halaman database & kartu game.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:16px; margin-top:24px;">
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">RAWG Video Games DB</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="info" variant="soft" size="sm" hint-size="auto,22px">API · Perlu key</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">500rb+ game di 50+ platform (termasuk mobile). Metadata kaya: genre, tag, developer, rilis, rating Metacritic, screenshot, tautan toko.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Endpoint</span><span style="font-family:var(--font-mono); font-size:12px; color:var(--teal-700); background:var(--teal-100); padding:2px 6px; border-radius:6px; word-break:break-all;">api.rawg.io/api/games?key=KEY</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Gratis</span><span style="font-size:13.5px; color:var(--ink-800);">≤ 100rb user / 500rb views per bulan</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Syarat</span><span style="font-size:13.5px; color:var(--ink-800);">Atribusi + link, tanpa redistribusi, header User-Agent</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">FreeToGame API</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="success" variant="soft" size="sm" hint-size="auto,22px">API · Gratis</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">400+ game free-to-play & MMO. Tanpa API key, bebas dipakai komersial. Filter per platform, genre, tag.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Endpoint</span><span style="font-family:var(--font-mono); font-size:12px; color:var(--teal-700); background:var(--teal-100); padding:2px 6px; border-radius:6px; word-break:break-all;">freetogame.com/api/games</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Lisensi</span><span style="font-size:13.5px; color:var(--ink-800);">Gratis (personal & komersial) + atribusi</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Batas</span><span style="font-size:13.5px; color:var(--ink-800);">Maks ~10 request / detik</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KATEGORI C: TIER LIST & GUIDE -->
+    <section style="margin-top:72px;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brand); font-weight:500; margin-bottom:10px;">C · Tier List & Guide</div>
+      <h2 style="font-family:var(--font-display); font-weight:800; font-size:30px; letter-spacing:-0.03em; color:var(--ink-950); margin:0 0 10px;">Tier list & guide (gacha)</h2>
+      <p style="font-size:15px; line-height:1.6; color:var(--ink-600); margin:0; max-width:64ch;">Tier list dan build karakter tidak punya API resmi — ini editorial. Pakai sebagai referensi, tulis ulang dengan sudut pandang sendiri, dan kasih kredit.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:16px; margin-top:24px;">
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">Prydwen.gg</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="warning" variant="soft" size="sm" hint-size="auto,22px">Referensi</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Sumber tier list gacha terbaik. Rutin di-update per patch, dengan review karakter & rekomendasi tim.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Game</span><span style="font-size:13.5px; color:var(--ink-800);">HSR, ZZZ, NIKKE, Wuthering Waves, AFK Journey, Reverse 1999</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Akses</span><span style="font-size:13.5px; color:var(--ink-800);">Tanpa API — referensi manual</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">Game8 · GameWith</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="warning" variant="soft" size="sm" hint-size="auto,22px">Referensi</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Cakupan guide & tier list paling luas untuk game mobile secara umum — dari gacha sampai game kasual.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Cakupan</span><span style="font-size:13.5px; color:var(--ink-800);">Ratusan judul mobile, lintas genre</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Akses</span><span style="font-size:13.5px; color:var(--ink-800);">Tanpa API — referensi manual</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">Paimon.moe</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="success" variant="soft" size="sm" hint-size="auto,22px">Open data</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Kalender event & timeline banner Genshin, plus data karakter/item. Open-source — datanya ada di GitHub, aman ditarik.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Guna</span><span style="font-size:13.5px; color:var(--ink-800);">Kalender / countdown event Genshin</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Lisensi</span><span style="font-size:13.5px; color:var(--ink-800);">Open source (cek lisensi repo)</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KATEGORI D: DATA KARAKTER RESMI -->
+    <section style="margin-top:72px;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brand); font-weight:500; margin-bottom:10px;">D · Data Karakter Resmi</div>
+      <h2 style="font-family:var(--font-display); font-weight:800; font-size:30px; letter-spacing:-0.03em; color:var(--ink-950); margin:0 0 10px;">Data karakter resmi (MOBA / RPG)</h2>
+      <p style="font-size:15px; line-height:1.6; color:var(--ink-600); margin:0; max-width:64ch;">Untuk database karakter/hero yang presisi & legal — pakai data resmi kalau ada.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:16px; margin-top:24px;">
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">Riot Data Dragon</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="success" variant="soft" size="sm" hint-size="auto,22px">API · Gratis</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">JSON statis + gambar resmi untuk champion, item, rune League of Legends (relevan juga untuk Wild Rift). Tanpa key.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Endpoint</span><span style="font-family:var(--font-mono); font-size:12px; color:var(--teal-700); background:var(--teal-100); padding:2px 6px; border-radius:6px; word-break:break-all;">ddragon.leagueoflegends.com/api/versions.json</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Update</span><span style="font-size:13.5px; color:var(--ink-800);">Per patch (cek versions.json)</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Syarat</span><span style="font-size:13.5px; color:var(--ink-800);">Wajib disclaimer "not endorsed by Riot Games"</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">Riot Games API</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="info" variant="soft" size="sm" hint-size="auto,22px">API · Perlu key</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Data live: match, ranked, leaderboard, esports. Rate-limited & butuh key produksi untuk fitur lanjutan.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Guna</span><span style="font-size:13.5px; color:var(--ink-800);">Stats agregat, leaderboard resmi</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Catatan</span><span style="font-size:13.5px; color:var(--ink-800);">Patuhi kebijakan produk Riot</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">Wiki komunitas (Fandom / wiki.gg)</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="warning" variant="soft" size="sm" hint-size="auto,22px">Referensi</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Untuk game tanpa API resmi (mis. Mobile Legends). Beberapa punya MediaWiki API, tapi cek lisensi (biasanya CC-BY-SA) + kredit.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Guna</span><span style="font-size:13.5px; color:var(--ink-800);">Data hero MLBB & game tanpa feed resmi</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Lisensi</span><span style="font-size:13.5px; color:var(--ink-800);">Umumnya CC-BY-SA — wajib atribusi</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KATEGORI E: BERITA, EVENT & ESPORTS -->
+    <section style="margin-top:72px;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brand); font-weight:500; margin-bottom:10px;">E · Berita, Event & Esports</div>
+      <h2 style="font-family:var(--font-display); font-weight:800; font-size:30px; letter-spacing:-0.03em; color:var(--ink-950); margin:0 0 10px;">Berita, event & esports</h2>
+      <p style="font-size:15px; line-height:1.6; color:var(--ink-600); margin:0; max-width:64ch;">Sumber yang menjaga situs selalu "hidup" dengan konten baru tiap hari.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:16px; margin-top:24px;">
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">RSS feeds situs game</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="brand" variant="soft" size="sm" hint-size="auto,22px">RSS</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Mayoritas situs berita punya feed RSS/Atom. Parse jadi section "Berita" otomatis — tampilkan judul + ringkasan + link ke sumber.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Contoh</span><span style="font-size:13.5px; color:var(--ink-800);">IGN, Dot Esports, Pocket Tactics, GameSpot</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Catatan</span><span style="font-size:13.5px; color:var(--ink-800);">Tampilkan cuplikan + link, jangan copy artikel penuh</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">HoYoLAB (resmi)</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="brand" variant="soft" size="sm" hint-size="auto,22px">Resmi</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Berita & jadwal event/banner resmi untuk semua game HoYoverse. Paling otoritatif untuk Genshin / HSR / ZZZ.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Guna</span><span style="font-size:13.5px; color:var(--ink-800);">Update event, banner, patch note resmi</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Akses</span><span style="font-size:13.5px; color:var(--ink-800);">Feed artikel resmi / kurasi</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">PandaScore</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="info" variant="soft" size="sm" hint-size="auto,22px">API · Freemium</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Jadwal & skor esports: LoL, Dota 2, CS, Valorant, dll. Bagus untuk section esports penggemar MOBA.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Endpoint</span><span style="font-family:var(--font-mono); font-size:12px; color:var(--teal-700); background:var(--teal-100); padding:2px 6px; border-radius:6px; word-break:break-all;">api.pandascore.co</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Gratis</span><span style="font-size:13.5px; color:var(--ink-800);">Plan free: 1000 request / jam</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(11,26,28,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-0.02em; color:var(--ink-950); margin:0;">Steam Web API</h3>
+            <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Badge" tone="info" variant="soft" size="sm" hint-size="auto,22px">API · Perlu key</x-import>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:var(--ink-700); margin:0;">Berita & metadata game PC/Steam. Endpoint GetNewsForApp bagus buat feed berita per game.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Endpoint</span><span style="font-family:var(--font-mono); font-size:12px; color:var(--teal-700); background:var(--teal-100); padding:2px 6px; border-radius:6px; word-break:break-all;">api.steampowered.com/ISteamNews/GetNewsForApp/v2</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-500); flex:0 0 80px;">Guna</span><span style="font-size:13.5px; color:var(--ink-800);">Berita game lintas-platform yang ada di Steam</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LEGAL -->
+    <section style="margin-top:72px;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brand); font-weight:500; margin-bottom:16px;">Rambu penting</div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Callout" tone="warning" title="Atribusi & aturan pakai wajib dipatuhi" hint-size="100%,auto">
+          <p style="margin:0 0 8px; line-height:1.6;"><strong>RAWG</strong>: wajib atribusi + link balik, tanpa redistribusi, kirim header User-Agent. <strong>FreeToGame & GamerPower</strong>: gratis, cukup atribusi. <strong>Riot</strong>: tampilkan disclaimer "not endorsed by Riot Games".</p>
+          <p style="margin:0; line-height:1.6;">Untuk situs referensi (Prydwen, Game8, BlueStacks): teks & tabel mereka <strong>berhak cipta</strong> — jangan salin mentah. Jadikan referensi, tulis ulang dengan gaya sendiri, kasih kredit + link, dan hormati robots.txt / rate limit.</p>
+        </x-import>
+        <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Callout" tone="danger" title="Jaga situs bersih dari judol" hint-size="100%,auto">
+          <p style="margin:0; line-height:1.6;">Jangan pernah memasukkan game judi uang asli, slot, "gacor", atau afiliasi taruhan — meski secara SEO menggoda. Fokus ke game legit: gacha, MOBA, RPG, idle. Hati-hati juga: sebagian "game" gacha punya mekanik mirip judi; sajikan info secukupnya, jangan mendorong belanja berlebihan.</p>
+        </x-import>
+      </div>
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section style="margin-top:72px; background:var(--surface); border:1px solid var(--border); border-radius:28px; padding:36px;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brand); font-weight:500; margin-bottom:10px;">Langkah berikutnya</div>
+      <h2 style="font-family:var(--font-display); font-weight:800; font-size:28px; letter-spacing:-0.03em; color:var(--ink-950); margin:0 0 18px;">Rekomendasi urutan bangun</h2>
+      <ol style="margin:0 0 28px; padding-left:22px; color:var(--ink-700); font-size:15px; line-height:1.75; max-width:66ch;">
+        <li><strong>Mulai dari 1 fitur jualan:</strong> section kode redeem (hoyo-codes + GamerPower) — API gratis, langsung jalan, paling dicari.</li>
+        <li><strong>Bangun katalog:</strong> RAWG + FreeToGame untuk halaman database & kartu game.</li>
+        <li><strong>Tambah editorial:</strong> tier list & guide (kurasi dari Prydwen/Game8, tulis ulang).</li>
+        <li><strong>Jaga tetap hidup:</strong> feed berita (RSS) + kalender event.</li>
+        <li><strong>Sambungkan pipeline:</strong> worker terjadwal → cache JSON → situs baca.</li>
+      </ol>
+      <div style="display:flex; flex-wrap:wrap; gap:12px;">
+        <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Button" href="https://rawg.io/apidocs" variant="outline" size="sm" hint-size="auto,40px">Docs RAWG</x-import>
+        <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Button" href="https://www.freetogame.com/api-doc" variant="outline" size="sm" hint-size="auto,40px">Docs FreeToGame</x-import>
+        <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Button" href="https://www.gamerpower.com/api-read" variant="outline" size="sm" hint-size="auto,40px">Docs GamerPower</x-import>
+        <x-import component-from-global-scope="JEDAKampanyeAntiJudolDesignSystem_c01be6.Button" href="https://github.com/seriaati/hoyo-codes" variant="outline" size="sm" hint-size="auto,40px">hoyo-codes (GitHub)</x-import>
+      </div>
+      <p style="font-size:14px; color:var(--ink-500); margin:24px 0 0; line-height:1.6;">Statistik & endpoint di dokumen ini hasil riset per Juli 2026 — verifikasi ulang sebelum publikasi. Kalau sumbernya oke, tinggal bilang: gw lanjut desain homepage-nya.</p>
+    </section>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
