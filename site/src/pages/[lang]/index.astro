@@ -1,0 +1,45 @@
+---
+import Base from "../../layouts/Base.astro";
+import HomePage from "../../components/HomePage.astro";
+import { LANGS, t } from "../../lib/i18n.mjs";
+import { loadCodes } from "../../lib/codes.mjs";
+import { loadFeed } from "../../lib/feed.mjs";
+import { loadCatalog } from "../../lib/catalog.mjs";
+import { langPaths } from "../../lib/routes.mjs";
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const tr = t(lang);
+const [codes, feed, catalog] = await Promise.all([loadCodes(), loadFeed(lang), loadCatalog()]);
+
+const meta = lang === "id"
+  ? { title: "KodeGG — Portal Info Game Online: Kode Redeem, Event, Berita", desc: "Kode redeem, event & banner, dan berita game online — otomatis, diperbarui tiap jam. Genshin, Star Rail, Zenless, dan lainnya." }
+  : { title: "KodeGG — Online Game Info: Redeem Codes, Events, News", desc: "Redeem codes, events & banners, and online game news — automated, updated hourly. Genshin, Star Rail, Zenless, and more." };
+
+const site = Astro.site.href.replace(/\/$/, "");
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "KodeGG",
+    alternateName: "KodeGG — Portal Info Game Online",
+    url: `${site}/${lang}`,
+    inLanguage: lang === "id" ? "id-ID" : "en-US",
+    description: meta.desc,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "KodeGG",
+    url: `${site}/`,
+    logo: `${site}/assets/favicon-512.png`,
+  },
+];
+---
+
+<Base lang={lang} title={meta.title} description={meta.desc} paths={langPaths("home")} jsonLd={jsonLd}>
+  <HomePage lang={lang} codes={codes} catalog={catalog} feed={feed} />
+</Base>

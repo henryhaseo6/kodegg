@@ -1,0 +1,81 @@
+---
+// Satu kartu feed — event ATAU berita. Klik → modal detail (FeedModal.astro).
+// Event punya rentang tanggal + countdown; berita punya tanggal posting. Kedua
+// jenis punya tombol ke sumber asli di dalam modal.
+import { t } from "../lib/i18n.mjs";
+import { dateRange } from "../lib/events.mjs";
+import { newsDate } from "../lib/news.mjs";
+
+const { it, lang, archived = false } = Astro.props;
+const tr = t(lang);
+const isEvent = it.kind === "event";
+const isBanner = isEvent && it.type === "banner";
+const dates = isEvent ? dateRange(it.startsAt, it.endsAt, lang) : "";
+const posted = newsDate(it.sortMs, lang);
+
+const payload = JSON.stringify({
+  kind: it.kind,
+  game: it.gameName,
+  type: it.type ?? "event",
+  title: it.title,
+  desc: it.desc ?? "",
+  image: it.image ?? "",
+  url: it.url ?? "",
+  source: it.source ?? "",
+  posted,
+  startsAt: it.startsAt ?? "",
+  endsAt: it.endsAt ?? "",
+  dates,
+  characters: it.characters ?? [],
+  weapons: it.weapons ?? [],
+  rewards: it.rewards ?? [],
+});
+
+const badge = isEvent
+  ? { text: isBanner ? tr("ev.banner") : tr("ev.event"), bg: isBanner ? "var(--acc2)" : "var(--acc)", fg: "var(--ink)" }
+  : { text: tr("feed.news"), bg: "rgba(9,12,18,0.82)", fg: "var(--txt)" };
+---
+
+<button
+  class="gg-card"
+  data-feed
+  data-game={it.game}
+  data-kind={it.kind}
+  data-archive={archived ? "1" : undefined}
+  data-search={it.search}
+  data-payload={payload}
+  type="button"
+  style="text-align:left; padding:0; cursor:pointer; display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;"
+>
+  <div style={`position:relative; aspect-ratio:16/9; overflow:hidden; background:linear-gradient(150deg, ${isBanner ? "rgba(139,107,255,0.18)" : "rgba(203,255,70,0.08)"}, var(--surface2));`}>
+    {
+      it.image ? (
+        <img src={it.image} alt="" referrerpolicy="no-referrer" loading="lazy" decoding="async"
+          style={`width:100%; height:100%; object-fit:${isBanner ? "contain" : "cover"}; display:block;`} onerror="this.style.display='none'" />
+      ) : (
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:18px; text-align:center; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:var(--muted); line-height:1.3;">{it.title}</div>
+      )
+    }
+    <span style={`position:absolute; top:10px; left:10px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:${badge.fg}; background:${badge.bg}; border:1px solid var(--line2); padding:3px 8px; border-radius:6px;`}>
+      {badge.text}
+    </span>
+  </div>
+  <div style="padding:14px 15px; display:flex; flex-direction:column; gap:8px; flex:1;">
+    <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--acc);">{it.gameName}</div>
+    <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.28;">{it.title}</div>
+    {it.desc && <div style="font-size:12.5px; color:var(--muted); line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; flex:1;">{it.desc}</div>}
+    <div style="border-top:1px solid var(--line); padding-top:10px; margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:8px; font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">
+      {
+        isEvent ? (
+          <span style="display:inline-flex; align-items:center; gap:5px; color:var(--muted); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+            <span data-deadline={it.endsAt} data-ended={tr("ev.ended")} style="color:var(--warn); font-weight:700;">—</span>
+          </span>
+        ) : (
+          <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{posted}</span>
+        )
+      }
+      <span style="flex:0 0 auto; color:var(--acc);">{tr("feed.open")} ↗</span>
+    </div>
+  </div>
+</button>

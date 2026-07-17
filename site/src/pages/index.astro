@@ -1,0 +1,19 @@
+---
+// Root: arahkan ke bahasa default (ID). Situs statis, jadi memakai meta-refresh;
+// di Cloudflare Pages nanti bisa diganti redirect 302 via _redirects.
+import { DEFAULT_LANG } from "../lib/i18n.mjs";
+const to = `/${DEFAULT_LANG}`;
+---
+
+<!doctype html>
+<html lang={DEFAULT_LANG}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+    <link rel="canonical" href={to} />
+    <title>KodeGG</title>
+  </head>
+  <body>
+    <a href={to}>KodeGG →</a>
+  </body>
+</html>

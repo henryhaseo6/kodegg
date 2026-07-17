@@ -1,0 +1,253 @@
+---
+// Halaman "Jelajah Game" — database game online. Search + filter genre + sort +
+// pagination + favorit (localStorage). Dipakai kedua route bahasa.
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import { t } from "../lib/i18n.mjs";
+import { langPaths } from "../lib/routes.mjs";
+import { GENRE_FILTERS, GENRE_LABEL } from "../lib/catalog.mjs";
+
+const { lang, data } = Astro.props;
+const tr = t(lang);
+const PAGE = 14; // 14 game per halaman (pagination) = 2 baris di desktop
+const fmtNum = (n) => new Intl.NumberFormat(lang === "id" ? "id-ID" : "en-GB").format(n);
+
+const sorts = [
+  ["pop", tr("cat.sortPop")],
+  ["new", tr("cat.sortNew")],
+  ["rating", tr("cat.sortRating")],
+  ["az", tr("cat.sortAZ")],
+];
+---
+
+<Header lang={lang} active="discover" paths={langPaths("discover")} />
+
+<main>
+  <section style="max-width:1280px; margin:0 auto; padding:44px 28px 8px;">
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:42px; line-height:1.03; letter-spacing:-0.03em; color:#fff; margin:0 0 12px;">
+      {tr("cat.title")}
+    </h1>
+    <p style="font-size:16px; line-height:1.55; color:var(--muted); margin:0 0 6px;">
+      {tr("cat.desc")}
+    </p>
+    <div style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint); margin-top:8px;">
+      <span data-count>{data.games.length}</span> {tr("cat.shown")}
+    </div>
+  </section>
+
+  <!-- CONTROLS -->
+  <section style="max-width:1280px; margin:0 auto; padding:18px 28px 4px; display:flex; flex-direction:column; gap:14px;">
+    <div class="gg-controls" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <div style="position:relative; flex:1; min-width:240px;">
+        <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--faint); pointer-events:none;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+        </span>
+        <input class="gg-ac-input" data-search type="search" autocomplete="off" aria-label={tr("cat.search")} placeholder={tr("cat.search")}
+          style="width:100%; box-sizing:border-box; font-family:'Satoshi',sans-serif; font-size:14.5px; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 14px 13px 40px; outline:none;" />
+      </div>
+      <select class="gg-sel" data-sort aria-label={tr("cat.sortBy")} style="font-family:'Satoshi',sans-serif; font-size:14px; font-weight:600; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 38px 13px 14px; cursor:pointer; outline:none; min-width:150px;">
+        {sorts.map(([v, label]) => <option value={v}>{tr("cat.sortBy")}: {label}</option>)}
+      </select>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:9px;">
+      <button class="gg-fchip" data-genre="all" type="button" aria-pressed="true"
+        style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--acc); background:var(--acc); color:var(--ink); border-radius:10px; padding:8px 14px;">
+        {tr("cat.all")}
+      </button>
+      {
+        GENRE_FILTERS.map((g) => (
+          <button class="gg-fchip" data-genre={g} type="button" aria-pressed="false"
+            style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">
+            {GENRE_LABEL[g]}
+          </button>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section style="max-width:1280px; margin:0 auto; padding:16px 28px 8px;">
+    <div data-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(158px,1fr)); gap:16px;">
+      {
+        data.games.map((g) => (
+          <article
+            class="gg-card"
+            data-game-card
+            data-genre={g.genres.join(" ")}
+            data-name={g.name}
+            data-search={g.search}
+            data-pop={g.pop}
+            data-rating={g.rating ?? 0}
+            data-new={g.releasedMs}
+            style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;"
+          >
+            <div style="position:relative; aspect-ratio:1/1; background:var(--surface2);">
+              {g.cover ? (
+                <img src={g.cover} alt={g.name} width="256" height="256" loading="lazy" decoding="async"
+                  style="width:100%; height:100%; object-fit:cover; display:block;"
+                  onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,var(--surface2),var(--bg2))';" />
+              ) : (
+                <span aria-hidden="true" style="display:block; width:100%; height:100%; background:linear-gradient(135deg,var(--surface2),var(--bg2));" />
+              )}
+              <button class="gg-fav" data-fav={g.id} type="button" aria-label="Favorit"
+                style="position:absolute; top:8px; right:8px; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg>
+              </button>
+              {g.hasActiveCodes && (
+                <span style="position:absolute; bottom:8px; left:8px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ink); background:var(--acc); padding:3px 7px; border-radius:6px;">
+                  {tr("cat.hasCodes")}
+                </span>
+              )}
+            </div>
+            <div style="padding:12px 13px; display:flex; flex-direction:column; gap:6px; flex:1;">
+              <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                {g.name}
+              </div>
+              <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">
+                {g.genreLabels.slice(0, 2).join(" · ")}
+                {g.rating ? ` · ★ ${g.rating}` : ""}
+              </div>
+              <div style="margin-top:auto; padding-top:4px;">
+                {g.hasCodes ? (
+                  <a href={`/${lang}/game/${g.id}`}
+                    style="display:inline-block; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--acc); text-decoration:none; border-bottom:1px solid rgba(203,255,70,0.35);">
+                    {tr("cat.viewCodes")} →
+                  </a>
+                ) : (
+                  <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">{tr("cat.browseOnly")}</span>
+                )}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <p data-empty style="display:none; text-align:center; color:var(--muted); font-size:15px; padding:40px 0;">{tr("cat.empty")}</p>
+    <nav data-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:30px;"></nav>
+  </section>
+</main>
+
+<Footer lang={lang} updatedAt={data.updatedAt} />
+
+<script is:inline define:vars={{ PAGE }}>
+  (function () {
+    const grid = document.querySelector("[data-grid]");
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll("[data-game-card]"));
+    const searchEl = document.querySelector("[data-search]");
+    const sortEl = document.querySelector("[data-sort]");
+    // HANYA chip filter (.gg-fchip). Kartu game juga punya data-genre.
+    const chips = Array.from(document.querySelectorAll(".gg-fchip"));
+    const countEl = document.querySelector("[data-count]");
+    const emptyEl = document.querySelector("[data-empty]");
+    const pager = document.querySelector("[data-pager]");
+    const state = { q: "", genre: "all", sort: "pop", page: 1 };
+
+    function filteredSorted() {
+      const q = state.q.trim().toLowerCase();
+      const shown = cards.filter((c) => {
+        const okG = state.genre === "all" || (c.dataset.genre || "").split(" ").includes(state.genre);
+        const okQ = !q || (c.dataset.search || "").includes(q);
+        return okG && okQ;
+      });
+      shown.sort((a, b) => {
+        if (state.sort === "az") return a.dataset.name.localeCompare(b.dataset.name);
+        if (state.sort === "rating") return Number(b.dataset.rating) - Number(a.dataset.rating);
+        if (state.sort === "new") return Number(b.dataset.new) - Number(a.dataset.new);
+        return Number(a.dataset.pop) - Number(b.dataset.pop); // pop: rank kecil = atas
+      });
+      return shown;
+    }
+
+    function pageList(cur, total) {
+      const want = new Set([1, total, cur, cur - 1, cur + 1]);
+      const arr = [...want].filter((n) => n >= 1 && n <= total).sort((a, b) => a - b);
+      const out = [];
+      let prev = 0;
+      for (const n of arr) { if (n - prev > 1) out.push("…"); out.push(n); prev = n; }
+      return out;
+    }
+    function pbtn(label, opts) {
+      const el = document.createElement("button");
+      el.type = "button";
+      el.textContent = label;
+      el.disabled = !!opts.disabled;
+      el.style.cssText =
+        "cursor:pointer; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; min-width:38px; height:38px; padding:0 11px; border-radius:10px; border:1px solid " +
+        (opts.active ? "var(--acc)" : "var(--line2)") + "; background:" + (opts.active ? "var(--acc)" : "var(--surface)") +
+        "; color:" + (opts.active ? "var(--ink)" : opts.disabled ? "var(--faint)" : "var(--txt)") + (opts.disabled ? "; opacity:0.5; cursor:default" : "") + ";";
+      if (opts.onClick && !opts.disabled) el.addEventListener("click", opts.onClick);
+      return el;
+    }
+    function renderPager(total) {
+      pager.innerHTML = "";
+      if (total <= 1) return;
+      const go = (n) => { state.page = n; apply(); grid.scrollIntoView({ behavior: "smooth", block: "start" }); };
+      pager.appendChild(pbtn("‹", { disabled: state.page === 1, onClick: () => go(state.page - 1) }));
+      for (const n of pageList(state.page, total)) {
+        if (n === "…") {
+          const d = document.createElement("span");
+          d.textContent = "…";
+          d.style.cssText = "color:var(--faint); font-family:'Space Mono',monospace; padding:0 4px;";
+          pager.appendChild(d);
+        } else pager.appendChild(pbtn(String(n), { active: n === state.page, onClick: () => go(n) }));
+      }
+      pager.appendChild(pbtn("›", { disabled: state.page === total, onClick: () => go(state.page + 1) }));
+    }
+
+    function apply() {
+      const shown = filteredSorted();
+      const total = Math.max(1, Math.ceil(shown.length / PAGE));
+      if (state.page > total) state.page = total;
+      const start = (state.page - 1) * PAGE;
+      const vis = new Set(shown.slice(start, start + PAGE));
+      for (const c of cards) c.style.display = "none";
+      for (const c of shown) {
+        c.style.display = vis.has(c) ? "flex" : "none";
+        grid.appendChild(c); // jaga urutan terurut
+      }
+      if (countEl) countEl.textContent = String(shown.length);
+      if (emptyEl) emptyEl.style.display = shown.length === 0 ? "block" : "none";
+      renderPager(total);
+    }
+
+    searchEl?.addEventListener("input", (e) => { state.q = e.target.value; state.page = 1; apply(); });
+    sortEl?.addEventListener("change", (e) => { state.sort = e.target.value; state.page = 1; apply(); });
+    chips.forEach((chip) =>
+      chip.addEventListener("click", () => {
+        state.genre = chip.dataset.genre;
+        state.page = 1;
+        chips.forEach((c) => {
+          const on = c === chip;
+          c.setAttribute("aria-pressed", String(on));
+          c.style.background = on ? "var(--acc)" : "var(--surface)";
+          c.style.color = on ? "var(--ink)" : "var(--muted)";
+          c.style.borderColor = on ? "var(--acc)" : "var(--line)";
+        });
+        apply();
+      }),
+    );
+
+    // Favorit (localStorage) — tanpa backend.
+    const KEY = "kodegg:fav";
+    const favs = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+    const paint = (btn, on) => {
+      btn.style.color = on ? "var(--acc)" : "var(--muted)";
+      btn.style.borderColor = on ? "var(--acc)" : "var(--line2)";
+      btn.querySelector("svg").setAttribute("fill", on ? "var(--acc)" : "none");
+    };
+    grid.querySelectorAll("[data-fav]").forEach((btn) => {
+      if (favs.has(btn.dataset.fav)) paint(btn, true);
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.fav;
+        if (favs.has(id)) favs.delete(id);
+        else favs.add(id);
+        localStorage.setItem(KEY, JSON.stringify([...favs]));
+        paint(btn, favs.has(id));
+      });
+    });
+
+    apply();
+  })();
+</script>

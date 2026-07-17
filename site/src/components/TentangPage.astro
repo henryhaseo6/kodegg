@@ -1,0 +1,40 @@
+---
+import Header from "./Header.astro";
+import Breadcrumb from "./Breadcrumb.astro";
+import Footer from "./Footer.astro";
+import { route, langPaths } from "../lib/routes.mjs";
+
+const { lang } = Astro.props;
+const id = lang === "id";
+
+const sections = id
+  ? [
+      { h: "Apa itu KodeGG?", p: "KodeGG adalah portal informasi game online dan live-service — kode redeem, event & banner, dan berita — untuk Android dan lintas platform. Fokus kami hanya game yang punya siklus konten berkelanjutan: event berkala, banner gacha, patch, dan kode redeem." },
+      { h: "Dari mana datanya?", p: "Kode dan data ditarik otomatis dari sumber tepercaya lalu diperbarui berkala. Kami memakai lebih dari satu sumber untuk tiap data bila memungkinkan, dan saling cek-silang agar informasi yang tampil selengkap dan seakurat mungkin. Kode kedaluwarsa tidak dihapus — diarsipkan jadi database." },
+      { h: "Bersih dari judol", p: "KodeGG tidak memuat judi uang asli, slot, atau afiliasi taruhan dalam bentuk apa pun. Kami menyajikan info gacha secukupnya sebagai informasi, bukan mendorong belanja berlebihan." },
+      { h: "Atribusi", p: "KodeGG bukan situs resmi dan tidak berafiliasi dengan penerbit game mana pun. Seluruh nama game, item, dan aset adalah milik pemiliknya masing-masing. Berita & event bersumber dari HoYoLAB (resmi HoYoverse); data game dari App Store; kode dari hoyo-codes, ennead.cc, crimsonwitch, wuwastatus, tot.wiki, dan wiki komunitas." },
+    ]
+  : [
+      { h: "What is KodeGG?", p: "KodeGG is an information portal for online and live-service games — redeem codes, events & banners, and news — for Android and cross-platform. We focus only on games with an ongoing content cycle: recurring events, gacha banners, patches, and redeem codes." },
+      { h: "Where does the data come from?", p: "Codes and data are pulled automatically from trusted sources and refreshed regularly. Where possible we use more than one source per data point and cross-check them, so what you see is as complete and accurate as possible. Expired codes aren't deleted — they're archived into a database." },
+      { h: "Free of online gambling", p: "KodeGG contains no real-money gambling, slots, or betting affiliations of any kind. We present gacha info as information, not as encouragement to overspend." },
+      { h: "Attribution", p: "KodeGG is unofficial and not affiliated with any game publisher. All game names, items, and assets belong to their respective owners. News & events are sourced from HoYoLAB (official HoYoverse); game data from the App Store; codes from hoyo-codes, ennead.cc, crimsonwitch, wuwastatus, tot.wiki, and community wikis." },
+    ];
+---
+
+<Header lang={lang} active={null} paths={langPaths("about")} />
+<Breadcrumb items={[{ label: id ? "Beranda" : "Home", href: route("home", lang) }, { label: id ? "Tentang" : "About" }]} />
+<main style="max-width:820px; margin:0 auto; padding:48px 28px 8px;">
+  <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:42px; line-height:1.05; letter-spacing:-0.03em; color:#fff; margin:0 0 26px;">
+    {id ? "Tentang KodeGG" : "About KodeGG"}
+  </h1>
+  {
+    sections.map((s) => (
+      <section style="margin-bottom:26px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; color:var(--txt); margin:0 0 8px;">{s.h}</h2>
+        <p style="font-size:15.5px; line-height:1.7; color:var(--muted); margin:0; max-width:70ch;">{s.p}</p>
+      </section>
+    ))
+  }
+</main>
+<Footer lang={lang} updatedAt={null} />

@@ -1,0 +1,48 @@
+---
+import Header from "./Header.astro";
+import Breadcrumb from "./Breadcrumb.astro";
+import Footer from "./Footer.astro";
+import { route, langPaths } from "../lib/routes.mjs";
+
+const { lang } = Astro.props;
+const id = lang === "id";
+const EMAIL = "halo@kodegg.com";
+
+const cards = id
+  ? [
+      { h: "Lapor / usul", p: "Nemu kode yang salah atau kedaluwarsa, atau mau usul game untuk ditambah? Kabari kami — masukanmu bikin data makin akurat." },
+      { h: "Kerja sama", p: "Untuk kerja sama, media, atau pertanyaan lain, email kami dan kami balas secepatnya." },
+    ]
+  : [
+      { h: "Report / suggest", p: "Found a wrong or expired code, or want to suggest a game to add? Let us know — your feedback keeps the data accurate." },
+      { h: "Partnerships", p: "For partnerships, press, or any other question, email us and we'll get back to you shortly." },
+    ];
+---
+
+<Header lang={lang} active={null} paths={langPaths("contact")} />
+<Breadcrumb items={[{ label: id ? "Beranda" : "Home", href: route("home", lang) }, { label: id ? "Kontak" : "Contact" }]} />
+<main style="max-width:820px; margin:0 auto; padding:48px 28px 8px;">
+  <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:42px; line-height:1.05; letter-spacing:-0.03em; color:#fff; margin:0 0 14px;">
+    {id ? "Kontak" : "Contact"}
+  </h1>
+  <p style="font-size:16px; line-height:1.6; color:var(--muted); margin:0 0 26px; max-width:64ch;">
+    {id ? "Ada masukan, laporan, atau ingin kerja sama? Kami senang mendengarnya." : "Feedback, a report, or a partnership idea? We'd love to hear from you."}
+  </p>
+
+  <a href={`mailto:${EMAIL}`} class="gg-cta"
+    style="display:inline-flex; align-items:center; gap:9px; font-family:'Space Mono',monospace; font-weight:700; font-size:14px; color:var(--ink); background:var(--acc); text-decoration:none; border-radius:12px; padding:13px 20px; margin-bottom:32px;">
+    {EMAIL} ↗
+  </a>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;">
+    {
+      cards.map((c) => (
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px;">
+          <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; color:var(--txt); margin:0 0 7px;">{c.h}</h2>
+          <p style="font-size:14px; line-height:1.6; color:var(--muted); margin:0;">{c.p}</p>
+        </div>
+      ))
+    }
+  </div>
+</main>
+<Footer lang={lang} updatedAt={null} />

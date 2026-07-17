@@ -1,0 +1,152 @@
+---
+// Satu kartu kode redeem. Struktur & style dipindah dari mockup Kode Redeem.
+//
+// Tiga penyimpangan dari mockup, semuanya karena data ASLI berbeda dari sample:
+//  1. Countdown "Berakhir dalam" → "Terpantau <relatif>". Sumber tidak
+//     menyediakan tanggal kedaluwarsa (lihat schema/worker). Kode HoYo permanen
+//     tetap ditandai "Tanpa batas".
+//  2. Reward kosong (mis. Honkai Impact 3rd) → catatan kecil, bukan dikarang.
+//  3. Giveaway GamerPower diklaim via tombol Klaim (URL), bukan kode + Salin.
+import { t } from "../lib/i18n.mjs";
+
+const { card, lang } = Astro.props;
+const tr = t(lang);
+
+const isClaim = !card.code && card.claimUrl; // giveaway GamerPower
+
+// Tanggal ABSOLUT (bukan "hari ini" relatif — itu berubah tiap build & terlihat
+// palsu saat semua kode tampak "hari ini"). Prioritas tanggal SUMBER (kolom
+// Date/Released wiki); bila sumber tak punya tanggal (mis. API HoYo), pakai
+// firstSeenAt (kapan worker pertama melihatnya) dengan label "Terpantau".
+const fmtDate = (iso) =>
+  new Date(iso).toLocaleDateString(lang === "id" ? "id-ID" : "en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "Asia/Jakarta",
+  });
+
+let badge;
+if (card.perm) {
+  badge = { text: lang === "id" ? "Tanpa batas" : "No expiry", color: "var(--ok)" };
+} else if (card.date) {
+  badge = { text: `${lang === "id" ? "Rilis" : "Released"} ${fmtDate(card.date)}`, color: "var(--faint)" };
+} else if (card.firstSeenAt) {
+  badge = { text: `${tr("card.seen")} ${fmtDate(card.firstSeenAt)}`, color: "var(--faint)" };
+} else {
+  badge = { text: "—", color: "var(--faint)" };
+}
+---
+
+<article
+  class="gg-card"
+  data-code-card
+  data-game={card.game ?? ""}
+  data-name={card.name}
+  data-search={card.search}
+  data-seen={card.seenMs}
+  style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;"
+>
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+    <div style="display:flex; align-items:center; gap:11px; min-width:0;">
+      <span
+        style="width:38px; height:38px; border-radius:10px; overflow:hidden; flex:0 0 38px; background:var(--surface2); border:1px solid var(--line); display:block;"
+      >
+        {
+          card.icon ? (
+            // onerror: sampai icon diunggah ke public/assets/games/, berkasnya
+            // 404 dan menampilkan teks alt yang terpotong jelek. Turunkan ke
+            // gradien netral; begitu berkas ada, tampil normal tanpa perubahan.
+            <img
+              src={card.icon}
+              alt={card.name}
+              width="38"
+              height="38"
+              loading="lazy"
+              decoding="async"
+              style="width:100%; height:100%; object-fit:cover; display:block;"
+              onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,var(--surface2),var(--bg2))';"
+            />
+          ) : (
+            <span
+              aria-hidden="true"
+              style="width:100%; height:100%; display:block; background:linear-gradient(135deg,var(--surface2),var(--bg2));"
+            />
+          )
+        }
+      </span>
+      <div style="min-width:0;">
+        <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+          {card.name}
+        </div>
+        <div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">
+          {card.source}
+        </div>
+      </div>
+    </div>
+    <span
+      style="flex:0 0 auto; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"
+      >{tr("card.active")}</span
+    >
+  </div>
+
+  {
+    card.reward ? (
+      <div style="font-size:13px; color:var(--muted); line-height:1.5;">{card.reward}</div>
+    ) : (
+      <div style="font-size:12.5px; color:var(--faint); font-style:italic; line-height:1.5;">
+        {tr("card.noReward")}
+      </div>
+    )
+  }
+
+  {
+    isClaim ? (
+      <a
+        href={card.claimUrl}
+        rel="noopener nofollow"
+        target="_blank"
+        class="gg-copy"
+        style="text-align:center; text-decoration:none; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:11px 12px; transition:all .15s;"
+      >
+        {tr("card.claim")} ↗
+      </a>
+    ) : (
+      <div style="display:flex; align-items:center; gap:9px;">
+        <code style="flex:1; min-width:0; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center; overflow:hidden; text-overflow:ellipsis;">
+          {card.code}
+        </code>
+        <button
+          class="gg-copy"
+          data-copy={card.code}
+          data-label={tr("card.copy")}
+          data-done={tr("card.copied")}
+          type="button"
+          style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;"
+        >
+          {tr("card.copy")}
+        </button>
+      </div>
+    )
+  }
+
+  <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px; gap:8px;">
+    <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">
+      {
+        /* Tautan ke SUMBER asli (selalu hidup): halaman redeem HoYo, halaman
+           wiki, atau wuwastatus. Sengaja bukan redeemUrl — sebagian game
+           (mis. Reverse:1999) redeem in-game & tak punya halaman web. */
+        card.sourceUrl ? (
+          <a href={card.sourceUrl} rel="noopener nofollow" target="_blank" style="color:var(--faint); text-decoration:none; border-bottom:1px dotted var(--line2);">
+            {card.source}
+          </a>
+        ) : (
+          card.source
+        )
+      }
+    </span>
+    <span style={`font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:${badge.color};`}>
+      {badge.text}
+    </span>
+  </div>
+</article>

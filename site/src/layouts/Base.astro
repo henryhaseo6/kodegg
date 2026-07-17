@@ -1,0 +1,194 @@
+---
+// Layout dasar. Menggantikan <helmet> + <x-dc> dari mockup Design Component.
+// Token warna dipindah apa adanya dari wrapper .dc.html agar visual identik.
+import { otherLang } from "../lib/i18n.mjs";
+
+// paths = {id, en} bila slug beda per bahasa (mis. /id/jelajah vs /en/discover).
+// path = suffix tunggal (fallback, slug sama utk kedua bahasa).
+// jsonLd = array objek Schema.org (dirender sbg <script ld+json>).
+const { lang, title, description, path, paths, jsonLd = [] } = Astro.props;
+const other = otherLang(lang);
+const pathFor = (l) => (paths ? paths[l] : `/${l}${path ?? ""}`);
+const canonical = new URL(pathFor(lang), Astro.site).href;
+const altUrl = (l) => new URL(pathFor(l), Astro.site).href;
+const ogImage = new URL("/assets/og.png", Astro.site).href;
+const locale = lang === "id" ? "id_ID" : "en_US";
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="id" href={altUrl("id")} />
+    <link rel="alternate" hreflang="en" href={altUrl("en")} />
+    <link rel="alternate" hreflang="x-default" href={altUrl("id")} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="KodeGG" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:locale:alternate" content={lang === "id" ? "en_US" : "id_ID"} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {jsonLd.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj)} />)}
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png" />
+
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="gg-root">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  /* Token dipindah verbatim dari wrapper .dc.html — jangan diubah tanpa
+     menyesuaikan mockup di root repo (acuan visual). */
+  .gg-root {
+    --bg: #090c12;
+    --bg2: #0e121b;
+    --surface: #151b27;
+    --surface2: #1c2331;
+    --line: rgba(255, 255, 255, 0.08);
+    --line2: rgba(255, 255, 255, 0.15);
+    --txt: #eef1f6;
+    --muted: #98a2b3;
+    --faint: #5b6472;
+    --acc: #cbff46;
+    --acc2: #8b6bff;
+    --ink: #090c12;
+    --ok: #37e38b;
+    --warn: #ffb13c;
+    --danger: #ff5c77;
+    font-family: "Satoshi", system-ui, sans-serif;
+    color: var(--txt);
+    min-height: 100vh;
+    background:
+      radial-gradient(1100px 560px at 82% -12%, rgba(139, 107, 255, 0.13), transparent 60%),
+      radial-gradient(1000px 520px at -5% 0%, rgba(203, 255, 70, 0.06), transparent 55%),
+      var(--bg);
+  }
+
+  body {
+    margin: 0;
+    background: #090c12;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: #cbff46;
+    color: #090c12;
+  }
+
+  @keyframes glowPulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+
+  .gg-nav:hover {
+    color: #eef1f6 !important;
+  }
+  .gg-card {
+    transition:
+      transform 0.22s cubic-bezier(0.2, 0.7, 0.3, 1),
+      box-shadow 0.22s,
+      border-color 0.22s;
+  }
+  .gg-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(203, 255, 70, 0.4) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  }
+  .gg-copy:hover {
+    background: #cbff46 !important;
+    color: #090c12 !important;
+    border-color: #cbff46 !important;
+  }
+  .gg-more:hover {
+    background: #1c2331 !important;
+    border-color: rgba(203, 255, 70, 0.5) !important;
+  }
+  .gg-ac-input::placeholder {
+    color: #5b6472;
+  }
+  .gg-sel {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2398A2B3' stroke-width='3' stroke-linecap='round'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  .gg-sug:hover {
+    background: #1c2331 !important;
+  }
+  details > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .gg-arch-chev {
+    transform: rotate(180deg);
+  }
+
+  /* Fokus terlihat: mockup mematikan outline default lewat `outline:none`
+     pada input/select tanpa penggantinya — itu menjebak pengguna keyboard. */
+  .gg-root :is(a, button, input, select, summary):focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  .gg-crumb:hover {
+    color: var(--acc) !important;
+  }
+
+  @media (max-width: 720px) {
+    .gg-headnav {
+      display: none !important;
+    }
+    .gg-menu-btn {
+      display: flex !important;
+    }
+    .gg-controls {
+      flex-direction: column !important;
+      align-items: stretch !important;
+    }
+  }
+  /* Panel mobile tak boleh tersisa terbuka saat layar melebar ke desktop. */
+  @media (min-width: 721px) {
+    .gg-mobile-nav {
+      display: none !important;
+    }
+  }
+</style>

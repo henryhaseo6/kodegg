@@ -1,0 +1,103 @@
+---
+// Modal detail event + skrip countdown — dipakai halaman Event & per-game.
+// Skrip: (1) tick semua [data-deadline] tiap detik, (2) klik [data-event] →
+// buka modal berisi payload dari data-payload kartu.
+import { t } from "../lib/i18n.mjs";
+const { lang } = Astro.props;
+const tr = t(lang);
+const id = lang === "id";
+---
+
+<div data-modal style="display:none; position:fixed; inset:0; z-index:100; background:rgba(9,12,18,0.82); backdrop-filter:blur(6px); align-items:flex-start; justify-content:center; padding:20px; overflow-y:auto;">
+  <div style="background:var(--surface); border:1px solid var(--line2); border-radius:20px; max-width:640px; width:100%; margin:auto; box-shadow:0 30px 80px rgba(0,0,0,0.6); overflow:hidden;">
+    <div data-m-hero style="position:relative; aspect-ratio:16/9; background:var(--surface2);">
+      <button data-m-close type="button" aria-label={tr("ev.close")} style="position:absolute; top:12px; right:12px; z-index:2; cursor:pointer; width:34px; height:34px; border-radius:10px; border:1px solid var(--line2); background:rgba(9,12,18,0.8); color:#fff; font-size:18px; line-height:1;">×</button>
+    </div>
+    <div style="padding:20px 22px;">
+      <div data-m-game style="font-family:'Space Mono',monospace; font-size:11px; color:var(--acc); margin-bottom:5px;"></div>
+      <div data-m-title style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; color:var(--txt); line-height:1.25;"></div>
+      <div style="display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px; margin:10px 0 16px; font-family:'Space Mono',monospace; font-size:12px;">
+        <span data-m-dates style="display:inline-flex; align-items:center; gap:6px; color:var(--muted);"></span>
+        <span style="display:inline-flex; align-items:center; gap:6px;"><span style="color:var(--faint);">{tr("ev.endsIn")}</span><span data-m-cd data-deadline="" data-ended={tr("ev.ended")} style="color:var(--warn); font-weight:700;">—</span></span>
+      </div>
+      <div data-m-body></div>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ lang, L_CHAR: id ? "Karakter" : "Characters", L_WEAP: id ? "Senjata" : "Weapons", L_REW: id ? "Reward" : "Rewards", L_NODETAIL: id ? "Detail lengkap belum tersedia dari sumber untuk event ini — pantau countdown-nya biar tak kelewat." : "Full details aren't available from the source for this event — keep an eye on the countdown so you don't miss it." }}>
+  (function () {
+    // Countdown untuk SEMUA [data-deadline] di halaman (kartu + modal).
+    function fmt(ms) {
+      if (ms <= 0) return null;
+      const d = Math.floor(ms / 86400000), h = Math.floor((ms % 86400000) / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
+      if (d > 0) return `${d}${lang === "id" ? "h" : "d"} ${h}${lang === "id" ? "j" : "h"} ${m}m`;
+      return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+    }
+    function tick() {
+      const now = Date.now();
+      for (const el of document.querySelectorAll("[data-deadline]")) {
+        const dl = el.getAttribute("data-deadline");
+        if (!dl) continue;
+        const t = Date.parse(dl);
+        if (isNaN(t)) continue;
+        const left = fmt(t - now);
+        el.textContent = left === null ? el.getAttribute("data-ended") : left;
+      }
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // Modal
+    const modal = document.querySelector("[data-modal]");
+    if (!modal) return;
+    const mHero = modal.querySelector("[data-m-hero]");
+    const mGame = modal.querySelector("[data-m-game]");
+    const mTitle = modal.querySelector("[data-m-title]");
+    const mDates = modal.querySelector("[data-m-dates]");
+    const mCd = modal.querySelector("[data-m-cd]");
+    const mBody = modal.querySelector("[data-m-body]");
+    const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+
+    function itemGrid(label, items, gold) {
+      if (!items || !items.length) return "";
+      const chips = items.map((it) => `
+        <span style="display:flex; align-items:center; gap:6px; font-family:'Space Mono',monospace; font-size:11px; color:${gold && it.rarity === 5 ? "var(--warn)" : "var(--muted)"}; background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:4px 8px;">
+          ${it.icon ? `<img src="${esc(it.icon)}" alt="" referrerpolicy="no-referrer" width="18" height="18" style="border-radius:50%; display:block;" onerror="this.style.display='none'">` : ""}
+          ${esc(it.name)}${it.amount ? ` ×${esc(it.amount)}` : it.rarity === 5 ? " ★5" : ""}
+        </span>`).join("");
+      return `<div style="margin-bottom:16px;"><div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.08em; color:var(--acc); margin-bottom:9px;">${esc(label).toUpperCase()}</div><div style="display:flex; flex-wrap:wrap; gap:7px;">${chips}</div></div>`;
+    }
+
+    function open(card) {
+      const d = JSON.parse(card.dataset.payload);
+      mHero.style.background = d.type === "banner" ? "linear-gradient(150deg,rgba(139,107,255,0.2),var(--surface2))" : "var(--surface2)";
+      const old = mHero.querySelector("img"); if (old) old.remove();
+      if (d.image) {
+        const img = document.createElement("img");
+        img.src = d.image; img.referrerPolicy = "no-referrer"; img.alt = "";
+        img.style.cssText = `width:100%; height:100%; object-fit:${d.type === "banner" ? "contain" : "cover"}; display:block;`;
+        img.onerror = () => img.remove();
+        mHero.insertBefore(img, mHero.firstChild);
+      }
+      mGame.textContent = d.game + (d.sub ? ` · ${d.sub}` : "");
+      mTitle.textContent = d.title;
+      mDates.innerHTML = d.dates
+        ? `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>${esc(d.dates)}`
+        : "";
+      mCd.setAttribute("data-deadline", d.endsAt || "");
+      const detail =
+        (d.desc ? `<p style="font-size:14px; line-height:1.7; color:var(--muted); margin:0 0 18px;">${esc(d.desc)}</p>` : "") +
+        itemGrid(L_CHAR, d.characters, true) + itemGrid(L_WEAP, d.weapons, true) + itemGrid(L_REW, d.rewards, false);
+      mBody.innerHTML = detail || `<p style="font-size:13.5px; color:var(--faint); margin:0; line-height:1.6;">${L_NODETAIL}</p>`;
+      tick();
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+    function close() { modal.style.display = "none"; document.body.style.overflow = ""; }
+    document.querySelectorAll("[data-event]").forEach((c) => c.addEventListener("click", () => open(c)));
+    modal.querySelector("[data-m-close]").addEventListener("click", close);
+    modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  })();
+</script>

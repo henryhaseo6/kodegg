@@ -1,0 +1,48 @@
+---
+// Satu kartu event/banner — dipakai halaman Event & halaman per-game.
+// Klik → modal detail (lihat EventModal.astro; skrip mencari [data-event]).
+import { t } from "../lib/i18n.mjs";
+import { dateRange } from "../lib/events.mjs";
+
+const { e, lang } = Astro.props;
+const tr = t(lang);
+
+const payload = JSON.stringify({
+  game: e.gameName, sub: e.sub ?? "", type: e.type, title: e.title,
+  desc: e.desc ?? "", image: e.image ?? "", endsAt: e.endsAt ?? "", startsAt: e.startsAt ?? "",
+  dates: dateRange(e.startsAt, e.endsAt, lang),
+  characters: e.characters ?? [], weapons: e.weapons ?? [], rewards: e.rewards ?? [],
+});
+---
+
+<button class="gg-card" data-event data-game={e.game} data-type={e.type} data-payload={payload} type="button"
+  style="text-align:left; padding:0; cursor:pointer; display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+  <div style={`position:relative; aspect-ratio:16/9; overflow:hidden; background:linear-gradient(150deg, ${e.type === "banner" ? "rgba(139,107,255,0.18)" : "rgba(203,255,70,0.10)"}, var(--surface2));`}>
+    {
+      e.image ? (
+        <img src={e.image} alt="" referrerpolicy="no-referrer" loading="lazy" decoding="async"
+          style={`width:100%; height:100%; object-fit:${e.type === "banner" ? "contain" : "cover"}; display:block;`} onerror="this.style.display='none'" />
+      ) : (
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:18px; text-align:center; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; color:var(--muted); line-height:1.3;">{e.title}</div>
+      )
+    }
+    <span style={`position:absolute; top:10px; left:10px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ink); background:${e.type === "banner" ? "var(--acc2)" : "var(--acc)"}; padding:3px 8px; border-radius:6px;`}>
+      {e.type === "banner" ? tr("ev.banner") : tr("ev.event")}
+    </span>
+  </div>
+  <div style="padding:15px 16px; display:flex; flex-direction:column; gap:9px; flex:1;">
+    <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--acc);">{e.gameName}{e.sub ? ` · ${e.sub}` : ""}</div>
+    <div style="font-size:15px; font-weight:700; color:var(--txt); line-height:1.25;">{e.title}</div>
+    {e.desc && <div style="font-size:12.5px; color:var(--muted); line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">{e.desc}</div>}
+    <div style="border-top:1px solid var(--line); padding-top:11px; margin-top:auto; display:flex; flex-direction:column; gap:6px;">
+      <div style="display:flex; align-items:center; gap:6px; font-family:'Space Mono',monospace; font-size:11px; color:var(--muted);">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+        {dateRange(e.startsAt, e.endsAt, lang)}
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+        <span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">{tr("ev.endsIn")}</span>
+        <span data-deadline={e.endsAt} data-ended={tr("ev.ended")} style="font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--warn);">—</span>
+      </div>
+    </div>
+  </div>
+</button>

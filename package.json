@@ -1,0 +1,13 @@
+{
+  "name": "kodegg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KodeGG — portal info game online (kode redeem, event, tier). Monorepo: worker (penarik data) + site (Astro SSG).",
+  "scripts": {
+    "data": "node worker/fetch-codes.mjs",
+    "icons": "node worker/fetch-icons.mjs",
+    "test": "cd worker && npm test",
+    "dev": "cd site && npm run dev",
+    "build": "node build.mjs"
+  }
+}

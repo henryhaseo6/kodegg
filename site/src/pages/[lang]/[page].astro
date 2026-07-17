@@ -1,0 +1,70 @@
+---
+// Route TERPADU untuk semua halaman statis (selain beranda & per-game). Slug
+// per bahasa dari lib/routes.mjs → /id/jelajah, /en/discover, dst. Tiap slug
+// dipetakan ke komponen + data + meta-nya.
+import Base from "../../layouts/Base.astro";
+import CatalogPage from "../../components/CatalogPage.astro";
+import RedeemPage from "../../components/RedeemPage.astro";
+import FeedPage from "../../components/FeedPage.astro";
+import FavoritPage from "../../components/FavoritPage.astro";
+import TentangPage from "../../components/TentangPage.astro";
+import KontakPage from "../../components/KontakPage.astro";
+import { LANGS, t } from "../../lib/i18n.mjs";
+import { SLUGS, PAGE_KEYS, langPaths } from "../../lib/routes.mjs";
+import { loadCatalog } from "../../lib/catalog.mjs";
+import { loadCodes } from "../../lib/codes.mjs";
+import { loadFeed } from "../../lib/feed.mjs";
+
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) =>
+    PAGE_KEYS.map((key) => ({ params: { lang, page: SLUGS[key][lang] }, props: { key } })),
+  );
+}
+
+const { lang } = Astro.params;
+const { key } = Astro.props;
+const tr = t(lang);
+const id = lang === "id";
+
+let Comp;
+let data = null;
+let title;
+let desc;
+if (key === "discover") {
+  Comp = CatalogPage;
+  data = await loadCatalog();
+  title = tr("cat.metaTitle");
+  desc = tr("cat.metaDesc");
+} else if (key === "codes") {
+  Comp = RedeemPage;
+  data = await loadCodes();
+  title = tr("page.metaTitle");
+  desc = tr("page.metaDesc");
+} else if (key === "news") {
+  Comp = FeedPage;
+  data = await loadFeed(lang);
+  title = tr("feed.metaTitle");
+  desc = tr("feed.metaDesc");
+} else if (key === "saved") {
+  Comp = FavoritPage;
+  data = await loadCatalog();
+  title = tr("fav.metaTitle");
+  desc = tr("fav.metaDesc");
+} else if (key === "about") {
+  Comp = TentangPage;
+  title = id ? "Tentang KodeGG — Portal Info Game Online" : "About KodeGG — Online Game Info Portal";
+  desc = id
+    ? "Apa itu KodeGG, dari mana datanya, dan komitmen kami: bersih dari judi online."
+    : "What KodeGG is, where the data comes from, and our commitment: free of online gambling.";
+} else {
+  Comp = KontakPage;
+  title = id ? "Kontak — KodeGG" : "Contact — KodeGG";
+  desc = id
+    ? "Hubungi KodeGG: lapor kode kedaluwarsa, usul game, atau kerja sama."
+    : "Get in touch with KodeGG: report expired codes, suggest games, or partnerships.";
+}
+---
+
+<Base lang={lang} title={title} description={desc} paths={langPaths(key)}>
+  <Comp lang={lang} data={data} />
+</Base>

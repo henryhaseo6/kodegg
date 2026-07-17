@@ -1,0 +1,53 @@
+# Auto-update kode redeem: jalankan worker tiap jam, commit codes.json,
+# push → memicu rebuild Cloudflare Pages.
+#
+# KENAPA commit (bukan sekadar ping deploy-hook): codes.json harus BERTAHAN
+# antar-build supaya:
+#   - firstSeenAt tiap kode tetap (label "Terpantau N hari lalu" akurat),
+#   - arsip kode kadaluarsa terus terakumulasi (jadi database).
+# Kalau tiap build mulai dari nol, kedua hal itu kereset.
+
+name: update-codes
+
+on:
+  schedule:
+    - cron: "0 * * * *" # tiap jam (UTC)
+  workflow_dispatch: {} # bisa dijalankan manual dari tab Actions
+
+# Cukup satu run sekaligus; batalkan yang lama bila menumpuk.
+concurrency:
+  group: update-codes
+  cancel-in-progress: true
+
+permissions:
+  contents: write # untuk commit codes.json
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Tarik data time-sensitive (kode, event, berita)
+        run: |
+          node worker/fetch-codes.mjs || echo "codes gagal, lanjut"
+          node worker/fetch-events.mjs || echo "events gagal, lanjut"
+          node worker/fetch-news.mjs || echo "news gagal, lanjut"
+
+      - name: Commit bila ada perubahan
+        run: |
+          if git diff --quiet -- worker/data/; then
+            echo "Tidak ada perubahan data."
+            exit 0
+          fi
+          git config user.name "kodegg-bot"
+          git config user.email "bot@kodegg.com"
+          git add worker/data/
+          git commit -m "chore: update data (kode/event/berita) [skip ci]"
+          git push
+        # Push memicu rebuild Cloudflare Pages (build ulang seluruh situs,
+        # sekaligus refresh katalog & karakter yang jarang berubah).

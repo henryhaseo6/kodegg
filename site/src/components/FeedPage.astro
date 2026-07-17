@@ -1,0 +1,169 @@
+---
+// Halaman Berita & Event — SATU feed. Event (ada masa waktu) + berita (tanpa)
+// digabung, diurut dari postingan terbaru. Semua kartu klik → modal + tombol
+// ke sumber asli.
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import FeedCard from "./FeedCard.astro";
+import FeedModal from "./FeedModal.astro";
+import { t } from "../lib/i18n.mjs";
+import { langPaths } from "../lib/routes.mjs";
+
+const { lang, data } = Astro.props;
+const tr = t(lang);
+const PAGE = 8; // item per halaman (pagination)
+const fmtNum = (n) => new Intl.NumberFormat(lang === "id" ? "id-ID" : "en-GB").format(n);
+---
+
+<Header lang={lang} active="news" paths={langPaths("news")} />
+
+<main>
+  <section style="max-width:1280px; margin:0 auto; padding:44px 28px 8px;">
+    <div style="display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:var(--acc); margin-bottom:14px;">
+      <span style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span>
+      {tr("feed.live")}
+    </div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:42px; line-height:1.03; letter-spacing:-0.03em; color:#fff; margin:0 0 12px;">
+      {tr("feed.title")}
+    </h1>
+    <p style="font-size:16px; line-height:1.55; color:var(--muted); margin:0;">{tr("feed.desc")}</p>
+  </section>
+
+  <!-- CONTROLS -->
+  <section style="max-width:1280px; margin:0 auto; padding:18px 28px 4px;">
+    <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <div data-kind-tabs style="display:inline-flex; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:4px; gap:2px;">
+        <button data-kind="all" class="gg-kind is-on" type="button" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; border:none; background:transparent; color:var(--txt); padding:8px 14px; border-radius:9px;">{tr("feed.all")}</button>
+        <button data-kind="event" class="gg-kind" type="button" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; border:none; background:transparent; color:var(--muted); padding:8px 14px; border-radius:9px;">{tr("feed.events")}</button>
+        <button data-kind="news" class="gg-kind" type="button" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; border:none; background:transparent; color:var(--muted); padding:8px 14px; border-radius:9px;">{tr("feed.news")}</button>
+        <button data-kind="archive" class="gg-kind" type="button" style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; border:none; background:transparent; color:var(--muted); padding:8px 14px; border-radius:9px;">{tr("feed.archive")}</button>
+      </div>
+      <select class="gg-sel" data-game aria-label={tr("news.all")}
+        style="font-family:'Satoshi',sans-serif; font-size:14px; font-weight:600; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 38px 13px 14px; cursor:pointer; outline:none; min-width:180px;">
+        <option value="all">{tr("news.all")}</option>
+        {data.games.map((g) => <option value={g.id}>{g.name}</option>)}
+      </select>
+      <div style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);">
+        <span data-count>{fmtNum(data.items.length)}</span> {tr("feed.shown")}
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section style="max-width:1280px; margin:0 auto; padding:20px 28px 8px;">
+    <div data-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:18px;">
+      {data.items.map((it) => <FeedCard it={it} lang={lang} />)}
+      {data.archive.map((it) => <FeedCard it={it} lang={lang} archived />)}
+    </div>
+    <p data-empty style="display:none; text-align:center; color:var(--muted); font-size:15px; padding:40px 0;">{tr("feed.empty")}</p>
+    <nav data-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:30px;"></nav>
+  </section>
+</main>
+
+<FeedModal lang={lang} />
+<Footer lang={lang} updatedAt={data.updatedAt} />
+
+<script is:inline define:vars={{ PAGE }}>
+  (function () {
+    const grid = document.querySelector("[data-grid]");
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll("[data-feed]"));
+    const gameEl = document.querySelector("[data-game]");
+    // HANYA tombol tab di [data-kind-tabs] — kartu feed juga punya data-kind.
+    const kindBtns = Array.from(document.querySelectorAll("[data-kind-tabs] [data-kind]"));
+    const countEl = document.querySelector("[data-count]");
+    const emptyEl = document.querySelector("[data-empty]");
+    const pager = document.querySelector("[data-pager]");
+    const gridTop = document.querySelector("[data-grid]");
+    const state = { game: "all", kind: "all", page: 1 };
+
+    const filtered = () =>
+      cards.filter((c) => {
+        if (state.game !== "all" && c.dataset.game !== state.game) return false;
+        const isArch = c.hasAttribute("data-archive");
+        if (state.kind === "archive") return isArch; // tab Arsip = HANYA arsip
+        if (isArch) return false; // tab aktif (Semua/Event/Berita) sembunyikan arsip
+        return state.kind === "all" || c.dataset.kind === state.kind;
+      });
+
+    // Nomor halaman yang ditampilkan: 1, sekitar current, terakhir; sisipkan "…".
+    function pageList(cur, total) {
+      const want = new Set([1, total, cur, cur - 1, cur + 1]);
+      const arr = [...want].filter((n) => n >= 1 && n <= total).sort((a, b) => a - b);
+      const out = [];
+      let prev = 0;
+      for (const n of arr) {
+        if (n - prev > 1) out.push("…");
+        out.push(n);
+        prev = n;
+      }
+      return out;
+    }
+
+    function btn(label, opts) {
+      const el = document.createElement("button");
+      el.type = "button";
+      el.textContent = label;
+      const on = opts.active;
+      el.disabled = !!opts.disabled;
+      el.style.cssText =
+        "cursor:pointer; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; min-width:38px; height:38px; padding:0 11px; border-radius:10px; border:1px solid " +
+        (on ? "var(--acc)" : "var(--line2)") +
+        "; background:" + (on ? "var(--acc)" : "var(--surface)") +
+        "; color:" + (on ? "var(--ink)" : opts.disabled ? "var(--faint)" : "var(--txt)") +
+        (opts.disabled ? "; opacity:0.5; cursor:default" : "") + ";";
+      if (opts.onClick && !opts.disabled) el.addEventListener("click", opts.onClick);
+      return el;
+    }
+
+    function renderPager(total) {
+      pager.innerHTML = "";
+      if (total <= 1) return;
+      const go = (n) => {
+        state.page = n;
+        apply();
+        gridTop.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+      pager.appendChild(btn("‹", { disabled: state.page === 1, onClick: () => go(state.page - 1) }));
+      for (const n of pageList(state.page, total)) {
+        if (n === "…") {
+          const dots = document.createElement("span");
+          dots.textContent = "…";
+          dots.style.cssText = "color:var(--faint); font-family:'Space Mono',monospace; padding:0 4px;";
+          pager.appendChild(dots);
+        } else {
+          pager.appendChild(btn(String(n), { active: n === state.page, onClick: () => go(n) }));
+        }
+      }
+      pager.appendChild(btn("›", { disabled: state.page === total, onClick: () => go(state.page + 1) }));
+    }
+
+    function apply() {
+      const shown = filtered();
+      const total = Math.max(1, Math.ceil(shown.length / PAGE));
+      if (state.page > total) state.page = total;
+      const start = (state.page - 1) * PAGE;
+      const vis = new Set(shown.slice(start, start + PAGE));
+      for (const c of cards) c.style.display = vis.has(c) ? "flex" : "none";
+      if (countEl) countEl.textContent = String(shown.length);
+      if (emptyEl) emptyEl.style.display = shown.length === 0 ? "block" : "none";
+      renderPager(total);
+    }
+
+    gameEl?.addEventListener("change", (e) => { state.game = e.target.value; state.page = 1; apply(); });
+    kindBtns.forEach((b) =>
+      b.addEventListener("click", () => {
+        state.kind = b.dataset.kind;
+        state.page = 1;
+        kindBtns.forEach((x) => {
+          const on = x === b;
+          x.classList.toggle("is-on", on);
+          x.style.background = on ? "var(--surface2)" : "transparent";
+          x.style.color = on ? "var(--txt)" : "var(--muted)";
+        });
+        apply();
+      }),
+    );
+    apply();
+  })();
+</script>

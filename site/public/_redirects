@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects.
+# Root → beranda bahasa default (ID). 302 supaya bisa ganti default nanti tanpa cache permanen.
+/            /id/   302

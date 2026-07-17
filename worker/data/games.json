@@ -1,0 +1,326 @@
+{
+  "updatedAt": "2026-07-17T12:38:57.830Z",
+  "counts": {
+    "total": 20
+  },
+  "games": [
+    {
+      "id": "gi",
+      "name": "Genshin Impact",
+      "genres": [
+        "rpg",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.2,
+      "ratingCount": 575179,
+      "releasedAt": "2020-09-26",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fd/a5/bd/fda5bd6d-4ce5-9bd9-1b06-adc46757af8b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
+      "pop": 2,
+      "isNew": false
+    },
+    {
+      "id": "hsr",
+      "name": "Honkai: Star Rail",
+      "genres": [
+        "rpg",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.4,
+      "ratingCount": 52409,
+      "releasedAt": "2023-04-22",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2d/6c/39/2d6c393e-a07e-38e7-a077-aedf44c476cd/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 11,
+      "isNew": false
+    },
+    {
+      "id": "zzz",
+      "name": "Zenless Zone Zero",
+      "genres": [
+        "action",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.1,
+      "ratingCount": 21500,
+      "releasedAt": "2024-07-02",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ee/9d/6f/ee9d6ff1-d787-d19f-1d3c-3b90fc2c692a/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
+      "pop": 15,
+      "isNew": false
+    },
+    {
+      "id": "hi3",
+      "name": "Honkai Impact 3rd",
+      "genres": [
+        "action",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.7,
+      "ratingCount": 46601,
+      "releasedAt": "2018-03-28",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/34/b2/98/34b29809-3a25-831f-88ed-a6e2bf2608ec/AppIcon-1x_U007emarketing-0-10-0-85-220-0.png/256x256bb.jpg",
+      "pop": 12,
+      "isNew": false
+    },
+    {
+      "id": "tot",
+      "name": "Tears of Themis",
+      "genres": [
+        "otome",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.6,
+      "ratingCount": 5434,
+      "releasedAt": "2021-07-27",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6a/30/49/6a3049b7-05c2-d4c7-487b-6fce92f24748/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
+      "pop": 18,
+      "isNew": false
+    },
+    {
+      "id": "wuwa",
+      "name": "Wuthering Waves",
+      "genres": [
+        "rpg",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.6,
+      "ratingCount": 57611,
+      "releasedAt": "2024-05-21",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/82/ed/b9/82edb917-f286-cc09-09e2-f85950929a4d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 10,
+      "isNew": false
+    },
+    {
+      "id": "r1999",
+      "name": "Reverse: 1999",
+      "genres": [
+        "rpg",
+        "gacha",
+        "strategy"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.8,
+      "ratingCount": 10051,
+      "releasedAt": "2023-10-25",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4c/1a/6c/4c1a6c50-753d-652d-1846-9d9e29e41bd4/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
+      "pop": 17,
+      "isNew": false
+    },
+    {
+      "id": "afkj",
+      "name": "AFK Journey",
+      "genres": [
+        "idle",
+        "rpg"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.8,
+      "ratingCount": 73294,
+      "releasedAt": "2024-03-27",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3f/ef/77/3fef7750-6199-61cc-2206-5cadb66adadd/AppIcon-Global-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
+      "pop": 7,
+      "isNew": false
+    },
+    {
+      "id": "nikki",
+      "name": "Infinity Nikki",
+      "genres": [
+        "adventure",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 3.9,
+      "ratingCount": 12433,
+      "releasedAt": "2024-12-03",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9b/cf/fa/9bcffa2e-a711-0224-940a-488c4a349135/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 16,
+      "isNew": false
+    },
+    {
+      "id": "mlbb",
+      "name": "Mobile Legends: Bang Bang",
+      "genres": [
+        "moba"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4,
+      "ratingCount": 29601,
+      "releasedAt": "2025-04-01",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/24/0e/c3240e2a-1279-21fc-84eb-c3bb535a0222/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
+      "pop": 14,
+      "isNew": false
+    },
+    {
+      "id": "wildrift",
+      "name": "League of Legends: Wild Rift",
+      "genres": [
+        "moba"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4.2,
+      "ratingCount": 63257,
+      "releasedAt": "2021-03-28",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/70/46/6c/70466c45-0ce6-c664-6ff6-a951773be30b/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 9,
+      "isNew": false
+    },
+    {
+      "id": "hok",
+      "name": "Honor of Kings",
+      "genres": [
+        "moba"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4.6,
+      "ratingCount": 38371,
+      "releasedAt": "2024-06-20",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6c/9c/73/6c9c73a3-b6d8-6f98-a7c2-00de2f82a240/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/256x256bb.jpg",
+      "pop": 13,
+      "isNew": false
+    },
+    {
+      "id": "aov",
+      "name": "Arena of Valor",
+      "genres": [
+        "moba"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4.6,
+      "ratingCount": 89134,
+      "releasedAt": "2017-12-19",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/70/21/49/70214910-8392-c875-2135-b5d1398396ba/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/256x256bb.jpg",
+      "pop": 6,
+      "isNew": false
+    },
+    {
+      "id": "pubgm",
+      "name": "PUBG Mobile",
+      "genres": [
+        "br",
+        "shooter"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4.3,
+      "ratingCount": 1602282,
+      "releasedAt": "2018-03-19",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e3/c1/54/e3c15430-c128-802a-ec17-95d0a02bc752/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
+      "pop": 1,
+      "isNew": false
+    },
+    {
+      "id": "codm",
+      "name": "Call of Duty: Mobile",
+      "genres": [
+        "br",
+        "shooter"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4.7,
+      "ratingCount": 2001566,
+      "releasedAt": "2019-09-30",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/62/09/3c/62093c33-07fa-9c35-084e-81f717e1b16f/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/256x256bb.jpg",
+      "pop": 0,
+      "isNew": false
+    },
+    {
+      "id": "ff",
+      "name": "Free Fire",
+      "genres": [
+        "br",
+        "shooter"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4,
+      "ratingCount": 351393,
+      "releasedAt": "2017-12-08",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d6/8f/47/d68f4742-5a10-b375-2114-0f840bd49ec1/AppIcon-1781539049-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 5,
+      "isNew": false
+    },
+    {
+      "id": "nikke",
+      "name": "Goddess of Victory: NIKKE",
+      "genres": [
+        "rpg",
+        "gacha",
+        "shooter"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4.8,
+      "ratingCount": 69509,
+      "releasedAt": "2022-11-02",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6b/f7/cc/6bf7ccea-fd33-3415-54e0-78c2c1f60d7a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 8,
+      "isNew": false
+    },
+    {
+      "id": "ba",
+      "name": "Blue Archive",
+      "genres": [
+        "rpg",
+        "gacha"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4.1,
+      "ratingCount": 5331,
+      "releasedAt": "2021-11-07",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7f/1f/75/7f1f75c8-e2e1-12fc-ce1d-73171f34a7e2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 19,
+      "isNew": false
+    },
+    {
+      "id": "whiteout",
+      "name": "Whiteout Survival",
+      "genres": [
+        "strategy",
+        "idle"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4.6,
+      "ratingCount": 440921,
+      "releasedAt": "2023-02-12",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/00/4e/1c/004e1c54-f26a-10ac-800b-4bd3c04a4d53/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 4,
+      "isNew": false
+    },
+    {
+      "id": "lastwar",
+      "name": "Last War: Survival",
+      "genres": [
+        "strategy",
+        "idle"
+      ],
+      "hasCodes": false,
+      "online": true,
+      "rating": 4.7,
+      "ratingCount": 445928,
+      "releasedAt": "2023-08-02",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/92/c0/2392c00c-ddc5-711b-9020-ead5864a04c0/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 3,
+      "isNew": false
+    }
+  ]
+}

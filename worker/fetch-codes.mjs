@@ -1,116 +1,144 @@
-// PatchDay — contoh worker penarik KODE REDEEM
-// Menarik dari hoyo-codes (game HoYoverse) + GamerPower (giveaway lintas-platform),
-// menormalisasi ke skema PatchDay, lalu menulis data/codes.json.
+// KodeGG — worker penarik KODE REDEEM (fase 1).
 //
-// Jalankan: `node fetch-codes.mjs` (Node >=18, fetch bawaan).
-// Produksi: jalankan terjadwal (~tiap jam) via serverless cron / GitHub Actions.
+// Alur: hoyo-codes + GamerPower → normalisasi → gabung dengan state lama →
+//       tulis data/codes.json. Situs membaca JSON ini saat build (SSG).
 //
-// CATATAN:
-// - Kode expired TIDAK dihapus — dipindah ke "archive" (jadi database).
-// - Hanya game online/live-service. Tambah game baru di GAMES di bawah.
-// - Verifikasi status kode dari sumber; jangan mengarang.
-// - Untuk produksi: cache icon game ke storage sendiri, jangan hotlink permanen.
+// Jalankan lokal : node fetch-codes.mjs
+// Produksi       : cron ~1 jam (lihat Cetak Biru Pipeline).
+//
+// Aturan yang ditegakkan di sini (CLAUDE.md):
+// - Hanya game online/live-service — lihat src/games.mjs.
+// - Reward VERBATIM — src/normalize.mjs hanya menyentuh pemisah/jumlah.
+// - Kode expired diarsipkan, tidak pernah dihapus — src/archive.mjs.
+// - Atribusi GamerPower dibawa di tiap item (`source`).
 
 import { writeFile, readFile, mkdir } from "node:fs/promises";
-import { dirname } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
-// game HoYoverse yang didukung hoyo-codes: game key -> meta situs
-const GAMES = {
-  genshin: { id: "gi", name: "Genshin Impact", redeem: "https://genshin.hoyoverse.com/en/gift" },
-  hkrpg:   { id: "hsr", name: "Honkai: Star Rail", redeem: "https://hsr.hoyoverse.com/gift" },
-  nap:     { id: "zzz", name: "Zenless Zone Zero", redeem: "https://zzz.hoyoverse.com/redemption" },
-};
+import { GAMES } from "./src/games.mjs";
+import { fetchHoyo } from "./src/sources/hoyo.mjs";
+import { fetchWiki } from "./src/sources/wiki.mjs";
+import { fetchWuwaStatus } from "./src/sources/wuwastatus.mjs";
+import { fetchHoyolabCodes } from "./src/sources/hoyolab.mjs";
+import { fetchTotWiki } from "./src/sources/totwiki.mjs";
+import { fetchCrimsonwitch } from "./src/sources/crimsonwitch.mjs";
+import { fetchCurated, combineCodes } from "./src/sources/curated.mjs";
+import { codeKey } from "./src/normalize.mjs";
+// GamerPower (giveaway gift-pack) sengaja TIDAK dipakai di halaman kode: item-nya
+// tanpa kode redeem & diklaim via URL eksternal (redirect) — tak cocok dengan
+// konsep "Kode Redeem". src/sources/gamerpower.mjs disimpan untuk kemungkinan
+// halaman "Giveaway" terpisah nanti.
+import { mergeWithPrevious } from "./src/archive.mjs";
 
-const HOYO_ENDPOINT = (game) => `https://hoyo-codes.seria.moe/codes?game=${game}`;
-const GAMERPOWER_ENDPOINT = "https://www.gamerpower.com/api/giveaways?platform=android&type=game";
+const HERE = dirname(fileURLToPath(import.meta.url));
+const OUT = resolve(HERE, "data/codes.json");
+const USER_AGENT = "KodeGGBot/1.0 (+https://kodegg.com)";
 
-async function getJSON(url) {
-  const res = await fetch(url, { headers: { "User-Agent": "PatchDayBot/0.1 (+https://patchday.example)" } });
-  if (!res.ok) throw new Error(`${url} → HTTP ${res.status}`);
-  return res.json();
-}
-
-// --- Tarik kode HoYoverse ---
-async function fetchHoyo() {
-  const out = [];
-  for (const [game, meta] of Object.entries(GAMES)) {
-    try {
-      const data = await getJSON(HOYO_ENDPOINT(game));
-      // hoyo-codes mengembalikan { active: [{code, rewards, ...}], ... }
-      const active = data.active || data.codes || [];
-      for (const c of active) {
-        out.push({
-          game: meta.id,
-          gameName: meta.name,
-          code: (c.code || "").trim(),
-          reward: c.rewards || c.reward || "",     // VERBATIM dari sumber
-          status: "active",
-          source: "hoyo-codes",
-          sourceUrl: meta.redeem,
-          fetchedAt: new Date().toISOString(),
-        });
-      }
-    } catch (err) {
-      console.error(`[hoyo] ${game}:`, err.message); // jangan gagalkan seluruh run
-    }
-  }
-  return out;
-}
-
-// --- Tarik giveaway/loot Android (GamerPower) ---
-async function fetchGamerPower() {
+async function readPrevious(path) {
   try {
-    const data = await getJSON(GAMERPOWER_ENDPOINT);
-    return (data || []).slice(0, 40).map((g) => ({
-      game: null,                       // GamerPower tak selalu punya game id kita
-      gameName: g.title || "",
-      code: null,                        // giveaway biasanya klaim via URL, bukan kode
-      reward: g.description || "",
-      status: "active",
-      claimUrl: g.open_giveaway_url || g.gamerpower_url,
-      source: "GamerPower",             // WAJIB atribusi
-      sourceUrl: g.gamerpower_url,
-      endsAt: g.end_date && g.end_date !== "N/A" ? new Date(g.end_date).toISOString() : null,
-      fetchedAt: new Date().toISOString(),
-    }));
-  } catch (err) {
-    console.error("[gamerpower]:", err.message);
-    return [];
+    return JSON.parse(await readFile(path, "utf8"));
+  } catch {
+    return { active: [], archive: [] }; // run pertama
   }
-}
-
-// --- Gabung dengan arsip lama: kode yang hilang dari "active" → arsipkan ---
-async function mergeArchive(freshActive, prevPath) {
-  let prev = { active: [], archive: [] };
-  try { prev = JSON.parse(await readFile(prevPath, "utf8")); } catch {}
-  const freshKeys = new Set(freshActive.filter((c) => c.code).map((c) => c.game + ":" + c.code));
-  const archive = [...(prev.archive || [])];
-  const archKeys = new Set(archive.map((c) => c.game + ":" + c.code));
-  // kode aktif sebelumnya yang kini hilang → expired → arsip
-  for (const c of (prev.active || [])) {
-    if (!c.code) continue;
-    const key = c.game + ":" + c.code;
-    if (!freshKeys.has(key) && !archKeys.has(key)) {
-      archive.push({ ...c, status: "expired", expiredAt: new Date().toISOString() });
-      archKeys.add(key);
-    }
-  }
-  return { active: freshActive, archive };
 }
 
 async function main() {
-  const [hoyo, gp] = await Promise.all([fetchHoyo(), fetchGamerPower()]);
-  const freshActive = [...hoyo, ...gp];
-  const outPath = "data/codes.json";
-  const merged = await mergeArchive(freshActive, outPath);
+  const now = new Date().toISOString();
+
+  const log = (m) => console.log(`  ${m}`);
+  const [hoyo, wiki, wuwa, hylab, totw, cw] = await Promise.all([
+    fetchHoyo({ userAgent: USER_AGENT, log }),
+    fetchWiki({ games: GAMES, userAgent: USER_AGENT, log }),
+    fetchWuwaStatus({ games: GAMES, userAgent: USER_AGENT, log }),
+    fetchHoyolabCodes({ games: GAMES, userAgent: USER_AGENT, log }),
+    fetchTotWiki({ games: GAMES, userAgent: USER_AGENT, log }),
+    fetchCrimsonwitch({ games: GAMES, userAgent: USER_AGENT, log }),
+  ]);
+
+  const curated = fetchCurated({ games: GAMES });
+
+  // Semua sumber gagal → jangan tulis apa pun. Menimpa cache bagus dengan
+  // hasil kosong akan mengosongkan situs DAN mengarsipkan seluruh kode aktif.
+  // (Kode terkurasi tidak dihitung "sumber hidup" di sini.)
+  if (hoyo.items.length === 0 && wiki.items.length === 0 && wuwa.items.length === 0) {
+    console.error("✗ semua sumber gagal / kosong — data/codes.json dibiarkan utuh");
+    process.exit(1);
+  }
+
+  // covered = game yang sukses ditarik dari SUMBER MANA PUN (aman diarsipkan).
+  // Kode terkurasi selalu meng-cover gamenya (kode permanen harus tetap tampil).
+  const covered = new Set([
+    ...hoyo.covered,
+    ...wiki.covered,
+    ...wuwa.covered,
+    ...hylab.covered,
+    ...totw.covered,
+    ...cw.covered,
+    ...curated.covered,
+  ]);
+
+  // Urutan penting untuk dedup reward: sumber resmi/live menang atas curated.
+  // crimsonwitch tepat setelah API HoYo — reward terstruktur & tanggalnya
+  // memperkaya/mengoreksi. HoYoLAB (mining) paling belakang — pelengkap saja.
+  let freshItems = combineCodes(
+    [...hoyo.items, ...cw.items, ...wuwa.items, ...wiki.items, ...totw.items, ...hylab.items],
+    curated.items,
+  );
+
+  // PINDAHKAN kode yang sumber otoritatif tandai EXPIRED dari aktif ke arsip:
+  //  - wiki (Legacy/Expired) → mis. seria menyajikan kode HI3 lama sebagai aktif.
+  //  - tot.wiki (End Date lewat) → seria ToT mandek 2024, 24 dari 25 kodenya mati.
+  //  - crimsonwitch (expires lewat) → cross-check tambahan untuk game HoYo.
+  // expiredItems (objek lengkap, bertanggal) mengisi arsip langsung.
+  const expiredKeys = new Set([...wiki.expired, ...totw.expired, ...cw.expired]);
+  const freshArchive = [...wiki.expiredItems, ...totw.expiredItems, ...cw.expiredItems];
+  const beforeExpiryFilter = freshItems.length;
+  freshItems = freshItems.filter((item) => !expiredKeys.has(codeKey(item)));
+
+  // ToT: seria mandek 2024 & tak bisa dipercaya untuk status aktif. Jadikan
+  // tot.wiki OTORITAS TUNGGAL kode aktif ToT — kode ToT hanya lolos bila tot.wiki
+  // mengonfirmasinya aktif. (seria tetap boleh memperkaya reward via combineCodes,
+  // tapi tak bisa menyatakan sebuah kode ToT aktif sendirian.) Tanpa ini, saat
+  // Wayback tot.wiki gagal sesaat, 24 kode seria yang mati bocor jadi "aktif".
+  if (totw.covered.has("tot")) {
+    const totActive = new Set(totw.items.map((i) => i.code));
+    freshItems = freshItems.filter((item) => item.game !== "tot" || totActive.has(item.code));
+  }
+
+  const removed = beforeExpiryFilter - freshItems.length;
+  if (removed > 0) console.log(`  ✂ ${removed} kode dipindah ke arsip / dibuang (expired atau tak terverifikasi)`);
+
+  const prev = await readPrevious(OUT);
+  const { active, archive, newlyArchived } = mergeWithPrevious(
+    freshItems,
+    freshArchive,
+    prev,
+    covered,
+    now,
+  );
+
   const payload = {
-    updatedAt: new Date().toISOString(),
-    counts: { active: merged.active.length, archived: merged.archive.length },
-    ...merged,
+    updatedAt: now,
+    counts: { active: active.length, archived: archive.length },
+    active,
+    archive,
   };
-  await mkdir(dirname(outPath), { recursive: true });
-  await writeFile(outPath, JSON.stringify(payload, null, 2));
-  console.log(`✓ ${outPath}: ${payload.counts.active} aktif, ${payload.counts.archived} arsip`);
+
+  await mkdir(dirname(OUT), { recursive: true });
+  await writeFile(OUT, JSON.stringify(payload, null, 2));
+
+  console.log(
+    `✓ data/codes.json — ${payload.counts.active} aktif, ` +
+      `${payload.counts.archived} arsip (+${newlyArchived} baru diarsipkan)`,
+  );
+  const totalFailed = hoyo.failed + wiki.failed + wuwa.failed + totw.failed + cw.failed;
+  if (totalFailed) {
+    console.warn(`⚠ ${totalFailed} sumber/game gagal — kodenya dipertahankan`);
+  }
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

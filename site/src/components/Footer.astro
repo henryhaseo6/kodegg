@@ -1,0 +1,83 @@
+---
+// Footer. Memuat dua hal yang WAJIB ada dan tidak boleh dihapus:
+//  - atribusi GamerPower (syarat lisensi mereka)
+//  - disclaimer non-afiliasi (situs memakai nama & aset milik penerbit)
+import { t } from "../lib/i18n.mjs";
+import { route } from "../lib/routes.mjs";
+
+const { lang, updatedAt } = Astro.props;
+const tr = t(lang);
+
+const footLinks = [
+  { label: tr("nav.discover"), href: route("discover", lang) },
+  { label: tr("nav.codes"), href: route("codes", lang) },
+  { label: tr("nav.news"), href: route("news", lang) },
+  { label: tr("nav.saved"), href: route("saved", lang) },
+  { label: lang === "id" ? "Tentang" : "About", href: route("about", lang) },
+  { label: lang === "id" ? "Kontak" : "Contact", href: route("contact", lang) },
+];
+
+const stamp = updatedAt
+  ? new Intl.DateTimeFormat(lang === "id" ? "id-ID" : "en-GB", {
+      dateStyle: "medium",
+      timeStyle: "short",
+      timeZone: "Asia/Jakarta",
+    }).format(new Date(updatedAt))
+  : null;
+
+// Sumber data yang benar-benar dipakai halaman kode (lihat worker/src/sources).
+const sources = [
+  { name: "hoyo-codes", url: "https://hoyo-codes.seria.moe" },
+  { name: "ennead.cc", url: "https://api.ennead.cc" },
+  { name: "wuwastatus", url: "https://wuwastatus.com" },
+  { name: "HoYoverse", url: "https://www.hoyolab.com" },
+  { name: "Fandom", url: "https://www.fandom.com" },
+  { name: "tot.wiki", url: "https://tot.wiki" },
+  { name: "crimsonwitch", url: "https://www.crimsonwitch.com" },
+];
+---
+
+<footer style="border-top:1px solid var(--line); background:var(--bg); margin-top:44px;">
+  <div style="max-width:1280px; margin:0 auto; padding:30px 28px 40px;">
+    <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:baseline; justify-content:space-between;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--txt);">
+        KODE<span style="color:var(--acc);">GG</span>
+      </div>
+      {
+        stamp && (
+          <div style="font-family:'Space Mono',monospace; font-size:11.5px; color:var(--faint);">
+            {tr("foot.updated")}: <time datetime={updatedAt}>{stamp} WIB</time>
+          </div>
+        )
+      }
+    </div>
+
+    <nav style="margin-top:16px; display:flex; flex-wrap:wrap; gap:18px;">
+      {
+        footLinks.map((l) => (
+          <a href={l.href} class="gg-nav" style="font-size:13.5px; font-weight:500; color:var(--muted); text-decoration:none;">
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div style="margin-top:18px; font-family:'Space Mono',monospace; font-size:11.5px; color:var(--faint);">
+      {tr("foot.sources")}:{" "}
+      {
+        sources.map((s, i) => (
+          <>
+            {i > 0 && " · "}
+            <a href={s.url} rel="noopener nofollow" target="_blank" style="color:var(--muted); text-decoration:none; border-bottom:1px dotted var(--line2);">
+              {s.name}
+            </a>
+          </>
+        ))
+      }
+    </div>
+
+    <p style="margin:14px 0 0; font-size:12px; line-height:1.6; color:var(--faint); max-width:78ch;">
+      {tr("foot.disclaimer")}
+    </p>
+  </div>
+</footer>

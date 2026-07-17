@@ -1,0 +1,26 @@
+---
+// Breadcrumb — jejak navigasi ke halaman terkait. items: [{label, href?}].
+// Item terakhir = halaman saat ini (tanpa tautan).
+const { items = [] } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" style="max-width:1280px; margin:0 auto; padding:18px 28px 0;">
+  <ol style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:0; padding:0; list-style:none; font-family:'Space Mono',monospace; font-size:12px;">
+    {
+      items.map((it, i) => (
+        <li style="display:flex; align-items:center; gap:8px; min-width:0;">
+          {it.href ? (
+            <a href={it.href} class="gg-crumb" style="color:var(--faint); text-decoration:none;">
+              {it.label}
+            </a>
+          ) : (
+            <span aria-current="page" style="color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:48ch;">
+              {it.label}
+            </span>
+          )}
+          {i < items.length - 1 && <span aria-hidden="true" style="color:var(--line2);">/</span>}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
