@@ -5,6 +5,7 @@ import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 import FeedCard from "./FeedCard.astro";
 import FeedModal from "./FeedModal.astro";
+import CountdownScript from "./CountdownScript.astro";
 import { t } from "../lib/i18n.mjs";
 import { route, langPaths } from "../lib/routes.mjs";
 
@@ -13,6 +14,9 @@ const tr = t(lang);
 const id = lang === "id";
 const L = (p) => `/${lang}${p}`;
 const fmtNum = (n) => new Intl.NumberFormat(id ? "id-ID" : "en-GB").format(n);
+const nowMs = Date.now();
+const fmtDate = (iso) =>
+  new Date(iso).toLocaleDateString(id ? "id-ID" : "en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Jakarta" });
 
 const topCodes = codes.active.slice(0, 8);
 const topFeed = feed.items.slice(0, 8); // event + berita tercampur, terbaru dulu
@@ -79,6 +83,20 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
                 {tr("card.copy")}
               </button>
             )}
+          </div>
+          <div style="display:flex; justify-content:flex-end; align-items:center; min-height:14px;">
+            {c.perm ? (
+              <span style="font-family:'Space Mono',monospace; font-size:10.5px; font-weight:700; color:var(--ok);">{id ? "Tanpa batas" : "No expiry"}</span>
+            ) : c.endsAt && Date.parse(c.endsAt) > nowMs ? (
+              <span style="display:inline-flex; align-items:center; gap:5px;">
+                <span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint);">{tr("ev.endsIn")}</span>
+                <span data-deadline={c.endsAt} data-ended={tr("ev.ended")} style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--warn); white-space:nowrap;">—</span>
+              </span>
+            ) : c.date ? (
+              <span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">{id ? "Rilis" : "Released"} {fmtDate(c.date)}</span>
+            ) : c.firstSeenAt ? (
+              <span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">{tr("card.seen")} {fmtDate(c.firstSeenAt)}</span>
+            ) : null}
           </div>
         </div>
       ))}
@@ -149,6 +167,7 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
 
 <FeedModal lang={lang} />
 <Footer lang={lang} updatedAt={codes.updatedAt} />
+<CountdownScript lang={lang} />
 
 <script is:inline>
   // Salin kode di kartu homepage. Clipboard API dulu, JATUH ke execCommand
