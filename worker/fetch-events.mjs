@@ -17,6 +17,14 @@ import { GAMES as REGISTRY } from "./src/games.mjs";
 import { fetchHoyolabEvents } from "./src/sources/hoyolab.mjs";
 
 const evKey = (e) => `${e.game}:${typeof e.title === "object" ? e.title.en : e.title}`;
+
+// Halaman berita resmi per game — fallback tautan sumber untuk event dari API
+// pengumuman in-game (yang tak punya URL artikel publik). Terverifikasi 200.
+const OFFICIAL_NEWS = {
+  gi: "https://genshin.hoyoverse.com/en/news",
+  hsr: "https://hsr.hoyoverse.com/en/news",
+  zzz: "https://zenless.hoyoverse.com/en/news",
+};
 const ARCHIVE_CAP = 200; // maks item arsip yang disimpan (terbaru menang)
 const ARCHIVE_MAX_AGE = 180 * 86400000; // arsip disimpan hingga 180 hari
 
@@ -168,6 +176,11 @@ async function main() {
     }),
   ]);
 
+  // Peta url HoYoLAB per event — untuk melengkapi event API (source HoYoverse)
+  // yang tak punya url tapi duplikatnya ada di HoYoLAB (deep-link ke artikel).
+  const hoyolabUrl = new Map();
+  for (const e of hoyolabEvents) if (e.url) hoyolabUrl.set(evKey(e), e.url);
+
   // Dedup per (game+judul), lalu pisah: BERLANGSUNG → aktif, BERAKHIR → arsip.
   const seen = new Set();
   const all = [...apiResults.flat(), ...hoyolabEvents]
@@ -177,6 +190,16 @@ async function main() {
       if (seen.has(k)) return false;
       seen.add(k);
       return true;
+    })
+    .map((e) => {
+      if (e.url) return e; // event HoYoLAB sudah punya url artikel
+      // (1) deep-link HoYoLAB bila event API ini juga ada di HoYoLAB
+      const hl = hoyolabUrl.get(evKey(e));
+      if (hl) return { ...e, url: hl, source: "HoYoLAB" };
+      // (2) fallback: halaman berita resmi game (event API in-game tak punya URL
+      //     artikel publik) — tetap mengarah ke sumber resmi HoYoverse.
+      const fb = OFFICIAL_NEWS[e.game];
+      return fb ? { ...e, url: fb } : e;
     });
 
   // Aktif = masih berlangsung; urut cepat berakhir dulu (di feed nanti diurut lagi).
