@@ -15,7 +15,12 @@ on:
     # saat beban puncak — awal tiap jam (menit :00) adalah waktu tersibuk.
     # Menit ganjil di tengah jam jauh lebih andal mendekati "tiap jam".
     - cron: "27 * * * *"
-  workflow_dispatch: {} # bisa dijalankan manual dari tab Actions
+  workflow_dispatch: # bisa dijalankan manual dari tab Actions
+    inputs:
+      test_push:
+        description: "Kirim notifikasi UJI ke semua subscriber (untuk tes push)"
+        type: boolean
+        default: false
 
 # Cukup satu run sekaligus; batalkan yang lama bila menumpuk.
 concurrency:
@@ -72,3 +77,18 @@ jobs:
           if [ -z "$VAPID_PRIVATE" ]; then echo "VAPID belum di-set — lewati notifikasi."; exit 0; fi
           npm install web-push@^3 --no-save --no-audit --no-fund
           node worker/push-notify.mjs
+
+      # Tes manual: centang "test_push" saat Run workflow → kirim notif uji ke
+      # semua subscriber (tanpa menunggu kode baru).
+      - name: Tes notifikasi push (manual)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.test_push }}
+        env:
+          VAPID_PUBLIC: ${{ secrets.VAPID_PUBLIC }}
+          VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          PUSH_SECRET: ${{ secrets.PUSH_SECRET }}
+          SITE_URL: https://kodegg.com
+        run: |
+          if [ -z "$VAPID_PRIVATE" ]; then echo "VAPID belum di-set."; exit 0; fi
+          npm install web-push@^3 --no-save --no-audit --no-fund
+          node worker/push-test.mjs
