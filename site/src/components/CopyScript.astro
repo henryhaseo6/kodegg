@@ -1,0 +1,74 @@
+---
+// Wiring tombol Salin/Copy (data-copy) yang bisa dipakai ulang. Delegasi di
+// level DOCUMENT — jadi cukup diikutkan sekali di halaman mana pun yang punya
+// kartu kode (mis. halaman per-game yang tak punya skrip filter/paginasi sendiri).
+// Fallback bertingkat: Clipboard API async dulu, kalau gagal/diblokir JATUH ke
+// execCommand legacy (dijalankan pada gesture klik). Guard `__ggCopyBound`
+// mencegah bind ganda bila komponen dimuat lebih dari sekali.
+---
+
+<script is:inline>
+  (function () {
+    if (window.__ggCopyBound) return;
+    window.__ggCopyBound = true;
+
+    function legacyCopy(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.top = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      let ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch {
+        ok = false;
+      }
+      document.body.removeChild(ta);
+      return ok;
+    }
+
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-copy]");
+      if (!btn) return;
+      const code = btn.getAttribute("data-copy");
+      const done = btn.getAttribute("data-done") || "✓";
+      const label = btn.getAttribute("data-label") || "Copy";
+      const flash = () => {
+        btn.textContent = done;
+        btn.style.background = "var(--acc)";
+        btn.style.color = "var(--ink)";
+        btn.style.borderColor = "var(--acc)";
+        setTimeout(() => {
+          btn.textContent = label;
+          btn.style.background = "var(--surface2)";
+          btn.style.color = "var(--txt)";
+          btn.style.borderColor = "var(--line2)";
+        }, 1400);
+      };
+
+      let handled = false;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+          const p = navigator.clipboard.writeText(code);
+          if (p && typeof p.then === "function") {
+            handled = true;
+            p.then(flash).catch(() => {
+              legacyCopy(code);
+              flash();
+            });
+          }
+        }
+      } catch {
+        /* jatuh ke legacy di bawah */
+      }
+      if (!handled) {
+        legacyCopy(code);
+        flash();
+      }
+    });
+  })();
+</script>
