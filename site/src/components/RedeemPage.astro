@@ -18,7 +18,7 @@ const fmtArchDate = (iso) =>
     timeZone: "Asia/Jakarta",
   });
 const PAGE = 8; // kartu per halaman (pagination)
-const ARCH_PAGE = 40; // kartu arsip per langkah "muat lebih"
+const ARCH_PAGE = 24; // kartu arsip per halaman (pagination)
 const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisanya via count
 ---
 
@@ -133,9 +133,7 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
                 ))}
               </div>
               <div data-arch-empty style="display:none; text-align:center; padding:24px 0; color:var(--faint); font-size:13px;">{tr("arch.noMatch")}</div>
-              <div style="text-align:center; margin-top:16px;">
-                <button data-arch-more type="button" style="display:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface); border-radius:10px; padding:11px 20px;">{tr("ctl.more")}</button>
-              </div>
+              <nav data-arch-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:22px;"></nav>
             </>
           )
         }
@@ -177,9 +175,9 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
     const archGrid = document.querySelector("[data-arch-grid]");
     const archCards = archGrid ? Array.from(archGrid.querySelectorAll("[data-arch-card]")) : [];
     const archEmptyEl = document.querySelector("[data-arch-empty]");
-    const archMoreEl = document.querySelector("[data-arch-more]");
+    const archPager = document.querySelector("[data-arch-pager]");
 
-    const state = { q: "", game: "all", sort: "new", page: 1, archLimit: ARCH_PAGE };
+    const state = { q: "", game: "all", sort: "new", page: 1, archPage: 1 };
 
     function pageList(cur, total) {
       const want = new Set([1, total, cur, cur - 1, cur + 1]);
@@ -257,7 +255,31 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
       applyArchive(q);
     }
 
-    // Filter arsip pakai state game + query yang sama dengan kode aktif.
+    // Arsip: pager terpisah (banyak kode expired) — pakai pola pager yang sama
+    // dengan kode aktif, tapi state.archPage & elemen [data-arch-pager] sendiri.
+    function renderArchPager(total) {
+      if (!archPager) return;
+      archPager.innerHTML = "";
+      if (total <= 1) return;
+      const go = (n) => {
+        state.archPage = n;
+        applyArchive(state.q.trim().toLowerCase());
+        if (archGrid) archGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+      archPager.appendChild(pbtn("‹", { disabled: state.archPage === 1, onClick: () => go(state.archPage - 1) }));
+      for (const n of pageList(state.archPage, total)) {
+        if (n === "…") {
+          const d = document.createElement("span");
+          d.textContent = "…";
+          d.style.cssText = "color:var(--faint); font-family:'Space Mono',monospace; padding:0 4px;";
+          archPager.appendChild(d);
+        } else archPager.appendChild(pbtn(String(n), { active: n === state.archPage, onClick: () => go(n) }));
+      }
+      archPager.appendChild(pbtn("›", { disabled: state.archPage === total, onClick: () => go(state.archPage + 1) }));
+    }
+
+    // Filter arsip pakai state game + query yang sama dengan kode aktif, lalu
+    // paginasi ARCH_PAGE per halaman (bukan muat-lebih yang menumpuk).
     function applyArchive(q) {
       if (!archGrid) return;
       const shown = archCards.filter((c) => {
@@ -265,32 +287,31 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
         const okQ = !q || (c.dataset.search || "").includes(q);
         return okGame && okQ;
       });
-      const visible = new Set(shown.slice(0, state.archLimit));
+      const total = Math.max(1, Math.ceil(shown.length / ARCH_PAGE));
+      if (state.archPage > total) state.archPage = total;
+      const start = (state.archPage - 1) * ARCH_PAGE;
+      const visible = new Set(shown.slice(start, start + ARCH_PAGE));
       for (const c of archCards) c.style.display = visible.has(c) ? "block" : "none";
       if (archEmptyEl) archEmptyEl.style.display = shown.length === 0 ? "block" : "none";
-      if (archMoreEl) archMoreEl.style.display = shown.length > state.archLimit ? "inline-flex" : "none";
+      renderArchPager(total);
     }
 
     searchEl?.addEventListener("input", (e) => {
       state.q = e.target.value;
       state.page = 1;
-      state.archLimit = ARCH_PAGE;
+      state.archPage = 1;
       apply();
     });
     gameEl?.addEventListener("change", (e) => {
       state.game = e.target.value;
       state.page = 1;
-      state.archLimit = ARCH_PAGE;
+      state.archPage = 1;
       apply();
     });
     sortEl?.addEventListener("change", (e) => {
       state.sort = e.target.value;
       state.page = 1;
       apply();
-    });
-    archMoreEl?.addEventListener("click", () => {
-      state.archLimit += ARCH_PAGE;
-      applyArchive(state.q.trim().toLowerCase());
     });
 
     // Salin ke clipboard dengan fallback bertingkat. Metode legacy (textarea +
