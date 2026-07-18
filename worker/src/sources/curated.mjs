@@ -20,7 +20,9 @@ import { codeKey } from "../normalize.mjs";
 
 export const CURATED = {
   gi: [
-    { code: "GENSHINGIFT", reward: "Primogem ×60 · Mora ×10000" },
+    // Reward VERBATIM (diverifikasi Fandom wiki + pockettactics, Jul 2026).
+    // Welcome code "periodik": sering aktif, kadang kena max-usage lalu balik.
+    { code: "GENSHINGIFT", reward: "Primogem ×50 · Hero's Wit ×3" },
   ],
   zzz: [
     {
