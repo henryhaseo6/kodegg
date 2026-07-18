@@ -11,7 +11,10 @@ name: update-codes
 
 on:
   schedule:
-    - cron: "0 * * * *" # tiap jam (UTC)
+    # Menit :27 (BUKAN :00). Cron GitHub best-effort & sering ditunda/di-drop
+    # saat beban puncak — awal tiap jam (menit :00) adalah waktu tersibuk.
+    # Menit ganjil di tengah jam jauh lebih andal mendekati "tiap jam".
+    - cron: "27 * * * *"
   workflow_dispatch: {} # bisa dijalankan manual dari tab Actions
 
 # Cukup satu run sekaligus; batalkan yang lama bila menumpuk.
