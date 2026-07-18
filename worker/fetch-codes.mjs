@@ -23,6 +23,7 @@ import { fetchWuwaStatus } from "./src/sources/wuwastatus.mjs";
 import { fetchHoyolabCodes } from "./src/sources/hoyolab.mjs";
 import { fetchTotWiki } from "./src/sources/totwiki.mjs";
 import { fetchCrimsonwitch } from "./src/sources/crimsonwitch.mjs";
+import { fetchRedeemTracker } from "./src/sources/redeemtracker.mjs";
 import { fetchCurated, combineCodes } from "./src/sources/curated.mjs";
 import { codeKey } from "./src/normalize.mjs";
 // GamerPower (giveaway gift-pack) sengaja TIDAK dipakai di halaman kode: item-nya
@@ -47,13 +48,14 @@ async function main() {
   const now = new Date().toISOString();
 
   const log = (m) => console.log(`  ${m}`);
-  const [hoyo, wiki, wuwa, hylab, totw, cw] = await Promise.all([
+  const [hoyo, wiki, wuwa, hylab, totw, cw, rct] = await Promise.all([
     fetchHoyo({ userAgent: USER_AGENT, log }),
     fetchWiki({ games: GAMES, userAgent: USER_AGENT, log }),
     fetchWuwaStatus({ games: GAMES, userAgent: USER_AGENT, log }),
     fetchHoyolabCodes({ games: GAMES, userAgent: USER_AGENT, log }),
     fetchTotWiki({ games: GAMES, userAgent: USER_AGENT, log }),
     fetchCrimsonwitch({ games: GAMES, userAgent: USER_AGENT, log }),
+    fetchRedeemTracker({ games: GAMES, userAgent: USER_AGENT, log }),
   ]);
 
   const curated = fetchCurated({ games: GAMES });
@@ -75,6 +77,7 @@ async function main() {
     ...hylab.covered,
     ...totw.covered,
     ...cw.covered,
+    ...rct.covered,
     ...curated.covered,
   ]);
 
@@ -82,7 +85,7 @@ async function main() {
   // crimsonwitch tepat setelah API HoYo — reward terstruktur & tanggalnya
   // memperkaya/mengoreksi. HoYoLAB (mining) paling belakang — pelengkap saja.
   let freshItems = combineCodes(
-    [...hoyo.items, ...cw.items, ...wuwa.items, ...wiki.items, ...totw.items, ...hylab.items],
+    [...hoyo.items, ...cw.items, ...rct.items, ...wuwa.items, ...wiki.items, ...totw.items, ...hylab.items],
     curated.items,
   );
 
@@ -91,8 +94,8 @@ async function main() {
   //  - tot.wiki (End Date lewat) → seria ToT mandek 2024, 24 dari 25 kodenya mati.
   //  - crimsonwitch (expires lewat) → cross-check tambahan untuk game HoYo.
   // expiredItems (objek lengkap, bertanggal) mengisi arsip langsung.
-  const expiredKeys = new Set([...wiki.expired, ...totw.expired, ...cw.expired]);
-  const freshArchive = [...wiki.expiredItems, ...totw.expiredItems, ...cw.expiredItems];
+  const expiredKeys = new Set([...wiki.expired, ...totw.expired, ...cw.expired, ...rct.expired]);
+  const freshArchive = [...wiki.expiredItems, ...totw.expiredItems, ...cw.expiredItems, ...rct.expiredItems];
   const beforeExpiryFilter = freshItems.length;
   freshItems = freshItems.filter((item) => !expiredKeys.has(codeKey(item)));
 
@@ -140,7 +143,7 @@ async function main() {
       `${payload.counts.archived} arsip (+${newlyArchived} baru diarsipkan)` +
       (newlyAdded.length ? `, ${newlyAdded.length} kode baru → notifikasi` : ""),
   );
-  const totalFailed = hoyo.failed + wiki.failed + wuwa.failed + totw.failed + cw.failed;
+  const totalFailed = hoyo.failed + wiki.failed + wuwa.failed + totw.failed + cw.failed + rct.failed;
   if (totalFailed) {
     console.warn(`⚠ ${totalFailed} sumber/game gagal — kodenya dipertahankan`);
   }
