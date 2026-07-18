@@ -84,7 +84,7 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
               </button>
             )}
           </div>
-          <div style="display:flex; justify-content:flex-end; align-items:center; min-height:14px;">
+          <div style="display:flex; justify-content:center; align-items:center; min-height:14px;">
             {c.perm ? (
               <span style="font-family:'Space Mono',monospace; font-size:10.5px; font-weight:700; color:var(--ok);">{id ? "Tanpa batas" : "No expiry"}</span>
             ) : c.endsAt && Date.parse(c.endsAt) > nowMs ? (
