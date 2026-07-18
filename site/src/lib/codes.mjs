@@ -92,7 +92,8 @@ export async function loadCodes() {
   const present = new Set(active.map((c) => c.game).filter(Boolean));
   const games = Object.entries(GAMES)
     .filter(([id]) => present.has(id))
-    .map(([id, meta]) => ({ id, name: meta.name }));
+    .map(([id, meta]) => ({ id, name: meta.name }))
+    .sort((a, b) => a.name.localeCompare(b.name)); // dropdown filter urut A–Z
 
   return {
     updatedAt: raw.updatedAt ?? null,
