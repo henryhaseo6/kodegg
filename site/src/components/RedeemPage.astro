@@ -79,6 +79,11 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
         <option value="new">{tr("ctl.sortNew")}</option>
         <option value="az">{tr("ctl.sortAZ")}</option>
       </select>
+      <button data-new-toggle type="button" aria-pressed="false"
+        style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--muted); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 16px; display:inline-flex; align-items:center; gap:7px; white-space:nowrap; transition:all .15s;">
+        <span data-new-dot style="width:6px; height:6px; border-radius:50%; background:var(--faint); display:inline-block;"></span>
+        {lang === "id" ? "Baru saja" : "New only"}
+      </button>
     </div>
     <div style="margin-top:14px; font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);">
       <span data-count>{data.active.length}</span> {tr("ctl.shown")}
@@ -179,7 +184,9 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
     const archEmptyEl = document.querySelector("[data-arch-empty]");
     const archPager = document.querySelector("[data-arch-pager]");
 
-    const state = { q: "", game: "all", sort: "new", page: 1, archPage: 1 };
+    const state = { q: "", game: "all", sort: "new", page: 1, archPage: 1, newOnly: false };
+    const newToggle = document.querySelector("[data-new-toggle]");
+    const newDot = document.querySelector("[data-new-dot]");
 
     function pageList(cur, total) {
       const want = new Set([1, total, cur, cur - 1, cur + 1]);
@@ -232,7 +239,8 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
       let shown = cards.filter((c) => {
         const okGame = state.game === "all" || c.dataset.game === state.game;
         const okQ = !q || (c.dataset.search || "").includes(q);
-        return okGame && okQ;
+        const okNew = !state.newOnly || c.dataset.new === "1";
+        return okGame && okQ && okNew;
       });
 
       shown.sort((a, b) => {
@@ -313,6 +321,17 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
     sortEl?.addEventListener("change", (e) => {
       state.sort = e.target.value;
       state.page = 1;
+      apply();
+    });
+    // Toggle "Baru saja" — filter ke kode yang baru rilis (data-new=1).
+    newToggle?.addEventListener("click", () => {
+      state.newOnly = !state.newOnly;
+      state.page = 1;
+      newToggle.setAttribute("aria-pressed", String(state.newOnly));
+      newToggle.style.color = state.newOnly ? "var(--ink)" : "var(--muted)";
+      newToggle.style.background = state.newOnly ? "var(--acc)" : "var(--surface)";
+      newToggle.style.borderColor = state.newOnly ? "var(--acc)" : "var(--line)";
+      if (newDot) newDot.style.background = state.newOnly ? "var(--ink)" : "var(--faint)";
       apply();
     });
 

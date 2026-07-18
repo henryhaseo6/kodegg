@@ -61,6 +61,7 @@ if (card.perm) {
   data-name={card.name}
   data-search={card.search}
   data-seen={card.seenMs}
+  data-new={card.isNew ? "1" : "0"}
   style={`background:var(--surface); border:1px solid ${card.isNew ? "rgba(203,255,70,0.5)" : "var(--line)"}; border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;${card.isNew ? " box-shadow:0 0 0 1px rgba(203,255,70,0.12),0 10px 34px rgba(203,255,70,0.08);" : ""}`}
 >
   <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
