@@ -25,7 +25,9 @@ export const GENRE_LABEL = {
   br: "Battle Royale",
   shooter: "Shooter",
   strategy: "Strategy",
+  survival: "Survival",
   idle: "Idle",
+  adventure: "Adventure",
   otome: "Otome",
   mmorpg: "MMORPG",
 };

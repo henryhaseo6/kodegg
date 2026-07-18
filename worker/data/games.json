@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T11:20:30.239Z",
+  "updatedAt": "2026-07-18T11:30:47.493Z",
   "counts": {
     "total": 24
   },
@@ -9,6 +9,7 @@
       "name": "Genshin Impact",
       "genres": [
         "rpg",
+        "action",
         "gacha"
       ],
       "hasCodes": true,
@@ -41,12 +42,13 @@
       "name": "Zenless Zone Zero",
       "genres": [
         "action",
+        "rpg",
         "gacha"
       ],
       "hasCodes": true,
       "online": true,
       "rating": 4.1,
-      "ratingCount": 21506,
+      "ratingCount": 21504,
       "releasedAt": "2024-07-02",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ee/9d/6f/ee9d6ff1-d787-d19f-1d3c-3b90fc2c692a/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
       "pop": 12,
@@ -57,6 +59,7 @@
       "name": "Honkai Impact 3rd",
       "genres": [
         "action",
+        "rpg",
         "gacha"
       ],
       "hasCodes": true,
@@ -78,7 +81,7 @@
       "hasCodes": true,
       "online": true,
       "rating": 4.6,
-      "ratingCount": 5434,
+      "ratingCount": 5433,
       "releasedAt": "2021-07-27",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6a/30/49/6a3049b7-05c2-d4c7-487b-6fce92f24748/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
       "pop": 19,
@@ -89,6 +92,7 @@
       "name": "Wuthering Waves",
       "genres": [
         "rpg",
+        "action",
         "gacha"
       ],
       "hasCodes": true,
@@ -170,6 +174,7 @@
       "name": "Arknights: Endfield",
       "genres": [
         "rpg",
+        "strategy",
         "gacha"
       ],
       "hasCodes": true,
@@ -186,6 +191,7 @@
       "name": "Neverness to Everness",
       "genres": [
         "action",
+        "rpg",
         "gacha"
       ],
       "hasCodes": true,
@@ -202,7 +208,8 @@
       "name": "Diablo Immortal",
       "genres": [
         "action",
-        "rpg"
+        "rpg",
+        "mmorpg"
       ],
       "hasCodes": true,
       "online": true,
@@ -234,6 +241,7 @@
       "name": "Guardian Tales",
       "genres": [
         "action",
+        "adventure",
         "rpg"
       ],
       "hasCodes": true,
