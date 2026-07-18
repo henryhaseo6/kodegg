@@ -117,7 +117,21 @@ const jsonLd = [
         <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; color:var(--txt); margin:0;">
           {id ? "Kode aktif" : "Active codes"} <span style="color:var(--faint); font-size:16px;">({gameCodes.length})</span>
         </h2>
-        <a href={`${route("codes", lang)}?game=${game}`} style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--acc); text-decoration:none;">{id ? "Halaman kode" : "Codes page"} →</a>
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          {gameCodes.some((c) => c.code) && (
+            <button
+              data-copy-all
+              data-codes={gameCodes.map((c) => c.code).filter(Boolean).join("\n")}
+              data-label={id ? "Salin semua" : "Copy all"}
+              data-done={id ? "Tersalin ✓" : "Copied ✓"}
+              type="button"
+              style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:9px; padding:8px 13px; white-space:nowrap; transition:all .15s;"
+            >
+              {id ? "Salin semua" : "Copy all"}
+            </button>
+          )}
+          <a href={`${route("codes", lang)}?game=${game}`} style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--acc); text-decoration:none; white-space:nowrap;">{id ? "Halaman kode" : "Codes page"} →</a>
+        </div>
       </div>
       {
         gameCodes.length > 0 ? (

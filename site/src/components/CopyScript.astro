@@ -31,12 +31,10 @@
       return ok;
     }
 
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-copy]");
-      if (!btn) return;
-      const code = btn.getAttribute("data-copy");
+    function copyText(text, btn) {
+      if (!text) return;
       const done = btn.getAttribute("data-done") || "✓";
-      const label = btn.getAttribute("data-label") || "Copy";
+      const label = btn.getAttribute("data-label") || btn.textContent;
       const flash = () => {
         btn.textContent = done;
         btn.style.background = "var(--acc)";
@@ -53,11 +51,11 @@
       let handled = false;
       try {
         if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
-          const p = navigator.clipboard.writeText(code);
+          const p = navigator.clipboard.writeText(text);
           if (p && typeof p.then === "function") {
             handled = true;
             p.then(flash).catch(() => {
-              legacyCopy(code);
+              legacyCopy(text);
               flash();
             });
           }
@@ -66,9 +64,18 @@
         /* jatuh ke legacy di bawah */
       }
       if (!handled) {
-        legacyCopy(code);
+        legacyCopy(text);
         flash();
       }
+    }
+
+    document.addEventListener("click", (e) => {
+      // "Salin semua" → semua kode (dipisah baris) dari atribut data-codes.
+      const all = e.target.closest("[data-copy-all]");
+      if (all) return copyText(all.getAttribute("data-codes"), all);
+      // Salin satu kode.
+      const one = e.target.closest("[data-copy]");
+      if (one) return copyText(one.getAttribute("data-copy"), one);
     });
   })();
 </script>
