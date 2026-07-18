@@ -97,7 +97,13 @@ export function combineCodes(sourceItems, curatedItems) {
       // per-kode di kartu). `source` tetap = sumber utama/pemenang (yang pertama,
       // sesuai urutan prioritas argumen). Kode bisa datang dari >1 sumber, mis.
       // ZZZY2ANNIV: identitas+reward dari hoyo-codes, tanggal dari crimsonwitch.
-      byKey.set(key, { ...item, sources: item.source ? [item.source] : [] });
+      // sourceUrls = peta nama-sumber → URL-nya, biar TIAP sumber bisa dilink
+      // di kartu (bukan cuma primary). Sumber tanpa URL tak masuk peta (jadi teks).
+      byKey.set(key, {
+        ...item,
+        sources: item.source ? [item.source] : [],
+        sourceUrls: item.source && item.sourceUrl ? { [item.source]: item.sourceUrl } : {},
+      });
     } else {
       if (rewardScore(item.reward) > rewardScore(cur.reward)) {
         cur.reward = item.reward; // sumber lebih lengkap menang untuk reward
@@ -113,6 +119,7 @@ export function combineCodes(sourceItems, curatedItems) {
       if (item.perm) cur.perm = true;
       // Catat sumber tambahan (dedup, pertahankan urutan prioritas).
       if (item.source && !cur.sources.includes(item.source)) cur.sources.push(item.source);
+      if (item.source && item.sourceUrl && !cur.sourceUrls[item.source]) cur.sourceUrls[item.source] = item.sourceUrl;
     }
   }
   for (const item of byKey.values()) {
