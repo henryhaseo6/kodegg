@@ -21,11 +21,15 @@ const id = lang === "id";
         <span style="display:inline-flex; align-items:center; gap:6px;"><span style="color:var(--faint);">{tr("ev.endsIn")}</span><span data-m-cd data-deadline="" data-ended={tr("ev.ended")} style="color:var(--warn); font-weight:700;">—</span></span>
       </div>
       <div data-m-body></div>
+      <a data-m-src rel="noopener nofollow" target="_blank"
+        style="display:none; align-items:center; gap:8px; margin-top:18px; text-decoration:none; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; color:var(--ink); background:var(--acc); border-radius:11px; padding:11px 18px;">
+        <span data-m-src-label></span> ↗
+      </a>
     </div>
   </div>
 </div>
 
-<script is:inline define:vars={{ lang, L_CHAR: id ? "Karakter" : "Characters", L_WEAP: id ? "Senjata" : "Weapons", L_REW: id ? "Reward" : "Rewards", L_NODETAIL: id ? "Detail lengkap belum tersedia dari sumber untuk event ini — pantau countdown-nya biar tak kelewat." : "Full details aren't available from the source for this event — keep an eye on the countdown so you don't miss it." }}>
+<script is:inline define:vars={{ lang, L_CHAR: id ? "Karakter" : "Characters", L_WEAP: id ? "Senjata" : "Weapons", L_REW: id ? "Reward" : "Rewards", L_SRC: id ? "Buka di sumber" : "Open at source", L_NODETAIL: id ? "Detail lengkap belum tersedia dari sumber untuk event ini — pantau countdown-nya biar tak kelewat." : "Full details aren't available from the source for this event — keep an eye on the countdown so you don't miss it." }}>
   (function () {
     // Countdown untuk SEMUA [data-deadline] di halaman (kartu + modal).
     function fmt(ms) {
@@ -57,6 +61,8 @@ const id = lang === "id";
     const mDates = modal.querySelector("[data-m-dates]");
     const mCd = modal.querySelector("[data-m-cd]");
     const mBody = modal.querySelector("[data-m-body]");
+    const mSrc = modal.querySelector("[data-m-src]");
+    const mSrcLabel = modal.querySelector("[data-m-src-label]");
     const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
 
     function itemGrid(label, items, gold) {
@@ -90,6 +96,16 @@ const id = lang === "id";
         (d.desc ? `<p style="font-size:14px; line-height:1.7; color:var(--muted); margin:0 0 18px;">${esc(d.desc)}</p>` : "") +
         itemGrid(L_CHAR, d.characters, true) + itemGrid(L_WEAP, d.weapons, true) + itemGrid(L_REW, d.rewards, false);
       mBody.innerHTML = detail || `<p style="font-size:13.5px; color:var(--faint); margin:0; line-height:1.6;">${L_NODETAIL}</p>`;
+
+      // Tombol ke sumber asli (HoYoLAB dll) — muncul bila event punya url.
+      if (d.url) {
+        mSrc.href = d.url;
+        mSrc.style.display = "inline-flex";
+        mSrcLabel.textContent = d.source ? `${L_SRC} · ${d.source}` : L_SRC;
+      } else {
+        mSrc.style.display = "none";
+      }
+
       tick();
       modal.style.display = "flex";
       document.body.style.overflow = "hidden";

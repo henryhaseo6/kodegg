@@ -12,6 +12,7 @@ const payload = JSON.stringify({
   desc: e.desc ?? "", image: e.image ?? "", endsAt: e.endsAt ?? "", startsAt: e.startsAt ?? "",
   dates: dateRange(e.startsAt, e.endsAt, lang),
   characters: e.characters ?? [], weapons: e.weapons ?? [], rewards: e.rewards ?? [],
+  url: e.url ?? "", source: e.source ?? "",
 });
 ---
 
