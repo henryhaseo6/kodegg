@@ -38,17 +38,24 @@ const NEW_DAYS = 3;
 const NOW_MS = Date.now();
 
 function shape(item) {
-  // Kunci sort "Terbaru": tanggal SUMBER (rilis/discovery) bila ada, kalau tidak
-  // firstSeenAt ("Terpantau"). Konsisten dg label tanggal di kartu.
-  const seenMs = Date.parse(item.date ?? item.firstSeenAt ?? "") || 0;
+  // Dua kunci sort terpisah:
+  //  - dateMs      = TANGGAL RILIS dari sumber (mis. createdAt tracker, tanggal
+  //                  livestream). Ini "seberapa baru KODENYA".
+  //  - firstSeenMs = kapan KodeGG pertama melihatnya ("ditemukan"/Terpantau).
+  // Sort "Terbaru" mengutamakan dateMs; firstSeenMs HANYA tiebreak untuk kode
+  // yang sumbernya tak memberi tanggal rilis (mis. NIKKE editorial, Whiteout).
+  // Sengaja TIDAK menaikkan kode ke atas hanya karena baru ditemukan — kalau
+  // tidak, tiap kali menambah game, seluruh kodenya (walau lama) membanjiri atas.
   const dateMs = Date.parse(item.date ?? "") || 0;
+  const firstSeenMs = Date.parse(item.firstSeenAt ?? "") || 0;
   return {
     ...item,
     name: displayName(item),
     icon: iconUrl(item.game),
     redeemUrl: GAMES[item.game]?.redeemUrl ?? item.sourceUrl ?? null,
     search: searchIndex(item),
-    seenMs,
+    dateMs,
+    firstSeenMs,
     isNew: !item.perm && dateMs > 0 && NOW_MS - dateMs <= NEW_DAYS * 86400000,
   };
 }
@@ -62,13 +69,16 @@ export async function loadCodes() {
     return { updatedAt: null, active: [], archive: [], games: [], counts: { active: 0, archived: 0 } };
   }
 
-  const active = (raw.active ?? []).map(shape).sort((a, b) => b.seenMs - a.seenMs);
-  // Arsip diurut TERBARU→TERLAMA berdasar tanggal SUMBER (discovery/rilis). Kode
-  // arsip tanpa tanggal (sumber tak menyediakan) jatuh ke belakang.
-  const archMs = (x) => Date.parse(x.date ?? "") || 0;
+  // "Terbaru" = tanggal RILIS sumber dulu (kode paling baru), lalu kode tanpa
+  // tanggal rilis di belakang diurut dari yang terakhir ditemukan. Tidak memakai
+  // firstSeen sebagai kunci utama → menambah game tak lagi membanjiri atas.
+  const active = (raw.active ?? [])
+    .map(shape)
+    .sort((a, b) => b.dateMs - a.dateMs || b.firstSeenMs - a.firstSeenMs);
+  // Arsip: sama — tanggal rilis sumber dulu, lalu firstSeen sebagai tiebreak.
   const archive = (raw.archive ?? [])
     .map(shape)
-    .sort((a, b) => archMs(b) - archMs(a) || (b.seenMs || 0) - (a.seenMs || 0));
+    .sort((a, b) => b.dateMs - a.dateMs || b.firstSeenMs - a.firstSeenMs);
 
   // Dropdown game dibangun dari data yang BENAR-BENAR ada, bukan daftar hardcoded
   // — mockup menawarkan Wuthering Waves/MLBB/Free Fire yang belum punya sumber.
