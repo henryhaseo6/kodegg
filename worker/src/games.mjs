@@ -137,6 +137,33 @@ export const GAMES = {
     androidId: "com.blizzard.diablo.immortal",
     iconFile: "diablo.png",
   },
+  afka: {
+    name: "AFK Arena",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["idle", "rpg"],
+    appleId: "com.lilithgame.hgames.ios",
+    androidId: "com.lilithgame.hgame.gp",
+    iconFile: "afka.png",
+  },
+  gtales: {
+    name: "Guardian Tales",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["action", "rpg"],
+    appleId: "com.kakaogames.gdts",
+    androidId: "com.kakaogames.gdts",
+    iconFile: "gtales.png",
+  },
+  mongil: {
+    name: "Mongil: Star Dive",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["rpg", "gacha"],
+    appleId: "com.netmarble.monster2",
+    androidId: "com.netmarble.monster2",
+    iconFile: "mongil.png",
+  },
 };
 
 /** Jalur publik icon sebuah game (dipakai situs). */
