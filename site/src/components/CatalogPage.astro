@@ -244,6 +244,7 @@ const sorts = [
         if (favs.has(id)) favs.delete(id);
         else favs.add(id);
         localStorage.setItem(KEY, JSON.stringify([...favs]));
+        window.dispatchEvent(new Event("kodegg:fav")); // update badge header
         paint(btn, favs.has(id));
       });
     });

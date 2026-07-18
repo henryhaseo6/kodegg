@@ -213,6 +213,7 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
         if (favs.has(fid)) favs.delete(fid);
         else favs.add(fid);
         localStorage.setItem(KEY, JSON.stringify([...favs]));
+        window.dispatchEvent(new Event("kodegg:fav")); // update badge header
         paint(btn, favs.has(fid));
       });
     }
