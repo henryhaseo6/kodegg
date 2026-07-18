@@ -21,12 +21,21 @@ async function fetchBytes(url, ua) {
 // --- Adapter 1: App Store (iTunes Lookup) ---
 async function appleIcon(meta, ua) {
   if (!meta.appleId) throw new Error("tanpa appleId");
-  const res = await fetch(
-    `https://itunes.apple.com/lookup?bundleId=${encodeURIComponent(meta.appleId)}`,
-    { headers: { "User-Agent": ua } },
-  );
-  if (!res.ok) throw new Error(`lookup HTTP ${res.status}`);
-  const app = (await res.json()).results?.[0];
+  // Sebagian game (mis. MLBB) tak ada di App Store US → coba US → ID → SG.
+  let app = null;
+  for (const c of ["us", "id", "sg"]) {
+    try {
+      const res = await fetch(
+        `https://itunes.apple.com/lookup?bundleId=${encodeURIComponent(meta.appleId)}&country=${c}`,
+        { headers: { "User-Agent": ua } },
+      );
+      if (!res.ok) continue;
+      app = (await res.json()).results?.[0];
+      if (app) break;
+    } catch {
+      /* coba storefront berikutnya */
+    }
+  }
   if (!app) throw new Error("bundleId tak ditemukan");
 
   const art = app.artworkUrl512 || app.artworkUrl100 || app.artworkUrl60;

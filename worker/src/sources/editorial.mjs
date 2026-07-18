@@ -23,6 +23,11 @@ const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 const CODE_RE = /^[A-Za-z0-9]{4,30}$/;
+// Kata umum yang sering ter-bold di artikel (bukan kode). Difilter agar tak
+// terhitung sebagai kandidat kode. Aman untuk kode asli (nama kode game bukan
+// kata kamus generik). Cross-check ≥2 sumber sudah menangkis kebanyakan noise;
+// ini pengaman tambahan untuk kata yang kebetulan ter-bold di dua sumber.
+const NOISE = /^(redeem|redeemed|redeeming|send|copy|active|expired|code|codes|new|note|settings|reward|rewards|click|here|open|enter|update|updated|free|gift|gifts|latest|working|valid|invalid|error|step|steps|tap|press|select|confirm|claim|login|account|server|region|global|garena)$/i;
 
 function clean(s) {
   return (s || "")
@@ -82,6 +87,42 @@ const SITES = {
       return { active: grab(aHtml), expired: grab(eHtml).map((x) => x.code) };
     },
   },
+  pocketgamer: {
+    // Struktur sama pockettactics: <li><strong>CODE</strong> - reward</li>,
+    // batas section = heading "Expired codes".
+    url: (slug) => `https://www.pocketgamer.com/${slug}/`,
+    parse(html) {
+      const cut = html.search(/Expired codes/i);
+      const aHtml = cut > 0 ? html.slice(0, cut) : html;
+      const eHtml = cut > 0 ? html.slice(cut) : "";
+      const grab = (h) => {
+        const out = [];
+        for (const m of h.matchAll(/<li>\s*<strong>([A-Za-z0-9]{4,30})<\/strong>([^<]*)/g)) {
+          out.push({ code: m[1], reward: reward(m[2]) });
+        }
+        return out;
+      };
+      return { active: grab(aHtml), expired: grab(eHtml).map((x) => x.code) };
+    },
+  },
+  dexerto: {
+    // Tabel: <td>…<strong>CODE</strong>…</td>. Reward di kolom terpisah
+    // (diabaikan; diambil dari sumber lain berformat "CODE - reward"). Heading
+    // "Active/Expired codes" muncul BERKALI-KALI (nav/intro) → tak bisa slice
+    // pakai kemunculan pertama. Strategi: kumpulkan semua <strong>CODE</strong>
+    // berposisi; batas = heading "expired codes" PERTAMA setelah kode pertama.
+    url: (slug) => `https://www.dexerto.com/${slug}/`,
+    parse(html) {
+      const codes = [...html.matchAll(/<strong>([A-Za-z0-9]{4,30})<\/strong>/g)].map((m) => ({ code: m[1], pos: m.index }));
+      if (codes.length === 0) return { active: [], expired: [] };
+      const expHeads = [...html.matchAll(/expired\s+codes/gi)].map((m) => m.index);
+      const boundary = expHeads.find((p) => p > codes[0].pos) ?? Infinity;
+      return {
+        active: codes.filter((c) => c.pos < boundary).map((c) => ({ code: c.code, reward: null })),
+        expired: codes.filter((c) => c.pos >= boundary).map((c) => c.code),
+      };
+    },
+  },
 };
 
 // --- Registry game editorial: id → slug per situs (butuh ≥2). ---
@@ -93,8 +134,20 @@ const GAMES_CFG = {
       progameguides: "nikke-goddess-of-victory/goddess-of-victory-nikke-codes",
     },
   },
+  mlbb: {
+    // Mobile Legends — kode claim-limited (umur panjang). PocketGamer + Dexerto
+    // dua-duanya fresh & misahin aktif/expired; irisan = kode yang dua-duanya
+    // sepakat aktif (mencegah kode yang mati karena cap-redeem penuh bocor).
+    sources: {
+      pocketgamer: "mobile-legends-bang-bang/redeem-codes",
+      dexerto: "gaming/mobile-legends-bang-bang-codes-ml-diamonds-magic-dust-1740586",
+    },
+  },
   // Blue Archive DI-HOLD: sumber melacak region berbeda (Global vs JP) →
   // daftar kodenya disjoint, irisan = 0. Tak bisa cross-check dengan andal.
+  // CODM/PUBG/Free Fire DI-HOLD: CODM butuh tag region Garena/Global (sumber tak
+  // melabelinya andal); PUBG kode 24-72 jam & cuma 1 sumber fresh; Free Fire kode
+  // harian region-locked tanpa sumber fresh yang misahin aktif/expired.
 };
 
 async function fetchHtml(url) {
@@ -155,7 +208,7 @@ export async function fetchEditorial({ games, log = () => {} }) {
         const votes = new Map(); // UPPER → { count, cands:[{code,reward,site}] }
         for (const r of ok) {
           for (const { code, reward: rw } of r.active) {
-            if (!CODE_RE.test(code)) continue;
+            if (!CODE_RE.test(code) || NOISE.test(code)) continue;
             const k = code.toUpperCase();
             const v = votes.get(k) || { count: 0, cands: [] };
             v.count += 1;

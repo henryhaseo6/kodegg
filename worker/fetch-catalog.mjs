@@ -17,12 +17,23 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, "data/games.json");
 const UA = "KodeGGBot/1.0 (+https://kodegg.com)";
 
+// Sebagian game (mis. MLBB) TIDAK ada di App Store US → lookup default gagal.
+// Coba beberapa storefront (US → ID → SG) sampai ketemu.
+const STOREFRONTS = ["us", "id", "sg"];
 async function lookup(appleId) {
-  const res = await fetch(`https://itunes.apple.com/lookup?bundleId=${encodeURIComponent(appleId)}`, {
-    headers: { "User-Agent": UA },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return (await res.json()).results?.[0] ?? null;
+  for (const c of STOREFRONTS) {
+    try {
+      const res = await fetch(`https://itunes.apple.com/lookup?bundleId=${encodeURIComponent(appleId)}&country=${c}`, {
+        headers: { "User-Agent": UA },
+      });
+      if (!res.ok) continue;
+      const app = (await res.json()).results?.[0];
+      if (app) return app;
+    } catch {
+      /* coba storefront berikutnya */
+    }
+  }
+  return null;
 }
 
 /** Cover 256px dari artwork iTunes (kotak, cukup untuk kartu). */

@@ -230,6 +230,15 @@ export const GAMES = {
     androidId: "com.proximabeta.nikke",
     iconFile: "gov.png",
   },
+  mlbb: {
+    name: "Mobile Legends: Bang Bang",
+    codeSource: "editorial",
+    redeemUrl: "https://www.mobilelegends.com/redeem",
+    genres: ["moba"],
+    appleId: "com.mobile.legends",
+    androidId: "com.mobile.legends",
+    iconFile: "mlbb.png",
+  },
   // --- Game via whiteoutsurvival-community (sources/whiteout.mjs) ---
   wos: {
     name: "Whiteout Survival",
