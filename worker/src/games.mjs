@@ -100,6 +100,43 @@ export const GAMES = {
     androidId: "com.infoldgames.infinitynikki",
     iconFile: "nikki.png",
   },
+  // --- Game via redeem-code-tracker (sources/redeemtracker.mjs) ---
+  e7: {
+    name: "Epic Seven",
+    codeSource: "redeemtracker",
+    redeemUrl: null, // redeem in-game (Menu → coupon)
+    genres: ["rpg", "gacha"],
+    appleId: "com.stove.epic7.ios",
+    androidId: "com.stove.epic7.google",
+    iconFile: "e7.png",
+  },
+  endfield: {
+    name: "Arknights: Endfield",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["rpg", "gacha"],
+    appleId: "com.gryphline.endfield.ios",
+    androidId: "com.gryphline.endfield.global",
+    iconFile: "endfield.png",
+  },
+  nte: {
+    name: "Neverness to Everness",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["action", "gacha"],
+    appleId: "com.hottagames.nte",
+    androidId: "com.hottagames.nte",
+    iconFile: "nte.png",
+  },
+  diablo: {
+    name: "Diablo Immortal",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["action", "rpg"],
+    appleId: "com.blizzard.diablo.immortal",
+    androidId: "com.blizzard.diablo.immortal",
+    iconFile: "diablo.png",
+  },
 };
 
 /** Jalur publik icon sebuah game (dipakai situs). */

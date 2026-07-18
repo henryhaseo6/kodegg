@@ -11,6 +11,10 @@
 
 const SLUGS = {
   afkj: "afk-journey",
+  e7: "epic-seven",
+  endfield: "arknights-endfield",
+  nte: "nte",
+  diablo: "diablo-immortal",
 };
 const CODE_RE = /^[A-Za-z0-9]{4,30}$/;
 
