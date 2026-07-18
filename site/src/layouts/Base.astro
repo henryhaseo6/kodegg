@@ -47,6 +47,11 @@ const locale = lang === "id" ? "id_ID" : "en_US";
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#090C12" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="KodeGG" />
 
     <link rel="preconnect" href="https://api.fontshare.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -63,6 +68,14 @@ const locale = lang === "id" ? "id_ID" : "en_US";
     <div class="gg-root">
       <slot />
     </div>
+    <script is:inline>
+      // Daftarkan service worker (PWA installable + offline dasar).
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>
 
