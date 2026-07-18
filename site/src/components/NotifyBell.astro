@@ -1,0 +1,107 @@
+---
+// Tombol lonceng notifikasi push (kode baru). Muncul HANYA bila:
+//   1. PUBLIC_VAPID_KEY di-set saat build (fitur dikonfigurasi), DAN
+//   2. browser mendukung Push (dicek klien; tombol default disembunyikan).
+// Klik → minta izin + subscribe (POST /api/subscribe) atau unsubscribe.
+const VAPID = import.meta.env.PUBLIC_VAPID_KEY || "";
+const { lang } = Astro.props;
+const id = lang === "id";
+const T = {
+  on: id ? "Notifikasi kode baru: AKTIF" : "New-code notifications: ON",
+  off: id ? "Aktifkan notifikasi kode baru" : "Enable new-code notifications",
+  err: id ? "Gagal mengaktifkan notifikasi. Coba lagi." : "Couldn't enable notifications. Try again.",
+};
+---
+
+{
+  VAPID && (
+    <>
+      <button
+        data-notify-btn
+        aria-label={T.off}
+        aria-pressed="false"
+        title={T.off}
+        type="button"
+        style="position:relative; display:none; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:var(--surface); color:var(--muted); cursor:pointer;"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg>
+      </button>
+
+      <script is:inline define:vars={{ VAPID, T }}>
+        (function () {
+          const btn = document.querySelector("[data-notify-btn]");
+          if (!btn) return;
+          const supported = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
+          if (!supported) return; // biarkan tersembunyi
+          btn.style.display = "flex";
+
+          function urlB64(base64) {
+            const pad = "=".repeat((4 - (base64.length % 4)) % 4);
+            const b = (base64 + pad).replace(/-/g, "+").replace(/_/g, "/");
+            const raw = atob(b);
+            return Uint8Array.from([...raw].map((c) => c.charCodeAt(0)));
+          }
+          function setState(on) {
+            btn.setAttribute("aria-pressed", String(on));
+            btn.setAttribute("aria-label", on ? T.on : T.off);
+            btn.setAttribute("title", on ? T.on : T.off);
+            btn.style.color = on ? "var(--acc)" : "var(--muted)";
+            btn.style.borderColor = on ? "var(--acc)" : "var(--line)";
+            const svg = btn.querySelector("svg");
+            if (svg) svg.setAttribute("fill", on ? "rgba(203,255,70,0.25)" : "none");
+          }
+
+          (async () => {
+            try {
+              const reg = await navigator.serviceWorker.ready;
+              setState(!!(await reg.pushManager.getSubscription()));
+            } catch {}
+          })();
+
+          btn.addEventListener("click", async () => {
+            btn.disabled = true;
+            try {
+              const reg = await navigator.serviceWorker.ready;
+              const existing = await reg.pushManager.getSubscription();
+              if (existing) {
+                await fetch("/api/subscribe", {
+                  method: "DELETE",
+                  headers: { "content-type": "application/json" },
+                  body: JSON.stringify({ endpoint: existing.endpoint }),
+                }).catch(() => {});
+                await existing.unsubscribe();
+                setState(false);
+              } else {
+                const perm = await Notification.requestPermission();
+                if (perm !== "granted") {
+                  btn.disabled = false;
+                  return;
+                }
+                const sub = await reg.pushManager.subscribe({
+                  userVisibleOnly: true,
+                  applicationServerKey: urlB64(VAPID),
+                });
+                const res = await fetch("/api/subscribe", {
+                  method: "POST",
+                  headers: { "content-type": "application/json" },
+                  body: JSON.stringify(sub),
+                });
+                if (res.ok) setState(true);
+                else {
+                  await sub.unsubscribe();
+                  alert(T.err);
+                }
+              }
+            } catch {
+              /* abaikan */
+            }
+            btn.disabled = false;
+          });
+        })();
+      </script>
+    </>
+  )
+}

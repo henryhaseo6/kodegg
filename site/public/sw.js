@@ -61,3 +61,39 @@ self.addEventListener("fetch", (e) => {
     ),
   );
 });
+
+// PUSH — tampilkan notifikasi kode baru. Payload dikirim worker (web-push).
+self.addEventListener("push", (event) => {
+  let d = {};
+  try {
+    d = event.data ? event.data.json() : {};
+  } catch {
+    d = { body: event.data && event.data.text() };
+  }
+  const title = d.title || "KodeGG";
+  const options = {
+    body: d.body || "",
+    icon: "/assets/favicon-192.png",
+    badge: "/assets/favicon-192.png",
+    tag: d.tag || "kodegg-code",
+    data: { url: d.url || "/id" },
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+// Klik notifikasi → fokus tab yang sudah terbuka / buka tab baru ke URL-nya.
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const url = (event.notification.data && event.notification.data.url) || "/id";
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((cls) => {
+      for (const c of cls) {
+        if ("focus" in c) {
+          c.navigate(url);
+          return c.focus();
+        }
+      }
+      if (self.clients.openWindow) return self.clients.openWindow(url);
+    }),
+  );
+});

@@ -128,9 +128,17 @@ async function main() {
   await mkdir(dirname(OUT), { recursive: true });
   await writeFile(OUT, JSON.stringify(payload, null, 2));
 
+  // Kode BARU pada run ini (firstSeenAt === now) → dipakai worker push-notify
+  // untuk kirim notifikasi. Non-permanen saja (kode evergreen bukan "berita").
+  const newlyAdded = active
+    .filter((c) => c.firstSeenAt === now && c.code && !c.perm)
+    .map((c) => ({ code: c.code, game: c.game, gameName: c.gameName ?? c.game, reward: c.reward ?? "" }));
+  await writeFile(resolve(dirname(OUT), "new-codes.json"), JSON.stringify({ generatedAt: now, codes: newlyAdded }, null, 2));
+
   console.log(
     `✓ data/codes.json — ${payload.counts.active} aktif, ` +
-      `${payload.counts.archived} arsip (+${newlyArchived} baru diarsipkan)`,
+      `${payload.counts.archived} arsip (+${newlyArchived} baru diarsipkan)` +
+      (newlyAdded.length ? `, ${newlyAdded.length} kode baru → notifikasi` : ""),
   );
   const totalFailed = hoyo.failed + wiki.failed + wuwa.failed + totw.failed + cw.failed;
   if (totalFailed) {

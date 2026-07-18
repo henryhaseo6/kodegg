@@ -7,9 +7,13 @@
   "scripts": {
     "codes": "node fetch-codes.mjs",
     "icons": "node fetch-icons.mjs",
+    "notify": "node push-notify.mjs",
     "test": "node --test"
   },
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "web-push": "^3.6.7"
   }
 }

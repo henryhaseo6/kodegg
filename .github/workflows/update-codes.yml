@@ -58,3 +58,17 @@ jobs:
         # ini dipicu schedule/workflow_dispatch, BUKAN push, jadi commit ini
         # tak akan memicu ulang dirinya sendiri. Push memicu rebuild Cloudflare
         # (build.mjs fetch data segar + render ulang seluruh situs).
+
+      # Kirim notifikasi push utk kode baru run ini (data/new-codes.json).
+      # Aman-dilewati: skrip exit 0 bila secret VAPID belum di-set.
+      - name: Kirim notifikasi push (kode baru)
+        env:
+          VAPID_PUBLIC: ${{ secrets.VAPID_PUBLIC }}
+          VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          PUSH_SECRET: ${{ secrets.PUSH_SECRET }}
+          SITE_URL: https://kodegg.com
+        run: |
+          if [ -z "$VAPID_PRIVATE" ]; then echo "VAPID belum di-set — lewati notifikasi."; exit 0; fi
+          npm install web-push@^3 --no-save --no-audit --no-fund
+          node worker/push-notify.mjs

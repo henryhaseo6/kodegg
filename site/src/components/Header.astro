@@ -4,6 +4,7 @@
 // lain. Toggle klien membuat crawler hanya melihat satu bahasa (lihat schema.md).
 import { t } from "../lib/i18n.mjs";
 import { route, langPaths } from "../lib/routes.mjs";
+import NotifyBell from "./NotifyBell.astro";
 
 // active = kunci halaman logis yang aktif (discover/codes/news) atau null.
 // paths = {id, en} untuk toggle bahasa; default ke Beranda bila tak diberikan.
@@ -49,6 +50,7 @@ const nav = [
     </nav>
 
     <div style="margin-left:auto; display:flex; align-items:center; gap:12px;">
+      <NotifyBell lang={lang} />
       <a
         href={route("saved", lang)}
         class="gg-icon-btn"
