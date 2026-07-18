@@ -30,8 +30,9 @@ export const GENRE_LABEL = {
   mmorpg: "MMORPG",
 };
 
-// Chip filter yang ditampilkan (urutan sesuai desain).
-export const GENRE_FILTERS = ["rpg", "gacha", "moba", "br", "shooter", "strategy", "idle"];
+// Urutan preferensi chip filter. Yang BENAR-BENAR ditampilkan dihitung dinamis
+// di loadCatalog() — hanya genre yang ada gamenya (biar tak ada chip kosong).
+const GENRE_ORDER = ["rpg", "gacha", "action", "moba", "br", "shooter", "strategy", "survival", "idle", "mmorpg", "adventure", "otome"];
 
 export async function loadCatalog() {
   let raw;
@@ -53,5 +54,9 @@ export async function loadCatalog() {
     hasActiveCodes: active.has(g.id),
   }));
 
-  return { updatedAt: raw.updatedAt ?? null, games };
+  // Chip genre = hanya genre yang benar-benar ada gamenya, urut sesuai preferensi.
+  const present = new Set(games.flatMap((g) => g.genres));
+  const genreFilters = GENRE_ORDER.filter((k) => present.has(k));
+
+  return { updatedAt: raw.updatedAt ?? null, games, genreFilters };
 }
