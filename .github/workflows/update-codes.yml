@@ -11,10 +11,11 @@ name: update-codes
 
 on:
   schedule:
-    # Menit :27 (BUKAN :00). Cron GitHub best-effort & sering ditunda/di-drop
-    # saat beban puncak — awal tiap jam (menit :00) adalah waktu tersibuk.
-    # Menit ganjil di tengah jam jauh lebih andal mendekati "tiap jam".
-    - cron: "27 * * * *"
+    # FALLBACK HARIAN saja. Pemicu UTAMA tiap jam = Cloudflare Cron Worker
+    # (cron/worker.js) yang memanggil workflow_dispatch — jauh lebih andal
+    # daripada cron GitHub (sering ditunda/di-drop). Jadwal harian ini cuma
+    # jaring pengaman bila CF cron mati. Hindari dobel-jalan tiap jam.
+    - cron: "27 3 * * *"
   workflow_dispatch: # bisa dijalankan manual dari tab Actions
     inputs:
       test_push:
