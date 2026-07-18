@@ -3,6 +3,7 @@
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 import CodeCard from "./CodeCard.astro";
+import CountdownScript from "./CountdownScript.astro";
 import { t } from "../lib/i18n.mjs";
 import { langPaths } from "../lib/routes.mjs";
 
@@ -154,6 +155,7 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
 </main>
 
 <Footer lang={lang} updatedAt={data.updatedAt} />
+<CountdownScript lang={lang} />
 
 <script is:inline define:vars={{ PAGE, ARCH_PAGE }}>
   // Filter/sort/copy/muat-lebih. Menggantikan kelas Component dari support.js.

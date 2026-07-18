@@ -8,6 +8,7 @@ import Breadcrumb from "../../../components/Breadcrumb.astro";
 import Footer from "../../../components/Footer.astro";
 import CodeCard from "../../../components/CodeCard.astro";
 import CopyScript from "../../../components/CopyScript.astro";
+import CountdownScript from "../../../components/CountdownScript.astro";
 import EventCard from "../../../components/EventCard.astro";
 import EventModal from "../../../components/EventModal.astro";
 import { LANGS, t } from "../../../lib/i18n.mjs";
@@ -202,6 +203,7 @@ const jsonLd = [
   {gameEvents.length > 0 && <EventModal lang={lang} />}
   <Footer lang={lang} updatedAt={codes.updatedAt} />
   <CopyScript />
+  <CountdownScript lang={lang} />
 
 
 

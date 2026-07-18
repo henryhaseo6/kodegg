@@ -36,6 +36,12 @@ const allSources = card.sources?.length ? card.sources : card.source ? [card.sou
 const primarySource = card.source ?? allSources[0] ?? null;
 const extraSources = allSources.filter((s) => s !== primarySource);
 
+// Countdown kedaluwarsa: hanya untuk kode berbatas waktu (endsAt di masa depan,
+// mis. kode livestream ~48 jam). Ticker real-time via CountdownScript. Tampil
+// menggantikan label tanggal — lebih mendesak & berguna untuk kode ini.
+const endsMs = card.endsAt ? Date.parse(card.endsAt) : NaN;
+const hasCountdown = !card.perm && Number.isFinite(endsMs) && endsMs > Date.now();
+
 let badge;
 if (card.perm) {
   badge = { text: lang === "id" ? "Tanpa batas" : "No expiry", color: "var(--ok)" };
@@ -173,8 +179,17 @@ if (card.perm) {
       }
       {extraSources.length > 0 && <span> · {extraSources.join(" · ")}</span>}
     </span>
-    <span style={`font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:${badge.color};`}>
-      {badge.text}
-    </span>
+    {
+      hasCountdown ? (
+        <span style="display:inline-flex; align-items:center; gap:5px; flex:0 0 auto;">
+          <span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">{tr("ev.endsIn")}</span>
+          <span data-deadline={card.endsAt} data-ended={lang === "id" ? "Berakhir" : "Ended"} style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--warn); white-space:nowrap;">—</span>
+        </span>
+      ) : (
+        <span style={`font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:${badge.color}; text-align:right;`}>
+          {badge.text}
+        </span>
+      )
+    }
   </div>
 </article>

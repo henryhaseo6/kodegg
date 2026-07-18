@@ -68,7 +68,10 @@ async function fetchOne(id, slug, meta, ua, now) {
     if (Number.isFinite(expMs) && expMs <= now) {
       expiredItems.push({ ...base, code: r.code, reward: r.reward, date, status: "expired" });
     } else {
-      items.push({ ...base, code: r.code, reward: r.reward, date, status: "active" });
+      // Simpan endsAt (waktu kedaluwarsa presisi) utk kode berbatas waktu, mis.
+      // kode livestream (~48 jam) → situs bisa tampilkan countdown "kadaluarsa
+      // dalam". Kode tanpa expires (permanen/tak diketahui) tetap endsAt null.
+      items.push({ ...base, code: r.code, reward: r.reward, date, endsAt: iso(r.expires), status: "active" });
     }
   }
   return { items, expiredItems };

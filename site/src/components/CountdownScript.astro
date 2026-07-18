@@ -1,0 +1,39 @@
+---
+// Ticker countdown reusable. Meng-update SEMUA [data-deadline] di halaman tiap
+// detik (mis. badge "kadaluarsa dalam" di kartu kode). Diikutkan di halaman yg
+// punya kartu kode berbatas waktu (halaman kode & per-game). Guard __ggCdBound
+// mencegah ticker ganda bila komponen dimuat >1×.
+import { t } from "../lib/i18n.mjs";
+const { lang } = Astro.props;
+---
+
+<script is:inline define:vars={{ lang }}>
+  (function () {
+    if (window.__ggCdBound) return;
+    window.__ggCdBound = true;
+
+    const id = lang === "id";
+    function fmt(ms) {
+      if (ms <= 0) return null;
+      const d = Math.floor(ms / 86400000),
+        h = Math.floor((ms % 86400000) / 3600000),
+        m = Math.floor((ms % 3600000) / 60000),
+        s = Math.floor((ms % 60000) / 1000);
+      if (d > 0) return `${d}${id ? "h" : "d"} ${h}${id ? "j" : "h"} ${m}m`;
+      return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+    }
+    function tick() {
+      const now = Date.now();
+      for (const el of document.querySelectorAll("[data-deadline]")) {
+        const dl = el.getAttribute("data-deadline");
+        if (!dl) continue;
+        const ts = Date.parse(dl);
+        if (isNaN(ts)) continue;
+        const left = fmt(ts - now);
+        el.textContent = left === null ? el.getAttribute("data-ended") || "" : left;
+      }
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>

@@ -103,6 +103,9 @@ export function combineCodes(sourceItems, curatedItems) {
       // Tanggal SUMBER (mis. discovery dari wiki) — API HoYo tak punya tanggal,
       // jadi ambil dari sumber mana pun yang menyediakannya.
       if (!cur.date && item.date) cur.date = item.date;
+      // Waktu kedaluwarsa (mis. crimsonwitch untuk kode livestream) — ambil dari
+      // sumber mana pun yang punya, untuk countdown di kartu.
+      if (!cur.endsAt && item.endsAt) cur.endsAt = item.endsAt;
       // Permanen bila DITANDAI permanen oleh sumber mana pun (mis. tot.wiki
       // End Date 2099) — biar kartu tampil "Tanpa batas", bukan tanggal rilis.
       if (item.perm) cur.perm = true;
