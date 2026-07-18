@@ -164,6 +164,16 @@ export const GAMES = {
     androidId: "com.netmarble.monster2",
     iconFile: "mongil.png",
   },
+  // --- Game via whiteoutsurvival-community (sources/whiteout.mjs) ---
+  wos: {
+    name: "Whiteout Survival",
+    codeSource: "whiteout",
+    redeemUrl: "https://wos-giftcode.centurygame.com/",
+    genres: ["strategy", "survival"],
+    appleId: "com.gof.global",
+    androidId: "com.gof.global",
+    iconFile: "wos.png",
+  },
 };
 
 /** Jalur publik icon sebuah game (dipakai situs). */
