@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-18T09:45:57.762Z",
+  "updatedAt": "2026-07-18T10:02:31.543Z",
   "counts": {
-    "total": 29
+    "total": 35
   },
   "games": [
     {
@@ -14,7 +14,7 @@
       "hasCodes": true,
       "online": true,
       "rating": 4.2,
-      "ratingCount": 575206,
+      "ratingCount": 575215,
       "releasedAt": "2020-09-26",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fd/a5/bd/fda5bd6d-4ce5-9bd9-1b06-adc46757af8b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
       "pop": 2,
@@ -49,7 +49,7 @@
       "ratingCount": 21506,
       "releasedAt": "2024-07-02",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ee/9d/6f/ee9d6ff1-d787-d19f-1d3c-3b90fc2c692a/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-      "pop": 21,
+      "pop": 22,
       "isNew": false
     },
     {
@@ -78,10 +78,10 @@
       "hasCodes": true,
       "online": true,
       "rating": 4.6,
-      "ratingCount": 5434,
+      "ratingCount": 5433,
       "releasedAt": "2021-07-27",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6a/30/49/6a3049b7-05c2-d4c7-487b-6fce92f24748/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-      "pop": 26,
+      "pop": 29,
       "isNew": false
     },
     {
@@ -114,7 +114,7 @@
       "ratingCount": 10051,
       "releasedAt": "2023-10-25",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4c/1a/6c/4c1a6c50-753d-652d-1846-9d9e29e41bd4/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-      "pop": 24,
+      "pop": 27,
       "isNew": false
     },
     {
@@ -143,10 +143,10 @@
       "hasCodes": true,
       "online": true,
       "rating": 3.9,
-      "ratingCount": 12433,
+      "ratingCount": 12463,
       "releasedAt": "2024-12-03",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9b/cf/fa/9bcffa2e-a711-0224-940a-488c4a349135/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 23,
+      "pop": 25,
       "isNew": false
     },
     {
@@ -178,7 +178,7 @@
       "ratingCount": 5547,
       "releasedAt": "2026-01-19",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cb/f4/3c/cbf43c8d-a911-f698-e68b-3f8c26719f02/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 25,
+      "pop": 28,
       "isNew": false
     },
     {
@@ -194,7 +194,7 @@
       "ratingCount": 16479,
       "releasedAt": "2026-04-26",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/79/cd/c8/79cdc820-f215-f8e7-8cbe-d573e1f10953/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 22,
+      "pop": 23,
       "isNew": true
     },
     {
@@ -258,8 +258,110 @@
       "ratingCount": 3694,
       "releasedAt": "2026-04-13",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e5/b1/8c/e5b18c01-e85a-90a8-defa-6acad8c18efa/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 28,
+      "pop": 31,
       "isNew": true
+    },
+    {
+      "id": "dtrav",
+      "name": "Dragon Traveler",
+      "genres": [
+        "rpg",
+        "idle",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.8,
+      "ratingCount": 16366,
+      "releasedAt": "2026-01-12",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4c/02/86/4c028696-16ff-a4cf-c401-59a0ee6ebdf2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 24,
+      "isNew": false
+    },
+    {
+      "id": "sxs",
+      "name": "Sword x Staff",
+      "genres": [
+        "rpg",
+        "idle",
+        "strategy"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.9,
+      "ratingCount": 29144,
+      "releasedAt": "2026-05-19",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ed/91/33/ed913343-2460-a04e-a4f4-41c517efc516/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 21,
+      "isNew": true
+    },
+    {
+      "id": "evernight",
+      "name": "Ever Night: Reawakening",
+      "genres": [
+        "rpg",
+        "idle",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.7,
+      "ratingCount": 1497,
+      "releasedAt": "2026-06-05",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2f/f1/e6/2ff1e63b-e0a5-8061-3c9a-2e0a18146814/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
+      "pop": 33,
+      "isNew": true
+    },
+    {
+      "id": "isekai",
+      "name": "Isekai: Slow Life",
+      "genres": [
+        "idle",
+        "strategy",
+        "rpg"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.5,
+      "ratingCount": 10363,
+      "releasedAt": "2023-08-14",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/43/6d/75/436d7561-3fc1-5d87-1023-ddf580c00c41/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
+      "pop": 26,
+      "isNew": false
+    },
+    {
+      "id": "loe",
+      "name": "Legend of Elements",
+      "genres": [
+        "mmorpg",
+        "rpg",
+        "idle"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.8,
+      "ratingCount": 2384,
+      "releasedAt": "2025-10-10",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8d/34/f2/8d34f209-bc3d-2b6e-e19e-fc4c0e1255ea/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg",
+      "pop": 32,
+      "isNew": false
+    },
+    {
+      "id": "starsail",
+      "name": "Star Sailors",
+      "genres": [
+        "rpg",
+        "gacha",
+        "strategy"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.8,
+      "ratingCount": 387,
+      "releasedAt": "2026-02-25",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d4/ee/b7/d4eeb722-1791-7ee4-f251-0c0716e6265a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 34,
+      "isNew": false
     },
     {
       "id": "gov",
@@ -303,7 +405,7 @@
       "hasCodes": false,
       "online": true,
       "rating": 4,
-      "ratingCount": 29601,
+      "ratingCount": 29633,
       "releasedAt": "2025-04-01",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/24/0e/c3240e2a-1279-21fc-84eb-c3bb535a0222/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
       "pop": 20,
@@ -318,7 +420,7 @@
       "hasCodes": false,
       "online": true,
       "rating": 4.2,
-      "ratingCount": 63257,
+      "ratingCount": 63262,
       "releasedAt": "2021-03-28",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/70/46/6c/70466c45-0ce6-c664-6ff6-a951773be30b/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
       "pop": 13,
@@ -348,7 +450,7 @@
       "hasCodes": false,
       "online": true,
       "rating": 4.6,
-      "ratingCount": 89134,
+      "ratingCount": 89138,
       "releasedAt": "2017-12-19",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/70/21/49/70214910-8392-c875-2135-b5d1398396ba/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/256x256bb.jpg",
       "pop": 9,
@@ -432,7 +534,7 @@
       "ratingCount": 5331,
       "releasedAt": "2021-11-07",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7f/1f/75/7f1f75c8-e2e1-12fc-ce1d-73171f34a7e2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 27,
+      "pop": 30,
       "isNew": false
     },
     {
@@ -461,7 +563,7 @@
       "hasCodes": false,
       "online": true,
       "rating": 4.7,
-      "ratingCount": 445937,
+      "ratingCount": 445995,
       "releasedAt": "2023-08-02",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/92/c0/2392c00c-ddc5-711b-9020-ead5864a04c0/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
       "pop": 4,

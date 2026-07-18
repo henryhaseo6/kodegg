@@ -18,6 +18,12 @@ const SLUGS = {
   afka: "afk-arena-classic",
   gtales: "guardian-tales",
   mongil: "mongil-star-dive",
+  dtrav: "dragon-traveler",
+  sxs: "sword-x-staff",
+  evernight: "ever-night-reawakening",
+  isekai: "isekai-slow-life",
+  loe: "legend-of-elements",
+  starsail: "star-sailors",
 };
 const CODE_RE = /^[A-Za-z0-9]{4,30}$/;
 

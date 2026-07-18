@@ -164,6 +164,60 @@ export const GAMES = {
     androidId: "com.netmarble.monster2",
     iconFile: "mongil.png",
   },
+  dtrav: {
+    name: "Dragon Traveler",
+    codeSource: "redeemtracker",
+    redeemUrl: null, // redeem in-game (Gift Code)
+    genres: ["rpg", "idle", "gacha"],
+    appleId: "com.gametree.lhlr.ios",
+    androidId: "com.gametree.lhlr.gp",
+    iconFile: "dtrav.png",
+  },
+  sxs: {
+    name: "Sword x Staff",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["rpg", "idle", "strategy"],
+    appleId: "com.zjcs.ios.us",
+    androidId: "com.zjcs.android.us",
+    iconFile: "sxs.png",
+  },
+  evernight: {
+    name: "Ever Night: Reawakening",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["rpg", "idle", "gacha"],
+    appleId: "com.yongyesea.ios",
+    androidId: "com.yongyesea.az",
+    iconFile: "evernight.png",
+  },
+  isekai: {
+    name: "Isekai: Slow Life",
+    codeSource: "redeemtracker",
+    redeemUrl: null, // redeem in-game (Settings → Gift Code)
+    genres: ["idle", "strategy", "rpg"],
+    appleId: "com.iskslow.mislen.ios",
+    androidId: "com.iskslowtest.mislen",
+    iconFile: "isekai.png",
+  },
+  loe: {
+    name: "Legend of Elements",
+    codeSource: "redeemtracker",
+    redeemUrl: null, // redeem in-game (Settings → Gift Code)
+    genres: ["mmorpg", "rpg", "idle"],
+    appleId: "com.us.zzsj.ios",
+    androidId: "com.zzsjus.google",
+    iconFile: "loe.png",
+  },
+  starsail: {
+    name: "Star Sailors",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["rpg", "gacha", "strategy"],
+    appleId: "com.com2usholdings.starsailors.ios.apple.global.normal",
+    androidId: "com.com2usholdings.starsailors.android.google.global.normal",
+    iconFile: "starsail.png",
+  },
   // --- Game via cross-check editorial ≥2 sumber (sources/editorial.mjs) ---
   // Tak ada tracker cepat → NIKKE dilacak situs guide; akurasi dijaga dengan
   // hanya menampilkan kode yang ≥2 sumber sepakat aktif.
