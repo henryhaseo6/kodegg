@@ -106,7 +106,7 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:16px;">
       {trending.map((g) => (
-        <article class="gg-card" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;">
+        <article class="gg-card" style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; width:100%; max-width:260px; margin-inline:auto;">
           <div style="position:relative; aspect-ratio:1/1; background:var(--surface2);">
             {g.cover ? (
               <img src={g.cover} alt={g.name} width="256" height="256" loading="lazy" decoding="async"

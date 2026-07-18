@@ -80,7 +80,7 @@ const sorts = [
             data-pop={g.pop}
             data-rating={g.rating ?? 0}
             data-new={g.releasedMs}
-            style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;"
+            style="display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; width:100%; max-width:260px; margin-inline:auto;"
           >
             <div style="position:relative; aspect-ratio:1/1; background:var(--surface2);">
               {g.cover ? (
