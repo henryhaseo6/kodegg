@@ -26,16 +26,32 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now)
   const prevActive = prev.active ?? [];
   const prevArchive = prev.archive ?? [];
 
-  const seenBefore = new Map();
+  const prevByKey = new Map();
+  const prevGames = new Set();
   for (const item of [...prevActive, ...prevArchive]) {
-    seenBefore.set(codeKey(item), item.firstSeenAt ?? item.fetchedAt ?? now);
+    prevByKey.set(codeKey(item), item);
+    if (item.game) prevGames.add(item.game);
   }
+  const seenBefore = new Map(
+    [...prevByKey].map(([k, v]) => [k, v.firstSeenAt ?? v.fetchedAt ?? now]),
+  );
 
-  const active = freshActive.map((item) => ({
-    ...item,
-    firstSeenAt: seenBefore.get(codeKey(item)) ?? now,
-    fetchedAt: now,
-  }));
+  // `bulk` = kode yang umurnya TAK DIKETAHUI: bagian dari IMPORT PERTAMA sebuah
+  // game (worker baru mulai memantau game ini). Dibedakan dari kode yang baru
+  // dirilis di game yang SUDAH dipantau — yang itu genuine baru dan boleh nongol
+  // paling atas di sort "Terbaru". Untuk kode tanpa tanggal-rilis sumber, flag
+  // ini yang mencegah seluruh katalog game baru membanjiri puncak (lihat
+  // site/src/lib/codes.mjs). Sekali di-set, dipertahankan antar-run.
+  const active = freshActive.map((item) => {
+    const prior = prevByKey.get(codeKey(item));
+    const bulk = prior ? prior.bulk === true : !prevGames.has(item.game);
+    return {
+      ...item,
+      firstSeenAt: prior?.firstSeenAt ?? prior?.fetchedAt ?? now,
+      fetchedAt: now,
+      ...(bulk ? { bulk: true } : {}),
+    };
+  });
 
   const activeKeys = new Set(active.map(codeKey));
   const archiveByKey = new Map();

@@ -245,11 +245,10 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
 
       shown.sort((a, b) => {
         if (state.sort === "az") return a.dataset.name.localeCompare(b.dataset.name);
-        // "Terbaru": tanggal RILIS sumber dulu (kode paling baru), lalu kode tanpa
-        // tanggal rilis diurut dari yang terakhir ditemukan — bukan dinaikkan ke
-        // atas hanya karena baru ditemukan.
+        // "Terbaru": rankMs (tanggal rilis; atau firstSeen bila genuine baru;
+        // 0 bila bulk-import) dulu, lalu firstSeen sebagai tiebreak.
         return (
-          (Number(b.dataset.date || 0) - Number(a.dataset.date || 0)) ||
+          (Number(b.dataset.rank || 0) - Number(a.dataset.rank || 0)) ||
           (Number(b.dataset.seen || 0) - Number(a.dataset.seen || 0))
         );
       });

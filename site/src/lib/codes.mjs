@@ -48,13 +48,20 @@ function shape(item) {
   // tidak, tiap kali menambah game, seluruh kodenya (walau lama) membanjiri atas.
   const dateMs = Date.parse(item.date ?? "") || 0;
   const firstSeenMs = Date.parse(item.firstSeenAt ?? "") || 0;
+  // rankMs = kunci sort "Terbaru" (kode paling baru di atas):
+  //  - tanggal RILIS sumber bila ada (mis. createdAt tracker, tanggal livestream);
+  //  - kalau tak ada, firstSeen — TAPI hanya untuk kode GENUINE baru (muncul di
+  //    game yang sudah dipantau). Kode `bulk` (import pertama, umur tak diketahui)
+  //    → 0, supaya menambah game baru tak membanjiri puncak. Kode NIKKE/Whiteout
+  //    yang benar-benar baru dirilis nanti tetap nongol paling atas.
+  const rankMs = dateMs || (item.bulk ? 0 : firstSeenMs);
   return {
     ...item,
     name: displayName(item),
     icon: iconUrl(item.game),
     redeemUrl: GAMES[item.game]?.redeemUrl ?? item.sourceUrl ?? null,
     search: searchIndex(item),
-    dateMs,
+    rankMs,
     firstSeenMs,
     isNew: !item.perm && dateMs > 0 && NOW_MS - dateMs <= NEW_DAYS * 86400000,
   };
@@ -74,11 +81,11 @@ export async function loadCodes() {
   // firstSeen sebagai kunci utama → menambah game tak lagi membanjiri atas.
   const active = (raw.active ?? [])
     .map(shape)
-    .sort((a, b) => b.dateMs - a.dateMs || b.firstSeenMs - a.firstSeenMs);
-  // Arsip: sama — tanggal rilis sumber dulu, lalu firstSeen sebagai tiebreak.
+    .sort((a, b) => b.rankMs - a.rankMs || b.firstSeenMs - a.firstSeenMs);
+  // Arsip: sama — rankMs dulu, lalu firstSeen sebagai tiebreak.
   const archive = (raw.archive ?? [])
     .map(shape)
-    .sort((a, b) => b.dateMs - a.dateMs || b.firstSeenMs - a.firstSeenMs);
+    .sort((a, b) => b.rankMs - a.rankMs || b.firstSeenMs - a.firstSeenMs);
 
   // Dropdown game dibangun dari data yang BENAR-BENAR ada, bukan daftar hardcoded
   // — mockup menawarkan Wuthering Waves/MLBB/Free Fire yang belum punya sumber.

@@ -60,7 +60,7 @@ if (card.perm) {
   data-game={card.game ?? ""}
   data-name={card.name}
   data-search={card.search}
-  data-date={card.dateMs}
+  data-rank={card.rankMs}
   data-seen={card.firstSeenMs}
   data-new={card.isNew ? "1" : "0"}
   style={`background:var(--surface); border:1px solid ${card.isNew ? "rgba(203,255,70,0.5)" : "var(--line)"}; border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;${card.isNew ? " box-shadow:0 0 0 1px rgba(203,255,70,0.12),0 10px 34px rgba(203,255,70,0.08);" : ""}`}
