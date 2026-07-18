@@ -121,7 +121,7 @@ const jsonLd = [
       {
         gameCodes.length > 0 ? (
           <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;">
-            {gameCodes.map((card) => <CodeCard card={card} lang={lang} />)}
+            {gameCodes.map((card) => <CodeCard card={card} lang={lang} linkGame={false} />)}
           </div>
         ) : (
           <p style="color:var(--muted); font-size:15px;">{id ? "Belum ada kode aktif saat ini." : "No active codes right now."}</p>

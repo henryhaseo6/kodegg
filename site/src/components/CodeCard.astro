@@ -9,8 +9,11 @@
 //  3. Giveaway GamerPower diklaim via tombol Klaim (URL), bukan kode + Salin.
 import { t } from "../lib/i18n.mjs";
 
-const { card, lang } = Astro.props;
+// linkGame: nama game ditautkan ke halaman game-nya (default true). Di-set false
+// pada halaman per-game itu sendiri (tak perlu menaut ke diri sendiri).
+const { card, lang, linkGame = true } = Astro.props;
 const tr = t(lang);
+const gameHref = card.game ? `/${lang}/game/${card.game}` : null;
 
 const isClaim = !card.code && card.claimUrl; // giveaway GamerPower
 
@@ -83,12 +86,17 @@ if (card.perm) {
         }
       </span>
       <div style="min-width:0;">
-        <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
-          {card.name}
-        </div>
-        <div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">
-          {card.source}
-        </div>
+        {
+          linkGame && gameHref ? (
+            <a href={gameHref} class="gg-game-link" style="display:block; font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-decoration:none;">
+              {card.name}
+            </a>
+          ) : (
+            <div style="font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+              {card.name}
+            </div>
+          )
+        }
       </div>
     </div>
     {
