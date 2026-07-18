@@ -1,0 +1,109 @@
+---
+// Tombol Bagikan + popover ke sosmed (WhatsApp, X, Telegram, Facebook) & salin
+// link. Semua link pakai skema share resmi tiap platform (buka tab baru). Props:
+//   url  : URL absolut yang dibagikan
+//   text : teks share (judul/ajakan)
+//   lang : "id" | "en"
+const { url, text, lang } = Astro.props;
+const id = lang === "id";
+const enc = encodeURIComponent;
+const links = {
+  whatsapp: `https://wa.me/?text=${enc(`${text} ${url}`)}`,
+  x: `https://twitter.com/intent/tweet?text=${enc(text)}&url=${enc(url)}`,
+  telegram: `https://t.me/share/url?url=${enc(url)}&text=${enc(text)}`,
+  facebook: `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`,
+};
+
+const rowStyle =
+  "display:flex; align-items:center; gap:11px; width:100%; box-sizing:border-box; padding:10px 12px; font-family:'Satoshi',sans-serif; font-size:14px; font-weight:600; color:var(--txt); background:transparent; border:none; border-radius:10px; text-decoration:none; cursor:pointer; text-align:left;";
+const platforms = [
+  { key: "whatsapp", label: "WhatsApp", href: links.whatsapp, color: "#25D366", path: "M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" },
+  { key: "x", label: "X", href: links.x, color: "#e7e9ea", path: "M4 4l16 16M20 4L4 20" },
+  { key: "telegram", label: "Telegram", href: links.telegram, color: "#229ED9", path: "M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" },
+  { key: "facebook", label: "Facebook", href: links.facebook, color: "#1877F2", path: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" },
+];
+---
+
+<div data-share-root style="position:relative; display:inline-block;">
+  <button
+    data-share-btn
+    type="button"
+    aria-haspopup="true"
+    aria-expanded="false"
+    class="gg-share-btn"
+    style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--txt); background:var(--surface); border:1px solid var(--line2); border-radius:11px; padding:10px 15px; white-space:nowrap; transition:all .15s;"
+  >
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"></path></svg>
+    {id ? "Bagikan" : "Share"}
+  </button>
+
+  <div
+    data-share-menu
+    role="menu"
+    style="display:none; position:absolute; top:calc(100% + 8px); right:0; z-index:70; min-width:210px; background:var(--surface); border:1px solid var(--line2); border-radius:14px; padding:6px; box-shadow:0 20px 50px rgba(0,0,0,0.55);"
+  >
+    {
+      platforms.map((p) => (
+        <a href={p.href} target="_blank" rel="noopener noreferrer" role="menuitem" class="gg-share-row" style={rowStyle}>
+          <span style={`flex:0 0 auto; width:26px; height:26px; border-radius:8px; background:${p.color}1f; display:flex; align-items:center; justify-content:center; color:${p.color};`}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={p.path} /></svg>
+          </span>
+          {p.label}
+        </a>
+      ))
+    }
+    <button data-share-copy data-url={url} type="button" role="menuitem" class="gg-share-row" style={rowStyle}>
+      <span style="flex:0 0 auto; width:26px; height:26px; border-radius:8px; background:rgba(203,255,70,0.14); display:flex; align-items:center; justify-content:center; color:var(--acc);">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+      </span>
+      <span data-share-copy-label>{id ? "Salin link" : "Copy link"}</span>
+    </button>
+  </div>
+</div>
+
+<script is:inline define:vars={{ COPIED: id ? "Tersalin ✓" : "Copied ✓", COPY: id ? "Salin link" : "Copy link" }}>
+  (function () {
+    const root = document.currentScript.previousElementSibling;
+    if (!root || !root.hasAttribute("data-share-root")) return;
+    const btn = root.querySelector("[data-share-btn]");
+    const menu = root.querySelector("[data-share-menu]");
+    const copyBtn = root.querySelector("[data-share-copy]");
+    const copyLabel = root.querySelector("[data-share-copy-label]");
+
+    const setOpen = (open) => {
+      menu.style.display = open ? "block" : "none";
+      btn.setAttribute("aria-expanded", String(open));
+    };
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setOpen(menu.style.display === "none");
+    });
+    // Tutup saat klik di luar / Escape.
+    document.addEventListener("click", (e) => { if (!root.contains(e.target)) setOpen(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+
+    copyBtn.addEventListener("click", () => {
+      const url = copyBtn.getAttribute("data-url");
+      const flash = () => {
+        copyLabel.textContent = COPIED;
+        setTimeout(() => { copyLabel.textContent = COPY; setOpen(false); }, 1100);
+      };
+      let ok = false;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+          navigator.clipboard.writeText(url).then(flash).catch(legacy);
+          ok = true;
+        }
+      } catch {}
+      if (!ok) legacy();
+      function legacy() {
+        const ta = document.createElement("textarea");
+        ta.value = url; ta.style.position = "fixed"; ta.style.top = "-9999px";
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); } catch {}
+        document.body.removeChild(ta);
+        flash();
+      }
+    });
+  })();
+</script>

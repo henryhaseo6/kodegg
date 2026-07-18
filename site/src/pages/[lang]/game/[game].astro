@@ -9,6 +9,7 @@ import Footer from "../../../components/Footer.astro";
 import CodeCard from "../../../components/CodeCard.astro";
 import CopyScript from "../../../components/CopyScript.astro";
 import CountdownScript from "../../../components/CountdownScript.astro";
+import ShareButton from "../../../components/ShareButton.astro";
 import EventCard from "../../../components/EventCard.astro";
 import EventModal from "../../../components/EventModal.astro";
 import { LANGS, t } from "../../../lib/i18n.mjs";
@@ -108,6 +109,13 @@ const jsonLd = [
         <div style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint); margin-top:6px;">
           {gameMeta.genreLabels?.join(" · ")}{gameMeta.rating ? ` · ★ ${gameMeta.rating}` : ""}
         </div>
+      </div>
+      <div style="margin-left:auto;">
+        <ShareButton
+          url={`${site}/${lang}/game/${game}`}
+          text={id ? `Kode redeem ${gameMeta.name} terbaru — KodeGG` : `Latest ${gameMeta.name} redeem codes — KodeGG`}
+          lang={lang}
+        />
       </div>
     </section>
 
