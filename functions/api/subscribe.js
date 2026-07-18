@@ -9,14 +9,20 @@ async function hash(s) {
 
 export async function onRequestPost({ request, env }) {
   if (!env.SUBS) return new Response("KV SUBS belum di-bind", { status: 500 });
-  let sub;
+  let body;
   try {
-    sub = await request.json();
+    body = await request.json();
   } catch {
     return new Response("bad json", { status: 400 });
   }
+  // Terima {subscription, games} (baru) atau subscription polos (kompat lama).
+  const sub = body && body.subscription ? body.subscription : body;
   if (!sub || !sub.endpoint) return new Response("bad subscription", { status: 400 });
-  await env.SUBS.put("sub:" + (await hash(sub.endpoint)), JSON.stringify(sub));
+  // games = daftar id game yg dipilih. Kosong = SEMUA game. Dibatasi & disaring.
+  const games = Array.isArray(body?.games)
+    ? [...new Set(body.games.filter((g) => typeof g === "string" && g.length < 30))].slice(0, 200)
+    : [];
+  await env.SUBS.put("sub:" + (await hash(sub.endpoint)), JSON.stringify({ sub, games }));
   return new Response("ok", { status: 201 });
 }
 

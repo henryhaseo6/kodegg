@@ -58,24 +58,35 @@ async function main() {
 
   webpush.setVapidDetails(VAPID_SUBJECT, VAPID_PUBLIC, VAPID_PRIVATE);
 
-  const messages = codes.slice(0, MAX).map((c) => ({
+  const msgFor = (c) => ({
     title: `Kode ${c.gameName} baru!`,
     body: c.reward ? `${c.code} — ${c.reward}` : c.code,
     url: `${SITE_URL}/id/game/${c.game}`,
     tag: `kodegg-${c.code}`,
-  }));
-  if (codes.length > MAX) {
-    messages.push({
-      title: "KodeGG",
-      body: `+${codes.length - MAX} kode baru lainnya. Buka untuk lihat semua.`,
-      url: `${SITE_URL}/id/kode-redeem`,
-      tag: "kodegg-more",
-    });
-  }
+  });
 
   let sent = 0;
   let pruned = 0;
-  for (const sub of subs) {
+  for (const entry of subs) {
+    // Kompat: entri baru = {sub, games}; lama = subscription polos (→ semua game).
+    const sub = entry && entry.sub ? entry.sub : entry;
+    const games = Array.isArray(entry?.games) ? entry.games : [];
+    const wantsAll = games.length === 0;
+
+    // Kode yang relevan buat subscriber ini (sesuai pilihan game-nya).
+    const mine = wantsAll ? codes : codes.filter((c) => games.includes(c.game));
+    if (mine.length === 0) continue;
+
+    const messages = mine.slice(0, MAX).map(msgFor);
+    if (mine.length > MAX) {
+      messages.push({
+        title: "KodeGG",
+        body: `+${mine.length - MAX} kode baru lainnya. Buka untuk lihat semua.`,
+        url: `${SITE_URL}/id/kode-redeem`,
+        tag: "kodegg-more",
+      });
+    }
+
     for (const m of messages) {
       try {
         await webpush.sendNotification(sub, JSON.stringify(m));
@@ -88,7 +99,7 @@ async function main() {
             body: JSON.stringify({ endpoint: sub.endpoint }),
           }).catch(() => {});
           pruned += 1;
-          break; // subscription mati → jangan kirim pesan lain ke sini
+          break; // subscription mati → berhenti kirim ke sini
         }
       }
     }

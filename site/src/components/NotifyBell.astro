@@ -1,25 +1,45 @@
 ---
-// Tombol lonceng notifikasi push (kode baru). Muncul HANYA bila:
-//   1. PUBLIC_VAPID_KEY di-set saat build (fitur dikonfigurasi), DAN
-//   2. browser mendukung Push (dicek klien; tombol default disembunyikan).
-// Klik → minta izin + subscribe (POST /api/subscribe) atau unsubscribe.
+// Lonceng notifikasi push + PANEL SETELAN. Muncul HANYA bila PUBLIC_VAPID_KEY
+// di-set (build) & browser mendukung Push (dicek klien). User bisa pilih:
+// Semua game / game tertentu (checkbox) / shortcut favorit. Pilihan disimpan
+// di localStorage (utk render ulang) & dikirim ke /api/subscribe (utk filter
+// pengiriman di worker push-notify).
+import { loadCatalog } from "../lib/catalog.mjs";
+
 const VAPID = import.meta.env.PUBLIC_VAPID_KEY || "";
 const { lang } = Astro.props;
 const id = lang === "id";
+
+let games = [];
+if (VAPID) {
+  const catalog = await loadCatalog();
+  games = catalog.games.filter((g) => g.hasCodes).map((g) => ({ id: g.id, name: g.name }));
+}
+
 const T = {
-  on: id ? "Notifikasi kode baru: AKTIF" : "New-code notifications: ON",
+  on: id ? "Notifikasi: AKTIF" : "Notifications: ON",
   off: id ? "Aktifkan notifikasi kode baru" : "Enable new-code notifications",
-  err: id ? "Gagal mengaktifkan notifikasi. Coba lagi." : "Couldn't enable notifications. Try again.",
+  title: id ? "Notifikasi kode baru" : "New-code notifications",
+  desc: id ? "Dapat notif saat ada kode redeem baru." : "Get notified when new redeem codes drop.",
+  all: id ? "Semua game" : "All games",
+  pick: id ? "Pilih game tertentu" : "Selected games",
+  favs: id ? "Pilih favorit saya" : "Pick my favorites",
+  save: id ? "Aktifkan" : "Enable",
+  update: id ? "Simpan perubahan" : "Save changes",
+  turnoff: id ? "Matikan notifikasi" : "Turn off",
+  err: id ? "Gagal. Coba lagi." : "Failed. Try again.",
+  none: id ? "Pilih minimal satu game." : "Pick at least one game.",
 };
 ---
 
 {
   VAPID && (
-    <>
+    <div data-notify-root style="position:relative; display:inline-block;">
       <button
         data-notify-btn
         aria-label={T.off}
-        aria-pressed="false"
+        aria-haspopup="true"
+        aria-expanded="false"
         title={T.off}
         type="button"
         style="position:relative; display:none; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:var(--surface); color:var(--muted); cursor:pointer;"
@@ -30,19 +50,74 @@ const T = {
         </svg>
       </button>
 
+      <div
+        data-notify-menu
+        role="dialog"
+        aria-label={T.title}
+        style="display:none; position:absolute; top:calc(100% + 8px); right:0; z-index:80; width:290px; max-width:calc(100vw - 32px); background:var(--surface); border:1px solid var(--line2); border-radius:16px; padding:16px; box-shadow:0 22px 55px rgba(0,0,0,0.6);"
+      >
+        <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:var(--txt);">{T.title}</div>
+        <div style="font-size:12.5px; color:var(--muted); margin:4px 0 14px; line-height:1.5;">{T.desc}</div>
+
+        <label style="display:flex; align-items:center; gap:10px; padding:8px 4px; cursor:pointer; font-size:14px; color:var(--txt);">
+          <input type="radio" name="notify-scope" value="all" data-notify-scope checked style="accent-color:var(--acc); width:16px; height:16px;" />
+          {T.all}
+        </label>
+        <label style="display:flex; align-items:center; gap:10px; padding:8px 4px; cursor:pointer; font-size:14px; color:var(--txt);">
+          <input type="radio" name="notify-scope" value="pick" data-notify-scope style="accent-color:var(--acc); width:16px; height:16px;" />
+          {T.pick}
+        </label>
+
+        <div data-notify-games style="display:none; margin:6px 0 4px; border:1px solid var(--line); border-radius:10px; padding:6px;">
+          <button data-notify-favs type="button" style="width:100%; text-align:left; cursor:pointer; font-family:'Space Mono',monospace; font-size:11.5px; font-weight:700; color:var(--acc); background:transparent; border:none; padding:6px 6px 8px;">
+            ★ {T.favs}
+          </button>
+          <div style="max-height:180px; overflow-y:auto; display:flex; flex-direction:column;">
+            {games.map((g) => (
+              <label style="display:flex; align-items:center; gap:9px; padding:6px; cursor:pointer; font-size:13px; color:var(--txt); border-radius:7px;">
+                <input type="checkbox" value={g.id} data-notify-game style="accent-color:var(--acc); width:15px; height:15px;" />
+                {g.name}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div data-notify-msg style="display:none; font-size:11.5px; color:var(--danger); margin:6px 2px 0;" />
+
+        <div style="display:flex; gap:8px; margin-top:14px;">
+          <button data-notify-save type="button" style="flex:1; cursor:pointer; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--ink); background:var(--acc); border:none; border-radius:10px; padding:10px;">
+            {T.save}
+          </button>
+          <button data-notify-off type="button" style="display:none; cursor:pointer; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--danger); background:transparent; border:1px solid var(--line2); border-radius:10px; padding:10px 12px;">
+            {T.turnoff}
+          </button>
+        </div>
+      </div>
+
       <script is:inline define:vars={{ VAPID, T }}>
         (function () {
-          const btn = document.querySelector("[data-notify-btn]");
-          if (!btn) return;
+          const root = document.querySelector("[data-notify-root]");
+          if (!root) return;
+          const btn = root.querySelector("[data-notify-btn]");
+          const menu = root.querySelector("[data-notify-menu]");
           const supported = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
-          if (!supported) return; // biarkan tersembunyi
+          if (!supported) return;
           btn.style.display = "flex";
+
+          const scopes = [...root.querySelectorAll("[data-notify-scope]")];
+          const gamesBox = root.querySelector("[data-notify-games]");
+          const gameChecks = [...root.querySelectorAll("[data-notify-game]")];
+          const favsBtn = root.querySelector("[data-notify-favs]");
+          const saveBtn = root.querySelector("[data-notify-save]");
+          const offBtn = root.querySelector("[data-notify-off]");
+          const msg = root.querySelector("[data-notify-msg]");
+          const KEY = "kodegg:notif";
+          const FAV = "kodegg:fav";
 
           function urlB64(base64) {
             const pad = "=".repeat((4 - (base64.length % 4)) % 4);
             const b = (base64 + pad).replace(/-/g, "+").replace(/_/g, "/");
-            const raw = atob(b);
-            return Uint8Array.from([...raw].map((c) => c.charCodeAt(0)));
+            return Uint8Array.from([...atob(b)].map((c) => c.charCodeAt(0)));
           }
           function setState(on) {
             btn.setAttribute("aria-pressed", String(on));
@@ -52,8 +127,39 @@ const T = {
             btn.style.borderColor = on ? "var(--acc)" : "var(--line)";
             const svg = btn.querySelector("svg");
             if (svg) svg.setAttribute("fill", on ? "rgba(203,255,70,0.25)" : "none");
+            offBtn.style.display = on ? "block" : "none";
+            saveBtn.textContent = on ? T.update : T.save;
+          }
+          function syncGamesBox() {
+            const pick = scopes.find((s) => s.value === "pick")?.checked;
+            gamesBox.style.display = pick ? "block" : "none";
+          }
+          function loadPrefs() {
+            let p = { all: true, games: [] };
+            try { p = { ...p, ...JSON.parse(localStorage.getItem(KEY) || "{}") }; } catch {}
+            const useAll = p.all !== false && (!p.games || p.games.length === 0);
+            scopes.forEach((s) => (s.checked = useAll ? s.value === "all" : s.value === "pick"));
+            gameChecks.forEach((c) => (c.checked = (p.games || []).includes(c.value)));
+            syncGamesBox();
           }
 
+          scopes.forEach((s) => s.addEventListener("change", syncGamesBox));
+          favsBtn?.addEventListener("click", () => {
+            let favs = [];
+            try { favs = JSON.parse(localStorage.getItem(FAV) || "[]"); } catch {}
+            gameChecks.forEach((c) => (c.checked = favs.includes(c.value)));
+          });
+
+          function setOpen(open) {
+            menu.style.display = open ? "block" : "none";
+            btn.setAttribute("aria-expanded", String(open));
+            if (open) { loadPrefs(); msg.style.display = "none"; }
+          }
+          btn.addEventListener("click", (e) => { e.stopPropagation(); setOpen(menu.style.display === "none"); });
+          document.addEventListener("click", (e) => { if (!root.contains(e.target)) setOpen(false); });
+          document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+
+          // Status awal lonceng.
           (async () => {
             try {
               const reg = await navigator.serviceWorker.ready;
@@ -61,47 +167,55 @@ const T = {
             } catch {}
           })();
 
-          btn.addEventListener("click", async () => {
-            btn.disabled = true;
+          saveBtn.addEventListener("click", async () => {
+            const all = scopes.find((s) => s.value === "all")?.checked;
+            const games = all ? [] : gameChecks.filter((c) => c.checked).map((c) => c.value);
+            if (!all && games.length === 0) { msg.textContent = T.none; msg.style.display = "block"; return; }
+            saveBtn.disabled = true;
             try {
               const reg = await navigator.serviceWorker.ready;
-              const existing = await reg.pushManager.getSubscription();
-              if (existing) {
+              let sub = await reg.pushManager.getSubscription();
+              if (!sub) {
+                const perm = await Notification.requestPermission();
+                if (perm !== "granted") { saveBtn.disabled = false; return; }
+                sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlB64(VAPID) });
+              }
+              const res = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify({ subscription: sub, games }),
+              });
+              if (res.ok) {
+                localStorage.setItem(KEY, JSON.stringify({ all: !!all, games }));
+                setState(true);
+                setOpen(false);
+              } else {
+                msg.textContent = T.err; msg.style.display = "block";
+              }
+            } catch { msg.textContent = T.err; msg.style.display = "block"; }
+            saveBtn.disabled = false;
+          });
+
+          offBtn.addEventListener("click", async () => {
+            offBtn.disabled = true;
+            try {
+              const reg = await navigator.serviceWorker.ready;
+              const sub = await reg.pushManager.getSubscription();
+              if (sub) {
                 await fetch("/api/subscribe", {
                   method: "DELETE",
                   headers: { "content-type": "application/json" },
-                  body: JSON.stringify({ endpoint: existing.endpoint }),
+                  body: JSON.stringify({ endpoint: sub.endpoint }),
                 }).catch(() => {});
-                await existing.unsubscribe();
-                setState(false);
-              } else {
-                const perm = await Notification.requestPermission();
-                if (perm !== "granted") {
-                  btn.disabled = false;
-                  return;
-                }
-                const sub = await reg.pushManager.subscribe({
-                  userVisibleOnly: true,
-                  applicationServerKey: urlB64(VAPID),
-                });
-                const res = await fetch("/api/subscribe", {
-                  method: "POST",
-                  headers: { "content-type": "application/json" },
-                  body: JSON.stringify(sub),
-                });
-                if (res.ok) setState(true);
-                else {
-                  await sub.unsubscribe();
-                  alert(T.err);
-                }
+                await sub.unsubscribe();
               }
-            } catch {
-              /* abaikan */
-            }
-            btn.disabled = false;
+              setState(false);
+              setOpen(false);
+            } catch {}
+            offBtn.disabled = false;
           });
         })();
       </script>
-    </>
+    </div>
   )
 }

@@ -38,7 +38,8 @@ async function main() {
 
   let sent = 0;
   let pruned = 0;
-  for (const sub of subs) {
+  for (const entry of subs) {
+    const sub = entry && entry.sub ? entry.sub : entry; // kompat {sub,games} / polos
     try {
       await webpush.sendNotification(sub, msg);
       sent += 1;
