@@ -164,6 +164,18 @@ export const GAMES = {
     androidId: "com.netmarble.monster2",
     iconFile: "mongil.png",
   },
+  // --- Game via cross-check editorial ≥2 sumber (sources/editorial.mjs) ---
+  // Tak ada tracker cepat → NIKKE dilacak situs guide; akurasi dijaga dengan
+  // hanya menampilkan kode yang ≥2 sumber sepakat aktif.
+  gov: {
+    name: "Goddess of Victory: NIKKE",
+    codeSource: "editorial",
+    redeemUrl: null, // redeem in-game (Settings → Other → coupon)
+    genres: ["rpg", "action", "gacha"],
+    appleId: "com.proximabeta.nikke",
+    androidId: "com.proximabeta.nikke",
+    iconFile: "gov.png",
+  },
   // --- Game via whiteoutsurvival-community (sources/whiteout.mjs) ---
   wos: {
     name: "Whiteout Survival",

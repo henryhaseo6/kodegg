@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-17T12:38:57.830Z",
+  "updatedAt": "2026-07-18T09:45:57.762Z",
   "counts": {
-    "total": 20
+    "total": 29
   },
   "games": [
     {
@@ -14,7 +14,7 @@
       "hasCodes": true,
       "online": true,
       "rating": 4.2,
-      "ratingCount": 575179,
+      "ratingCount": 575206,
       "releasedAt": "2020-09-26",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fd/a5/bd/fda5bd6d-4ce5-9bd9-1b06-adc46757af8b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
       "pop": 2,
@@ -30,10 +30,10 @@
       "hasCodes": true,
       "online": true,
       "rating": 4.4,
-      "ratingCount": 52409,
+      "ratingCount": 52433,
       "releasedAt": "2023-04-22",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2d/6c/39/2d6c393e-a07e-38e7-a077-aedf44c476cd/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 11,
+      "pop": 15,
       "isNew": false
     },
     {
@@ -46,10 +46,10 @@
       "hasCodes": true,
       "online": true,
       "rating": 4.1,
-      "ratingCount": 21500,
+      "ratingCount": 21506,
       "releasedAt": "2024-07-02",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ee/9d/6f/ee9d6ff1-d787-d19f-1d3c-3b90fc2c692a/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-      "pop": 15,
+      "pop": 21,
       "isNew": false
     },
     {
@@ -65,7 +65,7 @@
       "ratingCount": 46601,
       "releasedAt": "2018-03-28",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/34/b2/98/34b29809-3a25-831f-88ed-a6e2bf2608ec/AppIcon-1x_U007emarketing-0-10-0-85-220-0.png/256x256bb.jpg",
-      "pop": 12,
+      "pop": 17,
       "isNew": false
     },
     {
@@ -81,7 +81,7 @@
       "ratingCount": 5434,
       "releasedAt": "2021-07-27",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6a/30/49/6a3049b7-05c2-d4c7-487b-6fce92f24748/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-      "pop": 18,
+      "pop": 26,
       "isNew": false
     },
     {
@@ -94,10 +94,10 @@
       "hasCodes": true,
       "online": true,
       "rating": 4.6,
-      "ratingCount": 57611,
+      "ratingCount": 57640,
       "releasedAt": "2024-05-21",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/82/ed/b9/82edb917-f286-cc09-09e2-f85950929a4d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 10,
+      "pop": 14,
       "isNew": false
     },
     {
@@ -114,7 +114,7 @@
       "ratingCount": 10051,
       "releasedAt": "2023-10-25",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4c/1a/6c/4c1a6c50-753d-652d-1846-9d9e29e41bd4/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-      "pop": 17,
+      "pop": 24,
       "isNew": false
     },
     {
@@ -127,10 +127,10 @@
       "hasCodes": true,
       "online": true,
       "rating": 4.8,
-      "ratingCount": 73294,
+      "ratingCount": 73312,
       "releasedAt": "2024-03-27",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3f/ef/77/3fef7750-6199-61cc-2206-5cadb66adadd/AppIcon-Global-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-      "pop": 7,
+      "pop": 10,
       "isNew": false
     },
     {
@@ -146,7 +146,152 @@
       "ratingCount": 12433,
       "releasedAt": "2024-12-03",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9b/cf/fa/9bcffa2e-a711-0224-940a-488c4a349135/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 23,
+      "isNew": false
+    },
+    {
+      "id": "e7",
+      "name": "Epic Seven",
+      "genres": [
+        "rpg",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.6,
+      "ratingCount": 48891,
+      "releasedAt": "2018-11-03",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/83/03/fd/8303fd74-13e3-7113-3c1f-a00c429b6075/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
       "pop": 16,
+      "isNew": false
+    },
+    {
+      "id": "endfield",
+      "name": "Arknights: Endfield",
+      "genres": [
+        "rpg",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.4,
+      "ratingCount": 5547,
+      "releasedAt": "2026-01-19",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cb/f4/3c/cbf43c8d-a911-f698-e68b-3f8c26719f02/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 25,
+      "isNew": false
+    },
+    {
+      "id": "nte",
+      "name": "Neverness to Everness",
+      "genres": [
+        "action",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.7,
+      "ratingCount": 16479,
+      "releasedAt": "2026-04-26",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/79/cd/c8/79cdc820-f215-f8e7-8cbe-d573e1f10953/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 22,
+      "isNew": true
+    },
+    {
+      "id": "diablo",
+      "name": "Diablo Immortal",
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.7,
+      "ratingCount": 304938,
+      "releasedAt": "2022-06-01",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/36/ed/10/36ed102a-5f77-1d6c-d047-35db5564f7d9/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg",
+      "pop": 8,
+      "isNew": false
+    },
+    {
+      "id": "afka",
+      "name": "AFK Arena",
+      "genres": [
+        "idle",
+        "rpg"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.7,
+      "ratingCount": 497686,
+      "releasedAt": "2019-04-09",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/92/59/93/925993f6-5e4b-5e40-1ccb-fac0c12b25e6/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/256x256bb.jpg",
+      "pop": 3,
+      "isNew": false
+    },
+    {
+      "id": "gtales",
+      "name": "Guardian Tales",
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.8,
+      "ratingCount": 39011,
+      "releasedAt": "2020-07-28",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8c/65/1f/8c651fd7-bafb-7b84-1a03-78ad6fd44d50/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 18,
+      "isNew": false
+    },
+    {
+      "id": "mongil",
+      "name": "Mongil: Star Dive",
+      "genres": [
+        "rpg",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.8,
+      "ratingCount": 3694,
+      "releasedAt": "2026-04-13",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e5/b1/8c/e5b18c01-e85a-90a8-defa-6acad8c18efa/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 28,
+      "isNew": true
+    },
+    {
+      "id": "gov",
+      "name": "Goddess of Victory: NIKKE",
+      "genres": [
+        "rpg",
+        "action",
+        "gacha"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.8,
+      "ratingCount": 69532,
+      "releasedAt": "2022-11-02",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6b/f7/cc/6bf7ccea-fd33-3415-54e0-78c2c1f60d7a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 11,
+      "isNew": false
+    },
+    {
+      "id": "wos",
+      "name": "Whiteout Survival",
+      "genres": [
+        "strategy",
+        "survival"
+      ],
+      "hasCodes": true,
+      "online": true,
+      "rating": 4.6,
+      "ratingCount": 441145,
+      "releasedAt": "2023-02-12",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/00/4e/1c/004e1c54-f26a-10ac-800b-4bd3c04a4d53/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+      "pop": 5,
       "isNew": false
     },
     {
@@ -161,7 +306,7 @@
       "ratingCount": 29601,
       "releasedAt": "2025-04-01",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/24/0e/c3240e2a-1279-21fc-84eb-c3bb535a0222/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
-      "pop": 14,
+      "pop": 20,
       "isNew": false
     },
     {
@@ -176,7 +321,7 @@
       "ratingCount": 63257,
       "releasedAt": "2021-03-28",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/70/46/6c/70466c45-0ce6-c664-6ff6-a951773be30b/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 9,
+      "pop": 13,
       "isNew": false
     },
     {
@@ -188,10 +333,10 @@
       "hasCodes": false,
       "online": true,
       "rating": 4.6,
-      "ratingCount": 38371,
+      "ratingCount": 38379,
       "releasedAt": "2024-06-20",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6c/9c/73/6c9c73a3-b6d8-6f98-a7c2-00de2f82a240/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/256x256bb.jpg",
-      "pop": 13,
+      "pop": 19,
       "isNew": false
     },
     {
@@ -206,7 +351,7 @@
       "ratingCount": 89134,
       "releasedAt": "2017-12-19",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/70/21/49/70214910-8392-c875-2135-b5d1398396ba/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/256x256bb.jpg",
-      "pop": 6,
+      "pop": 9,
       "isNew": false
     },
     {
@@ -219,7 +364,7 @@
       "hasCodes": false,
       "online": true,
       "rating": 4.3,
-      "ratingCount": 1602282,
+      "ratingCount": 1602393,
       "releasedAt": "2018-03-19",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e3/c1/54/e3c15430-c128-802a-ec17-95d0a02bc752/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
       "pop": 1,
@@ -235,7 +380,7 @@
       "hasCodes": false,
       "online": true,
       "rating": 4.7,
-      "ratingCount": 2001566,
+      "ratingCount": 2001691,
       "releasedAt": "2019-09-30",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/62/09/3c/62093c33-07fa-9c35-084e-81f717e1b16f/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/256x256bb.jpg",
       "pop": 0,
@@ -251,10 +396,10 @@
       "hasCodes": false,
       "online": true,
       "rating": 4,
-      "ratingCount": 351393,
+      "ratingCount": 351504,
       "releasedAt": "2017-12-08",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d6/8f/47/d68f4742-5a10-b375-2114-0f840bd49ec1/AppIcon-1781539049-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 5,
+      "pop": 7,
       "isNew": false
     },
     {
@@ -268,10 +413,10 @@
       "hasCodes": false,
       "online": true,
       "rating": 4.8,
-      "ratingCount": 69509,
+      "ratingCount": 69532,
       "releasedAt": "2022-11-02",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6b/f7/cc/6bf7ccea-fd33-3415-54e0-78c2c1f60d7a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 8,
+      "pop": 12,
       "isNew": false
     },
     {
@@ -287,7 +432,7 @@
       "ratingCount": 5331,
       "releasedAt": "2021-11-07",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7f/1f/75/7f1f75c8-e2e1-12fc-ce1d-73171f34a7e2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 19,
+      "pop": 27,
       "isNew": false
     },
     {
@@ -300,10 +445,10 @@
       "hasCodes": false,
       "online": true,
       "rating": 4.6,
-      "ratingCount": 440921,
+      "ratingCount": 441145,
       "releasedAt": "2023-02-12",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/00/4e/1c/004e1c54-f26a-10ac-800b-4bd3c04a4d53/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 4,
+      "pop": 6,
       "isNew": false
     },
     {
@@ -316,10 +461,10 @@
       "hasCodes": false,
       "online": true,
       "rating": 4.7,
-      "ratingCount": 445928,
+      "ratingCount": 445937,
       "releasedAt": "2023-08-02",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/92/c0/2392c00c-ddc5-711b-9020-ead5864a04c0/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-      "pop": 3,
+      "pop": 4,
       "isNew": false
     }
   ]
