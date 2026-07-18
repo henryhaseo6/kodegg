@@ -50,7 +50,11 @@ jobs:
           git config user.name "kodegg-bot"
           git config user.email "bot@kodegg.com"
           git add worker/data/
-          git commit -m "chore: update data (kode/event/berita) [skip ci]"
+          git commit -m "chore: update data (kode/event/berita)"
           git push
-        # Push memicu rebuild Cloudflare Pages (build ulang seluruh situs,
-        # sekaligus refresh katalog & karakter yang jarang berubah).
+        # PENTING: JANGAN pakai [skip ci] di pesan commit — Cloudflare Pages
+        # menghormatinya dan MELEWATI deploy, sehingga update data tak pernah
+        # sampai ke situs live. Tag itu juga tak perlu untuk Actions: workflow
+        # ini dipicu schedule/workflow_dispatch, BUKAN push, jadi commit ini
+        # tak akan memicu ulang dirinya sendiri. Push memicu rebuild Cloudflare
+        # (build.mjs fetch data segar + render ulang seluruh situs).
