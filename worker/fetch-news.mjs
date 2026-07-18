@@ -14,6 +14,7 @@ import { fileURLToPath } from "node:url";
 
 import { GAMES } from "./src/games.mjs";
 import { fetchHoyolabNews } from "./src/sources/hoyolab.mjs";
+import { fetchWuwaNews } from "./src/sources/wuwanews.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, "data/news.json");
@@ -34,12 +35,18 @@ async function main() {
   const now = new Date().toISOString();
   const nowMs = Date.now();
 
-  let all = [];
-  try {
-    all = await fetchHoyolabNews({ games: GAMES, userAgent: UA, log: (m) => console.log(`  ${m}`) });
-  } catch (err) {
-    console.error(`[hoyolab] berita: ${err.message}`);
-  }
+  const log = (m) => console.log(`  ${m}`);
+  const [hoyo, wuwa] = await Promise.all([
+    fetchHoyolabNews({ games: GAMES, userAgent: UA, log }).catch((err) => {
+      console.error(`[hoyolab] berita: ${err.message}`);
+      return [];
+    }),
+    fetchWuwaNews({ games: GAMES, userAgent: UA, log }).catch((err) => {
+      console.error(`[wuwa] berita: ${err.message}`);
+      return [];
+    }),
+  ]);
+  const all = [...hoyo, ...wuwa];
   all.sort((a, b) => Date.parse(b.publishedAt ?? 0) - Date.parse(a.publishedAt ?? 0));
 
   const ageOf = (a) => nowMs - Date.parse(a.publishedAt ?? 0);
