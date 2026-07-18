@@ -6,6 +6,7 @@ import { loadCodes } from "../../lib/codes.mjs";
 import { loadFeed } from "../../lib/feed.mjs";
 import { loadCatalog } from "../../lib/catalog.mjs";
 import { langPaths } from "../../lib/routes.mjs";
+import { monthYear } from "../../lib/seo.mjs";
 
 export function getStaticPaths() {
   return LANGS.map((lang) => ({ params: { lang } }));
@@ -15,9 +16,10 @@ const { lang } = Astro.params;
 const tr = t(lang);
 const [codes, feed, catalog] = await Promise.all([loadCodes(), loadFeed(lang), loadCatalog()]);
 
+const my = monthYear(lang);
 const meta = lang === "id"
-  ? { title: "KodeGG — Portal Info Game Online: Kode Redeem, Event, Berita", desc: "Kode redeem, event & banner, dan berita game online — otomatis, diperbarui tiap jam. Genshin, Star Rail, Zenless, dan lainnya." }
-  : { title: "KodeGG — Online Game Info: Redeem Codes, Events, News", desc: "Redeem codes, events & banners, and online game news — automated, updated hourly. Genshin, Star Rail, Zenless, and more." };
+  ? { title: "KodeGG — Portal Info Game Online: Kode Redeem, Event, Berita", desc: `Kode redeem terbaru ${my}, event & banner, dan berita game online — otomatis, diperbarui tiap jam. Genshin, Star Rail, Zenless, dan lainnya.` }
+  : { title: "KodeGG — Online Game Info: Redeem Codes, Events, News", desc: `Latest ${my} redeem codes, events & banners, and online game news — automated, updated hourly. Genshin, Star Rail, Zenless, and more.` };
 
 const site = Astro.site.href.replace(/\/$/, "");
 const jsonLd = [

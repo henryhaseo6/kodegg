@@ -114,6 +114,29 @@ const locale = lang === "id" ? "id_ID" : "en_US";
     }
   }
 
+  /* Badge "BARU/NEW" pada kode terbaru — glow lembut biar langsung kelihatan. */
+  @keyframes ggNewGlow {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(203, 255, 70, 0);
+    }
+    50% {
+      box-shadow: 0 0 10px 1px rgba(203, 255, 70, 0.55);
+    }
+  }
+  .gg-new {
+    animation: ggNewGlow 1.9s ease-in-out infinite;
+  }
+  .gg-new-dot {
+    animation: glowPulse 1.4s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gg-new,
+    .gg-new-dot {
+      animation: none;
+    }
+  }
+
   .gg-nav:hover {
     color: #eef1f6 !important;
   }

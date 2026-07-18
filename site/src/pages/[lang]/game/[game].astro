@@ -12,6 +12,7 @@ import EventModal from "../../../components/EventModal.astro";
 import { LANGS, t } from "../../../lib/i18n.mjs";
 import { route } from "../../../lib/routes.mjs";
 import { redeemInfo } from "../../../lib/redeem.mjs";
+import { monthYear } from "../../../lib/seo.mjs";
 import { loadCodes } from "../../../lib/codes.mjs";
 import { loadEvents } from "../../../lib/events.mjs";
 import { loadCatalog } from "../../../lib/catalog.mjs";
@@ -34,11 +35,14 @@ const gameEvents = events.events.filter((e) => e.game === game);
 // Cara redeem (spesifik per game, terverifikasi — lihat lib/redeem.mjs).
 const rd = redeemInfo(game, lang);
 
+const my = monthYear(lang);
 const meta = {
-  title: id ? `Kode Redeem ${gameMeta.name} Terbaru — KodeGG` : `${gameMeta.name} Redeem Codes — KodeGG`,
+  title: id
+    ? `Kode Redeem ${gameMeta.name} ${my} (Masih Aktif) — KodeGG`
+    : `${gameMeta.name} Redeem Codes ${my} (Active) — KodeGG`,
   desc: id
-    ? `Semua kode redeem ${gameMeta.name} yang masih aktif dan event berlangsung. Diperbarui otomatis tiap jam.`
-    : `All active ${gameMeta.name} redeem codes and live events. Auto-updated hourly.`,
+    ? `Kode redeem ${gameMeta.name} terbaru ${my} yang masih aktif + event berlangsung. Diperbarui otomatis tiap jam.`
+    : `Latest active ${gameMeta.name} redeem codes for ${my} plus live events. Auto-updated hourly.`,
 };
 
 const site = Astro.site.href.replace(/\/$/, "");

@@ -38,6 +38,7 @@ const DICT = {
     "ctl.more": "Muat lebih banyak",
 
     "card.active": "AKTIF",
+    "card.new": "BARU",
     "card.expired": "KADALUARSA",
     "card.copy": "Salin",
     "card.copied": "Tersalin ✓",
@@ -183,6 +184,7 @@ const DICT = {
     "ctl.more": "Load more",
 
     "card.active": "ACTIVE",
+    "card.new": "NEW",
     "card.expired": "EXPIRED",
     "card.copy": "Copy",
     "card.copied": "Copied ✓",

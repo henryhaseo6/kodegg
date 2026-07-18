@@ -39,13 +39,13 @@ if (card.perm) {
 ---
 
 <article
-  class="gg-card"
+  class:list={["gg-card", { "gg-new-card": card.isNew }]}
   data-code-card
   data-game={card.game ?? ""}
   data-name={card.name}
   data-search={card.search}
   data-seen={card.seenMs}
-  style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;"
+  style={`background:var(--surface); border:1px solid ${card.isNew ? "rgba(203,255,70,0.5)" : "var(--line)"}; border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;${card.isNew ? " box-shadow:0 0 0 1px rgba(203,255,70,0.12),0 10px 34px rgba(203,255,70,0.08);" : ""}`}
 >
   <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
     <div style="display:flex; align-items:center; gap:11px; min-width:0;">
@@ -84,10 +84,21 @@ if (card.perm) {
         </div>
       </div>
     </div>
-    <span
-      style="flex:0 0 auto; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;"
-      >{tr("card.active")}</span
-    >
+    {
+      card.isNew ? (
+        <span
+          class="gg-new"
+          style="flex:0 0 auto; display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ink); background:var(--acc); border:1px solid var(--acc); padding:4px 9px; border-radius:8px;"
+        >
+          <span class="gg-new-dot" aria-hidden="true" style="width:5px; height:5px; border-radius:50%; background:var(--ink);" />
+          {tr("card.new")}
+        </span>
+      ) : (
+        <span style="flex:0 0 auto; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;">
+          {tr("card.active")}
+        </span>
+      )
+    }
   </div>
 
   {

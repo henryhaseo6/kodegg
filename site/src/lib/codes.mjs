@@ -29,16 +29,27 @@ function searchIndex(item) {
     .toLowerCase();
 }
 
+// Ambang "kode baru": dianggap BARU bila TANGGAL RILIS/DISCOVERY dari sumber
+// dalam N hari terakhir. SENGAJA pakai `date` (bukan firstSeenAt) — firstSeenAt
+// ke-stamp bareng saat deploy pertama, jadi semua kode lama tampak "baru".
+// Pakai tanggal sumber = presisi: hanya kode yang benar-benar baru dirilis yang
+// glow (mis. kode livestream dari crimsonwitch/wiki). Kode permanen tak pernah baru.
+const NEW_DAYS = 3;
+const NOW_MS = Date.now();
+
 function shape(item) {
+  // Kunci sort "Terbaru": tanggal SUMBER (rilis/discovery) bila ada, kalau tidak
+  // firstSeenAt ("Terpantau"). Konsisten dg label tanggal di kartu.
+  const seenMs = Date.parse(item.date ?? item.firstSeenAt ?? "") || 0;
+  const dateMs = Date.parse(item.date ?? "") || 0;
   return {
     ...item,
     name: displayName(item),
     icon: iconUrl(item.game),
     redeemUrl: GAMES[item.game]?.redeemUrl ?? item.sourceUrl ?? null,
     search: searchIndex(item),
-    // Kunci sort "Terbaru": tanggal SUMBER (rilis/discovery) bila ada, kalau tidak
-    // firstSeenAt ("Terpantau"). Konsisten dg label tanggal di kartu.
-    seenMs: Date.parse(item.date ?? item.firstSeenAt ?? "") || 0,
+    seenMs,
+    isNew: !item.perm && dateMs > 0 && NOW_MS - dateMs <= NEW_DAYS * 86400000,
   };
 }
 
