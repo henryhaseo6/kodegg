@@ -26,6 +26,13 @@ const fmtDate = (iso) =>
     timeZone: "Asia/Jakarta",
   });
 
+// Atribusi per-kode. `sources` = semua sumber yang menyumbang data kode ini;
+// `source` = sumber utama (punya sourceUrl, ditautkan). Sumber tambahan tampil
+// sebagai teks (kredit, bukan untuk diklik — kode bukan artikel).
+const allSources = card.sources?.length ? card.sources : card.source ? [card.source] : [];
+const primarySource = card.source ?? allSources[0] ?? null;
+const extraSources = allSources.filter((s) => s !== primarySource);
+
 let badge;
 if (card.perm) {
   badge = { text: lang === "id" ? "Tanpa batas" : "No expiry", color: "var(--ok)" };
@@ -144,17 +151,19 @@ if (card.perm) {
   <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px; gap:8px;">
     <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">
       {
-        /* Tautan ke SUMBER asli (selalu hidup): halaman redeem HoYo, halaman
-           wiki, atau wuwastatus. Sengaja bukan redeemUrl — sebagian game
+        /* Atribusi sumber. Sumber utama ditautkan (sourceUrl — halaman/API
+           sumber). Bila kode ditarik dari >1 sumber, sisanya tampil sbg teks
+           kredit ("· crimsonwitch"). Sengaja bukan redeemUrl — sebagian game
            (mis. Reverse:1999) redeem in-game & tak punya halaman web. */
         card.sourceUrl ? (
           <a href={card.sourceUrl} rel="noopener nofollow" target="_blank" style="color:var(--faint); text-decoration:none; border-bottom:1px dotted var(--line2);">
-            {card.source}
+            {primarySource}
           </a>
         ) : (
-          card.source
+          primarySource
         )
       }
+      {extraSources.length > 0 && <span> · {extraSources.join(" · ")}</span>}
     </span>
     <span style={`font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:${badge.color};`}>
       {badge.text}

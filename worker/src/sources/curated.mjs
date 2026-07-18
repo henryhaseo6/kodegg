@@ -91,7 +91,11 @@ export function combineCodes(sourceItems, curatedItems) {
     const key = codeKey(item);
     const cur = byKey.get(key);
     if (!cur) {
-      byKey.set(key, { ...item });
+      // `sources` = daftar SEMUA sumber yang menyumbang kode ini (untuk atribusi
+      // per-kode di kartu). `source` tetap = sumber utama/pemenang (yang pertama,
+      // sesuai urutan prioritas argumen). Kode bisa datang dari >1 sumber, mis.
+      // ZZZY2ANNIV: identitas+reward dari hoyo-codes, tanggal dari crimsonwitch.
+      byKey.set(key, { ...item, sources: item.source ? [item.source] : [] });
     } else {
       if (rewardScore(item.reward) > rewardScore(cur.reward)) {
         cur.reward = item.reward; // sumber lebih lengkap menang untuk reward
@@ -102,6 +106,8 @@ export function combineCodes(sourceItems, curatedItems) {
       // Permanen bila DITANDAI permanen oleh sumber mana pun (mis. tot.wiki
       // End Date 2099) — biar kartu tampil "Tanpa batas", bukan tanggal rilis.
       if (item.perm) cur.perm = true;
+      // Catat sumber tambahan (dedup, pertahankan urutan prioritas).
+      if (item.source && !cur.sources.includes(item.source)) cur.sources.push(item.source);
     }
   }
   for (const item of byKey.values()) {
