@@ -42,8 +42,9 @@ async function main() {
     Object.entries(ROBLOX_GAMES).map(async ([id, meta]) => {
       try {
         const { active, archive, meta: m } = await fetchRoCodes(meta.slug);
-        for (const c of active) freshActive.push({ game: id, gameName: meta.name, ...c });
-        for (const c of archive) freshArchive.push({ game: id, gameName: meta.name, ...c, status: "expired" });
+        const src = { source: "RoCodes.gg", sourceUrl: `https://rocodes.gg/codes/${meta.slug}` };
+        for (const c of active) freshActive.push({ game: id, gameName: meta.name, ...src, ...c });
+        for (const c of archive) freshArchive.push({ game: id, gameName: meta.name, ...src, ...c, status: "expired" });
         games[id] = {
           name: meta.name,
           slug: robloxSlug(id),

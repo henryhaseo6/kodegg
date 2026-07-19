@@ -27,6 +27,26 @@ const my = monthYear(lang);
 const ARCH_CAP = 24; // Fase 1: tampilkan arsip terbaru saja (windowing di Fase 3)
 const archShown = g.archive.slice(0, ARCH_CAP);
 
+// Cara redeem Roblox: BILINGUAL & standar. howTo dari RoCodes cuma Inggris +
+// mengandung placeholder {{game_name}} yang tak tersubstitusi, jadi tak dipakai.
+// Redemption Roblox sangat seragam (tombol Codes → masukkan → Redeem), jadi
+// langkah standar ini akurat untuk hampir semua game. (Spesifik per-game =
+// perbaikan Fase 3 bila sumber menyediakan langkah bersih & terlokalisasi.)
+const redeemSteps = {
+  id: [
+    "Buka game-nya di Roblox",
+    "Cari tombol Codes — biasanya di layar utama, atau lewat ikon Twitter/burung atau menu Settings",
+    "Tempel kode dari daftar di atas (case-sensitive — salin persis)",
+    "Tekan Redeem — hadiah langsung masuk",
+  ],
+  en: [
+    "Open the game in Roblox",
+    "Find the Codes button — usually on the main screen, or via a Twitter/bird icon or the Settings menu",
+    "Paste a code from the list above (case-sensitive — copy exactly)",
+    "Press Redeem — the reward is granted instantly",
+  ],
+};
+
 const meta = id
   ? {
       title: `Kode Roblox ${g.name} ${my} — Terbaru & Aktif | KodeGG`,
@@ -49,20 +69,18 @@ const jsonLd = [
     ],
   },
 ];
-if (g.howTo.length) {
-  jsonLd.push({
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: id ? `Cara redeem kode ${g.name}` : `How to redeem ${g.name} codes`,
-    step: g.howTo.map((s, i) => ({ "@type": "HowToStep", position: i + 1, text: s })),
-  });
-}
+jsonLd.push({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: id ? `Cara redeem kode ${g.name}` : `How to redeem ${g.name} codes`,
+  step: redeemSteps[lang].map((s, i) => ({ "@type": "HowToStep", position: i + 1, text: s })),
+});
 
 const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.02em; color:#fff; margin:0;";
 ---
 
 <Base lang={lang} title={meta.title} description={meta.desc} paths={robloxGamePaths(slug)} jsonLd={jsonLd}>
-  <Header lang={lang} active={null} paths={{ id: "/id/roblox", en: "/en/roblox" }} />
+  <Header lang={lang} active={null} paths={robloxGamePaths(slug)} />
 
   <Breadcrumb
     items={[
@@ -137,20 +155,16 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
     <!-- CARA REDEEM -->
     <section style="margin-bottom:38px;">
       <h2 style={SectionHead}>{id ? `Cara redeem kode ${g.name}` : `How to redeem ${g.name} codes`}</h2>
-      <div style="margin-top:16px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px;">
-        {g.howTo.length > 0 ? (
-          <ol style="margin:0; padding-left:22px; color:var(--txt); font-size:14.5px; line-height:1.9;">
-            {g.howTo.map((s) => <li>{s}</li>)}
-          </ol>
-        ) : (
-          <ol style="margin:0; padding-left:22px; color:var(--txt); font-size:14.5px; line-height:1.9;">
-            <li>{id ? "Buka game di Roblox" : "Open the game in Roblox"}</li>
-            <li>{id ? "Cari tombol Codes / ikon Twitter di menu (biasanya di layar utama atau Settings)" : "Find the Codes button / Twitter icon in the menu (usually on the main screen or Settings)"}</li>
-            <li>{id ? "Masukkan kode persis seperti tertulis (case-sensitive)" : "Enter the code exactly as written (case-sensitive)"}</li>
-            <li>{id ? "Tekan Redeem — hadiah langsung masuk" : "Press Redeem — rewards are granted instantly"}</li>
-          </ol>
-        )}
-        <p style="margin:14px 0 0; font-size:12.5px; color:var(--faint); font-family:'Space Mono',monospace;">
+      <div style="margin-top:16px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; max-width:640px;">
+        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px;">
+          {redeemSteps[lang].map((s, i) => (
+            <li style="display:flex; gap:12px; align-items:flex-start; font-size:14.5px; line-height:1.55; color:var(--txt);">
+              <span style="flex:none; width:24px; height:24px; border-radius:8px; background:var(--surface2); border:1px solid rgba(139,107,255,0.4); font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--acc2); display:flex; align-items:center; justify-content:center;">{i + 1}</span>
+              <span>{s}</span>
+            </li>
+          ))}
+        </ol>
+        <p style="margin:16px 0 0; font-size:12.5px; color:var(--faint); font-family:'Space Mono',monospace;">
           {id ? "Kode Roblox umumnya case-sensitive — salin persis." : "Roblox codes are usually case-sensitive — copy exactly."}
         </p>
       </div>

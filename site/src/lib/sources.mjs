@@ -10,7 +10,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const P = (env, file) => process.env[env] ?? resolve(process.cwd(), `../worker/data/${file}`);
-const FILES = [P("KODEGG_CODES", "codes.json"), P("KODEGG_NEWS", "news.json"), P("KODEGG_EVENTS", "events.json")];
+const FILES = [P("KODEGG_CODES", "codes.json"), P("KODEGG_NEWS", "news.json"), P("KODEGG_EVENTS", "events.json"), P("KODEGG_ROBLOX", "roblox-codes.json")];
 
 // Bukan sumber eksternal: "curated" = kode permanen yang kita rawat sendiri,
 // "editorial" = label meta cross-check (situs spesifiknya sudah terdaftar).
