@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url";
 
 import { ROBLOX_GAMES, robloxSlug } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
+import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
 import { mergeWithPrevious } from "./src/archive.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -42,8 +43,15 @@ async function main() {
     Object.entries(ROBLOX_GAMES).map(async ([id, meta]) => {
       try {
         const { active, archive, meta: m } = await fetchRoCodes(meta.slug);
+        // Cross-check: tandai kode yang JUGA aktif di situs editorial (badge Verified).
+        const { set: xset, sources: xsrc } = await crossCheckActive(meta.checkSlug ?? meta.slug);
         const src = { source: "RoCodes.gg", sourceUrl: `https://rocodes.gg/codes/${meta.slug}` };
-        for (const c of active) freshActive.push({ game: id, gameName: meta.name, ...src, ...c });
+        let nVer = 0;
+        for (const c of active) {
+          const verified = xset.has((c.code ?? "").trim().toLowerCase());
+          if (verified) nVer += 1;
+          freshActive.push({ game: id, gameName: meta.name, ...src, ...c, verified });
+        }
         for (const c of archive) freshArchive.push({ game: id, gameName: meta.name, ...src, ...c, status: "expired" });
         games[id] = {
           name: meta.name,
@@ -53,10 +61,11 @@ async function main() {
           universeId: m.universeId,
           placeId: m.placeId,
           verified: m.verified,
+          crossCheck: xsrc, // situs editorial yg mengkonfirmasi kode game ini
           howTo: m.howTo,
         };
         covered.add(id);
-        console.log(`  [${id}] ✓ ${active.length} aktif + ${archive.length} arsip (RoCodes)`);
+        console.log(`  [${id}] ✓ ${active.length} aktif (${nVer} verified${xsrc.length ? ` via ${xsrc.join("+")}` : ""}) + ${archive.length} arsip`);
       } catch (err) {
         failed += 1;
         console.log(`  [${id}] · gagal: ${err.message}`);

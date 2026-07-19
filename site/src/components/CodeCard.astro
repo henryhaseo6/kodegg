@@ -118,7 +118,14 @@ if (card.perm) {
       </div>
     </div>
     {
-      card.isNew ? (
+      card.verified ? (
+        /* Verified = kode ini juga dilisting AKTIF oleh situs editorial (cross-check).
+           Badge hijau TERISI + centang → sinyal kepercayaan tertinggi. */
+        <span style="flex:0 0 auto; display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ink); background:var(--ok); border:1px solid var(--ok); padding:4px 9px; border-radius:8px;">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+          Verified
+        </span>
+      ) : card.isNew ? (
         <span
           class:list={[{ "gg-new": !isAcc2 }]}
           style={`flex:0 0 auto; display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:${badgeText}; background:${accent}; border:1px solid ${accent}; padding:4px 9px; border-radius:8px;`}

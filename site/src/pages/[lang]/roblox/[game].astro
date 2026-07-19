@@ -100,8 +100,11 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
       <div style="min-width:0;">
         <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap;">
           <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--acc2); border:1px solid rgba(139,107,255,0.5); background:rgba(139,107,255,0.1); padding:3px 8px; border-radius:6px;">Roblox</span>
-          {g.verified && (
-            <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.12); border:1px solid rgba(55,227,139,0.35); padding:3px 8px; border-radius:6px;">✓ {id ? "Terverifikasi" : "Verified"}</span>
+          {g.verifiedCount > 0 && (
+            <span style="display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.12); border:1px solid rgba(55,227,139,0.35); padding:3px 8px; border-radius:6px;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+              {g.verifiedCount} {id ? "terverifikasi" : "verified"}
+            </span>
           )}
         </div>
         <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(24px,4vw,36px); letter-spacing:-0.02em; color:#fff; margin:6px 0 0; line-height:1.1;">
@@ -120,6 +123,9 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
       {id
         ? `${g.active.length} kode aktif · ${g.archive.length} di arsip · ditarik otomatis dari RoCodes.gg`
         : `${g.active.length} active codes · ${g.archive.length} archived · auto-pulled from RoCodes.gg`}
+      {g.crossCheck.length > 0 && (
+        <span style="color:var(--faint);"> · {id ? "cross-check" : "cross-checked with"} {g.crossCheck.join(", ")}</span>
+      )}
     </p>
 
     <!-- KODE AKTIF -->
@@ -142,6 +148,14 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
           <a href={robloxHome(lang)} style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--acc2); text-decoration:none; white-space:nowrap;">{id ? "Semua game Roblox" : "All Roblox games"} →</a>
         </div>
       </div>
+      {g.verifiedCount > 0 && (
+        <p style="font-size:12.5px; color:var(--faint); margin:0 0 16px; display:inline-flex; align-items:center; gap:7px; flex-wrap:wrap;">
+          <span style="display:inline-flex; align-items:center; gap:4px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ink); background:var(--ok); padding:3px 7px; border-radius:6px;">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>Verified
+          </span>
+          {id ? "= kode juga dikonfirmasi aktif oleh situs editorial (cross-check)." : "= code also confirmed active by an editorial site (cross-check)."}
+        </p>
+      )}
       {g.active.length > 0 ? (
         <div data-code-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:16px;">
           {g.active.map((c) => <CodeCard card={c} lang={lang} linkGame={false} accent="var(--acc2)" gameBase="roblox" />)}
