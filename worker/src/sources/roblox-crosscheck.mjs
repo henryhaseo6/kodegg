@@ -42,6 +42,18 @@ function activeCodes(html) {
   return out;
 }
 
+// Roblox Den: tiap kode punya `data-copy="CODE"`, status di parent
+// `data-expired="false|true"`. Ambil hanya yang false (aktif).
+function robloxDenActive(html) {
+  const out = new Set();
+  for (const m of html.matchAll(/data-expired="(false|true)"[\s\S]{0,600}?data-copy="([^"]{2,40})"/gi)) {
+    if (m[1] !== "false") continue;
+    const c = m[2].trim();
+    if (CODE_RE.test(c)) out.add(c.toLowerCase());
+  }
+  return out;
+}
+
 // Situs cross-check. Tiap fetch di-timeout & try/catch → satu gagal tak jatuhkan
 // yang lain. Diverifikasi cocok dg kode RoCodes (lihat probe): tryhardguides &
 // gamerant paling lengkap; pockettactics stabil; pcgamesn/progameguides parsial.
@@ -51,6 +63,7 @@ const SITES = [
   { name: "Game Rant", url: (s) => `https://gamerant.com/${s}-codes/` },
   { name: "PCGamesN", url: (s) => `https://www.pcgamesn.com/${s}/codes` },
   { name: "Pro Game Guides", url: (s) => `https://progameguides.com/roblox/${s}-codes/` },
+  { name: "Roblox Den", url: (s) => `https://robloxden.com/game-codes/${s}`, extract: robloxDenActive },
 ];
 
 /**
@@ -65,7 +78,7 @@ export async function crossCheckActive(slug) {
   await Promise.all(
     SITES.map(async (site) => {
       try {
-        const codes = activeCodes(await fetchHtml(site.url(slug)));
+        const codes = (site.extract ?? activeCodes)(await fetchHtml(site.url(slug)));
         if (codes.size) {
           for (const c of codes) set.add(c);
           bySite.push({ name: site.name, set: codes });
