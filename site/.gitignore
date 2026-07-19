@@ -1,1 +1,5 @@
+# artefak fontconfig OG (TTF-nya sendiri DI-COMMIT di scripts/ogfonts/)
+scripts/ogfonts/.cache/
+scripts/ogfonts/fonts.conf
 scripts/.ogfonts/
+scripts/fontcmp/

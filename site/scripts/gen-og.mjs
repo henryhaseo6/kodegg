@@ -1,29 +1,25 @@
 // Generator OG image — site (ID/EN) + per-game. Jalankan dari site/: node scripts/gen-og.mjs
 //
-// PENTING: librsvg (sharp) TIDAK memuat @font-face woff2 data-URI, jadi font
-// Space Grotesk/Space Mono disediakan lewat FONTCONFIG (TTF di scripts/.ogfonts,
-// di-download otomatis). FONTCONFIG_FILE di-set SEBELUM import sharp.
-import { mkdir, writeFile, readFile, access } from "node:fs/promises";
+// FONT (kritis, jangan diganti sembarangan): librsvg (sharp) TIDAK memuat
+// @font-face woff2, jadi font disediakan lewat FONTCONFIG dari TTF di
+// scripts/ogfonts/ (DI-COMMIT ke repo → generator self-contained, tak perlu
+// download/Python). FONTCONFIG_FILE di-set SEBELUM import sharp.
+//
+// SpaceGrotesk-700.ttf = variable font Google (yg PERSIS dipakai situs) yang
+// sudah di-INSTANCE ke wght=700 (static). Dua jebakan yang menghasilkan wordmark
+// BEDA dari header situs & sudah dihindari di sini:
+//   1) Variable SpaceGrotesk[wght].ttf → FreeType/libvips tak apply weight axis,
+//      render ~400 (tipis). Solusi: instance ke static 700.
+//   2) Cut floriankarsten (repo sumber) ≠ cut Google Fonts (yg dipakai situs) —
+//      lebih lebar, letterform beda. Solusi: WAJIB dari variable font Google.
+// Regenerasi TTF (mis. update versi): lihat scripts/ogfonts/README.
+import { mkdir, writeFile } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const FONTDIR = resolve(HERE, ".ogfonts");
+const FONTDIR = resolve(HERE, "ogfonts");
 const P = (p) => p.split("\\").join("/");
-// PENTING: pakai TTF STATIS Bold (weight 700 sudah baked-in). Variable font
-// SpaceGrotesk[wght].ttf render di weight DEFAULT (~400, tipis) karena FreeType
-// di libvips tak meng-apply weight axis → wordmark beda dari header situs (700).
-const TTF = {
-  "SpaceGrotesk-Bold.ttf": "https://raw.githubusercontent.com/floriankarsten/space-grotesk/master/fonts/ttf/static/SpaceGrotesk-Bold.ttf",
-  "SpaceMono-Bold.ttf": "https://github.com/google/fonts/raw/main/ofl/spacemono/SpaceMono-Bold.ttf",
-};
-await mkdir(FONTDIR, { recursive: true });
-for (const [f, u] of Object.entries(TTF)) {
-  try { await access(resolve(FONTDIR, f)); } catch {
-    const b = Buffer.from(await (await fetch(u, { redirect: "follow" })).arrayBuffer());
-    await writeFile(resolve(FONTDIR, f), b);
-  }
-}
 await writeFile(resolve(FONTDIR, "fonts.conf"),
   `<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"><fontconfig><dir>${P(FONTDIR)}</dir><cachedir>${P(FONTDIR)}/.cache</cachedir></fontconfig>`);
 process.env.FONTCONFIG_FILE = resolve(FONTDIR, "fonts.conf");
