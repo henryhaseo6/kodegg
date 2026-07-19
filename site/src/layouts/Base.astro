@@ -7,12 +7,14 @@ import "../styles/fonts.css"; // @font-face self-hosted (public/fonts/*.woff2)
 // paths = {id, en} bila slug beda per bahasa (mis. /id/jelajah vs /en/discover).
 // path = suffix tunggal (fallback, slug sama utk kedua bahasa).
 // jsonLd = array objek Schema.org (dirender sbg <script ld+json>).
-const { lang, title, description, path, paths, jsonLd = [], noindex = false } = Astro.props;
+const { lang, title, description, path, paths, jsonLd = [], noindex = false, ogImage: ogImageProp } = Astro.props;
 const other = otherLang(lang);
 const pathFor = (l) => (paths ? paths[l] : `/${l}${path ?? ""}`);
 const canonical = new URL(pathFor(lang), Astro.site).href;
 const altUrl = (l) => new URL(pathFor(l), Astro.site).href;
-const ogImage = new URL("/assets/og.png", Astro.site).href;
+// OG image: prop khusus (mis. kartu per-game) → fallback OG situs per-bahasa
+// (og-en.png untuk EN, og.png untuk ID) supaya EN tak memakai gambar berteks ID.
+const ogImage = new URL(ogImageProp ?? (lang === "en" ? "/assets/og-en.png" : "/assets/og.png"), Astro.site).href;
 const locale = lang === "id" ? "id_ID" : "en_US";
 ---
 

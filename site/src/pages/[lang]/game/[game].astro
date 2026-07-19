@@ -136,7 +136,7 @@ const jsonLd = [
 ];
 ---
 
-<Base lang={lang} title={meta.title} description={meta.desc} paths={{ id: `/id/game/${game}`, en: `/en/game/${game}` }} jsonLd={jsonLd}>
+<Base lang={lang} title={meta.title} description={meta.desc} paths={{ id: `/id/game/${game}`, en: `/en/game/${game}` }} jsonLd={jsonLd} ogImage={`/assets/og/games/${gid}.png`}>
   <Header lang={lang} active={null} paths={{ id: `/id/game/${game}`, en: `/en/game/${game}` }} />
   <Breadcrumb
     items={[
