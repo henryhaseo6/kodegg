@@ -129,21 +129,6 @@ const DICT = {
     "ev.more": "Muat lebih banyak",
     "ev.close": "Tutup",
 
-    "tier.metaTitle": "Database Karakter & Tier — Genshin, Star Rail | KodeGG",
-    "tier.metaDesc":
-      "Jelajahi karakter Genshin Impact & Honkai: Star Rail — element, rarity, dan skill lengkap. Filter dan cari karakter favoritmu.",
-    "tier.title": "Karakter & tier",
-    "tier.desc": "Database karakter dengan skill lengkap dari sumber resmi. Peringkat tier sedang dikurasi — menyusul.",
-    "tier.search": "Cari karakter…",
-    "tier.allEl": "Semua element",
-    "tier.allRarity": "Semua rarity",
-    "tier.shown": "karakter",
-    "tier.skills": "Skill",
-    "tier.noSkills": "Detail skill segera hadir.",
-    "tier.close": "Tutup",
-    "tier.empty": "Tidak ada karakter yang cocok.",
-    "tier.tierSoon": "Peringkat tier menyusul",
-
     "fav.metaTitle": "Game Favorit — KodeGG",
     "fav.metaDesc": "Game yang kamu simpan di KodeGG. Akses cepat ke kode & event game favoritmu.",
     "fav.title": "Game favorit",
@@ -273,21 +258,6 @@ const DICT = {
     "ev.empty": "Nothing matches this filter.",
     "ev.more": "Load more",
     "ev.close": "Close",
-
-    "tier.metaTitle": "Character Database & Tiers — Genshin, Star Rail | KodeGG",
-    "tier.metaDesc":
-      "Browse Genshin Impact & Honkai: Star Rail characters — element, rarity, and full skills. Filter and search your favorites.",
-    "tier.title": "Characters & tiers",
-    "tier.desc": "A character database with full skills from official sources. Tier rankings are being curated — coming soon.",
-    "tier.search": "Search character…",
-    "tier.allEl": "All elements",
-    "tier.allRarity": "All rarities",
-    "tier.shown": "characters",
-    "tier.skills": "Skills",
-    "tier.noSkills": "Skill details coming soon.",
-    "tier.close": "Close",
-    "tier.empty": "No characters match.",
-    "tier.tierSoon": "Tier ranking coming soon",
 
     "fav.metaTitle": "Saved Games — KodeGG",
     "fav.metaDesc": "The games you saved on KodeGG. Quick access to your favorite games' codes & events.",
