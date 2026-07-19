@@ -1,3 +1,7 @@
 # scratch generator OG (TTF di scripts/ogfonts/ DI-COMMIT; ini artefak lama)
 scripts/.ogfonts/
 scripts/fontcmp/
+
+# OG card per-game Roblox: di-generate `prebuild` (gen-og.mjs) tiap build.
+# 180+ game & auto-expand -> jangan commit (bloat). Fallback ke hub OG bila hilang.
+public/assets/og/roblox/

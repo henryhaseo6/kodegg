@@ -27,8 +27,10 @@ import { mergeWithPrevious } from "./src/archive.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, "data/roblox-codes.json");
-const MAX_GAMES = 60;
-const CONCURRENCY = 6;
+const MAX_GAMES = 250; // batas atas; game tanpa kode aktif gugur → angka final natural (~150-250)
+const CONCURRENCY = 5; // game paralel maks (rendah = tak membanjiri RoCodes/Den)
+const CROSSCHECK_MIN = 10000; // cross-check editorial HANYA game populer (pemain ≥ ini) — beban terkendali
+const ARCHIVE_CAP = 40; // arsip kode kedaluwarsa disimpan per game (hindari JSON balloon)
 
 // Sumber primer. url = untuk atribusi (dilink di kartu).
 const PRIMARIES = [
@@ -170,7 +172,13 @@ async function main() {
     const slugDen = entry.denSlug;
 
     // Cross-check editorial (5 situs) dg slug terbaik.
-    const { set: xset, bySite } = await crossCheckActive(slugRo || slugDen);
+    // Cross-check editorial hanya utk game populer (bounded load); long-tail
+    // tetap tampil kodenya (dari primer), badge Verified nyusul saat naik populer.
+    let xset = new Set();
+    let bySite = [];
+    if (entry.seed || (entry.players ?? 0) >= CROSSCHECK_MIN) {
+      ({ set: xset, bySite } = await crossCheckActive(slugRo || slugDen));
+    }
 
     // universeId: RoCodes → placeId Den (resolve) → discovery.
     let universeId = rocodesMeta?.universeId ?? entry.universeId ?? null;
@@ -230,8 +238,22 @@ async function main() {
     covered.add(r.id);
   }
 
-  const { active, archive, newlyArchived } = mergeWithPrevious(freshActive, freshArchive, prev, covered, now);
+  const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshActive, freshArchive, prev, covered, now);
   const mergedGames = { ...(prev.games ?? {}), ...games };
+
+  // Cap arsip per game (simpan ARCHIVE_CAP terbaru) → roblox-codes.json tak
+  // membengkak tak terbatas seiring bertambahnya game & kode kedaluwarsa.
+  const archByGame = new Map();
+  for (const c of fullArchive) {
+    const arr = archByGame.get(c.game);
+    if (arr) arr.push(c);
+    else archByGame.set(c.game, [c]);
+  }
+  const archive = [];
+  for (const arr of archByGame.values()) {
+    arr.sort((a, b) => (Date.parse(b.date ?? b.expiredAt ?? "") || 0) - (Date.parse(a.date ?? a.expiredAt ?? "") || 0));
+    for (const c of arr.slice(0, ARCHIVE_CAP)) archive.push(c);
+  }
 
   const uids = [...new Set(Object.values(mergedGames).map((g) => g.universeId).filter(Boolean))];
   const players = await fetchPlayers(uids);

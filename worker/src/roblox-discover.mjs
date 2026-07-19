@@ -17,25 +17,35 @@ export function slugify(s) {
   return (s ?? "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
 
+// Semua sort game explore-api Roblox. Gabungan → ~366 game populer unik (jauh
+// lebih banyak dari satu sort yg cuma ~95). Roblox tak expose lebih dari ini.
+const SORTS = ["top-playing-now", "top-trending", "up-and-coming", "fun-with-friends", "top-revisited", "top-earning", "top-rated"];
+
 /**
- * Game Roblox terpopuler saat ini (urut pemain terbanyak).
+ * Game Roblox terpopuler saat ini dari SEMUA sort (urut pemain terbanyak, unik).
  * @returns {Promise<{name:string, universeId:number, players:number}[]>}
  */
 export async function discoverTopGames() {
   const sid = globalThis.crypto?.randomUUID?.() ?? "00000000-0000-4000-8000-000000000000";
-  const url = `https://apis.roblox.com/explore-api/v1/get-sort-content?sessionId=${sid}&sortId=top-playing-now`;
-  try {
-    const res = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(15000) });
-    if (!res.ok) return [];
-    const data = await res.json();
-    const games = data.games ?? data.contents ?? [];
-    return games
-      .map((g) => ({ name: g.name ?? "", universeId: g.universeId ?? null, players: g.playerCount ?? 0 }))
-      .filter((g) => g.name && g.universeId)
-      .sort((a, b) => b.players - a.players);
-  } catch {
-    return [];
-  }
+  const games = new Map(); // universeId → {name, universeId, players} (pemain tertinggi menang)
+  await Promise.all(
+    SORTS.map(async (s) => {
+      try {
+        const res = await fetch(`https://apis.roblox.com/explore-api/v1/get-sort-content?sessionId=${sid}&sortId=${s}`, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(15000) });
+        if (!res.ok) return;
+        for (const g of (await res.json()).games ?? []) {
+          const uid = g.universeId;
+          if (!uid || !g.name) continue;
+          const players = g.playerCount ?? 0;
+          const cur = games.get(uid);
+          if (!cur || players > cur.players) games.set(uid, { name: g.name, universeId: uid, players });
+        }
+      } catch {
+        /* satu sort gagal → lanjut */
+      }
+    }),
+  );
+  return [...games.values()].sort((a, b) => b.players - a.players);
 }
 
 // Semua slug game yang PUNYA halaman kode di RoCodes (dari sitemap) — dipakai
