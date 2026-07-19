@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-19T12:01:00.480Z",
+  "updatedAt": "2026-07-19T13:01:02.284Z",
   "counts": {
     "active": 257,
     "archived": 1307
@@ -28,7 +28,7 @@
       },
       "date": "2026-06-21T13:44:03.319Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "gi",
@@ -53,7 +53,7 @@
       },
       "date": "2026-07-01T09:33:55.637Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "gi",
@@ -78,7 +78,7 @@
       },
       "date": "2026-05-08T17:06:50.441Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "gi",
@@ -103,7 +103,7 @@
       },
       "date": "2026-05-27T10:12:12.952Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "tot",
@@ -126,7 +126,238 @@
       },
       "date": "2024-10-25T00:00:00.000Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "5S6ZHRWTDNJB",
+      "reward": "60 stellar jade",
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe"
+      },
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "4TKSX77Y58QK",
+      "reward": "30 stellar jade, three traveler’s guides, five condensed aether, four lost gold fragments, and 20k credits",
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe"
+      },
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "STARRAILGIFT",
+      "reward": "50 stellar jade, 10k credits, two traveler’s guides, and five bottled soda",
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes",
+        "crimsonwitch",
+        "wiki"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe",
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
+        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
+      },
+      "date": "2023-04-26T00:00:00.000Z",
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "IFYOUAREREADINGTHIS",
+      "reward": "60 stellar jade and one fuel",
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes",
+        "crimsonwitch",
+        "wiki"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe",
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
+        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
+      },
+      "date": "2025-01-16T20:19:32.464Z",
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "FAREWELL",
+      "reward": "60 stellar jade and one fuel",
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes",
+        "crimsonwitch",
+        "wiki"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe",
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
+        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
+      },
+      "date": "2025-04-09T14:29:08.709Z",
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "CTK5DRQVT48F",
+      "reward": null,
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe"
+      },
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "CREATIONNYMPH",
+      "reward": "Stellar Jade x60 · Fuel x1 · Heroic Variable x1",
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes",
+        "crimsonwitch",
+        "wiki"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe",
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
+        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
+      },
+      "date": "2025-07-02T15:42:10.063Z",
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "OMEGA",
+      "reward": "60 stellar jade and one fuel",
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes",
+        "crimsonwitch",
+        "wiki"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe",
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
+        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
+      },
+      "date": "2025-11-08T01:29:43.278Z",
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "PSJQKBQPYGMT",
+      "reward": "Stellar Jade ×50 · Credit ×10,000",
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes",
+        "crimsonwitch"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe",
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail"
+      },
+      "date": "2026-07-15T05:18:11.142Z",
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "code": "BESTCOFFEEEVER",
+      "reward": "Traveler's Guide ×3 · Express Special Blend - Rustic Infusion ×2",
+      "status": "active",
+      "perm": false,
+      "endsAt": null,
+      "claimUrl": null,
+      "source": "hoyo-codes",
+      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "sources": [
+        "hoyo-codes",
+        "crimsonwitch"
+      ],
+      "sourceUrls": {
+        "hoyo-codes": "https://hoyo-codes.seria.moe",
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail"
+      },
+      "date": "2026-07-15T05:50:41.547Z",
+      "firstSeenAt": "2026-07-17T04:19:56.202Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -153,7 +384,7 @@
       },
       "date": "2024-07-04T00:00:00.000Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -178,7 +409,7 @@
       },
       "date": "2026-06-06T19:16:55.853Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -203,7 +434,7 @@
       },
       "date": "2026-06-09T04:14:46.676Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -228,7 +459,7 @@
       },
       "date": "2026-06-09T04:12:53.838Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -253,7 +484,7 @@
       },
       "date": "2026-06-11T13:32:17.995Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -278,7 +509,7 @@
       },
       "date": "2026-06-11T13:58:19.953Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -303,7 +534,7 @@
       },
       "date": "2026-06-18T22:52:57.559Z",
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -328,7 +559,7 @@
       },
       "date": "2026-07-17T11:30:00.000Z",
       "firstSeenAt": "2026-07-17T12:38:55.118Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -353,7 +584,7 @@
       },
       "date": "2026-07-18T12:05:04.521Z",
       "firstSeenAt": "2026-07-18T06:15:56.467Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -376,7 +607,7 @@
       },
       "date": "2026-07-17T00:00:00.000Z",
       "firstSeenAt": "2026-07-17T16:48:18.308Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "zzz",
@@ -401,238 +632,196 @@
       },
       "date": "2026-07-18T02:42:03.730Z",
       "firstSeenAt": "2026-07-17T16:48:18.308Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "5S6ZHRWTDNJB",
-      "reward": "60 stellar jade",
-      "status": "active",
-      "perm": false,
-      "endsAt": null,
+      "game": "nikki",
+      "gameName": "Infinity Nikki",
+      "source": "crimsonwitch",
+      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
+      "endsAt": "2026-08-27T19:50:00.000Z",
       "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
-      "sources": [
-        "hoyo-codes"
-      ],
-      "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe"
-      },
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "4TKSX77Y58QK",
-      "reward": "30 stellar jade, three traveler’s guides, five condensed aether, four lost gold fragments, and 20k credits",
-      "status": "active",
       "perm": false,
-      "endsAt": null,
-      "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
-      "sources": [
-        "hoyo-codes"
-      ],
-      "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe"
-      },
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "STARRAILGIFT",
-      "reward": "50 stellar jade, 10k credits, two traveler’s guides, and five bottled soda",
+      "code": "MachineControlFB",
+      "reward": "Shiny Bubbles ×30 · Bling ×20000",
+      "date": "2026-07-17T09:48:45.485Z",
       "status": "active",
-      "perm": false,
-      "endsAt": null,
-      "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
       "sources": [
-        "hoyo-codes",
-        "crimsonwitch",
-        "wiki"
-      ],
-      "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe",
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
-        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
-      },
-      "date": "2023-04-26T00:00:00.000Z",
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "IFYOUAREREADINGTHIS",
-      "reward": "60 stellar jade and one fuel",
-      "status": "active",
-      "perm": false,
-      "endsAt": null,
-      "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
-      "sources": [
-        "hoyo-codes",
-        "crimsonwitch",
-        "wiki"
-      ],
-      "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe",
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
-        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
-      },
-      "date": "2025-01-16T20:19:32.464Z",
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "FAREWELL",
-      "reward": "60 stellar jade and one fuel",
-      "status": "active",
-      "perm": false,
-      "endsAt": null,
-      "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
-      "sources": [
-        "hoyo-codes",
-        "crimsonwitch",
-        "wiki"
-      ],
-      "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe",
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
-        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
-      },
-      "date": "2025-04-09T14:29:08.709Z",
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "CTK5DRQVT48F",
-      "reward": null,
-      "status": "active",
-      "perm": false,
-      "endsAt": null,
-      "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
-      "sources": [
-        "hoyo-codes"
-      ],
-      "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe"
-      },
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "CREATIONNYMPH",
-      "reward": "Stellar Jade x60 · Fuel x1 · Heroic Variable x1",
-      "status": "active",
-      "perm": false,
-      "endsAt": null,
-      "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
-      "sources": [
-        "hoyo-codes",
-        "crimsonwitch",
-        "wiki"
-      ],
-      "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe",
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
-        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
-      },
-      "date": "2025-07-02T15:42:10.063Z",
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "OMEGA",
-      "reward": "60 stellar jade and one fuel",
-      "status": "active",
-      "perm": false,
-      "endsAt": null,
-      "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
-      "sources": [
-        "hoyo-codes",
-        "crimsonwitch",
-        "wiki"
-      ],
-      "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe",
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail",
-        "wiki": "https://honkai-star-rail.fandom.com/wiki/Redemption%20Code"
-      },
-      "date": "2025-11-08T01:29:43.278Z",
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "PSJQKBQPYGMT",
-      "reward": "Stellar Jade ×50 · Credit ×10,000",
-      "status": "active",
-      "perm": false,
-      "endsAt": null,
-      "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
-      "sources": [
-        "hoyo-codes",
         "crimsonwitch"
       ],
       "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe",
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail"
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
       },
-      "date": "2026-07-15T05:18:11.142Z",
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "firstSeenAt": "2026-07-17T12:38:55.118Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "code": "BESTCOFFEEEVER",
-      "reward": "Traveler's Guide ×3 · Express Special Blend - Rustic Infusion ×2",
-      "status": "active",
-      "perm": false,
-      "endsAt": null,
+      "game": "nikki",
+      "gameName": "Infinity Nikki",
+      "source": "crimsonwitch",
+      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
+      "endsAt": "2026-08-27T19:50:00.000Z",
       "claimUrl": null,
-      "source": "hoyo-codes",
-      "sourceUrl": "https://hoyo-codes.seria.moe",
+      "perm": false,
+      "code": "GoldenFeastDC",
+      "reward": "Shiny Bubbles ×30 · Bling ×20000",
+      "date": "2026-07-17T09:27:15.288Z",
+      "status": "active",
       "sources": [
-        "hoyo-codes",
         "crimsonwitch"
       ],
       "sourceUrls": {
-        "hoyo-codes": "https://hoyo-codes.seria.moe",
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Star_Rail"
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
       },
-      "date": "2026-07-15T05:50:41.547Z",
-      "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "firstSeenAt": "2026-07-17T12:38:55.118Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nikki",
+      "gameName": "Infinity Nikki",
+      "source": "crimsonwitch",
+      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
+      "endsAt": "2026-08-27T19:50:00.000Z",
+      "claimUrl": null,
+      "perm": false,
+      "code": "SongofGoldReddit",
+      "reward": "Shiny Bubbles ×30 · Bling ×20000",
+      "date": "2026-07-17T08:08:33.021Z",
+      "status": "active",
+      "sources": [
+        "crimsonwitch"
+      ],
+      "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
+      },
+      "firstSeenAt": "2026-07-17T12:38:55.118Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nikki",
+      "gameName": "Infinity Nikki",
+      "source": "crimsonwitch",
+      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
+      "endsAt": "2026-07-24T15:59:59.000Z",
+      "claimUrl": null,
+      "perm": false,
+      "code": "JOINNIKKIATTHEGOLDENFEAST",
+      "reward": "Revelation Crystal ×10",
+      "date": "2026-07-11T12:43:38.939Z",
+      "status": "active",
+      "sources": [
+        "crimsonwitch"
+      ],
+      "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
+      },
+      "firstSeenAt": "2026-07-17T06:28:19.039Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nikki",
+      "gameName": "Infinity Nikki",
+      "source": "crimsonwitch",
+      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
+      "endsAt": "2026-07-24T15:59:59.000Z",
+      "claimUrl": null,
+      "perm": false,
+      "code": "SEEYOUINHEAVENSREACH",
+      "reward": "Diamond ×100 · Shiny Bubbles ×100 · Thread of Purity ×100",
+      "date": "2026-07-11T12:43:37.034Z",
+      "status": "active",
+      "sources": [
+        "crimsonwitch"
+      ],
+      "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
+      },
+      "firstSeenAt": "2026-07-17T06:28:19.039Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nikki",
+      "gameName": "Infinity Nikki",
+      "source": "crimsonwitch",
+      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
+      "endsAt": "2026-07-24T15:59:59.000Z",
+      "claimUrl": null,
+      "perm": false,
+      "code": "DANCEINTHEMIRROR",
+      "reward": "Diamond ×100 · Shiny Bubbles ×50 · Bling ×30000",
+      "date": "2026-07-11T12:43:12.277Z",
+      "status": "active",
+      "sources": [
+        "crimsonwitch"
+      ],
+      "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
+      },
+      "firstSeenAt": "2026-07-17T06:28:19.039Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nikki",
+      "gameName": "Infinity Nikki",
+      "source": "crimsonwitch",
+      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
+      "endsAt": "2026-07-24T15:59:59.000Z",
+      "claimUrl": null,
+      "perm": false,
+      "code": "FINALCHAPTEROFITZALAND",
+      "reward": "Diamond ×100 · Thread of Purity ×50 · Bling ×20000",
+      "date": "2026-07-11T12:42:24.475Z",
+      "status": "active",
+      "sources": [
+        "crimsonwitch"
+      ],
+      "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
+      },
+      "firstSeenAt": "2026-07-17T06:28:19.039Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nikki",
+      "gameName": "Infinity Nikki",
+      "source": "crimsonwitch",
+      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
+      "endsAt": null,
+      "claimUrl": null,
+      "perm": false,
+      "code": "ZONGZIMOMOFRAGRANTNIKKI",
+      "reward": "Diamond ×200 · Bling ×18888",
+      "date": "2026-06-19T08:07:29.699Z",
+      "status": "active",
+      "sources": [
+        "crimsonwitch"
+      ],
+      "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
+      },
+      "firstSeenAt": "2026-07-17T06:28:19.039Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nikki",
+      "gameName": "Infinity Nikki",
+      "source": "crimsonwitch",
+      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
+      "endsAt": "2026-07-24T12:59:59.000Z",
+      "claimUrl": null,
+      "perm": false,
+      "code": "nikkisbestcompanion",
+      "reward": "Diamond ×200 · Bling ×20000",
+      "date": "2025-07-25T18:29:45.412Z",
+      "status": "active",
+      "sources": [
+        "crimsonwitch"
+      ],
+      "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
+      },
+      "firstSeenAt": "2026-07-17T06:28:19.039Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "hi3",
@@ -655,7 +844,7 @@
         "wiki": "https://honkaiimpact3.fandom.com/wiki/Exchange%20Rewards"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "hi3",
@@ -678,7 +867,7 @@
         "wiki": "https://honkaiimpact3.fandom.com/wiki/Exchange%20Rewards"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "hi3",
@@ -699,7 +888,7 @@
         "crimsonwitch": "https://www.crimsonwitch.com/codes/Honkai_Impact_3rd"
       },
       "firstSeenAt": "2026-07-17T06:17:56.246Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "hi3",
@@ -722,7 +911,7 @@
         "wiki": "https://honkaiimpact3.fandom.com/wiki/Exchange%20Rewards"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "hi3",
@@ -747,364 +936,7 @@
         "HoYoLAB": "https://www.hoyolab.com/"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nikki",
-      "gameName": "Infinity Nikki",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
-      "endsAt": "2026-08-27T19:50:00.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "MachineControlFB",
-      "reward": "Shiny Bubbles ×30 · Bling ×20000",
-      "date": "2026-07-17T09:48:45.485Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
-      },
-      "firstSeenAt": "2026-07-17T12:38:55.118Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nikki",
-      "gameName": "Infinity Nikki",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
-      "endsAt": "2026-08-27T19:50:00.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "GoldenFeastDC",
-      "reward": "Shiny Bubbles ×30 · Bling ×20000",
-      "date": "2026-07-17T09:27:15.288Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
-      },
-      "firstSeenAt": "2026-07-17T12:38:55.118Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nikki",
-      "gameName": "Infinity Nikki",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
-      "endsAt": "2026-08-27T19:50:00.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "SongofGoldReddit",
-      "reward": "Shiny Bubbles ×30 · Bling ×20000",
-      "date": "2026-07-17T08:08:33.021Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
-      },
-      "firstSeenAt": "2026-07-17T12:38:55.118Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nikki",
-      "gameName": "Infinity Nikki",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
-      "endsAt": "2026-07-24T15:59:59.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "JOINNIKKIATTHEGOLDENFEAST",
-      "reward": "Revelation Crystal ×10",
-      "date": "2026-07-11T12:43:38.939Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
-      },
-      "firstSeenAt": "2026-07-17T06:28:19.039Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nikki",
-      "gameName": "Infinity Nikki",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
-      "endsAt": "2026-07-24T15:59:59.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "SEEYOUINHEAVENSREACH",
-      "reward": "Diamond ×100 · Shiny Bubbles ×100 · Thread of Purity ×100",
-      "date": "2026-07-11T12:43:37.034Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
-      },
-      "firstSeenAt": "2026-07-17T06:28:19.039Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nikki",
-      "gameName": "Infinity Nikki",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
-      "endsAt": "2026-07-24T15:59:59.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "DANCEINTHEMIRROR",
-      "reward": "Diamond ×100 · Shiny Bubbles ×50 · Bling ×30000",
-      "date": "2026-07-11T12:43:12.277Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
-      },
-      "firstSeenAt": "2026-07-17T06:28:19.039Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nikki",
-      "gameName": "Infinity Nikki",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
-      "endsAt": "2026-07-24T15:59:59.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "FINALCHAPTEROFITZALAND",
-      "reward": "Diamond ×100 · Thread of Purity ×50 · Bling ×20000",
-      "date": "2026-07-11T12:42:24.475Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
-      },
-      "firstSeenAt": "2026-07-17T06:28:19.039Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nikki",
-      "gameName": "Infinity Nikki",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
-      "endsAt": null,
-      "claimUrl": null,
-      "perm": false,
-      "code": "ZONGZIMOMOFRAGRANTNIKKI",
-      "reward": "Diamond ×200 · Bling ×18888",
-      "date": "2026-06-19T08:07:29.699Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
-      },
-      "firstSeenAt": "2026-07-17T06:28:19.039Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nikki",
-      "gameName": "Infinity Nikki",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Infinity_Nikki",
-      "endsAt": "2026-07-24T12:59:59.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "nikkisbestcompanion",
-      "reward": "Diamond ×200 · Bling ×20000",
-      "date": "2025-07-25T18:29:45.412Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
-      },
-      "firstSeenAt": "2026-07-17T06:28:19.039Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "evernight",
-      "gameName": "Ever Night: Reawakening",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
-      "claimUrl": null,
-      "perm": false,
-      "code": "EVERNIGHT777",
-      "reward": null,
-      "date": "2026-07-15T14:03:45.252Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "evernight",
-      "gameName": "Ever Night: Reawakening",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
-      "claimUrl": null,
-      "perm": false,
-      "code": "EVERNIGHT999",
-      "reward": null,
-      "date": "2026-07-15T14:03:38.364Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "evernight",
-      "gameName": "Ever Night: Reawakening",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
-      "claimUrl": null,
-      "perm": false,
-      "code": "EVERNIGHT666",
-      "reward": null,
-      "date": "2026-07-15T14:03:32.347Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "evernight",
-      "gameName": "Ever Night: Reawakening",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
-      "claimUrl": null,
-      "perm": false,
-      "code": "JUNE111",
-      "reward": null,
-      "date": "2026-07-15T14:03:27.112Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "evernight",
-      "gameName": "Ever Night: Reawakening",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
-      "claimUrl": null,
-      "perm": false,
-      "code": "2000DISCORD",
-      "reward": null,
-      "date": "2026-07-15T14:03:23.128Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "evernight",
-      "gameName": "Ever Night: Reawakening",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
-      "claimUrl": null,
-      "perm": false,
-      "code": "HOTDAY",
-      "reward": null,
-      "date": "2026-07-15T14:03:19.676Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "evernight",
-      "gameName": "Ever Night: Reawakening",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
-      "claimUrl": null,
-      "perm": false,
-      "code": "JUNENIGHT",
-      "reward": null,
-      "date": "2026-07-15T14:03:16.495Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "evernight",
-      "gameName": "Ever Night: Reawakening",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
-      "claimUrl": null,
-      "perm": false,
-      "code": "JULYTIME",
-      "reward": null,
-      "date": "2026-07-15T14:03:12.665Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "starsail",
@@ -1125,7 +957,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/star-sailors"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "starsail",
@@ -1146,7 +978,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/star-sailors"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "starsail",
@@ -1167,7 +999,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/star-sailors"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "starsail",
@@ -1188,7 +1020,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/star-sailors"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "starsail",
@@ -1209,7 +1041,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/star-sailors"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "starsail",
@@ -1230,154 +1062,175 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/star-sailors"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afkj",
-      "gameName": "AFK Journey",
+      "game": "evernight",
+      "gameName": "Ever Night: Reawakening",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
       "claimUrl": null,
       "perm": false,
-      "code": "SmallGiftFromPeggy",
-      "reward": "Diamonds ×500 · Coins ×20000",
-      "date": "2026-07-01T03:40:26.894Z",
-      "endsAt": "2026-07-22T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "afkj",
-      "gameName": "AFK Journey",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
-      "claimUrl": null,
-      "perm": false,
-      "code": "B52f8N5opog7k",
-      "reward": "Origami Hamsters ×10 · Diamonds ×500 · Gold ×50,000",
-      "date": "2026-06-20T08:07:33.723Z",
-      "endsAt": "2026-07-20T16:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "afkj",
-      "gameName": "AFK Journey",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
-      "claimUrl": null,
-      "perm": false,
-      "code": "hqC0Zfsc6QYtX",
-      "reward": "Diamonds ×500 · Hamsters ×5 · Gold ×50,000",
-      "date": "2026-06-01T11:51:49.583Z",
+      "code": "EVERNIGHT777",
+      "reward": null,
+      "date": "2026-07-15T14:03:45.252Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
       },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afkj",
-      "gameName": "AFK Journey",
+      "game": "evernight",
+      "gameName": "Ever Night: Reawakening",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
       "claimUrl": null,
       "perm": false,
-      "code": "BoundforSavannah",
-      "reward": "unspecified ×exclusive rewards",
-      "date": "2026-05-19T07:13:48.799Z",
+      "code": "EVERNIGHT999",
+      "reward": null,
+      "date": "2026-07-15T14:03:38.364Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
       },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afkj",
-      "gameName": "AFK Journey",
+      "game": "evernight",
+      "gameName": "Ever Night: Reawakening",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
       "claimUrl": null,
       "perm": false,
-      "code": "164PATCHUPDATE",
-      "reward": "Diamonds ×500 · Gold ×20000",
-      "date": "2026-04-25T07:55:09.253Z",
+      "code": "EVERNIGHT666",
+      "reward": null,
+      "date": "2026-07-15T14:03:32.347Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
       },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afkj",
-      "gameName": "AFK Journey",
+      "game": "evernight",
+      "gameName": "Ever Night: Reawakening",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
       "claimUrl": null,
       "perm": false,
-      "code": "AFKJMOONLIGHT",
-      "reward": "Origami Hamsters ×10 · Diamonds ×500 · Gold ×50000",
-      "date": "2026-04-13T09:35:39.138Z",
+      "code": "JUNE111",
+      "reward": null,
+      "date": "2026-07-15T14:03:27.112Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
       },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afkj",
-      "gameName": "AFK Journey",
+      "game": "evernight",
+      "gameName": "Ever Night: Reawakening",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
       "claimUrl": null,
       "perm": false,
-      "code": "CheerForAnniv",
-      "reward": "Diamonds ×500 · Gold ×20,000",
-      "date": "2026-04-13T09:35:39.134Z",
+      "code": "2000DISCORD",
+      "reward": null,
+      "date": "2026-07-15T14:03:23.128Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
       },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "evernight",
+      "gameName": "Ever Night: Reawakening",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
+      "claimUrl": null,
+      "perm": false,
+      "code": "HOTDAY",
+      "reward": null,
+      "date": "2026-07-15T14:03:19.676Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "evernight",
+      "gameName": "Ever Night: Reawakening",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
+      "claimUrl": null,
+      "perm": false,
+      "code": "JUNENIGHT",
+      "reward": null,
+      "date": "2026-07-15T14:03:16.495Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "evernight",
+      "gameName": "Ever Night: Reawakening",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/ever-night-reawakening",
+      "claimUrl": null,
+      "perm": false,
+      "code": "JULYTIME",
+      "reward": null,
+      "date": "2026-07-15T14:03:12.665Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/ever-night-reawakening"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "endfield",
@@ -1398,7 +1251,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/arknights-endfield"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "endfield",
@@ -1419,7 +1272,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/arknights-endfield"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "endfield",
@@ -1440,7 +1293,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/arknights-endfield"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "endfield",
@@ -1461,7 +1314,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/arknights-endfield"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "endfield",
@@ -1482,7 +1335,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/arknights-endfield"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "endfield",
@@ -1503,343 +1356,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/arknights-endfield"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "e7",
-      "gameName": "Epic Seven",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/epic-seven",
-      "claimUrl": null,
-      "perm": false,
-      "code": "E7SUMMERGIFT26",
-      "reward": "Leif ×10x · Epic Equipment Charms ×3x · Epic Accessory Charms ×3x · Epic Artifact Charms ×3x · Gold ×1M",
-      "date": "2026-06-17T12:07:06.966Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/epic-seven"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "loe",
-      "gameName": "Legend of Elements",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
-      "claimUrl": null,
-      "perm": false,
-      "code": "KIDS2026",
-      "reward": null,
-      "date": "2026-06-01T11:29:14.188Z",
-      "endsAt": "2026-07-31T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "loe",
-      "gameName": "Legend of Elements",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
-      "claimUrl": null,
-      "perm": false,
-      "code": "ThanksMom",
-      "reward": null,
-      "date": "2026-05-10T10:40:47.316Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "loe",
-      "gameName": "Legend of Elements",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
-      "claimUrl": null,
-      "perm": false,
-      "code": "LOVELOE",
-      "reward": null,
-      "date": "2026-04-17T17:02:53.551Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "loe",
-      "gameName": "Legend of Elements",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
-      "claimUrl": null,
-      "perm": false,
-      "code": "NIAN",
-      "reward": null,
-      "date": "2026-04-17T17:02:53.548Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "loe",
-      "gameName": "Legend of Elements",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
-      "claimUrl": null,
-      "perm": false,
-      "code": "happyfool",
-      "reward": null,
-      "date": "2026-04-17T17:02:53.544Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "loe",
-      "gameName": "Legend of Elements",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
-      "claimUrl": null,
-      "perm": false,
-      "code": "egghunt",
-      "reward": null,
-      "date": "2026-04-17T17:02:53.541Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "isekai",
-      "gameName": "Isekai: Slow Life",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
-      "claimUrl": null,
-      "perm": false,
-      "code": "iskmatch",
-      "reward": null,
-      "date": "2026-07-18T16:00:40.649Z",
-      "endsAt": "2026-08-31T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
-      },
-      "firstSeenAt": "2026-07-18T16:01:00.305Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "isekai",
-      "gameName": "Isekai: Slow Life",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
-      "claimUrl": null,
-      "perm": false,
-      "code": "iskwball",
-      "reward": null,
-      "date": "2026-07-18T09:49:22.133Z",
-      "endsAt": "2026-08-31T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "isekai",
-      "gameName": "Isekai: Slow Life",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
-      "claimUrl": null,
-      "perm": false,
-      "code": "CDKeys",
-      "reward": null,
-      "date": "2026-07-18T09:49:14.868Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "isekai",
-      "gameName": "Isekai: Slow Life",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
-      "claimUrl": null,
-      "perm": false,
-      "code": "honeylife",
-      "reward": null,
-      "date": "2026-07-18T09:49:10.545Z",
-      "endsAt": "2026-08-31T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "isekai",
-      "gameName": "Isekai: Slow Life",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
-      "claimUrl": null,
-      "perm": false,
-      "code": "CDKey",
-      "reward": null,
-      "date": "2026-07-18T09:48:55.042Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "isekai",
-      "gameName": "Isekai: Slow Life",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
-      "claimUrl": null,
-      "perm": false,
-      "code": "iskwcup",
-      "reward": "Crystals ×200 · Fairy Bottle ×5",
-      "date": "2026-07-14T11:11:53.687Z",
-      "endsAt": "2026-08-31T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "isekai",
-      "gameName": "Isekai: Slow Life",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
-      "claimUrl": null,
-      "perm": false,
-      "code": "konosuba",
-      "reward": "Crystals ×300 · Fairy Bottle ×5",
-      "date": "2026-07-14T03:27:02.006Z",
-      "endsAt": "2026-08-31T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "isekai",
-      "gameName": "Isekai: Slow Life",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
-      "claimUrl": null,
-      "perm": false,
-      "code": "elqyzhc",
-      "reward": "Crystals ×200 · Fairy Bottle ×5",
-      "date": "2026-07-01T12:08:02.942Z",
-      "endsAt": "2026-08-01T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "isekai",
-      "gameName": "Isekai: Slow Life",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
-      "claimUrl": null,
-      "perm": false,
-      "code": "gbtww",
-      "reward": "Crystals ×300 · Fairy Bottle ×5",
-      "date": "2026-07-01T12:01:22.850Z",
-      "endsAt": "2026-08-31T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -1860,7 +1377,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -1881,7 +1398,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -1902,7 +1419,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -1923,7 +1440,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -1944,7 +1461,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -1965,7 +1482,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -1986,7 +1503,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2007,7 +1524,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2028,7 +1545,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2049,7 +1566,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2070,7 +1587,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2091,7 +1608,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2112,7 +1629,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2133,7 +1650,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2154,7 +1671,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2175,7 +1692,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2196,7 +1713,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2217,7 +1734,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "sxs",
@@ -2238,637 +1755,154 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/sword-x-staff"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afka",
-      "gameName": "AFK Arena",
+      "game": "afkj",
+      "gameName": "AFK Journey",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
       "claimUrl": null,
       "perm": false,
-      "code": "CLASSIC4F",
-      "reward": null,
-      "date": "2026-07-05T22:58:41.344Z",
+      "code": "SmallGiftFromPeggy",
+      "reward": "Diamonds ×500 · Coins ×20000",
+      "date": "2026-07-01T03:40:26.894Z",
+      "endsAt": "2026-07-22T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "afkj",
+      "gameName": "AFK Journey",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
+      "claimUrl": null,
+      "perm": false,
+      "code": "B52f8N5opog7k",
+      "reward": "Origami Hamsters ×10 · Diamonds ×500 · Gold ×50,000",
+      "date": "2026-06-20T08:07:33.723Z",
+      "endsAt": "2026-07-20T16:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "afkj",
+      "gameName": "AFK Journey",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
+      "claimUrl": null,
+      "perm": false,
+      "code": "hqC0Zfsc6QYtX",
+      "reward": "Diamonds ×500 · Hamsters ×5 · Gold ×50,000",
+      "date": "2026-06-01T11:51:49.583Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afka",
-      "gameName": "AFK Arena",
+      "game": "afkj",
+      "gameName": "AFK Journey",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
       "claimUrl": null,
       "perm": false,
-      "code": "6ab8kqbtz4",
-      "reward": "Draconis Insignia ×10 · Stargazer Scrolls ×10 · Time Emblems ×10 · Diamonds ×3000",
-      "date": "2026-07-05T22:58:41.318Z",
+      "code": "BoundforSavannah",
+      "reward": "unspecified ×exclusive rewards",
+      "date": "2026-05-19T07:13:48.799Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afka",
-      "gameName": "AFK Arena",
+      "game": "afkj",
+      "gameName": "AFK Journey",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
       "claimUrl": null,
       "perm": false,
-      "code": "classic4F",
-      "reward": "Draconis Insignia ×10 · Stargazer Scrolls ×10 · Time Emblems ×10 · Diamonds ×3000",
-      "date": "2026-07-02T11:04:45.514Z",
-      "endsAt": "2026-08-31T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "afka",
-      "gameName": "AFK Arena",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
-      "claimUrl": null,
-      "perm": false,
-      "code": "6artru2utm",
-      "reward": null,
-      "date": "2026-06-22T06:24:16.464Z",
+      "code": "164PATCHUPDATE",
+      "reward": "Diamonds ×500 · Gold ×20000",
+      "date": "2026-04-25T07:55:09.253Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afka",
-      "gameName": "AFK Arena",
+      "game": "afkj",
+      "gameName": "AFK Journey",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
       "claimUrl": null,
       "perm": false,
-      "code": "426653P7TD",
-      "reward": "Time Emblems ×10 · Stargazer Scrolls ×10 · Common Scrolls ×10 · Diamonds ×3000",
-      "date": "2026-04-17T17:18:33.971Z",
+      "code": "AFKJMOONLIGHT",
+      "reward": "Origami Hamsters ×10 · Diamonds ×500 · Gold ×50000",
+      "date": "2026-04-13T09:35:39.138Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "afka",
-      "gameName": "AFK Arena",
+      "game": "afkj",
+      "gameName": "AFK Journey",
       "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
       "claimUrl": null,
       "perm": false,
-      "code": "2b9pyu99rn",
-      "reward": "Stargazer Scrolls ×10 · Honourable Soulstones ×60 · Faction Scrolls ×10",
-      "date": "2026-04-17T17:18:05.711Z",
+      "code": "CheerForAnniv",
+      "reward": "Diamonds ×500 · Gold ×20,000",
+      "date": "2026-04-13T09:35:39.134Z",
       "endsAt": null,
       "status": "active",
       "sources": [
         "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-journey"
       },
       "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "afka",
-      "gameName": "AFK Arena",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
-      "claimUrl": null,
-      "perm": false,
-      "code": "2bxn4k86qd",
-      "reward": "Dust ×3× 8h Dust · Gold ×3× 8h Gold · EXP ×3× 8h EXP · Diamonds ×1000",
-      "date": "2026-04-17T17:17:35.117Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "mongil",
-      "gameName": "Mongil: Star Dive",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
-      "claimUrl": null,
-      "perm": false,
-      "code": "MONGILREPORT",
-      "reward": "White Wolf Warrior (Monsterling) ×1",
-      "date": "2026-04-15T06:08:27.233Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "mongil",
-      "gameName": "Mongil: Star Dive",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
-      "claimUrl": null,
-      "perm": false,
-      "code": "DINDINISDINDIN",
-      "reward": "Green Cappy (Monsterling) ×1 · Gold ×10,000",
-      "date": "2026-04-15T06:08:27.230Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "mongil",
-      "gameName": "Mongil: Star Dive",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
-      "claimUrl": null,
-      "perm": false,
-      "code": "MONGILDISCORD",
-      "reward": "Starlight Crystal ×30 · Glimmering Stardust ×3 · Gold ×300,000",
-      "date": "2026-04-15T06:08:27.228Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "mongil",
-      "gameName": "Mongil: Star Dive",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
-      "claimUrl": null,
-      "perm": false,
-      "code": "MONGILPRESENT",
-      "reward": "Brown Cappy (Monsterling) ×1 · Spark Slime (Monsterling) ×1 · Forkmugger (Monsterling) ×1",
-      "date": "2026-04-15T06:08:27.226Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "mongil",
-      "gameName": "Mongil: Star Dive",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
-      "claimUrl": null,
-      "perm": false,
-      "code": "devlive0410",
-      "reward": "Scar Monsterling ×1 · White Wolf Warrior Monsterling ×1 · Spark Slime Monsterling ×1",
-      "date": "2026-04-15T06:08:27.224Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "mongil",
-      "gameName": "Mongil: Star Dive",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
-      "claimUrl": null,
-      "perm": false,
-      "code": "LOVEMONGIL",
-      "reward": "Overflowing Love (Artifact) ×1",
-      "date": "2026-04-15T06:08:27.219Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "NTEMusou",
-      "reward": "Fons ×10000 · BeetleCoin ×10000",
-      "date": "2026-07-16T11:31:35.379Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "NTEKokushi",
-      "reward": "Fons ×30000 · BeetleCoin ×30000",
-      "date": "2026-07-16T11:31:35.363Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "DRAGONGIRL",
-      "reward": "Annulith ×30 · Fons ×20000",
-      "date": "2026-07-08T10:41:49.391Z",
-      "endsAt": "2027-03-27T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "WELCOMETONTE",
-      "reward": "Exclusive Avatar Frame ×1",
-      "date": "2026-07-08T04:17:54.668Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "IROI0729",
-      "reward": "Annulith ×100 · ColorlessDye ×2 · EliteHunterGuide ×2 · BeetleCoin ×12000",
-      "date": "2026-06-27T12:34:53.208Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "999NIGHTS",
-      "reward": "Annulith ×100 · ColorlessDye ×5 · SeniorHunterGuide ×5 · BeetleCoin ×6000",
-      "date": "2026-06-27T12:34:53.203Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "SHINKU0708",
-      "reward": "Annulith ×100 · LightDye ×5 · RisingHunterGuide ×5 · BeetleCoin ×4000",
-      "date": "2026-06-27T12:34:53.184Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "LACRIMOSA0603",
-      "reward": "Annulith ×30 · Fons ×20000",
-      "date": "2026-06-03T08:58:40.993Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "RACENOLIMIT",
-      "reward": "Annulith ×100 · ChaoticDye ×2 · EliteHunterGuide ×2 · BeetleCoin ×12000",
-      "date": "2026-05-23T12:48:04.543Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "TOMATO100",
-      "reward": "Annulith ×100 · ColorlessDye ×5 · SeniorHunterGuide ×5 · BeetleCoin ×6000",
-      "date": "2026-05-23T12:48:04.539Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "DREAMWALK0603",
-      "reward": "Annulith ×100 · LightDye ×5 · RisingHunterGuide ×5 · BeetleCoin ×4000",
-      "date": "2026-05-23T12:48:04.508Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "NTEFREE",
-      "reward": "Fons ×30,000",
-      "date": "2026-05-14T15:11:58.561Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "NTEWINFONS",
-      "reward": "Fons ×20,000",
-      "date": "2026-05-14T15:11:58.559Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "NTEFUNGAME",
-      "reward": "Fons ×10,000",
-      "date": "2026-05-14T15:11:58.557Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "NTENENE",
-      "reward": "Fons ×10,000 · DynamiK ×10 · Clicky Fries ×10",
-      "date": "2026-05-14T15:11:58.554Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "NTEvtuber200",
-      "reward": "Fons ×10,000 · Beetle Coins ×10,000",
-      "date": "2026-05-14T15:11:58.552Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
-    },
-    {
-      "game": "nte",
-      "gameName": "Neverness to Everness",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
-      "claimUrl": null,
-      "perm": false,
-      "code": "NTEGIFT",
-      "reward": "Annulith ×50 · Rising Hunter Guide ×5 · Light Dye ×5",
-      "date": "2026-05-14T15:11:58.538Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -2889,7 +1923,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -2910,7 +1944,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -2931,7 +1965,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -2952,7 +1986,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -2973,7 +2007,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -2994,7 +2028,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3015,7 +2049,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3036,7 +2070,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3057,7 +2091,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3078,7 +2112,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3099,7 +2133,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3120,7 +2154,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3141,7 +2175,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3162,7 +2196,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3183,7 +2217,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3204,7 +2238,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3225,7 +2259,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3246,7 +2280,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3267,7 +2301,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3288,7 +2322,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3309,7 +2343,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3330,7 +2364,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3351,7 +2385,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3372,7 +2406,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3393,7 +2427,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3414,7 +2448,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3435,7 +2469,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3456,7 +2490,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3477,7 +2511,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3498,7 +2532,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3519,7 +2553,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3540,7 +2574,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3561,7 +2595,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3582,7 +2616,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3603,7 +2637,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3624,7 +2658,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3645,7 +2679,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3666,7 +2700,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3687,7 +2721,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3708,7 +2742,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3729,7 +2763,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3750,7 +2784,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3771,7 +2805,7 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "dtrav",
@@ -3792,117 +2826,973 @@
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
       "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "sdsgc",
-      "gameName": "The Seven Deadly Sins: Grand Cross",
-      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "game": "mongil",
+      "gameName": "Mongil: Star Dive",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
+      "claimUrl": null,
       "perm": false,
-      "code": "777OURSPRING",
-      "reward": "Seventh Spring Box",
+      "code": "MONGILREPORT",
+      "reward": "White Wolf Warrior (Monsterling) ×1",
+      "date": "2026-04-15T06:08:27.233Z",
+      "endsAt": null,
       "status": "active",
-      "source": "pockettactics",
-      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
       "sources": [
-        "pocketgamer",
-        "pockettactics"
+        "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
-        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
       },
-      "firstSeenAt": "2026-07-19T05:27:41.412Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
-      "bulk": true
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "sdsgc",
-      "gameName": "The Seven Deadly Sins: Grand Cross",
-      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "game": "mongil",
+      "gameName": "Mongil: Star Dive",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
+      "claimUrl": null,
       "perm": false,
-      "code": "777PERFECT",
+      "code": "DINDINISDINDIN",
+      "reward": "Green Cappy (Monsterling) ×1 · Gold ×10,000",
+      "date": "2026-04-15T06:08:27.230Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "mongil",
+      "gameName": "Mongil: Star Dive",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
+      "claimUrl": null,
+      "perm": false,
+      "code": "MONGILDISCORD",
+      "reward": "Starlight Crystal ×30 · Glimmering Stardust ×3 · Gold ×300,000",
+      "date": "2026-04-15T06:08:27.228Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "mongil",
+      "gameName": "Mongil: Star Dive",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
+      "claimUrl": null,
+      "perm": false,
+      "code": "MONGILPRESENT",
+      "reward": "Brown Cappy (Monsterling) ×1 · Spark Slime (Monsterling) ×1 · Forkmugger (Monsterling) ×1",
+      "date": "2026-04-15T06:08:27.226Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "mongil",
+      "gameName": "Mongil: Star Dive",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
+      "claimUrl": null,
+      "perm": false,
+      "code": "devlive0410",
+      "reward": "Scar Monsterling ×1 · White Wolf Warrior Monsterling ×1 · Spark Slime Monsterling ×1",
+      "date": "2026-04-15T06:08:27.224Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "mongil",
+      "gameName": "Mongil: Star Dive",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/mongil-star-dive",
+      "claimUrl": null,
+      "perm": false,
+      "code": "LOVEMONGIL",
+      "reward": "Overflowing Love (Artifact) ×1",
+      "date": "2026-04-15T06:08:27.219Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/mongil-star-dive"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "e7",
+      "gameName": "Epic Seven",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/epic-seven",
+      "claimUrl": null,
+      "perm": false,
+      "code": "E7SUMMERGIFT26",
+      "reward": "Leif ×10x · Epic Equipment Charms ×3x · Epic Accessory Charms ×3x · Epic Artifact Charms ×3x · Gold ×1M",
+      "date": "2026-06-17T12:07:06.966Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/epic-seven"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "afka",
+      "gameName": "AFK Arena",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "claimUrl": null,
+      "perm": false,
+      "code": "CLASSIC4F",
       "reward": null,
+      "date": "2026-07-05T22:58:41.344Z",
+      "endsAt": null,
       "status": "active",
-      "source": "pockettactics",
-      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
       "sources": [
-        "pocketgamer",
-        "pockettactics"
+        "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
-        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
       },
-      "firstSeenAt": "2026-07-19T05:27:41.412Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
-      "bulk": true
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "sdsgc",
-      "gameName": "The Seven Deadly Sins: Grand Cross",
-      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "game": "afka",
+      "gameName": "AFK Arena",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "claimUrl": null,
       "perm": false,
-      "code": "777NIGHTMARE",
-      "reward": "77 SSR Evolution Pendant",
+      "code": "6ab8kqbtz4",
+      "reward": "Draconis Insignia ×10 · Stargazer Scrolls ×10 · Time Emblems ×10 · Diamonds ×3000",
+      "date": "2026-07-05T22:58:41.318Z",
+      "endsAt": null,
       "status": "active",
-      "source": "pockettactics",
-      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
       "sources": [
-        "pocketgamer",
-        "pockettactics"
+        "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
-        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
       },
-      "firstSeenAt": "2026-07-19T05:27:41.412Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
-      "bulk": true
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "sdsgc",
-      "gameName": "The Seven Deadly Sins: Grand Cross",
-      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "game": "afka",
+      "gameName": "AFK Arena",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "claimUrl": null,
       "perm": false,
-      "code": "LIGHTNDARK",
+      "code": "classic4F",
+      "reward": "Draconis Insignia ×10 · Stargazer Scrolls ×10 · Time Emblems ×10 · Diamonds ×3000",
+      "date": "2026-07-02T11:04:45.514Z",
+      "endsAt": "2026-08-31T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "afka",
+      "gameName": "AFK Arena",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "claimUrl": null,
+      "perm": false,
+      "code": "6artru2utm",
       "reward": null,
+      "date": "2026-06-22T06:24:16.464Z",
+      "endsAt": null,
       "status": "active",
-      "source": "pockettactics",
-      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
       "sources": [
-        "pocketgamer",
-        "pockettactics"
+        "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
-        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
       },
-      "firstSeenAt": "2026-07-19T05:27:41.412Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
-      "bulk": true
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
-      "game": "sdsgc",
-      "gameName": "The Seven Deadly Sins: Grand Cross",
-      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "game": "afka",
+      "gameName": "AFK Arena",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "claimUrl": null,
       "perm": false,
-      "code": "777FLAME",
-      "reward": null,
+      "code": "426653P7TD",
+      "reward": "Time Emblems ×10 · Stargazer Scrolls ×10 · Common Scrolls ×10 · Diamonds ×3000",
+      "date": "2026-04-17T17:18:33.971Z",
+      "endsAt": null,
       "status": "active",
-      "source": "pockettactics",
-      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
       "sources": [
-        "pocketgamer",
-        "pockettactics"
+        "redeem-code-tracker"
       ],
       "sourceUrls": {
-        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
-        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
       },
-      "firstSeenAt": "2026-07-19T05:27:41.412Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
-      "bulk": true
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "afka",
+      "gameName": "AFK Arena",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "claimUrl": null,
+      "perm": false,
+      "code": "2b9pyu99rn",
+      "reward": "Stargazer Scrolls ×10 · Honourable Soulstones ×60 · Faction Scrolls ×10",
+      "date": "2026-04-17T17:18:05.711Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "afka",
+      "gameName": "AFK Arena",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
+      "claimUrl": null,
+      "perm": false,
+      "code": "2bxn4k86qd",
+      "reward": "Dust ×3× 8h Dust · Gold ×3× 8h Gold · EXP ×3× 8h EXP · Diamonds ×1000",
+      "date": "2026-04-17T17:17:35.117Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "loe",
+      "gameName": "Legend of Elements",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
+      "claimUrl": null,
+      "perm": false,
+      "code": "KIDS2026",
+      "reward": null,
+      "date": "2026-06-01T11:29:14.188Z",
+      "endsAt": "2026-07-31T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "loe",
+      "gameName": "Legend of Elements",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
+      "claimUrl": null,
+      "perm": false,
+      "code": "ThanksMom",
+      "reward": null,
+      "date": "2026-05-10T10:40:47.316Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "loe",
+      "gameName": "Legend of Elements",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
+      "claimUrl": null,
+      "perm": false,
+      "code": "LOVELOE",
+      "reward": null,
+      "date": "2026-04-17T17:02:53.551Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "loe",
+      "gameName": "Legend of Elements",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
+      "claimUrl": null,
+      "perm": false,
+      "code": "NIAN",
+      "reward": null,
+      "date": "2026-04-17T17:02:53.548Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "loe",
+      "gameName": "Legend of Elements",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
+      "claimUrl": null,
+      "perm": false,
+      "code": "happyfool",
+      "reward": null,
+      "date": "2026-04-17T17:02:53.544Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "loe",
+      "gameName": "Legend of Elements",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/legend-of-elements",
+      "claimUrl": null,
+      "perm": false,
+      "code": "egghunt",
+      "reward": null,
+      "date": "2026-04-17T17:02:53.541Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/legend-of-elements"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "NTEMusou",
+      "reward": "Fons ×10000 · BeetleCoin ×10000",
+      "date": "2026-07-16T11:31:35.379Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "NTEKokushi",
+      "reward": "Fons ×30000 · BeetleCoin ×30000",
+      "date": "2026-07-16T11:31:35.363Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "DRAGONGIRL",
+      "reward": "Annulith ×30 · Fons ×20000",
+      "date": "2026-07-08T10:41:49.391Z",
+      "endsAt": "2027-03-27T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "WELCOMETONTE",
+      "reward": "Exclusive Avatar Frame ×1",
+      "date": "2026-07-08T04:17:54.668Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "IROI0729",
+      "reward": "Annulith ×100 · ColorlessDye ×2 · EliteHunterGuide ×2 · BeetleCoin ×12000",
+      "date": "2026-06-27T12:34:53.208Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "999NIGHTS",
+      "reward": "Annulith ×100 · ColorlessDye ×5 · SeniorHunterGuide ×5 · BeetleCoin ×6000",
+      "date": "2026-06-27T12:34:53.203Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "SHINKU0708",
+      "reward": "Annulith ×100 · LightDye ×5 · RisingHunterGuide ×5 · BeetleCoin ×4000",
+      "date": "2026-06-27T12:34:53.184Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "LACRIMOSA0603",
+      "reward": "Annulith ×30 · Fons ×20000",
+      "date": "2026-06-03T08:58:40.993Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "RACENOLIMIT",
+      "reward": "Annulith ×100 · ChaoticDye ×2 · EliteHunterGuide ×2 · BeetleCoin ×12000",
+      "date": "2026-05-23T12:48:04.543Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "TOMATO100",
+      "reward": "Annulith ×100 · ColorlessDye ×5 · SeniorHunterGuide ×5 · BeetleCoin ×6000",
+      "date": "2026-05-23T12:48:04.539Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "DREAMWALK0603",
+      "reward": "Annulith ×100 · LightDye ×5 · RisingHunterGuide ×5 · BeetleCoin ×4000",
+      "date": "2026-05-23T12:48:04.508Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "NTEFREE",
+      "reward": "Fons ×30,000",
+      "date": "2026-05-14T15:11:58.561Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "NTEWINFONS",
+      "reward": "Fons ×20,000",
+      "date": "2026-05-14T15:11:58.559Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "NTEFUNGAME",
+      "reward": "Fons ×10,000",
+      "date": "2026-05-14T15:11:58.557Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "NTENENE",
+      "reward": "Fons ×10,000 · DynamiK ×10 · Clicky Fries ×10",
+      "date": "2026-05-14T15:11:58.554Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "NTEvtuber200",
+      "reward": "Fons ×10,000 · Beetle Coins ×10,000",
+      "date": "2026-05-14T15:11:58.552Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "nte",
+      "gameName": "Neverness to Everness",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/nte",
+      "claimUrl": null,
+      "perm": false,
+      "code": "NTEGIFT",
+      "reward": "Annulith ×50 · Rising Hunter Guide ×5 · Light Dye ×5",
+      "date": "2026-05-14T15:11:58.538Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/nte"
+      },
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "isekai",
+      "gameName": "Isekai: Slow Life",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
+      "claimUrl": null,
+      "perm": false,
+      "code": "iskmatch",
+      "reward": null,
+      "date": "2026-07-18T16:00:40.649Z",
+      "endsAt": "2026-08-31T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
+      },
+      "firstSeenAt": "2026-07-18T16:01:00.305Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "isekai",
+      "gameName": "Isekai: Slow Life",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
+      "claimUrl": null,
+      "perm": false,
+      "code": "iskwball",
+      "reward": null,
+      "date": "2026-07-18T09:49:22.133Z",
+      "endsAt": "2026-08-31T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "isekai",
+      "gameName": "Isekai: Slow Life",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
+      "claimUrl": null,
+      "perm": false,
+      "code": "CDKeys",
+      "reward": null,
+      "date": "2026-07-18T09:49:14.868Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "isekai",
+      "gameName": "Isekai: Slow Life",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
+      "claimUrl": null,
+      "perm": false,
+      "code": "honeylife",
+      "reward": null,
+      "date": "2026-07-18T09:49:10.545Z",
+      "endsAt": "2026-08-31T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "isekai",
+      "gameName": "Isekai: Slow Life",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
+      "claimUrl": null,
+      "perm": false,
+      "code": "CDKey",
+      "reward": null,
+      "date": "2026-07-18T09:48:55.042Z",
+      "endsAt": null,
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "isekai",
+      "gameName": "Isekai: Slow Life",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
+      "claimUrl": null,
+      "perm": false,
+      "code": "iskwcup",
+      "reward": "Crystals ×200 · Fairy Bottle ×5",
+      "date": "2026-07-14T11:11:53.687Z",
+      "endsAt": "2026-08-31T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "isekai",
+      "gameName": "Isekai: Slow Life",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
+      "claimUrl": null,
+      "perm": false,
+      "code": "konosuba",
+      "reward": "Crystals ×300 · Fairy Bottle ×5",
+      "date": "2026-07-14T03:27:02.006Z",
+      "endsAt": "2026-08-31T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "isekai",
+      "gameName": "Isekai: Slow Life",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
+      "claimUrl": null,
+      "perm": false,
+      "code": "elqyzhc",
+      "reward": "Crystals ×200 · Fairy Bottle ×5",
+      "date": "2026-07-01T12:08:02.942Z",
+      "endsAt": "2026-08-01T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "isekai",
+      "gameName": "Isekai: Slow Life",
+      "source": "redeem-code-tracker",
+      "sourceUrl": "https://www.redeem-code-tracker.com/games/isekai-slow-life",
+      "claimUrl": null,
+      "perm": false,
+      "code": "gbtww",
+      "reward": "Crystals ×300 · Fairy Bottle ×5",
+      "date": "2026-07-01T12:01:22.850Z",
+      "endsAt": "2026-08-31T00:00:00.000Z",
+      "status": "active",
+      "sources": [
+        "redeem-code-tracker"
+      ],
+      "sourceUrls": {
+        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/isekai-slow-life"
+      },
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "gov",
@@ -3923,7 +3813,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -3945,7 +3835,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -3967,7 +3857,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -3989,7 +3879,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4011,7 +3901,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4033,7 +3923,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4055,7 +3945,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4077,7 +3967,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4099,7 +3989,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4121,7 +4011,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4143,7 +4033,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4165,7 +4055,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4187,7 +4077,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4209,7 +4099,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4231,7 +4121,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4253,7 +4143,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4275,7 +4165,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4297,7 +4187,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4319,7 +4209,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4341,7 +4231,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4363,7 +4253,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4385,7 +4275,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4407,7 +4297,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4429,7 +4319,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4451,7 +4341,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4473,7 +4363,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4495,7 +4385,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4517,7 +4407,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4539,7 +4429,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4561,7 +4451,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4583,7 +4473,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4605,7 +4495,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4627,7 +4517,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4649,7 +4539,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4671,7 +4561,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4693,7 +4583,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4715,7 +4605,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4737,7 +4627,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4759,7 +4649,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4781,7 +4671,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4803,7 +4693,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4825,7 +4715,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4847,7 +4737,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4869,7 +4759,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4891,7 +4781,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4913,7 +4803,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4935,7 +4825,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4957,7 +4847,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -4979,7 +4869,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5001,7 +4891,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5023,7 +4913,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5045,7 +4935,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5067,7 +4957,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5089,7 +4979,7 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5109,7 +4999,117 @@
         "progameguides": "https://progameguides.com/nikke-goddess-of-victory/goddess-of-victory-nikke-codes/"
       },
       "firstSeenAt": "2026-07-18T09:45:55.257Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
+      "bulk": true
+    },
+    {
+      "game": "sdsgc",
+      "gameName": "The Seven Deadly Sins: Grand Cross",
+      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "perm": false,
+      "code": "777OURSPRING",
+      "reward": "Seventh Spring Box",
+      "status": "active",
+      "source": "pockettactics",
+      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
+      "sources": [
+        "pocketgamer",
+        "pockettactics"
+      ],
+      "sourceUrls": {
+        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
+        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+      },
+      "firstSeenAt": "2026-07-19T05:27:41.412Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
+      "bulk": true
+    },
+    {
+      "game": "sdsgc",
+      "gameName": "The Seven Deadly Sins: Grand Cross",
+      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "perm": false,
+      "code": "777PERFECT",
+      "reward": null,
+      "status": "active",
+      "source": "pockettactics",
+      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
+      "sources": [
+        "pocketgamer",
+        "pockettactics"
+      ],
+      "sourceUrls": {
+        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
+        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+      },
+      "firstSeenAt": "2026-07-19T05:27:41.412Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
+      "bulk": true
+    },
+    {
+      "game": "sdsgc",
+      "gameName": "The Seven Deadly Sins: Grand Cross",
+      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "perm": false,
+      "code": "777NIGHTMARE",
+      "reward": "77 SSR Evolution Pendant",
+      "status": "active",
+      "source": "pockettactics",
+      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
+      "sources": [
+        "pocketgamer",
+        "pockettactics"
+      ],
+      "sourceUrls": {
+        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
+        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+      },
+      "firstSeenAt": "2026-07-19T05:27:41.412Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
+      "bulk": true
+    },
+    {
+      "game": "sdsgc",
+      "gameName": "The Seven Deadly Sins: Grand Cross",
+      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "perm": false,
+      "code": "LIGHTNDARK",
+      "reward": null,
+      "status": "active",
+      "source": "pockettactics",
+      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
+      "sources": [
+        "pocketgamer",
+        "pockettactics"
+      ],
+      "sourceUrls": {
+        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
+        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+      },
+      "firstSeenAt": "2026-07-19T05:27:41.412Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
+      "bulk": true
+    },
+    {
+      "game": "sdsgc",
+      "gameName": "The Seven Deadly Sins: Grand Cross",
+      "claimUrl": "https://coupon.netmarble.com/nanagb",
+      "perm": false,
+      "code": "777FLAME",
+      "reward": null,
+      "status": "active",
+      "source": "pockettactics",
+      "sourceUrl": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes",
+      "sources": [
+        "pocketgamer",
+        "pockettactics"
+      ],
+      "sourceUrls": {
+        "pocketgamer": "https://www.pocketgamer.com/the-seven-deadly-sins-grand-cross/codes/",
+        "pockettactics": "https://www.pockettactics.com/seven-deadly-sins-grand-cross/codes"
+      },
+      "firstSeenAt": "2026-07-19T05:27:41.412Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5131,7 +5131,7 @@
         "dexerto": "https://www.dexerto.com/gaming/mobile-legends-bang-bang-codes-ml-diamonds-magic-dust-1740586/"
       },
       "firstSeenAt": "2026-07-18T12:20:33.033Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5153,7 +5153,7 @@
         "dexerto": "https://www.dexerto.com/gaming/mobile-legends-bang-bang-codes-ml-diamonds-magic-dust-1740586/"
       },
       "firstSeenAt": "2026-07-18T12:20:33.033Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5175,7 +5175,7 @@
         "dexerto": "https://www.dexerto.com/gaming/mobile-legends-bang-bang-codes-ml-diamonds-magic-dust-1740586/"
       },
       "firstSeenAt": "2026-07-18T12:20:33.033Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5197,7 +5197,7 @@
         "wiki": "https://reverse1999.fandom.com/wiki/Promotional%20Code"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5219,7 +5219,7 @@
         "wiki": "https://reverse1999.fandom.com/wiki/Promotional%20Code"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5241,7 +5241,7 @@
         "wiki": "https://reverse1999.fandom.com/wiki/Promotional%20Code"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5263,7 +5263,7 @@
         "wiki": "https://reverse1999.fandom.com/wiki/Promotional%20Code"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5285,7 +5285,7 @@
         "wiki": "https://reverse1999.fandom.com/wiki/Promotional%20Code"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
@@ -5307,29 +5307,8 @@
         "wiki": "https://reverse1999.fandom.com/wiki/Promotional%20Code"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "source": "wiki",
-      "sourceUrl": "https://zenless-zone-zero.fandom.com/wiki/Redemption%20Code",
-      "endsAt": null,
-      "claimUrl": null,
-      "code": "VRELEASE31",
-      "reward": "Polychrome ×50",
-      "date": "2026-07-17T00:00:00.000Z",
-      "status": "active",
-      "perm": false,
-      "sources": [
-        "wiki"
-      ],
-      "sourceUrls": {
-        "wiki": "https://zenless-zone-zero.fandom.com/wiki/Redemption%20Code"
-      },
-      "firstSeenAt": "2026-07-18T21:00:59.209Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
     },
     {
       "game": "gi",
@@ -5350,7 +5329,28 @@
         "wiki": "https://genshin-impact.fandom.com/wiki/Promotional%20Code"
       },
       "firstSeenAt": "2026-07-17T05:07:21.840Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "source": "wiki",
+      "sourceUrl": "https://zenless-zone-zero.fandom.com/wiki/Redemption%20Code",
+      "endsAt": null,
+      "claimUrl": null,
+      "code": "VRELEASE31",
+      "reward": "Polychrome ×50",
+      "date": "2026-07-17T00:00:00.000Z",
+      "status": "active",
+      "perm": false,
+      "sources": [
+        "wiki"
+      ],
+      "sourceUrls": {
+        "wiki": "https://zenless-zone-zero.fandom.com/wiki/Redemption%20Code"
+      },
+      "firstSeenAt": "2026-07-18T21:00:59.209Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "tot",
@@ -5371,7 +5371,7 @@
         "tot.wiki": "https://tot.wiki/wiki/Redeem_Code"
       },
       "firstSeenAt": "2026-07-17T06:07:26.901Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "tot",
@@ -5392,7 +5392,7 @@
         "tot.wiki": "https://tot.wiki/wiki/Redeem_Code"
       },
       "firstSeenAt": "2026-07-17T06:07:26.901Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "gi",
@@ -5412,7 +5412,7 @@
         "curated": "https://genshin.hoyoverse.com/en/gift"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z"
+      "fetchedAt": "2026-07-19T13:01:02.284Z"
     },
     {
       "game": "wuwa",
@@ -5432,7 +5432,7 @@
         "curated": "https://wutheringwaves.kurogames.com/"
       },
       "firstSeenAt": "2026-07-17T04:19:56.202Z",
-      "fetchedAt": "2026-07-19T12:01:00.480Z",
+      "fetchedAt": "2026-07-19T13:01:02.284Z",
       "bulk": true
     },
     {
