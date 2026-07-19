@@ -207,7 +207,9 @@ async function main() {
         universeId,
         verified: rocodesMeta?.verified ?? false,
         crossCheck,
-        howTo: rocodesMeta?.howTo ?? [],
+        // Cara redeem spesifik: RoCodes dulu, lalu Roblox Den (mis. MMV), lalu
+        // situs pakai langkah standar bilingual bila keduanya kosong.
+        howTo: rocodesMeta?.howTo?.length ? rocodesMeta.howTo : denMeta?.howTo ?? [],
       },
     };
   });

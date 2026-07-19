@@ -24,6 +24,23 @@ function clean(s) {
     .trim();
 }
 
+// Cara redeem spesifik Roblox Den: paragraf di section "How to Use Codes in X"
+// (prosa, mis. MMV: "click the INVENTORY button… enter code in EnterCode box…
+// click Redeem"). Batas = section "About" berikutnya.
+function parseDenHowTo(html) {
+  const i = html.search(/how to use codes in/i);
+  if (i < 0) return [];
+  const rest = html.slice(i + 20);
+  const end = rest.search(/<h2|about\s|how to claim|case.?sensitive/i);
+  const body = rest.slice(0, end > 40 ? end : 2500);
+  const steps = [];
+  for (const m of body.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)) {
+    const t = clean(m[1]).replace(/:$/, "");
+    if (t.length > 15) steps.push(t);
+  }
+  return steps;
+}
+
 // Rapikan reward Roblox Den yang verbose → esensinya.
 function reward(raw) {
   let r = clean(raw)
@@ -64,7 +81,7 @@ export async function fetchRobloxDen(slug) {
 
   const tm = html.match(/<title>(?:Roblox\s+)?([^<]+?)\s+Codes\b/i);
   const pm = html.match(/roblox\.com\/games\/(\d+)/);
-  const meta = { name: tm ? clean(tm[1]) : null, placeId: pm ? Number(pm[1]) : null };
+  const meta = { name: tm ? clean(tm[1]) : null, placeId: pm ? Number(pm[1]) : null, howTo: parseDenHowTo(html) };
   if (active.length === 0 && archive.length === 0) throw new Error("0 kode terparse");
   return { active, archive, meta };
 }
