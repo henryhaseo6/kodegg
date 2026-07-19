@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-19T06:01:43.130Z",
+  "updatedAt": "2026-07-19T08:01:13.862Z",
   "counts": {
-    "active": 111,
+    "active": 112,
     "archived": 28
   },
   "articles": [
@@ -246,22 +246,6 @@
       "publishedAt": "2026-07-17T12:30:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Join us at gamescom 2026! Tickets giveaway!",
-        "id": "Join us at gamescom 2026! Tickets giveaway!"
-      },
-      "excerpt": {
-        "en": "This year, Zenless Zone Zero will be meeting all you Proxies at the HoYoverse Exhibition Area at gamescom in Cologne, Germany! 💬 More information about the exhibition will be anno",
-        "id": "This year, Zenless Zone Zero will be meeting all you Proxies at the HoYoverse Exhibition Area at gamescom in Cologne, Germany! 💬 More information about the exhibition will be anno"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/15/0/52f2fb4bccc2edda7b4d160038bf2bf9_8113760226988168599.jpeg",
-      "url": "https://www.hoyolab.com/article/45889417",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-17T12:30:01.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -274,6 +258,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/41c825bd3bbe001c43010f0db37b3d67_6051343732940402339.jpg",
       "url": "https://www.hoyolab.com/article/45889415",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-17T12:30:01.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Join us at gamescom 2026! Tickets giveaway!",
+        "id": "Join us at gamescom 2026! Tickets giveaway!"
+      },
+      "excerpt": {
+        "en": "This year, Zenless Zone Zero will be meeting all you Proxies at the HoYoverse Exhibition Area at gamescom in Cologne, Germany! 💬 More information about the exhibition will be anno",
+        "id": "This year, Zenless Zone Zero will be meeting all you Proxies at the HoYoverse Exhibition Area at gamescom in Cologne, Germany! 💬 More information about the exhibition will be anno"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/15/0/52f2fb4bccc2edda7b4d160038bf2bf9_8113760226988168599.jpeg",
+      "url": "https://www.hoyolab.com/article/45889417",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-17T12:30:01.000Z"
     },
@@ -548,6 +548,22 @@
       "url": "https://www.hoyolab.com/article/45858971",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-15T10:00:03.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Post-Lament Anthropocene: Enemies — Myriad Snare: Rustfire Chassis",
+        "id": "Post-Lament Anthropocene: Enemies — Myriad Snare: Rustfire Chassis"
+      },
+      "excerpt": {
+        "en": "A ruined giant shadow lurking within the Skyworks. It has nearly been forgotten, yet still clings to the directive to wipe out the Tacet Discords to the bitter end.",
+        "id": "A ruined giant shadow lurking within the Skyworks. It has nearly been forgotten, yet still clings to the directive to wipe out the Tacet Discords to the bitter end."
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1784044800000/eglulrod4owb9d2rru-1784109073157.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5162",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-07-15T09:54:16.000Z"
     },
     {
       "game": "wuwa",
