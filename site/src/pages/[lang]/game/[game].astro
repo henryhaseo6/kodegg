@@ -97,6 +97,7 @@ const jsonLd = [
     "@type": "VideoGame",
     name: gameMeta.name,
     url: `${site}/${lang}/game/${game}`,
+    ...(codes.updatedAt ? { dateModified: codes.updatedAt } : {}),
     ...(gameMeta.cover ? { image: gameMeta.cover } : {}),
     ...(gameMeta.genreLabels?.length ? { genre: gameMeta.genreLabels } : {}),
     gamePlatform: ["Android", "iOS"],

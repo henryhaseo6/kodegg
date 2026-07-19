@@ -1,23 +1,33 @@
 // Sitemap dinamis — semua halaman × 2 bahasa + per-game, dengan slug per bahasa.
+// lastmod PER-HALAMAN dari data aslinya (bukan waktu build seragam) supaya
+// sinyal kesegaran "update tiap jam" jujur: halaman kode & game pakai
+// codes.updatedAt, berita pakai feed.updatedAt, katalog pakai catalog.updatedAt,
+// halaman statis pakai tanggal build.
 import { LANGS } from "../lib/i18n.mjs";
 import { loadCatalog } from "../lib/catalog.mjs";
+import { loadCodes } from "../lib/codes.mjs";
+import { loadFeed } from "../lib/feed.mjs";
 import { PAGE_KEYS, route, langPaths } from "../lib/routes.mjs";
 
 const SITE = "https://kodegg.com";
+const day = (iso) => (iso ? new Date(iso) : new Date()).toISOString().slice(0, 10);
 
 export async function GET() {
-  const catalog = await loadCatalog();
+  const [catalog, codes, feed] = await Promise.all([loadCatalog(), loadCodes(), loadFeed("id")]);
   const gameIds = catalog.games.filter((g) => g.hasCodes).map((g) => g.id);
 
-  // Tiap entri = pasangan {id, en} agar loc + hreflang alternate saling benar
-  // (mis. /id/jelajah ↔ /en/discover).
-  const entries = [{ id: route("home", "id"), en: route("home", "en") }];
-  // "saved"/favorit di-noindex (isinya dari localStorage → shell kosong bagi
-  // crawler) → jangan masukkan ke sitemap.
-  for (const key of PAGE_KEYS) if (key !== "saved") entries.push(langPaths(key));
-  for (const gid of gameIds) entries.push({ id: `/id/game/${gid}`, en: `/en/game/${gid}` });
+  const build = day();
+  const codesMod = day(codes.updatedAt);
+  const catMod = day(catalog.updatedAt);
+  const newsMod = day(feed.updatedAt);
+  const lmFor = (key) => (key === "codes" ? codesMod : key === "discover" ? catMod : key === "news" ? newsMod : build);
 
-  const now = new Date().toISOString().slice(0, 10);
+  // Tiap entri = { paths:{id,en}, lastmod } agar loc + hreflang alternate benar.
+  const entries = [{ paths: langPaths("home"), lastmod: codesMod }];
+  // "saved"/favorit di-noindex (isinya localStorage) → tak dimasukkan.
+  for (const key of PAGE_KEYS) if (key !== "saved") entries.push({ paths: langPaths(key), lastmod: lmFor(key) });
+  for (const gid of gameIds) entries.push({ paths: { id: `/id/game/${gid}`, en: `/en/game/${gid}` }, lastmod: codesMod });
+
   const body =
     `<?xml version="1.0" encoding="UTF-8"?>\n` +
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n` +
@@ -26,10 +36,10 @@ export async function GET() {
         LANGS.map(
           (lang) =>
             `  <url>\n` +
-            `    <loc>${SITE}${e[lang]}</loc>\n` +
-            `    <lastmod>${now}</lastmod>\n` +
-            `    <xhtml:link rel="alternate" hreflang="id" href="${SITE}${e.id}"/>\n` +
-            `    <xhtml:link rel="alternate" hreflang="en" href="${SITE}${e.en}"/>\n` +
+            `    <loc>${SITE}${e.paths[lang]}</loc>\n` +
+            `    <lastmod>${e.lastmod}</lastmod>\n` +
+            `    <xhtml:link rel="alternate" hreflang="id" href="${SITE}${e.paths.id}"/>\n` +
+            `    <xhtml:link rel="alternate" hreflang="en" href="${SITE}${e.paths.en}"/>\n` +
             `  </url>`,
         ),
       )
