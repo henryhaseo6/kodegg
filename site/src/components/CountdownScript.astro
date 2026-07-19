@@ -11,6 +11,8 @@ const { lang } = Astro.props;
   (function () {
     if (window.__ggCdBound) return;
     window.__ggCdBound = true;
+    // Tak ada kode/event berbatas waktu di halaman ini → jangan jalankan ticker.
+    if (!document.querySelector("[data-deadline]")) return;
 
     const id = lang === "id";
     function fmt(ms) {

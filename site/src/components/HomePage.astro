@@ -28,11 +28,11 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
 
 <Header lang={lang} active={null} paths={langPaths("home")} />
 
-<main>
+<main id="main">
   <!-- HERO -->
   <section style="max-width:1280px; margin:0 auto; padding:60px 28px 30px;">
     <div style="display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:var(--acc); margin-bottom:18px;">
-      <span style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span>
+      <span class="gg-pulse" style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span>
       {id ? "OTOMATIS · DIPERBARUI TIAP JAM" : "AUTOMATED · UPDATED HOURLY"}
     </div>
     <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1.04; letter-spacing:-0.03em; color:#fff; margin:0 0 18px; text-wrap:balance;">

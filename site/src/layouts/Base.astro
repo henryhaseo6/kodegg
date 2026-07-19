@@ -65,6 +65,7 @@ const locale = lang === "id" ? "id_ID" : "en_US";
     />
   </head>
   <body>
+    <a class="gg-skip" href="#main">{lang === "id" ? "Lewati ke konten" : "Skip to content"}</a>
     <div class="gg-root">
       <slot />
     </div>
@@ -145,9 +146,30 @@ const locale = lang === "id" ? "id_ID" : "en_US";
   }
   @media (prefers-reduced-motion: reduce) {
     .gg-new,
-    .gg-new-dot {
-      animation: none;
+    .gg-new-dot,
+    .gg-pulse {
+      animation: none !important;
     }
+  }
+
+  /* Skip-to-content: tersembunyi sampai difokus via keyboard. */
+  .gg-skip {
+    position: absolute;
+    left: 8px;
+    top: -60px;
+    z-index: 200;
+    background: var(--acc);
+    color: var(--ink);
+    font-family: "Space Mono", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: top 0.15s;
+  }
+  .gg-skip:focus {
+    top: 8px;
   }
 
   .gg-nav:hover {
