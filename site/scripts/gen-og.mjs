@@ -173,8 +173,9 @@ async function robloxCard(id, name, players, favImg) {
   let fs = name.length > 26 ? 46 : name.length > 18 ? 54 : 64;
   while (fs > 30 && widthOf(ctx, name, "SG7", fs, -1.5) > 858) fs -= 2;
   text(ctx, name, 320, 330, { family: "SG7", size: fs, fill: C.white, ls: -1.5 });
-  const sub = players > 0 ? `Roblox codes · ${fmtPlayers(players)} playing · kodegg.com` : "Roblox codes + archive · updated hourly · kodegg.com";
-  text(ctx, sub, 320, 385, { family: "SM", size: 21, fill: C.faint });
+  // Subtitle STATIS (bukan player count) → kartu deterministik, aman di-commit &
+  // di-cache crawler (player count berubah tiap jam).
+  text(ctx, "Roblox codes + archive · updated hourly · kodegg.com", 320, 385, { family: "SM", size: 21, fill: C.faint });
   return cv.toBuffer("image/png");
 }
 
