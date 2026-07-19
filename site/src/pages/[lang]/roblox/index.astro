@@ -1,6 +1,6 @@
 ---
-// Hub Roblox: /{lang}/roblox — daftar semua game Roblox yang dilacak.
-// (Fase 3 nambah search/trending/filter; Fase 1 = grid sederhana.)
+// Hub Roblox: /{lang}/roblox — daftar semua game Roblox. Search + filter genre +
+// sort + pagination (client-side), siap skala ke ribuan game (Fase 3 auto-expand).
 import Base from "../../../layouts/Base.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
@@ -18,10 +18,21 @@ const { lang } = Astro.params;
 const id = lang === "id";
 const [games, home] = await Promise.all([loadRobloxCatalog(), loadRobloxHome(0)]);
 const my = monthYear(lang);
+const PAGE = 14; // game per halaman (konsisten dg halaman Jelajah)
+
+// Label genre Roblox (istilah game — sama ID/EN). Chip hanya utk genre yg ada.
+const RGENRE = {
+  anime: "Anime", rpg: "RPG", adventure: "Adventure", sports: "Sports",
+  fighting: "Fighting", td: "Tower Defense", simulator: "Simulator",
+  casual: "Casual", roleplay: "Roleplay", mmorpg: "MMORPG", survival: "Survival",
+};
+const GORDER = ["anime", "rpg", "sports", "fighting", "td", "simulator", "adventure", "survival", "casual", "roleplay", "mmorpg"];
+const present = new Set(games.flatMap((g) => g.genres));
+const genreFilters = GORDER.filter((k) => present.has(k));
 
 const meta = id
-  ? { title: `Kode Roblox ${my} — Semua Game | KodeGG`, desc: `Kode Roblox terbaru & aktif ${my} untuk ${games.length}+ game (Blox Fruits, Blue Lock Rivals, Type Soul, dll). Diperbarui otomatis dari RoCodes.` }
-  : { title: `Roblox Codes ${my} — All Games | KodeGG`, desc: `Latest active Roblox codes for ${my} across ${games.length}+ games (Blox Fruits, Blue Lock Rivals, Type Soul, and more). Auto-updated from RoCodes.` };
+  ? { title: `Kode Roblox ${my} — Semua Game | KodeGG`, desc: `Kode Roblox terbaru & aktif ${my} untuk ${games.length}+ game (Blox Fruits, Blue Lock Rivals, Type Soul, dll). Cari game, diperbarui otomatis dari RoCodes.` }
+  : { title: `Roblox Codes ${my} — All Games | KodeGG`, desc: `Latest active Roblox codes for ${my} across ${games.length}+ games (Blox Fruits, Blue Lock Rivals, Type Soul, and more). Search games, auto-updated from RoCodes.` };
 
 const site = Astro.site.href.replace(/\/$/, "");
 const jsonLd = [
@@ -34,6 +45,8 @@ const jsonLd = [
     ],
   },
 ];
+
+const sorts = id ? [["active", "Kode terbanyak"], ["az", "A–Z"]] : [["active", "Most codes"], ["az", "A–Z"]];
 ---
 
 <Base lang={lang} title={meta.title} description={meta.desc} paths={robloxHomePaths()} jsonLd={jsonLd}>
@@ -49,12 +62,12 @@ const jsonLd = [
     <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4.4vw,46px); line-height:1.05; letter-spacing:-0.03em; color:#fff; margin:0 0 14px; text-wrap:balance;">
       {id ? "Kode Roblox terbaru" : "Latest Roblox codes"}
     </h1>
-    <p style="font-size:16px; line-height:1.55; color:var(--muted); margin:0 0 26px; max-width:66ch;">
+    <p style="font-size:16px; line-height:1.55; color:var(--muted); margin:0 0 24px; max-width:66ch;">
       {id
-        ? `Kode aktif untuk ${games.length} game Roblox populer — ditarik otomatis dari RoCodes.gg dan diperbarui cepat. Klik game untuk lihat semua kode + cara redeem.`
-        : `Active codes for ${games.length} popular Roblox games — auto-pulled from RoCodes.gg and refreshed fast. Click a game for all its codes + how to redeem.`}
+        ? `Kode aktif untuk ${games.length} game Roblox populer — ditarik otomatis dari RoCodes.gg dan diperbarui cepat. Cari game, lalu klik untuk lihat semua kode + cara redeem.`
+        : `Active codes for ${games.length} popular Roblox games — auto-pulled from RoCodes.gg and refreshed fast. Search a game, then click for all its codes + how to redeem.`}
     </p>
-    <div style="display:flex; flex-wrap:wrap; gap:24px; margin-bottom:34px;">
+    <div style="display:flex; flex-wrap:wrap; gap:24px; margin-bottom:26px;">
       {[[games.length, id ? "game" : "games"], [home.counts.active, id ? "kode aktif" : "active codes"], [home.counts.archived, id ? "arsip" : "archived"]].map(([n, label]) => (
         <div style="display:flex; align-items:baseline; gap:8px;">
           <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:24px; color:var(--acc2);">{new Intl.NumberFormat(id ? "id-ID" : "en-GB").format(n)}</span>
@@ -63,9 +76,54 @@ const jsonLd = [
       ))}
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr)); gap:16px;">
+    <!-- CONTROLS: search + sort + filter genre -->
+    <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:20px;">
+      <div class="gg-controls" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+        <div style="position:relative; flex:1; min-width:240px;">
+          <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--faint); pointer-events:none;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+          </span>
+          <input class="gg-ac-input" data-search type="search" autocomplete="off" aria-label={id ? "Cari game Roblox" : "Search Roblox games"} placeholder={id ? "Cari game Roblox…" : "Search Roblox games…"}
+            style="width:100%; box-sizing:border-box; font-family:'Satoshi',sans-serif; font-size:14.5px; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 14px 13px 40px; outline:none;" />
+        </div>
+        <select class="gg-sel" data-sort aria-label={id ? "Urutkan" : "Sort by"} style="font-family:'Satoshi',sans-serif; font-size:14px; font-weight:600; color:var(--txt); background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 38px 13px 14px; cursor:pointer; outline:none; min-width:170px;">
+          {sorts.map(([v, label]) => <option value={v}>{id ? "Urutkan" : "Sort"}: {label}</option>)}
+        </select>
+      </div>
+
+      {genreFilters.length > 0 && (
+        <div style="display:flex; flex-wrap:wrap; gap:9px;">
+          <button class="gg-rchip" data-genre="all" type="button" aria-pressed="true"
+            style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--acc2); background:var(--acc2); color:#fff; border-radius:10px; padding:8px 14px;">
+            {id ? "Semua" : "All"}
+          </button>
+          {genreFilters.map((k) => (
+            <button class="gg-rchip" data-genre={k} type="button" aria-pressed="false"
+              style="cursor:pointer; font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:10px; padding:8px 14px;">
+              {RGENRE[k] ?? k}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <div style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint); margin-bottom:14px;">
+      <span data-count>{games.length}</span> {id ? "game" : "games"}
+    </div>
+
+    <!-- GRID -->
+    <div data-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr)); gap:16px;">
       {games.map((g) => (
-        <a href={`/${lang}/roblox/${g.slug}`} class="gg-card" style="display:flex; align-items:center; gap:13px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:15px; text-decoration:none;">
+        <a
+          href={`/${lang}/roblox/${g.slug}`}
+          class="gg-card"
+          data-game-card
+          data-name={g.name}
+          data-search={g.name.toLowerCase()}
+          data-genre={g.genres.join(" ")}
+          data-active={g.activeCount}
+          style="display:flex; align-items:center; gap:13px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:15px; text-decoration:none;"
+        >
           <span style="width:52px; height:52px; border-radius:13px; overflow:hidden; flex:0 0 auto; background:var(--surface2); border:1px solid var(--line2); display:block;">
             <img src={g.icon} alt={g.name} width="52" height="52" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;"
               onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,var(--surface2),var(--bg2))';" />
@@ -79,7 +137,100 @@ const jsonLd = [
         </a>
       ))}
     </div>
+    <p data-empty style="display:none; text-align:center; color:var(--muted); font-size:15px; padding:40px 0;">{id ? "Game tidak ditemukan." : "No games found."}</p>
+    <nav data-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:30px;"></nav>
   </main>
 
   <Footer lang={lang} updatedAt={home.updatedAt} />
+
+  <script is:inline define:vars={{ PAGE }}>
+    (function () {
+      const grid = document.querySelector("[data-grid]");
+      if (!grid) return;
+      const cards = Array.from(grid.querySelectorAll("[data-game-card]"));
+      const searchEl = document.querySelector("[data-search]");
+      const sortEl = document.querySelector("[data-sort]");
+      const chips = Array.from(document.querySelectorAll(".gg-rchip"));
+      const countEl = document.querySelector("[data-count]");
+      const emptyEl = document.querySelector("[data-empty]");
+      const pager = document.querySelector("[data-pager]");
+      const state = { q: "", genre: "all", sort: "active", page: 1 };
+
+      function filteredSorted() {
+        const q = state.q.trim().toLowerCase();
+        const shown = cards.filter((c) => {
+          const okG = state.genre === "all" || (c.dataset.genre || "").split(" ").includes(state.genre);
+          const okQ = !q || (c.dataset.search || "").includes(q);
+          return okG && okQ;
+        });
+        shown.sort((a, b) => {
+          if (state.sort === "az") return a.dataset.name.localeCompare(b.dataset.name);
+          return Number(b.dataset.active) - Number(a.dataset.active); // active: terbanyak dulu
+        });
+        return shown;
+      }
+
+      function pageList(cur, total) {
+        const want = new Set([1, total, cur, cur - 1, cur + 1]);
+        const arr = [...want].filter((n) => n >= 1 && n <= total).sort((a, b) => a - b);
+        const out = []; let prev = 0;
+        for (const n of arr) { if (n - prev > 1) out.push("…"); out.push(n); prev = n; }
+        return out;
+      }
+      function pbtn(label, opts) {
+        const el = document.createElement("button");
+        el.type = "button"; el.textContent = label; el.disabled = !!opts.disabled;
+        el.style.cssText =
+          "cursor:pointer; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; min-width:38px; height:38px; padding:0 11px; border-radius:10px; border:1px solid " +
+          (opts.active ? "var(--acc2)" : "var(--line2)") + "; background:" + (opts.active ? "var(--acc2)" : "var(--surface)") +
+          "; color:" + (opts.active ? "#fff" : opts.disabled ? "var(--faint)" : "var(--txt)") + (opts.disabled ? "; opacity:0.5; cursor:default" : "") + ";";
+        if (opts.onClick && !opts.disabled) el.addEventListener("click", opts.onClick);
+        return el;
+      }
+      function renderPager(total) {
+        pager.innerHTML = "";
+        if (total <= 1) return;
+        const go = (n) => { state.page = n; apply(); grid.scrollIntoView({ behavior: "smooth", block: "start" }); };
+        pager.appendChild(pbtn("‹", { disabled: state.page === 1, onClick: () => go(state.page - 1) }));
+        for (const n of pageList(state.page, total)) {
+          if (n === "…") {
+            const d = document.createElement("span");
+            d.textContent = "…";
+            d.style.cssText = "color:var(--faint); font-family:'Space Mono',monospace; padding:0 4px;";
+            pager.appendChild(d);
+          } else pager.appendChild(pbtn(String(n), { active: n === state.page, onClick: () => go(n) }));
+        }
+        pager.appendChild(pbtn("›", { disabled: state.page === total, onClick: () => go(state.page + 1) }));
+      }
+      function apply() {
+        const shown = filteredSorted();
+        const total = Math.max(1, Math.ceil(shown.length / PAGE));
+        if (state.page > total) state.page = total;
+        const start = (state.page - 1) * PAGE;
+        const vis = new Set(shown.slice(start, start + PAGE));
+        for (const c of cards) c.style.display = "none";
+        for (const c of shown) { c.style.display = vis.has(c) ? "flex" : "none"; grid.appendChild(c); }
+        if (countEl) countEl.textContent = String(shown.length);
+        if (emptyEl) emptyEl.style.display = shown.length === 0 ? "block" : "none";
+        renderPager(total);
+      }
+
+      searchEl?.addEventListener("input", (e) => { state.q = e.target.value; state.page = 1; apply(); });
+      sortEl?.addEventListener("change", (e) => { state.sort = e.target.value; state.page = 1; apply(); });
+      chips.forEach((chip) =>
+        chip.addEventListener("click", () => {
+          state.genre = chip.dataset.genre; state.page = 1;
+          chips.forEach((c) => {
+            const on = c === chip;
+            c.setAttribute("aria-pressed", String(on));
+            c.style.background = on ? "var(--acc2)" : "var(--surface)";
+            c.style.color = on ? "#fff" : "var(--muted)";
+            c.style.borderColor = on ? "var(--acc2)" : "var(--line)";
+          });
+          apply();
+        }),
+      );
+      apply();
+    })();
+  </script>
 </Base>
