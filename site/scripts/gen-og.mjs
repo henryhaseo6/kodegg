@@ -10,8 +10,11 @@ import { fileURLToPath } from "node:url";
 const HERE = dirname(fileURLToPath(import.meta.url));
 const FONTDIR = resolve(HERE, ".ogfonts");
 const P = (p) => p.split("\\").join("/");
+// PENTING: pakai TTF STATIS Bold (weight 700 sudah baked-in). Variable font
+// SpaceGrotesk[wght].ttf render di weight DEFAULT (~400, tipis) karena FreeType
+// di libvips tak meng-apply weight axis → wordmark beda dari header situs (700).
 const TTF = {
-  "SpaceGrotesk.ttf": "https://github.com/google/fonts/raw/main/ofl/spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf",
+  "SpaceGrotesk-Bold.ttf": "https://raw.githubusercontent.com/floriankarsten/space-grotesk/master/fonts/ttf/static/SpaceGrotesk-Bold.ttf",
   "SpaceMono-Bold.ttf": "https://github.com/google/fonts/raw/main/ofl/spacemono/SpaceMono-Bold.ttf",
 };
 await mkdir(FONTDIR, { recursive: true });
