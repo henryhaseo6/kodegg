@@ -7,13 +7,20 @@ import { LANGS } from "../lib/i18n.mjs";
 import { loadCatalog } from "../lib/catalog.mjs";
 import { loadCodes } from "../lib/codes.mjs";
 import { loadFeed } from "../lib/feed.mjs";
+import { loadRobloxCatalog, loadRobloxHome } from "../lib/roblox.mjs";
 import { PAGE_KEYS, route, langPaths } from "../lib/routes.mjs";
 
 const SITE = "https://kodegg.com";
 const day = (iso) => (iso ? new Date(iso) : new Date()).toISOString().slice(0, 10);
 
 export async function GET() {
-  const [catalog, codes, feed] = await Promise.all([loadCatalog(), loadCodes(), loadFeed("id")]);
+  const [catalog, codes, feed, robloxGames, robloxHome] = await Promise.all([
+    loadCatalog(),
+    loadCodes(),
+    loadFeed("id"),
+    loadRobloxCatalog(),
+    loadRobloxHome(0),
+  ]);
   const gameEntries = catalog.games.filter((g) => g.hasCodes); // { id, slug, ... }
 
   const build = day();
@@ -27,6 +34,11 @@ export async function GET() {
   // "saved"/favorit di-noindex (isinya localStorage) → tak dimasukkan.
   for (const key of PAGE_KEYS) if (key !== "saved") entries.push({ paths: langPaths(key), lastmod: lmFor(key) });
   for (const g of gameEntries) entries.push({ paths: { id: `/id/game/${g.slug}`, en: `/en/game/${g.slug}` }, lastmod: codesMod });
+
+  // Vertikal Roblox: hub + per-game (lastmod = kesegaran data Roblox).
+  const robloxMod = day(robloxHome.updatedAt);
+  entries.push({ paths: { id: "/id/roblox", en: "/en/roblox" }, lastmod: robloxMod });
+  for (const g of robloxGames) entries.push({ paths: { id: `/id/roblox/${g.slug}`, en: `/en/roblox/${g.slug}` }, lastmod: robloxMod });
 
   const body =
     `<?xml version="1.0" encoding="UTF-8"?>\n` +

@@ -115,6 +115,7 @@ export async function loadRobloxGame(slug) {
     genres: g.genres ?? [],
     universeId: g.universeId ?? null,
     placeId: g.placeId ?? null,
+    players: g.players ?? 0, // pemain konkuren (realtime, refresh hourly)
     crossCheck: Array.isArray(g.crossCheck) ? g.crossCheck : [], // situs editorial pengonfirmasi
     verifiedCount: active.filter((c) => c.verified).length,
     howTo: Array.isArray(g.howTo) ? g.howTo : [],
