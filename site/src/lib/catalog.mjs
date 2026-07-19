@@ -3,6 +3,8 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
+import { gameSlug } from "../../../worker/src/games.mjs";
+
 const CACHE = process.env.KODEGG_GAMES ?? resolve(process.cwd(), "../worker/data/games.json");
 const CODES = process.env.KODEGG_CODES ?? resolve(process.cwd(), "../worker/data/codes.json");
 
@@ -48,6 +50,7 @@ export async function loadCatalog() {
 
   const games = (raw.games ?? []).map((g) => ({
     ...g,
+    slug: gameSlug(g.id),
     genreLabels: g.genres.map((k) => GENRE_LABEL[k] ?? k),
     search: `${g.name} ${g.genres.map((k) => GENRE_LABEL[k] ?? k).join(" ")}`.toLowerCase(),
     releasedMs: g.releasedAt ? Date.parse(g.releasedAt) : 0,

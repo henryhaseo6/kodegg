@@ -14,7 +14,7 @@ const day = (iso) => (iso ? new Date(iso) : new Date()).toISOString().slice(0, 1
 
 export async function GET() {
   const [catalog, codes, feed] = await Promise.all([loadCatalog(), loadCodes(), loadFeed("id")]);
-  const gameIds = catalog.games.filter((g) => g.hasCodes).map((g) => g.id);
+  const gameEntries = catalog.games.filter((g) => g.hasCodes); // { id, slug, ... }
 
   const build = day();
   const codesMod = day(codes.updatedAt);
@@ -26,7 +26,7 @@ export async function GET() {
   const entries = [{ paths: langPaths("home"), lastmod: codesMod }];
   // "saved"/favorit di-noindex (isinya localStorage) → tak dimasukkan.
   for (const key of PAGE_KEYS) if (key !== "saved") entries.push({ paths: langPaths(key), lastmod: lmFor(key) });
-  for (const gid of gameIds) entries.push({ paths: { id: `/id/game/${gid}`, en: `/en/game/${gid}` }, lastmod: codesMod });
+  for (const g of gameEntries) entries.push({ paths: { id: `/id/game/${g.slug}`, en: `/en/game/${g.slug}` }, lastmod: codesMod });
 
   const body =
     `<?xml version="1.0" encoding="UTF-8"?>\n` +

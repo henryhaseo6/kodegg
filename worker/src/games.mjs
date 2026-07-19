@@ -255,6 +255,15 @@ export const GAMES = {
 export const ICON_DIR = "/assets/games";
 export const iconUrl = (id) => (GAMES[id]?.iconFile ? `${ICON_DIR}/${GAMES[id].iconFile}` : null);
 
+// Slug URL keyword dari NAMA game (mis. "Genshin Impact" → "genshin-impact"),
+// dipakai di URL /game/<slug> untuk SEO. `id` internal (gi, mlbb) tetap kunci
+// data (codes.json, events, icon). Slug diturunkan dari nama → stabil selama
+// nama tak berubah. Semua slug terbukti unik (dicek saat migrasi).
+const slugify = (s) => (s ?? "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+export const GAME_SLUG = Object.fromEntries(Object.keys(GAMES).map((id) => [id, slugify(GAMES[id].name)]));
+export const gameSlug = (id) => GAME_SLUG[id] ?? id;
+export const gameIdFromSlug = (slug) => Object.keys(GAME_SLUG).find((id) => GAME_SLUG[id] === slug) ?? null;
+
 /** Id internal semua game HoYoverse (punya rantai sumber kode). */
 export const HOYO_IDS = Object.entries(GAMES)
   .filter(([, meta]) => meta.isHoyo)

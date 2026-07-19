@@ -7,7 +7,7 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-import { GAMES, iconUrl } from "../../../worker/src/games.mjs";
+import { GAMES, iconUrl, gameSlug } from "../../../worker/src/games.mjs";
 
 // JANGAN memakai import.meta.url di sini: Vite mem-bundle modul ini saat
 // `astro build`, sehingga import.meta.url menunjuk ke lokasi bundel — bukan
@@ -59,6 +59,7 @@ function shape(item) {
     ...item,
     name: displayName(item),
     icon: iconUrl(item.game),
+    gameSlug: item.game ? gameSlug(item.game) : null,
     redeemUrl: GAMES[item.game]?.redeemUrl ?? item.sourceUrl ?? null,
     search: searchIndex(item),
     rankMs,

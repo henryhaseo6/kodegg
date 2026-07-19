@@ -107,7 +107,7 @@ if (key === "codes") {
       itemListElement: data.active
         .filter((c) => c.code)
         .slice(0, 60)
-        .map((c, i) => ({ "@type": "ListItem", position: i + 1, name: `${c.name}: ${c.code}`, url: `${site}/${lang}/game/${c.game}` })),
+        .map((c, i) => ({ "@type": "ListItem", position: i + 1, name: `${c.name}: ${c.code}`, url: `${site}/${lang}/game/${c.gameSlug}` })),
     },
   );
 }

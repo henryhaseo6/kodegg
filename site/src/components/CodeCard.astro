@@ -13,7 +13,7 @@ import { t } from "../lib/i18n.mjs";
 // pada halaman per-game itu sendiri (tak perlu menaut ke diri sendiri).
 const { card, lang, linkGame = true } = Astro.props;
 const tr = t(lang);
-const gameHref = card.game ? `/${lang}/game/${card.game}` : null;
+const gameHref = card.gameSlug ? `/${lang}/game/${card.gameSlug}` : null;
 
 const isClaim = !card.code && card.claimUrl; // giveaway GamerPower
 

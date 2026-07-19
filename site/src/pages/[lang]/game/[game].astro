@@ -23,20 +23,22 @@ import { loadCatalog } from "../../../lib/catalog.mjs";
 export async function getStaticPaths() {
   const catalog = await loadCatalog();
   const withCodes = catalog.games.filter((g) => g.hasCodes);
-  return LANGS.flatMap((lang) => withCodes.map((g) => ({ params: { lang, game: g.id }, props: { gameMeta: g } })));
+  // URL pakai SLUG keyword (SEO); id internal dibawa lewat props (gameMeta.id).
+  return LANGS.flatMap((lang) => withCodes.map((g) => ({ params: { lang, game: g.slug }, props: { gameMeta: g } })));
 }
 
-const { lang, game } = Astro.params;
+const { lang, game } = Astro.params; // `game` = slug URL
 const { gameMeta } = Astro.props;
+const gid = gameMeta.id; // id internal untuk filter data (codes/events/redeem)
 const tr = t(lang);
 const id = lang === "id";
 
 const [codes, events] = await Promise.all([loadCodes(), loadEvents(lang)]);
-const gameCodes = codes.active.filter((c) => c.game === game);
-const gameEvents = events.events.filter((e) => e.game === game);
+const gameCodes = codes.active.filter((c) => c.game === gid);
+const gameEvents = events.events.filter((e) => e.game === gid);
 
 // Cara redeem (spesifik per game, terverifikasi — lihat lib/redeem.mjs).
-const rd = redeemInfo(game, lang);
+const rd = redeemInfo(gid, lang);
 
 // FAQ per game — SEMUA jawaban BERSUMBER dari data redeem terverifikasi (rd) +
 // fakta universal/tentang KodeGG. TIDAK ada trivia game yang dikarang.
