@@ -37,10 +37,10 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
       {id ? "OTOMATIS · DIPERBARUI TIAP JAM" : "AUTOMATED · UPDATED HOURLY"}
     </div>
     <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1.04; letter-spacing:-0.03em; color:#fff; margin:0 0 18px; text-wrap:balance;">
-      {id ? "Semua info game online, di satu tempat." : "All your online game info, in one place."}
+      {id ? "Semua info game online & Roblox, di satu tempat." : "All your online game & Roblox info, in one place."}
     </h1>
     <p style="font-size:17px; line-height:1.55; color:var(--muted); margin:0 0 30px;">
-      {id ? "Kode redeem, event & banner, dan berita — ditarik otomatis dari sumber tepercaya dan diperbarui tiap jam." : "Redeem codes, events & banners, and news — pulled automatically from trusted sources and refreshed hourly."}
+      {id ? "Kode redeem game online & Roblox, event & banner, dan berita — ditarik otomatis dari sumber tepercaya dan diperbarui tiap jam." : "Redeem codes for online games & Roblox, events & banners, and news — pulled automatically from trusted sources and refreshed hourly."}
     </p>
     <div style="display:flex; flex-wrap:wrap; gap:26px;">
       {[[fmtNum(codes.counts.active), tr("stat.active")], [fmtNum(catalog.games.length), tr("stat.games")], [fmtNum(feed.counts.events), id ? "event" : "events"], [fmtNum(feed.counts.news), id ? "berita" : "articles"]].map(([n, label]) => (

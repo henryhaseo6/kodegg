@@ -19,8 +19,8 @@ const [codes, feed, catalog, roblox] = await Promise.all([loadCodes(), loadFeed(
 
 const my = monthYear(lang);
 const meta = lang === "id"
-  ? { title: "KodeGG — Portal Info Game Online: Kode Redeem, Event, Berita", desc: `Kode redeem terbaru ${my}, event & banner, dan berita game online — otomatis, diperbarui tiap jam. Genshin, Star Rail, Zenless, dan lainnya.` }
-  : { title: "KodeGG — Online Game Info: Redeem Codes, Events, News", desc: `Latest ${my} redeem codes, events & banners, and online game news — automated, updated hourly. Genshin, Star Rail, Zenless, and more.` };
+  ? { title: "KodeGG — Kode Redeem Game Online & Roblox: Event, Berita", desc: `Kode redeem terbaru ${my} untuk game online & Roblox, event & banner, dan berita — otomatis, diperbarui tiap jam. Genshin, Star Rail, Zenless, Blox Fruits, dan lainnya.` }
+  : { title: "KodeGG — Online Game & Roblox Redeem Codes: Events, News", desc: `Latest ${my} redeem codes for online games & Roblox, events & banners, and news — automated, updated hourly. Genshin, Star Rail, Zenless, Blox Fruits, and more.` };
 
 const site = Astro.site.href.replace(/\/$/, "");
 const jsonLd = [
