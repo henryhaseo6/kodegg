@@ -147,7 +147,7 @@ const jsonLd = [
     <section style="max-width:1280px; margin:0 auto; padding:44px 28px 8px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
       {gameMeta.cover && <img src={gameMeta.cover} alt={gameMeta.name} width="72" height="72" style="width:72px; height:72px; border-radius:16px; object-fit:cover; border:1px solid var(--line);" onerror="this.style.display='none'" />}
       <div>
-        <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:34px; letter-spacing:-0.02em; color:#fff; margin:0;">{gameMeta.name}</h1>
+        <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:34px; letter-spacing:-0.02em; color:#fff; margin:0;">{id ? `Kode Redeem ${gameMeta.name}` : `${gameMeta.name} Redeem Codes`}</h1>
         <div style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint); margin-top:6px;">
           {gameMeta.genreLabels?.join(" · ")}{gameMeta.rating ? ` · ★ ${gameMeta.rating}` : ""}
         </div>
