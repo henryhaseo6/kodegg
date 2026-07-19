@@ -132,7 +132,7 @@ async function buildGameSet(prevGames) {
   const popular = await discoverPopularWithCodes();
   for (const g of popular) {
     if (set.size >= MAX_GAMES) break;
-    add(canon(g), { rocodesSlug: g.rocodesSlug, denSlug: g.denSlug, name: g.name, genres: g.featured ? [] : inferGenres(g.name, canon(g)), universeId: g.universeId, players: g.players, featured: g.featured });
+    add(canon(g), { rocodesSlug: g.rocodesSlug, denSlug: g.denSlug, name: g.name, genres: g.featured ? [] : inferGenres(g.name, canon(g)), universeId: g.universeId, players: g.players, featured: g.featured, needsVerify: g.needsVerify });
   }
   return set;
 }
@@ -166,6 +166,16 @@ async function main() {
 
     const { active, archive } = mergeCodes(perSource);
     if (active.length === 0 && archive.length === 0) return { id, ok: false };
+
+    // Verifikasi identitas untuk token-match longgar (needsVerify): universeId yg
+    // DILAPORKAN sumber harus == universeId API Roblox. Buang false-positive game
+    // beda-mirip (mis. "Mansion Tycoon" → "sea-mansion-tycoon"). Match exact/
+    // homepage/seed/prev tak lewat sini (identitasnya sudah pasti).
+    if (entry.needsVerify) {
+      let srcUid = Number(rocodesMeta?.universeId) || 0;
+      if (!srcUid && denMeta?.placeId) srcUid = Number(await resolveUniverse(denMeta.placeId)) || 0;
+      if (!srcUid || srcUid !== Number(entry.universeId)) return { id, ok: false };
+    }
 
     const name = entry.seed ? entry.name : rocodesMeta?.name || denMeta?.name || entry.name;
     const slugRo = entry.rocodesSlug;

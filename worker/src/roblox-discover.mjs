@@ -112,6 +112,36 @@ export function matchSlug(name, roset) {
   return null;
 }
 
+// Token-match LONGGAR untuk game API yg tak exact-match: cocokkan token inti nama
+// ke slug RoCodes/Den. WAJIB diverifikasi universeId di fetch-roblox (needsVerify)
+// → aman dari false-positive (mis. "Mansion Tycoon" ke-match "sea-mansion-tycoon"
+// yg BEDA game; verifikasi universeId membuangnya). "simulator"/"roblox" dst =
+// noise agar "Bee Swarm Simulator" ↔ slug "bee-swarm-simulator" tetap ketemu.
+const TNOISE = new Set(["upd", "update", "new", "release", "released", "codes", "code", "register", "now", "out", "beta", "free", "the", "a", "x", "simulator", "sim", "2024", "2025", "2026", "roblox"]);
+function coreTokens(s) {
+  return (s ?? "").toLowerCase().replace(/\[[^\]]*\]/g, " ").replace(/\([^)]*\)/g, " ").replace(/[^\x00-\x7f]/g, " ").replace(/[^a-z0-9]+/g, " ").trim().split(/\s+/).filter((w) => w && !TNOISE.has(w));
+}
+function buildSlugIndex(slugSet) {
+  return [...slugSet].map((s) => ({ slug: s, t: new Set(s.split("-").filter((w) => !TNOISE.has(w))) }));
+}
+// Kandidat terbaik: SEMUA token nama ada di slug, dan slug menambah ≤1 token
+// (lebih dari itu berisiko game lain). Butuh ≥2 token inti biar tak generik.
+function bestTokenMatch(name, slugIndex) {
+  const gt = coreTokens(name);
+  if (gt.length < 2) return null;
+  let best = null;
+  let bestExtra = Infinity;
+  for (const r of slugIndex) {
+    if (!gt.every((w) => r.t.has(w))) continue;
+    const extra = r.t.size - gt.length;
+    if (extra >= 0 && extra < bestExtra) {
+      best = r.slug;
+      bestExtra = extra;
+    }
+  }
+  return bestExtra <= 1 ? best : null;
+}
+
 // Tebak genre dari nama/slug (heuristik ringan) supaya game hasil discovery tetap
 // punya genre untuk filter hub. Konservatif — hanya kategori yang jelas.
 export function inferGenres(name, slug = "") {
@@ -147,16 +177,27 @@ export async function discoverPopularWithCodes() {
     seen.add(slug);
     out.push({ rocodesSlug: slug, denSlug: denset.has(slug) ? slug : null, name: titleFromSlug(slug), universeId: null, players: 0, featured: true });
   }
-  // 2) DISCOVERY explore-api Roblox (fuzzy-match nama → slug) untuk long-tail.
+  // 2) DISCOVERY explore-api Roblox. Untuk TIAP game unik: exact-match slug dulu;
+  //    kalau gagal, token-match longgar (ditandai needsVerify → fetch-roblox
+  //    memverifikasi universeId sebelum menerima). Cakup seluruh ~367 game unik.
+  const roIndex = buildSlugIndex(roset);
+  const denIndex = buildSlugIndex(denset);
   for (const g of top) {
     const cands = candidateSlugs(g.name);
-    const rocodesSlug = cands.find((s) => roset.has(s)) ?? null;
-    const denSlug = cands.find((s) => denset.has(s)) ?? null;
-    if (!rocodesSlug && !denSlug) continue;
+    let rocodesSlug = cands.find((s) => roset.has(s)) ?? null;
+    let denSlug = cands.find((s) => denset.has(s)) ?? null;
+    let needsVerify = false;
+    if (!rocodesSlug && !denSlug) {
+      // Belum exact → coba token-match (RoCodes dulu, katalognya jauh lebih besar).
+      rocodesSlug = bestTokenMatch(g.name, roIndex);
+      if (!rocodesSlug) denSlug = bestTokenMatch(g.name, denIndex);
+      if (!rocodesSlug && !denSlug) continue;
+      needsVerify = true; // identitas belum pasti → wajib cek universeId
+    }
     const key = rocodesSlug ?? denSlug;
     if (seen.has(key)) continue;
     seen.add(key);
-    out.push({ rocodesSlug, denSlug, name: g.name, universeId: g.universeId, players: g.players });
+    out.push({ rocodesSlug, denSlug, name: g.name, universeId: g.universeId, players: g.players, needsVerify });
   }
   return out;
 }
