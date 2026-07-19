@@ -18,7 +18,7 @@ const { lang } = Astro.params;
 const id = lang === "id";
 const [games, home] = await Promise.all([loadRobloxCatalog(), loadRobloxHome(0)]);
 const my = monthYear(lang);
-const PAGE = 14; // game per halaman (konsisten dg halaman Jelajah)
+const PAGE = 15; // game per halaman (grid 5 kolom → 3 baris penuh, tak ada sisa)
 
 // Label genre Roblox (istilah game — sama ID/EN). Chip hanya utk genre yg ada.
 const RGENRE = {
