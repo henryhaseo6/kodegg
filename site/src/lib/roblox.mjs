@@ -75,7 +75,10 @@ export async function loadRobloxCatalog() {
   const newestByGame = {};
   for (const c of raw.active ?? []) {
     activeByGame[c.game] = (activeByGame[c.game] ?? 0) + 1;
-    const ms = Date.parse(c.date ?? "") || Date.parse(c.firstSeenAt ?? "") || 0;
+    // SAMA dg rankMs homepage: tanggal rilis dulu; kalau tak ada & BUKAN impor
+    // massal pertama, baru firstSeen. Tanpa ini, game yg baru di-discover (kode
+    // lama tapi `bulk`) salah naik ke puncak "kode terbaru" krn firstSeen=hari ini.
+    const ms = Date.parse(c.date ?? "") || (c.bulk ? 0 : Date.parse(c.firstSeenAt ?? "")) || 0;
     if (ms > (newestByGame[c.game] ?? 0)) newestByGame[c.game] = ms;
   }
   return Object.entries(games)
