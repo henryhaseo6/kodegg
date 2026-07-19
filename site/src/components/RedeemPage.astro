@@ -122,22 +122,17 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
             </div>
           ) : (
             <>
-              <div data-arch-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr)); gap:12px;">
-                {data.archive.slice(0, ARCH_RENDER).map((c) => (
-                  <div data-arch-card data-game={c.game ?? ""} data-search={c.search} style="background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:14px 16px; opacity:0.72;">
-                    <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
-                      <span style="font-size:13px; font-weight:700; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{c.name}</span>
-                      <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.28); padding:3px 7px; border-radius:6px; flex:0 0 auto;">{tr("card.expired")}</span>
-                    </div>
-                    {c.code && (
-                      <code style="display:block; margin-top:9px; font-family:'Space Mono',monospace; font-size:12.5px; color:var(--faint); text-decoration:line-through;">{c.code}</code>
-                    )}
-                    {c.date && (
-                      <div style="margin-top:7px; font-family:'Space Mono',monospace; font-size:10px; color:var(--faint);">{fmtArchDate(c.date)}</div>
-                    )}
-                  </div>
-                ))}
-              </div>
+              {/* WINDOWING: data arsip diembed sebagai JSON (bukan ~1300 kartu di
+                  DOM). Kartu halaman aktif (ARCH_PAGE) dirender client-side saat
+                  arsip dibuka/difilter → DOM ringan meski arsip ribuan. */}
+              <div data-arch-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr)); gap:12px;"></div>
+              <script
+                type="application/json"
+                data-arch-data
+                set:html={JSON.stringify(
+                  data.archive.map((c) => ({ n: c.name, g: c.game ?? "", k: c.code ?? "", d: c.date ? fmtArchDate(c.date) : "", s: c.search })),
+                )}
+              />
               <div data-arch-empty style="display:none; text-align:center; padding:24px 0; color:var(--faint); font-size:13px;">{tr("arch.noMatch")}</div>
               <nav data-arch-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:22px;"></nav>
             </>
@@ -162,7 +157,7 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
 <Footer lang={lang} updatedAt={data.updatedAt} />
 <CountdownScript lang={lang} />
 
-<script is:inline define:vars={{ PAGE, ARCH_PAGE }}>
+<script is:inline define:vars={{ PAGE, ARCH_PAGE, L_EXPIRED: tr("card.expired") }}>
   // Filter/sort/copy/muat-lebih. Menggantikan kelas Component dari support.js.
   // Dijalankan atas markup yang sudah dirender server — progressive enhancement:
   // tanpa JS, seluruh kartu tetap tampil dan bisa dibaca.
@@ -180,7 +175,20 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
     // Arsip: kartu kadaluarsa yang ikut kefilter game + search yang sama, jadi
     // arsip berlaku sebagai database per-game (bukan daftar statis 60 kode).
     const archGrid = document.querySelector("[data-arch-grid]");
-    const archCards = archGrid ? Array.from(archGrid.querySelectorAll("[data-arch-card]")) : [];
+    // Windowing: data arsip dari JSON embed; kartu dirender per-halaman on-demand.
+    let archData = [];
+    try { archData = JSON.parse(document.querySelector("[data-arch-data]")?.textContent || "[]"); } catch {}
+    const escH = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    function archCard(c) {
+      return `<div style="background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:14px 16px; opacity:0.72;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+          <span style="font-size:13px; font-weight:700; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${escH(c.n)}</span>
+          <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--danger); background:rgba(255,92,119,0.12); border:1px solid rgba(255,92,119,0.28); padding:3px 7px; border-radius:6px; flex:0 0 auto;">${escH(L_EXPIRED)}</span>
+        </div>
+        ${c.k ? `<code style="display:block; margin-top:9px; font-family:'Space Mono',monospace; font-size:12.5px; color:var(--faint); text-decoration:line-through;">${escH(c.k)}</code>` : ""}
+        ${c.d ? `<div style="margin-top:7px; font-family:'Space Mono',monospace; font-size:10px; color:var(--faint);">${escH(c.d)}</div>` : ""}
+      </div>`;
+    }
     const archEmptyEl = document.querySelector("[data-arch-empty]");
     const archPager = document.querySelector("[data-arch-pager]");
 
@@ -297,16 +305,11 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
     // paginasi ARCH_PAGE per halaman (bukan muat-lebih yang menumpuk).
     function applyArchive(q) {
       if (!archGrid) return;
-      const shown = archCards.filter((c) => {
-        const okGame = state.game === "all" || c.dataset.game === state.game;
-        const okQ = !q || (c.dataset.search || "").includes(q);
-        return okGame && okQ;
-      });
+      const shown = archData.filter((c) => (state.game === "all" || c.g === state.game) && (!q || (c.s || "").includes(q)));
       const total = Math.max(1, Math.ceil(shown.length / ARCH_PAGE));
       if (state.archPage > total) state.archPage = total;
       const start = (state.archPage - 1) * ARCH_PAGE;
-      const visible = new Set(shown.slice(start, start + ARCH_PAGE));
-      for (const c of archCards) c.style.display = visible.has(c) ? "block" : "none";
+      archGrid.innerHTML = shown.slice(start, start + ARCH_PAGE).map(archCard).join(""); // render hanya 1 halaman
       if (archEmptyEl) archEmptyEl.style.display = shown.length === 0 ? "block" : "none";
       renderArchPager(total);
     }
