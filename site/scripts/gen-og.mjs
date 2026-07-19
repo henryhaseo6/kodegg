@@ -86,8 +86,8 @@ function eyebrow(ctx, t, { accent = C.lime, dot = C.ok } = {}) {
 }
 
 const site = {
-  id: { eye: "OTOMATIS · TIAP JAM", a: "Kode redeem, event &", b: "berita ", c: "game online", sub: ["Semua info game online live-service dalam", "satu tempat — ditarik otomatis dari sumber", "resmi, diperbarui tiap jam."], chips: ["Genshin", "Star Rail", "Zenless", "+ lainnya"] },
-  en: { eye: "AUTOMATED · HOURLY", a: "Redeem codes, events &", b: "news for ", c: "online games", sub: ["All your online live-service game info in", "one place — pulled automatically from", "official sources, refreshed hourly."], chips: ["Genshin", "Star Rail", "Zenless", "+ more"] },
+  id: { eye: "OTOMATIS · TIAP JAM", a: "Kode redeem, event &", b: "berita ", c: "game online", sub: ["Semua info kode game online & Roblox dalam", "satu tempat — ditarik otomatis dari sumber", "resmi, diperbarui tiap jam."], chips: ["Genshin", "Star Rail", "Roblox", "+ lainnya"] },
+  en: { eye: "AUTOMATED · HOURLY", a: "Redeem codes, events &", b: "news for ", c: "online games", sub: ["Online game & Roblox codes info, all in one", "place — pulled automatically from official", "sources, refreshed hourly."], chips: ["Genshin", "Star Rail", "Roblox", "+ more"] },
 };
 
 async function siteCard(d, favImg) {
