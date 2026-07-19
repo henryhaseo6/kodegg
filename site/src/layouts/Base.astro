@@ -2,6 +2,7 @@
 // Layout dasar. Menggantikan <helmet> + <x-dc> dari mockup Design Component.
 // Token warna dipindah apa adanya dari wrapper .dc.html agar visual identik.
 import { otherLang } from "../lib/i18n.mjs";
+import "../styles/fonts.css"; // @font-face self-hosted (public/fonts/*.woff2)
 
 // paths = {id, en} bila slug beda per bahasa (mis. /id/jelajah vs /en/discover).
 // path = suffix tunggal (fallback, slug sama utk kedua bahasa).
@@ -54,16 +55,10 @@ const locale = lang === "id" ? "id_ID" : "en_US";
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="KodeGG" />
 
-    <link rel="preconnect" href="https://api.fontshare.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
-    />
+    {/* Font self-hosted (lihat src/styles/fonts.css) — preload yang paling
+        terlihat di atas lipatan: body (Satoshi 400) + heading (Space Grotesk 700). */}
+    <link rel="preload" href="/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <a class="gg-skip" href="#main">{lang === "id" ? "Lewati ke konten" : "Skip to content"}</a>
