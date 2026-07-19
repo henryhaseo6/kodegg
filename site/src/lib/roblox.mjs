@@ -71,12 +71,18 @@ export async function loadRobloxHome(limit = 8) {
   };
 }
 
-/** Katalog game Roblox (getStaticPaths per-game + hub), urut kode aktif terbanyak. */
+/** Katalog game Roblox (getStaticPaths per-game + hub). Default urut KODE TERBARU
+ * (tanggal kode terbaru tiap game) → game yang jarang update kode turun ke bawah. */
 export async function loadRobloxCatalog() {
   const raw = await read();
   const games = raw.games ?? {};
   const activeByGame = {};
-  for (const c of raw.active ?? []) activeByGame[c.game] = (activeByGame[c.game] ?? 0) + 1;
+  const newestByGame = {};
+  for (const c of raw.active ?? []) {
+    activeByGame[c.game] = (activeByGame[c.game] ?? 0) + 1;
+    const ms = Date.parse(c.date ?? "") || Date.parse(c.firstSeenAt ?? "") || 0;
+    if (ms > (newestByGame[c.game] ?? 0)) newestByGame[c.game] = ms;
+  }
   return Object.entries(games)
     .map(([id, g]) => ({
       id,
@@ -86,8 +92,9 @@ export async function loadRobloxCatalog() {
       genres: g.genres ?? [],
       verified: g.verified === true,
       activeCount: activeByGame[id] ?? 0,
+      newestMs: newestByGame[id] ?? 0, // tanggal kode terbaru → sort "terbaru"
     }))
-    .sort((a, b) => b.activeCount - a.activeCount || a.name.localeCompare(b.name));
+    .sort((a, b) => b.newestMs - a.newestMs || b.activeCount - a.activeCount || a.name.localeCompare(b.name));
 }
 
 /** Per-game (halaman /roblox/<slug>): meta + kode aktif + arsip. */
