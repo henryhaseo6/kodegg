@@ -6,7 +6,7 @@ import { otherLang } from "../lib/i18n.mjs";
 // paths = {id, en} bila slug beda per bahasa (mis. /id/jelajah vs /en/discover).
 // path = suffix tunggal (fallback, slug sama utk kedua bahasa).
 // jsonLd = array objek Schema.org (dirender sbg <script ld+json>).
-const { lang, title, description, path, paths, jsonLd = [] } = Astro.props;
+const { lang, title, description, path, paths, jsonLd = [], noindex = false } = Astro.props;
 const other = otherLang(lang);
 const pathFor = (l) => (paths ? paths[l] : `/${l}${path ?? ""}`);
 const canonical = new URL(pathFor(lang), Astro.site).href;
@@ -22,6 +22,7 @@ const locale = lang === "id" ? "id_ID" : "en_US";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,follow" />}
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="id" href={altUrl("id")} />
     <link rel="alternate" hreflang="en" href={altUrl("en")} />

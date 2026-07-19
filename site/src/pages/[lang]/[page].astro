@@ -71,6 +71,6 @@ if (key === "discover") {
 }
 ---
 
-<Base lang={lang} title={title} description={desc} paths={langPaths(key)}>
+<Base lang={lang} title={title} description={desc} paths={langPaths(key)} noindex={key === "saved"}>
   <Comp lang={lang} data={data} />
 </Base>

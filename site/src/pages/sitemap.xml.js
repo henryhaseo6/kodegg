@@ -12,7 +12,9 @@ export async function GET() {
   // Tiap entri = pasangan {id, en} agar loc + hreflang alternate saling benar
   // (mis. /id/jelajah ↔ /en/discover).
   const entries = [{ id: route("home", "id"), en: route("home", "en") }];
-  for (const key of PAGE_KEYS) entries.push(langPaths(key));
+  // "saved"/favorit di-noindex (isinya dari localStorage → shell kosong bagi
+  // crawler) → jangan masukkan ke sitemap.
+  for (const key of PAGE_KEYS) if (key !== "saved") entries.push(langPaths(key));
   for (const gid of gameIds) entries.push({ id: `/id/game/${gid}`, en: `/en/game/${gid}` });
 
   const now = new Date().toISOString().slice(0, 10);
