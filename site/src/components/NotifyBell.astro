@@ -5,6 +5,7 @@
 // di localStorage (utk render ulang) & dikirim ke /api/subscribe (utk filter
 // pengiriman di worker push-notify).
 import { loadCatalog } from "../lib/catalog.mjs";
+import { route } from "../lib/routes.mjs";
 
 const VAPID = import.meta.env.PUBLIC_VAPID_KEY || "";
 const { lang } = Astro.props;
@@ -92,6 +93,10 @@ const T = {
             {T.turnoff}
           </button>
         </div>
+
+        <a href={route("privacy", lang)} style="display:block; margin-top:11px; font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint); text-decoration:none;">
+          {id ? "Data yang disimpan — Kebijakan Privasi ↗" : "Data we store — Privacy Policy ↗"}
+        </a>
       </div>
 
       <script is:inline define:vars={{ VAPID, T }}>

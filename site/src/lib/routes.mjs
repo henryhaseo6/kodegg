@@ -9,6 +9,7 @@ export const SLUGS = {
   saved: { id: "favorit", en: "saved" },
   about: { id: "tentang", en: "about" },
   contact: { id: "kontak", en: "contact" },
+  privacy: { id: "privasi", en: "privacy" },
 };
 
 export const PAGE_KEYS = Object.keys(SLUGS);
