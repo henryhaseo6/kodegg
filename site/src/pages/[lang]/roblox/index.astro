@@ -1,0 +1,85 @@
+---
+// Hub Roblox: /{lang}/roblox — daftar semua game Roblox yang dilacak.
+// (Fase 3 nambah search/trending/filter; Fase 1 = grid sederhana.)
+import Base from "../../../layouts/Base.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Breadcrumb from "../../../components/Breadcrumb.astro";
+import { LANGS } from "../../../lib/i18n.mjs";
+import { loadRobloxCatalog, loadRobloxHome } from "../../../lib/roblox.mjs";
+import { robloxHomePaths } from "../../../lib/routes.mjs";
+import { monthYear } from "../../../lib/seo.mjs";
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const id = lang === "id";
+const [games, home] = await Promise.all([loadRobloxCatalog(), loadRobloxHome(0)]);
+const my = monthYear(lang);
+
+const meta = id
+  ? { title: `Kode Roblox ${my} — Semua Game | KodeGG`, desc: `Kode Roblox terbaru & aktif ${my} untuk ${games.length}+ game (Blox Fruits, Blue Lock Rivals, Type Soul, dll). Diperbarui otomatis dari RoCodes.` }
+  : { title: `Roblox Codes ${my} — All Games | KodeGG`, desc: `Latest active Roblox codes for ${my} across ${games.length}+ games (Blox Fruits, Blue Lock Rivals, Type Soul, and more). Auto-updated from RoCodes.` };
+
+const site = Astro.site.href.replace(/\/$/, "");
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}` },
+      { "@type": "ListItem", position: 2, name: "Roblox", item: `${site}/${lang}/roblox` },
+    ],
+  },
+];
+---
+
+<Base lang={lang} title={meta.title} description={meta.desc} paths={robloxHomePaths()} jsonLd={jsonLd}>
+  <Header lang={lang} active={null} paths={robloxHomePaths()} />
+
+  <Breadcrumb items={[{ label: "KodeGG", href: `/${lang}` }, { label: "Roblox" }]} />
+
+  <main id="main" style="max-width:1280px; margin:0 auto; padding:22px 28px 60px;">
+    <div style="display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; color:var(--acc2); margin-bottom:16px;">
+      <span class="gg-pulse" style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span>
+      {id ? "ROBLOX · SYNC CEPAT" : "ROBLOX · FAST SYNC"}
+    </div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4.4vw,46px); line-height:1.05; letter-spacing:-0.03em; color:#fff; margin:0 0 14px; text-wrap:balance;">
+      {id ? "Kode Roblox terbaru" : "Latest Roblox codes"}
+    </h1>
+    <p style="font-size:16px; line-height:1.55; color:var(--muted); margin:0 0 26px; max-width:66ch;">
+      {id
+        ? `Kode aktif untuk ${games.length} game Roblox populer — ditarik otomatis dari RoCodes.gg dan diperbarui cepat. Klik game untuk lihat semua kode + cara redeem.`
+        : `Active codes for ${games.length} popular Roblox games — auto-pulled from RoCodes.gg and refreshed fast. Click a game for all its codes + how to redeem.`}
+    </p>
+    <div style="display:flex; flex-wrap:wrap; gap:24px; margin-bottom:34px;">
+      {[[games.length, id ? "game" : "games"], [home.counts.active, id ? "kode aktif" : "active codes"], [home.counts.archived, id ? "arsip" : "archived"]].map(([n, label]) => (
+        <div style="display:flex; align-items:baseline; gap:8px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:24px; color:var(--acc2);">{new Intl.NumberFormat(id ? "id-ID" : "en-GB").format(n)}</span>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint); text-transform:uppercase; letter-spacing:0.06em;">{label}</span>
+        </div>
+      ))}
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr)); gap:16px;">
+      {games.map((g) => (
+        <a href={`/${lang}/roblox/${g.slug}`} class="gg-card" style="display:flex; align-items:center; gap:13px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:15px; text-decoration:none;">
+          <span style="width:52px; height:52px; border-radius:13px; overflow:hidden; flex:0 0 auto; background:var(--surface2); border:1px solid var(--line2); display:block;">
+            <img src={g.icon} alt={g.name} width="52" height="52" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;"
+              onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,var(--surface2),var(--bg2))';" />
+          </span>
+          <span style="min-width:0;">
+            <span style="display:block; font-size:14.5px; font-weight:700; color:var(--txt); line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{g.name}</span>
+            <span style="display:block; font-family:'Space Mono',monospace; font-size:11.5px; color:var(--acc2); margin-top:3px;">
+              {g.activeCount > 0 ? `${g.activeCount} ${id ? "kode aktif" : "active"}` : (id ? "arsip" : "archive")}
+            </span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </main>
+
+  <Footer lang={lang} updatedAt={home.updatedAt} />
+</Base>

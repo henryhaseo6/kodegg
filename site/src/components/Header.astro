@@ -3,18 +3,19 @@
 // lagi tombol yang menukar teks di klien, melainkan TAUTAN ke halaman bahasa
 // lain. Toggle klien membuat crawler hanya melihat satu bahasa (lihat schema.md).
 import { t } from "../lib/i18n.mjs";
-import { route, langPaths } from "../lib/routes.mjs";
+import { route, langPaths, robloxHome } from "../lib/routes.mjs";
 import NotifyBell from "./NotifyBell.astro";
 
-// active = kunci halaman logis yang aktif (discover/codes/news) atau null.
+// active = kunci halaman logis yang aktif (discover/codes/news/roblox) atau null.
 // paths = {id, en} untuk toggle bahasa; default ke Beranda bila tak diberikan.
 const { lang, active = null, paths = langPaths("home") } = Astro.props;
 const tr = t(lang);
 const nav = [
   { key: "nav.discover", page: "discover" },
   { key: "nav.codes", page: "codes" },
+  { label: "Roblox", page: "roblox", href: robloxHome(lang) }, // vertikal terpisah, label brand
   { key: "nav.news", page: "news" },
-].map((n) => ({ ...n, href: route(n.page, lang), current: n.page === active }));
+].map((n) => ({ ...n, href: n.href ?? route(n.page, lang), current: n.page === active }));
 ---
 
 <header
@@ -45,7 +46,7 @@ const nav = [
             aria-current={item.current ? "page" : undefined}
             style={`font-size:14.5px; font-weight:500; text-decoration:none; color:${item.current ? "var(--acc)" : "var(--muted)"};`}
           >
-            {tr(item.key)}
+            {item.label ?? tr(item.key)}
           </a>
         ))
       }

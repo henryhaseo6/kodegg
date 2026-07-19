@@ -9,7 +9,7 @@ import CountdownScript from "./CountdownScript.astro";
 import { t } from "../lib/i18n.mjs";
 import { route, langPaths } from "../lib/routes.mjs";
 
-const { lang, codes, catalog, feed } = Astro.props;
+const { lang, codes, catalog, feed, roblox } = Astro.props;
 const tr = t(lang);
 const id = lang === "id";
 const L = (p) => `/${lang}${p}`;
@@ -19,6 +19,7 @@ const fmtDate = (iso) =>
   new Date(iso).toLocaleDateString(id ? "id-ID" : "en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Jakarta" });
 
 const topCodes = codes.active.slice(0, 8);
+const topRoblox = roblox?.top ?? []; // kode Roblox terbaru (RoCodes)
 const topFeed = feed.items.slice(0, 8); // event + berita tercampur, terbaru dulu
 const trending = [...catalog.games].sort((a, b) => a.pop - b.pop).slice(0, 7); // 7 = pas 1 baris desktop
 
@@ -102,6 +103,59 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
       ))}
     </div>
   </section>
+
+  <!-- KODE ROBLOX — vertikal terpisah (RoCodes), aksen ungu utk bedakan -->
+  {topRoblox.length > 0 && (
+    <section style="max-width:1280px; margin:0 auto; padding:28px 28px; background:var(--bg2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:11px; flex-wrap:wrap;">
+          <h2 style={SectionHead}>{id ? "Kode Roblox terbaru" : "Latest Roblox codes"}</h2>
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--acc2); border:1px solid rgba(139,107,255,0.5); background:rgba(139,107,255,0.1); padding:4px 9px; border-radius:7px;">Roblox</span>
+          <span style="display:inline-flex; align-items:center; gap:6px; font-family:'Space Mono',monospace; font-size:11px; color:var(--muted);">
+            <span class="gg-pulse" style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span>{id ? "sync cepat" : "fast sync"}
+          </span>
+        </div>
+        <a href={L("/roblox")} style={`${More} color:var(--acc2);`}>{id ? "Semua game Roblox" : "All Roblox games"} →</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:16px;">
+        {topRoblox.map((c) => (
+          <div class="gg-card" style="background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:17px; display:flex; flex-direction:column; gap:11px;">
+            <div style="display:flex; align-items:center; gap:9px;">
+              {c.icon && <img src={c.icon} alt="" width="30" height="30" style="border-radius:8px; object-fit:cover; flex:0 0 auto;" onerror="this.style.display='none'" />}
+              <a href={`${L("/roblox/")}${c.gameSlug}`} class="gg-game-link" style="font-size:13.5px; font-weight:700; color:var(--txt); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-decoration:none;">{c.name}</a>
+              {c.isNew && (
+                <span style="flex:0 0 auto; margin-left:auto; display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:#fff; background:var(--acc2); padding:3px 7px; border-radius:7px;">
+                  {id ? "Baru" : "New"}
+                </span>
+              )}
+            </div>
+            {c.reward && <div style="font-size:12px; color:var(--muted); line-height:1.4; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{c.reward}</div>}
+            <div style="display:flex; align-items:center; gap:8px; margin-top:auto;">
+              <code style="flex:1; min-width:0; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; color:var(--acc2); background:var(--bg); border:1px dashed var(--line2); border-radius:9px; padding:9px 11px; text-align:center; overflow:hidden; text-overflow:ellipsis;">{c.code ?? "—"}</code>
+              {c.code && (
+                <button class="gg-copy2" data-copy={c.code} data-label={tr("card.copy")} data-done={tr("card.copied")} type="button"
+                  style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid rgba(139,107,255,0.4); color:var(--acc2); background:var(--surface2); border-radius:9px; padding:9px 12px; transition:all .15s; flex:0 0 auto;">
+                  {tr("card.copy")}
+                </button>
+              )}
+            </div>
+            <div style="display:flex; justify-content:center; align-items:center; min-height:14px;">
+              {c.endsAt && Date.parse(c.endsAt) > nowMs ? (
+                <span style="display:inline-flex; align-items:center; gap:5px;">
+                  <span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint);">{tr("ev.endsIn")}</span>
+                  <span data-deadline={c.endsAt} data-ended={tr("ev.ended")} style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--warn); white-space:nowrap;">—</span>
+                </span>
+              ) : c.date ? (
+                <span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">{id ? "Rilis" : "Released"} {fmtDate(c.date)}</span>
+              ) : c.firstSeenAt ? (
+                <span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">{tr("card.seen")} {fmtDate(c.firstSeenAt)}</span>
+              ) : null}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
 
   <!-- BERITA & EVENT — kartu klik → modal (sama seperti halaman feed) -->
   {topFeed.length > 0 && (

@@ -1,0 +1,160 @@
+---
+// Halaman kode Roblox per-game: /{lang}/roblox/{slug}. Sumber: RoCodes.gg.
+import Base from "../../../layouts/Base.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Breadcrumb from "../../../components/Breadcrumb.astro";
+import CodeCard from "../../../components/CodeCard.astro";
+import CopyScript from "../../../components/CopyScript.astro";
+import CountdownScript from "../../../components/CountdownScript.astro";
+import { LANGS } from "../../../lib/i18n.mjs";
+import { loadRobloxCatalog, loadRobloxGame } from "../../../lib/roblox.mjs";
+import { robloxGamePaths, robloxHome } from "../../../lib/routes.mjs";
+import { monthYear } from "../../../lib/seo.mjs";
+
+export async function getStaticPaths() {
+  const games = await loadRobloxCatalog();
+  return LANGS.flatMap((lang) => games.map((g) => ({ params: { lang, game: g.slug }, props: { slug: g.slug } })));
+}
+
+const { lang, game: slug } = Astro.params;
+const id = lang === "id";
+const g = await loadRobloxGame(slug);
+if (!g) return Astro.redirect(`/${lang}/roblox`);
+
+const my = monthYear(lang);
+const ARCH_CAP = 24; // Fase 1: tampilkan arsip terbaru saja (windowing di Fase 3)
+const archShown = g.archive.slice(0, ARCH_CAP);
+
+const meta = id
+  ? {
+      title: `Kode Roblox ${g.name} ${my} — Terbaru & Aktif | KodeGG`,
+      desc: `Semua kode ${g.name} (Roblox) yang aktif ${my} + arsip. ${g.active.length} kode aktif, diperbarui otomatis dari RoCodes.`,
+    }
+  : {
+      title: `${g.name} Codes ${my} — Latest Roblox Codes | KodeGG`,
+      desc: `All active ${g.name} (Roblox) codes for ${my} + archive. ${g.active.length} active codes, auto-updated from RoCodes.`,
+    };
+
+const site = Astro.site.href.replace(/\/$/, "");
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}` },
+      { "@type": "ListItem", position: 2, name: "Roblox", item: `${site}${robloxHome(lang)}` },
+      { "@type": "ListItem", position: 3, name: g.name, item: `${site}/${lang}/roblox/${slug}` },
+    ],
+  },
+];
+if (g.howTo.length) {
+  jsonLd.push({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: id ? `Cara redeem kode ${g.name}` : `How to redeem ${g.name} codes`,
+    step: g.howTo.map((s, i) => ({ "@type": "HowToStep", position: i + 1, text: s })),
+  });
+}
+
+const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.02em; color:#fff; margin:0;";
+---
+
+<Base lang={lang} title={meta.title} description={meta.desc} paths={robloxGamePaths(slug)} jsonLd={jsonLd}>
+  <Header lang={lang} active={null} paths={{ id: "/id/roblox", en: "/en/roblox" }} />
+
+  <Breadcrumb
+    items={[
+      { label: "KodeGG", href: `/${lang}` },
+      { label: "Roblox", href: robloxHome(lang) },
+      { label: g.name },
+    ]}
+  />
+
+  <main id="main" style="max-width:1280px; margin:0 auto; padding:22px 28px 60px;">
+    <!-- HERO -->
+    <header style="display:flex; align-items:center; gap:16px; margin-bottom:8px;">
+      <span style="width:66px; height:66px; border-radius:16px; overflow:hidden; flex:0 0 auto; background:var(--surface2); border:1px solid var(--line2); display:block;">
+        <img src={g.icon} alt={g.name} width="66" height="66" style="width:100%;height:100%;object-fit:cover;display:block;"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,var(--surface2),var(--bg2))';" />
+      </span>
+      <div style="min-width:0;">
+        <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap;">
+          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--acc2); border:1px solid rgba(139,107,255,0.5); background:rgba(139,107,255,0.1); padding:3px 8px; border-radius:6px;">Roblox</span>
+          {g.verified && (
+            <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.12); border:1px solid rgba(55,227,139,0.35); padding:3px 8px; border-radius:6px;">✓ {id ? "Terverifikasi" : "Verified"}</span>
+          )}
+        </div>
+        <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(24px,4vw,36px); letter-spacing:-0.02em; color:#fff; margin:6px 0 0; line-height:1.1;">
+          {id ? `Kode ${g.name}` : `${g.name} Codes`}
+        </h1>
+      </div>
+    </header>
+    <p style="color:var(--muted); font-size:15px; margin:0 0 26px;">
+      {id
+        ? `${g.active.length} kode aktif · ${g.archive.length} di arsip · ditarik otomatis dari RoCodes.gg`
+        : `${g.active.length} active codes · ${g.archive.length} archived · auto-pulled from RoCodes.gg`}
+    </p>
+
+    <!-- KODE AKTIF -->
+    <section style="margin-bottom:38px;">
+      <h2 style={SectionHead}>{id ? "Kode aktif" : "Active codes"} <span style="color:var(--faint); font-size:16px; font-weight:700;">({g.active.length})</span></h2>
+      {g.active.length > 0 ? (
+        <div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:16px;">
+          {g.active.map((c) => <CodeCard card={c} lang={lang} linkGame={false} />)}
+        </div>
+      ) : (
+        <p style="margin-top:14px; color:var(--muted); font-size:15px;">{id ? "Belum ada kode aktif saat ini. Cek arsip di bawah." : "No active codes right now. Check the archive below."}</p>
+      )}
+    </section>
+
+    <!-- CARA REDEEM -->
+    <section style="margin-bottom:38px;">
+      <h2 style={SectionHead}>{id ? `Cara redeem kode ${g.name}` : `How to redeem ${g.name} codes`}</h2>
+      <div style="margin-top:16px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px;">
+        {g.howTo.length > 0 ? (
+          <ol style="margin:0; padding-left:22px; color:var(--txt); font-size:14.5px; line-height:1.9;">
+            {g.howTo.map((s) => <li>{s}</li>)}
+          </ol>
+        ) : (
+          <ol style="margin:0; padding-left:22px; color:var(--txt); font-size:14.5px; line-height:1.9;">
+            <li>{id ? "Buka game di Roblox" : "Open the game in Roblox"}</li>
+            <li>{id ? "Cari tombol Codes / ikon Twitter di menu (biasanya di layar utama atau Settings)" : "Find the Codes button / Twitter icon in the menu (usually on the main screen or Settings)"}</li>
+            <li>{id ? "Masukkan kode persis seperti tertulis (case-sensitive)" : "Enter the code exactly as written (case-sensitive)"}</li>
+            <li>{id ? "Tekan Redeem — hadiah langsung masuk" : "Press Redeem — rewards are granted instantly"}</li>
+          </ol>
+        )}
+        <p style="margin:14px 0 0; font-size:12.5px; color:var(--faint); font-family:'Space Mono',monospace;">
+          {id ? "Kode Roblox umumnya case-sensitive — salin persis." : "Roblox codes are usually case-sensitive — copy exactly."}
+        </p>
+      </div>
+    </section>
+
+    <!-- ARSIP -->
+    {g.archive.length > 0 && (
+      <section>
+        <details>
+          <summary style="cursor:pointer; display:flex; align-items:center; gap:10px; list-style:none;">
+            <h2 style={SectionHead}>{id ? "Arsip kode kedaluwarsa" : "Expired codes archive"} <span style="color:var(--faint); font-size:16px; font-weight:700;">({g.archive.length})</span></h2>
+            <svg class="gg-arch-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--faint)" stroke-width="2.5" stroke-linecap="round" style="transition:transform .2s;"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p style="color:var(--faint); font-size:13px; margin:12px 0 0; font-family:'Space Mono',monospace;">
+            {id ? `Menampilkan ${archShown.length} terbaru dari ${g.archive.length}. Kode kedaluwarsa disimpan sebagai database, tidak dihapus.` : `Showing latest ${archShown.length} of ${g.archive.length}. Expired codes are kept as a database, never deleted.`}
+          </p>
+          <div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr)); gap:12px;">
+            {archShown.map((c) => (
+              <div style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px; opacity:.72;">
+                <div style="font-size:12.5px; font-weight:700; color:var(--muted); margin-bottom:8px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{c.reward || (id ? "Kode kedaluwarsa" : "Expired code")}</div>
+                <code style="display:block; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--faint); background:var(--bg); border:1px dashed var(--line2); border-radius:8px; padding:7px 9px; text-align:center; overflow:hidden; text-overflow:ellipsis; text-decoration:line-through;">{c.code}</code>
+              </div>
+            ))}
+          </div>
+        </details>
+      </section>
+    )}
+  </main>
+
+  <Footer lang={lang} updatedAt={g.updatedAt} />
+  <CopyScript />
+  <CountdownScript lang={lang} />
+</Base>

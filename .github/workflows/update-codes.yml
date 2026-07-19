@@ -43,11 +43,12 @@ jobs:
         with:
           node-version: 22
 
-      - name: Tarik data time-sensitive (kode, event, berita)
+      - name: Tarik data time-sensitive (kode, event, berita, Roblox)
         run: |
           node worker/fetch-codes.mjs || echo "codes gagal, lanjut"
           node worker/fetch-events.mjs || echo "events gagal, lanjut"
           node worker/fetch-news.mjs || echo "news gagal, lanjut"
+          node worker/fetch-roblox.mjs || echo "roblox gagal, lanjut"
 
       - name: Commit bila ada perubahan
         run: |
