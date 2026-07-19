@@ -11,9 +11,16 @@ import { t } from "../lib/i18n.mjs";
 
 // linkGame: nama game ditautkan ke halaman game-nya (default true). Di-set false
 // pada halaman per-game itu sendiri (tak perlu menaut ke diri sendiri).
-const { card, lang, linkGame = true } = Astro.props;
+// accent: warna aksen kartu — default lime (mobile). Vertikal Roblox pakai ungu
+// (var(--acc2)) supaya konsisten dg section Roblox di homepage. gameBase: prefix
+// path game ("game" mobile / "roblox").
+const { card, lang, linkGame = true, accent = "var(--acc)", gameBase = "game" } = Astro.props;
 const tr = t(lang);
-const gameHref = card.gameSlug ? `/${lang}/game/${card.gameSlug}` : null;
+const gameHref = card.gameSlug ? `/${lang}/${gameBase}/${card.gameSlug}` : null;
+// Turunan aksen (dipakai untuk kode, badge "Baru", sorotan kartu baru).
+const isAcc2 = accent.includes("acc2");
+const accentRgb = isAcc2 ? "139,107,255" : "203,255,70";
+const badgeText = isAcc2 ? "#fff" : "var(--ink)";
 
 const isClaim = !card.code && card.claimUrl; // giveaway GamerPower
 
@@ -66,7 +73,7 @@ if (card.perm) {
   data-rank={card.rankMs}
   data-seen={card.firstSeenMs}
   data-new={card.isNew ? "1" : "0"}
-  style={`background:var(--surface); border:1px solid ${card.isNew ? "rgba(203,255,70,0.5)" : "var(--line)"}; border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;${card.isNew ? " box-shadow:0 0 0 1px rgba(203,255,70,0.12),0 10px 34px rgba(203,255,70,0.08);" : ""}`}
+  style={`background:var(--surface); border:1px solid ${card.isNew ? `rgba(${accentRgb},0.5)` : "var(--line)"}; border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:14px;${card.isNew ? ` box-shadow:0 0 0 1px rgba(${accentRgb},0.12),0 10px 34px rgba(${accentRgb},0.08);` : ""}`}
 >
   <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
     <div style="display:flex; align-items:center; gap:11px; min-width:0;">
@@ -113,10 +120,10 @@ if (card.perm) {
     {
       card.isNew ? (
         <span
-          class="gg-new"
-          style="flex:0 0 auto; display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ink); background:var(--acc); border:1px solid var(--acc); padding:4px 9px; border-radius:8px;"
+          class:list={[{ "gg-new": !isAcc2 }]}
+          style={`flex:0 0 auto; display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:${badgeText}; background:${accent}; border:1px solid ${accent}; padding:4px 9px; border-radius:8px;`}
         >
-          <span class="gg-new-dot" aria-hidden="true" style="width:5px; height:5px; border-radius:50%; background:var(--ink);" />
+          <span class="gg-new-dot" aria-hidden="true" style={`width:5px; height:5px; border-radius:50%; background:${badgeText};`} />
           {tr("card.new")}
         </span>
       ) : (
@@ -150,7 +157,7 @@ if (card.perm) {
       </a>
     ) : (
       <div style="display:flex; align-items:center; gap:9px; margin-top:auto;">
-        <code style="flex:1; min-width:0; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center; overflow:hidden; text-overflow:ellipsis;">
+        <code style={`flex:1; min-width:0; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:${accent}; background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center; overflow:hidden; text-overflow:ellipsis;`}>
           {card.code}
         </code>
         <button

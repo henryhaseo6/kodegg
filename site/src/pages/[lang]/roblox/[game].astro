@@ -7,6 +7,7 @@ import Breadcrumb from "../../../components/Breadcrumb.astro";
 import CodeCard from "../../../components/CodeCard.astro";
 import CopyScript from "../../../components/CopyScript.astro";
 import CountdownScript from "../../../components/CountdownScript.astro";
+import ShareButton from "../../../components/ShareButton.astro";
 import { LANGS } from "../../../lib/i18n.mjs";
 import { loadRobloxCatalog, loadRobloxGame } from "../../../lib/roblox.mjs";
 import { robloxGamePaths, robloxHome } from "../../../lib/routes.mjs";
@@ -89,6 +90,13 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
           {id ? `Kode ${g.name}` : `${g.name} Codes`}
         </h1>
       </div>
+      <div style="margin-left:auto;">
+        <ShareButton
+          url={`${site}/${lang}/roblox/${slug}`}
+          text={id ? `Kode ${g.name} (Roblox) terbaru — KodeGG` : `Latest ${g.name} (Roblox) codes — KodeGG`}
+          lang={lang}
+        />
+      </div>
     </header>
     <p style="color:var(--muted); font-size:15px; margin:0 0 26px;">
       {id
@@ -98,14 +106,32 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
 
     <!-- KODE AKTIF -->
     <section style="margin-bottom:38px;">
-      <h2 style={SectionHead}>{id ? "Kode aktif" : "Active codes"} <span style="color:var(--faint); font-size:16px; font-weight:700;">({g.active.length})</span></h2>
+      <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px; gap:12px; flex-wrap:wrap;">
+        <h2 style={SectionHead}>{id ? "Kode aktif" : "Active codes"} <span style="color:var(--faint); font-size:16px; font-weight:700;">({g.active.length})</span></h2>
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          {g.active.some((c) => c.code) && (
+            <button
+              data-copy-all
+              data-codes={g.active.map((c) => c.code).filter(Boolean).join("\n")}
+              data-label={id ? "Salin semua" : "Copy all"}
+              data-done={id ? "Tersalin ✓" : "Copied ✓"}
+              type="button"
+              style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid rgba(139,107,255,0.4); color:var(--acc2); background:var(--surface2); border-radius:9px; padding:8px 13px; white-space:nowrap; transition:all .15s;"
+            >
+              {id ? "Salin semua" : "Copy all"}
+            </button>
+          )}
+          <a href={robloxHome(lang)} style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--acc2); text-decoration:none; white-space:nowrap;">{id ? "Semua game Roblox" : "All Roblox games"} →</a>
+        </div>
+      </div>
       {g.active.length > 0 ? (
-        <div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:16px;">
-          {g.active.map((c) => <CodeCard card={c} lang={lang} linkGame={false} />)}
+        <div data-code-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:16px;">
+          {g.active.map((c) => <CodeCard card={c} lang={lang} linkGame={false} accent="var(--acc2)" gameBase="roblox" />)}
         </div>
       ) : (
-        <p style="margin-top:14px; color:var(--muted); font-size:15px;">{id ? "Belum ada kode aktif saat ini. Cek arsip di bawah." : "No active codes right now. Check the archive below."}</p>
+        <p style="color:var(--muted); font-size:15px;">{id ? "Belum ada kode aktif saat ini. Cek arsip di bawah." : "No active codes right now. Check the archive below."}</p>
       )}
+      <nav data-code-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:26px;"></nav>
     </section>
 
     <!-- CARA REDEEM -->
@@ -157,4 +183,53 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
   <Footer lang={lang} updatedAt={g.updatedAt} />
   <CopyScript />
   <CountdownScript lang={lang} />
+
+  {g.active.length > 8 && (
+    <script is:inline define:vars={{ CODE_PAGE: 8 }}>
+      (function () {
+        const grid = document.querySelector("[data-code-grid]");
+        const pager = document.querySelector("[data-code-pager]");
+        if (!grid || !pager) return;
+        const cards = Array.from(grid.querySelectorAll("[data-code-card]"));
+        let page = 1;
+        function pageList(cur, total) {
+          const want = new Set([1, total, cur, cur - 1, cur + 1]);
+          const arr = [...want].filter((n) => n >= 1 && n <= total).sort((a, b) => a - b);
+          const out = []; let prev = 0;
+          for (const n of arr) { if (n - prev > 1) out.push("…"); out.push(n); prev = n; }
+          return out;
+        }
+        function pbtn(label, opts) {
+          const el = document.createElement("button");
+          el.type = "button"; el.textContent = label; el.disabled = !!opts.disabled;
+          el.style.cssText =
+            "cursor:pointer; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; min-width:38px; height:38px; padding:0 11px; border-radius:10px; border:1px solid " +
+            (opts.active ? "var(--acc2)" : "var(--line2)") + "; background:" + (opts.active ? "var(--acc2)" : "var(--surface)") +
+            "; color:" + (opts.active ? "#fff" : opts.disabled ? "var(--faint)" : "var(--txt)") + (opts.disabled ? "; opacity:0.5; cursor:default" : "") + ";";
+          if (opts.onClick && !opts.disabled) el.addEventListener("click", opts.onClick);
+          return el;
+        }
+        function render() {
+          const total = Math.max(1, Math.ceil(cards.length / CODE_PAGE));
+          if (page > total) page = total;
+          const start = (page - 1) * CODE_PAGE;
+          cards.forEach((c, i) => (c.style.display = i >= start && i < start + CODE_PAGE ? "flex" : "none"));
+          pager.innerHTML = "";
+          if (total <= 1) return;
+          const go = (n) => { page = n; render(); grid.scrollIntoView({ behavior: "smooth", block: "start" }); };
+          pager.appendChild(pbtn("‹", { disabled: page === 1, onClick: () => go(page - 1) }));
+          for (const n of pageList(page, total)) {
+            if (n === "…") {
+              const d = document.createElement("span");
+              d.textContent = "…";
+              d.style.cssText = "color:var(--faint); font-family:'Space Mono',monospace; padding:0 4px;";
+              pager.appendChild(d);
+            } else pager.appendChild(pbtn(String(n), { active: n === page, onClick: () => go(n) }));
+          }
+          pager.appendChild(pbtn("›", { disabled: page === total, onClick: () => go(page + 1) }));
+        }
+        render();
+      })();
+    </script>
+  )}
 </Base>
