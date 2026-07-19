@@ -44,7 +44,7 @@ async function main() {
       try {
         const { active, archive, meta: m } = await fetchRoCodes(meta.slug);
         // Cross-check: tandai kode yang JUGA aktif di situs editorial (badge Verified).
-        const { set: xset, sources: xsrc } = await crossCheckActive(meta.checkSlug ?? meta.slug);
+        const { set: xset, bySite } = await crossCheckActive(meta.checkSlug ?? meta.slug);
         const src = { source: "RoCodes.gg", sourceUrl: `https://rocodes.gg/codes/${meta.slug}` };
         let nVer = 0;
         for (const c of active) {
@@ -52,6 +52,9 @@ async function main() {
           if (verified) nVer += 1;
           freshActive.push({ game: id, gameName: meta.name, ...src, ...c, verified });
         }
+        // Atribusi = HANYA situs yg mengkonfirmasi ≥1 kode aktif RoCodes.
+        const roActive = new Set(active.map((c) => (c.code ?? "").trim().toLowerCase()));
+        const xsrc = bySite.filter((s) => [...s.set].some((c) => roActive.has(c))).map((s) => s.name);
         for (const c of archive) freshArchive.push({ game: id, gameName: meta.name, ...src, ...c, status: "expired" });
         games[id] = {
           name: meta.name,

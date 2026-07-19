@@ -2,62 +2,78 @@
 //
 // Model 2-lapis: RoCodes = sumber KECEPATAN (semua kode tampil cepat). Cross-check
 // = lapisan VERIFIKASI: kode RoCodes yang JUGA dilisting AKTIF oleh ≥1 situs
-// editorial → badge "Verified". Ini TIDAK menahan/menyembunyikan kode (beda dari
-// cross-check editorial game mobile yang jadi gerbang) — cuma menaikkan kepercayaan.
+// editorial → badge "Verified". TIDAK menahan/menyembunyikan kode (beda dari
+// cross-check editorial game mobile yang jadi gerbang) — hanya menaikkan kepercayaan.
 //
-// Karena kita hanya mengambil IRISAN dengan kode RoCodes, parser boleh longgar:
-// kata ter-bold yang bukan kode tak akan cocok dg key RoCodes → aman.
+// Karena kita hanya mengambil IRISAN dengan kode RoCodes, extractor boleh LONGGAR
+// (union <strong>/<code>/<td>): token ter-bold yang bukan kode tak akan cocok dg
+// key RoCodes → aman. Lebih banyak sumber = lebih banyak kode terkonfirmasi.
+//
+// Menambah situs: tambah entri di SITES (name + url(slug)). Slug = slug game
+// Roblox (mis. "blox-fruits"); tiap situs menyusun path-nya sendiri.
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 const CODE_RE = /^[A-Za-z0-9_!.\- ]{3,40}$/;
+const EXTRACTORS = [
+  /<strong>([^<]{3,40})<\/strong>/gi, // pockettactics/gamerant/tryhardguides
+  /<code[^>]*>([^<]{3,40})<\/code>/gi, // sebagian situs pakai <code>
+  /<td[^>]*>([^<]{3,40})<\/td>/gi, // tabel (pcgamesn)
+];
 
 async function fetchHtml(url) {
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
+  const res = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.text();
 }
 
-// Ambil bagian AKTIF (sebelum heading "Expired codes") lalu ekstrak kode ter-bold.
-function activeStrongs(html, requireLi) {
-  const cut = html.search(/expired\s+codes/i);
+// Kode di bagian AKTIF (sebelum heading "Expired codes"), union beberapa pola.
+function activeCodes(html) {
+  const cut = html.search(/expired\s*codes/i);
   const seg = cut > 0 ? html.slice(0, cut) : html;
-  const re = requireLi
-    ? /<li>\s*<strong>([^<]{3,40})<\/strong>/gi // pockettactics: kode dalam <li>
-    : /<strong>([^<]{3,40})<\/strong>/gi; // pcgamesn: kode bold (bisa di tabel)
-  const out = [];
-  for (const m of seg.matchAll(re)) {
-    const c = m[1].trim();
-    if (CODE_RE.test(c)) out.push(c);
+  const out = new Set();
+  for (const re of EXTRACTORS) {
+    for (const m of seg.matchAll(re)) {
+      const c = m[1].trim();
+      if (CODE_RE.test(c)) out.add(c.toLowerCase());
+    }
   }
   return out;
 }
 
+// Situs cross-check. Tiap fetch di-timeout & try/catch → satu gagal tak jatuhkan
+// yang lain. Diverifikasi cocok dg kode RoCodes (lihat probe): tryhardguides &
+// gamerant paling lengkap; pockettactics stabil; pcgamesn/progameguides parsial.
 const SITES = [
-  { name: "Pocket Tactics", url: (s) => `https://www.pockettactics.com/${s}/codes`, li: true },
-  { name: "PCGamesN", url: (s) => `https://www.pcgamesn.com/${s}/codes`, li: false },
+  { name: "Pocket Tactics", url: (s) => `https://www.pockettactics.com/${s}/codes` },
+  { name: "Try Hard Guides", url: (s) => `https://tryhardguides.com/${s}-codes/` },
+  { name: "Game Rant", url: (s) => `https://gamerant.com/${s}-codes/` },
+  { name: "PCGamesN", url: (s) => `https://www.pcgamesn.com/${s}/codes` },
+  { name: "Pro Game Guides", url: (s) => `https://progameguides.com/roblox/${s}-codes/` },
 ];
 
 /**
- * Kumpulan kode AKTIF menurut situs editorial untuk 1 game.
- * @returns {Promise<{set:Set<string>, sources:string[]}>} set = key kode lowercase.
+ * Kode AKTIF menurut situs editorial untuk 1 game.
+ * @returns {Promise<{set:Set<string>, bySite:{name:string,set:Set<string>}[]}>}
+ *   set = gabungan semua kode (lowercase); bySite = per-situs (untuk atribusi
+ *   yang akurat — hanya situs yang cocok dg kode RoCodes yang layak dikreditkan).
  */
 export async function crossCheckActive(slug) {
   const set = new Set();
-  const sources = [];
+  const bySite = [];
   await Promise.all(
     SITES.map(async (site) => {
       try {
-        const codes = activeStrongs(await fetchHtml(site.url(slug)), site.li);
-        if (codes.length) {
-          for (const c of codes) set.add(c.toLowerCase());
-          sources.push(site.name);
+        const codes = activeCodes(await fetchHtml(site.url(slug)));
+        if (codes.size) {
+          for (const c of codes) set.add(c);
+          bySite.push({ name: site.name, set: codes });
         }
       } catch {
-        /* situs gagal/tak punya game → lewati (kode cukup tak ter-verify) */
+        /* situs gagal/tak punya game → lewati */
       }
     }),
   );
-  return { set, sources };
+  return { set, bySite };
 }
