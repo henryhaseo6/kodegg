@@ -43,15 +43,17 @@ const srcUrl = (s) => card.sourceUrls?.[s] ?? (s === primarySource ? card.source
 const endsMs = card.endsAt ? Date.parse(card.endsAt) : NaN;
 const hasCountdown = !card.perm && Number.isFinite(endsMs) && endsMs > Date.now();
 
+// Badge tanggal 2-baris: label di atas, nilai di bawah (kolom kanan lebih ramping
+// → atribusi sumber dapat tempat lebih lebar).
 let badge;
 if (card.perm) {
-  badge = { text: lang === "id" ? "Tanpa batas" : "No expiry", color: "var(--ok)" };
+  badge = { label: lang === "id" ? "Tanpa batas" : "No expiry", value: null, color: "var(--ok)" };
 } else if (card.date) {
-  badge = { text: `${lang === "id" ? "Rilis" : "Released"} ${fmtDate(card.date)}`, color: "var(--faint)" };
+  badge = { label: lang === "id" ? "Rilis" : "Released", value: fmtDate(card.date), color: "var(--faint)" };
 } else if (card.firstSeenAt) {
-  badge = { text: `${tr("card.seen")} ${fmtDate(card.firstSeenAt)}`, color: "var(--faint)" };
+  badge = { label: tr("card.seen"), value: fmtDate(card.firstSeenAt), color: "var(--faint)" };
 } else {
-  badge = { text: "—", color: "var(--faint)" };
+  badge = { label: "—", value: null, color: "var(--faint)" };
 }
 ---
 
@@ -188,13 +190,14 @@ if (card.perm) {
     </span>
     {
       hasCountdown ? (
-        <span style="display:inline-flex; align-items:center; gap:5px; flex:0 0 auto;">
-          <span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">{tr("ev.endsIn")}</span>
+        <span style="display:flex; flex-direction:column; align-items:flex-end; gap:2px; flex:0 0 auto; text-align:right;">
+          <span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); white-space:nowrap;">{tr("ev.endsIn")}</span>
           <span data-deadline={card.endsAt} data-ended={lang === "id" ? "Berakhir" : "Ended"} style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--warn); white-space:nowrap;">—</span>
         </span>
       ) : (
-        <span style={`font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:${badge.color}; text-align:right;`}>
-          {badge.text}
+        <span style="display:flex; flex-direction:column; align-items:flex-end; gap:2px; flex:0 0 auto; text-align:right;">
+          <span style={`font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:${badge.color}; white-space:nowrap;`}>{badge.label}</span>
+          {badge.value && <span style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--faint); white-space:nowrap;">{badge.value}</span>}
         </span>
       )
     }
