@@ -63,7 +63,6 @@ const SITES = [
   { name: "Game Rant", url: (s) => `https://gamerant.com/${s}-codes/` },
   { name: "PCGamesN", url: (s) => `https://www.pcgamesn.com/${s}/codes` },
   { name: "Pro Game Guides", url: (s) => `https://progameguides.com/roblox/${s}-codes/` },
-  { name: "Roblox Den", url: (s) => `https://robloxden.com/game-codes/${s}`, extract: robloxDenActive },
 ];
 
 /**

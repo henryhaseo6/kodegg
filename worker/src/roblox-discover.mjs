@@ -5,6 +5,8 @@
 // Dipakai fetch-roblox untuk MENUMBUHKAN daftar game otomatis, dimulai dari yang
 // paling ramai (yang punya halaman kode di RoCodes).
 
+import { fetchRobloxDenSlugs } from "./sources/robloxden.mjs";
+
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
@@ -96,19 +98,24 @@ export function inferGenres(name, slug = "") {
 }
 
 /**
- * Game populer yang PUNYA halaman kode di RoCodes, urut pemain terbanyak.
- * (Belum tentu ada kode aktif — itu dikonfirmasi saat fetch di fetch-roblox.)
- * @returns {Promise<{slug:string, name:string, universeId:number, players:number}[]>}
+ * Game populer yang punya halaman kode di RoCodes ATAU Roblox Den, urut pemain
+ * terbanyak. Tiap game bawa slug untuk masing-masing sumber yang punya (bisa
+ * salah satu / keduanya) → dua primary saling melengkapi coverage.
+ * @returns {Promise<{rocodesSlug:string|null, denSlug:string|null, name:string, universeId:number, players:number}[]>}
  */
 export async function discoverPopularWithCodes() {
-  const [top, roset] = await Promise.all([discoverTopGames(), fetchRoCodesSlugs()]);
+  const [top, roset, denset] = await Promise.all([discoverTopGames(), fetchRoCodesSlugs(), fetchRobloxDenSlugs()]);
   const out = [];
   const seen = new Set();
   for (const g of top) {
-    const slug = matchSlug(g.name, roset);
-    if (!slug || seen.has(slug)) continue;
-    seen.add(slug);
-    out.push({ slug, name: g.name, universeId: g.universeId, players: g.players });
+    const cands = candidateSlugs(g.name);
+    const rocodesSlug = cands.find((s) => roset.has(s)) ?? null;
+    const denSlug = cands.find((s) => denset.has(s)) ?? null;
+    if (!rocodesSlug && !denSlug) continue;
+    const key = rocodesSlug ?? denSlug;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ rocodesSlug, denSlug, name: g.name, universeId: g.universeId, players: g.players });
   }
   return out;
 }

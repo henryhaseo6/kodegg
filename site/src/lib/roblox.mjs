@@ -21,20 +21,15 @@ function shape(item, games) {
   // rankMs = kunci sort "Terbaru": tanggal rilis dulu; kalau tak ada & bukan
   // impor massal pertama, pakai firstSeen. (Lihat codes.mjs untuk alasan `bulk`.)
   const rankMs = dateMs || (item.bulk ? 0 : firstSeenMs);
-  const rocodesUrl = g.rocodesSlug ? `https://rocodes.gg/codes/${g.rocodesSlug}` : null;
   return {
-    ...item,
+    ...item, // termasuk source/sources/sourceUrls dari worker (RoCodes &/atau Roblox Den)
     name: g.name ?? item.gameName ?? "—",
     icon: robloxIconUrl(item.game),
     gameSlug: g.slug ?? item.game,
     rankMs,
     firstSeenMs,
     isNew: dateMs > 0 && NOW_MS - dateMs <= NEW_DAYS * 86400000,
-    verified: item.verified === true, // diisi Fase 2 (cross-check editorial)
-    // Atribusi (dipakai CodeCard): tiap item Roblox berasal dari RoCodes.
-    source: "RoCodes.gg",
-    sources: ["RoCodes.gg"],
-    sourceUrls: rocodesUrl ? { "RoCodes.gg": rocodesUrl } : {},
+    verified: item.verified === true,
     search: `${g.name ?? ""} ${item.code ?? ""} ${item.reward ?? ""}`.toLowerCase(),
   };
 }
