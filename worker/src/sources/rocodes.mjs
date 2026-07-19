@@ -90,7 +90,11 @@ export async function fetchRoCodes(slug) {
 
   const active = best.active.map(shapeCode).filter(Boolean);
   const archive = best.expired.map(shapeCode).filter(Boolean);
+  // Nama game BERSIH dari <title> ("Blox Fruits Codes | ..." → "Blox Fruits") —
+  // lebih rapi dari nama Roblox yang berdekorasi ([UPD], emoji, dll).
+  const tm = html.match(/<title>([^<]+?)\s+Codes\b/i);
   const meta = {
+    name: tm ? tm[1].trim() : null,
     universeId: R(best.v.universeId) ?? null,
     placeId: R(best.v.placeId) ?? null,
     verified: R(best.v.verified) === true,

@@ -49,16 +49,17 @@ jobs:
           node worker/fetch-events.mjs || echo "events gagal, lanjut"
           node worker/fetch-news.mjs || echo "news gagal, lanjut"
           node worker/fetch-roblox.mjs || echo "roblox gagal, lanjut"
+          node worker/fetch-roblox-icons.mjs || echo "roblox icons gagal, lanjut"
 
       - name: Commit bila ada perubahan
         run: |
-          if git diff --quiet -- worker/data/; then
+          if git diff --quiet -- worker/data/ site/public/assets/roblox/; then
             echo "Tidak ada perubahan data."
             exit 0
           fi
           git config user.name "kodegg-bot"
           git config user.email "bot@kodegg.com"
-          git add worker/data/
+          git add worker/data/ site/public/assets/roblox/
           git commit -m "chore: update data (kode/event/berita)"
           # Push tahan-balapan: remote bisa MAJU di antara checkout & push (push
           # manual atau run lain) → push ditolak "fetch first". Solusi: rebase di

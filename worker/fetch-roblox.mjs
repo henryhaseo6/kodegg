@@ -1,13 +1,16 @@
 // KodeGG — penarik kode ROBLOX (vertikal terpisah dari game mobile).
-// Sumber: RoCodes.gg (real-time). Output: data/roblox-codes.json.
+// Sumber kode: RoCodes.gg. Output: data/roblox-codes.json.
 //
-// Jalankan: node fetch-roblox.mjs
-// Struktur output mirror codes.json (active/archive + firstSeenAt + arsip
-// terakumulasi lewat mergeWithPrevious) + peta `games` (meta per game: nama,
-// slug, universeId utk thumbnail, howTo langkah redeem, verified).
+// Fase 3 — AUTO-EXPAND: daftar game bukan lagi statis. Tiap run:
+//   1. SEED = ROBLOX_GAMES (kurasi, selalu ada).
+//   2. AKUMULASI = game yang sudah masuk run sebelumnya (tak pernah dibuang → tak
+//      ada 404/churn untuk halaman yang sudah terindeks).
+//   3. DISCOVERY = game Roblox TERPOPULER saat ini (explore-api "top-playing-now")
+//      yang punya halaman kode di RoCodes → ditambah, prioritas pemain terbanyak,
+//      sampai batas MAX_GAMES.
+// Game tanpa kode aktif otomatis gugur (fetchRoCodes gagal → di-skip).
 //
-// Cadence: churn kode Roblox cepat → dijadwalkan lebih sering dari mobile
-// (lihat .github/workflows/update-roblox.yml).
+// Konkurensi dibatasi (CONCURRENCY) supaya tak membanjiri RoCodes/situs editorial.
 
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
@@ -16,10 +19,13 @@ import { fileURLToPath } from "node:url";
 import { ROBLOX_GAMES, robloxSlug } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
+import { discoverPopularWithCodes, inferGenres } from "./src/roblox-discover.mjs";
 import { mergeWithPrevious } from "./src/archive.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, "data/roblox-codes.json");
+const MAX_GAMES = 60; // batas total game (kurasi + akumulasi + discovery)
+const CONCURRENCY = 8; // game diproses paralel maksimal sekian sekaligus
 
 async function readPrevious() {
   try {
@@ -29,8 +35,22 @@ async function readPrevious() {
   }
 }
 
-// Jumlah pemain KONKUREN (realtime) per game dari API RESMI Roblox — dipakai
-// untuk sort "Terpopuler". `id` di respons = universeId, `playing` = pemain aktif.
+// Jalankan fn untuk tiap item, maksimal `limit` bersamaan.
+async function mapLimit(items, limit, fn) {
+  const out = [];
+  let i = 0;
+  await Promise.all(
+    Array.from({ length: Math.min(limit, items.length) }, async () => {
+      while (i < items.length) {
+        const idx = i++;
+        out[idx] = await fn(items[idx], idx);
+      }
+    }),
+  );
+  return out;
+}
+
+// Player count KONKUREN (realtime) dari API RESMI Roblox (sort "Terpopuler").
 async function fetchPlayers(universeIds) {
   const out = {};
   for (let i = 0; i < universeIds.length; i += 50) {
@@ -40,67 +60,102 @@ async function fetchPlayers(universeIds) {
       if (!res.ok) continue;
       for (const g of (await res.json()).data ?? []) out[g.id] = g.playing ?? 0;
     } catch {
-      /* API sibuk → biarkan; nilai lama dipertahankan */
+      /* API sibuk → pertahankan nilai lama */
     }
   }
   return out;
+}
+
+// Bangun daftar game run ini: seed + akumulasi prev + discovery populer (cap).
+async function buildGameSet(prevGames) {
+  const set = new Map(); // id → { rocodesSlug, name, genres, universeId?, players?, seed? }
+  const slugs = new Set();
+  const add = (id, e) => {
+    if (set.has(id) || slugs.has(e.rocodesSlug)) return;
+    set.set(id, e);
+    slugs.add(e.rocodesSlug);
+  };
+  for (const [id, m] of Object.entries(ROBLOX_GAMES)) add(id, { rocodesSlug: m.slug, name: m.name, genres: m.genres ?? [], seed: true });
+  for (const [id, g] of Object.entries(prevGames)) add(id, { rocodesSlug: g.rocodesSlug ?? g.slug ?? id, name: g.name, genres: g.genres ?? [], universeId: g.universeId, players: g.players });
+  const popular = await discoverPopularWithCodes();
+  for (const g of popular) {
+    if (set.size >= MAX_GAMES) break;
+    add(g.slug, { rocodesSlug: g.slug, name: g.name, genres: inferGenres(g.name, g.slug), universeId: g.universeId, players: g.players });
+  }
+  return set;
 }
 
 async function main() {
   const now = new Date().toISOString();
   const prev = await readPrevious();
 
+  const set = await buildGameSet(prev.games ?? {});
+  const entries = [...set.entries()];
+  console.log(`memproses ${entries.length} game (seed ${Object.keys(ROBLOX_GAMES).length} + akumulasi/discovery)…`);
+
+  const results = await mapLimit(entries, CONCURRENCY, async ([id, entry]) => {
+    try {
+      const { active, archive, meta: m } = await fetchRoCodes(entry.rocodesSlug);
+      const { set: xset, bySite } = await crossCheckActive(entry.rocodesSlug);
+      const name = entry.seed ? entry.name : m.name || entry.name; // nama bersih dari RoCodes utk hasil discovery
+      const src = { source: "RoCodes.gg", sourceUrl: `https://rocodes.gg/codes/${entry.rocodesSlug}` };
+      const fActive = [];
+      const fArchive = [];
+      let nVer = 0;
+      for (const c of active) {
+        const verified = xset.has((c.code ?? "").trim().toLowerCase());
+        if (verified) nVer += 1;
+        fActive.push({ game: id, gameName: name, ...src, ...c, verified });
+      }
+      const roActive = new Set(active.map((c) => (c.code ?? "").trim().toLowerCase()));
+      const xsrc = bySite.filter((s) => [...s.set].some((c) => roActive.has(c))).map((s) => s.name);
+      for (const c of archive) fArchive.push({ game: id, gameName: name, ...src, ...c, status: "expired" });
+      console.log(`  [${id}] ✓ ${active.length} aktif (${nVer} verified) + ${archive.length} arsip`);
+      return {
+        id,
+        ok: true,
+        fActive,
+        fArchive,
+        meta: {
+          name,
+          slug: robloxSlug(id),
+          rocodesSlug: entry.rocodesSlug,
+          genres: entry.genres ?? [],
+          universeId: m.universeId ?? entry.universeId ?? null,
+          placeId: m.placeId ?? null,
+          verified: m.verified,
+          crossCheck: xsrc,
+          howTo: m.howTo,
+        },
+      };
+    } catch (err) {
+      return { id, ok: false, err: err.message };
+    }
+  });
+
   const freshActive = [];
   const freshArchive = [];
   const games = {};
   const covered = new Set();
   let failed = 0;
-
-  await Promise.all(
-    Object.entries(ROBLOX_GAMES).map(async ([id, meta]) => {
-      try {
-        const { active, archive, meta: m } = await fetchRoCodes(meta.slug);
-        // Cross-check: tandai kode yang JUGA aktif di situs editorial (badge Verified).
-        const { set: xset, bySite } = await crossCheckActive(meta.checkSlug ?? meta.slug);
-        const src = { source: "RoCodes.gg", sourceUrl: `https://rocodes.gg/codes/${meta.slug}` };
-        let nVer = 0;
-        for (const c of active) {
-          const verified = xset.has((c.code ?? "").trim().toLowerCase());
-          if (verified) nVer += 1;
-          freshActive.push({ game: id, gameName: meta.name, ...src, ...c, verified });
-        }
-        // Atribusi = HANYA situs yg mengkonfirmasi ≥1 kode aktif RoCodes.
-        const roActive = new Set(active.map((c) => (c.code ?? "").trim().toLowerCase()));
-        const xsrc = bySite.filter((s) => [...s.set].some((c) => roActive.has(c))).map((s) => s.name);
-        for (const c of archive) freshArchive.push({ game: id, gameName: meta.name, ...src, ...c, status: "expired" });
-        games[id] = {
-          name: meta.name,
-          slug: robloxSlug(id),
-          rocodesSlug: meta.slug,
-          genres: meta.genres ?? [],
-          universeId: m.universeId,
-          placeId: m.placeId,
-          verified: m.verified,
-          crossCheck: xsrc, // situs editorial yg mengkonfirmasi kode game ini
-          howTo: m.howTo,
-        };
-        covered.add(id);
-        console.log(`  [${id}] ✓ ${active.length} aktif (${nVer} verified${xsrc.length ? ` via ${xsrc.join("+")}` : ""}) + ${archive.length} arsip`);
-      } catch (err) {
-        failed += 1;
-        console.log(`  [${id}] · gagal: ${err.message}`);
-      }
-    }),
-  );
+  for (const r of results) {
+    if (!r || !r.ok) {
+      failed += 1;
+      continue;
+    }
+    freshActive.push(...r.fActive);
+    freshArchive.push(...r.fArchive);
+    games[r.id] = r.meta;
+    covered.add(r.id);
+  }
 
   const { active, archive, newlyArchived } = mergeWithPrevious(freshActive, freshArchive, prev, covered, now);
 
-  // Pertahankan meta game dari run sebelumnya bila game gagal ditarik run ini
-  // (biar halaman/thumbnail tak hilang saat RoCodes down sesaat).
+  // Game yang gagal ditarik run ini tetap dipertahankan metanya (biar halaman &
+  // thumbnail tak hilang saat sumber down sesaat).
   const mergedGames = { ...(prev.games ?? {}), ...games };
 
-  // Player count realtime (langsung dari Roblox) untuk semua game yang punya
-  // universeId. Gagal fetch → pertahankan nilai lama (jangan nol-kan ranking).
+  // Player count realtime dari Roblox (untuk semua game ber-universeId).
   const uids = [...new Set(Object.values(mergedGames).map((g) => g.universeId).filter(Boolean))];
   const players = await fetchPlayers(uids);
   for (const g of Object.values(mergedGames)) {
@@ -116,13 +171,12 @@ async function main() {
   };
   await writeFile(OUT, JSON.stringify(payload, null, 2));
 
-  // Kode BARU run ini (buat notifikasi/heuristik "Baru") → new-roblox-codes.json.
   const newly = active.filter((c) => c.firstSeenAt === now && c.code);
   await writeFile(resolve(dirname(OUT), "new-roblox-codes.json"), JSON.stringify({ generatedAt: now, codes: newly }, null, 2));
 
   console.log(
     `✓ data/roblox-codes.json — ${payload.counts.active} aktif, ${payload.counts.archived} arsip ` +
-      `(+${newlyArchived} baru diarsipkan), ${Object.keys(games).length}/${Object.keys(ROBLOX_GAMES).length} game OK` +
+      `(+${newlyArchived} baru diarsipkan), ${covered.size}/${entries.length} game OK, ${Object.keys(mergedGames).length} total` +
       (failed ? `, ${failed} gagal` : ""),
   );
 }
