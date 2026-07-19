@@ -31,6 +31,7 @@ const NOISE = /^(redeem|redeemed|redeeming|send|copy|active|expired|code|codes|n
 
 function clean(s) {
   return (s || "")
+    .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&#8217;|&#8216;|&#039;|&rsquo;|&lsquo;/g, "'")
     .replace(/&quot;/g, '"')
@@ -142,6 +143,11 @@ const GAMES_CFG = {
       pocketgamer: "mobile-legends-bang-bang/redeem-codes",
       dexerto: "gaming/mobile-legends-bang-bang-codes-ml-diamonds-magic-dust-1740586",
     },
+  },
+  sdsgc: {
+    // 7DS: Grand Cross — punya portal coupon Netmarble; daftar kode dari dua situs
+    // editorial (validity panjang). HATI-HATI beda dari "7DS: Origin".
+    sources: { pocketgamer: "the-seven-deadly-sins-grand-cross/codes", pockettactics: "seven-deadly-sins-grand-cross" },
   },
   // Blue Archive DI-HOLD: sumber melacak region berbeda (Global vs JP) →
   // daftar kodenya disjoint, irisan = 0. Tak bisa cross-check dengan andal.

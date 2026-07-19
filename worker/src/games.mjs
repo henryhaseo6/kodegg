@@ -239,6 +239,15 @@ export const GAMES = {
     androidId: "com.mobile.legends",
     iconFile: "mlbb.png",
   },
+  sdsgc: {
+    name: "The Seven Deadly Sins: Grand Cross",
+    codeSource: "editorial",
+    redeemUrl: "https://coupon.netmarble.com/nanagb", // portal coupon resmi Netmarble
+    genres: ["rpg", "gacha"],
+    appleId: "com.netmarble.nanagb",
+    androidId: "com.netmarble.nanagb",
+    iconFile: "sdsgc.png",
+  },
   // --- Game via whiteoutsurvival-community (sources/whiteout.mjs) ---
   wos: {
     name: "Whiteout Survival",
