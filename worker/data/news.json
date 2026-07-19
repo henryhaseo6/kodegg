@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-19T10:01:49.243Z",
+  "updatedAt": "2026-07-19T11:01:08.764Z",
   "counts": {
-    "active": 112,
-    "archived": 28
+    "active": 111,
+    "archived": 29
   },
   "articles": [
     {
@@ -246,22 +246,6 @@
       "publishedAt": "2026-07-17T12:30:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Join us at gamescom 2026! Tickets giveaway!",
-        "id": "Join us at gamescom 2026! Tickets giveaway!"
-      },
-      "excerpt": {
-        "en": "This year, Zenless Zone Zero will be meeting all you Proxies at the HoYoverse Exhibition Area at gamescom in Cologne, Germany! 💬 More information about the exhibition will be anno",
-        "id": "This year, Zenless Zone Zero will be meeting all you Proxies at the HoYoverse Exhibition Area at gamescom in Cologne, Germany! 💬 More information about the exhibition will be anno"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/15/0/52f2fb4bccc2edda7b4d160038bf2bf9_8113760226988168599.jpeg",
-      "url": "https://www.hoyolab.com/article/45889417",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-17T12:30:01.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -274,6 +258,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/41c825bd3bbe001c43010f0db37b3d67_6051343732940402339.jpg",
       "url": "https://www.hoyolab.com/article/45889415",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-17T12:30:01.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Join us at gamescom 2026! Tickets giveaway!",
+        "id": "Join us at gamescom 2026! Tickets giveaway!"
+      },
+      "excerpt": {
+        "en": "This year, Zenless Zone Zero will be meeting all you Proxies at the HoYoverse Exhibition Area at gamescom in Cologne, Germany! 💬 More information about the exhibition will be anno",
+        "id": "This year, Zenless Zone Zero will be meeting all you Proxies at the HoYoverse Exhibition Area at gamescom in Cologne, Germany! 💬 More information about the exhibition will be anno"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/15/0/52f2fb4bccc2edda7b4d160038bf2bf9_8113760226988168599.jpeg",
+      "url": "https://www.hoyolab.com/article/45889417",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-17T12:30:01.000Z"
     },
@@ -1780,7 +1780,9 @@
       "url": "https://www.hoyolab.com/article/45523522",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-19T12:00:06.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1795,10 +1797,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/b626093e59c8800218208ae43b960e23_7729831501750515339.jpg",
       "url": "https://www.hoyolab.com/article/45522813",
       "source": "HoYoLAB",
-      "publishedAt": "2026-06-19T11:00:04.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-06-19T11:00:04.000Z",
+      "archivedAt": "2026-07-19T11:01:08.764Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
