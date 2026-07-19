@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/gen-og.mjs || echo \"OG gen dilewati\"",
     "build": "astro build",
     "preview": "astro preview"
   },

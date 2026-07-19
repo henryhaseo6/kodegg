@@ -8,6 +8,7 @@ import CodeCard from "../../../components/CodeCard.astro";
 import CopyScript from "../../../components/CopyScript.astro";
 import CountdownScript from "../../../components/CountdownScript.astro";
 import ShareButton from "../../../components/ShareButton.astro";
+import { existsSync } from "node:fs";
 import { LANGS } from "../../../lib/i18n.mjs";
 import { loadRobloxCatalog, loadRobloxGame } from "../../../lib/roblox.mjs";
 import { robloxGamePaths, robloxHome } from "../../../lib/routes.mjs";
@@ -147,7 +148,7 @@ jsonLd.push({
 const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.02em; color:#fff; margin:0;";
 ---
 
-<Base lang={lang} title={meta.title} description={meta.desc} paths={robloxGamePaths(slug)} jsonLd={jsonLd}>
+<Base lang={lang} title={meta.title} description={meta.desc} paths={robloxGamePaths(slug)} jsonLd={jsonLd} ogImage={existsSync(`public/assets/og/roblox/${g.id}.png`) ? `/assets/og/roblox/${g.id}.png` : "/assets/og/roblox-hub.png"}>
   <Header lang={lang} active={null} paths={robloxGamePaths(slug)} />
 
   <Breadcrumb
