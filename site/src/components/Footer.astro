@@ -4,6 +4,7 @@
 //  - disclaimer non-afiliasi (situs memakai nama & aset milik penerbit)
 import { t } from "../lib/i18n.mjs";
 import { route } from "../lib/routes.mjs";
+import { loadSources } from "../lib/sources.mjs";
 
 const { lang, updatedAt } = Astro.props;
 const tr = t(lang);
@@ -26,16 +27,9 @@ const stamp = updatedAt
     }).format(new Date(updatedAt))
   : null;
 
-// Sumber data yang benar-benar dipakai halaman kode (lihat worker/src/sources).
-const sources = [
-  { name: "hoyo-codes", url: "https://hoyo-codes.seria.moe" },
-  { name: "ennead.cc", url: "https://api.ennead.cc" },
-  { name: "wuwastatus", url: "https://wuwastatus.com" },
-  { name: "HoYoverse", url: "https://www.hoyolab.com" },
-  { name: "Fandom", url: "https://www.fandom.com" },
-  { name: "tot.wiki", url: "https://tot.wiki" },
-  { name: "crimsonwitch", url: "https://www.crimsonwitch.com" },
-];
+// Sumber data DITURUNKAN OTOMATIS dari data yang beneran dipakai (codes/news/
+// events). Nambah sumber di worker → otomatis muncul di sini. Lihat lib/sources.
+const sources = await loadSources();
 ---
 
 <footer style="border-top:1px solid var(--line); background:var(--bg); margin-top:44px;">
@@ -69,9 +63,13 @@ const sources = [
         sources.map((s, i) => (
           <>
             {i > 0 && " · "}
-            <a href={s.url} rel="noopener nofollow" target="_blank" style="color:var(--muted); text-decoration:none; border-bottom:1px dotted var(--line2);">
-              {s.name}
-            </a>
+            {s.url ? (
+              <a href={s.url} rel="noopener nofollow" target="_blank" style="color:var(--muted); text-decoration:none; border-bottom:1px dotted var(--line2);">
+                {s.name}
+              </a>
+            ) : (
+              <span style="color:var(--muted);">{s.name}</span>
+            )}
           </>
         ))
       }

@@ -227,6 +227,9 @@ export async function fetchEditorial({ games, log = () => {} }) {
           if (expiredUnion.has(k)) continue; // ada sumber bilang expired → jangan aktif
           const { code, reward: rw } = pickCanonical(v.cands);
           const src = v.cands.find((c) => c.site === "pockettactics") ?? v.cands[0];
+          // Kredit SEMUA sumber yang ikut menyuarakan kode ini aktif (bukan cuma
+          // pemenang reward) — atribusi cross-check jujur & footer auto-list lengkap.
+          const sites = [...new Set(v.cands.map((c) => c.site))];
           items.push({
             ...base,
             code,
@@ -234,6 +237,8 @@ export async function fetchEditorial({ games, log = () => {} }) {
             status: "active",
             source: src.site,
             sourceUrl: SITES[src.site].url(cfg.sources[src.site]),
+            sources: sites,
+            sourceUrls: Object.fromEntries(sites.map((s) => [s, SITES[s].url(cfg.sources[s])])),
           });
           nAct += 1;
         }

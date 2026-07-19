@@ -101,8 +101,16 @@ export function combineCodes(sourceItems, curatedItems) {
       // di kartu (bukan cuma primary). Sumber tanpa URL tak masuk peta (jadi teks).
       byKey.set(key, {
         ...item,
-        sources: item.source ? [item.source] : [],
-        sourceUrls: item.source && item.sourceUrl ? { [item.source]: item.sourceUrl } : {},
+        // Item bisa datang dg daftar sumber sendiri (mis. editorial: >1 situs
+        // cross-check dalam satu item) — pertahankan; kalau tidak, mulai dari
+        // sumber tunggalnya.
+        sources: item.sources?.length ? [...item.sources] : item.source ? [item.source] : [],
+        sourceUrls:
+          item.sourceUrls && Object.keys(item.sourceUrls).length
+            ? { ...item.sourceUrls }
+            : item.source && item.sourceUrl
+              ? { [item.source]: item.sourceUrl }
+              : {},
       });
     } else {
       if (rewardScore(item.reward) > rewardScore(cur.reward)) {
@@ -117,9 +125,14 @@ export function combineCodes(sourceItems, curatedItems) {
       // Permanen bila DITANDAI permanen oleh sumber mana pun (mis. tot.wiki
       // End Date 2099) — biar kartu tampil "Tanpa batas", bukan tanggal rilis.
       if (item.perm) cur.perm = true;
-      // Catat sumber tambahan (dedup, pertahankan urutan prioritas).
-      if (item.source && !cur.sources.includes(item.source)) cur.sources.push(item.source);
-      if (item.source && item.sourceUrl && !cur.sourceUrls[item.source]) cur.sourceUrls[item.source] = item.sourceUrl;
+      // Catat sumber tambahan (dedup, pertahankan urutan prioritas). Item bisa
+      // membawa >1 sumber (mis. editorial cross-check) → gabung semuanya.
+      for (const s of item.sources?.length ? item.sources : item.source ? [item.source] : []) {
+        if (!cur.sources.includes(s)) cur.sources.push(s);
+      }
+      for (const [s, u] of Object.entries(item.sourceUrls ?? (item.source && item.sourceUrl ? { [item.source]: item.sourceUrl } : {}))) {
+        if (!cur.sourceUrls[s]) cur.sourceUrls[s] = u;
+      }
     }
   }
   for (const item of byKey.values()) {
