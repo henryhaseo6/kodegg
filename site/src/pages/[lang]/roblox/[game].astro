@@ -32,7 +32,7 @@ const archShown = g.archive.slice(0, ARCH_CAP);
 // Redemption Roblox sangat seragam (tombol Codes → masukkan → Redeem), jadi
 // langkah standar ini akurat untuk hampir semua game. (Spesifik per-game =
 // perbaikan Fase 3 bila sumber menyediakan langkah bersih & terlokalisasi.)
-const redeemSteps = {
+const redeemStd = {
   id: [
     "Buka game-nya di Roblox",
     "Cari tombol Codes — biasanya di layar utama, atau lewat ikon Twitter/burung atau menu Settings",
@@ -46,6 +46,11 @@ const redeemSteps = {
     "Press Redeem — the reward is granted instantly",
   ],
 };
+// Cara redeem SPESIFIK per-game dari RoCodes bila ada (mis. Island of Move
+// "walk over to the NPC…") — lebih akurat dari langkah standar. Kosong → standar
+// bilingual. (howTo sumber berbahasa Inggris; dipakai apa adanya utk akurasi.)
+const isSpecific = Array.isArray(g.howTo) && g.howTo.length >= 3;
+const redeemSteps = { id: isSpecific ? g.howTo : redeemStd.id, en: isSpecific ? g.howTo : redeemStd.en };
 
 const gname = g.name;
 // Pemain konkuren → ringkas (jangan pakai regex literal di frontmatter .astro).

@@ -33,16 +33,18 @@ function makeResolver(data) {
   };
 }
 
-// howTo.body = HTML <ol><li><p>langkah</p></li>...</ol> → array langkah teks bersih.
-function parseHowTo(body) {
-  if (!body || typeof body !== "string") return [];
+// <ol><li>langkah</li>…</ol> → array langkah teks bersih. Substitusi placeholder
+// {{game_name}} dg nama game asli (RoCodes menaruhnya sbg mention di teks).
+function parseHowTo(html, name) {
+  if (!html || typeof html !== "string") return [];
   const steps = [];
-  for (const m of body.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)) {
+  for (const m of html.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)) {
     const t = m[1]
       .replace(/<[^>]+>/g, " ")
       .replace(/&amp;/g, "&")
       .replace(/&nbsp;/g, " ")
       .replace(/&#8217;|&rsquo;/g, "'")
+      .replace(/\{\{\s*game_name\s*\}\}/gi, name || "the game")
       .replace(/\s+/g, " ")
       .trim();
     if (t) steps.push(t);
@@ -93,12 +95,23 @@ export async function fetchRoCodes(slug) {
   // Nama game BERSIH dari <title> ("Blox Fruits Codes | ..." → "Blox Fruits") —
   // lebih rapi dari nama Roblox yang berdekorasi ([UPD], emoji, dll).
   const tm = html.match(/<title>([^<]+?)\s+Codes\b/i);
+  const name = tm ? tm[1].trim() : null;
+  // Cara redeem SPESIFIK per-game: coba field `howTo`, lalu section "How do I
+  // redeem" di `content` (sebagian game menaruh langkahnya di sana, mis. Island
+  // of Move: "walk over to the TV…"). Substitusi {{game_name}}. Kosong → situs
+  // pakai langkah standar bilingual.
+  let howTo = parseHowTo(R(best.v.howTo)?.body, name);
+  if (howTo.length === 0 && best.v.content !== undefined) {
+    const content = R(best.v.content);
+    const om = typeof content === "string" ? content.match(/how do i redeem[\s\S]*?<ol[^>]*>([\s\S]*?)<\/ol>/i) : null;
+    if (om) howTo = parseHowTo(om[1], name);
+  }
   const meta = {
-    name: tm ? tm[1].trim() : null,
+    name,
     universeId: R(best.v.universeId) ?? null,
     placeId: R(best.v.placeId) ?? null,
     verified: R(best.v.verified) === true,
-    howTo: parseHowTo(R(best.v.howTo)?.body),
+    howTo,
   };
   if (active.length === 0 && archive.length === 0) throw new Error("0 kode terparse");
   return { active, archive, meta };
