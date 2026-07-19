@@ -21,6 +21,7 @@ import { ROBLOX_GAMES, robloxSlug } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen } from "./src/sources/robloxden.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
+import { fetchPromoCodes } from "./src/sources/roblox-promo.mjs";
 import { discoverPopularWithCodes, inferGenres } from "./src/roblox-discover.mjs";
 import { mergeWithPrevious } from "./src/archive.mjs";
 
@@ -236,12 +237,23 @@ async function main() {
     if (g.universeId && players[g.universeId] != null) g.players = players[g.universeId];
   }
 
+  // Kode PROMO Roblox platform (bukan per-game) — ditukar di roblox.com.
+  let promo = prev.promo ?? { active: [], archive: [] };
+  try {
+    const p = await fetchPromoCodes();
+    if (p.active.length) promo = { updatedAt: now, active: p.active, archive: p.archive };
+    console.log(`  promo: ${p.active.length} aktif + ${p.archive.length} arsip`);
+  } catch (e) {
+    console.log(`  promo gagal: ${e.message} (pertahankan lama)`);
+  }
+
   const payload = {
     updatedAt: now,
     counts: { active: active.length, archived: archive.length, games: Object.keys(mergedGames).length },
     games: mergedGames,
     active,
     archive,
+    promo,
   };
   await writeFile(OUT, JSON.stringify(payload, null, 2));
 

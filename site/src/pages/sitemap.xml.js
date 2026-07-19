@@ -38,6 +38,7 @@ export async function GET() {
   // Vertikal Roblox: hub + per-game (lastmod = kesegaran data Roblox).
   const robloxMod = day(robloxHome.updatedAt);
   entries.push({ paths: { id: "/id/roblox", en: "/en/roblox" }, lastmod: robloxMod });
+  entries.push({ paths: { id: "/id/roblox/promo-codes", en: "/en/roblox/promo-codes" }, lastmod: robloxMod });
   for (const g of robloxGames) entries.push({ paths: { id: `/id/roblox/${g.slug}`, en: `/en/roblox/${g.slug}` }, lastmod: robloxMod });
 
   const body =

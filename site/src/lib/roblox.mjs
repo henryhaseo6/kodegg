@@ -93,6 +93,18 @@ export async function loadRobloxCatalog() {
     .sort((a, b) => b.newestMs - a.newestMs || b.activeCount - a.activeCount || a.name.localeCompare(b.name));
 }
 
+/** Kode PROMO Roblox platform (halaman /roblox/promo-codes). */
+export async function loadRobloxPromo() {
+  const raw = await read();
+  const p = raw.promo ?? { active: [], archive: [] };
+  const shape = (c) => ({ ...c, verified: c.verified === true });
+  return {
+    updatedAt: p.updatedAt ?? raw.updatedAt ?? null,
+    active: (p.active ?? []).map(shape),
+    archive: (p.archive ?? []).map(shape),
+  };
+}
+
 /** Per-game (halaman /roblox/<slug>): meta + kode aktif + arsip. */
 export async function loadRobloxGame(slug) {
   const raw = await read();

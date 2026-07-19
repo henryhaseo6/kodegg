@@ -52725,5 +52725,178 @@
       "expiredAt": "2026-07-19T10:07:19.356Z",
       "firstSeenAt": "2026-07-19T10:07:19.356Z"
     }
-  ]
+  ],
+  "promo": {
+    "updatedAt": "2026-07-19T10:21:59.963Z",
+    "active": [
+      {
+        "code": "TWEETROBLOX",
+        "reward": "The Bird Says____.",
+        "sources": [
+          "RoCodes.gg",
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/promo-codes",
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "crossCheck": [],
+        "verified": true
+      },
+      {
+        "code": "SPIDERCOLA",
+        "reward": "Spider Cola",
+        "sources": [
+          "RoCodes.gg",
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/promo-codes",
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "crossCheck": [],
+        "verified": true
+      },
+      {
+        "code": "FREENGNBOI",
+        "reward": "Nguyễn Boi",
+        "sources": [
+          "RoCodes.gg",
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/promo-codes",
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "crossCheck": [],
+        "verified": true
+      },
+      {
+        "code": "FREENGNGON",
+        "reward": "Nguyễn Gơn",
+        "sources": [
+          "RoCodes.gg",
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/promo-codes",
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "crossCheck": [],
+        "verified": true
+      }
+    ],
+    "archive": [
+      {
+        "code": "GLIMMER",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      },
+      {
+        "code": "PARTICLEWIZARD",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      },
+      {
+        "code": "BOARDWALK",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      },
+      {
+        "code": "THINGSGOBOOM",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      },
+      {
+        "code": "FXARTIST",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      },
+      {
+        "code": "SETTINGTHESTAGE",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      },
+      {
+        "code": "GETMOVING",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      },
+      {
+        "code": "WORLDALIVE",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      },
+      {
+        "code": "VICTORYLAP",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      },
+      {
+        "code": "STRIKEAPOSE",
+        "reward": null,
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/promo-codes"
+        },
+        "status": "expired"
+      }
+    ]
+  }
 }

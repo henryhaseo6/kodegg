@@ -1,0 +1,197 @@
+---
+// Kode PROMO Roblox PLATFORM (bukan per-game) — ditukar di roblox.com/promocodes
+// untuk item avatar. Rute statis → menang atas [game].astro.
+import Base from "../../../layouts/Base.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Breadcrumb from "../../../components/Breadcrumb.astro";
+import CopyScript from "../../../components/CopyScript.astro";
+import { LANGS } from "../../../lib/i18n.mjs";
+import { loadRobloxPromo } from "../../../lib/roblox.mjs";
+import { robloxHome } from "../../../lib/routes.mjs";
+import { monthYear } from "../../../lib/seo.mjs";
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const id = lang === "id";
+const promo = await loadRobloxPromo();
+const my = monthYear(lang);
+const REDEEM_URL = "https://www.roblox.com/promocodes";
+
+const redeemSteps = {
+  id: [
+    "Login ke akun Roblox kamu",
+    "Buka halaman resmi roblox.com/promocodes (tombol di bawah)",
+    "Masukkan kode promo, lalu klik Redeem",
+    "Ambil item-nya lewat Avatar → item langsung masuk inventory",
+  ],
+  en: [
+    "Log in to your Roblox account",
+    "Open the official roblox.com/promocodes page (button below)",
+    "Enter the promo code, then click Redeem",
+    "Equip the item from your Avatar — it's added to your inventory",
+  ],
+};
+
+const meta = id
+  ? { title: `Kode Promo Roblox ${my} (Aktif) — Item Gratis | KodeGG`, desc: `Kode promo Roblox terbaru ${my} yang masih aktif untuk item avatar gratis — ditukar di roblox.com. ${promo.active.length} kode aktif, diverifikasi.` }
+  : { title: `Roblox Promo Codes ${my} (Active) — Free Items | KodeGG`, desc: `Latest active Roblox promo codes for ${my} for free avatar items — redeemed on roblox.com. ${promo.active.length} active, verified.` };
+
+const site = Astro.site.href.replace(/\/$/, "");
+const faqs = [
+  {
+    q: id ? "Apa itu kode promo Roblox?" : "What are Roblox promo codes?",
+    a: id
+      ? "Kode dari Roblox untuk item avatar gratis (topi, aksesori, dll), ditukar di roblox.com/promocodes — beda dari kode per-game yang ditukar di dalam game."
+      : "Codes from Roblox for free avatar items (hats, accessories, etc.), redeemed at roblox.com/promocodes — different from per-game codes redeemed inside a game.",
+  },
+  {
+    q: id ? "Apakah ada kode Robux gratis?" : "Are there free Robux codes?",
+    a: id
+      ? "Tidak. Roblox tidak pernah mengeluarkan kode Robux gratis — situs yang menjanjikan itu penipuan. Kode promo resmi hanya memberi ITEM avatar, bukan Robux."
+      : "No. Roblox never issues free Robux codes — sites promising that are scams. Official promo codes only grant avatar ITEMS, not Robux.",
+  },
+  {
+    q: id ? "Kenapa kode promo Roblox sedikit?" : "Why are there so few Roblox promo codes?",
+    a: id
+      ? "Roblox sudah lama jarang merilis kode promo baru. Yang aktif saat ini sedikit; kode lama diarsipkan di bawah sebagai database."
+      : "Roblox rarely releases new promo codes anymore. Only a few are active now; older ones are archived below as a database.",
+  },
+];
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}` },
+      { "@type": "ListItem", position: 2, name: "Roblox", item: `${site}${robloxHome(lang)}` },
+      { "@type": "ListItem", position: 3, name: id ? "Kode Promo" : "Promo Codes", item: `${site}/${lang}/roblox/promo-codes` },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: id ? "Cara redeem kode promo Roblox" : "How to redeem Roblox promo codes",
+    step: redeemSteps[lang].map((s, i) => ({ "@type": "HowToStep", position: i + 1, text: s })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  },
+];
+
+const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.02em; color:#fff; margin:0;";
+---
+
+<Base lang={lang} title={meta.title} description={meta.desc} paths={{ id: "/id/roblox/promo-codes", en: "/en/roblox/promo-codes" }} jsonLd={jsonLd}>
+  <Header lang={lang} active={null} paths={{ id: "/id/roblox/promo-codes", en: "/en/roblox/promo-codes" }} />
+  <Breadcrumb items={[{ label: "KodeGG", href: `/${lang}` }, { label: "Roblox", href: robloxHome(lang) }, { label: id ? "Kode Promo" : "Promo Codes" }]} />
+
+  <main id="main" style="max-width:1280px; margin:0 auto; padding:22px 28px 60px;">
+    <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap; margin-bottom:12px;">
+      <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--acc2); border:1px solid rgba(139,107,255,0.5); background:rgba(139,107,255,0.1); padding:3px 8px; border-radius:6px;">Roblox · Promo</span>
+    </div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(26px,4.2vw,42px); letter-spacing:-0.03em; color:#fff; margin:0 0 12px; line-height:1.06; text-wrap:balance;">
+      {id ? "Kode Promo Roblox" : "Roblox Promo Codes"}
+    </h1>
+    <p style="font-size:16px; line-height:1.55; color:var(--muted); margin:0 0 8px; max-width:70ch;">
+      {id
+        ? "Kode PLATFORM Roblox untuk item avatar gratis — ditukar di roblox.com/promocodes (bukan di dalam game). Diverifikasi dari RoCodes & Roblox Den."
+        : "Roblox PLATFORM codes for free avatar items — redeemed at roblox.com/promocodes (not inside a game). Verified from RoCodes & Roblox Den."}
+    </p>
+    <p style="font-size:13px; color:var(--faint); margin:0 0 26px;">
+      {id ? `${promo.active.length} kode aktif · ${promo.archive.length} di arsip` : `${promo.active.length} active · ${promo.archive.length} archived`}
+    </p>
+
+    <!-- KODE AKTIF -->
+    <section style="margin-bottom:38px;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+        <h2 style={SectionHead}>{id ? "Kode aktif" : "Active codes"} <span style="color:var(--faint); font-size:16px; font-weight:700;">({promo.active.length})</span></h2>
+        <a href={REDEEM_URL} target="_blank" rel="noopener nofollow" style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--ink); background:var(--acc2); padding:8px 14px; border-radius:9px; text-decoration:none;">{id ? "Buka halaman redeem resmi ↗" : "Open official redeem page ↗"}</a>
+      </div>
+      {promo.active.length > 0 ? (
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:16px;">
+          {promo.active.map((c) => (
+            <div class="gg-card" style="background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+                <span style="font-size:14px; font-weight:700; color:var(--txt); line-height:1.3;">{c.reward || (id ? "Item avatar" : "Avatar item")}</span>
+                {c.verified ? (
+                  <span style="flex:0 0 auto; display:inline-flex; align-items:center; gap:4px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ink); background:var(--ok); padding:4px 8px; border-radius:7px;">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>Verified
+                  </span>
+                ) : null}
+              </div>
+              <div style="display:flex; align-items:center; gap:9px; margin-top:auto;">
+                <code style="flex:1; min-width:0; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--acc2); background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center; overflow:hidden; text-overflow:ellipsis;">{c.code}</code>
+                <button class="gg-copy" data-copy={c.code} data-label={id ? "Salin" : "Copy"} data-done={id ? "Tersalin ✓" : "Copied ✓"} type="button"
+                  style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid rgba(139,107,255,0.4); color:var(--acc2); background:var(--surface2); border-radius:10px; padding:10px 13px;">{id ? "Salin" : "Copy"}</button>
+              </div>
+              <div style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">
+                {(c.sources ?? []).join(" · ")}
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p style="color:var(--muted); font-size:15px;">{id ? "Belum ada kode promo aktif saat ini." : "No active promo codes right now."}</p>
+      )}
+    </section>
+
+    <!-- CARA REDEEM -->
+    <section style="margin-bottom:38px;">
+      <h2 style={SectionHead}>{id ? "Cara redeem kode promo Roblox" : "How to redeem Roblox promo codes"}</h2>
+      <div style="margin-top:16px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; max-width:640px;">
+        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px;">
+          {redeemSteps[lang].map((s, i) => (
+            <li style="display:flex; gap:12px; align-items:flex-start; font-size:14.5px; line-height:1.55; color:var(--txt);">
+              <span style="flex:none; width:24px; height:24px; border-radius:8px; background:var(--surface2); border:1px solid rgba(139,107,255,0.4); font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--acc2); display:flex; align-items:center; justify-content:center;">{i + 1}</span>
+              <span>{s}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <!-- ARSIP -->
+    {promo.archive.length > 0 && (
+      <section style="margin-bottom:38px;">
+        <details>
+          <summary style="cursor:pointer; display:flex; align-items:center; gap:10px; list-style:none;">
+            <h2 style={SectionHead}>{id ? "Arsip kode kedaluwarsa" : "Expired codes archive"} <span style="color:var(--faint); font-size:16px; font-weight:700;">({promo.archive.length})</span></h2>
+            <svg class="gg-arch-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--faint)" stroke-width="2.5" stroke-linecap="round" style="transition:transform .2s;"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(200px,100%),1fr)); gap:12px;">
+            {promo.archive.map((c) => (
+              <div style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:12px; opacity:.72;">
+                <code style="display:block; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--faint); background:var(--bg); border:1px dashed var(--line2); border-radius:8px; padding:7px 9px; text-align:center; text-decoration:line-through;">{c.code}</code>
+              </div>
+            ))}
+          </div>
+        </details>
+      </section>
+    )}
+
+    <!-- FAQ -->
+    <section>
+      <h2 style={SectionHead}>{id ? "Pertanyaan umum" : "FAQ"}</h2>
+      <div style="margin-top:16px; display:flex; flex-direction:column; gap:10px; max-width:820px;">
+        {faqs.map((f) => (
+          <details style="background:var(--surface); border:1px solid var(--line); border-radius:14px;">
+            <summary style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:15px 18px; cursor:pointer; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:var(--txt); list-style:none;">
+              <span>{f.q}</span>
+              <svg class="gg-arch-chev" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2.4" stroke-linecap="round" style="flex:0 0 auto; transition:transform .2s;"><path d="M6 9l6 6 6-6" /></svg>
+            </summary>
+            <div style="padding:0 18px 16px; font-size:14px; line-height:1.65; color:var(--muted);">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} updatedAt={promo.updatedAt} />
+  <CopyScript />
+</Base>
