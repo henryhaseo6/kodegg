@@ -93,6 +93,7 @@ export async function loadRobloxCatalog() {
       verified: g.verified === true,
       activeCount: activeByGame[id] ?? 0,
       newestMs: newestByGame[id] ?? 0, // tanggal kode terbaru → sort "terbaru"
+      players: g.players ?? 0, // pemain konkuren realtime → sort "terpopuler"
     }))
     .sort((a, b) => b.newestMs - a.newestMs || b.activeCount - a.activeCount || a.name.localeCompare(b.name));
 }

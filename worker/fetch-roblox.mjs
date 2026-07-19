@@ -29,6 +29,23 @@ async function readPrevious() {
   }
 }
 
+// Jumlah pemain KONKUREN (realtime) per game dari API RESMI Roblox — dipakai
+// untuk sort "Terpopuler". `id` di respons = universeId, `playing` = pemain aktif.
+async function fetchPlayers(universeIds) {
+  const out = {};
+  for (let i = 0; i < universeIds.length; i += 50) {
+    const batch = universeIds.slice(i, i + 50).join(",");
+    try {
+      const res = await fetch(`https://games.roblox.com/v1/games?universeIds=${batch}`);
+      if (!res.ok) continue;
+      for (const g of (await res.json()).data ?? []) out[g.id] = g.playing ?? 0;
+    } catch {
+      /* API sibuk → biarkan; nilai lama dipertahankan */
+    }
+  }
+  return out;
+}
+
 async function main() {
   const now = new Date().toISOString();
   const prev = await readPrevious();
@@ -81,6 +98,14 @@ async function main() {
   // Pertahankan meta game dari run sebelumnya bila game gagal ditarik run ini
   // (biar halaman/thumbnail tak hilang saat RoCodes down sesaat).
   const mergedGames = { ...(prev.games ?? {}), ...games };
+
+  // Player count realtime (langsung dari Roblox) untuk semua game yang punya
+  // universeId. Gagal fetch → pertahankan nilai lama (jangan nol-kan ranking).
+  const uids = [...new Set(Object.values(mergedGames).map((g) => g.universeId).filter(Boolean))];
+  const players = await fetchPlayers(uids);
+  for (const g of Object.values(mergedGames)) {
+    if (g.universeId && players[g.universeId] != null) g.players = players[g.universeId];
+  }
 
   const payload = {
     updatedAt: now,
