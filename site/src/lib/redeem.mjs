@@ -455,6 +455,46 @@ export const REDEEM = {
     },
   },
 
+  sdsgc: {
+    web: "https://coupon.netmarble.com/nanagb",
+    account: "Netmarble",
+    req: { id: "Selesaikan tutorial awal", en: "Finish the tutorial levels" },
+    note: {
+      id: "Kode dimasukkan satu per satu. Di metode web, Netmarble ID perlu dimasukkan ulang untuk tiap kode.",
+      en: "Enter codes one at a time. On the web method, re-enter your Netmarble ID for each code.",
+    },
+    webSteps: {
+      id: [
+        "Buka halaman kupon resmi Netmarble (tombol di atas)",
+        "Login / masukkan Netmarble ID kamu",
+        "Masukkan kode kupon",
+        "Klik Redeem — hadiah masuk ke in-game mail",
+      ],
+      en: [
+        "Open the official Netmarble coupon page (button above)",
+        "Log in / enter your Netmarble ID",
+        "Enter the coupon code",
+        "Click Redeem — rewards arrive in your in-game mail",
+      ],
+    },
+    ingame: {
+      id: [
+        "Buka game (selesaikan dulu tutorial)",
+        "Ketuk menu di pojok kanan bawah",
+        "Ketuk 'Misc'",
+        "Pilih opsi 'Coupons'",
+        "Masukkan kode satu per satu, lalu ambil hadiah dari in-game mail",
+      ],
+      en: [
+        "Open the game (finish the tutorial first)",
+        "Tap the menu in the bottom-right",
+        "Tap 'Misc'",
+        "Select the 'Coupons' option",
+        "Enter codes one at a time, then claim rewards from in-game mail",
+      ],
+    },
+  },
+
   gov: {
     web: null,
     account: null,
