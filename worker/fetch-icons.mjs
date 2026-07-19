@@ -16,6 +16,25 @@ import { fileURLToPath } from "node:url";
 import { GAMES } from "./src/games.mjs";
 import { fetchIcon } from "./src/sources/icons.mjs";
 
+// sharp OPSIONAL: bila terpasang, icon dikecilkan ke 128px (dipakai maksimal
+// 38px di kartu → 512px = 100x over-delivery). Bila tak ada, tulis apa adanya
+// (jalankan `npm i` di worker/ untuk mengaktifkan resize). Icon 128px ≈ 10-14KB.
+const ICON_PX = 128;
+let sharp = null;
+try {
+  sharp = (await import("sharp")).default;
+} catch {
+  console.warn("⚠ sharp tak terpasang — icon ditulis ukuran asli (jalankan `npm i` di worker/ untuk resize).");
+}
+async function optimize(bytes) {
+  if (!sharp) return bytes;
+  try {
+    return await sharp(bytes).resize(ICON_PX, ICON_PX, { fit: "cover" }).png({ compressionLevel: 9, palette: true, quality: 90 }).toBuffer();
+  } catch {
+    return bytes;
+  }
+}
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = resolve(HERE, "../site/public/assets/games");
 const UA = "KodeGGBot/1.0 (+https://kodegg.com)";
@@ -46,8 +65,9 @@ async function main() {
       });
       if (!bytes) return { id, failed: true };
 
-      await writeFile(out, bytes);
-      return { id, bytes: bytes.length, source };
+      const optimized = await optimize(bytes);
+      await writeFile(out, optimized);
+      return { id, bytes: optimized.length, source };
     }),
   );
 
