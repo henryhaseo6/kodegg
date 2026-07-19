@@ -36,6 +36,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # history penuh → rebase saat push tahan-balapan andal (bukan shallow)
 
       - uses: actions/setup-node@v5
         with:
@@ -57,7 +59,20 @@ jobs:
           git config user.email "bot@kodegg.com"
           git add worker/data/
           git commit -m "chore: update data (kode/event/berita)"
-          git push
+          # Push tahan-balapan: remote bisa MAJU di antara checkout & push (push
+          # manual atau run lain) → push ditolak "fetch first". Solusi: rebase di
+          # atas remote lalu ulang. Saat konflik JSON, data bot (fetch tersegar
+          # run ini) MENANG (-X theirs); kalau ada game baru ditambah manual,
+          # datanya nyusul otomatis di run jam berikutnya (bot baca games.mjs).
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "push berhasil (percobaan $i)"; exit 0
+            fi
+            echo "push ditolak — integrasikan remote lalu ulang ($i)"
+            git pull --rebase -X theirs --autostash origin main \
+              || { git rebase --abort 2>/dev/null || true; }
+          done
+          echo "::error::gagal push setelah 5 percobaan"; exit 1
         # PENTING: JANGAN pakai [skip ci] di pesan commit — Cloudflare Pages
         # menghormatinya dan MELEWATI deploy, sehingga update data tak pernah
         # sampai ke situs live. Tag itu juga tak perlu untuk Actions: workflow
