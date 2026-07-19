@@ -10,7 +10,7 @@ import FavoritPage from "../../components/FavoritPage.astro";
 import TentangPage from "../../components/TentangPage.astro";
 import KontakPage from "../../components/KontakPage.astro";
 import { LANGS, t } from "../../lib/i18n.mjs";
-import { SLUGS, PAGE_KEYS, langPaths } from "../../lib/routes.mjs";
+import { SLUGS, PAGE_KEYS, langPaths, route } from "../../lib/routes.mjs";
 import { loadCatalog } from "../../lib/catalog.mjs";
 import { loadCodes } from "../../lib/codes.mjs";
 import { loadFeed } from "../../lib/feed.mjs";
@@ -69,8 +69,43 @@ if (key === "discover") {
     ? "Hubungi KodeGG: lapor kode kedaluwarsa, usul game, atau kerja sama."
     : "Get in touch with KodeGG: report expired codes, suggest games, or partnerships.";
 }
+// Structured data. Semua halaman konten dapat BreadcrumbList; halaman Kode
+// (halaman terpenting) juga dapat HowTo (cara redeem) + ItemList kode aktif.
+const site = Astro.site.href.replace(/\/$/, "");
+const crumbName =
+  { discover: tr("nav.discover"), codes: tr("nav.codes"), news: tr("nav.news"), about: id ? "Tentang" : "About", contact: id ? "Kontak" : "Contact", saved: tr("nav.saved") }[key] ?? title;
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: id ? "Beranda" : "Home", item: `${site}/${lang}` },
+      { "@type": "ListItem", position: 2, name: crumbName, item: `${site}${route(key, lang)}` },
+    ],
+  },
+];
+if (key === "codes") {
+  jsonLd.push(
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: tr("how.title"),
+      step: [tr("how.step1"), tr("how.step2"), tr("how.step3")].map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: s, text: s })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: title,
+      numberOfItems: data.active.length,
+      itemListElement: data.active
+        .filter((c) => c.code)
+        .slice(0, 60)
+        .map((c, i) => ({ "@type": "ListItem", position: i + 1, name: `${c.name}: ${c.code}`, url: `${site}/${lang}/game/${c.game}` })),
+    },
+  );
+}
 ---
 
-<Base lang={lang} title={title} description={desc} paths={langPaths(key)} noindex={key === "saved"}>
+<Base lang={lang} title={title} description={desc} paths={langPaths(key)} noindex={key === "saved"} jsonLd={jsonLd}>
   <Comp lang={lang} data={data} />
 </Base>
