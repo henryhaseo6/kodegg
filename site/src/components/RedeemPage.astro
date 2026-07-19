@@ -92,7 +92,7 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
 
   <!-- ACTIVE GRID -->
   <section style="max-width:1280px; margin:0 auto; padding:12px 28px 8px;">
-    <div data-code-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;">
+    <div data-code-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:18px;">
       {data.active.map((card) => <CodeCard card={card} lang={lang} />)}
     </div>
     <p data-empty style="display:none; text-align:center; color:var(--muted); font-size:15px; padding:40px 0;">
@@ -122,7 +122,7 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
             </div>
           ) : (
             <>
-              <div data-arch-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px;">
+              <div data-arch-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr)); gap:12px;">
                 {data.archive.slice(0, ARCH_RENDER).map((c) => (
                   <div data-arch-card data-game={c.game ?? ""} data-search={c.search} style="background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:14px 16px; opacity:0.72;">
                     <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">

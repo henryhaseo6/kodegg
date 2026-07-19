@@ -253,4 +253,21 @@ const locale = lang === "id" ? "id_ID" : "en_US";
       display: none !important;
     }
   }
+  /* Header muat di HP sempit: kecilkan padding + jarak cluster; ≤400px
+     sembunyikan wordmark "KODEGG" (kotak GG tetap sebagai logo). */
+  @media (max-width: 480px) {
+    .gg-headbar {
+      padding-left: 14px !important;
+      padding-right: 14px !important;
+      gap: 14px !important;
+    }
+    .gg-headright {
+      gap: 8px !important;
+    }
+  }
+  @media (max-width: 400px) {
+    .gg-wordmark {
+      display: none !important;
+    }
+  }
 </style>

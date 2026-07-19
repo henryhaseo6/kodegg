@@ -185,7 +185,7 @@ const jsonLd = [
       </div>
       {
         gameCodes.length > 0 ? (
-          <div data-code-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;">
+          <div data-code-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:18px;">
             {gameCodes.map((card) => <CodeCard card={card} lang={lang} linkGame={false} />)}
           </div>
         ) : (
@@ -213,7 +213,7 @@ const jsonLd = [
           : "Codes are redeemed in-game (or on the web where available). Rewards arrive in your in-game mail."}
       </p>
 
-      <div style={`display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; max-width:${rd.web ? "880px" : "560px"};`}>
+      <div style={`display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; max-width:${rd.web ? "880px" : "560px"};`}>
         {rd.web && (
           <div style="background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px;">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px;">
@@ -256,7 +256,7 @@ const jsonLd = [
       gameEvents.length > 0 && (
         <section style="max-width:1280px; margin:0 auto; padding:28px 28px 8px;">
           <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; color:var(--txt); margin:0 0 16px;">{tr("ev.title")} <span style="color:var(--faint); font-size:16px;">({gameEvents.length})</span></h2>
-          <div data-ev-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px;">
+          <div data-ev-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr)); gap:16px;">
             {gameEvents.map((e) => <EventCard e={e} lang={lang} />)}
           </div>
           <nav data-ev-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:26px;"></nav>

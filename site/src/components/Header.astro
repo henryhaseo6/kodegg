@@ -21,6 +21,7 @@ const nav = [
   style="position:sticky; top:0; z-index:60; background:rgba(9,12,18,0.72); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);"
 >
   <div
+    class="gg-headbar"
     style="max-width:1280px; margin:0 auto; padding:0 28px; height:70px; display:flex; align-items:center; gap:30px;"
   >
     <a href={`/${lang}`} style="display:flex; align-items:center; gap:11px; text-decoration:none;">
@@ -29,6 +30,7 @@ const nav = [
         >GG</span
       >
       <span
+        class="gg-wordmark"
         style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.01em; color:var(--txt);"
         >KODE<span style="color:var(--acc);">GG</span></span
       >
@@ -49,7 +51,7 @@ const nav = [
       }
     </nav>
 
-    <div style="margin-left:auto; display:flex; align-items:center; gap:12px;">
+    <div class="gg-headright" style="margin-left:auto; display:flex; align-items:center; gap:12px;">
       <NotifyBell lang={lang} />
       <a
         href={route("saved", lang)}

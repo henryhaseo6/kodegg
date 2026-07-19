@@ -57,7 +57,7 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
       <h2 style={SectionHead}>{id ? "Kode redeem terbaru" : "Latest redeem codes"}</h2>
       <a href={route("codes", lang)} style={More}>{id ? "Semua kode" : "All codes"} →</a>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:16px;">
       {topCodes.map((c) => (
         <div class:list={["gg-card", { "gg-new-card": c.isNew }]} style={`background:var(--surface); border:1px solid ${c.isNew ? "rgba(203,255,70,0.5)" : "var(--line)"}; border-radius:16px; padding:17px; display:flex; flex-direction:column; gap:11px;${c.isNew ? " box-shadow:0 0 0 1px rgba(203,255,70,0.12),0 10px 30px rgba(203,255,70,0.08);" : ""}`}>
           <div style="display:flex; align-items:center; gap:9px;">
@@ -110,7 +110,7 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
         <h2 style={SectionHead}>{id ? "Berita & event terbaru" : "Latest news & events"}</h2>
         <a href={route("news", lang)} style={More}>{id ? "Semua update" : "All updates"} →</a>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:16px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(268px,100%),1fr)); gap:16px;">
         {topFeed.map((it) => <FeedCard it={it} lang={lang} />)}
       </div>
     </section>

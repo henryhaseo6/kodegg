@@ -51,7 +51,7 @@ const fmtNum = (n) => new Intl.NumberFormat(lang === "id" ? "id-ID" : "en-GB").f
 
   <!-- GRID -->
   <section style="max-width:1280px; margin:0 auto; padding:20px 28px 8px;">
-    <div data-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:18px;">
+    <div data-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(268px,100%),1fr)); gap:18px;">
       {data.items.map((it) => <FeedCard it={it} lang={lang} />)}
       {data.archive.map((it) => <FeedCard it={it} lang={lang} archived />)}
     </div>
