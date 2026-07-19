@@ -48,6 +48,28 @@ export async function discoverTopGames() {
   return [...games.values()].sort((a, b) => b.players - a.players);
 }
 
+// Slug game UNGGULAN dari HOMEPAGE RoCodes (widget "Top Games" + baru diupdate).
+// Ini ranking RoCodes SENDIRI (game teramai yg punya kode) → slug-nya PERSIS,
+// bukan tebakan dari nama. Menutup celah fuzzy-match: game spt "+1 Speed Keyboard
+// Escape", "Escape Tsunami For Brainrots", "Roblox Knockout" yg nama Roblox-nya
+// tak memetakan bersih ke slug RoCodes → dulu kelewat walau paling ramai.
+export async function fetchRoCodesFeatured() {
+  try {
+    const res = await fetch("https://rocodes.gg/", { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(15000) });
+    if (!res.ok) return [];
+    const html = await res.text();
+    return [...new Set([...html.matchAll(/\/codes\/([a-z0-9-]+)/g)].map((m) => m[1]))];
+  } catch {
+    return [];
+  }
+}
+
+// Slug "escape-tsunami-for-brainrots" → "Escape Tsunami For Brainrots" (placeholder;
+// nama asli di-override dari <title> halaman RoCodes saat fetch).
+function titleFromSlug(slug) {
+  return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 // Semua slug game yang PUNYA halaman kode di RoCodes (dari sitemap) — dipakai
 // untuk memvalidasi/mencocokkan nama game Roblox ke slug RoCodes yang benar.
 export async function fetchRoCodesSlugs() {
@@ -114,9 +136,18 @@ export function inferGenres(name, slug = "") {
  * @returns {Promise<{rocodesSlug:string|null, denSlug:string|null, name:string, universeId:number, players:number}[]>}
  */
 export async function discoverPopularWithCodes() {
-  const [top, roset, denset] = await Promise.all([discoverTopGames(), fetchRoCodesSlugs(), fetchRobloxDenSlugs()]);
+  const [top, roset, denset, featured] = await Promise.all([discoverTopGames(), fetchRoCodesSlugs(), fetchRobloxDenSlugs(), fetchRoCodesFeatured()]);
   const out = [];
   const seen = new Set();
+  // 1) UNGGULAN RoCodes DULU (slug persis dari homepage) → jaminan game teramai
+  //    ketarik walau nama Roblox-nya tak match fuzzy. players/universeId nyusul
+  //    saat fetch; ditandai `featured` agar tetap ikut cross-check editorial.
+  for (const slug of featured) {
+    if (seen.has(slug)) continue;
+    seen.add(slug);
+    out.push({ rocodesSlug: slug, denSlug: denset.has(slug) ? slug : null, name: titleFromSlug(slug), universeId: null, players: 0, featured: true });
+  }
+  // 2) DISCOVERY explore-api Roblox (fuzzy-match nama → slug) untuk long-tail.
   for (const g of top) {
     const cands = candidateSlugs(g.name);
     const rocodesSlug = cands.find((s) => roset.has(s)) ?? null;

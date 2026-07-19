@@ -132,7 +132,7 @@ async function buildGameSet(prevGames) {
   const popular = await discoverPopularWithCodes();
   for (const g of popular) {
     if (set.size >= MAX_GAMES) break;
-    add(canon(g), { rocodesSlug: g.rocodesSlug, denSlug: g.denSlug, name: g.name, genres: inferGenres(g.name, canon(g)), universeId: g.universeId, players: g.players });
+    add(canon(g), { rocodesSlug: g.rocodesSlug, denSlug: g.denSlug, name: g.name, genres: g.featured ? [] : inferGenres(g.name, canon(g)), universeId: g.universeId, players: g.players, featured: g.featured });
   }
   return set;
 }
@@ -176,7 +176,7 @@ async function main() {
     // tetap tampil kodenya (dari primer), badge Verified nyusul saat naik populer.
     let xset = new Set();
     let bySite = [];
-    if (entry.seed || (entry.players ?? 0) >= CROSSCHECK_MIN) {
+    if (entry.seed || entry.featured || (entry.players ?? 0) >= CROSSCHECK_MIN) {
       ({ set: xset, bySite } = await crossCheckActive(slugRo || slugDen));
     }
 
@@ -211,7 +211,7 @@ async function main() {
         slug: robloxSlug(id),
         rocodesSlug: slugRo ?? null,
         denSlug: perSource.some((p) => p.name === "Roblox Den") ? slugDen : null,
-        genres: entry.genres ?? [],
+        genres: entry.genres?.length ? entry.genres : inferGenres(name, slugRo || slugDen || ""),
         universeId,
         verified: rocodesMeta?.verified ?? false,
         crossCheck,
