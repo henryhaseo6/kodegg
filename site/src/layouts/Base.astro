@@ -350,13 +350,20 @@ const locale = lang === "id" ? "id_ID" : "en_US";
      section Roblox. Plus batasi trending (game & Roblox) jadi 6 kartu (grid 2
      kolom = 3 baris rapi, tak ada kartu ke-7 yatim). */
   @media (max-width: 560px) {
+    /* Semua section header di HP: judul ambil 1 baris penuh → link "semua …"
+       (dan badge/subtitle bila ada) turun ke baris bawah, link RATA KANAN
+       (margin-left:auto). Seragam dg section trending. */
     .gg-sechead {
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      gap: 6px !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      gap: 8px 10px !important;
     }
-    /* Trending: judul penuh 1 baris → badge (kiri) + link "Jelajah semua" (kanan,
-       margin-left:auto) turun ke baris bawahnya. */
+    .gg-sechead > :first-child {
+      flex-basis: 100% !important;
+    }
+    .gg-sechead > a {
+      margin-left: auto !important;
+    }
     .gg-trend-title {
       flex-basis: 100% !important;
     }
