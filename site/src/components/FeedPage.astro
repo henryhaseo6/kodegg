@@ -23,7 +23,7 @@ const fmtNum = (n) => new Intl.NumberFormat(lang === "id" ? "id-ID" : "en-GB").f
       <span class="gg-pulse" style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span>
       {tr("feed.live")}
     </div>
-    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:42px; line-height:1.03; letter-spacing:-0.03em; color:#fff; margin:0 0 12px;">
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(28px,4.5vw,44px); line-height:1.03; letter-spacing:-0.03em; color:#fff; margin:0 0 12px;">
       {tr("feed.title")}
     </h1>
     <p style="font-size:16px; line-height:1.55; color:var(--muted); margin:0;">{tr("feed.desc")}</p>

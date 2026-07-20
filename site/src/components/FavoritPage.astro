@@ -14,7 +14,7 @@ const tr = t(lang);
 <Header lang={lang} active={null} paths={langPaths("saved")} />
 <Breadcrumb items={[{ label: lang === "id" ? "Beranda" : "Home", href: route("home", lang) }, { label: tr("nav.saved") }]} />
 <main style="max-width:1280px; margin:0 auto; padding:22px 28px 8px;">
-  <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:42px; letter-spacing:-0.03em; color:#fff; margin:0 0 12px;">{tr("fav.title")}</h1>
+  <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(28px,4.5vw,44px); letter-spacing:-0.03em; color:#fff; margin:0 0 12px;">{tr("fav.title")}</h1>
   <p style="font-size:16px; color:var(--muted); margin:0 0 24px;">{tr("fav.desc")}</p>
 
   <div data-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(158px,1fr)); gap:16px;">
