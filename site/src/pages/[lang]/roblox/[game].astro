@@ -164,50 +164,51 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
   />
 
   <main id="main" style="max-width:1280px; margin:0 auto; padding:22px 28px 60px;">
-    <!-- HERO -->
-    <header style="display:flex; align-items:center; gap:16px; margin-bottom:8px;">
-      <span style="width:66px; height:66px; border-radius:16px; overflow:hidden; flex:0 0 auto; background:var(--surface2); border:1px solid var(--line2); display:block;">
-        <img src={g.icon} alt={g.name} width="66" height="66" style="width:100%;height:100%;object-fit:cover;display:block;"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,var(--surface2),var(--bg2))';" />
-      </span>
-      <div style="min-width:0;">
-        <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap;">
-          <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--acc2); border:1px solid rgba(139,107,255,0.5); background:rgba(139,107,255,0.1); padding:3px 8px; border-radius:6px;">Roblox</span>
-          {g.verifiedCount > 0 && (
-            <span style="display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.12); border:1px solid rgba(55,227,139,0.35); padding:3px 8px; border-radius:6px;">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-              {g.verifiedCount} {id ? "terverifikasi" : "verified"}
-            </span>
-          )}
-          {g.players > 0 && (
-            <span style="display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--muted); background:var(--surface); border:1px solid var(--line2); padding:3px 8px; border-radius:6px;" title={id ? "Pemain konkuren (data resmi Roblox, tiap jam)" : "Concurrent players (official Roblox data, hourly)"}>
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11a3 3 0 0 0 0-6M21.5 20a6.5 6.5 0 0 0-5-6.3"/></svg>
-              {fmtPlayers(g.players)} {id ? "pemain" : "players"}
-            </span>
-          )}
+    <!-- HERO — baris atas: icon + aksi; lalu badges; lalu judul full-width.
+         (Hindari icon+badges+judul+tombol rebutan 1 baris → berantakan di HP.) -->
+    <header style="margin-bottom:8px;">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <span style="width:60px; height:60px; border-radius:15px; overflow:hidden; flex:0 0 auto; background:var(--surface2); border:1px solid var(--line2); display:block;">
+          <img src={g.icon} alt={g.name} width="60" height="60" style="width:100%;height:100%;object-fit:cover;display:block;"
+            onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,var(--surface2),var(--bg2))';" />
+        </span>
+        <div style="margin-left:auto; display:flex; align-items:center; gap:10px; flex:0 0 auto;">
+          <button
+            class="gg-fav"
+            data-fav={g.id}
+            type="button"
+            aria-pressed="false"
+            aria-label={id ? "Simpan ke favorit" : "Save to favorites"}
+            title={id ? "Simpan ke favorit" : "Save to favorites"}
+            style="flex:none; width:40px; height:40px; border-radius:10px; border:1px solid var(--line2); background:var(--surface); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"
+          >
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg>
+          </button>
+          <ShareButton
+            url={`${site}/${lang}/roblox/${slug}`}
+            text={id ? `Kode ${g.name} (Roblox) terbaru — KodeGG` : `Latest ${g.name} (Roblox) codes — KodeGG`}
+            lang={lang}
+          />
         </div>
-        <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(24px,4vw,36px); letter-spacing:-0.02em; color:#fff; margin:6px 0 0; line-height:1.1;">
-          {id ? `Kode ${g.name}` : `${g.name} Codes`}
-        </h1>
       </div>
-      <div style="margin-left:auto; display:flex; align-items:center; gap:10px;">
-        <button
-          class="gg-fav"
-          data-fav={g.id}
-          type="button"
-          aria-pressed="false"
-          aria-label={id ? "Simpan ke favorit" : "Save to favorites"}
-          title={id ? "Simpan ke favorit" : "Save to favorites"}
-          style="flex:none; width:40px; height:40px; border-radius:10px; border:1px solid var(--line2); background:var(--surface); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"
-        >
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg>
-        </button>
-        <ShareButton
-          url={`${site}/${lang}/roblox/${slug}`}
-          text={id ? `Kode ${g.name} (Roblox) terbaru — KodeGG` : `Latest ${g.name} (Roblox) codes — KodeGG`}
-          lang={lang}
-        />
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+        <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--acc2); border:1px solid rgba(139,107,255,0.5); background:rgba(139,107,255,0.1); padding:3px 8px; border-radius:6px;">Roblox</span>
+        {g.verifiedCount > 0 && (
+          <span style="display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.12); border:1px solid rgba(55,227,139,0.35); padding:3px 8px; border-radius:6px;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+            {g.verifiedCount} {id ? "terverifikasi" : "verified"}
+          </span>
+        )}
+        {g.players > 0 && (
+          <span style="display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--muted); background:var(--surface); border:1px solid var(--line2); padding:3px 8px; border-radius:6px;" title={id ? "Pemain konkuren (data resmi Roblox, tiap jam)" : "Concurrent players (official Roblox data, hourly)"}>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11a3 3 0 0 0 0-6M21.5 20a6.5 6.5 0 0 0-5-6.3"/></svg>
+            {fmtPlayers(g.players)} {id ? "pemain" : "players"}
+          </span>
+        )}
       </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(26px,5vw,36px); letter-spacing:-0.02em; color:#fff; margin:0; line-height:1.1;">
+        {id ? `Kode ${g.name}` : `${g.name} Codes`}
+      </h1>
     </header>
     <p style="color:var(--muted); font-size:15px; margin:0 0 26px;">
       {id
