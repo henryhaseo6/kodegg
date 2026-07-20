@@ -69,6 +69,17 @@ jobs:
           npm install @napi-rs/canvas @ffmpeg-installer/ffmpeg googleapis --no-save --no-audit --no-fund
           node worker/make-videos.mjs || echo "auto-video gagal, lanjut"
 
+      # Video di atas kuota harian tak diupload — disimpan sbg artifact biar bisa
+      # diupload manual. Retensi 14 hari; kode redeem biasanya basi jauh sebelum itu.
+      - name: Simpan video sisa (upload manual)
+        if: ${{ always() && !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: shorts-manual-${{ github.run_number }}
+          path: _video-out/
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Commit bila ada perubahan
         run: |
           if git diff --quiet -- worker/data/ site/public/assets/roblox/; then

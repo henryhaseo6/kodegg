@@ -16,10 +16,12 @@ const ASSETS_ROBLOX = resolve(HERE, "../site/public/assets/roblox");
 const ASSETS_GAMES = resolve(HERE, "../site/public/assets/games");
 const TMP = resolve(HERE, "../_video-tmp");
 const STATE_PATH = resolve(DATA, "video-state.json");
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 3);
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 3); // batas UPLOAD otomatis/hari
+const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 8); // batas RENDER/run (jaga durasi CI)
 const PRIVACY = process.env.YT_PRIVACY || "unlisted";
 const DRY_RUN = process.env.DRY_RUN === "1"; // render + simpan lokal, TANPA upload
 const REVIEW = resolve(HERE, "../_video-review");
+const OUTDIR = resolve(HERE, "../_video-out"); // video utk upload manual (di-artifact-kan CI)
 
 const readJSON = (p, d) => { try { return JSON.parse(readFileSync(p, "utf8")); } catch { return d; } };
 const fmtPlayers = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : String(n));
@@ -91,15 +93,20 @@ async function main() {
   let candidates = buildCandidates();
   // buang yg SEMUA kode barunya sudah pernah dibikin video
   candidates = candidates.filter((c) => c.newCodes.some((nc) => !state.posted[ck(c.id, nc.code)]));
-  const remaining = MAX_PER_DAY - state.todayCount;
-  console.log(`kandidat: ${candidates.length} game punya kode baru | slot hari ini: ${remaining}/${MAX_PER_DAY}`);
+  let remaining = MAX_PER_DAY - state.todayCount;
+  console.log(`kandidat: ${candidates.length} game punya kode baru | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
   if (candidates.length === 0) { console.log("tak ada kode baru → tak ada video."); return; }
-  if (remaining <= 0) { console.log("kuota harian habis."); return; }
-  if (!ytConfigured() && !DRY_RUN) { console.log("YT belum di-set (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — lewati upload. Set dulu (lihat DEPLOY-YOUTUBE.md), atau DRY_RUN=1 utk preview lokal."); return; }
+  const canUpload = ytConfigured() && !DRY_RUN;
+  if (!canUpload && !DRY_RUN) console.log("YT belum di-set (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — semua video dirender utk upload manual. Lihat DEPLOY-YOUTUBE.md.");
 
-  const picks = candidates.slice(0, remaining);
+  // Render SEMUA kandidat (dibatasi RENDER_MAX biar CI tak kelamaan): yang muat
+  // kuota harian diupload otomatis, sisanya disimpan di _video-out/ + file
+  // metadata utk diupload manual. Tanpa ini, kode ke-4 dst hari itu tak pernah
+  // dapat video sama sekali.
+  const picks = candidates.slice(0, RENDER_MAX);
+  if (candidates.length > RENDER_MAX) console.log(`(dibatasi ${RENDER_MAX} video/run — ${candidates.length - RENDER_MAX} game sisanya nunggu run berikutnya)`);
   mkdirSync(TMP, { recursive: true });
-  if (DRY_RUN) mkdirSync(REVIEW, { recursive: true });
+  if (DRY_RUN) mkdirSync(REVIEW, { recursive: true }); else mkdirSync(OUTDIR, { recursive: true });
   for (const c of picks) {
     try {
       console.log(`\n▶ ${c.name} (${c.platform}) — ${c.newCodes.length} kode baru`);
@@ -115,12 +122,25 @@ async function main() {
         console.log(`  ✓ [DRY] ${dst}\n    judul: ${meta.title}`);
         continue; // dry run: tak upload, tak update state
       }
-      const { id, url } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th });
-      console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
+      if (canUpload && remaining > 0) {
+        const { id, url } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th });
+        console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
+        state.todayCount += 1; remaining -= 1;
+        state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
+      } else {
+        // Kuota harian habis (atau YT belum di-set) → simpan buat upload manual,
+        // lengkap dg thumbnail & metadata siap tempel.
+        const stem = `${today}-${c.id}`;
+        copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
+        copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
+        writeFileSync(resolve(OUTDIR, `${stem}.txt`), `JUDUL:\n${meta.title}\n\nDESKRIPSI:\n${meta.description}\n\nTAG:\n${(meta.tags ?? []).join(", ")}\n`);
+        console.log(`  ✓ manual: _video-out/${stem}.mp4 — "${meta.title}"`);
+        state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, title: meta.title, mode: "manual", file: `${stem}.mp4` });
+      }
+      // Tandai terpakai baik yg diupload maupun yg manual → tak dirender ulang
+      // tiap jam. Yang manual tinggal ambil dari artifact run ini.
       for (const nc of c.newCodes) state.posted[ck(c.id, nc.code)] = true;
-      state.todayCount += 1;
-      state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title });
-      writeFileSync(STATE_PATH, JSON.stringify(state, null, 2)); // simpan tiap upload → aman bila run dibatalkan
+      writeFileSync(STATE_PATH, JSON.stringify(state, null, 2)); // simpan tiap video → aman bila run dibatalkan
     } catch (e) {
       console.log(`  ✗ gagal ${c.name}: ${e.message}`);
     }
@@ -132,7 +152,8 @@ async function main() {
     writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
   }
   try { rmSync(TMP, { recursive: true, force: true }); } catch {}
-  console.log(`\nselesai — ${state.todayCount}/${MAX_PER_DAY} video hari ini.`);
+  const manual = state.log.filter((l) => l.mode === "manual" && l.at?.slice(0, 10) === today).length;
+  console.log(`\nselesai — ${state.todayCount}/${MAX_PER_DAY} upload otomatis hari ini${manual ? `, ${manual} video nunggu upload manual (_video-out/)` : ""}.`);
 }
 
 main().catch((e) => { console.error("make-videos error:", e.message); process.exit(0); });
