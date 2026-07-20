@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-07-20T02:01:16.528Z",
+  "updatedAt": "2026-07-20T03:01:14.576Z",
   "counts": {
-    "active": 110,
-    "archived": 30
+    "active": 108,
+    "archived": 31
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "[Zenless Zone Zero × Kyuramen Collaboration]",
+        "id": "[Zenless Zone Zero × Kyuramen Collaboration]"
+      },
+      "excerpt": {
+        "en": "Dear Proxies! Zenless Zone Zero is teaming up with all Kyuramen locations across the U.S. to bring you this year's Operation Yum collab event. The event runs from August 14 to Octo",
+        "id": "Dear Proxies! Zenless Zone Zero is teaming up with all Kyuramen locations across the U.S. to bring you this year's Operation Yum collab event. The event runs from August 14 to Octo"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/18/2bb40fa70bb4edbc77b045e4f165ac37_6477218949925517798.jpg",
+      "url": "https://www.hoyolab.com/article/45927314",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-20T03:00:02.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -308,22 +324,6 @@
       "url": "https://www.hoyolab.com/article/45889380",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-17T12:28:02.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Version 3.1 Zenless Zone Zero 2nd Anniversary Celebration Rewards Overview",
-        "id": "Panduan Bonus V3.1 \"Anniversary ke-2 Zenless Zone Zero\""
-      },
-      "excerpt": {
-        "en": "Version 3.1 \"The Long Goodbye\" officially launches on July 29, featuring the first-generation Void Hunter Remielle! ● During the event, log in to receive a limited S-Rank Agent of ",
-        "id": "Versi 3.1 \"Sunyi Panjang Sebuah Pamit\" akan resmi dirilis pada 29 Juli, menghadirkan Void Hunter generasi pertama, \"Remielle\"! ● Selama event berlangsung, login untuk mendapatkan 1"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/0/afb12d823728c822d2e419f2434829c3_6722160881222993593.jpeg",
-      "url": "https://www.hoyolab.com/article/45889330",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-17T12:25:08.000Z"
     },
     {
       "game": "hsr",
@@ -820,22 +820,6 @@
       "url": "https://www.hoyolab.com/article/45842284",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-14T02:00:04.000Z"
-    },
-    {
-      "game": "tot",
-      "gameName": "Tears of Themis",
-      "title": {
-        "en": "✦ Ceremony Preparations - Ring Holder ✦",
-        "id": "✦ Ceremony Preparations - Ring Holder ✦"
-      },
-      "excerpt": {
-        "en": "\"I'll definitely be nervous then. Don't you dare laugh at me if my hands start to shake...\" Faithful to the end, he gladly gives his all for love. \"The ancients believed that geese",
-        "id": "\"I'll definitely be nervous then. Don't you dare laugh at me if my hands start to shake...\" Faithful to the end, he gladly gives his all for love. \"The ancients believed that geese"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/09/efc8a9d6cab81da419183788a23b9280_6370427444858455572.png",
-      "url": "https://www.hoyolab.com/article/45835303",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-13T10:45:03.000Z"
     },
     {
       "game": "hsr",
@@ -1748,7 +1732,9 @@
       "url": "https://www.hoyolab.com/article/45571163",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-23T06:00:03.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1763,10 +1749,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/15/7e60be640410e7fefb6a5e165e677493_6144413754517439072.png",
       "url": "https://www.hoyolab.com/article/45531236",
       "source": "HoYoLAB",
-      "publishedAt": "2026-06-20T03:00:07.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-06-20T03:00:07.000Z",
+      "archivedAt": "2026-07-20T03:01:14.576Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
