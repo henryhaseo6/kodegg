@@ -29,11 +29,12 @@ function searchIndex(item) {
     .toLowerCase();
 }
 
-// Ambang "kode baru": dianggap BARU bila TANGGAL RILIS/DISCOVERY dari sumber
-// dalam N hari terakhir. SENGAJA pakai `date` (bukan firstSeenAt) — firstSeenAt
-// ke-stamp bareng saat deploy pertama, jadi semua kode lama tampak "baru".
-// Pakai tanggal sumber = presisi: hanya kode yang benar-benar baru dirilis yang
-// glow (mis. kode livestream dari crimsonwitch/wiki). Kode permanen tak pernah baru.
+// Ambang "kode baru": dianggap BARU bila `rankMs` (tanggal rilis sumber, atau
+// firstSeen untuk kode non-bulk) dalam N hari terakhir. Pakai rankMs, BUKAN date
+// saja — sumber seperti WSCO/NIKKE tak memberi tanggal rilis, jadi kode yang
+// benar-benar baru muncul di sana takkan pernah dapat badge. Flag `bulk` (import
+// pertama sebuah game, umur tak diketahui) sudah membuat rankMs=0, jadi menambah
+// game baru tetap tak membanjiri badge BARU. Kode permanen tak pernah baru.
 const NEW_DAYS = 3;
 const NOW_MS = Date.now();
 
@@ -64,7 +65,7 @@ function shape(item) {
     search: searchIndex(item),
     rankMs,
     firstSeenMs,
-    isNew: !item.perm && dateMs > 0 && NOW_MS - dateMs <= NEW_DAYS * 86400000,
+    isNew: !item.perm && rankMs > 0 && NOW_MS - rankMs <= NEW_DAYS * 86400000,
   };
 }
 
