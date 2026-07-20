@@ -36,6 +36,10 @@ const id = lang === "id";
 const [codes, events] = await Promise.all([loadCodes(), loadEvents(lang)]);
 const gameCodes = codes.active.filter((c) => c.game === gid);
 const gameEvents = events.events.filter((e) => e.game === gid);
+// Arsip kode kedaluwarsa (disimpan sbg database, tak dihapus). Tampilkan terbaru.
+const ARCH_CAP = 24;
+const gameArchive = codes.archive.filter((c) => c.game === gid);
+const archShown = gameArchive.slice(0, ARCH_CAP);
 
 // Cara redeem (spesifik per game, terverifikasi — lihat lib/redeem.mjs).
 const rd = redeemInfo(gid, lang);
@@ -263,6 +267,37 @@ const jsonLd = [
             {gameEvents.map((e) => <EventCard e={e} lang={lang} />)}
           </div>
           <nav data-ev-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:26px;"></nav>
+        </section>
+      )
+    }
+
+    <!-- ARSIP KODE KEDALUWARSA — disimpan sbg database, tidak dihapus -->
+    {
+      gameArchive.length > 0 && (
+        <section style="max-width:1280px; margin:0 auto; padding:28px 28px 8px;">
+          <details>
+            <summary style="cursor:pointer; display:flex; align-items:center; gap:10px; list-style:none;">
+              <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; color:var(--txt); margin:0;">
+                {id ? "Arsip kode kedaluwarsa" : "Expired codes archive"} <span style="color:var(--faint); font-size:16px; font-weight:700;">({gameArchive.length})</span>
+              </h2>
+              <svg class="gg-arch-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--faint)" stroke-width="2.5" stroke-linecap="round" style="transition:transform .2s;">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <p style="color:var(--faint); font-size:13px; margin:12px 0 0; font-family:'Space Mono',monospace;">
+              {id
+                ? `Menampilkan ${archShown.length} terbaru dari ${gameArchive.length}. Kode kedaluwarsa disimpan sebagai database, tidak dihapus.`
+                : `Showing latest ${archShown.length} of ${gameArchive.length}. Expired codes are kept as a database, never deleted.`}
+            </p>
+            <div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr)); gap:12px;">
+              {archShown.map((c) => (
+                <div style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px; opacity:.72;">
+                  <div style="font-size:12.5px; font-weight:700; color:var(--muted); margin-bottom:8px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{c.reward || (id ? "Kode kedaluwarsa" : "Expired code")}</div>
+                  <code style="display:block; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--faint); background:var(--bg); border:1px dashed var(--line2); border-radius:8px; padding:7px 9px; text-align:center; overflow:hidden; text-overflow:ellipsis; text-decoration:line-through;">{c.code}</code>
+                </div>
+              ))}
+            </div>
+          </details>
         </section>
       )
     }
