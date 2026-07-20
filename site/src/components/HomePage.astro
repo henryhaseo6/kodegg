@@ -23,6 +23,16 @@ const topRoblox = roblox?.top ?? []; // kode Roblox terbaru (RoCodes)
 const topFeed = feed.items.slice(0, 8); // event + berita tercampur, terbaru dulu
 const trending = [...catalog.games].sort((a, b) => a.pop - b.pop).slice(0, 7); // 7 = pas 1 baris desktop
 
+// Statistik hero. Lime (--acc) = umum/mobile; ungu (--acc2) = vertikal Roblox.
+const stats = [
+  [fmtNum(codes.counts.active), tr("stat.active"), "var(--acc)"],
+  [fmtNum(catalog.games.length), tr("stat.games"), "var(--acc)"],
+  [fmtNum(roblox?.counts?.active ?? 0), id ? "kode Roblox" : "Roblox codes", "var(--acc2)"],
+  [fmtNum(roblox?.gamesCount ?? 0), id ? "game Roblox" : "Roblox games", "var(--acc2)"],
+  [fmtNum(feed.counts.events), id ? "event" : "events", "var(--acc)"],
+  [fmtNum(feed.counts.news), id ? "berita" : "articles", "var(--acc)"],
+];
+
 const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:26px; letter-spacing:-0.02em; color:#fff; margin:0;";
 const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--acc); text-decoration:none;";
 ---
@@ -31,8 +41,8 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
 
 <main id="main">
   <!-- HERO -->
-  <section style="max-width:1280px; margin:0 auto; padding:60px 28px 30px;">
-    <div style="display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:var(--acc); margin-bottom:18px;">
+  <section class="gg-hero" style="max-width:1280px; margin:0 auto; padding:60px 28px 30px;">
+    <div class="gg-hero-badge" style="display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:var(--acc); margin-bottom:18px;">
       <span class="gg-pulse" style="width:7px; height:7px; border-radius:50%; background:var(--ok); animation:glowPulse 1.8s infinite;"></span>
       {id ? "OTOMATIS · DIPERBARUI TIAP JAM" : "AUTOMATED · UPDATED HOURLY"}
     </div>
@@ -42,10 +52,10 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
     <p style="font-size:17px; line-height:1.55; color:var(--muted); margin:0 0 30px;">
       {id ? "Kode redeem game online & Roblox, event & banner, dan berita — ditarik otomatis dari sumber tepercaya dan diperbarui tiap jam." : "Redeem codes for online games & Roblox, events & banners, and news — pulled automatically from trusted sources and refreshed hourly."}
     </p>
-    <div style="display:flex; flex-wrap:wrap; gap:26px;">
-      {[[fmtNum(codes.counts.active), tr("stat.active")], [fmtNum(catalog.games.length), tr("stat.games")], [fmtNum(feed.counts.events), id ? "event" : "events"], [fmtNum(feed.counts.news), id ? "berita" : "articles"]].map(([n, label]) => (
-        <div style="display:flex; align-items:baseline; gap:8px;">
-          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:24px; color:var(--acc);">{n}</span>
+    <div class="gg-stats" style="display:flex; flex-wrap:wrap; gap:26px;">
+      {stats.map(([n, label, color]) => (
+        <div class="gg-stat" style="display:flex; align-items:baseline; gap:8px;">
+          <span style={`font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:24px; color:${color};`}>{n}</span>
           <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint); text-transform:uppercase; letter-spacing:0.06em;">{label}</span>
         </div>
       ))}
@@ -53,7 +63,7 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
   </section>
 
   <!-- REDEEM -->
-  <section style="max-width:1280px; margin:0 auto; padding:28px 28px;">
+  <section class="gg-redeem" style="max-width:1280px; margin:0 auto; padding:28px 28px;">
     <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px; gap:12px;">
       <h2 style={SectionHead}>{id ? "Kode redeem terbaru" : "Latest redeem codes"}</h2>
       <a href={route("codes", lang)} style={More}>{id ? "Semua kode" : "All codes"} →</a>

@@ -316,4 +316,34 @@ const locale = lang === "id" ? "id_ID" : "en_US";
       padding-right: 7px !important;
     }
   }
+  /* Homepage hero lebih ringkas di HP: kurangi padding atas + jarak, stat jadi
+     grid 2 kolom → kartu kode pertama lebih dekat (tak jauh ke bawah). */
+  @media (max-width: 720px) {
+    .gg-hero {
+      padding-top: 26px !important;
+      padding-bottom: 14px !important;
+    }
+    .gg-hero-badge {
+      margin-bottom: 12px !important;
+    }
+    .gg-hero h1 {
+      margin-bottom: 12px !important;
+    }
+    .gg-hero p {
+      font-size: 15px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 18px !important;
+    }
+    .gg-stats {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 12px 14px !important;
+    }
+    .gg-stat span:first-child {
+      font-size: 21px !important;
+    }
+    .gg-redeem {
+      padding-top: 14px !important;
+    }
+  }
 </style>
