@@ -137,6 +137,60 @@ async function buildGameSet(prevGames) {
   return set;
 }
 
+// Dedup by universeId: game yg SAMA bisa punya >1 slug (mis. RoCodes "rivals" &
+// "roblox-rivals", atau "fish-it" & "roblox-fish-it") → tampil dobel. universeId
+// = identitas sejati game. Gabungkan: pilih survivor (dual-source dulu, lalu kode
+// terbanyak, lalu nama terpendek), UNION kode dua slug (dedup per kode), lebur
+// meta kosong. Jalan tiap run → dobel tak muncul lagi walau slug baru bermunculan.
+function dedupByUniverse(gamesMap, activeArr, archiveArr) {
+  const groups = new Map();
+  for (const [id, g] of Object.entries(gamesMap)) {
+    const uid = Number(g.universeId); // universeId bisa number ATAU string → samakan
+    if (!uid) continue;
+    (groups.get(uid) ?? groups.set(uid, []).get(uid)).push(id);
+  }
+  const remap = new Map(); // loserId → survivorId
+  for (const ids of groups.values()) {
+    if (ids.length < 2) continue;
+    const nActive = (id) => activeArr.reduce((n, c) => n + (c.game === id ? 1 : 0), 0);
+    const score = (id) => {
+      const g = gamesMap[id];
+      return [g.rocodesSlug && g.denSlug ? 1 : 0, nActive(id), -(g.name?.length ?? 99)];
+    };
+    ids.sort((a, b) => {
+      const sa = score(a);
+      const sb = score(b);
+      return sb[0] - sa[0] || sb[1] - sa[1] || sb[2] - sa[2];
+    });
+    const survivor = ids[0];
+    const s = gamesMap[survivor];
+    for (const loser of ids.slice(1)) {
+      remap.set(loser, survivor);
+      const l = gamesMap[loser];
+      if (!s.denSlug && l.denSlug) s.denSlug = l.denSlug;
+      if ((s.howTo?.length ?? 0) < (l.howTo?.length ?? 0)) s.howTo = l.howTo;
+      s.crossCheck = [...new Set([...(s.crossCheck ?? []), ...(l.crossCheck ?? [])])];
+      s.verified = s.verified || l.verified;
+      s.players = Math.max(s.players ?? 0, l.players ?? 0);
+      delete gamesMap[loser];
+    }
+  }
+  if (!remap.size) return { active: activeArr, archive: archiveArr };
+  const reassign = (arr) => {
+    const seen = new Set();
+    const out = [];
+    for (const c of arr) {
+      const gid = remap.get(c.game) ?? c.game;
+      const key = `${gid}|${(c.code ?? "").toLowerCase()}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      out.push(gid === c.game ? c : { ...c, game: gid, gameName: gamesMap[gid]?.name ?? c.gameName });
+    }
+    return out;
+  };
+  return { active: reassign(activeArr), archive: reassign(archiveArr) };
+}
+
 async function main() {
   const now = new Date().toISOString();
   const prev = await readPrevious();
@@ -190,9 +244,11 @@ async function main() {
       ({ set: xset, bySite } = await crossCheckActive(slugRo || slugDen));
     }
 
-    // universeId: RoCodes → placeId Den (resolve) → discovery.
+    // universeId: RoCodes → placeId Den (resolve) → discovery. Normalisasi ke
+    // Number (sumber kadang string) → dedup & fetchPlayers konsisten.
     let universeId = rocodesMeta?.universeId ?? entry.universeId ?? null;
     if (!universeId && denMeta?.placeId) universeId = await resolveUniverse(denMeta.placeId);
+    universeId = universeId != null ? Number(universeId) || null : null;
 
     const fActive = [];
     let nVer = 0;
@@ -248,8 +304,11 @@ async function main() {
     covered.add(r.id);
   }
 
-  const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshActive, freshArchive, prev, covered, now);
+  const { active: activeRaw, archive: fullArchiveRaw, newlyArchived } = mergeWithPrevious(freshActive, freshArchive, prev, covered, now);
   const mergedGames = { ...(prev.games ?? {}), ...games };
+  // Gabung game duplikat (universeId sama, slug beda spt rivals/roblox-rivals) →
+  // satu game, kode dua slug di-UNION. Wajib sebelum cap arsip & tulis payload.
+  const { active, archive: fullArchive } = dedupByUniverse(mergedGames, activeRaw, fullArchiveRaw);
 
   // Cap arsip per game (simpan ARCHIVE_CAP terbaru) → roblox-codes.json tak
   // membengkak tak terbatas seiring bertambahnya game & kode kedaluwarsa.
