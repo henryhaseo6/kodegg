@@ -5,16 +5,23 @@
 // di localStorage (utk render ulang) & dikirim ke /api/subscribe (utk filter
 // pengiriman di worker push-notify).
 import { loadCatalog } from "../lib/catalog.mjs";
+import { loadRobloxGameList } from "../lib/roblox.mjs";
 import { route } from "../lib/routes.mjs";
 
 const VAPID = import.meta.env.PUBLIC_VAPID_KEY || "";
 const { lang } = Astro.props;
 const id = lang === "id";
 
+// Picker gabungan: game mobile + game Roblox (r:1). id = kunci filter push-notify.
 let games = [];
 if (VAPID) {
   const catalog = await loadCatalog();
-  games = catalog.games.filter((g) => g.hasCodes).map((g) => ({ id: g.id, name: g.name }));
+  const mobile = catalog.games.filter((g) => g.hasCodes).map((g) => ({ id: g.id, name: g.name, r: 0 }));
+  let roblox = [];
+  try {
+    roblox = (await loadRobloxGameList()).map((g) => ({ id: g.id, name: g.name, r: 1 }));
+  } catch {}
+  games = [...mobile, ...roblox];
 }
 
 const T = {
@@ -30,6 +37,8 @@ const T = {
   turnoff: id ? "Matikan notifikasi" : "Turn off",
   err: id ? "Gagal. Coba lagi." : "Failed. Try again.",
   none: id ? "Pilih minimal satu game." : "Pick at least one game.",
+  search: id ? "Cari game…" : "Search game…",
+  nores: id ? "Game tak ditemukan" : "No game found",
 };
 ---
 
@@ -73,14 +82,16 @@ const T = {
           <button data-notify-favs type="button" style="width:100%; text-align:left; cursor:pointer; font-family:'Space Mono',monospace; font-size:11.5px; font-weight:700; color:var(--acc); background:transparent; border:none; padding:6px 6px 8px;">
             ★ {T.favs}
           </button>
-          <div style="max-height:180px; overflow-y:auto; display:flex; flex-direction:column;">
-            {games.map((g) => (
-              <label style="display:flex; align-items:center; gap:9px; padding:6px; cursor:pointer; font-size:13px; color:var(--txt); border-radius:7px;">
-                <input type="checkbox" value={g.id} data-notify-game style="accent-color:var(--acc); width:15px; height:15px;" />
-                {g.name}
-              </label>
-            ))}
-          </div>
+          <input
+            data-notify-search
+            type="search"
+            autocomplete="off"
+            placeholder={T.search}
+            aria-label={T.search}
+            style="width:100%; box-sizing:border-box; margin:0 0 6px; padding:8px 10px; font-family:'Satoshi',sans-serif; font-size:13px; color:var(--txt); background:var(--bg); border:1px solid var(--line); border-radius:8px; outline:none;"
+          />
+          <div data-notify-empty style="display:none; padding:10px 6px; font-size:12px; color:var(--faint);">{T.nores}</div>
+          <div data-notify-gamelist style="max-height:190px; overflow-y:auto; display:flex; flex-direction:column;" />
         </div>
 
         <div data-notify-msg style="display:none; font-size:11.5px; color:var(--danger); margin:6px 2px 0;" />
@@ -99,7 +110,7 @@ const T = {
         </a>
       </div>
 
-      <script is:inline define:vars={{ VAPID, T }}>
+      <script is:inline define:vars={{ VAPID, T, GAMES: games }}>
         (function () {
           const root = document.querySelector("[data-notify-root]");
           if (!root) return;
@@ -111,8 +122,53 @@ const T = {
 
           const scopes = [...root.querySelectorAll("[data-notify-scope]")];
           const gamesBox = root.querySelector("[data-notify-games]");
-          const gameChecks = [...root.querySelectorAll("[data-notify-game]")];
+          const gameList = root.querySelector("[data-notify-gamelist]");
+          const searchInput = root.querySelector("[data-notify-search]");
+          const emptyEl = root.querySelector("[data-notify-empty]");
           const favsBtn = root.querySelector("[data-notify-favs]");
+          let gameChecks = [];
+
+          // Bangun daftar game (mobile + Roblox) SEKALI, saat picker dibuka
+          // pertama kali (hemat: ~240 game tak dirender di tiap page-load).
+          let built = false;
+          function buildGameList() {
+            if (built) return;
+            built = true;
+            for (const g of GAMES) {
+              const label = document.createElement("label");
+              label.dataset.row = g.name.toLowerCase();
+              label.style.cssText = "display:flex; align-items:center; gap:9px; padding:6px; cursor:pointer; font-size:13px; color:var(--txt); border-radius:7px;";
+              const cb = document.createElement("input");
+              cb.type = "checkbox";
+              cb.value = g.id;
+              cb.setAttribute("data-notify-game", "");
+              cb.style.cssText = "accent-color:var(--acc); width:15px; height:15px; flex:none;";
+              const txt = document.createElement("span");
+              txt.textContent = g.name;
+              txt.style.cssText = "overflow:hidden; text-overflow:ellipsis; white-space:nowrap;";
+              label.append(cb, txt);
+              if (g.r) {
+                const tag = document.createElement("span");
+                tag.textContent = "Roblox";
+                tag.style.cssText = "margin-left:auto; flex:none; font-family:'Space Mono',monospace; font-size:9px; font-weight:700; color:var(--acc2); border:1px solid var(--acc2); border-radius:5px; padding:1px 5px;";
+                label.appendChild(tag);
+              }
+              gameList.appendChild(label);
+              gameChecks.push(cb);
+            }
+          }
+
+          function applySearch() {
+            const q = (searchInput?.value || "").trim().toLowerCase();
+            let shown = 0;
+            for (const cb of gameChecks) {
+              const on = !q || cb.parentElement.dataset.row.includes(q);
+              cb.parentElement.style.display = on ? "flex" : "none";
+              if (on) shown++;
+            }
+            if (emptyEl) emptyEl.style.display = shown ? "none" : "block";
+          }
+          searchInput?.addEventListener("input", applySearch);
           const saveBtn = root.querySelector("[data-notify-save]");
           const offBtn = root.querySelector("[data-notify-off]");
           const msg = root.querySelector("[data-notify-msg]");
@@ -158,7 +214,7 @@ const T = {
           function setOpen(open) {
             menu.style.display = open ? "block" : "none";
             btn.setAttribute("aria-expanded", String(open));
-            if (open) { loadPrefs(); msg.style.display = "none"; }
+            if (open) { buildGameList(); loadPrefs(); applySearch(); msg.style.display = "none"; }
           }
           btn.addEventListener("click", (e) => { e.stopPropagation(); setOpen(menu.style.display === "none"); });
           document.addEventListener("click", (e) => { if (!root.contains(e.target)) setOpen(false); });
@@ -224,3 +280,19 @@ const T = {
     </div>
   )
 }
+
+<style>
+  /* Mobile: lonceng ada di tengah-kanan header, panel absolut `right:0` melar ke
+     kiri sampai kepotong layar. Anchor ke viewport (fixed, full-width) → selalu
+     utuh. !important utk mengalahkan inline style. */
+  @media (max-width: 720px) {
+    [data-notify-menu] {
+      position: fixed !important;
+      top: 64px !important;
+      left: 12px !important;
+      right: 12px !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+  }
+</style>

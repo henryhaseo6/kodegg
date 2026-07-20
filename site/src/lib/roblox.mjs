@@ -96,6 +96,15 @@ export async function loadRobloxCatalog() {
     .sort((a, b) => b.newestMs - a.newestMs || b.activeCount - a.activeCount || a.name.localeCompare(b.name));
 }
 
+/** Daftar ringkas game Roblox (id + nama) untuk picker notifikasi. `id` = kunci
+ * filter push-notify (cocok dg field `game` pada kode), bukan slug. */
+export async function loadRobloxGameList() {
+  const raw = await read();
+  return Object.entries(raw.games ?? {})
+    .map(([id, g]) => ({ id, name: g.name }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
 /** Kode PROMO Roblox platform (halaman /roblox/promo-codes). */
 export async function loadRobloxPromo() {
   const raw = await read();

@@ -37,9 +37,20 @@ async function main() {
   try {
     codes = JSON.parse(await readFile(resolve(HERE, "data/new-codes.json"), "utf8")).codes ?? [];
   } catch {
-    console.log("push-notify: new-codes.json tak ada — tak ada kode baru.");
-    return;
+    /* tak ada kode mobile baru — mungkin ada kode Roblox baru di bawah */
   }
+  // Kode Roblox baru: tandai platform + resolve slug (id ≠ slug) utk URL
+  // /roblox/<slug>. Subscriber yg memilih game Roblox (id) di picker menerimanya.
+  try {
+    const rb = JSON.parse(await readFile(resolve(HERE, "data/new-roblox-codes.json"), "utf8")).codes ?? [];
+    if (rb.length) {
+      let rbGames = {};
+      try {
+        rbGames = JSON.parse(await readFile(resolve(HERE, "data/roblox-codes.json"), "utf8")).games ?? {};
+      } catch {}
+      for (const c of rb) codes.push({ ...c, platform: "roblox", gameSlug: rbGames[c.game]?.slug ?? c.game });
+    }
+  } catch {}
   if (codes.length === 0) {
     console.log("push-notify: tak ada kode baru.");
     return;
@@ -61,7 +72,7 @@ async function main() {
   const msgFor = (c) => ({
     title: `Kode ${c.gameName} baru!`,
     body: c.reward ? `${c.code} — ${c.reward}` : c.code,
-    url: `${SITE_URL}/id/game/${c.game}`,
+    url: c.platform === "roblox" ? `${SITE_URL}/id/roblox/${c.gameSlug}` : `${SITE_URL}/id/game/${c.game}`,
     tag: `kodegg-${c.code}`,
   });
 
