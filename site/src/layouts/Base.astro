@@ -355,6 +355,11 @@ const locale = lang === "id" ? "id_ID" : "en_US";
       align-items: flex-start !important;
       gap: 6px !important;
     }
+    /* Trending: judul penuh 1 baris → badge (kiri) + link "Jelajah semua" (kanan,
+       margin-left:auto) turun ke baris bawahnya. */
+    .gg-trend-title {
+      flex-basis: 100% !important;
+    }
     .gg-trend-grid > *:nth-child(n + 7) {
       display: none !important;
     }
