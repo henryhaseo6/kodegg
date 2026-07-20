@@ -11,6 +11,8 @@ import { loadRobloxCatalog, loadRobloxHome } from "../lib/roblox.mjs";
 import { PAGE_KEYS, route, langPaths } from "../lib/routes.mjs";
 
 const SITE = "https://kodegg.com";
+// URL kanonik = ber-trailing-slash (CF Pages menyajikan versi ber-slash sbg 200).
+const ws = (p) => (p.endsWith("/") ? p : `${p}/`);
 const day = (iso) => (iso ? new Date(iso) : new Date()).toISOString().slice(0, 10);
 
 export async function GET() {
@@ -49,10 +51,10 @@ export async function GET() {
         LANGS.map(
           (lang) =>
             `  <url>\n` +
-            `    <loc>${SITE}${e.paths[lang]}</loc>\n` +
+            `    <loc>${SITE}${ws(e.paths[lang])}</loc>\n` +
             `    <lastmod>${e.lastmod}</lastmod>\n` +
-            `    <xhtml:link rel="alternate" hreflang="id" href="${SITE}${e.paths.id}"/>\n` +
-            `    <xhtml:link rel="alternate" hreflang="en" href="${SITE}${e.paths.en}"/>\n` +
+            `    <xhtml:link rel="alternate" hreflang="id" href="${SITE}${ws(e.paths.id)}"/>\n` +
+            `    <xhtml:link rel="alternate" hreflang="en" href="${SITE}${ws(e.paths.en)}"/>\n` +
             `  </url>`,
         ),
       )

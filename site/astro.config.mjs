@@ -6,7 +6,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://kodegg.com",
   output: "static",
-  trailingSlash: "ignore",
+  trailingSlash: "always", // CF Pages (directory) serve versi ber-slash sbg 200
   build: { format: "directory" },
   devToolbar: { enabled: false },
 });

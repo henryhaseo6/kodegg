@@ -9,7 +9,11 @@ import "../styles/fonts.css"; // @font-face self-hosted (public/fonts/*.woff2)
 // jsonLd = array objek Schema.org (dirender sbg <script ld+json>).
 const { lang, title, description, path, paths, jsonLd = [], noindex = false, ogImage: ogImageProp } = Astro.props;
 const other = otherLang(lang);
-const pathFor = (l) => (paths ? paths[l] : `/${l}${path ?? ""}`);
+// Cloudflare Pages (build.format "directory") menyajikan versi BER-trailing-slash
+// sebagai 200 & me-redirect non-slash → slash (308). Maka canonical/hreflang/og
+// WAJIB ber-trailing-slash agar menunjuk langsung ke URL 200 (bukan yg redirect).
+const withSlash = (p) => (p.endsWith("/") ? p : `${p}/`);
+const pathFor = (l) => withSlash(paths ? paths[l] : `/${l}${path ?? ""}`);
 const canonical = new URL(pathFor(lang), Astro.site).href;
 const altUrl = (l) => new URL(pathFor(l), Astro.site).href;
 // OG image: prop khusus (mis. kartu per-game) → fallback OG situs per-bahasa
