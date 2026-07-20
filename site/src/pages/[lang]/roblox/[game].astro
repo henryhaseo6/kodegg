@@ -25,8 +25,9 @@ const g = await loadRobloxGame(slug);
 if (!g) return Astro.redirect(`/${lang}/roblox`);
 
 const my = monthYear(lang);
-const ARCH_CAP = 24; // Fase 1: tampilkan arsip terbaru saja (windowing di Fase 3)
-const archShown = g.archive.slice(0, ARCH_CAP);
+const ARCHIVE_CAP = 300; // = ARCHIVE_CAP di worker/fetch-roblox.mjs (batas arsip/game)
+const atCap = g.archive.length >= ARCHIVE_CAP; // mentok → teks "never deleted" tak akurat
+const ARCH_PAGE = 20; // arsip dipaginasi 20/halaman (klien)
 
 // Cara redeem Roblox: BILINGUAL & standar. howTo dari RoCodes cuma Inggris +
 // mengandung placeholder {{game_name}} yang tak tersubstitusi, jadi tak dipakai.
@@ -282,16 +283,23 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
             <svg class="gg-arch-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--faint)" stroke-width="2.5" stroke-linecap="round" style="transition:transform .2s;"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <p style="color:var(--faint); font-size:13px; margin:12px 0 0; font-family:'Space Mono',monospace;">
-            {id ? `Menampilkan ${archShown.length} terbaru dari ${g.archive.length}. Kode kedaluwarsa disimpan sebagai database, tidak dihapus.` : `Showing latest ${archShown.length} of ${g.archive.length}. Expired codes are kept as a database, never deleted.`}
+            {atCap
+              ? id
+                ? `Menyimpan ${ARCHIVE_CAP} kode kedaluwarsa terbaru per game (batas arsip; yang lebih lama dari itu terpangkas).`
+                : `Keeping the latest ${ARCHIVE_CAP} expired codes per game (archive cap; older ones are trimmed).`
+              : id
+                ? `${g.archive.length} kode kedaluwarsa — disimpan sebagai database, tidak dihapus.`
+                : `${g.archive.length} expired codes — kept as a database, never deleted.`}
           </p>
-          <div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr)); gap:12px;">
-            {archShown.map((c) => (
-              <div style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px; opacity:.72;">
+          <div data-arch-grid style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr)); gap:12px;">
+            {g.archive.map((c) => (
+              <div data-arch-card style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px; opacity:.72;">
                 <div style="font-size:12.5px; font-weight:700; color:var(--muted); margin-bottom:8px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{c.reward || (id ? "Kode kedaluwarsa" : "Expired code")}</div>
                 <code style="display:block; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; color:var(--faint); background:var(--bg); border:1px dashed var(--line2); border-radius:8px; padding:7px 9px; text-align:center; overflow:hidden; text-overflow:ellipsis; text-decoration:line-through;">{c.code}</code>
               </div>
             ))}
           </div>
+          <nav data-arch-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:22px;" />
         </details>
       </section>
     )}
@@ -374,6 +382,55 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
           if (page > total) page = total;
           const start = (page - 1) * CODE_PAGE;
           cards.forEach((c, i) => (c.style.display = i >= start && i < start + CODE_PAGE ? "flex" : "none"));
+          pager.innerHTML = "";
+          if (total <= 1) return;
+          const go = (n) => { page = n; render(); grid.scrollIntoView({ behavior: "smooth", block: "start" }); };
+          pager.appendChild(pbtn("‹", { disabled: page === 1, onClick: () => go(page - 1) }));
+          for (const n of pageList(page, total)) {
+            if (n === "…") {
+              const d = document.createElement("span");
+              d.textContent = "…";
+              d.style.cssText = "color:var(--faint); font-family:'Space Mono',monospace; padding:0 4px;";
+              pager.appendChild(d);
+            } else pager.appendChild(pbtn(String(n), { active: n === page, onClick: () => go(n) }));
+          }
+          pager.appendChild(pbtn("›", { disabled: page === total, onClick: () => go(page + 1) }));
+        }
+        render();
+      })();
+    </script>
+  )}
+
+  {g.archive.length > ARCH_PAGE && (
+    <script is:inline define:vars={{ ARCH_PAGE }}>
+      (function () {
+        const grid = document.querySelector("[data-arch-grid]");
+        const pager = document.querySelector("[data-arch-pager]");
+        if (!grid || !pager) return;
+        const cards = Array.from(grid.querySelectorAll("[data-arch-card]"));
+        let page = 1;
+        function pageList(cur, total) {
+          const want = new Set([1, total, cur, cur - 1, cur + 1]);
+          const arr = [...want].filter((n) => n >= 1 && n <= total).sort((a, b) => a - b);
+          const out = []; let prev = 0;
+          for (const n of arr) { if (n - prev > 1) out.push("…"); out.push(n); prev = n; }
+          return out;
+        }
+        function pbtn(label, opts) {
+          const el = document.createElement("button");
+          el.type = "button"; el.textContent = label; el.disabled = !!opts.disabled;
+          el.style.cssText =
+            "cursor:pointer; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; min-width:38px; height:38px; padding:0 11px; border-radius:10px; border:1px solid " +
+            (opts.active ? "var(--acc2)" : "var(--line2)") + "; background:" + (opts.active ? "var(--acc2)" : "var(--surface)") +
+            "; color:" + (opts.active ? "#fff" : opts.disabled ? "var(--faint)" : "var(--txt)") + (opts.disabled ? "; opacity:0.5; cursor:default" : "") + ";";
+          if (opts.onClick && !opts.disabled) el.addEventListener("click", opts.onClick);
+          return el;
+        }
+        function render() {
+          const total = Math.max(1, Math.ceil(cards.length / ARCH_PAGE));
+          if (page > total) page = total;
+          const start = (page - 1) * ARCH_PAGE;
+          cards.forEach((c, i) => (c.style.display = i >= start && i < start + ARCH_PAGE ? "" : "none"));
           pager.innerHTML = "";
           if (total <= 1) return;
           const go = (n) => { page = n; render(); grid.scrollIntoView({ behavior: "smooth", block: "start" }); };
