@@ -108,7 +108,7 @@ const nav = [
           aria-current={item.current ? "page" : undefined}
           style={`display:block; padding:13px 6px; font-size:16px; font-weight:600; text-decoration:none; border-bottom:1px solid var(--line); color:${item.current ? "var(--acc)" : "var(--txt)"};`}
         >
-          {tr(item.key)}
+          {item.label ?? tr(item.key)}
         </a>
       ))
     }

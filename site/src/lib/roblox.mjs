@@ -74,7 +74,7 @@ export async function loadRobloxHome(limit = 8) {
       codeCount: activeByGame[gid] ?? 0,
     }))
     .sort((a, b) => b.players - a.players)
-    .slice(0, 12);
+    .slice(0, 7);
 
   return {
     updatedAt: raw.updatedAt ?? null,

@@ -346,4 +346,17 @@ const locale = lang === "id" ? "id_ID" : "en_US";
       padding-top: 14px !important;
     }
   }
+  /* HP: judul section di atas, link "semua" di bawah (bukan sebaris) — seperti
+     section Roblox. Plus batasi trending (game & Roblox) jadi 6 kartu (grid 2
+     kolom = 3 baris rapi, tak ada kartu ke-7 yatim). */
+  @media (max-width: 560px) {
+    .gg-sechead {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 6px !important;
+    }
+    .gg-trend-grid > *:nth-child(n + 7) {
+      display: none !important;
+    }
+  }
 </style>
