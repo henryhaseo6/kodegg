@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-07-20T03:01:14.576Z",
+  "updatedAt": "2026-07-20T04:01:10.362Z",
   "counts": {
-    "active": 108,
+    "active": 109,
     "archived": 31
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Data Bounty: Combat Simulation\" Event Details",
+        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/07/22 04:00 (server time) – 2026/07/27 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
+        "id": "[Waktu Event] 2026/07/22 04:00 (waktu server) - 2026/07/27 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/18/0/4cde49db74e4409d89b172b9f25bf7a1_8868803154460172631.jpeg",
+      "url": "https://www.hoyolab.com/article/45927809",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-20T04:00:07.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -262,22 +278,6 @@
       "publishedAt": "2026-07-17T12:30:02.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "gamescom 2026 exhibition confirmed! Ticket giveaway event begins now!",
-        "id": "gamescom 2026 exhibition confirmed! Ticket giveaway event begins now!"
-      },
-      "excerpt": {
-        "en": "This year, Honkai: Star Rail will be meeting all Trailblazers at the gamescom HoYoverse Exhibition Area in Cologne, Germany! 💬 More information about the exhibition will be announ",
-        "id": "This year, Honkai: Star Rail will be meeting all Trailblazers at the gamescom HoYoverse Exhibition Area in Cologne, Germany! 💬 More information about the exhibition will be announ"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/41c825bd3bbe001c43010f0db37b3d67_6051343732940402339.jpg",
-      "url": "https://www.hoyolab.com/article/45889415",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-17T12:30:01.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -290,6 +290,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/15/0/52f2fb4bccc2edda7b4d160038bf2bf9_8113760226988168599.jpeg",
       "url": "https://www.hoyolab.com/article/45889417",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-17T12:30:01.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "gamescom 2026 exhibition confirmed! Ticket giveaway event begins now!",
+        "id": "gamescom 2026 exhibition confirmed! Ticket giveaway event begins now!"
+      },
+      "excerpt": {
+        "en": "This year, Honkai: Star Rail will be meeting all Trailblazers at the gamescom HoYoverse Exhibition Area in Cologne, Germany! 💬 More information about the exhibition will be announ",
+        "id": "This year, Honkai: Star Rail will be meeting all Trailblazers at the gamescom HoYoverse Exhibition Area in Cologne, Germany! 💬 More information about the exhibition will be announ"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/41c825bd3bbe001c43010f0db37b3d67_6051343732940402339.jpg",
+      "url": "https://www.hoyolab.com/article/45889415",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-17T12:30:01.000Z"
     },
