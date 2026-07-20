@@ -14,9 +14,9 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, now })
   const url = `${SITE}/id/${isRoblox ? "roblox" : "game"}/${slug}/`;
   const tag = pascal(name); // "BloxFruits"
 
-  // Judul (<=100 char) — intent search "[game] codes"
-  let title = `${name} Codes (${my}) 🎁 NEW Working Codes — KodeGG`;
-  if (title.length > 100) title = `${name} Codes (${my}) — NEW Working Codes`.slice(0, 100);
+  // Judul (<=100 char): "[Game] Codes" (search global EN) + "Kode Terbaru" (search ID).
+  let title = `${name} Codes (${my}) 🎁 Kode Terbaru — KodeGG`;
+  if (title.length > 100) title = `${name} Codes (${my}) — Kode Terbaru`.slice(0, 100);
 
   const codeLines = codes.slice(0, 8).map((c) => `• ${c.code}${c.reward ? ` — ${c.reward}` : ""}`).join("\n");
   const description =
@@ -25,7 +25,8 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, now })
     `✅ Full list + cara redeem (auto-update tiap jam):\n${url}\n\n` +
     `KodeGG — portal kode redeem game online & Roblox. 200+ game, kode terverifikasi cross-check, update otomatis tiap jam.\n` +
     `🔔 Subscribe & nyalain lonceng biar gak ketinggalan kode baru!\n\n` +
-    `#${tag} #${tag}Codes #${isRoblox ? "RobloxCodes #Roblox" : "GameCodes"} #KodeRedeem #KodeGG #kode${tag}`;
+    `— The latest working ${name} codes for ${my} (updated hourly). Full list + how to redeem: ${url}\n\n` +
+    `#Shorts #${tag} #${tag}Codes #${isRoblox ? "RobloxCodes #Roblox" : "GameCodes"} #RedeemCodes #KodeRedeem #KodeGG`;
 
   const tags = [
     name, `${name} codes`, `${name} code`, `${name} redeem codes`, `kode ${name}`, `${name} ${my}`,
