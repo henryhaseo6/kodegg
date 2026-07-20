@@ -30,7 +30,7 @@ const OUT = resolve(HERE, "data/roblox-codes.json");
 const MAX_GAMES = 250; // batas atas; game tanpa kode aktif gugur → angka final natural (~150-250)
 const CONCURRENCY = 5; // game paralel maks (rendah = tak membanjiri RoCodes/Den)
 const CROSSCHECK_MIN = 10000; // cross-check editorial HANYA game populer (pemain ≥ ini) — beban terkendali
-const ARCHIVE_CAP = 40; // arsip kode kedaluwarsa disimpan per game (hindari JSON balloon)
+const ARCHIVE_CAP = 300; // arsip kode kedaluwarsa per game — besar biar praktis "selamanya" tanpa JSON meledak liar
 
 // Sumber primer. url = untuk atribusi (dilink di kartu).
 const PRIMARIES = [
