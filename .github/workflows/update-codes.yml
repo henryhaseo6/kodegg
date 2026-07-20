@@ -51,6 +51,24 @@ jobs:
           node worker/fetch-roblox.mjs || echo "roblox gagal, lanjut"
           node worker/fetch-roblox-icons.mjs || echo "roblox icons gagal, lanjut"
 
+      # Auto-video YouTube: kode baru run ini → Short (maks 3/hari, Unlisted).
+      # Aman-dilewati bila YT belum di-set. Jalan SEBELUM commit → video-state.json
+      # ikut ter-commit sekali jalan (tak nambah deploy). Lihat DEPLOY-YOUTUBE.md.
+      - name: Auto-video YouTube (kode baru → Shorts)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_PRIVACY: ${{ vars.YT_PRIVACY || 'unlisted' }}
+          VIDEO_MAX_PER_DAY: ${{ vars.VIDEO_MAX_PER_DAY || '3' }}
+          PYTHON: python3
+        run: |
+          if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set — lewati auto-video (lihat DEPLOY-YOUTUBE.md)."; exit 0; fi
+          pip install --quiet --disable-pip-version-check edge-tts || pip3 install --quiet edge-tts
+          npm install @napi-rs/canvas @ffmpeg-installer/ffmpeg googleapis --no-save --no-audit --no-fund
+          node worker/make-videos.mjs || echo "auto-video gagal, lanjut"
+
       - name: Commit bila ada perubahan
         run: |
           if git diff --quiet -- worker/data/ site/public/assets/roblox/; then
