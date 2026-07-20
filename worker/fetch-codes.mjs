@@ -140,7 +140,7 @@ async function main() {
   // Kode BARU pada run ini (firstSeenAt === now) → dipakai worker push-notify
   // untuk kirim notifikasi. Non-permanen saja (kode evergreen bukan "berita").
   const newlyAdded = active
-    .filter((c) => c.firstSeenAt === now && c.code && !c.perm)
+    .filter((c) => c.firstSeenAt === now && c.code && !c.perm && !c.bulk)
     .map((c) => ({ code: c.code, game: c.game, gameName: c.gameName ?? c.game, reward: c.reward ?? "" }));
   await writeFile(resolve(dirname(OUT), "new-codes.json"), JSON.stringify({ generatedAt: now, codes: newlyAdded }, null, 2));
 

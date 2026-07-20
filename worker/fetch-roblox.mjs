@@ -304,11 +304,15 @@ async function main() {
     covered.add(r.id);
   }
 
-  const { active: activeRaw, archive: fullArchiveRaw, newlyArchived } = mergeWithPrevious(freshActive, freshArchive, prev, covered, now);
+  // Dedup game duplikat (universeId sama, slug beda spt rivals/roblox-rivals):
+  // reassign kode FRESH ke id survivor SEBELUM merge. KRUSIAL — kalau dedup jalan
+  // SETELAH merge, kode dari slug-loser (mis. roblox-fish-it) di-cocokkan pakai
+  // codeKey `roblox-fish-it:X` yg tak pernah ada di data lama (`fish-it:X`) →
+  // firstSeenAt reset ke `now` tiap run → kirim "kode baru" palsu tiap jam (bug
+  // notif spam). Dedup dulu → codeKey konsisten → firstSeenAt awet.
+  const { active: freshDD, archive: freshArchDD } = dedupByUniverse(games, freshActive, freshArchive);
+  const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshDD, freshArchDD, prev, covered, now);
   const mergedGames = { ...(prev.games ?? {}), ...games };
-  // Gabung game duplikat (universeId sama, slug beda spt rivals/roblox-rivals) →
-  // satu game, kode dua slug di-UNION. Wajib sebelum cap arsip & tulis payload.
-  const { active, archive: fullArchive } = dedupByUniverse(mergedGames, activeRaw, fullArchiveRaw);
 
   // Cap arsip per game (simpan ARCHIVE_CAP terbaru) → roblox-codes.json tak
   // membengkak tak terbatas seiring bertambahnya game & kode kedaluwarsa.
@@ -350,7 +354,10 @@ async function main() {
   };
   await writeFile(OUT, JSON.stringify(payload, null, 2));
 
-  const newly = active.filter((c) => c.firstSeenAt === now && c.code);
+  // Notif "kode baru" HANYA utk kode yg genuine baru di game yg SUDAH dipantau.
+  // `!c.bulk` membuang import-pertama game baru di-discover (mis. sailor-piece 166
+  // kode sekaligus) → cegah banjir notif tiap ada game baru.
+  const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk);
   await writeFile(resolve(dirname(OUT), "new-roblox-codes.json"), JSON.stringify({ generatedAt: now, codes: newly }, null, 2));
 
   console.log(
