@@ -6,7 +6,7 @@ import { loadCodes } from "../../lib/codes.mjs";
 import { loadFeed } from "../../lib/feed.mjs";
 import { loadCatalog } from "../../lib/catalog.mjs";
 import { loadRobloxHome } from "../../lib/roblox.mjs";
-import { langPaths } from "../../lib/routes.mjs";
+import { langPaths, route } from "../../lib/routes.mjs";
 import { monthYear } from "../../lib/seo.mjs";
 
 export function getStaticPaths() {
@@ -32,6 +32,14 @@ const jsonLd = [
     url: `${site}/${lang}/`,
     inLanguage: lang === "id" ? "id-ID" : "en-US",
     description: meta.desc,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${site}${route("codes", lang)}?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   },
   {
     "@context": "https://schema.org",

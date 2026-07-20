@@ -1,0 +1,57 @@
+---
+// Halaman 404 kustom (disajikan Cloudflare Pages untuk rute tak dikenal).
+// Lang-agnostic → default ID + baris EN. noindex. Tautan ke halaman kunci.
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { route, robloxHome } from "../lib/routes.mjs";
+
+const lang = "id";
+const links = [
+  { label: "Beranda · Home", href: route("home", lang) },
+  { label: "Kode Redeem · Codes", href: route("codes", lang) },
+  { label: "Roblox", href: robloxHome(lang) },
+  { label: "Berita & Event · News", href: route("news", lang) },
+];
+---
+
+<Base
+  lang={lang}
+  title="404 — Halaman tidak ditemukan | KodeGG"
+  description="Halaman yang kamu cari tidak ada. Kembali ke beranda atau telusuri kode redeem terbaru."
+  paths={{ id: "/id/", en: "/en/" }}
+  noindex={true}
+>
+  <Header lang={lang} active={null} />
+  <main id="main" style="max-width:1280px; margin:0 auto; padding:22px 28px 60px;">
+    <section style="min-height:52vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:clamp(72px,18vw,140px); line-height:1; letter-spacing:-0.04em; color:var(--acc); text-shadow:0 0 60px rgba(203,255,70,0.25);">
+        404
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(22px,4vw,30px); letter-spacing:-0.02em; color:#fff; margin:8px 0 0;">
+        Halaman tidak ditemukan
+      </h1>
+      <p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 22px; max-width:420px;">
+        Halaman yang kamu cari tidak ada atau sudah dipindahkan.<br />
+        <span style="color:var(--faint);">The page you're looking for doesn't exist or has moved.</span>
+      </p>
+      <nav aria-label="Tautan cepat" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+        {
+          links.map((l, i) => (
+            <a
+              href={l.href}
+              style={`font-family:'Space Mono',monospace; font-size:13px; font-weight:700; text-decoration:none; padding:11px 16px; border-radius:11px; ${
+                i === 0
+                  ? "color:var(--ink); background:var(--acc); border:1px solid var(--acc);"
+                  : "color:var(--txt); background:var(--surface); border:1px solid var(--line2);"
+              }`}
+            >
+              {l.label}
+            </a>
+          ))
+        }
+      </nav>
+    </section>
+  </main>
+  <Footer lang={lang} updatedAt={null} />
+</Base>

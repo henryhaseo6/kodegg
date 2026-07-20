@@ -236,10 +236,17 @@ const ARCH_RENDER = 1300; // batas kartu arsip yang dirender ke DOM (SSG), sisan
     // Deep-link ?game=gi memfilter otomatis ke game itu. Selalu terapkan
     // filternya; kalau game itu tak punya kode aktif, hasilnya empty state
     // (BUKAN diam-diam menampilkan semua kode game lain).
-    const wantGame = new URLSearchParams(location.search).get("game");
+    const params = new URLSearchParams(location.search);
+    const wantGame = params.get("game");
     if (wantGame) {
       state.game = wantGame;
       if (gameEl && [...gameEl.options].some((o) => o.value === wantGame)) gameEl.value = wantGame;
+    }
+    // Deep-link ?q=... (dipakai SearchAction schema → sitelinks searchbox Google).
+    const wantQ = params.get("q");
+    if (wantQ) {
+      state.q = wantQ;
+      if (searchEl) searchEl.value = wantQ;
     }
 
     function apply() {
