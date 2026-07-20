@@ -40,8 +40,8 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}` },
-      { "@type": "ListItem", position: 2, name: "Roblox", item: `${site}/${lang}/roblox` },
+      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}/` },
+      { "@type": "ListItem", position: 2, name: "Roblox", item: `${site}/${lang}/roblox/` },
     ],
   },
 ];
@@ -63,7 +63,7 @@ function fmtPlayers(n) {
 <Base lang={lang} title={meta.title} description={meta.desc} paths={robloxHomePaths()} jsonLd={jsonLd} ogImage="/assets/og/roblox-hub.png">
   <Header lang={lang} active={null} paths={robloxHomePaths()} />
 
-  <Breadcrumb items={[{ label: "KodeGG", href: `/${lang}` }, { label: "Roblox" }]} />
+  <Breadcrumb items={[{ label: "KodeGG", href: `/${lang}/` }, { label: "Roblox" }]} />
 
   <main id="main" style="max-width:1280px; margin:0 auto; padding:22px 28px 60px;">
     <div style="display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; color:var(--acc2); margin-bottom:16px;">
@@ -87,7 +87,7 @@ function fmtPlayers(n) {
       ))}
     </div>
 
-    <a href={`/${lang}/roblox/promo-codes`} style="display:flex; align-items:center; gap:12px; background:linear-gradient(90deg,rgba(139,107,255,0.12),transparent); border:1px solid rgba(139,107,255,0.35); border-radius:14px; padding:14px 18px; text-decoration:none; margin-bottom:22px;">
+    <a href={`/${lang}/roblox/promo-codes/`} style="display:flex; align-items:center; gap:12px; background:linear-gradient(90deg,rgba(139,107,255,0.12),transparent); border:1px solid rgba(139,107,255,0.35); border-radius:14px; padding:14px 18px; text-decoration:none; margin-bottom:22px;">
       <span style="font-size:20px;">🎁</span>
       <span style="min-width:0;">
         <span style="display:block; font-size:14.5px; font-weight:700; color:var(--txt);">{id ? "Kode Promo Roblox (item avatar gratis)" : "Roblox Promo Codes (free avatar items)"}</span>
@@ -135,7 +135,7 @@ function fmtPlayers(n) {
     <div data-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr)); gap:16px;">
       {games.map((g) => (
         <a
-          href={`/${lang}/roblox/${g.slug}`}
+          href={`/${lang}/roblox/${g.slug}/`}
           class="gg-card"
           data-game-card
           data-name={g.name}

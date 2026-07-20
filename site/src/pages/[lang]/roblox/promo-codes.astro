@@ -66,9 +66,9 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}` },
+      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}/` },
       { "@type": "ListItem", position: 2, name: "Roblox", item: `${site}${robloxHome(lang)}` },
-      { "@type": "ListItem", position: 3, name: id ? "Kode Promo" : "Promo Codes", item: `${site}/${lang}/roblox/promo-codes` },
+      { "@type": "ListItem", position: 3, name: id ? "Kode Promo" : "Promo Codes", item: `${site}/${lang}/roblox/promo-codes/` },
     ],
   },
   {
@@ -87,9 +87,9 @@ const jsonLd = [
 const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.02em; color:#fff; margin:0;";
 ---
 
-<Base lang={lang} title={meta.title} description={meta.desc} paths={{ id: "/id/roblox/promo-codes", en: "/en/roblox/promo-codes" }} jsonLd={jsonLd} ogImage="/assets/og/roblox-promo.png">
-  <Header lang={lang} active={null} paths={{ id: "/id/roblox/promo-codes", en: "/en/roblox/promo-codes" }} />
-  <Breadcrumb items={[{ label: "KodeGG", href: `/${lang}` }, { label: "Roblox", href: robloxHome(lang) }, { label: id ? "Kode Promo" : "Promo Codes" }]} />
+<Base lang={lang} title={meta.title} description={meta.desc} paths={{ id: "/id/roblox/promo-codes/", en: "/en/roblox/promo-codes/" }} jsonLd={jsonLd} ogImage="/assets/og/roblox-promo.png">
+  <Header lang={lang} active={null} paths={{ id: "/id/roblox/promo-codes/", en: "/en/roblox/promo-codes/" }} />
+  <Breadcrumb items={[{ label: "KodeGG", href: `/${lang}/` }, { label: "Roblox", href: robloxHome(lang) }, { label: id ? "Kode Promo" : "Promo Codes" }]} />
 
   <main id="main" style="max-width:1280px; margin:0 auto; padding:22px 28px 60px;">
     <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap; margin-bottom:12px;">

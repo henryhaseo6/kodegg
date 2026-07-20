@@ -93,7 +93,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: id ? "Beranda" : "Home", item: `${site}/${lang}` },
+      { "@type": "ListItem", position: 1, name: id ? "Beranda" : "Home", item: `${site}/${lang}/` },
       { "@type": "ListItem", position: 2, name: tr("nav.discover"), item: `${site}${route("discover", lang)}` },
       { "@type": "ListItem", position: 3, name: gameMeta.name },
     ],
@@ -102,7 +102,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "VideoGame",
     name: gameMeta.name,
-    url: `${site}/${lang}/game/${game}`,
+    url: `${site}/${lang}/game/${game}/`,
     ...(codes.updatedAt ? { dateModified: codes.updatedAt } : {}),
     ...(gameMeta.cover ? { image: gameMeta.cover } : {}),
     ...(gameMeta.genreLabels?.length ? { genre: gameMeta.genreLabels } : {}),
@@ -140,8 +140,8 @@ const jsonLd = [
 ];
 ---
 
-<Base lang={lang} title={meta.title} description={meta.desc} paths={{ id: `/id/game/${game}`, en: `/en/game/${game}` }} jsonLd={jsonLd} ogImage={`/assets/og/games/${gid}.png`}>
-  <Header lang={lang} active={null} paths={{ id: `/id/game/${game}`, en: `/en/game/${game}` }} />
+<Base lang={lang} title={meta.title} description={meta.desc} paths={{ id: `/id/game/${game}/`, en: `/en/game/${game}/` }} jsonLd={jsonLd} ogImage={`/assets/og/games/${gid}.png`}>
+  <Header lang={lang} active={null} paths={{ id: `/id/game/${game}/`, en: `/en/game/${game}/` }} />
   <Breadcrumb
     items={[
       { label: id ? "Beranda" : "Home", href: route("home", lang) },
@@ -168,7 +168,7 @@ const jsonLd = [
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg>
           </button>
           <ShareButton
-            url={`${site}/${lang}/game/${game}`}
+            url={`${site}/${lang}/game/${game}/`}
             text={id ? `Kode redeem ${gameMeta.name} terbaru — KodeGG` : `Latest ${gameMeta.name} redeem codes — KodeGG`}
             lang={lang}
           />

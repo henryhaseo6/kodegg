@@ -12,7 +12,7 @@ import { route, langPaths } from "../lib/routes.mjs";
 const { lang, codes, catalog, feed, roblox } = Astro.props;
 const tr = t(lang);
 const id = lang === "id";
-const L = (p) => `/${lang}${p}`;
+const L = (p) => `/${lang}${p}${p.endsWith("/") ? "" : "/"}`;
 const fmtNum = (n) => new Intl.NumberFormat(id ? "id-ID" : "en-GB").format(n);
 const nowMs = Date.now();
 const fmtDate = (iso) =>
@@ -84,7 +84,7 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
           <div style="display:flex; align-items:center; gap:9px;">
             {c.icon && <img src={c.icon} alt="" width="30" height="30" style="border-radius:8px; object-fit:cover; flex:0 0 auto;" onerror="this.style.display='none'" />}
             {c.game ? (
-              <a href={`/${lang}/game/${c.gameSlug}`} class="gg-game-link" style="font-size:13.5px; font-weight:700; color:var(--txt); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-decoration:none;">{c.name}</a>
+              <a href={`/${lang}/game/${c.gameSlug}/`} class="gg-game-link" style="font-size:13.5px; font-weight:700; color:var(--txt); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-decoration:none;">{c.name}</a>
             ) : (
               <span style="font-size:13.5px; font-weight:700; color:var(--txt); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{c.name}</span>
             )}
@@ -142,7 +142,7 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
           <div class="gg-card" style="background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:17px; display:flex; flex-direction:column; gap:11px;">
             <div style="display:flex; align-items:center; gap:9px;">
               {c.icon && <img src={c.icon} alt="" width="30" height="30" style="border-radius:8px; object-fit:cover; flex:0 0 auto;" onerror="this.style.display='none'" />}
-              <a href={`${L("/roblox/")}${c.gameSlug}`} class="gg-game-link" style="font-size:13.5px; font-weight:700; color:var(--txt); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-decoration:none;">{c.name}</a>
+              <a href={`${L("/roblox/")}${c.gameSlug}/`} class="gg-game-link" style="font-size:13.5px; font-weight:700; color:var(--txt); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-decoration:none;">{c.name}</a>
               {c.verified ? (
                 <span style="flex:0 0 auto; margin-left:auto; display:inline-flex; align-items:center; gap:4px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ink); background:var(--ok); padding:3px 7px; border-radius:7px;">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>Verified

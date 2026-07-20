@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 const { lang, game: slug } = Astro.params;
 const id = lang === "id";
 const g = await loadRobloxGame(slug);
-if (!g) return Astro.redirect(`/${lang}/roblox`);
+if (!g) return Astro.redirect(`/${lang}/roblox/`);
 
 const my = monthYear(lang);
 const ARCHIVE_CAP = 300; // = ARCHIVE_CAP di worker/fetch-roblox.mjs (batas arsip/game)
@@ -120,9 +120,9 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}` },
+      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}/` },
       { "@type": "ListItem", position: 2, name: "Roblox", item: `${site}${robloxHome(lang)}` },
-      { "@type": "ListItem", position: 3, name: g.name, item: `${site}/${lang}/roblox/${slug}` },
+      { "@type": "ListItem", position: 3, name: g.name, item: `${site}/${lang}/roblox/${slug}/` },
     ],
   },
 ];
@@ -136,7 +136,7 @@ jsonLd.push({
   "@context": "https://schema.org",
   "@type": "VideoGame",
   name: gname,
-  url: `${site}/${lang}/roblox/${slug}`,
+  url: `${site}/${lang}/roblox/${slug}/`,
   image: `${site}${g.icon}`,
   gamePlatform: "Roblox",
   ...(g.updatedAt ? { dateModified: g.updatedAt } : {}),
@@ -157,7 +157,7 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
 
   <Breadcrumb
     items={[
-      { label: "KodeGG", href: `/${lang}` },
+      { label: "KodeGG", href: `/${lang}/` },
       { label: "Roblox", href: robloxHome(lang) },
       { label: g.name },
     ]}
@@ -185,7 +185,7 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg>
           </button>
           <ShareButton
-            url={`${site}/${lang}/roblox/${slug}`}
+            url={`${site}/${lang}/roblox/${slug}/`}
             text={id ? `Kode ${g.name} (Roblox) terbaru — KodeGG` : `Latest ${g.name} (Roblox) codes — KodeGG`}
             lang={lang}
           />
