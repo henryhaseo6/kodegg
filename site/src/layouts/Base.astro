@@ -273,21 +273,47 @@ const locale = lang === "id" ? "id_ID" : "en_US";
       display: none !important;
     }
   }
-  /* Header muat di HP sempit: kecilkan padding + jarak cluster; ≤400px
-     sembunyikan wordmark "KODEGG" (kotak GG tetap sebagai logo). */
+  /* Header muat di HP sempit TANPA menyembunyikan brand: wordmark "KODEGG" +
+     logo tetap tampil, dikecilkan bertahap, cluster kanan dirapatkan. */
   @media (max-width: 480px) {
     .gg-headbar {
       padding-left: 14px !important;
       padding-right: 14px !important;
-      gap: 14px !important;
+      gap: 12px !important;
     }
     .gg-headright {
       gap: 8px !important;
     }
-  }
-  @media (max-width: 400px) {
+    .gg-logo {
+      gap: 8px !important;
+    }
     .gg-wordmark {
-      display: none !important;
+      font-size: 18px !important;
+    }
+    .gg-logomark {
+      width: 30px !important;
+      height: 30px !important;
+      font-size: 19px !important;
+    }
+  }
+  @media (max-width: 380px) {
+    .gg-headbar {
+      gap: 8px !important;
+    }
+    .gg-headright {
+      gap: 6px !important;
+    }
+    .gg-wordmark {
+      font-size: 16px !important;
+    }
+    .gg-icon-btn,
+    .gg-menu-btn {
+      width: 36px !important;
+      height: 36px !important;
+    }
+    .gg-toggle a {
+      padding-left: 7px !important;
+      padding-right: 7px !important;
     }
   }
 </style>
