@@ -29,13 +29,13 @@ function searchIndex(item) {
     .toLowerCase();
 }
 
-// Ambang "kode baru": dianggap BARU bila `rankMs` (tanggal rilis sumber, atau
-// firstSeen untuk kode non-bulk) dalam N hari terakhir. Pakai rankMs, BUKAN date
-// saja — sumber seperti WSCO/NIKKE tak memberi tanggal rilis, jadi kode yang
-// benar-benar baru muncul di sana takkan pernah dapat badge. Flag `bulk` (import
-// pertama sebuah game, umur tak diketahui) sudah membuat rankMs=0, jadi menambah
-// game baru tetap tak membanjiri badge BARU. Kode permanen tak pernah baru.
-const NEW_DAYS = 3;
+// Ambang "kode baru": BARU bila kodenya BARU DITARIK (firstSeen) ATAU baru
+// dirilis menurut sumber, dalam 24 jam terakhir. Tak butuh tanggal rilis dari
+// sumber — banyak sumber (WSCO, NIKKE) tak punya; yang penting gamenya sudah
+// dipantau sebelumnya, artinya ini benar-benar tambahan baru. Kode `bulk`
+// (impor pertama sebuah game, umur tak diketahui) tak ikut, biar menambah game
+// baru tak membanjiri badge. Jendela sengaja pendek: badge jangan lengket lama.
+const NEW_MS = 24 * 3600 * 1000;
 const NOW_MS = Date.now();
 
 function shape(item) {
@@ -56,6 +56,9 @@ function shape(item) {
   //    → 0, supaya menambah game baru tak membanjiri puncak. Kode NIKKE/Whiteout
   //    yang benar-benar baru dirilis nanti tetap nongol paling atas.
   const rankMs = dateMs || (item.bulk ? 0 : firstSeenMs);
+  // newMs = "seberapa baru kode ini bagi pembaca": dirilis sumber ATAU baru
+  // kami tarik — mana yang lebih baru. Kode bulk hanya boleh lewat tanggal rilis.
+  const newMs = item.bulk ? dateMs : Math.max(dateMs, firstSeenMs);
   return {
     ...item,
     name: displayName(item),
@@ -65,7 +68,7 @@ function shape(item) {
     search: searchIndex(item),
     rankMs,
     firstSeenMs,
-    isNew: !item.perm && rankMs > 0 && NOW_MS - rankMs <= NEW_DAYS * 86400000,
+    isNew: !item.perm && newMs > 0 && NOW_MS - newMs <= NEW_MS,
   };
 }
 

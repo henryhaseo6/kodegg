@@ -10,8 +10,9 @@ const CACHE = process.env.KODEGG_ROBLOX ?? resolve(process.cwd(), "../worker/dat
 const ICON_DIR = "/assets/roblox";
 export const robloxIconUrl = (id) => `${ICON_DIR}/${id}.png`;
 
-// Kode Roblox churn cepat → jendela "Baru" sedikit lebih longgar dari mobile.
-const NEW_DAYS = 5;
+// Aturan badge sama dengan mobile (lihat codes.mjs): baru ditarik ATAU baru
+// dirilis dalam 24 jam, asal bukan impor pertama sebuah game (`bulk`).
+const NEW_MS = 24 * 3600 * 1000;
 const NOW_MS = Date.now();
 
 function shape(item, games) {
@@ -21,6 +22,7 @@ function shape(item, games) {
   // rankMs = kunci sort "Terbaru": tanggal rilis dulu; kalau tak ada & bukan
   // impor massal pertama, pakai firstSeen. (Lihat codes.mjs untuk alasan `bulk`.)
   const rankMs = dateMs || (item.bulk ? 0 : firstSeenMs);
+  const newMs = item.bulk ? dateMs : Math.max(dateMs, firstSeenMs);
   return {
     ...item, // termasuk source/sources/sourceUrls dari worker (RoCodes &/atau Roblox Den)
     name: g.name ?? item.gameName ?? "—",
@@ -28,7 +30,7 @@ function shape(item, games) {
     gameSlug: g.slug ?? item.game,
     rankMs,
     firstSeenMs,
-    isNew: dateMs > 0 && NOW_MS - dateMs <= NEW_DAYS * 86400000,
+    isNew: newMs > 0 && NOW_MS - newMs <= NEW_MS,
     verified: item.verified === true,
     search: `${g.name ?? ""} ${item.code ?? ""} ${item.reward ?? ""}`.toLowerCase(),
   };
