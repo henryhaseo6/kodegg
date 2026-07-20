@@ -24,6 +24,9 @@ const REVIEW = resolve(HERE, "../_video-review");
 const readJSON = (p, d) => { try { return JSON.parse(readFileSync(p, "utf8")); } catch { return d; } };
 const fmtPlayers = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : String(n));
 const ck = (game, code) => `${game}:${code}`;
+// Total kode yg diklaim di video = gabungan unik aktif + baru (kode baru kadang
+// belum ke-merge ke daftar aktif → jangan sampai angka "+N lagi" meleset).
+const countAll = (active, newCodes) => new Set([...active.map((c) => c.code), ...newCodes.map((c) => c.code)]).size;
 
 function thumb(videoPath, outPath) {
   return new Promise((res) => { const ff = spawn(ffmpegBin(), ["-y", "-ss", "8", "-i", videoPath, "-frames:v", "1", "-q:v", "3", outPath], { stdio: "ignore" }); ff.on("close", res); });
@@ -33,7 +36,8 @@ function buildCandidates() {
   const out = [];
   // ROBLOX
   const rb = readJSON(resolve(DATA, "roblox-codes.json"), { games: {}, active: [] });
-  const rbNew = readJSON(resolve(DATA, "new-roblox-codes.json"), { codes: [] }).codes;
+  const rbNewFile = readJSON(resolve(DATA, "new-roblox-codes.json"), { codes: [] });
+  const rbNew = rbNewFile.codes;
   const rbNewByGame = {};
   for (const c of rbNew) (rbNewByGame[c.game] = rbNewByGame[c.game] || []).push(c);
   for (const [id, nc] of Object.entries(rbNewByGame)) {
@@ -42,7 +46,7 @@ function buildCandidates() {
     out.push({
       platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: (g.players ?? 0),
-      newCodes: nc, activeCount: active.length,
+      newCodes: nc, activeCount: countAll(active, nc), fetchedAt: rbNewFile.generatedAt,
       displayCodes: pickDisplay(nc, active),
     });
   }
@@ -50,7 +54,8 @@ function buildCandidates() {
   const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
   const cat = readJSON(resolve(DATA, "games.json"), { games: [] });
   const catById = Object.fromEntries((cat.games ?? []).map((g) => [g.id, g]));
-  const mNew = readJSON(resolve(DATA, "new-codes.json"), { codes: [] }).codes;
+  const mNewFile = readJSON(resolve(DATA, "new-codes.json"), { codes: [] });
+  const mNew = mNewFile.codes;
   const mNewByGame = {};
   for (const c of mNew) (mNewByGame[c.game] = mNewByGame[c.game] || []).push(c);
   for (const [id, nc] of Object.entries(mNewByGame)) {
@@ -59,19 +64,21 @@ function buildCandidates() {
     out.push({
       platform: "MOBILE", id, name: meta?.name ?? nc[0]?.gameName ?? id, slug: meta?.slug ?? id, players: 0,
       iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 1e9, // mobile prioritas (game besar, jarang)
-      newCodes: nc, activeCount: active.length,
+      newCodes: nc, activeCount: countAll(active, nc), fetchedAt: mNewFile.generatedAt,
       displayCodes: pickDisplay(nc, active),
     });
   }
   return out.sort((a, b) => b.rank - a.rank);
 }
 
-// Kartu tampil: kode BARU dulu (maks 3), pad dg kode aktif lain yg ada reward.
+// Kartu tampil di video: kode BARU dulu (maks MAX_DISPLAY), pad dg kode aktif lain
+// yg ada reward. Sisanya (bila game punya banyak kode) → teaser "+N lagi" di video.
+const MAX_DISPLAY = 4; // Short harus tetap kebaca; jangan jejalin semua kode.
 function pickDisplay(newCodes, active) {
   const seen = new Set();
   const disp = [];
-  for (const c of newCodes) { if (disp.length >= 3) break; if (seen.has(c.code)) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward || "" }); }
-  for (const c of active) { if (disp.length >= 3) break; if (seen.has(c.code) || !c.reward) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward }); }
+  for (const c of newCodes) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(c.code)) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward || "", isNew: true }); }
+  for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(c.code) || !c.reward) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward, isNew: false }); }
   return disp;
 }
 
@@ -97,7 +104,8 @@ async function main() {
     try {
       console.log(`\n▶ ${c.name} (${c.platform}) — ${c.newCodes.length} kode baru`);
       const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
-      await renderShort({ game: { name: c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, iconPath: c.iconPath, outPath: base });
+      const moreCount = Math.max(0, c.activeCount - c.displayCodes.length); // sisa kode di situs → teaser "+N lagi"
+      await renderShort({ game: { name: c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, iconPath: c.iconPath, outPath: base });
       await makeVO({ name: c.name, activeCount: c.activeCount, outPath: vo });
       await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
       await thumb(fin, th);

@@ -18,3 +18,8 @@ _test-*.mp4
 /kodegg-short-*.mp4
 site/_short-gen.mjs
 site/_music-gen.mjs
+
+# banner channel (aset, upload manual)
+/kodegg-banner.png
+_banner-preview.png
+worker/_banner.mjs
