@@ -189,7 +189,18 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
           {id ? `Kode ${g.name}` : `${g.name} Codes`}
         </h1>
       </div>
-      <div style="margin-left:auto;">
+      <div style="margin-left:auto; display:flex; align-items:center; gap:10px;">
+        <button
+          class="gg-fav"
+          data-fav={g.id}
+          type="button"
+          aria-pressed="false"
+          aria-label={id ? "Simpan ke favorit" : "Save to favorites"}
+          title={id ? "Simpan ke favorit" : "Save to favorites"}
+          style="flex:none; width:40px; height:40px; border-radius:10px; border:1px solid var(--line2); background:var(--surface); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;"
+        >
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg>
+        </button>
         <ShareButton
           url={`${site}/${lang}/roblox/${slug}`}
           text={id ? `Kode ${g.name} (Roblox) terbaru — KodeGG` : `Latest ${g.name} (Roblox) codes — KodeGG`}
@@ -305,6 +316,33 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
   <Footer lang={lang} updatedAt={g.updatedAt} />
   <CopyScript />
   <CountdownScript lang={lang} />
+
+  <!-- Favorit game (localStorage kodegg:fav) — sinkron dg Jelajah/Beranda/Saved. -->
+  <script is:inline>
+    (function () {
+      const KEY = "kodegg:fav";
+      let favs = [];
+      try { favs = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch {}
+      const set = new Set(favs);
+      const paint = (btn, on) => {
+        btn.style.color = on ? "var(--acc)" : "var(--muted)";
+        btn.style.borderColor = on ? "var(--acc)" : "var(--line2)";
+        btn.setAttribute("aria-pressed", String(on));
+        btn.querySelector("svg").setAttribute("fill", on ? "var(--acc)" : "none");
+      };
+      for (const btn of document.querySelectorAll("[data-fav]")) {
+        if (set.has(btn.dataset.fav)) paint(btn, true);
+        btn.addEventListener("click", () => {
+          const fid = btn.dataset.fav;
+          if (set.has(fid)) set.delete(fid);
+          else set.add(fid);
+          localStorage.setItem(KEY, JSON.stringify([...set]));
+          window.dispatchEvent(new Event("kodegg:fav"));
+          paint(btn, set.has(fid));
+        });
+      }
+    })();
+  </script>
 
   {g.active.length > 8 && (
     <script is:inline define:vars={{ CODE_PAGE: 8 }}>

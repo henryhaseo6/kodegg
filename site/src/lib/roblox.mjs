@@ -58,12 +58,54 @@ export async function loadRobloxHome(limit = 8) {
     const n = (perGame[c.game] = (perGame[c.game] ?? 0) + 1);
     if (n <= 2) top.push(c);
   }
+  // TRENDING Roblox: game teramai (pemain konkuren realtime, di-refresh tiap jam
+  // di worker). Dinamis — urutan otomatis berubah saat popularitas bergeser.
+  const activeByGame = {};
+  for (const c of raw.active ?? []) activeByGame[c.game] = (activeByGame[c.game] ?? 0) + 1;
+  const trending = Object.entries(games)
+    .map(([gid, g]) => ({
+      id: gid,
+      name: g.name,
+      slug: g.slug ?? gid,
+      icon: robloxIconUrl(gid),
+      players: g.players ?? 0,
+      genre: rbxGenreLabel(g.genres?.[0]),
+      verified: g.verified === true,
+      codeCount: activeByGame[gid] ?? 0,
+    }))
+    .sort((a, b) => b.players - a.players)
+    .slice(0, 12);
+
   return {
     updatedAt: raw.updatedAt ?? null,
     counts: raw.counts ?? { active: active.length, archived: (raw.archive ?? []).length, games: Object.keys(games).length },
     top,
+    trending,
     gamesCount: Object.keys(games).length,
   };
+}
+
+// Label genre Roblox (istilah game, sama ID/EN) untuk kartu.
+const RBX_GENRE = { anime: "Anime", rpg: "RPG", sports: "Sports", fighting: "Fighting", td: "Tower Defense", simulator: "Simulator", adventure: "Adventure", survival: "Survival", casual: "Casual", roleplay: "Roleplay", moba: "MOBA", horror: "Horror" };
+function rbxGenreLabel(key) {
+  if (!key) return "";
+  return RBX_GENRE[key] ?? key.charAt(0).toUpperCase() + key.slice(1);
+}
+
+/** Kartu game Roblox untuk halaman Favorit (bentuk selaras loadCatalog): dipakai
+ * agar game Roblox yang difavoritkan ikut tampil di /saved. platform:"roblox"
+ * menandai URL /roblox/<slug>. */
+export async function loadRobloxSavedCards() {
+  const raw = await read();
+  return Object.entries(raw.games ?? {}).map(([gid, g]) => ({
+    id: gid,
+    name: g.name,
+    slug: g.slug ?? gid,
+    cover: robloxIconUrl(gid),
+    genreLabels: (g.genres ?? []).map(rbxGenreLabel).filter(Boolean),
+    hasCodes: true,
+    platform: "roblox",
+  }));
 }
 
 /** Katalog game Roblox (getStaticPaths per-game + hub). Default urut KODE TERBARU
