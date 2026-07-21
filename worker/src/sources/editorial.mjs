@@ -109,6 +109,11 @@ export const SITES = {
     },
   },
   game8: {
+    // Dari IP GitHub Actions, game8 membalas 200 tapi ISI halamannya beda — hub
+    // maupun artikel. Karena statusnya sukses, retry-proxy otomatis (yang cuma
+    // memantau 403/429/451) tak pernah kepicu → situs ini SELALU lewat proxy
+    // bila tersedia. Di lokal/Cloudflare (tanpa env proxy) tetap fetch langsung.
+    alwaysProxy: true,
     // URL artikelnya pakai id angka (/archives/304759) yang tak bisa ditebak dari
     // nama game → resolve() cari dulu artikel kode dari halaman hub. Judul artikel
     // diberi skor: daftar kode utama menang, halaman kode acara (livestream/
@@ -276,7 +281,7 @@ export async function fetchEditorial({ games, log = () => {} }) {
               // Situs dengan URL artikel tak-tertebak (game8: /archives/<id>)
               // menyediakan resolve() async utk mencari halaman kodenya dulu.
               const url = SITES[site].resolve ? await SITES[site].resolve(slug) : SITES[site].url(slug);
-              const parsed = SITES[site].parse(await fetchHtml(url));
+              const parsed = SITES[site].parse(await fetchHtml(url, { forceProxy: SITES[site].alwaysProxy === true }));
               if (parsed.active.length === 0) throw new Error("0 aktif terparse — layout berubah");
               return { site, slug, url, ...parsed };
             } catch (err) {

@@ -78,7 +78,9 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-          YT_PRIVACY: ${{ vars.YT_PRIVACY || 'unlisted' }}
+          # Terima dari Variable ATAU Secret — mudah tertukar tabnya, dan kalau
+          # kosong videonya diam-diam terbit sebagai unlisted (kejadian 21 Jul).
+          YT_PRIVACY: ${{ vars.YT_PRIVACY || secrets.YT_PRIVACY || 'unlisted' }}
           VIDEO_MAX_PER_DAY: ${{ vars.VIDEO_MAX_PER_DAY || '3' }}
           PYTHON: python3
         run: |

@@ -65,7 +65,17 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
   if (playlistTitle) {
     try {
       const pid = await ensurePlaylist(yt, playlistTitle, playlistDescription ?? "");
-      await yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, resourceId: { kind: "youtube#video", videoId: id } } } });
+      const masukkan = () => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, resourceId: { kind: "youtube#video", videoId: id } } } });
+      try {
+        await masukkan();
+      } catch (e) {
+        // "The operation was aborted" = timeout di sisi klien; servernya sering
+        // SUDAH menyimpan. Cek dulu sebelum mencoba lagi, biar tak dobel.
+        const isi = await yt.playlistItems.list({ part: ["snippet"], playlistId: pid, maxResults: 50 });
+        const sudah = (isi.data.items ?? []).some((i) => i.snippet?.resourceId?.videoId === id);
+        if (!sudah) await masukkan();
+        else console.log(`  (playlist: ${e.message} — ternyata sudah masuk, lanjut)`);
+      }
       console.log(`  ↳ playlist: ${playlistTitle}`);
     } catch (e) { console.log("  playlist gagal (abaikan):", e.message); }
   }
