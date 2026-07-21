@@ -14,8 +14,24 @@ async function client() {
   return google.youtube({ version: "v3", auth: o });
 }
 
+/** Cari playlist milik channel berdasarkan JUDUL; kalau belum ada, bikin. */
+async function ensurePlaylist(yt, title, description) {
+  let pageToken;
+  do {
+    const r = await yt.playlists.list({ part: ["snippet"], mine: true, maxResults: 50, pageToken });
+    const hit = (r.data.items ?? []).find((p) => p.snippet?.title === title);
+    if (hit) return hit.id;
+    pageToken = r.data.nextPageToken;
+  } while (pageToken);
+  const made = await yt.playlists.insert({
+    part: ["snippet", "status"],
+    requestBody: { snippet: { title, description, defaultLanguage: "id" }, status: { privacyStatus: "public" } },
+  });
+  return made.data.id;
+}
+
 /** Upload 1 video. privacy: 'unlisted'|'public'|'private'. */
-export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath }) {
+export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription }) {
   const yt = await client();
   const res = await yt.videos.insert({
     part: ["snippet", "status"],
@@ -28,6 +44,15 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
   const id = res.data.id;
   if (thumbnailPath && existsSync(thumbnailPath)) {
     try { await yt.thumbnails.set({ videoId: id, media: { body: createReadStream(thumbnailPath) } }); } catch (e) { console.log("  thumbnail gagal (abaikan):", e.message); }
+  }
+  // Playlist per game. Gagal di sini TAK boleh menggagalkan upload yg sudah jadi.
+  // Biaya kuota kecil: list 1 unit, insert playlist/item 50 unit (upload = 1600).
+  if (playlistTitle) {
+    try {
+      const pid = await ensurePlaylist(yt, playlistTitle, playlistDescription ?? "");
+      await yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, resourceId: { kind: "youtube#video", videoId: id } } } });
+      console.log(`  ↳ playlist: ${playlistTitle}`);
+    } catch (e) { console.log("  playlist gagal (abaikan):", e.message); }
   }
   return { id, url: `https://youtu.be/${id}` };
 }

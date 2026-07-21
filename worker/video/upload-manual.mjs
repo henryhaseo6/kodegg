@@ -45,8 +45,9 @@ function readMeta(videoPath) {
   };
   const title = grab("JUDUL", "DESKRIPSI");
   const description = grab("DESKRIPSI", "TAG");
-  const tags = grab("TAG", "ZZZ").split(",").map((t) => t.trim()).filter(Boolean);
-  return { title: title || fallback.title, description, tags };
+  const tags = grab("TAG", "PLAYLIST").split(",").map((t) => t.trim()).filter(Boolean);
+  const playlistTitle = grab("PLAYLIST", "ZZZ") || undefined; // file lama tak punya bagian ini
+  return { title: title || fallback.title, description, tags, playlistTitle };
 }
 
 function parseArgs(argv) {
@@ -88,7 +89,7 @@ async function main() {
     const meta = readMeta(f);
     const thumb = f.replace(/\.mp4$/i, ".jpg");
     console.log(`▶ ${basename(f)}\n  judul: ${meta.title}\n  thumbnail: ${existsSync(thumb) ? "ada" : "TIDAK ADA (YouTube akan pilih frame sendiri)"}`);
-    if (opt.dry) { console.log(`  deskripsi: ${meta.description.length} karakter · tag: ${meta.tags.join(", ") || "—"}\n`); continue; }
+    if (opt.dry) { console.log(`  playlist: ${meta.playlistTitle ?? "—"}\n  deskripsi: ${meta.description.length} karakter · tag: ${meta.tags.join(", ") || "—"}\n`); continue; }
     try {
       const { url } = await uploadVideo({ videoPath: f, ...meta, privacy: opt.privacy, thumbnailPath: thumb });
       console.log(`  ✓ ${url}\n`);

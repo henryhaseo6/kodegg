@@ -68,6 +68,11 @@ Review di **YouTube Studio → Content**, kalau bagus tinggal jadiin **Public**.
 - **Video di atas kuota** tetap dirender, lalu di-publish ke **Release harian** (tag
   `videos-<tgl>`) + artifact run sebagai cadangan; keduanya dihapus setelah 14 hari.
 - **Ganti ke Public otomatis**: ubah Variable `YT_PRIVACY` = `public`.
+- **Judul** memuat tanggal WIB (mis. "Update 21 Juli 2026") → tiap video unik walau game yang
+  sama dapat kode baru beberapa kali sebulan. Kalau nama game panjang, bagian judul turun
+  bertahap supaya tetap ≤100 karakter.
+- **Playlist per game** dibuat/diisi otomatis saat upload (judul: "<Game> Codes — Kode Redeem").
+  Gagal bikin playlist tidak menggagalkan upload.
 - **Preview tanpa upload** (tes lokal): `DRY_RUN=1 node worker/make-videos.mjs` → video ke
   folder `_video-review/` (butuh `new-*-codes.json` berisi kode + paket canvas/ffmpeg/edge-tts).
 - **Suara**: butuh `edge-tts` (Python) — di-install otomatis di Actions.

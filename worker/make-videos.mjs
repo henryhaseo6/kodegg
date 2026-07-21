@@ -136,7 +136,7 @@ async function main() {
         const stem = `${today}-${c.id}`;
         copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
         copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
-        writeFileSync(resolve(OUTDIR, `${stem}.txt`), `JUDUL:\n${meta.title}\n\nDESKRIPSI:\n${meta.description}\n\nTAG:\n${(meta.tags ?? []).join(", ")}\n`);
+        writeFileSync(resolve(OUTDIR, `${stem}.txt`), `JUDUL:\n${meta.title}\n\nDESKRIPSI:\n${meta.description}\n\nTAG:\n${(meta.tags ?? []).join(", ")}\n\nPLAYLIST:\n${meta.playlistTitle}\n`);
         console.log(`  ✓ manual: _video-out/${stem}.mp4 — "${meta.title}"`);
         state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, title: meta.title, mode: "manual", file: `${stem}.mp4` });
       }
