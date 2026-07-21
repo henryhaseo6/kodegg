@@ -27,6 +27,40 @@ const {
 
 const MAX = 3; // maksimal notifikasi kode individual per run (sisanya diringkas)
 
+/**
+ * Notifikasi tak boleh mendahului situs. Commit data memicu build Cloudflare
+ * (fetch ulang + build + deploy ≈ 1-3 menit); kalau notif dikirim saat itu,
+ * penerima mengetuk dan kodenya BELUM ADA — kesan pertamanya: bohong.
+ *
+ * Bukan sekadar sleep tetap: halaman Kode di situs live di-poll sampai salah
+ * satu kode baru benar-benar muncul. Biasanya jauh lebih cepat dari jeda tetap,
+ * dan otomatis menyesuaikan saat deploy sedang lambat. Kalau melewati batas
+ * tunggu, notif tetap dikirim — telat lebih baik daripada hilang.
+ */
+async function tungguSitusSegar(codes, { maksDetik = 360, jedaDetik = 20 } = {}) {
+  const target = codes.slice(0, 5).map((c) => c.code).filter(Boolean);
+  if (target.length === 0) return;
+  const url = `${SITE_URL}/id/kode-redeem/`;
+  const batas = Date.now() + maksDetik * 1000;
+  let putaran = 0;
+  while (Date.now() < batas) {
+    putaran++;
+    try {
+      const r = await fetch(url, { headers: { "cache-control": "no-cache" } });
+      if (r.ok) {
+        const html = await r.text();
+        const ada = target.find((k) => html.includes(k));
+        if (ada) {
+          console.log(`push-notify: situs sudah memuat kode baru (${ada}) setelah ${putaran} pengecekan.`);
+          return;
+        }
+      }
+    } catch { /* jaringan goyang → coba lagi */ }
+    await new Promise((r) => setTimeout(r, jedaDetik * 1000));
+  }
+  console.log(`push-notify: ⚠ situs belum memuat kode baru setelah ${maksDetik}s — notifikasi tetap dikirim.`);
+}
+
 async function main() {
   if (!VAPID_PUBLIC || !VAPID_PRIVATE || !PUSH_SECRET) {
     console.log("push-notify: VAPID/PUSH_SECRET belum lengkap — dilewati.");
@@ -55,6 +89,8 @@ async function main() {
     console.log("push-notify: tak ada kode baru.");
     return;
   }
+
+  await tungguSitusSegar(codes);
 
   const res = await fetch(`${SITE_URL}/api/list`, { headers: { authorization: `Bearer ${PUSH_SECRET}` } });
   if (!res.ok) {
