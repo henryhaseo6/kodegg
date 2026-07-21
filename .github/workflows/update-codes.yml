@@ -44,6 +44,11 @@ jobs:
           node-version: 22
 
       - name: Tarik data time-sensitive (kode, event, berita, Roblox)
+        env:
+          # Proxy Cloudflare untuk sumber yang memblokir IP GitHub Actions
+          # (whiteoutsurvival-community, wuwastatus). Kosong = fetch langsung saja.
+          KODEGG_PROXY: ${{ vars.KODEGG_PROXY }}
+          KODEGG_PROXY_KEY: ${{ secrets.KODEGG_PROXY_KEY }}
         run: |
           node worker/fetch-codes.mjs || echo "codes gagal, lanjut"
           node worker/fetch-events.mjs || echo "events gagal, lanjut"

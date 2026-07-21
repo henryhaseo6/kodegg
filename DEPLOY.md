@@ -85,3 +85,20 @@ Jelajah Game, Event & Banner, Karakter/Tier, Berita, Favorit, Tentang, Kontak,
 **Worker data:** `fetch-codes` (kode), `fetch-catalog` (katalog game),
 `fetch-news` (berita RSS), `fetch-events` (event/banner), `fetch-characters`
 (database karakter). Semua dijalankan `build.mjs` saat build.
+
+## Proxy sumber yang memblokir IP GitHub Actions
+
+Sebagian sumber (whiteoutsurvival-community, wuwastatus) membalas **403 khusus ke
+IP GitHub Actions** — halaman yang sama tetap 200 dari IP lokal maupun Cloudflare.
+Header browser saja tidak cukup, jadi worker bisa mengulang lewat proxy sendiri:
+
+1. **Cloudflare Worker** `cron/worker.js` sudah punya route `/proxy` (host di-allowlist,
+   wajib `TRIGGER_KEY`). Tempel ulang kodenya di Workers & Pages → worker cron → Edit.
+2. **GitHub → Settings → Secrets and variables → Actions**
+   - Variable `KODEGG_PROXY` = `https://<worker>.workers.dev/proxy`
+   - Secret `KODEGG_PROXY_KEY` = nilai `TRIGGER_KEY` worker
+3. Tanpa dua nilai itu, worker tetap jalan (fetch langsung) — hanya sumber yang
+   diblokir yang datanya membeku.
+
+Cek berhasil: log run memuat `· <host> 403 langsung → OK via proxy`, dan warning
+"Sumber kode gagal" untuk wos/wuwa hilang.

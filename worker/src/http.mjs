@@ -15,16 +15,34 @@
 const BROWSER_UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 
-/** fetch dengan header ala browser. Dipakai sumber yang menolak UA bot. */
-export function fetchAsBrowser(url, init = {}) {
-  return fetch(url, {
-    ...init,
-    headers: {
-      "User-Agent": BROWSER_UA,
-      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-      "Accept-Language": "en-US,en;q=0.9,id;q=0.8",
-      "Cache-Control": "no-cache",
-      ...(init.headers ?? {}),
-    },
-  });
+const HEADERS_BROWSER = {
+  "User-Agent": BROWSER_UA,
+  Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+  "Accept-Language": "en-US,en;q=0.9,id;q=0.8",
+  "Cache-Control": "no-cache",
+};
+
+/**
+ * fetch dengan header ala browser; bila tetap ditolak (403/429/451) DAN proxy
+ * Cloudflare tersedia, ulangi lewat proxy itu.
+ *
+ * Ternyata header browser saja tak cukup: whiteoutsurvival-community tetap 403
+ * dari IP GitHub Actions (lihat run #80), sementara dari IP Cloudflare & lokal
+ * 200. Jadi yang diblokir memang RENTANG IP-nya, bukan UA. Proxy = Worker milik
+ * sendiri (cron/worker.js, route /proxy, host di-allowlist).
+ *
+ * Env: KODEGG_PROXY (URL /proxy) + KODEGG_PROXY_KEY. Tanpa env itu, perilakunya
+ * sama seperti sebelumnya (lokal & Cloudflare build tak butuh proxy).
+ */
+export async function fetchAsBrowser(url, init = {}) {
+  const headers = { ...HEADERS_BROWSER, ...(init.headers ?? {}) };
+  const res = await fetch(url, { ...init, headers });
+  const diblokir = res.status === 403 || res.status === 429 || res.status === 451;
+  const { KODEGG_PROXY, KODEGG_PROXY_KEY } = process.env;
+  if (!diblokir || !KODEGG_PROXY || !KODEGG_PROXY_KEY) return res;
+
+  const via = `${KODEGG_PROXY}?key=${encodeURIComponent(KODEGG_PROXY_KEY)}&url=${encodeURIComponent(url)}`;
+  const lewatProxy = await fetch(via, { headers });
+  if (lewatProxy.ok) console.log(`  · ${new URL(url).hostname} ${res.status} langsung → OK via proxy`);
+  return lewatProxy;
 }
