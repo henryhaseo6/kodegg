@@ -30,8 +30,11 @@ const ck = (game, code) => `${game}:${code}`;
 // belum ke-merge ke daftar aktif → jangan sampai angka "+N lagi" meleset).
 const countAll = (active, newCodes) => new Set([...active.map((c) => c.code), ...newCodes.map((c) => c.code)]).size;
 
+// Thumbnail diambil detik 12.5: semua kartu kode sudah ke-reveal (kartu ke-4
+// muncul ~8.7s) DAN baris teaser "+N kode lagi" sudah tampil (11.5s), sebelum
+// transisi outro (14.4s). Detik 8 dulu cuma dapat 3 kartu.
 function thumb(videoPath, outPath) {
-  return new Promise((res) => { const ff = spawn(ffmpegBin(), ["-y", "-ss", "8", "-i", videoPath, "-frames:v", "1", "-q:v", "3", outPath], { stdio: "ignore" }); ff.on("close", res); });
+  return new Promise((res) => { const ff = spawn(ffmpegBin(), ["-y", "-ss", "12.5", "-i", videoPath, "-frames:v", "1", "-q:v", "3", outPath], { stdio: "ignore" }); ff.on("close", res); });
 }
 
 function buildCandidates() {
