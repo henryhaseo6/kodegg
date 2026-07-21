@@ -16,7 +16,9 @@ const SLUGS = {
   nte: "nte",
   diablo: "diablo-immortal",
   afka: "afk-arena-classic",
-  gtales: "guardian-tales",
+  // gtales (Guardian Tales) DICABUT 21 Jul 2026: dihapus dari daftar game
+  // redeem-code-tracker → /games/guardian-tales 404 tiap jam. Lihat catatan di
+  // editorial.mjs untuk syarat mengaktifkannya kembali.
   mongil: "mongil-star-dive",
   dtrav: "dragon-traveler",
   sxs: "sword-x-staff",

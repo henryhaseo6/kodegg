@@ -149,6 +149,11 @@ const GAMES_CFG = {
     // editorial (validity panjang). HATI-HATI beda dari "7DS: Origin".
     sources: { pocketgamer: "the-seven-deadly-sins-grand-cross/codes", pockettactics: "seven-deadly-sins-grand-cross" },
   },
+  // Guardian Tales (gtales) DI-HOLD: dihapus dari redeem-code-tracker (404 sejak
+  // ~21 Jul 2026) dan tak ada 2 sumber editorial yang bisa dipakai — progameguides
+  // OK, tapi pocketgamer/guardian-tales/codes terparse 0 (layoutnya beda) dan
+  // pockettactics tak punya halaman kode (cuma hub game). Cross-check butuh ≥2,
+  // jadi gamenya sementara tanpa sumber hidup. Aktifkan lagi bila ada sumber kedua.
   // Blue Archive DI-HOLD: sumber melacak region berbeda (Global vs JP) →
   // daftar kodenya disjoint, irisan = 0. Tak bisa cross-check dengan andal.
   // CODM/PUBG/Free Fire DI-HOLD: CODM butuh tag region Garena/Global (sumber tak
