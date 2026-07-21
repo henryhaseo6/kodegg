@@ -46,7 +46,9 @@ function readMeta(videoPath) {
   const title = grab("JUDUL", "DESKRIPSI");
   const description = grab("DESKRIPSI", "TAG");
   const tags = grab("TAG", "PLAYLIST").split(",").map((t) => t.trim()).filter(Boolean);
-  const playlistTitle = grab("PLAYLIST", "ZZZ") || undefined; // file lama tak punya bagian ini
+  // File .txt lama (sebelum fitur playlist) tak punya bagian PLAYLIST → turunkan
+  // dari judul: "<Game> Codes (July 2026) ..." → "<Game> Codes — Kode Redeem".
+  const playlistTitle = grab("PLAYLIST", "ZZZ") || (/^(.+?) Codes\b/.exec(title || "")?.[1] ? `${/^(.+?) Codes\b/.exec(title)[1]} Codes — Kode Redeem` : undefined);
   return { title: title || fallback.title, description, tags, playlistTitle };
 }
 
