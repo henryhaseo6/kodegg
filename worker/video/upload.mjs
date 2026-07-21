@@ -37,7 +37,10 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
     part: ["snippet", "status"],
     requestBody: {
       snippet: { title, description, tags, categoryId: "20", defaultLanguage: "id", defaultAudioLanguage: "id" }, // 20 = Gaming
-      status: { privacyStatus: privacy, selfDeclaredMadeForKids: false },
+      // containsSyntheticMedia: narasi video pakai TTS neural (suara sintetis).
+      // Visualnya grafis buatan sendiri (bukan orang/tempat nyata), tapi YouTube
+      // minta disclosure utk "realistic sounds ... made with AI" → deklarasikan.
+      status: { privacyStatus: privacy, selfDeclaredMadeForKids: false, containsSyntheticMedia: true },
     },
     media: { body: createReadStream(videoPath) },
   }, { maxContentLength: Infinity, maxBodyLength: Infinity });

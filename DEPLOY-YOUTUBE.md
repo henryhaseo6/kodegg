@@ -73,6 +73,8 @@ Review di **YouTube Studio → Content**, kalau bagus tinggal jadiin **Public**.
   bertahap supaya tetap ≤100 karakter.
 - **Playlist per game** dibuat/diisi otomatis saat upload (judul: "<Game> Codes — Kode Redeem").
   Gagal bikin playlist tidak menggagalkan upload.
+- **Disclosure AI** (`status.containsSyntheticMedia: true`) dikirim otomatis — narasi memakai
+  TTS neural. Video yang diupload sebelum ini perlu dicentang manual di Studio ("AI use" → Yes).
 - **Preview tanpa upload** (tes lokal): `DRY_RUN=1 node worker/make-videos.mjs` → video ke
   folder `_video-review/` (butuh `new-*-codes.json` berisi kode + paket canvas/ffmpeg/edge-tts).
 - **Suara**: butuh `edge-tts` (Python) — di-install otomatis di Actions.
