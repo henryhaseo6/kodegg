@@ -45,6 +45,18 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
     media: { body: createReadStream(videoPath) },
   }, { maxContentLength: Infinity, maxBodyLength: Infinity });
   const id = res.data.id;
+  // YouTube kadang MENIMPA privacy yang kita minta (mis. channel muda yang
+  // melewati batas upload harian → dipaksa unlisted). Diamnya berbahaya: video
+  // terlihat "sukses" padahal tak tayang publik. Cek balik, biaya 1 unit.
+  try {
+    const cek = await yt.videos.list({ part: ["status"], id: [id] });
+    const nyata = cek.data.items?.[0]?.status?.privacyStatus;
+    if (nyata && nyata !== privacy) {
+      console.log(`  ⚠ privacy diminta "${privacy}" tapi YouTube menyetel "${nyata}" — kemungkinan batas upload harian channel.`);
+      if (process.env.GITHUB_ACTIONS) console.log(`::warning title=Privacy ditimpa YouTube::${id} jadi "${nyata}" (diminta "${privacy}")`);
+    }
+  } catch { /* pengecekan gagal ≠ upload gagal */ }
+
   if (thumbnailPath && existsSync(thumbnailPath)) {
     try { await yt.thumbnails.set({ videoId: id, media: { body: createReadStream(thumbnailPath) } }); } catch (e) { console.log("  thumbnail gagal (abaikan):", e.message); }
   }
