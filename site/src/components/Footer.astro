@@ -18,6 +18,9 @@ const footLinks = [
   { label: lang === "id" ? "Kontak" : "Contact", href: route("contact", lang) },
   { label: lang === "id" ? "Privasi" : "Privacy", href: route("privacy", lang) },
   { label: lang === "id" ? "Ketentuan" : "Terms", href: route("terms", lang) },
+  // Kanal resmi. Ditaut nyata (bukan cuma sameAs di JSON-LD) supaya kaitan
+  // situs↔kanal bisa diverifikasi Google dari dua arah.
+  { label: "YouTube", href: "https://www.youtube.com/@KodeGGCodes", extern: true },
 ];
 
 const stamp = updatedAt
@@ -51,7 +54,13 @@ const sources = await loadSources();
     <nav style="margin-top:16px; display:flex; flex-wrap:wrap; gap:18px;">
       {
         footLinks.map((l) => (
-          <a href={l.href} class="gg-nav" style="font-size:13.5px; font-weight:500; color:var(--muted); text-decoration:none;">
+          <a
+            href={l.href}
+            class="gg-nav"
+            target={l.extern ? "_blank" : undefined}
+            rel={l.extern ? "me noopener" : undefined}
+            style="font-size:13.5px; font-weight:500; color:var(--muted); text-decoration:none;"
+          >
             {l.label}
           </a>
         ))
