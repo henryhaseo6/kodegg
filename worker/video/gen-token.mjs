@@ -26,6 +26,17 @@ const authUrl = oauth2.generateAuthUrl({
   ],
 });
 
+// Jalur cadangan: kalau server lokal keburu mati saat Google mengalihkan balik
+// (browser bilang "localhost refused to connect"), kodenya TETAP ada di URL —
+// tukar manual: node worker/video/gen-token.mjs --code=4/0A...
+// Kode otorisasi hanya berlaku ~10 menit dan sekali pakai.
+const argCode = process.argv.find((a) => a.startsWith("--code="))?.slice(7);
+if (argCode) {
+  const { tokens } = await oauth2.getToken(decodeURIComponent(argCode));
+  console.log("\nYT_REFRESH_TOKEN =", tokens.refresh_token ?? "(kosong — cabut akses lama di myaccount.google.com/permissions lalu ulangi)");
+  process.exit(0);
+}
+
 const server = http.createServer(async (req, res) => {
   try {
     const u = new URL(req.url, REDIRECT);
