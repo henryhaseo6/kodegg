@@ -7,6 +7,9 @@ site/.astro/
 # (biarkan ter-commit kalau mau deploy tanpa jalanin fetch-icons dulu)
 # data efemeral: daftar kode baru per-run (untuk notifikasi push, tak di-commit)
 worker/data/new-codes.json
+# kredensial lokal (upload manual YouTube)
+worker/.env
+
 # logs & temp
 *.log
 .DS_Store

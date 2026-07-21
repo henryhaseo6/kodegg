@@ -63,10 +63,33 @@ Review di **YouTube Studio → Content**, kalau bagus tinggal jadiin **Public**.
 
 ## Catatan penting
 
-- **Quota**: default YouTube API = ~**6 upload/hari**. Sistem dibatasi 3/hari (aman). Kalau
+- **Quota**: default YouTube API = ~**6 upload/hari**. Sistem dibatasi 5/hari (aman). Kalau
   mau lebih, ajukan quota increase di Google Cloud.
+- **Video di atas kuota** tetap dirender, lalu di-publish ke **Release harian** (tag
+  `videos-<tgl>`) + artifact run sebagai cadangan; keduanya dihapus setelah 14 hari.
 - **Ganti ke Public otomatis**: ubah Variable `YT_PRIVACY` = `public`.
 - **Preview tanpa upload** (tes lokal): `DRY_RUN=1 node worker/make-videos.mjs` → video ke
   folder `_video-review/` (butuh `new-*-codes.json` berisi kode + paket canvas/ffmpeg/edge-tts).
 - **Suara**: butuh `edge-tts` (Python) — di-install otomatis di Actions.
 - File state: `worker/data/video-state.json` (dedup + hitung harian, di-commit).
+
+## Upload manual (video sisa kuota)
+
+Shorts **tidak bisa** diberi thumbnail custom lewat YouTube Studio — hanya lewat API. Jadi
+untuk video dari Release/artifact, pakai script ini (thumbnail & metadata ikut terpasang):
+
+```bash
+# sekali saja: simpan kredensial di worker/.env (tak ikut ter-commit)
+#   YT_CLIENT_ID=...
+#   YT_CLIENT_SECRET=...
+#   YT_REFRESH_TOKEN=...      (dari: node worker/video/gen-token.mjs)
+
+node worker/video/upload-manual.mjs --all --dry                    # lihat dulu, tak upload
+node worker/video/upload-manual.mjs --all                          # semua isi _video-out/
+node worker/video/upload-manual.mjs --all --dir ~/Downloads/videos-2026-07-21
+node worker/video/upload-manual.mjs _video-out/2026-07-21-wos.mp4 --privacy unlisted
+```
+
+Privacy default `public` (ikut `YT_PRIVACY` bila diset). Video yang sukses dipindah ke
+subfolder `terkirim/` supaya perintah aman diulang. Script ini **tidak** kena batas 5/hari —
+batas sebenarnya cuma kuota API YouTube (~6 upload/hari, dipakai bareng bot).
