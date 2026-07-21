@@ -31,7 +31,16 @@ export default {
 // Host yang boleh diambil lewat proxy. SENGAJA daftar tertutup: worker ini tak
 // boleh jadi open proxy. Tambah host baru hanya bila sumbernya memang memblokir
 // IP GitHub Actions.
-const HOST_DIIZINKAN = new Set(["www.whiteoutsurvival-community.com", "wuwastatus.com"]);
+const HOST_DIIZINKAN = new Set([
+  "www.whiteoutsurvival-community.com",
+  "wuwastatus.com",
+  // Situs editorial (cross-check) — sebagian juga 403 dari IP Actions.
+  "game8.co",
+  "www.pockettactics.com",
+  "progameguides.com",
+  "www.pocketgamer.com",
+  "www.dexerto.com",
+]);
 
 /**
  * Ambil halaman publik dari IP Cloudflare, untuk sumber yang membalas 403 ke IP

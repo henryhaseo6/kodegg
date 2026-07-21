@@ -19,6 +19,8 @@
 // Menambah game: tambah entri di GAMES_CFG dengan ≥2 slug situs. Menambah situs:
 // tambah adapter di SITES (harus punya pemisah section aktif/expired yang jelas).
 
+import { fetchAsBrowser } from "../http.mjs";
+
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
@@ -225,8 +227,10 @@ export const GAMES_CFG = {
   // harian region-locked tanpa sumber fresh yang misahin aktif/expired.
 };
 
+// fetchAsBrowser: header ala browser + retry lewat proxy Cloudflare bila 403/429
+// (beberapa situs editorial memblokir rentang IP GitHub Actions — lihat http.mjs).
 async function fetchHtml(url) {
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
+  const res = await fetchAsBrowser(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.text();
 }
