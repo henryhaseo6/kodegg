@@ -255,6 +255,7 @@ export async function fetchEditorial({ games, log = () => {} }) {
   const expired = new Set();
   const covered = new Set();
   let failed = 0;
+  const failedGames = []; // id game yang batal cross-check → dinamai di annotation CI
 
   await Promise.all(
     Object.entries(GAMES_CFG)
@@ -282,6 +283,7 @@ export async function fetchEditorial({ games, log = () => {} }) {
         // dipertahankan worker, tidak diarsipkan massal.
         if (ok.length < 2) {
           failed += 1;
+          failedGames.push(`${id}(${ok.length}/${Object.keys(cfg.sources).length})`);
           log(`[${id}] · cross-check batal — hanya ${ok.length} sumber OK (butuh ≥2)`);
           return;
         }
@@ -337,5 +339,5 @@ export async function fetchEditorial({ games, log = () => {} }) {
       }),
   );
 
-  return { items, expiredItems, expired, covered, failed };
+  return { items, expiredItems, expired, covered, failed, failedGames };
 }

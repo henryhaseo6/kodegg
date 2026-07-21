@@ -155,7 +155,12 @@ async function main() {
   const perSource = { hoyo, wiki, wuwa, totw, cw, rct, wos, edi };
   const totalFailed = Object.values(perSource).reduce((n, r) => n + (r.failed ?? 0), 0);
   if (totalFailed) {
-    const names = Object.entries(perSource).filter(([, r]) => r.failed).map(([k, r]) => `${k}(${r.failed})`).join(", ");
+    // Sebut GAME-nya bila sumber bisa merinci (editorial) — "edi(4)" saja bikin
+    // harus buka log & menebak; nama game langsung menunjuk lubangnya.
+    const names = Object.entries(perSource)
+      .filter(([, r]) => r.failed)
+      .map(([k, r]) => (r.failedGames?.length ? `${k}: ${r.failedGames.join(", ")}` : `${k}(${r.failed})`))
+      .join(" | ");
     console.warn(`⚠ ${totalFailed} sumber/game gagal — kodenya dipertahankan: ${names}`);
     if (process.env.GITHUB_ACTIONS) console.log(`::warning title=Sumber kode gagal::${names} — data lama dipertahankan, cek log baris [nama]`);
   }
