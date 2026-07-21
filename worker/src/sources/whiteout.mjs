@@ -6,6 +6,8 @@
 // null, tanggal via firstSeenAt di worker. Aktif/expired langsung dari status.
 // Single-game (wos).
 
+import { fetchAsBrowser } from "../http.mjs";
+
 const URL = "https://www.whiteoutsurvival-community.com/en/gift-codes.html";
 const CODE_RE = /^[A-Za-z0-9]{4,30}$/;
 
@@ -20,7 +22,8 @@ function parseCodes(html) {
 }
 
 async function fetchOne(id, meta, ua) {
-  const res = await fetch(URL, { headers: { "User-Agent": ua } });
+  // Sumber ini menolak UA bot dari IP Actions (HTTP 403) → header ala browser.
+  const res = await fetchAsBrowser(URL);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const rows = parseCodes(await res.text());
   if (rows.length === 0) throw new Error("0 kode terparse — layout whiteoutsurvival-community berubah");

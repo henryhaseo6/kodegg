@@ -149,9 +149,15 @@ async function main() {
       `${payload.counts.archived} arsip (+${newlyArchived} baru diarsipkan)` +
       (newlyAdded.length ? `, ${newlyAdded.length} kode baru → notifikasi` : ""),
   );
-  const totalFailed = hoyo.failed + wiki.failed + wuwa.failed + totw.failed + cw.failed + rct.failed + wos.failed + edi.failed;
+  // Kegagalan per-sumber HARUS terlihat: kalau senyap, data game itu beku diam-diam
+  // (kasus nyata: whiteout 403 dari IP Actions selama 3 hari, tak ada yang sadar).
+  // Di GitHub Actions, ::warning:: muncul di ringkasan run, bukan cuma di log.
+  const perSource = { hoyo, wiki, wuwa, totw, cw, rct, wos, edi };
+  const totalFailed = Object.values(perSource).reduce((n, r) => n + (r.failed ?? 0), 0);
   if (totalFailed) {
-    console.warn(`⚠ ${totalFailed} sumber/game gagal — kodenya dipertahankan`);
+    const names = Object.entries(perSource).filter(([, r]) => r.failed).map(([k, r]) => `${k}(${r.failed})`).join(", ");
+    console.warn(`⚠ ${totalFailed} sumber/game gagal — kodenya dipertahankan: ${names}`);
+    if (process.env.GITHUB_ACTIONS) console.log(`::warning title=Sumber kode gagal::${names} — data lama dipertahankan, cek log baris [nama]`);
   }
 }
 

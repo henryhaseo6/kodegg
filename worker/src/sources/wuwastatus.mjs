@@ -18,6 +18,8 @@
 // Menangkap kode livestream 48-jam saat jendelanya terbuka (jika wuwastatus
 // sudah memuatnya). Kode permanen tetap dijamin oleh curated.mjs.
 
+import { fetchAsBrowser } from "../http.mjs";
+
 const URL = "https://wuwastatus.com/codes";
 const MAX_AGE_DAYS = 30;
 const CODE_RE = /^[A-Za-z0-9]{4,30}$/;
@@ -66,7 +68,8 @@ export async function fetchWuwaStatus({ games, userAgent, log = () => {} }) {
   if (!games.wuwa) return { items: [], covered: new Set(), failed: 0 };
 
   try {
-    const res = await fetch(URL, { headers: { "User-Agent": userAgent } });
+    // Menolak UA bot dari IP Actions (HTTP 403) → header ala browser.
+    const res = await fetchAsBrowser(URL);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const html = stripScripts(await res.text());
 
