@@ -47,7 +47,9 @@ jobs:
         env:
           # Proxy Cloudflare untuk sumber yang memblokir IP GitHub Actions
           # (whiteoutsurvival-community, wuwastatus). Kosong = fetch langsung saja.
-          KODEGG_PROXY: ${{ vars.KODEGG_PROXY }}
+          # URL proxy boleh dipasang sebagai Variable ATAU Secret — dua-duanya
+          # diterima supaya tak gagal senyap kalau ditaruh di tab yang berbeda.
+          KODEGG_PROXY: ${{ vars.KODEGG_PROXY || secrets.KODEGG_PROXY }}
           KODEGG_PROXY_KEY: ${{ secrets.KODEGG_PROXY_KEY }}
         run: |
           node worker/fetch-codes.mjs || echo "codes gagal, lanjut"
