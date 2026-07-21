@@ -1,114 +1,14 @@
 {
-  "generatedAt": "2026-07-21T20:00:54.962Z",
-  "codes": [
+  "generatedAt": "2026-07-21T21:00:58.371Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "redliner",
-      "gameName": "REDLINER",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/redliner"
-      },
-      "code": "Spain1",
-      "reward": "500 Crimson",
-      "date": "2026-07-21T18:40:50.778Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-21T20:00:54.962Z",
-      "fetchedAt": "2026-07-21T20:00:54.962Z"
+      "game": "ultimate-gym-game",
+      "count": 3
     },
     {
-      "game": "zombie-island",
-      "gameName": "Zombie Island",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/zombie-island"
-      },
-      "code": "MIMICCORE",
-      "reward": "Mythical Core",
-      "date": "2026-07-21T19:07:06.547Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-21T20:00:54.962Z",
-      "fetchedAt": "2026-07-21T20:00:54.962Z"
-    },
-    {
-      "game": "zombie-island",
-      "gameName": "Zombie Island",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/zombie-island"
-      },
-      "code": "UPD1",
-      "reward": "1,000 Gems",
-      "date": "2026-07-21T19:07:06.189Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-21T20:00:54.962Z",
-      "fetchedAt": "2026-07-21T20:00:54.962Z"
-    },
-    {
-      "game": "zombie-island",
-      "gameName": "Zombie Island",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/zombie-island"
-      },
-      "code": "Zombie",
-      "reward": "1,000 Gems",
-      "date": "2026-07-21T19:07:06.002Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-21T20:00:54.962Z",
-      "fetchedAt": "2026-07-21T20:00:54.962Z"
-    },
-    {
-      "game": "zombie-island",
-      "gameName": "Zombie Island",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/zombie-island"
-      },
-      "code": "ArcSpider",
-      "reward": "1,000 Gems",
-      "date": "2026-07-21T19:07:05.838Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-21T20:00:54.962Z",
-      "fetchedAt": "2026-07-21T20:00:54.962Z"
-    },
-    {
-      "game": "zombie-island",
-      "gameName": "Zombie Island",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/zombie-island"
-      },
-      "code": "Summer",
-      "reward": "1,000 Gems",
-      "date": "2026-07-21T19:07:05.683Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-21T20:00:54.962Z",
-      "fetchedAt": "2026-07-21T20:00:54.962Z"
+      "game": "nightfall",
+      "count": 3
     }
-  ],
-  "bulkGames": []
+  ]
 }
