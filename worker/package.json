@@ -8,7 +8,8 @@
     "codes": "node fetch-codes.mjs",
     "icons": "node fetch-icons.mjs",
     "notify": "node push-notify.mjs",
-    "test": "node --test"
+    "test": "node --test",
+    "deps:video": "npm install @napi-rs/canvas @ffmpeg-installer/ffmpeg googleapis --no-save --no-audit --no-fund"
   },
   "engines": {
     "node": ">=18"

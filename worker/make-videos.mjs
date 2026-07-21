@@ -109,11 +109,63 @@ function pickDisplay(newCodes, active) {
   return disp;
 }
 
+/**
+ * Kandidat ATAS PERMINTAAN: `node worker/make-videos.mjs --game=driving-empire`.
+ * Untuk game yang tak lolos jalur otomatis (kodenya tak baru / impor pertamanya
+ * sudah lewat) tapi layak dibuatkan video — mode "semua kode aktif", hasilnya ke
+ * _video-out/ untuk diupload manual. Tak menyentuh video-state.json.
+ */
+function buildOnDemand(id) {
+  const rb = readJSON(resolve(DATA, "roblox-codes.json"), { games: {}, active: [] });
+  const g = rb.games[id];
+  if (g) {
+    const active = rb.active.filter((c) => c.game === id);
+    if (active.length === 0) return null;
+    return {
+      platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
+      iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: 0, newCodes: [], activeCount: active.length,
+      fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], active),
+    };
+  }
+  const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
+  const active = mc.active.filter((c) => c.game === id);
+  if (active.length === 0) return null;
+  const cat = readJSON(resolve(DATA, "games.json"), { games: [] });
+  const meta = (cat.games ?? []).find((x) => x.id === id);
+  return {
+    platform: "MOBILE", id, name: meta?.name ?? active[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
+    iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 0, newCodes: [], activeCount: active.length,
+    fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], active),
+  };
+}
+
 async function main() {
   const now = new Date();
   const today = now.toISOString().slice(0, 10);
   const state = readJSON(STATE_PATH, { date: today, todayCount: 0, posted: {}, log: [] });
   if (state.date !== today) { state.date = today; state.todayCount = 0; }
+
+  const onDemandId = process.argv.find((a) => a.startsWith("--game="))?.slice(7);
+  if (onDemandId) {
+    const c = buildOnDemand(onDemandId);
+    if (!c) { console.log(`game "${onDemandId}" tak ditemukan / tak punya kode aktif.`); return; }
+    mkdirSync(TMP, { recursive: true }); mkdirSync(OUTDIR, { recursive: true });
+    console.log(`▶ [atas permintaan] ${c.name} (${c.platform}) — ${c.activeCount} kode aktif`);
+    const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
+    const moreCount = Math.max(0, c.activeCount - c.displayCodes.length);
+    await renderShort({ game: { name: c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, allMode: true, iconPath: c.iconPath, outPath: base });
+    await makeVO({ name: c.name, activeCount: c.activeCount, allMode: true, outPath: vo });
+    await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
+    await thumb(fin, th);
+    const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.displayCodes, activeCount: c.activeCount, allMode: true, now });
+    const stem = `${today}-${c.id}`;
+    copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
+    copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
+    writeFileSync(resolve(OUTDIR, `${stem}.txt`), `JUDUL:\n${meta.title}\n\nDESKRIPSI:\n${meta.description}\n\nTAG:\n${(meta.tags ?? []).join(", ")}\n\nPLAYLIST:\n${meta.playlistTitle}\n`);
+    try { rmSync(TMP, { recursive: true, force: true }); } catch {}
+    console.log(`  ✓ _video-out/${stem}.mp4 (+ .jpg thumbnail, .txt metadata)\n    judul: ${meta.title}`);
+    return;
+  }
 
   let candidates = buildCandidates();
   // buang yg SEMUA kode barunya sudah pernah dibikin video
