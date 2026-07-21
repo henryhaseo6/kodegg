@@ -149,9 +149,12 @@ export async function renderShort({ game, codes, iconPath, activeCount, moreCoun
         { idFont: "400 30px GroteskR", enFont: "400 27px GroteskR", idColor: C.muted, enColor: "#6E7788" });
       ctx.globalAlpha = mainA;
 
-      // Layout adaptif: 1-3 kode → kartu besar; 4 kode → kartu sedikit lebih rapat + reveal lebih cepat.
+      // Layout adaptif: 1-3 kode → kartu besar; 4 kode → lebih rapat + reveal cepat.
+      // Blok kartu sengaja diakhiri di ~1600 supaya baris teaser di bawahnya tetap
+      // di atas ZONA OVERLAY player Shorts (handle @channel + judul menutupi
+      // sekitar 200px paling bawah — dulu teaser "+N kode lagi" ketutup di situ).
       const nCards = CODES.length;
-      const cardH = nCards >= 4 ? 182 : 200, gapC = nCards >= 4 ? 22 : 26, startY = nCards >= 4 ? 902 : 940;
+      const cardH = nCards >= 4 ? 168 : 200, gapC = nCards >= 4 ? 18 : 26, startY = nCards >= 4 ? 874 : 940;
       const cardSpacing = nCards >= 4 ? 2.0 : 2.4;
       CODES.forEach((c, i) => {
         const appear = 2.7 + i * cardSpacing, a = inv(appear, appear + 0.7, t); if (a <= 0) return;
@@ -171,7 +174,7 @@ export async function renderShort({ game, codes, iconPath, activeCount, moreCoun
         const rwMax = w - 130 - (badgeW ? badgeW + 30 : 0);
         let rw = rwFull; while (ctx.measureText(rw).width > rwMax && rw.length > 6) rw = rw.slice(0, -2);
         ctx.fillText(rw === rwFull ? rw : rw + "…", x + 82, y + 44);
-        const by = y + 74, bh = 92;
+        const by = y + (nCards >= 4 ? 68 : 74), bh = nCards >= 4 ? 84 : 92;
         rr(ctx, x + 30, by, w - 60, bh, 16); ctx.fillStyle = "#0B0E14"; ctx.fill();
         ctx.setLineDash([9, 8]); ctx.lineWidth = 2; ctx.strokeStyle = "rgba(203,255,70,0.4)"; ctx.stroke(); ctx.setLineDash([]);
         let fs = 46; ctx.font = `700 ${fs}px Mono`; while (ctx.measureText(c.code).width > w - 90 && fs > 24) { fs -= 2; ctx.font = `700 ${fs}px Mono`; }
@@ -186,11 +189,11 @@ export async function renderShort({ game, codes, iconPath, activeCount, moreCoun
         ctx.globalAlpha = mainA * inv(11.5, 12.2, t); ctx.textAlign = "center";
         if (moreCount > 0) {
           ctx.shadowColor = "rgba(203,255,70,0.3)"; ctx.shadowBlur = 20;
-          bi(ctx, `+${moreCount} kode lagi di kodegg.com`, `+${moreCount} more code${moreCount === 1 ? "" : "s"} on kodegg.com`, 1758,
+          bi(ctx, `+${moreCount} kode lagi di kodegg.com`, `+${moreCount} more code${moreCount === 1 ? "" : "s"} on kodegg.com`, 1650,
             { idFont: "700 38px Grotesk", enFont: "700 30px Grotesk", idColor: C.acc, enColor: "rgba(203,255,70,0.55)" });
           ctx.shadowBlur = 0;
         } else {
-          bi(ctx, "Redeem cepat — sebagian cuma aktif beberapa hari", "Redeem fast — some expire within days", 1758,
+          bi(ctx, "Redeem cepat — sebagian cuma aktif beberapa hari", "Redeem fast — some expire within days", 1650,
             { idFont: "700 34px Grotesk", enFont: "700 28px Grotesk", idColor: C.warn, enColor: "rgba(255,177,60,0.6)" });
         }
       }
