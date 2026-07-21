@@ -19,6 +19,7 @@ const TMP = resolve(HERE, "../_video-tmp");
 const STATE_PATH = resolve(DATA, "video-state.json");
 const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 5); // batas UPLOAD otomatis/hari (kuota API YouTube muat ~6)
 const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 8); // batas RENDER/run (jaga durasi CI)
+const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru: min pemain utk dapat video "semua kode"
 const PRIVACY = process.env.YT_PRIVACY || "unlisted";
 const DRY_RUN = process.env.DRY_RUN === "1"; // render + simpan lokal, TANPA upload
 const REVIEW = resolve(HERE, "../_video-review");
@@ -56,6 +57,23 @@ function buildCandidates() {
       displayCodes: pickDisplay(nc, active),
     });
   }
+  // ROBLOX — game yang BARU masuk pantauan (impor pertama). Kodenya belum tentu
+  // baru, jadi videonya bermode "semua kode aktif" (bukan "KODE BARU"). Hanya
+  // game besar: game kecil tak sepadan dengan kuota upload & waktu render.
+  for (const { game: id } of rbNewFile.bulkGames ?? []) {
+    const g = rb.games[id]; if (!g) continue;
+    if ((g.players ?? 0) < BULK_MIN_PLAYERS) continue;
+    if (rbNewByGame[id]) continue; // sudah jadi kandidat lewat jalur kode baru
+    const active = rb.active.filter((c) => c.game === id);
+    if (active.length === 0) continue;
+    out.push({
+      platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
+      iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: (g.players ?? 0),
+      newCodes: active, activeCount: active.length, fetchedAt: rbNewFile.generatedAt, allMode: true,
+      displayCodes: pickDisplay([], active),
+    });
+  }
+
   // MOBILE
   const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
   const cat = readJSON(resolve(DATA, "games.json"), { games: [] });
@@ -119,11 +137,11 @@ async function main() {
       console.log(`\n▶ ${c.name} (${c.platform}) — ${c.newCodes.length} kode baru`);
       const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
       const moreCount = Math.max(0, c.activeCount - c.displayCodes.length); // sisa kode di situs → teaser "+N lagi"
-      await renderShort({ game: { name: c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, iconPath: c.iconPath, outPath: base });
-      await makeVO({ name: c.name, activeCount: c.activeCount, outPath: vo });
+      await renderShort({ game: { name: c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, allMode: c.allMode, iconPath: c.iconPath, outPath: base });
+      await makeVO({ name: c.name, activeCount: c.activeCount, allMode: c.allMode, outPath: vo });
       await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
       await thumb(fin, th);
-      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.displayCodes, activeCount: c.activeCount, now });
+      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, now });
       if (DRY_RUN) {
         const dst = resolve(REVIEW, `${c.id}.mp4`); copyFileSync(fin, dst);
         console.log(`  ✓ [DRY] ${dst}\n    judul: ${meta.title}`);

@@ -96,7 +96,7 @@ function fmtWIB(d) {
 
 /** Render Short bisu. game={name,platform,players?}, codes=[{code,reward,isNew}] (maks 4 kartu),
  *  moreCount=sisa kode di situs → teaser "+N lagi", fetchedAt=waktu data ditarik (Date/ISO). */
-export async function renderShort({ game, codes, iconPath, activeCount, moreCount = 0, fetchedAt, outPath }) {
+export async function renderShort({ game, codes, iconPath, activeCount, moreCount = 0, fetchedAt, allMode = false, outPath }) {
   const stamp = fmtWIB(fetchedAt ? new Date(fetchedAt) : new Date());
   const iconImg = existsSync(iconPath) ? await loadImage(iconPath) : null;
   const MAX_CARDS = 4;
@@ -142,8 +142,10 @@ export async function renderShort({ game, codes, iconPath, activeCount, moreCoun
       const ha = inv(1.1, 1.9, t), hy = 600 + (1 - easeOut(ha)) * 30; // naik dikit: blok judul kini 2 bahasa
       ctx.globalAlpha = mainA * ha;
       ctx.font = "800 96px Grotesk"; ctx.fillStyle = C.acc; ctx.textAlign = "center";
-      ctx.shadowColor = "rgba(203,255,70,0.3)"; ctx.shadowBlur = 30; ctx.fillText("KODE BARU!", W / 2, hy); ctx.shadowBlur = 0;
-      ctx.font = "700 38px Grotesk"; ctx.fillStyle = "rgba(203,255,70,0.6)"; ctx.fillText("NEW CODES!", W / 2, hy + 68);
+      // allMode = game baru masuk pantauan: kodenya belum tentu baru, jadi
+      // judulnya "SEMUA KODE" — jangan mengklaim baru kalau tak tahu umurnya.
+      ctx.shadowColor = "rgba(203,255,70,0.3)"; ctx.shadowBlur = 30; ctx.fillText(allMode ? "SEMUA KODE" : "KODE BARU!", W / 2, hy); ctx.shadowBlur = 0;
+      ctx.font = "700 38px Grotesk"; ctx.fillStyle = "rgba(203,255,70,0.6)"; ctx.fillText(allMode ? "ALL ACTIVE CODES" : "NEW CODES!", W / 2, hy + 68);
       ctx.globalAlpha = mainA * inv(1.3, 2.0, t);
       ctx.font = "700 52px Grotesk"; ctx.fillStyle = C.txt;
       let gname = game.name; while (ctx.measureText(gname).width > W - 120 && gname.length > 8) gname = gname.slice(0, -2);

@@ -20,7 +20,7 @@ function wibParts(now) {
  * @param {{name, platform:'ROBLOX'|'MOBILE', slug, codes:[{code,reward}], activeCount, now:Date}} o
  * @returns {{title, description, tags:string[]}}
  */
-export function buildMetadata({ name, platform, slug, codes, activeCount, now }) {
+export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, now }) {
   const my = `${MONTHS[now.getUTCMonth()]} ${now.getUTCFullYear()}`;
   const isRoblox = platform === "ROBLOX";
   const url = `${SITE}/id/${isRoblox ? "roblox" : "game"}/${slug}/`;
@@ -30,16 +30,19 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, now })
   // Terbaru" utk search ID, + tanggal WIB biar tiap video beda (bukan duplikat).
   // Turun bertahap kalau nama game panjang; potongan terakhir = potong keras.
   const w = wibParts(now);
+  // allMode (game baru masuk pantauan): kodenya belum tentu baru → jangan tulis
+  // "Kode Terbaru", pakai "Semua Kode Aktif".
+  const label = allMode ? "Semua Kode Aktif" : "Kode Terbaru";
   const title = [
-    `${name} Codes (${my}) 🎁 Kode Terbaru Update ${w.d} ${w.mon} ${w.y} — KodeGG`,
-    `${name} Codes (${my}) 🎁 Kode Terbaru Update ${w.d} ${w.mon} — KodeGG`,
-    `${name} Codes (${my}) 🎁 Kode Terbaru ${w.d} ${w.mon}`,
-    `${name} Codes (${my}) Update ${w.d} ${w.mon}`,
+    `${name} Codes (${my}) 🎁 ${label} Update ${w.d} ${w.mon} ${w.y} — KodeGG`,
+    `${name} Codes (${my}) 🎁 ${label} Update ${w.d} ${w.mon} — KodeGG`,
+    `${name} Codes (${my}) 🎁 ${label} ${w.d} ${w.mon}`,
+    `${name} Codes (${my}) ${label} ${w.d} ${w.mon}`,
   ].find((t) => t.length <= 100) ?? `${name} Codes ${w.d} ${w.mon} ${w.y}`.slice(0, 100);
 
   const codeLines = codes.slice(0, 8).map((c) => `• ${c.code}${c.reward ? ` — ${c.reward}` : ""}`).join("\n");
   const description =
-    `Kode redeem ${name} terbaru & aktif ${my}! ${activeCount} kode aktif, semua terverifikasi.\n` +
+    `${allMode ? `Semua kode redeem ${name} yang masih aktif ${my}!` : `Kode redeem ${name} terbaru & aktif ${my}!`} ${activeCount} kode aktif, semua terverifikasi.\n` +
     `🕒 Update terakhir: ${w.d} ${w.mon} ${w.y}, ${w.hm} WIB\n\n` +
     `🎁 KODE:\n${codeLines}\n\n` +
     `✅ Full list + cara redeem (auto-update tiap jam):\n${url}\n\n` +

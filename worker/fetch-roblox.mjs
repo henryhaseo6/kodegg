@@ -358,7 +358,13 @@ async function main() {
   // `!c.bulk` membuang import-pertama game baru di-discover (mis. sailor-piece 166
   // kode sekaligus) → cegah banjir notif tiap ada game baru.
   const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk);
-  await writeFile(resolve(dirname(OUT), "new-roblox-codes.json"), JSON.stringify({ generatedAt: now, codes: newly }, null, 2));
+  // Game yang BARU masuk pantauan run ini (impor pertama). Bukan bahan notif —
+  // kodenya bisa lama semua — tapi berguna utk auto-video "semua kode aktif"
+  // pada game besar (lihat worker/make-videos.mjs).
+  const bulkByGame = {};
+  for (const c of active) if (c.firstSeenAt === now && c.code && c.bulk) bulkByGame[c.game] = (bulkByGame[c.game] ?? 0) + 1;
+  const bulkGames = Object.entries(bulkByGame).map(([game, count]) => ({ game, count }));
+  await writeFile(resolve(dirname(OUT), "new-roblox-codes.json"), JSON.stringify({ generatedAt: now, codes: newly, bulkGames }, null, 2));
 
   console.log(
     `✓ data/roblox-codes.json — ${payload.counts.active} aktif, ${payload.counts.archived} arsip ` +
