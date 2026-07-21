@@ -16,7 +16,7 @@ const ASSETS_ROBLOX = resolve(HERE, "../site/public/assets/roblox");
 const ASSETS_GAMES = resolve(HERE, "../site/public/assets/games");
 const TMP = resolve(HERE, "../_video-tmp");
 const STATE_PATH = resolve(DATA, "video-state.json");
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 3); // batas UPLOAD otomatis/hari
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 5); // batas UPLOAD otomatis/hari (kuota API YouTube muat ~6)
 const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 8); // batas RENDER/run (jaga durasi CI)
 const PRIVACY = process.env.YT_PRIVACY || "unlisted";
 const DRY_RUN = process.env.DRY_RUN === "1"; // render + simpan lokal, TANPA upload

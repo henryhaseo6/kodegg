@@ -69,13 +69,42 @@ jobs:
           npm install @napi-rs/canvas @ffmpeg-installer/ffmpeg googleapis --no-save --no-audit --no-fund
           node worker/make-videos.mjs || echo "auto-video gagal, lanjut"
 
-      # Video di atas kuota harian tak diupload — disimpan sbg artifact biar bisa
-      # diupload manual. Retensi 14 hari; kode redeem biasanya basi jauh sebelum itu.
-      - name: Simpan video sisa (upload manual)
-        if: ${{ always() && !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
+      # Video di atas kuota upload otomatis → Release harian (gampang dicari &
+      # diambil satuan) + artifact per-run sbg cadangan. Keduanya dibersihkan
+      # setelah 14 hari; kode redeem biasanya basi jauh sebelum itu.
+      - name: Ringkas & rilis video manual
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          files=(_video-out/*.mp4)
+          if [ ${#files[@]} -eq 0 ]; then echo "tak ada video manual run ini."; exit 0; fi
+          # slug game (buang prefix tanggal) → dipakai utk nama artifact & ringkasan
+          slugs=$(printf '%s\n' "${files[@]}" | xargs -n1 basename | sed 's/\.mp4$//; s/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-//')
+          echo "ART_NAME=shorts-$(date -u +%F)-${#files[@]}video-$(echo "$slugs" | head -2 | paste -sd- -)" >> "$GITHUB_ENV"
+          {
+            echo "### 🎬 ${#files[@]} video siap upload manual"
+            echo "$slugs" | sed 's/^/- /'
+          } >> "$GITHUB_STEP_SUMMARY"
+          TAG="videos-$(date -u +%F)"
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" \
+            --title "Video Shorts $(date -u +%F)" \
+            --notes "Video KodeGG yang lewat kuota upload otomatis — siap diupload manual. Tiap video punya .jpg (thumbnail) dan .txt (judul/deskripsi/tag)."
+          gh release upload "$TAG" _video-out/* --clobber
+          # buang rilis lebih tua dari 14 hari biar halaman Releases tak menumpuk
+          for tag in $(gh release list --limit 100 --json tagName -q '.[].tagName' | grep '^videos-' || true); do
+            d="${tag#videos-}"
+            if [ $(( ( $(date -u +%s) - $(date -u -d "$d" +%s) ) / 86400 )) -gt 14 ]; then
+              gh release delete "$tag" --yes --cleanup-tag || true
+            fi
+          done
+
+      - name: Simpan video sisa sbg artifact (cadangan)
+        if: ${{ env.ART_NAME != '' }}
         uses: actions/upload-artifact@v4
         with:
-          name: shorts-manual-${{ github.run_number }}
+          name: ${{ env.ART_NAME }}
           path: _video-out/
           if-no-files-found: ignore
           retention-days: 14
