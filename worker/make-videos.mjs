@@ -17,7 +17,12 @@ const ASSETS_ROBLOX = resolve(HERE, "../site/public/assets/roblox");
 const ASSETS_GAMES = resolve(HERE, "../site/public/assets/games");
 const TMP = resolve(HERE, "../_video-tmp");
 const STATE_PATH = resolve(DATA, "video-state.json");
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 5); // batas UPLOAD otomatis/hari (kuota API YouTube muat ~6)
+// Batas UPLOAD otomatis/hari. Dinaikkan ke 30 (21 Jul 2026) untuk MENGUJI batas
+// sebenarnya: Google memberi jatah "Video Uploads per day = 100" & 10.000 unit,
+// sementara dokumentasi menyebut videos.insert = 1.600 unit (≈6 upload). Angka
+// pemakaian nyata jauh lebih kecil dari itu, jadi dokumentasinya perlu dibuktikan.
+// Turunkan lagi kalau ternyata mentok. Bisa dioverride lewat Variable repo.
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 30);
 const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 8); // batas RENDER/run (jaga durasi CI)
 const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru: min pemain utk dapat video "semua kode"
 const PRIVACY = process.env.YT_PRIVACY || "unlisted";
@@ -199,20 +204,32 @@ async function main() {
         console.log(`  ✓ [DRY] ${dst}\n    judul: ${meta.title}`);
         continue; // dry run: tak upload, tak update state
       }
-      if (canUpload && remaining > 0) {
-        const { id, url } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th });
-        console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
-        state.todayCount += 1; remaining -= 1;
-        state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
-      } else {
-        // Kuota harian habis (atau YT belum di-set) → simpan buat upload manual,
-        // lengkap dg thumbnail & metadata siap tempel.
+      // Simpan utk upload manual: dipakai saat kuota habis, YT belum di-set,
+      // ATAU upload gagal. Video yang sudah jadi jangan sampai hilang.
+      const simpanManual = (alasan) => {
         const stem = `${today}-${c.id}`;
         copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
         copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
         writeFileSync(resolve(OUTDIR, `${stem}.txt`), `JUDUL:\n${meta.title}\n\nDESKRIPSI:\n${meta.description}\n\nTAG:\n${(meta.tags ?? []).join(", ")}\n\nPLAYLIST:\n${meta.playlistTitle}\n`);
-        console.log(`  ✓ manual: _video-out/${stem}.mp4 — "${meta.title}"`);
-        state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, title: meta.title, mode: "manual", file: `${stem}.mp4` });
+        console.log(`  ✓ manual (${alasan}): _video-out/${stem}.mp4 — "${meta.title}"`);
+        state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, title: meta.title, mode: "manual", alasan, file: `${stem}.mp4` });
+      };
+
+      if (canUpload && remaining > 0) {
+        try {
+          const { id, url } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th });
+          console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
+          state.todayCount += 1; remaining -= 1;
+          state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
+        } catch (e) {
+          // Paling sering: kuota API habis. Dulu video-nya hilang begitu saja —
+          // sekarang jatuh ke jalur manual supaya tetap bisa diupload belakangan.
+          console.log(`  ✗ upload gagal: ${e.message}`);
+          if (/quota/i.test(e.message)) remaining = 0; // jangan hantam kuota berkali-kali
+          simpanManual("upload gagal");
+        }
+      } else {
+        simpanManual(canUpload ? "kuota harian" : "YT belum di-set");
       }
       // Tandai terpakai baik yg diupload maupun yg manual → tak dirender ulang
       // tiap jam. Yang manual tinggal ambil dari artifact run ini.
