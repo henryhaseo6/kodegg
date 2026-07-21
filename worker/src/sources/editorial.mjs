@@ -106,6 +106,50 @@ export const SITES = {
       return { active: grab(aHtml), expired: grab(eHtml).map((x) => x.code) };
     },
   },
+  game8: {
+    // URL artikelnya pakai id angka (/archives/304759) yang tak bisa ditebak dari
+    // nama game → resolve() cari dulu artikel kode dari halaman hub. Judul artikel
+    // diberi skor: daftar kode utama menang, halaman kode acara (livestream/
+    // special program/collab) DIBUANG — isinya cuma kode sesaat, bukan daftar.
+    //
+    // Markup-nya paling enak dari semua situs editorial: kode ada di atribut
+    // value input clipboard (bukan tebak-tebakan teks), reward di kolom sebelah,
+    // dan section aktif↔expired dipisah heading. Kutipnya campur ' dan " → regex
+    // menerima dua-duanya.
+    resolve: async (slug) => {
+      const hub = await fetchHtml(`https://game8.co/games/${slug}`);
+      const skor = (t) => {
+        const s = t.toLowerCase();
+        if (/livestream|special program|collab|version \d/.test(s)) return 0;
+        if (/all .*redeem codes|redeem codes list|codes list/.test(s)) return 3;
+        if (/all codes|redeem codes/.test(s)) return 2;
+        return /\bcodes\b/.test(s) ? 1 : 0;
+      };
+      const pilih = [...hub.matchAll(/href=["'](\/games\/[^"']+\/archives\/\d+)["'][^>]*>([^<]{0,70})/g)]
+        .map((m) => ({ url: m[1], skor: skor(m[2]) }))
+        .filter((k) => k.skor > 0)
+        .sort((a, b) => b.skor - a.skor)[0];
+      if (!pilih) throw new Error("artikel kode tak ditemukan di hub game8");
+      return `https://game8.co${pilih.url}`;
+    },
+    parse(html) {
+      const heads = [...html.matchAll(/<h[23][^>]*>([\s\S]{0,90}?)<\/h[23]>/g)];
+      const mulai = heads.find((h) => /active/i.test(h[1]) && /code/i.test(h[1])) ?? heads.find((h) => /redeem codes?/i.test(h[1]));
+      if (!mulai) return { active: [], expired: [] };
+      const akhir = heads.find((h) => h.index > mulai.index && /expired/i.test(h[1]));
+      const sec = html.slice(mulai.index, akhir ? akhir.index : mulai.index + 20000);
+      const active = [];
+      for (const m of sec.matchAll(/<tr>([\s\S]*?)<\/tr>/g)) {
+        const kode = /a-clipboard__textInput[^>]*value=["']([A-Za-z0-9]{4,30})["']/.exec(m[1]);
+        if (!kode) continue;
+        const td = [...m[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((x) => clean(x[1].replace(/<input[^>]*>/g, "")));
+        active.push({ code: kode[1], reward: reward(td[1] ?? "") || null });
+      }
+      const expSec = akhir ? html.slice(akhir.index, akhir.index + 20000) : "";
+      const expired = [...expSec.matchAll(/a-clipboard__textInput[^>]*value=["']([A-Za-z0-9]{4,30})["']/g)].map((m) => m[1]);
+      return { active, expired };
+    },
+  },
   dexerto: {
     // Tabel: <td>…<strong>CODE</strong>…</td>. Reward di kolom terpisah
     // (diabaikan; diambil dari sumber lain berformat "CODE - reward"). Heading
@@ -152,8 +196,19 @@ export const GAMES_CFG = {
   wuwa: {
     // Wuthering Waves — sudah punya wuwastatus (tracker khusus), ini lapis kedua:
     // saat wuwastatus 403/berubah layout, kode tetap masuk lewat cross-check.
-    sources: { progameguides: "wuthering-waves/wuthering-waves-codes", pocketgamer: "wuthering-waves/codes" },
+    sources: { progameguides: "wuthering-waves/wuthering-waves-codes", pocketgamer: "wuthering-waves/codes", game8: "Wuthering-Waves" },
   },
+  nte: {
+    // Neverness to Everness — pendamping redeem-code-tracker. game8 & pocketgamer
+    // sama-sama menyertakan reward, jadi datanya lebih kaya dari tracker.
+    sources: { game8: "Neverness-to-Everness", pocketgamer: "neverness-to-everness/codes" },
+  },
+  // HoYo (gi/hsr/zzz): API resmi tetap sumber utama & paling tepercaya. Pasangan
+  // editorial ini lapis tambahan supaya kode livestream/acara yang belum masuk API
+  // tetap tertangkap — tetap wajib ≥2 sumber sepakat, jadi tak menurunkan akurasi.
+  gi: { sources: { game8: "Genshin-Impact", pocketgamer: "genshin-impact/codes" } },
+  hsr: { sources: { game8: "Honkai-Star-Rail", progameguides: "honkai-star-rail/honkai-star-rail-codes" } },
+  zzz: { sources: { game8: "Zenless-Zone-Zero", pocketgamer: "zenless-zone-zero/codes" } },
   drr: {
     // Dragon Raja: ReRise — cross-check pendamping redeem-code-tracker.
     sources: { progameguides: "dragon-raja-rerise/dragon-raja-rerise-codes", pocketgamer: "dragon-raja-rerise/codes" },
@@ -205,9 +260,12 @@ export async function fetchEditorial({ games, log = () => {} }) {
         const results = await Promise.all(
           Object.entries(cfg.sources).map(async ([site, slug]) => {
             try {
-              const parsed = SITES[site].parse(await fetchHtml(SITES[site].url(slug)));
+              // Situs dengan URL artikel tak-tertebak (game8: /archives/<id>)
+              // menyediakan resolve() async utk mencari halaman kodenya dulu.
+              const url = SITES[site].resolve ? await SITES[site].resolve(slug) : SITES[site].url(slug);
+              const parsed = SITES[site].parse(await fetchHtml(url));
               if (parsed.active.length === 0) throw new Error("0 aktif terparse — layout berubah");
-              return { site, slug, ...parsed };
+              return { site, slug, url, ...parsed };
             } catch (err) {
               log(`[${id}] · ${site} gagal: ${err.message}`);
               return null;
@@ -240,7 +298,9 @@ export async function fetchEditorial({ games, log = () => {} }) {
         for (const r of ok) for (const c of r.expired) if (CODE_RE.test(c)) expiredUnion.add(c.toUpperCase());
 
         const base = { game: id, gameName: meta.name, claimUrl: meta.redeemUrl ?? null, perm: false };
-        const primaryUrl = SITES[ok[0].site].url(cfg.sources[ok[0].site]);
+        // URL dipakai dari hasil fetch (game8 URL-nya di-resolve, tak bisa dihitung ulang).
+        const urlOf = (site) => ok.find((r) => r.site === site)?.url ?? SITES[site].url?.(cfg.sources[site]) ?? null;
+        const primaryUrl = urlOf(ok[0].site);
         let nAct = 0;
         for (const [k, v] of votes) {
           if (v.count < 2) continue; // < mayoritas → buang (kemungkinan mati)
@@ -256,9 +316,9 @@ export async function fetchEditorial({ games, log = () => {} }) {
             reward: rw,
             status: "active",
             source: src.site,
-            sourceUrl: SITES[src.site].url(cfg.sources[src.site]),
+            sourceUrl: urlOf(src.site),
             sources: sites,
-            sourceUrls: Object.fromEntries(sites.map((s) => [s, SITES[s].url(cfg.sources[s])])),
+            sourceUrls: Object.fromEntries(sites.map((s) => [s, urlOf(s)])),
           });
           nAct += 1;
         }
