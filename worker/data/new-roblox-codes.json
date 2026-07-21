@@ -1,60 +1,29 @@
 {
-  "generatedAt": "2026-07-21T13:01:04.836Z",
+  "generatedAt": "2026-07-21T14:01:11.134Z",
   "codes": [
     {
-      "game": "chameleon",
-      "gameName": "Chameleon",
+      "game": "be-the-final-boss",
+      "gameName": "Be the Final Boss",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/chameleon"
+        "Roblox Den": "https://robloxden.com/game-codes/be-the-final-boss"
       },
-      "code": "10KLIKES",
-      "reward": "5,000 Coins and 75 Ink",
+      "code": "ulttheboss",
+      "reward": "a Health Booster, a Attack Booster, and 5 Spin Tickets",
       "date": null,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-07-21T13:01:04.836Z",
-      "fetchedAt": "2026-07-21T13:01:04.836Z"
-    },
-    {
-      "game": "chameleon",
-      "gameName": "Chameleon",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/chameleon"
-      },
-      "code": "SQUIDGAMES",
-      "reward": "2,500 Coins and 30 Ink",
-      "date": null,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-21T13:01:04.836Z",
-      "fetchedAt": "2026-07-21T13:01:04.836Z"
-    },
-    {
-      "game": "gakuran",
-      "gameName": "Gakuran",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/gakuran"
-      },
-      "code": "Son",
-      "reward": "5 Rerolls",
-      "date": null,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-21T13:01:04.836Z",
-      "fetchedAt": "2026-07-21T13:01:04.836Z"
+      "firstSeenAt": "2026-07-21T14:01:11.134Z",
+      "fetchedAt": "2026-07-21T14:01:11.134Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "paranormal",
+      "count": 5
+    }
+  ]
 }
