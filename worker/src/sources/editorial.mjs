@@ -119,7 +119,8 @@ export const SITES = {
     // dan section aktif↔expired dipisah heading. Kutipnya campur ' dan " → regex
     // menerima dua-duanya.
     resolve: async (slug) => {
-      const hub = await fetchHtml(`https://game8.co/games/${slug}`);
+      // Slug boleh langsung menunjuk artikel ("Genshin-Impact/archives/304759").
+      if (slug.includes("/archives/")) return `https://game8.co/games/${slug}`;
       const skor = (t) => {
         const s = t.toLowerCase();
         if (/livestream|special program|collab|version \d/.test(s)) return 0;
@@ -127,10 +128,17 @@ export const SITES = {
         if (/all codes|redeem codes/.test(s)) return 2;
         return /\bcodes\b/.test(s) ? 1 : 0;
       };
-      const pilih = [...hub.matchAll(/href=["'](\/games\/[^"']+\/archives\/\d+)["'][^>]*>([^<]{0,70})/g)]
-        .map((m) => ({ url: m[1], skor: skor(m[2]) }))
-        .filter((k) => k.skor > 0)
-        .sort((a, b) => b.skor - a.skor)[0];
+      const cari = (hub) =>
+        [...hub.matchAll(/href=["'](\/games\/[^"']+\/archives\/\d+)["'][^>]*>([^<]{0,70})/g)]
+          .map((m) => ({ url: m[1], skor: skor(m[2]) }))
+          .filter((k) => k.skor > 0)
+          .sort((a, b) => b.skor - a.skor)[0];
+
+      // Dari IP GitHub Actions, game8 membalas 200 tapi HALAMAN HUB-NYA BEDA —
+      // tanpa daftar artikel. Statusnya sukses, jadi retry-proxy otomatis tak
+      // kepicu → di sini dipaksa: kalau tak ada kandidat, ambil ulang via proxy.
+      let pilih = cari(await fetchHtml(`https://game8.co/games/${slug}`));
+      if (!pilih) pilih = cari(await fetchHtml(`https://game8.co/games/${slug}`, { forceProxy: true }));
       if (!pilih) throw new Error("artikel kode tak ditemukan di hub game8");
       return `https://game8.co${pilih.url}`;
     },
@@ -229,8 +237,8 @@ export const GAMES_CFG = {
 
 // fetchAsBrowser: header ala browser + retry lewat proxy Cloudflare bila 403/429
 // (beberapa situs editorial memblokir rentang IP GitHub Actions — lihat http.mjs).
-async function fetchHtml(url) {
-  const res = await fetchAsBrowser(url);
+async function fetchHtml(url, opts = {}) {
+  const res = await fetchAsBrowser(url, {}, opts);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.text();
 }
