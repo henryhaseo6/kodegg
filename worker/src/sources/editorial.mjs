@@ -54,7 +54,7 @@ function isGeneric(r) {
 
 // --- Adapter per situs. parse(html) → { active:[{code,reward}], expired:[code] } ---
 // Tiap situs WAJIB punya batas section aktif↔expired yang jelas.
-const SITES = {
+export const SITES = {
   pockettactics: {
     url: (slug) => `https://www.pockettactics.com/${slug}/codes`,
     parse(html) {
@@ -127,7 +127,7 @@ const SITES = {
 };
 
 // --- Registry game editorial: id → slug per situs (butuh ≥2). ---
-const GAMES_CFG = {
+export const GAMES_CFG = {
   gov: {
     // Goddess of Victory: NIKKE (id "nikke" sudah dipakai Infinity Nikki)
     sources: {

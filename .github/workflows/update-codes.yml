@@ -51,6 +51,17 @@ jobs:
           node worker/fetch-roblox.mjs || echo "roblox gagal, lanjut"
           node worker/fetch-roblox-icons.mjs || echo "roblox icons gagal, lanjut"
 
+      # Pemantau sumber — 1×/hari (jam 01 UTC / 08 WIB). Melapor saja: game baru
+      # di sumber yang sudah dipakai, game yang dihapus sumber, dan kandidat
+      # cross-check editorial. Temuannya muncul di ringkasan run + warning.
+      - name: Pantau sumber kode (harian)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
+        run: |
+          if [ "${FORCE_DISCOVER:-}" != "1" ] && [ "$(date -u +%H)" != "01" ]; then
+            echo "bukan jam pemantauan (01 UTC) — lewati."; exit 0
+          fi
+          node worker/discover-sources.mjs || echo "pemantau sumber gagal, lanjut"
+
       # Auto-video YouTube: kode baru run ini → Short (maks 3/hari, Unlisted).
       # Aman-dilewati bila YT belum di-set. Jalan SEBELUM commit → video-state.json
       # ikut ter-commit sekali jalan (tak nambah deploy). Lihat DEPLOY-YOUTUBE.md.

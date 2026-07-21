@@ -9,7 +9,7 @@
 // Akses: situs 403 ke UA bot tapi 200 ke browser UA — worker kita kirim browser
 // UA, jadi lolos. Nambah game = 1 entri SLUGS (slug = path /games/<slug>).
 
-const SLUGS = {
+export const SLUGS = {
   afkj: "afk-journey",
   e7: "epic-seven",
   endfield: "arknights-endfield",
