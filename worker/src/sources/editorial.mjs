@@ -149,6 +149,15 @@ export const GAMES_CFG = {
     // editorial (validity panjang). HATI-HATI beda dari "7DS: Origin".
     sources: { pocketgamer: "the-seven-deadly-sins-grand-cross/codes", pockettactics: "seven-deadly-sins-grand-cross" },
   },
+  wuwa: {
+    // Wuthering Waves — sudah punya wuwastatus (tracker khusus), ini lapis kedua:
+    // saat wuwastatus 403/berubah layout, kode tetap masuk lewat cross-check.
+    sources: { progameguides: "wuthering-waves/wuthering-waves-codes", pocketgamer: "wuthering-waves/codes" },
+  },
+  drr: {
+    // Dragon Raja: ReRise — cross-check pendamping redeem-code-tracker.
+    sources: { progameguides: "dragon-raja-rerise/dragon-raja-rerise-codes", pocketgamer: "dragon-raja-rerise/codes" },
+  },
   // Guardian Tales (gtales) DI-HOLD: dihapus dari redeem-code-tracker (404 sejak
   // ~21 Jul 2026) dan tak ada 2 sumber editorial yang bisa dipakai — progameguides
   // OK, tapi pocketgamer/guardian-tales/codes terparse 0 (layoutnya beda) dan

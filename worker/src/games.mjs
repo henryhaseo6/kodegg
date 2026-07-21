@@ -191,6 +191,48 @@ export const GAMES = {
     androidId: "com.yongyesea.az",
     iconFile: "evernight.png",
   },
+  // --- Ditemukan bot pemantau sumber (discover-sources.mjs) 21 Jul 2026 ---
+  drr: {
+    name: "Dragon Raja: ReRise",
+    codeSource: "redeemtracker", // + cross-check editorial (lihat editorial.mjs)
+    redeemUrl: null,
+    genres: ["mmorpg", "rpg", "action"],
+    appleId: "com.fh.eu.drc.ios",
+    androidId: "com.fh.sea.drc.gp",
+    iconFile: "drr.png",
+  },
+  icre: {
+    name: "Illusion Connect: Re",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["rpg", "gacha", "strategy"],
+    appleId: "com.sugargame.mjlj",
+    androidId: "com.sugargame.mjlj.gp",
+    iconFile: "icre.png",
+  },
+  tlon: {
+    name: "The Legend of Neverland",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["mmorpg", "rpg", "adventure"],
+    appleId: "com.arkgames.tlonglobal",
+    androidId: "com.gameark.ggplay.lonsea",
+    iconFile: "tlon.png",
+  },
+  afkac: {
+    // Mode "Companions" dilacak terpisah oleh redeem-code-tracker (kodenya beda
+    // dari AFK Arena Classic) — aplikasinya sama, jadi id store & ikonnya ikut.
+    name: "AFK Arena: Companions",
+    codeSource: "redeemtracker",
+    redeemUrl: null,
+    genres: ["idle", "rpg", "gacha"],
+    appleId: "com.lilithgame.hgames.ios",
+    androidId: "com.lilithgame.hgame.gp",
+    iconFile: "afkac.png",
+  },
+  // Valorant DI-HOLD: ada di redeem-code-tracker, tapi tak punya listing App
+  // Store/Play Store global (Valorant Mobile belum rilis luas) → pipeline ikon
+  // tak punya sumber. Tambahkan bila versi mobile-nya sudah tersedia resmi.
   isekai: {
     name: "Isekai: Slow Life",
     codeSource: "redeemtracker",

@@ -26,6 +26,13 @@ export const SLUGS = {
   isekai: "isekai-slow-life",
   loe: "legend-of-elements",
   starsail: "star-sailors",
+  // Ditemukan bot pemantau sumber 21 Jul 2026 (parser sama, cukup tambah slug).
+  // drr (Dragon Raja: ReRise) TIDAK dipasang di sini: halamannya ada tapi belum
+  // memuat satu kode pun (0 terparse → dianggap gagal tiap jam). Gamenya sudah
+  // tercakup lewat cross-check editorial. Pasang bila trackernya sudah berisi.
+  icre: "illusion-connect-re",
+  tlon: "the-legend-of-neverland",
+  afkac: "afk-arena-companions",
 };
 const CODE_RE = /^[A-Za-z0-9]{4,30}$/;
 
