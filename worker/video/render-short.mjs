@@ -110,8 +110,12 @@ export async function renderShort({ game, codes, iconPath, activeCount, moreCoun
   function frame(ctx, t) {
     drawBG(ctx);
     logo(ctx, 60, 70, 0.62);
-    const outroIn = inv(14.4, 15.0, t), outroOut = inv(17.0, 17.4, t), subIn = inv(17.55, 18.05, t);
-    const mainA = 1 - outroIn, outro = outroIn * (1 - outroOut), subA = subIn;
+    // Transisi SEKUENSIAL (bukan crossfade): adegan lama fade-out sampai habis,
+    // jeda sebentar, baru adegan berikutnya fade-in. Crossfade bikin dua lapis
+    // teks kelihatan barengan (kartu kode tertimpa teks outro).
+    const mainOut = inv(14.2, 14.7, t), outroIn = inv(14.9, 15.4, t);
+    const outroOut = inv(17.0, 17.4, t), subIn = inv(17.55, 18.05, t);
+    const mainA = 1 - mainOut, outro = outroIn * (1 - outroOut), subA = subIn;
 
     if (mainA > 0.01) {
       ctx.globalAlpha = mainA;
