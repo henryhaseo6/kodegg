@@ -81,7 +81,11 @@ jobs:
           # Terima dari Variable ATAU Secret — mudah tertukar tabnya, dan kalau
           # kosong videonya diam-diam terbit sebagai unlisted (kejadian 21 Jul).
           YT_PRIVACY: ${{ vars.YT_PRIVACY || secrets.YT_PRIVACY || 'unlisted' }}
-          VIDEO_MAX_PER_DAY: ${{ vars.VIDEO_MAX_PER_DAY || '3' }}
+          # JANGAN taruh angka default di sini — nilai workflow menang atas default
+          # di kode, jadi angka usang tersangkut diam-diam (kejadian: kode sudah 30,
+          # workflow masih memaksa 3 → video jatuh ke manual dengan alasan "kuota
+          # harian"). Kosong = pakai default make-videos.mjs.
+          VIDEO_MAX_PER_DAY: ${{ vars.VIDEO_MAX_PER_DAY }}
           PYTHON: python3
         run: |
           if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set — lewati auto-video (lihat DEPLOY-YOUTUBE.md)."; exit 0; fi
