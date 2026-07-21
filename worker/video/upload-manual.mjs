@@ -49,7 +49,10 @@ function readMeta(videoPath) {
   // File .txt lama (sebelum fitur playlist) tak punya bagian PLAYLIST → turunkan
   // dari judul: "<Game> Codes (July 2026) ..." → "<Game> Codes — Kode Redeem".
   const playlistTitle = grab("PLAYLIST", "ZZZ") || (/^(.+?) Codes\b/.exec(title || "")?.[1] ? `${/^(.+?) Codes\b/.exec(title)[1]} Codes — Kode Redeem` : undefined);
-  return { title: title || fallback.title, description, tags, playlistTitle };
+  // Komentar utk di-pin: pakai URL halaman game yang sudah ada di deskripsi.
+  const pageUrl = /https:\/\/kodegg\.com\/\S+/.exec(description)?.[0];
+  const comment = pageUrl ? `🎁 Semua kode + cara redeem:\n${pageUrl}\nKode gagal/expired? Tulis di sini 👇` : undefined;
+  return { title: title || fallback.title, description, tags, playlistTitle, comment };
 }
 
 function parseArgs(argv) {
@@ -91,7 +94,7 @@ async function main() {
     const meta = readMeta(f);
     const thumb = f.replace(/\.mp4$/i, ".jpg");
     console.log(`▶ ${basename(f)}\n  judul: ${meta.title}\n  thumbnail: ${existsSync(thumb) ? "ada" : "TIDAK ADA (YouTube akan pilih frame sendiri)"}`);
-    if (opt.dry) { console.log(`  playlist: ${meta.playlistTitle ?? "—"}\n  deskripsi: ${meta.description.length} karakter · tag: ${meta.tags.join(", ") || "—"}\n`); continue; }
+    if (opt.dry) { console.log(`  playlist: ${meta.playlistTitle ?? "—"}\n  komentar: ${meta.comment ? meta.comment.split("\n")[1] : "—"}\n  deskripsi: ${meta.description.length} karakter · tag: ${meta.tags.join(", ") || "—"}\n`); continue; }
     try {
       const { url } = await uploadVideo({ videoPath: f, ...meta, privacy: opt.privacy, thumbnailPath: thumb });
       console.log(`  ✓ ${url}\n`);

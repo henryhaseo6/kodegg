@@ -31,7 +31,7 @@ async function ensurePlaylist(yt, title, description) {
 }
 
 /** Upload 1 video. privacy: 'unlisted'|'public'|'private'. */
-export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription }) {
+export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription, comment }) {
   const yt = await client();
   const res = await yt.videos.insert({
     part: ["snippet", "status"],
@@ -56,6 +56,18 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
       await yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, resourceId: { kind: "youtube#video", videoId: id } } } });
       console.log(`  ↳ playlist: ${playlistTitle}`);
     } catch (e) { console.log("  playlist gagal (abaikan):", e.message); }
+  }
+  // Komentar berisi link halaman game — TINGGAL DI-PIN MANUAL di Studio/app,
+  // karena API YouTube tak punya endpoint pin. Butuh scope youtube.force-ssl:
+  // kalau token lama (upload+youtube saja), akan 403 → jalankan gen-token.mjs lagi.
+  if (comment) {
+    try {
+      await yt.commentThreads.insert({ part: ["snippet"], requestBody: { snippet: { videoId: id, topLevelComment: { snippet: { textOriginal: comment } } } } });
+      console.log("  ↳ komentar diposting (pin manual di Studio)");
+    } catch (e) {
+      const hint = /insufficient|scope|forbidden/i.test(e.message) ? " — token perlu scope youtube.force-ssl, jalankan: node worker/video/gen-token.mjs" : "";
+      console.log(`  komentar gagal (abaikan): ${e.message}${hint}`);
+    }
   }
   return { id, url: `https://youtu.be/${id}` };
 }

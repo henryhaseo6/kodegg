@@ -17,7 +17,13 @@ const oauth2 = new google.auth.OAuth2(YT_CLIENT_ID, YT_CLIENT_SECRET, REDIRECT);
 const authUrl = oauth2.generateAuthUrl({
   access_type: "offline",
   prompt: "consent", // paksa refresh_token keluar
-  scope: ["https://www.googleapis.com/auth/youtube.upload", "https://www.googleapis.com/auth/youtube"],
+  // force-ssl dibutuhkan utk posting komentar (commentThreads.insert); upload &
+  // playlist cukup dg dua scope pertama.
+  scope: [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.force-ssl",
+  ],
 });
 
 const server = http.createServer(async (req, res) => {

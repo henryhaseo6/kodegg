@@ -55,7 +55,11 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, now })
   ];
   // Playlist per game → penonton bisa telusuri semua kode game itu dari waktu ke
   // waktu, dan tiap video punya rumah tetap meski judulnya beda tanggal.
+  // Komentar utk di-pin: 3 baris supaya kebaca penuh di panel komentar HP tanpa
+  // "Read more". URL di baris sendiri biar gampang di-copy (di Shorts, URL pada
+  // komentar tak di-linkify YouTube).
+  const comment = `🎁 Semua kode + cara redeem:\n${url}\nKode gagal/expired? Tulis di sini 👇`;
   const playlistTitle = `${name} Codes — Kode Redeem`;
   const playlistDescription = `Semua kode redeem ${name} dari KodeGG, diupdate tiap ada kode baru. Full list + cara redeem: ${url}`;
-  return { title, description: description.slice(0, 4900), tags, playlistTitle, playlistDescription };
+  return { title, description: description.slice(0, 4900), tags, playlistTitle, playlistDescription, comment };
 }

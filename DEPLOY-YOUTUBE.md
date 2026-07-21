@@ -75,6 +75,10 @@ Review di **YouTube Studio → Content**, kalau bagus tinggal jadiin **Public**.
   Gagal bikin playlist tidak menggagalkan upload.
 - **Disclosure AI** (`status.containsSyntheticMedia: true`) dikirim otomatis — narasi memakai
   TTS neural. Video yang diupload sebelum ini perlu dicentang manual di Studio ("AI use" → Yes).
+- **Komentar berisi link** diposting otomatis tiap upload (3 baris, muat di panel komentar HP).
+  **Pin-nya manual** — API YouTube tak punya endpoint pin. Butuh scope `youtube.force-ssl`;
+  token lama hanya punya `youtube.upload` + `youtube` → jalankan `node worker/video/gen-token.mjs`
+  lagi, lalu perbarui Secret `YT_REFRESH_TOKEN` (dan `worker/.env` bila dipakai lokal).
 - **Preview tanpa upload** (tes lokal): `DRY_RUN=1 node worker/make-videos.mjs` → video ke
   folder `_video-review/` (butuh `new-*-codes.json` berisi kode + paket canvas/ffmpeg/edge-tts).
 - **Suara**: butuh `edge-tts` (Python) — di-install otomatis di Actions.
