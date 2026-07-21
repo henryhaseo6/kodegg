@@ -9,6 +9,7 @@ import { renderShort, ffmpegBin } from "./video/render-short.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
 import { uploadVideo, ytConfigured } from "./video/upload.mjs";
+import { gameSlug } from "./src/games.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA = resolve(HERE, "data");
@@ -67,7 +68,10 @@ function buildCandidates() {
     const meta = catById[id];
     const active = mc.active.filter((c) => c.game === id);
     out.push({
-      platform: "MOBILE", id, name: meta?.name ?? nc[0]?.gameName ?? id, slug: meta?.slug ?? id, players: 0,
+      // slug HARUS dari games.mjs (sumber kebenaran URL situs). games.json tak
+      // punya field slug → dulu jatuh ke id mentah & link deskripsi jadi 404
+      // (mis. /id/game/r1999/ padahal halamannya /id/game/reverse-1999/).
+      platform: "MOBILE", id, name: meta?.name ?? nc[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
       iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 1e9, // mobile prioritas (game besar, jarang)
       newCodes: nc, activeCount: countAll(active, nc), fetchedAt: mNewFile.generatedAt,
       displayCodes: pickDisplay(nc, active),
