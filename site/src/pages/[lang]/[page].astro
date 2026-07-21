@@ -10,6 +10,7 @@ import FavoritPage from "../../components/FavoritPage.astro";
 import TentangPage from "../../components/TentangPage.astro";
 import KontakPage from "../../components/KontakPage.astro";
 import PrivasiPage from "../../components/PrivasiPage.astro";
+import KetentuanPage from "../../components/KetentuanPage.astro";
 import { LANGS, t } from "../../lib/i18n.mjs";
 import { SLUGS, PAGE_KEYS, langPaths, route } from "../../lib/routes.mjs";
 import { loadCatalog } from "../../lib/catalog.mjs";
@@ -73,6 +74,12 @@ if (key === "discover") {
   desc = id
     ? "Kebijakan privasi KodeGG: data notifikasi push yang disimpan, penyimpanan lokal, dan komitmen tanpa pelacakan."
     : "KodeGG privacy policy: what push-notification data we store, local storage, and our no-tracking commitment.";
+} else if (key === "terms") {
+  Comp = KetentuanPage;
+  title = id ? "Ketentuan Layanan — KodeGG" : "Terms of Service — KodeGG";
+  desc = id
+    ? "Ketentuan layanan KodeGG: sifat informasi kode redeem, batas tanggung jawab, dan status non-afiliasi dengan penerbit game."
+    : "KodeGG terms of service: the nature of redeem-code information, limits of liability, and our non-affiliation with game publishers.";
 } else {
   Comp = KontakPage;
   title = id ? "Kontak — KodeGG" : "Contact — KodeGG";
@@ -84,7 +91,7 @@ if (key === "discover") {
 // (halaman terpenting) juga dapat HowTo (cara redeem) + ItemList kode aktif.
 const site = Astro.site.href.replace(/\/$/, "");
 const crumbName =
-  { discover: tr("nav.discover"), codes: tr("nav.codes"), news: tr("nav.news"), about: id ? "Tentang" : "About", contact: id ? "Kontak" : "Contact", privacy: id ? "Privasi" : "Privacy", saved: tr("nav.saved") }[key] ?? title;
+  { discover: tr("nav.discover"), codes: tr("nav.codes"), news: tr("nav.news"), about: id ? "Tentang" : "About", contact: id ? "Kontak" : "Contact", privacy: id ? "Privasi" : "Privacy", terms: id ? "Ketentuan" : "Terms", saved: tr("nav.saved") }[key] ?? title;
 const jsonLd = [
   {
     "@context": "https://schema.org",

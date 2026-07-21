@@ -10,6 +10,7 @@ export const SLUGS = {
   about: { id: "tentang", en: "about" },
   contact: { id: "kontak", en: "contact" },
   privacy: { id: "privasi", en: "privacy" },
+  terms: { id: "ketentuan", en: "terms" },
 };
 
 export const PAGE_KEYS = Object.keys(SLUGS);

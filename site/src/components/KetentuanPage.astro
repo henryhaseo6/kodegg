@@ -1,0 +1,51 @@
+---
+// Ketentuan Layanan. Sengaja apa adanya: KodeGG mengumpulkan kode dari sumber
+// publik, jadi janji yang bisa kami tepati cuma soal usaha & transparansi —
+// bukan jaminan tiap kode pasti berhasil ditukar.
+import Header from "./Header.astro";
+import Breadcrumb from "./Breadcrumb.astro";
+import Footer from "./Footer.astro";
+import { route, langPaths } from "../lib/routes.mjs";
+
+const { lang } = Astro.props;
+const id = lang === "id";
+
+const effective = id ? "Berlaku sejak Juli 2026" : "Effective July 2026";
+const sections = id
+  ? [
+      { h: "Tentang layanan ini", p: "KodeGG mengumpulkan kode redeem game online & Roblox dari sumber publik (API resmi penerbit, tracker komunitas, dan situs panduan), lalu menampilkannya dalam satu tempat yang diperbarui otomatis. Layanan ini gratis, tanpa akun, dan boleh dipakai siapa saja." },
+      { h: "Sifat informasi kode", p: "Kode redeem punya masa berlaku, kadang dibatasi jumlah klaim, region, atau server. Kami menandai kode aktif berdasarkan data sumber saat penarikan terakhir — jadi sebuah kode bisa saja sudah tidak berlaku ketika kamu mencobanya. Kami tidak menjanjikan kode pasti berhasil, dan tidak bertanggung jawab atas hadiah yang gagal diklaim." },
+      { h: "Bukan afiliasi penerbit", p: "KodeGG tidak berafiliasi, tidak disponsori, dan tidak didukung oleh penerbit game mana pun (termasuk HoYoverse, Roblox Corporation, dan lainnya). Semua nama game, logo, dan merek dagang milik pemiliknya masing-masing, dipakai hanya untuk merujuk game yang bersangkutan." },
+      { h: "Pemakaian yang wajar", p: "Silakan pakai KodeGG untuk keperluan pribadi. Yang tidak boleh: mengambil data secara massal/otomatis sampai mengganggu layanan, menyalin isi situs untuk dijual, atau memakai nama dan tampilan KodeGG untuk mengaku-ngaku sebagai kami. Menyebut dan menautkan halaman kami tentu saja boleh." },
+      { h: "Konten dari pengguna", p: "Kolom komentar di kanal YouTube kami bukan bagian dari situs, tetapi berlaku hal yang sama: jangan spam, jangan menautkan judi atau penipuan, dan jangan menjual/membeli akun. Komentar yang melanggar kami hapus." },
+      { h: "Perubahan & ketersediaan", p: "Fitur, daftar game, dan halaman bisa berubah atau dihentikan sewaktu-waktu. Kami juga tidak menjamin situs bebas gangguan — data ditarik dari pihak ketiga yang bisa berubah atau mati kapan saja." },
+      { h: "Koreksi & kontak", p: "Menemukan kode yang salah, sudah kadaluarsa, atau informasi keliru? Kabari kami di support@kodegg.com — koreksi seperti ini sangat membantu dan biasanya kami perbaiki cepat." },
+    ]
+  : [
+      { h: "About this service", p: "KodeGG collects redeem codes for online and Roblox games from public sources (official publisher APIs, community trackers, and guide sites) and presents them in one automatically updated place. The service is free, requires no account, and is open to anyone." },
+      { h: "Nature of code information", p: "Redeem codes expire, and are sometimes limited by claim count, region, or server. We mark codes as active based on source data at the time of our last fetch — so a code may already be invalid by the time you try it. We make no guarantee that any code will work, and are not liable for rewards you fail to claim." },
+      { h: "Not affiliated with publishers", p: "KodeGG is not affiliated with, sponsored by, or endorsed by any game publisher (including HoYoverse, Roblox Corporation, and others). All game names, logos, and trademarks belong to their respective owners and are used only to identify the games in question." },
+      { h: "Fair use", p: "Feel free to use KodeGG for personal purposes. What's not allowed: bulk or automated scraping that degrades the service, republishing our content for sale, or using the KodeGG name and look to impersonate us. Citing and linking to our pages is of course fine." },
+      { h: "User-submitted content", p: "The comment sections on our YouTube channel aren't part of this site, but the same rules apply: no spam, no gambling or scam links, and no account trading. Comments that break these are removed." },
+      { h: "Changes & availability", p: "Features, game coverage, and pages may change or be discontinued at any time. We also don't guarantee uninterrupted service — our data comes from third parties that can change or go offline without notice." },
+      { h: "Corrections & contact", p: "Found a wrong code, an expired one, or incorrect information? Tell us at support@kodegg.com — corrections like these genuinely help, and we usually fix them fast." },
+    ];
+---
+
+<Header lang={lang} active={null} paths={langPaths("terms")} />
+<Breadcrumb items={[{ label: id ? "Beranda" : "Home", href: route("home", lang) }, { label: id ? "Ketentuan" : "Terms" }]} />
+<main id="main" style="max-width:820px; margin:0 auto; padding:22px 28px 8px;">
+  <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(28px,4.5vw,44px); line-height:1.05; letter-spacing:-0.03em; color:#fff; margin:0 0 6px;">
+    {id ? "Ketentuan Layanan" : "Terms of Service"}
+  </h1>
+  <p style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint); margin:0 0 26px;">{effective}</p>
+  {
+    sections.map((s) => (
+      <section style="margin-bottom:26px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; color:var(--txt); margin:0 0 8px;">{s.h}</h2>
+        <p style="font-size:15.5px; line-height:1.7; color:var(--muted); margin:0;">{s.p}</p>
+      </section>
+    ))
+  }
+</main>
+<Footer lang={lang} updatedAt={null} />
