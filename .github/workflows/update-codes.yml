@@ -78,9 +78,9 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-          # Terima dari Variable ATAU Secret — mudah tertukar tabnya, dan kalau
-          # kosong videonya diam-diam terbit sebagai unlisted (kejadian 21 Jul).
-          YT_PRIVACY: ${{ vars.YT_PRIVACY || secrets.YT_PRIVACY || 'unlisted' }}
+          # Kosong = pakai default make-videos.mjs (public). Isi hanya bila mau
+          # override, mis. YT_PRIVACY=unlisted saat menahan buat review.
+          YT_PRIVACY: ${{ vars.YT_PRIVACY || secrets.YT_PRIVACY }}
           # JANGAN taruh angka default di sini — nilai workflow menang atas default
           # di kode, jadi angka usang tersangkut diam-diam (kejadian: kode sudah 30,
           # workflow masih memaksa 3 → video jatuh ke manual dengan alasan "kuota

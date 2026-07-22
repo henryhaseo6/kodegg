@@ -25,7 +25,11 @@ const STATE_PATH = resolve(DATA, "video-state.json");
 const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 30);
 const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 8); // batas RENDER/run (jaga durasi CI)
 const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru: min pemain utk dapat video "semua kode"
-const PRIVACY = process.env.YT_PRIVACY || "unlisted";
+// Default PUBLIC: channel sudah live & ratusan video publik, fase "review dulu"
+// lewat. Menyetel YT_PRIVACY sbg Variable terus kelupaan → video diam-diam
+// unlisted (kejadian berhari-hari). Set YT_PRIVACY=unlisted hanya bila memang
+// mau menahan (mis. saat menguji).
+const PRIVACY = process.env.YT_PRIVACY || "public";
 const DRY_RUN = process.env.DRY_RUN === "1"; // render + simpan lokal, TANPA upload
 const REVIEW = resolve(HERE, "../_video-review");
 const OUTDIR = resolve(HERE, "../_video-out"); // video utk upload manual (di-artifact-kan CI)
