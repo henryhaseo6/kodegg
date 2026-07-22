@@ -185,6 +185,28 @@ async function drainPending() {
   console.log(`  ${q.length - tertahan.length} terpasang, ${tertahan.length} masih tertunda.`);
 }
 
+// PROMO Roblox: kode platform (ditukar di roblox.com/promocodes), bukan per-game.
+// Video dibuat bila (a) ada kode promo BARU run ini, atau (b) awal bulan baru
+// (rekap bulanan) — sesuai permintaan user. `promoActive` disimpan utk penandaan.
+function buildPromoCandidate(state, now) {
+  const rb = readJSON(resolve(DATA, "roblox-codes.json"), { promo: {} });
+  const promo = rb.promo ?? {};
+  const active = promo.active ?? [];
+  if (active.length === 0) return null;
+  const baru = active.filter((c) => c.firstSeenAt === promo.updatedAt && !state.posted[`promo:${c.code}`]);
+  const bulanIni = now.toISOString().slice(0, 7); // YYYY-MM (UTC)
+  const perluRekap = state.promoMonth !== bulanIni;
+  if (baru.length === 0 && !perluRekap) return null; // tak ada kode baru & rekap bulan ini sudah
+  const allMode = baru.length === 0; // rekap = "semua kode aktif"; ada baru = "kode baru"
+  return {
+    platform: "ROBLOX", id: "roblox-promo", name: "Roblox Promo Codes", slug: "promo-codes",
+    players: 0, isPromo: true, promoActive: active, rank: 5e8, // prioritas tinggi (di bawah mobile)
+    iconPath: resolve(ASSETS_ROBLOX, "roblox-promo.png"),
+    newCodes: baru, activeCount: active.length, fetchedAt: promo.updatedAt, allMode,
+    displayCodes: pickDisplay(baru, active),
+  };
+}
+
 async function main() {
   const now = new Date();
   const today = now.toISOString().slice(0, 10);
@@ -219,6 +241,10 @@ async function main() {
   let candidates = buildCandidates();
   // buang yg SEMUA kode barunya sudah pernah dibikin video
   candidates = candidates.filter((c) => c.newCodes.some((nc) => !state.posted[ck(c.id, nc.code)]));
+  // Vertikal PROMO Roblox: video tiap bulan (rekap) ATAU saat ada kode promo baru.
+  // Cadence-nya sendiri (bukan lewat filter game di atas) → ditambah terpisah.
+  const promoC = buildPromoCandidate(state, now);
+  if (promoC) candidates.unshift(promoC); // prioritaskan: jarang & evergreen
   let remaining = MAX_PER_DAY - state.todayCount;
   console.log(`kandidat: ${candidates.length} game punya kode baru | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
   if (candidates.length === 0) { console.log("tak ada kode baru → tak ada video."); return; }
@@ -239,10 +265,10 @@ async function main() {
       const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
       const moreCount = Math.max(0, c.activeCount - c.displayCodes.length); // sisa kode di situs → teaser "+N lagi"
       await renderShort({ game: { name: c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, allMode: c.allMode, iconPath: c.iconPath, outPath: base });
-      await makeVO({ name: c.name, activeCount: c.activeCount, allMode: c.allMode, outPath: vo });
+      await makeVO({ name: c.name, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, outPath: vo });
       await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
       await thumb(fin, th);
-      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, now });
+      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, now });
       if (DRY_RUN) {
         const dst = resolve(REVIEW, `${c.id}.mp4`); copyFileSync(fin, dst);
         console.log(`  ✓ [DRY] ${dst}\n    judul: ${meta.title}`);
@@ -279,6 +305,12 @@ async function main() {
       // Tandai terpakai baik yg diupload maupun yg manual → tak dirender ulang
       // tiap jam. Yang manual tinggal ambil dari artifact run ini.
       for (const nc of c.newCodes) state.posted[ck(c.id, nc.code)] = true;
+      if (c.isPromo) {
+        // Rekap bulan ini beres + semua kode promo saat ini ditandai (jangan
+        // ulang bulan ini kecuali muncul kode promo yg benar-benar baru).
+        state.promoMonth = now.toISOString().slice(0, 7);
+        for (const pc of c.promoActive ?? []) state.posted[`promo:${pc.code}`] = true;
+      }
       writeFileSync(STATE_PATH, JSON.stringify(state, null, 2)); // simpan tiap video → aman bila run dibatalkan
     } catch (e) {
       console.log(`  ✗ gagal ${c.name}: ${e.message}`);

@@ -47,6 +47,8 @@ async function main() {
   for (const [id, m] of Object.entries(GAMES)) byName.set(normalize(m.name), id);
   const rb = JSON.parse(readFileSync(resolve(HERE, "data/roblox-codes.json"), "utf8"));
   for (const [id, g] of Object.entries(rb.games ?? {})) if (g?.name) byName.set(normalize(g.name), id);
+  // Vertikal promo (bukan game) → key khusus yang dibaca halaman promo-codes.
+  byName.set(normalize("Roblox Promo Codes"), "roblox-promo");
 
   const playlists = await listPlaylists();
   const map = {};

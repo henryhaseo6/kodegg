@@ -20,12 +20,14 @@ function wibParts(now) {
  * @param {{name, platform:'ROBLOX'|'MOBILE', slug, codes:[{code,reward}], activeCount, now:Date}} o
  * @returns {{title, description, tags:string[]}}
  */
-export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, now }) {
+export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, now }) {
   const my = `${MONTHS[now.getUTCMonth()]} ${now.getUTCFullYear()}`;
   const isRoblox = platform === "ROBLOX";
-  const seg = isRoblox ? "roblox" : "game";
-  const url = `${SITE}/id/${seg}/${slug}/`; // halaman ID (dipakai deskripsi/komentar ID)
-  const urlEn = `${SITE}/en/${seg}/${slug}/`; // halaman EN — dipakai teks berbahasa Inggris
+  // Promo Roblox = halaman khusus /roblox/promo-codes/ (bukan per-game).
+  const seg = isPromo ? "roblox" : isRoblox ? "roblox" : "game";
+  const path = isPromo ? "roblox/promo-codes" : `${seg}/${slug}`;
+  const url = `${SITE}/id/${path}/`; // halaman ID (dipakai deskripsi/komentar ID)
+  const urlEn = `${SITE}/en/${path}/`; // halaman EN — dipakai teks berbahasa Inggris
   const tag = pascal(name); // "BloxFruits"
 
   // Judul (<=100 char): "[Game] Codes (July 2026)" utk search global EN, "Kode
@@ -35,12 +37,13 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
   // allMode (game baru masuk pantauan): kodenya belum tentu baru → jangan tulis
   // "Kode Terbaru", pakai "Semua Kode Aktif".
   const label = allMode ? "Semua Kode Aktif" : "Kode Terbaru";
+  const cw = isPromo ? "" : " Codes"; // nama promo sudah "...Codes" → jangan dobel
   const title = [
-    `${name} Codes (${my}) 🎁 ${label} Update ${w.d} ${w.mon} ${w.y} — KodeGG`,
-    `${name} Codes (${my}) 🎁 ${label} Update ${w.d} ${w.mon} — KodeGG`,
-    `${name} Codes (${my}) 🎁 ${label} ${w.d} ${w.mon}`,
-    `${name} Codes (${my}) ${label} ${w.d} ${w.mon}`,
-  ].find((t) => t.length <= 100) ?? `${name} Codes ${w.d} ${w.mon} ${w.y}`.slice(0, 100);
+    `${name}${cw} (${my}) 🎁 ${label} Update ${w.d} ${w.mon} ${w.y} — KodeGG`,
+    `${name}${cw} (${my}) 🎁 ${label} Update ${w.d} ${w.mon} — KodeGG`,
+    `${name}${cw} (${my}) 🎁 ${label} ${w.d} ${w.mon}`,
+    `${name}${cw} (${my}) ${label} ${w.d} ${w.mon}`,
+  ].find((t) => t.length <= 100) ?? `${name}${cw} ${w.d} ${w.mon} ${w.y}`.slice(0, 100);
 
   const codeLines = codes.slice(0, 8).map((c) => `• ${c.code}${c.reward ? ` — ${c.reward}` : ""}`).join("\n");
   const description =
@@ -64,7 +67,7 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
   // "Read more". URL di baris sendiri biar gampang di-copy (di Shorts, URL pada
   // komentar tak di-linkify YouTube).
   const comment = `🎁 Semua kode + cara redeem:\n${url}\nKode gagal/expired? Tulis di sini 👇`;
-  const playlistTitle = `${name} Codes — Kode Redeem`;
+  const playlistTitle = `${name}${cw} — Kode Redeem`;
   // Deskripsi playlist BILINGUAL: YouTube TAK auto-translate deskripsi playlist
   // (beda dari video) → tulis ID + EN langsung supaya penonton luar pun terlayani.
   const playlistDescription =

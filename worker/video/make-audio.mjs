@@ -19,18 +19,22 @@ function run(cmd, args) {
 }
 
 // Naskah VO — nyambung visual, tak baca kode mentah, brand "kode gg dot com".
-export function voScript({ name, activeCount, allMode = false }) {
+export function voScript({ name, activeCount, allMode = false, isPromo = false }) {
   const n = activeCount || "beberapa";
   // allMode: game baru masuk pantauan → jangan bilang "kode baru", umurnya tak diketahui.
   const buka = allMode
     ? `Ini semua kode ${name} yang masih aktif! Ada ${n} kode, semuanya udah diverifikasi.`
     : `Kode baru ${name} udah keluar! Ada ${n} kode aktif, semuanya udah diverifikasi.`;
-  return `${buka} Tinggal salin dari layar, terus tukarkan di dalam game. Buruan ya, sebagian cuma aktif beberapa hari. Kode lengkap semua game, cek di kode gg dot com. Jangan lupa subscribe dan nyalain loncengnya biar gak ketinggalan kode baru!`;
+  // Promo Roblox ditukar di roblox dot com slash promocodes, BUKAN di dalam game.
+  const cara = isPromo
+    ? `Tinggal salin dari layar, terus tukarkan di roblox dot com slash promocodes buat dapetin item avatar gratis.`
+    : `Tinggal salin dari layar, terus tukarkan di dalam game.`;
+  return `${buka} ${cara} Buruan ya, sebagian cuma aktif beberapa hari. Kode lengkap semua game, cek di kode gg dot com. Jangan lupa subscribe dan nyalain loncengnya biar gak ketinggalan kode baru!`;
 }
 
 /** Generate voiceover MP3 (edge-tts). Coba `python` lalu `python3`. */
-export async function makeVO({ name, activeCount, allMode = false, outPath }) {
-  const text = voScript({ name, activeCount, allMode });
+export async function makeVO({ name, activeCount, allMode = false, isPromo = false, outPath }) {
+  const text = voScript({ name, activeCount, allMode, isPromo });
   const args = ["-m", "edge_tts", "--voice", "id-ID-ArdiNeural", "--rate=+7%", "--text", text, "--write-media", outPath];
   try {
     await run(PY, args);

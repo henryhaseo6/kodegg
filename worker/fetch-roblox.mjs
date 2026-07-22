@@ -338,7 +338,13 @@ async function main() {
   let promo = prev.promo ?? { active: [], archive: [] };
   try {
     const p = await fetchPromoCodes();
-    if (p.active.length) promo = { updatedAt: now, active: p.active, archive: p.archive };
+    if (p.active.length) {
+      // firstSeenAt dipertahankan lintas-run (utk deteksi kode promo baru di
+      // auto-video). Yang belum pernah terlihat → firstSeenAt = now.
+      const seen = new Map((prev.promo?.active ?? []).map((c) => [c.code, c.firstSeenAt]));
+      const active = p.active.map((c) => ({ ...c, firstSeenAt: seen.get(c.code) ?? now }));
+      promo = { updatedAt: now, active, archive: p.archive };
+    }
     console.log(`  promo: ${p.active.length} aktif + ${p.archive.length} arsip`);
   } catch (e) {
     console.log(`  promo gagal: ${e.message} (pertahankan lama)`);
