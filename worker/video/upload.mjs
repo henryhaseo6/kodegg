@@ -17,12 +17,18 @@ async function client() {
 /** Cari playlist milik channel berdasarkan JUDUL; kalau belum ada, bikin. */
 const tidur = (detik) => new Promise((r) => setTimeout(r, detik * 1000));
 
-/** Cari playlist by judul; kalau belum ada, bikin. `baru` = true bila baru dibuat. */
+// Kunci pencocokan playlist = nama GAME saja (buang "— Kode Redeem" & "Codes").
+// Cegah duplikat saat format judul bergeser: playlist lama "X — Kode Redeem"
+// (batch manual awal) dan baru "X Codes — Kode Redeem" (auto) dianggap sama.
+const plKey = (t) => (t || "").toLowerCase().replace(/\s*—\s*kode redeem\s*$/i, "").replace(/\s+codes$/i, "").trim();
+
+/** Cari playlist by nama game; kalau belum ada, bikin. `baru` = true bila baru dibuat. */
 async function ensurePlaylist(yt, title, description) {
+  const want = plKey(title);
   let pageToken;
   do {
     const r = await yt.playlists.list({ part: ["snippet"], mine: true, maxResults: 50, pageToken });
-    const hit = (r.data.items ?? []).find((p) => p.snippet?.title === title);
+    const hit = (r.data.items ?? []).find((p) => plKey(p.snippet?.title) === want);
     if (hit) return { id: hit.id, baru: false };
     pageToken = r.data.nextPageToken;
   } while (pageToken);
