@@ -15,19 +15,22 @@ async function client() {
 }
 
 /** Cari playlist milik channel berdasarkan JUDUL; kalau belum ada, bikin. */
+const tidur = (detik) => new Promise((r) => setTimeout(r, detik * 1000));
+
+/** Cari playlist by judul; kalau belum ada, bikin. `baru` = true bila baru dibuat. */
 async function ensurePlaylist(yt, title, description) {
   let pageToken;
   do {
     const r = await yt.playlists.list({ part: ["snippet"], mine: true, maxResults: 50, pageToken });
     const hit = (r.data.items ?? []).find((p) => p.snippet?.title === title);
-    if (hit) return hit.id;
+    if (hit) return { id: hit.id, baru: false };
     pageToken = r.data.nextPageToken;
   } while (pageToken);
   const made = await yt.playlists.insert({
     part: ["snippet", "status"],
     requestBody: { snippet: { title, description, defaultLanguage: "id" }, status: { privacyStatus: "public" } },
   });
-  return made.data.id;
+  return { id: made.data.id, baru: true };
 }
 
 /** Upload 1 video. privacy: 'unlisted'|'public'|'private'. */
@@ -64,19 +67,27 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
   // Biaya kuota kecil: list 1 unit, insert playlist/item 50 unit (upload = 1600).
   if (playlistTitle) {
     try {
-      const pid = await ensurePlaylist(yt, playlistTitle, playlistDescription ?? "");
+      const { id: pid, baru } = await ensurePlaylist(yt, playlistTitle, playlistDescription ?? "");
+      // Playlist BARU perlu waktu propagasi sebelum bisa diisi — insert langsung
+      // sering ditolak/timeout (kasus nyata: "Zombie Island" playlistnya kebuat
+      // tapi kosong). Beri jeda awal, lalu retry berjenjang. Playlist lama tak.
+      if (baru) await tidur(3);
       const masukkan = () => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, resourceId: { kind: "youtube#video", videoId: id } } } });
-      try {
-        await masukkan();
-      } catch (e) {
-        // "The operation was aborted" = timeout di sisi klien; servernya sering
-        // SUDAH menyimpan. Cek dulu sebelum mencoba lagi, biar tak dobel.
+      const sudahMasuk = async () => {
         const isi = await yt.playlistItems.list({ part: ["snippet"], playlistId: pid, maxResults: 50 });
-        const sudah = (isi.data.items ?? []).some((i) => i.snippet?.resourceId?.videoId === id);
-        if (!sudah) await masukkan();
-        else console.log(`  (playlist: ${e.message} — ternyata sudah masuk, lanjut)`);
+        return (isi.data.items ?? []).some((i) => i.snippet?.resourceId?.videoId === id);
+      };
+      let ok = false;
+      for (const jeda of [0, 3, 6]) { // 3 percobaan, backoff bertambah
+        if (jeda) await tidur(jeda);
+        try { await masukkan(); ok = true; break; }
+        catch (e) {
+          // timeout sisi klien sering berarti server SUDAH simpan → cek dulu
+          if (await sudahMasuk()) { ok = true; break; }
+          if (jeda === 6) throw e; // percobaan terakhir gagal → lempar ke luar
+        }
       }
-      console.log(`  ↳ playlist: ${playlistTitle}`);
+      if (ok) console.log(`  ↳ playlist: ${playlistTitle}${baru ? " (baru)" : ""}`);
     } catch (e) { console.log("  playlist gagal (abaikan):", e.message); }
   }
   // Komentar berisi link halaman game — TINGGAL DI-PIN MANUAL di Studio/app,
