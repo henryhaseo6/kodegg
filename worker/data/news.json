@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-07-22T09:01:00.782Z",
+  "updatedAt": "2026-07-22T10:00:58.160Z",
   "counts": {
     "active": 108,
     "archived": 31
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Unarchived Agent Footage | Remielle",
+        "id": "Video Agen Non-Arsip: Remielle"
+      },
+      "excerpt": {
+        "en": "\"Rather than the distant past... don't you think it's better to look forward to the future, my accomplice?\"",
+        "id": "\"Bukankah masa depan kita lebih berharga daripada masa lalu, Rekan Kriminalku?\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/0/18612e24e7c8135a3acb8e816728b44c_1520884034064591411.jpeg",
+      "url": "https://www.hoyolab.com/article/45958284",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-22T10:00:08.000Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
@@ -404,22 +420,6 @@
       "url": "https://www.hoyolab.com/article/45889662",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-17T12:40:02.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Version 3.1 Teaser - \"The Long Goodbye\" | Zenless Zone Zero",
-        "id": "Trailer V3.1 \"Sunyi Panjang Sebuah Pamit\" | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "\"You almost made me forget that I no longer belong to this era.\" \"I almost forgot... that I was meant to fly into the abyss alone.\" \"There's still a place for you to go back to.\" \"",
-        "id": "\"Kamu hampir membuatku lupa, bahwa aku bukan lagi bagian dari era ini.\" \"Aku hampir lupa bahwa aku ditakdirkan untuk terbang ke jurang sendirian.\" \"Kamu masih punya tempat untuk pu"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/ecf3ffba18ce4f62e9ebd5a1dd92a2db_8055318468258845140.jpg",
-      "url": "https://www.hoyolab.com/article/45889418",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-17T12:30:02.000Z"
     },
     {
       "game": "hsr",
