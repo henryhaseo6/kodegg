@@ -109,6 +109,10 @@ export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlis
       const isi = await yt.playlistItems.list({ part: ["snippet"], playlistId: pid, maxResults: 50 });
       return (isi.data.items ?? []).some((i) => i.snippet?.resourceId?.videoId === videoId);
     };
+    // Playlist YouTube BOLEH memuat video sama berkali-kali — insert TAK gagal
+    // meski sudah ada (kasus nyata: retry queue menambah ulang video yg sudah
+    // dimasukkan manual → dobel). Jadi cek dulu SEBELUM insert (playlist lama).
+    if (!baru && (await sudahMasuk())) { console.log(`  ↳ playlist: ${playlistTitle} (sudah ada)`); return true; }
     for (const jeda of [0, 3, 6]) {
       if (jeda) await tidur(jeda);
       try { await masukkan(); console.log(`  ↳ playlist: ${playlistTitle}${baru ? " (baru)" : ""}`); return true; }
