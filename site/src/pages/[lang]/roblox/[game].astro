@@ -13,6 +13,7 @@ import { LANGS } from "../../../lib/i18n.mjs";
 import { loadRobloxCatalog, loadRobloxGame } from "../../../lib/roblox.mjs";
 import { robloxGamePaths, robloxHome } from "../../../lib/routes.mjs";
 import { monthYear } from "../../../lib/seo.mjs";
+import { ytPlaylistUrl } from "../../../lib/ytPlaylists.mjs";
 
 export async function getStaticPaths() {
   const games = await loadRobloxCatalog();
@@ -25,6 +26,7 @@ const g = await loadRobloxGame(slug);
 if (!g) return Astro.redirect(`/${lang}/roblox/`);
 
 const my = monthYear(lang);
+const ytPlaylist = await ytPlaylistUrl(g.id); // tautan playlist kode di YouTube (opsional)
 const ARCHIVE_CAP = 300; // = ARCHIVE_CAP di worker/fetch-roblox.mjs (batas arsip/game)
 const atCap = g.archive.length >= ARCHIVE_CAP; // mentok → teks "never deleted" tak akurat
 const ARCH_PAGE = 20; // arsip dipaginasi 20/halaman (klien)
@@ -235,6 +237,12 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
             >
               {id ? "Salin semua" : "Copy all"}
             </button>
+          )}
+          {ytPlaylist && (
+            <a href={ytPlaylist} target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:#fff; background:#FF0033; border-radius:9px; padding:8px 13px; text-decoration:none; white-space:nowrap;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+              {id ? "Video di YouTube" : "Watch on YouTube"}
+            </a>
           )}
           <a href={robloxHome(lang)} style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--acc2); text-decoration:none; white-space:nowrap;">{id ? "Semua game Roblox" : "All Roblox games"} →</a>
         </div>

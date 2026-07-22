@@ -92,6 +92,9 @@ jobs:
           pip install --quiet --disable-pip-version-check edge-tts || pip3 install --quiet edge-tts
           npm install @napi-rs/canvas @ffmpeg-installer/ffmpeg googleapis --no-save --no-audit --no-fund
           node worker/make-videos.mjs || echo "auto-video gagal, lanjut"
+          # Sinkron peta game→playlist YouTube (dibaca situs utk tautan "Video di
+          # YouTube" per game). Butuh googleapis (sudah diinstal di atas).
+          node worker/fetch-yt-playlists.mjs || echo "sync playlist gagal, lanjut"
 
       # Video di atas kuota upload otomatis → Release harian (gampang dicari &
       # diambil satuan) + artifact per-run sbg cadangan. Keduanya dibersihkan
