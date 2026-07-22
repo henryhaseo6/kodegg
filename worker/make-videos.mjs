@@ -24,7 +24,8 @@ const STATE_PATH = resolve(DATA, "video-state.json");
 // Turunkan lagi kalau ternyata mentok. Bisa dioverride lewat Variable repo.
 const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 30);
 const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 8); // batas RENDER/run (jaga durasi CI)
-const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru: min pemain utk dapat video "semua kode"
+const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru TANPA kode fresh: min pemain utk video "semua kode"
+const FRESH_MIN_PLAYERS = Number(process.env.VIDEO_FRESH_MIN_PLAYERS || 2000); // game baru DENGAN kode fresh: ambang lebih rendah (kodenya layak)
 // Default PUBLIC: channel sudah live & ratusan video publik, fase "review dulu"
 // lewat. Menyetel YT_PRIVACY sbg Variable terus kelupaan → video diam-diam
 // unlisted (kejadian berhari-hari). Set YT_PRIVACY=unlisted hanya bila memang
@@ -66,21 +67,34 @@ function buildCandidates() {
       displayCodes: pickDisplay(nc, active),
     });
   }
-  // ROBLOX — game yang BARU masuk pantauan (impor pertama). Kodenya belum tentu
-  // baru, jadi videonya bermode "semua kode aktif" (bukan "KODE BARU"). Hanya
-  // game besar: game kecil tak sepadan dengan kuota upload & waktu render.
-  for (const { game: id } of rbNewFile.bulkGames ?? []) {
+  // ROBLOX — game yang BARU masuk pantauan (impor pertama). Dua kemungkinan:
+  //  (a) Punya kode ber-tanggal-baru (`fresh`, ≤48 jam) → itu KODE BARU sungguhan
+  //      (situs pun menandai "New"); video "KODE BARU" bila pemain ≥ FRESH_MIN
+  //      (ambang lebih rendah — kodenya memang layak, bukan cuma backfill).
+  //  (b) Tak ada kode fresh (semua backfill lama) → video "SEMUA KODE" hanya bila
+  //      game besar (≥ BULK_MIN), sebab isinya kode lama, kurang layak diumbar.
+  for (const { game: id, fresh } of rbNewFile.bulkGames ?? []) {
     const g = rb.games[id]; if (!g) continue;
-    if ((g.players ?? 0) < BULK_MIN_PLAYERS) continue;
     if (rbNewByGame[id]) continue; // sudah jadi kandidat lewat jalur kode baru
     const active = rb.active.filter((c) => c.game === id);
     if (active.length === 0) continue;
-    out.push({
-      platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
-      iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: (g.players ?? 0),
-      newCodes: active, activeCount: active.length, fetchedAt: rbNewFile.generatedAt, allMode: true,
-      displayCodes: pickDisplay([], active),
-    });
+    const players = g.players ?? 0;
+    const freshCodes = (fresh ?? []).filter((c) => c.code);
+    if (freshCodes.length > 0 && players >= FRESH_MIN_PLAYERS) {
+      out.push({
+        platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players,
+        iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: players,
+        newCodes: freshCodes, activeCount: countAll(active, freshCodes), fetchedAt: rbNewFile.generatedAt,
+        displayCodes: pickDisplay(freshCodes, active),
+      });
+    } else if (players >= BULK_MIN_PLAYERS) {
+      out.push({
+        platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players,
+        iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: players,
+        newCodes: active, activeCount: active.length, fetchedAt: rbNewFile.generatedAt, allMode: true,
+        displayCodes: pickDisplay([], active),
+      });
+    }
   }
 
   // MOBILE

@@ -358,12 +358,22 @@ async function main() {
   // `!c.bulk` membuang import-pertama game baru di-discover (mis. sailor-piece 166
   // kode sekaligus) → cegah banjir notif tiap ada game baru.
   const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk);
-  // Game yang BARU masuk pantauan run ini (impor pertama). Bukan bahan notif —
-  // kodenya bisa lama semua — tapi berguna utk auto-video "semua kode aktif"
-  // pada game besar (lihat worker/make-videos.mjs).
-  const bulkByGame = {};
-  for (const c of active) if (c.firstSeenAt === now && c.code && c.bulk) bulkByGame[c.game] = (bulkByGame[c.game] ?? 0) + 1;
-  const bulkGames = Object.entries(bulkByGame).map(([game, count]) => ({ game, count }));
+  // Game yang BARU masuk pantauan run ini (impor pertama). Kodenya bisa lama
+  // semua (backfill) → dipakai make-videos utk video "semua kode aktif" pada game
+  // besar. TAPI kalau sebuah kode punya tanggal rilis sumber dalam 48 jam, ia
+  // benar-benar BARU (situs pun menandainya "New") → dicatat terpisah sbg `fresh`
+  // supaya bisa dibuatkan video "KODE BARU" walau gamenya baru & tak sebesar 10K.
+  const FRESH_MS = 48 * 3600 * 1000;
+  const nowMs = Date.parse(now);
+  const bulk = {};
+  for (const c of active) {
+    if (c.firstSeenAt !== now || !c.code || !c.bulk) continue;
+    const b = (bulk[c.game] ??= { count: 0, fresh: [] });
+    b.count++;
+    const d = Date.parse(c.date ?? "");
+    if (d > 0 && nowMs - d <= FRESH_MS && !c.perm) b.fresh.push({ code: c.code, reward: c.reward ?? "" });
+  }
+  const bulkGames = Object.entries(bulk).map(([game, b]) => ({ game, count: b.count, fresh: b.fresh }));
   await writeFile(resolve(dirname(OUT), "new-roblox-codes.json"), JSON.stringify({ generatedAt: now, codes: newly, bulkGames }, null, 2));
 
   console.log(
