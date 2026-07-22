@@ -63,6 +63,10 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
   // komentar tak di-linkify YouTube).
   const comment = `🎁 Semua kode + cara redeem:\n${url}\nKode gagal/expired? Tulis di sini 👇`;
   const playlistTitle = `${name} Codes — Kode Redeem`;
-  const playlistDescription = `Semua kode redeem ${name} dari KodeGG, diupdate tiap ada kode baru. Full list + cara redeem: ${url}`;
+  // Deskripsi playlist BILINGUAL: YouTube TAK auto-translate deskripsi playlist
+  // (beda dari video) → tulis ID + EN langsung supaya penonton luar pun terlayani.
+  const playlistDescription =
+    `Semua kode redeem ${name} dari KodeGG, diupdate tiap ada kode baru. Full list + cara redeem: ${url}\n\n` +
+    `All ${name} redeem codes from KodeGG, updated whenever new codes drop. Full list + how to redeem: ${url}`;
   return { title, description: description.slice(0, 4900), tags, playlistTitle, playlistDescription, comment };
 }
