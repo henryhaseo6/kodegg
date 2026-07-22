@@ -8,7 +8,7 @@ import { spawn } from "node:child_process";
 import { renderShort, ffmpegBin } from "./video/render-short.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
-import { uploadVideo, ytConfigured } from "./video/upload.mjs";
+import { uploadVideo, ytConfigured, attachToPlaylist } from "./video/upload.mjs";
 import { gameSlug } from "./src/games.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -17,6 +17,7 @@ const ASSETS_ROBLOX = resolve(HERE, "../site/public/assets/roblox");
 const ASSETS_GAMES = resolve(HERE, "../site/public/assets/games");
 const TMP = resolve(HERE, "../_video-tmp");
 const STATE_PATH = resolve(DATA, "video-state.json");
+const PENDING_PL = resolve(DATA, "pending-playlists.json"); // playlist gagal (rate-limit) → retry run berikutnya
 // Batas UPLOAD otomatis/hari. Dinaikkan ke 30 (21 Jul 2026) untuk MENGUJI batas
 // sebenarnya: Google memberi jatah "Video Uploads per day = 100" & 10.000 unit,
 // sementara dokumentasi menyebut videos.insert = 1.600 unit (≈6 upload). Angka
@@ -162,11 +163,36 @@ function buildOnDemand(id) {
   };
 }
 
+// Antrian playlist tertunda (gagal krn rate-limit YouTube). Ditulis ke file →
+// bertahan antar-run → dikuras saat limit playlist sudah reset.
+function enqueuePending(item) {
+  const q = readJSON(PENDING_PL, []);
+  if (!q.some((x) => x.videoId === item.videoId)) { q.push(item); writeFileSync(PENDING_PL, JSON.stringify(q, null, 2)); }
+}
+async function drainPending() {
+  let q = readJSON(PENDING_PL, []);
+  if (q.length === 0) return;
+  console.log(`playlist tertunda: ${q.length} → coba pasang…`);
+  const sisa = [];
+  for (const item of q) {
+    const ok = await attachToPlaylist(null, item.videoId, item.playlistTitle, item.playlistDescription);
+    if (!ok) { sisa.push(item); break; } // kena rate-limit lagi → sisanya biar run berikutnya (jangan hantam)
+  }
+  // item setelah yg gagal juga dikembalikan ke antrian
+  const idxGagal = q.indexOf(sisa[0]);
+  const tertahan = idxGagal >= 0 ? q.slice(idxGagal) : [];
+  writeFileSync(PENDING_PL, JSON.stringify(tertahan, null, 2));
+  console.log(`  ${q.length - tertahan.length} terpasang, ${tertahan.length} masih tertunda.`);
+}
+
 async function main() {
   const now = new Date();
   const today = now.toISOString().slice(0, 10);
   const state = readJSON(STATE_PATH, { date: today, todayCount: 0, posted: {}, log: [] });
   if (state.date !== today) { state.date = today; state.todayCount = 0; }
+
+  // Kuras antrian playlist tertunda lebih dulu (limit playlist mungkin sudah reset).
+  if (ytConfigured() && !DRY_RUN) await drainPending();
 
   const onDemandId = process.argv.find((a) => a.startsWith("--game="))?.slice(7);
   if (onDemandId) {
@@ -235,10 +261,11 @@ async function main() {
 
       if (canUpload && remaining > 0) {
         try {
-          const { id, url } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th });
+          const { id, url, playlistPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th });
           console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
           state.todayCount += 1; remaining -= 1;
           state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
+          if (playlistPending) enqueuePending(playlistPending); // rate-limit playlist → coba lagi run berikutnya
         } catch (e) {
           // Paling sering: kuota API habis. Dulu video-nya hilang begitu saja —
           // sekarang jatuh ke jalur manual supaya tetap bisa diupload belakangan.

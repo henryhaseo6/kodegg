@@ -70,31 +70,12 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
     try { await yt.thumbnails.set({ videoId: id, media: { body: createReadStream(thumbnailPath) } }); } catch (e) { console.log("  thumbnail gagal (abaikan):", e.message); }
   }
   // Playlist per game. Gagal di sini TAK boleh menggagalkan upload yg sudah jadi.
-  // Biaya kuota kecil: list 1 unit, insert playlist/item 50 unit (upload = 1600).
+  // `playlistPending` diisi bila gagal (mis. rate-limit playlist YouTube ~10/hari)
+  // → orkestrator mengantrikannya utk dicoba lagi di run berikutnya.
+  let playlistPending = null;
   if (playlistTitle) {
-    try {
-      const { id: pid, baru } = await ensurePlaylist(yt, playlistTitle, playlistDescription ?? "");
-      // Playlist BARU perlu waktu propagasi sebelum bisa diisi — insert langsung
-      // sering ditolak/timeout (kasus nyata: "Zombie Island" playlistnya kebuat
-      // tapi kosong). Beri jeda awal, lalu retry berjenjang. Playlist lama tak.
-      if (baru) await tidur(3);
-      const masukkan = () => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, resourceId: { kind: "youtube#video", videoId: id } } } });
-      const sudahMasuk = async () => {
-        const isi = await yt.playlistItems.list({ part: ["snippet"], playlistId: pid, maxResults: 50 });
-        return (isi.data.items ?? []).some((i) => i.snippet?.resourceId?.videoId === id);
-      };
-      let ok = false;
-      for (const jeda of [0, 3, 6]) { // 3 percobaan, backoff bertambah
-        if (jeda) await tidur(jeda);
-        try { await masukkan(); ok = true; break; }
-        catch (e) {
-          // timeout sisi klien sering berarti server SUDAH simpan → cek dulu
-          if (await sudahMasuk()) { ok = true; break; }
-          if (jeda === 6) throw e; // percobaan terakhir gagal → lempar ke luar
-        }
-      }
-      if (ok) console.log(`  ↳ playlist: ${playlistTitle}${baru ? " (baru)" : ""}`);
-    } catch (e) { console.log("  playlist gagal (abaikan):", e.message); }
+    const ok = await attachToPlaylist(yt, id, playlistTitle, playlistDescription ?? "");
+    if (!ok) playlistPending = { videoId: id, playlistTitle, playlistDescription: playlistDescription ?? "" };
   }
   // Komentar berisi link halaman game — TINGGAL DI-PIN MANUAL di Studio/app,
   // karena API YouTube tak punya endpoint pin. Butuh scope youtube.force-ssl:
@@ -108,5 +89,38 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
       console.log(`  komentar gagal (abaikan): ${e.message}${hint}`);
     }
   }
-  return { id, url: `https://youtu.be/${id}` };
+  return { id, url: `https://youtu.be/${id}`, playlistPending };
+}
+
+/**
+ * Tambahkan sebuah video ke playlist game-nya (buat playlist bila belum ada).
+ * Return true bila berhasil, false bila gagal (mis. rate-limit playlist YouTube).
+ * Dipakai uploadVideo DAN orkestrator utk mengulang antrian playlist tertunda.
+ */
+export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlistDescription = "") {
+  const yt = ytOrNull ?? (await client());
+  try {
+    const { id: pid, baru } = await ensurePlaylist(yt, playlistTitle, playlistDescription);
+    // Playlist BARU perlu waktu propagasi sebelum bisa diisi — insert langsung
+    // sering ditolak/timeout (kasus nyata: "Zombie Island" kebuat tapi kosong).
+    if (baru) await tidur(3);
+    const masukkan = () => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, resourceId: { kind: "youtube#video", videoId } } } });
+    const sudahMasuk = async () => {
+      const isi = await yt.playlistItems.list({ part: ["snippet"], playlistId: pid, maxResults: 50 });
+      return (isi.data.items ?? []).some((i) => i.snippet?.resourceId?.videoId === videoId);
+    };
+    for (const jeda of [0, 3, 6]) {
+      if (jeda) await tidur(jeda);
+      try { await masukkan(); console.log(`  ↳ playlist: ${playlistTitle}${baru ? " (baru)" : ""}`); return true; }
+      catch (e) {
+        if (await sudahMasuk()) { console.log(`  ↳ playlist: ${playlistTitle} (sudah ada)`); return true; }
+        if (jeda === 6) throw e;
+      }
+    }
+    return false;
+  } catch (e) {
+    const rl = /exhaust|rate|quota/i.test(e.message) ? " (rate-limit playlist — diantrikan utk run berikutnya)" : "";
+    console.log(`  playlist gagal (abaikan): ${e.message}${rl}`);
+    return false;
+  }
 }
