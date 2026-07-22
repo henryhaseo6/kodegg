@@ -47,13 +47,13 @@ async function main() {
   for (const [id, m] of Object.entries(GAMES)) byName.set(normalize(m.name), id);
   const rb = JSON.parse(readFileSync(resolve(HERE, "data/roblox-codes.json"), "utf8"));
   for (const [id, g] of Object.entries(rb.games ?? {})) if (g?.name) byName.set(normalize(g.name), id);
-  // Vertikal promo (bukan game) → key khusus yang dibaca halaman promo-codes.
-  byName.set(normalize("Roblox Promo Codes"), "roblox-promo");
-
   const playlists = await listPlaylists();
   const map = {};
   let cocok = 0;
   for (const p of playlists) {
+    // Vertikal promo (bukan game) → key khusus dibaca halaman promo-codes.
+    // Dicek terpisah: gameNameFromTitle membuang "Codes" jadi tak cocok registry.
+    if (/roblox promo/i.test(p.title)) { map["roblox-promo"] = p.id; cocok++; continue; }
     const id = byName.get(normalize(gameNameFromTitle(p.title)));
     if (id) { map[id] = p.id; cocok++; }
   }
@@ -61,7 +61,7 @@ async function main() {
   const sorted = Object.fromEntries(Object.keys(map).sort().map((k) => [k, map[k]]));
   writeFileSync(OUT, JSON.stringify(sorted, null, 2) + "\n");
   console.log(`✓ data/yt-playlists.json — ${cocok}/${playlists.length} playlist tercocokkan ke game.`);
-  const takCocok = playlists.filter((p) => !byName.has(normalize(gameNameFromTitle(p.title))));
+  const takCocok = playlists.filter((p) => !/roblox promo/i.test(p.title) && !byName.has(normalize(gameNameFromTitle(p.title))));
   if (takCocok.length) console.log(`  (tak tercocokkan: ${takCocok.map((p) => p.title).join(", ")})`);
 }
 
