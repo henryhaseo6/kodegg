@@ -194,7 +194,10 @@ function buildPromoCandidate(state, now) {
   const active = promo.active ?? [];
   if (active.length === 0) return null;
   const baru = active.filter((c) => c.firstSeenAt === promo.updatedAt && !state.posted[`promo:${c.code}`]);
-  const bulanIni = now.toISOString().slice(0, 7); // YYYY-MM (UTC)
+  // Bulan WIB (bukan UTC) → batas bulan sejalan dg stempel tanggal di video;
+  // rekap Agustus muncul tepat 1 Agustus 00:00 WIB, bukan jam 07:00.
+  const p = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta", year: "numeric", month: "2-digit" }).format(now);
+  const bulanIni = p.slice(0, 7); // "2026-08"
   const perluRekap = state.promoMonth !== bulanIni;
   if (baru.length === 0 && !perluRekap) return null; // tak ada kode baru & rekap bulan ini sudah
   const allMode = baru.length === 0; // rekap = "semua kode aktif"; ada baru = "kode baru"
