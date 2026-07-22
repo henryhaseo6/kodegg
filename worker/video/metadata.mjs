@@ -23,7 +23,9 @@ function wibParts(now) {
 export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, now }) {
   const my = `${MONTHS[now.getUTCMonth()]} ${now.getUTCFullYear()}`;
   const isRoblox = platform === "ROBLOX";
-  const url = `${SITE}/id/${isRoblox ? "roblox" : "game"}/${slug}/`;
+  const seg = isRoblox ? "roblox" : "game";
+  const url = `${SITE}/id/${seg}/${slug}/`; // halaman ID (dipakai deskripsi/komentar ID)
+  const urlEn = `${SITE}/en/${seg}/${slug}/`; // halaman EN — dipakai teks berbahasa Inggris
   const tag = pascal(name); // "BloxFruits"
 
   // Judul (<=100 char): "[Game] Codes (July 2026)" utk search global EN, "Kode
@@ -48,7 +50,7 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
     `✅ Full list + cara redeem (auto-update tiap jam):\n${url}\n\n` +
     `KodeGG — portal kode redeem game online & Roblox. 200+ game, kode terverifikasi cross-check, update otomatis tiap jam.\n` +
     `🔔 Subscribe & nyalain lonceng biar gak ketinggalan kode baru!\n\n` +
-    `— The latest working ${name} codes for ${my} (updated hourly). Full list + how to redeem: ${url}\n\n` +
+    `— The latest working ${name} codes for ${my} (updated hourly). Full list + how to redeem: ${urlEn}\n\n` +
     `#Shorts #${tag} #${tag}Codes #${isRoblox ? "RobloxCodes #Roblox" : "GameCodes"} #RedeemCodes #KodeRedeem #KodeGG`;
 
   const tags = [
@@ -67,6 +69,6 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
   // (beda dari video) → tulis ID + EN langsung supaya penonton luar pun terlayani.
   const playlistDescription =
     `Semua kode redeem ${name} dari KodeGG, diupdate tiap ada kode baru. Full list + cara redeem: ${url}\n\n` +
-    `All ${name} redeem codes from KodeGG, updated whenever new codes drop. Full list + how to redeem: ${url}`;
+    `All ${name} redeem codes from KodeGG, updated whenever new codes drop. Full list + how to redeem: ${urlEn}`;
   return { title, description: description.slice(0, 4900), tags, playlistTitle, playlistDescription, comment };
 }
