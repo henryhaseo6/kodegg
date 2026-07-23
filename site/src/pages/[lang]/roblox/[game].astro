@@ -52,11 +52,12 @@ const redeemStd = {
 };
 // Cara redeem SPESIFIK per-game dari sumber (mis. Island of Move "walk over to
 // the NPC…") lebih akurat dari langkah standar — TAPI hanya berbahasa Inggris.
-// Karena itu: halaman EN boleh memakainya (akurat & memang Inggris); halaman ID
-// SELALU pakai langkah standar Indonesia supaya tak bocor Inggris. Langkah standar
-// akurat untuk hampir semua game Roblox (tombol Codes → masukkan → Redeem).
+// Keputusan user (23 Jul): pakai langkah spesifik APA ADANYA di kedua bahasa
+// (akurasi > lokalisasi utk langkah redeem). Auto-translate butuh API berbayar &
+// berisiko salah → tak sepadan utk teks prosedural ini. Kalau tak ada langkah
+// spesifik → fallback ke langkah standar (bilingual).
 const isSpecific = Array.isArray(g.howTo) && g.howTo.length >= 2;
-const redeemSteps = { id: redeemStd.id, en: isSpecific ? g.howTo : redeemStd.en };
+const redeemSteps = { id: isSpecific ? g.howTo : redeemStd.id, en: isSpecific ? g.howTo : redeemStd.en };
 
 const gname = g.name;
 // Pemain konkuren → ringkas (jangan pakai regex literal di frontmatter .astro).
