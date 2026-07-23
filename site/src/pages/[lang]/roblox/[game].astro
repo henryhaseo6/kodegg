@@ -50,14 +50,13 @@ const redeemStd = {
     "Press Redeem — the reward is granted instantly",
   ],
 };
-// Cara redeem SPESIFIK per-game dari RoCodes bila ada (mis. Island of Move
-// "walk over to the NPC…") — lebih akurat dari langkah standar. Kosong → standar
-// bilingual. (howTo sumber berbahasa Inggris; dipakai apa adanya utk akurasi.)
-// >=2 langkah sudah spesifik & akurat (mis. Grow a Garden: cog→settings→Claim;
-// MM2: inventory→EnterCode; Tower of Hell: chat). Ambang 3 dulu keliru membuang
-// langkah-2 yang benar ke fallback generik.
+// Cara redeem SPESIFIK per-game dari sumber (mis. Island of Move "walk over to
+// the NPC…") lebih akurat dari langkah standar — TAPI hanya berbahasa Inggris.
+// Karena itu: halaman EN boleh memakainya (akurat & memang Inggris); halaman ID
+// SELALU pakai langkah standar Indonesia supaya tak bocor Inggris. Langkah standar
+// akurat untuk hampir semua game Roblox (tombol Codes → masukkan → Redeem).
 const isSpecific = Array.isArray(g.howTo) && g.howTo.length >= 2;
-const redeemSteps = { id: isSpecific ? g.howTo : redeemStd.id, en: isSpecific ? g.howTo : redeemStd.en };
+const redeemSteps = { id: redeemStd.id, en: isSpecific ? g.howTo : redeemStd.en };
 
 const gname = g.name;
 // Pemain konkuren → ringkas (jangan pakai regex literal di frontmatter .astro).
