@@ -18,6 +18,7 @@ const ASSETS_GAMES = resolve(HERE, "../site/public/assets/games");
 const TMP = resolve(HERE, "../_video-tmp");
 const STATE_PATH = resolve(DATA, "video-state.json");
 const PENDING_PL = resolve(DATA, "pending-playlists.json"); // playlist gagal (rate-limit) → retry run berikutnya
+const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak muat RENDER_MAX → antri run berikutnya
 // Batas UPLOAD otomatis/hari. Dinaikkan ke 30 (21 Jul 2026) untuk MENGUJI batas
 // sebenarnya: Google memberi jatah "Video Uploads per day = 100" & 10.000 unit,
 // sementara dokumentasi menyebut videos.insert = 1.600 unit (≈6 upload). Angka
@@ -42,6 +43,8 @@ const ck = (game, code) => `${game}:${code}`;
 // Total kode yg diklaim di video = gabungan unik aktif + baru (kode baru kadang
 // belum ke-merge ke daftar aktif → jangan sampai angka "+N lagi" meleset).
 const countAll = (active, newCodes) => new Set([...active.map((c) => c.code), ...newCodes.map((c) => c.code)]).size;
+// Path ikon dari deskriptor kandidat (di-recompute saat rekonstruksi antrian).
+const iconFor = (d) => (d.isPromo ? resolve(ASSETS_ROBLOX, "roblox-promo.png") : resolve(d.platform === "ROBLOX" ? ASSETS_ROBLOX : ASSETS_GAMES, `${d.id}.png`));
 
 // Thumbnail diambil detik 12.5: semua kartu kode sudah ke-reveal (kartu ke-4
 // muncul ~8.7s) DAN baris teaser "+N kode lagi" sudah tampil (11.5s), sebelum
@@ -241,16 +244,23 @@ async function main() {
     return;
   }
 
-  let candidates = buildCandidates();
-  // buang yg SEMUA kode barunya sudah pernah dibikin video
-  candidates = candidates.filter((c) => c.newCodes.some((nc) => !state.posted[ck(c.id, nc.code)]));
+  const fresh = buildCandidates();
   // Vertikal PROMO Roblox: video tiap bulan (rekap) ATAU saat ada kode promo baru.
-  // Cadence-nya sendiri (bukan lewat filter game di atas) → ditambah terpisah.
   const promoC = buildPromoCandidate(state, now);
-  if (promoC) candidates.unshift(promoC); // prioritaskan: jarang & evergreen
+  if (promoC) fresh.unshift(promoC);
+  // ANTRIAN VIDEO: kandidat yg run lalu tak muat RENDER_MAX. Sinyal "kode baru"
+  // sekali-jalan (bulkGames & new-codes cuma ada di run impor) → yg ke-drop hilang
+  // permanen kalau tak diantrikan. Diproses DULUAN biar tak keburu basi.
+  const pending = readJSON(PENDING_VID, []).map((d) => ({ ...d, iconPath: iconFor(d) }));
+  const seen = new Set();
+  let candidates = [...pending, ...fresh].filter((c) => {
+    if (seen.has(c.id)) return false; // dedup: antrian menang atas fresh (lebih lama)
+    seen.add(c.id);
+    return c.isPromo || c.newCodes.some((nc) => !state.posted[ck(c.id, nc.code)]); // buang yg semua kodenya sudah divideokan
+  });
   let remaining = MAX_PER_DAY - state.todayCount;
-  console.log(`kandidat: ${candidates.length} game punya kode baru | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
-  if (candidates.length === 0) { console.log("tak ada kode baru → tak ada video."); return; }
+  console.log(`kandidat: ${candidates.length} (antrian ${pending.length} + baru ${fresh.length}) | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
+  if (candidates.length === 0) { console.log("tak ada kode baru → tak ada video."); writeFileSync(PENDING_VID, "[]\n"); return; }
   const canUpload = ytConfigured() && !DRY_RUN;
   if (!canUpload && !DRY_RUN) console.log("YT belum di-set (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — semua video dirender utk upload manual. Lihat DEPLOY-YOUTUBE.md.");
 
@@ -259,7 +269,11 @@ async function main() {
   // metadata utk diupload manual. Tanpa ini, kode ke-4 dst hari itu tak pernah
   // dapat video sama sekali.
   const picks = candidates.slice(0, RENDER_MAX);
-  if (candidates.length > RENDER_MAX) console.log(`(dibatasi ${RENDER_MAX} video/run — ${candidates.length - RENDER_MAX} game sisanya nunggu run berikutnya)`);
+  // Sisa yg tak muat → SIMPAN sbg antrian run berikutnya (bukan di-drop). Promo &
+  // on-demand tak diantrikan (punya cadence sendiri). Cap 40 biar tak membengkak.
+  const overflow = candidates.slice(RENDER_MAX).filter((c) => !c.isPromo).slice(0, 40);
+  writeFileSync(PENDING_VID, JSON.stringify(overflow.map(({ iconPath, ...d }) => d), null, 2) + "\n"); // iconPath di-recompute saat rekonstruksi
+  if (overflow.length) console.log(`(dibatasi ${RENDER_MAX}/run — ${overflow.length} game diantrikan utk run berikutnya)`);
   mkdirSync(TMP, { recursive: true });
   if (DRY_RUN) mkdirSync(REVIEW, { recursive: true }); else mkdirSync(OUTDIR, { recursive: true });
   for (const c of picks) {
