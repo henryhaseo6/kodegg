@@ -9,10 +9,6 @@ import "../styles/fonts.css"; // @font-face self-hosted (public/fonts/*.woff2)
 // jsonLd = array objek Schema.org (dirender sbg <script ld+json>).
 const { lang, title, description, path, paths, jsonLd = [], noindex = false, ogImage: ogImageProp } = Astro.props;
 const other = otherLang(lang);
-// Cloudflare Web Analytics (opsional) — cookieless & agregat. Token PUBLIK
-// (memang tampil di HTML), diisi lewat env build PUBLIC_CF_BEACON di Cloudflare
-// Pages. Tanpa token → beacon tak dirender (situs tetap bersih dari analytics).
-const cfBeacon = import.meta.env.PUBLIC_CF_BEACON;
 // Cloudflare Pages (build.format "directory") menyajikan versi BER-trailing-slash
 // sebagai 200 & me-redirect non-slash → slash (308). Maka canonical/hreflang/og
 // WAJIB ber-trailing-slash agar menunjuk langsung ke URL 200 (bukan yg redirect).
@@ -74,16 +70,6 @@ const locale = lang === "id" ? "id_ID" : "en_US";
         terlihat di atas lipatan: body (Satoshi 400) + heading (Space Grotesk 700). */}
     <link rel="preload" href="/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-
-    {/* Cloudflare Web Analytics — cookieless, agregat, tanpa data personal.
-        Hanya dirender bila PUBLIC_CF_BEACON di-set (lihat frontmatter). */}
-    {cfBeacon && (
-      <script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon={`{"token": "${cfBeacon}"}`}
-      />
-    )}
   </head>
   <body>
     <a class="gg-skip" href="#main">{lang === "id" ? "Lewati ke konten" : "Skip to content"}</a>
