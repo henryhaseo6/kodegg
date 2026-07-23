@@ -71,34 +71,44 @@ function buildCandidates() {
       displayCodes: pickDisplay(nc, active),
     });
   }
-  // ROBLOX — game yang BARU masuk pantauan (impor pertama). Dua kemungkinan:
-  //  (a) Punya kode ber-tanggal-baru (`fresh`, ≤48 jam) → itu KODE BARU sungguhan
-  //      (situs pun menandai "New"); video "KODE BARU" bila pemain ≥ FRESH_MIN
-  //      (ambang lebih rendah — kodenya memang layak, bukan cuma backfill).
-  //  (b) Tak ada kode fresh (semua backfill lama) → video "SEMUA KODE" hanya bila
-  //      game besar (≥ BULK_MIN), sebab isinya kode lama, kurang layak diumbar.
-  for (const { game: id, fresh } of rbNewFile.bulkGames ?? []) {
+  // ROBLOX — KODE FRESH (window-based, dicek TIAP run, bukan sekali saat impor).
+  // Game mana pun dg kode ber-tanggal ≤48 jam & pemain ≥ FRESH_MIN → video "KODE
+  // BARU". Tahan thd (a) fluktuasi jumlah pemain real-time (game di ambang 2K bisa
+  // turun saat jam tidur → dulu one-shot bikin ketinggalan permanen), dan (b) drop
+  // RENDER_MAX. Dedup: game yg sudah punya playlist (= sudah ada video) dilewati —
+  // sinyal andal, mencakup upload manual yg tak tercatat di state.
+  const FRESH_MS = 48 * 3600 * 1000;
+  const nowMs = Date.parse(rbNewFile.generatedAt) || Date.now();
+  const ytpl = readJSON(resolve(DATA, "yt-playlists.json"), {});
+  for (const [id, g] of Object.entries(rb.games)) {
+    if (rbNewByGame[id] || ytpl[id]) continue; // sudah lewat jalur kode-baru / sudah ada video
+    if ((g.players ?? 0) < FRESH_MIN_PLAYERS) continue;
+    const active = rb.active.filter((c) => c.game === id);
+    const fresh = active.filter((c) => { const d = Date.parse(c.date ?? ""); return d > 0 && nowMs - d <= FRESH_MS && !c.perm; });
+    if (fresh.length === 0) continue;
+    const freshCodes = fresh.map((c) => ({ code: c.code, reward: c.reward ?? "" }));
+    out.push({
+      platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
+      iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
+      newCodes: freshCodes, activeCount: countAll(active, freshCodes), fetchedAt: rbNewFile.generatedAt,
+      displayCodes: pickDisplay(freshCodes, active),
+    });
+  }
+  // ROBLOX — game BARU masuk pantauan TANPA kode fresh (semua backfill lama) →
+  // video "SEMUA KODE" hanya bila besar (≥ BULK_MIN); isinya kode lama, kurang
+  // layak diumbar utk game sepi. One-shot (bulkGames); drop-nya ditangkap antrian.
+  for (const { game: id } of rbNewFile.bulkGames ?? []) {
     const g = rb.games[id]; if (!g) continue;
-    if (rbNewByGame[id]) continue; // sudah jadi kandidat lewat jalur kode baru
+    if (rbNewByGame[id] || ytpl[id] || out.some((c) => c.id === id)) continue;
+    if ((g.players ?? 0) < BULK_MIN_PLAYERS) continue;
     const active = rb.active.filter((c) => c.game === id);
     if (active.length === 0) continue;
-    const players = g.players ?? 0;
-    const freshCodes = (fresh ?? []).filter((c) => c.code);
-    if (freshCodes.length > 0 && players >= FRESH_MIN_PLAYERS) {
-      out.push({
-        platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players,
-        iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: players,
-        newCodes: freshCodes, activeCount: countAll(active, freshCodes), fetchedAt: rbNewFile.generatedAt,
-        displayCodes: pickDisplay(freshCodes, active),
-      });
-    } else if (players >= BULK_MIN_PLAYERS) {
-      out.push({
-        platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players,
-        iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: players,
-        newCodes: active, activeCount: active.length, fetchedAt: rbNewFile.generatedAt, allMode: true,
-        displayCodes: pickDisplay([], active),
-      });
-    }
+    out.push({
+      platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
+      iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
+      newCodes: active, activeCount: active.length, fetchedAt: rbNewFile.generatedAt, allMode: true,
+      displayCodes: pickDisplay([], active),
+    });
   }
 
   // MOBILE
