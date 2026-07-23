@@ -121,5 +121,46 @@
         "isNew": true
       }
     ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "speedsters-infinite",
+    "name": "Speedsters Infinite",
+    "slug": "speedsters-infinite",
+    "players": 5330,
+    "newCodes": [
+      {
+        "code": "WADMINABUSE",
+        "reward": ""
+      },
+      {
+        "code": "MEMBERS2M",
+        "reward": ""
+      },
+      {
+        "code": "KEEPRUNNING",
+        "reward": ""
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-07-23T01:01:21.274Z",
+    "allMode": false,
+    "displayCodes": [
+      {
+        "code": "WADMINABUSE",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "MEMBERS2M",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "KEEPRUNNING",
+        "reward": "",
+        "isNew": true
+      }
+    ]
   }
 ]
