@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-07-23T02:01:19.403Z",
+  "updatedAt": "2026-07-23T03:00:53.823Z",
   "counts": {
-    "active": 108,
+    "active": 107,
     "archived": 31
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Fate/Star Rail Night\" Event Introduction",
+        "id": "Pengenalan Event \"Fate/Malam Rel Bintang\""
+      },
+      "excerpt": {
+        "en": "Join the mage Rin Tohsaka in the Holy Grail War and claim the treasure! Turn-based card combat, various gameplay schools... Participate in the event to obtain Self-Modeling Resins,",
+        "id": "Berpartisipasilah dalam Perang Cawan Suci bersama mage Rin Tohsaka untuk merebut harta karun! Pertempuran kartu turn-based, berbagai gameplay ... Ikuti event untuk memperoleh hadia"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/22/898298689b845f2c722ad6b238597e05_1062361477164023467.jpg",
+      "url": "https://www.hoyolab.com/article/45966589",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-23T03:00:08.000Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
@@ -86,22 +102,6 @@
       "publishedAt": "2026-07-22T04:00:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Spotlight Theater's Program List | Temporal Patterns & Precepts",
-        "id": "Daftar Pertunjukan Spotlight Theater 丨 Titah dan Tatanan Waktu"
-      },
-      "excerpt": {
-        "en": "\"Where the needle sweeps, the vigil begins.\"",
-        "id": "\"Ke mana sang jarum melintas, di sanalah penjagaan bermula.\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/0/a3c0f093e54b888d082edbd51b925b84_4403918319039613990.jpeg",
-      "url": "https://www.hoyolab.com/article/45955088",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-22T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -114,6 +114,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/0/dd1cf2d3ff40c5f27ab16974c24767a1_4873039298119105013.jpeg",
       "url": "https://www.hoyolab.com/article/45955086",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-22T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Spotlight Theater's Program List | Temporal Patterns & Precepts",
+        "id": "Daftar Pertunjukan Spotlight Theater 丨 Titah dan Tatanan Waktu"
+      },
+      "excerpt": {
+        "en": "\"Where the needle sweeps, the vigil begins.\"",
+        "id": "\"Ke mana sang jarum melintas, di sanalah penjagaan bermula.\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/0/a3c0f093e54b888d082edbd51b925b84_4403918319039613990.jpeg",
+      "url": "https://www.hoyolab.com/article/45955088",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-22T04:00:06.000Z"
     },
@@ -758,22 +774,6 @@
       "publishedAt": "2026-07-15T04:05:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Pom-Pom Gallery | Honkai: Star Rail Sticker Set 28 Now Available!",
-        "id": "Galeri Pom-Pom | Stiker \"Honkai: Star Rail\" Set ke-28 Dirilis!"
-      },
-      "excerpt": {
-        "en": "In this vast universe, nothing holds more beauty than \"the lands en route, yet to be reached.\" But they can be reached, with the Astral Express. Honkai: Star Rail Sticker Set 28 is",
-        "id": "Di alam semesta yang luas ini, tiada yang lebih indah daripada \"tempat-tempat yang belum kita kunjungi\". Tapi semua itu bisa dijangkau, dengan Astral Express. Stiker \"Honkai: Star "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/14/31b0d852900957d3e95f5df71945b706_2623448617716842661.png",
-      "url": "https://www.hoyolab.com/article/45854227",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-15T04:00:09.000Z"
-    },
-    {
       "game": "tot",
       "gameName": "Tears of Themis",
       "title": {
@@ -788,22 +788,6 @@
       "url": "https://www.hoyolab.com/article/45854225",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-15T04:00:06.000Z"
-    },
-    {
-      "game": "tot",
-      "gameName": "Tears of Themis",
-      "title": {
-        "en": "🎁S-Chip ×180 & Gift Card🎁 ✦ You are the only truth in my heart ✦ Trailer",
-        "id": "🎁S-Chip ×180 & Gift Card🎁 \"You are the only truth in my heart\" Trailer"
-      },
-      "excerpt": {
-        "en": "💍 DAVIS has prepared 🎁 S-Chip ×180 🎁 and more for everyone. Don't forget to log in and claim the gift! ✦ Redemption Code: YESIDO ✦ Valid until: 2026/8/15 23:59 (UTC+9) ✦ Redeem ",
-        "id": "💍 DAVIS has prepared 🎁 S-Chip ×180 🎁 and more for everyone. Don't forget to log in and claim the gift! ✦ Redemption Code: YESIDO ✦ Valid until: 2026/8/15 23:59 (UTC+9) ✦ Redeem "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/09/ce457db70ff00e628355932c17a1767a_7635560448105795018.png",
-      "url": "https://www.hoyolab.com/article/45853855",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-15T03:30:03.000Z"
     },
     {
       "game": "hsr",
