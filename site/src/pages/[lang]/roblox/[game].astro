@@ -201,12 +201,10 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
             {g.verifiedCount} {id ? "terverifikasi" : "verified"}
           </span>
         )}
-        {g.players > 0 && (
-          <span style="display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--muted); background:var(--surface); border:1px solid var(--line2); padding:3px 8px; border-radius:6px;" title={id ? "Pemain konkuren (data resmi Roblox, tiap jam)" : "Concurrent players (official Roblox data, hourly)"}>
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11a3 3 0 0 0 0-6M21.5 20a6.5 6.5 0 0 0-5-6.3"/></svg>
-            {fmtPlayers(g.players)} {id ? "pemain" : "players"}
-          </span>
-        )}
+        <span style="display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--muted); background:var(--surface); border:1px solid var(--line2); padding:3px 8px; border-radius:6px;" title={id ? "Pemain konkuren (data resmi Roblox, tiap jam)" : "Concurrent players (official Roblox data, hourly)"}>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11a3 3 0 0 0 0-6M21.5 20a6.5 6.5 0 0 0-5-6.3"/></svg>
+          {fmtPlayers(g.players || 0)} {id ? "pemain" : "players"}
+        </span>
       </div>
       <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4.5vw,44px); letter-spacing:-0.02em; color:#fff; margin:0; line-height:1.1;">
         {id ? `Kode ${g.name}` : `${g.name} Codes`}
