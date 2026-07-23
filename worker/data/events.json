@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T07:00:51.683Z",
+  "updatedAt": "2026-07-23T08:00:46.309Z",
   "counts": {
     "active": 67,
     "archived": 54
@@ -477,30 +477,6 @@
       "url": "https://zenless.hoyoverse.com/en/news"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Primogem Rewards: Participate in Columbina and Raiden Shogun's Topic Discussions and Earn Primogems",
-        "id": "[Berhadiah Primogem] Ikuti Diskusi Bertema Columbina dan Raiden Shogun untuk Memenangkan Primogem"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Olah! Hello, Traveler~ Join the discussion to get guaranteed avatar frames, and for a chance to win Primogems~ Columbina Topic Discussion I like to go up to the moon and watch Teyvat revolve in silence. It brings me peace. Take your Kamera ",
-        "id": "Olah! Apa kabar, Traveler? Ikuti diskusinya untuk langsung mendapatkan Bingkai Avatar, serta kesempatan memenangkan Primogem~ Diskusi Bertema Columbina Aku suka pergi ke bulan dan melihat Teyvat berputar dalam keheningan. Itu membuatku mera"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/e54352a57faaafa36a73c68d9ad86f0f_2354643821338835913.png",
-      "startsAt": "2026-07-21T03:59:00.000Z",
-      "endsAt": "2026-07-29T15:59:59.000Z",
-      "postedAt": "2026-07-21T03:59:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45941004"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "type": "event",
@@ -523,6 +499,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45852900"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Primogem Rewards: Participate in Columbina and Raiden Shogun's Topic Discussions and Earn Primogems",
+        "id": "[Berhadiah Primogem] Ikuti Diskusi Bertema Columbina dan Raiden Shogun untuk Memenangkan Primogem"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Olah! Hello, Traveler~ Join the discussion to get guaranteed avatar frames, and for a chance to win Primogems~ Columbina Topic Discussion I like to go up to the moon and watch Teyvat revolve in silence. It brings me peace. Take your Kamera ",
+        "id": "Olah! Apa kabar, Traveler? Ikuti diskusinya untuk langsung mendapatkan Bingkai Avatar, serta kesempatan memenangkan Primogem~ Diskusi Bertema Columbina Aku suka pergi ke bulan dan melihat Teyvat berputar dalam keheningan. Itu membuatku mera"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/e54352a57faaafa36a73c68d9ad86f0f_2354643821338835913.png",
+      "startsAt": "2026-07-21T03:59:00.000Z",
+      "endsAt": "2026-07-29T15:59:59.000Z",
+      "postedAt": "2026-07-21T03:59:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45941004"
     },
     {
       "game": "tot",
@@ -950,30 +950,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "The \"Luna VIII\" Genius Column Submission Event Begins! Share Your Stage Insights to Win Handsome Rewards!",
-        "id": "Event Kontes Kolom Bakat \"Candra VIII\" dimulai! Bagikan wawasanmu dan menangkan hadiah!"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Hello, Traveler! Version \"Luna VIII\" is now live! Share your stage insights for a chance to win Primogems and Arcane Keystones! Event Duration July 1, 2026 – August 11, 2026 23:59 (UTC+8) Results: The list of winners will be updated in this",
-        "id": "Halo, Traveler! Versi \"Candra VIII\" sudah hadir! Ayo bagikan pendapatmu tentang stage-nya untuk mendapatkan Primogem dan Arcane Keystone~ [Waktu Event] 1 Juli 2026 - 11 Agustus 2026 23:59 (UTC+8) Pengumuman Pemenang: Daftar pemenang akan di"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/3e631891971850fb9e3df14190ada889_568876503192255408.png",
-      "startsAt": "2026-06-30T16:00:00.000Z",
-      "endsAt": "2026-08-11T15:59:59.000Z",
-      "postedAt": "2026-07-01T09:04:30.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45677715"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "Version \"Luna VIII\" HoYoverse Top-Up Center Event: Share the Promotional Image to Win Primogems — Phase 2",
         "id": "Event Top-Up Center HoYoverse Versi \"Candra VIII\": Bagikan Gambar Promosi untuk Memenangkan Primogem - Tahap 2"
       },
@@ -991,6 +967,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45941011"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "The \"Luna VIII\" Genius Column Submission Event Begins! Share Your Stage Insights to Win Handsome Rewards!",
+        "id": "Event Kontes Kolom Bakat \"Candra VIII\" dimulai! Bagikan wawasanmu dan menangkan hadiah!"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Hello, Traveler! Version \"Luna VIII\" is now live! Share your stage insights for a chance to win Primogems and Arcane Keystones! Event Duration July 1, 2026 – August 11, 2026 23:59 (UTC+8) Results: The list of winners will be updated in this",
+        "id": "Halo, Traveler! Versi \"Candra VIII\" sudah hadir! Ayo bagikan pendapatmu tentang stage-nya untuk mendapatkan Primogem dan Arcane Keystone~ [Waktu Event] 1 Juli 2026 - 11 Agustus 2026 23:59 (UTC+8) Pengumuman Pemenang: Daftar pemenang akan di"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/3e631891971850fb9e3df14190ada889_568876503192255408.png",
+      "startsAt": "2026-06-30T16:00:00.000Z",
+      "endsAt": "2026-08-11T15:59:59.000Z",
+      "postedAt": "2026-07-01T09:04:30.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45677715"
     },
     {
       "game": "gi",
@@ -1463,23 +1463,47 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Rita, at your service.\"",
-        "id": "\"Rita, siap melayani Anda.\""
+        "en": "\"It's time to settle things!\"",
+        "id": "\"Saatnya pertempuran penentu!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Rita Rossweisse  Today's Topic: Rita's wardrobe: Which of her outfits is your favorite?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Rita Rossweisse  Topik Hari Ini: Lemari pakaian Rita: Outfit mana yang menjadi favoritmu?  Like dan tulis komentar berkesempatan memenangkan [100USD], bundle merchandise, dan lainnya! Jangan "
+        "en": " Today's Time Album Spotlight: Murata Himeko  Today's Topic: What is the most important lesson Miss Himeko taught you?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Karakter Utama Album Kenangan Hari Ini: Murata Himeko  Topik Kali Ini: Apa pelajaran terpenting yang diajarkan Guru Himeko padamu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya!"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/13/72e70558025b1ccae45366e686718404_1837434251712324176.png",
-      "startsAt": "2026-07-14T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/5dcdfb067a5a52af634f58f6869fd0c8_2537018723789932979.png",
+      "startsAt": "2026-07-04T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-14T04:00:06.000Z",
+      "postedAt": "2026-07-06T05:12:09.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45842949"
+      "url": "https://www.hoyolab.com/article/45747948"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Bronya has arrived at the designated coordinates.\"",
+        "id": "\"Bronya telah mencapai lokasi pengaturan.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Bronya Zaychik  Today's Topic: Besides HOMU and video games, what else does Bronya love?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem ",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Bronya Zaychik  Topik Hari Ini: Yang paling disukai Bronya tentunya adalah HOMU, game, dan...?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/63002c268818e8c31b19895d5ae64dd4_7947424859823521703.png",
+      "startsAt": "2026-06-23T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-06-23T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45570201"
     },
     {
       "game": "hi3",
@@ -1511,54 +1535,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Yae Sakura, requesting deployment!\"",
-        "id": "\"Yae, ayo serang!!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Yae Sakura  Today's Topic: The tragedy transcends time and space. Is there anything you'd like to say to her?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And do",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Yae Sakura  Topik Hari Ini: Kisah menyayat hati yang melintasi ruang dan waktu, apa yang ingin kamu sampaikan kepadanya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 US"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/26/92cacf988ffdf62609f35742b5f35c94_1009205883909262713.png",
-      "startsAt": "2026-06-28T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-06-28T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45635894"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"It's time to settle things!\"",
-        "id": "\"Saatnya pertempuran penentu!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Murata Himeko  Today's Topic: What is the most important lesson Miss Himeko taught you?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Karakter Utama Album Kenangan Hari Ini: Murata Himeko  Topik Kali Ini: Apa pelajaran terpenting yang diajarkan Guru Himeko padamu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/5dcdfb067a5a52af634f58f6869fd0c8_2537018723789932979.png",
-      "startsAt": "2026-07-04T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-06T05:12:09.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45747948"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "\"Theresa is the World's No. 1 Cutie! Pew!\"",
         "id": "\"Theresa adalah gadis terimut sedunia, biu!\""
       },
@@ -1576,30 +1552,6 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45747945"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Vodka power, discharge!\"",
-        "id": "\"Kekuatan Vodka, lepaskan!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Olenyevas  Today's Topic: Please describe Rozaliya and Liliya in one sentence!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Olenyeva bersaudara  Topik Kali Ini: Deskripsikan Rozaliya dan Liliya dalam satu kalimat!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lain"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/14/ddae622c8b46e04768b5adc8fd76b3a5_6832252828787114953.png",
-      "startsAt": "2026-07-18T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-18T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45901660"
     },
     {
       "game": "hi3",
@@ -1631,30 +1583,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Valkyrie Mei, reporting for duty!\"",
-        "id": "\"Valkyrie Mei, telah tiba!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "📸 Today's Time Album Spotlight: Raiden Mei 💬 Today's Topic: What are some of Mei's lovingly made dishes that stand out to you? 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to",
-        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Raiden Mei 💬 Topik Hari Ini: Masakan penuh cinta apa dari Mei yang paling berkesan untukmu? 🎁 Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/59e5696d12ec253411f2f97a1d91f2d7_3245954936371395859.png",
-      "startsAt": "2026-06-20T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-06-20T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45531767"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "\"This is Kiana's time!\"",
         "id": "\"Waktunya Kiana beraksi!\""
       },
@@ -1679,23 +1607,95 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Bronya has arrived at the designated coordinates.\"",
-        "id": "\"Bronya telah mencapai lokasi pengaturan.\""
+        "en": "\"Vodka power, discharge!\"",
+        "id": "\"Kekuatan Vodka, lepaskan!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Bronya Zaychik  Today's Topic: Besides HOMU and video games, what else does Bronya love?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem ",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Bronya Zaychik  Topik Hari Ini: Yang paling disukai Bronya tentunya adalah HOMU, game, dan...?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan"
+        "en": " Today's Time Album Spotlight: Olenyevas  Today's Topic: Please describe Rozaliya and Liliya in one sentence!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Olenyeva bersaudara  Topik Kali Ini: Deskripsikan Rozaliya dan Liliya dalam satu kalimat!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lain"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/63002c268818e8c31b19895d5ae64dd4_7947424859823521703.png",
-      "startsAt": "2026-06-23T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/14/ddae622c8b46e04768b5adc8fd76b3a5_6832252828787114953.png",
+      "startsAt": "2026-07-18T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-06-23T04:00:06.000Z",
+      "postedAt": "2026-07-18T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45570201"
+      "url": "https://www.hoyolab.com/article/45901660"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Rita, at your service.\"",
+        "id": "\"Rita, siap melayani Anda.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Rita Rossweisse  Today's Topic: Rita's wardrobe: Which of her outfits is your favorite?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Rita Rossweisse  Topik Hari Ini: Lemari pakaian Rita: Outfit mana yang menjadi favoritmu?  Like dan tulis komentar berkesempatan memenangkan [100USD], bundle merchandise, dan lainnya! Jangan "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/13/72e70558025b1ccae45366e686718404_1837434251712324176.png",
+      "startsAt": "2026-07-14T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-14T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45842949"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Valkyrie Mei, reporting for duty!\"",
+        "id": "\"Valkyrie Mei, telah tiba!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "📸 Today's Time Album Spotlight: Raiden Mei 💬 Today's Topic: What are some of Mei's lovingly made dishes that stand out to you? 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to",
+        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Raiden Mei 💬 Topik Hari Ini: Masakan penuh cinta apa dari Mei yang paling berkesan untukmu? 🎁 Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/59e5696d12ec253411f2f97a1d91f2d7_3245954936371395859.png",
+      "startsAt": "2026-06-20T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-06-20T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45531767"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Yae Sakura, requesting deployment!\"",
+        "id": "\"Yae, ayo serang!!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Yae Sakura  Today's Topic: The tragedy transcends time and space. Is there anything you'd like to say to her?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And do",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Yae Sakura  Topik Hari Ini: Kisah menyayat hati yang melintasi ruang dan waktu, apa yang ingin kamu sampaikan kepadanya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 US"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/26/92cacf988ffdf62609f35742b5f35c94_1009205883909262713.png",
+      "startsAt": "2026-06-28T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-06-28T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45635894"
     },
     {
       "game": "hsr",
