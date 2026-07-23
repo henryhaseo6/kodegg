@@ -34,6 +34,7 @@ const FRESH_MIN_PLAYERS = Number(process.env.VIDEO_FRESH_MIN_PLAYERS || 2000); /
 // mau menahan (mis. saat menguji).
 const PRIVACY = process.env.YT_PRIVACY || "public";
 const DRY_RUN = process.env.DRY_RUN === "1"; // render + simpan lokal, TANPA upload
+const CHECK = process.argv.includes("--check"); // cek ADA kerja video? exit 0=ada, 1=tidak (tanpa deps berat)
 const REVIEW = resolve(HERE, "../_video-review");
 const OUTDIR = resolve(HERE, "../_video-out"); // video utk upload manual (di-artifact-kan CI)
 
@@ -228,6 +229,18 @@ async function main() {
   const today = now.toISOString().slice(0, 10);
   const state = readJSON(STATE_PATH, { date: today, todayCount: 0, posted: {}, log: [] });
   if (state.date !== today) { state.date = today; state.todayCount = 0; }
+
+  // Mode --check: tentukan ADA kerja video/playlist tanpa render/upload/deps berat.
+  // Dipakai CI utk melewati install deps video (canvas/ffmpeg/edge-tts) & render
+  // pada run tanpa video (hemat menit Actions). Exit 0=ada kerja, 1=tidak.
+  if (CHECK) {
+    const cands = buildCandidates().filter((c) => c.newCodes.some((nc) => !state.posted[ck(c.id, nc.code)]));
+    const promoC = buildPromoCandidate(state, now);
+    const pv = readJSON(PENDING_VID, []).length, pp = readJSON(PENDING_PL, []).length;
+    const kerja = cands.length + (promoC ? 1 : 0) + pv + pp;
+    console.log(`cek video: ${kerja} unit (fresh ${cands.length}, promo ${promoC ? 1 : 0}, antri-vid ${pv}, antri-pl ${pp})`);
+    process.exit(kerja > 0 ? 0 : 1);
+  }
 
   // Kuras antrian playlist tertunda lebih dulu (limit playlist mungkin sudah reset).
   if (ytConfigured() && !DRY_RUN) await drainPending();

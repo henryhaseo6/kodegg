@@ -1,7 +1,6 @@
 // Renderer YouTube Short KodeGG — data-driven (dari prototipe _short-gen).
 // renderShort({game, codes, iconPath, outPath}) → MP4 vertikal BISU (audio dimux
 // terpisah). 1080x1920, 30fps, ~21s. Canvas → pipe RGBA ke ffmpeg.
-import { createCanvas, GlobalFonts, loadImage } from "@napi-rs/canvas";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
@@ -11,9 +10,21 @@ const require = createRequire(import.meta.url);
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const FONTS = resolve(HERE, "../../site/scripts/ogfonts");
-GlobalFonts.registerFromPath(resolve(FONTS, "SpaceGrotesk-700.ttf"), "Grotesk");
-GlobalFonts.registerFromPath(resolve(FONTS, "SpaceGrotesk-400.ttf"), "GroteskR");
-GlobalFonts.registerFromPath(resolve(FONTS, "SpaceMono-Bold.ttf"), "Mono");
+
+// @napi-rs/canvas di-import LAZY: modul ini boleh di-import utk logika ringan
+// (mis. cek kandidat via make-videos --check) TANPA paket canvas terpasang.
+// Paket berat baru dimuat saat benar-benar merender → CI bisa lewati install
+// deps video pada run tanpa video (hemat menit Actions).
+let _cv;
+async function canvasLib() {
+  if (!_cv) {
+    _cv = await import("@napi-rs/canvas");
+    _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceGrotesk-700.ttf"), "Grotesk");
+    _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceGrotesk-400.ttf"), "GroteskR");
+    _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceMono-Bold.ttf"), "Mono");
+  }
+  return _cv;
+}
 
 // Resolusi path ffmpeg: env → @ffmpeg-installer → 'ffmpeg' sistem (CI ubuntu).
 export function ffmpegBin() {
@@ -97,6 +108,7 @@ function fmtWIB(d) {
 /** Render Short bisu. game={name,platform,players?}, codes=[{code,reward,isNew}] (maks 4 kartu),
  *  moreCount=sisa kode di situs → teaser "+N lagi", fetchedAt=waktu data ditarik (Date/ISO). */
 export async function renderShort({ game, codes, iconPath, activeCount, moreCount = 0, fetchedAt, allMode = false, outPath }) {
+  const { createCanvas, loadImage } = await canvasLib();
   const stamp = fmtWIB(fetchedAt ? new Date(fetchedAt) : new Date());
   const iconImg = existsSync(iconPath) ? await loadImage(iconPath) : null;
   const MAX_CARDS = 4;

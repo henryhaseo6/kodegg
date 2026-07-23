@@ -89,6 +89,13 @@ jobs:
           PYTHON: python3
         run: |
           if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set — lewati auto-video (lihat DEPLOY-YOUTUBE.md)."; exit 0; fi
+          # Cek dulu ADA kerja video (pakai fs saja, TANPA deps berat). Sebagian
+          # besar run tak punya video baru → lewati install (~15-30 dtk) & render,
+          # hemat menit Actions. make-videos --check exit 1 bila tak ada kerja.
+          if ! node worker/make-videos.mjs --check; then
+            echo "tak ada kerja video — lewati install deps & render."
+            exit 0
+          fi
           pip install --quiet --disable-pip-version-check edge-tts || pip3 install --quiet edge-tts
           npm install @napi-rs/canvas @ffmpeg-installer/ffmpeg googleapis --no-save --no-audit --no-fund
           node worker/make-videos.mjs || echo "auto-video gagal, lanjut"
