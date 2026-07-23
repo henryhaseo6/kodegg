@@ -19,12 +19,12 @@ const TMP = resolve(HERE, "../_video-tmp");
 const STATE_PATH = resolve(DATA, "video-state.json");
 const PENDING_PL = resolve(DATA, "pending-playlists.json"); // playlist gagal (rate-limit) → retry run berikutnya
 const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak muat RENDER_MAX → antri run berikutnya
-// Batas UPLOAD otomatis/hari. Dinaikkan ke 30 (21 Jul 2026) untuk MENGUJI batas
-// sebenarnya: Google memberi jatah "Video Uploads per day = 100" & 10.000 unit,
-// sementara dokumentasi menyebut videos.insert = 1.600 unit (≈6 upload). Angka
-// pemakaian nyata jauh lebih kecil dari itu, jadi dokumentasinya perlu dibuktikan.
-// Turunkan lagi kalau ternyata mentok. Bisa dioverride lewat Variable repo.
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 30);
+// Batas UPLOAD otomatis/hari. Pemakaian nyata TERUKUR (23 Jul): ~188 unit/video
+// (bukan 1.600 spt dokumentasi), jadi kuota 10.000/hari muat ~50 video. Diset 45
+// → ~8.500 unit, sisa buffer aman; batas "Video Uploads per day" (100) tak kena.
+// Kalau lonjakan kode makin ramai & mentok, sisanya jatuh ke jalur manual (aman).
+// Bisa dioverride lewat Variable repo VIDEO_MAX_PER_DAY.
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 45);
 const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 8); // batas RENDER/run (jaga durasi CI)
 const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru TANPA kode fresh: min pemain utk video "semua kode"
 const FRESH_MIN_PLAYERS = Number(process.env.VIDEO_FRESH_MIN_PLAYERS || 2000); // game baru DENGAN kode fresh: ambang lebih rendah (kodenya layak)
