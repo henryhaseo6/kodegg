@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-23T05:00:43.090Z",
+  "updatedAt": "2026-07-23T06:00:42.064Z",
   "counts": {
-    "active": 108,
-    "archived": 31
+    "active": 107,
+    "archived": 32
   },
   "articles": [
     {
@@ -1716,7 +1716,9 @@
       "url": "https://www.hoyolab.com/article/45582273",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-24T04:00:05.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1731,10 +1733,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/17/0c70d9f50f31af8362b5050d452b318d_5581355529546529918.png",
       "url": "https://www.hoyolab.com/article/45571163",
       "source": "HoYoLAB",
-      "publishedAt": "2026-06-23T06:00:03.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-06-23T06:00:03.000Z",
+      "archivedAt": "2026-07-23T06:00:42.064Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
