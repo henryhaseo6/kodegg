@@ -99,8 +99,23 @@ jobs:
           pip install --quiet --disable-pip-version-check edge-tts || pip3 install --quiet edge-tts
           npm install @napi-rs/canvas @ffmpeg-installer/ffmpeg googleapis --no-save --no-audit --no-fund
           node worker/make-videos.mjs || echo "auto-video gagal, lanjut"
-          # Sinkron peta game→playlist YouTube (dibaca situs utk tautan "Video di
-          # YouTube" per game). Butuh googleapis (sudah diinstal di atas).
+
+      # Sinkron peta game→playlist YouTube (dibaca situs utk tautan "Video di
+      # YouTube" per game). SELALU jalan bila YT di-set — BUKAN cuma saat ada
+      # video baru. Kenapa terpisah dari blok video di atas: playlist bisa dibuat
+      # MANUAL (video upload-manual utk game gede), di jam yang tak ada video
+      # otomatis. Kalau sync nebeng blok video, jam-jam itu ke-skip → tombol tak
+      # pernah muncul. googleapis di-install di sini; bila blok video di atas
+      # sudah memasangnya (jam ada video baru), install ini jadi no-op cepat.
+      - name: Sync playlist YouTube (peta game→playlist)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set — lewati sync playlist."; exit 0; fi
+          npm install googleapis --no-save --no-audit --no-fund
           node worker/fetch-yt-playlists.mjs || echo "sync playlist gagal, lanjut"
 
       # Video di atas kuota upload otomatis → Release harian (gampang dicari &
