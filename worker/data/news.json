@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-07-25T07:01:12.260Z",
+  "updatedAt": "2026-07-25T08:01:56.726Z",
   "counts": {
-    "active": 106,
-    "archived": 34
+    "active": 105,
+    "archived": 35
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "【Rewarded Event】Fate/stay night [Unlimited Blade Works] Collaboration Discussion - Discord Event",
+        "id": "[Event Berhadiah] Event Discord - Diskusi Kolaborasi \"Fate/stay night [Unlimited Blade Works]\""
+      },
+      "excerpt": {
+        "en": "\"Imagenae Holy Grail War\": Honkai: Star Rail × Fate/stay night [Unlimited Blade Works] Collaboration has just released and we are inviting all trailblazers to join in a strategy di",
+        "id": "\"Perang Cawan Suci Imagenae\": Kolaborasi \"Honkai: Star Rail\" × \"Fate/stay night [Unlimited Blade Works]\" kini telah hadir. Kami mengundang para Trailblazer untuk berpartisipasi dal"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/23/3d979660609393a2cb07e10db5cec554_303758551388178313.png",
+      "url": "https://www.hoyolab.com/article/45993949",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-25T08:00:06.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -724,22 +740,6 @@
       "url": "https://www.hoyolab.com/article/45870202",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-16T03:00:05.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "HoYo FEST 2026 ticket sales now open!",
-        "id": "Penjualan tiket HoYo FEST 2026 sudah dibuka!"
-      },
-      "excerpt": {
-        "en": "Dear Trailblazer, 🎟️ HoYo FEST 2026 ticket sales now open! ✨ Grab your tickets today and be a part of this unforgettable experience! Don't forget to check the event details on the",
-        "id": "Halo Trailblazer, 🎟️ Penjualan tiket HoYo FEST 2026 sudah dibuka! ✨ Segera beli tiketnya dan jadilah bagian dari pengalaman tak terlupakan ini! Jangan lupa untuk memeriksa detail "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/15/3b96e5b4b2c1eb06ef1131f81facb653_7404965113869805653.png",
-      "url": "https://www.hoyolab.com/article/45870200",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-16T03:00:03.000Z"
     },
     {
       "game": "gi",
@@ -1684,7 +1684,9 @@
       "url": "https://www.hoyolab.com/article/45597399",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-25T10:30:05.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1699,10 +1701,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/24/c95891c1c3d1ed173e25bfe5c96d0226_7127091939303216002.jpg",
       "url": "https://www.hoyolab.com/article/45595970",
       "source": "HoYoLAB",
-      "publishedAt": "2026-06-25T08:00:05.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-06-25T08:00:05.000Z",
+      "archivedAt": "2026-07-25T08:01:56.726Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
