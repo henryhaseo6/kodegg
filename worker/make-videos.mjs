@@ -143,7 +143,12 @@ function pickDisplay(newCodes, active) {
   const seen = new Set();
   const disp = [];
   for (const c of newCodes) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(c.code)) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward || "", isNew: true }); }
+  // Pad dg kode aktif BER-REWARD dulu (kartu lebih informatif).
   for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(c.code) || !c.reward) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward, isNew: false }); }
+  // Masih ada slot & pilihan ber-reward habis → ikutkan kode TANPA reward
+  // (render isi "Reward in-game"). Cegah video/deskripsi tanpa kode sama sekali
+  // saat semua kode game tak punya reward (mis. +1 Speed Keyboard Escape).
+  for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(c.code)) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward || "", isNew: false }); }
   return disp;
 }
 
