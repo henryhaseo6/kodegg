@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-07-25T10:02:04.066Z",
+  "updatedAt": "2026-07-25T11:01:26.810Z",
   "counts": {
     "active": 106,
-    "archived": 35
+    "archived": 36
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "SEA Zenless Anniversary Film Festival Series Artwork: Indonesia Edition",
+        "id": "Gambar Festival Film Anniversary SEA Zenless: Indonesia"
+      },
+      "excerpt": {
+        "en": "This has gotta be... a Komodo dragon! We're grateful to have you with us in the two years of journeying together, Proxies! Happy anniversary! Thank you @darkavey for the amazing ar",
+        "id": "Ini... komodo, kan?! Para Proxy, terima kasih sudah menemani kami selama dua tahun ini! Selamat anniversary~ Terima kasih @darkavey untuk karyanya yang luar biasa!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/24/6f4de9171da484a043156e47cdbdc0bd_1041564948309236651.jpg",
+      "url": "https://www.hoyolab.com/article/45995357",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-25T10:30:05.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1684,7 +1700,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4936",
       "source": "Wuthering Waves",
       "publishedAt": "2026-06-26T06:50:47.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1699,10 +1717,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/22/6ec5a2495400ae3f2e7a078b2eaeeb8e_9018704377289144567.png",
       "url": "https://www.hoyolab.com/article/45597399",
       "source": "HoYoLAB",
-      "publishedAt": "2026-06-25T10:30:05.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-06-25T10:30:05.000Z",
+      "archivedAt": "2026-07-25T11:01:26.810Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
