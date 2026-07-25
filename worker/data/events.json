@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25T05:01:15.536Z",
+  "updatedAt": "2026-07-25T06:01:16.047Z",
   "counts": {
     "active": 66,
     "archived": 55
@@ -426,30 +426,6 @@
       "url": "https://zenless.hoyoverse.com/en/news"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Primogem Rewards: Participate in Columbina and Raiden Shogun's Topic Discussions and Earn Primogems",
-        "id": "[Berhadiah Primogem] Ikuti Diskusi Bertema Columbina dan Raiden Shogun untuk Memenangkan Primogem"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Olah! Hello, Traveler~ Join the discussion to get guaranteed avatar frames, and for a chance to win Primogems~ Columbina Topic Discussion I like to go up to the moon and watch Teyvat revolve in silence. It brings me peace. Take your Kamera ",
-        "id": "Olah! Apa kabar, Traveler? Ikuti diskusinya untuk langsung mendapatkan Bingkai Avatar, serta kesempatan memenangkan Primogem~ Diskusi Bertema Columbina Aku suka pergi ke bulan dan melihat Teyvat berputar dalam keheningan. Itu membuatku mera"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/e54352a57faaafa36a73c68d9ad86f0f_2354643821338835913.png",
-      "startsAt": "2026-07-21T03:59:00.000Z",
-      "endsAt": "2026-07-29T15:59:59.000Z",
-      "postedAt": "2026-07-21T03:59:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45941004"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "type": "event",
@@ -472,6 +448,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45852900"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Primogem Rewards: Participate in Columbina and Raiden Shogun's Topic Discussions and Earn Primogems",
+        "id": "[Berhadiah Primogem] Ikuti Diskusi Bertema Columbina dan Raiden Shogun untuk Memenangkan Primogem"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Olah! Hello, Traveler~ Join the discussion to get guaranteed avatar frames, and for a chance to win Primogems~ Columbina Topic Discussion I like to go up to the moon and watch Teyvat revolve in silence. It brings me peace. Take your Kamera ",
+        "id": "Olah! Apa kabar, Traveler? Ikuti diskusinya untuk langsung mendapatkan Bingkai Avatar, serta kesempatan memenangkan Primogem~ Diskusi Bertema Columbina Aku suka pergi ke bulan dan melihat Teyvat berputar dalam keheningan. Itu membuatku mera"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/e54352a57faaafa36a73c68d9ad86f0f_2354643821338835913.png",
+      "startsAt": "2026-07-21T03:59:00.000Z",
+      "endsAt": "2026-07-29T15:59:59.000Z",
+      "postedAt": "2026-07-21T03:59:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45941004"
     },
     {
       "game": "tot",
@@ -1415,71 +1415,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Please, the other me!\"",
-        "id": "\"Tolonglah, diriku yang lain!\""
+        "en": "\"Fate is what brought us together.\"",
+        "id": "\"Takdirlah yang mempertemukan kita.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Seele Vollerei  Today's Topic: Which of Seele's dual personalities do you prefer?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Seele Vollerei  Topik Kali Ini: Dari dua kepribadian Seele, kamu lebih suka yang mana?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya"
+        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
+        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/a62f839ced1795d5218421d992fe3b5f_618852002642294793.png",
-      "startsAt": "2026-07-23T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
+      "startsAt": "2026-07-11T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-23T04:00:06.000Z",
+      "postedAt": "2026-07-11T04:00:05.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45967005"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Rita, at your service.\"",
-        "id": "\"Rita, siap melayani Anda.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Rita Rossweisse  Today's Topic: Rita's wardrobe: Which of her outfits is your favorite?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Rita Rossweisse  Topik Hari Ini: Lemari pakaian Rita: Outfit mana yang menjadi favoritmu?  Like dan tulis komentar berkesempatan memenangkan [100USD], bundle merchandise, dan lainnya! Jangan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/13/72e70558025b1ccae45366e686718404_1837434251712324176.png",
-      "startsAt": "2026-07-14T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-14T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45842949"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Vodka power, discharge!\"",
-        "id": "\"Kekuatan Vodka, lepaskan!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Olenyevas  Today's Topic: Please describe Rozaliya and Liliya in one sentence!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Olenyeva bersaudara  Topik Kali Ini: Deskripsikan Rozaliya dan Liliya dalam satu kalimat!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lain"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/14/ddae622c8b46e04768b5adc8fd76b3a5_6832252828787114953.png",
-      "startsAt": "2026-07-18T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-18T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45901660"
+      "url": "https://www.hoyolab.com/article/45809908"
     },
     {
       "game": "hi3",
@@ -1511,23 +1463,95 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Fate is what brought us together.\"",
-        "id": "\"Takdirlah yang mempertemukan kita.\""
+        "en": "\"Bronya has arrived at the designated coordinates.\"",
+        "id": "\"Bronya telah mencapai lokasi pengaturan.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
-        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+        "en": " Today's Time Album Spotlight: Bronya Zaychik  Today's Topic: Besides HOMU and video games, what else does Bronya love?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem ",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Bronya Zaychik  Topik Hari Ini: Yang paling disukai Bronya tentunya adalah HOMU, game, dan...?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
-      "startsAt": "2026-07-11T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/63002c268818e8c31b19895d5ae64dd4_7947424859823521703.png",
+      "startsAt": "2026-06-23T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-11T04:00:05.000Z",
+      "postedAt": "2026-06-23T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45809908"
+      "url": "https://www.hoyolab.com/article/45570201"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Vodka power, discharge!\"",
+        "id": "\"Kekuatan Vodka, lepaskan!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Olenyevas  Today's Topic: Please describe Rozaliya and Liliya in one sentence!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Olenyeva bersaudara  Topik Kali Ini: Deskripsikan Rozaliya dan Liliya dalam satu kalimat!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lain"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/14/ddae622c8b46e04768b5adc8fd76b3a5_6832252828787114953.png",
+      "startsAt": "2026-07-18T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-18T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45901660"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Rita, at your service.\"",
+        "id": "\"Rita, siap melayani Anda.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Rita Rossweisse  Today's Topic: Rita's wardrobe: Which of her outfits is your favorite?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Rita Rossweisse  Topik Hari Ini: Lemari pakaian Rita: Outfit mana yang menjadi favoritmu?  Like dan tulis komentar berkesempatan memenangkan [100USD], bundle merchandise, dan lainnya! Jangan "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/13/72e70558025b1ccae45366e686718404_1837434251712324176.png",
+      "startsAt": "2026-07-14T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-14T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45842949"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Please, the other me!\"",
+        "id": "\"Tolonglah, diriku yang lain!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Seele Vollerei  Today's Topic: Which of Seele's dual personalities do you prefer?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Seele Vollerei  Topik Kali Ini: Dari dua kepribadian Seele, kamu lebih suka yang mana?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/a62f839ced1795d5218421d992fe3b5f_618852002642294793.png",
+      "startsAt": "2026-07-23T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-23T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45967005"
     },
     {
       "game": "hi3",
@@ -1552,6 +1576,54 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45772697"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"It's time to settle things!\"",
+        "id": "\"Saatnya pertempuran penentu!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Murata Himeko  Today's Topic: What is the most important lesson Miss Himeko taught you?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Karakter Utama Album Kenangan Hari Ini: Murata Himeko  Topik Kali Ini: Apa pelajaran terpenting yang diajarkan Guru Himeko padamu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/5dcdfb067a5a52af634f58f6869fd0c8_2537018723789932979.png",
+      "startsAt": "2026-07-04T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-06T05:12:09.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45747948"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Theresa is the World's No. 1 Cutie! Pew!\"",
+        "id": "\"Theresa adalah gadis terimut sedunia, biu!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Theresa Apocalypse  Today's Topic: Share your favorite Principal stickers with us!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 10",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Theresa Apocalypse  Topik Kali Ini: Bagikan stiker Kepala Sekolah favoritmu dengan kami!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainn"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/eadc089868a7d4808be4f7722372ec9c_8818077989149360608.png",
+      "startsAt": "2026-07-02T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-06T05:12:05.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45747945"
     },
     {
       "game": "hi3",
@@ -1600,78 +1672,6 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45531767"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Bronya has arrived at the designated coordinates.\"",
-        "id": "\"Bronya telah mencapai lokasi pengaturan.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Bronya Zaychik  Today's Topic: Besides HOMU and video games, what else does Bronya love?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem ",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Bronya Zaychik  Topik Hari Ini: Yang paling disukai Bronya tentunya adalah HOMU, game, dan...?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/63002c268818e8c31b19895d5ae64dd4_7947424859823521703.png",
-      "startsAt": "2026-06-23T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-06-23T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45570201"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Theresa is the World's No. 1 Cutie! Pew!\"",
-        "id": "\"Theresa adalah gadis terimut sedunia, biu!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Theresa Apocalypse  Today's Topic: Share your favorite Principal stickers with us!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 10",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Theresa Apocalypse  Topik Kali Ini: Bagikan stiker Kepala Sekolah favoritmu dengan kami!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainn"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/eadc089868a7d4808be4f7722372ec9c_8818077989149360608.png",
-      "startsAt": "2026-07-02T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-06T05:12:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45747945"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"It's time to settle things!\"",
-        "id": "\"Saatnya pertempuran penentu!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Murata Himeko  Today's Topic: What is the most important lesson Miss Himeko taught you?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Karakter Utama Album Kenangan Hari Ini: Murata Himeko  Topik Kali Ini: Apa pelajaran terpenting yang diajarkan Guru Himeko padamu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/5dcdfb067a5a52af634f58f6869fd0c8_2537018723789932979.png",
-      "startsAt": "2026-07-04T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-06T05:12:09.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45747948"
     },
     {
       "game": "hi3",
