@@ -244,9 +244,10 @@ async function main() {
     // Cross-check editorial hanya utk game populer (bounded load); long-tail
     // tetap tampil kodenya (dari primer), badge Verified nyusul saat naik populer.
     let xset = new Set();
+    let xExpired = new Set();
     let bySite = [];
     if (entry.seed || entry.featured || (entry.players ?? 0) >= CROSSCHECK_MIN) {
-      ({ set: xset, bySite } = await crossCheckActive(slugRo || slugDen));
+      ({ set: xset, bySite, expiredSet: xExpired } = await crossCheckActive(slugRo || slugDen));
     }
 
     // universeId: RoCodes → placeId Den (resolve) → discovery. Normalisasi ke
@@ -255,23 +256,49 @@ async function main() {
     if (!universeId && denMeta?.placeId) universeId = await resolveUniverse(denMeta.placeId);
     universeId = universeId != null ? Number(universeId) || null : null;
 
+    // Keputusan EXPIRED (akurasi > kelengkapan; arsip non-destruktif jadi risiko
+    // over-expire kecil). Kode aktif dipindah ke arsip bila:
+    //  (a) endsAt sudah lewat → definitif, tanpa grace.
+    //  (b) ≥1 PRIMER tandai expired, ATAU editorial tandai expired (& tak ada
+    //      editorial lain bilang aktif) → arsip, KECUALI kode masih FRESH (≤48j):
+    //      grace agar sumber yang telat update tak membunuh kode baru.
+    const nowMs = Date.now();
+    const GRACE_MS = 48 * 3600 * 1000;
+    const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
+    const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, ...extra });
+
     const fActive = [];
+    const archFromActive = [];
     let nVer = 0;
     for (const c of active) {
       const key = c.code.toLowerCase();
+      const endsMs = c.endsAt ? Date.parse(c.endsAt) : 0;
+      const endsPassed = endsMs > 0 && endsMs < nowMs;
+      const dateMs = c.date ? Date.parse(c.date) : 0;
+      const isFresh = dateMs > 0 && nowMs - dateMs <= GRACE_MS;
+      const votedExpired = primExpired.has(key) || (xExpired.has(key) && !xset.has(key));
+      if (endsPassed || (votedExpired && !isFresh)) {
+        archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt }));
+        continue;
+      }
       const edConfirm = xset.has(key) ? 1 : 0;
       const verified = c.sources.length + edConfirm >= 2; // ≥2 sumber sepakat
       if (verified) nVer += 1;
-      fActive.push({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, endsAt: c.endsAt, verified });
+      fActive.push(mk(c, { endsAt: c.endsAt, verified }));
     }
-    const roActive = new Set(active.map((c) => c.code.toLowerCase()));
+    const roActive = new Set(fActive.map((c) => c.code.toLowerCase()));
     const edSrc = bySite.filter((s) => [...s.set].some((c) => roActive.has(c))).map((s) => s.name);
     // Atribusi cross-check = primer selain sumber utama + situs editorial pengonfirmasi.
     const primaryNames = [...new Set(active.flatMap((c) => c.sources))];
     const crossCheck = [...new Set([...primaryNames.slice(1), ...edSrc])];
-    const fArchive = archive.map((c) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, status: "expired" }));
+    // Arsip = expired eksplisit primer + kode yg dipindah dari aktif (dedup by code).
+    const archMap = new Map();
+    for (const c of archive) archMap.set(c.code.toLowerCase(), mk(c, { status: "expired" }));
+    for (const c of archFromActive) archMap.set(c.code.toLowerCase(), c);
+    const fArchive = [...archMap.values()];
 
-    console.log(`  [${id}] ✓ ${active.length} aktif (${nVer} verified) + ${archive.length} arsip [${primaryNames.join("+")}]`);
+    const nExp = archFromActive.length;
+    console.log(`  [${id}] ✓ ${fActive.length} aktif (${nVer} verified) + ${fArchive.length} arsip${nExp ? ` (${nExp} di-expire)` : ""} [${primaryNames.join("+")}]`);
     return {
       id,
       ok: true,

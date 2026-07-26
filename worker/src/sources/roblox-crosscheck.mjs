@@ -32,6 +32,19 @@ async function fetchHtml(url) {
 function activeCodes(html) {
   const cut = html.search(/expired\s*codes/i);
   const seg = cut > 0 ? html.slice(0, cut) : html;
+  return extractSeg(seg);
+}
+
+// Kode di bagian EXPIRED (setelah heading "Expired codes"). Dipakai sbg SUARA
+// expiry: kode aktif kita yang dilisting kadaluarsa oleh editorial → kandidat
+// diarsipkan (dgn grace fresh di fetch-roblox, krn editorial sering telat).
+function expiredCodes(html) {
+  const cut = html.search(/expired\s*codes/i);
+  if (cut < 0) return new Set();
+  return extractSeg(html.slice(cut));
+}
+
+function extractSeg(seg) {
   const out = new Set();
   for (const re of EXTRACTORS) {
     for (const m of seg.matchAll(re)) {
@@ -66,26 +79,29 @@ const SITES = [
 ];
 
 /**
- * Kode AKTIF menurut situs editorial untuk 1 game.
- * @returns {Promise<{set:Set<string>, bySite:{name:string,set:Set<string>}[]}>}
- *   set = gabungan semua kode (lowercase); bySite = per-situs (untuk atribusi
- *   yang akurat — hanya situs yang cocok dg kode RoCodes yang layak dikreditkan).
+ * Kode AKTIF & EXPIRED menurut situs editorial untuk 1 game.
+ * @returns {Promise<{set:Set<string>, bySite:{name:string,set:Set<string>}[], expiredSet:Set<string>}>}
+ *   set = gabungan kode aktif (lowercase); bySite = per-situs (atribusi Verified);
+ *   expiredSet = gabungan kode yg dilisting kadaluarsa (suara expiry).
  */
 export async function crossCheckActive(slug) {
   const set = new Set();
+  const expiredSet = new Set();
   const bySite = [];
   await Promise.all(
     SITES.map(async (site) => {
       try {
-        const codes = (site.extract ?? activeCodes)(await fetchHtml(site.url(slug)));
+        const html = await fetchHtml(site.url(slug));
+        const codes = (site.extract ?? activeCodes)(html);
         if (codes.size) {
           for (const c of codes) set.add(c);
           bySite.push({ name: site.name, set: codes });
         }
+        for (const c of expiredCodes(html)) expiredSet.add(c);
       } catch {
         /* situs gagal/tak punya game → lewati */
       }
     }),
   );
-  return { set, bySite };
+  return { set, bySite, expiredSet };
 }
