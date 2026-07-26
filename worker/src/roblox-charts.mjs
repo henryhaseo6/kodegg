@@ -77,14 +77,16 @@ export async function fetchPlayersByIds(universeIds) {
 
 /**
  * Rollup harian: dari kumpulan snapshot 1 hari → statistik per game.
- * @param {Array<Record<number, number>>} snapshots  tiap elemen = {uid: ccu}
- * @param {Record<number, {name:string}>} registry   uid → {name}
+ * @param {Array<{ccu:Record<number,number>, sorts?:object}|Record<number,number>>} snapshots
+ *   tiap elemen = {ccu:{uid:n}, sorts:{...}} (format baru) ATAU {uid:n} (lama).
+ * @param {Record<number, string>} names   uid → nama game
  * @returns {Array<{universeId, name, avg, peak, samples}>}  urut peak menurun
  */
-export function rollupDay(snapshots, registry = {}) {
+export function rollupDay(snapshots, names = {}) {
   const acc = new Map(); // uid → {sum, peak, n}
-  for (const snap of snapshots) {
-    for (const [uid, ccu] of Object.entries(snap)) {
+  for (const raw of snapshots) {
+    const ccuMap = raw?.ccu ?? raw; // kompat: format lama = {uid:ccu} langsung
+    for (const [uid, ccu] of Object.entries(ccuMap)) {
       if (typeof ccu !== "number") continue;
       const a = acc.get(uid) ?? { sum: 0, peak: 0, n: 0 };
       a.sum += ccu;
@@ -97,7 +99,7 @@ export function rollupDay(snapshots, registry = {}) {
   for (const [uid, a] of acc) {
     out.push({
       universeId: Number(uid),
-      name: registry[uid]?.name ?? null,
+      name: names[uid] ?? null,
       avg: Math.round(a.sum / a.n),
       peak: a.peak,
       samples: a.n,

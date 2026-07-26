@@ -66,29 +66,36 @@ async function fetchChartsGamesW() {
   );
   if (!res.ok) throw new Error("get-sorts " + res.status);
   const j = await res.json();
-  const ccu = {}, names = {};
+  const ccu = {}, names = {}, sorts = {};
   for (const srt of j.sorts ?? []) {
     if (srt.contentType !== "Games") continue;
+    const ids = []; // urutan array = RANGKING game di dalam sort ini
     for (const g of srt.games ?? []) {
       if (!g.universeId || typeof g.playerCount !== "number") continue;
       if (ccu[g.universeId] == null || g.playerCount > ccu[g.universeId]) ccu[g.universeId] = g.playerCount;
       names[g.universeId] = g.name;
+      ids.push(g.universeId);
     }
+    if (ids.length) sorts[srt.sortId] = ids;
   }
-  return { ccu, names };
+  return { ccu, names, sorts };
 }
 
 async function logPlayers(env) {
   if (!env.ROBLOX_LOG) { console.log("kodegg-log: KV ROBLOX_LOG belum di-bind — lewati."); return; }
-  const { ccu, names } = await fetchChartsGamesW();
+  const { ccu, names, sorts } = await fetchChartsGamesW();
   const { date, hhmm } = wibNow();
   const ttl = 4 * 86400; // 4 hari: cukup utk rollup H-1 + buffer
-  // snapshot CCU {uid: ccu}
-  await env.ROBLOX_LOG.put(`snap:${date}:${hhmm}`, JSON.stringify(ccu), { expirationTtl: ttl });
-  // nama per-hari (union) — supaya rollup punya label game
-  const prevNames = JSON.parse((await env.ROBLOX_LOG.get(`names:${date}`)) || "{}");
-  await env.ROBLOX_LOG.put(`names:${date}`, JSON.stringify({ ...prevNames, ...names }), { expirationTtl: ttl });
-  console.log(`kodegg-log: ${date} ${hhmm} — ${Object.keys(ccu).length} game`);
+  // snapshot: CCU {uid: ccu} + keanggotaan sort {sortId: [uid urut rangking]}.
+  // sorts disimpan supaya bisa bikin video per-kategori (Top Trending, dst) —
+  // info ini TAK bisa diambil retroaktif, jadi dilog sejak awal.
+  await env.ROBLOX_LOG.put(`snap:${date}:${hhmm}`, JSON.stringify({ ccu, sorts }), { expirationTtl: ttl });
+  // nama per-hari (union). Tulis ULANG hanya bila ada perubahan (game/nama baru)
+  // — daftar chart stabil, jadi ini hemat ~140 write/hari.
+  const prevRaw = (await env.ROBLOX_LOG.get(`names:${date}`)) || "{}";
+  const mergedRaw = JSON.stringify({ ...JSON.parse(prevRaw), ...names });
+  if (mergedRaw !== prevRaw) await env.ROBLOX_LOG.put(`names:${date}`, mergedRaw, { expirationTtl: ttl });
+  console.log(`kodegg-log: ${date} ${hhmm} — ${Object.keys(ccu).length} game, ${Object.keys(sorts).length} sort${mergedRaw !== prevRaw ? " (+names)" : ""}`);
 }
 
 // GET /roblox-daily?date=YYYY-MM-DD&key=TRIGGER_KEY → {date, count, names, snapshots:[{uid:ccu}]}
