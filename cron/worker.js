@@ -4,12 +4,14 @@
 // workflow_dispatch (butuh token), jadi workflow-nya tetap yang di repo.
 //
 // Deploy: Workers & Pages → Create → Worker → tempel kode ini.
-// Bindings/secret (di Settings → Variables):
+// Bindings/secret (di Settings → Variables & Bindings):
 //   GITHUB_TOKEN  (Secret) : PAT fine-grained, izin Actions=Read&Write di repo
 //   GH_REPO       (Text)   : henryhaseo6/kodegg
 //   GH_WORKFLOW   (Text)   : update-codes.yml
 //   TRIGGER_KEY   (Secret, opsional) : kunci utk uji manual via URL
-// Trigger: Settings → Triggers → Cron Triggers → "0 * * * *" (tiap jam).
+//   ROBLOX_LOG    (KV)     : log CCU 10-menit (buffer, TTL 4 hari)
+//   ROBLOX_DB     (R2)     : database permanen — file harian padat (10-menit utuh)
+// Trigger: Cron Triggers → "0 * * * *" (dispatch) + "*/10 * * * *" (log+compact).
 
 export default {
   // Dipanggil otomatis oleh Cron Trigger. DUA jadwal:
@@ -18,7 +20,11 @@ export default {
   // event.cron = string jadwal yang memicu invocation ini (dipisah CF per jadwal).
   async scheduled(event, env, ctx) {
     if (event.cron === "*/10 * * * *") {
-      ctx.waitUntil(logPlayers(env).catch((e) => console.log("kodegg-log gagal:", e.message)));
+      ctx.waitUntil((async () => {
+        await logPlayers(env).catch((e) => console.log("kodegg-log gagal:", e.message));
+        // Tiap tick sekalian cek: padetin data KEMARIN ke R2 bila belum (idempoten).
+        await maybeCompact(env).catch((e) => console.log("kodegg-compact gagal:", e.message));
+      })());
     } else {
       ctx.waitUntil(trigger(env)); // "0 * * * *" (default bila cron tak dikenal)
     }
@@ -28,12 +34,20 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/proxy") return proxy(url, env);
-    // Dump snapshot 1 hari (buat pipeline video hitung rollup). Butuh TRIGGER_KEY.
+    // Dump snapshot mentah 1 hari dari KV (buffer). Butuh TRIGGER_KEY.
     if (url.pathname === "/roblox-daily") return robloxDaily(url, env);
+    // Baca file harian PADAT dari R2 (database permanen). ?date=YYYY-MM-DD atau ?list=1
+    if (url.pathname === "/roblox-db") return robloxDb(url, env);
     // Log manual sekali (uji): /log?key=...
     if (url.pathname === "/log") {
       if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) return new Response("unauthorized", { status: 401 });
       try { await logPlayers(env); return new Response("logged ✓"); } catch (e) { return new Response("gagal: " + e.message, { status: 500 }); }
+    }
+    // Padetin manual (uji): /compact?date=YYYY-MM-DD&key=... (default: kemarin WIB, paksa timpa)
+    if (url.pathname === "/compact") {
+      if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) return new Response("unauthorized", { status: 401 });
+      const date = url.searchParams.get("date") || wibYesterday();
+      try { const r = await compactDay(env, date, true); return new Response(`compact ${date}: ${r}`); } catch (e) { return new Response("gagal: " + e.message, { status: 500 }); }
     }
     if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) {
       return new Response("kodegg-cron aktif. Tambah ?key=... utk uji manual.", { status: 200 });
@@ -118,6 +132,77 @@ async function robloxDaily(url, env) {
   for (const k of list.keys) { const v = await env.ROBLOX_LOG.get(k.name); if (v) snapshots.push(JSON.parse(v)); }
   const names = JSON.parse((await env.ROBLOX_LOG.get(`names:${date}`)) || "{}");
   return Response.json({ date, count: snapshots.length, names, snapshots });
+}
+
+// ————————————————————————————————————————————————————————————————
+// DATABASE PERMANEN (R2 binding ROBLOX_DB) — file harian PADAT.
+// Tiap ganti hari, 144 snapshot mentah KV (buffer, TTL 4 hari) dipadatkan jadi
+// SATU objek kolom di R2: daily/<date>.json. Resolusi 10-menit UTUH tersimpan
+// selamanya (buat top50 harian, grafik bergerak, video per-kategori, dst).
+// Bentuk: { date, count, times:[HHMM], names:{uid:nama},
+//           series:{uid:[ccu per titik, null bila absen]},
+//           sortsSeries:{sortId:[[uid rangking] per titik]} }
+// ————————————————————————————————————————————————————————————————
+
+const wibYesterday = () => new Date(Date.now() + WIB_MS - 86400000).toISOString().slice(0, 10);
+
+/**
+ * Padetkan snapshot 1 hari (dari KV) → 1 file kolom di R2.
+ * @param force bila false, lewati kalau file R2 sudah ada (idempoten utk cron).
+ * @returns string status ringkas.
+ */
+async function compactDay(env, date, force = false) {
+  if (!env.ROBLOX_LOG) return "KV ROBLOX_LOG belum di-bind";
+  if (!env.ROBLOX_DB) return "R2 ROBLOX_DB belum di-bind";
+  if (!force && (await env.ROBLOX_DB.head(`daily/${date}.json`))) return "sudah ada";
+  const list = await env.ROBLOX_LOG.list({ prefix: `snap:${date}:` });
+  const keys = list.keys.map((k) => k.name).sort(); // urut waktu (HHMM di ekor)
+  if (!keys.length) return "tak ada snapshot";
+  const n = keys.length;
+  const times = [], series = {}, sortsSeries = {};
+  for (let i = 0; i < n; i++) {
+    times.push(keys[i].split(":").pop()); // HHMM
+    const v = await env.ROBLOX_LOG.get(keys[i]);
+    if (!v) continue; // slot i tetap null di semua series (align terjaga)
+    const snap = JSON.parse(v);
+    const ccu = snap.ccu ?? snap; // kompat format lama {uid:ccu}
+    for (const [uid, c] of Object.entries(ccu)) {
+      (series[uid] ??= new Array(n).fill(null))[i] = c;
+    }
+    for (const [sid, ids] of Object.entries(snap.sorts ?? {})) {
+      (sortsSeries[sid] ??= new Array(n).fill(null))[i] = ids;
+    }
+  }
+  const names = JSON.parse((await env.ROBLOX_LOG.get(`names:${date}`)) || "{}");
+  const doc = { date, count: n, times, names, series, sortsSeries };
+  await env.ROBLOX_DB.put(`daily/${date}.json`, JSON.stringify(doc), {
+    httpMetadata: { contentType: "application/json" },
+  });
+  return `ok (${n} titik, ${Object.keys(series).length} game, ${Object.keys(sortsSeries).length} sort)`;
+}
+
+// Auto (dipanggil tiap tick 10-mnt): padetin KEMARIN bila belum ada di R2.
+async function maybeCompact(env) {
+  if (!env.ROBLOX_DB) return; // R2 belum di-bind — logging tetap jalan, lewati saja
+  const y = wibYesterday();
+  const r = await compactDay(env, y, false);
+  if (r !== "sudah ada") console.log(`kodegg-compact: ${y} → ${r}`);
+}
+
+// GET /roblox-db?date=YYYY-MM-DD&key=... → file harian padat (JSON) dari R2.
+// GET /roblox-db?list=1&key=...          → daftar tanggal tersedia.
+async function robloxDb(url, env) {
+  if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) return new Response("unauthorized", { status: 401 });
+  if (!env.ROBLOX_DB) return new Response("R2 ROBLOX_DB belum di-bind", { status: 503 });
+  if (url.searchParams.get("list")) {
+    const l = await env.ROBLOX_DB.list({ prefix: "daily/" });
+    return Response.json({ dates: (l.objects ?? []).map((o) => o.key.replace(/^daily\//, "").replace(/\.json$/, "")).sort() });
+  }
+  const date = url.searchParams.get("date");
+  if (!date) return new Response("param 'date' wajib (atau ?list=1)", { status: 400 });
+  const obj = await env.ROBLOX_DB.get(`daily/${date}.json`);
+  if (!obj) return new Response("tidak ditemukan (belum dipadatkan?)", { status: 404 });
+  return new Response(obj.body, { headers: { "content-type": "application/json" } });
 }
 
 // Host yang boleh diambil lewat proxy. SENGAJA daftar tertutup: worker ini tak
