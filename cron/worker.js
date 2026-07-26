@@ -12,21 +12,97 @@
 // Trigger: Settings → Triggers → Cron Triggers → "0 * * * *" (tiap jam).
 
 export default {
-  // Dipanggil otomatis oleh Cron Trigger.
+  // Dipanggil otomatis oleh Cron Trigger. DUA jadwal:
+  //   "0 * * * *"    → dispatch workflow GitHub Actions (update kode, tiap jam)
+  //   "*/10 * * * *" → log CCU game teratas Roblox ke KV (tiap 10 menit)
+  // event.cron = string jadwal yang memicu invocation ini (dipisah CF per jadwal).
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(trigger(env));
+    if (event.cron === "*/10 * * * *") {
+      ctx.waitUntil(logPlayers(env).catch((e) => console.log("kodegg-log gagal:", e.message)));
+    } else {
+      ctx.waitUntil(trigger(env)); // "0 * * * *" (default bila cron tak dikenal)
+    }
   },
 
   // Uji manual (opsional): buka https://<worker>.workers.dev/?key=TRIGGER_KEY
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/proxy") return proxy(url, env);
+    // Dump snapshot 1 hari (buat pipeline video hitung rollup). Butuh TRIGGER_KEY.
+    if (url.pathname === "/roblox-daily") return robloxDaily(url, env);
+    // Log manual sekali (uji): /log?key=...
+    if (url.pathname === "/log") {
+      if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) return new Response("unauthorized", { status: 401 });
+      try { await logPlayers(env); return new Response("logged ✓"); } catch (e) { return new Response("gagal: " + e.message, { status: 500 }); }
+    }
     if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) {
       return new Response("kodegg-cron aktif. Tambah ?key=... utk uji manual.", { status: 200 });
     }
     return new Response(await trigger(env));
   },
 };
+
+// ————————————————————————————————————————————————————————————————
+// LOG CCU GAME ROBLOX (Charts) — tiap 10 menit ke KV binding ROBLOX_LOG.
+// Sumber: explore-api get-sorts (1 call = ~264 game teratas + playerCount inline,
+// ber-kode maupun tidak; game baru yang naik chart otomatis kebawa). Logika
+// fetch ini CERMIN dari worker/src/roblox-charts.mjs (dipakai sisi Node/Actions
+// utk rollup & render) — worker ini di-paste manual, tak bisa import modul.
+// ————————————————————————————————————————————————————————————————
+
+const WIB_MS = 7 * 3600 * 1000; // WIB = UTC+7, tanpa DST
+
+// Tanggal & jam WIB dari waktu sekarang. Trik: geser +7 jam lalu baca ISO (UTC).
+function wibNow(d = new Date()) {
+  const iso = new Date(d.getTime() + WIB_MS).toISOString();
+  return { date: iso.slice(0, 10), hhmm: iso.slice(11, 13) + iso.slice(14, 16) };
+}
+
+async function fetchChartsGamesW() {
+  const sid = (globalThis.crypto?.randomUUID?.() ?? `kodegg-${Date.now()}`);
+  const res = await fetch(
+    `https://apis.roblox.com/explore-api/v1/get-sorts?sessionId=${sid}&device=computer&country=all`,
+    { headers: { accept: "application/json", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" } },
+  );
+  if (!res.ok) throw new Error("get-sorts " + res.status);
+  const j = await res.json();
+  const ccu = {}, names = {};
+  for (const srt of j.sorts ?? []) {
+    if (srt.contentType !== "Games") continue;
+    for (const g of srt.games ?? []) {
+      if (!g.universeId || typeof g.playerCount !== "number") continue;
+      if (ccu[g.universeId] == null || g.playerCount > ccu[g.universeId]) ccu[g.universeId] = g.playerCount;
+      names[g.universeId] = g.name;
+    }
+  }
+  return { ccu, names };
+}
+
+async function logPlayers(env) {
+  if (!env.ROBLOX_LOG) { console.log("kodegg-log: KV ROBLOX_LOG belum di-bind — lewati."); return; }
+  const { ccu, names } = await fetchChartsGamesW();
+  const { date, hhmm } = wibNow();
+  const ttl = 4 * 86400; // 4 hari: cukup utk rollup H-1 + buffer
+  // snapshot CCU {uid: ccu}
+  await env.ROBLOX_LOG.put(`snap:${date}:${hhmm}`, JSON.stringify(ccu), { expirationTtl: ttl });
+  // nama per-hari (union) — supaya rollup punya label game
+  const prevNames = JSON.parse((await env.ROBLOX_LOG.get(`names:${date}`)) || "{}");
+  await env.ROBLOX_LOG.put(`names:${date}`, JSON.stringify({ ...prevNames, ...names }), { expirationTtl: ttl });
+  console.log(`kodegg-log: ${date} ${hhmm} — ${Object.keys(ccu).length} game`);
+}
+
+// GET /roblox-daily?date=YYYY-MM-DD&key=TRIGGER_KEY → {date, count, names, snapshots:[{uid:ccu}]}
+// Default date = hari WIB ini. Pipeline video ambil H-1 lalu hitung rollup Node.
+async function robloxDaily(url, env) {
+  if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) return new Response("unauthorized", { status: 401 });
+  if (!env.ROBLOX_LOG) return new Response("KV ROBLOX_LOG belum di-bind", { status: 503 });
+  const date = url.searchParams.get("date") || wibNow().date;
+  const list = await env.ROBLOX_LOG.list({ prefix: `snap:${date}:` });
+  const snapshots = [];
+  for (const k of list.keys) { const v = await env.ROBLOX_LOG.get(k.name); if (v) snapshots.push(JSON.parse(v)); }
+  const names = JSON.parse((await env.ROBLOX_LOG.get(`names:${date}`)) || "{}");
+  return Response.json({ date, count: snapshots.length, names, snapshots });
+}
 
 // Host yang boleh diambil lewat proxy. SENGAJA daftar tertutup: worker ini tak
 // boleh jadi open proxy. Tambah host baru hanya bila sumbernya memang memblokir
