@@ -25,7 +25,11 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // Kalau lonjakan kode makin ramai & mentok, sisanya jatuh ke jalur manual (aman).
 // Bisa dioverride lewat Variable repo VIDEO_MAX_PER_DAY.
 const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 45);
-const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 8); // batas RENDER/run (jaga durasi CI)
+// Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
+// Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
+// 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
+// harian tetap dibatasi MAX_PER_DAY (kuota YouTube). Aman utk memori runner.
+const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 15);
 const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru TANPA kode fresh: min pemain utk video "semua kode"
 const FRESH_MIN_PLAYERS = Number(process.env.VIDEO_FRESH_MIN_PLAYERS || 2000); // game baru DENGAN kode fresh: ambang lebih rendah (kodenya layak)
 // Default PUBLIC: channel sudah live & ratusan video publik, fase "review dulu"
