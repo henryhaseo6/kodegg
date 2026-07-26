@@ -27,7 +27,12 @@ import { mergeWithPrevious } from "./src/archive.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, "data/roblox-codes.json");
-const MAX_GAMES = 250; // batas atas; game tanpa kode aktif gugur → angka final natural (~150-250)
+// Batas atas jumlah game. HARUS ≥ ukuran semesta "populer + punya kode" dari
+// discoverPopularWithCodes (~367), kalau tidak prevGames (data run lalu) mengunci
+// semua slot dan game HOT baru tak pernah bisa masuk (bug: game 9.9K pemain +
+// featured RoCodes kejebak di luar karena cap 250 keburu penuh oleh prevGames).
+// Game tanpa kode aktif tetap gugur → angka final natural di bawah cap ini.
+const MAX_GAMES = 400;
 const CONCURRENCY = 5; // game paralel maks (rendah = tak membanjiri RoCodes/Den)
 const CROSSCHECK_MIN = 10000; // cross-check editorial HANYA game populer (pemain ≥ ini) — beban terkendali
 const ARCHIVE_CAP = 300; // arsip kode kedaluwarsa per game — besar biar praktis "selamanya" tanpa JSON meledak liar
