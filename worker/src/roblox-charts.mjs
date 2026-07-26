@@ -14,38 +14,41 @@ const uuid = () =>
   (globalThis.crypto?.randomUUID?.() ??
     `kodegg-${Date.now()}-${Math.floor(Math.random() * 1e9)}`);
 
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+
 /**
+ * Game unik lintas SEMUA sort (26 kategori, di-paginate), urut CCU menurun.
  * @returns {Promise<Array<{universeId:number, name:string, playerCount:number, rootPlaceId:number}>>}
- *   game unik lintas-sort, urut CCU menurun. Lempar Error bila API gagal.
+ * @throws bila halaman pertama gagal (halaman lanjutan best-effort).
  */
 export async function fetchChartsGames() {
-  const url = `${SORTS_URL}?sessionId=${uuid()}&device=computer&country=all`;
-  const res = await fetch(url, {
-    headers: {
-      accept: "application/json",
-      "user-agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-    },
-  });
-  if (!res.ok) throw new Error(`get-sorts ${res.status}`);
-  const j = await res.json();
+  const sid = uuid();
   const uni = new Map();
-  for (const srt of j.sorts ?? []) {
-    if (srt.contentType !== "Games") continue;
-    for (const g of srt.games ?? []) {
-      if (!g.universeId || typeof g.playerCount !== "number") continue;
-      const prev = uni.get(g.universeId);
-      // game bisa muncul di banyak sort — simpan CCU tertinggi (harusnya sama)
-      if (!prev || g.playerCount > prev.playerCount) {
-        uni.set(g.universeId, {
-          universeId: g.universeId,
-          name: g.name,
-          playerCount: g.playerCount,
-          rootPlaceId: g.rootPlaceId ?? null,
-        });
+  let token = "", page = 0;
+  do {
+    const url = `${SORTS_URL}?sessionId=${sid}&device=computer&country=all` + (token ? `&sortsPageToken=${encodeURIComponent(token)}` : "");
+    const res = await fetch(url, { headers: { accept: "application/json", "user-agent": UA } });
+    if (!res.ok) { if (page === 0) throw new Error(`get-sorts ${res.status}`); break; }
+    const j = await res.json();
+    for (const srt of j.sorts ?? []) {
+      if (srt.contentType !== "Games") continue;
+      for (const g of srt.games ?? []) {
+        if (!g.universeId || typeof g.playerCount !== "number") continue;
+        const prev = uni.get(g.universeId);
+        // game bisa muncul di banyak sort — simpan CCU tertinggi (harusnya sama)
+        if (!prev || g.playerCount > prev.playerCount) {
+          uni.set(g.universeId, {
+            universeId: g.universeId,
+            name: g.name,
+            playerCount: g.playerCount,
+            rootPlaceId: g.rootPlaceId ?? null,
+          });
+        }
       }
     }
-  }
+    token = j.nextSortsPageToken || "";
+    page++;
+  } while (token && page < 8);
   return [...uni.values()].sort((a, b) => b.playerCount - a.playerCount);
 }
 

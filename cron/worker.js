@@ -59,25 +59,34 @@ function wibNow(d = new Date()) {
 }
 
 async function fetchChartsGamesW() {
+  // get-sorts di-PAGINATE (6 sort/halaman). Halaman 1 = 5 sort umum; halaman
+  // berikutnya = sort umum lain + 15 sort per-genre. Total 26 kategori (~5 hal).
+  // sessionId sama dipakai lintas-halaman (token menyimpan session_id).
   const sid = (globalThis.crypto?.randomUUID?.() ?? `kodegg-${Date.now()}`);
-  const res = await fetch(
-    `https://apis.roblox.com/explore-api/v1/get-sorts?sessionId=${sid}&device=computer&country=all`,
-    { headers: { accept: "application/json", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" } },
-  );
-  if (!res.ok) throw new Error("get-sorts " + res.status);
-  const j = await res.json();
+  const ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
   const ccu = {}, names = {}, sorts = {};
-  for (const srt of j.sorts ?? []) {
-    if (srt.contentType !== "Games") continue;
-    const ids = []; // urutan array = RANGKING game di dalam sort ini
-    for (const g of srt.games ?? []) {
-      if (!g.universeId || typeof g.playerCount !== "number") continue;
-      if (ccu[g.universeId] == null || g.playerCount > ccu[g.universeId]) ccu[g.universeId] = g.playerCount;
-      names[g.universeId] = g.name;
-      ids.push(g.universeId);
+  let token = "", page = 0;
+  do {
+    const url = `https://apis.roblox.com/explore-api/v1/get-sorts?sessionId=${sid}&device=computer&country=all` + (token ? `&sortsPageToken=${encodeURIComponent(token)}` : "");
+    const res = await fetch(url, { headers: { accept: "application/json", "user-agent": ua } });
+    // Halaman 1 wajib (kalau gagal, lempar). Halaman lanjutan best-effort:
+    // kalau satu gagal, pakai yang sudah terkumpul (jangan gagalkan seluruh tick).
+    if (!res.ok) { if (page === 0) throw new Error("get-sorts " + res.status); break; }
+    const j = await res.json();
+    for (const srt of j.sorts ?? []) {
+      if (srt.contentType !== "Games") continue;
+      const ids = []; // urutan array = RANGKING game di dalam sort ini
+      for (const g of srt.games ?? []) {
+        if (!g.universeId || typeof g.playerCount !== "number") continue;
+        if (ccu[g.universeId] == null || g.playerCount > ccu[g.universeId]) ccu[g.universeId] = g.playerCount;
+        names[g.universeId] = g.name;
+        ids.push(g.universeId);
+      }
+      if (ids.length) sorts[srt.sortId] = ids;
     }
-    if (ids.length) sorts[srt.sortId] = ids;
-  }
+    token = j.nextSortsPageToken || "";
+    page++;
+  } while (token && page < 8); // 26 sort muat di ~5 hal; 8 = batas aman
   return { ccu, names, sorts };
 }
 
