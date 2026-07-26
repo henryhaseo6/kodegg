@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-26T11:01:09.183Z",
+  "updatedAt": "2026-07-26T12:01:57.823Z",
   "counts": {
-    "active": 108,
-    "archived": 37
+    "active": 107,
+    "archived": 38
   },
   "articles": [
     {
@@ -1716,7 +1716,9 @@
       "url": "https://www.hoyolab.com/article/45647248",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-29T03:10:07.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1731,10 +1733,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1782403200000/n509jleyh5pw416j0i-1782471682976.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4944",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-06-26T11:02:32.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-06-26T11:02:32.000Z",
+      "archivedAt": "2026-07-26T12:01:57.823Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
