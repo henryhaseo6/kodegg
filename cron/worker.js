@@ -181,12 +181,19 @@ async function compactDay(env, date, force = false) {
   return `ok (${n} titik, ${Object.keys(series).length} game, ${Object.keys(sortsSeries).length} sort)`;
 }
 
-// Auto (dipanggil tiap tick 10-mnt): padetin KEMARIN bila belum ada di R2.
+// Auto (dipanggil tiap tick 10-mnt): padetin KEMARIN sekali, LENGKAP.
+// Pakai penanda KV `compacted:<date>` supaya exactly-once — dan paksa-timpa
+// (force) agar file parsial dari uji manual ke-overwrite jadi hari penuh.
 async function maybeCompact(env) {
-  if (!env.ROBLOX_DB) return; // R2 belum di-bind — logging tetap jalan, lewati saja
+  if (!env.ROBLOX_DB || !env.ROBLOX_LOG) return; // butuh dua binding; kalau belum, lewati
   const y = wibYesterday();
-  const r = await compactDay(env, y, false);
-  if (r !== "sudah ada") console.log(`kodegg-compact: ${y} → ${r}`);
+  if (await env.ROBLOX_LOG.get(`compacted:${y}`)) return; // sudah beres hari ini
+  const r = await compactDay(env, y, true);
+  // "ok" atau "tak ada snapshot" = keadaan final → set penanda biar tak diulang.
+  if (r.startsWith("ok") || r === "tak ada snapshot") {
+    await env.ROBLOX_LOG.put(`compacted:${y}`, "1", { expirationTtl: 7 * 86400 });
+  }
+  console.log(`kodegg-compact: ${y} → ${r}`);
 }
 
 // GET /roblox-db?date=YYYY-MM-DD&key=... → file harian padat (JSON) dari R2.
