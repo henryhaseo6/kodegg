@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-07-26T10:19:39.584Z",
+  "updatedAt": "2026-07-26T11:01:09.183Z",
   "counts": {
     "active": 108,
     "archived": 37
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Welcome to the HoYo FEST 2026 Honkai: Star Rail offline event!",
+        "id": "Selamat datang di event offline HoYo FEST 2026 \"Honkai: Star Rail\"!"
+      },
+      "excerpt": {
+        "en": "Dear Trailblazer, Welcome to the HoYo FEST 2026 Honkai: Star Rail offline event! Fun activities, limited-edition merch, and bountiful rewards are awaiting. All that's missing is yo",
+        "id": "Dear Trailblazer, Selamat datang di event offline HoYo FEST 2026 \"Honkai: Star Rail\"! Event seru, merchandise eksklusif, dan hadiah berlimpah sudah menunggu kedatanganmu. [Info Eve"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/24/63424a8dc71116756dd097165f540c4d_3754183490172036018.png",
+      "url": "https://www.hoyolab.com/article/46007257",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-26T11:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "SEA Zenless Anniversary Film Festival Series Artwork: Philippines Edition",
+        "id": "Gambar Festival Film Anniversary SEA Zenless: Filipina"
+      },
+      "excerpt": {
+        "en": "Who's cooler — me or this jeepney? We're grateful to have you with us in the two years of journeying together, Proxies! Happy anniversary! Thank you @KunoMD for the amazing artwork",
+        "id": "Menurutmu yang lebih keren, aku atau jeepney ini? Para Proxy, terima kasih sudah menemani kami selama dua tahun ini! Selamat anniversary~ Terima kasih @KunoMD untuk karyanya yang l"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/24/5802b0d61a6be8ad128ea2d33419dcef_1279294634330148873.jpg",
+      "url": "https://www.hoyolab.com/article/46006953",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-26T10:30:04.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -262,22 +294,6 @@
       "publishedAt": "2026-07-24T06:38:42.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Imagenae: Holy Grail War is Now Live | Log in to Claim Gilgamesh or Archer",
-        "id": "\"Perang Cawan Suci Imagenae\" Kini Dimulai | Log In dan Dapatkan \"Gilgamesh\" atau \"Archer\""
-      },
-      "excerpt": {
-        "en": "Hello, Trailblazers, The Honkai: Star Rail × Fate[UBW] collaboration is now live! The collaboration-themed event Imagenae: Holy Grail War is now available! Warps for Rin Tohsaka (E",
-        "id": "Dear Trailblazer, Kolaborasi \"Honkai: Star Rail\" × Fate[UBW] kini telah diperbarui! Event bertema kolaborasi \"Perang Cawan Suci Imagenae\" kini telah dimulai! Warp \"Rin Tohsaka (Eru"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/22/a13b8221dad66ac61f218ef321bce31d_1084296613965733642.jpg",
-      "url": "https://www.hoyolab.com/article/45977958",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-24T04:00:05.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -290,6 +306,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/24/50fac4b31e06b8df16dc641b26e62baa_1565999398325292279.png",
       "url": "https://www.hoyolab.com/article/45977957",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-24T04:00:05.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Imagenae: Holy Grail War is Now Live | Log in to Claim Gilgamesh or Archer",
+        "id": "\"Perang Cawan Suci Imagenae\" Kini Dimulai | Log In dan Dapatkan \"Gilgamesh\" atau \"Archer\""
+      },
+      "excerpt": {
+        "en": "Hello, Trailblazers, The Honkai: Star Rail × Fate[UBW] collaboration is now live! The collaboration-themed event Imagenae: Holy Grail War is now available! Warps for Rin Tohsaka (E",
+        "id": "Dear Trailblazer, Kolaborasi \"Honkai: Star Rail\" × Fate[UBW] kini telah diperbarui! Event bertema kolaborasi \"Perang Cawan Suci Imagenae\" kini telah dimulai! Warp \"Rin Tohsaka (Eru"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/22/a13b8221dad66ac61f218ef321bce31d_1084296613965733642.jpg",
+      "url": "https://www.hoyolab.com/article/45977958",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-24T04:00:05.000Z"
     },
@@ -482,22 +514,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/0/dd1cf2d3ff40c5f27ab16974c24767a1_4873039298119105013.jpeg",
       "url": "https://www.hoyolab.com/article/45955086",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-22T04:00:06.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Spotlight Theater's Program List | Temporal Patterns & Precepts",
-        "id": "Daftar Pertunjukan Spotlight Theater 丨 Titah dan Tatanan Waktu"
-      },
-      "excerpt": {
-        "en": "\"Where the needle sweeps, the vigil begins.\"",
-        "id": "\"Ke mana sang jarum melintas, di sanalah penjagaan bermula.\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/0/a3c0f093e54b888d082edbd51b925b84_4403918319039613990.jpeg",
-      "url": "https://www.hoyolab.com/article/45955088",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-22T04:00:06.000Z"
     },
@@ -772,22 +788,6 @@
       "url": "https://www.hoyolab.com/article/45871854",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-16T06:00:07.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Planarcadia Brand-New OST \"Let There Be Laughter (Part 2)\" Now Online",
-        "id": "OST Baru Planarcadia \"Let There Be Laughter (Bagian 2)\" Resmi Dirilis"
-      },
-      "excerpt": {
-        "en": "Hello, Trailblazers! The brand-new Planarcadia music album \"Let There Be Laughter (Part 2)\" is now officially online. The album includes 62 original tracks created by the HOYO-MiX ",
-        "id": "Halo, Trailblazer: Album musik baru Planarcadia \"Let There Be Laughter (Bagian 2)\" sudah resmi dirilis. Di dalam album ini terdapat 62 soundtrack asli yang dibuat oleh tim musik HO"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/15/aeae596c4a7161dddd0eb082de7f01cd_8412890524073595126.jpg",
-      "url": "https://www.hoyolab.com/article/45871336",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-16T05:00:03.000Z"
     },
     {
       "game": "gi",
