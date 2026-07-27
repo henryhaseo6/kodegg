@@ -13,7 +13,7 @@ import { existsSync, mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchChartsGames } from "./src/roblox-charts.mjs";
-import { renderTop50 } from "./video/render-top50.mjs";
+import { renderTop50, renderThumb } from "./video/render-top50.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
@@ -136,13 +136,20 @@ function metadata(games, dateLbl, chapters = []) {
   const meta = metadata(games, label(DATE), chapters);
   writeFileSync(outPath.replace(/\.mp4$/, ".txt"), `${meta.title}\n\n${meta.description}\n\nTAGS: ${meta.tags.join(", ")}\n`);
 
+  // thumbnail clickbait
+  const thumbPath = outPath.replace(/\.mp4$/, ".jpg");
+  try { await renderThumb({ games, assetsDir: CACHE, dateLabel: label(DATE), outPath: thumbPath }); console.log("[top50] thumbnail ✓ →", thumbPath); }
+  catch (e) { console.log("[top50] thumbnail gagal:", e.message); }
+
   if (ARG["no-upload"] === "1") { console.log("[top50] --no-upload → tidak upload."); return; }
   const { ytConfigured, uploadVideo } = await import("./video/upload.mjs");
   if (!ytConfigured()) { console.log("[top50] YT belum di-set → skip upload (video tersimpan lokal)."); return; }
   const privacy = process.env.YT_PRIVACY || "private"; // draft
+  const playlistTitle = "Roblox Top 50 — Daily Player Count Rankings";
+  const playlistDescription = "Peringkat harian 50 game Roblox terpopuler (peak player). Update tiap hari dari KodeGG — https://kodegg.com\n\nDaily Top 50 most played Roblox games by peak concurrent players, updated every day.";
   console.log(`[top50] upload YouTube (privacy=${privacy})…`);
   try {
-    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy });
+    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription });
     console.log(`[top50] uploaded ✓ ${r.url} (privacy=${privacy})`);
     if (process.env.GITHUB_STEP_SUMMARY) writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### 🎬 Top ${games.length} Roblox — ${label(DATE)}\n- ${r.url} (privacy=${privacy})\n- #1: ${games[0].name} (${games[0].peak.toLocaleString()} peak)\n`, { flag: "a" });
   } catch (e) { console.log("[top50] upload gagal:", e.message); }

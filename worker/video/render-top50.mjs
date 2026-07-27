@@ -38,6 +38,7 @@ async function canvasLib() {
 const W = 1920, H = 1080, FPS = 30;
 const C = { bg: "#090C12", lime: "#CBFF46", limeSoft: "#e7ffb0", purple: "#8B6BFF", purpleSoft: "#c3b2ff", low: "#5EC8FF", lowSoft: "#bfe6ff", txt: "#ffffff", muted: "#9aa4b8", gold: "#FFD23F", goldSoft: "#ffe9a3", ok: "#37E38B", danger: "#FF5C77" };
 const nfmt = (n) => Math.round(n).toLocaleString("en-US");
+const kfmt = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : String(n));
 // Nama LENGKAP: pertahankan [tag] + EMOJI (di-render via font "Emoji"); buang
 // "| subjudul" & rapikan spasi. (Dulu emoji di-strip → "[]" kosong.)
 const clean = (s) => (s || "").split("|")[0].replace(/\[\s+/g, "[").replace(/\s+\]/g, "]").replace(/\s+/g, " ").trim();
@@ -320,6 +321,57 @@ export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = 
   await new Promise((res) => mux.on("close", res));
   try { unlinkSync(silentPath); unlinkSync(wav); } catch {}
   return { outPath, chapters };
+}
+
+// ——— Thumbnail clickbait 1280×720 (JPG) ———
+export async function renderThumb({ games, assetsDir, dateLabel, outPath }) {
+  const cv = await canvasLib();
+  const { createCanvas, loadImage } = cv;
+  const TW = 1280, TH = 720;
+  const g1 = games[0], g2 = games[1], g3 = games[2];
+  const load = async (p) => (existsSync(p) ? await loadImage(p).catch(() => null) : null);
+  const b1 = (await load(resolve(assetsDir, `${g1.uid}-banner.png`))) || (await load(resolve(assetsDir, `${g1.uid}-icon.png`)));
+  const i1 = await load(resolve(assetsDir, `${g1.uid}-icon.png`));
+  const i2 = g2 && (await load(resolve(assetsDir, `${g2.uid}-icon.png`)));
+  const i3 = g3 && (await load(resolve(assetsDir, `${g3.uid}-icon.png`)));
+  const canvas = createCanvas(TW, TH), ctx = canvas.getContext("2d");
+  // bg: banner #1 blur + gelap + glow
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, TW, TH);
+  if (b1) { try { ctx.save(); ctx.filter = "blur(10px)"; const s = Math.max(TW / b1.width, TH / b1.height) * 1.16, bw = b1.width * s, bh = b1.height * s; ctx.drawImage(b1, (TW - bw) / 2, (TH - bh) / 2, bw, bh); ctx.restore(); } catch {} }
+  ctx.fillStyle = "rgba(9,12,18,0.5)"; ctx.fillRect(0, 0, TW, TH);
+  let g = ctx.createRadialGradient(300, 250, 60, 300, 250, 760); g.addColorStop(0, "rgba(203,255,70,0.16)"); g.addColorStop(1, "rgba(9,12,18,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, TW, TH);
+  g = ctx.createLinearGradient(0, 0, 720, 0); g.addColorStop(0, "rgba(9,12,18,0.82)"); g.addColorStop(1, "rgba(9,12,18,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, 720, TH);
+  g = ctx.createLinearGradient(0, TH, 0, TH - 220); g.addColorStop(0, "rgba(9,12,18,0.8)"); g.addColorStop(1, "rgba(9,12,18,0)"); ctx.fillStyle = g; ctx.fillRect(0, TH - 220, TW, 220);
+  // icon + rank badge bulat
+  const drawIcon = (img, x, y, sz, acc, badge) => {
+    ctx.save(); ctx.shadowColor = acc; ctx.shadowBlur = 45; ctx.shadowOffsetY = 6; rr(ctx, x, y, sz, sz, sz * 0.16); ctx.fillStyle = "#0b0f16"; ctx.fill(); ctx.restore();
+    ctx.save(); rr(ctx, x, y, sz, sz, sz * 0.16); ctx.clip(); if (img) ctx.drawImage(img, x, y, sz, sz); else { ctx.fillStyle = "#1b2230"; ctx.fillRect(x, y, sz, sz); } ctx.restore();
+    ctx.lineWidth = Math.max(5, sz * 0.035); ctx.strokeStyle = acc; rr(ctx, x, y, sz, sz, sz * 0.16); ctx.stroke();
+    const br = sz * 0.2, bx = x + br * 0.2, by = y + br * 0.2;
+    ctx.beginPath(); ctx.arc(bx, by, br, 0, 7); ctx.fillStyle = acc; ctx.fill(); ctx.lineWidth = 5; ctx.strokeStyle = "#05070b"; ctx.stroke();
+    ctx.fillStyle = "#0b0f16"; ctx.font = `${br * 1.4}px Rank`; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(badge, bx, by + 2);
+  };
+  if (i3) drawIcon(i3, 715, 360, 200, C.low, "3");
+  if (i2) drawIcon(i2, 675, 150, 235, C.purpleSoft, "2");
+  drawIcon(i1, 905, 165, 325, C.gold, "1");
+  // player count #1 (gold) — di bawah icon, DALAM kanvas
+  const pcx = 905 + 325 / 2;
+  ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+  ctx.font = "700 82px Mono"; popText(ctx, kfmt(g1.peak), pcx, 165 + 325 + 66, C.gold, 11);
+  ctx.font = "700 28px Grotesk"; popText(ctx, "PEAK PLAYERS", pcx, 165 + 325 + 100, C.goldSoft, 5);
+  // judul kiri (Anton = chunky clickbait)
+  ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+  ctx.font = "215px Rank"; popText(ctx, "TOP 50", 52, 250, C.lime, 17);
+  ctx.font = "700 82px Grotesk"; popText(ctx, "ROBLOX GAMES", 58, 340, C.txt, 11);
+  // hook
+  ctx.font = "700 78px Grotesk"; popText(ctx, "WHO'S #1?", 58, 560, C.txt, 12);
+  // date pill
+  ctx.font = "700 34px Mono"; ctx.textBaseline = "middle"; const dl = dateLabel, dw = ctx.measureText(dl).width + 52;
+  rr(ctx, 58, 600, dw, 58, 29); ctx.fillStyle = "rgba(9,12,18,0.7)"; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = C.lime; ctx.stroke();
+  ctx.fillStyle = C.lime; ctx.textAlign = "left"; ctx.fillText(dl, 84, 630);
+  kodeggLogo(ctx, TW - 132, 52, 0.4, 1);
+  writeFileSync(outPath, canvas.toBuffer("image/jpeg", 0.9));
+  return outPath;
 }
 
 // ——— SFX synth → sample buffer (mono) ———
