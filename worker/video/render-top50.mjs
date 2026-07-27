@@ -29,7 +29,7 @@ async function canvasLib() {
     _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceGrotesk-400.ttf"), "GroteskR");
     _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceMono-Bold.ttf"), "Mono");
     _cv.GlobalFonts.registerFromPath(resolve(FONTS, "Anton-Regular.ttf"), "Rank"); // angka rank 3D
-    _cv.GlobalFonts.registerFromPath(resolve(FONTS, "NotoColorEmoji.ttf"), "Emoji"); // emoji warna (fallback)
+    _cv.GlobalFonts.registerFromPath(resolve(FONTS, "Twemoji.Mozilla.ttf"), "Emoji"); // emoji Twemoji (gaya Roblox web)
   }
   return _cv;
 }
