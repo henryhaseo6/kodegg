@@ -1,0 +1,79 @@
+# Auto-generate video "Top 50 Roblox Harian" tiap ganti hari (00:30 WIB) dari
+# data player-count di R2 (H-1). Render TANPA musik dulu, upload YouTube PRIVATE
+# (draft) + simpan sbg artifact — buat review hasil otomatis sebelum go-public.
+#
+# Data H-1 dipadatkan ke R2 (`daily/<date>.json`) oleh cron Worker pas ganti hari
+# WIB (~00:00). Job ini jalan 00:30 WIB → data sudah siap. Kalau R2 kosong
+# (mis. secret WORKER_URL/TRIGGER_KEY belum di-set), otomatis fallback live charts.
+
+name: top50-video
+
+on:
+  schedule:
+    - cron: "30 17 * * *" # 00:30 WIB (UTC+7) = 17:30 UTC — H-1 sudah di-compact
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Tanggal data (YYYY-MM-DD, WIB). Kosong = H-1 otomatis."
+        type: string
+        default: ""
+      limit:
+        description: "Jumlah game (1-50)"
+        type: string
+        default: "50"
+      source:
+        description: "Sumber data"
+        type: choice
+        options: ["auto", "live"]
+        default: "auto"
+      upload:
+        description: "Upload ke YouTube (PRIVATE/draft)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: top50-video
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install deps video (canvas + ffmpeg + googleapis)
+        run: cd worker && npm run deps:video
+
+      - name: Render Top 50 (+ upload PRIVATE)
+        env:
+          # Baca database R2 (H-1). Kosong → fallback live charts (kurang akurat).
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          TRIGGER_KEY: ${{ secrets.TRIGGER_KEY }}
+          # Upload YouTube (reuse secret pipeline Shorts). PRIVATE = draft.
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_PRIVACY: private
+        run: |
+          ARGS="--limit=${{ inputs.limit || '50' }}"
+          [ -n "${{ inputs.date }}" ] && ARGS="$ARGS --date=${{ inputs.date }}"
+          [ "${{ inputs.source }}" = "live" ] && ARGS="$ARGS --source=live"
+          # workflow_dispatch dg upload=false → jangan upload; schedule → upload.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.upload }}" != "true" ]; then ARGS="$ARGS --no-upload"; fi
+          echo "make-top50 $ARGS"
+          node worker/make-top50.mjs $ARGS
+
+      - name: Simpan video sbg artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: top50-video
+          path: |
+            _video-out/top50-*.mp4
+            _video-out/top50-*.txt
+          if-no-files-found: warn
+          retention-days: 14
