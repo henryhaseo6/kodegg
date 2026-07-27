@@ -1,6 +1,6 @@
 # Auto-generate video "Top 50 Roblox Harian" tiap ganti hari (00:30 WIB) dari
-# data player-count di R2 (H-1). Render TANPA musik dulu, upload YouTube PRIVATE
-# (draft) + simpan sbg artifact — buat review hasil otomatis sebelum go-public.
+# data player-count di R2 (H-1). Render (musik+SFX+emoji+timeline+thumbnail
+# collage) → upload YouTube PUBLIC + masuk playlist + simpan sbg artifact.
 #
 # Data H-1 dipadatkan ke R2 (`daily/<date>.json`) oleh cron Worker pas ganti hari
 # WIB (~00:00). Job ini jalan 00:30 WIB → data sudah siap. Kalau R2 kosong
@@ -27,7 +27,7 @@ on:
         options: ["auto", "live"]
         default: "auto"
       upload:
-        description: "Upload ke YouTube (PRIVATE/draft)"
+        description: "Upload ke YouTube (PUBLIC)"
         type: boolean
         default: true
 
@@ -57,7 +57,7 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-          YT_PRIVACY: private
+          YT_PRIVACY: public
         run: |
           ARGS="--limit=${{ inputs.limit || '50' }}"
           [ -n "${{ inputs.date }}" ] && ARGS="$ARGS --date=${{ inputs.date }}"
