@@ -12,6 +12,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { existsSync, readFileSync, writeFileSync, unlinkSync } from "node:fs";
 import { createRequire } from "node:module";
+import { synthMusic } from "./music.mjs";
 const require = createRequire(import.meta.url);
 const HERE = dirname(fileURLToPath(import.meta.url));
 const FONTS = resolve(HERE, "../../site/scripts/ogfonts");
@@ -126,7 +127,7 @@ function bg(ctx, banner, zoom, ts, scatter) {
   g = ctx.createLinearGradient(0, H - 300, 0, H); g.addColorStop(0, "rgba(9,12,18,0)"); g.addColorStop(1, "rgba(9,12,18,0.78)"); ctx.fillStyle = g; ctx.fillRect(0, H - 300, W, 300);
 }
 
-export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = true, title }) {
+export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = true, music = true, musicGain = 0.5, title }) {
   const cv = await canvasLib();
   const { createCanvas, loadImage, Path2D } = cv;
   const TITLE = title || `TOP ${games.length} ROBLOX GAMES`;
@@ -258,6 +259,9 @@ export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = 
   const TRT = 0.5;
   const St = [0]; for (let i = 0; i < SEC.length - 1; i++) St.push(St[i] + SEC[i].D - TRT);
   const total = St[SEC.length - 1] + SEC[SEC.length - 1].D;
+  // timeline utk deskripsi YouTube (waktu mulai tiap game, urutan countdown)
+  const chapters = [{ t: 0, rank: 0, name: "Intro" }];
+  for (let i = 0; i < ordered.length; i++) chapters.push({ t: St[i + 1], rank: ordered[i].rank, name: ordered[i].name, peak: ordered[i].peak });
   const drawSec = (ctx, i, lt) => { const s = SEC[i]; if (s.kind === "intro") introFrame(ctx, lt); else if (s.kind === "outro") outroFrame(ctx, lt); else gameFrame(ctx, s.g, lt, s.D); };
 
   // events SFX
@@ -269,7 +273,7 @@ export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = 
   const outroStart = St[SEC.length - 1]; ev.push({ t: outroStart + 0.05, k: "chime" }); ev.push({ t: outroStart + 0.7, k: "subup" });
 
   // render silent
-  const silentPath = sfx ? outPath.replace(/\.mp4$/, ".silent.mp4") : outPath;
+  const silentPath = (sfx || music) ? outPath.replace(/\.mp4$/, ".silent.mp4") : outPath;
   const ff = spawn(ffmpegBin(), ["-y", "-f", "rawvideo", "-pixel_format", "rgba", "-video_size", `${W}x${H}`, "-framerate", String(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p", "-r", String(FPS), "-g", "60", "-keyint_min", "60", "-movflags", "+faststart", silentPath, "-loglevel", "error"], { stdio: ["pipe", "ignore", "inherit"] });
   const mctx = createCanvas(W, H).getContext("2d"), actx = createCanvas(W, H).getContext("2d"), bctx = createCanvas(W, H).getContext("2d");
   const N = Math.round(total * FPS);
@@ -284,20 +288,24 @@ export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = 
     if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once("drain", r));
   }
   ff.stdin.end(); await new Promise((res) => ff.on("close", res));
-  if (!sfx) return outPath;
+  if (!sfx && !music) return { outPath, chapters };
 
-  // SFX → WAV → mux
-  const wav = outPath.replace(/\.mp4$/, ".sfx.wav");
-  writeFileSync(wav, buildSfxWav(ev, total + 0.5));
+  // audio = musik latar (musicGain) + SFX (0.85), di-mix di sample-level → 1 WAV → mux
+  const SR = 44100, adur = total + 0.5, N2 = Math.ceil(adur * SR), wav = outPath.replace(/\.mp4$/, ".audio.wav");
+  const sfxBuf = sfx ? sfxSamples(ev, adur, SR) : null;
+  const musBuf = music ? synthMusic(adur, SR) : null;
+  const mix = new Float32Array(N2);
+  for (let i = 0; i < N2; i++) mix[i] = (musBuf ? musBuf[i] * musicGain : 0) + (sfxBuf ? sfxBuf[i] * 0.85 : 0);
+  writeFileSync(wav, wavMono(mix, SR));
   const mux = spawn(ffmpegBin(), ["-y", "-i", silentPath, "-i", wav, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-map", "0:v:0", "-map", "1:a:0", "-shortest", outPath, "-loglevel", "error"], { stdio: "inherit" });
   await new Promise((res) => mux.on("close", res));
   try { unlinkSync(silentPath); unlinkSync(wav); } catch {}
-  return outPath;
+  return { outPath, chapters };
 }
 
-// ——— SFX synth (mono 44.1k 16-bit WAV) ———
-function buildSfxWav(events, durSec) {
-  const SR = 44100, buf = new Float32Array(Math.ceil(durSec * SR));
+// ——— SFX synth → sample buffer (mono) ———
+function sfxSamples(events, durSec, SR) {
+  const buf = new Float32Array(Math.ceil(durSec * SR));
   const tone = (t, freq, dur, amp, decay, type = "sine", f2 = null) => { const start = Math.floor(t * SR), n = Math.floor(dur * SR); for (let i = 0; i < n; i++) { const k = start + i; if (k < 0 || k >= buf.length) continue; const ph = i / SR, f = f2 == null ? freq : freq + (f2 - freq) * (i / n); let s = Math.sin(2 * Math.PI * f * ph); if (type === "tri") s = (2 / Math.PI) * Math.asin(Math.sin(2 * Math.PI * f * ph)); buf[k] += s * amp * Math.exp(-ph * decay); } };
   const noise = (t, dur, amp, shape = "hump") => { const start = Math.floor(t * SR), n = Math.floor(dur * SR); let prev = 0; for (let i = 0; i < n; i++) { const k = start + i; if (k < 0 || k >= buf.length) continue; const x = i / n, env = shape === "hump" ? Math.sin(Math.PI * x) : Math.exp(-x * 6); prev = prev * 0.6 + (Math.random() * 2 - 1) * 0.4; buf[k] += prev * amp * env; } };
   const SFX = {
@@ -310,8 +318,13 @@ function buildSfxWav(events, durSec) {
     subup: (t) => { tone(t, 660, 0.12, 0.2, 10); tone(t + 0.12, 880, 0.18, 0.2, 8); },
   };
   for (const e of events) (SFX[e.k] || (() => {}))(e.t);
+  return buf;
+}
+
+// ——— Float32 mono → WAV 16-bit (soft-limit) ———
+function wavMono(buf, SR) {
   let peak = 0; for (let i = 0; i < buf.length; i++) peak = Math.max(peak, Math.abs(buf[i]));
-  const g = peak > 0.9 ? 0.9 / peak : 1;
+  const g = peak > 0.98 ? 0.98 / peak : 1;
   const bytes = Buffer.alloc(44 + buf.length * 2);
   bytes.write("RIFF", 0); bytes.writeUInt32LE(36 + buf.length * 2, 4); bytes.write("WAVE", 8); bytes.write("fmt ", 12); bytes.writeUInt32LE(16, 16); bytes.writeUInt16LE(1, 20); bytes.writeUInt16LE(1, 22);
   bytes.writeUInt32LE(SR, 24); bytes.writeUInt32LE(SR * 2, 28); bytes.writeUInt16LE(2, 32); bytes.writeUInt16LE(16, 34); bytes.write("data", 36); bytes.writeUInt32LE(buf.length * 2, 40);

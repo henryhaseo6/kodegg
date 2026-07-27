@@ -80,16 +80,20 @@ async function resolveAssets(games) {
   }
 }
 
-function metadata(n, dateLbl) {
+const tstamp = (t) => { const s = Math.floor(t); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; };
+function metadata(games, dateLbl, chapters = []) {
+  const n = games.length;
   const title = `Top ${n} Most Played Roblox Games — ${dateLbl} (Daily Player Count)`;
-  const description = [
-    `The ${n} most played Roblox games on ${dateLbl}, ranked by peak concurrent players (CCU).`,
-    `Peak, average & lowest player counts + 24-hour player graph for each game.`,
-    ``,
-    `🎮 Free Roblox & game redeem codes, updated hourly → https://kodegg.com`,
-    ``,
-    `Data: Roblox charts (logged every 10 minutes). #Roblox #RobloxGames`,
-  ].join("\n");
+  // TIMELINE + RANKING (50→1) — timestamp di awal baris → YouTube bikin jadi
+  // link klik-able (loncat ke game). Nama pakai emoji apa adanya.
+  const timeline = (chapters || []).map((c) =>
+    c.rank === 0 ? `${tstamp(c.t)} Intro`
+      : `${tstamp(c.t)} #${c.rank} ${c.name}${c.peak ? ` — ${c.peak.toLocaleString("en-US")}` : ""}`
+  ).join("\n");
+  const head = `The ${n} most played Roblox games on ${dateLbl}, ranked by peak concurrent players (CCU).\nPeak, average & lowest player counts + 24-hour player graph for each game.`;
+  const foot = `🎮 Free Roblox & game redeem codes, updated hourly → https://kodegg.com\n\nData: Roblox charts (logged every 10 minutes). #Roblox #RobloxGames`;
+  let description = `${head}\n\n⏱️ RANKING & TIMELINE (tap to jump):\n${timeline}\n\n${foot}`;
+  if (description.length > 4950) description = description.slice(0, 4947) + "…"; // batas deskripsi YT 5000
   const tags = ["roblox", "roblox games", "most played roblox games", "top roblox games", "roblox player count", "roblox ccu", "roblox top games", "roblox ranking", "kodegg"];
   return { title, description, tags };
 }
@@ -108,10 +112,10 @@ function metadata(n, dateLbl) {
   mkdirSync(OUT_DIR, { recursive: true });
   const outPath = ARG.out || resolve(OUT_DIR, `top50-roblox-${DATE}.mp4`);
   console.log("[top50] render…");
-  await renderTop50({ games, assetsDir: CACHE, dateLabel: label(DATE), outPath, sfx: SFX });
+  const { chapters } = await renderTop50({ games, assetsDir: CACHE, dateLabel: label(DATE), outPath, sfx: SFX });
   console.log("[top50] video ✓ →", outPath);
 
-  const meta = metadata(games.length, label(DATE));
+  const meta = metadata(games, label(DATE), chapters);
   writeFileSync(outPath.replace(/\.mp4$/, ".txt"), `${meta.title}\n\n${meta.description}\n\nTAGS: ${meta.tags.join(", ")}\n`);
 
   if (ARG["no-upload"] === "1") { console.log("[top50] --no-upload → tidak upload."); return; }
