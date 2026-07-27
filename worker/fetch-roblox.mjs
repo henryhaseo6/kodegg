@@ -360,15 +360,26 @@ async function main() {
       // survivor: yg PUNYA playlist dulu (jaga video yg udah ada) → kode aktif
       // terbanyak → slug terpendek (kanonik). Cegah orphan playlist.
       ids.sort((a, b) => hasPl(b) - hasPl(a) || nAct(b) - nAct(a) || a.length - b.length);
-      for (const drop of ids.slice(1)) delete mergedGames[drop];
+      const keep = ids[0];
+      for (const drop of ids.slice(1)) {
+        // REMAP kode drop → survivor (kode dari sumber lain, mis. Roblox Den,
+        // tak hilang — cuma selisih 1 kode) lalu hapus game-nya.
+        for (const c of active) if (c.game === drop) c.game = keep;
+        for (const c of fullArchive) if (c.game === drop) c.game = keep;
+        delete mergedGames[drop];
+      }
     }
+    // dedup active by game+code setelah remap (idempotent utk data normal → aman)
+    const seenA = new Set();
+    for (let i = 0; i < active.length; i++) { const k = active[i].game + "::" + active[i].code; if (seenA.has(k)) { active.splice(i, 1); i--; } else seenA.add(k); }
   }
 
   // Cap arsip per game (simpan ARCHIVE_CAP terbaru) → roblox-codes.json tak
   // membengkak tak terbatas seiring bertambahnya game & kode kedaluwarsa.
-  const archByGame = new Map();
+  const archByGame = new Map(), seenArch = new Set();
   for (const c of fullArchive) {
     if (!mergedGames[c.game]) continue; // arsip milik game yg udah di-purge → buang (no halaman hantu)
+    const ak = c.game + "::" + c.code; if (seenArch.has(ak)) continue; seenArch.add(ak); // dedup arsip setelah remap
     const arr = archByGame.get(c.game);
     if (arr) arr.push(c);
     else archByGame.set(c.game, [c]);
