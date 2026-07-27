@@ -29,6 +29,7 @@ async function canvasLib() {
     _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceGrotesk-400.ttf"), "GroteskR");
     _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceMono-Bold.ttf"), "Mono");
     _cv.GlobalFonts.registerFromPath(resolve(FONTS, "Anton-Regular.ttf"), "Rank"); // angka rank 3D
+    _cv.GlobalFonts.registerFromPath(resolve(FONTS, "NotoColorEmoji.ttf"), "Emoji"); // emoji warna (fallback)
   }
   return _cv;
 }
@@ -36,7 +37,11 @@ async function canvasLib() {
 const W = 1920, H = 1080, FPS = 30;
 const C = { bg: "#090C12", lime: "#CBFF46", limeSoft: "#e7ffb0", purple: "#8B6BFF", purpleSoft: "#c3b2ff", low: "#5EC8FF", lowSoft: "#bfe6ff", txt: "#ffffff", muted: "#9aa4b8", gold: "#FFD23F", goldSoft: "#ffe9a3" };
 const nfmt = (n) => Math.round(n).toLocaleString("en-US");
-const clean = (s) => (s || "").split("|")[0].replace(/[^\x00-\x7F]/g, "").replace(/\[\s+/g, "[").replace(/\s+\]/g, "]").replace(/\s+/g, " ").trim();
+// Nama LENGKAP: pertahankan [tag] + EMOJI (di-render via font "Emoji"); buang
+// "| subjudul" & rapikan spasi. (Dulu emoji di-strip → "[]" kosong.)
+const clean = (s) => (s || "").split("|")[0].replace(/\[\s+/g, "[").replace(/\s+\]/g, "]").replace(/\s+/g, " ").trim();
+const seg = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+const graphemes = (s) => [...seg.segment(s)].map((x) => x.segment); // split aman utk emoji (surrogate/ZWJ/VS)
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const outCubic = (t) => 1 - Math.pow(1 - t, 3);
 const outBack = (t) => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
@@ -132,6 +137,7 @@ export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = 
   const tryLoad = async (p) => (existsSync(p) ? await loadImage(p).catch(() => null) : null);
   for (const g of games) {
     g.name = clean(g.name);
+    g.graphemes = graphemes(g.name);
     g.icon = await tryLoad(resolve(assetsDir, `${g.uid}-icon.png`));
     g.banner = (await tryLoad(resolve(assetsDir, `${g.uid}-banner.png`))) || g.icon;
     g.series = Array.isArray(g.series) && g.series.length > 1 ? g.series : [g.avg || g.peak, g.peak];
@@ -180,11 +186,11 @@ export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = 
   function gameFrame(ctx, g, ts, D) {
     const rank = g.rank, gold = rank === 1, ACC = gold ? C.gold : C.lime, ACCsoft = gold ? C.goldSoft : C.limeSoft;
     bg(ctx, g.banner, 1.1 + 0.05 * (ts / D), ts, g.scatter); chrome(ctx);
-    const fs = fitFont(ctx, g.name, W - 300, 78, 46); ctx.font = `700 ${fs}px Grotesk`;
+    const fs = fitFont(ctx, g.name, W - 300, 78, 46); const TF = `700 ${fs}px Grotesk, Emoji`; ctx.font = TF;
     const fullW = ctx.measureText(g.name).width, left = W / 2 - fullW / 2;
-    const titleEnd = D - 2.5, tp = clamp((ts - 0.2) / (titleEnd - 0.2)), shown = Math.round(tp * g.name.length), sub = g.name.slice(0, shown);
-    ctx.textAlign = "left"; ctx.textBaseline = "middle"; popText(ctx, sub, left, 195, C.txt, 8); ctx.textBaseline = "alphabetic";
-    if (tp < 1 && Math.floor(ts * 3) % 2 === 0) { const cx = left + ctx.measureText(sub).width + 8; ctx.fillStyle = ACC; ctx.fillRect(cx, 195 - fs * 0.4, 6, fs * 0.72); }
+    const gr = g.graphemes, titleEnd = D - 2.5, tp = clamp((ts - 0.2) / (titleEnd - 0.2)), shown = Math.round(tp * gr.length), sub = gr.slice(0, shown).join("");
+    ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.font = TF; popText(ctx, sub, left, 195, C.txt, 8); ctx.textBaseline = "alphabetic";
+    if (tp < 1 && Math.floor(ts * 3) % 2 === 0) { ctx.font = TF; const cx = left + ctx.measureText(sub).width + 8; ctx.fillStyle = ACC; ctx.fillRect(cx, 195 - fs * 0.4, 6, fs * 0.72); }
     const floatY = Math.sin(ts * 1.9) * 8, iconY = ICON_Y + floatY, iconCY = ICON_CY + floatY;
     if (gold) { const gg = ctx.createRadialGradient(ICON_CX, iconCY, 80, ICON_CX, iconCY, 420); gg.addColorStop(0, `rgba(255,210,63,${0.28 + 0.07 * Math.sin(ts * 4)})`); gg.addColorStop(1, "rgba(255,210,63,0)"); ctx.fillStyle = gg; ctx.fillRect(ICON_CX - 440, iconCY - 440, 880, 880); }
     drawRank(ctx, rank, rankSize(rank), ts);
