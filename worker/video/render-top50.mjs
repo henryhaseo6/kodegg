@@ -356,12 +356,18 @@ export async function renderThumb({ games, assetsDir, dateLabel, outPath }) {
   ctx.fillStyle = "rgba(9,12,18,0.5)"; ctx.fillRect(0, 0, TW, TH);
   let g = ctx.createRadialGradient(TW / 2, TH / 2, 120, TW / 2, TH / 2, 780); g.addColorStop(0, "rgba(9,12,18,0.74)"); g.addColorStop(1, "rgba(9,12,18,0.12)"); ctx.fillStyle = g; ctx.fillRect(0, 0, TW, TH);
   // ——— judul clickbait (depan) ———
-  ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
-  ctx.font = "205px Rank"; popText(ctx, "TOP 50", TW / 2, 232, C.lime, 18);
-  ctx.font = "700 68px Grotesk"; popText(ctx, "MOST PLAYED ROBLOX GAMES", TW / 2, 312, C.txt, 10);
-  ctx.font = "700 100px Grotesk"; popText(ctx, "WHO'S #1 TODAY?", TW / 2, 475, C.lime, 16);
+  // judul gaya channel-besar: SEMUA font condensed Anton + highlight dua-warna
+  const line = (segs, y, px, sw) => {
+    ctx.font = `${px}px Rank`; ctx.textBaseline = "alphabetic"; ctx.textAlign = "left";
+    const w = segs.map((s) => ctx.measureText(s.t).width), tot = w.reduce((a, b) => a + b, 0);
+    let x = TW / 2 - tot / 2;
+    segs.forEach((s, i) => { popText(ctx, s.t, x, y, s.col, sw); x += w[i]; });
+  };
+  line([{ t: "TOP 50", col: C.lime }], 198, 188, 16);
+  line([{ t: "MOST PLAYED ", col: C.txt }, { t: "ROBLOX", col: C.lime }, { t: " GAMES", col: C.txt }], 282, 76, 9);
+  line([{ t: "WHO'S ", col: C.txt }, { t: "#1", col: C.lime }, { t: " TODAY?", col: C.txt }], 430, 122, 13);
   // tanggal ala STAMP merah (miring + border, drop-shadow biar nonjol di collage)
-  ctx.save(); ctx.translate(TW / 2, 560); ctx.rotate(-0.12);
+  ctx.save(); ctx.translate(TW / 2, 545); ctx.rotate(-0.12);
   ctx.font = "700 48px Mono"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
   const RED = "#F0322C", dw = ctx.measureText(dateLabel).width, bw = dw + 60, bh = 82;
   ctx.shadowColor = "rgba(0,0,0,0.55)"; ctx.shadowBlur = 12; ctx.shadowOffsetY = 4;
