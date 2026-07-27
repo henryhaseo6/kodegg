@@ -72,7 +72,7 @@ async function fetchPlayers(universeIds) {
     try {
       const res = await fetch(`https://games.roblox.com/v1/games?universeIds=${batch}`);
       if (!res.ok) continue;
-      for (const g of (await res.json()).data ?? []) out[g.id] = g.playing ?? 0;
+      for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null };
     } catch {
       /* pertahankan nilai lama */
     }
@@ -363,7 +363,8 @@ async function main() {
   const uids = [...new Set(Object.values(mergedGames).map((g) => g.universeId).filter(Boolean))];
   const players = await fetchPlayers(uids);
   for (const g of Object.values(mergedGames)) {
-    if (g.universeId && players[g.universeId] != null) g.players = players[g.universeId];
+    const pd = g.universeId ? players[g.universeId] : null;
+    if (pd) { if (pd.playing != null) g.players = pd.playing; if (pd.name) g.rawName = pd.name; } // rawName = nama asli Roblox (+emoji/tag) utk visual video
   }
 
   // Kode PROMO Roblox platform (bukan per-game) — ditukar di roblox.com.

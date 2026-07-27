@@ -70,7 +70,7 @@ function buildCandidates() {
     const g = rb.games[id]; if (!g) continue;
     const active = rb.active.filter((c) => c.game === id);
     out.push({
-      platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
+      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: (g.players ?? 0),
       newCodes: nc, activeCount: countAll(active, nc), fetchedAt: rbNewFile.generatedAt,
       displayCodes: pickDisplay(nc, active),
@@ -93,7 +93,7 @@ function buildCandidates() {
     if (fresh.length === 0) continue;
     const freshCodes = fresh.map((c) => ({ code: c.code, reward: c.reward ?? "" }));
     out.push({
-      platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
+      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: freshCodes, activeCount: countAll(active, freshCodes), fetchedAt: rbNewFile.generatedAt,
       displayCodes: pickDisplay(freshCodes, active),
@@ -109,7 +109,7 @@ function buildCandidates() {
     const active = rb.active.filter((c) => c.game === id);
     if (active.length === 0) continue;
     out.push({
-      platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
+      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: active, activeCount: active.length, fetchedAt: rbNewFile.generatedAt, allMode: true,
       displayCodes: pickDisplay([], active),
@@ -169,7 +169,7 @@ function buildOnDemand(id) {
     const active = rb.active.filter((c) => c.game === id);
     if (active.length === 0) return null;
     return {
-      platform: "ROBLOX", id, name: g.name, slug: g.slug ?? id, players: g.players ?? 0,
+      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: 0, newCodes: [], activeCount: active.length,
       fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], active),
     };
@@ -262,7 +262,7 @@ async function main() {
     console.log(`▶ [atas permintaan] ${c.name} (${c.platform}) — ${c.activeCount} kode aktif`);
     const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
     const moreCount = Math.max(0, c.activeCount - c.displayCodes.length);
-    await renderShort({ game: { name: c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, allMode: true, iconPath: c.iconPath, outPath: base });
+    await renderShort({ game: { name: c.displayName || c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, allMode: true, iconPath: c.iconPath, outPath: base });
     await makeVO({ name: c.name, activeCount: c.activeCount, allMode: true, outPath: vo });
     await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
     await thumb(fin, th);
@@ -313,7 +313,7 @@ async function main() {
       console.log(`\n▶ ${c.name} (${c.platform}) — ${c.newCodes.length} kode baru`);
       const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
       const moreCount = Math.max(0, c.activeCount - c.displayCodes.length); // sisa kode di situs → teaser "+N lagi"
-      await renderShort({ game: { name: c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, allMode: c.allMode, iconPath: c.iconPath, outPath: base });
+      await renderShort({ game: { name: c.displayName || c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, allMode: c.allMode, iconPath: c.iconPath, outPath: base });
       await makeVO({ name: c.name, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, outPath: vo });
       await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
       await thumb(fin, th);

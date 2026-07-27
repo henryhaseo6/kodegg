@@ -22,9 +22,11 @@ async function canvasLib() {
     _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceGrotesk-700.ttf"), "Grotesk");
     _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceGrotesk-400.ttf"), "GroteskR");
     _cv.GlobalFonts.registerFromPath(resolve(FONTS, "SpaceMono-Bold.ttf"), "Mono");
+    _cv.GlobalFonts.registerFromPath(resolve(FONTS, "Twemoji.Mozilla.ttf"), "Emoji"); // emoji nama game (gaya Roblox web)
   }
   return _cv;
 }
+const SEG = new Intl.Segmenter(undefined, { granularity: "grapheme" }); // potong nama aman utk emoji
 
 // Resolusi path ffmpeg: env → @ffmpeg-installer → 'ffmpeg' sistem (CI ubuntu).
 export function ffmpegBin() {
@@ -159,9 +161,10 @@ export async function renderShort({ game, codes, iconPath, activeCount, moreCoun
       ctx.shadowColor = "rgba(203,255,70,0.3)"; ctx.shadowBlur = 30; ctx.fillText(allMode ? "SEMUA KODE" : "KODE BARU!", W / 2, hy); ctx.shadowBlur = 0;
       ctx.font = "700 38px Grotesk"; ctx.fillStyle = "rgba(203,255,70,0.6)"; ctx.fillText(allMode ? "ALL ACTIVE CODES" : "NEW CODES!", W / 2, hy + 68);
       ctx.globalAlpha = mainA * inv(1.3, 2.0, t);
-      ctx.font = "700 52px Grotesk"; ctx.fillStyle = C.txt;
-      let gname = game.name; while (ctx.measureText(gname).width > W - 120 && gname.length > 8) gname = gname.slice(0, -2);
-      ctx.fillText(gname === game.name ? gname : gname + "…", W / 2, hy + 130);
+      ctx.font = "700 52px Grotesk, Emoji"; ctx.fillStyle = C.txt; // font-stack → emoji nama ke-render (Twemoji)
+      const gfull = game.name, gr = [...SEG.segment(gfull)].map((s) => s.segment);
+      let gname = gfull; while (ctx.measureText(gname).width > W - 120 && gr.length > 8) { gr.pop(); gname = gr.join(""); }
+      ctx.fillText(gname === gfull ? gname : gname + "…", W / 2, hy + 130);
       ctx.globalAlpha = mainA * inv(1.8, 2.5, t);
       bi(ctx, `${nActive} kode aktif · terverifikasi`, `${nActive} active code${nActive === 1 ? "" : "s"} · verified`, hy + 177,
         { idFont: "400 30px GroteskR", enFont: "400 27px GroteskR", idColor: C.muted, enColor: "#6E7788" });
@@ -186,11 +189,11 @@ export async function renderShort({ game, codes, iconPath, activeCount, moreCoun
         let badgeW = 0;
         if (c.isNew) { ctx.font = "700 24px Mono"; badgeW = ctx.measureText("BARU · NEW").width + 40; pill(ctx, x + w - badgeW - 24, y + 16, "BARU · NEW", C.acc, "rgba(203,255,70,0.12)"); ctx.textBaseline = "alphabetic"; }
         ctx.font = "800 26px Mono"; ctx.fillStyle = C.faint; ctx.textAlign = "left"; ctx.fillText(String(i + 1).padStart(2, "0"), x + 30, y + 44);
-        ctx.font = "700 30px Grotesk"; ctx.fillStyle = C.muted;
+        ctx.font = "700 30px Grotesk, Emoji"; ctx.fillStyle = C.muted;
         // Sumber kadang tak menyertakan reward → label generik (jangan mengarang isi hadiah).
         const rwFull = c.reward || "Reward in-game";
         const rwMax = w - 130 - (badgeW ? badgeW + 30 : 0);
-        let rw = rwFull; while (ctx.measureText(rw).width > rwMax && rw.length > 6) rw = rw.slice(0, -2);
+        let rw = rwFull, rwg = [...SEG.segment(rwFull)].map((s) => s.segment); while (ctx.measureText(rw).width > rwMax && rwg.length > 6) { rwg.pop(); rw = rwg.join(""); }
         ctx.fillText(rw === rwFull ? rw : rw + "…", x + 82, y + 44);
         const by = y + (nCards >= 4 ? 68 : 74), bh = nCards >= 4 ? 84 : 92;
         rr(ctx, x + 30, by, w - 60, bh, 16); ctx.fillStyle = "#0B0E14"; ctx.fill();
