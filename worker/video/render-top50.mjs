@@ -78,7 +78,7 @@ function changeTag(ctx, cx, y, change, appear) {
   if (change.dir === "up") { col = C.ok; txt = "+" + change.delta; tri = "up"; }
   else if (change.dir === "down") { col = C.danger; txt = String(change.delta); tri = "down"; }
   else if (change.dir === "new") { col = C.lime; txt = "NEW"; }
-  else { col = C.muted; txt = "="; }
+  else { col = C.txt; txt = "-"; } // tetap: strip putih
   ctx.save(); ctx.globalAlpha = clamp(appear); const pop = 0.7 + 0.3 * outBack(clamp(appear));
   ctx.translate(cx, y); ctx.scale(pop, pop);
   ctx.font = "700 44px Grotesk"; ctx.textBaseline = "middle"; ctx.textAlign = "left";
