@@ -345,11 +345,26 @@ async function main() {
   const { active: freshDD, archive: freshArchDD } = dedupByUniverse(games, freshActive, freshArchive);
   const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshDD, freshArchDD, prev, covered, now);
   const mergedGames = { ...(prev.games ?? {}), ...games };
+  // PURGE game DUPLIKAT yg nyangkut di prev.games (universeId sama, slug beda
+  // spt fish-it/roblox-fish-it): buang yg KALAH (kode aktif lebih sedikit; seri →
+  // slug lebih panjang) dari games map → hapus halaman & arsip "hantu" di situs.
+  // Aman: game "Roblox X" yg universeId-nya UNIK tak tersentuh (ids.length<2).
+  {
+    const byUni = new Map();
+    for (const [id, g] of Object.entries(mergedGames)) { if (!g.universeId) continue; const a = byUni.get(g.universeId) ?? []; a.push(id); byUni.set(g.universeId, a); }
+    const nAct = (id) => active.filter((c) => c.game === id).length;
+    for (const [, ids] of byUni) {
+      if (ids.length < 2) continue;
+      ids.sort((a, b) => nAct(b) - nAct(a) || a.length - b.length);
+      for (const drop of ids.slice(1)) delete mergedGames[drop];
+    }
+  }
 
   // Cap arsip per game (simpan ARCHIVE_CAP terbaru) → roblox-codes.json tak
   // membengkak tak terbatas seiring bertambahnya game & kode kedaluwarsa.
   const archByGame = new Map();
   for (const c of fullArchive) {
+    if (!mergedGames[c.game]) continue; // arsip milik game yg udah di-purge → buang (no halaman hantu)
     const arr = archByGame.get(c.game);
     if (arr) arr.push(c);
     else archByGame.set(c.game, [c]);
