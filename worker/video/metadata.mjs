@@ -66,7 +66,7 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
   // Komentar utk di-pin: 3 baris supaya kebaca penuh di panel komentar HP tanpa
   // "Read more". URL di baris sendiri biar gampang di-copy (di Shorts, URL pada
   // komentar tak di-linkify YouTube).
-  const comment = `🎁 Semua kode + cara redeem:\n${url}\nKode gagal/expired? Tulis di sini 👇`;
+  const comment = `🎁 Semua kode + cara redeem → link ada di DESKRIPSI 👆\n⚠️ Kode CASE-SENSITIVE, salin PERSIS! Sebagian butuh Level 10+ / follow dulu.\n✅ Update tiap jam — kode expired auto ke arsip di kodegg.com`;
   const playlistTitle = `${name}${cw} — Kode Redeem`;
   // Deskripsi playlist BILINGUAL: YouTube TAK auto-translate deskripsi playlist
   // (beda dari video) → tulis ID + EN langsung supaya penonton luar pun terlayani.
