@@ -366,14 +366,14 @@ export async function renderThumb({ games, assetsDir, dateLabel, outPath }) {
   line([{ t: "TOP 50", col: C.lime }], 198, 188, 16);
   line([{ t: "MOST PLAYED ", col: C.txt }, { t: "ROBLOX", col: C.lime }, { t: " GAMES", col: C.txt }], 282, 76, 9);
   line([{ t: "WHO'S ", col: C.txt }, { t: "#1", col: C.lime }, { t: " TODAY?", col: C.txt }], 430, 122, 13);
-  // tanggal ala STAMP merah (miring + border, drop-shadow biar nonjol di collage)
-  ctx.save(); ctx.translate(TW / 2, 545); ctx.rotate(-0.12);
-  ctx.font = "700 48px Mono"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  const RED = "#F0322C", dw = ctx.measureText(dateLabel).width, bw = dw + 60, bh = 82;
-  ctx.shadowColor = "rgba(0,0,0,0.55)"; ctx.shadowBlur = 12; ctx.shadowOffsetY = 4;
-  ctx.lineWidth = 7; ctx.strokeStyle = RED; rr(ctx, -bw / 2, -bh / 2, bw, bh, 12); ctx.stroke();
-  ctx.shadowColor = "transparent"; ctx.lineWidth = 3; rr(ctx, -bw / 2 + 9, -bh / 2 + 9, bw - 18, bh - 18, 7); ctx.stroke();
-  ctx.fillStyle = RED; ctx.fillText(dateLabel, 0, 3); ctx.restore();
+  // tanggal ala STAMP merah GEDE (font Anton — tinggi & padat, gak lebar)
+  ctx.save(); ctx.translate(TW / 2, 548); ctx.rotate(-0.12);
+  ctx.font = "78px Rank"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  const RED = "#F0322C", dw = ctx.measureText(dateLabel).width, bw = dw + 92, bh = 124;
+  ctx.shadowColor = "rgba(0,0,0,0.55)"; ctx.shadowBlur = 14; ctx.shadowOffsetY = 5;
+  ctx.lineWidth = 10; ctx.strokeStyle = RED; rr(ctx, -bw / 2, -bh / 2, bw, bh, 16); ctx.stroke();
+  ctx.shadowColor = "transparent"; ctx.lineWidth = 4; rr(ctx, -bw / 2 + 12, -bh / 2 + 12, bw - 24, bh - 24, 10); ctx.stroke();
+  ctx.fillStyle = RED; ctx.fillText(dateLabel, 0, 6); ctx.restore();
   kodeggLogo(ctx, TW - 132, 52, 0.4, 1);
   writeFileSync(outPath, canvas.toBuffer("image/png"));
   return outPath;
