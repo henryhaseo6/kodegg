@@ -1,5 +1,107 @@
 {
-  "generatedAt": "2026-07-27T06:03:41.262Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-07-27T07:02:34.420Z",
+  "codes": [
+    {
+      "game": "anime-squadron",
+      "gameName": "Anime Squadron",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-squadron"
+      },
+      "code": "100YearsMaintenance!",
+      "reward": "100 Trait Shards",
+      "date": "2026-07-27T06:32:43.665Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-27T07:02:34.420Z",
+      "fetchedAt": "2026-07-27T07:02:34.420Z"
+    },
+    {
+      "game": "anime-squadron",
+      "gameName": "Anime Squadron",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-squadron"
+      },
+      "code": "UPD2.0!",
+      "reward": "100 Trait Shards, 1.5K Gems, 4K Gold",
+      "date": "2026-07-27T06:32:42.247Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-27T07:02:34.420Z",
+      "fetchedAt": "2026-07-27T07:02:34.420Z"
+    },
+    {
+      "game": "final-swarm",
+      "gameName": "Final Swarm",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/final-swarm"
+      },
+      "code": "nocheaters",
+      "reward": null,
+      "date": "2026-07-27T06:32:32.099Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-27T07:02:34.420Z",
+      "fetchedAt": "2026-07-27T07:02:34.420Z"
+    },
+    {
+      "game": "kaizen",
+      "gameName": "Kaizen",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/kaizen"
+      },
+      "code": "TojiAwakens!",
+      "reward": null,
+      "date": "2026-07-27T06:32:26.370Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-27T07:02:34.420Z",
+      "fetchedAt": "2026-07-27T07:02:34.420Z"
+    },
+    {
+      "game": "kaizen",
+      "gameName": "Kaizen",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/kaizen"
+      },
+      "code": "KaizenQuality!",
+      "reward": null,
+      "date": "2026-07-27T06:32:25.501Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-27T07:02:34.420Z",
+      "fetchedAt": "2026-07-27T07:02:34.420Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "snatch-a-seed",
+      "count": 32,
+      "fresh": []
+    },
+    {
+      "game": "driving-experience-japan",
+      "count": 47,
+      "fresh": []
+    }
+  ]
 }
