@@ -137,7 +137,18 @@ function buildCandidates() {
       displayCodes: pickDisplay(nc, active),
     });
   }
-  return out.sort((a, b) => b.rank - a.rank);
+  // Dedup by universeId: buang kandidat ROBLOX yg universeId-nya SUDAH punya
+  // video/playlist di id LAIN (kasus flip-flop nama → id baru, mis. dog-race vs
+  // roblox-dog-race). Cegah Short & playlist DOBEL — 1 game = 1 seri video.
+  const uniWithVideo = new Set();
+  for (const plid of Object.keys(ytpl)) { const gg = rb.games[plid]; if (gg?.universeId) uniWithVideo.add(gg.universeId); }
+  const deduped = out.filter((c) => {
+    if (c.platform !== "ROBLOX") return true;
+    const uni = rb.games[c.id]?.universeId;
+    if (uni && !ytpl[c.id] && uniWithVideo.has(uni)) { console.log(`  ⏭ skip ${c.id}: universeId ${uni} sudah punya video di id lain (anti-dup)`); return false; }
+    return true;
+  });
+  return deduped.sort((a, b) => b.rank - a.rank);
 }
 
 // Kartu tampil di video: kode BARU dulu (maks MAX_DISPLAY), pad dg kode aktif lain

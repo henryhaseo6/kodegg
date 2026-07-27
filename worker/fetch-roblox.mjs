@@ -14,6 +14,7 @@
 // (Roblox explore-api) yang ada di RoCodes ATAU Roblox Den, sampai MAX_GAMES.
 
 import { readFile, writeFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -350,12 +351,15 @@ async function main() {
   // slug lebih panjang) dari games map → hapus halaman & arsip "hantu" di situs.
   // Aman: game "Roblox X" yg universeId-nya UNIK tak tersentuh (ids.length<2).
   {
+    const ytpl = (() => { try { return JSON.parse(readFileSync(resolve(HERE, "data/yt-playlists.json"), "utf8")); } catch { return {}; } })();
+    const hasPl = (id) => (ytpl[id] ? 1 : 0), nAct = (id) => active.filter((c) => c.game === id).length;
     const byUni = new Map();
     for (const [id, g] of Object.entries(mergedGames)) { if (!g.universeId) continue; const a = byUni.get(g.universeId) ?? []; a.push(id); byUni.set(g.universeId, a); }
-    const nAct = (id) => active.filter((c) => c.game === id).length;
     for (const [, ids] of byUni) {
       if (ids.length < 2) continue;
-      ids.sort((a, b) => nAct(b) - nAct(a) || a.length - b.length);
+      // survivor: yg PUNYA playlist dulu (jaga video yg udah ada) → kode aktif
+      // terbanyak → slug terpendek (kanonik). Cegah orphan playlist.
+      ids.sort((a, b) => hasPl(b) - hasPl(a) || nAct(b) - nAct(a) || a.length - b.length);
       for (const drop of ids.slice(1)) delete mergedGames[drop];
     }
   }
