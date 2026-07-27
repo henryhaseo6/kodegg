@@ -137,7 +137,7 @@ function metadata(games, dateLbl, chapters = []) {
   writeFileSync(outPath.replace(/\.mp4$/, ".txt"), `${meta.title}\n\n${meta.description}\n\nTAGS: ${meta.tags.join(", ")}\n`);
 
   // thumbnail clickbait
-  const thumbPath = outPath.replace(/\.mp4$/, ".jpg");
+  const thumbPath = outPath.replace(/\.mp4$/, ".png");
   try { await renderThumb({ games, assetsDir: CACHE, dateLabel: label(DATE), outPath: thumbPath }); console.log("[top50] thumbnail ✓ →", thumbPath); }
   catch (e) { console.log("[top50] thumbnail gagal:", e.message); }
 

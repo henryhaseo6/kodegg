@@ -370,7 +370,7 @@ export async function renderThumb({ games, assetsDir, dateLabel, outPath }) {
   rr(ctx, 58, 600, dw, 58, 29); ctx.fillStyle = "rgba(9,12,18,0.7)"; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = C.lime; ctx.stroke();
   ctx.fillStyle = C.lime; ctx.textAlign = "left"; ctx.fillText(dl, 84, 630);
   kodeggLogo(ctx, TW - 132, 52, 0.4, 1);
-  writeFileSync(outPath, canvas.toBuffer("image/jpeg", 0.9));
+  writeFileSync(outPath, canvas.toBuffer("image/png")); // PNG lossless (JPEG quality napi ambigu → pecah)
   return outPath;
 }
 
