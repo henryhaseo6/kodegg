@@ -36,7 +36,7 @@ async function canvasLib() {
 }
 
 const W = 1920, H = 1080, FPS = 30;
-const C = { bg: "#090C12", lime: "#CBFF46", limeSoft: "#e7ffb0", purple: "#8B6BFF", purpleSoft: "#c3b2ff", low: "#5EC8FF", lowSoft: "#bfe6ff", txt: "#ffffff", muted: "#9aa4b8", gold: "#FFD23F", goldSoft: "#ffe9a3" };
+const C = { bg: "#090C12", lime: "#CBFF46", limeSoft: "#e7ffb0", purple: "#8B6BFF", purpleSoft: "#c3b2ff", low: "#5EC8FF", lowSoft: "#bfe6ff", txt: "#ffffff", muted: "#9aa4b8", gold: "#FFD23F", goldSoft: "#ffe9a3", ok: "#37E38B", danger: "#FF5C77" };
 const nfmt = (n) => Math.round(n).toLocaleString("en-US");
 // Nama LENGKAP: pertahankan [tag] + EMOJI (di-render via font "Emoji"); buang
 // "| subjudul" & rapikan spasi. (Dulu emoji di-strip → "[]" kosong.)
@@ -70,6 +70,24 @@ function num3d(ctx, text, size) {
 }
 function shockwave(ctx, cx, cy, age) { if (age < 0 || age > 0.6) return; const r = age * 600 + 24, al = clamp(1 - age / 0.5) * 0.34; ctx.save(); ctx.globalAlpha = al; ctx.strokeStyle = "#fff"; ctx.lineWidth = 6 * (1 - age / 0.6); ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.stroke(); ctx.restore(); }
 function floorShadow(ctx, cx, y, w, a) { ctx.save(); ctx.globalAlpha = a * 0.42; ctx.fillStyle = "#000"; ctx.beginPath(); ctx.ellipse(cx, y, w, w * 0.16, 0, 0, 7); ctx.fill(); ctx.restore(); }
+// Chip perubahan peringkat vs kemarin: ▲+N (hijau) / ▼N (merah) / = (abu) / NEW (lime).
+function changeTag(ctx, cx, y, change, appear) {
+  if (!change || change.dir === "hide" || appear <= 0.01) return;
+  let col, txt, tri = null;
+  if (change.dir === "up") { col = C.ok; txt = "+" + change.delta; tri = "up"; }
+  else if (change.dir === "down") { col = C.danger; txt = String(change.delta); tri = "down"; }
+  else if (change.dir === "new") { col = C.lime; txt = "NEW"; }
+  else { col = C.muted; txt = "="; }
+  ctx.save(); ctx.globalAlpha = clamp(appear); const pop = 0.7 + 0.3 * outBack(clamp(appear));
+  ctx.translate(cx, y); ctx.scale(pop, pop);
+  ctx.font = "700 44px Grotesk"; ctx.textBaseline = "middle"; ctx.textAlign = "left";
+  const tw = ctx.measureText(txt).width, triW = tri ? 34 : 0, gap = tri ? 12 : 0, inner = triW + gap + tw, padX = 24, chipW = inner + padX * 2, chipH = 64;
+  rr(ctx, -chipW / 2, -chipH / 2, chipW, chipH, chipH / 2); ctx.fillStyle = "rgba(9,12,18,0.75)"; ctx.fill();
+  ctx.lineWidth = 3; ctx.strokeStyle = col; ctx.stroke();
+  let tx = -inner / 2;
+  if (tri) { const s = 30; ctx.beginPath(); if (tri === "up") { ctx.moveTo(tx, s * 0.34); ctx.lineTo(tx + s, s * 0.34); ctx.lineTo(tx + s / 2, -s * 0.42); } else { ctx.moveTo(tx, -s * 0.34); ctx.lineTo(tx + s, -s * 0.34); ctx.lineTo(tx + s / 2, s * 0.42); } ctx.closePath(); ctx.fillStyle = col; ctx.fill(); tx += triW + gap; }
+  ctx.fillStyle = col; ctx.fillText(txt, tx, 2); ctx.restore();
+}
 let ROBLOX_P2D;
 function robloxMark(ctx, Path2D, cx, cy, s, appear) {
   if (!ROBLOX_P2D) ROBLOX_P2D = new Path2D(ROBLOX_PATH);
@@ -195,6 +213,7 @@ export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = 
     const floatY = Math.sin(ts * 1.9) * 8, iconY = ICON_Y + floatY, iconCY = ICON_CY + floatY;
     if (gold) { const gg = ctx.createRadialGradient(ICON_CX, iconCY, 80, ICON_CX, iconCY, 420); gg.addColorStop(0, `rgba(255,210,63,${0.28 + 0.07 * Math.sin(ts * 4)})`); gg.addColorStop(1, "rgba(255,210,63,0)"); ctx.fillStyle = gg; ctx.fillRect(ICON_CX - 440, iconCY - 440, 880, 880); }
     drawRank(ctx, rank, rankSize(rank), ts);
+    changeTag(ctx, RANK_CX, RANK_CY + rankSize(rank) * 0.5 + 50, g.change, clamp((ts - 0.6) / 0.4));
     const ip = clamp((ts - 0.05) / 1.0), iScale = outBack(ip);
     ctx.save(); ctx.globalAlpha = clamp(ip * 2.2); ctx.translate(ICON_CX, iconCY); ctx.scale(iScale, iScale); ctx.translate(-ICON_CX, -iconCY);
     if (g.icon) { ctx.save(); rr(ctx, ICON_X, iconY, ICON_SZ, ICON_SZ, 52); ctx.clip(); ctx.drawImage(g.icon, ICON_X, iconY, ICON_SZ, ICON_SZ); ctx.restore(); }

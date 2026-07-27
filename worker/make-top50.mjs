@@ -106,6 +106,19 @@ function metadata(games, dateLbl, chapters = []) {
   const games = rows.slice(0, LIMIT).map((g, i) => ({ ...g, rank: i + 1 }));
   console.log(`[top50] ${games.length} game. #1 = ${games[0]?.name} (${games[0]?.peak?.toLocaleString()})`);
 
+  // Perubahan peringkat vs KEMARIN (H-2): panah ▲/▼/=/NEW. Kalau data kemarin
+  // belum ada (hari pertama / mode live) → panah disembunyikan.
+  const prevDate = (() => { const d = new Date(DATE + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() - 1); return d.toISOString().slice(0, 10); })();
+  const prevRows = ARG.source !== "live" ? await fromR2(prevDate) : null;
+  const prevRank = prevRows ? Object.fromEntries(prevRows.map((g, i) => [g.uid, i + 1])) : null;
+  for (const g of games) {
+    if (!prevRank) { g.change = { dir: "hide" }; continue; }
+    const pv = prevRank[g.uid];
+    if (pv == null) g.change = { dir: "new" };
+    else { const d = pv - g.rank; g.change = d > 0 ? { dir: "up", delta: d } : d < 0 ? { dir: "down", delta: -d } : { dir: "same" }; }
+  }
+  console.log(`[top50] rank-change vs ${prevDate}: ${prevRank ? "ON" : "OFF (data kemarin belum ada)"}`);
+
   console.log("[top50] unduh icon+banner…");
   await resolveAssets(games);
 
