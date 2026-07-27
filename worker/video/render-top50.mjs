@@ -336,14 +336,20 @@ export async function renderThumb({ games, assetsDir, dateLabel, outPath }) {
   let h = 2166136261; const sstr = dateLabel + "|" + (games[0]?.uid || "");
   for (let i = 0; i < sstr.length; i++) { h ^= sstr.charCodeAt(i); h = Math.imul(h, 16777619); }
   const rnd = mulberry32(h >>> 0);
-  // sebar SEMUA icon: posisi/ukuran/rotasi acak, boleh numpuk & keluar tepi
-  const placed = icons.map((img) => ({ img, sz: 105 + rnd() * 165, x: rnd() * TW, y: rnd() * TH, rot: (rnd() - 0.5) * 0.5, a: 0.82 + rnd() * 0.18 }));
-  placed.sort((a, b) => a.sz - b.sz); // kecil di belakang, besar di depan → depth
-  for (const p of placed) {
-    ctx.save(); ctx.globalAlpha = p.a; ctx.translate(p.x, p.y); ctx.rotate(p.rot);
-    ctx.shadowColor = "rgba(0,0,0,0.5)"; ctx.shadowBlur = 18; ctx.shadowOffsetY = 6;
-    rr(ctx, -p.sz / 2, -p.sz / 2, p.sz, p.sz, p.sz * 0.18); ctx.save(); ctx.clip(); ctx.drawImage(p.img, -p.sz / 2, -p.sz / 2, p.sz, p.sz); ctx.restore();
-    ctx.shadowColor = "transparent"; ctx.lineWidth = 3; ctx.strokeStyle = "rgba(255,255,255,0.28)"; rr(ctx, -p.sz / 2, -p.sz / 2, p.sz, p.sz, p.sz * 0.18); ctx.stroke();
+  // sebar icon pakai GRID + jitter → coverage PENUH (tanpa celah) tapi tetap acak
+  // & numpuk. Urutan icon di-acak (seed) → tiap hari beda.
+  const cols = 10, rows = 5, cw = TW / cols, ch = TH / rows;
+  const order = [...icons.keys()]; for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+  let k = 0;
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+    const img = icons[order[k % icons.length]]; k++;
+    const sz = Math.max(cw, ch) * (1.2 + rnd() * 0.5); // > sel → numpuk & nutup celah
+    const x = (c + 0.5) * cw + (rnd() - 0.5) * cw * 0.55, y = (r + 0.5) * ch + (rnd() - 0.5) * ch * 0.55;
+    const rot = (rnd() - 0.5) * 0.44, a = 0.85 + rnd() * 0.15;
+    ctx.save(); ctx.globalAlpha = a; ctx.translate(x, y); ctx.rotate(rot);
+    ctx.shadowColor = "rgba(0,0,0,0.45)"; ctx.shadowBlur = 16; ctx.shadowOffsetY = 5;
+    rr(ctx, -sz / 2, -sz / 2, sz, sz, sz * 0.16); ctx.save(); ctx.clip(); ctx.drawImage(img, -sz / 2, -sz / 2, sz, sz); ctx.restore();
+    ctx.shadowColor = "transparent"; ctx.lineWidth = 3; ctx.strokeStyle = "rgba(255,255,255,0.22)"; rr(ctx, -sz / 2, -sz / 2, sz, sz, sz * 0.16); ctx.stroke();
     ctx.restore();
   }
   // overlay gelap + vignette tengah → judul kebaca
@@ -352,11 +358,16 @@ export async function renderThumb({ games, assetsDir, dateLabel, outPath }) {
   // ——— judul clickbait (depan) ———
   ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
   ctx.font = "205px Rank"; popText(ctx, "TOP 50", TW / 2, 232, C.lime, 18);
-  ctx.font = "700 54px Grotesk"; popText(ctx, "MOST PLAYED ROBLOX GAMES", TW / 2, 306, C.txt, 9);
-  ctx.font = "700 100px Grotesk"; popText(ctx, "WHO'S #1 TODAY?", TW / 2, 472, C.lime, 16);
-  ctx.font = "700 40px Mono"; ctx.textBaseline = "middle"; const dw = ctx.measureText(dateLabel).width + 64;
-  rr(ctx, TW / 2 - dw / 2, 520, dw, 74, 37); ctx.fillStyle = "rgba(9,12,18,0.78)"; ctx.fill(); ctx.lineWidth = 3.5; ctx.strokeStyle = C.lime; ctx.stroke();
-  ctx.fillStyle = C.lime; ctx.fillText(dateLabel, TW / 2, 559);
+  ctx.font = "700 68px Grotesk"; popText(ctx, "MOST PLAYED ROBLOX GAMES", TW / 2, 312, C.txt, 10);
+  ctx.font = "700 100px Grotesk"; popText(ctx, "WHO'S #1 TODAY?", TW / 2, 475, C.lime, 16);
+  // tanggal ala STAMP merah (miring + border, drop-shadow biar nonjol di collage)
+  ctx.save(); ctx.translate(TW / 2, 560); ctx.rotate(-0.12);
+  ctx.font = "700 48px Mono"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  const RED = "#F0322C", dw = ctx.measureText(dateLabel).width, bw = dw + 60, bh = 82;
+  ctx.shadowColor = "rgba(0,0,0,0.55)"; ctx.shadowBlur = 12; ctx.shadowOffsetY = 4;
+  ctx.lineWidth = 7; ctx.strokeStyle = RED; rr(ctx, -bw / 2, -bh / 2, bw, bh, 12); ctx.stroke();
+  ctx.shadowColor = "transparent"; ctx.lineWidth = 3; rr(ctx, -bw / 2 + 9, -bh / 2 + 9, bw - 18, bh - 18, 7); ctx.stroke();
+  ctx.fillStyle = RED; ctx.fillText(dateLabel, 0, 3); ctx.restore();
   kodeggLogo(ctx, TW - 132, 52, 0.4, 1);
   writeFileSync(outPath, canvas.toBuffer("image/png"));
   return outPath;
