@@ -323,54 +323,42 @@ export async function renderTop50({ games, assetsDir, dateLabel, outPath, sfx = 
   return { outPath, chapters };
 }
 
-// ——— Thumbnail clickbait 1280×720 (JPG) ———
+// ——— Thumbnail clickbait: collage 50 icon acak (unik tiap hari) + judul depan ———
 export async function renderThumb({ games, assetsDir, dateLabel, outPath }) {
   const cv = await canvasLib();
   const { createCanvas, loadImage } = cv;
   const TW = 1280, TH = 720;
-  const g1 = games[0], g2 = games[1], g3 = games[2];
-  const load = async (p) => (existsSync(p) ? await loadImage(p).catch(() => null) : null);
-  const b1 = (await load(resolve(assetsDir, `${g1.uid}-banner.png`))) || (await load(resolve(assetsDir, `${g1.uid}-icon.png`)));
-  const i1 = await load(resolve(assetsDir, `${g1.uid}-icon.png`));
-  const i2 = g2 && (await load(resolve(assetsDir, `${g2.uid}-icon.png`)));
-  const i3 = g3 && (await load(resolve(assetsDir, `${g3.uid}-icon.png`)));
+  const load = async (u) => { const p = resolve(assetsDir, `${u}-icon.png`); return existsSync(p) ? await loadImage(p).catch(() => null) : null; };
+  const icons = (await Promise.all(games.map((g) => load(g.uid)))).filter(Boolean);
   const canvas = createCanvas(TW, TH), ctx = canvas.getContext("2d");
-  // bg: banner #1 blur + gelap + glow
   ctx.fillStyle = C.bg; ctx.fillRect(0, 0, TW, TH);
-  if (b1) { try { ctx.save(); ctx.filter = "blur(10px)"; const s = Math.max(TW / b1.width, TH / b1.height) * 1.16, bw = b1.width * s, bh = b1.height * s; ctx.drawImage(b1, (TW - bw) / 2, (TH - bh) / 2, bw, bh); ctx.restore(); } catch {} }
+  // seed unik per hari (dari tanggal + #1) → tiap thumbnail beda, tapi deterministik
+  let h = 2166136261; const sstr = dateLabel + "|" + (games[0]?.uid || "");
+  for (let i = 0; i < sstr.length; i++) { h ^= sstr.charCodeAt(i); h = Math.imul(h, 16777619); }
+  const rnd = mulberry32(h >>> 0);
+  // sebar SEMUA icon: posisi/ukuran/rotasi acak, boleh numpuk & keluar tepi
+  const placed = icons.map((img) => ({ img, sz: 105 + rnd() * 165, x: rnd() * TW, y: rnd() * TH, rot: (rnd() - 0.5) * 0.5, a: 0.82 + rnd() * 0.18 }));
+  placed.sort((a, b) => a.sz - b.sz); // kecil di belakang, besar di depan → depth
+  for (const p of placed) {
+    ctx.save(); ctx.globalAlpha = p.a; ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+    ctx.shadowColor = "rgba(0,0,0,0.5)"; ctx.shadowBlur = 18; ctx.shadowOffsetY = 6;
+    rr(ctx, -p.sz / 2, -p.sz / 2, p.sz, p.sz, p.sz * 0.18); ctx.save(); ctx.clip(); ctx.drawImage(p.img, -p.sz / 2, -p.sz / 2, p.sz, p.sz); ctx.restore();
+    ctx.shadowColor = "transparent"; ctx.lineWidth = 3; ctx.strokeStyle = "rgba(255,255,255,0.28)"; rr(ctx, -p.sz / 2, -p.sz / 2, p.sz, p.sz, p.sz * 0.18); ctx.stroke();
+    ctx.restore();
+  }
+  // overlay gelap + vignette tengah → judul kebaca
   ctx.fillStyle = "rgba(9,12,18,0.5)"; ctx.fillRect(0, 0, TW, TH);
-  let g = ctx.createRadialGradient(300, 250, 60, 300, 250, 760); g.addColorStop(0, "rgba(203,255,70,0.16)"); g.addColorStop(1, "rgba(9,12,18,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, TW, TH);
-  g = ctx.createLinearGradient(0, 0, 720, 0); g.addColorStop(0, "rgba(9,12,18,0.82)"); g.addColorStop(1, "rgba(9,12,18,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, 720, TH);
-  g = ctx.createLinearGradient(0, TH, 0, TH - 220); g.addColorStop(0, "rgba(9,12,18,0.8)"); g.addColorStop(1, "rgba(9,12,18,0)"); ctx.fillStyle = g; ctx.fillRect(0, TH - 220, TW, 220);
-  // icon + rank badge bulat
-  const drawIcon = (img, x, y, sz, acc, badge) => {
-    ctx.save(); ctx.shadowColor = acc; ctx.shadowBlur = 45; ctx.shadowOffsetY = 6; rr(ctx, x, y, sz, sz, sz * 0.16); ctx.fillStyle = "#0b0f16"; ctx.fill(); ctx.restore();
-    ctx.save(); rr(ctx, x, y, sz, sz, sz * 0.16); ctx.clip(); if (img) ctx.drawImage(img, x, y, sz, sz); else { ctx.fillStyle = "#1b2230"; ctx.fillRect(x, y, sz, sz); } ctx.restore();
-    ctx.lineWidth = Math.max(5, sz * 0.035); ctx.strokeStyle = acc; rr(ctx, x, y, sz, sz, sz * 0.16); ctx.stroke();
-    const br = sz * 0.2, bx = x + br * 0.2, by = y + br * 0.2;
-    ctx.beginPath(); ctx.arc(bx, by, br, 0, 7); ctx.fillStyle = acc; ctx.fill(); ctx.lineWidth = 5; ctx.strokeStyle = "#05070b"; ctx.stroke();
-    ctx.fillStyle = "#0b0f16"; ctx.font = `${br * 1.4}px Rank`; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(badge, bx, by + 2);
-  };
-  if (i3) drawIcon(i3, 715, 360, 200, C.low, "3");
-  if (i2) drawIcon(i2, 675, 150, 235, C.purpleSoft, "2");
-  drawIcon(i1, 905, 165, 325, C.gold, "1");
-  // player count #1 (gold) — di bawah icon, DALAM kanvas
-  const pcx = 905 + 325 / 2;
+  let g = ctx.createRadialGradient(TW / 2, TH / 2, 120, TW / 2, TH / 2, 780); g.addColorStop(0, "rgba(9,12,18,0.74)"); g.addColorStop(1, "rgba(9,12,18,0.12)"); ctx.fillStyle = g; ctx.fillRect(0, 0, TW, TH);
+  // ——— judul clickbait (depan) ———
   ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
-  ctx.font = "700 82px Mono"; popText(ctx, kfmt(g1.peak), pcx, 165 + 325 + 66, C.gold, 11);
-  ctx.font = "700 28px Grotesk"; popText(ctx, "PEAK PLAYERS", pcx, 165 + 325 + 100, C.goldSoft, 5);
-  // judul kiri (Anton = chunky clickbait)
-  ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
-  ctx.font = "215px Rank"; popText(ctx, "TOP 50", 52, 250, C.lime, 17);
-  ctx.font = "700 82px Grotesk"; popText(ctx, "ROBLOX GAMES", 58, 340, C.txt, 11);
-  // hook
-  ctx.font = "700 78px Grotesk"; popText(ctx, "WHO'S #1?", 58, 560, C.txt, 12);
-  // date pill
-  ctx.font = "700 34px Mono"; ctx.textBaseline = "middle"; const dl = dateLabel, dw = ctx.measureText(dl).width + 52;
-  rr(ctx, 58, 600, dw, 58, 29); ctx.fillStyle = "rgba(9,12,18,0.7)"; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = C.lime; ctx.stroke();
-  ctx.fillStyle = C.lime; ctx.textAlign = "left"; ctx.fillText(dl, 84, 630);
+  ctx.font = "205px Rank"; popText(ctx, "TOP 50", TW / 2, 232, C.lime, 18);
+  ctx.font = "700 54px Grotesk"; popText(ctx, "MOST PLAYED ROBLOX GAMES", TW / 2, 306, C.txt, 9);
+  ctx.font = "700 100px Grotesk"; popText(ctx, "WHO'S #1 TODAY?", TW / 2, 472, C.lime, 16);
+  ctx.font = "700 40px Mono"; ctx.textBaseline = "middle"; const dw = ctx.measureText(dateLabel).width + 64;
+  rr(ctx, TW / 2 - dw / 2, 520, dw, 74, 37); ctx.fillStyle = "rgba(9,12,18,0.78)"; ctx.fill(); ctx.lineWidth = 3.5; ctx.strokeStyle = C.lime; ctx.stroke();
+  ctx.fillStyle = C.lime; ctx.fillText(dateLabel, TW / 2, 559);
   kodeggLogo(ctx, TW - 132, 52, 0.4, 1);
-  writeFileSync(outPath, canvas.toBuffer("image/png")); // PNG lossless (JPEG quality napi ambigu → pecah)
+  writeFileSync(outPath, canvas.toBuffer("image/png"));
   return outPath;
 }
 
