@@ -27,14 +27,24 @@ const ts = (t) => { const s = Math.floor(t); return `${Math.floor(s / 60)}:${Str
 const decode = (s) => (s || "").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#x2F;/g, "/").replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n));
 const seedFromDate = (ymd) => { let h = 0; for (const ch of ymd) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h; };
 
-// ——— data: kode BARU hari DATE (non-bulk), group per game ———
+// ——— data: kode yg BENER-BENER BARU hari DATE, group per game ———
+// Kriteria "kode baru beneran" (= badge NEW di Shorts/situs):
+//   1. firstSeenAt = DATE dan bukan `bulk` (bulk = import-pertama game baru, archive.mjs).
+//   2. TAPI game-nya BUKAN game yg baru ke-discover di DATE. Saat game baru dilacak
+//      (nyampe min-player) sumber nge-dump SEMUA kode lamanya: sebagian jadi bulk,
+//      sisanya "nyusul" jadi non-bulk di hari yg sama — itu BUKAN kode baru, cuma
+//      arsip game yg baru masuk. Deteksi: tgl discovery game = firstSeenAt paling awal
+//      dari kode `bulk`-nya; kalau == DATE → game baru masuk hari itu → SKIP semua.
 function loadGames() {
   const db = JSON.parse(readFileSync(resolve(HERE, "data/roblox-codes.json"), "utf8"));
   const G = db.games || {}; // slug → { universeId, players, rawName, name }
   const all = [].concat(db.active || [], db.archive || [], db.promo || []);
+  const discovered = {}; // slug → tgl paling awal kode bulk (= saat game mulai dilacak)
+  for (const c of all) { if (!c.game || !c.bulk || !c.firstSeenAt) continue; const d = c.firstSeenAt.slice(0, 10); if (!discovered[c.game] || d < discovered[c.game]) discovered[c.game] = d; }
   const byGame = {};
   for (const c of all) {
     if (!c.firstSeenAt || c.firstSeenAt.slice(0, 10) !== DATE || c.bulk) continue;
+    if (discovered[c.game] === DATE) continue; // game baru ke-discover hari ini → arsip, bukan kode baru
     (byGame[c.game] = byGame[c.game] || []).push({ code: c.code, reward: decode(c.reward || "") });
   }
   const list = Object.entries(byGame).map(([slug, codes]) => {
