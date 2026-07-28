@@ -58,3 +58,30 @@ Roundup** (utility/SEO). Channel 3 kaki.
   YT (~95%). Opsi: turunkan cap Shorts atau apply quota increase.
 - Reuse maksimal komponen Top 50 (render-top50.mjs, music.mjs, thumbnail collage konsep, ffmpegBin,
   font Anton/Twemoji) → build lebih ringan dari nol.
+
+---
+
+## DESAIN FINAL (28 Jul 2026) — sudah di-prototipe & di-approve user
+
+> Prototipe renderer video ada di scratchpad `_roundup.mjs` (recovered dari transcript). Output
+> sample terakhir: `_video-out/sample-roundup-27-v8.mp4` (65.8s). Thumbnail: `_video-out/thumb-roundup-T3plus.png`.
+> Semua LOKAL (0 build CF). Pipeline produksi dibangun pasca reset 1 Agt (reuse infra Top 50).
+
+### Keputusan
+- **Roblox-only** (judul "NEW ROBLOX CODES"). Game mobile lewat Shorts / video mingguan terpisah — TIDAK dicampur ke roundup harian (volume kode mobile jarang; SEO "roblox codes" + konsisten Top 50).
+- **Global / English** (bukan bilingual). CTA arahkan penonton yg mau update per-jam → ke **Shorts**.
+- Data BASIS = deteksi kode-baru pipeline (H-1), sort by jumlah pemain.
+
+### Video (landscape 1920×1080, ~66s, musik + SFX)
+- **Intro**: judul "NEW ROBLOX CODES" (Anton, putih/lime, center) → "N CODES · N GAMES" **animasi ketik** (center) → **stamp tanggal** (Anton merah, gede 116px, center-bawah) dgn **animasi SLAM** (terbang dari besar → di-cap ke layar → shockwave + settle wobble). **SFX stamp = "KA-CHUNK"** (pre-click → main-hit sinkron shockwave + ping metalik).
+- **Kartu per-game**: judul (emoji Twemoji) center + icon kiri + badge "N NEW CODES"; baris kode kanan = **reward (kiri) + badge NEW ala Shorts (kanan, sejajar baris reward)** + kotak kode dashed + **kode animasi ketik + cursor**; **PEAK/AVG/LOWEST** (dari series, sumber sama Top 50/R2) di atas grafik; **grafik 24 jam** bawah. Transisi antar-game = **SFX whoosh**.
+- **Outro**: logo KODEGG (gaya Short/situs: badge GG kiri + "KODEGG") + kodegg.com + tagline + **SUBSCRIBE (merah) + lonceng (lime)** (SFX chime + subup).
+- Audio: musik (synthMusic, gain 0.5) + SFX (0.9) di-mix sample-level, normalize peak 0.95.
+
+### Thumbnail (1280×720) — konsep "T3+"
+- **Background** = collage icon game hari itu, **seeded dari TANGGAL** → tiap hari susunan beda (deterministik, gak template). Sort by pemain; hari sepi → icon di-ulang biar penuh. Gradient gelap di atasnya.
+- **Judul** "NEW ROBLOX CODES" (Anton putih/lime, center, gede).
+- **Baris tengah rata**: badge **STARBURST "15 GAMES"** (kiri) — **stamp merah "JULY 27, 2026"** (center, gede) — badge **STARBURST "N NEW CODES"** (kanan). Dua badge simetris, sejajar tanggal.
+- **CTA bawah**: "NEW CODES EVERY HOUR ON **SHORTS**" (SHORTS lime).
+- Logo KODEGG (badge-first) pojok kiri atas.
+- Semua angka/tanggal/collage auto dari data harian.
