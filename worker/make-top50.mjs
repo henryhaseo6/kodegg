@@ -146,7 +146,7 @@ function metadata(games, dateLbl, chapters = []) {
   if (!ytConfigured()) { console.log("[top50] YT belum di-set → skip upload (video tersimpan lokal)."); return; }
   const privacy = process.env.YT_PRIVACY || "private"; // draft
   const playlistTitle = "Roblox Top 50 — Daily Player Count Rankings";
-  const playlistDescription = "Peringkat harian 50 game Roblox terpopuler (peak player). Update tiap hari dari KodeGG — https://kodegg.com\n\nDaily Top 50 most played Roblox games by peak concurrent players, updated every day.";
+  const playlistDescription = "Daily Top 50 most played Roblox games ranked by peak concurrent players (CCU). Peak, average & lowest player counts + a 24-hour player graph for each game. Updated every day.\n\n🎮 Free Roblox & game redeem codes, updated hourly → https://kodegg.com";
   console.log(`[top50] upload YouTube (privacy=${privacy})…`);
   try {
     const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription });

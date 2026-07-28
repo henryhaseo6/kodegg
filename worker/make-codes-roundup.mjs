@@ -118,7 +118,7 @@ function metadata(games, dateLbl, totalCodes, totalGames, chapters) {
   if (!ytConfigured()) { console.log("[roundup] YT belum di-set → skip upload (video tersimpan lokal)."); return; }
   const privacy = process.env.YT_PRIVACY || "private";
   const playlistTitle = "New Roblox Codes — Daily Roundup";
-  const playlistDescription = "Rekap harian semua kode Roblox baru, dikelompokkan per game. Update tiap hari dari KodeGG — https://kodegg.com\n\nDaily roundup of all new Roblox codes, grouped by game. New codes every hour on our Shorts.";
+  const playlistDescription = "New Roblox codes drop every day — here's the daily roundup. All the new Roblox codes added each day, grouped by game, with rewards. Copy & redeem before they expire!\n\n⚡ Want codes the moment they drop? New codes every hour on our Shorts.\n🎮 All codes + how to redeem (updated hourly) → https://kodegg.com";
   console.log(`[roundup] upload YouTube (privacy=${privacy})…`);
   try {
     const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription });
