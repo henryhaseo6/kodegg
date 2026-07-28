@@ -109,10 +109,14 @@ function subscribeCTA(ctx, cx, cy, appear, wiggle) {
   ctx.fillStyle = "#fff"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(label, sx + pillW / 2, cy + 3);
   bell(ctx, sx + pillW + gap + bellS / 2, cy, bellS, C.lime, wiggle); ctx.textBaseline = "alphabetic"; ctx.restore();
 }
-function kodeggLogo(ctx, cx, cy, scale, appear) {
-  ctx.save(); ctx.globalAlpha = appear; ctx.translate(cx, cy); ctx.scale(scale, scale); ctx.font = "700 92px Grotesk"; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  const kw = ctx.measureText("KODE").width, gw = ctx.measureText("GG").width, pad = 24, boxW = gw + pad * 2, gap = 16, total = kw + gap + boxW; let x = -total / 2;
-  ctx.fillStyle = "#fff"; ctx.fillText("KODE", x, 4); x += kw + gap; rr(ctx, x, -58, boxW, 116, 26); ctx.fillStyle = C.lime; ctx.fill(); ctx.fillStyle = "#0b0f16"; ctx.fillText("GG", x + pad, 6);
+function kodeggLogo(ctx, cx, cy, scale, appear) { // gaya Short/situs/roundup: badge GG (kiri) + "KODEGG"
+  ctx.save(); ctx.globalAlpha = appear; ctx.translate(cx, cy); ctx.scale(scale, scale);
+  const B = 104, fs = 58, gap = 22; ctx.font = `800 ${fs}px Grotesk`;
+  const kw = ctx.measureText("KODE").width, gw = ctx.measureText("GG").width, tot = B + gap + kw + gw; let x = -tot / 2;
+  rr(ctx, x, -B / 2, B, B, B * 0.26); ctx.fillStyle = "#0E121B"; ctx.fill();
+  ctx.lineWidth = B * 0.06; ctx.strokeStyle = C.lime; ctx.shadowColor = "rgba(203,255,70,0.5)"; ctx.shadowBlur = 26; ctx.stroke(); ctx.shadowColor = "transparent";
+  ctx.fillStyle = C.lime; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("GG", x + B / 2, 2);
+  ctx.textAlign = "left"; ctx.fillStyle = "#fff"; ctx.fillText("KODE", x + B + gap, 2); ctx.fillStyle = C.lime; ctx.fillText("GG", x + B + gap + kw, 2);
   ctx.textBaseline = "alphabetic"; ctx.restore();
 }
 
