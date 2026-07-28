@@ -113,6 +113,77 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "anime-fighters-simulator",
+    "name": "Anime Fighters Simulator",
+    "displayName": "[🪄Wistoria] Anime Fighters",
+    "slug": "anime-fighters-simulator",
+    "players": 1186,
+    "rank": 1186,
+    "newCodes": [
+      {
+        "game": "anime-fighters-simulator",
+        "gameName": "Anime Fighters Simulator",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/anime-fighters-simulator"
+        },
+        "code": "GROUNDED",
+        "reward": "75 Passive Tokens, 25 Heavenly Fruits",
+        "date": "2026-07-28T20:12:12.133Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-07-28T21:01:35.784Z",
+        "fetchedAt": "2026-07-28T21:01:35.784Z"
+      },
+      {
+        "game": "anime-fighters-simulator",
+        "gameName": "Anime Fighters Simulator",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/anime-fighters-simulator"
+        },
+        "code": "BUGHUNTERS",
+        "reward": "50 Wand Shards, 3 Damage & Luck boosts",
+        "date": "2026-07-28T20:12:11.685Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-07-28T21:01:35.784Z",
+        "fetchedAt": "2026-07-28T21:01:35.784Z"
+      }
+    ],
+    "activeCount": 56,
+    "fetchedAt": "2026-07-28T21:01:35.784Z",
+    "displayCodes": [
+      {
+        "code": "GROUNDED",
+        "reward": "75 Passive Tokens, 25 Heavenly Fruits",
+        "isNew": true
+      },
+      {
+        "code": "BUGHUNTERS",
+        "reward": "50 Wand Shards, 3 Damage & Luck boosts",
+        "isNew": true
+      },
+      {
+        "code": "THANKYOU96",
+        "reward": "50 Cursed Orbs, 25 Heavenly Fruits, 5 Passive Transfer Tokens",
+        "isNew": false
+      },
+      {
+        "code": "RAIDREADY",
+        "reward": "3 Mysterious Keys, 25 Heavenly Fruits",
+        "isNew": false
+      }
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "anime-paradox-x",
     "name": "Anime Paradox X",
     "displayName": "[QOL] Anime Paradox X",
