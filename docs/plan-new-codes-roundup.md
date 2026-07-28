@@ -70,7 +70,7 @@ Roundup** (utility/SEO). Channel 3 kaki.
 ### Keputusan
 - **Roblox-only** (judul "NEW ROBLOX CODES"). Game mobile lewat Shorts / video mingguan terpisah — TIDAK dicampur ke roundup harian (volume kode mobile jarang; SEO "roblox codes" + konsisten Top 50).
 - **Global / English** (bukan bilingual). CTA arahkan penonton yg mau update per-jam → ke **Shorts**.
-- Data BASIS = deteksi kode-baru pipeline (H-1), sort by jumlah pemain.
+- Data BASIS = deteksi kode-baru pipeline (H-1, non-bulk). **SEMUA game** yg dapet kode masuk (durasi variabel ~1-4 mnt), diurut by jumlah pemain (game gede duluan = hook). `--limit` override kalau perlu.
 
 ### Video (landscape 1920×1080, ~66s, musik + SFX)
 - **Intro**: judul "NEW ROBLOX CODES" (Anton, putih/lime, center) → "N CODES · N GAMES" **animasi ketik** (center) → **stamp tanggal** (Anton merah, gede 116px, center-bawah) dgn **animasi SLAM** (terbang dari besar → di-cap ke layar → shockwave + settle wobble). **SFX stamp = "KA-CHUNK"** (pre-click → main-hit sinkron shockwave + ping metalik).

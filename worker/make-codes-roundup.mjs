@@ -14,7 +14,7 @@ import { renderRoundup, renderRoundupThumb } from "./video/render-roundup.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
-const LIMIT = Math.max(1, Math.min(30, Number(ARG.limit) || 15));
+const LIMIT = Math.max(1, Number(ARG.limit) || 999); // default: SEMUA game yg dapet kode baru H-1
 const OUT_DIR = resolve(HERE, "../_video-out");
 const ASSETS = resolve(HERE, "../site/public/assets/roblox");
 const CACHE = resolve(HERE, "video/assets/roundup-cache");
@@ -61,11 +61,20 @@ function metadata(games, dateLbl, totalCodes, totalGames, chapters) {
   const n = games.length;
   const title = `New Roblox Codes — ${dateLbl} (${totalCodes} Codes, ${n} Games)`;
   const timeline = chapters.map((c) => (c.n === 0 ? `${ts(c.t)} Intro` : `${ts(c.t)} ${c.name} — ${c.n} code${c.n > 1 ? "s" : ""}`)).join("\n");
-  const codeList = games.map((g) => `▶ ${g.disp} — ${g.codes.length} new\n${g.codes.map((c) => `  • ${c.code}${c.reward ? ` — ${c.reward}` : ""}`).join("\n")}`).join("\n\n");
-  const more = totalGames > n ? `\n\n➕ ${totalGames - n} more games got codes today — full list at kodegg.com` : "";
   const head = `All the NEW Roblox codes added on ${dateLbl}, grouped by game — copy & redeem before they expire.\n⚡ Want codes the moment they drop? New codes EVERY HOUR on our Shorts.`;
-  const foot = `🎮 All codes + how to redeem (updated hourly) → https://kodegg.com${more}\n\n#Roblox #RobloxCodes #RobloxCodesToday`;
-  let description = `${head}\n\n⏱️ TIMELINE (tap to jump):\n${timeline}\n\n🎁 ALL CODES:\n${codeList}\n\n${foot}`;
+  const foot = `🎮 All codes + how to redeem (updated hourly) → https://kodegg.com\n\n#Roblox #RobloxCodes #RobloxCodesToday`;
+  // Prioritas: head + timeline (semua game) + foot. Daftar KODE diisi sebanyak yg
+  // muat di sisa budget 5000 char YT, dipotong di batas GAME (rapi) + tautan situs.
+  const essential = `${head}\n\n⏱️ TIMELINE (tap to jump):\n${timeline}\n\n${foot}`;
+  const budget = 4900 - essential.length - 60;
+  let codeList = "", truncated = false;
+  for (const g of games) {
+    const block = `▶ ${g.disp} — ${g.codes.length} new\n${g.codes.map((c) => `  • ${c.code}${c.reward ? ` — ${c.reward}` : ""}`).join("\n")}\n\n`;
+    if (codeList.length + block.length > budget) { truncated = true; break; }
+    codeList += block;
+  }
+  const codeSection = codeList ? `\n\n🎁 ALL CODES:\n${codeList.trimEnd()}${truncated ? "\n\n… + more — full code list at https://kodegg.com" : ""}` : "";
+  let description = `${head}\n\n⏱️ TIMELINE (tap to jump):\n${timeline}${codeSection}\n\n${foot}`;
   if (description.length > 4950) description = description.slice(0, 4947) + "…";
   const tags = ["roblox codes", "new roblox codes", "roblox codes today", "roblox redeem codes", "roblox promo codes", "free roblox codes", `roblox codes ${dateLbl.toLowerCase()}`, "kodegg", ...games.slice(0, 8).map((g) => `${g.disp} codes`)];
   return { title, description, tags };

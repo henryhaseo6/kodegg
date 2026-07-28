@@ -19,9 +19,9 @@ on:
         type: string
         default: ""
       limit:
-        description: "Jumlah game (1-30)"
+        description: "Jumlah game. Kosong = SEMUA game yg dapet kode baru."
         type: string
-        default: "15"
+        default: ""
       upload:
         description: "Upload ke YouTube (PUBLIC)"
         type: boolean
@@ -52,7 +52,8 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_PRIVACY: public
         run: |
-          ARGS="--limit=${{ inputs.limit || '15' }}"
+          ARGS=""
+          [ -n "${{ inputs.limit }}" ] && ARGS="$ARGS --limit=${{ inputs.limit }}"
           [ -n "${{ inputs.date }}" ] && ARGS="$ARGS --date=${{ inputs.date }}"
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.upload }}" != "true" ]; then ARGS="$ARGS --no-upload"; fi
           echo "make-codes-roundup $ARGS"
