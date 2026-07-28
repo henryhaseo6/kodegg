@@ -173,14 +173,14 @@ jobs:
           # situs tak perlu DEPLOY tiap jam: build.mjs re-fetch data segar tiap
           # build, jadi konten selalu terbaru saat build jalan. Deploy hanya bila
           # run ini bawa KODE BARU (konten penting → muncul seketika, sinkron dg
-          # notif), ATAU tiap 4 jam sbg lantai (event/news/pemain tak basi >4j).
+          # notif), ATAU tiap 2 jam sbg lantai (event/news/pemain tak basi >2j).
           # Selain itu → commit pakai [skip ci] → Cloudflare LEWATI build. Kode
           # tetap terdeteksi & video tetap dibuat tiap jam (langkah terpisah).
           NEWCODES=0
           for f in worker/data/new-codes.json worker/data/new-roblox-codes.json; do
             if [ -f "$f" ] && node -e "process.exit(((JSON.parse(require('fs').readFileSync('$f','utf8')).codes)||[]).length>0?0:1)" 2>/dev/null; then NEWCODES=1; fi
           done
-          if [ "$NEWCODES" = "1" ] || [ $((10#$(date -u +%H) % 4)) -eq 0 ]; then
+          if [ "$NEWCODES" = "1" ] || [ $((10#$(date -u +%H) % 2)) -eq 0 ]; then
             git commit -m "chore: update data (kode/event/berita)"
           else
             git commit -m "chore: update data (kode/event/berita) [skip ci]"
@@ -202,7 +202,7 @@ jobs:
         # CATATAN [skip ci]: Cloudflare Pages menghormati [skip ci] → MELEWATI
         # build. Dipakai SENGAJA di atas untuk menekan jumlah build (limit 500/
         # bln) pada run yang cuma churn rutin (jumlah pemain). Run berkode-baru
-        # ATAU tiap 4 jam TAK memakai tag → Cloudflare build & situs update.
+        # ATAU tiap 2 jam TAK memakai tag → Cloudflare build & situs update.
         # [skip ci] tak memengaruhi Actions: workflow ini dipicu schedule/
         # workflow_dispatch, BUKAN push, jadi commit ini tak memicu ulang dirinya.
 
