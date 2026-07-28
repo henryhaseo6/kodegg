@@ -173,14 +173,21 @@ jobs:
           # situs tak perlu DEPLOY tiap jam: build.mjs re-fetch data segar tiap
           # build, jadi konten selalu terbaru saat build jalan. Deploy hanya bila
           # run ini bawa KODE BARU (konten penting → muncul seketika, sinkron dg
-          # notif), ATAU tiap 2 jam sbg lantai (event/news/pemain tak basi >2j).
+          # notif), ATAU 10×/hari (~tiap 2-3 jam) sbg lantai (event/news/pemain
+          # tak basi lama).
           # Selain itu → commit pakai [skip ci] → Cloudflare LEWATI build. Kode
           # tetap terdeteksi & video tetap dibuat tiap jam (langkah terpisah).
           NEWCODES=0
           for f in worker/data/new-codes.json worker/data/new-roblox-codes.json; do
             if [ -f "$f" ] && node -e "process.exit(((JSON.parse(require('fs').readFileSync('$f','utf8')).codes)||[]).length>0?0:1)" 2>/dev/null; then NEWCODES=1; fi
           done
-          if [ "$NEWCODES" = "1" ] || [ $((10#$(date -u +%H) % 2)) -eq 0 ]; then
+          # Lantai deploy 10×/hari (~tiap 2-3 jam) di jam UTC berikut → ~300
+          # build/bln pasti; sisanya dari run berkode-baru. Total nyaman <500.
+          H=$(date -u +%H)
+          case " 00 02 05 07 10 12 14 17 19 22 " in
+            *" $H "*) FLOOR=1 ;; *) FLOOR=0 ;;
+          esac
+          if [ "$NEWCODES" = "1" ] || [ "$FLOOR" = "1" ]; then
             git commit -m "chore: update data (kode/event/berita)"
           else
             git commit -m "chore: update data (kode/event/berita) [skip ci]"
@@ -202,7 +209,7 @@ jobs:
         # CATATAN [skip ci]: Cloudflare Pages menghormati [skip ci] → MELEWATI
         # build. Dipakai SENGAJA di atas untuk menekan jumlah build (limit 500/
         # bln) pada run yang cuma churn rutin (jumlah pemain). Run berkode-baru
-        # ATAU tiap 2 jam TAK memakai tag → Cloudflare build & situs update.
+        # ATAU 10×/hari (jam lantai) TAK memakai tag → Cloudflare build & situs update.
         # [skip ci] tak memengaruhi Actions: workflow ini dipicu schedule/
         # workflow_dispatch, BUKAN push, jadi commit ini tak memicu ulang dirinya.
 
