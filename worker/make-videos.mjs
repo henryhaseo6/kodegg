@@ -359,11 +359,11 @@ async function main() {
           state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
           if (playlistPending) enqueuePending(playlistPending); // rate-limit playlist → coba lagi run berikutnya
         } catch (e) {
-          // Kuota API habis → simpan buat manual + ANTRI RETRY run berikut (kuota
-          // reset harian), TIDAK di-mark posted. Error lain → manual + mark posted
-          // (hindari retry tak berhenti pada video bermasalah).
+          // Error upload HAMPIR SELALU account-wide (kuota / token `invalid_grant` /
+          // rate limit) → STOP upload run ini + ANTRI RETRY (JANGAN mark posted) biar
+          // auto-upload begitu beres (mis. token di-refresh). Queue di-cap 40, aman.
           console.log(`  ✗ upload gagal: ${e.message}`);
-          if (/quota/i.test(e.message)) { remaining = 0; requeue.push(c); quotaManual = true; }
+          remaining = 0; requeue.push(c); quotaManual = true;
           simpanManual("upload gagal");
         }
       } else {
