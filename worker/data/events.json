@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-28T05:01:15.194Z",
+  "updatedAt": "2026-07-28T06:01:11.685Z",
   "counts": {
-    "active": 57,
+    "active": 59,
     "archived": 61
   },
   "events": [
@@ -50,33 +50,6 @@
       "startsAt": "2026-07-27T04:00:00.000Z",
       "endsAt": "2026-07-28T21:50:00.000Z",
       "postedAt": "2026-07-27T04:00:00.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoverse",
-      "url": "https://zenless.hoyoverse.com/en/news"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "type": "banner",
-      "typeName": "Announcements",
-      "title": {
-        "en": "New Arrival in \"An Outstanding Partner\"",
-        "id": "\"Partner Terbaik\" | Detail Update"
-      },
-      "subtitle": {
-        "en": "New Arrival in \"An Outstanding Partner\"",
-        "id": "\"Partner Terbaik\" | Detail Update"
-      },
-      "desc": {
-        "en": "New Bangboo available in \"An Outstanding Partner\"! After the Version 3.0 update, the S-Rank Bangboo Ultra Jake will permanently join the Bangboo Channel. Signal Search Details • Before Signal Searching for Bangboo, Proxies should select an S-Rank Bangboo. Upon obtaining an S-Rank Bangboo through Signal Search, the Signal is guaranteed to be the selected S-Rank Bangboo. • Once you select an S-Rank Bangboo, you can switch targets without resetting the number of Signal Searches, allowing you to retain your guarantee. ※ This channel is a Bangboo Channel. The Search count for guaranteed Signals in this Channel is effective only in the Bangboo Channel and is independent of and unaffected by other types of Channels. ※ For more information on Signal Searches, please press Details at the bottom-left of the search page.",
-        "id": "Bangboo baru akan hadir di FM \"Partner Terbaik\"! Setelah update V3.0, Bangboo Tier-S Ultra Jake akan tersedia di FM Bangboo secara permanen. [Penjelasan FM] • Sebelum melakukan Pencarian Sinyal di FM Bangboo, kamu perlu menentukan 1 Bangboo Tier-S di FM ini sebagai pilihanmu. Saat mendapatkan Sinyal Bangboo Tier-S dalam Pencarian Sinyal, maka Bangboo yang dijamin didapatkan adalah Bangboo Tier-S pilihanmu. • Setelah menentukan Bangboo Tier-S, Proxy dapat mengganti pilihannya kapan saja. Jumlah Pencarian Sinyal tidak akan di-reset dan jaminan akan diwariskan. ※ Saluran FM ini tergolong FM Bangboo. Jumlah hitungan jaminan dalam FM ini akan terakumulasi dalam FM Bangboo. FM Bangboo akan dihitung secara terpisah dari jaminan saluran FM lainnya, serta tidak akan saling memengaruhi. ※ Informasi lebih lanjut tentang Pencarian Sinyal dapat dilihat dengan menekan tombol \"Detail\" di kiri bawah halaman pencarian."
-      },
-      "image": "https://sdk.hoyoverse.com/upload/ann/2026/06/15/02526c012f6eacce260210d29fa92f1d_4948602968781482882_transformed.png",
-      "startsAt": "2026-06-16T05:15:00.000Z",
-      "endsAt": "2026-07-28T21:59:00.000Z",
-      "postedAt": "2026-06-16T05:15:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -219,30 +192,6 @@
       "url": "https://zenless.hoyoverse.com/en/news"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Primogem Rewards: Participate in Columbina and Raiden Shogun's Topic Discussions and Earn Primogems",
-        "id": "[Berhadiah Primogem] Ikuti Diskusi Bertema Columbina dan Raiden Shogun untuk Memenangkan Primogem"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Olah! Hello, Traveler~ Join the discussion to get guaranteed avatar frames, and for a chance to win Primogems~ Columbina Topic Discussion I like to go up to the moon and watch Teyvat revolve in silence. It brings me peace. Take your Kamera ",
-        "id": "Olah! Apa kabar, Traveler? Ikuti diskusinya untuk langsung mendapatkan Bingkai Avatar, serta kesempatan memenangkan Primogem~ Diskusi Bertema Columbina Aku suka pergi ke bulan dan melihat Teyvat berputar dalam keheningan. Itu membuatku mera"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/e54352a57faaafa36a73c68d9ad86f0f_2354643821338835913.png",
-      "startsAt": "2026-07-21T03:59:00.000Z",
-      "endsAt": "2026-07-29T15:59:59.000Z",
-      "postedAt": "2026-07-21T03:59:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45941004"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "type": "event",
@@ -265,6 +214,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45852900"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Primogem Rewards: Participate in Columbina and Raiden Shogun's Topic Discussions and Earn Primogems",
+        "id": "[Berhadiah Primogem] Ikuti Diskusi Bertema Columbina dan Raiden Shogun untuk Memenangkan Primogem"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Olah! Hello, Traveler~ Join the discussion to get guaranteed avatar frames, and for a chance to win Primogems~ Columbina Topic Discussion I like to go up to the moon and watch Teyvat revolve in silence. It brings me peace. Take your Kamera ",
+        "id": "Olah! Apa kabar, Traveler? Ikuti diskusinya untuk langsung mendapatkan Bingkai Avatar, serta kesempatan memenangkan Primogem~ Diskusi Bertema Columbina Aku suka pergi ke bulan dan melihat Teyvat berputar dalam keheningan. Itu membuatku mera"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/21/e54352a57faaafa36a73c68d9ad86f0f_2354643821338835913.png",
+      "startsAt": "2026-07-21T03:59:00.000Z",
+      "endsAt": "2026-07-29T15:59:59.000Z",
+      "postedAt": "2026-07-21T03:59:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45941004"
     },
     {
       "game": "tot",
@@ -1085,6 +1058,33 @@
       "type": "event",
       "typeName": "Announcements",
       "title": {
+        "en": "Version 3.1 New Eridu City Fund Details",
+        "id": "Penjelasan Dana Kota New Eridu V3.1"
+      },
+      "subtitle": {
+        "en": "Version 3.1 New Eridu City Fund Details",
+        "id": "Penjelasan Dana Kota New Eridu V3.1"
+      },
+      "desc": {
+        "en": "Dear Proxies, During this event, you can earn generous rewards by raising your City Fund Level in New Eridu City Fund. Unlock the Growth Plan to instantly receive Polychrome ×680 and the exclusive avatar \"Berry Party\" . Unlock the Premium Plan to get additional instant rewards including Polychrome ×208 , menu decoration set , W-Engine Microcontroller Unit , Resonating Core , and Ether Batteries ! After unlocking the Growth Plan or Premium Plan, you can earn exclusive rewards by raising your City Fund Level, including the exclusive namecard \"Time for Afternoon Tea\" , W-Engine Microcontroller Unit, Resonating Core, Hamster Cage Pass, and upgrade materials! You can also choose your desired type of upgrade materials to be obtained. Event Duration After the Version 3.1 update – 2026/09/07 03:59 (server time) ※ Purchasing of the Growth Plan, Premium Plan, and Plan Upgrade for the current event will close on 2026/09/07 02:59 (server time) . After purchasing is closed, Proxies may still complete Expansion Tasks and claim rewards. Please pay attention to purchase availability times and the event duration. Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • At the start of each season of the New Eridu City Fund, the Basic Plan is automatically unlocked. Proxies can complete Expansion Tasks for experience and increase their Fund Level to obtain more rewards. • Proxies who have already unlocked the Growth Plan can purchase the Plan Upgrade to upgrade to the Premium Plan. • After unlocking the Growth Plan or Premium Plan and reaching City Fund Level Lv. 30, Proxies can claim the Great Builder's Certificate. The Great Builder's Certificate is a time-limited reward for the current City Fund period and will not be retained for the next New Eridu City fund period. It will expire automatically if not used within the time limit. • Please see New Eridu City Fund in-game for more details.",
+        "id": "Dear Proxy: Selama event berlangsung, Proxy bisa mendapatkan hadiah berlimpah dengan cara meningkatkan Level Dana Kota di Dana Kota New Eridu! Buka Rencana Ekspansi dan langsung dapatkan Polychrome ×680 dan Avatar Eksklusif \"Pesta Berry\" . Buka Rencana Premium untuk langsung mendapatkan bonus tambahan berupa Polychrome ×208 , hadiah Dekorasi , W-Engine Microcontroller Unit , Resonating Core , dan Ether Battery ! Setelah membuka Rencana Ekspansi atau Rencana Premium, kamu juga bisa mendapatkan Kartu Nama Eksklusif \"Waktu Istirahat Teh Sore\" , W-Engine Microcontroller Unit, Resonating Core, Hamster Cage Pass, material pengembangan, dan hadiah lainnya dengan meningkatkan Level Dana Kota! Untuk material pengembangan, Proxy dapat memilih jenis material yang ingin didapatkan. [Waktu Event] Setelah update V3.1 - 2026/09/07 03:59 (waktu server) ※ 2026/09/07 02:59 (waktu server) adalah batas waktu untuk membeli Rencana Ekspansi, Rencana Premium, dan Peningkatan Level. Namun, setelah batas waktu berakhir, Proxy masih bisa menyelesaikan Misi Ekspansi dan mengambil hadiahnya. Mohon perhatikan waktu pembelian dan durasi event. [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si Kucing\" [Penjelasan Event] • Saat periode Dana Kota New Eridu dimulai, Rencana Dasar akan terbuka secara otomatis. Proxy dapat menyelesaikan Misi Ekspansi untuk mendapatkan EXP Dana Kota dan meningkatkan Level Dana Kota agar bisa mendapatkan lebih banyak hadiah. • Proxy yang sudah membuka Rencana Ekspansi bisa membeli Peningkatan Level untuk meningkatkan Rencana Dasar ke Rencana Premium. • Setelah membuka Rencana Ekspansi atau Rencana Premium, dan Level Dana Kota mencapai Lv. 30, Proxy bisa mengambil hadiah Great Builder's Certificate. Great Builder's Certificate merupakan hadiah terbatas untuk periode saat ini dan tidak akan diteruskan ke Dana Kota New Eridu periode berikutnya. Item ini akan hangus jika tidak digunakan sebelum periode berakhir. • Untuk detail lainnya, silakan merujuk pada Dana Kota New Eridu dalam game."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/07/27/0400c0018fe06b029d234983f95db6ec_5402435394112322740.jpg",
+      "startsAt": "2026-07-28T05:30:00.000Z",
+      "endsAt": "2026-09-06T19:59:59.000Z",
+      "postedAt": "2026-07-28T05:30:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://zenless.hoyoverse.com/en/news"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": "Announcements",
+      "title": {
         "en": "\"Gift From the Clouds\" Event Details",
         "id": "\"Hadiah dari sang Awan\" | Penjelasan Event"
       },
@@ -1129,6 +1129,60 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45889282"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": "Announcements",
+      "title": {
+        "en": "\"Potential Hypothesis: Hunting Game\" Event Details",
+        "id": "\"Hipotesis Potensi - Rantai Perburuan\" | Penjelasan Event"
+      },
+      "subtitle": {
+        "en": "\"Potential Hypothesis: Hunting Game\" Event Details",
+        "id": "\"Hipotesis Potensi - Rantai Perburuan\" | Penjelasan Event"
+      },
+      "desc": {
+        "en": "Event Duration After the Version 3.1 update – End of Version 3.1 Requirements Available after unlocking Ridu Weekly in Chapter 1 of the main story. Event Details • During the event, Proxies can use designated squad formations to repeatedly experience Agent gameplay before potential activation through the trial stage Cooperative Exercise and Agent gameplay after potential activation through the trial stage Potential Hypothesis. • In trial stages, your squad, Agents' W-Engines, and Drive Discs cannot be changed. Event Rewards • After completing the Potential Hypothesis stage challenge for the first time, you can automatically claim the trial stage rewards on the stage clear screen. Each trial stage reward can only be claimed once during the event.",
+        "id": "[Waktu Event] Setelah update V3.1 hingga akhir V3.1 [Syarat Partisipasi] Buka Mingguan Ridu di Chapter 1 Cerita Utama [Penjelasan Event] • Selama event berlangsung, Proxy dapat menggunakan formasi tim yang ditentukan untuk memainkan ulang stage uji coba \"Latihan Koordinasi\" sebelum mengaktifkan Potensi Agen dan stage uji coba Hipotesis Potensi setelah mengaktifkan Potensi. • Dalam stage uji coba, formasi tim, W-Engine Agen, dan Drive Disc Agen tidak dapat diubah. [Hadiah Event] • Setelah menyelesaikan tantangan stage \"Hipotesis Potensi\" untuk pertama kalinya, kamu akan mendapatkan hadiah stage uji coba secara otomatis di halaman finalisasi stage. Hadiah setiap stage uji coba hanya dapat diambil satu kali selama event berlangsung."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/07/27/a6ca07c079bbd44c93600dfed8fb089e_9074248912064314489.jpg",
+      "startsAt": "2026-07-28T05:45:00.000Z",
+      "endsAt": "2026-09-08T22:00:00.000Z",
+      "postedAt": "2026-07-28T05:45:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://zenless.hoyoverse.com/en/news"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "banner",
+      "typeName": "Announcements",
+      "title": {
+        "en": "New Arrival in \"An Outstanding Partner\"",
+        "id": "\"Partner Terbaik\" | Detail Update"
+      },
+      "subtitle": {
+        "en": "New Arrival in \"An Outstanding Partner\"",
+        "id": "\"Partner Terbaik\" | Detail Update"
+      },
+      "desc": {
+        "en": "New Bangboo available in \"An Outstanding Partner\"! After the Version 3.1 update, the S-Rank Bangboo Ariel will permanently join the Bangboo Channel. Signal Search Details • Before Signal Searching for Bangboo, Proxies should select an S-Rank Bangboo. Upon obtaining an S-Rank Bangboo through Signal Search, the Signal is guaranteed to be the selected S-Rank Bangboo. · Once you select an S-Rank Bangboo, you can switch targets without resetting the number of Signal Searches, allowing you to retain your guarantee. ※ This channel is a Bangboo Channel. The Search count for guaranteed Signals in this Channel is effective only in the Bangboo Channel and is independent of and unaffected by other types of Channels. ※ For more information on Signal Searches, please press Details at the bottom-left of the search page.",
+        "id": "Bangboo baru akan hadir di FM \"Partner Terbaik\"! Setelah update V3.1, Bangboo Tier-S \"Ariel\" akan tersedia di FM Bangboo secara permanen. [Penjelasan FM] • Sebelum melakukan Pencarian Sinyal di FM Bangboo, kamu perlu menentukan 1 Bangboo Tier-S di FM ini sebagai pilihanmu. Saat mendapatkan Sinyal Bangboo Tier-S dalam Pencarian Sinyal, maka Bangboo yang didapatkan dijamin adalah Bangboo Tier-S pilihanmu. • Setelah menentukan Bangboo Tier-S, Proxy dapat mengganti pilihannya kapan saja. Jumlah Pencarian Sinyal tidak akan direset dan jaminan akan diwariskan . ※ Saluran FM ini tergolong FM Bangboo. Jumlah hitungan jaminan dalam FM ini akan terakumulasi dalam FM Bangboo. FM Bangboo akan dihitung secara terpisah dari jaminan saluran FM lainnya, serta tidak akan saling memengaruhi. ※ Informasi lebih lanjut tentang Pencarian Sinyal dapat dilihat dengan menekan tombol Detail di kiri bawah halaman pencarian."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/07/27/3d5b7028dd733cadbca3139bc7796970_3586435640209892688_transformed.jpg",
+      "startsAt": "2026-07-28T05:15:00.000Z",
+      "endsAt": "2026-09-08T22:00:00.000Z",
+      "postedAt": "2026-07-28T05:15:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://zenless.hoyoverse.com/en/news"
     },
     {
       "game": "gi",
@@ -1190,47 +1244,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Vodka power, discharge!\"",
-        "id": "\"Kekuatan Vodka, lepaskan!\""
+        "en": "\"Please, the other me!\"",
+        "id": "\"Tolonglah, diriku yang lain!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Olenyevas  Today's Topic: Please describe Rozaliya and Liliya in one sentence!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Olenyeva bersaudara  Topik Kali Ini: Deskripsikan Rozaliya dan Liliya dalam satu kalimat!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lain"
+        "en": " Today's Time Album Spotlight: Seele Vollerei  Today's Topic: Which of Seele's dual personalities do you prefer?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Seele Vollerei  Topik Kali Ini: Dari dua kepribadian Seele, kamu lebih suka yang mana?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/14/ddae622c8b46e04768b5adc8fd76b3a5_6832252828787114953.png",
-      "startsAt": "2026-07-18T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/a62f839ced1795d5218421d992fe3b5f_618852002642294793.png",
+      "startsAt": "2026-07-23T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-18T04:00:06.000Z",
+      "postedAt": "2026-07-23T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45901660"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Durandal, awaiting orders!\"",
-        "id": "\"Durandal, menunggu perintah.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Durandal  Today's Topic: Which matters more to you, the process or the outcome?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 C",
-        "id": " Bintang Utama Album Kenangan Hari Ini: Durandal  Topik Kali Ini: Mana yang lebih penting bagimu, proses atau hasil?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa un"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/39c753cd0ab279b8126b12397114e955_5372028776434856330.png",
-      "startsAt": "2026-07-25T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-25T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45991851"
+      "url": "https://www.hoyolab.com/article/45967005"
     },
     {
       "game": "hi3",
@@ -1262,23 +1292,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Please, the other me!\"",
-        "id": "\"Tolonglah, diriku yang lain!\""
+        "en": "\"Durandal, awaiting orders!\"",
+        "id": "\"Durandal, menunggu perintah.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Seele Vollerei  Today's Topic: Which of Seele's dual personalities do you prefer?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Seele Vollerei  Topik Kali Ini: Dari dua kepribadian Seele, kamu lebih suka yang mana?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya"
+        "en": " Today's Time Album Spotlight: Durandal  Today's Topic: Which matters more to you, the process or the outcome?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 C",
+        "id": " Bintang Utama Album Kenangan Hari Ini: Durandal  Topik Kali Ini: Mana yang lebih penting bagimu, proses atau hasil?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa un"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/a62f839ced1795d5218421d992fe3b5f_618852002642294793.png",
-      "startsAt": "2026-07-23T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/39c753cd0ab279b8126b12397114e955_5372028776434856330.png",
+      "startsAt": "2026-07-25T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-23T04:00:06.000Z",
+      "postedAt": "2026-07-25T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45967005"
+      "url": "https://www.hoyolab.com/article/45991851"
     },
     {
       "game": "hi3",
@@ -1286,47 +1316,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"It's time to settle things!\"",
-        "id": "\"Saatnya pertempuran penentu!\""
+        "en": "\"Vodka power, discharge!\"",
+        "id": "\"Kekuatan Vodka, lepaskan!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Murata Himeko  Today's Topic: What is the most important lesson Miss Himeko taught you?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Karakter Utama Album Kenangan Hari Ini: Murata Himeko  Topik Kali Ini: Apa pelajaran terpenting yang diajarkan Guru Himeko padamu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya!"
+        "en": " Today's Time Album Spotlight: Olenyevas  Today's Topic: Please describe Rozaliya and Liliya in one sentence!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Olenyeva bersaudara  Topik Kali Ini: Deskripsikan Rozaliya dan Liliya dalam satu kalimat!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lain"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/5dcdfb067a5a52af634f58f6869fd0c8_2537018723789932979.png",
-      "startsAt": "2026-07-04T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/14/ddae622c8b46e04768b5adc8fd76b3a5_6832252828787114953.png",
+      "startsAt": "2026-07-18T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-06T05:12:09.000Z",
+      "postedAt": "2026-07-18T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45747948"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Theresa is the World's No. 1 Cutie! Pew!\"",
-        "id": "\"Theresa adalah gadis terimut sedunia, biu!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Theresa Apocalypse  Today's Topic: Share your favorite Principal stickers with us!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 10",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Theresa Apocalypse  Topik Kali Ini: Bagikan stiker Kepala Sekolah favoritmu dengan kami!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainn"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/eadc089868a7d4808be4f7722372ec9c_8818077989149360608.png",
-      "startsAt": "2026-07-02T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-06T05:12:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45747945"
+      "url": "https://www.hoyolab.com/article/45901660"
     },
     {
       "game": "hi3",
@@ -1358,23 +1364,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Fate is what brought us together.\"",
-        "id": "\"Takdirlah yang mempertemukan kita.\""
+        "en": "\"Theresa is the World's No. 1 Cutie! Pew!\"",
+        "id": "\"Theresa adalah gadis terimut sedunia, biu!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
-        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+        "en": " Today's Time Album Spotlight: Theresa Apocalypse  Today's Topic: Share your favorite Principal stickers with us!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 10",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Theresa Apocalypse  Topik Kali Ini: Bagikan stiker Kepala Sekolah favoritmu dengan kami!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainn"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
-      "startsAt": "2026-07-11T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/eadc089868a7d4808be4f7722372ec9c_8818077989149360608.png",
+      "startsAt": "2026-07-02T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-11T04:00:05.000Z",
+      "postedAt": "2026-07-06T05:12:05.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45809908"
+      "url": "https://www.hoyolab.com/article/45747945"
     },
     {
       "game": "hi3",
@@ -1382,47 +1388,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"This is Kiana's time!\"",
-        "id": "\"Waktunya Kiana beraksi!\""
+        "en": "\"It's time to settle things!\"",
+        "id": "\"Saatnya pertempuran penentu!\""
       },
       "subtitle": "",
       "desc": {
-        "en": "📸 Today's Time Album Spotlight: Kiana Kaslana 💬 Today's Topic: Which Kiana's battlesuit is your favorite? 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cryst",
-        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Kiana Kaslana 💬 Topik Hari Ini: Battlesuit Kiana mana yang menjadi favoritmu? 🎁 Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Janga"
+        "en": " Today's Time Album Spotlight: Murata Himeko  Today's Topic: What is the most important lesson Miss Himeko taught you?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Karakter Utama Album Kenangan Hari Ini: Murata Himeko  Topik Kali Ini: Apa pelajaran terpenting yang diajarkan Guru Himeko padamu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya!"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/17/8ba5805b9bca8b11b5a846bc5a2d9d03_5761413510756045051.png",
-      "startsAt": "2026-06-17T06:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/5dcdfb067a5a52af634f58f6869fd0c8_2537018723789932979.png",
+      "startsAt": "2026-07-04T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-06-17T06:00:05.000Z",
+      "postedAt": "2026-07-06T05:12:09.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45491709"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Valkyrie Mei, reporting for duty!\"",
-        "id": "\"Valkyrie Mei, telah tiba!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "📸 Today's Time Album Spotlight: Raiden Mei 💬 Today's Topic: What are some of Mei's lovingly made dishes that stand out to you? 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to",
-        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Raiden Mei 💬 Topik Hari Ini: Masakan penuh cinta apa dari Mei yang paling berkesan untukmu? 🎁 Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/59e5696d12ec253411f2f97a1d91f2d7_3245954936371395859.png",
-      "startsAt": "2026-06-20T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-06-20T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45531767"
+      "url": "https://www.hoyolab.com/article/45747948"
     },
     {
       "game": "hi3",
@@ -1454,6 +1436,30 @@
       "type": "event",
       "typeName": null,
       "title": {
+        "en": "\"Fate is what brought us together.\"",
+        "id": "\"Takdirlah yang mempertemukan kita.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
+        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
+      "startsAt": "2026-07-11T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-11T04:00:05.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45809908"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
         "en": "\"Bronya has arrived at the designated coordinates.\"",
         "id": "\"Bronya telah mencapai lokasi pengaturan.\""
       },
@@ -1471,6 +1477,54 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45570201"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Valkyrie Mei, reporting for duty!\"",
+        "id": "\"Valkyrie Mei, telah tiba!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "📸 Today's Time Album Spotlight: Raiden Mei 💬 Today's Topic: What are some of Mei's lovingly made dishes that stand out to you? 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to",
+        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Raiden Mei 💬 Topik Hari Ini: Masakan penuh cinta apa dari Mei yang paling berkesan untukmu? 🎁 Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/59e5696d12ec253411f2f97a1d91f2d7_3245954936371395859.png",
+      "startsAt": "2026-06-20T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-06-20T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45531767"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"This is Kiana's time!\"",
+        "id": "\"Waktunya Kiana beraksi!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "📸 Today's Time Album Spotlight: Kiana Kaslana 💬 Today's Topic: Which Kiana's battlesuit is your favorite? 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cryst",
+        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Kiana Kaslana 💬 Topik Hari Ini: Battlesuit Kiana mana yang menjadi favoritmu? 🎁 Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Janga"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/17/8ba5805b9bca8b11b5a846bc5a2d9d03_5761413510756045051.png",
+      "startsAt": "2026-06-17T06:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-06-17T06:00:05.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45491709"
     }
   ],
   "archive": [
