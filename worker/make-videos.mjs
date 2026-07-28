@@ -24,7 +24,7 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // → ~8.500 unit, sisa buffer aman; batas "Video Uploads per day" (100) tak kena.
 // Kalau lonjakan kode makin ramai & mentok, sisanya jatuh ke jalur manual (aman).
 // Bisa dioverride lewat Variable repo VIDEO_MAX_PER_DAY.
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 45);
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 50);
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
