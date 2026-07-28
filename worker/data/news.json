@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-07-28T09:01:23.723Z",
+  "updatedAt": "2026-07-28T10:01:26.446Z",
   "counts": {
-    "active": 114,
+    "active": 115,
     "archived": 38
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "For Display Only | Remielle",
+        "id": "For Display Only | Remielle"
+      },
+      "excerpt": {
+        "en": "\"May I steal you for a dance?\"",
+        "id": "\"May I steal you for a dance?\""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-07-28/transcoded/142082015445319979008_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/46030167",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-28T10:00:04.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -116,6 +132,22 @@
       "url": "https://www.hoyolab.com/article/46018633",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-27T10:30:03.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Upcoming Events in Wuthering Waves Version 3.5",
+        "id": "Upcoming Events in Wuthering Waves Version 3.5"
+      },
+      "excerpt": {
+        "en": "Here is a compilation of the upcoming events in Version 3.5. Don't miss out!",
+        "id": "Here is a compilation of the upcoming events in Version 3.5. Don't miss out!"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1785081600000/okhrprqu3k7zcjhyj6-1785146894790.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5208",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-07-27T10:09:29.000Z"
     },
     {
       "game": "zzz",
@@ -532,22 +564,6 @@
       "url": "https://www.hoyolab.com/article/45981885",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-24T10:00:04.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Banyue | Eradicate Evil, Cultivate Good",
-        "id": "Selamat Ulang Tahun, Banyue | Menapaki Jalan Kebajikan"
-      },
-      "excerpt": {
-        "en": "\"Evil deeds and habits already formed need to be halted. Evil deeds not yet done need to be prevented.\" \"Guard the good already born and let it grow. Strive to bring forth the good",
-        "id": "\"Musnahkan keburukan yang telah tumbuh, cegah keburukan yang belum bersemi.\" \"Rawat kebajikan yang sudah ada, tumbuhkan kebajikan yang belum bersemi.\" \"Ehn-ne! (Berhenti mengikutik"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/23/0/2f1f7f7437aaeca33694a1a0f9ceb7b3_820504115444523728.jpeg",
-      "url": "https://www.hoyolab.com/article/45979828",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-24T06:38:42.000Z"
     },
     {
       "game": "hsr",
