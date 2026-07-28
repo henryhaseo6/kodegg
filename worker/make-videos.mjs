@@ -301,6 +301,9 @@ async function main() {
     seen.add(c.id);
     return c.isPromo || c.newCodes.some((nc) => !state.posted[ck(c.id, nc.code)]); // buang yg semua kodenya sudah divideokan
   });
+  // PRIORITAS slot upload (kuota API ~45/hari): game player TERBESAR duluan → game
+  // gede (mis. RIVALS 241K) tak kebuang ke manual saat hari rame. Promo tetap depan.
+  candidates.sort((a, b) => (b.isPromo ? 1 : 0) - (a.isPromo ? 1 : 0) || (b.players || 0) - (a.players || 0));
   let remaining = MAX_PER_DAY - state.todayCount;
   console.log(`kandidat: ${candidates.length} (antrian ${pending.length} + baru ${fresh.length}) | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
   if (candidates.length === 0) { console.log("tak ada kode baru → tak ada video."); writeFileSync(PENDING_VID, "[]\n"); return; }
@@ -319,7 +322,10 @@ async function main() {
   if (overflow.length) console.log(`(dibatasi ${RENDER_MAX}/run — ${overflow.length} game diantrikan utk run berikutnya)`);
   mkdirSync(TMP, { recursive: true });
   if (DRY_RUN) mkdirSync(REVIEW, { recursive: true }); else mkdirSync(OUTDIR, { recursive: true });
+  const requeue = []; // kuota upload habis → antri retry run berikut (JANGAN mark posted)
   for (const c of picks) {
+    if (canUpload && remaining <= 0) { requeue.push(c); continue; } // kuota habis → jgn render, antri retry
+    let quotaManual = false;
     try {
       console.log(`\n▶ ${c.name} (${c.platform}) — ${c.newCodes.length} kode baru`);
       const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
@@ -353,19 +359,19 @@ async function main() {
           state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
           if (playlistPending) enqueuePending(playlistPending); // rate-limit playlist → coba lagi run berikutnya
         } catch (e) {
-          // Paling sering: kuota API habis. Dulu video-nya hilang begitu saja —
-          // sekarang jatuh ke jalur manual supaya tetap bisa diupload belakangan.
+          // Kuota API habis → simpan buat manual + ANTRI RETRY run berikut (kuota
+          // reset harian), TIDAK di-mark posted. Error lain → manual + mark posted
+          // (hindari retry tak berhenti pada video bermasalah).
           console.log(`  ✗ upload gagal: ${e.message}`);
-          if (/quota/i.test(e.message)) remaining = 0; // jangan hantam kuota berkali-kali
+          if (/quota/i.test(e.message)) { remaining = 0; requeue.push(c); quotaManual = true; }
           simpanManual("upload gagal");
         }
       } else {
-        simpanManual(canUpload ? "kuota harian" : "YT belum di-set");
+        simpanManual("YT belum di-set");
       }
-      // Tandai terpakai baik yg diupload maupun yg manual → tak dirender ulang
-      // tiap jam. Yang manual tinggal ambil dari artifact run ini.
-      for (const nc of c.newCodes) state.posted[ck(c.id, nc.code)] = true;
-      if (c.isPromo) {
+      // Mark posted KECUALI ke-antri retry gara2 kuota (biar diulang run berikut).
+      if (!quotaManual) for (const nc of c.newCodes) state.posted[ck(c.id, nc.code)] = true;
+      if (!quotaManual && c.isPromo) {
         // Rekap bulan ini beres + semua kode promo saat ini ditandai (jangan
         // ulang bulan ini kecuali muncul kode promo yg benar-benar baru).
         state.promoMonth = now.toISOString().slice(0, 7);
@@ -375,6 +381,12 @@ async function main() {
     } catch (e) {
       console.log(`  ✗ gagal ${c.name}: ${e.message}`);
     }
+  }
+  // Antrian retry (kuota habis) + overflow render → PENDING_VID (dedup by id), diproses run berikut.
+  if (!DRY_RUN) {
+    const seenP = new Set(), merged = [...requeue, ...overflow].filter((c) => !seenP.has(c.id) && seenP.add(c.id));
+    writeFileSync(PENDING_VID, JSON.stringify(merged.map(({ iconPath, ...d }) => d), null, 2) + "\n");
+    if (requeue.length) console.log(`(${requeue.length} game diantrikan retry — kuota upload habis run ini)`);
   }
   if (!DRY_RUN) {
     // prune state biar tak membengkak
