@@ -1,0 +1,71 @@
+# Auto-generate video "New Roblox Codes Roundup" tiap ganti hari (00:35 WIB) —
+# rekap SEMUA kode Roblox BARU H-1 (dari worker/data/roblox-codes.json, firstSeenAt
+# non-bulk) → group per game → top-N by pemain → render (stamp-slam + SFX + kartu kode
+# + grafik + outro subscribe) + thumbnail T3+ → upload YouTube PUBLIC + playlist.
+#
+# Jalan 00:35 WIB (5 menit setelah Top 50) biar tidak bentrok upload YouTube. Data H-1
+# sudah lengkap di repo (di-commit tiap jam oleh update-codes). Tidak butuh R2.
+# Roblox-ONLY, global/English. CTA update per-jam → Shorts.
+
+name: codes-roundup
+
+on:
+  schedule:
+    - cron: "35 17 * * *" # 00:35 WIB (UTC+7) = 17:35 UTC — tepat setelah Top 50
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Tanggal kode (YYYY-MM-DD, WIB). Kosong = H-1 otomatis."
+        type: string
+        default: ""
+      limit:
+        description: "Jumlah game (1-30)"
+        type: string
+        default: "15"
+      upload:
+        description: "Upload ke YouTube (PUBLIC)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: codes-roundup
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install deps video (canvas + ffmpeg + googleapis)
+        run: cd worker && npm run deps:video
+
+      - name: Render Roundup (+ upload PUBLIC)
+        env:
+          # Upload YouTube (reuse secret pipeline Shorts/Top 50).
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_PRIVACY: public
+        run: |
+          ARGS="--limit=${{ inputs.limit || '15' }}"
+          [ -n "${{ inputs.date }}" ] && ARGS="$ARGS --date=${{ inputs.date }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.upload }}" != "true" ]; then ARGS="$ARGS --no-upload"; fi
+          echo "make-codes-roundup $ARGS"
+          node worker/make-codes-roundup.mjs $ARGS
+
+      - name: Simpan video sbg artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: codes-roundup
+          path: |
+            _video-out/roundup-*.mp4
+            _video-out/roundup-*.txt
+            _video-out/roundup-*.png
+          if-no-files-found: warn
+          retention-days: 14
