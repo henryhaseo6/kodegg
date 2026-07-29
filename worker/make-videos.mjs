@@ -175,6 +175,14 @@ function buildCandidates() {
     if (uni && !ytpl[c.id] && uniWithVideo.has(uni)) { console.log(`  ⏭ skip ${c.id}: universeId ${uni} sudah punya video di id lain (anti-dup)`); return false; }
     return true;
   });
+  // Tempel SEMUA kode aktif tiap game ke kandidat (allCodes). Pas video jadi,
+  // seluruh kode aktif game itu di-mark posted — bukan cuma subset new-codes-file.
+  // Cegah jalur fresh-codes nge-surface ULANG game yg baru divideokan (dobel);
+  // hanya kode yg benar2 baru (muncul setelahnya) yg memicu video berikutnya.
+  const rbByGame = {}, mcByGame = {};
+  for (const c of rb.active) (rbByGame[c.game] ??= []).push(c.code);
+  for (const c of mc.active) (mcByGame[c.game] ??= []).push(c.code);
+  for (const c of deduped) c.allCodes = (c.platform === "ROBLOX" ? rbByGame[c.id] : mcByGame[c.id]) ?? c.newCodes.map((n) => n.code);
   return deduped.sort((a, b) => b.rank - a.rank);
 }
 
@@ -397,7 +405,7 @@ async function main() {
         simpanManual("YT belum di-set");
       }
       // Mark posted KECUALI ke-antri retry gara2 kuota (biar diulang run berikut).
-      if (!quotaManual) for (const nc of c.newCodes) state.posted[ck(c.id, nc.code)] = true;
+      if (!quotaManual) for (const code of c.allCodes ?? c.newCodes.map((n) => n.code)) state.posted[ck(c.id, code)] = true;
       if (!quotaManual && c.isPromo) {
         // Rekap bulan ini beres + semua kode promo saat ini ditandai (jangan
         // ulang bulan ini kecuali muncul kode promo yg benar-benar baru).
