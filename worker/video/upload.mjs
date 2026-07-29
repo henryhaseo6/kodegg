@@ -66,7 +66,7 @@ async function ensurePlaylist(yt, title, description, lang = "id") {
     const hit = (r.data.items ?? []).find((p) => plKey(p.snippet?.title) === want);
     if (hit) {
       const cur = hit.snippet ?? {};
-      if (cur.title !== title || (cur.defaultLanguage || "") !== lang) {
+      if (cur.title !== title || (cur.defaultLanguage || "") !== lang || (description && (cur.description || "") !== description)) {
         try {
           await yt.playlists.update({ part: ["snippet"], requestBody: { id: hit.id, snippet: { title, description, defaultLanguage: lang } } });
           console.log(`  ↳ playlist dinormalisasi: "${cur.title}" → "${title}" [${lang}]`);

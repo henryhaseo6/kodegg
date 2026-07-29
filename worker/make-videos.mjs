@@ -321,7 +321,7 @@ async function main() {
     const stem = `${today}-${c.id}`;
     copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
     copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
-    writeFileSync(resolve(OUTDIR, `${stem}.txt`), `JUDUL:\n${meta.title}\n\nDESKRIPSI:\n${meta.description}\n\nTAG:\n${(meta.tags ?? []).join(", ")}\n\nPLAYLIST:\n${meta.playlistTitle}\n`);
+    writeFileSync(resolve(OUTDIR, `${stem}.txt`), `JUDUL:\n${meta.title}\n\nDESKRIPSI:\n${meta.description}\n\nTAG:\n${(meta.tags ?? []).join(", ")}\n\nPLAYLIST:\n${meta.playlistTitle}\n\nPLAYLIST_DESC:\n${meta.playlistDescription ?? ""}\n`);
     try { rmSync(TMP, { recursive: true, force: true }); } catch {}
     console.log(`  ✓ _video-out/${stem}.mp4 (+ .jpg thumbnail, .txt metadata)\n    judul: ${meta.title}`);
     return;
@@ -387,7 +387,7 @@ async function main() {
         const stem = `${today}-${c.id}`;
         copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
         copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
-        writeFileSync(resolve(OUTDIR, `${stem}.txt`), `JUDUL:\n${meta.title}\n\nDESKRIPSI:\n${meta.description}\n\nTAG:\n${(meta.tags ?? []).join(", ")}\n\nPLAYLIST:\n${meta.playlistTitle}\n`);
+        writeFileSync(resolve(OUTDIR, `${stem}.txt`), `JUDUL:\n${meta.title}\n\nDESKRIPSI:\n${meta.description}\n\nTAG:\n${(meta.tags ?? []).join(", ")}\n\nPLAYLIST:\n${meta.playlistTitle}\n\nPLAYLIST_DESC:\n${meta.playlistDescription ?? ""}\n`);
         console.log(`  ✓ manual (${alasan}): _video-out/${stem}.mp4 — "${meta.title}"`);
         state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, title: meta.title, mode: "manual", alasan, file: `${stem}.mp4` });
       };
