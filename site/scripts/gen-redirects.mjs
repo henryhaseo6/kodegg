@@ -32,10 +32,16 @@ const emit = (oldSlug, slug) => {
   }
 };
 
+// Batasi ledakan baris (limit CF ~2000): prefix-migration tak ninggalin jejak di
+// data, jadi pola-1 di-emit hanya utk game "notable" (≥2000 pemain = ambang yg
+// bisa dapat video → link lama tersebar & perlu redirect). Pola-2 presisi (id
+// beda slug = jejak rename nyata) → emit semua. Fix akar (universeId + slug-
+// history → hanya slug yg BENER-BENER berubah) menyusul di refactor 1 Agt.
+const NOTABLE = 2000;
 for (const [id, g] of Object.entries(rc.games)) {
   const slug = g.slug || id;
-  if (!slug.startsWith("roblox-")) emit(`roblox-${slug}`, slug); // pola 1: buang prefix
-  if (id !== slug) emit(id, slug); // pola 2: id lama sbg slug
+  if (!slug.startsWith("roblox-") && (g.players || 0) >= NOTABLE) emit(`roblox-${slug}`, slug); // pola 1
+  if (id !== slug) emit(id, slug); // pola 2 (presisi)
 }
 
 const out = `${base}\n\n${MARKER}\n${lines.join("\n")}\n`;
