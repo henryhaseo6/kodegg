@@ -270,5 +270,57 @@
         "isNew": false
       }
     ]
+  },
+  {
+    "platform": "MOBILE",
+    "id": "nikki",
+    "name": "Infinity Nikki",
+    "slug": "infinity-nikki",
+    "players": 0,
+    "rank": 1000000000,
+    "newCodes": [
+      {
+        "code": "AAuEDFnQFpu",
+        "game": "nikki",
+        "gameName": "Infinity Nikki",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000"
+      },
+      {
+        "code": "AAuPeEK4vvp",
+        "game": "nikki",
+        "gameName": "Infinity Nikki",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000"
+      },
+      {
+        "code": "AAu6hcK7cBp",
+        "game": "nikki",
+        "gameName": "Infinity Nikki",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000"
+      }
+    ],
+    "activeCount": 34,
+    "fetchedAt": "2026-07-29T00:01:00.544Z",
+    "displayCodes": [
+      {
+        "code": "AAuEDFnQFpu",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": true
+      },
+      {
+        "code": "AAuPeEK4vvp",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": true
+      },
+      {
+        "code": "AAu6hcK7cBp",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": true
+      },
+      {
+        "code": "AAuQ8sMjHEC",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      }
+    ]
   }
 ]
