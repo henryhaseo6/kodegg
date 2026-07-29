@@ -1,0 +1,76 @@
+# Catch-up video Short manual — render + upload game tertentu yang kelewat
+# pipeline otomatis (mis. korban window kacau / kode sudah tak "fresh" lagi /
+# game di bawah ambang pemain). Render pakai mode --game (allMode = SEMUA kode
+# aktif) → upload via upload-manual.mjs (+ playlist + komentar). Tak commit apa-apa.
+#
+# Pakai: Actions → manual-video → Run workflow → isi `games` (slug pisah koma).
+name: manual-video
+
+on:
+  workflow_dispatch:
+    inputs:
+      games:
+        description: "Slug game (pisah koma), mis: become-an-anime-billionaire,idle-balls"
+        required: true
+      privacy:
+        description: "Privasi upload"
+        type: choice
+        options: [public, unlisted, private]
+        default: public
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manual-video
+  cancel-in-progress: false
+
+jobs:
+  render-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install deps (canvas + ffmpeg + googleapis + edge-tts)
+        run: |
+          pip install --quiet --disable-pip-version-check edge-tts || pip3 install --quiet edge-tts
+          npm install @napi-rs/canvas @ffmpeg-installer/ffmpeg googleapis --no-save --no-audit --no-fund
+      - name: Render + upload
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          # Multi-project (opsional) — ikut kepakai kalau terisi.
+          YT_CLIENT_ID_2: ${{ secrets.YT_CLIENT_ID_2 }}
+          YT_CLIENT_SECRET_2: ${{ secrets.YT_CLIENT_SECRET_2 }}
+          YT_REFRESH_TOKEN_2: ${{ secrets.YT_REFRESH_TOKEN_2 }}
+          YT_CLIENT_ID_3: ${{ secrets.YT_CLIENT_ID_3 }}
+          YT_CLIENT_SECRET_3: ${{ secrets.YT_CLIENT_SECRET_3 }}
+          YT_REFRESH_TOKEN_3: ${{ secrets.YT_REFRESH_TOKEN_3 }}
+          YT_PRIVACY: ${{ inputs.privacy }}
+          GAMES: ${{ inputs.games }}
+          PYTHON: python3
+        run: |
+          if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set (secret kosong)."; exit 1; fi
+          IFS=',' read -ra GS <<< "$GAMES"
+          for g in "${GS[@]}"; do
+            g=$(echo "$g" | xargs)   # trim spasi
+            [ -z "$g" ] && continue
+            echo "▶ render: $g"
+            node worker/make-videos.mjs --game="$g" || echo "  render $g gagal, lanjut"
+          done
+          echo "▶ upload semua hasil render ke YouTube (privasi=${{ inputs.privacy }})…"
+          node worker/video/upload-manual.mjs --all --privacy "${{ inputs.privacy }}"
+      - name: Artifact video (cadangan bila upload gagal)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: manual-video
+          path: _video-out/
+          if-no-files-found: ignore
+          retention-days: 5
