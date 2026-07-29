@@ -1,10 +1,90 @@
 {
-  "updatedAt": "2026-07-29T03:01:42.270Z",
+  "updatedAt": "2026-07-29T04:01:11.533Z",
   "counts": {
-    "active": 115,
-    "archived": 38
+    "active": 114,
+    "archived": 39
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Pom-Pom Gallery | In Ravages Does the Whistle Sound",
+        "id": "\"Galeri Pom-Pom | Gema Peluit di Ambang Kesunyian\""
+      },
+      "excerpt": {
+        "en": "\"Just keep moving forward... To set forth, trusting only the path before us... with no question about the ending!\"",
+        "id": "\"Terus melangkah maju ... Melangkah maju, percayalah hanya pada jalan di hadapan kita ... dan bukanlah tujuan di baliknya!\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/28/6e22463a40d52cb235460cd181d17ba9_4358949385318876869.jpg",
+      "url": "https://www.hoyolab.com/article/46039637",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-29T04:00:06.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact Version 7.0 Special Program Preview",
+        "id": "Preview Acara Khusus Versi 7.0 | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "Dear Traveler, it's announcement time! The special program for Genshin Impact's new version will premiere on the official Twitch and YouTube channels on 07/31/2026 at 08:00 AM (UTC",
+        "id": "Dear Traveler, ada pengumuman baru nih! Acara Khusus untuk versi baru Genshin Impact akan ditayangkan perdana di Twitch dan YouTube pada 31 Juli 2026 08:00 (UTC-4)! Acara Khusus ka"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/29/e714025f8711427b2ba668a54b07fa99_8133256506386220169.jpg",
+      "url": "https://www.hoyolab.com/article/46039635",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-29T04:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Behind the Design of Remielle | ZTALK",
+        "id": "ZTALK | Di Balik Desain Remielle"
+      },
+      "excerpt": {
+        "en": "Remielle, the first-generation Void Hunter, has officially returned! The development team will be on the show to reveal the design journey behind Remielle, sharing fun behind-the-s",
+        "id": "Void Hunter Generasi Pertama \"Remielle\", resmi kembali! Di acara ini, tim pengembang akan mengungkap proses desain karakter Remielle serta berbagi kisah menarik di balik proses pem"
+      },
+      "image": null,
+      "url": "https://www.hoyolab.com/article/46039634",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-29T04:00:03.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Version 3.1 \"The Long Goodbye\" Is Now Live!",
+        "id": "Zenless Zone Zero Version 3.1 \"The Long Goodbye\" Is Now Live!"
+      },
+      "excerpt": {
+        "en": "",
+        "id": ""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-07-29/transcoded/142082265971815124992_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/46039198",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-29T03:30:02.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "The Long Goodbye | Version 3.1 Content Overview (Phase I)",
+        "id": "Sunyi Panjang Sebuah Pamit | Preview Konten Versi 3.1 (Tahap 1)"
+      },
+      "excerpt": {
+        "en": "Hey Proxies! Version 3.1 is now live! S-Rank Agents Remielle (Lumiflux - Anomaly) and Aria (Ether - Anomaly), along with S-Rank W-Engines Ode of Resurrected Wings (Anomaly) and Ang",
+        "id": "Halo Proxy, versi 3.1 sudah dimulai! Agen Tier-S Remielle (Lumiflux - Anomaly), Aria (Ether - Anomaly) dan W-Engine Tier-S Ode of Resurrected Wings (Anomaly), Angel in the Shell (A"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/28/0/855e30d62c63cc82bb0fc90dd1ab47b6_1209582870877564944.jpeg",
+      "url": "https://www.hoyolab.com/article/46038962",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-07-29T03:15:04.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -550,38 +630,6 @@
       "publishedAt": "2026-07-25T08:00:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Ode of Resurrected Wings W-Engine Showcase Video",
-        "id": "Ode of Resurrected Wings W-Engine Showcase Video"
-      },
-      "excerpt": {
-        "en": "The \"Ode of Resurrected Wings\" Signal Search event is about to begin! After the Version 3.1 update – 2026/09/08 14:59 (server time), reception rate for the limited S-Rank W-Engine ",
-        "id": "The \"Ode of Resurrected Wings\" Signal Search event is about to begin! After the Version 3.1 update – 2026/09/08 14:59 (server time), reception rate for the limited S-Rank W-Engine "
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-07-25/transcoded/142080569026345979904_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/45992410",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-25T05:00:02.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Behind-the-Scenes丨Ariel",
-        "id": "Behind-the-Scenes丨Ariel"
-      },
-      "excerpt": {
-        "en": "May the prismatic light wash away your confusion. ▼ Pre-Register for Version 3.1 to get Polychromes and a commemorative namecard! https://hoyo.link/TYcCrU4IL",
-        "id": "May the prismatic light wash away your confusion. ▼ Pre-Register for Version 3.1 to get Polychromes and a commemorative namecard! https://hoyo.link/TYcCrU4IL"
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-07-25/transcoded/142080568085039304704_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/45991989",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-25T04:15:01.000Z"
-    },
-    {
       "game": "tot",
       "gameName": "Tears of Themis",
       "title": {
@@ -612,22 +660,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5200",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-24T11:05:29.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "New Eridan Vol.06 | Seashade Pas Seul & Moonlight Whispers",
-        "id": "New Eridan Vol. 06 | Gemulai sang Siluet & Bisikan Rembulan"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! This time, we're introducing Remielle's brand-new outfits, Seashade Pas Seul and Moonlight Whispers. Let's check them out!",
-        "id": "Halo, Proxy! Kali ini kami akan memperkenalkan Outfit baru Remielle, \"Gemulai sang Siluet\" dan \"Bisikan Rembulan\"! Mari kita lihat bersama!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/23/0/fd2bc1d0f795953d11b0e108aa49a918_3668299205258632008.jpeg",
-      "url": "https://www.hoyolab.com/article/45982193",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-24T10:30:05.000Z"
     },
     {
       "game": "wuwa",
@@ -1062,22 +1094,6 @@
       "publishedAt": "2026-07-16T08:00:04.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Welcome to Arcadia | Arcadia Evacuation Guide",
-        "id": "Selamat Datang di Utopia | Panduan Evakuasi Utopia"
-      },
-      "excerpt": {
-        "en": "Multiple unpredictable phenomena and accidents have been occurring in Planarcadia. All residents are requested to constantly monitor this news broadcast and abide by the rules in t",
-        "id": "Telah terjadi banyak fenomena penyimpangan dan kecelakaan yang tidak terduga di Planarcadia. Mohon kepada seluruh penduduk untuk selalu memantau laporan berita ini dan mematuhi atu"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/15/5e94b2f854442072c5a90f101e3fbf71_7430338801011723120.jpg",
-      "url": "https://www.hoyolab.com/article/45871854",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-16T06:00:07.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -1348,22 +1364,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5125",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-10T04:19:03.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Cutscene Animation: \"Should We Meet Again\" | Genshin Impact",
-        "id": "Adegan Animasi \"Jika Kita Bertemu Lagi\" | Genshin Impact"
-      },
-      "excerpt": {
-        "en": "\"Plus, the film got a happy ending too.\"",
-        "id": "\"Dan filmnya juga berakhir bahagia.\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/09/0/feff77deabf57d3c912051d2d110563a_5865773916114631339.jpeg",
-      "url": "https://www.hoyolab.com/article/45797246",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-10T04:00:04.000Z"
     },
     {
       "game": "wuwa",
@@ -1828,7 +1828,9 @@
       "url": "https://www.hoyolab.com/article/45665589",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-30T14:00:02.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -1843,10 +1845,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/26/0/8320fa8820ace261f98ca8e2caa97cfc_8489163827264510576.jpeg",
       "url": "https://www.hoyolab.com/article/45647248",
       "source": "HoYoLAB",
-      "publishedAt": "2026-06-29T03:10:07.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-06-29T03:10:07.000Z",
+      "archivedAt": "2026-07-29T04:01:11.533Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
