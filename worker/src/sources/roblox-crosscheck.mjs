@@ -30,7 +30,7 @@ async function fetchHtml(url) {
 
 // Kode di bagian AKTIF (sebelum heading "Expired codes"), union beberapa pola.
 function activeCodes(html) {
-  const cut = html.search(/expired\s*codes/i);
+  const cut = html.search(/expired[^<]{0,40}?codes/i); // "Expired <Game> Codes" (nama game di tengah, mis. THG "Expired Adopt Me Codes")
   const seg = cut > 0 ? html.slice(0, cut) : html;
   return extractSeg(seg);
 }
@@ -39,7 +39,7 @@ function activeCodes(html) {
 // expiry: kode aktif kita yang dilisting kadaluarsa oleh editorial → kandidat
 // diarsipkan (dgn grace fresh di fetch-roblox, krn editorial sering telat).
 function expiredCodes(html) {
-  const cut = html.search(/expired\s*codes/i);
+  const cut = html.search(/expired[^<]{0,40}?codes/i); // "Expired <Game> Codes" (nama game di tengah, mis. THG "Expired Adopt Me Codes")
   if (cut < 0) return new Set();
   return extractSeg(html.slice(cut));
 }
