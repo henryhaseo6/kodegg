@@ -145,6 +145,25 @@ function buildCandidates() {
       displayCodes: pickDisplay(nc, active),
     });
   }
+  // MOBILE — KODE FRESH (fallback, dicek TIAP run) — sejajar jalur fresh Roblox.
+  // Game mobile dg kode ber-firstSeen/date ≤48j & un-posted yg TAK ada di
+  // new-codes.json (mis. kode barunya gagal upload → hilang dari file per-run).
+  // Tanpa ini, game mobile ber-playlist yg kode barunya gagal tak pernah ke-retry
+  // (mis. Sword x Staff). Yg sudah divideokan ke-filter posted (baris ~302).
+  const nowMsM = Date.parse(mNewFile.generatedAt) || Date.now();
+  for (const id of [...new Set(mc.active.map((c) => c.game))]) {
+    if (mNewByGame[id] || out.some((c) => c.id === id)) continue;
+    const active = mc.active.filter((c) => c.game === id);
+    const fresh = active.filter((c) => { const d = Math.max(Date.parse(c.date ?? "") || 0, Date.parse(c.firstSeenAt ?? "") || 0); return d > 0 && nowMsM - d <= FRESH_MS && !c.perm; });
+    if (!fresh.length) continue;
+    const meta = catById[id], freshCodes = fresh.map((c) => ({ code: c.code, reward: c.reward ?? "" }));
+    out.push({
+      platform: "MOBILE", id, name: meta?.name ?? active[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
+      iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 1e9,
+      newCodes: freshCodes, activeCount: countAll(active, freshCodes), fetchedAt: mNewFile.generatedAt,
+      displayCodes: pickDisplay(freshCodes, active),
+    });
+  }
   // Dedup by universeId: buang kandidat ROBLOX yg universeId-nya SUDAH punya
   // video/playlist di id LAIN (kasus flip-flop nama → id baru, mis. dog-race vs
   // roblox-dog-race). Cegah Short & playlist DOBEL — 1 game = 1 seri video.
@@ -311,7 +330,7 @@ async function main() {
   });
   // PRIORITAS slot upload (kuota API ~45/hari): game player TERBESAR duluan → game
   // gede (mis. RIVALS 241K) tak kebuang ke manual saat hari rame. Promo tetap depan.
-  candidates.sort((a, b) => (b.isPromo ? 1 : 0) - (a.isPromo ? 1 : 0) || (b.players || 0) - (a.players || 0));
+  candidates.sort((a, b) => (b.isPromo ? 1 : 0) - (a.isPromo ? 1 : 0) || (b.rank ?? b.players ?? 0) - (a.rank ?? a.players ?? 0)); // rank: mobile=1e9 (prioritas), roblox=players
   let remaining = MAX_PER_DAY - state.todayCount;
   console.log(`kandidat: ${candidates.length} (antrian ${pending.length} + baru ${fresh.length}) | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
   if (candidates.length === 0) { console.log("tak ada kode baru → tak ada video."); writeFileSync(PENDING_VID, "[]\n"); return; }
