@@ -112,8 +112,12 @@ function mergeCodes(perSource) {
         if ((!it.reward || isGeneric(it.reward)) && c.reward && !isGeneric(c.reward)) it.reward = c.reward;
         if (!it.date && c.date) it.date = c.date;
         if (!it.endsAt && c.endsAt) it.endsAt = c.endsAt;
+        // check (Roblox Den "CHECK"): ragu bila SEMUA sumber ragu; hilang begitu
+        // ADA sumber yg daftarin TANPA check (confident) → confident/verified menang.
+        if (c.check) it._check = true; else it._confident = true;
       }
     }
+    for (const it of map.values()) { if (it._check && !it._confident) it.check = true; delete it._check; delete it._confident; }
     return [...map.values()];
   };
   return {
@@ -285,7 +289,10 @@ async function main() {
       const edConfirm = xset.has(key) ? 1 : 0;
       const verified = c.sources.length + edConfirm >= 2; // ≥2 sumber sepakat
       if (verified) nVer += 1;
-      fActive.push(mk(c, { endsAt: c.endsAt, verified }));
+      // Badge "CHECK": kode aktif tapi sumber (Roblox Den) belum konfirmasi-ulang
+      // & tak ada konfirmasi ganda → tandai "cek dulu". Verified selalu menang.
+      const check = c.check === true && !verified;
+      fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true } : {}) }));
     }
     const roActive = new Set(fActive.map((c) => c.code.toLowerCase()));
     const edSrc = bySite.filter((s) => [...s.set].some((c) => roActive.has(c))).map((s) => s.name);

@@ -217,6 +217,12 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
       {g.crossCheck.length > 0 && (
         <span style="color:var(--faint);"> · {id ? "cross-check" : "cross-checked with"} {g.crossCheck.join(", ")}</span>
       )}
+      {g.checkedAt > 0 && (
+        <span style="color:var(--faint);">
+          {" · "}{id ? "dicek" : "checked"}{" "}
+          {new Date(g.checkedAt).toLocaleString(id ? "id-ID" : "en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" })} WIB
+        </span>
+      )}
     </p>
 
     <!-- KODE AKTIF -->

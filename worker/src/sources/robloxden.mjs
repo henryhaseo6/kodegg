@@ -72,9 +72,17 @@ export async function fetchRobloxDen(slug) {
     const key = code.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    const after = html.slice(m.index + m[0].length, m.index + m[0].length + 400);
+    const start = m.index + m[0].length;
+    // Window sampai kode BERIKUTNYA (maks 1600) → hanya markup item INI, biar
+    // status badge & reward tak nyasar ke kode lain.
+    const nextIdx = html.indexOf('data-copy="', start);
+    const after = html.slice(start, nextIdx > 0 ? Math.min(nextIdx, start + 1600) : start + 1600);
     const rw = (after.match(/codes-list__description[^"]*">([\s\S]*?)<\/p>/i) || [])[1];
-    const item = { code, reward: reward(rw), date: null, endsAt: null };
+    // "CHECK" = Roblox Den menandai kode AKTIF tapi belum dikonfirmasi-ulang
+    // works (class badge--check, beda dari badge--active). BUKAN expired — kode
+    // tetap aktif, tapi kita bawa flag `check` supaya bisa ditandai "cek dulu".
+    const check = m[1] === "false" && /badge--check/i.test(after);
+    const item = { code, reward: reward(rw), date: null, endsAt: null, ...(check ? { check: true } : {}) };
     if (m[1] === "false") active.push(item);
     else archive.push(item);
   }

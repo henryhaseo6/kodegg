@@ -183,6 +183,11 @@ export async function loadRobloxGame(slug) {
     verifiedCount: active.filter((c) => c.verified).length,
     howTo: Array.isArray(g.howTo) ? g.howTo : [],
     updatedAt: raw.updatedAt ?? null,
+    // "Terakhir dicek" = fetchedAt TERBARU antar kode game ini (= run terakhir
+    // yg sukses menarik sumbernya; game yg fetch-nya gagal fetchedAt-nya lama).
+    checkedAt:
+      [...active, ...archive].reduce((mx, c) => Math.max(mx, Date.parse(c.fetchedAt ?? "") || 0), 0) ||
+      (raw.updatedAt ? Date.parse(raw.updatedAt) : 0),
     active,
     archive,
   };

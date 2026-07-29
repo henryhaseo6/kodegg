@@ -38,6 +38,8 @@ const DICT = {
     "ctl.more": "Muat lebih banyak",
 
     "card.active": "AKTIF",
+    "card.check": "CEK DULU",
+    "card.checkHint": "Sumber belum konfirmasi ulang kode ini masih works — coba dulu di game, jangan terlalu berharap.",
     "card.new": "BARU",
     "card.expired": "KADALUARSA",
     "card.copy": "Salin",
@@ -169,6 +171,8 @@ const DICT = {
     "ctl.more": "Load more",
 
     "card.active": "ACTIVE",
+    "card.check": "CHECK",
+    "card.checkHint": "Source hasn't re-verified this code still works — try it in-game first.",
     "card.new": "NEW",
     "card.expired": "EXPIRED",
     "card.copy": "Copy",
