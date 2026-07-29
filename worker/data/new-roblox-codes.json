@@ -1,72 +1,16 @@
 {
-  "generatedAt": "2026-07-29T22:01:54.380Z",
+  "generatedAt": "2026-07-29T23:01:27.934Z",
   "codes": [],
   "bulkGames": [
     {
-      "game": "spin-a-fem",
-      "count": 5,
-      "fresh": [
-        {
-          "code": "CALFMOO",
-          "reward": "750K Cash, 75 Gems, 12 Diamond Dice"
-        },
-        {
-          "code": "PUPPYWOOF",
-          "reward": "550K Cash, 25 Gems, 6 Diamond Dice"
-        },
-        {
-          "code": "KITTYMEOW",
-          "reward": "350K Cash, 200 Gems, Diamond Dice"
-        },
-        {
-          "code": "UPDATEOUT",
-          "reward": "500 Gems, 15 Diamond Dice"
-        },
-        {
-          "code": "RAININGGEMS",
-          "reward": "800 Gems"
-        }
-      ]
+      "game": "loomian-legacy",
+      "count": 4,
+      "fresh": []
     },
     {
-      "game": "horse-racing-legends",
-      "count": 3,
-      "fresh": [
-        {
-          "code": "5KLIKESFORMORE",
-          "reward": "25 Spins, 100 Coins"
-        },
-        {
-          "code": "HORSESARECOOL",
-          "reward": "250 Coins, White Tail Bow Horse Accessory"
-        },
-        {
-          "code": "BIGHRLFAN",
-          "reward": "3 Lucky Spins, 500 Coins"
-        }
-      ]
-    },
-    {
-      "game": "anime-dungeons",
-      "count": 5,
-      "fresh": [
-        {
-          "code": "300KVISITS",
-          "reward": "500 Gems, 10 Trait Rerolls, 10 Stat Rerolls"
-        },
-        {
-          "code": "ALLAGES",
-          "reward": "2000 Gems, 25 Trait Rerolls, 25 Stat Rerolls"
-        },
-        {
-          "code": "THANKYOU",
-          "reward": "1000 Gems, 20 Trait Rerolls, 20 Stat Rerolls"
-        },
-        {
-          "code": "RELEASE",
-          "reward": "1000 Gems, 10 Trait Rerolls"
-        }
-      ]
+      "game": "tower-heroes",
+      "count": 27,
+      "fresh": []
     }
   ]
 }
