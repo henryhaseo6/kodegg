@@ -212,6 +212,9 @@ function pickDisplay(newCodes, active) {
  */
 function buildOnDemand(id) {
   const rb = readJSON(resolve(DATA, "roblox-codes.json"), { games: {}, active: [] });
+  // Terima ID internal ATAU slug URL (mis. "blox-fruits" utk id "bloxfruits") —
+  // biar `--game=` gampang (user liat slug di URL, bukan id).
+  if (!rb.games[id]) { const f = Object.entries(rb.games).find(([, gg]) => (gg.slug ?? "") === id); if (f) id = f[0]; }
   const g = rb.games[id];
   if (g) {
     const active = rb.active.filter((c) => c.game === id);
