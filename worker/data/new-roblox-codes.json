@@ -1,5 +1,80 @@
 {
-  "generatedAt": "2026-07-29T20:01:30.741Z",
+  "generatedAt": "2026-07-29T21:01:38.318Z",
   "codes": [],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "dino-world",
+      "count": 7,
+      "fresh": [
+        {
+          "code": "NewGamemode",
+          "reward": "20 Crude Oil"
+        },
+        {
+          "code": "HolySixSeven",
+          "reward": "67 Fossils, 67 Crude Oil"
+        },
+        {
+          "code": "Leveling",
+          "reward": "150 Fossils, 10 Crude Oil"
+        },
+        {
+          "code": "ComputerUpgrade",
+          "reward": "150 Fossils, 10 Crude Oil"
+        },
+        {
+          "code": "DAST",
+          "reward": "500 Fossils, 25 Crude Oil"
+        },
+        {
+          "code": "HOTDOG",
+          "reward": "500 Fossils, 25 Crude Oil"
+        },
+        {
+          "code": "INFSTONE",
+          "reward": "500 Fossils, 25 Crude Oil"
+        }
+      ]
+    },
+    {
+      "game": "monkey-bomb-tag",
+      "count": 4,
+      "fresh": [
+        {
+          "code": "Lava",
+          "reward": "500 Bananas"
+        },
+        {
+          "code": "sixseven",
+          "reward": "500 Bananas"
+        },
+        {
+          "code": "tripletmadness",
+          "reward": "500 Bananas"
+        },
+        {
+          "code": "M0NKE",
+          "reward": "150 Bananas"
+        }
+      ]
+    },
+    {
+      "game": "souls-crossover-x",
+      "count": 3,
+      "fresh": [
+        {
+          "code": "500kvisits",
+          "reward": "50 Gems"
+        },
+        {
+          "code": "1kccu",
+          "reward": "100 Gems (requires Reset 1)"
+        },
+        {
+          "code": "sub2noctyra",
+          "reward": "10 Gems, 100 Gold (requires Level 10)"
+        }
+      ]
+    }
+  ]
 }
