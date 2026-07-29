@@ -269,6 +269,10 @@ async function main() {
     //      grace agar sumber yang telat update tak membunuh kode baru.
     const nowMs = Date.now();
     const GRACE_MS = 48 * 3600 * 1000;
+    // Kode TUA (tgl rilis > ~6 bln) yg belum diverifikasi → tandai CHECK "cek
+    // dulu" (BUKAN expire): kemungkinan basi walau sumber lambat (mis. RoCodes)
+    // masih daftarin aktif. Non-destruktif; verified selalu menang.
+    const AGE_CHECK_MS = 180 * 24 * 3600 * 1000;
     const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
     const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, ...extra });
 
@@ -289,9 +293,11 @@ async function main() {
       const edConfirm = xset.has(key) ? 1 : 0;
       const verified = c.sources.length + edConfirm >= 2; // ≥2 sumber sepakat
       if (verified) nVer += 1;
-      // Badge "CHECK": kode aktif tapi sumber (Roblox Den) belum konfirmasi-ulang
-      // & tak ada konfirmasi ganda → tandai "cek dulu". Verified selalu menang.
-      const check = c.check === true && !verified;
+      // Badge "CHECK" (cek dulu). Verified selalu menang. Dua pemicu:
+      //  (a) sumber (Roblox Den) tandai CHECK — belum dikonfirmasi-ulang works;
+      //  (b) kode TUA (rilis >6 bln) — mungkin basi walau sumber masih daftarin.
+      const oldUnverified = dateMs > 0 && nowMs - dateMs > AGE_CHECK_MS;
+      const check = !verified && (c.check === true || oldUnverified);
       fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true } : {}) }));
     }
     const roActive = new Set(fActive.map((c) => c.code.toLowerCase()));
