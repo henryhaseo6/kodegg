@@ -94,7 +94,15 @@ function metadata(games, dateLbl, totalCodes, totalGames, chapters) {
   const codeSection = codeList ? `\n\n🎁 ALL CODES:\n${codeList.trimEnd()}${truncated ? "\n\n… + more — full code list at https://kodegg.com" : ""}` : "";
   let description = `${head}\n\n⏱️ TIMELINE (tap to jump):\n${timeline}${codeSection}\n\n${foot}`;
   if (description.length > 4950) description = description.slice(0, 4947) + "…";
-  const tags = ["roblox codes", "new roblox codes", "roblox codes today", "roblox redeem codes", "roblox promo codes", "free roblox codes", `roblox codes ${dateLbl.toLowerCase()}`, "kodegg", ...games.slice(0, 8).map((g) => `${g.disp} codes`)];
+  // Nama game utk tag: buang [UPD]/emoji/":" — SEO gak nyari "[UPD] X codes",
+  // sekalian hemat budget. dayTag tanpa koma (koma bikin YT split 1 tag jadi 2).
+  const cleanName = (s) => (s || "").split("|")[0].replace(/\[[^\]]*\]/g, " ").replace(/[\p{Extended_Pictographic}️]/gu, " ").replace(/:/g, " ").replace(/\s+/g, " ").trim();
+  const dayTag = dateLbl.toLowerCase().replace(/,.*/, ""); // "july 28"
+  const base = ["roblox codes", "new roblox codes", "roblox codes today", "roblox redeem codes", "roblox promo codes", "free roblox codes", `roblox codes ${dayTag}`, "kodegg"];
+  const gameTags = [...new Set(games.map((g) => cleanName(g.rawName || g.name)).filter(Boolean))].map((nm) => `${nm} codes`);
+  // Cap total 500 char YT (pakai 460 biar aman quote/koma) → tag TAK PERNAH ditolak/kosong.
+  const tags = []; let tlen = 0;
+  for (const t of [...base, ...gameTags]) { if (tlen + t.length + 2 > 460) break; tags.push(t); tlen += t.length + 2; }
   return { title, description, tags };
 }
 
