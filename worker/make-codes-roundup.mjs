@@ -27,27 +27,31 @@ const ts = (t) => { const s = Math.floor(t); return `${Math.floor(s / 60)}:${Str
 const decode = (s) => (s || "").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#x2F;/g, "/").replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n));
 const seedFromDate = (ymd) => { let h = 0; for (const ch of ymd) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h; };
 
-// ——— data: kode yg BENER-BENER BARU hari DATE, group per game ———
-// Kriteria "kode baru beneran" (konsisten dg badge NEW situs & Shorts). Patokan
-// utama = TANGGAL RILIS (c.date), BUKAN bulk-flag. Alasan: game yg baru ke-discover
-// borongan (mis. Lineage Piece 50 kode) — SEMUA kodenya masuk `bulk`, TAPI sebagian
-// rilisnya emang hari itu (c.date=DATE) → itu kode baru asli, jangan dibuang cuma
-// gara-gara bulk. (Dulu pakai `!bulk && firstSeen==DATE && discovered!=DATE` →
-// Lineage Piece dkk kebuang bulat-bulat, roundup cuma 4 game.) Kriteria (union):
-//   BIG = player ≥2000 DAN c.date ∈ [DATE-1, DATE]  → game gede rilis kode baru
-//   EST = !bulk DAN firstSeenAt = DATE              → game established nambah kode
-// Archive-dump kecil (mis. One Fruit 126 kode umur lama, <2000p) gugur di dua-duanya:
-// c.date lawas (bukan BIG) + bulk (bukan EST). Cocok sama filter Shorts (≥2000 + c.date).
+// ——— data: kode yg BENER-BENER BARU hari DATE (WIB), group per game ———
+// JANGKAR anti-double: `firstSeenAt` (hari pertama KITA detect, DIHITUNG DI WIB)
+// HARUS == DATE → tiap kode masuk TEPAT 1 hari, roundup harian TAK PERNAH overlap
+// antar tgl. (WIB penting: kode jam 00–07 WIB = tgl sebelumnya di UTC — kalau
+// slice UTC, ke-geser ke hari kemarin.) Di dalam hari itu, saring "beneran baru"
+// (konsisten dg badge NEW situs & Shorts):
+//   BIG = player ≥2000 DAN c.date ∈ [DATE-1, DATE+1]  → game gede rilis kode baru.
+//         Pakai c.date (tgl RILIS) BUKAN bulk-flag: game baru ke-discover borongan
+//         (Lineage Piece 50 kode) semua kodenya `bulk`, tp sebagian rilisnya emang
+//         hari itu = baru asli. Window c.date nyaring backfill lama game yg sama.
+//   EST = !bulk  → game established (udah dilacak) nambah kode non-bulk.
+// Archive-dump kecil (One Fruit 126 kode umur lama, <2000p) gugur: c.date lawas
+// (bukan BIG) + bulk (bukan EST). Sama threshold Shorts (≥2000p + c.date ≤48j).
 function loadGames() {
   const db = JSON.parse(readFileSync(resolve(HERE, "data/roblox-codes.json"), "utf8"));
   const G = db.games || {}; // slug → { universeId, players, rawName, name }
-  const MINP = 2000, DATEms = Date.parse(DATE + "T00:00:00Z");
+  const MINP = 2000, DATEms = Date.parse(DATE + "T00:00:00+07:00"); // batas hari WIB
+  const wibDay = (iso) => { const t = Date.parse(iso || ""); return t ? new Date(t + 7 * 36e5).toISOString().slice(0, 10) : ""; };
   const winDate = (c) => { const d = Date.parse(c.date || "") || 0; return d > 0 && d >= DATEms - 864e5 && d <= DATEms + 864e5; };
   const byGame = {};
   for (const c of (db.active || [])) { // hanya kode AKTIF (redeemable) — bukan arsip expired
     if (!c.game || !c.code) continue;
+    if (wibDay(c.firstSeenAt) !== DATE) continue; // JANGKAR: hari pertama ke-detect (WIB) == DATE
     const big = (G[c.game]?.players || 0) >= MINP && winDate(c);
-    const est = !c.bulk && c.firstSeenAt && c.firstSeenAt.slice(0, 10) === DATE;
+    const est = !c.bulk;
     if (!big && !est) continue;
     (byGame[c.game] = byGame[c.game] || []).push({ code: c.code, reward: decode(c.reward || "") });
   }
