@@ -137,7 +137,7 @@ function metadata(games, dateLbl, totalCodes, totalGames, chapters) {
   const playlistDescription = "New Roblox codes drop every day — here's the daily roundup. All the new Roblox codes added each day, grouped by game, with rewards. Copy & redeem before they expire!\n\n⚡ Want codes the moment they drop? New codes every hour on our Shorts.\n🎮 All codes + how to redeem (updated hourly) → https://kodegg.com";
   console.log(`[roundup] upload YouTube (privacy=${privacy})…`);
   try {
-    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription });
+    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en" });
     console.log(`[roundup] uploaded ✓ ${r.url} (privacy=${privacy})`);
     if (process.env.GITHUB_STEP_SUMMARY) writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### 🎁 New Roblox Codes Roundup — ${label(DATE)}\n- ${r.url} (privacy=${privacy})\n- ${totalCodes} kode / ${games.length} game (dari ${totalGames} game total)\n`, { flag: "a" });
   } catch (e) { console.log("[roundup] upload gagal:", e.message); }

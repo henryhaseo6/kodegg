@@ -96,7 +96,9 @@ async function main() {
     console.log(`▶ ${basename(f)}\n  judul: ${meta.title}\n  thumbnail: ${existsSync(thumb) ? "ada" : "TIDAK ADA (YouTube akan pilih frame sendiri)"}`);
     if (opt.dry) { console.log(`  playlist: ${meta.playlistTitle ?? "—"}\n  komentar: ${meta.comment ? meta.comment.split("\n")[1] : "—"}\n  deskripsi: ${meta.description.length} karakter · tag: ${meta.tags.join(", ") || "—"}\n`); continue; }
     try {
-      const { url } = await uploadVideo({ videoPath: f, ...meta, privacy: opt.privacy, thumbnailPath: thumb });
+      // video long (roundup/top50) = English; Short = Indonesia (default).
+      const lang = /roundup|top-?50/i.test(basename(f)) ? "en" : "id";
+      const { url } = await uploadVideo({ videoPath: f, ...meta, privacy: opt.privacy, thumbnailPath: thumb, lang });
       console.log(`  ✓ ${url}\n`);
       ok++;
       // Pindahkan berkas yang sudah naik → aman kalau perintah diulang.

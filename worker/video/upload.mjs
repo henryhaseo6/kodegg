@@ -40,12 +40,14 @@ async function ensurePlaylist(yt, title, description) {
 }
 
 /** Upload 1 video. privacy: 'unlisted'|'public'|'private'. */
-export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription, comment }) {
+export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription, comment, lang = "id" }) {
+  // lang = bahasa metadata + audio. Short = "id" (VO Indonesia + teks bilingual);
+  // video long (Top 50/roundup) = "en" (full English, cuma musik/SFX tanpa VO).
   const yt = await client();
   const res = await yt.videos.insert({
     part: ["snippet", "status"],
     requestBody: {
-      snippet: { title, description, tags, categoryId: "20", defaultLanguage: "id", defaultAudioLanguage: "id" }, // 20 = Gaming
+      snippet: { title, description, tags, categoryId: "20", defaultLanguage: lang, defaultAudioLanguage: lang }, // 20 = Gaming
       // containsSyntheticMedia: narasi video pakai TTS neural (suara sintetis).
       // Visualnya grafis buatan sendiri (bukan orang/tempat nyata), tapi YouTube
       // minta disclosure utk "realistic sounds ... made with AI" → deklarasikan.

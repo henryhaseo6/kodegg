@@ -149,7 +149,7 @@ function metadata(games, dateLbl, chapters = []) {
   const playlistDescription = "Daily Top 50 most played Roblox games ranked by peak concurrent players (CCU). Peak, average & lowest player counts + a 24-hour player graph for each game. Updated every day.\n\n🎮 Free Roblox & game redeem codes, updated hourly → https://kodegg.com";
   console.log(`[top50] upload YouTube (privacy=${privacy})…`);
   try {
-    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription });
+    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en" });
     console.log(`[top50] uploaded ✓ ${r.url} (privacy=${privacy})`);
     if (process.env.GITHUB_STEP_SUMMARY) writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### 🎬 Top ${games.length} Roblox — ${label(DATE)}\n- ${r.url} (privacy=${privacy})\n- #1: ${games[0].name} (${games[0].peak.toLocaleString()} peak)\n`, { flag: "a" });
   } catch (e) { console.log("[top50] upload gagal:", e.message); }
