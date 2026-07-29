@@ -8,7 +8,7 @@ import { spawn } from "node:child_process";
 import { renderShort, ffmpegBin } from "./video/render-short.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
-import { uploadVideo, ytConfigured, attachToPlaylist } from "./video/upload.mjs";
+import { uploadVideo, ytConfigured, attachToPlaylist, ytProjectCount } from "./video/upload.mjs";
 import { gameSlug } from "./src/games.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -346,6 +346,7 @@ async function main() {
   if (candidates.length === 0) { console.log("tak ada kode baru → tak ada video."); writeFileSync(PENDING_VID, "[]\n"); return; }
   const canUpload = ytConfigured() && !DRY_RUN;
   if (!canUpload && !DRY_RUN) console.log("YT belum di-set (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — semua video dirender utk upload manual. Lihat DEPLOY-YOUTUBE.md.");
+  if (canUpload && ytProjectCount() > 1) console.log(`  ↻ multi-project YT aktif: ${ytProjectCount()} project (auto-rotasi saat kuota habis)`);
 
   // Render SEMUA kandidat (dibatasi RENDER_MAX biar CI tak kelamaan): yang muat
   // kuota harian diupload otomatis, sisanya disimpan di _video-out/ + file

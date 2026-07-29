@@ -78,6 +78,14 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          # Multi-project (opsional) — nambah kuota query saat game makin banyak.
+          # Kosong = diabaikan (rotasi cuma aktif bila project ke-2+ terisi).
+          YT_CLIENT_ID_2: ${{ secrets.YT_CLIENT_ID_2 }}
+          YT_CLIENT_SECRET_2: ${{ secrets.YT_CLIENT_SECRET_2 }}
+          YT_REFRESH_TOKEN_2: ${{ secrets.YT_REFRESH_TOKEN_2 }}
+          YT_CLIENT_ID_3: ${{ secrets.YT_CLIENT_ID_3 }}
+          YT_CLIENT_SECRET_3: ${{ secrets.YT_CLIENT_SECRET_3 }}
+          YT_REFRESH_TOKEN_3: ${{ secrets.YT_REFRESH_TOKEN_3 }}
           # Kosong = pakai default make-videos.mjs (public). Isi hanya bila mau
           # override, mis. YT_PRIVACY=unlisted saat menahan buat review.
           YT_PRIVACY: ${{ vars.YT_PRIVACY || secrets.YT_PRIVACY }}

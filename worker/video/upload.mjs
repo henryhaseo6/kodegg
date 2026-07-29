@@ -1,17 +1,48 @@
 // Upload video ke YouTube via Data API v3 (OAuth refresh token).
-// Env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN.
+// Env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (project utama).
+//
+// MULTI-PROJECT (opsional — nambah kuota saat game makin banyak): set juga
+//   YT_CLIENT_ID_2 / YT_CLIENT_SECRET_2 / YT_REFRESH_TOKEN_2 (dst _3.._9).
+//   Tiap Google Cloud project punya kuota query 10rb unit/hari SENDIRI. Saat
+//   project aktif kena quotaExceeded (atau invalid_grant), upload auto-ROTASI
+//   ke project berikutnya — semua ke channel YOUTUBE YANG SAMA. Batas count
+//   channel (~100 upload/hari) tetap berlaku, jadi naikkan VIDEO_MAX_PER_DAY
+//   seperlunya. 1 project = perilaku lama (tak ada rotasi).
 // googleapis di-import LAZY (dynamic) → render/DRY_RUN tak butuh paket ini.
 import { createReadStream, existsSync } from "node:fs";
 
-export function ytConfigured() {
-  return !!(process.env.YT_CLIENT_ID && process.env.YT_CLIENT_SECRET && process.env.YT_REFRESH_TOKEN);
+// Kumpulkan set kredensial: project 1 (tanpa suffix) + _2.._9 bila ada.
+function credentialSets() {
+  const S = [], E = process.env;
+  const add = (id, sec, rt, label) => { if (id && sec && rt) S.push({ clientId: id, clientSecret: sec, refreshToken: rt, label }); };
+  add(E.YT_CLIENT_ID, E.YT_CLIENT_SECRET, E.YT_REFRESH_TOKEN, "P1");
+  for (let i = 2; i <= 9; i++) add(E[`YT_CLIENT_ID_${i}`], E[`YT_CLIENT_SECRET_${i}`], E[`YT_REFRESH_TOKEN_${i}`], `P${i}`);
+  return S;
 }
+let _sets = null, _idx = 0;
+const sets = () => (_sets ??= credentialSets());
 
-async function client() {
+export function ytConfigured() { return sets().length > 0; }
+export const ytProjectCount = () => sets().length;
+
+async function activeClient() {
   const { google } = await import("googleapis");
-  const o = new google.auth.OAuth2(process.env.YT_CLIENT_ID, process.env.YT_CLIENT_SECRET);
-  o.setCredentials({ refresh_token: process.env.YT_REFRESH_TOKEN });
+  const s = sets()[Math.min(_idx, sets().length - 1)];
+  const o = new google.auth.OAuth2(s.clientId, s.clientSecret);
+  o.setCredentials({ refresh_token: s.refreshToken });
   return google.youtube({ version: "v3", auth: o });
+}
+const client = activeClient; // alias — playlist & komentar pakai project aktif
+const activeLabel = () => sets()[Math.min(_idx, sets().length - 1)]?.label ?? "P?";
+// Naikkan pointer ke project berikutnya. false bila sudah project terakhir.
+function rotate() { if (_idx + 1 < sets().length) { _idx++; return true; } return false; }
+// Klasifikasi error insert: "quota" (kuota harian habis) / "token" (refresh
+// token mati) / null (error lain → JANGAN rotasi, lempar apa adanya).
+function quotaOrAuth(e) {
+  const s = `${e?.message || ""} ${JSON.stringify(e?.errors ?? e?.response?.data?.error ?? "")}`;
+  if (/invalid_grant/i.test(s)) return "token";
+  if (/quotaExceeded|dailyLimitExceeded|userRateLimitExceeded|rateLimitExceeded/i.test(s)) return "quota";
+  return null;
 }
 
 /** Cari playlist milik channel berdasarkan JUDUL; kalau belum ada, bikin. */
@@ -43,18 +74,35 @@ async function ensurePlaylist(yt, title, description) {
 export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription, comment, lang = "id" }) {
   // lang = bahasa metadata + audio. Short = "id" (VO Indonesia + teks bilingual);
   // video long (Top 50/roundup) = "en" (full English, cuma musik/SFX tanpa VO).
-  const yt = await client();
-  const res = await yt.videos.insert({
-    part: ["snippet", "status"],
-    requestBody: {
-      snippet: { title, description, tags, categoryId: "20", defaultLanguage: lang, defaultAudioLanguage: lang }, // 20 = Gaming
-      // containsSyntheticMedia: narasi video pakai TTS neural (suara sintetis).
-      // Visualnya grafis buatan sendiri (bukan orang/tempat nyata), tapi YouTube
-      // minta disclosure utk "realistic sounds ... made with AI" → deklarasikan.
-      status: { privacyStatus: privacy, selfDeclaredMadeForKids: false, containsSyntheticMedia: true },
-    },
-    media: { body: createReadStream(videoPath) },
-  }, { maxContentLength: Infinity, maxBodyLength: Infinity });
+  // Insert video — dgn ROTASI multi-project: kalau project aktif kena quota
+  // habis / token mati & masih ada project lain, pindah project & ulang (stream
+  // dibuat ulang tiap percobaan). Semua project upload ke channel yg sama.
+  let yt, res;
+  for (;;) {
+    yt = await activeClient();
+    try {
+      res = await yt.videos.insert({
+        part: ["snippet", "status"],
+        requestBody: {
+          snippet: { title, description, tags, categoryId: "20", defaultLanguage: lang, defaultAudioLanguage: lang }, // 20 = Gaming
+          // containsSyntheticMedia: narasi video pakai TTS neural (suara sintetis).
+          // Visualnya grafis buatan sendiri (bukan orang/tempat nyata), tapi YouTube
+          // minta disclosure utk "realistic sounds ... made with AI" → deklarasikan.
+          status: { privacyStatus: privacy, selfDeclaredMadeForKids: false, containsSyntheticMedia: true },
+        },
+        media: { body: createReadStream(videoPath) },
+      }, { maxContentLength: Infinity, maxBodyLength: Infinity });
+      break;
+    } catch (e) {
+      const jenis = quotaOrAuth(e);
+      if (jenis && sets().length > 1) {
+        console.log(`  ⚠ project ${activeLabel()} ${jenis === "token" ? "token mati (perbaiki refresh token-nya)" : "kuota habis"} → rotasi project berikutnya`);
+        if (rotate()) continue;
+        console.log(`  ✗ semua ${sets().length} project habis kuota/mati hari ini`);
+      }
+      throw e; // 1 project, atau semua habis, atau error non-kuota → lempar
+    }
+  }
   const id = res.data.id;
   // YouTube kadang MENIMPA privacy yang kita minta (mis. channel muda yang
   // melewati batas upload harian → dipaksa unlisted). Diamnya berbahaya: video
