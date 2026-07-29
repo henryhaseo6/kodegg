@@ -86,10 +86,18 @@ function buildCandidates() {
   const nowMs = Date.parse(rbNewFile.generatedAt) || Date.now();
   const ytpl = readJSON(resolve(DATA, "yt-playlists.json"), {});
   for (const [id, g] of Object.entries(rb.games)) {
-    if (rbNewByGame[id] || ytpl[id]) continue; // sudah lewat jalur kode-baru / sudah ada video
+    if (rbNewByGame[id]) continue; // sudah lewat jalur kode-baru run ini
+    // CATATAN: dulu juga skip `ytpl[id]` (game yg sudah punya playlist), TAPI itu bikin
+    // kode baru yg upload-nya GAGAL (mis. token mati) tak pernah di-retry — kodenya
+    // hilang dari new-roblox-codes.json (per-run) & game-nya punya playlist → mandek.
+    // Sekarang game-punya-playlist TETAP disurvei; yg semua kodenya sudah divideokan
+    // di-buang oleh filter posted (baris ~302), jadi tak ada video dobel.
     if ((g.players ?? 0) < FRESH_MIN_PLAYERS) continue;
     const active = rb.active.filter((c) => c.game === id);
-    const fresh = active.filter((c) => { const d = Date.parse(c.date ?? ""); return d > 0 && nowMs - d <= FRESH_MS && !c.perm; });
+    // "fresh" = baru RILIS (c.date) ATAU baru KITA temukan (firstSeenAt) dlm 48j —
+    // pakai yg paling baru. (Dulu cuma c.date → kode ber-tgl-rilis lama tp baru
+    // ke-discover, mis. RIVALS COCONUTBONK, tak pernah ke-retry saat upload gagal.)
+    const fresh = active.filter((c) => { const d = Math.max(Date.parse(c.date ?? "") || 0, Date.parse(c.firstSeenAt ?? "") || 0); return d > 0 && nowMs - d <= FRESH_MS && !c.perm; });
     if (fresh.length === 0) continue;
     const freshCodes = fresh.map((c) => ({ code: c.code, reward: c.reward ?? "" }));
     out.push({
