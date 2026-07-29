@@ -53,19 +53,32 @@ const tidur = (detik) => new Promise((r) => setTimeout(r, detik * 1000));
 // (batch manual awal) dan baru "X Codes — Kode Redeem" (auto) dianggap sama.
 const plKey = (t) => (t || "").toLowerCase().replace(/\s*—\s*kode redeem\s*$/i, "").replace(/\s+codes$/i, "").trim();
 
-/** Cari playlist by nama game; kalau belum ada, bikin. `baru` = true bila baru dibuat. */
-async function ensurePlaylist(yt, title, description) {
+/** Cari playlist by nama game; kalau belum ada, bikin. `baru` = true bila baru dibuat.
+ *  lang = bahasa metadata playlist ("id" Shorts, "en" Top 50/Roundup).
+ *  Bila ketemu playlist lama yg judul/bahasanya beda template sekarang (mis. batch
+ *  manual "X — Kode Redeem" tanpa "Codes", atau playlist EN yg ke-set "id") →
+ *  otomatis dinormalisasi ke judul+deskripsi+bahasa yang benar. */
+async function ensurePlaylist(yt, title, description, lang = "id") {
   const want = plKey(title);
   let pageToken;
   do {
     const r = await yt.playlists.list({ part: ["snippet"], mine: true, maxResults: 50, pageToken });
     const hit = (r.data.items ?? []).find((p) => plKey(p.snippet?.title) === want);
-    if (hit) return { id: hit.id, baru: false };
+    if (hit) {
+      const cur = hit.snippet ?? {};
+      if (cur.title !== title || (cur.defaultLanguage || "") !== lang) {
+        try {
+          await yt.playlists.update({ part: ["snippet"], requestBody: { id: hit.id, snippet: { title, description, defaultLanguage: lang } } });
+          console.log(`  ↳ playlist dinormalisasi: "${cur.title}" → "${title}" [${lang}]`);
+        } catch (e) { console.log(`  playlist normalisasi gagal (abaikan): ${e.message}`); }
+      }
+      return { id: hit.id, baru: false };
+    }
     pageToken = r.data.nextPageToken;
   } while (pageToken);
   const made = await yt.playlists.insert({
     part: ["snippet", "status"],
-    requestBody: { snippet: { title, description, defaultLanguage: "id" }, status: { privacyStatus: "public" } },
+    requestBody: { snippet: { title, description, defaultLanguage: lang }, status: { privacyStatus: "public" } },
   });
   return { id: made.data.id, baru: true };
 }
@@ -124,7 +137,7 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
   // → orkestrator mengantrikannya utk dicoba lagi di run berikutnya.
   let playlistPending = null;
   if (playlistTitle) {
-    const ok = await attachToPlaylist(yt, id, playlistTitle, playlistDescription ?? "");
+    const ok = await attachToPlaylist(yt, id, playlistTitle, playlistDescription ?? "", lang);
     if (!ok) playlistPending = { videoId: id, playlistTitle, playlistDescription: playlistDescription ?? "" };
   }
   // Komentar berisi link halaman game — TINGGAL DI-PIN MANUAL di Studio/app,
@@ -147,10 +160,10 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
  * Return true bila berhasil, false bila gagal (mis. rate-limit playlist YouTube).
  * Dipakai uploadVideo DAN orkestrator utk mengulang antrian playlist tertunda.
  */
-export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlistDescription = "") {
+export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlistDescription = "", lang = "id") {
   const yt = ytOrNull ?? (await client());
   try {
-    const { id: pid, baru } = await ensurePlaylist(yt, playlistTitle, playlistDescription);
+    const { id: pid, baru } = await ensurePlaylist(yt, playlistTitle, playlistDescription, lang);
     // Playlist BARU perlu waktu propagasi sebelum bisa diisi — insert langsung
     // sering ditolak/timeout (kasus nyata: "Zombie Island" kebuat tapi kosong).
     if (baru) await tidur(3);
