@@ -235,8 +235,10 @@ jobs:
           # Kirim notif HANYA SETELAH deploy live → visitor yg klik notif langsung
           # liat kode barunya (dulu notif nyusul sebelum situs ke-update). Cuma
           # nunggu bila run ini bawa KODE BARU (= commit tanpa [skip ci] = CF
-          # build). Poll build-id.txt sampai == commit ini; timeout ~13 mnt (deploy
-          # pages.dev kadang ~8 mnt) → notif tetap dikirim (telat > hilang).
+          # build). Poll build-id.txt sampai == commit ini; timeout ~16 mnt →
+          # notif tetap dikirim (telat > hilang). Wall-clock live = ANTRIAN CF +
+          # build; "Duration" di dashboard cuma bagian build (antrian tak keitung,
+          # bisa +5 mnt) → makanya poll hasil nyata, bukan timer durasi.
           HASNEW=0
           for f in worker/data/new-codes.json worker/data/new-roblox-codes.json; do
             [ -f "$f" ] && node -e "process.exit(((JSON.parse(require('fs').readFileSync('$f','utf8')).codes)||[]).length>0?0:1)" 2>/dev/null && HASNEW=1
@@ -244,10 +246,10 @@ jobs:
           if [ "$HASNEW" = "1" ]; then
             SHA=$(git rev-parse HEAD)
             echo "kode baru → tunggu deploy $SHA live sebelum notif…"
-            for i in $(seq 1 40); do
+            for i in $(seq 1 48); do
               LIVE=$(curl -s --max-time 10 https://kodegg.com/build-id.txt | tr -d '[:space:]')
               if [ "$LIVE" = "$SHA" ]; then echo "  ✓ deploy live (cek ke-$i, ~$((i*20))dtk)"; break; fi
-              if [ "$i" = "40" ]; then echo "  ⚠ timeout ~13mnt — notif dikirim walau deploy mungkin masih build"; break; fi
+              if [ "$i" = "48" ]; then echo "  ⚠ timeout ~16mnt — notif dikirim walau deploy mungkin masih build"; break; fi
               sleep 20
             done
           fi
