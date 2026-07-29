@@ -165,8 +165,9 @@ export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlis
   try {
     const { id: pid, baru } = await ensurePlaylist(yt, playlistTitle, playlistDescription, lang);
     // Playlist BARU perlu waktu propagasi sebelum bisa diisi — insert langsung
-    // sering ditolak/timeout (kasus nyata: "Zombie Island" kebuat tapi kosong).
-    if (baru) await tidur(3);
+    // sering ditolak/timeout (kasus nyata: "Zombie Island"/"Blox Fruits" kebuat
+    // tapi kosong). Window utk playlist baru diperpanjang (dulu 3s+9s → kurang).
+    if (baru) await tidur(8);
     const masukkan = () => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, resourceId: { kind: "youtube#video", videoId } } } });
     const sudahMasuk = async () => {
       const isi = await yt.playlistItems.list({ part: ["snippet"], playlistId: pid, maxResults: 50 });
@@ -176,12 +177,13 @@ export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlis
     // meski sudah ada (kasus nyata: retry queue menambah ulang video yg sudah
     // dimasukkan manual → dobel). Jadi cek dulu SEBELUM insert (playlist lama).
     if (!baru && (await sudahMasuk())) { console.log(`  ↳ playlist: ${playlistTitle} (sudah ada)`); return true; }
-    for (const jeda of [0, 3, 6]) {
-      if (jeda) await tidur(jeda);
+    const jedas = baru ? [0, 5, 10, 20] : [0, 3, 6]; // baru: ~8+35s window (propagasi); lama: cepat
+    for (let i = 0; i < jedas.length; i++) {
+      if (jedas[i]) await tidur(jedas[i]);
       try { await masukkan(); console.log(`  ↳ playlist: ${playlistTitle}${baru ? " (baru)" : ""}`); return true; }
       catch (e) {
         if (await sudahMasuk()) { console.log(`  ↳ playlist: ${playlistTitle} (sudah ada)`); return true; }
-        if (jeda === 6) throw e;
+        if (i === jedas.length - 1) throw e;
       }
     }
     return false;
