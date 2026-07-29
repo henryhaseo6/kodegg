@@ -94,10 +94,12 @@ function buildCandidates() {
     // di-buang oleh filter posted (baris ~302), jadi tak ada video dobel.
     if ((g.players ?? 0) < FRESH_MIN_PLAYERS) continue;
     const active = rb.active.filter((c) => c.game === id);
-    // "fresh" = baru RILIS (c.date) ATAU baru KITA temukan (firstSeenAt) dlm 48j —
-    // pakai yg paling baru. (Dulu cuma c.date → kode ber-tgl-rilis lama tp baru
-    // ke-discover, mis. RIVALS COCONUTBONK, tak pernah ke-retry saat upload gagal.)
-    const fresh = active.filter((c) => { const d = Math.max(Date.parse(c.date ?? "") || 0, Date.parse(c.firstSeenAt ?? "") || 0); return d > 0 && nowMs - d <= FRESH_MS && !c.perm; });
+    // "fresh" = baru RILIS dlm 48j (c.date = tgl rilis dari sumber). JANGAN pakai
+    // firstSeenAt: game archive-dump (mis. project-baki-3 194 kode, one-fruit 126)
+    // ke-discover sekaligus → firstSeenAt semua baru walau kodenya lama; kalau
+    // pakai max(date,firstSeenAt) SEMUA keitung "fresh" → spam video 100+ kode.
+    // c.date bedain kode genuine-baru (tgl rilis baru) vs archive (tgl rilis lama).
+    const fresh = active.filter((c) => { const d = Date.parse(c.date ?? "") || 0; return d > 0 && nowMs - d <= FRESH_MS && !c.perm; });
     if (fresh.length === 0) continue;
     const freshCodes = fresh.map((c) => ({ code: c.code, reward: c.reward ?? "" }));
     out.push({
@@ -154,7 +156,7 @@ function buildCandidates() {
   for (const id of [...new Set(mc.active.map((c) => c.game))]) {
     if (mNewByGame[id] || out.some((c) => c.id === id)) continue;
     const active = mc.active.filter((c) => c.game === id);
-    const fresh = active.filter((c) => { const d = Math.max(Date.parse(c.date ?? "") || 0, Date.parse(c.firstSeenAt ?? "") || 0); return d > 0 && nowMsM - d <= FRESH_MS && !c.perm; });
+    const fresh = active.filter((c) => { const d = Date.parse(c.date ?? "") || 0; return d > 0 && nowMsM - d <= FRESH_MS && !c.perm; });
     if (!fresh.length) continue;
     const meta = catById[id], freshCodes = fresh.map((c) => ({ code: c.code, reward: c.reward ?? "" }));
     out.push({
