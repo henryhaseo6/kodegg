@@ -1,20 +1,30 @@
 {
-  "generatedAt": "2026-07-30T19:01:43.340Z",
-  "codes": [],
+  "generatedAt": "2026-07-30T20:02:15.825Z",
+  "codes": [
+    {
+      "game": "toy-defense",
+      "gameName": "Toy Defense",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/toy-defense"
+      },
+      "code": "135KLIKES",
+      "reward": null,
+      "date": "2026-07-30T19:13:28.218Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-30T20:02:15.825Z",
+      "fetchedAt": "2026-07-30T20:02:15.825Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "coach-a-fighter",
-      "count": 2,
-      "fresh": [
-        {
-          "code": "Update1!",
-          "reward": "25K Cash, 10 Real Rerolls, 5 Legend Rerolls"
-        },
-        {
-          "code": "Release!",
-          "reward": "25K Cash, 10 Real Rerolls, 1 Legend Reroll"
-        }
-      ]
+      "game": "gym-star-simulator",
+      "count": 34,
+      "fresh": []
     }
   ]
 }
