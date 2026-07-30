@@ -1,77 +1,18 @@
 {
-  "generatedAt": "2026-07-30T18:01:48.916Z",
-  "codes": [
-    {
-      "game": "armless-detective",
-      "gameName": "Armless Detective",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/armless-detective"
-      },
-      "code": "snowcone",
-      "reward": "20 Seashells, 1 Summer Crate",
-      "date": "2026-07-30T16:09:46.212Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-30T18:01:48.916Z",
-      "fetchedAt": "2026-07-30T18:01:48.916Z"
-    },
-    {
-      "game": "armless-detective",
-      "gameName": "Armless Detective",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/armless-detective"
-      },
-      "code": "snowconedelayed",
-      "reward": "1 Summer Crate",
-      "date": "2026-07-30T16:09:45.847Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-30T18:01:48.916Z",
-      "fetchedAt": "2026-07-30T18:01:48.916Z"
-    }
-  ],
+  "generatedAt": "2026-07-30T19:01:43.340Z",
+  "codes": [],
   "bulkGames": [
     {
-      "game": "compshop",
-      "count": 4,
-      "fresh": [
-        {
-          "code": "1Mvisits",
-          "reward": "1 Double Lucky Potion, 1 Ultra Lucky Potion, 1 Double Cash Potion, $10k, 1 TriFan-Lite"
-        },
-        {
-          "code": "Wnowell",
-          "reward": "Ultra Luck Potion"
-        },
-        {
-          "code": "Pogisiren",
-          "reward": "Double Luck Potion x2"
-        },
-        {
-          "code": "555kvisits",
-          "reward": "Double Cash Potion, $5k"
-        }
-      ]
-    },
-    {
-      "game": "1-loot-evo",
+      "game": "coach-a-fighter",
       "count": 2,
       "fresh": [
         {
-          "code": "New",
-          "reward": "Double Wins Potion (15 minutes), Double Power Potion (15 minutes)"
+          "code": "Update1!",
+          "reward": "25K Cash, 10 Real Rerolls, 5 Legend Rerolls"
         },
         {
-          "code": "Loot",
-          "reward": "Double Wins Potion (15 minutes), Double Power Potion (15 minutes)"
+          "code": "Release!",
+          "reward": "25K Cash, 10 Real Rerolls, 1 Legend Reroll"
         }
       ]
     }
