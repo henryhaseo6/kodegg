@@ -1,60 +1,109 @@
 {
-  "generatedAt": "2026-07-30T15:01:37.362Z",
+  "generatedAt": "2026-07-30T16:02:03.319Z",
   "codes": [
     {
-      "game": "dueling-grounds",
-      "gameName": "Dueling Grounds",
+      "game": "anime-expeditions",
+      "gameName": "Anime Expeditions",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/dueling-grounds"
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-expeditions"
       },
-      "code": "InnovationAwards",
+      "code": "300mvisits",
       "reward": null,
-      "date": "2026-07-30T14:54:14.043Z",
+      "date": "2026-07-30T15:10:33.432Z",
       "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-07-30T15:01:37.362Z",
-      "fetchedAt": "2026-07-30T15:01:37.362Z"
+      "verified": true,
+      "firstSeenAt": "2026-07-30T16:02:03.319Z",
+      "fetchedAt": "2026-07-30T16:02:03.319Z"
     },
     {
-      "game": "jujutsu-randomizer",
-      "gameName": "Jujutsu Randomizer",
+      "game": "toy-defense",
+      "gameName": "Toy Defense",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/jujutsu-randomizer"
+        "RoCodes.gg": "https://rocodes.gg/codes/toy-defense"
       },
-      "code": "SEEYOUNEXTMONTH",
+      "code": "135KYES",
       "reward": null,
-      "date": "2026-07-30T14:54:12.838Z",
+      "date": "2026-07-30T15:10:28.011Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-07-30T15:01:37.362Z",
-      "fetchedAt": "2026-07-30T15:01:37.362Z"
+      "firstSeenAt": "2026-07-30T16:02:03.319Z",
+      "fetchedAt": "2026-07-30T16:02:03.319Z"
     },
     {
-      "game": "jujutsu-randomizer",
-      "gameName": "Jujutsu Randomizer",
+      "game": "tr-legacy",
+      "gameName": "TR Legacy",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/jujutsu-randomizer"
+        "RoCodes.gg": "https://rocodes.gg/codes/tr-legacy"
       },
-      "code": "10MVISITS",
+      "code": "WEHIT25KLIKES",
       "reward": null,
-      "date": "2026-07-30T14:54:11.642Z",
+      "date": "2026-07-30T15:10:29.918Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-07-30T15:01:37.362Z",
-      "fetchedAt": "2026-07-30T15:01:37.362Z"
+      "firstSeenAt": "2026-07-30T16:02:03.319Z",
+      "fetchedAt": "2026-07-30T16:02:03.319Z"
+    },
+    {
+      "game": "snatch-a-seed",
+      "gameName": "Snatch a Seed",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/snatch-a-seed"
+      },
+      "code": "STARLIGHT",
+      "reward": null,
+      "date": "2026-07-30T15:10:35.033Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-30T16:02:03.319Z",
+      "fetchedAt": "2026-07-30T16:02:03.319Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "summon-heroes",
+      "count": 15,
+      "fresh": []
+    },
+    {
+      "game": "reborn-skills-master",
+      "count": 68,
+      "fresh": [
+        {
+          "code": "update87",
+          "reward": ""
+        }
+      ]
+    },
+    {
+      "game": "arise-shadow-hunt",
+      "count": 76,
+      "fresh": []
+    },
+    {
+      "game": "prism-runway-show",
+      "count": 25,
+      "fresh": [
+        {
+          "code": "KIRAKIRASUMMER",
+          "reward": ""
+        }
+      ]
+    }
+  ]
 }
