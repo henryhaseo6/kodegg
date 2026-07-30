@@ -60,6 +60,12 @@ const isSpecific = Array.isArray(g.howTo) && g.howTo.length >= 2;
 const redeemSteps = { id: isSpecific ? g.howTo : redeemStd.id, en: isSpecific ? g.howTo : redeemStd.en };
 
 const gname = g.name;
+// Judul H1 kode. EN "{name} Codes" (grammar benar utk kode-musik: "X Music
+// Codes"). ID "Kode {name}" bikin "Music" nyangkut di belakang → utk game
+// kode-musik (nama "... Music"), pindahkan: "Kode Musik {game}". Perbaikan
+// menyeluruh (SEO/how-to/FAQ + pisah nama-game vs tipe-kode) menyusul refactor 1 Agt.
+const _mMusic = /^(.*) Music$/i.exec(g.name);
+const codesH1 = id ? (_mMusic ? `Kode Musik ${_mMusic[1]}` : `Kode ${g.name}`) : `${g.name} Codes`;
 // Pemain konkuren → ringkas (jangan pakai regex literal di frontmatter .astro).
 function fmtPlayers(n) {
   if (n >= 1e6) {
@@ -207,7 +213,7 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
         </span>
       </div>
       <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4.5vw,44px); letter-spacing:-0.02em; color:#fff; margin:0; line-height:1.1;">
-        {id ? `Kode ${g.name}` : `${g.name} Codes`}
+        {codesH1}
       </h1>
     </header>
     <p style="color:var(--muted); font-size:15px; margin:0 0 26px;">
