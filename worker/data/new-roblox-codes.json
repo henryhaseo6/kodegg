@@ -1,16 +1,60 @@
 {
-  "generatedAt": "2026-07-30T14:02:21.215Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-07-30T15:01:37.362Z",
+  "codes": [
     {
-      "game": "fish-it",
-      "count": 25,
-      "fresh": []
+      "game": "dueling-grounds",
+      "gameName": "Dueling Grounds",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/dueling-grounds"
+      },
+      "code": "InnovationAwards",
+      "reward": null,
+      "date": "2026-07-30T14:54:14.043Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-30T15:01:37.362Z",
+      "fetchedAt": "2026-07-30T15:01:37.362Z"
     },
     {
-      "game": "rivals",
-      "count": 4,
-      "fresh": []
+      "game": "jujutsu-randomizer",
+      "gameName": "Jujutsu Randomizer",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/jujutsu-randomizer"
+      },
+      "code": "SEEYOUNEXTMONTH",
+      "reward": null,
+      "date": "2026-07-30T14:54:12.838Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-30T15:01:37.362Z",
+      "fetchedAt": "2026-07-30T15:01:37.362Z"
+    },
+    {
+      "game": "jujutsu-randomizer",
+      "gameName": "Jujutsu Randomizer",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/jujutsu-randomizer"
+      },
+      "code": "10MVISITS",
+      "reward": null,
+      "date": "2026-07-30T14:54:11.642Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-30T15:01:37.362Z",
+      "fetchedAt": "2026-07-30T15:01:37.362Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
