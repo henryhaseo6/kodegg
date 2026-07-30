@@ -62,12 +62,19 @@ function buildCandidates() {
   const out = [];
   // ROBLOX
   const rb = readJSON(resolve(DATA, "roblox-codes.json"), { games: {}, active: [] });
+  // Kode badge "CEK DULU" (c.check = belum diverifikasi/ragu) TAK dimasukkan ke
+  // video mana pun — jangan umbar kode meragukan (kualitas). Berlaku semua game.
+  const chkKey = (game, code) => `${game}:${(code || "").toLowerCase()}`;
+  const checkSet = new Set((rb.active || []).filter((c) => c.check).map((c) => chkKey(c.game, c.code)));
+  rb.active = (rb.active || []).filter((c) => !c.check);
   const rbNewFile = readJSON(resolve(DATA, "new-roblox-codes.json"), { codes: [] });
   const rbNew = rbNewFile.codes;
   const rbNewByGame = {};
   for (const c of rbNew) (rbNewByGame[c.game] = rbNewByGame[c.game] || []).push(c);
-  for (const [id, nc] of Object.entries(rbNewByGame)) {
+  for (const [id, nc0] of Object.entries(rbNewByGame)) {
     const g = rb.games[id]; if (!g) continue;
+    const nc = nc0.filter((c) => !checkSet.has(chkKey(id, c.code))); // buang kode baru yg "CEK DULU"
+    if (!nc.length) continue; // semua kode baru game ini meragukan → skip video
     const active = rb.active.filter((c) => c.game === id);
     out.push({
       platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0,
@@ -128,6 +135,7 @@ function buildCandidates() {
 
   // MOBILE
   const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
+  mc.active = (mc.active || []).filter((c) => !c.check); // buang kode "CEK DULU" (konsisten; mobile blm ada check)
   const cat = readJSON(resolve(DATA, "games.json"), { games: [] });
   const catById = Object.fromEntries((cat.games ?? []).map((g) => [g.id, g]));
   const mNewFile = readJSON(resolve(DATA, "new-codes.json"), { codes: [] });
@@ -217,7 +225,7 @@ function buildOnDemand(id) {
   if (!rb.games[id]) { const f = Object.entries(rb.games).find(([, gg]) => (gg.slug ?? "") === id); if (f) id = f[0]; }
   const g = rb.games[id];
   if (g) {
-    const active = rb.active.filter((c) => c.game === id);
+    const active = rb.active.filter((c) => c.game === id && !c.check); // buang kode "CEK DULU"
     if (active.length === 0) return null;
     return {
       platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0,
@@ -226,7 +234,7 @@ function buildOnDemand(id) {
     };
   }
   const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
-  const active = mc.active.filter((c) => c.game === id);
+  const active = mc.active.filter((c) => c.game === id && !c.check); // buang kode "CEK DULU"
   if (active.length === 0) return null;
   const cat = readJSON(resolve(DATA, "games.json"), { games: [] });
   const meta = (cat.games ?? []).find((x) => x.id === id);

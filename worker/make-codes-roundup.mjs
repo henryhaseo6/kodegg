@@ -48,7 +48,7 @@ function loadGames() {
   const winDate = (c) => { const d = Date.parse(c.date || "") || 0; return d > 0 && d >= DATEms - 864e5 && d <= DATEms + 864e5; };
   const byGame = {};
   for (const c of (db.active || [])) { // hanya kode AKTIF (redeemable) — bukan arsip expired
-    if (!c.game || !c.code) continue;
+    if (!c.game || !c.code || c.check) continue; // c.check = badge "CEK DULU" → jangan masuk video
     if (wibDay(c.firstSeenAt) !== DATE) continue; // JANGKAR: hari pertama ke-detect (WIB) == DATE
     const big = (G[c.game]?.players || 0) >= MINP && winDate(c);
     const est = !c.bulk;
