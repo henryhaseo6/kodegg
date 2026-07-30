@@ -49,10 +49,12 @@ function readMeta(videoPath) {
   // File .txt lama (sebelum fitur playlist) tak punya bagian PLAYLIST → turunkan
   // dari judul: "<Game> Codes (July 2026) ..." → "<Game> Codes — Kode Redeem".
   const playlistTitle = grab("PLAYLIST", "PLAYLIST_DESC") || (/^(.+?) Codes\b/.exec(title || "")?.[1] ? `${/^(.+?) Codes\b/.exec(title)[1]} Codes — Kode Redeem` : undefined);
-  const playlistDescription = grab("PLAYLIST_DESC", "ZZZ") || undefined;
-  // Komentar utk di-pin: pakai URL halaman game yang sudah ada di deskripsi.
+  const playlistDescription = grab("PLAYLIST_DESC", "KOMENTAR") || undefined;
+  // Komentar pin: pakai dari .txt (meta.comment, format terbaru = sama dg pipeline
+  // auto) kalau ada; fallback konstruksi dari URL (file .txt lama tanpa KOMENTAR).
+  const commentTxt = grab("KOMENTAR", "ZZZ");
   const pageUrl = /https:\/\/kodegg\.com\/\S+/.exec(description)?.[0];
-  const comment = pageUrl ? `🎁 Semua kode + cara redeem:\n${pageUrl}\nKode gagal/expired? Tulis di sini 👇` : undefined;
+  const comment = commentTxt || (pageUrl ? `🎁 Semua kode + cara redeem:\n${pageUrl}\nKode gagal/expired? Tulis di sini 👇` : undefined);
   return { title: title || fallback.title, description, tags, playlistTitle, playlistDescription, comment };
 }
 
