@@ -64,8 +64,9 @@ const gname = g.name;
 // Codes"). ID "Kode {name}" bikin "Music" nyangkut di belakang → utk game
 // kode-musik (nama "... Music"), pindahkan: "Kode Musik {game}". Perbaikan
 // menyeluruh (SEO/how-to/FAQ + pisah nama-game vs tipe-kode) menyusul refactor 1 Agt.
-const _mMusic = /^(.*) Music$/i.exec(g.name);
-const codesH1 = id ? (_mMusic ? `Kode Musik ${_mMusic[1]}` : `Kode ${g.name}`) : `${g.name} Codes`;
+const _mType = /^(.*) (Music|Sound)$/i.exec(g.name);
+const _typeId = _mType ? ({ music: "Musik", sound: "Sound" }[_mType[2].toLowerCase()] || _mType[2]) : "";
+const codesH1 = id ? (_mType ? `Kode ${_typeId} ${_mType[1]}` : `Kode ${g.name}`) : `${g.name} Codes`;
 // Pemain konkuren → ringkas (jangan pakai regex literal di frontmatter .astro).
 function fmtPlayers(n) {
   if (n >= 1e6) {

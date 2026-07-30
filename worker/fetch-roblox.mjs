@@ -18,7 +18,7 @@ import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { ROBLOX_GAMES, robloxSlug } from "./src/roblox-games.mjs";
+import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen } from "./src/sources/robloxden.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
@@ -241,7 +241,7 @@ async function main() {
       if (!srcUid || srcUid !== Number(entry.universeId)) return { id, ok: false };
     }
 
-    const name = entry.seed ? entry.name : rocodesMeta?.name || denMeta?.name || entry.name;
+    const name = ROBLOX_NAME_OVERRIDE[id] || (entry.seed ? entry.name : rocodesMeta?.name || denMeta?.name || entry.name);
     const slugRo = entry.rocodesSlug;
     const slugDen = entry.denSlug;
 

@@ -24,6 +24,14 @@ export const ROBLOX_GAMES = {
   adoptme: { slug: "adopt-me", name: "Adopt Me!", genres: ["roleplay", "casual"] },
 };
 
+// Override NAMA saja (slug/URL TAK berubah) — utk game auto-discover yg nama
+// sumbernya kurang tepat / nyesatin. Mis. RoCodes judulin "The Strongest
+// Battlegrounds Music" padahal kode-nya Kill Sound Effect (bukan lagu) → pakai
+// "Sound" biar visitor gak ngerasa ketipu. Keyed by game id.
+export const ROBLOX_NAME_OVERRIDE = {
+  "the-strongest-battlegrounds": "The Strongest Battlegrounds Sound",
+};
+
 // Slug URL keyword dari NAMA (mis. "Blox Fruits" -> "blox-fruits") untuk /roblox/<slug>.
 const slugify = (s) => (s ?? "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 export const ROBLOX_SLUG = Object.fromEntries(Object.keys(ROBLOX_GAMES).map((id) => [id, slugify(ROBLOX_GAMES[id].name)]));
