@@ -1,30 +1,24 @@
 {
-  "generatedAt": "2026-07-30T20:02:15.825Z",
+  "generatedAt": "2026-07-30T21:02:06.140Z",
   "codes": [
     {
-      "game": "toy-defense",
-      "gameName": "Toy Defense",
+      "game": "gym-star-simulator",
+      "gameName": "GYM Star Simulator",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/toy-defense"
+        "RoCodes.gg": "https://rocodes.gg/codes/gym-star-simulator"
       },
-      "code": "135KLIKES",
-      "reward": null,
-      "date": "2026-07-30T19:13:28.218Z",
+      "code": "SUMMERHEAT",
+      "reward": "1,250 Gym Tokens",
+      "date": "2026-07-30T19:13:34.465Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-07-30T20:02:15.825Z",
-      "fetchedAt": "2026-07-30T20:02:15.825Z"
+      "firstSeenAt": "2026-07-30T21:02:06.140Z",
+      "fetchedAt": "2026-07-30T21:02:06.140Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "gym-star-simulator",
-      "count": 34,
-      "fresh": []
-    }
-  ]
+  "bulkGames": []
 }
