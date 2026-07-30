@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-30T22:08:56.147Z",
+  "updatedAt": "2026-07-30T23:01:41.522Z",
   "counts": {
-    "active": 117,
-    "archived": 40
+    "active": 116,
+    "archived": 41
   },
   "articles": [
     {
@@ -1860,7 +1860,9 @@
       "url": "https://www.hoyolab.com/article/45673007",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-01T04:05:01.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -1875,10 +1877,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/30/0/866ce1d69aab014876b243c4b77e6f3f_8403460820030530600.jpeg",
       "url": "https://www.hoyolab.com/article/45670084",
       "source": "HoYoLAB",
-      "publishedAt": "2026-06-30T23:00:03.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-06-30T23:00:03.000Z",
+      "archivedAt": "2026-07-30T23:01:41.522Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
