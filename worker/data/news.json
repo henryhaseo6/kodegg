@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-31T06:02:25.826Z",
+  "updatedAt": "2026-07-31T07:01:37.197Z",
   "counts": {
-    "active": 115,
-    "archived": 42
+    "active": 114,
+    "archived": 43
   },
   "articles": [
     {
@@ -1828,7 +1828,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4957",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-01T10:35:00.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1843,10 +1845,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1782835200000/zl2evqvnkhz0n7eqcv-1782888580279.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4955",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-01T06:51:05.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-01T06:51:05.000Z",
+      "archivedAt": "2026-07-31T07:01:37.197Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
