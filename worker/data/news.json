@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-31T04:02:00.765Z",
+  "updatedAt": "2026-07-31T05:01:29.554Z",
   "counts": {
-    "active": 116,
-    "archived": 41
+    "active": 115,
+    "archived": 42
   },
   "articles": [
     {
@@ -1844,7 +1844,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4955",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-01T06:51:05.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -1859,10 +1861,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/0/40cf78190a96739c6681b03af75a87ca_7547655472955533537.webp",
       "url": "https://www.hoyolab.com/article/45673007",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-01T04:05:01.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-01T04:05:01.000Z",
+      "archivedAt": "2026-07-31T05:01:29.554Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
