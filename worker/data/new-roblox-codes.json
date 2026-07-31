@@ -1,5 +1,117 @@
 {
-  "generatedAt": "2026-07-31T15:02:36.173Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-07-31T16:03:30.545Z",
+  "codes": [
+    {
+      "game": "anime-expeditions",
+      "gameName": "Anime Expeditions",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-expeditions"
+      },
+      "code": "200klikes",
+      "reward": null,
+      "date": "2026-07-31T15:25:36.349Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-07-31T16:03:30.545Z",
+      "fetchedAt": "2026-07-31T16:03:30.545Z"
+    },
+    {
+      "game": "savannah-life",
+      "gameName": "Savannah Life",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/savannah-life"
+      },
+      "code": "SCAVENGER",
+      "reward": null,
+      "date": "2026-07-31T15:25:35.815Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-31T16:03:30.545Z",
+      "fetchedAt": "2026-07-31T16:03:30.545Z"
+    },
+    {
+      "game": "devil-hunter",
+      "gameName": "Devil Hunter",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/devil-hunter"
+      },
+      "code": "SPAINWC",
+      "reward": null,
+      "date": "2026-07-31T15:25:31.401Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-31T16:03:30.545Z",
+      "fetchedAt": "2026-07-31T16:03:30.545Z"
+    },
+    {
+      "game": "devil-hunter",
+      "gameName": "Devil Hunter",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/devil-hunter"
+      },
+      "code": "LARGEPATCH",
+      "reward": null,
+      "date": "2026-07-31T15:25:30.984Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-31T16:03:30.545Z",
+      "fetchedAt": "2026-07-31T16:03:30.545Z"
+    },
+    {
+      "game": "devil-hunter",
+      "gameName": "Devil Hunter",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/devil-hunter"
+      },
+      "code": "DEVILSGALORE",
+      "reward": null,
+      "date": "2026-07-31T15:25:30.608Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-07-31T16:03:30.545Z",
+      "fetchedAt": "2026-07-31T16:03:30.545Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "makeup-store-simulator",
+      "count": 8,
+      "fresh": [
+        {
+          "code": "BRUSH2025",
+          "reward": ""
+        }
+      ]
+    },
+    {
+      "game": "clothing-store-simulator",
+      "count": 8,
+      "fresh": []
+    },
+    {
+      "game": "project-menacing-remake",
+      "count": 1,
+      "fresh": []
+    }
+  ]
 }
