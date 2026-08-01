@@ -15,9 +15,9 @@ const IDS = arg("ids").split(",").map((s) => s.trim()).filter(Boolean);
 const FROM = arg("from"), TO = arg("to");
 const REQ = arg("require-title"); // palang pengaman hapus: judul WAJIB memuat teks ini
 
-if (!["retitle", "delete", "playlist", "audit"].includes(MODE)) { console.error("--mode wajib: retitle | delete | playlist | audit"); process.exit(1); }
+if (!["retitle", "delete", "playlist", "audit", "show"].includes(MODE)) { console.error("--mode wajib: retitle | delete | playlist | audit | show"); process.exit(1); }
 if (MODE !== "audit" && IDS.length === 0) { console.error("--ids kosong"); process.exit(1); }
-if (!["delete", "audit"].includes(MODE) && (!FROM || !TO)) { console.error(`mode ${MODE} butuh --from dan --to`); process.exit(1); }
+if (!["delete", "audit", "show"].includes(MODE) && (!FROM || !TO)) { console.error(`mode ${MODE} butuh --from dan --to`); process.exit(1); }
 if (MODE === "delete" && !REQ) { console.error("mode delete WAJIB pakai --require-title (palang pengaman)"); process.exit(1); }
 if (!process.env.YT_REFRESH_TOKEN) { console.error("kredensial YouTube belum di-set"); process.exit(1); }
 
@@ -107,6 +107,23 @@ if (MODE === "audit") {
   if (hilang.length) T("TINGGI", "entri yt-playlists.json menunjuk playlist yang SUDAH TAK ADA", hilang.map(([g, id]) => `${g}=${id}`).join("; "));
 
   console.log(temuan.length ? temuan.join("\n\n") : "bersih — tak ada temuan.");
+  process.exit(0);
+}
+
+// ── mode show: dump metadata mentah sebuah video (diagnostik) ──────────────
+if (MODE === "show") {
+  const r = await yt.videos.list({ part: ["snippet", "status", "localizations"], id: IDS });
+  for (const v of r.data.items ?? []) {
+    console.log(`\n== ${v.id}`);
+    console.log(`  snippet.title       : ${v.snippet.title}`);
+    console.log(`  defaultLanguage     : ${v.snippet.defaultLanguage ?? "(kosong)"}`);
+    console.log(`  defaultAudioLanguage: ${v.snippet.defaultAudioLanguage ?? "(kosong)"}`);
+    console.log(`  publishedAt         : ${v.snippet.publishedAt}`);
+    console.log(`  uploadStatus        : ${v.status?.uploadStatus} · privacy: ${v.status?.privacyStatus}`);
+    const loc = v.localizations ?? {};
+    console.log(`  localizations       : ${Object.keys(loc).length ? Object.entries(loc).map(([k, x]) => `${k}="${x.title}"`).join(" | ") : "(tak ada)"}`);
+    console.log(`  deskripsi memuat "July 2026": ${(v.snippet.description ?? "").includes("July 2026")}`);
+  }
   process.exit(0);
 }
 
