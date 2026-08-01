@@ -148,6 +148,7 @@ const byId = Object.fromEntries(items.map((v) => [v.id, v]));
 for (const id of IDS) if (!byId[id]) console.log(`! ${id} tak ditemukan di channel — lewati`);
 
 let ubah = 0, lewat = 0;
+const diubah = []; // utk verifikasi baca-ulang di akhir (lihat catatan di bawah)
 for (const id of IDS) {
   const v = byId[id]; if (!v) { lewat++; continue; }
   const s = v.snippet, view = v.statistics?.viewCount ?? "0";
@@ -180,8 +181,21 @@ for (const id of IDS) {
   const nD = ((s.description ?? "").match(new RegExp(FROM.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) ?? []).length;
   const nT = (s.tags ?? []).filter((t) => t.includes(FROM)).length;
   console.log(`UBAH   ${id} · ${view} view\n       lama: ${s.title}\n       baru: ${baru.title}\n       deskripsi ${nD} ganti · tag ${nT} ganti`);
-  if (APPLY) { await yt.videos.update({ part: ["snippet"], requestBody: { id, snippet: baru } }); console.log("       ✓ diperbarui"); }
+  if (APPLY) { await yt.videos.update({ part: ["snippet"], requestBody: { id, snippet: baru } }); console.log("       ✓ diperbarui"); diubah.push({ id, judul: baru.title }); }
   ubah++;
+}
+
+// VERIFIKASI BACA-ULANG. videos.update bisa menjawab sukses TAPI perubahannya
+// tak tersimpan (kejadian 1 Agt 2026: OHt4LRpjn0s dilaporkan "✓ diperbarui",
+// beberapa jam kemudian judulnya kembali "(July 2026)" — ketahuan cuma karena
+// audit). Jadi jangan percaya respons API: baca ulang & bandingkan.
+if (APPLY && MODE === "retitle" && diubah.length) {
+  const r = await yt.videos.list({ part: ["snippet"], id: diubah.map((d) => d.id) });
+  const kini = Object.fromEntries((r.data.items ?? []).map((v) => [v.id, v.snippet.title]));
+  const gagal = diubah.filter((d) => kini[d.id] !== d.judul);
+  console.log(`\nverifikasi baca-ulang: ${diubah.length - gagal.length}/${diubah.length} tersimpan.`);
+  for (const g of gagal) console.log(`  ✗ ${g.id} TIDAK tersimpan — masih: ${kini[g.id] ?? "(tak terbaca)"}`);
+  if (gagal.length) { console.log("  → jalankan ulang mode retitle utk id di atas."); process.exitCode = 1; }
 }
 
 console.log(`\n${APPLY ? "selesai" : "DRY-RUN selesai"} — ${ubah} video ${MODE === "delete" ? "dihapus" : "diubah"}, ${lewat} dilewati.`);
