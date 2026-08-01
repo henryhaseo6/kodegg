@@ -68,7 +68,17 @@ async function ensurePlaylist(yt, title, description, lang = "id") {
       const cur = hit.snippet ?? {};
       if (cur.title !== title || (cur.defaultLanguage || "") !== lang || (description && (cur.description || "") !== description)) {
         try {
-          await yt.playlists.update({ part: ["snippet"], requestBody: { id: hit.id, snippet: { title, description, defaultLanguage: lang } } });
+          // localizations WAJIB ikut dikirim. playlists.update MENGGANTI snippet,
+          // dan `defaultLanguage` sendirian tak membuat YouTube menyimpan bahasa —
+          // yang dipakai Studio ("Title and description language") adalah entri
+          // localizations. Tanpa ini: setelan bahasa yang di-set manual di Studio
+          // TERHAPUS tiap ada video baru masuk playlist, lalu kosongnya memicu
+          // update ini lagi di upload berikutnya — loop penulisan sia-sia yang
+          // membakar 50 unit kuota per video. (Dilaporkan user 1 Agt 2026.)
+          await yt.playlists.update({
+            part: ["snippet", "localizations"],
+            requestBody: { id: hit.id, snippet: { title, description, defaultLanguage: lang }, localizations: { [lang]: { title, description } } },
+          });
           console.log(`  ↳ playlist dinormalisasi: "${cur.title}" → "${title}" [${lang}]`);
         } catch (e) { console.log(`  playlist normalisasi gagal (abaikan): ${e.message}`); }
       }
@@ -77,8 +87,14 @@ async function ensurePlaylist(yt, title, description, lang = "id") {
     pageToken = r.data.nextPageToken;
   } while (pageToken);
   const made = await yt.playlists.insert({
-    part: ["snippet", "status"],
-    requestBody: { snippet: { title, description, defaultLanguage: lang }, status: { privacyStatus: "public" } },
+    // localizations disertakan sejak awal — alasan sama dg cabang update di atas:
+    // defaultLanguage sendirian tak cukup untuk membuat bahasa tersimpan.
+    part: ["snippet", "status", "localizations"],
+    requestBody: {
+      snippet: { title, description, defaultLanguage: lang },
+      status: { privacyStatus: "public" },
+      localizations: { [lang]: { title, description } },
+    },
   });
   return { id: made.data.id, baru: true };
 }
