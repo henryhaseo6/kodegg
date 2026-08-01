@@ -4,9 +4,12 @@
 // berdampingan dg RoCodes → saling melengkapi (game/kode yang tak ada di satu
 // sumber) DAN saling cross-check (kode yang ada di keduanya = terverifikasi).
 //
+// (decode entity via normalize.mjs — lihat clean()).
 // Markup: tiap kode `data-copy="CODE"`, status di container `data-expired`,
 // reward di `<p class="codes-list__description">`. Nama dari <title>, placeId
 // dari link play (roblox.com/games/<placeId>) → bisa di-resolve ke universeId.
+
+import { decodeEntities } from "../normalize.mjs";
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
@@ -14,12 +17,9 @@ const UA =
 const CODE_OK = /^[\w!.\- ]{2,40}$/;
 
 function clean(s) {
-  return (s || "")
-    .replace(/<[^>]*>/g, "")
-    .replace(/&amp;/g, "&")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&#8217;|&rsquo;/g, "'")
-    .replace(/&quot;/g, '"')
+  // decodeEntities menggantikan daftar entity ad-hoc: dulu &#x27; / &#x2F; lolos
+  // dan tersimpan mentah di data (lihat catatan di normalize.mjs).
+  return decodeEntities((s || "").replace(/<[^>]*>/g, ""))
     .replace(/\s+/g, " ")
     .trim();
 }

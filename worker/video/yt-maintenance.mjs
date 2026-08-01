@@ -15,9 +15,9 @@ const IDS = arg("ids").split(",").map((s) => s.trim()).filter(Boolean);
 const FROM = arg("from"), TO = arg("to");
 const REQ = arg("require-title"); // palang pengaman hapus: judul WAJIB memuat teks ini
 
-if (!["retitle", "delete"].includes(MODE)) { console.error("--mode wajib: retitle | delete"); process.exit(1); }
+if (!["retitle", "delete", "playlist"].includes(MODE)) { console.error("--mode wajib: retitle | delete | playlist"); process.exit(1); }
 if (IDS.length === 0) { console.error("--ids kosong"); process.exit(1); }
-if (MODE === "retitle" && (!FROM || !TO)) { console.error("mode retitle butuh --from dan --to"); process.exit(1); }
+if (MODE !== "delete" && (!FROM || !TO)) { console.error(`mode ${MODE} butuh --from dan --to`); process.exit(1); }
 if (MODE === "delete" && !REQ) { console.error("mode delete WAJIB pakai --require-title (palang pengaman)"); process.exit(1); }
 if (!process.env.YT_REFRESH_TOKEN) { console.error("kredensial YouTube belum di-set"); process.exit(1); }
 
@@ -27,6 +27,34 @@ o.setCredentials({ refresh_token: process.env.YT_REFRESH_TOKEN });
 const yt = google.youtube({ version: "v3", auth: o });
 
 console.log(APPLY ? `=== APPLY · mode=${MODE} · ${IDS.length} video ===` : `=== DRY-RUN · mode=${MODE} · ${IDS.length} video (tak mengubah apa pun) ===`);
+
+// ── mode playlist: ganti teks di JUDUL playlist ────────────────────────────
+// Penting: situs memetakan halaman game → playlist lewat JUDUL playlist
+// (fetch-yt-playlists.mjs, dicocokkan ke nama game). Jadi kalau nama game di
+// data diperbaiki, judul playlist WAJIB ikut diperbaiki — kalau tidak,
+// pemetaannya putus dan tombol "Video di YouTube" hilang dari halaman game.
+if (MODE === "playlist") {
+  const r = await yt.playlists.list({ part: ["snippet"], id: IDS });
+  const found = r.data.items ?? [];
+  for (const id of IDS) if (!found.some((p) => p.id === id)) console.log(`! ${id} tak ditemukan — lewati`);
+  let n = 0;
+  for (const p of found) {
+    const s = p.snippet;
+    if (!(s.title ?? "").includes(FROM) && !(s.description ?? "").includes(FROM)) {
+      console.log(`-      ${p.id} · sudah benar · ${s.title}`); continue;
+    }
+    const snippet = {
+      title: (s.title ?? "").replaceAll(FROM, TO),
+      description: (s.description ?? "").replaceAll(FROM, TO),
+      defaultLanguage: s.defaultLanguage,
+    };
+    console.log(`UBAH   ${p.id}\n       lama: ${s.title}\n       baru: ${snippet.title}`);
+    if (APPLY) { await yt.playlists.update({ part: ["snippet"], requestBody: { id: p.id, snippet } }); console.log("       ✓ diperbarui"); }
+    n++;
+  }
+  console.log(`\n${APPLY ? "selesai" : "DRY-RUN selesai"} — ${n} playlist diubah.`);
+  process.exit(0);
+}
 
 // videos.list menerima maks 50 id per panggilan (1 unit kuota).
 const items = [];

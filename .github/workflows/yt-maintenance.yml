@@ -12,18 +12,18 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "retitle (ganti teks) atau delete (hapus)"
+        description: "retitle (video) / delete (video) / playlist (judul playlist)"
         type: choice
-        options: [retitle, delete]
+        options: [retitle, delete, playlist]
         required: true
       ids:
-        description: "Video ID (pisah koma)"
+        description: "Video ID — atau Playlist ID bila mode=playlist (pisah koma)"
         required: true
       from:
-        description: "retitle: teks lama, mis. July 2026"
+        description: "retitle/playlist: teks lama, mis. July 2026"
         required: false
       to:
-        description: "retitle: teks baru, mis. August 2026"
+        description: "retitle/playlist: teks baru, mis. August 2026"
         required: false
       require_title:
         description: "delete: judul WAJIB memuat teks ini (palang pengaman)"

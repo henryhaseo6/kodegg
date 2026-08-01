@@ -8,6 +8,7 @@
 //
 // Akses: butuh browser-UA (bot-UA bisa 403). Menambah game = tambah slug di
 // roblox-games.mjs; adapter ini generik untuk semua game.
+import { decodeEntities } from "../normalize.mjs";
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
@@ -39,11 +40,7 @@ function parseHowTo(html, name) {
   if (!html || typeof html !== "string") return [];
   const steps = [];
   for (const m of html.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)) {
-    const t = m[1]
-      .replace(/<[^>]+>/g, " ")
-      .replace(/&amp;/g, "&")
-      .replace(/&nbsp;/g, " ")
-      .replace(/&#8217;|&rsquo;/g, "'")
+    const t = decodeEntities(m[1].replace(/<[^>]+>/g, " "))
       .replace(/\{\{\s*game_name\s*\}\}/gi, name || "the game")
       .replace(/\s+/g, " ")
       .trim();
@@ -94,8 +91,10 @@ export async function fetchRoCodes(slug) {
   const archive = best.expired.map(shapeCode).filter(Boolean);
   // Nama game BERSIH dari <title> ("Blox Fruits Codes | ..." → "Blox Fruits") —
   // lebih rapi dari nama Roblox yang berdekorasi ([UPD], emoji, dll).
+  // decodeEntities: <title> di-escape HTML oleh Nuxt — tanpa ini nama tersimpan
+  // sbg "Soul&#x27;s Crossover X" & nyebar ke situs, judul video, nama playlist.
   const tm = html.match(/<title>([^<]+?)\s+Codes\b/i);
-  const name = tm ? tm[1].trim() : null;
+  const name = tm ? decodeEntities(tm[1].trim()) : null;
   // Cara redeem SPESIFIK per-game: coba field `howTo`, lalu section "How do I
   // redeem" di `content` (sebagian game menaruh langkahnya di sana, mis. Island
   // of Move: "walk over to the TV…"). Substitusi {{game_name}}. Kosong → situs
