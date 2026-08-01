@@ -69,6 +69,22 @@ jobs:
           fi
           node worker/discover-sources.mjs || echo "pemantau sumber gagal, lanjut"
 
+      # Audit konsistensi data — BACA-SAJA & non-blocking. Bug data di proyek ini
+      # jenisnya menumpuk diam-diam lintas-run (kode aktif-sekaligus-expired
+      # sempat sampai 521 kode di 45 game sebelum ketahuan). Ini melaporkannya
+      # sejak kemunculan pertama. SENGAJA tak pernah menggagalkan run: audit yang
+      # bikin pipeline merah malah bikin merahnya diabaikan.
+      - name: Audit konsistensi data (lapor saja)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
+        run: |
+          node worker/audit-data.mjs | tee audit.txt || true
+          # Temuan TINGGI dinaikkan jadi warning GitHub → kelihatan di ringkasan
+          # run tanpa perlu membuka log.
+          if grep -q '^\[TINGGI\]' audit.txt; then
+            echo "::warning::Audit data menemukan masalah TINGGI — lihat log langkah ini."
+          fi
+          rm -f audit.txt
+
       # Auto-video YouTube: kode baru run ini → Short (maks 3/hari, Unlisted).
       # Aman-dilewati bila YT belum di-set. Jalan SEBELUM commit → video-state.json
       # ikut ter-commit sekali jalan (tak nambah deploy). Lihat DEPLOY-YOUTUBE.md.
