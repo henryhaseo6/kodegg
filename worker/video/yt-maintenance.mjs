@@ -66,7 +66,7 @@ if (MODE === "audit") {
   } while (token);
   const vids = [];
   for (let i = 0; i < vidIds.length; i += 50) {
-    const r = await yt.videos.list({ part: ["snippet", "status"], id: vidIds.slice(i, i + 50) });
+    const r = await yt.videos.list({ part: ["snippet", "status", "localizations"], id: vidIds.slice(i, i + 50) });
     vids.push(...(r.data.items ?? []));
   }
 
@@ -95,6 +95,17 @@ if (MODE === "audit") {
     return `${thn}-${String(BULAN.indexOf(mon) + 1).padStart(2, "0")}` !== w;
   });
   if (bulanSalah.length) T("SEDANG", "bulan di judul ≠ bulan terbit (WIB)", bulanSalah.map((v) => `${v.id}: ${v.snippet.title.slice(0, 55)} (terbit ${bulanWIB(v.snippet.publishedAt)})`).join("; "));
+
+  // Lokalisasi basi: terjemahan otomatis YouTube dibuat dari teks SAAT ITU, jadi
+  // perbaikan judul yg hanya menyentuh snippet meninggalkan versi asing tetap
+  // salah — penonton en-US melihat bulan lama / entity HTML.
+  const locBasi = vids.filter((v) => Object.entries(v.localizations ?? {}).some(([k, x]) => {
+    if (k === v.snippet.defaultLanguage) return false;
+    const m = /\((January|February|March|April|May|June|July|August|September|October|November|December) (\d{4})\)/.exec(x.title ?? "");
+    const salahBulan = m && `${m[2]}-${String(BULAN.indexOf(m[1]) + 1).padStart(2, "0")}` !== bulanWIB(v.snippet.publishedAt);
+    return salahBulan || ENT.test(x.title ?? "") || ENT.test(x.description ?? "");
+  }));
+  if (locBasi.length) T("TINGGI", "LOKALISASI basi (penonton bahasa lain masih lihat teks lama)", locBasi.map((v) => `${v.id}: ${Object.entries(v.localizations).filter(([k]) => k !== v.snippet.defaultLanguage).map(([k, x]) => `${k}="${(x.title ?? "").slice(0, 45)}"`).join(" ")}`).join("; "));
 
   const takPublik = vids.filter((v) => v.status?.privacyStatus !== "public");
   if (takPublik.length) T("SEDANG", "video tidak publik", takPublik.map((v) => `${v.id} [${v.status?.privacyStatus}] ${v.snippet.title.slice(0, 45)}`).join("; "));
@@ -180,8 +191,18 @@ for (const id of IDS) {
     ubah++; continue;
   }
 
-  // retitle: ganti FROM→TO di judul, deskripsi, dan tag.
-  if (!(s.title ?? "").includes(FROM) && !(s.description ?? "").includes(FROM)) {
+  // retitle: ganti FROM→TO di judul, deskripsi, tag, DAN SEMUA LOKALISASI.
+  //
+  // LOKALISASI ITU WAJIB. YouTube membuat terjemahan metadata otomatis (mis.
+  // en-US) dari judul/deskripsi SAAT ITU. Memperbarui snippet saja hanya
+  // mengubah versi bahasa default (id) — penonton berbahasa Inggris tetap
+  // melihat teks LAMA. Kejadian 1 Agt 2026: judul id sudah "(August 2026)"
+  // sementara en-US masih "(July 2026)"; videos.list kadang memulangkan versi
+  // en-US itu, sehingga verifikasi baca-ulang sempat melapor "tidak tersimpan"
+  // padahal Studio sudah benar.
+  const loc = v.localizations ?? {};
+  const adaDiLokal = Object.values(loc).some((x) => (x.title ?? "").includes(FROM) || (x.description ?? "").includes(FROM));
+  if (!(s.title ?? "").includes(FROM) && !(s.description ?? "").includes(FROM) && !adaDiLokal) {
     console.log(`-      ${id} · sudah benar, lewati · ${s.title}`);
     lewat++; continue;
   }
@@ -207,11 +228,13 @@ for (const id of IDS) {
 // beberapa jam kemudian judulnya kembali "(July 2026)" — ketahuan cuma karena
 // audit). Jadi jangan percaya respons API: baca ulang & bandingkan.
 if (APPLY && MODE === "retitle" && diubah.length) {
-  const r = await yt.videos.list({ part: ["snippet"], id: diubah.map((d) => d.id) });
-  const kini = Object.fromEntries((r.data.items ?? []).map((v) => [v.id, v.snippet.title]));
-  const gagal = diubah.filter((d) => kini[d.id] !== d.judul);
+  // Bandingkan thd SEMUA varian bahasa: snippet.title yg dipulangkan API bisa
+  // versi terlokalisasi (en-US), bukan bahasa default → dulu memicu alarm palsu.
+  const r = await yt.videos.list({ part: ["snippet", "localizations"], id: diubah.map((d) => d.id) });
+  const kini = Object.fromEntries((r.data.items ?? []).map((v) => [v.id, [v.snippet.title, ...Object.values(v.localizations ?? {}).map((x) => x.title)]]));
+  const gagal = diubah.filter((d) => (kini[d.id] ?? []).some((t) => t.includes(FROM)));
   console.log(`\nverifikasi baca-ulang: ${diubah.length - gagal.length}/${diubah.length} tersimpan.`);
-  for (const g of gagal) console.log(`  ✗ ${g.id} TIDAK tersimpan — masih: ${kini[g.id] ?? "(tak terbaca)"}`);
+  for (const g of gagal) console.log(`  ✗ ${g.id} masih memuat "${FROM}" di salah satu bahasa: ${(kini[g.id] ?? []).join(" | ")}`);
   if (gagal.length) { console.log("  → jalankan ulang mode retitle utk id di atas."); process.exitCode = 1; }
 }
 
