@@ -125,6 +125,10 @@ async function main() {
     prev,
     covered,
     now,
+    // ci: jalur mobile/gacha — kode yg sama ditulis beda kapitalisasi antar
+    // sumber. Tanpa ini, kapitalisasi yg berubah dianggap KODE BARU →
+    // firstSeenAt ke-reset & bisa memicu notif/video ulang. (Roblox: tidak.)
+    { ci: true },
   );
 
   const payload = {

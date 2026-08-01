@@ -44,7 +44,18 @@ const OUTDIR = resolve(HERE, "../_video-out"); // video utk upload manual (di-ar
 
 const readJSON = (p, d) => { try { return JSON.parse(readFileSync(p, "utf8")); } catch { return d; } };
 const fmtPlayers = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : String(n));
-const ck = (game, code) => `${game}:${code}`;
+// Kunci "kode ini sudah divideokan". Untuk MOBILE dikecilkan hurufnya: kode yang
+// sama bisa BERUBAH kapitalisasinya antar-run (hoyo-codes duluan dg HURUF BESAR,
+// wiki/crimsonwitch nyusul dg kapitalisasi resmi → nilai `code` ikut berubah).
+// Dengan kunci case-sensitive, perubahan itu terbaca sebagai KODE BARU → video
+// DOBEL utk kode yang sama. Roblox tetap case-sensitive (kapitalisasi = identitas
+// kode di sana). Lihat codeKey di src/normalize.mjs.
+const ck = (game, code, platform) => `${game}:${platform === "ROBLOX" ? code : String(code).toLowerCase()}`;
+// Kompat mundur: state lama menyimpan kunci mobile apa adanya (belum dikecilkan).
+// Cek KEDUANYA, kalau tidak seluruh kode mobile lama terbaca "belum divideokan"
+// dan langsung dibanjiri video ulang saat rilis ini jalan pertama kali.
+const sudahDiposting = (state, id, code, platform) =>
+  !!(state.posted[ck(id, code, platform)] || state.posted[`${id}:${code}`]);
 // Total kode yg diklaim di video = gabungan unik aktif + baru (kode baru kadang
 // belum ke-merge ke daftar aktif → jangan sampai angka "+N lagi" meleset).
 const countAll = (active, newCodes) => new Set([...active.map((c) => c.code), ...newCodes.map((c) => c.code)]).size;
@@ -312,7 +323,7 @@ async function main() {
   // Dipakai CI utk melewati install deps video (canvas/ffmpeg/edge-tts) & render
   // pada run tanpa video (hemat menit Actions). Exit 0=ada kerja, 1=tidak.
   if (CHECK) {
-    const cands = buildCandidates().filter((c) => c.newCodes.some((nc) => !state.posted[ck(c.id, nc.code)]));
+    const cands = buildCandidates().filter((c) => c.newCodes.some((nc) => !sudahDiposting(state, c.id, nc.code, c.platform)));
     const promoC = buildPromoCandidate(state, now);
     const pv = readJSON(PENDING_VID, []).length, pp = readJSON(PENDING_PL, []).length;
     const kerja = cands.length + (promoC ? 1 : 0) + pv + pp;
@@ -357,7 +368,7 @@ async function main() {
   let candidates = [...pending, ...fresh].filter((c) => {
     if (seen.has(c.id)) return false; // dedup: antrian menang atas fresh (lebih lama)
     seen.add(c.id);
-    return c.isPromo || c.newCodes.some((nc) => !state.posted[ck(c.id, nc.code)]); // buang yg semua kodenya sudah divideokan
+    return c.isPromo || c.newCodes.some((nc) => !sudahDiposting(state, c.id, nc.code, c.platform)); // buang yg semua kodenya sudah divideokan
   });
   // PRIORITAS slot upload (kuota API ~45/hari): game player TERBESAR duluan → game
   // gede (mis. RIVALS 241K) tak kebuang ke manual saat hari rame. Promo tetap depan.
@@ -429,7 +440,7 @@ async function main() {
         simpanManual("YT belum di-set");
       }
       // Mark posted KECUALI ke-antri retry gara2 kuota (biar diulang run berikut).
-      if (!quotaManual) for (const code of c.allCodes ?? c.newCodes.map((n) => n.code)) state.posted[ck(c.id, code)] = true;
+      if (!quotaManual) for (const code of c.allCodes ?? c.newCodes.map((n) => n.code)) state.posted[ck(c.id, code, c.platform)] = true;
       if (!quotaManual && c.isPromo) {
         // Rekap bulan ini beres + semua kode promo saat ini ditandai (jangan
         // ulang bulan ini kecuali muncul kode promo yg benar-benar baru).

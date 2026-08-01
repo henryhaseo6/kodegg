@@ -69,7 +69,33 @@ export function decodeEntities(s) {
   return sekali(sekali(s));
 }
 
-/** Kunci unik sebuah kode lintas-run. */
-export function codeKey(item) {
-  return `${item.game ?? "-"}:${item.code ?? item.claimUrl ?? item.gameName}`;
+/**
+ * Kunci unik sebuah kode lintas-run.
+ *
+ * `ci` (case-insensitive) dipakai jalur MOBILE/gacha saja. Alasannya: sumber
+ * merender kapitalisasi berbeda untuk kode yang SAMA — hoyo-codes memulangkan
+ * semuanya HURUF BESAR ("ONTOSNEZHNAYA") sementara crimsonwitch & wiki memakai
+ * kapitalisasi resmi dari pengumuman HoYo ("OntoSnezhnaya"). Tanpa `ci`, satu
+ * kode jadi DUA kartu di halaman game (kejadian 1 Agt 2026: Genshin, 3 kode).
+ *
+ * JANGAN nyalakan `ci` untuk ROBLOX: di sana kapitalisasi bagian dari kode
+ * (situs sendiri memberi tahu "salin persis"), jadi dua varian huruf memang
+ * dianggap dua kode berbeda.
+ */
+export function codeKey(item, ci = false) {
+  const c = item.code ?? item.claimUrl ?? item.gameName;
+  return `${item.game ?? "-"}:${ci && typeof c === "string" ? c.toLowerCase() : c}`;
+}
+
+/**
+ * Dari dua penulisan kode yang sama (beda kapitalisasi), pilih yang paling
+ * mungkin ASLI. Kode yang memuat huruf kecil pasti berasal dari sumber yang
+ * MEMPERTAHANKAN kapitalisasi; yang HURUF BESAR SEMUA bisa jadi hasil
+ * normalisasi sumber (hoyo-codes meng-uppercase semuanya). Kalau dua-duanya
+ * huruf besar semua (mis. "2BJ64QRZ7RT8"), tak ada bedanya → pertahankan yg ada.
+ */
+export function preferCasing(current, candidate) {
+  if (typeof current !== "string" || typeof candidate !== "string") return current;
+  const mixed = (s) => s !== s.toUpperCase();
+  return !mixed(current) && mixed(candidate) ? candidate : current;
 }

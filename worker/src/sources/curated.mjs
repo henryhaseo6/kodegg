@@ -16,7 +16,7 @@
 //
 // Diverifikasi 2026-07-16 (lihat riwayat chat: pencarian + wuwastatus/game8).
 
-import { codeKey } from "../normalize.mjs";
+import { codeKey, preferCasing } from "../normalize.mjs";
 
 export const CURATED = {
   gi: [
@@ -90,7 +90,10 @@ const rewardScore = (r) => (r == null ? -1 : String(r).length);
 export function combineCodes(sourceItems, curatedItems) {
   const byKey = new Map();
   for (const item of [...sourceItems, ...curatedItems]) {
-    const key = codeKey(item);
+    // Kunci case-INsensitive: jalur ini khusus mobile/gacha, dan sumber berbeda
+    // menulis kode yang sama dg kapitalisasi berbeda (hoyo-codes HURUF BESAR vs
+    // wiki/crimsonwitch kapitalisasi resmi) → tanpa ini jadi dua kartu.
+    const key = codeKey(item, true);
     const cur = byKey.get(key);
     if (!cur) {
       // `sources` = daftar SEMUA sumber yang menyumbang kode ini (untuk atribusi
@@ -113,6 +116,10 @@ export function combineCodes(sourceItems, curatedItems) {
               : {},
       });
     } else {
+      // Kapitalisasi: menang yang berhuruf-kecil (kapitalisasi resmi dari
+      // wiki/crimsonwitch) atas yang HURUF BESAR SEMUA (hasil normalisasi
+      // hoyo-codes). Penting: kode ditampilkan & disalin visitor apa adanya.
+      cur.code = preferCasing(cur.code, item.code);
       if (rewardScore(item.reward) > rewardScore(cur.reward)) {
         cur.reward = item.reward; // sumber lebih lengkap menang untuk reward
       }

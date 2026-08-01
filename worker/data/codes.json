@@ -31,42 +31,52 @@
     {
       "game": "gi",
       "gameName": "Genshin Impact",
-      "code": "ONTOSNEZHNAYA",
+      "code": "OntoSnezhnaya",
       "reward": "Primogem ×100 · Hero's Wit ×5",
       "status": "active",
       "perm": false,
-      "endsAt": null,
+      "endsAt": "2026-08-03T03:59:59.000Z",
       "claimUrl": null,
       "source": "hoyo-codes",
       "sourceUrl": "https://hoyo-codes.seria.moe",
       "sources": [
-        "hoyo-codes"
+        "hoyo-codes",
+        "crimsonwitch",
+        "wiki"
       ],
       "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Genshin_Impact",
+        "wiki": "https://genshin-impact.fandom.com/wiki/Promotional%20Code",
         "hoyo-codes": "https://hoyo-codes.seria.moe"
       },
       "firstSeenAt": "2026-07-31T13:01:24.203Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
+      "fetchedAt": "2026-08-01T02:02:42.689Z",
+      "date": "2026-07-31T12:00:00.000Z"
     },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
-      "code": "ODETTE0812",
+      "code": "Odette0812",
       "reward": "Primogem ×100 · Mora ×50000",
       "status": "active",
       "perm": false,
-      "endsAt": null,
+      "endsAt": "2026-08-03T03:59:59.000Z",
       "claimUrl": null,
       "source": "hoyo-codes",
       "sourceUrl": "https://hoyo-codes.seria.moe",
       "sources": [
-        "hoyo-codes"
+        "hoyo-codes",
+        "crimsonwitch",
+        "wiki"
       ],
       "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Genshin_Impact",
+        "wiki": "https://genshin-impact.fandom.com/wiki/Promotional%20Code",
         "hoyo-codes": "https://hoyo-codes.seria.moe"
       },
       "firstSeenAt": "2026-07-31T13:01:24.203Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
+      "fetchedAt": "2026-08-01T02:02:42.689Z",
+      "date": "2026-07-31T12:00:00.000Z"
     },
     {
       "game": "gi",
@@ -141,22 +151,27 @@
     {
       "game": "gi",
       "gameName": "Genshin Impact",
-      "code": "EVERWINTER",
+      "code": "Everwinter",
       "reward": "Primogem ×100 · Mystic Enhancement Ore ×10",
       "status": "active",
       "perm": false,
-      "endsAt": null,
+      "endsAt": "2026-08-03T03:59:59.000Z",
       "claimUrl": null,
       "source": "hoyo-codes",
       "sourceUrl": "https://hoyo-codes.seria.moe",
       "sources": [
-        "hoyo-codes"
+        "hoyo-codes",
+        "crimsonwitch",
+        "wiki"
       ],
       "sourceUrls": {
+        "crimsonwitch": "https://www.crimsonwitch.com/codes/Genshin_Impact",
+        "wiki": "https://genshin-impact.fandom.com/wiki/Promotional%20Code",
         "hoyo-codes": "https://hoyo-codes.seria.moe"
       },
       "firstSeenAt": "2026-07-31T13:01:24.203Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
+      "fetchedAt": "2026-08-01T02:02:42.689Z",
+      "date": "2026-07-31T12:00:00.000Z"
     },
     {
       "game": "gi",
@@ -1380,75 +1395,6 @@
         "crimsonwitch": "https://www.crimsonwitch.com/codes/Infinity_Nikki"
       },
       "firstSeenAt": "2026-07-17T06:28:19.039Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Genshin_Impact",
-      "endsAt": "2026-08-03T03:59:59.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "Everwinter",
-      "reward": "Primogem ×100 · Mystic Enhancement Ore ×10",
-      "date": "2026-07-31T12:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch",
-        "wiki"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Genshin_Impact",
-        "wiki": "https://genshin-impact.fandom.com/wiki/Promotional%20Code"
-      },
-      "firstSeenAt": "2026-07-31T13:01:24.203Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Genshin_Impact",
-      "endsAt": "2026-08-03T03:59:59.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "OntoSnezhnaya",
-      "reward": "Primogem ×100 · Hero's Wit ×5",
-      "date": "2026-07-31T12:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch",
-        "wiki"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Genshin_Impact",
-        "wiki": "https://genshin-impact.fandom.com/wiki/Promotional%20Code"
-      },
-      "firstSeenAt": "2026-07-31T13:01:24.203Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "source": "crimsonwitch",
-      "sourceUrl": "https://www.crimsonwitch.com/codes/Genshin_Impact",
-      "endsAt": "2026-08-03T03:59:59.000Z",
-      "claimUrl": null,
-      "perm": false,
-      "code": "Odette0812",
-      "reward": "Primogem ×100 · Mora ×50000",
-      "date": "2026-07-31T12:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "crimsonwitch",
-        "wiki"
-      ],
-      "sourceUrls": {
-        "crimsonwitch": "https://www.crimsonwitch.com/codes/Genshin_Impact",
-        "wiki": "https://genshin-impact.fandom.com/wiki/Promotional%20Code"
-      },
-      "firstSeenAt": "2026-07-31T13:01:24.203Z",
       "fetchedAt": "2026-08-01T02:02:42.689Z"
     },
     {
@@ -3302,7 +3248,7 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/dragon-traveler",
       "claimUrl": null,
       "perm": false,
-      "code": "PITCHPREDATOR",
+      "code": "PitchPredator",
       "reward": null,
       "date": "2026-07-22T13:03:06.554Z",
       "endsAt": null,
@@ -3313,7 +3259,7 @@
       "sourceUrls": {
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
-      "firstSeenAt": "2026-07-22T14:00:42.033Z",
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
       "fetchedAt": "2026-08-01T02:02:42.689Z"
     },
     {
@@ -3365,7 +3311,7 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/dragon-traveler",
       "claimUrl": null,
       "perm": false,
-      "code": "WILDCARDTALENT",
+      "code": "WildcardTalent",
       "reward": null,
       "date": "2026-07-22T13:03:06.541Z",
       "endsAt": null,
@@ -3376,7 +3322,7 @@
       "sourceUrls": {
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
-      "firstSeenAt": "2026-07-22T14:00:42.033Z",
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
       "fetchedAt": "2026-08-01T02:02:42.689Z"
     },
     {
@@ -3386,7 +3332,7 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/dragon-traveler",
       "claimUrl": null,
       "perm": false,
-      "code": "MYSENIOR",
+      "code": "MySenior",
       "reward": null,
       "date": "2026-07-22T13:03:06.534Z",
       "endsAt": null,
@@ -3397,7 +3343,7 @@
       "sourceUrls": {
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
-      "firstSeenAt": "2026-07-22T14:00:42.033Z",
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
       "fetchedAt": "2026-08-01T02:02:42.689Z"
     },
     {
@@ -3565,7 +3511,7 @@
       "sourceUrls": {
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
       },
-      "firstSeenAt": "2026-07-22T14:00:42.033Z",
+      "firstSeenAt": "2026-07-18T10:02:15.696Z",
       "fetchedAt": "2026-08-01T02:02:42.689Z"
     },
     {
@@ -3848,27 +3794,6 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/dragon-traveler",
       "claimUrl": null,
       "perm": false,
-      "code": "SetSail",
-      "reward": null,
-      "date": "2026-07-03T02:07:35.307Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
-    },
-    {
-      "game": "dtrav",
-      "gameName": "Dragon Traveler",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/dragon-traveler",
-      "claimUrl": null,
-      "perm": false,
       "code": "MimirGuide",
       "reward": null,
       "date": "2026-07-02T02:13:02.717Z",
@@ -4058,27 +3983,6 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/dragon-traveler",
       "claimUrl": null,
       "perm": false,
-      "code": "MySenior",
-      "reward": null,
-      "date": "2026-06-05T02:02:53.648Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
-    },
-    {
-      "game": "dtrav",
-      "gameName": "Dragon Traveler",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/dragon-traveler",
-      "claimUrl": null,
-      "perm": false,
       "code": "XuanwuGuide",
       "reward": null,
       "date": "2026-06-04T02:03:55.842Z",
@@ -4103,48 +4007,6 @@
       "code": "GXGGBFSJ",
       "reward": null,
       "date": "2026-06-02T02:02:53.836Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
-    },
-    {
-      "game": "dtrav",
-      "gameName": "Dragon Traveler",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/dragon-traveler",
-      "claimUrl": null,
-      "perm": false,
-      "code": "WildcardTalent",
-      "reward": null,
-      "date": "2026-05-30T03:52:38.231Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/dragon-traveler"
-      },
-      "firstSeenAt": "2026-07-18T10:02:15.696Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
-    },
-    {
-      "game": "dtrav",
-      "gameName": "Dragon Traveler",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/dragon-traveler",
-      "claimUrl": null,
-      "perm": false,
-      "code": "PitchPredator",
-      "reward": null,
-      "date": "2026-05-27T02:50:52.236Z",
       "endsAt": null,
       "status": "active",
       "sources": [
@@ -4898,7 +4760,7 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
       "claimUrl": null,
       "perm": false,
-      "code": "6ARTRU2UTM",
+      "code": "6artru2utm",
       "reward": null,
       "date": "2026-07-22T13:03:06.443Z",
       "endsAt": null,
@@ -4909,7 +4771,7 @@
       "sourceUrls": {
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
       },
-      "firstSeenAt": "2026-07-22T14:00:42.033Z",
+      "firstSeenAt": "2026-07-18T09:01:00.670Z",
       "fetchedAt": "2026-08-01T02:02:42.689Z"
     },
     {
@@ -5024,7 +4886,7 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
       "claimUrl": null,
       "perm": false,
-      "code": "CLASSIC4F",
+      "code": "classic4F",
       "reward": "Draconis Insignia ×x10 · Stargazer Scrolls ×x10 · Time Emblems ×x10 · Diamonds ×x3000",
       "date": "2026-07-05T22:58:41.344Z",
       "endsAt": "2026-08-31T23:59:59.000Z",
@@ -5048,48 +4910,6 @@
       "code": "6ab8kqbtz4",
       "reward": "Draconis Insignia ×10 · Stargazer Scrolls ×10 · Time Emblems ×10 · Diamonds ×3000",
       "date": "2026-07-05T22:58:41.318Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
-    },
-    {
-      "game": "afka",
-      "gameName": "AFK Arena",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
-      "claimUrl": null,
-      "perm": false,
-      "code": "classic4F",
-      "reward": "Draconis Insignia ×10 · Stargazer Scrolls ×10 · Time Emblems ×10 · Diamonds ×3000",
-      "date": "2026-07-02T11:04:45.514Z",
-      "endsAt": "2026-08-31T00:00:00.000Z",
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-classic"
-      },
-      "firstSeenAt": "2026-07-18T09:01:00.670Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z"
-    },
-    {
-      "game": "afka",
-      "gameName": "AFK Arena",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-classic",
-      "claimUrl": null,
-      "perm": false,
-      "code": "6artru2utm",
-      "reward": null,
-      "date": "2026-06-22T06:24:16.464Z",
       "endsAt": null,
       "status": "active",
       "sources": [
@@ -5633,7 +5453,7 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-companions",
       "claimUrl": null,
       "perm": false,
-      "code": "2BQW69YDK3",
+      "code": "2bqw69ydk3",
       "reward": null,
       "date": "2026-07-22T13:03:06.466Z",
       "endsAt": null,
@@ -5644,7 +5464,7 @@
       "sourceUrls": {
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-companions"
       },
-      "firstSeenAt": "2026-07-22T14:00:42.033Z",
+      "firstSeenAt": "2026-07-21T06:34:42.658Z",
       "fetchedAt": "2026-08-01T02:02:42.689Z"
     },
     {
@@ -5654,7 +5474,7 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-companions",
       "claimUrl": null,
       "perm": false,
-      "code": "2BZTSHN6HS",
+      "code": "2bztshn6hs",
       "reward": null,
       "date": "2026-07-22T13:03:06.463Z",
       "endsAt": null,
@@ -5665,7 +5485,7 @@
       "sourceUrls": {
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-companions"
       },
-      "firstSeenAt": "2026-07-22T14:00:42.033Z",
+      "firstSeenAt": "2026-07-21T06:34:42.658Z",
       "fetchedAt": "2026-08-01T02:02:42.689Z"
     },
     {
@@ -5675,7 +5495,7 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-companions",
       "claimUrl": null,
       "perm": false,
-      "code": "6AJ9B5AIVT",
+      "code": "6aj9b5aivt",
       "reward": null,
       "date": "2026-07-22T13:03:06.457Z",
       "endsAt": null,
@@ -5686,7 +5506,7 @@
       "sourceUrls": {
         "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-companions"
       },
-      "firstSeenAt": "2026-07-22T14:00:42.033Z",
+      "firstSeenAt": "2026-07-21T06:34:42.658Z",
       "fetchedAt": "2026-08-01T02:02:42.689Z"
     },
     {
@@ -5781,75 +5601,9 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-companions",
       "claimUrl": null,
       "perm": false,
-      "code": "6aj9b5aivt",
-      "reward": null,
-      "date": "2026-06-22T06:24:14.001Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-companions"
-      },
-      "firstSeenAt": "2026-07-21T06:34:42.658Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z",
-      "bulk": true
-    },
-    {
-      "game": "afkac",
-      "gameName": "AFK Arena: Companions",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-companions",
-      "claimUrl": null,
-      "perm": false,
       "code": "42N6CAGKSV",
       "reward": null,
       "date": "2026-04-17T17:18:29.385Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-companions"
-      },
-      "firstSeenAt": "2026-07-21T06:34:42.658Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z",
-      "bulk": true
-    },
-    {
-      "game": "afkac",
-      "gameName": "AFK Arena: Companions",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-companions",
-      "claimUrl": null,
-      "perm": false,
-      "code": "2bztshn6hs",
-      "reward": null,
-      "date": "2026-04-17T17:18:08.637Z",
-      "endsAt": null,
-      "status": "active",
-      "sources": [
-        "redeem-code-tracker"
-      ],
-      "sourceUrls": {
-        "redeem-code-tracker": "https://www.redeem-code-tracker.com/games/afk-arena-companions"
-      },
-      "firstSeenAt": "2026-07-21T06:34:42.658Z",
-      "fetchedAt": "2026-08-01T02:02:42.689Z",
-      "bulk": true
-    },
-    {
-      "game": "afkac",
-      "gameName": "AFK Arena: Companions",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-arena-companions",
-      "claimUrl": null,
-      "perm": false,
-      "code": "2bqw69ydk3",
-      "reward": null,
-      "date": "2026-04-17T17:15:20.436Z",
       "endsAt": null,
       "status": "active",
       "sources": [

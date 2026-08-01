@@ -21,15 +21,19 @@ import { codeKey } from "./normalize.mjs";
  * @param {object}   prev          isi codes.json run sebelumnya
  * @param {Set<string>} covered    id game yang sukses ditarik
  * @param {string}   now           ISO timestamp run ini
+ * @param {{ci?: boolean}} opt       ci=true → kunci kode case-INsensitive (jalur
+ *   mobile/gacha: sumber menulis kode sama dg kapitalisasi beda). JANGAN untuk
+ *   Roblox — di sana kapitalisasi bagian dari kode. Lihat codeKey di normalize.
  */
-export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now) {
+export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now, { ci = false } = {}) {
+  const K = (item) => codeKey(item, ci);
   const prevActive = prev.active ?? [];
   const prevArchive = prev.archive ?? [];
 
   const prevByKey = new Map();
   const prevGames = new Set();
   for (const item of [...prevActive, ...prevArchive]) {
-    prevByKey.set(codeKey(item), item);
+    prevByKey.set(K(item), item);
     if (item.game) prevGames.add(item.game);
   }
   const seenBefore = new Map(
@@ -43,7 +47,7 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now)
   // ini yang mencegah seluruh katalog game baru membanjiri puncak (lihat
   // site/src/lib/codes.mjs). Sekali di-set, dipertahankan antar-run.
   const active = freshActive.map((item) => {
-    const prior = prevByKey.get(codeKey(item));
+    const prior = prevByKey.get(K(item));
     const bulk = prior ? prior.bulk === true : !prevGames.has(item.game);
     return {
       ...item,
@@ -53,13 +57,13 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now)
     };
   });
 
-  const activeKeys = new Set(active.map(codeKey));
+  const activeKeys = new Set(active.map(K));
   const archiveByKey = new Map();
-  for (const item of prevArchive) archiveByKey.set(codeKey(item), item);
+  for (const item of prevArchive) archiveByKey.set(K(item), item);
   let newlyArchived = 0;
 
   const addToArchive = (item) => {
-    const key = codeKey(item);
+    const key = K(item);
     if (activeKeys.has(key)) return; // aktif menang
     const existing = archiveByKey.get(key);
     if (existing) {
@@ -83,7 +87,7 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now)
 
   // (3) Arsip otomatis: kode aktif sebelumnya yang kini hilang.
   for (const item of prevActive) {
-    const key = codeKey(item);
+    const key = K(item);
     if (activeKeys.has(key) || archiveByKey.has(key)) continue;
     if (!covered.has(item.game)) {
       // Sumber game ini gagal ditarik → hilangnya tak bermakna. Pertahankan.
