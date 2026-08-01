@@ -1,15 +1,165 @@
 {
-  "generatedAt": "2026-08-01T14:02:51.083Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-08-01T15:01:30.464Z",
+  "codes": [
     {
-      "game": "spin-a-soccer-card",
-      "count": 4,
-      "fresh": []
+      "game": "anime-expeditions",
+      "gameName": "Anime Expeditions",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-expeditions"
+      },
+      "code": "400mvisits",
+      "reward": null,
+      "date": "2026-08-01T14:53:20.655Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-01T15:01:30.464Z",
+      "fetchedAt": "2026-08-01T15:01:30.464Z"
     },
     {
-      "game": "be-a-lucky-block",
-      "count": 10,
+      "game": "be-a-fish-bait",
+      "gameName": "Be a Fish Bait",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/be-a-fish-bait"
+      },
+      "code": "SHARDS",
+      "reward": null,
+      "date": "2026-08-01T14:53:26.468Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-01T15:01:30.464Z",
+      "fetchedAt": "2026-08-01T15:01:30.464Z"
+    },
+    {
+      "game": "drag-drive-simulator",
+      "gameName": "Drag Drive Simulator",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/drag-drive-simulator"
+      },
+      "code": "DRAGDRIVESIMULATORJULY26",
+      "reward": null,
+      "date": "2026-08-01T14:53:15.942Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-01T15:01:30.464Z",
+      "fetchedAt": "2026-08-01T15:01:30.464Z"
+    },
+    {
+      "game": "saber-simulator",
+      "gameName": "Saber Simulator",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/saber-simulator"
+      },
+      "code": "WATCH35",
+      "reward": null,
+      "date": "2026-08-01T14:53:19.397Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-01T15:01:30.464Z",
+      "fetchedAt": "2026-08-01T15:01:30.464Z"
+    },
+    {
+      "game": "anime-eternal",
+      "gameName": "Anime Eternal",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-eternal"
+      },
+      "code": "Update60Part2",
+      "reward": null,
+      "date": "2026-08-01T14:53:25.573Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-01T15:01:30.464Z",
+      "fetchedAt": "2026-08-01T15:01:30.464Z"
+    },
+    {
+      "game": "inazuma-strikers",
+      "gameName": "Inazuma Strikers",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/inazuma-strikers"
+      },
+      "code": "MECHANICS",
+      "reward": null,
+      "date": "2026-08-01T14:53:17.885Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-01T15:01:30.464Z",
+      "fetchedAt": "2026-08-01T15:01:30.464Z"
+    },
+    {
+      "game": "spin-a-soccer-card",
+      "gameName": "Spin a Soccer Card",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/spin-a-soccer-card"
+      },
+      "code": "RAVEN-COMET",
+      "reward": null,
+      "date": "2026-08-01T15:01:24.535Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-01T15:01:30.464Z",
+      "fetchedAt": "2026-08-01T15:01:30.464Z"
+    },
+    {
+      "game": "spin-a-soccer-card",
+      "gameName": "Spin a Soccer Card",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/spin-a-soccer-card"
+      },
+      "code": "WEAREBACK",
+      "reward": null,
+      "date": "2026-08-01T15:01:24.382Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-01T15:01:30.464Z",
+      "fetchedAt": "2026-08-01T15:01:30.464Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "reign-piece",
+      "count": 71,
+      "fresh": [
+        {
+          "code": "RESTRICTED",
+          "reward": ""
+        }
+      ]
+    },
+    {
+      "game": "create-a-car",
+      "count": 5,
       "fresh": []
     }
   ]
