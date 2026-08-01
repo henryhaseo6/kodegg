@@ -238,6 +238,26 @@ const recency = (c) => Math.max(Date.parse(c.date ?? 0) || 0, Date.parse(c.first
 const terbaruDulu = (arr) => [...arr].sort((a, b) => recency(b) - recency(a));
 
 /**
+ * Badge "BARU · NEW" pada kartu video on-demand.
+ *
+ * Di jalur otomatis badge menempel pada kode PEMICU video (newCodes). Jalur
+ * on-demand tak punya pemicu (newCodes kosong) → dulu SEMUA kartu tampil polos,
+ * padahal kodenya bisa saja rilis hari itu juga. Di sini badge mengikuti DATA:
+ * kode yang rilis ≤48 jam ditandai baru — sama persis dengan badge "BARU" di
+ * halaman game, jadi video & situs tak saling bertentangan.
+ *
+ * Sengaja TIDAK mengubah `allMode`: judul/VO tetap "Semua Kode Aktif" karena
+ * video ini memang memuat semua kode aktif, bukan cuma yang baru. Badge menandai
+ * kartunya, bukan mengklaim seluruh isinya baru.
+ */
+const FRESH_BADGE_MS = 48 * 3600 * 1000;
+function tandaiBaru(disp, active, ci = false) {
+  const now = Date.now();
+  const baru = new Set(active.filter((c) => now - recency(c) <= FRESH_BADGE_MS && recency(c) > 0).map((c) => norm(c.code, ci)));
+  return disp.map((d) => ({ ...d, isNew: baru.has(norm(d.code, ci)) }));
+}
+
+/**
  * Kandidat ATAS PERMINTAAN: `node worker/make-videos.mjs --game=driving-empire`.
  * Untuk game yang tak lolos jalur otomatis (kodenya tak baru / impor pertamanya
  * sudah lewat) tapi layak dibuatkan video — mode "semua kode aktif", hasilnya ke
@@ -255,7 +275,7 @@ function buildOnDemand(id) {
     return {
       platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: 0, newCodes: [], activeCount: active.length,
-      fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], terbaruDulu(active)),
+      fetchedAt: new Date().toISOString(), allMode: true, displayCodes: tandaiBaru(pickDisplay([], terbaruDulu(active)), active),
     };
   }
   const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
@@ -266,7 +286,7 @@ function buildOnDemand(id) {
   return {
     platform: "MOBILE", id, name: meta?.name ?? active[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
     iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 0, newCodes: [], activeCount: countAll(active, [], true),
-    fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], terbaruDulu(active), true),
+    fetchedAt: new Date().toISOString(), allMode: true, displayCodes: tandaiBaru(pickDisplay([], terbaruDulu(active), true), active, true),
   };
 }
 
