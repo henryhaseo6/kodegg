@@ -229,6 +229,14 @@ function pickDisplay(newCodes, active, ci = false) {
   return disp;
 }
 
+// Kebaruan sebuah kode: tanggal RILIS sumber, jatuh ke firstSeenAt kalau sumber
+// tak punya tanggal. Dipakai video "semua kode aktif" — kartunya cuma 4, jadi yg
+// tampil harus kode TERBARU, bukan urutan array mentah. (Kejadian 1 Agt 2026:
+// video Genshin on-demand memilih LEGEDILJKSGM (rilis Juni) & melewatkan
+// Everwinter yang rilis hari itu, semata karena posisinya di array.)
+const recency = (c) => Math.max(Date.parse(c.date ?? 0) || 0, Date.parse(c.firstSeenAt ?? 0) || 0);
+const terbaruDulu = (arr) => [...arr].sort((a, b) => recency(b) - recency(a));
+
 /**
  * Kandidat ATAS PERMINTAAN: `node worker/make-videos.mjs --game=driving-empire`.
  * Untuk game yang tak lolos jalur otomatis (kodenya tak baru / impor pertamanya
@@ -247,7 +255,7 @@ function buildOnDemand(id) {
     return {
       platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: 0, newCodes: [], activeCount: active.length,
-      fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], active),
+      fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], terbaruDulu(active)),
     };
   }
   const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
@@ -258,7 +266,7 @@ function buildOnDemand(id) {
   return {
     platform: "MOBILE", id, name: meta?.name ?? active[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
     iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 0, newCodes: [], activeCount: countAll(active, [], true),
-    fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], active, true),
+    fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], terbaruDulu(active), true),
   };
 }
 
