@@ -1,0 +1,63 @@
+# Perawatan video YouTube yang sudah terlanjur naik: retitle massal (mis. salah
+# bulan) atau hapus duplikat. Manual saja (workflow_dispatch), DEFAULT DRY-RUN.
+#
+# Kenapa lewat CI, bukan lokal: refresh token yang hidup ada di GitHub Secrets;
+# token di worker/.env sisa era OAuth "Testing" (mati tiap 7 hari) → invalid_grant.
+#
+# Pakai: Actions → yt-maintenance → Run workflow → isi ids (+ from/to atau
+# require-title) → jalankan DRY-RUN dulu, baca log, baru ulangi dg apply=true.
+name: yt-maintenance
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "retitle (ganti teks) atau delete (hapus)"
+        type: choice
+        options: [retitle, delete]
+        required: true
+      ids:
+        description: "Video ID (pisah koma)"
+        required: true
+      from:
+        description: "retitle: teks lama, mis. July 2026"
+        required: false
+      to:
+        description: "retitle: teks baru, mis. August 2026"
+        required: false
+      require_title:
+        description: "delete: judul WAJIB memuat teks ini (palang pengaman)"
+        required: false
+      apply:
+        description: "Eksekusi beneran? Kosongkan utk DRY-RUN"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: yt-maintenance
+  cancel-in-progress: false
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install googleapis --no-save --no-audit --no-fund
+      - name: Jalankan
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          ARGS=(--mode="${{ inputs.mode }}" --ids="${{ inputs.ids }}")
+          [ -n "${{ inputs.from }}" ] && ARGS+=(--from="${{ inputs.from }}")
+          [ -n "${{ inputs.to }}" ] && ARGS+=(--to="${{ inputs.to }}")
+          [ -n "${{ inputs.require_title }}" ] && ARGS+=(--require-title="${{ inputs.require_title }}")
+          [ "${{ inputs.apply }}" = "true" ] && ARGS+=(--apply)
+          node worker/video/yt-maintenance.mjs "${ARGS[@]}"
