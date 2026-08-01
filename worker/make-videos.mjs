@@ -267,6 +267,20 @@ async function drainPending() {
   console.log(`  ${q.length - tertahan.length} terpasang, ${tertahan.length} masih tertunda.`);
 }
 
+/**
+ * Bulan "YYYY-MM" menurut WIB (bukan UTC) — batas bulan sejalan dg stempel
+ * tanggal di video; rekap Agustus muncul tepat 1 Agustus 00:00 WIB, bukan 07:00.
+ *
+ * WAJIB dipakai di KEDUA sisi gerbang rekap promo (baca & tulis `promoMonth`).
+ * BUG 1 Agu 2026: gerbang dibaca pakai bulan WIB tapi disimpan pakai bulan UTC
+ * (`toISOString().slice(0,7)`) → selama 7 jam window WIB-sudah-Agustus-tapi-UTC-
+ * masih-Juli, gerbang tak pernah menutup → 8 video promo duplikat (tiap jam,
+ * 00:03–07:03 WIB) sampai UTC ikut ganti bulan. Kambuh tiap awal bulan.
+ */
+function bulanWIB(now) {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta", year: "numeric", month: "2-digit" }).format(now).slice(0, 7);
+}
+
 // PROMO Roblox: kode platform (ditukar di roblox.com/promocodes), bukan per-game.
 // Video dibuat bila (a) ada kode promo BARU run ini, atau (b) awal bulan baru
 // (rekap bulanan) — sesuai permintaan user. `promoActive` disimpan utk penandaan.
@@ -276,11 +290,7 @@ function buildPromoCandidate(state, now) {
   const active = promo.active ?? [];
   if (active.length === 0) return null;
   const baru = active.filter((c) => c.firstSeenAt === promo.updatedAt && !state.posted[`promo:${c.code}`]);
-  // Bulan WIB (bukan UTC) → batas bulan sejalan dg stempel tanggal di video;
-  // rekap Agustus muncul tepat 1 Agustus 00:00 WIB, bukan jam 07:00.
-  const p = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta", year: "numeric", month: "2-digit" }).format(now);
-  const bulanIni = p.slice(0, 7); // "2026-08"
-  const perluRekap = state.promoMonth !== bulanIni;
+  const perluRekap = state.promoMonth !== bulanWIB(now);
   if (baru.length === 0 && !perluRekap) return null; // tak ada kode baru & rekap bulan ini sudah
   const allMode = baru.length === 0; // rekap = "semua kode aktif"; ada baru = "kode baru"
   return {
@@ -423,7 +433,7 @@ async function main() {
       if (!quotaManual && c.isPromo) {
         // Rekap bulan ini beres + semua kode promo saat ini ditandai (jangan
         // ulang bulan ini kecuali muncul kode promo yg benar-benar baru).
-        state.promoMonth = now.toISOString().slice(0, 7);
+        state.promoMonth = bulanWIB(now); // WIB — HARUS sama dg sisi baca (lihat bulanWIB)
         for (const pc of c.promoActive ?? []) state.posted[`promo:${pc.code}`] = true;
       }
       writeFileSync(STATE_PATH, JSON.stringify(state, null, 2)); // simpan tiap video → aman bila run dibatalkan
