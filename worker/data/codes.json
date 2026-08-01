@@ -1,8 +1,8 @@
 {
   "updatedAt": "2026-08-01T02:02:42.689Z",
   "counts": {
-    "active": 363,
-    "archived": 1349
+    "active": 351,
+    "archived": 1344
   },
   "active": [
     {
@@ -24745,39 +24745,9 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
       "claimUrl": null,
       "perm": false,
-      "code": "e8BesLBqzLzUD",
-      "reward": "item1 ×10 · item2 ×500 · item3 ×50,000",
-      "date": "2026-06-20T01:06:06.257Z",
-      "endsAt": "2001-07-18T16:00:00.000Z",
-      "status": "expired",
-      "expiredAt": "2026-07-18T09:01:00.670Z",
-      "firstSeenAt": "2026-07-18T09:01:00.670Z"
-    },
-    {
-      "game": "afkj",
-      "gameName": "AFK Journey",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
-      "claimUrl": null,
-      "perm": false,
       "code": "4iYTsNbdXC",
       "reward": "Diamonds ×1000 · Invitation letter ×5 · Gold ×20000",
       "date": "2026-05-28T07:32:36.586Z",
-      "endsAt": "2026-06-30T16:00:00.000Z",
-      "status": "expired",
-      "expiredAt": "2026-07-18T09:01:00.670Z",
-      "firstSeenAt": "2026-07-18T09:01:00.670Z"
-    },
-    {
-      "game": "afkj",
-      "gameName": "AFK Journey",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
-      "claimUrl": null,
-      "perm": false,
-      "code": "ZC1JJ3Uu0N",
-      "reward": "Diamonds ×1000 · Invitation letter ×5 · Gold ×20000",
-      "date": "2026-05-27T11:20:35.389Z",
       "endsAt": "2026-06-30T16:00:00.000Z",
       "status": "expired",
       "expiredAt": "2026-07-18T09:01:00.670Z",
@@ -26619,21 +26589,6 @@
       "sourceUrl": "https://www.redeem-code-tracker.com/games/sword-x-staff",
       "claimUrl": null,
       "perm": false,
-      "code": "D38N7P2X",
-      "reward": null,
-      "date": "2026-07-07T07:27:38.156Z",
-      "endsAt": "2026-07-14T00:00:00.000Z",
-      "status": "expired",
-      "expiredAt": "2026-07-18T10:02:15.696Z",
-      "firstSeenAt": "2026-07-18T10:02:15.696Z"
-    },
-    {
-      "game": "sxs",
-      "gameName": "Sword x Staff",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/sword-x-staff",
-      "claimUrl": null,
-      "perm": false,
       "code": "Chomusuke",
       "reward": "Chomusuke Shard ×30",
       "date": "2026-06-12T09:25:28.038Z",
@@ -27056,21 +27011,6 @@
       "firstSeenAt": "2026-07-18T09:01:00.670Z"
     },
     {
-      "game": "afkj",
-      "gameName": "AFK Journey",
-      "source": "redeem-code-tracker",
-      "sourceUrl": "https://www.redeem-code-tracker.com/games/afk-journey",
-      "claimUrl": null,
-      "perm": false,
-      "code": "B52f8N5opog7k",
-      "reward": "Origami Hamsters ×10 · Diamonds ×500 · Gold ×50,000",
-      "date": "2026-06-20T08:07:33.723Z",
-      "endsAt": "2026-07-20T16:00:00.000Z",
-      "status": "expired",
-      "expiredAt": "2026-07-20T16:01:19.158Z",
-      "firstSeenAt": "2026-07-18T09:01:00.670Z"
-    },
-    {
       "game": "tot",
       "gameName": "Tears of Themis",
       "source": "tot.wiki",
@@ -27386,27 +27326,6 @@
       "status": "expired",
       "expiredAt": "2026-07-25T00:00:29.388Z",
       "firstSeenAt": "2026-07-18T09:01:00.670Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "code": "P7G0XA30H0Q3",
-      "reward": "Primogem ×60 · Adventurer's Experience ×5",
-      "status": "expired",
-      "perm": false,
-      "endsAt": null,
-      "claimUrl": null,
-      "source": "ennead.cc",
-      "sourceUrl": "https://api.ennead.cc",
-      "sources": [
-        "ennead.cc"
-      ],
-      "sourceUrls": {
-        "ennead.cc": "https://api.ennead.cc"
-      },
-      "firstSeenAt": "2026-07-23T09:00:36.175Z",
-      "fetchedAt": "2026-07-25T04:00:32.160Z",
-      "expiredAt": "2026-07-25T05:01:02.833Z"
     },
     {
       "game": "sxs",

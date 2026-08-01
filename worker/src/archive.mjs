@@ -98,5 +98,22 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now,
     addToArchive(item);
   }
 
-  return { active, archive: [...archiveByKey.values()], newlyArchived };
+  // Kode yang HIDUP LAGI: sempat diarsipkan (hilang dari sumber), lalu muncul
+  // kembali di run berikutnya. Entrinya tetap tertinggal di arsip karena arsip
+  // di-seed dari prevArchive dan addToArchive cuma menolak MENAMBAH yg aktif —
+  // bukan membuang yg sudah telanjur ada. Akibatnya satu kode tampil sbg AKTIF
+  // sekaligus EXPIRED di halaman game (situs tak menyaring arsip thd aktif), dan
+  // hitungan "N di arsip" ikut menggelembung. Kejadian 1 Agt 2026: 521 kode
+  // Roblox di 45 game (Sailor Piece: 162 dari 171 kode aktifnya juga di arsip).
+  // Ini BUKAN menghapus riwayat — kodenya tetap ada, statusnya saja yang benar.
+  // Saat nanti benar-benar expired, ia diarsipkan lagi lewat jalur normal.
+  // Perbandingan di sini SELALU case-insensitive, termasuk untuk Roblox yang
+  // identitas kodenya case-sensitive. Alasannya beda: ini bukan menggabungkan
+  // dua kode aktif (yg memang harus dibedakan), tapi mencegah arsip mengklaim
+  // "expired" untuk kode yang huruf-hurufnya SAMA dg yg sedang aktif — mis.
+  // gakuran "UMA" (aktif, RoCodes) vs "Uma" (arsip, sumber lain). Kodenya jelas
+  // berfungsi; melabelinya expired menyesatkan visitor.
+  const aktifCI = new Set(active.map((it) => `${it.game ?? "-"}:${String(it.code ?? "").toLowerCase()}`));
+  const arsip = [...archiveByKey.values()].filter((it) => !aktifCI.has(`${it.game ?? "-"}:${String(it.code ?? "").toLowerCase()}`));
+  return { active, archive: arsip, newlyArchived };
 }
