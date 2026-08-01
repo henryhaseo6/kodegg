@@ -9,11 +9,15 @@ const pascal = (s) => s.replace(/[^a-zA-Z0-9 ]/g, "").split(/\s+/).filter(Boolea
 // Tanggal WIB (sama dg stempel di video) — dipakai agar judul UNIK tiap hari:
 // satu game bisa dapat kode baru beberapa kali sebulan, kalau judulnya cuma
 // "(July 2026)" semua video tampak duplikat di mata penonton & YouTube.
+// Bulan EN (`monEn`) juga dari WIB: dulu diambil dari getUTCMonth() → video yg
+// terbit 1 Agustus 00:00–07:00 WIB judulnya "(July 2026)" padahal deskripsinya
+// sendiri bilang "Update terakhir: 1 Agustus 2026". Satu sumber waktu saja: WIB.
 function wibParts(now) {
   const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {
     timeZone: "Asia/Jakarta", day: "numeric", month: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit", hour12: false,
   }).formatToParts(now).map((x) => [x.type, x.value]));
-  return { d: Number(p.day), mon: MONTHS_ID[Number(p.month) - 1], y: p.year, hm: `${p.hour}.${p.minute}` };
+  const mi = Number(p.month) - 1;
+  return { d: Number(p.day), mon: MONTHS_ID[mi], monEn: MONTHS[mi], y: p.year, hm: `${p.hour}.${p.minute}` };
 }
 
 /**
@@ -21,7 +25,8 @@ function wibParts(now) {
  * @returns {{title, description, tags:string[]}}
  */
 export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, now }) {
-  const my = `${MONTHS[now.getUTCMonth()]} ${now.getUTCFullYear()}`;
+  const w = wibParts(now);
+  const my = `${w.monEn} ${w.y}`; // bulan WIB — sama dg tanggal di judul/deskripsi/video
   const isRoblox = platform === "ROBLOX";
   // Promo Roblox = halaman khusus /roblox/promo-codes/ (bukan per-game).
   const seg = isPromo ? "roblox" : isRoblox ? "roblox" : "game";
@@ -33,7 +38,6 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
   // Judul (<=100 char): "[Game] Codes (July 2026)" utk search global EN, "Kode
   // Terbaru" utk search ID, + tanggal WIB biar tiap video beda (bukan duplikat).
   // Turun bertahap kalau nama game panjang; potongan terakhir = potong keras.
-  const w = wibParts(now);
   // allMode (game baru masuk pantauan): kodenya belum tentu baru → jangan tulis
   // "Kode Terbaru", pakai "Semua Kode Aktif".
   const label = allMode ? "Semua Kode Aktif" : "Kode Terbaru";
