@@ -219,7 +219,23 @@ for (const id of IDS) {
   const nD = ((s.description ?? "").match(new RegExp(FROM.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) ?? []).length;
   const nT = (s.tags ?? []).filter((t) => t.includes(FROM)).length;
   console.log(`UBAH   ${id} · ${view} view\n       lama: ${s.title}\n       baru: ${baru.title}\n       deskripsi ${nD} ganti · tag ${nT} ganti`);
-  if (APPLY) { await yt.videos.update({ part: ["snippet"], requestBody: { id, snippet: baru } }); console.log("       ✓ diperbarui"); diubah.push({ id, judul: baru.title }); }
+  // Lokalisasi ikut diganti. Yang dikirim HANYA bahasa yang benar-benar memuat
+  // FROM — read-modify-write penuh berbahaya karena API ini eventual-consistent:
+  // pembacaan bisa memulangkan replika basi, dan menulis balik seluruh objek
+  // berarti menimpa versi yang sudah benar dengan versi basi itu.
+  const locBaru = Object.fromEntries(Object.entries(loc)
+    .filter(([, x]) => (x.title ?? "").includes(FROM) || (x.description ?? "").includes(FROM))
+    .map(([k, x]) => [k, { title: (x.title ?? "").replaceAll(FROM, TO), description: (x.description ?? "").replaceAll(FROM, TO) }]));
+  if (Object.keys(locBaru).length) console.log(`       lokalisasi diganti: ${Object.keys(locBaru).join(", ")}`);
+  if (APPLY) {
+    const part = ["snippet"], body = { id, snippet: baru };
+    // localizations WAJIB dikirim UTUH (bahasa yg tak disertakan akan terhapus)
+    // → gabungkan yang diperbaiki dg yang sudah benar.
+    if (Object.keys(locBaru).length) { part.push("localizations"); body.localizations = { ...loc, ...locBaru }; }
+    await yt.videos.update({ part, requestBody: body });
+    console.log("       ✓ diperbarui");
+    diubah.push({ id, judul: baru.title });
+  }
   ubah++;
 }
 
