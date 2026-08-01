@@ -58,7 +58,13 @@ const sudahDiposting = (state, id, code, platform) =>
   !!(state.posted[ck(id, code, platform)] || state.posted[`${id}:${code}`]);
 // Total kode yg diklaim di video = gabungan unik aktif + baru (kode baru kadang
 // belum ke-merge ke daftar aktif → jangan sampai angka "+N lagi" meleset).
-const countAll = (active, newCodes) => new Set([...active.map((c) => c.code), ...newCodes.map((c) => c.code)]).size;
+// `ci` = samakan kode yg cuma beda kapitalisasi (MOBILE). Jaring pengaman lapis
+// kedua: data sudah didedup di fetch-codes, tapi kalau satu varian lolos lagi,
+// jangan sampai video mengklaim jumlah kode yg digelembungkan (kejadian 31 Jul:
+// video Genshin bilang "13 kode aktif" padahal 10) atau memajang kode yg sama
+// dua kali (EVERWINTER + Everwinter di satu video).
+const norm = (code, ci) => (ci ? String(code).toLowerCase() : code);
+const countAll = (active, newCodes, ci = false) => new Set([...active.map((c) => norm(c.code, ci)), ...newCodes.map((c) => norm(c.code, ci))]).size;
 // Path ikon dari deskriptor kandidat (di-recompute saat rekonstruksi antrian).
 const iconFor = (d) => (d.isPromo ? resolve(ASSETS_ROBLOX, "roblox-promo.png") : resolve(d.platform === "ROBLOX" ? ASSETS_ROBLOX : ASSETS_GAMES, `${d.id}.png`));
 
@@ -162,8 +168,8 @@ function buildCandidates() {
       // (mis. /id/game/r1999/ padahal halamannya /id/game/reverse-1999/).
       platform: "MOBILE", id, name: meta?.name ?? nc[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
       iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 1e9, // mobile prioritas (game besar, jarang)
-      newCodes: nc, activeCount: countAll(active, nc), fetchedAt: mNewFile.generatedAt,
-      displayCodes: pickDisplay(nc, active),
+      newCodes: nc, activeCount: countAll(active, nc, true), fetchedAt: mNewFile.generatedAt,
+      displayCodes: pickDisplay(nc, active, true),
     });
   }
   // MOBILE — KODE FRESH (fallback, dicek TIAP run) — sejajar jalur fresh Roblox.
@@ -181,8 +187,8 @@ function buildCandidates() {
     out.push({
       platform: "MOBILE", id, name: meta?.name ?? active[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
       iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 1e9,
-      newCodes: freshCodes, activeCount: countAll(active, freshCodes), fetchedAt: mNewFile.generatedAt,
-      displayCodes: pickDisplay(freshCodes, active),
+      newCodes: freshCodes, activeCount: countAll(active, freshCodes, true), fetchedAt: mNewFile.generatedAt,
+      displayCodes: pickDisplay(freshCodes, active, true),
     });
   }
   // Dedup by universeId: buang kandidat ROBLOX yg universeId-nya SUDAH punya
@@ -210,16 +216,16 @@ function buildCandidates() {
 // Kartu tampil di video: kode BARU dulu (maks MAX_DISPLAY), pad dg kode aktif lain
 // yg ada reward. Sisanya (bila game punya banyak kode) → teaser "+N lagi" di video.
 const MAX_DISPLAY = 4; // Short harus tetap kebaca; jangan jejalin semua kode.
-function pickDisplay(newCodes, active) {
+function pickDisplay(newCodes, active, ci = false) {
   const seen = new Set();
   const disp = [];
-  for (const c of newCodes) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(c.code)) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward || "", isNew: true }); }
+  for (const c of newCodes) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci))) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward || "", isNew: true }); }
   // Pad dg kode aktif BER-REWARD dulu (kartu lebih informatif).
-  for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(c.code) || !c.reward) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward, isNew: false }); }
+  for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci)) || !c.reward) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward, isNew: false }); }
   // Masih ada slot & pilihan ber-reward habis → ikutkan kode TANPA reward
   // (render isi "Reward in-game"). Cegah video/deskripsi tanpa kode sama sekali
   // saat semua kode game tak punya reward (mis. +1 Speed Keyboard Escape).
-  for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(c.code)) continue; seen.add(c.code); disp.push({ code: c.code, reward: c.reward || "", isNew: false }); }
+  for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci))) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward || "", isNew: false }); }
   return disp;
 }
 
@@ -251,8 +257,8 @@ function buildOnDemand(id) {
   const meta = (cat.games ?? []).find((x) => x.id === id);
   return {
     platform: "MOBILE", id, name: meta?.name ?? active[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
-    iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 0, newCodes: [], activeCount: active.length,
-    fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], active),
+    iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 0, newCodes: [], activeCount: countAll(active, [], true),
+    fetchedAt: new Date().toISOString(), allMode: true, displayCodes: pickDisplay([], active, true),
   };
 }
 
