@@ -15,9 +15,9 @@ const IDS = arg("ids").split(",").map((s) => s.trim()).filter(Boolean);
 const FROM = arg("from"), TO = arg("to");
 const REQ = arg("require-title"); // palang pengaman hapus: judul WAJIB memuat teks ini
 
-if (!["retitle", "delete", "playlist"].includes(MODE)) { console.error("--mode wajib: retitle | delete | playlist"); process.exit(1); }
-if (IDS.length === 0) { console.error("--ids kosong"); process.exit(1); }
-if (MODE !== "delete" && (!FROM || !TO)) { console.error(`mode ${MODE} butuh --from dan --to`); process.exit(1); }
+if (!["retitle", "delete", "playlist", "audit"].includes(MODE)) { console.error("--mode wajib: retitle | delete | playlist | audit"); process.exit(1); }
+if (MODE !== "audit" && IDS.length === 0) { console.error("--ids kosong"); process.exit(1); }
+if (!["delete", "audit"].includes(MODE) && (!FROM || !TO)) { console.error(`mode ${MODE} butuh --from dan --to`); process.exit(1); }
 if (MODE === "delete" && !REQ) { console.error("mode delete WAJIB pakai --require-title (palang pengaman)"); process.exit(1); }
 if (!process.env.YT_REFRESH_TOKEN) { console.error("kredensial YouTube belum di-set"); process.exit(1); }
 
@@ -27,6 +27,88 @@ o.setCredentials({ refresh_token: process.env.YT_REFRESH_TOKEN });
 const yt = google.youtube({ version: "v3", auth: o });
 
 console.log(APPLY ? `=== APPLY · mode=${MODE} · ${IDS.length} video ===` : `=== DRY-RUN · mode=${MODE} · ${IDS.length} video (tak mengubah apa pun) ===`);
+
+// ── mode audit: BACA-SAJA, cocokkan kondisi YouTube dg data repo ───────────
+// Tak butuh --ids. Cari cacat yang tak kelihatan dari sisi data: playlist yang
+// tak tercocokkan ke game (tombol di halaman game jadi hilang), playlist KOSONG
+// (situs menaut ke halaman hampa), sisa entity HTML / bulan salah di judul, dan
+// video yang privasinya tak publik.
+if (MODE === "audit") {
+  const { readFileSync } = await import("node:fs");
+  const { resolve, dirname } = await import("node:path");
+  const { fileURLToPath } = await import("node:url");
+  const DATA = resolve(dirname(fileURLToPath(import.meta.url)), "../data");
+  const baca = (f, d) => { try { return JSON.parse(readFileSync(resolve(DATA, f), "utf8")); } catch { return d; } };
+  const pl = baca("yt-playlists.json", {}), rb = baca("roblox-codes.json", { games: {} }), gj = baca("games.json", { games: [] });
+
+  // nama game → id (sama persis dg fetch-yt-playlists.mjs, biar hasilnya sepadan)
+  const normal = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const namaKe = new Map();
+  for (const g of gj.games ?? []) if (g?.name) namaKe.set(normal(g.name), g.id);
+  for (const [id, g] of Object.entries(rb.games ?? {})) if (g?.name) namaKe.set(normal(g.name), id);
+  const judulKeNama = (t) => t.replace(/\s*—\s*Kode Redeem\s*$/i, "").replace(/\s+Codes$/i, "").trim();
+
+  const daftar = [];
+  let token;
+  do {
+    const r = await yt.playlists.list({ part: ["snippet", "contentDetails"], mine: true, maxResults: 50, pageToken: token });
+    daftar.push(...(r.data.items ?? [])); token = r.data.nextPageToken;
+  } while (token);
+
+  // semua video channel via playlist "uploads"
+  const ch = await yt.channels.list({ part: ["contentDetails"], mine: true });
+  const up = ch.data.items?.[0]?.contentDetails?.relatedPlaylists?.uploads;
+  const vidIds = [];
+  token = undefined;
+  do {
+    const r = await yt.playlistItems.list({ part: ["contentDetails"], playlistId: up, maxResults: 50, pageToken: token });
+    vidIds.push(...(r.data.items ?? []).map((i) => i.contentDetails.videoId)); token = r.data.nextPageToken;
+  } while (token);
+  const vids = [];
+  for (let i = 0; i < vidIds.length; i += 50) {
+    const r = await yt.videos.list({ part: ["snippet", "status"], id: vidIds.slice(i, i + 50) });
+    vids.push(...(r.data.items ?? []));
+  }
+
+  const ENT = /&(#x?[0-9a-f]+|amp|lt|gt|quot|apos|nbsp);/i;
+  const bulanWIB = (iso) => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta", year: "numeric", month: "2-digit" }).format(new Date(iso)).slice(0, 7);
+  const BULAN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const temuan = [];
+  const T = (parah, judul, detail) => temuan.push(`[${parah}] ${judul}\n        ${detail}`);
+
+  console.log(`channel: ${vids.length} video · ${daftar.length} playlist\n`);
+
+  const tanpaGame = daftar.filter((p) => !/roblox promo|top 50|roundup/i.test(p.snippet.title) && !namaKe.has(normal(judulKeNama(p.snippet.title))));
+  if (tanpaGame.length) T("TINGGI", "playlist tak tercocokkan ke game (tombol YouTube TAK muncul di halaman)", tanpaGame.map((p) => `${p.snippet.title} [${p.id}]`).join("; "));
+
+  const kosong = daftar.filter((p) => (p.contentDetails?.itemCount ?? 0) === 0);
+  if (kosong.length) T("TINGGI", "playlist KOSONG (situs menaut ke halaman hampa)", kosong.map((p) => `${p.snippet.title} [${p.id}]`).join("; "));
+
+  const entJudul = [...vids.filter((v) => ENT.test(v.snippet.title) || ENT.test(v.snippet.description ?? "")).map((v) => `video ${v.id}: ${v.snippet.title.slice(0, 50)}`),
+    ...daftar.filter((p) => ENT.test(p.snippet.title)).map((p) => `playlist ${p.id}: ${p.snippet.title.slice(0, 50)}`)];
+  if (entJudul.length) T("TINGGI", "entity HTML tersisa di judul/deskripsi", entJudul.join("; "));
+
+  const bulanSalah = vids.filter((v) => {
+    const m = /\((January|February|March|April|May|June|July|August|September|October|November|December) (\d{4})\)/.exec(v.snippet.title);
+    if (!m) return false;
+    const [, mon, thn] = m, w = bulanWIB(v.snippet.publishedAt);
+    return `${thn}-${String(BULAN.indexOf(mon) + 1).padStart(2, "0")}` !== w;
+  });
+  if (bulanSalah.length) T("SEDANG", "bulan di judul ≠ bulan terbit (WIB)", bulanSalah.map((v) => `${v.id}: ${v.snippet.title.slice(0, 55)} (terbit ${bulanWIB(v.snippet.publishedAt)})`).join("; "));
+
+  const takPublik = vids.filter((v) => v.status?.privacyStatus !== "public");
+  if (takPublik.length) T("SEDANG", "video tidak publik", takPublik.map((v) => `${v.id} [${v.status?.privacyStatus}] ${v.snippet.title.slice(0, 45)}`).join("; "));
+
+  const idPl = new Set(Object.values(pl));
+  const belumTerpetakan = daftar.filter((p) => !idPl.has(p.id) && namaKe.has(normal(judulKeNama(p.snippet.title))));
+  if (belumTerpetakan.length) T("INFO", "playlist cocok ke game tapi belum masuk yt-playlists.json (nunggu sync run berikutnya)", belumTerpetakan.map((p) => p.snippet.title).join("; "));
+
+  const hilang = Object.entries(pl).filter(([, id]) => !daftar.some((p) => p.id === id));
+  if (hilang.length) T("TINGGI", "entri yt-playlists.json menunjuk playlist yang SUDAH TAK ADA", hilang.map(([g, id]) => `${g}=${id}`).join("; "));
+
+  console.log(temuan.length ? temuan.join("\n\n") : "bersih — tak ada temuan.");
+  process.exit(0);
+}
 
 // ── mode playlist: ganti teks di JUDUL playlist ────────────────────────────
 // Penting: situs memetakan halaman game → playlist lewat JUDUL playlist
