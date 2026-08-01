@@ -123,7 +123,24 @@ if (MODE === "audit") {
 
 // ── mode show: dump metadata mentah sebuah video (diagnostik) ──────────────
 if (MODE === "show") {
-  const r = await yt.videos.list({ part: ["snippet", "status", "localizations"], id: IDS });
+  // ID berawalan "PL" = playlist. Berguna utk memeriksa apakah defaultLanguage
+  // benar-benar tersimpan di sisi YouTube (Studio menampilkannya sbg "Title and
+  // description language").
+  const idPl = IDS.filter((i) => i.startsWith("PL"));
+  if (idPl.length) {
+    const rp = await yt.playlists.list({ part: ["snippet", "localizations", "status"], id: idPl });
+    for (const p of rp.data.items ?? []) {
+      const loc = p.localizations ?? {};
+      console.log(`\n== PLAYLIST ${p.id}`);
+      console.log(`  title           : ${p.snippet.title}`);
+      console.log(`  defaultLanguage : ${p.snippet.defaultLanguage ?? "(KOSONG)"}`);
+      console.log(`  localizations   : ${Object.keys(loc).length ? Object.keys(loc).join(", ") : "(tak ada)"}`);
+      console.log(`  privacy         : ${p.status?.privacyStatus}`);
+    }
+  }
+  const idVid = IDS.filter((i) => !i.startsWith("PL"));
+  if (!idVid.length) process.exit(0);
+  const r = await yt.videos.list({ part: ["snippet", "status", "localizations"], id: idVid });
   for (const v of r.data.items ?? []) {
     console.log(`\n== ${v.id}`);
     console.log(`  snippet.title       : ${v.snippet.title}`);
