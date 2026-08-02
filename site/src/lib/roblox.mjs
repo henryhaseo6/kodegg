@@ -117,8 +117,16 @@ export async function loadRobloxCatalog() {
   const games = raw.games ?? {};
   const activeByGame = {};
   const newestByGame = {};
+  // lastChangeByGame = kapan ISI HALAMAN game ini terakhir berubah = saat kode
+  // terakhir MASUK (firstSeenAt) atau dirilis (date), mana yg lebih baru.
+  // Beda tujuan dari `newestMs`: itu utk sort "kode terbaru" (sengaja mengabaikan
+  // firstSeen pd impor massal). Yang ini untuk <lastmod> sitemap, jadi impor
+  // massal justru DIHITUNG — halamannya memang baru berubah saat itu.
+  const lastChangeByGame = {};
   for (const c of raw.active ?? []) {
     activeByGame[c.game] = (activeByGame[c.game] ?? 0) + 1;
+    const ubah = Math.max(Date.parse(c.firstSeenAt ?? "") || 0, Date.parse(c.date ?? "") || 0);
+    if (ubah > (lastChangeByGame[c.game] ?? 0)) lastChangeByGame[c.game] = ubah;
     // SAMA dg rankMs homepage: tanggal rilis dulu; kalau tak ada & BUKAN impor
     // massal pertama, baru firstSeen. Tanpa ini, game yg baru di-discover (kode
     // lama tapi `bulk`) salah naik ke puncak "kode terbaru" krn firstSeen=hari ini.
@@ -135,6 +143,7 @@ export async function loadRobloxCatalog() {
       verified: g.verified === true,
       activeCount: activeByGame[id] ?? 0,
       newestMs: newestByGame[id] ?? 0, // tanggal kode terbaru → sort "terbaru"
+      lastChangeMs: lastChangeByGame[id] ?? 0, // perubahan isi halaman → <lastmod> sitemap
       players: g.players ?? 0, // pemain konkuren realtime → sort "terpopuler"
     }))
     .sort((a, b) => b.newestMs - a.newestMs || b.activeCount - a.activeCount || a.name.localeCompare(b.name));

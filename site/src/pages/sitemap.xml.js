@@ -1,8 +1,10 @@
 // Sitemap dinamis — semua halaman × 2 bahasa + per-game, dengan slug per bahasa.
 // lastmod PER-HALAMAN dari data aslinya (bukan waktu build seragam) supaya
-// sinyal kesegaran "update tiap jam" jujur: halaman kode & game pakai
-// codes.updatedAt, berita pakai feed.updatedAt, katalog pakai catalog.updatedAt,
-// halaman statis pakai tanggal build.
+// sinyal kesegaran "update tiap jam" jujur:
+//   - halaman GAME (mobile & Roblox): kapan kode terakhir masuk/rilis DI GAME
+//     ITU SENDIRI — bukan stempel global, lihat catatan di dalam GET();
+//   - daftar kode pakai codes.updatedAt, berita feed.updatedAt, katalog
+//     catalog.updatedAt, halaman statis tanggal build.
 import { LANGS } from "../lib/i18n.mjs";
 import { loadCatalog } from "../lib/catalog.mjs";
 import { loadCodes } from "../lib/codes.mjs";
@@ -27,6 +29,21 @@ export async function GET() {
 
   const build = day();
   const codesMod = day(codes.updatedAt);
+  // lastmod PER-GAME, bukan satu stempel global. Sebelumnya SEMUA halaman game
+  // memakai `codes.updatedAt`/`roblox.updatedAt`, jadi ratusan halaman mengaku
+  // "berubah hari ini" tiap hari padahal isinya tak berubah berminggu-minggu
+  // (terukur 2 Agu 2026: 180 dari 350 game Roblox terakhir berubah 8-30 hari
+  // lalu, tapi semuanya diklaim segar). Google memakai <lastmod> hanya SELAMA
+  // ia terbukti jujur — begitu ia merayapi halaman "segar" yang ternyata sama
+  // saja, sinyalnya diabaikan untuk seluruh situs.
+  const NOW = Date.now();
+  const hariDari = (ms, cadangan) => (ms > 0 ? day(new Date(Math.min(ms, NOW)).toISOString()) : cadangan);
+  // Mobile: kapan kode terakhir MASUK/rilis per game (item sudah ter-shape).
+  const mobileUbah = {};
+  for (const c of codes.active ?? []) {
+    const ms = Math.max(c.firstSeenMs ?? 0, c.rankMs ?? 0);
+    if (ms > (mobileUbah[c.game] ?? 0)) mobileUbah[c.game] = ms;
+  }
   const catMod = day(catalog.updatedAt);
   const newsMod = day(feed.updatedAt);
   const lmFor = (key) => (key === "codes" ? codesMod : key === "discover" ? catMod : key === "news" ? newsMod : build);
@@ -35,13 +52,13 @@ export async function GET() {
   const entries = [{ paths: langPaths("home"), lastmod: codesMod }];
   // "saved"/favorit di-noindex (isinya localStorage) → tak dimasukkan.
   for (const key of PAGE_KEYS) if (key !== "saved") entries.push({ paths: langPaths(key), lastmod: lmFor(key) });
-  for (const g of gameEntries) entries.push({ paths: { id: `/id/game/${g.slug}`, en: `/en/game/${g.slug}` }, lastmod: codesMod });
+  for (const g of gameEntries) entries.push({ paths: { id: `/id/game/${g.slug}`, en: `/en/game/${g.slug}` }, lastmod: hariDari(mobileUbah[g.id] ?? 0, codesMod) });
 
   // Vertikal Roblox: hub + per-game (lastmod = kesegaran data Roblox).
   const robloxMod = day(robloxHome.updatedAt);
   entries.push({ paths: { id: "/id/roblox", en: "/en/roblox" }, lastmod: robloxMod });
   entries.push({ paths: { id: "/id/roblox/promo-codes", en: "/en/roblox/promo-codes" }, lastmod: robloxMod });
-  for (const g of robloxGames) entries.push({ paths: { id: `/id/roblox/${g.slug}`, en: `/en/roblox/${g.slug}` }, lastmod: robloxMod });
+  for (const g of robloxGames) entries.push({ paths: { id: `/id/roblox/${g.slug}`, en: `/en/roblox/${g.slug}` }, lastmod: hariDari(g.lastChangeMs ?? 0, robloxMod) });
 
   const body =
     `<?xml version="1.0" encoding="UTF-8"?>\n` +
