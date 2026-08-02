@@ -97,12 +97,43 @@ export async function fetchRobloxDen(slug) {
 // Semua slug game di Roblox Den (dari halaman /game-codes) — untuk discovery +
 // validasi (game populer yang ada di Den walau tak ada di RoCodes).
 export async function fetchRobloxDenSlugs() {
+  return new Set((await fetchRobloxDenIndex()).keys());
+}
+
+/**
+ * Peta slug → waktu <lastmod> (ms) dari SITEMAP Roblox Den.
+ *
+ * Dulu daftar slug diambil dari SATU halaman /game-codes → hanya ~109 slug,
+ * sehingga cuma 35 dari 350 game kita pernah dikaitkan ke sumber primer kedua;
+ * sisanya jalan sendirian dg RoCodes tanpa ada yang mengoreksi (mis. kode yang
+ * sudah mati tak pernah tertangkap). Sitemap memuat ~4.900 slug → 304 game kita
+ * cocok PERSIS, tanpa perlu tebak-tebakan nama.
+ *
+ * `lastmod` dipakai untuk menarik HALAMAN GAME hanya bila benar-benar berubah
+ * (lihat fetch-roblox.mjs). Tanpa itu, memperluas cakupan berarti ~7.300
+ * permintaan/hari ke situs kecil ini — tak sopan dan tak perlu.
+ */
+export async function fetchRobloxDenIndex() {
+  const peta = new Map();
+  try {
+    const res = await fetch("https://robloxden.com/sitemap.xml", { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(20000) });
+    if (res.ok) {
+      const xml = await res.text();
+      for (const blok of xml.match(/<url>[\s\S]*?<\/url>/g) ?? []) {
+        const slug = /robloxden\.com\/game-codes\/([a-z0-9-]+)\s*</.exec(blok)?.[1];
+        if (!slug) continue;
+        const lm = Date.parse(/<lastmod>([^<]+)<\/lastmod>/.exec(blok)?.[1] ?? "") || 0;
+        if (lm > (peta.get(slug) ?? 0)) peta.set(slug, lm);
+      }
+    }
+  } catch { /* jatuh ke cadangan di bawah */ }
+  if (peta.size) return peta;
+  // Cadangan: halaman daftar (cara lama). Tanpa lastmod → 0 = "tak diketahui".
   try {
     const res = await fetch("https://robloxden.com/game-codes", { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(15000) });
-    if (!res.ok) return new Set();
+    if (!res.ok) return peta;
     const html = await res.text();
-    return new Set([...html.matchAll(/\/game-codes\/([a-z0-9-]+)/g)].map((m) => m[1]));
-  } catch {
-    return new Set();
-  }
+    for (const m of html.matchAll(/\/game-codes\/([a-z0-9-]+)/g)) peta.set(m[1], 0);
+  } catch { /* biarkan kosong */ }
+  return peta;
 }

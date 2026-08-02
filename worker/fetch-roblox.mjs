@@ -20,7 +20,7 @@ import { fileURLToPath } from "node:url";
 
 import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
-import { fetchRobloxDen } from "./src/sources/robloxden.mjs";
+import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
 import { fetchPromoCodes } from "./src/sources/roblox-promo.mjs";
 import { discoverPopularWithCodes, inferGenres } from "./src/roblox-discover.mjs";
@@ -207,21 +207,66 @@ async function main() {
 
   const set = await buildGameSet(prev.games ?? {});
   const entries = [...set.entries()];
-  console.log(`memproses ${entries.length} game (2 primer: RoCodes + Roblox Den)…`);
+
+  // ── Roblox Den: tarik HANYA yang halamannya berubah ───────────────────────
+  // Cakupan Den melonjak (35 → ~300 game) sejak daftar slug pindah ke sitemap.
+  // Menarik semuanya tiap jam = ~7.300 permintaan/hari ke situs kecil — tak
+  // sopan & mubazir: sitemap mereka menunjukkan hanya ~119 dari 4.900 halaman
+  // berubah per 24 jam. Jadi halaman Den ditarik bila `lastmod` sitemap lebih
+  // baru dari terakhir kali kita menariknya (`denAt` per game).
+  const denIndex = await fetchRobloxDenIndex();
+  const prevGamesMap = prev.games ?? {};
+  // Kode Den yang SUDAH kita punya, per game — dipakai saat halamannya dilewati.
+  // WAJIB: tanpa ini, kode yang hanya ada di Den lenyap dari hasil merge lalu
+  // ikut diarsipkan otomatis (game-nya dianggap "covered"), padahal halamannya
+  // tak berubah = kodenya masih terpampang di sana.
+  const denPunya = {};
+  for (const [kunci, arr] of [["active", prev.active ?? []], ["archive", prev.archive ?? []]]) {
+    for (const c of arr) {
+      const src = c.sources?.length ? c.sources : [c.source];
+      if (!src.includes("Roblox Den")) continue;
+      ((denPunya[c.game] ??= { active: [], archive: [] })[kunci]).push(c);
+    }
+  }
+  // Backfill awal (game yang belum pernah ditarik dari Den) dibatasi per run
+  // supaya rilis ini tak meledak jadi 300 permintaan sekaligus.
+  const DEN_BACKFILL_MAX = Number(process.env.DEN_BACKFILL_MAX || 40);
+  let backfillSisa = DEN_BACKFILL_MAX;
+  const perluDen = (id, slug) => {
+    if (!slug) return false;
+    const lm = denIndex.get(slug) ?? 0;
+    const terakhir = Number(prevGamesMap[id]?.denAt ?? 0);
+    if (!terakhir) return backfillSisa-- > 0; // belum pernah → antre backfill
+    return lm > terakhir; // hanya bila halamannya memang berubah
+  };
+  let denTarik = 0, denLewat = 0;
+
+  console.log(`memproses ${entries.length} game (2 primer: RoCodes + Roblox Den; indeks Den ${denIndex.size} slug)…`);
 
   const results = await mapLimit(entries, CONCURRENCY, async ([id, entry]) => {
     // Tarik dari tiap primer yang punya slug untuk game ini.
     const perSource = [];
     let rocodesMeta = null;
     let denMeta = null;
+    let denAt = Number(prevGamesMap[id]?.denAt ?? 0);
+    let denDilewati = false;
     for (const p of PRIMARIES) {
       const slug = entry[p.slugKey];
       if (!slug) continue;
+      // Den: lewati bila halamannya tak berubah — pakai kode yang sudah kita
+      // simpan dari penarikan sebelumnya (halaman sama = isi sama).
+      if (p.name === "Roblox Den" && !perluDen(id, slug)) {
+        const punya = denPunya[id];
+        if (punya) perSource.push({ name: p.name, url: p.url(slug), active: punya.active, archive: punya.archive });
+        denLewat++;
+        denDilewati = true; // pertahankan denSlug walau tak ditarik run ini
+        continue;
+      }
       try {
         const r = await p.fetch(slug);
         perSource.push({ name: p.name, url: p.url(slug), active: r.active, archive: r.archive });
         if (p.name === "RoCodes.gg") rocodesMeta = r.meta;
-        else denMeta = r.meta;
+        else { denMeta = r.meta; denAt = Math.max(denIndex.get(slug) ?? 0, Date.now()); denTarik++; }
       } catch {
         /* sumber ini tak punya game / gagal → lanjut */
       }
@@ -322,7 +367,13 @@ async function main() {
         name,
         slug: robloxSlug(id),
         rocodesSlug: slugRo ?? null,
-        denSlug: perSource.some((p) => p.name === "Roblox Den") ? slugDen : null,
+        // denDilewati: halaman tak berubah & sengaja tak ditarik — slug-nya TETAP
+        // disimpan, kalau tidak game ini terlihat "belum pernah kena Den" lagi dan
+        // antrean backfill tak pernah maju.
+        denSlug: denDilewati || perSource.some((p) => p.name === "Roblox Den") ? slugDen : null,
+        // Kapan halaman Den game ini terakhir DITARIK — dibandingkan dg <lastmod>
+        // sitemap Den di run berikutnya supaya halaman yang tak berubah dilewati.
+        ...(denAt ? { denAt } : {}),
         genres: entry.genres?.length ? entry.genres : inferGenres(name, slugRo || slugDen || ""),
         universeId,
         verified: rocodesMeta?.verified ?? false,
@@ -357,6 +408,7 @@ async function main() {
   // firstSeenAt reset ke `now` tiap run → kirim "kode baru" palsu tiap jam (bug
   // notif spam). Dedup dulu → codeKey konsisten → firstSeenAt awet.
   const { active: freshDD, archive: freshArchDD } = dedupByUniverse(games, freshActive, freshArchive);
+  console.log(`Roblox Den: ${denTarik} halaman ditarik (berubah), ${denLewat} dilewati (tak berubah / pakai simpanan)`);
   const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshDD, freshArchDD, prev, covered, now);
   const mergedGames = { ...(prev.games ?? {}), ...games };
   // PURGE game DUPLIKAT yg nyangkut di prev.games (universeId sama, slug beda
