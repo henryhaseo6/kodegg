@@ -260,6 +260,23 @@ async function main() {
     return false;
   };
 
+  // TAMBAL slug RoCodes yang RUSAK. Slug tersimpan bisa 404 permanen (mis. kita
+  // simpan "fish-it" padahal RoCodes memakai "roblox-fish-it") — penarikan gagal
+  // TIAP JAM tanpa suara, dan kodenya jadi sisa lama yang tak pernah diperbarui.
+  // Terparah: Rivals (232K pemain) & Fish It (126K). Ketahuan 2 Agu 2026 lewat
+  // laporan user: RoCodes bilang aktif, Den bilang expired, situs ikut yang basi.
+  const roIndexSlug = await fetchRoCodesIndex();
+  let roTambal = 0;
+  if (roIndexSlug.size) {
+    for (const [id, e] of set) {
+      if (!e.rocodesSlug || roIndexSlug.has(e.rocodesSlug)) continue;
+      const varian = [e.rocodesSlug.replace(/^roblox-/, ""), `roblox-${e.rocodesSlug}`, id, `roblox-${id}`];
+      const cocok = varian.find((v) => v && roIndexSlug.has(v));
+      if (cocok) { e.rocodesSlug = cocok; roTambal++; }
+    }
+    if (roTambal) console.log(`slug RoCodes diperbaiki utk ${roTambal} game (sebelumnya 404 tiap run)`);
+  }
+
   let ditambal = 0;
   for (const [id, e] of set) {
     if (e.denSlug) continue;
