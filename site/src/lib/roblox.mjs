@@ -41,8 +41,14 @@ function shape(item, games) {
   // Den menempel sampai halamannya diperiksa lagi: 2 Agu 2026 Anime Astral
   // Simulator memajang 34 NEW CODE padahal terakhir dicek 31 Juli. Memakai
   // firstSeen di situ akan mencap 34 kode berumur ≥2 hari sebagai BARU.
+  // Dipakai bukti PALING TUA di antara keduanya, karena masing-masing hanya batas
+  // atas: Den mempertahankan badge NEW berhari-hari (2 Agu 2026: halaman Shindo
+  // Life dicek hari itu juga, tapi 7 dari 9 kode ber-NEW rilis 17-26 Juli), jadi
+  // srcNewAt saja bisa membuat kode 2 pekan tampak baru; sebaliknya firstSeen
+  // saja mencap kode lama sebagai baru begitu halamannya pertama kali kita baca.
   const srcNewMs = Number(item.srcNewAt) || 0;
-  const newMs = dateMs || (item.bulk || !item.srcNew ? 0 : srcNewMs || firstSeenMs);
+  const bukti = srcNewMs && firstSeenMs ? Math.min(srcNewMs, firstSeenMs) : srcNewMs || firstSeenMs;
+  const newMs = dateMs || (item.bulk || !item.srcNew ? 0 : bukti);
   return {
     ...item, // termasuk source/sources/sourceUrls dari worker (RoCodes &/atau Roblox Den)
     name: g.name ?? item.gameName ?? "—",
