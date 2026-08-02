@@ -502,7 +502,15 @@ async function main() {
   // DAN memicu video "KODE BARU" utk puluhan game berisi kode berbulan-bulan.
   // Kode yang memang baru rilis tetap tertangkap: make-videos punya jalur "fresh"
   // (tanggal rilis ≤48 jam) yang menyapu semua game tiap run, lepas dari daftar ini.
-  const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk && !denBackfill.has(c.game));
+  // Saringan dipersempit ke KODE-nya, bukan seluruh game: yang ditahan hanya
+  // kode yang HANYA dimiliki Den. Kode yang juga muncul di RoCodes berarti baru
+  // di sumber yang memang sudah kita baca tiap jam → itu genuine baru, tetap
+  // memicu notif & video walau game-nya kebetulan sedang backfill run ini.
+  const denSaja = (c) => {
+    const src = c.sources?.length ? c.sources : [c.source];
+    return src.length === 1 && src[0] === "Roblox Den";
+  };
+  const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk && !(denBackfill.has(c.game) && denSaja(c)));
   // Game yang BARU masuk pantauan run ini (impor pertama). Kodenya bisa lama
   // semua (backfill) → dipakai make-videos utk video "semua kode aktif" pada game
   // besar. TAPI kalau sebuah kode punya tanggal rilis sumber dalam 48 jam, ia
