@@ -15,9 +15,9 @@ const IDS = arg("ids").split(",").map((s) => s.trim()).filter(Boolean);
 const FROM = arg("from"), TO = arg("to");
 const REQ = arg("require-title"); // palang pengaman hapus: judul WAJIB memuat teks ini
 
-if (!["retitle", "delete", "playlist", "audit", "show", "addloc"].includes(MODE)) { console.error("--mode wajib: retitle | delete | playlist | audit | show | addloc"); process.exit(1); }
+if (!["retitle", "delete", "playlist", "audit", "show", "addloc", "playlistadd"].includes(MODE)) { console.error("--mode wajib: retitle | delete | playlist | audit | show | addloc | playlistadd"); process.exit(1); }
 if (!["audit", "addloc"].includes(MODE) && IDS.length === 0) { console.error("--ids kosong"); process.exit(1); }
-if (!["delete", "audit", "show", "addloc"].includes(MODE) && (!FROM || !TO)) { console.error(`mode ${MODE} butuh --from dan --to`); process.exit(1); }
+if (!["delete", "audit", "show", "addloc", "playlistadd"].includes(MODE) && (!FROM || !TO)) { console.error(`mode ${MODE} butuh --from dan --to`); process.exit(1); }
 if (MODE === "delete" && !REQ) { console.error("mode delete WAJIB pakai --require-title (palang pengaman)"); process.exit(1); }
 if (!process.env.YT_REFRESH_TOKEN) { console.error("kredensial YouTube belum di-set"); process.exit(1); }
 
@@ -126,6 +126,30 @@ if (MODE === "audit") {
   if (hilang.length) T("TINGGI", "entri yt-playlists.json menunjuk playlist yang SUDAH TAK ADA", hilang.map(([g, id]) => `${g}=${id}`).join("; "));
 
   console.log(temuan.length ? temuan.join("\n\n") : "bersih — tak ada temuan.");
+  process.exit(0);
+}
+
+// ── mode playlistadd: masukkan video ke playlist game-nya ──────────────────
+// Untuk video yang playlist-nya GAGAL saat upload (rate-limit ~10 playlist baru
+// per hari). Jalur `manual-video` tak punya antrian retry seperti pipeline
+// otomatis — workspace CI-nya sekali pakai, jadi tak ada tempat menyimpan
+// antrian. Mode ini penggantinya: jalankan besok saat kuota playlist pulih.
+// Judul playlist diturunkan dari judul video ("X Codes (...)" → "X Codes —
+// Kode Redeem"), sama dengan yang dipakai metadata.mjs.
+if (MODE === "playlistadd") {
+  const { attachToPlaylist } = await import("./upload.mjs");
+  const r = await yt.videos.list({ part: ["snippet"], id: IDS });
+  for (const v of r.data.items ?? []) {
+    const m = /^(.+?) Codes \(/.exec(v.snippet.title);
+    if (!m) { console.log(`-      ${v.id} · judul bukan pola video game — lewati · ${v.snippet.title}`); continue; }
+    const judul = `${m[1]} Codes — Kode Redeem`;
+    console.log(`MASUK  ${v.id} → "${judul}"`);
+    if (APPLY) {
+      const ok = await attachToPlaylist(yt, v.id, judul, "");
+      console.log(ok ? "       ✓ masuk playlist" : "       ✗ gagal (kemungkinan rate-limit lagi — coba besok)");
+    }
+  }
+  console.log(`\n${APPLY ? "selesai" : "DRY-RUN selesai"}.`);
   process.exit(0);
 }
 
