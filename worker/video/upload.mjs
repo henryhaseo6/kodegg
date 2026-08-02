@@ -196,7 +196,23 @@ export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlis
     // seperti "Date published (newest)" tanpa perlu menyentuh 177 playlist satu
     // per satu. Pada playlist yang sudah di-set urut tanggal, posisi ini
     // diabaikan — jadi aman untuk keduanya.
-    const masukkan = () => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, position: 0, resourceId: { kind: "youtube#video", videoId } } } });
+    // `position: 0` cuma SAH di playlist bersortir manual. Playlist yang di-set
+    // "Date published (newest)" MENOLAK-nya dengan error "Playlist should use
+    // manual sorting to support position" — dan videonya gagal masuk sama sekali
+    // (kejadian 2 Agu 2026: Reverse: 1999). Dugaan awal bahwa posisi "diabaikan"
+    // pada playlist tersortir itu KELIRU. Jadi: coba dengan posisi dulu (biar
+    // video baru di atas), kalau ditolak karena sortir → ulangi tanpa posisi.
+    // Di playlist tersortir, urutan tampilannya memang sudah diatur sortirnya.
+    const insertPl = (snippet) => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet } });
+    const dasar = { playlistId: pid, resourceId: { kind: "youtube#video", videoId } };
+    const masukkan = async () => {
+      try { return await insertPl({ ...dasar, position: 0 }); }
+      catch (e) {
+        if (!/manual sorting/i.test(e.message ?? "")) throw e;
+        console.log("  ↳ playlist tersortir otomatis → masuk tanpa posisi");
+        return insertPl(dasar);
+      }
+    };
     const sudahMasuk = async () => {
       const isi = await yt.playlistItems.list({ part: ["snippet"], playlistId: pid, maxResults: 50 });
       return (isi.data.items ?? []).some((i) => i.snippet?.resourceId?.videoId === videoId);
