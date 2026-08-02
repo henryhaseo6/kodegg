@@ -192,12 +192,37 @@ if (MODE === "playlist") {
 }
 
 // videos.list menerima maks 50 id per panggilan (1 unit kuota).
-const items = [];
-for (let i = 0; i < IDS.length; i += 50) {
-  const r = await yt.videos.list({ part: ["snippet", "statistics"], id: IDS.slice(i, i + 50) });
-  items.push(...(r.data.items ?? []));
-}
+// localizations WAJIB ikut ditarik: terjemahan otomatis YouTube menyimpan
+// salinan judul/deskripsi sendiri, dan itu yang dilihat penonton asing.
+const bacaSemua = async () => {
+  const out = [];
+  for (let i = 0; i < IDS.length; i += 50) {
+    const r = await yt.videos.list({ part: ["snippet", "statistics", "localizations"], id: IDS.slice(i, i + 50) });
+    out.push(...(r.data.items ?? []));
+  }
+  return out;
+};
+const memuatFROM = (v) => !!FROM && [v.snippet?.title, v.snippet?.description, ...Object.values(v.localizations ?? {}).flatMap((x) => [x.title, x.description])]
+  .some((t) => (t ?? "").includes(FROM));
+
+// BACA BEBERAPA KALI. API ini eventual-consistent: replika berbeda memulangkan
+// isi berbeda dalam hitungan detik. Sekali baca bisa kebetulan mendapat replika
+// yang sudah bersih, lalu skrip menyimpulkan "sudah benar" padahal versi lama
+// masih hidup di replika lain — persis yang terjadi pada lnNVEbGIeiA (audit
+// melihat en-US "July 2026", retitle 3 menit kemudian melihat bersih).
+// Aturannya: kalau ADA pembacaan yang menemukan FROM, itu yang dipakai.
+const items = await bacaSemua();
 const byId = Object.fromEntries(items.map((v) => [v.id, v]));
+if (MODE === "retitle") {
+  for (let putaran = 2; putaran <= 3; putaran++) {
+    const belum = IDS.filter((id) => byId[id] && !memuatFROM(byId[id]));
+    if (!belum.length) break; // semua sudah menampakkan teks lama → cukup
+    const lagi = await bacaSemua();
+    let baru = 0;
+    for (const v of lagi) if (memuatFROM(v) && !memuatFROM(byId[v.id] ?? {})) { byId[v.id] = v; baru++; }
+    if (baru) console.log(`(pembacaan ke-${putaran}: ${baru} video ternyata MASIH memuat "${FROM}" — pakai versi itu)`);
+  }
+}
 for (const id of IDS) if (!byId[id]) console.log(`! ${id} tak ditemukan di channel — lewati`);
 
 let ubah = 0, lewat = 0;
