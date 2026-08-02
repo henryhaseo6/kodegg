@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-02T13:01:18.477Z",
+  "updatedAt": "2026-08-02T14:02:24.893Z",
   "counts": {
-    "active": 108,
-    "archived": 50
+    "active": 107,
+    "archived": 51
   },
   "articles": [
     {
@@ -1716,7 +1716,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5007",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-05T07:19:16.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1731,10 +1733,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/03/9d489677dbda433a3fb707624960c6b3_7759140323846393547.png",
       "url": "https://www.hoyolab.com/article/45712451",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-03T13:05:06.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-03T13:05:06.000Z",
+      "archivedAt": "2026-08-02T14:02:24.893Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
