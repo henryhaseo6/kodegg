@@ -690,7 +690,17 @@ async function main() {
     const src = c.sources?.length ? c.sources : [c.source];
     return src.length === 1 && src[0] === "Roblox Den";
   };
-  const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk && !(denBackfill.has(c.game) && denSaja(c)));
+  // "Kode baru" = baru DIRILIS, bukan sekadar baru KITA LIHAT. Sumber bisa
+  // sewaktu-waktu menambahkan kode lama ke daftarnya (mis. RoCodes memunculkan
+  // 5YearSL2! & Year5ShindoLife! Shindo Life pada 2 Agu 2026, padahal rilisnya
+  // 23 Des 2025 — 222 hari sebelumnya). Tanpa saringan usia, kode setengah tahun
+  // memicu notifikasi "kode baru" dan video berjudul "KODE BARU!".
+  // Kode TANPA tanggal rilis dibiarkan lolos: umurnya tak diketahui, dan itu
+  // beda dari diketahui-tua.
+  const USIA_BARU_MS = Number(process.env.NEW_MAX_AGE_DAYS || 7) * 24 * 3600 * 1000;
+  const nowMsBaru = Date.parse(now);
+  const usiaMasukAkal = (c) => { const d = Date.parse(c.date ?? "") || 0; return d === 0 || nowMsBaru - d <= USIA_BARU_MS; };
+  const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk && !(denBackfill.has(c.game) && denSaja(c)) && usiaMasukAkal(c));
 
   // Probe keandalan <lastmod> kedua sumber — MENCATAT SAJA, tak mengubah alur.
   // Hasilnya menentukan dua keputusan yang belum bisa diambil: (a) apakah gerbang

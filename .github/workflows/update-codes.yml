@@ -64,6 +64,9 @@ jobs:
           CROSS_DAILY_MAX: ${{ vars.CROSS_DAILY_MAX }}
           # Umur (hari) kode CEK DULU sebelum disapu ke arsip. Kosong = 365.
           AGE_EXPIRE_DAYS: ${{ vars.AGE_EXPIRE_DAYS }}
+          # Usia maks (hari) kode yang boleh disebut "kode baru" (notif + video).
+          # Kosong = 7. Kode tanpa tanggal rilis tak terpengaruh.
+          NEW_MAX_AGE_DAYS: ${{ vars.NEW_MAX_AGE_DAYS }}
         run: |
           node worker/fetch-codes.mjs || echo "codes gagal, lanjut"
           node worker/fetch-events.mjs || echo "events gagal, lanjut"
