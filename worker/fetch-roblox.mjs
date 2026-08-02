@@ -129,6 +129,9 @@ function mergeCodes(perSource) {
         // ADA sumber yg daftarin TANPA check (confident) → confident/verified menang.
         if (c.check) it._check = true; else it._confident = true;
         if (c.srcNew) it.srcNew = true; // ada sumber menandainya "kode baru"
+        // Kapan penanda itu dipasang (= "Last checked" halaman sumber). Ambil yang
+        // paling baru bila dua sumber sama-sama menandai.
+        if (c.srcNewAt > 0 && !(it.srcNewAt >= c.srcNewAt)) it.srcNewAt = c.srcNewAt;
       }
     }
     for (const it of map.values()) { if (it._check && !it._confident) it.check = true; delete it._check; delete it._confident; }
@@ -404,7 +407,19 @@ async function main() {
         const r = await p.fetch(slug);
         perSource.push({ name: p.name, url: p.url(slug), active: r.active, archive: r.archive });
         if (p.name === "RoCodes.gg") rocodesMeta = r.meta;
-        else { denMeta = r.meta; denAt = Math.max(denIndex.get(slug) ?? 0, Date.now()); denTarik++; }
+        else {
+          denMeta = r.meta;
+          // Stempel "Last checked" halaman Den — terbukti identik sampai ke menit
+          // dengan <lastmod> sitemapnya (dicek 2 Agu 2026: shindo-life 05:53,
+          // anime-astral-simulator 31 Jul 04:03, keduanya sama persis). Dipakai
+          // sebagai UMUR penanda "NEW CODE": badge itu menempel sampai Den
+          // memeriksa halamannya lagi, jadi ia bukan bukti "baru hari ini" —
+          // halaman yang terakhir dicek seminggu lalu tetap memajang NEW CODE.
+          const lm = denIndex.get(slug) ?? 0;
+          if (lm > 0) for (const c of [...(r.active ?? []), ...(r.archive ?? [])]) if (c.srcNew) c.srcNewAt = lm;
+          denAt = Math.max(lm, Date.now());
+          denTarik++;
+        }
       } catch {
         /* sumber ini tak punya game / gagal → lanjut */
       }
@@ -486,7 +501,7 @@ async function main() {
     // tak tersentuh), kode `perm` dikecualikan, dan arsip tetap terlihat pembaca.
     const AGE_EXPIRE_MS = Number(process.env.AGE_EXPIRE_DAYS || 365) * 24 * 3600 * 1000;
     const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
-    const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, ...(c.srcNew ? { srcNew: true } : {}), ...extra });
+    const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, ...(c.srcNew ? { srcNew: true } : {}), ...(c.srcNewAt > 0 ? { srcNewAt: c.srcNewAt } : {}), ...extra });
 
     const fActive = [];
     const archFromActive = [];
@@ -722,7 +737,13 @@ async function main() {
   const usiaMasukAkal = (c) => {
     const d = Date.parse(c.date ?? "") || 0;
     if (d > 0) return nowMsBaru - d <= USIA_BARU_MS;
-    return c.srcNew === true;
+    if (c.srcNew !== true) return false;
+    // Penanda NEW menempel sampai halamannya diperiksa ulang, jadi ia harus
+    // dinilai dari kapan pemeriksaan itu terjadi (srcNewAt), bukan dari kapan
+    // KITA menemukannya. Tanpa itu, game yang halamannya terakhir dicek pekan
+    // lalu tetap mengirim "kode baru" begitu kita pertama membacanya.
+    const at = Number(c.srcNewAt) || 0;
+    return at > 0 ? nowMsBaru - at <= USIA_BARU_MS : true;
   };
   const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk && !(denBackfill.has(c.game) && denSaja(c)) && usiaMasukAkal(c));
 

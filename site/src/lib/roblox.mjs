@@ -36,7 +36,13 @@ function shape(item, games) {
   // Catatan: jalur MOBILE sengaja TETAP memakai firstSeen tanpa syarat, karena di
   // sana kode tak bertanggal (mis. NIKKE/Whiteout dari editorial) memang genuine
   // baru saat ditemukan — tak ada sumber yang menumpahkan ratusan kode lama.
-  const newMs = dateMs || (item.bulk || !item.srcNew ? 0 : firstSeenMs);
+  // Umur penanda NEW dihitung dari kapan SUMBER memasangnya (srcNewAt = stempel
+  // "Last checked" halaman Den), bukan dari kapan kita menemukannya. Badge NEW di
+  // Den menempel sampai halamannya diperiksa lagi: 2 Agu 2026 Anime Astral
+  // Simulator memajang 34 NEW CODE padahal terakhir dicek 31 Juli. Memakai
+  // firstSeen di situ akan mencap 34 kode berumur ≥2 hari sebagai BARU.
+  const srcNewMs = Number(item.srcNewAt) || 0;
+  const newMs = dateMs || (item.bulk || !item.srcNew ? 0 : srcNewMs || firstSeenMs);
   return {
     ...item, // termasuk source/sources/sourceUrls dari worker (RoCodes &/atau Roblox Den)
     name: g.name ?? item.gameName ?? "—",
