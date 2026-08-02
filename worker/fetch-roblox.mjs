@@ -558,6 +558,17 @@ async function main() {
     // dedup active by game+code setelah remap (idempotent utk data normal → aman)
     const seenA = new Set();
     for (let i = 0; i < active.length; i++) { const k = active[i].game + "::" + active[i].code; if (seenA.has(k)) { active.splice(i, 1); i--; } else seenA.add(k); }
+    // REMAP DI ATAS BISA MEMBUAT ULANG BENTROK AKTIF∩ARSIP: kode yang aktif di id
+    // pemenang tapi terarsip di id yang dibuang kini berbagi game id yang sama.
+    // Penyaring di mergeWithPrevious berjalan SEBELUM remap, jadi tak menangkapnya
+    // — kejadian 2 Agu 2026: fish-it, 28 kode tampil aktif SEKALIGUS expired
+    // beberapa jam setelah bentrok serupa diperbaiki di tempat lain.
+    const aktifSetelahRemap = new Set(active.map((c) => `${c.game}:${String(c.code).toLowerCase()}`));
+    let bersih = 0;
+    for (let i = 0; i < fullArchive.length; i++) {
+      if (aktifSetelahRemap.has(`${fullArchive[i].game}:${String(fullArchive[i].code).toLowerCase()}`)) { fullArchive.splice(i, 1); i--; bersih++; }
+    }
+    if (bersih) console.log(`bentrok aktif∩arsip pasca-remap dibersihkan: ${bersih} kode`);
   }
 
   // Cap arsip per game (simpan ARCHIVE_CAP terbaru) → roblox-codes.json tak
