@@ -58,7 +58,13 @@ function shape(item) {
   const rankMs = dateMs || (item.bulk ? 0 : firstSeenMs);
   // newMs = "seberapa baru kode ini bagi pembaca": dirilis sumber ATAU baru
   // kami tarik — mana yang lebih baru. Kode bulk hanya boleh lewat tanggal rilis.
-  const newMs = item.bulk ? dateMs : Math.max(dateMs, firstSeenMs);
+  // newMs = dasar badge "BARU". Memakai TANGGAL RILIS sumber; firstSeen hanya
+  // dipakai bila sumber tak memberi tanggal (umur tak diketahui — dan itu beda
+  // dari diketahui-tua). Dulu max(dateMs, firstSeenMs): kode lama yang baru kita
+  // TEMUKAN ikut dicap BARU — kejadian 2 Agu 2026, Shindo Life "5YearSL2!" rilis
+  // 23 Des 2025 (222 hari) tampil BARU karena RoCodes baru memunculkannya hari
+  // itu. Sejalan dengan saringan usia pemicu notif/video di fetch-roblox.
+  const newMs = dateMs || (item.bulk ? 0 : firstSeenMs);
   return {
     ...item,
     name: displayName(item),
