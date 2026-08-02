@@ -22,6 +22,8 @@ import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE } from "./src/roblox-gam
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
 import { scoutDen } from "./src/den-scout.mjs";
+import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
+import { fetchRoCodesIndex } from "./src/roblox-discover.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
 import { fetchPromoCodes } from "./src/sources/roblox-promo.mjs";
 import { discoverPopularWithCodes, inferGenres } from "./src/roblox-discover.mjs";
@@ -529,6 +531,22 @@ async function main() {
     return src.length === 1 && src[0] === "Roblox Den";
   };
   const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk && !(denBackfill.has(c.game) && denSaja(c)));
+
+  // Probe keandalan <lastmod> kedua sumber — MENCATAT SAJA, tak mengubah alur.
+  // Hasilnya menentukan dua keputusan yang belum bisa diambil: (a) apakah gerbang
+  // lastmod pada Den memperlambat deteksi, (b) apakah RoCodes boleh ikut
+  // digerbangi (memangkas 8.400 permintaan/hari). Lihat src/lastmod-probe.mjs.
+  if (newly.length) {
+    const PROBE = resolve(dirname(OUT), "lastmod-probe.json");
+    let lama = [];
+    try { lama = JSON.parse(await readFile(PROBE, "utf8")); } catch { /* pertama kali */ }
+    try {
+      const roIndex = await fetchRoCodesIndex();
+      const sampel = rekamProbe(newly, roIndex, denIndex, mergedGames, lama);
+      await writeFile(PROBE, JSON.stringify(sampel, null, 1));
+      console.log(ringkasProbe(sampel));
+    } catch (e) { console.log("probe lastmod gagal (abaikan):", e.message); }
+  }
   // Game yang BARU masuk pantauan run ini (impor pertama). Kodenya bisa lama
   // semua (backfill) → dipakai make-videos utk video "semua kode aktif" pada game
   // besar. TAPI kalau sebuah kode punya tanggal rilis sumber dalam 48 jam, ia

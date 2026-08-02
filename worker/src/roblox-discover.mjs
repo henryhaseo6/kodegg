@@ -73,14 +73,33 @@ function titleFromSlug(slug) {
 // Semua slug game yang PUNYA halaman kode di RoCodes (dari sitemap) — dipakai
 // untuk memvalidasi/mencocokkan nama game Roblox ke slug RoCodes yang benar.
 export async function fetchRoCodesSlugs() {
+  return new Set((await fetchRoCodesIndex()).keys());
+}
+
+/**
+ * Peta slug → <lastmod> (ms) dari sitemap RoCodes. Sejajar dg fetchRobloxDenIndex.
+ *
+ * Dipakai untuk MENGUKUR keandalan `lastmod` (lihat catatan probe di
+ * fetch-roblox.mjs): kalau stempelnya terbukti diperbarui segera setelah kode
+ * ditambahkan, penarikan halaman bisa digerbangi seperti Den — memangkas 8.400
+ * permintaan/hari jadi beberapa ratus TANPA kehilangan kecepatan. Kalau ternyata
+ * telat, gerbang itu justru akan memperlambat deteksi kode baru, dan kecepatan
+ * adalah jualan utama KodeGG. Jadi diukur dulu, jangan diasumsikan.
+ */
+export async function fetchRoCodesIndex() {
+  const peta = new Map();
   try {
     const res = await fetch("https://rocodes.gg/sitemap-codes.xml", { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(15000) });
-    if (!res.ok) return new Set();
+    if (!res.ok) return peta;
     const xml = await res.text();
-    return new Set([...xml.matchAll(/\/codes\/([a-z0-9-]+)/g)].map((m) => m[1]));
-  } catch {
-    return new Set();
-  }
+    for (const blok of xml.match(/<url>[\s\S]*?<\/url>/g) ?? []) {
+      const slug = /\/codes\/([a-z0-9-]+)\s*</.exec(blok)?.[1];
+      if (!slug) continue;
+      const lm = Date.parse(/<lastmod>([^<]+)<\/lastmod>/.exec(blok)?.[1] ?? "") || 0;
+      if (lm > (peta.get(slug) ?? 0)) peta.set(slug, lm);
+    }
+  } catch { /* kosong = perlakukan seperti tak ada info */ }
+  return peta;
 }
 
 // Nama Roblox penuh dekorasi ([UPD], (New), emoji, "RP", "Release"). Hasilkan
