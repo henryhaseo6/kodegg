@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-02T12:01:45.874Z",
+  "updatedAt": "2026-08-02T13:01:18.477Z",
   "counts": {
-    "active": 109,
-    "archived": 49
+    "active": 108,
+    "archived": 50
   },
   "articles": [
     {
@@ -1732,7 +1732,9 @@
       "url": "https://www.hoyolab.com/article/45712451",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-03T13:05:06.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1747,10 +1749,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/03/2a1565ca466fadf7f61988700dd56c7e_3520316978314166816.png",
       "url": "https://www.hoyolab.com/article/45712242",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-03T12:55:05.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-03T12:55:05.000Z",
+      "archivedAt": "2026-08-02T13:01:18.477Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
