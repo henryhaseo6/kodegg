@@ -1,5 +1,21 @@
 {
-  "generatedAt": "2026-08-02T04:04:00.783Z",
+  "generatedAt": "2026-08-02T05:05:18.187Z",
   "codes": [],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "samurai-duels",
+      "count": 1,
+      "fresh": [
+        {
+          "code": "samuraiduels300",
+          "reward": "300 Shards"
+        }
+      ]
+    },
+    {
+      "game": "overkill",
+      "count": 1,
+      "fresh": []
+    }
+  ]
 }
