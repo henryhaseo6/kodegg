@@ -270,8 +270,21 @@ async function main() {
   if (roIndexSlug.size) {
     for (const [id, e] of set) {
       if (!e.rocodesSlug || roIndexSlug.has(e.rocodesSlug)) continue;
-      const varian = [e.rocodesSlug.replace(/^roblox-/, ""), `roblox-${e.rocodesSlug}`, id, `roblox-${id}`];
-      const cocok = varian.find((v) => v && roIndexSlug.has(v));
+      // Dua pola beda-slug yang TERBUKTI (diperiksa manual oleh user 2 Agu 2026):
+      //   1. awalan SEO — kita "fish-it" vs RoCodes "roblox-fish-it";
+      //   2. apostrof — nama "Dandy's World" jadi "dandy-s-world" di kita & Den,
+      //      tapi "dandys-world" di RoCodes (apostrof dibuang, bukan jadi tanda
+      //      hubung). Kena juga ke "jule-s-rng" → "jules-rng".
+      const apos = (t) => t.replace(/-s-/g, "s-").replace(/-s$/, "s");
+      const varian = new Set();
+      for (const dasar of [e.rocodesSlug, id].filter(Boolean)) {
+        for (const bentuk of [dasar, apos(dasar)]) {
+          varian.add(bentuk);
+          varian.add(bentuk.replace(/^roblox-/, ""));
+          varian.add(`roblox-${bentuk}`);
+        }
+      }
+      const cocok = [...varian].find((v) => v && roIndexSlug.has(v));
       if (cocok) { e.rocodesSlug = cocok; roTambal++; }
     }
     if (roTambal) console.log(`slug RoCodes diperbaiki utk ${roTambal} game (sebelumnya 404 tiap run)`);
