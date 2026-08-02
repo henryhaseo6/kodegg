@@ -464,9 +464,11 @@ async function main() {
 
       if (canUpload && remaining > 0) {
         try {
-          const metaKirim = SKIP_PLAYLIST ? { ...meta, playlistTitle: undefined, playlistDescription: undefined } : meta;
-          const { id, url, playlistPending } = await uploadVideo({ videoPath: fin, ...metaKirim, privacy: PRIVACY, thumbnailPath: th });
-          if (SKIP_PLAYLIST) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
+          // SKIP_PLAYLIST menahan PEMBUATAN playlist baru saja. Video untuk game
+          // yang playlist-nya SUDAH ada tetap dimasukkan — itu tak memakai jatah
+          // harian (yang dibatasi YouTube adalah playlists.insert).
+          const { id, url, playlistPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th, tanpaBuatPlaylist: SKIP_PLAYLIST });
+          if (SKIP_PLAYLIST && playlistPending) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
           console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
           state.todayCount += 1; remaining -= 1;
           state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });

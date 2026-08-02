@@ -58,7 +58,7 @@ const plKey = (t) => (t || "").toLowerCase().replace(/\s*—\s*kode redeem\s*$/i
  *  Bila ketemu playlist lama yg judul/bahasanya beda template sekarang (mis. batch
  *  manual "X — Kode Redeem" tanpa "Codes", atau playlist EN yg ke-set "id") →
  *  otomatis dinormalisasi ke judul+deskripsi+bahasa yang benar. */
-async function ensurePlaylist(yt, title, description, lang = "id") {
+async function ensurePlaylist(yt, title, description, lang = "id", tanpaBuat = false) {
   const want = plKey(title);
   let pageToken;
   do {
@@ -86,6 +86,11 @@ async function ensurePlaylist(yt, title, description, lang = "id") {
     }
     pageToken = r.data.nextPageToken;
   } while (pageToken);
+  // tanpaBuat: playlist belum ada & kita sedang menghemat jatah pembuatan
+  // playlist baru (~10/hari). Memasukkan video ke playlist yang SUDAH ada tak
+  // memakai jatah itu, jadi hanya pembuatannya yang ditahan — bukan seluruh
+  // proses playlist.
+  if (tanpaBuat) return null;
   const made = await yt.playlists.insert({
     // localizations disertakan sejak awal — alasan sama dg cabang update di atas:
     // defaultLanguage sendirian tak cukup untuk membuat bahasa tersimpan.
@@ -100,7 +105,7 @@ async function ensurePlaylist(yt, title, description, lang = "id") {
 }
 
 /** Upload 1 video. privacy: 'unlisted'|'public'|'private'. */
-export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription, comment, lang = "id", localizations }) {
+export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription, comment, lang = "id", localizations, tanpaBuatPlaylist = false }) {
   // lang = bahasa metadata + audio. Short = "id" (VO Indonesia + teks bilingual);
   // video long (Top 50/roundup) = "en" (full English, cuma musik/SFX tanpa VO).
   // Insert video — dgn ROTASI multi-project: kalau project aktif kena quota
@@ -158,7 +163,7 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
   // → orkestrator mengantrikannya utk dicoba lagi di run berikutnya.
   let playlistPending = null;
   if (playlistTitle) {
-    const ok = await attachToPlaylist(yt, id, playlistTitle, playlistDescription ?? "", lang);
+    const ok = await attachToPlaylist(yt, id, playlistTitle, playlistDescription ?? "", lang, tanpaBuatPlaylist);
     if (!ok) playlistPending = { videoId: id, playlistTitle, playlistDescription: playlistDescription ?? "" };
   }
   // Komentar berisi link halaman game — TINGGAL DI-PIN MANUAL di Studio/app,
@@ -181,10 +186,12 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
  * Return true bila berhasil, false bila gagal (mis. rate-limit playlist YouTube).
  * Dipakai uploadVideo DAN orkestrator utk mengulang antrian playlist tertunda.
  */
-export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlistDescription = "", lang = "id") {
+export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlistDescription = "", lang = "id", tanpaBuat = false) {
   const yt = ytOrNull ?? (await client());
   try {
-    const { id: pid, baru } = await ensurePlaylist(yt, playlistTitle, playlistDescription, lang);
+    const hasil = await ensurePlaylist(yt, playlistTitle, playlistDescription, lang, tanpaBuat);
+    if (!hasil) { console.log(`  ↳ playlist "${playlistTitle}" belum ada — pembuatan ditahan (hemat kuota)`); return false; }
+    const { id: pid, baru } = hasil;
     // Playlist BARU perlu waktu propagasi sebelum bisa diisi — insert langsung
     // sering ditolak/timeout (kasus nyata: "Zombie Island"/"Blox Fruits" kebuat
     // tapi kosong). Window utk playlist baru diperpanjang (dulu 3s+9s → kurang).
