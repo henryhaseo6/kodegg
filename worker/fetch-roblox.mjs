@@ -397,9 +397,17 @@ async function main() {
       const endsPassed = endsMs > 0 && endsMs < nowMs;
       const dateMs = c.date ? Date.parse(c.date) : 0;
       const isFresh = dateMs > 0 && nowMs - dateMs <= GRACE_MS;
-      const votedExpired = primExpired.has(key) || (xExpired.has(key) && !xset.has(key));
+      const olehPrimer = primExpired.has(key);
+      const olehEditorial = xExpired.has(key) && !xset.has(key);
+      const votedExpired = olehPrimer || olehEditorial;
       if (endsPassed || (votedExpired && !isFresh)) {
-        archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt }));
+        // expiredBy = ALASAN kode ini diarsipkan. Tanpa jejak ini, kode yang
+        // hilang dari daftar aktif tak bisa dipertanggungjawabkan: tak ada cara
+        // membedakan kode yang memang habis waktunya dari kode yang dibunuh satu
+        // situs editorial yang parsing-nya rusak. Penting terutama saat cakupan
+        // sumber berubah (mis. gelombang arsip dari Roblox Den).
+        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : "editorial";
+        archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt, expiredBy }));
         continue;
       }
       const edConfirm = xset.has(key) ? 1 : 0;
@@ -419,7 +427,7 @@ async function main() {
     const crossCheck = [...new Set([...primaryNames.slice(1), ...edSrc])];
     // Arsip = expired eksplisit primer + kode yg dipindah dari aktif (dedup by code).
     const archMap = new Map();
-    for (const c of archive) archMap.set(c.code.toLowerCase(), mk(c, { status: "expired" }));
+    for (const c of archive) archMap.set(c.code.toLowerCase(), mk(c, { status: "expired", expiredBy: "primer" }));
     for (const c of archFromActive) archMap.set(c.code.toLowerCase(), c);
     const fArchive = [...archMap.values()];
 

@@ -78,6 +78,10 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now,
       status: "expired",
       expiredAt: item.expiredAt ?? now,
       firstSeenAt: seenBefore.get(key) ?? item.firstSeenAt ?? now,
+      // Alasan diarsipkan. Sumber sudah menetapkannya (endsAt/primer/editorial);
+      // yang sampai sini tanpa alasan berarti kode HILANG dari sumber — lenyap
+      // begitu saja tanpa ada yang menyatakannya expired.
+      expiredBy: item.expiredBy ?? "hilang",
     });
     newlyArchived += 1;
   };

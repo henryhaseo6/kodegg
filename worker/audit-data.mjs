@@ -96,6 +96,19 @@ for (const [nama, d] of [["roblox-codes", rb], ["codes", mc]]) {
   if ((d.counts.active ?? a) !== a || (d.counts.archived ?? r) !== r) lapor("SEDANG", `counts ${nama}.json meleset`, `tertulis ${d.counts.active}/${d.counts.archived}, sebenarnya ${a}/${r}`);
 }
 
+// 8b. Komposisi ALASAN arsip (expiredBy). Bukan cacat — tapi pergeseran tajam
+//     berarti ada yang berubah: mis. lonjakan "editorial" bisa berarti parsing
+//     satu situs rusak & membunuh kode yang masih hidup; lonjakan "hilang"
+//     berarti sumber berhenti mendaftarkan kode secara massal.
+for (const [nama, d] of [["ROBLOX", rb], ["MOBILE", mc]]) {
+  const arc = (d.archive ?? []).filter((c) => c.expiredBy);
+  if (!arc.length) continue;
+  const per = {};
+  for (const c of arc) per[c.expiredBy] = (per[c.expiredBy] ?? 0) + 1;
+  const rinci = Object.entries(per).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v} (${Math.round((v / arc.length) * 100)}%)`).join(" · ");
+  lapor("INFO", `alasan arsip ${nama}`, `${arc.length} tercatat — ${rinci}`);
+}
+
 // 9. Antrian tertunda — kalau bertahan berhari-hari berarti pengurasnya macet.
 const pv = baca("pending-videos.json", []), pp = baca("pending-playlists.json", []);
 if (pp.length) lapor("SEDANG", "antrian playlist tertunda", `${pp.length} video sudah naik tapi belum masuk playlist`);
