@@ -57,6 +57,11 @@ jobs:
           DEN_SCOUT_MAX: ${{ vars.DEN_SCOUT_MAX }}
           DEN_SCOUT_MIN_PLAYERS: ${{ vars.DEN_SCOUT_MIN_PLAYERS }}
           DEN_BACKFILL_MAX: ${{ vars.DEN_BACKFILL_MAX }}
+          # Penyetel cross-check editorial: ambang pemain tingkat 1, tiap berapa
+          # jam tingkat 1 jalan, dan jatah tingkat 2 (sapuan harian) per run.
+          CROSSCHECK_MIN: ${{ vars.CROSSCHECK_MIN }}
+          CROSS_INTERVAL_H: ${{ vars.CROSS_INTERVAL_H }}
+          CROSS_DAILY_MAX: ${{ vars.CROSS_DAILY_MAX }}
         run: |
           node worker/fetch-codes.mjs || echo "codes gagal, lanjut"
           node worker/fetch-events.mjs || echo "events gagal, lanjut"

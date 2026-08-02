@@ -38,7 +38,17 @@ const OUT = resolve(HERE, "data/roblox-codes.json");
 // Game tanpa kode aktif tetap gugur → angka final natural di bawah cap ini.
 const MAX_GAMES = 400;
 const CONCURRENCY = 5; // game paralel maks (rendah = tak membanjiri RoCodes/Den)
-const CROSSCHECK_MIN = 10000; // cross-check editorial HANYA game populer (pemain ≥ ini) — beban terkendali
+// Cross-check editorial — dua tingkat, dijadwal supaya cakupan LUAS tapi beban
+// justru TURUN (terukur: 8.760 → 6.665 permintaan/hari):
+//   tingkat 1 — game ramai (>= CROSSCHECK_MIN), tiap 3 jam;
+//   tingkat 2 — SEMUA game, dijamin kena minimal 1× sehari.
+// Dulu: tiap jam untuk game >=10K saja (73 game) — sempit sekaligus boros.
+const CROSSCHECK_MIN = Number(process.env.CROSSCHECK_MIN || 5000);
+const CROSS_TIAP_JAM = Number(process.env.CROSS_INTERVAL_H || 3);
+// Tingkat 2 disebar rata per run, bukan diborong dalam satu run: 373 game × 5
+// situs sekaligus = 1.865 permintaan meledak bersamaan ke 5 situs kecil. Dengan
+// jatah per run, cakupan hariannya sama tapi bebannya rata.
+const CROSS_HARIAN_MAX = Number(process.env.CROSS_DAILY_MAX || 25);
 const ARCHIVE_CAP = 300; // arsip kode kedaluwarsa per game — besar biar praktis "selamanya" tanpa JSON meledak liar
 
 // Sumber primer. url = untuk atribusi (dilink di kartu).
@@ -236,6 +246,20 @@ async function main() {
   // Pencocokan tetap PERSIS (bukan fuzzy) — dicoba apa adanya plus varian awalan
   // "roblox-", karena RoCodes kerap memberi awalan itu pada slug-nya sementara Den
   // tidak (mis. kita "roblox-smiles" vs Den "smiles").
+  // Jadwal cross-check editorial (lihat catatan di konstanta).
+  const jamIni = new Date().getUTCHours();
+  const putaranTingkat1 = jamIni % CROSS_TIAP_JAM === 0;
+  let harianSisa = CROSS_HARIAN_MAX;
+  const HARI_MS = 24 * 3600 * 1000;
+  const perluCrossCheck = (id, entry) => {
+    if (entry.seed || entry.featured) return true;
+    if (putaranTingkat1 && (entry.players ?? 0) >= CROSSCHECK_MIN) return true;
+    // Tingkat 2: game yang belum di-cross-check 24 jam terakhir, dijatah per run.
+    const xAt = Number(prevGamesMap[id]?.xAt ?? 0);
+    if (Date.now() - xAt > HARI_MS && harianSisa > 0) { harianSisa -= 1; return true; }
+    return false;
+  };
+
   let ditambal = 0;
   for (const [id, e] of set) {
     if (e.denSlug) continue;
@@ -363,8 +387,10 @@ async function main() {
     let xset = new Set();
     let xExpired = new Set();
     let bySite = [];
-    if (entry.seed || entry.featured || (entry.players ?? 0) >= CROSSCHECK_MIN) {
+    let xJalan = false;
+    if (perluCrossCheck(id, entry)) {
       ({ set: xset, bySite, expiredSet: xExpired } = await crossCheckActive(slugRo || slugDen));
+      xJalan = true;
     }
 
     // universeId: RoCodes → placeId Den (resolve) → discovery. Normalisasi ke
@@ -397,27 +423,34 @@ async function main() {
       const endsPassed = endsMs > 0 && endsMs < nowMs;
       const dateMs = c.date ? Date.parse(c.date) : 0;
       const isFresh = dateMs > 0 && nowMs - dateMs <= GRACE_MS;
+      const edConfirm = xset.has(key) ? 1 : 0;
+      const verified = c.sources.length + edConfirm >= 2; // >=2 sumber sepakat
+      const oldUnverified = dateMs > 0 && nowMs - dateMs > AGE_CHECK_MS;
+      // Badge "CEK DULU": sumber menandai CHECK, atau kode tua (>6 bln) yg tak
+      // terverifikasi. Dihitung SEBELUM keputusan expiry karena ikut jadi bahan
+      // pertimbangannya (lihat konflikRagu).
+      const check = !verified && (c.check === true || oldUnverified);
       const olehPrimer = primExpired.has(key);
       const olehEditorial = xExpired.has(key) && !xset.has(key);
-      const votedExpired = olehPrimer || olehEditorial;
+      // KONFLIK editorial: sebagian bilang expired, sebagian bilang aktif.
+      // Biasanya suara "aktif" menyelamatkan kode. TAPI kalau kode itu memang
+      // SUDAH kita ragukan (CEK DULU — tua & tak terverifikasi, atau ditandai
+      // CHECK oleh sumber), keraguan + perselisihan sudah cukup untuk
+      // mengarsipkan. Kode terverifikasi tak tersentuh: `check` mensyaratkan
+      // !verified, jadi kode yang 2 sumber bilang aktif tetap aman.
+      const konflikRagu = xExpired.has(key) && xset.has(key) && check;
+      const votedExpired = olehPrimer || olehEditorial || konflikRagu;
       if (endsPassed || (votedExpired && !isFresh)) {
         // expiredBy = ALASAN kode ini diarsipkan. Tanpa jejak ini, kode yang
         // hilang dari daftar aktif tak bisa dipertanggungjawabkan: tak ada cara
         // membedakan kode yang memang habis waktunya dari kode yang dibunuh satu
         // situs editorial yang parsing-nya rusak. Penting terutama saat cakupan
         // sumber berubah (mis. gelombang arsip dari Roblox Den).
-        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : "editorial";
+        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : olehEditorial ? "editorial" : "editorial-konflik";
         archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt, expiredBy }));
         continue;
       }
-      const edConfirm = xset.has(key) ? 1 : 0;
-      const verified = c.sources.length + edConfirm >= 2; // ≥2 sumber sepakat
       if (verified) nVer += 1;
-      // Badge "CHECK" (cek dulu). Verified selalu menang. Dua pemicu:
-      //  (a) sumber (Roblox Den) tandai CHECK — belum dikonfirmasi-ulang works;
-      //  (b) kode TUA (rilis >6 bln) — mungkin basi walau sumber masih daftarin.
-      const oldUnverified = dateMs > 0 && nowMs - dateMs > AGE_CHECK_MS;
-      const check = !verified && (c.check === true || oldUnverified);
       fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true } : {}) }));
     }
     const roActive = new Set(fActive.map((c) => c.code.toLowerCase()));
@@ -449,6 +482,9 @@ async function main() {
         // Kapan halaman Den game ini terakhir DITARIK — dibandingkan dg <lastmod>
         // sitemap Den di run berikutnya supaya halaman yang tak berubah dilewati.
         ...(denAt ? { denAt } : {}),
+        // Kapan cross-check editorial terakhir dijalankan utk game ini — dasar
+        // penjadwalan tingkat 2 (jaminan minimal 1× sehari untuk SEMUA game).
+        ...(xJalan ? { xAt: Date.now() } : prevGamesMap[id]?.xAt ? { xAt: prevGamesMap[id].xAt } : {}),
         genres: entry.genres?.length ? entry.genres : inferGenres(name, slugRo || slugDen || ""),
         universeId,
         verified: rocodesMeta?.verified ?? false,
