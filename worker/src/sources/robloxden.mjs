@@ -64,10 +64,15 @@ export async function fetchRobloxDen(slug) {
   const seen = new Set();
   // Tiap item: data-expired="false|true" … data-copy="CODE"; reward di <p
   // class="codes-list__description"> tepat setelahnya (diambil dari slice).
-  const re = /data-expired="(false|true)"[\s\S]{0,500}?data-copy="([^"]{2,40})"/gi;
+  // class baris ikut ditangkap: Den menandai kode yang BARU ia tambahkan dengan
+  // `table__tr--new` (badge "NEW CODE"). Itu satu-satunya sinyal umur yang Den
+  // punya — halamannya tak pernah memberi tanggal rilis sama sekali. Dipakai
+  // sebagai syarat "kode baru" untuk kode yang tak bertanggal (lihat fetch-roblox).
+  const re = /<tr[^>]*class="([^"]*)"[^>]*data-expired="(false|true)"[\s\S]{0,600}?data-copy="([^"]{2,40})"/gi;
   let m;
   while ((m = re.exec(html)) !== null) {
-    const code = m[2].trim();
+    const code = m[3].trim();
+    const srcNew = /table__tr--new/.test(m[1] || "");
     if (!CODE_OK.test(code)) continue;
     const key = code.toLowerCase();
     if (seen.has(key)) continue;
@@ -81,9 +86,12 @@ export async function fetchRobloxDen(slug) {
     // "CHECK" = Roblox Den menandai kode AKTIF tapi belum dikonfirmasi-ulang
     // works (class badge--check, beda dari badge--active). BUKAN expired — kode
     // tetap aktif, tapi kita bawa flag `check` supaya bisa ditandai "cek dulu".
-    const check = m[1] === "false" && /badge--check/i.test(after);
-    const item = { code, reward: reward(rw), date: null, endsAt: null, ...(check ? { check: true } : {}) };
-    if (m[1] === "false") active.push(item);
+    const check = m[2] === "false" && /badge--check/i.test(after);
+    // srcNew = Den menandainya "NEW CODE". Den tak memberi tanggal rilis, jadi
+    // penanda ini satu-satunya cara membedakan kode yang baru ia tambahkan dari
+    // ratusan kode lama di halaman yang sama.
+    const item = { code, reward: reward(rw), date: null, endsAt: null, ...(check ? { check: true } : {}), ...(srcNew ? { srcNew: true } : {}) };
+    if (m[2] === "false") active.push(item);
     else archive.push(item);
   }
 

@@ -128,6 +128,7 @@ function mergeCodes(perSource) {
         // check (Roblox Den "CHECK"): ragu bila SEMUA sumber ragu; hilang begitu
         // ADA sumber yg daftarin TANPA check (confident) → confident/verified menang.
         if (c.check) it._check = true; else it._confident = true;
+        if (c.srcNew) it.srcNew = true; // ada sumber menandainya "kode baru"
       }
     }
     for (const it of map.values()) { if (it._check && !it._confident) it.check = true; delete it._check; delete it._confident; }
@@ -485,7 +486,7 @@ async function main() {
     // tak tersentuh), kode `perm` dikecualikan, dan arsip tetap terlihat pembaca.
     const AGE_EXPIRE_MS = Number(process.env.AGE_EXPIRE_DAYS || 365) * 24 * 3600 * 1000;
     const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
-    const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, ...extra });
+    const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, ...(c.srcNew ? { srcNew: true } : {}), ...extra });
 
     const fActive = [];
     const archFromActive = [];
@@ -713,7 +714,16 @@ async function main() {
   // beda dari diketahui-tua.
   const USIA_BARU_MS = Number(process.env.NEW_MAX_AGE_DAYS || 7) * 24 * 3600 * 1000;
   const nowMsBaru = Date.parse(now);
-  const usiaMasukAkal = (c) => { const d = Date.parse(c.date ?? "") || 0; return d === 0 || nowMsBaru - d <= USIA_BARU_MS; };
+  // Kode BERTANGGAL dinilai dari usia rilis. Kode TANPA tanggal (praktis semua
+  // kode Den — halaman mereka tak pernah memberi tanggal) kini harus membawa
+  // penanda "NEW CODE" dari Den. Sebelumnya semua kode tak bertanggal lolos,
+  // jadi satu halaman Den berisi 300+ kode lama bisa mengirim puluhan "kode
+  // baru" palsu begitu kita pertama kali membacanya.
+  const usiaMasukAkal = (c) => {
+    const d = Date.parse(c.date ?? "") || 0;
+    if (d > 0) return nowMsBaru - d <= USIA_BARU_MS;
+    return c.srcNew === true;
+  };
   const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk && !(denBackfill.has(c.game) && denSaja(c)) && usiaMasukAkal(c));
 
   // Probe keandalan <lastmod> kedua sumber — MENCATAT SAJA, tak mengubah alur.
