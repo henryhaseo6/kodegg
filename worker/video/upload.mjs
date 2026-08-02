@@ -189,7 +189,14 @@ export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlis
     // sering ditolak/timeout (kasus nyata: "Zombie Island"/"Blox Fruits" kebuat
     // tapi kosong). Window utk playlist baru diperpanjang (dulu 3s+9s → kurang).
     if (baru) await tidur(8);
-    const masukkan = () => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, resourceId: { kind: "youtube#video", videoId } } } });
+    // position 0 = SELALU di paling atas playlist. "Default video order" adalah
+    // setelan khusus Studio yang TAK ada di Data API (resource playlists cuma
+    // punya snippet/status/contentDetails/player/localizations), jadi urutan tak
+    // bisa diatur dari kode. Menyisipkan di posisi 0 memberi hasil yang sama
+    // seperti "Date published (newest)" tanpa perlu menyentuh 177 playlist satu
+    // per satu. Pada playlist yang sudah di-set urut tanggal, posisi ini
+    // diabaikan — jadi aman untuk keduanya.
+    const masukkan = () => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet: { playlistId: pid, position: 0, resourceId: { kind: "youtube#video", videoId } } } });
     const sudahMasuk = async () => {
       const isi = await yt.playlistItems.list({ part: ["snippet"], playlistId: pid, maxResults: 50 });
       return (isi.data.items ?? []).some((i) => i.snippet?.resourceId?.videoId === videoId);
