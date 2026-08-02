@@ -109,6 +109,18 @@ for (const [nama, d] of [["ROBLOX", rb], ["MOBILE", mc]]) {
   lapor("INFO", `alasan arsip ${nama}`, `${arc.length} tercatat — ${rinci}`);
 }
 
+// 8c. Slug sumber yang 404 permanen (ditulis fetch-roblox). Kegagalan penarikan
+//     per-game DIAM, jadi tanpa laporan ini sebuah game bisa menyajikan data beku
+//     berbulan-bulan. Yang TANPA sumber lain = benar-benar mati, harus ditangani.
+const mati = baca("slug-404.json", []);
+if (mati.length) {
+  const buta = mati.filter((m) => !m.denSlug);
+  const besar = mati.filter((m) => (m.players ?? 0) >= 10000).map((m) => `${m.game}(${m.players})`);
+  if (buta.length) lapor("TINGGI", "game TANPA sumber hidup (slug RoCodes 404 & tak ada di Den)", potong(buta.map((m) => m.game)));
+  lapor(besar.length ? "SEDANG" : "INFO", "slug RoCodes 404 (masih tertutup Roblox Den)",
+    `${mati.length} game${besar.length ? ` — besar: ${potong(besar, 6)}` : ""}`);
+}
+
 // 9. Antrian tertunda — kalau bertahan berhari-hari berarti pengurasnya macet.
 const pv = baca("pending-videos.json", []), pp = baca("pending-playlists.json", []);
 if (pp.length) lapor("SEDANG", "antrian playlist tertunda", `${pp.length} video sudah naik tapi belum masuk playlist`);

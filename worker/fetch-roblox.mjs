@@ -288,6 +288,28 @@ async function main() {
       if (cocok) { e.rocodesSlug = cocok; roTambal++; }
     }
     if (roTambal) console.log(`slug RoCodes diperbaiki utk ${roTambal} game (sebelumnya 404 tiap run)`);
+    // ALARM slug mati. Kegagalan penarikan per-game DIAM (catch kosong: "sumber
+    // ini tak punya game → lanjut"), jadi slug yang 404 permanen bisa bertahan
+    // berbulan-bulan sambil situs menyajikan sisa lama — persis yang terjadi pada
+    // Rivals (232K pemain) & Fish It (126K). Dicatat ke berkas supaya audit
+    // harian melaporkannya tanpa perlu menembak jaringan.
+    //
+    // CATATAN: pencarian slug MIRIP di sitemap sudah diuji dan DITOLAK sebagai
+    // penambal otomatis — kandidat ber-skor tinggi ternyata game lain
+    // (fighting-simulator → weapon-fighting-simulator, brainrot → to-be-brainrot,
+    // knife-vs-gun-duels → knife-duels; ketiganya universeId-nya beda). Kalau
+    // suatu saat dipasang, WAJIB diverifikasi universeId halaman kandidat dulu.
+    const mati = [];
+    for (const [id, e] of set) {
+      if (!e.rocodesSlug || roIndexSlug.has(e.rocodesSlug)) continue;
+      mati.push({ game: id, slug: e.rocodesSlug, denSlug: e.denSlug ?? null, players: e.players ?? 0 });
+    }
+    mati.sort((a, b) => b.players - a.players);
+    await writeFile(resolve(dirname(OUT), "slug-404.json"), JSON.stringify(mati, null, 1));
+    if (mati.length) {
+      const buta = mati.filter((m) => !m.denSlug).length;
+      console.log(`slug RoCodes 404: ${mati.length} game${buta ? ` — ${buta} DI ANTARANYA TANPA SUMBER LAIN` : " (semuanya masih punya Roblox Den)"}`);
+    }
   }
 
   let ditambal = 0;
