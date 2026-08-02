@@ -92,6 +92,7 @@ async function main() {
 
   console.log(`${files.length} video · privacy: ${opt.privacy.toUpperCase()}${opt.dry ? " · MODE LIHAT SAJA" : ""}\n`);
   let ok = 0;
+  const gagalPlaylist = []; // video yg playlist-nya gagal -> dilaporkan di akhir
   for (const f of files) {
     if (!existsSync(f)) { console.log(`✗ tak ada: ${f}`); continue; }
     const meta = readMeta(f);
@@ -101,8 +102,15 @@ async function main() {
     try {
       // video long (roundup/top50) = English; Short = Indonesia (default).
       const lang = /roundup|top-?50/i.test(basename(f)) ? "en" : "id";
-      const { url } = await uploadVideo({ videoPath: f, ...meta, privacy: opt.privacy, thumbnailPath: thumb, lang });
-      console.log(`  ✓ ${url}\n`);
+      const { url, id, playlistPending } = await uploadVideo({ videoPath: f, ...meta, privacy: opt.privacy, thumbnailPath: thumb, lang });
+      console.log(`  ✓ ${url}`);
+      // Jalur manual TAK punya antrian retry seperti pipeline otomatis —
+      // workspace CI-nya sekali pakai, jadi tak ada tempat menyimpan antrian yang
+      // bertahan antar-run. Dulu pesan "diantrikan utk run berikutnya" dari
+      // attachToPlaylist ikut tercetak di sini: MENYESATKAN, karena tak ada yang
+      // mengantrikan apa pun dan tak ada yang tahu playlist-nya belum terpasang.
+      if (playlistPending) { gagalPlaylist.push(id); console.log("  ! playlist TIDAK terpasang (rate-limit) — jalur manual tak punya antrian retry."); }
+      console.log("");
       ok++;
       // Pindahkan berkas yang sudah naik → aman kalau perintah diulang.
       const done = join(dirname(f), "terkirim");
@@ -116,6 +124,12 @@ async function main() {
     }
   }
   if (!opt.dry) console.log(`selesai — ${ok}/${files.length} terupload. Yang berhasil dipindah ke subfolder "terkirim/".`);
+  if (gagalPlaylist.length) {
+    console.log(`
+[!] ${gagalPlaylist.length} video belum masuk playlist (kuota playlist harian habis).`);
+    console.log("   Beresi BESOK saat kuota pulih - Actions > yt-maintenance:");
+    console.log(`   mode=playlistadd . ids=${gagalPlaylist.join(",")} . apply=true`);
+  }
 }
 
 main().catch((e) => { console.error(e.message); process.exit(1); });
