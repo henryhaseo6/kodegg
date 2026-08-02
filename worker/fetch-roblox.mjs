@@ -21,6 +21,7 @@ import { fileURLToPath } from "node:url";
 import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
+import { scoutDen } from "./src/den-scout.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
 import { fetchPromoCodes } from "./src/sources/roblox-promo.mjs";
 import { discoverPopularWithCodes, inferGenres } from "./src/roblox-discover.mjs";
@@ -206,7 +207,6 @@ async function main() {
   const prev = await readPrevious();
 
   const set = await buildGameSet(prev.games ?? {});
-  const entries = [...set.entries()];
 
   // ── Roblox Den: tarik HANYA yang halamannya berubah ───────────────────────
   // Cakupan Den melonjak (35 → ~300 game) sejak daftar slug pindah ke sitemap.
@@ -216,6 +216,24 @@ async function main() {
   // baru dari terakhir kali kita menariknya (`denAt` per game).
   const denIndex = await fetchRobloxDenIndex();
   const prevGamesMap = prev.games ?? {};
+
+  // Pemantau ekor-panjang: game yang kodenya baru diperbarui di Den tapi belum
+  // kita pantau. Discovery utama berbasis chart Roblox → game yang sedang NAIK
+  // tak masuk chart, padahal di situ permintaan pencarian kode paling besar.
+  const SCOUT = resolve(dirname(OUT), "den-scout.json");
+  let memo = {};
+  try { memo = JSON.parse(await readFile(SCOUT, "utf8")); } catch { /* pertama kali */ }
+  const slugDipantau = new Set([...set.values()].map((e) => e.denSlug).filter(Boolean));
+  const { tambah, memoBaru } = await scoutDen(denIndex, slugDipantau, memo);
+  for (const t of tambah) {
+    // denSlug = rocodesSlug: kalau slug-nya kebetulan juga ada di RoCodes, dua
+    // primer langsung aktif; kalau tidak, RoCodes gagal dilewati mulus.
+    set.set(t.slug, { rocodesSlug: t.slug, denSlug: t.slug, name: t.name, genres: [], universeId: t.universeId, players: t.players, needsVerify: false });
+  }
+  await writeFile(SCOUT, JSON.stringify(memoBaru, null, 1));
+
+  const entries = [...set.entries()];
+
   // Kode Den yang SUDAH kita punya, per game — dipakai saat halamannya dilewati.
   // WAJIB: tanpa ini, kode yang hanya ada di Den lenyap dari hasil merge lalu
   // ikut diarsipkan otomatis (game-nya dianggap "covered"), padahal halamannya

@@ -30,6 +30,12 @@ const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 50);
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
 // harian tetap dibatasi MAX_PER_DAY (kuota YouTube). Aman utk memori runner.
 const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 15);
+// Tahan pembuatan playlist lewat API (kuota playlist baru YouTube ~10/hari).
+// Dipakai saat kita sengaja menambah banyak game sekaligus: videonya boleh naik,
+// tapi jatah playlist disisakan untuk game yang benar-benar dapat kode baru.
+// Video yang terdampak dicetak di akhir run + ringkasan Actions supaya bisa
+// dibuatkan playlist manual (atau lewat yt-maintenance mode=playlistadd).
+const SKIP_PLAYLIST = process.env.VIDEO_SKIP_PLAYLIST === "1";
 const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru TANPA kode fresh: min pemain utk video "semua kode"
 const FRESH_MIN_PLAYERS = Number(process.env.VIDEO_FRESH_MIN_PLAYERS || 2000); // game baru DENGAN kode fresh: ambang lebih rendah (kodenya layak)
 // Default PUBLIC: channel sudah live & ratusan video publik, fase "review dulu"
@@ -390,6 +396,7 @@ async function main() {
     return;
   }
 
+  const tanpaPlaylist = []; // VIDEO_SKIP_PLAYLIST: dibuatkan playlist manual
   const fresh = buildCandidates();
   // Vertikal PROMO Roblox: video tiap bulan (rekap) ATAU saat ada kode promo baru.
   const promoC = buildPromoCandidate(state, now);
@@ -457,7 +464,9 @@ async function main() {
 
       if (canUpload && remaining > 0) {
         try {
-          const { id, url, playlistPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th });
+          const metaKirim = SKIP_PLAYLIST ? { ...meta, playlistTitle: undefined, playlistDescription: undefined } : meta;
+          const { id, url, playlistPending } = await uploadVideo({ videoPath: fin, ...metaKirim, privacy: PRIVACY, thumbnailPath: th });
+          if (SKIP_PLAYLIST) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
           console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
           state.todayCount += 1; remaining -= 1;
           state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
@@ -501,6 +510,17 @@ async function main() {
   try { rmSync(TMP, { recursive: true, force: true }); } catch {}
   const manual = state.log.filter((l) => l.mode === "manual" && l.at?.slice(0, 10) === today).length;
   console.log(`\nselesai — ${state.todayCount}/${MAX_PER_DAY} upload otomatis hari ini${manual ? `, ${manual} video nunggu upload manual (_video-out/)` : ""}.`);
+  if (tanpaPlaylist.length) {
+    // SENGAJA tak diantrikan ke pending-playlists.json — VIDEO_SKIP_PLAYLIST
+    // dipakai justru ketika kita ingin jatah playlist harian TIDAK terpakai.
+    console.log(`\n[!] ${tanpaPlaylist.length} video TANPA playlist (VIDEO_SKIP_PLAYLIST=1):`);
+    for (const v of tanpaPlaylist) console.log(`    ${v.id}  →  ${v.judul}`);
+    console.log(`    Buat manual di Studio, atau: yt-maintenance mode=playlistadd ids=${tanpaPlaylist.map((v) => v.id).join(",")} apply=true`);
+    if (process.env.GITHUB_STEP_SUMMARY) {
+      const baris = tanpaPlaylist.map((v) => `- \`${v.id}\` → ${v.judul}`).join("\n");
+      try { writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### Video tanpa playlist (hemat kuota): ${tanpaPlaylist.length}\n${baris}\n`, { flag: "a" }); } catch {}
+    }
+  }
 }
 
 main().catch((e) => { console.error("make-videos error:", e.message); process.exit(0); });
