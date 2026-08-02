@@ -232,11 +232,15 @@ async function main() {
   // supaya rilis ini tak meledak jadi 300 permintaan sekaligus.
   const DEN_BACKFILL_MAX = Number(process.env.DEN_BACKFILL_MAX || 40);
   let backfillSisa = DEN_BACKFILL_MAX;
+  // Game yang halaman Den-nya ditarik PERTAMA KALI run ini. Kode Den yang belum
+  // pernah kita lihat pada game-game ini BUKAN kode baru — cuma kejar-tayang
+  // sumber kedua (umurnya bisa berbulan-bulan). Lihat pemakaian di `newly`.
+  const denBackfill = new Set();
   const perluDen = (id, slug) => {
     if (!slug) return false;
     const lm = denIndex.get(slug) ?? 0;
     const terakhir = Number(prevGamesMap[id]?.denAt ?? 0);
-    if (!terakhir) return backfillSisa-- > 0; // belum pernah → antre backfill
+    if (!terakhir) { if (backfillSisa-- > 0) { denBackfill.add(id); return true; } return false; }
     return lm > terakhir; // hanya bila halamannya memang berubah
   };
   let denTarik = 0, denLewat = 0;
@@ -491,7 +495,14 @@ async function main() {
   // Notif "kode baru" HANYA utk kode yg genuine baru di game yg SUDAH dipantau.
   // `!c.bulk` membuang import-pertama game baru di-discover (mis. sailor-piece 166
   // kode sekaligus) → cegah banjir notif tiap ada game baru.
-  const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk);
+  // `!denBackfill.has(c.game)`: saat halaman Den sebuah game ditarik PERTAMA
+  // KALI, kode Den yang tak dimiliki RoCodes ikut masuk & firstSeenAt-nya = now
+  // — padahal itu kode LAMA yang baru kita lihat, bukan kode yang baru rilis.
+  // Tanpa saringan ini, backfill Den (304 game) mengirim notif "kode baru" massal
+  // DAN memicu video "KODE BARU" utk puluhan game berisi kode berbulan-bulan.
+  // Kode yang memang baru rilis tetap tertangkap: make-videos punya jalur "fresh"
+  // (tanggal rilis ≤48 jam) yang menyapu semua game tiap run, lepas dari daftar ini.
+  const newly = active.filter((c) => c.firstSeenAt === now && c.code && !c.bulk && !denBackfill.has(c.game));
   // Game yang BARU masuk pantauan run ini (impor pertama). Kodenya bisa lama
   // semua (backfill) → dipakai make-videos utk video "semua kode aktif" pada game
   // besar. TAPI kalau sebuah kode punya tanggal rilis sumber dalam 48 jam, ia
