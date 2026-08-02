@@ -310,7 +310,25 @@ async function main() {
       if (!srcUid || srcUid !== Number(entry.universeId)) return { id, ok: false };
     }
 
-    const name = ROBLOX_NAME_OVERRIDE[id] || (entry.seed ? entry.name : rocodesMeta?.name || denMeta?.name || entry.name);
+    // RoCodes kerap menambahkan awalan "Roblox " untuk SEO ("Roblox Knockout
+    // Codes") padahal nama game aslinya bukan itu — situs kita memakai nama asli
+    // (lihat kebijakan penamaan; "Roblox" hanya ditambahkan di judul video/SEO).
+    // Awalan dibuang hanya bila ADA BUKTI, bukan asumsi:
+    //   (a) Roblox Den menyebut nama tanpa awalan itu, ATAU
+    //   (b) nama resmi dari API Roblox (rawName, tersimpan dari run sebelumnya)
+    //       tak memuat kata "Roblox" sama sekali.
+    // Game yang memang bernama "Roblox ..." tak tersentuh karena kedua bukti itu
+    // akan gagal.
+    const buangAwalanRoblox = (n) => {
+      if (!n || !/^roblox\s+/i.test(n)) return n;
+      const tanpa = n.replace(/^roblox\s+/i, "").trim();
+      if (!tanpa) return n;
+      if (denMeta?.name && denMeta.name.trim().toLowerCase() === tanpa.toLowerCase()) return tanpa;
+      const resmi = prevGamesMap[id]?.rawName;
+      if (resmi && !/roblox/i.test(resmi)) return tanpa;
+      return n;
+    };
+    const name = ROBLOX_NAME_OVERRIDE[id] || (entry.seed ? entry.name : buangAwalanRoblox(rocodesMeta?.name) || denMeta?.name || entry.name);
     const slugRo = entry.rocodesSlug;
     const slugDen = entry.denSlug;
 
