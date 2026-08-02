@@ -62,6 +62,8 @@ jobs:
           CROSSCHECK_MIN: ${{ vars.CROSSCHECK_MIN }}
           CROSS_INTERVAL_H: ${{ vars.CROSS_INTERVAL_H }}
           CROSS_DAILY_MAX: ${{ vars.CROSS_DAILY_MAX }}
+          # Umur (hari) kode CEK DULU sebelum disapu ke arsip. Kosong = 365.
+          AGE_EXPIRE_DAYS: ${{ vars.AGE_EXPIRE_DAYS }}
         run: |
           node worker/fetch-codes.mjs || echo "codes gagal, lanjut"
           node worker/fetch-events.mjs || echo "events gagal, lanjut"

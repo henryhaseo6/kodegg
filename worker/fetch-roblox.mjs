@@ -411,6 +411,15 @@ async function main() {
     // dulu" (BUKAN expire): kemungkinan basi walau sumber lambat (mis. RoCodes)
     // masih daftarin aktif. Non-destruktif; verified selalu menang.
     const AGE_CHECK_MS = 180 * 24 * 3600 * 1000;
+    // SAPU USIA: kode ber-badge CEK DULU yang umurnya sudah lewat ambang ini
+    // dipindah ke arsip, bukan dibiarkan tampil "aktif dengan peringatan".
+    // Alasan: kode Roblox umumnya hidup mingguan-bulanan; yang bertahan setahun
+    // TANPA satu pun sumber kedua mengonfirmasi hampir pasti mati. Membiarkan
+    // 51% daftar aktif berisi kode yang kita sendiri ragukan membuat label
+    // "terverifikasi" kehilangan arti — dan itu jualan utama situs ini.
+    // Pengaman: `check` mensyaratkan !verified (kode yang 2 sumber bilang aktif
+    // tak tersentuh), kode `perm` dikecualikan, dan arsip tetap terlihat pembaca.
+    const AGE_EXPIRE_MS = Number(process.env.AGE_EXPIRE_DAYS || 365) * 24 * 3600 * 1000;
     const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
     const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, ...extra });
 
@@ -439,14 +448,15 @@ async function main() {
       // mengarsipkan. Kode terverifikasi tak tersentuh: `check` mensyaratkan
       // !verified, jadi kode yang 2 sumber bilang aktif tetap aman.
       const konflikRagu = xExpired.has(key) && xset.has(key) && check;
-      const votedExpired = olehPrimer || olehEditorial || konflikRagu;
+      const terlaluTua = check && !c.perm && dateMs > 0 && nowMs - dateMs > AGE_EXPIRE_MS;
+      const votedExpired = olehPrimer || olehEditorial || konflikRagu || terlaluTua;
       if (endsPassed || (votedExpired && !isFresh)) {
         // expiredBy = ALASAN kode ini diarsipkan. Tanpa jejak ini, kode yang
         // hilang dari daftar aktif tak bisa dipertanggungjawabkan: tak ada cara
         // membedakan kode yang memang habis waktunya dari kode yang dibunuh satu
         // situs editorial yang parsing-nya rusak. Penting terutama saat cakupan
         // sumber berubah (mis. gelombang arsip dari Roblox Den).
-        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : olehEditorial ? "editorial" : "editorial-konflik";
+        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : olehEditorial ? "editorial" : konflikRagu ? "editorial-konflik" : "usia";
         archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt, expiredBy }));
         continue;
       }
