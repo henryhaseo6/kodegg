@@ -341,6 +341,18 @@ async function main() {
   // WAJIB: tanpa ini, kode yang hanya ada di Den lenyap dari hasil merge lalu
   // ikut diarsipkan otomatis (game-nya dianggap "covered"), padahal halamannya
   // tak berubah = kodenya masih terpampang di sana.
+  // Usia cadangan utk kode TANPA tanggal rilis. Roblox Den tak pernah memberi
+  // tanggal (0 dari 896 kode Den-saja punya `date`), sehingga kode-kode itu kebal
+  // terhadap SEMUA aturan berbasis usia: tak bisa disapu (365 hari), tak dapat
+  // badge CEK DULU otomatis (180 hari). Proksi yang jujur: sejak kapan KITA
+  // menyimpannya — "sudah setahun kami bawa dan tak satu pun sumber kedua
+  // mengonfirmasi" adalah bukti yang setara.
+  const prevSeen = new Map();
+  for (const c of [...(prev.active ?? []), ...(prev.archive ?? [])]) {
+    const t = Date.parse(c.firstSeenAt ?? "") || 0;
+    if (t) prevSeen.set(`${c.game}:${String(c.code).toLowerCase()}`, t);
+  }
+
   const denPunya = {};
   for (const [kunci, arr] of [["active", prev.active ?? []], ["archive", prev.archive ?? []]]) {
     for (const c of arr) {
@@ -486,7 +498,9 @@ async function main() {
       const isFresh = dateMs > 0 && nowMs - dateMs <= GRACE_MS;
       const edConfirm = xset.has(key) ? 1 : 0;
       const verified = c.sources.length + edConfirm >= 2; // >=2 sumber sepakat
-      const oldUnverified = dateMs > 0 && nowMs - dateMs > AGE_CHECK_MS;
+      // umurMs: tanggal rilis bila ada, kalau tidak sejak kapan kita menyimpannya.
+      const umurMs = dateMs || prevSeen.get(`${id}:${key}`) || 0;
+      const oldUnverified = umurMs > 0 && nowMs - umurMs > AGE_CHECK_MS;
       // Badge "CEK DULU": sumber menandai CHECK, atau kode tua (>6 bln) yg tak
       // terverifikasi. Dihitung SEBELUM keputusan expiry karena ikut jadi bahan
       // pertimbangannya (lihat konflikRagu).
@@ -500,7 +514,7 @@ async function main() {
       // mengarsipkan. Kode terverifikasi tak tersentuh: `check` mensyaratkan
       // !verified, jadi kode yang 2 sumber bilang aktif tetap aman.
       const konflikRagu = xExpired.has(key) && xset.has(key) && check;
-      const terlaluTua = check && !c.perm && dateMs > 0 && nowMs - dateMs > AGE_EXPIRE_MS;
+      const terlaluTua = check && !c.perm && umurMs > 0 && nowMs - umurMs > AGE_EXPIRE_MS;
       const votedExpired = olehPrimer || olehEditorial || konflikRagu || terlaluTua;
       if (endsPassed || (votedExpired && !isFresh)) {
         // expiredBy = ALASAN kode ini diarsipkan. Tanpa jejak ini, kode yang
