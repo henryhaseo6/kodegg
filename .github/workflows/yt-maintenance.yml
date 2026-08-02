@@ -14,7 +14,7 @@ on:
       mode:
         description: "retitle / delete / playlist / audit (baca-saja, tanpa ids)"
         type: choice
-        options: [retitle, delete, playlist, audit, show]
+        options: [retitle, delete, playlist, audit, show, addloc]
         required: true
       ids:
         description: "Video ID — atau Playlist ID bila mode=playlist (pisah koma). Kosongkan utk mode=audit"

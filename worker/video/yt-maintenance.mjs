@@ -15,9 +15,9 @@ const IDS = arg("ids").split(",").map((s) => s.trim()).filter(Boolean);
 const FROM = arg("from"), TO = arg("to");
 const REQ = arg("require-title"); // palang pengaman hapus: judul WAJIB memuat teks ini
 
-if (!["retitle", "delete", "playlist", "audit", "show"].includes(MODE)) { console.error("--mode wajib: retitle | delete | playlist | audit | show"); process.exit(1); }
-if (MODE !== "audit" && IDS.length === 0) { console.error("--ids kosong"); process.exit(1); }
-if (!["delete", "audit", "show"].includes(MODE) && (!FROM || !TO)) { console.error(`mode ${MODE} butuh --from dan --to`); process.exit(1); }
+if (!["retitle", "delete", "playlist", "audit", "show", "addloc"].includes(MODE)) { console.error("--mode wajib: retitle | delete | playlist | audit | show | addloc"); process.exit(1); }
+if (!["audit", "addloc"].includes(MODE) && IDS.length === 0) { console.error("--ids kosong"); process.exit(1); }
+if (!["delete", "audit", "show", "addloc"].includes(MODE) && (!FROM || !TO)) { console.error(`mode ${MODE} butuh --from dan --to`); process.exit(1); }
 if (MODE === "delete" && !REQ) { console.error("mode delete WAJIB pakai --require-title (palang pengaman)"); process.exit(1); }
 if (!process.env.YT_REFRESH_TOKEN) { console.error("kredensial YouTube belum di-set"); process.exit(1); }
 
@@ -126,6 +126,51 @@ if (MODE === "audit") {
   if (hilang.length) T("TINGGI", "entri yt-playlists.json menunjuk playlist yang SUDAH TAK ADA", hilang.map(([g, id]) => `${g}=${id}`).join("; "));
 
   console.log(temuan.length ? temuan.join("\n\n") : "bersih — tak ada temuan.");
+  process.exit(0);
+}
+
+// ── mode addloc: pasang terjemahan ID pada video LONG yang belum punya ─────
+// Video long berbahasa Inggris & YouTube menolak menerjemahkannya otomatis,
+// jadi backfill ini yang memasangnya. Memakai localisasiID() — modul yang SAMA
+// dengan jalur upload harian, supaya hasil backfill & video baru tak berbeda.
+// Tak butuh --ids: seluruh channel disisir, yang bukan video long dilewati.
+if (MODE === "addloc") {
+  const { localisasiID } = await import("./meta-long.mjs");
+  const ch = await yt.channels.list({ part: ["contentDetails"], mine: true });
+  const up = ch.data.items?.[0]?.contentDetails?.relatedPlaylists?.uploads;
+  const ids = [];
+  let tok;
+  do {
+    const r = await yt.playlistItems.list({ part: ["contentDetails"], playlistId: up, maxResults: 50, pageToken: tok });
+    ids.push(...(r.data.items ?? []).map((i) => i.contentDetails.videoId)); tok = r.data.nextPageToken;
+  } while (tok);
+  const vids = [];
+  for (let i = 0; i < ids.length; i += 50) {
+    const r = await yt.videos.list({ part: ["snippet", "localizations"], id: ids.slice(i, i + 50) });
+    vids.push(...(r.data.items ?? []));
+  }
+  let pasang = 0, punya = 0, bukan = 0;
+  for (const v of vids) {
+    const id = localisasiID({ title: v.snippet.title, description: v.snippet.description });
+    if (!id) { bukan++; continue; } // Shorts / bukan pola video long
+    if (v.localizations?.id) { punya++; continue; }
+    console.log(`PASANG ${v.id}\n       EN: ${v.snippet.title}\n       ID: ${id.title}`);
+    if (APPLY) {
+      // localizations dikirim UTUH (yang lama + id baru) — bahasa yang tak
+      // disertakan akan TERHAPUS. snippet ikut dikirim karena part diganti.
+      await yt.videos.update({
+        part: ["snippet", "localizations"],
+        requestBody: {
+          id: v.id,
+          snippet: { title: v.snippet.title, description: v.snippet.description, tags: v.snippet.tags, categoryId: v.snippet.categoryId, defaultLanguage: v.snippet.defaultLanguage, defaultAudioLanguage: v.snippet.defaultAudioLanguage },
+          localizations: { ...(v.localizations ?? {}), id },
+        },
+      });
+      console.log("       ✓ terpasang");
+    }
+    pasang++;
+  }
+  console.log(`\n${APPLY ? "selesai" : "DRY-RUN selesai"} — ${pasang} video long dipasangi terjemahan ID · ${punya} sudah punya · ${bukan} bukan video long (dilewati).`);
   process.exit(0);
 }
 

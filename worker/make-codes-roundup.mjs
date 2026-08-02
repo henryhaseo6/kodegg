@@ -11,6 +11,7 @@ import { existsSync, mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { renderRoundup, renderRoundupThumb } from "./video/render-roundup.mjs";
+import { localisasiID } from "./video/meta-long.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
@@ -106,6 +107,12 @@ function metadata(games, dateLbl, totalCodes, totalGames, chapters) {
   return { title, description, tags };
 }
 
+// Terjemahan ID judul+deskripsi (localizations.id). YouTube TAK menerjemahkan
+// video berbahasa Inggris secara otomatis ("This video cannot be automatically
+// translated"), jadi tanpa ini penonton Indonesia tak pernah melihat judul
+// berbahasa Indonesia untuk video harian ini.
+const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefined; };
+
 (async () => {
   console.log(`[roundup] tanggal=${DATE} limit=${LIMIT} sfx=${SFX}`);
   const { list, totalGames, totalCodes: totalCodesAll } = loadGames();
@@ -137,7 +144,7 @@ function metadata(games, dateLbl, totalCodes, totalGames, chapters) {
   const playlistDescription = "New Roblox codes drop every day — here's the daily roundup. All the new Roblox codes added each day, grouped by game, with rewards. Copy & redeem before they expire!\n\n⚡ Want codes the moment they drop? New codes every hour on our Shorts.\n🎮 All codes + how to redeem (updated hourly) → https://kodegg.com";
   console.log(`[roundup] upload YouTube (privacy=${privacy})…`);
   try {
-    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en" });
+    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en", localizations: locID(meta) });
     console.log(`[roundup] uploaded ✓ ${r.url} (privacy=${privacy})`);
     if (process.env.GITHUB_STEP_SUMMARY) writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### 🎁 New Roblox Codes Roundup — ${label(DATE)}\n- ${r.url} (privacy=${privacy})\n- ${totalCodes} kode / ${games.length} game (dari ${totalGames} game total)\n`, { flag: "a" });
   } catch (e) { console.log("[roundup] upload gagal:", e.message); }

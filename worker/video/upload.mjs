@@ -100,7 +100,7 @@ async function ensurePlaylist(yt, title, description, lang = "id") {
 }
 
 /** Upload 1 video. privacy: 'unlisted'|'public'|'private'. */
-export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription, comment, lang = "id" }) {
+export async function uploadVideo({ videoPath, title, description, tags, privacy = "unlisted", thumbnailPath, playlistTitle, playlistDescription, comment, lang = "id", localizations }) {
   // lang = bahasa metadata + audio. Short = "id" (VO Indonesia + teks bilingual);
   // video long (Top 50/roundup) = "en" (full English, cuma musik/SFX tanpa VO).
   // Insert video — dgn ROTASI multi-project: kalau project aktif kena quota
@@ -111,9 +111,14 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
     yt = await activeClient();
     try {
       res = await yt.videos.insert({
-        part: ["snippet", "status"],
+        // part WAJIB memuat "localizations" bila terjemahan disertakan — kalau
+        // tidak, YouTube mengabaikannya diam-diam (tak ada error).
+        part: localizations && Object.keys(localizations).length ? ["snippet", "status", "localizations"] : ["snippet", "status"],
         requestBody: {
+          // localizations = terjemahan judul/deskripsi (mis. `id` utk video long
+          // berbahasa Inggris — YouTube menolak menerjemahkannya otomatis).
           snippet: { title, description, tags, categoryId: "20", defaultLanguage: lang, defaultAudioLanguage: lang }, // 20 = Gaming
+          ...(localizations && Object.keys(localizations).length ? { localizations } : {}),
           // containsSyntheticMedia: narasi video pakai TTS neural (suara sintetis).
           // Visualnya grafis buatan sendiri (bukan orang/tempat nyata), tapi YouTube
           // minta disclosure utk "realistic sounds ... made with AI" → deklarasikan.

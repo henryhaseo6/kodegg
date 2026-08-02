@@ -14,6 +14,7 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchChartsGames } from "./src/roblox-charts.mjs";
 import { renderTop50, renderThumb } from "./video/render-top50.mjs";
+import { localisasiID } from "./video/meta-long.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
@@ -98,6 +99,12 @@ function metadata(games, dateLbl, chapters = []) {
   return { title, description, tags };
 }
 
+// Terjemahan ID judul+deskripsi (localizations.id). YouTube TAK menerjemahkan
+// video berbahasa Inggris secara otomatis ("This video cannot be automatically
+// translated"), jadi tanpa ini penonton Indonesia tak pernah melihat judul
+// berbahasa Indonesia untuk video harian ini.
+const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefined; };
+
 (async () => {
   console.log(`[top50] tanggal=${DATE} limit=${LIMIT} source=${ARG.source || "auto"} sfx=${SFX}`);
   let rows = null;
@@ -149,7 +156,7 @@ function metadata(games, dateLbl, chapters = []) {
   const playlistDescription = "Daily Top 50 most played Roblox games ranked by peak concurrent players (CCU). Peak, average & lowest player counts + a 24-hour player graph for each game. Updated every day.\n\n🎮 Free Roblox & game redeem codes, updated hourly → https://kodegg.com";
   console.log(`[top50] upload YouTube (privacy=${privacy})…`);
   try {
-    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en" });
+    const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en", localizations: locID(meta) });
     console.log(`[top50] uploaded ✓ ${r.url} (privacy=${privacy})`);
     if (process.env.GITHUB_STEP_SUMMARY) writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### 🎬 Top ${games.length} Roblox — ${label(DATE)}\n- ${r.url} (privacy=${privacy})\n- #1: ${games[0].name} (${games[0].peak.toLocaleString()} peak)\n`, { flag: "a" });
   } catch (e) { console.log("[top50] upload gagal:", e.message); }
