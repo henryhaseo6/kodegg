@@ -28,7 +28,15 @@ function shape(item, games) {
   // TEMUKAN ikut dicap BARU — kejadian 2 Agu 2026, Shindo Life "5YearSL2!" rilis
   // 23 Des 2025 (222 hari) tampil BARU karena RoCodes baru memunculkannya hari
   // itu. Sejalan dengan saringan usia pemicu notif/video di fetch-roblox.
-  const newMs = dateMs || (item.bulk ? 0 : firstSeenMs);
+  // Kode TANPA tanggal rilis (praktis semua kode Roblox Den — halaman mereka tak
+  // pernah memberi tanggal) hanya boleh BARU bila SUMBER menandainya "NEW CODE"
+  // (item.srcNew). Tanpa syarat ini, tiap kali kita pertama membaca halaman Den
+  // berisi ratusan kode lama, semuanya dicap BARU selama 24 jam — dan itu terjadi
+  // bergelombang tiap jam selama backfill Den ke 267 game.
+  // Catatan: jalur MOBILE sengaja TETAP memakai firstSeen tanpa syarat, karena di
+  // sana kode tak bertanggal (mis. NIKKE/Whiteout dari editorial) memang genuine
+  // baru saat ditemukan — tak ada sumber yang menumpahkan ratusan kode lama.
+  const newMs = dateMs || (item.bulk || !item.srcNew ? 0 : firstSeenMs);
   return {
     ...item, // termasuk source/sources/sourceUrls dari worker (RoCodes &/atau Roblox Den)
     name: g.name ?? item.gameName ?? "—",
