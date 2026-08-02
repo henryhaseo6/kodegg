@@ -51,6 +51,12 @@ jobs:
           # diterima supaya tak gagal senyap kalau ditaruh di tab yang berbeda.
           KODEGG_PROXY: ${{ vars.KODEGG_PROXY || secrets.KODEGG_PROXY }}
           KODEGG_PROXY_KEY: ${{ secrets.KODEGG_PROXY_KEY }}
+          # Penyetel pemantau ekor-panjang Roblox Den (semua opsional, ada
+          # nilai bawaan di kode): berapa slug baru dinilai per run, ambang
+          # pemain untuk mulai dipantau, dan jatah backfill halaman Den per run.
+          DEN_SCOUT_MAX: ${{ vars.DEN_SCOUT_MAX }}
+          DEN_SCOUT_MIN_PLAYERS: ${{ vars.DEN_SCOUT_MIN_PLAYERS }}
+          DEN_BACKFILL_MAX: ${{ vars.DEN_BACKFILL_MAX }}
         run: |
           node worker/fetch-codes.mjs || echo "codes gagal, lanjut"
           node worker/fetch-events.mjs || echo "events gagal, lanjut"
@@ -110,6 +116,12 @@ jobs:
           # workflow masih memaksa 3 → video jatuh ke manual dengan alasan "kuota
           # harian"). Kosong = pakai default make-videos.mjs.
           VIDEO_MAX_PER_DAY: ${{ vars.VIDEO_MAX_PER_DAY }}
+          # VIDEO_SKIP_PLAYLIST=1 → video tetap diupload TAPI playlist tak dibuat
+          # lewat API. Dipakai saat sengaja menambah banyak game sekaligus, supaya
+          # jatah playlist baru YouTube (~10/hari) tersisa untuk game yang benar-
+          # benar dapat kode baru. Daftar video yang perlu playlist manual dicetak
+          # di log + ringkasan run. Hapus variabelnya begitu kuota pulih.
+          VIDEO_SKIP_PLAYLIST: ${{ vars.VIDEO_SKIP_PLAYLIST }}
           PYTHON: python3
         run: |
           if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set — lewati auto-video (lihat DEPLOY-YOUTUBE.md)."; exit 0; fi
