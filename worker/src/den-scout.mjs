@@ -12,8 +12,9 @@
 // atas ambang dipantau mulai run berikutnya.
 //
 // Dibatasi ketat: MAX evaluasi per run, dan slug yang sudah dinilai DIINGAT
-// (data/den-scout.json) supaya game kecil tak dicek berulang tiap jam. Nilai
-// ulang setelah masa kedaluwarsa — game bisa tumbuh.
+// (data/den-scout.json) supaya game kecil tak dicek berulang tiap jam. Jeda
+// penilaian ulang BERTINGKAT menurut kedekatan ke ambang (lihat jedaUlang):
+// yang nyaris lolos dipantau tiap 2 hari, yang kecil cukup sebulan sekali.
 //
 // Hasil sapuan awal (2 Agu 2026, 98 slug): 67 game <500 pemain, 20 tak bisa
 // di-resolve (kemungkinan delisted), hanya 7 yang >=2.000. Jadi ambang ini
@@ -23,7 +24,17 @@ import { fetchRobloxDen } from "./sources/robloxden.mjs";
 const AMBANG = Number(process.env.DEN_SCOUT_MIN_PLAYERS || 2000);
 const MAX_EVAL = Number(process.env.DEN_SCOUT_MAX || 15); // evaluasi per run
 const SEGAR_MS = 36 * 3600 * 1000; // lastmod dianggap "baru diperbarui"
-const ULANG_MS = 30 * 24 * 3600 * 1000; // nilai ulang setelah sebulan
+// Jeda penilaian ulang BERTINGKAT menurut seberapa dekat ke ambang. Satu angka
+// tetap (dulu 30 hari) mematikan tujuan utama pemantau ini: game yang sedang
+// NAIK justru yang paling berharga, dan game 1.800 pemain hari ini bisa tembus
+// 5.000 besok — kalau baru dinilai ulang sebulan lagi, kita telat persis di kasus
+// yang kita incar. Sebaliknya game 50 pemain tak perlu dicek tiap hari.
+const jedaUlang = (players) => {
+  const H = 24 * 3600 * 1000;
+  if (players >= AMBANG * 0.6) return 2 * H;  // nyaris lolos → pantau ketat
+  if (players >= AMBANG * 0.25) return 7 * H; // berpotensi → mingguan
+  return 30 * H;                              // kecil → bulanan
+};
 
 async function resolveUniverse(placeId) {
   try {
@@ -53,7 +64,7 @@ export async function scoutDen(denIndex, sudahDipantau, memo = {}) {
   const now = Date.now();
   const kandidat = [...denIndex]
     .filter(([slug, lm]) => lm > 0 && now - lm <= SEGAR_MS && !sudahDipantau.has(slug))
-    .filter(([slug]) => { const m = memo[slug]; return !m || now - m.at > ULANG_MS; })
+    .filter(([slug]) => { const m = memo[slug]; return !m || now - m.at > jedaUlang(m.players ?? 0); })
     .sort((a, b) => b[1] - a[1]) // yang paling baru diperbarui dinilai duluan
     .slice(0, MAX_EVAL)
     .map(([slug]) => slug);
