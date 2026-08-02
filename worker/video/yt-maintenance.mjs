@@ -51,7 +51,7 @@ if (MODE === "audit") {
   const daftar = [];
   let token;
   do {
-    const r = await yt.playlists.list({ part: ["snippet", "contentDetails"], mine: true, maxResults: 50, pageToken: token });
+    const r = await yt.playlists.list({ part: ["snippet", "contentDetails", "localizations"], mine: true, maxResults: 50, pageToken: token });
     daftar.push(...(r.data.items ?? [])); token = r.data.nextPageToken;
   } while (token);
 
@@ -80,6 +80,14 @@ if (MODE === "audit") {
 
   const tanpaGame = daftar.filter((p) => !/roblox promo|top 50|roundup/i.test(p.snippet.title) && !namaKe.has(normal(judulKeNama(p.snippet.title))));
   if (tanpaGame.length) T("TINGGI", "playlist tak tercocokkan ke game (tombol YouTube TAK muncul di halaman)", tanpaGame.map((p) => `${p.snippet.title} [${p.id}]`).join("; "));
+
+  // Bahasa playlist. Studio ("Title and description language") TERBUKTI tak
+  // andal menampilkannya — playlist yang API-nya jelas `id` bisa tampil "Select"
+  // di UI. Jadi jangan menilai dari Studio; ini sumber kebenarannya.
+  const noLang = daftar.filter((p) => !p.snippet?.defaultLanguage);
+  const noLoc = daftar.filter((p) => !Object.keys(p.localizations ?? {}).length);
+  console.log(`bahasa playlist: ${daftar.length - noLang.length}/${daftar.length} punya defaultLanguage · ${daftar.length - noLoc.length}/${daftar.length} punya localizations`);
+  if (noLang.length) T("SEDANG", "playlist TANPA defaultLanguage di API (bukan sekadar tampilan Studio)", noLang.slice(0, 10).map((p) => p.snippet.title).join("; ") + (noLang.length > 10 ? ` (+${noLang.length - 10})` : ""));
 
   const kosong = daftar.filter((p) => (p.contentDetails?.itemCount ?? 0) === 0);
   if (kosong.length) T("TINGGI", "playlist KOSONG (situs menaut ke halaman hampa)", kosong.map((p) => `${p.snippet.title} [${p.id}]`).join("; "));
