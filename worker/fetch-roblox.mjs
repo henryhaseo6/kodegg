@@ -225,6 +225,31 @@ async function main() {
   const SCOUT = resolve(dirname(OUT), "den-scout.json");
   let memo = {};
   try { memo = JSON.parse(await readFile(SCOUT, "utf8")); } catch { /* pertama kali */ }
+  // TAMBAL denSlug yang tertinggal. buildGameSet menyusun: seed → game LAMA →
+  // populer, dan entri yang sudah ada tak bisa ditimpa. Game lama membawa
+  // `denSlug: null` apa adanya — nilai itu dihitung dulu terhadap indeks Den yang
+  // cuma 109 slug (satu halaman daftar). Setelah indeks pindah ke sitemap (~4.400
+  // slug), 267 game ternyata SLUG-nya ada di Den tapi tetap null selamanya karena
+  // tak pernah dihitung ulang. Jadi sumber primer kedua yang sudah kita bangun
+  // tak akan pernah menyentuh mereka.
+  //
+  // Pencocokan tetap PERSIS (bukan fuzzy) — dicoba apa adanya plus varian awalan
+  // "roblox-", karena RoCodes kerap memberi awalan itu pada slug-nya sementara Den
+  // tidak (mis. kita "roblox-smiles" vs Den "smiles").
+  let ditambal = 0;
+  for (const [id, e] of set) {
+    if (e.denSlug) continue;
+    const kandidat = new Set();
+    for (const dasar of [id, e.rocodesSlug].filter(Boolean)) {
+      kandidat.add(dasar);
+      kandidat.add(dasar.replace(/^roblox-/, ""));
+      kandidat.add(`roblox-${dasar}`);
+    }
+    const cocok = [...kandidat].find((c) => denIndex.has(c));
+    if (cocok) { e.denSlug = cocok; ditambal++; }
+  }
+  if (ditambal) console.log(`denSlug ditambal utk ${ditambal} game (slug ada di sitemap Den tapi belum terhubung)`);
+
   const slugDipantau = new Set([...set.values()].map((e) => e.denSlug).filter(Boolean));
   const { tambah, memoBaru } = await scoutDen(denIndex, slugDipantau, memo);
   for (const t of tambah) {
