@@ -1,83 +1,9 @@
 {
-  "generatedAt": "2026-08-03T15:01:34.890Z",
+  "generatedAt": "2026-08-03T16:01:20.578Z",
   "codes": [],
   "bulkGames": [
     {
-      "game": "coin-flip",
-      "count": 11,
-      "fresh": [
-        {
-          "code": "SORRY4INCONVENIENCE",
-          "reward": "20 Matrix Chests"
-        },
-        {
-          "code": "LDEVS",
-          "reward": "10 Matrix Chests"
-        },
-        {
-          "code": "UPDATE3",
-          "reward": "10 Matrix Chests"
-        },
-        {
-          "code": "REFINERY",
-          "reward": "1000 Shards, 100 Prisms, 100 Cores"
-        },
-        {
-          "code": "SHARDS",
-          "reward": "20 Shards, Prism, Cores"
-        },
-        {
-          "code": "CHESTS!",
-          "reward": "5 Chests, 9 Legendary Chests, Luck Boost"
-        },
-        {
-          "code": "SORRYFORDELAY",
-          "reward": "Boosts & Potions"
-        },
-        {
-          "code": "BLACKHOLE",
-          "reward": "Boosts & Potions"
-        },
-        {
-          "code": "UPDATE2",
-          "reward": "2 Chests"
-        },
-        {
-          "code": "POTIONS",
-          "reward": "Potions"
-        },
-        {
-          "code": "BugFix2",
-          "reward": "Chest"
-        }
-      ]
-    },
-    {
-      "game": "a-quiet-place-deadzone",
-      "count": 2,
-      "fresh": [
-        {
-          "code": "10000LIKES",
-          "reward": "40 Coins"
-        },
-        {
-          "code": "CoinShop",
-          "reward": "60 Coins"
-        }
-      ]
-    },
-    {
-      "game": "mmv",
-      "count": 15,
-      "fresh": []
-    },
-    {
-      "game": "mini-cup",
-      "count": 3,
-      "fresh": []
-    },
-    {
-      "game": "speed-training",
+      "game": "luck-incremental-265l",
       "count": 5,
       "fresh": []
     }
