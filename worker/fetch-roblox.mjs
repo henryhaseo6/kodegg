@@ -532,6 +532,10 @@ async function main() {
     // Pengaman: `check` mensyaratkan !verified (kode yang 2 sumber bilang aktif
     // tak tersentuh), kode `perm` dikecualikan, dan arsip tetap terlihat pembaca.
     const AGE_EXPIRE_MS = Number(process.env.AGE_EXPIRE_DAYS || 365) * 24 * 3600 * 1000;
+    // Ambang "CEK DULU mandek" — jauh lebih pendek dari AGE_EXPIRE karena yang
+    // dinilai bukan usia kodenya, melainkan berapa lama keraguan itu dibiarkan
+    // menggantung tanpa ada sumber yang mengonfirmasi.
+    const CHECK_STALE_MS = Number(process.env.CHECK_STALE_DAYS || 14) * 24 * 3600 * 1000;
     const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
     const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, ...(c.srcNew ? { srcNew: true } : {}), ...(c.srcNewAt > 0 ? { srcNewAt: c.srcNewAt } : {}), ...extra });
 
@@ -563,14 +567,25 @@ async function main() {
       // !verified, jadi kode yang 2 sumber bilang aktif tetap aman.
       const konflikRagu = xExpired.has(key) && xset.has(key) && check;
       const terlaluTua = check && !c.perm && umurMs > 0 && nowMs - umurMs > AGE_EXPIRE_MS;
-      const votedExpired = olehPrimer || olehEditorial || konflikRagu || terlaluTua;
+      // CEK DULU yang MANDEK: ditandai ragu dan tak ada satu pun sumber yang
+      // mengonfirmasinya setelah CHECK_STALE_MS. Diukur 3 Agu 2026: 1.537 kode
+      // (19% katalog) berstatus CEK DULU, 858 sudah >7 hari, dan sepanjang
+      // sejarah hanya 88 yang pernah lepas dari status itu — jadi menunggu lebih
+      // lama praktis tak mengubah apa pun. Tak satu pun dari mereka `verified`
+      // atau terdaftar di >1 sumber, jadi tak ada bukti yang ikut terbuang.
+      // Keputusan user: sapu semua yang lewat ambang, termasuk game besar yang
+      // liputan editorialnya nihil (mis. Murder Mystery 2) — konsekuensinya
+      // diterima demi katalog yang lebih bersih. Arsip TIDAK menghapus: kodenya
+      // tetap terlihat pembaca di tab arsip.
+      const mandek = check && !c.perm && umurMs > 0 && nowMs - umurMs > CHECK_STALE_MS;
+      const votedExpired = olehPrimer || olehEditorial || konflikRagu || terlaluTua || mandek;
       if (endsPassed || (votedExpired && !isFresh)) {
         // expiredBy = ALASAN kode ini diarsipkan. Tanpa jejak ini, kode yang
         // hilang dari daftar aktif tak bisa dipertanggungjawabkan: tak ada cara
         // membedakan kode yang memang habis waktunya dari kode yang dibunuh satu
         // situs editorial yang parsing-nya rusak. Penting terutama saat cakupan
         // sumber berubah (mis. gelombang arsip dari Roblox Den).
-        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : olehEditorial ? "editorial" : konflikRagu ? "editorial-konflik" : "usia";
+        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : olehEditorial ? "editorial" : konflikRagu ? "editorial-konflik" : mandek && !terlaluTua ? "cek-mandek" : "usia";
         archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt, expiredBy }));
         continue;
       }
