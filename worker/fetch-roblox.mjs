@@ -36,7 +36,21 @@ const OUT = resolve(HERE, "data/roblox-codes.json");
 // semua slot dan game HOT baru tak pernah bisa masuk (bug: game 9.9K pemain +
 // featured RoCodes kejebak di luar karena cap 250 keburu penuh oleh prevGames).
 // Game tanpa kode aktif tetap gugur → angka final natural di bawah cap ini.
-const MAX_GAMES = 400;
+// Dinaikkan 400 → 600 (3 Agu 2026) karena cap-nya SUDAH mengikat: game tercatat
+// 385, semesta discovery memuat 20 game yang benar-benar belum dipantau, jadi 5
+// tertahan — termasuk Catalog Avatar Creator (86.329 pemain). Perhatikan cap ini
+// hanya membatasi jalur discovery (lihat `break` di buildGameSet); prevGames
+// masuk TANPA batas, jadi makin penuh daftar kita, makin sempit jatah game baru.
+// Itulah kenapa gejalanya muncul perlahan lalu mendadak menutup total.
+//
+// TIDAK dilepas sepenuhnya: cap ini satu-satunya rem kalau discovery/den-scout
+// suatu saat memuntahkan ribuan game. Biaya tiap game = 1 penarikan RoCodes per
+// run (TAK digerbangi) = 24/hari; 385 game ≈ 9.240 permintaan/hari, 600 ≈ 14.400.
+// Durasi bukan kendala (run rutin 1-2 menit). Solusi sebenarnya untuk beban itu
+// adalah menggerbangi RoCodes dg <lastmod> spt Den — menunggu data
+// lastmod-probe.json; kalau terbukti jujur, angkanya turun drastis dan cap ini
+// bisa dilonggarkan lagi tanpa menambah beban.
+const MAX_GAMES = 600;
 const CONCURRENCY = 5; // game paralel maks (rendah = tak membanjiri RoCodes/Den)
 // Cross-check editorial — dua tingkat, dijadwal supaya cakupan LUAS tapi beban
 // justru TURUN (terukur: 8.760 → 6.665 permintaan/hari):
