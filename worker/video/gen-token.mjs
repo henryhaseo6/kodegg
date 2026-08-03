@@ -23,6 +23,12 @@ const authUrl = oauth2.generateAuthUrl({
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube",
     "https://www.googleapis.com/auth/youtube.force-ssl",
+    // BACA-SAJA. Membuka YouTube Analytics API → kata kunci pencarian yang
+    // benar-benar membawa penonton (insightTrafficSourceDetail). Tanpa ini kita
+    // cuma bisa MENEBAK permintaan lewat proksi (jumlah pemain, aktivitas kode).
+    // Terukur 3 Agu 2026: ~90% tayangan datang dari YouTube Search, jadi inilah
+    // sinyal yang paling menentukan game mana yang layak dibuatkan video.
+    "https://www.googleapis.com/auth/yt-analytics.readonly",
   ],
 });
 
