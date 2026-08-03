@@ -27,11 +27,18 @@ function clean(s) {
 // Cara redeem spesifik Roblox Den: paragraf di section "How to Use Codes in X"
 // (prosa, mis. MMV: "click the INVENTORY button… enter code in EnterCode box…
 // click Redeem"). Batas = section "About" berikutnya.
+// Den memakai DUA varian judul: "How to Use Codes in X" dan "How to Claim Codes
+// in X". Dulu hanya varian "Use" yang dicari — dan "claim" malah dipakai sebagai
+// penanda AKHIR blok, jadi halaman ber-judul "Claim" memulangkan kosong. Disurvei
+// 3 Agu 2026 pada 30 halaman Den terpopuler: 0 memakai "Use", 30 memakai "Claim".
+// Artinya fallback howTo Den di fetch-roblox.mjs praktis TAK PERNAH terpakai, dan
+// 14 dari 30 game itu tampil dengan langkah generik padahal Den punya langkah
+// spesifiknya (lengkap dengan tangkapan layar).
 function parseDenHowTo(html) {
-  const i = html.search(/how to use codes in/i);
-  if (i < 0) return [];
-  const rest = html.slice(i + 20);
-  const end = rest.search(/<h2|about\s|how to claim|case.?sensitive/i);
+  const m0 = /how to (?:use|claim) codes in/i.exec(html);
+  if (!m0) return [];
+  const rest = html.slice(m0.index + m0[0].length);
+  const end = rest.search(/<h2|about\s|case.?sensitive/i);
   const body = rest.slice(0, end > 40 ? end : 2500);
   const steps = [];
   for (const m of body.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)) {
