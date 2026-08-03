@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-03T09:01:36.348Z",
+  "updatedAt": "2026-08-03T10:01:10.876Z",
   "counts": {
-    "active": 107,
+    "active": 106,
     "archived": 51
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Base Mechanics",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Gameplay Dasar"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the basics of Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in! In the future, we'",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan gameplay permanen terbaru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama! Ke depannya, kami juga akan menghadirkan konten pe"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/03/0/870f486a4f8f8274c1939a9fd9297ca6_1527817909206465485.jpeg",
+      "url": "https://www.hoyolab.com/article/46124243",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-03T10:00:08.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -662,22 +678,6 @@
       "publishedAt": "2026-07-28T10:30:08.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "For Display Only | Remielle",
-        "id": "For Display Only | Remielle"
-      },
-      "excerpt": {
-        "en": "\"May I steal you for a dance?\"",
-        "id": "\"May I steal you for a dance?\""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-07-28/transcoded/142082015445319979008_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/46030167",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-28T10:00:04.000Z"
-    },
-    {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
       "title": {
@@ -1188,22 +1188,6 @@
       "url": "https://www.hoyolab.com/article/45932476",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-20T12:00:03.000Z"
-    },
-    {
-      "game": "tot",
-      "gameName": "Tears of Themis",
-      "title": {
-        "en": "✦ From Dawn Till Dusk ✦",
-        "id": "✦From Dawn Till Dusk✦"
-      },
-      "excerpt": {
-        "en": "Together from dawn till dusk, our hearts grow ever closer. On 7/25 at 11:00 (UTC+9), the From Dawn Till Dusk Event Shadow of Themis will be available for a limited time! ✦ Selected",
-        "id": "✦From Dawn Till Dusk✦ Together from dawn till dusk, our hearts grow ever closer. On 7/25 at 11:00 (UTC+9), the From Dawn Till Dusk Event Shadow of Themis will be available for a li"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/13/1b99dfa6682b64b51c9823b15ef621a7_5584271807896665561.jpg",
-      "url": "https://www.hoyolab.com/article/45905366",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-18T10:00:04.000Z"
     },
     {
       "game": "hsr",
