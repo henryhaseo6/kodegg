@@ -58,7 +58,14 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
     // SEBELUM tautan: kalau syaratnya tak dipenuhi, kode yang benar & masih
     // aktif pun ditolak game — penonton yang cuma menyalin kode dari video akan
     // mengira kodenya mati, padahal syaratnya yang kurang.
-    (redeemNote?.id || redeemNote?.en ? `⚠️ SYARAT: ${redeemNote.id ?? redeemNote.en}\n\n` : "") +
+    // Tautan akunnya ikut dicantumkan: di video penonton tak bisa mengklik apa
+    // pun di layar, jadi deskripsi adalah satu-satunya tempat syarat ini bisa
+    // benar-benar dikerjakan tanpa mencari-cari sendiri.
+    (redeemNote?.id || redeemNote?.en
+      ? `⚠️ SYARAT: ${redeemNote.id ?? redeemNote.en}\n` +
+        (redeemNote.links?.length ? redeemNote.links.map((l) => `   • ${l.label}: ${l.url}`).join("\n") + "\n" : "") +
+        "\n"
+      : "") +
     `✅ Full list + cara redeem (auto-update tiap jam):\n${url}\n\n` +
     `KodeGG — portal kode redeem game online & Roblox. 200+ game, kode terverifikasi cross-check, update otomatis tiap jam.\n` +
     `🔔 Subscribe & nyalain lonceng biar gak ketinggalan kode baru!\n\n` +

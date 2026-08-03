@@ -219,6 +219,8 @@ export async function loadRobloxGame(slug) {
     howTo: Array.isArray(g.howTo) ? g.howTo : [],
     // Syarat redeem (mis. RIVALS wajib follow developer-nya dulu). Bilingual
     // {en,id} dari registry manual worker/src/roblox-games.mjs.
+    // `links` (opsional) = akun/halaman yang harus dibuka pembaca utk memenuhi
+    // syaratnya — bikin syarat itu bisa DIKERJAKAN, bukan cuma dibaca.
     redeemNote: g.redeemNote && g.redeemNote.en ? g.redeemNote : null,
     updatedAt: raw.updatedAt ?? null,
     // "Terakhir dicek" = fetchedAt TERBARU antar kode game ini (= run terakhir

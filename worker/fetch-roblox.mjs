@@ -126,17 +126,31 @@ const isGeneric = (r) => !r || /^(free\s+)?(in-?game\s+)?(rewards?|gifts?|goodie
 // syarat itu sebagai callout tersendiri di ATAS daftar langkah, jadi tanpa ini
 // pembaca melihat kalimat yang sama dua kali (kejadian di rivals — langkah Den
 // memuat "You must follow the developers …" sebagai butir ke-4).
-function pilihHowTo(id, ro, den) {
+// `prev`/`prevSrc` = hasil run sebelumnya. WAJIB dipakai: halaman Den digerbangi
+// <lastmod>, jadi pada run yang Den-nya tak ditarik `den` kosong — tanpa
+// carry-forward, game yang di-pin ke Den akan JATUH BALIK ke RoCodes dan
+// langkahnya bolak-balik tiap jam. (Kejadian: pin rivals dipasang 09:37 WIB,
+// run 16:02 WIB masih memajang langkah RoCodes yang usang.)
+function pilihHowTo(id, ro, den, prev, prevSrc) {
   const pin = ROBLOX_HOWTO_PIN[id];
-  const a = pin === "den" ? den : ro;
-  const b = pin === "den" ? ro : den;
-  const dipakai = (a?.length ? a : b) ?? [];
+  const punya = { den, rocodes: ro };
+  let dipakai, src;
+  if (pin && punya[pin]?.length) { dipakai = punya[pin]; src = pin; }
+  else if (pin && prevSrc === pin && prev?.length) { dipakai = prev; src = pin; } // sumber pin tak ditarik run ini
+  else if (ro?.length) { dipakai = ro; src = "rocodes"; }
+  else if (den?.length) { dipakai = den; src = "den"; }
+  else { dipakai = prev?.length ? prev : []; src = prev?.length ? prevSrc : null; }
+
+  // Buang langkah yang cuma mengulang SYARAT (redeemNote): situs sudah memajang
+  // syarat itu sebagai callout tersendiri di ATAS daftar langkah.
   const note = ROBLOX_REDEEM_NOTE[id]?.en;
-  if (!note) return dipakai;
-  const inti = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "");
-  const n = inti(note);
-  const out = dipakai.filter((s) => inti(s) !== n);
-  return out.length ? out : dipakai; // jangan sampai daftar jadi kosong
+  if (note) {
+    const inti = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "");
+    const n = inti(note);
+    const out = dipakai.filter((s) => inti(s) !== n);
+    if (out.length) dipakai = out; // jangan sampai daftar jadi kosong
+  }
+  return { howTo: dipakai, howToSrc: src };
 }
 
 // Gabungkan hasil beberapa primer untuk 1 game. Tiap kode → sumber yang punya.
@@ -632,7 +646,10 @@ async function main() {
         // langkah standar bilingual bila keduanya kosong. Urutan itu bisa DIBALIK
         // per-game lewat ROBLOX_HOWTO_PIN untuk kasus yang terbukti usang
         // (mis. rivals). Lihat alasannya di registry.
-        howTo: pilihHowTo(id, rocodesMeta?.howTo, denMeta?.howTo),
+        // howToSrc ikut disimpan supaya run berikutnya tahu sumber mana yang
+        // sedang dipakai — tanpa itu, carry-forward tak bisa membedakan langkah
+        // hasil pin dari langkah fallback.
+        ...pilihHowTo(id, rocodesMeta?.howTo, denMeta?.howTo, prevGamesMap[id]?.howTo, prevGamesMap[id]?.howToSrc),
         // Syarat redeem (mis. wajib follow developer) — registry manual, lihat
         // ROBLOX_REDEEM_NOTE. Dipakai situs & deskripsi video.
         ...(ROBLOX_REDEEM_NOTE[id] ? { redeemNote: ROBLOX_REDEEM_NOTE[id] } : {}),

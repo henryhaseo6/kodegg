@@ -63,6 +63,14 @@ export const ROBLOX_REDEEM_NOTE = {
   rivals: {
     en: "You must follow the developers Nosniy Games, SenseiWarrior and Nosniy to redeem codes.",
     id: "Kamu harus follow developer Nosniy Games, SenseiWarrior, dan Nosniy dulu supaya kode bisa di-redeem.",
+    // Tautan langsung ke akun yang harus di-follow — syaratnya jadi bisa
+    // DIKERJAKAN, bukan cuma dibaca. URL diambil dari Roblox sendiri (bukan dari
+    // situs kode), jadi identitasnya pasti.
+    links: [
+      { label: "Nosniy Games", url: "https://www.roblox.com/communities/3461453/Nosniy-Games" },
+      { label: "SenseiWarrior", url: "https://www.roblox.com/users/15941965/profile" },
+      { label: "Nosniy", url: "https://www.roblox.com/users/20349956/profile" },
+    ],
   },
 };
 
