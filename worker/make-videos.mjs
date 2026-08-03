@@ -19,12 +19,15 @@ const TMP = resolve(HERE, "../_video-tmp");
 const STATE_PATH = resolve(DATA, "video-state.json");
 const PENDING_PL = resolve(DATA, "pending-playlists.json"); // playlist gagal (rate-limit) → retry run berikutnya
 const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak muat RENDER_MAX → antri run berikutnya
-// Batas UPLOAD otomatis/hari. Pemakaian nyata TERUKUR (23 Jul): ~188 unit/video
-// (bukan 1.600 spt dokumentasi), jadi kuota 10.000/hari muat ~50 video. Diset 45
-// → ~8.500 unit, sisa buffer aman; batas "Video Uploads per day" (100) tak kena.
+// Batas UPLOAD otomatis/hari. Diukur ULANG 3 Agu 2026 dari Google Cloud console:
+// 47 upload = 9.810 unit → ~209 unit/video EFEKTIF (termasuk thumbnail, playlist,
+// sync per jam), bukan ~188 seperti perkiraan 23 Jul. Artinya langit-langit nyata
+// ~47 video/hari: angka 50 tak akan pernah tercapai, kuota keras yang kena
+// duluan. Diset 45 → ~9.400 unit, menyisakan ruang untuk pembacaan rutin.
+// (Komentar lama bilang "Diset 45" padahal konstantanya 50 — kini disamakan.)
 // Kalau lonjakan kode makin ramai & mentok, sisanya jatuh ke jalur manual (aman).
 // Bisa dioverride lewat Variable repo VIDEO_MAX_PER_DAY.
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 50);
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 45);
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
@@ -355,9 +358,24 @@ function buildPromoCandidate(state, now) {
 
 async function main() {
   const now = new Date();
+  // Hari kuota = hari PACIFIC, bukan UTC. Kuota YouTube reset tengah malam PT;
+  // dulu dihitung UTC, jadi counter kita reset 7 jam LEBIH AWAL (00:00 UTC =
+  // 07:00 WIB, sedangkan kuota baru pulih 14:00 WIB). Akibatnya tiap pagi
+  // pipeline merasa punya puluhan slot padahal kuota masih habis — terlihat
+  // 3 Agu 2026 pukul 10:03 WIB: counter 7/50 (merasa 43 slot) sementara konsol
+  // Google menunjukkan 9.810/10.000 terpakai. Upload-nya gagal & ke-antri
+  // (jaringnya bekerja), tapi tiap percobaan tetap membakar waktu render.
+  // CATATAN: hanya untuk jatah kuota. `today` (UTC) tetap dipakai untuk nama
+  // berkas & penyaringan log — log menyimpan stempel UTC, dan nama berkas
+  // sebaiknya tak mundur sehari hanya karena zona kuota.
+  const hariKuota = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
   const today = now.toISOString().slice(0, 10);
-  const state = readJSON(STATE_PATH, { date: today, todayCount: 0, posted: {}, log: [] });
-  if (state.date !== today) { state.date = today; state.todayCount = 0; }
+  const state = readJSON(STATE_PATH, { date: hariKuota, todayCount: 0, posted: {}, log: [] });
+  // Reset HANYA saat hari maju. Saat pindah dari penanggalan UTC ke PT, tanggal
+  // tersimpan bisa lebih DEPAN dari hari PT — kalau direset juga, counter jadi
+  // 0 persis di jendela yang kuotanya justru sedang habis. Lebih aman kurang
+  // pakai daripada gagal berulang.
+  if (hariKuota > state.date) { state.date = hariKuota; state.todayCount = 0; }
 
   // Mode --check: tentukan ADA kerja video/playlist tanpa render/upload/deps berat.
   // Dipakai CI utk melewati install deps video (canvas/ffmpeg/edge-tts) & render
