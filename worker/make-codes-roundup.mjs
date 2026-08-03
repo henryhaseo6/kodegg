@@ -21,7 +21,12 @@ const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.ma
 // frame 9.300 setelah 47 menit, video hari itu tak pernah jadi. Yang kepotong
 // SELALU dicatat di log (jangan diam-diam), dan urutannya by pemain jadi yang
 // terbuang adalah game terkecil.
-const MAX_GAMES = Math.max(1, Number(process.env.ROUNDUP_MAX_GAMES || 30));
+// Dikalibrasi dari run nyata: 30 game/58 kode = 3.752 frame, job 8 menit. Jadi
+// ~125 frame per game → 60 game ≈ 7.500 frame (~16 menit), masih sehat; yang
+// membunuh runner kemarin 18.682 frame (~90 menit). Angka 30 sempat memotong 12
+// game yang sebenarnya muat (2 Agu: 42 game), jadi pagarnya dilonggarkan —
+// tujuannya menahan banjir ratusan game, bukan merapikan hari yang cuma ramai.
+const MAX_GAMES = Math.max(1, Number(process.env.ROUNDUP_MAX_GAMES || 60));
 const LIMIT = Math.max(1, Number(ARG.limit) || MAX_GAMES);
 const OUT_DIR = resolve(HERE, "../_video-out");
 const ASSETS = resolve(HERE, "../site/public/assets/roblox");
