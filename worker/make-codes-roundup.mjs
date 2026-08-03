@@ -15,7 +15,14 @@ import { localisasiID } from "./video/meta-long.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
-const LIMIT = Math.max(1, Number(ARG.limit) || 999); // default: SEMUA game yg dapet kode baru H-1
+// Default: SEMUA game yg dapet kode baru H-1, TAPI dipagari MAX_GAMES. Tanpa
+// pagar, satu hari banjir bisa merender video 10 menit dan runner-nya keburu
+// mati — kejadian 2 Agu 2026: 156 game/1.074 kode → 18.682 frame, job dibunuh di
+// frame 9.300 setelah 47 menit, video hari itu tak pernah jadi. Yang kepotong
+// SELALU dicatat di log (jangan diam-diam), dan urutannya by pemain jadi yang
+// terbuang adalah game terkecil.
+const MAX_GAMES = Math.max(1, Number(process.env.ROUNDUP_MAX_GAMES || 30));
+const LIMIT = Math.max(1, Number(ARG.limit) || MAX_GAMES);
 const OUT_DIR = resolve(HERE, "../_video-out");
 const ASSETS = resolve(HERE, "../site/public/assets/roblox");
 const CACHE = resolve(HERE, "video/assets/roundup-cache");
@@ -47,12 +54,26 @@ function loadGames() {
   const MINP = 2000, DATEms = Date.parse(DATE + "T00:00:00+07:00"); // batas hari WIB
   const wibDay = (iso) => { const t = Date.parse(iso || ""); return t ? new Date(t + 7 * 36e5).toISOString().slice(0, 10) : ""; };
   const winDate = (c) => { const d = Date.parse(c.date || "") || 0; return d > 0 && d >= DATEms - 864e5 && d <= DATEms + 864e5; };
+  // Kode tanpa tanggal rilis (praktis semua kode Roblox Den) — dinilai dari kapan
+  // SUMBER memasang penanda "NEW CODE"-nya, bukan kapan kita menemukannya.
+  const winNew = (c) => { const s = Number(c.srcNewAt) || 0; return c.srcNew === true && s > 0 && s >= DATEms - 864e5 && s <= DATEms + 864e5; };
   const byGame = {};
   for (const c of (db.active || [])) { // hanya kode AKTIF (redeemable) — bukan arsip expired
     if (!c.game || !c.code || c.check) continue; // c.check = badge "CEK DULU" → jangan masuk video
     if (wibDay(c.firstSeenAt) !== DATE) continue; // JANGKAR: hari pertama ke-detect (WIB) == DATE
     const big = (G[c.game]?.players || 0) >= MINP && winDate(c);
-    const est = !c.bulk;
+    // EST dulu cuma `!c.bulk`, dengan asumsi: kode non-bulk yang baru kita lihat
+    // di game yang SUDAH dilacak = kode yang memang baru rilis. Asumsi itu runtuh
+    // 2 Agu 2026 saat Roblox Den dipasang jadi primer KEDUA: ratusan kode lama
+    // masuk ke game lama (jadi bukan `bulk`) dan semuanya keitung "baru".
+    // Sekarang kode non-bulk masih harus membuktikan usianya — lewat tanggal
+    // rilis, atau lewat penanda "NEW CODE" sumber yang dipasang di jendela yang
+    // sama (srcNewAt; lihat fetch-roblox.mjs). Tanpa keduanya, umurnya tak
+    // diketahui dan tak boleh masuk video berjudul "New Roblox Codes".
+    // Diukur pada data nyata: 2 Agu 81 game/595 kode → 16/32; 1 Agu tak berubah
+    // (15/19); 31 Jul 59→26 kode, dan 33 yang gugur SEMUANYA bertanggal lama
+    // (28 Jun–15 Jul) — memang tak layak disebut kode 31 Juli.
+    const est = !c.bulk && (winDate(c) || winNew(c));
     if (!big && !est) continue;
     (byGame[c.game] = byGame[c.game] || []).push({ code: c.code, reward: decode(c.reward || "") });
   }
@@ -120,6 +141,10 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   const games = list.slice(0, LIMIT);
   const totalCodes = games.reduce((a, g) => a + g.codes.length, 0);
   console.log(`[roundup] ${totalGames} game punya kode baru (${totalCodesAll} kode). Tampil top ${games.length} by pemain: ${games.slice(0, 5).map((g) => g.name).join(", ")}…`);
+  if (totalGames > games.length) {
+    const sisa = list.slice(LIMIT);
+    console.log(`[roundup] ! ${sisa.length} game TIDAK masuk video (pagar ${LIMIT}): ${sisa.map((g) => `${g.name}(${g.codes.length})`).join(", ")}`);
+  }
 
   console.log("[roundup] resolve icon…"); await resolveIcons(games);
 
