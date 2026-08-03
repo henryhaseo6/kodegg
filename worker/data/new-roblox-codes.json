@@ -1,9 +1,33 @@
 {
-  "generatedAt": "2026-08-03T16:01:20.578Z",
+  "generatedAt": "2026-08-03T17:01:23.825Z",
   "codes": [],
   "bulkGames": [
     {
-      "game": "luck-incremental-265l",
+      "game": "heal-your-injuries",
+      "count": 2,
+      "fresh": [
+        {
+          "code": "ENERGYREWORK",
+          "reward": "100 Energy, 20 XP"
+        },
+        {
+          "code": "BACKROOMS",
+          "reward": "100 Energy, 50 XP"
+        }
+      ]
+    },
+    {
+      "game": "mysterious-murderers",
+      "count": 14,
+      "fresh": []
+    },
+    {
+      "game": "murder-mystery-duels",
+      "count": 2,
+      "fresh": []
+    },
+    {
+      "game": "car-flipper",
       "count": 5,
       "fresh": []
     }
