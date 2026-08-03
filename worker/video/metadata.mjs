@@ -62,7 +62,7 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
     // pun di layar, jadi deskripsi adalah satu-satunya tempat syarat ini bisa
     // benar-benar dikerjakan tanpa mencari-cari sendiri.
     (redeemNote?.id || redeemNote?.en
-      ? `⚠️ SYARAT: ${redeemNote.id ?? redeemNote.en}\n` +
+      ? `⚠️ ${redeemNote.kind === "catatan" ? "CATATAN" : "SYARAT"}: ${redeemNote.id ?? redeemNote.en}\n` +
         (redeemNote.links?.length ? redeemNote.links.map((l) => `   • ${l.label}: ${l.url}`).join("\n") + "\n" : "") +
         "\n"
       : "") +

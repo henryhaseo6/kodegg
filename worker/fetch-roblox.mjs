@@ -650,9 +650,18 @@ async function main() {
         // sedang dipakai — tanpa itu, carry-forward tak bisa membedakan langkah
         // hasil pin dari langkah fallback.
         ...pilihHowTo(id, rocodesMeta?.howTo, denMeta?.howTo, prevGamesMap[id]?.howTo, prevGamesMap[id]?.howToSrc),
-        // Syarat redeem (mis. wajib follow developer) — registry manual, lihat
-        // ROBLOX_REDEEM_NOTE. Dipakai situs & deskripsi video.
-        ...(ROBLOX_REDEEM_NOTE[id] ? { redeemNote: ROBLOX_REDEEM_NOTE[id] } : {}),
+        // Syarat/catatan redeem. Sumbernya berlapis:
+        //   1. ROBLOX_REDEEM_NOTE — kurasi manual, satu-satunya yang punya
+        //      terjemahan ID. Menang supaya terjemahan tak tertimpa.
+        //   2. spanduk `notice--important` Roblox Den — OTOMATIS untuk semua
+        //      game, lengkap dengan tautan akun/komunitas yang harus dibuka.
+        //   3. nilai run sebelumnya — WAJIB, karena halaman Den digerbangi
+        //      <lastmod>: tanpa ini syaratnya berkedip hilang-muncul tiap jam
+        //      pada run yang Den-nya tak ditarik (bug yang sama dengan howTo).
+        ...(() => {
+          const n = ROBLOX_REDEEM_NOTE[id] ?? denMeta?.notice ?? prevGamesMap[id]?.redeemNote;
+          return n ? { redeemNote: n } : {};
+        })(),
       },
     };
   });

@@ -24,16 +24,39 @@ function clean(s) {
     .trim();
 }
 
-// Cara redeem spesifik Roblox Den: paragraf di section "How to Use Codes in X"
-// (prosa, mis. MMV: "click the INVENTORY button… enter code in EnterCode box…
-// click Redeem"). Batas = section "About" berikutnya.
-// Den memakai DUA varian judul: "How to Use Codes in X" dan "How to Claim Codes
-// in X". Dulu hanya varian "Use" yang dicari — dan "claim" malah dipakai sebagai
-// penanda AKHIR blok, jadi halaman ber-judul "Claim" memulangkan kosong. Disurvei
-// 3 Agu 2026 pada 30 halaman Den terpopuler: 0 memakai "Use", 30 memakai "Claim".
-// Artinya fallback howTo Den di fetch-roblox.mjs praktis TAK PERNAH terpakai, dan
-// 14 dari 30 game itu tampil dengan langkah generik padahal Den punya langkah
-// spesifiknya (lengkap dengan tangkapan layar).
+// Spanduk merah di atas tabel kode: syarat/catatan yang bikin kode GAGAL walau
+// kodenya benar (wajib follow developer, wajib join komunitas, wajib level N).
+// Markup-nya seragam: <div class="notice … notice--important"><p>…</p></div>,
+// dan nama akun/komunitas di dalamnya SUDAH berupa <a href> ke roblox.com —
+// jadi tautannya ikut terpungut, tak perlu dicari manual.
+//
+// KELASNYA TAK BISA DIPAKAI MEMBEDAKAN. Disurvei 3 Agu 2026 pada 45 halaman
+// terpopuler: 7 punya spanduk, SEMUANYA `notice--important`, tapi 1 di antaranya
+// bukan syarat — Shindo Life memakai kotak yang sama untuk catatan batasan
+// ("setelah 500 Spins, kode tak menambah Spins lagi"). Pembedanya kata "must":
+// 6 spanduk syarat memuatnya, catatan Shindo tidak. Salah label di sini bukan
+// sekadar kosmetik — memajang "SYARAT" untuk hal yang bukan syarat menyesatkan.
+function parseDenNotice(html) {
+  const m = /<div class="notice[^"]*notice--important"[^>]*>\s*<p>([\s\S]*?)<\/p>/i.exec(html);
+  if (!m) return null;
+  const inner = m[1];
+  const en = clean(inner);
+  if (en.length < 20) return null;
+  const links = [...inner.matchAll(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)]
+    .map((a) => ({ label: clean(a[2]), url: a[1] }))
+    .filter((l) => l.label && /^https?:\/\//i.test(l.url));
+  return { en, links, kind: /\bmust\b|\brequired?\b|\bneed to\b/i.test(en) ? "syarat" : "catatan" };
+}
+
+// Cara redeem spesifik Roblox Den: paragraf di section "How to Use/Claim Codes
+// in X" (prosa). Batas = section "About" berikutnya.
+//
+// Den memakai DUA varian judul. Dulu hanya varian "Use" yang dicari — dan "claim"
+// malah dipakai sebagai penanda AKHIR blok, jadi halaman ber-judul "Claim" selalu
+// memulangkan kosong. Disurvei 3 Agu 2026 pada 30 halaman terpopuler: 0 memakai
+// "Use", 30 memakai "Claim". Artinya fallback howTo Den di fetch-roblox.mjs
+// praktis TAK PERNAH terpakai, dan 14 dari 30 game itu tampil dengan langkah
+// generik padahal Den punya langkah spesifiknya.
 function parseDenHowTo(html) {
   const m0 = /how to (?:use|claim) codes in/i.exec(html);
   if (!m0) return [];
@@ -104,7 +127,7 @@ export async function fetchRobloxDen(slug) {
 
   const tm = html.match(/<title>(?:Roblox\s+)?([^<]+?)\s+Codes\b/i);
   const pm = html.match(/roblox\.com\/games\/(\d+)/);
-  const meta = { name: tm ? clean(tm[1]) : null, placeId: pm ? Number(pm[1]) : null, howTo: parseDenHowTo(html) };
+  const meta = { name: tm ? clean(tm[1]) : null, placeId: pm ? Number(pm[1]) : null, howTo: parseDenHowTo(html), notice: parseDenNotice(html) };
   if (active.length === 0 && archive.length === 0) throw new Error("0 kode terparse");
   return { active, archive, meta };
 }
