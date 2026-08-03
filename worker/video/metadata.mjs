@@ -24,7 +24,7 @@ function wibParts(now) {
  * @param {{name, platform:'ROBLOX'|'MOBILE', slug, codes:[{code,reward}], activeCount, now:Date}} o
  * @returns {{title, description, tags:string[]}}
  */
-export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, now }) {
+export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, redeemNote = null, now }) {
   const w = wibParts(now);
   const my = `${w.monEn} ${w.y}`; // bulan WIB — sama dg tanggal di judul/deskripsi/video
   const isRoblox = platform === "ROBLOX";
@@ -54,9 +54,15 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
     `${allMode ? `Semua kode redeem ${name} yang masih aktif ${my}!` : `Kode redeem ${name} terbaru & aktif ${my}!`} ${activeCount} kode aktif, semua terverifikasi.\n` +
     `🕒 Update terakhir: ${w.d} ${w.mon} ${w.y}, ${w.hm} WIB\n\n` +
     `🎁 KODE:\n${codeLines}\n\n` +
+    // SYARAT redeem (mis. RIVALS wajib follow developer-nya dulu). Ditaruh
+    // SEBELUM tautan: kalau syaratnya tak dipenuhi, kode yang benar & masih
+    // aktif pun ditolak game — penonton yang cuma menyalin kode dari video akan
+    // mengira kodenya mati, padahal syaratnya yang kurang.
+    (redeemNote?.id || redeemNote?.en ? `⚠️ SYARAT: ${redeemNote.id ?? redeemNote.en}\n\n` : "") +
     `✅ Full list + cara redeem (auto-update tiap jam):\n${url}\n\n` +
     `KodeGG — portal kode redeem game online & Roblox. 200+ game, kode terverifikasi cross-check, update otomatis tiap jam.\n` +
     `🔔 Subscribe & nyalain lonceng biar gak ketinggalan kode baru!\n\n` +
+    (redeemNote?.en ? `— NOTE: ${redeemNote.en}\n\n` : "") +
     `— The latest working ${name} codes for ${my} (updated hourly). Full list + how to redeem: ${urlEn}\n\n` +
     `#Shorts #${tag} #${tag}Codes #${isRoblox ? "RobloxCodes #Roblox" : "GameCodes"} #RedeemCodes #KodeRedeem #KodeGG`;
 

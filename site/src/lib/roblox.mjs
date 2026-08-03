@@ -217,6 +217,9 @@ export async function loadRobloxGame(slug) {
     crossCheck: Array.isArray(g.crossCheck) ? g.crossCheck : [], // situs editorial pengonfirmasi
     verifiedCount: active.filter((c) => c.verified).length,
     howTo: Array.isArray(g.howTo) ? g.howTo : [],
+    // Syarat redeem (mis. RIVALS wajib follow developer-nya dulu). Bilingual
+    // {en,id} dari registry manual worker/src/roblox-games.mjs.
+    redeemNote: g.redeemNote && g.redeemNote.en ? g.redeemNote : null,
     updatedAt: raw.updatedAt ?? null,
     // "Terakhir dicek" = fetchedAt TERBARU antar kode game ini (= run terakhir
     // yg sukses menarik sumbernya; game yg fetch-nya gagal fetchedAt-nya lama).

@@ -32,6 +32,25 @@ export const ROBLOX_NAME_OVERRIDE = {
   "the-strongest-battlegrounds": "The Strongest Battlegrounds Sound",
 };
 
+// SYARAT redeem per-game — hal yang bikin kode GAGAL walau kodenya benar & masih
+// aktif (mis. wajib follow developer, wajib join grup, wajib level tertentu).
+// Ditulis manual & diverifikasi ke sumber, TIDAK ditarik otomatis: parser howTo
+// kita cuma menangkap daftar langkah, sedangkan syarat begini ditulis sumber
+// sebagai catatan terpisah di luar daftar itu.
+//
+// `en` = VERBATIM dari sumber (aturan fidelitas CLAUDE.md). `id` = terjemahan
+// kalimat penghubungnya saja; nama akun/developer TIDAK diterjemahkan.
+// Keyed by game id.
+export const ROBLOX_REDEEM_NOTE = {
+  // Sumber: robloxden.com/game-codes/rivals (dicek 3 Agu 2026). Ketiga akun
+  // diverifikasi ada di Roblox: Nosniy Games (communities/3461453),
+  // SenseiWarrior (users/15941965), Nosniy (users/20349956).
+  rivals: {
+    en: "You must follow the developers Nosniy Games, SenseiWarrior and Nosniy to redeem codes.",
+    id: "Kamu harus follow developer Nosniy Games, SenseiWarrior, dan Nosniy dulu supaya kode bisa di-redeem.",
+  },
+};
+
 // Slug URL keyword dari NAMA (mis. "Blox Fruits" -> "blox-fruits") untuk /roblox/<slug>.
 const slugify = (s) => (s ?? "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 export const ROBLOX_SLUG = Object.fromEntries(Object.keys(ROBLOX_GAMES).map((id) => [id, slugify(ROBLOX_GAMES[id].name)]));

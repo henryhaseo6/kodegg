@@ -18,7 +18,7 @@ import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE } from "./src/roblox-games.mjs";
+import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
 import { scoutDen } from "./src/den-scout.mjs";
@@ -584,6 +584,9 @@ async function main() {
         // Cara redeem spesifik: RoCodes dulu, lalu Roblox Den (mis. MMV), lalu
         // situs pakai langkah standar bilingual bila keduanya kosong.
         howTo: rocodesMeta?.howTo?.length ? rocodesMeta.howTo : denMeta?.howTo ?? [],
+        // Syarat redeem (mis. wajib follow developer) — registry manual, lihat
+        // ROBLOX_REDEEM_NOTE. Dipakai situs & deskripsi video.
+        ...(ROBLOX_REDEEM_NOTE[id] ? { redeemNote: ROBLOX_REDEEM_NOTE[id] } : {}),
       },
     };
   });
