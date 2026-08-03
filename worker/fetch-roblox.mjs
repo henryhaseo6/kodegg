@@ -18,7 +18,7 @@ import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE } from "./src/roblox-games.mjs";
+import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE, ROBLOX_HOWTO_PIN } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
 import { scoutDen } from "./src/den-scout.mjs";
@@ -106,6 +106,24 @@ async function resolveUniverse(placeId) {
 }
 
 const isGeneric = (r) => !r || /^(free\s+)?(in-?game\s+)?(rewards?|gifts?|goodies|codes?)$/i.test(r.trim());
+
+// Pilih langkah redeem antara RoCodes & Roblox Den, hormati ROBLOX_HOWTO_PIN.
+// Langkah yang cuma mengulang SYARAT (redeemNote) dibuang: situs sudah memajang
+// syarat itu sebagai callout tersendiri di ATAS daftar langkah, jadi tanpa ini
+// pembaca melihat kalimat yang sama dua kali (kejadian di rivals — langkah Den
+// memuat "You must follow the developers …" sebagai butir ke-4).
+function pilihHowTo(id, ro, den) {
+  const pin = ROBLOX_HOWTO_PIN[id];
+  const a = pin === "den" ? den : ro;
+  const b = pin === "den" ? ro : den;
+  const dipakai = (a?.length ? a : b) ?? [];
+  const note = ROBLOX_REDEEM_NOTE[id]?.en;
+  if (!note) return dipakai;
+  const inti = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "");
+  const n = inti(note);
+  const out = dipakai.filter((s) => inti(s) !== n);
+  return out.length ? out : dipakai; // jangan sampai daftar jadi kosong
+}
 
 // Gabungkan hasil beberapa primer untuk 1 game. Tiap kode → sumber yang punya.
 function mergeCodes(perSource) {
@@ -581,9 +599,11 @@ async function main() {
         universeId,
         verified: rocodesMeta?.verified ?? false,
         crossCheck,
-        // Cara redeem spesifik: RoCodes dulu, lalu Roblox Den (mis. MMV), lalu
-        // situs pakai langkah standar bilingual bila keduanya kosong.
-        howTo: rocodesMeta?.howTo?.length ? rocodesMeta.howTo : denMeta?.howTo ?? [],
+        // Cara redeem spesifik: RoCodes dulu, lalu Roblox Den, lalu situs pakai
+        // langkah standar bilingual bila keduanya kosong. Urutan itu bisa DIBALIK
+        // per-game lewat ROBLOX_HOWTO_PIN untuk kasus yang terbukti usang
+        // (mis. rivals). Lihat alasannya di registry.
+        howTo: pilihHowTo(id, rocodesMeta?.howTo, denMeta?.howTo),
         // Syarat redeem (mis. wajib follow developer) — registry manual, lihat
         // ROBLOX_REDEEM_NOTE. Dipakai situs & deskripsi video.
         ...(ROBLOX_REDEEM_NOTE[id] ? { redeemNote: ROBLOX_REDEEM_NOTE[id] } : {}),

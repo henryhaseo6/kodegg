@@ -32,6 +32,21 @@ export const ROBLOX_NAME_OVERRIDE = {
   "the-strongest-battlegrounds": "The Strongest Battlegrounds Sound",
 };
 
+// PIN sumber langkah redeem per-game. Default: RoCodes menang, Den mengisi bila
+// RoCodes kosong (lihat fetch-roblox.mjs). Default itu dipertahankan karena
+// disurvei 3 Agu 2026 pada 40 game teratas, Den TIDAK lebih baru secara umum —
+// dari 19 game yang punya keduanya, 7 pada dasarnya sama dan di beberapa sisanya
+// RoCodes justru lebih lengkap (mis. fish-it: RoCodes mencantumkan syarat "must
+// be Level 10", Den tidak). Tak ada sumber yang menstempel kapan panduannya
+// ditulis, jadi "paling baru" tak bisa dideteksi otomatis — makanya pin ini
+// MANUAL, hanya untuk kasus yang sudah diverifikasi mata.
+// Nilai: "den" | "rocodes".
+export const ROBLOX_HOWTO_PIN = {
+  // RoCodes masih menyuruh "Verify your Twitter account after following
+  // @NosniyRBLX"; alur sebenarnya sekarang + → More → Codes (dicek 3 Agu 2026).
+  rivals: "den",
+};
+
 // SYARAT redeem per-game — hal yang bikin kode GAGAL walau kodenya benar & masih
 // aktif (mis. wajib follow developer, wajib join grup, wajib level tertentu).
 // Ditulis manual & diverifikasi ke sumber, TIDAK ditarik otomatis: parser howTo
