@@ -9,7 +9,9 @@
 //   channel (~100 upload/hari) tetap berlaku, jadi naikkan VIDEO_MAX_PER_DAY
 //   seperlunya. 1 project = perilaku lama (tak ada rotasi).
 // googleapis di-import LAZY (dynamic) → render/DRY_RUN tak butuh paket ini.
-import { createReadStream, existsSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 // Kumpulkan set kredensial: project 1 (tanpa suffix) + _2.._9 bila ada.
 function credentialSets() {
@@ -43,6 +45,18 @@ function quotaOrAuth(e) {
   if (/invalid_grant/i.test(s)) return "token";
   if (/quotaExceeded|dailyLimitExceeded|userRateLimitExceeded|rateLimitExceeded/i.test(s)) return "quota";
   return null;
+}
+
+// Penanda "jatah playlist harian sudah habis", bertahan antar-run lewat berkas
+// di worker/data (folder yang di-commit workflow). Kuncinya hari PACIFIC karena
+// itulah siklus reset kuota YouTube.
+const PL_LIMIT = resolve(dirname(fileURLToPath(import.meta.url)), "../data/playlist-limit.json");
+const hariPT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+function jatahPlaylistHabis() {
+  try { return JSON.parse(readFileSync(PL_LIMIT, "utf8"))?.hari === hariPT(); } catch { return false; }
+}
+function tandaiJatahHabis() {
+  try { writeFileSync(PL_LIMIT, JSON.stringify({ hari: hariPT(), pada: new Date().toISOString() }, null, 1) + "\n"); } catch { /* jangan gagalkan upload */ }
 }
 
 /** Cari playlist milik channel berdasarkan JUDUL; kalau belum ada, bikin. */
@@ -91,6 +105,15 @@ async function ensurePlaylist(yt, title, description, lang = "id", tanpaBuat = f
   // memakai jatah itu, jadi hanya pembuatannya yang ditahan — bukan seluruh
   // proses playlist.
   if (tanpaBuat) return null;
+  // REM JATAH HABIS. playlists.insert menelan 50 unit kuota WALAU DITOLAK, dan
+  // jatah pembuatan playlist baru (~10/hari) reset harian — jadi begitu ditolak
+  // sekali, semua percobaan berikutnya hari itu pasti gagal DAN tetap membakar
+  // kuota. Terukur 4 Agu 2026: 27 upload memakai 6.865 unit padahal tarif normal
+  // ~209/video (≈5.636); selisih ~1.229 unit cocok dengan percobaan-percobaan
+  // yang pasti gagal (satu run bahkan mencoba 8 kali = 400 unit terbuang).
+  //
+  // Ditandai per HARI PACIFIC, sama dengan siklus reset kuota YouTube.
+  if (jatahPlaylistHabis()) { console.log("  ↳ jatah playlist harian sudah habis — pembuatan ditahan (hemat kuota)"); return null; }
   const made = await yt.playlists.insert({
     // localizations disertakan sejak awal — alasan sama dg cabang update di atas:
     // defaultLanguage sendirian tak cukup untuk membuat bahasa tersimpan.
@@ -259,8 +282,11 @@ export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlis
     }
     return false;
   } catch (e) {
-    const rl = /exhaust|rate|quota/i.test(e.message) ? " (rate-limit playlist — diantrikan utk run berikutnya)" : "";
-    console.log(`  playlist gagal (abaikan): ${e.message}${rl}`);
+    const kena = /exhaust|rate|quota/i.test(e.message);
+    // Sekali ditolak = jatah harian habis. Ditandai supaya percobaan berikutnya
+    // hari itu tak lagi menembak API (tiap tembakan 50 unit walau pasti gagal).
+    if (kena) tandaiJatahHabis();
+    console.log(`  playlist gagal (abaikan): ${e.message}${kena ? " (jatah playlist harian habis — pembuatan ditahan sampai reset)" : ""}`);
     return false;
   }
 }
