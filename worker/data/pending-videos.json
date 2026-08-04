@@ -559,6 +559,155 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "dog-race",
+    "name": "Dog Race",
+    "displayName": "[W3❄️] Dog Race 🐕💨",
+    "slug": "dog-race",
+    "players": 7774,
+    "redeemNote": null,
+    "rank": 7774,
+    "newCodes": [
+      {
+        "game": "dog-race",
+        "gameName": "Dog Race",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/dog-race"
+        },
+        "code": "Shoes",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785755631607,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T03:01:32.276Z",
+        "fetchedAt": "2026-08-04T03:01:32.276Z"
+      },
+      {
+        "game": "dog-race",
+        "gameName": "Dog Race",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/dog-race"
+        },
+        "code": "Dino",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785755631607,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T03:01:32.276Z",
+        "fetchedAt": "2026-08-04T03:01:32.276Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-08-04T03:01:32.276Z",
+    "displayCodes": [
+      {
+        "code": "Shoes",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Dino",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "FOREST",
+        "reward": "Double Win Potion",
+        "isNew": false
+      },
+      {
+        "code": "NEW",
+        "reward": "Double Win Potion",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "FOREST",
+      "NEW",
+      "ACHIEVE",
+      "WEEKEND",
+      "DOG",
+      "Shoes",
+      "Dino",
+      "Upgrade"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "car-flipper",
+    "name": "Car Flipper",
+    "displayName": "Car Flipper [NEW CARS]",
+    "slug": "car-flipper",
+    "players": 5346,
+    "redeemNote": null,
+    "rank": 5346,
+    "newCodes": [
+      {
+        "game": "car-flipper",
+        "gameName": "Car Flipper",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/car-flipper"
+        },
+        "code": "40KLIKES",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785755599559,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T03:01:32.276Z",
+        "fetchedAt": "2026-08-04T03:01:32.276Z"
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-08-04T03:01:32.276Z",
+    "displayCodes": [
+      {
+        "code": "40KLIKES",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "RELEASE",
+        "reward": "100 Uncommon Car Parts, 500 Common Car Parts, Rare Container, Uncommon Container, Common Container",
+        "isNew": false
+      },
+      {
+        "code": "35KLIKES",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "10MVISITS",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "35KLIKES",
+      "10MVISITS",
+      "RELEASE",
+      "40KLIKES",
+      "QAWBR"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "death-in-the-box",
     "name": "Death in the Box",
     "displayName": "[⛱️] Death in the Box",
