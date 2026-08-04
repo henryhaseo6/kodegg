@@ -537,6 +537,106 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "spin-a-soccer-card",
+    "name": "Spin a Soccer Card",
+    "displayName": "[🌙] Spin a Soccer Card",
+    "slug": "spin-a-soccer-card",
+    "players": 5906,
+    "redeemNote": {
+      "en": "To use codes in Spin a Soccer Card, you must join the Pixellar Studios | RSC Roblox Community.",
+      "links": [
+        {
+          "label": "Pixellar Studios | RSC Roblox Community",
+          "url": "https://www.roblox.com/share/g/520125566"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 5906,
+    "newCodes": [
+      {
+        "game": "spin-a-soccer-card",
+        "gameName": "Spin a Soccer Card",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/spin-a-soccer-card"
+        },
+        "code": "HERO-CRYSTAL",
+        "reward": "2 Packs and 3 Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785729230044,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T16:01:16.302Z",
+        "fetchedAt": "2026-08-04T16:01:16.302Z"
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-08-04T16:01:16.302Z",
+    "displayCodes": [
+      {
+        "code": "HERO-CRYSTAL",
+        "reward": "2 Packs and 3 Spins",
+        "isNew": true
+      },
+      {
+        "code": "RAVEN-COMET",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "WEAREBACK",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "OWL-HAPPY",
+        "reward": "3 Spins, 2 of all packs at your rebirth level",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "HERO-CRYSTAL",
+        "reward": "2 Packs and 3 Spins",
+        "isNew": true
+      },
+      {
+        "code": "RAVEN-COMET",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "WEAREBACK",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "OWL-HAPPY",
+        "reward": "3 Spins, 2 of all packs at your rebirth level",
+        "isNew": false
+      },
+      {
+        "code": "BIGUPDATECOMING",
+        "reward": "2 Wish Tickets, 30 Tournament Tokens, 2 Spins, and 100 Gems",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "RAVEN-COMET",
+      "WEAREBACK",
+      "OWL-HAPPY",
+      "BIGUPDATECOMING",
+      "HERO-CRYSTAL"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "five-nights-td-2",
     "name": "Five Nights TD 2",
     "displayName": "Five Nights TD 2 [CHALLENGES]",
