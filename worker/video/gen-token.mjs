@@ -1,8 +1,25 @@
 // Generate YT_REFRESH_TOKEN (jalankan LOKAL sekali). Butuh OAuth Client "Desktop"
 // dari Google Cloud. Pakai:
+//   node worker/video/gen-token.mjs
+// Client id/secret dibaca dari worker/.env bila ada; kalau tidak, set lewat env:
 //   YT_CLIENT_ID=xxx YT_CLIENT_SECRET=yyy node worker/video/gen-token.mjs
 // Lalu buka URL yg tampil, izinkan, selesai → refresh token tercetak.
 import http from "node:http";
+import { existsSync, readFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+// Baca worker/.env kalau ada — supaya client id/secret tak perlu ditempel ke
+// baris perintah tiap kali (dan tak ada peluang salah salin).
+{
+  const p = resolve(dirname(fileURLToPath(import.meta.url)), "../.env");
+  if (existsSync(p)) {
+    for (const line of readFileSync(p, "utf8").split(/\r?\n/)) {
+      const m = /^\s*([A-Z0-9_]+)\s*=\s*(.*)$/.exec(line);
+      if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
+    }
+  }
+}
 
 const { YT_CLIENT_ID, YT_CLIENT_SECRET } = process.env;
 if (!YT_CLIENT_ID || !YT_CLIENT_SECRET) {
