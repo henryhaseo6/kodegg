@@ -1,6 +1,57 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "sols-rng",
+    "name": "Sol's RNG",
+    "displayName": "Sol's RNG [ Summer Event 🏖️]",
+    "slug": "sols-rng",
+    "players": 45307,
+    "redeemNote": null,
+    "rank": 45307,
+    "newCodes": [
+      {
+        "code": "SUMMER2026",
+        "reward": ""
+      },
+      {
+        "code": "BLAZINGSUN",
+        "reward": ""
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "SUMMER2026",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "BLAZINGSUN",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "20260711UPD",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "GargantuaBiome",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "SUMMER2026",
+      "BLAZINGSUN",
+      "20260711UPD",
+      "GargantuaBiome",
+      "2026013UPD"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "mysterious-murderers",
     "name": "Mysterious Murderers",
     "displayName": "Mysterious Murderers 🔪",
@@ -280,6 +331,284 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "iron-soul-dungeon",
+    "name": "Iron Soul: Dungeon",
+    "displayName": "Iron Soul: Dungeon",
+    "slug": "iron-soul-dungeon",
+    "players": 15447,
+    "redeemNote": null,
+    "rank": 15447,
+    "newCodes": [
+      {
+        "game": "iron-soul-dungeon",
+        "gameName": "Iron Soul: Dungeon",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/iron-soul-dungeon"
+        },
+        "code": "IRONSOULWEEKEND18",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785776217175,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      },
+      {
+        "game": "iron-soul-dungeon",
+        "gameName": "Iron Soul: Dungeon",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/iron-soul-dungeon"
+        },
+        "code": "SEASON2ENDING",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785776217175,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 14,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "IRONSOULWEEKEND18",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SEASON2ENDING",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "IRONSOULWEEKEND17",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SCYTHEWEAPON",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "IRONSOULWEEKEND18",
+      "SEASON2ENDING",
+      "IRONSOULWEEKEND17",
+      "SCYTHEWEAPON",
+      "NEWMAP",
+      "NEWMAPEXPAND",
+      "IRONSOULWEEKEND16",
+      "CELEBRATEFOR150KMEMBER",
+      "IRONSOULWEEKEND15",
+      "SEASON2EXPAND",
+      "SEASON2OPEN",
+      "IRONSOULWEEKEND13",
+      "SEASON2LIVE",
+      "EXPEDITIONFIX"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "slap-battles",
+    "name": "Slap Battles",
+    "displayName": "[UPDATE🖐️] Slap Battles👏",
+    "slug": "slap-battles",
+    "players": 13801,
+    "redeemNote": null,
+    "rank": 13801,
+    "newCodes": [
+      {
+        "game": "slap-battles",
+        "gameName": "Slap Battles",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/slap-battles"
+        },
+        "code": "MUT4TE",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785781147298,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "MUT4TE",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "spookyseason25",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "spookyseason25",
+      "MUT4TE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "catch-a-monster",
+    "name": "Catch a Monster",
+    "displayName": "Catch a Monster",
+    "slug": "catch-a-monster",
+    "players": 9745,
+    "redeemNote": null,
+    "rank": 9745,
+    "newCodes": [
+      {
+        "game": "catch-a-monster",
+        "gameName": "Catch a Monster",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/catch-a-monster"
+        },
+        "code": "RALNEMP",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785799300636,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 28,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "RALNEMP",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "spinewyrm",
+        "reward": "Frost Coin x1k",
+        "isNew": false
+      },
+      {
+        "code": "coin",
+        "reward": "Coin Potions",
+        "isNew": false
+      },
+      {
+        "code": "cam",
+        "reward": "XP Potions",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "dmupner",
+      "lolteag",
+      "spinewyrm",
+      "vnoctane",
+      "coin",
+      "cam",
+      "RALNEMP",
+      "stardust",
+      "BUFEXX",
+      "FROXY",
+      "BJNEMDY",
+      "DORENI",
+      "EVENTBUFF",
+      "buffviolet",
+      "fixdungeon",
+      "AASchest",
+      "DJENEMBY",
+      "FESTPUN",
+      "egexos",
+      "ANTPANTER",
+      "buffediv",
+      "SPIFIX",
+      "DEVINGLEW",
+      "fspegg",
+      "SPABLING",
+      "HOREXIE",
+      "RUBYMON",
+      "xp"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "death-in-the-box",
+    "name": "Death in the Box",
+    "displayName": "[⛱️] Death in the Box",
+    "slug": "death-in-the-box",
+    "players": 3457,
+    "redeemNote": null,
+    "rank": 3457,
+    "newCodes": [
+      {
+        "game": "death-in-the-box",
+        "gameName": "Death in the Box",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/death-in-the-box"
+        },
+        "code": "SUMMER",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785799246648,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "SUMMER",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "APRILFOOLS",
+        "reward": "2K Cash & 2 Spins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "APRILFOOLS",
+      "SUMMER"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "merge-a-tank",
     "name": "Merge a Tank",
     "displayName": "Merge a Tank",
@@ -304,6 +633,314 @@
     ],
     "allCodes": [
       "welcome"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "1-speed-per-click",
+    "name": "+1 Speed Per Click",
+    "displayName": "[🚜] +1 Speed Per Click 🚗",
+    "slug": "1-speed-per-click",
+    "players": 2897,
+    "redeemNote": null,
+    "rank": 2897,
+    "newCodes": [
+      {
+        "game": "1-speed-per-click",
+        "gameName": "+1 Speed Per Click",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-speed-per-click"
+        },
+        "code": "1KLIKE",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785773393223,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "1KLIKE",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "RELEASE",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "1KLIKE",
+      "RELEASE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "resource-incremental",
+    "name": "Resource Incremental",
+    "displayName": "[💪 UPD 3] 🔩 Resource Incremental",
+    "slug": "resource-incremental",
+    "players": 1954,
+    "redeemNote": null,
+    "rank": 1954,
+    "newCodes": [
+      {
+        "game": "resource-incremental",
+        "gameName": "Resource Incremental",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/resource-incremental"
+        },
+        "code": "500KVisits",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785781633256,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 10,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "500KVisits",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "5KLikes",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "2500ccu",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "1500ccu",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "5KLikes",
+      "2500ccu",
+      "1500ccu",
+      "100KVisits",
+      "SummerEvent",
+      "Update1",
+      "100Likes",
+      "MiniPatch",
+      "Release",
+      "500KVisits"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "freeze-for-ugc",
+    "name": "Freeze for UGC",
+    "displayName": "Freeze for UGC 🧊",
+    "slug": "freeze-for-ugc",
+    "players": 1877,
+    "redeemNote": null,
+    "rank": 1877,
+    "newCodes": [
+      {
+        "game": "freeze-for-ugc",
+        "gameName": "Freeze for UGC",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/freeze-for-ugc"
+        },
+        "code": "Followed",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785786347620,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 13,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "Followed",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "ICEPOWER",
+        "reward": "Time",
+        "isNew": false
+      },
+      {
+        "code": "ILOVEFREEZE",
+        "reward": "Time",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "Time",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "ALXODEV",
+      "OML_JUANES1",
+      "ICEPOWER",
+      "ILOVEFREEZE",
+      "RELEASE",
+      "FREEZE",
+      "Juanes",
+      "GroupReward",
+      "GOAL2024",
+      "TOILET",
+      "UPDATE",
+      "SKIBIDI",
+      "Followed"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "the-storage",
+    "name": "The Storage",
+    "displayName": "[UPDATE] The Storage",
+    "slug": "the-storage",
+    "players": 983,
+    "redeemNote": null,
+    "rank": 983,
+    "newCodes": [
+      {
+        "game": "the-storage",
+        "gameName": "The Storage",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/the-storage"
+        },
+        "code": "SUMMER2026",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785770440410,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "SUMMER2026",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Sub2Hinjakuu",
+        "reward": "4,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "WeLoveTheStorage",
+        "reward": "2,500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "FreeCase",
+        "reward": "Free Case",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "Sub2Hinjakuu",
+      "WeLoveTheStorage",
+      "FreeCase",
+      "Sub2Izuurin",
+      "SUMMER2026"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "kaiju-paradise",
+    "name": "Kaiju Paradise",
+    "displayName": "Kaiju Paradise",
+    "slug": "kaiju-paradise",
+    "players": 781,
+    "redeemNote": null,
+    "rank": 781,
+    "newCodes": [
+      {
+        "game": "kaiju-paradise",
+        "gameName": "Kaiju Paradise",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/kaiju-paradise"
+        },
+        "code": "1234567891011121314151617181920",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785776106912,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 3,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "1234567891011121314151617181920",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "kevin jr.",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "kevin",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "1234567891011121314151617181920",
+      "kevin jr.",
+      "kevin"
     ]
   },
   {
@@ -689,6 +1326,81 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "robong-megabonk",
+    "name": "Robong Megabonk",
+    "displayName": "[RELEASE] Robong Survivors",
+    "slug": "robong-megabonk",
+    "players": 99,
+    "redeemNote": null,
+    "rank": 99,
+    "newCodes": [
+      {
+        "game": "robong-megabonk",
+        "gameName": "Robong Megabonk",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/robong-megabonk"
+        },
+        "code": "goldgamers",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785800743944,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 17,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "goldgamers",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "autoselect",
+        "reward": "5,000 Gems",
+        "isNew": false
+      },
+      {
+        "code": "adrian",
+        "reward": "10 Spins",
+        "isNew": false
+      },
+      {
+        "code": "spins",
+        "reward": "10 Spins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "catvortex",
+      "skilltree",
+      "release",
+      "autoselect",
+      "adrian",
+      "spins",
+      "faraday",
+      "classrework",
+      "testersthanks",
+      "newboss",
+      "3mvisits",
+      "phoenix",
+      "hype",
+      "welcome",
+      "earlytest",
+      "thankyou",
+      "goldgamers"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "chainsaw-man-devils-heart",
     "name": "Chainsaw Man Devil's Heart",
     "displayName": "Chainsaw Man: Devil's Heart",
@@ -752,6 +1464,148 @@
       "!Code MAKIMARELEASE",
       "!Code 28KBagsIntoTheDark",
       "!Code Progression"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "anime-astral-simulator",
+    "name": "Anime Astral Simulator",
+    "displayName": "[DUNGEON🔥] Simulador de Astral de Anime",
+    "slug": "anime-astral-simulator",
+    "players": 0,
+    "redeemNote": null,
+    "rank": 0,
+    "newCodes": [
+      {
+        "game": "anime-astral-simulator",
+        "gameName": "Anime Astral Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-astral-simulator"
+        },
+        "code": "!FIXEDABUG!",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785772712102,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      },
+      {
+        "game": "anime-astral-simulator",
+        "gameName": "Anime Astral Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-astral-simulator"
+        },
+        "code": "UPDATE8",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785772712102,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T01:00:56.598Z",
+        "fetchedAt": "2026-08-04T01:00:56.598Z"
+      }
+    ],
+    "activeCount": 64,
+    "fetchedAt": "2026-08-04T01:00:56.598Z",
+    "displayCodes": [
+      {
+        "code": "!FIXEDABUG!",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "UPDATE8",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "UPDATE3.5",
+        "reward": "250 F2P Tickets, Potions",
+        "isNew": false
+      },
+      {
+        "code": "TRIALMEDIUM",
+        "reward": "250 F2P Tickets, Potions",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "UPDATE5.5",
+      "SKILLTREE",
+      "UPDATE5",
+      "PETPASSIVES",
+      "DUNGEONS",
+      "MINIUPDATE4.75",
+      "UPDATE4",
+      "SUMMERMOUNT",
+      "UPDATE3.5",
+      "TRIALMEDIUM",
+      "WAIFU",
+      "UPDATE3",
+      "GRIMOIRES",
+      "UPDATE2.5",
+      "TRACKER",
+      "MOUNTS",
+      "UPDATE2",
+      "BATTLEPASS",
+      "3KEVENT",
+      "REWARDSFIXED",
+      "UPDATE1.5",
+      "13KPLAYERS",
+      "UPDATE1",
+      "EXCHANGE",
+      "RELEASE",
+      "!FIXEDABUG!",
+      "UPDATE8",
+      "GATESNOTCLOSINGANYMORE",
+      "AUTOCOLLECTFINGER",
+      "UPDATE7.5",
+      "UPDATE7",
+      "CURSEDRUSH",
+      "KINGOFCURSES",
+      "YETANOTHERFIXSHUTDOWN",
+      "UPDATE7FIXES",
+      "FIXEDINDEX",
+      "UPDATE6.1",
+      "KIEVOLUTION",
+      "UPDATE6EXTRAFIXES",
+      "UPDATE6.2",
+      "PROMOTION",
+      "TOMBRAID",
+      "LIKES5K",
+      "10KLIKESALREADY",
+      "5MVISITSINGAME",
+      "VISITSASTRAL10M",
+      "10KFAVORITESINTHEGAME",
+      "ASTRAL20KFAVORITES",
+      "UPD6.2FIXES",
+      "FIXEDWHITEBEARDQUEST",
+      "UPDATE6FIXES",
+      "OPTIMIZATIONS",
+      "UPDATE6RELEASE",
+      "BACKTOASTRAL",
+      "LIKES3KNEW",
+      "2MVISITSNEW",
+      "20KACTIVE",
+      "30KACTIVE",
+      "7.5KFAVORITES",
+      "!ASTRAL40KCCU!",
+      "FIXEDAVATAR",
+      "UPDATE4.5",
+      "DIVINEPASSIVES",
+      "NPCNERF"
     ]
   }
 ]
