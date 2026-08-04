@@ -268,7 +268,21 @@ function pickDisplay(newCodes, active, ci = false, max = MAX_DISPLAY) {
 // tampil harus kode TERBARU, bukan urutan array mentah. (Kejadian 1 Agt 2026:
 // video Genshin on-demand memilih LEGEDILJKSGM (rilis Juni) & melewatkan
 // Everwinter yang rilis hari itu, semata karena posisinya di array.)
-const recency = (c) => Math.max(Date.parse(c.date ?? 0) || 0, Date.parse(c.firstSeenAt ?? 0) || 0);
+// HARUS sama persis dengan rankMs di site/src/lib/roblox.mjs, kalau tidak urutan
+// kartu video berbeda dari urutan kartu di halaman game — pembaca yang menonton
+// video lalu membuka situs melihat dua daftar "terbaru" yang bertentangan.
+//
+// Dulu `max(date, firstSeen)`, dan itu melanggar prinsip yang sama yang sudah
+// ditegakkan di badge & roundup: kode yang RILIS lama tapi baru KITA TEMUKAN
+// ikut terangkat ke atas. `date` (tanggal rilis sumber) adalah kebenarannya;
+// firstSeen cuma cadangan saat sumber tak memberi tanggal. `bulk` = impor
+// pertama game baru → umurnya tak diketahui, jangan diangkat.
+//
+// JEBAKAN: pakai `?? ""`, JANGAN `?? 0`. Untuk kode tanpa tanggal, Date.parse(0)
+// memulangkan 1999-12-31 (angka 0 dikoersi jadi string "0" = tahun 2000), bukan
+// NaN — nilainya truthy sehingga cadangan firstSeen tak pernah terpakai. Versi
+// lama lolos karena dibungkus Math.max, di rumus baru ini langsung salah.
+const recency = (c) => (Date.parse(c.date ?? "") || 0) || (c.bulk ? 0 : Date.parse(c.firstSeenAt ?? "") || 0);
 const terbaruDulu = (arr) => [...arr].sort((a, b) => recency(b) - recency(a));
 
 /**
