@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-04T07:01:03.990Z",
+  "updatedAt": "2026-08-04T08:00:35.461Z",
   "counts": {
-    "active": 107,
-    "archived": 51
+    "active": 106,
+    "archived": 52
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Version 7.0 - \"Raiment Collection\" Event Elite Cosmetics",
+        "id": "Version 7.0 - \"Raiment Collection\" Event Elite Cosmetics"
+      },
+      "excerpt": {
+        "en": "★ Elite Cosmetic | Amber Nectar Using the power of a contract, sweetness and mellow flavor are drawn together into a marvelous drink to be shared with one's companions. —————— How ",
+        "id": "★ Elite Cosmetic | Amber Nectar Using the power of a contract, sweetness and mellow flavor are drawn together into a marvelous drink to be shared with one's companions. —————— How "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/f38a9ba72d51678accf68563af4188e5_8668846570188382381.jpg",
+      "url": "https://www.hoyolab.com/article/46137161",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-04T08:00:02.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -372,22 +388,6 @@
       "url": "https://www.hoyolab.com/article/46079910",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-31T13:40:05.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "The \"Spooky Summer Adventures\" Event Is About to Begin!",
-        "id": "The \"Spooky Summer Adventures\" Event Is About to Begin!"
-      },
-      "excerpt": {
-        "en": "The Miliastra Wonderland \"Spooky Summer Adventures\" Event Is Coming Soon~ Starting August 17, participate in the in-game event to obtain the event-exclusive Cosmetic Component \"Spo",
-        "id": "The Miliastra Wonderland \"Spooky Summer Adventures\" Event Is Coming Soon~ Starting August 17, participate in the in-game event to obtain the event-exclusive Cosmetic Component \"Spo"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/29/fb8c5865bcf6e4805dd17da53570a38a_6814039091120341856.jpg",
-      "url": "https://www.hoyolab.com/article/46079296",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-31T13:25:02.000Z"
     },
     {
       "game": "zzz",
@@ -1700,7 +1700,9 @@
       "url": "https://www.hoyolab.com/article/45746779",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-06T03:00:05.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1715,10 +1717,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1783180800000/3mqqoqnno90hzx0ft5-1783235312259.png",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5007",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-05T07:19:16.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-05T07:19:16.000Z",
+      "archivedAt": "2026-08-04T08:00:35.461Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
