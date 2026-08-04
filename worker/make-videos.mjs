@@ -222,8 +222,9 @@ function buildCandidates() {
   return deduped.sort((a, b) => b.rank - a.rank);
 }
 
-// Kartu tampil di video: kode BARU dulu (maks MAX_DISPLAY), pad dg kode aktif lain
-// yg ada reward. Sisanya (bila game punya banyak kode) → teaser "+N lagi" di video.
+// Kartu tampil di video: kode BARU dulu (maks MAX_DISPLAY), lalu kode aktif
+// TERBARU — tanpa memandang ada/tidaknya reward. Sisanya (bila game punya banyak
+// kode) → teaser "+N lagi" di video.
 const MAX_DISPLAY = 4; // Short harus tetap kebaca; jangan jejalin semua kode.
 function pickDisplay(newCodes, active, ci = false) {
   const seen = new Set();
@@ -238,11 +239,13 @@ function pickDisplay(newCodes, active, ci = false) {
   newCodes = terbaruDulu(newCodes);
   active = terbaruDulu(active);
   for (const c of newCodes) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci))) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward || "", isNew: true }); }
-  // Pad dg kode aktif BER-REWARD dulu (kartu lebih informatif).
-  for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci)) || !c.reward) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward, isNew: false }); }
-  // Masih ada slot & pilihan ber-reward habis → ikutkan kode TANPA reward
-  // (render isi "Reward in-game"). Cegah video/deskripsi tanpa kode sama sekali
-  // saat semua kode game tak punya reward (mis. +1 Speed Keyboard Escape).
+  // Pad MURNI berdasarkan KEBARUAN — reward TIDAK lagi menyalip.
+  //
+  // Dulu kode ber-reward didahulukan supaya kartunya lebih informatif. Tapi
+  // akibatnya kode yang lebih baru tapi rewardnya tak dilaporkan sumber bisa
+  // kalah oleh kode lama yang kebetulan punya reward — padahal yang dicari
+  // penonton adalah kode yang MASIH JALAN, dan kode terbaru paling mungkin
+  // begitu. Kartu tanpa reward tetap layak: render mengisinya "Reward in-game".
   for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci))) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward || "", isNew: false }); }
   return disp;
 }
