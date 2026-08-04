@@ -10,6 +10,7 @@ import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
 import { uploadVideo, ytConfigured, attachToPlaylist, ytProjectCount } from "./video/upload.mjs";
 import { gameSlug } from "./src/games.mjs";
+import { simpanPending, buangPending, ambilPending } from "./video/pending-thumbs.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA = resolve(HERE, "data");
@@ -50,6 +51,10 @@ const DRY_RUN = process.env.DRY_RUN === "1"; // render + simpan lokal, TANPA upl
 const CHECK = process.argv.includes("--check"); // cek ADA kerja video? exit 0=ada, 1=tidak (tanpa deps berat)
 const REVIEW = resolve(HERE, "../_video-review");
 const OUTDIR = resolve(HERE, "../_video-out"); // video utk upload manual (di-artifact-kan CI)
+// Thumbnail Shorts yang gagal dipasang, menunggu run berikutnya. Ditaruh di
+// worker/data/ karena folder itu YANG DI-COMMIT workflow — satu-satunya tempat
+// yang bertahan antar-run tanpa infrastruktur tambahan.
+const THUMB_DIR = resolve(DATA, "pending-thumbs");
 
 const readJSON = (p, d) => { try { return JSON.parse(readFileSync(p, "utf8")); } catch { return d; } };
 const fmtPlayers = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : String(n));
@@ -430,6 +435,22 @@ async function main() {
 
   // Kuras antrian playlist tertunda lebih dulu (limit playlist mungkin sudah reset).
   if (ytConfigured() && !DRY_RUN) await drainPending();
+  // Kuras thumbnail Shorts yang tertunda (kuota habis di run sebelumnya).
+  // Murah: 1 panggilan API per thumbnail, tak ada render sama sekali.
+  if (ytConfigured() && !DRY_RUN) {
+    const antre = ambilPending("short");
+    if (antre.length) {
+      const { setThumbnail } = await import("./video/upload.mjs");
+      let ok = 0;
+      for (const x of antre) {
+        const f = resolve(THUMB_DIR, x.file || `${x.videoId}.jpg`);
+        if (!existsSync(f)) { buangPending(x.videoId); continue; } // berkasnya hilang → jangan menggantung selamanya
+        try { await setThumbnail(x.videoId, f); rmSync(f, { force: true }); buangPending(x.videoId); ok++; }
+        catch (e) { console.log(`  thumbnail ${x.videoId} masih gagal: ${e.message}`); break; } // kuota belum pulih → hentikan, coba lagi run berikutnya
+      }
+      if (ok) console.log(`thumbnail tertunda dipasang: ${ok}/${antre.length}`);
+    }
+  }
 
   const onDemandId = process.argv.find((a) => a.startsWith("--game="))?.slice(7);
   if (onDemandId) {
@@ -524,7 +545,22 @@ async function main() {
           // SKIP_PLAYLIST menahan PEMBUATAN playlist baru saja. Video untuk game
           // yang playlist-nya SUDAH ada tetap dimasukkan — itu tak memakai jatah
           // harian (yang dibatasi YouTube adalah playlists.insert).
-          const { id, url, playlistPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th, tanpaBuatPlaylist: SKIP_PLAYLIST });
+          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th, tanpaBuatPlaylist: SKIP_PLAYLIST });
+          // Thumbnail Shorts TAK BISA dirender ulang seperti video long: dia
+          // potongan frame dari mp4 yang ikut terhapus bersama runner, dan
+          // Shorts tak bisa diberi thumbnail lewat Studio desktop (harus API atau
+          // aplikasi HP). Jadi kalau gagal, JPG-nya (±180 KB) disimpan ke
+          // worker/data/ — yang memang di-commit workflow — supaya run berikutnya
+          // bisa memasangnya tanpa perlu videonya lagi. Berkasnya dihapus begitu
+          // terpasang, jadi tak menumpuk.
+          if (thumbPending) {
+            try {
+              mkdirSync(THUMB_DIR, { recursive: true });
+              copyFileSync(th, resolve(THUMB_DIR, `${id}.jpg`));
+              simpanPending({ videoId: id, kind: "short", file: `${id}.jpg` });
+              console.log(`  ! thumbnail diantrikan (${id}) — run berikutnya akan memasangnya`);
+            } catch (e2) { console.log(`  ! thumbnail gagal diantrikan: ${e2.message}`); }
+          }
           if (SKIP_PLAYLIST && playlistPending) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
           console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
           state.todayCount += 1; remaining -= 1;
