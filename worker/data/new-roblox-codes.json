@@ -1,10 +1,24 @@
 {
-  "generatedAt": "2026-08-04T22:03:35.839Z",
+  "generatedAt": "2026-08-04T23:00:42.066Z",
   "codes": [],
   "bulkGames": [
     {
-      "game": "raygun-battle",
-      "count": 9,
+      "game": "garden-cleaner-evolution",
+      "count": 2,
+      "fresh": [
+        {
+          "code": "GiveMeRake",
+          "reward": "Free Rake (lasts until rebirth)"
+        },
+        {
+          "code": "GiveMeLeafblower",
+          "reward": "Free Leafblower (lasts until rebirth)"
+        }
+      ]
+    },
+    {
+      "game": "elemental-dungeons",
+      "count": 6,
       "fresh": []
     }
   ]

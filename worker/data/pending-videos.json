@@ -650,6 +650,57 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "garden-cleaner-evolution",
+    "name": "Garden Cleaner Evolution",
+    "displayName": "[NEW AREAS] Garden Cleaner Evolution",
+    "slug": "garden-cleaner-evolution",
+    "players": 15752,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 15752,
+    "newCodes": [
+      {
+        "code": "GiveMeRake",
+        "reward": "Free Rake (lasts until rebirth)"
+      },
+      {
+        "code": "GiveMeLeafblower",
+        "reward": "Free Leafblower (lasts until rebirth)"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-08-04T23:00:42.066Z",
+    "displayCodes": [
+      {
+        "code": "GiveMeRake",
+        "reward": "Free Rake (lasts until rebirth)",
+        "isNew": true
+      },
+      {
+        "code": "GiveMeLeafblower",
+        "reward": "Free Leafblower (lasts until rebirth)",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "GiveMeRake",
+        "reward": "Free Rake (lasts until rebirth)",
+        "isNew": true
+      },
+      {
+        "code": "GiveMeLeafblower",
+        "reward": "Free Leafblower (lasts until rebirth)",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "GiveMeRake",
+      "GiveMeLeafblower"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "noob-incremental",
     "name": "Noob Incremental",
     "displayName": "[UPD 3🌙] Noob Incremental",
