@@ -115,6 +115,24 @@ if (MODE === "audit") {
   }));
   if (locBasi.length) T("TINGGI", "LOKALISASI basi (penonton bahasa lain masih lihat teks lama)", locBasi.map((v) => `${v.id}: ${Object.entries(v.localizations).filter(([k]) => k !== v.snippet.defaultLanguage).map(([k, x]) => `${k}="${(x.title ?? "").slice(0, 45)}"`).join(" ")}`).join("; "));
 
+  // Video KEMBAR: judul identik = game & tanggal yang sama dibuatkan video dua
+  // kali. Di channel yang ~90% tayangannya dari pencarian, dua video begini
+  // berebut kueri yang sama dan memecah sinyalnya.
+  //
+  // Kejadian 3 Agu 2026: run terjadwal dibunuh setelah mengupload 9 video tapi
+  // sebelum commit video-state.json → kesembilannya dibuat ulang run berikutnya.
+  // Penyebabnya sudah ditutup (update-codes kini mengantre, tak dibatalkan),
+  // TAPI tak ada satu pun pemeriksaan yang akan memberi tahu kalau terulang —
+  // ketahuan hanya karena user kebetulan membuka Studio. Karena itu dicek di sini.
+  const perJudul = new Map();
+  for (const v of vids) {
+    const k = (v.snippet.title ?? "").trim().toLowerCase();
+    if (k) (perJudul.get(k) ?? perJudul.set(k, []).get(k)).push(v);
+  }
+  const kembar = [...perJudul.values()].filter((a) => a.length > 1);
+  if (kembar.length) T("TINGGI", `${kembar.length} judul punya video KEMBAR (berebut kueri pencarian yang sama)`,
+    kembar.slice(0, 12).map((a) => `"${a[0].snippet.title.slice(0, 45)}" → ${a.map((v) => v.id).join(" + ")}`).join("; ") + (kembar.length > 12 ? ` (+${kembar.length - 12} lagi)` : ""));
+
   const takPublik = vids.filter((v) => v.status?.privacyStatus !== "public");
   if (takPublik.length) T("SEDANG", "video tidak publik", takPublik.map((v) => `${v.id} [${v.status?.privacyStatus}] ${v.snippet.title.slice(0, 45)}`).join("; "));
 
