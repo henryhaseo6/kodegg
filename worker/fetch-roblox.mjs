@@ -693,6 +693,10 @@ async function main() {
         ...(denAt ? { denAt } : {}),
         // Sama untuk RoCodes — sejak sumber ini ikut digerbangi.
         ...(roAt ? { roAt } : {}),
+        // placeId halaman Den — identitas halaman yang kodenya kita pakai.
+        // Disimpan supaya identitas bisa diperiksa ulang TANPA menarik halaman
+        // Den lagi (lihat audit identitas di bawah).
+        ...((denMeta?.placeId ?? prevGamesMap[id]?.placeId) ? { placeId: denMeta?.placeId ?? prevGamesMap[id].placeId } : {}),
         // Kapan cross-check editorial terakhir dijalankan utk game ini — dasar
         // penjadwalan tingkat 2 (jaminan minimal 1× sehari untuk SEMUA game).
         ...(xJalan ? { xAt: Date.now() } : prevGamesMap[id]?.xAt ? { xAt: prevGamesMap[id].xAt } : {}),
@@ -841,6 +845,45 @@ async function main() {
     promo,
   };
   await writeFile(OUT, JSON.stringify(payload, null, 2));
+
+  // ── AUDIT IDENTITAS (lapor saja) ─────────────────────────────────────────
+  // Celah yang paling berbahaya karena DIAM: universeId salah yang menunjuk game
+  // LAIN yang RAMAI. Koreksi otomatis hanya berjalan saat pemain 0 — kalau uid
+  // salahnya kebetulan hidup, jumlah pemainnya wajar, tak ada yang mencurigakan,
+  // dan game itu bisa dibuatkan video memakai data pemain milik game lain.
+  //
+  // Pemeriksaannya: bandingkan universeId tersimpan dengan hasil resolve placeId
+  // Den. Beda = salah satu identitas keliru. TIDAK diperbaiki otomatis — kalau
+  // slug Den dan RoCodes kebetulan menunjuk game berbeda, menimpa sepihak justru
+  // memperburuk. Ditulis ke identitas-beda.json untuk ditinjau.
+  //
+  // Dibatasi & bergilir: yang paling lama tak diperiksa didahulukan, supaya
+  // seluruh katalog terlewati dalam beberapa hari tanpa membanjiri API Roblox.
+  try {
+    const UID_CEK_MAX = Number(process.env.UID_AUDIT_MAX || 15);
+    const kandidat = Object.entries(games)
+      .filter(([, g]) => g.placeId && g.universeId)
+      .sort((a, b) => (a[1].uidAt ?? 0) - (b[1].uidAt ?? 0))
+      .slice(0, UID_CEK_MAX);
+    const beda = [];
+    for (const [id, g] of kandidat) {
+      const uid = Number(await resolveUniverse(g.placeId)) || 0;
+      g.uidAt = Date.now();
+      if (uid && uid !== Number(g.universeId)) {
+        beda.push({ game: id, tersimpan: Number(g.universeId), dariPlaceId: uid, placeId: g.placeId, players: g.players ?? 0 });
+      }
+    }
+    const P = resolve(dirname(OUT), "identitas-beda.json");
+    let lama = [];
+    try { lama = JSON.parse(await readFile(P, "utf8")); } catch { /* pertama kali */ }
+    const gabung = [...beda, ...lama.filter((x) => !beda.some((b) => b.game === x.game))].slice(0, 200);
+    await writeFile(P, JSON.stringify(gabung, null, 1));
+    if (beda.length) console.log(`[audit-identitas] ${beda.length} game universeId-nya BEDA dari placeId Den: ${beda.map((b) => b.game).join(", ")}`);
+    else console.log(`[audit-identitas] ${kandidat.length} game diperiksa, identitas cocok semua`);
+    await writeFile(OUT, JSON.stringify(payload, null, 2)); // uidAt ikut tersimpan
+  } catch (e) {
+    console.log(`[audit-identitas] dilewati: ${e.message}`);
+  }
 
   // Notif "kode baru" HANYA utk kode yg genuine baru di game yg SUDAH dipantau.
   // `!c.bulk` membuang import-pertama game baru di-discover (mis. sailor-piece 166
