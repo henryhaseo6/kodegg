@@ -44,9 +44,21 @@ async function main() {
 
   // Peta nama-ternormalisasi → gameId. Mobile dari registry, Roblox dari data.
   const byName = new Map();
-  for (const [id, m] of Object.entries(GAMES)) byName.set(normalize(m.name), id);
+  const daftarkan = (kunci, id) => { const k = normalize(kunci || ""); if (k && !byName.has(k)) byName.set(k, id); };
+  for (const [id, m] of Object.entries(GAMES)) daftarkan(m.name, id);
   const rb = JSON.parse(readFileSync(resolve(HERE, "data/roblox-codes.json"), "utf8"));
-  for (const [id, g] of Object.entries(rb.games ?? {})) if (g?.name) byName.set(normalize(g.name), id);
+  for (const [id, g] of Object.entries(rb.games ?? {})) {
+    if (!g) continue;
+    daftarkan(g.name, id);
+    // Alias tambahan. Nama game BERUBAH di sumber (RoCodes menambahkan
+    // "(Shinobi Life 2)" ke Shindo Life, 4 Agu 2026) → judul playlist lama tak
+    // lagi cocok → entri hilang → tombol "Video di YouTube" lenyap dari halaman
+    // game padahal videonya ada. Alias ini membuat perubahan nama semacam itu
+    // tak langsung memutus pemetaan.
+    daftarkan(String(g.name || "").replace(/\s*\([^)]*\)\s*/g, " "), id); // nama tanpa tanda kurung
+    daftarkan(g.slug, id);
+    daftarkan(id, id);
+  }
   const playlists = await listPlaylists();
   const map = {};
   let cocok = 0;
@@ -57,6 +69,22 @@ async function main() {
     const id = byName.get(normalize(gameNameFromTitle(p.title)));
     if (id) { map[id] = p.id; cocok++; }
   }
+  // CARRY-FORWARD: pemetaan yang sudah benar TIDAK boleh hilang hanya karena
+  // judul tak lagi cocok. Berkas ini dibangun ulang dari nol tiap run, jadi
+  // tanpa ini satu perubahan nama di sumber langsung menghapus entri yang sah.
+  // Dipertahankan hanya bila playlist-nya MASIH ADA di channel dan game-nya
+  // masih kita pantau — kalau playlist dihapus, entrinya memang harus gugur.
+  try {
+    const lama = JSON.parse(readFileSync(OUT, "utf8"));
+    const idAda = new Set(playlists.map((p) => p.id));
+    const gameAda = (id) => id === "roblox-promo" || !!rb.games?.[id] || !!GAMES[id];
+    let dipertahankan = 0;
+    for (const [gid, plid] of Object.entries(lama)) {
+      if (!map[gid] && idAda.has(plid) && gameAda(gid)) { map[gid] = plid; dipertahankan++; }
+    }
+    if (dipertahankan) console.log(`  ${dipertahankan} pemetaan dipertahankan dari run sebelumnya (judul tak lagi cocok, playlist masih ada)`);
+  } catch { /* pertama kali / berkas belum ada */ }
+
   // urutkan key biar diff commit stabil
   const sorted = Object.fromEntries(Object.keys(map).sort().map((k) => [k, map[k]]));
   writeFileSync(OUT, JSON.stringify(sorted, null, 2) + "\n");
