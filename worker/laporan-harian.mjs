@@ -196,6 +196,41 @@ if (!TANPA_YT && process.env.YT_REFRESH_TOKEN) {
       L.push("", "**Kueri yang belum dikenali (kandidat alias baru):**");
       for (const [q, v] of asing.slice(0, 8)) L.push(`  - ${String(v).padStart(4)}  ${q}`);
     }
+
+    // PERMINTAAN PER GAME — kueri dicocokkan ke game lalu dijumlahkan. Kata kunci
+    // mentah di atas menjawab "orang mengetik apa"; ini menjawab "game mana yang
+    // dicari", dan itu pertanyaan yang menentukan game mana yang layak digarap
+    // lebih serius. Sumbernya 25 kueri teratas (batas keras API), jadi bacalah
+    // sebagai peringkat, bukan jumlah mutlak.
+    // ALIAS ikut dicocokkan — dan ini bukan detail kecil: pencocokan lewat nama
+    // game saja membuat "kode dds" tak jatuh ke mana pun, padahal itu justru
+    // kueri yang alias-nya sengaja kita pasang.
+    const plMap = baca("yt-playlists.json", {});
+    const daftarGame = Object.entries(rb.games ?? {}).map(([id, g]) => ({
+      nama: g.name ?? id,
+      punyaVideo: !!plMap[g.slug],
+      kunci: [rapi(g.name ?? id), ...(ROBLOX_ALIAS[g.slug] ?? []).map(rapi)].filter((x) => x.length > 2),
+    }));
+    const skor = new Map();
+    for (const [q, v] of rows) {
+      const nq = rapi(q);
+      // Kecocokan TERPANJANG menang supaya "blox fruits" tak tersedot ke "fruits".
+      let best = null, panjang = 0;
+      for (const g of daftarGame) for (const k of g.kunci) {
+        // Alias pendek ("dds", "tds") dicocokkan sebagai KATA UTUH — kalau tidak,
+        // ia menyedot tiap kueri yang kebetulan memuat huruf itu di tengah kata.
+        const cocok = k.length <= 4 ? new RegExp(`(^| )${k}( |$)`).test(nq) : nq.includes(k);
+        if (cocok && k.length > panjang) { best = g; panjang = k.length; }
+      }
+      if (best) skor.set(best.nama, { ...best, views: (skor.get(best.nama)?.views ?? 0) + (v ?? 0) });
+    }
+    const rank = [...skor.values()].sort((a, b) => b.views - a.views);
+    if (rank.length) {
+      L.push("", "**Permintaan pencarian per game (7 hari):**");
+      for (const g of rank.slice(0, 12)) L.push(`  - ${String(g.views).padStart(4)}  ${g.punyaVideo ? "" : "[BELUM ADA VIDEO] "}${g.nama}`);
+      const belum = rank.filter((g) => !g.punyaVideo);
+      if (belum.length) perhatian(`${belum.length} game dicari orang tapi belum punya video: ${belum.slice(0, 3).map((g) => g.nama).join(", ")}`);
+    }
   } catch (e) {
     const m = String(e.message);
     perhatian(/has not been used|is disabled/i.test(m) ? "YouTube Analytics API belum aktif" : `YouTube gagal: ${m.slice(0, 70)}`);
