@@ -72,6 +72,17 @@ try {
   rows = r.data.rows ?? [];
 } catch (e) {
   const msg = String(e?.message || e);
+  // API BELUM DIAKTIFKAN — beda dari masalah scope, dan gampang tertukar karena
+  // dua-duanya "gagal izin". YouTube Analytics API adalah layanan TERPISAH dari
+  // YouTube Data API yang dipakai pipeline upload; mengaktifkan satu tak
+  // mengaktifkan yang lain.
+  const proyek = /project (\d+)/.exec(msg)?.[1];
+  if (/has not been used in project|is disabled|SERVICE_DISABLED/i.test(msg)) {
+    console.error("YouTube Analytics API belum diaktifkan di project Google Cloud.");
+    console.error(`Aktifkan di: https://console.developers.google.com/apis/api/youtubeanalytics.googleapis.com/overview${proyek ? `?project=${proyek}` : ""}`);
+    console.error("Tunggu ~1-2 menit setelah Enable, lalu jalankan lagi.");
+    process.exit(3);
+  }
   if (/insufficient|scope|forbidden|403/i.test(msg)) {
     console.error("403 — token belum punya scope yt-analytics.readonly.");
     console.error("Perbaiki: node worker/video/gen-token.mjs  → perbarui secret YT_REFRESH_TOKEN di GitHub.");
