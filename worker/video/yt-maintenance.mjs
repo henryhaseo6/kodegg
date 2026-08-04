@@ -217,9 +217,13 @@ if (MODE === "show") {
   }
   const idVid = IDS.filter((i) => !i.startsWith("PL"));
   if (!idVid.length) process.exit(0);
-  const r = await yt.videos.list({ part: ["snippet", "status", "localizations"], id: idVid });
+  // statistics ikut ditarik: saat memutuskan mana dari sepasang video KEMBAR yang
+  // dihapus, yang menentukan adalah jumlah tayangannya — jangan sampai yang
+  // dibuang justru yang lebih jalan.
+  const r = await yt.videos.list({ part: ["snippet", "status", "localizations", "statistics"], id: idVid });
   for (const v of r.data.items ?? []) {
     console.log(`\n== ${v.id}`);
+    console.log(`  views/likes/komentar: ${v.statistics?.viewCount ?? "?"} / ${v.statistics?.likeCount ?? "?"} / ${v.statistics?.commentCount ?? "?"}`);
     console.log(`  snippet.title       : ${v.snippet.title}`);
     console.log(`  defaultLanguage     : ${v.snippet.defaultLanguage ?? "(kosong)"}`);
     console.log(`  defaultAudioLanguage: ${v.snippet.defaultAudioLanguage ?? "(kosong)"}`);
