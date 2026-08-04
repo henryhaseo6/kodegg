@@ -223,8 +223,32 @@ function dedupByUniverse(gamesMap, activeArr, archiveArr) {
     (groups.get(uid) ?? groups.set(uid, []).get(uid)).push(id);
   }
   const remap = new Map(); // loserId → survivorId
-  for (const ids of groups.values()) {
+  for (let ids of groups.values()) {
     if (ids.length < 2) continue;
+    // PENJAGA placeId. universeId dipakai di sini sebagai identitas sejati, tapi
+    // universeId sendiri BISA SALAH — dan kalau salahnya menunjuk game lain yang
+    // ramai, dua game berbeda terlihat kembar lalu kodenya dilebur. Kejadian
+    // 4 Agu 2026: `fighting-simulator` menyimpan uid 10321202755 (milik Anime
+    // Fighting Simulator). Saat halaman Den Anime Fighting Simulator ditemukan,
+    // keduanya segrup → 5 kode Anime FS masuk ke Fighting Simulator, tampil di
+    // situs, dan ikut terbit sebagai video.
+    //
+    // placeId membantah dengan MURAH: itu identitas halaman yang kodenya benar-
+    // benar kita pakai, sudah tersimpan, jadi tak perlu satu pun panggilan API.
+    // placeId berbeda = halaman berbeda = game berbeda, apa pun kata universeId.
+    // Duplikat sah (rivals / roblox-rivals) menunjuk placeId yang SAMA → tetap
+    // digabung seperti sebelumnya.
+    const pid = (id) => Number(gamesMap[id]?.placeId) || 0;
+    const berplace = ids.filter((id) => pid(id));
+    if (berplace.length > 1) {
+      const utama = pid(berplace[0]);
+      const bentrok = berplace.filter((id) => pid(id) !== utama);
+      if (bentrok.length) {
+        console.log(`  [dedup] uid ${gamesMap[ids[0]]?.universeId} diklaim ${ids.length} game dg placeId BERBEDA → tak digabung: ${ids.join(", ")}`);
+        ids = ids.filter((id) => !bentrok.includes(id));
+        if (ids.length < 2) continue;
+      }
+    }
     const nActive = (id) => activeArr.reduce((n, c) => n + (c.game === id ? 1 : 0), 0);
     const score = (id) => {
       const g = gamesMap[id];

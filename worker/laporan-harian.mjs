@@ -118,7 +118,10 @@ const buta = s404.filter((x) => !x.denSlug);
 baris("Slug RoCodes 404", `${s404.length} game` + (buta.length ? ` — ${buta.length} TANPA sumber cadangan` : " (semua masih tertutup Den)"));
 if (buta.length) perhatian(`${buta.length} game tak punya sumber hidup sama sekali`);
 const idb = baca("identitas-beda.json", []);
-if (idb.length) perhatian(`${idb.length} game universeId-nya beda dari placeId Den — perlu ditinjau`);
+// Sebut NAMA gamenya, bukan cuma jumlah: identitas keliru bisa menarik kode
+// game lain ke halaman yang salah (Fighting Simulator, 4 Agu 2026), dan yang
+// bisa ditindaklanjuti adalah namanya — angka telanjang cuma bikin cemas.
+if (idb.length) perhatian(`${idb.length} game universeId-nya beda dari placeId Den — perlu ditinjau: ${idb.slice(0, 5).map((x) => `${x.nama ?? x.game} (${x.players ?? 0} pemain)`).join(", ")}${idb.length > 5 ? ", …" : ""}`);
 else baris("Audit identitas", "cocok semua");
 
 // ── 7. YOUTUBE (butuh kredensial + Analytics API aktif) ────────────────────
