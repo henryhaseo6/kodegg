@@ -17,11 +17,6 @@ on:
     # jaring pengaman bila CF cron mati. Hindari dobel-jalan tiap jam.
     - cron: "27 3 * * *"
   workflow_dispatch: # bisa dijalankan manual dari tab Actions
-    inputs:
-      test_push:
-        description: "Kirim notifikasi UJI ke semua subscriber (untuk tes push)"
-        type: boolean
-        default: false
 
 # Cukup satu run sekaligus — TAPI JANGAN dibatalkan, ANTREKAN.
 #
@@ -91,7 +86,6 @@ jobs:
       # di sumber yang sudah dipakai, game yang dihapus sumber, dan kandidat
       # cross-check editorial. Temuannya muncul di ringkasan run + warning.
       - name: Pantau sumber kode (harian)
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
         run: |
           if [ "${FORCE_DISCOVER:-}" != "1" ] && [ "$(date -u +%H)" != "01" ]; then
             echo "bukan jam pemantauan (01 UTC) — lewati."; exit 0
@@ -104,7 +98,6 @@ jobs:
       # sejak kemunculan pertama. SENGAJA tak pernah menggagalkan run: audit yang
       # bikin pipeline merah malah bikin merahnya diabaikan.
       - name: Audit konsistensi data (lapor saja)
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
         run: |
           node worker/audit-data.mjs | tee audit.txt || true
           # Temuan TINGGI dinaikkan jadi warning GitHub → kelihatan di ringkasan
@@ -118,7 +111,6 @@ jobs:
       # Aman-dilewati bila YT belum di-set. Jalan SEBELUM commit → video-state.json
       # ikut ter-commit sekali jalan (tak nambah deploy). Lihat DEPLOY-YOUTUBE.md.
       - name: Auto-video YouTube (kode baru → Shorts)
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
@@ -167,7 +159,6 @@ jobs:
       # pernah muncul. googleapis di-install di sini; bila blok video di atas
       # sudah memasangnya (jam ada video baru), install ini jadi no-op cepat.
       - name: Sync playlist YouTube (peta game→playlist)
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
@@ -181,7 +172,6 @@ jobs:
       # diambil satuan) + artifact per-run sbg cadangan. Keduanya dibersihkan
       # setelah 14 hari; kode redeem biasanya basi jauh sebelum itu.
       - name: Ringkas & rilis video manual
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.test_push) }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -283,52 +273,8 @@ jobs:
         # [skip ci] tak memengaruhi Actions: workflow ini dipicu schedule/
         # workflow_dispatch, BUKAN push, jadi commit ini tak memicu ulang dirinya.
 
-      # Kirim notifikasi push utk kode baru run ini (data/new-codes.json).
-      # Aman-dilewati: skrip exit 0 bila secret VAPID belum di-set.
-      - name: Kirim notifikasi push (kode baru)
-        env:
-          VAPID_PUBLIC: ${{ secrets.VAPID_PUBLIC }}
-          VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
-          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
-          PUSH_SECRET: ${{ secrets.PUSH_SECRET }}
-          SITE_URL: https://kodegg.com
-        run: |
-          if [ -z "$VAPID_PRIVATE" ]; then echo "VAPID belum di-set — lewati notifikasi."; exit 0; fi
-          # Kirim notif HANYA SETELAH deploy live → visitor yg klik notif langsung
-          # liat kode barunya (dulu notif nyusul sebelum situs ke-update). Cuma
-          # nunggu bila run ini bawa KODE BARU (= commit tanpa [skip ci] = CF
-          # build). Poll build-id.txt sampai == commit ini; timeout ~16 mnt →
-          # notif tetap dikirim (telat > hilang). Wall-clock live = ANTRIAN CF +
-          # build; "Duration" di dashboard cuma bagian build (antrian tak keitung,
-          # bisa +5 mnt) → makanya poll hasil nyata, bukan timer durasi.
-          HASNEW=0
-          for f in worker/data/new-codes.json worker/data/new-roblox-codes.json; do
-            [ -f "$f" ] && node -e "process.exit(((JSON.parse(require('fs').readFileSync('$f','utf8')).codes)||[]).length>0?0:1)" 2>/dev/null && HASNEW=1
-          done
-          if [ "$HASNEW" = "1" ]; then
-            SHA=$(git rev-parse HEAD)
-            echo "kode baru → tunggu deploy $SHA live sebelum notif…"
-            for i in $(seq 1 48); do
-              LIVE=$(curl -s --max-time 10 https://kodegg.com/build-id.txt | tr -d '[:space:]')
-              if [ "$LIVE" = "$SHA" ]; then echo "  ✓ deploy live (cek ke-$i, ~$((i*20))dtk)"; break; fi
-              if [ "$i" = "48" ]; then echo "  ⚠ timeout ~16mnt — notif dikirim walau deploy mungkin masih build"; break; fi
-              sleep 20
-            done
-          fi
-          npm install web-push@^3 --no-save --no-audit --no-fund
-          node worker/push-notify.mjs
-
-      # Tes manual: centang "test_push" saat Run workflow → kirim notif uji ke
-      # semua subscriber (tanpa menunggu kode baru).
-      - name: Tes notifikasi push (manual)
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.test_push }}
-        env:
-          VAPID_PUBLIC: ${{ secrets.VAPID_PUBLIC }}
-          VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
-          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
-          PUSH_SECRET: ${{ secrets.PUSH_SECRET }}
-          SITE_URL: https://kodegg.com
-        run: |
-          if [ -z "$VAPID_PRIVATE" ]; then echo "VAPID belum di-set."; exit 0; fi
-          npm install web-push@^3 --no-save --no-audit --no-fund
-          node worker/push-test.mjs
+      # CATATAN: notifikasi push DIPINDAH ke workflow terpisah (push-notify.yml).
+      # Dulu langkah itu ada di sini dan MENAHAN run 7-12 menit hanya untuk
+      # menunggu deploy Cloudflare live — run jadi 24 menit padahal separuhnya
+      # cuma menunggu pihak lain. Sekarang update-codes selesai begitu
+      # pekerjaannya kelar, notifikasi menyusul lewat workflow_run.

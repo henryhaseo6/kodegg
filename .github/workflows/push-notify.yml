@@ -1,0 +1,87 @@
+# Notifikasi push kode baru — DIPISAH dari update-codes.
+#
+# Kenapa dipisah: notifikasi harus menunggu deploy Cloudflare live dulu supaya
+# penerima yang mengetuk langsung melihat kodenya. Penantian itu 7-12 menit dan
+# dulu MENAHAN update-codes sampai selesai — run 24 menit, padahal 12 menitnya
+# cuma menunggu pihak lain untuk mengirim beberapa notifikasi.
+#
+# Sekarang update-codes selesai begitu pekerjaannya kelar, dan workflow ini
+# menyusul sendiri lewat workflow_run. Jaminannya sama persis (tetap menunggu
+# deploy), tapi tak ada lagi yang diblokir.
+name: push-notify
+
+on:
+  workflow_run:
+    workflows: ["update-codes"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "Kirim notifikasi UJI ke semua subscriber (tanpa menunggu kode baru)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+# Antre, jangan dibatalkan: run yang dibunuh di tengah bisa mengirim sebagian
+# notifikasi lalu hilang jejaknya.
+concurrency:
+  group: push-notify
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      # main — bukan SHA pemicu: update-codes melakukan commit di AKHIR run,
+      # jadi kode barunya baru ada di main setelah run itu selesai.
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Kirim notifikasi push (kode baru)
+        if: ${{ inputs.test != true }}
+        env:
+          VAPID_PUBLIC: ${{ secrets.VAPID_PUBLIC }}
+          VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          PUSH_SECRET: ${{ secrets.PUSH_SECRET }}
+          SITE_URL: https://kodegg.com
+        run: |
+          if [ -z "$VAPID_PRIVATE" ]; then echo "VAPID belum di-set — lewati notifikasi."; exit 0; fi
+          HASNEW=0
+          for f in worker/data/new-codes.json worker/data/new-roblox-codes.json; do
+            [ -f "$f" ] && node -e "process.exit(((JSON.parse(require('fs').readFileSync('$f','utf8')).codes)||[]).length>0?0:1)" 2>/dev/null && HASNEW=1
+          done
+          if [ "$HASNEW" = "0" ]; then echo "tak ada kode baru — selesai."; exit 0; fi
+          # Tunggu deploy live dulu. Poll build-id.txt sampai == commit ini;
+          # timeout ~16 mnt → notif tetap dikirim (telat lebih baik daripada
+          # hilang). Wall-clock nyata = ANTRIAN Cloudflare + build, makanya
+          # yang di-poll hasilnya, bukan timer durasi.
+          SHA=$(git rev-parse HEAD)
+          echo "kode baru → tunggu deploy $SHA live sebelum notif…"
+          for i in $(seq 1 48); do
+            LIVE=$(curl -s --max-time 10 https://kodegg.com/build-id.txt | tr -d '[:space:]')
+            if [ "$LIVE" = "$SHA" ]; then echo "  ✓ deploy live (cek ke-$i, ~$((i*20))dtk)"; break; fi
+            if [ "$i" = "48" ]; then echo "  ⚠ timeout ~16mnt — notif dikirim walau deploy mungkin masih build"; break; fi
+            sleep 20
+          done
+          npm install web-push@^3 --no-save --no-audit --no-fund
+          node worker/push-notify.mjs
+
+      - name: Tes notifikasi push (manual)
+        if: ${{ inputs.test == true }}
+        env:
+          VAPID_PUBLIC: ${{ secrets.VAPID_PUBLIC }}
+          VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          PUSH_SECRET: ${{ secrets.PUSH_SECRET }}
+          SITE_URL: https://kodegg.com
+        run: |
+          if [ -z "$VAPID_PRIVATE" ]; then echo "VAPID belum di-set."; exit 0; fi
+          npm install web-push@^3 --no-save --no-audit --no-fund
+          node worker/push-test.mjs
