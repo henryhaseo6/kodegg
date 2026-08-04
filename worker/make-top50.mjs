@@ -139,6 +139,24 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   mkdirSync(OUT_DIR, { recursive: true });
   const outPath = ARG.out || resolve(OUT_DIR, `top50-roblox-${DATE}.mp4`);
   console.log("[top50] render…");
+  // MODE THUMBNAIL SAJA — HARUS sebelum render video (render top50 makan menit).
+  //   --thumb-only=<videoId>  pasang ke video yg sudah tayang
+  //   --thumb-out=<path>      cuma simpan berkasnya
+  if (ARG["thumb-only"] || ARG["thumb-out"]) {
+    const tPath = ARG["thumb-out"] || outPath.replace(/\.mp4$/, ".png");
+    await renderThumb({ games, assetsDir: CACHE, dateLabel: label(DATE), outPath: tPath });
+    console.log("[top50] thumbnail ✓ →", tPath);
+    if (!ARG["thumb-only"]) return;
+    const { ytConfigured: ok, setThumbnail } = await import("./video/upload.mjs");
+    if (!ok()) { console.log("[top50] YT belum di-set → tak bisa pasang."); return; }
+    try {
+      await setThumbnail(ARG["thumb-only"], tPath);
+      console.log(`[top50] thumbnail dipasang ke https://youtu.be/${ARG["thumb-only"]}`);
+      buangPending(ARG["thumb-only"]);
+    } catch (e) { console.log("[top50] pasang thumbnail gagal:", e.message); process.exitCode = 1; }
+    return;
+  }
+
   const { chapters } = await renderTop50({ games, assetsDir: CACHE, dateLabel: label(DATE), outPath, sfx: SFX });
   console.log("[top50] video ✓ →", outPath);
 
@@ -149,20 +167,6 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   const thumbPath = outPath.replace(/\.mp4$/, ".png");
   try { await renderThumb({ games, assetsDir: CACHE, dateLabel: label(DATE), outPath: thumbPath }); console.log("[top50] thumbnail ✓ →", thumbPath); }
   catch (e) { console.log("[top50] thumbnail gagal:", e.message); }
-
-  // MODE PERBAIKAN: pasang thumbnail ke video yang SUDAH tayang (lihat
-  // video/pending-thumbs.mjs). Thumbnail top50 deterministik dari tanggalnya.
-  //   node worker/make-top50.mjs --date=2026-08-03 --thumb-only=sHi3oXV7sMM
-  if (ARG["thumb-only"]) {
-    const { ytConfigured: ok, setThumbnail } = await import("./video/upload.mjs");
-    if (!ok()) { console.log("[top50] YT belum di-set → tak bisa pasang thumbnail."); return; }
-    try {
-      await setThumbnail(ARG["thumb-only"], thumbPath);
-      console.log(`[top50] thumbnail dipasang ke https://youtu.be/${ARG["thumb-only"]}`);
-      buangPending(ARG["thumb-only"]);
-    } catch (e) { console.log("[top50] pasang thumbnail gagal:", e.message); process.exitCode = 1; }
-    return;
-  }
 
   if (ARG["no-upload"] === "1") { console.log("[top50] --no-upload → tidak upload."); return; }
   const { ytConfigured, uploadVideo } = await import("./video/upload.mjs");

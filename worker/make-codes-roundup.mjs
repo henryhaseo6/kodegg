@@ -157,6 +157,26 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
 
   mkdirSync(OUT_DIR, { recursive: true });
   const outPath = ARG.out || resolve(OUT_DIR, `roundup-roblox-${DATE}.mp4`);
+
+  // MODE THUMBNAIL SAJA — HARUS sebelum render video. Render video roundup makan
+  // ~16 menit; memasang satu thumbnail tak boleh sampai membayar ongkos itu.
+  //   --thumb-only=<videoId>  pasang ke video yg sudah tayang
+  //   --thumb-out=<path>      cuma simpan berkasnya (dipakai menyiapkan antrean)
+  if (ARG["thumb-only"] || ARG["thumb-out"]) {
+    const tPath = ARG["thumb-out"] || outPath.replace(/\.mp4$/, ".png");
+    await renderRoundupThumb({ games, dateLabel: label(DATE), totalCodes, gamesCount: games.length, outPath: tPath, seed: seedFromDate(DATE) });
+    console.log("[roundup] thumbnail ✓ →", tPath);
+    if (!ARG["thumb-only"]) return;
+    const { ytConfigured: ok, setThumbnail } = await import("./video/upload.mjs");
+    if (!ok()) { console.log("[roundup] YT belum di-set → tak bisa pasang."); return; }
+    try {
+      await setThumbnail(ARG["thumb-only"], tPath);
+      console.log(`[roundup] thumbnail dipasang ke https://youtu.be/${ARG["thumb-only"]}`);
+      buangPending(ARG["thumb-only"]);
+    } catch (e) { console.log("[roundup] pasang thumbnail gagal:", e.message); process.exitCode = 1; }
+    return;
+  }
+
   console.log("[roundup] render video…");
   const { chapters } = await renderRoundup({ games, dateLabel: label(DATE), outPath, sfx: SFX });
   console.log("[roundup] video ✓ →", outPath);
@@ -167,23 +187,6 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   const thumbPath = outPath.replace(/\.mp4$/, ".png");
   try { await renderRoundupThumb({ games, dateLabel: label(DATE), totalCodes, gamesCount: games.length, outPath: thumbPath, seed: seedFromDate(DATE) }); console.log("[roundup] thumbnail ✓ →", thumbPath); }
   catch (e) { console.log("[roundup] thumbnail gagal:", e.message); }
-
-  // MODE PERBAIKAN: pasang thumbnail ke video yang SUDAH tayang, tanpa mengupload
-  // video baru. Dipakai saat thumbnail gagal karena kuota (kejadian 3 Agu 2026:
-  // roundup & top50 jalan 21:45 UTC, setelah 45 upload Shorts menghabiskan kuota
-  // hari Pacific → videonya naik tanpa thumbnail). Thumbnail-nya deterministik
-  // dari tanggal, jadi bisa dirender ulang — tak perlu mengunduh artifact.
-  //   node worker/make-codes-roundup.mjs --date=2026-08-03 --thumb-only=rsq4z95Tp38
-  if (ARG["thumb-only"]) {
-    const { ytConfigured: ok, setThumbnail } = await import("./video/upload.mjs");
-    if (!ok()) { console.log("[roundup] YT belum di-set → tak bisa pasang thumbnail."); return; }
-    try {
-      await setThumbnail(ARG["thumb-only"], thumbPath);
-      console.log(`[roundup] thumbnail dipasang ke https://youtu.be/${ARG["thumb-only"]}`);
-      buangPending(ARG["thumb-only"]);
-    } catch (e) { console.log("[roundup] pasang thumbnail gagal:", e.message); process.exitCode = 1; }
-    return;
-  }
 
   if (ARG["no-upload"] === "1") { console.log("[roundup] --no-upload → tidak upload."); return; }
   const { ytConfigured, uploadVideo } = await import("./video/upload.mjs");
