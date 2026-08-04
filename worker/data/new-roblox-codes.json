@@ -1,11 +1,24 @@
 {
-  "generatedAt": "2026-08-03T23:01:05.143Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-08-04T00:00:49.124Z",
+  "codes": [
     {
       "game": "battle-for-dream-island-again",
-      "count": 7,
-      "fresh": []
+      "gameName": "Battle for Dream Island Again",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/battle-for-dream-island-again"
+      },
+      "code": "25kmany",
+      "reward": null,
+      "date": "2026-08-03T22:54:29.894Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-04T00:00:49.124Z",
+      "fetchedAt": "2026-08-04T00:00:49.124Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
