@@ -135,16 +135,27 @@ if (MODE === "audit") {
   // TAPI tak ada satu pun pemeriksaan yang akan memberi tahu kalau terulang —
   // ketahuan hanya karena user kebetulan membuka Studio. Karena itu dicek di sini.
   //
-  // JUDUL SAMA SAJA BUKAN BUKTI. Judul kita hanya memuat TANGGAL, bukan jam,
-  // jadi beberapa video update untuk game yang sama di hari yang sama memang
-  // ber-judul identik — dan itu SAH: tiap video membawa kode yang bertambah.
-  // Versi pertama pemeriksaan ini menandai 7 kasus, dan KETUJUHNYA salah
-  // (Ever Night: Reawakening 27 Juli: 02.01 / 15.02 / 20.44, kodenya berbeda-beda).
+  // Kembar sejati = judul sama DAN DAFTAR KODENYA IDENTIK.
   //
-  // Ciri kembar yang SEBENARNYA adalah jaraknya: kasus 3 Agu terbit 14 MENIT
-  // berselang karena run diulang setelah dibunuh. Video update yang wajar
-  // berjarak jam-jaman. Jadi yang dipakai: judul sama DAN terbit < AMBANG_MENIT.
-  const AMBANG_MENIT = 60;
+  // Dua proksi sebelumnya sama-sama meleset:
+  //  1. "judul sama" saja → 7 temuan, KETUJUHNYA palsu. Judul kita cuma memuat
+  //     TANGGAL, jadi beberapa video update di hari yang sama memang ber-judul
+  //     identik — dan itu sah, tiap video membawa kode yang bertambah.
+  //  2. "judul sama + berdekatan waktu" → masih meleset. Clean the Golf Yard
+  //     29 Juli terbit 02.08 dan 02.54 (jarak 46 menit) tapi video kedua membawa
+  //     kode BARU (10KLIKES) — video update yang sah, bukan kembar.
+  //
+  // Yang benar-benar membedakan: ISI. Kasus 3 Agu lahir dari run yang diulang,
+  // jadi kedua videonya membawa daftar kode PERSIS SAMA — tak ada nilai tambah
+  // sama sekali pada yang kedua. Itu definisi kembar, dan itu yang diuji di sini.
+  // Waktu tak lagi dipakai: judul sudah memuat tanggal, jadi judul sama =
+  // game & hari yang sama; kalau kodenya juga sama, salah satunya redundan
+  // berapa pun jaraknya.
+  const kodeDari = (v) => {
+    const baris = (v.snippet.description ?? "").split("\n").filter((l) => l.trim().startsWith("•"));
+    const kode = baris.map((l) => l.replace(/^\s*•\s*/, "").replace(/^\[NEW\]\s*/i, "").split(/\s+—\s+/)[0].trim().toLowerCase()).filter(Boolean);
+    return kode.sort().join("|");
+  };
   const perJudul = new Map();
   for (const v of vids) {
     const k = (v.snippet.title ?? "").trim().toLowerCase();
@@ -153,14 +164,13 @@ if (MODE === "audit") {
   const kembar = [];
   for (const grup of perJudul.values()) {
     if (grup.length < 2) continue;
-    const urut = [...grup].sort((x, y) => Date.parse(x.snippet.publishedAt) - Date.parse(y.snippet.publishedAt));
-    let blok = [urut[0]];
-    for (let i = 1; i < urut.length; i++) {
-      const jarak = (Date.parse(urut[i].snippet.publishedAt) - Date.parse(urut[i - 1].snippet.publishedAt)) / 60000;
-      if (jarak <= AMBANG_MENIT) blok.push(urut[i]);
-      else { if (blok.length > 1) kembar.push(blok); blok = [urut[i]]; }
+    const perKode = new Map();
+    for (const v of grup) {
+      const sidik = kodeDari(v);
+      if (!sidik) continue; // deskripsi tanpa daftar kode → tak bisa dinilai, jangan tuduh
+      (perKode.get(sidik) ?? perKode.set(sidik, []).get(sidik)).push(v);
     }
-    if (blok.length > 1) kembar.push(blok);
+    for (const sama of perKode.values()) if (sama.length > 1) kembar.push(sama);
   }
   if (kembar.length) T("TINGGI", `${kembar.length} judul punya video KEMBAR (berebut kueri pencarian yang sama)`,
     kembar.slice(0, 12).map((a) => `"${a[0].snippet.title.slice(0, 45)}" → ${a.map((v) => v.id).join(" + ")}`).join("; ") + (kembar.length > 12 ? ` (+${kembar.length - 12} lagi)` : ""));
