@@ -529,6 +529,31 @@ async function main() {
     //       tak memuat kata "Roblox" sama sekali.
     // Game yang memang bernama "Roblox ..." tak tersentuh karena kedua bukti itu
     // akan gagal.
+    // Rapikan nama apa pun sumbernya: buang tag pembaruan dalam kurung siku/biasa,
+    // emoji, dan embel-embel promosi setelah "|". Developer Roblox rutin
+    // menempelkan itu ke nama game ("[249]", "(Shinobi Life 2)", "🐟", "| Candy &
+    // Chocolate") dan tiap situs kode menyalinnya berbeda-beda.
+    //
+    // Diterapkan ke nama TERPILIH, bukan mengganti sumbernya. Diukur pada 429
+    // game: nama dari RoCodes/Den ternyata SUDAH bersih — cuma 1 yang bocor
+    // ("Shindo Life (Shinobi Life 2)"). Sebaliknya, mengganti sumber ke nama
+    // resmi Roblox mengubah 114 nama dan mengimpor penjejalan kata kunci milik
+    // developer ("Driving Empire Car Racing RP", "Berry Avenue RP") — lebih
+    // konsisten tapi lebih buruk dibaca. Jadi yang dibetulkan bentuknya, bukan
+    // sumbernya. Tanda seperti "+" dan "!" SENGAJA dipertahankan
+    // ("+1 Speed Monkey Escape" tetap utuh).
+    const rapikanNama = (n) => {
+      const out = String(n || "")
+        .replace(/\[[^\]]*\]/g, " ")
+        .replace(/\([^)]*\)/g, " ")
+        .replace(/\p{Extended_Pictographic}/gu, " ")
+        .replace(/[️‍]/g, "")
+        .replace(/\s*\|.*$/, "")
+        .replace(/\s+/g, " ")
+        .replace(/^[\s\-–—|:,·]+|[\s\-–—|:,·]+$/g, "")
+        .trim();
+      return out || String(n || "").trim(); // jangan sampai jadi kosong
+    };
     const buangAwalanRoblox = (n) => {
       if (!n || !/^roblox\s+/i.test(n)) return n;
       const tanpa = n.replace(/^roblox\s+/i, "").trim();
@@ -558,6 +583,7 @@ async function main() {
     else if (prevNamaSrc === "rocodes" && prevNama) { name = prevNama; nameSrc = "rocodes"; } // RoCodes cuma tak ditarik run ini
     else if (namaDen) { name = namaDen; nameSrc = "den"; }
     else { name = prevNama || entry.name; nameSrc = prevNamaSrc ?? null; }
+    if (nameSrc !== "override") name = rapikanNama(name); // override manual dihormati apa adanya
     const slugRo = entry.rocodesSlug;
     const slugDen = entry.denSlug;
 
