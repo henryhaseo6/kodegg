@@ -228,6 +228,15 @@ const MAX_DISPLAY = 4; // Short harus tetap kebaca; jangan jejalin semua kode.
 function pickDisplay(newCodes, active, ci = false) {
   const seen = new Set();
   const disp = [];
+  // Penyortiran DILAKUKAN DI SINI, bukan di pemanggil. Dulu `terbaruDulu()` cuma
+  // dipasang di dua pemanggil jalur manual (--game=), sedangkan 6 pemanggil jalur
+  // OTOMATIS mengoper daftar apa adanya — jadi bug yang dicatat di komentar
+  // `recency` (video Genshin memilih kode rilis Juni & melewatkan kode hari itu,
+  // semata karena posisi array) tetap hidup di jalur yang paling sering jalan.
+  // Karena slotnya cuma 4, urutan menentukan kode mana yang benar-benar dilihat
+  // penonton. Ditaruh di dalam fungsi supaya tak bisa terlupa lagi.
+  newCodes = terbaruDulu(newCodes);
+  active = terbaruDulu(active);
   for (const c of newCodes) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci))) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward || "", isNew: true }); }
   // Pad dg kode aktif BER-REWARD dulu (kartu lebih informatif).
   for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci)) || !c.reward) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward, isNew: false }); }
