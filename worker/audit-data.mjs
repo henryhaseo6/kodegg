@@ -131,6 +131,72 @@ if (pv.length) lapor("INFO", "antrian video tertunda", `${pv.length} kandidat me
 const bulanWIB = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta", year: "numeric", month: "2-digit" }).format(new Date()).slice(0, 7);
 if (st?.promoMonth && st.promoMonth !== bulanWIB) lapor("INFO", "promoMonth belum menyusul bulan WIB", `${st.promoMonth} vs ${bulanWIB} — wajar bila rekap bulan ini memang belum dibuat`);
 
+// 11. KESEHATAN PARSER — pemeriksaan yang membandingkan run ini dengan RIWAYAT.
+//
+// Kelas bug paling berbahaya di proyek ini bukan yang meledak, tapi yang DIAM:
+// sumber mengubah markupnya, parser kita memulangkan kosong, dan tak ada yang
+// menjerit. Dua kali dalam dua hari dari sumber yang sama (4 Agu 2026):
+//   - parser howTo Den kelewat judul "How to CLAIM" → 30 dari 30 halaman kosong
+//   - parser reward Den kelewat kelas <td search-term> → 3.435 kode tanpa reward
+// Keduanya ketahuan hanya karena user kebetulan membuka halaman dan curiga.
+//
+// Pemeriksaan berbasis AMBANG TETAP tak cukup: nilai wajar tiap metrik berbeda
+// dan bergeser seiring katalog tumbuh. Yang dipakai di sini adalah PERBANDINGAN
+// DENGAN DIRI SENDIRI — median beberapa run terakhir. Anjlok mendadak = sesuatu
+// rusak, apa pun angka absolutnya.
+{
+  const HFILE = resolve(DATA, "health.json");
+  const dariDen = (c) => (c.sources?.length ? c.sources : [c.source]).some((x) => /Den/i.test(x || ""));
+  const dariRo = (c) => (c.sources?.length ? c.sources : [c.source]).some((x) => /RoCodes/i.test(x || ""));
+  const pct = (a, b) => (b > 0 ? Math.round((a / b) * 1000) / 10 : null);
+  const aktif = rb.active ?? [];
+  const den = aktif.filter(dariDen), ro = aktif.filter(dariRo);
+  const gDen = Object.values(rb.games ?? {}).filter((g) => g.denSlug);
+
+  const kini = {
+    at: new Date().toISOString(),
+    aktif: aktif.length,
+    denKode: den.length,
+    roKode: ro.length,
+    denRewardPct: pct(den.filter((c) => c.reward).length, den.length),
+    roRewardPct: pct(ro.filter((c) => c.reward).length, ro.length),
+    howToPct: pct(gDen.filter((g) => (g.howTo ?? []).length).length, gDen.length),
+    game: Object.keys(rb.games ?? {}).length,
+  };
+
+  let riwayat = baca("health.json", []);
+  if (!Array.isArray(riwayat)) riwayat = [];
+  const med = (kunci) => {
+    const v = riwayat.map((r) => r[kunci]).filter((x) => typeof x === "number").sort((a, b) => a - b);
+    return v.length >= 3 ? v[Math.floor(v.length / 2)] : null; // <3 sampel = belum ada dasar
+  };
+  // Anjlok >50% dari median = curiga rusak. Ambang longgar supaya fluktuasi
+  // wajar (katalog bertambah/berkurang) tak berbunyi.
+  for (const [kunci, nama] of [
+    ["denRewardPct", "% kode Den punya reward"],
+    ["roRewardPct", "% kode RoCodes punya reward"],
+    ["howToPct", "% game punya cara redeem"],
+    ["denKode", "jumlah kode dari Roblox Den"],
+    ["roKode", "jumlah kode dari RoCodes"],
+    ["aktif", "jumlah kode aktif"],
+  ]) {
+    const dasar = med(kunci), skr = kini[kunci];
+    if (dasar == null || skr == null || dasar <= 0) continue;
+    if (skr < dasar * 0.5) lapor("TINGGI", `ANJLOK: ${nama}`, `${skr} sekarang vs ${dasar} (median ${riwayat.length} run terakhir) — kemungkinan parser sumbernya rusak / markup berubah`);
+  }
+  // Jaring tanpa riwayat: nol mutlak padahal datanya banyak = pasti rusak.
+  // Ini yang akan menangkap kasus 4 Agu bahkan di pemasangan yang masih bersih.
+  if (den.length > 200 && kini.denRewardPct === 0) lapor("TINGGI", "parser reward Roblox Den memulangkan NOL", `${den.length} kode dari Den, tak satu pun punya reward`);
+  if (gDen.length > 50 && kini.howToPct === 0) lapor("TINGGI", "parser cara-redeem Roblox Den memulangkan NOL", `${gDen.length} game punya halaman Den, tak satu pun punya langkah redeem`);
+
+  // Simpan snapshot (maks 72 ≈ 3 hari). Ini SATU-SATUNYA berkas yang ditulis
+  // audit — data sumber tak pernah disentuh.
+  try {
+    const { writeFileSync } = await import("node:fs");
+    writeFileSync(HFILE, JSON.stringify([kini, ...riwayat].slice(0, 72), null, 1) + "\n");
+  } catch { /* jangan pernah menggagalkan audit */ }
+}
+
 // ── keluaran ────────────────────────────────────────────────────────────────
 const urut = { TINGGI: 0, SEDANG: 1, INFO: 2 };
 temuan.sort((a, b) => urut[a.parah] - urut[b.parah]);
