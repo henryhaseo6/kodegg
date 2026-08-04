@@ -1,26 +1,21 @@
 {
-  "generatedAt": "2026-08-04T16:01:16.302Z",
-  "codes": [
+  "generatedAt": "2026-08-04T17:01:01.233Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "spin-a-soccer-card",
-      "gameName": "Spin a Soccer Card",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/spin-a-soccer-card"
-      },
-      "code": "HERO-CRYSTAL",
-      "reward": "2 Packs and 3 Spins",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1785729230044,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-04T16:01:16.302Z",
-      "fetchedAt": "2026-08-04T16:01:16.302Z"
+      "game": "sail-and-sink-simulator",
+      "count": 1,
+      "fresh": []
+    },
+    {
+      "game": "street-soccer-2026",
+      "count": 1,
+      "fresh": []
+    },
+    {
+      "game": "trade-squishy-dumplings",
+      "count": 5,
+      "fresh": []
     }
-  ],
-  "bulkGames": []
+  ]
 }
