@@ -452,6 +452,7 @@ async function main() {
     return lm > terakhir;
   };
   let denTarik = 0, denLewat = 0, roTarik = 0, roLewat = 0;
+  const namaBerubah = []; // jejak perubahan nama game (lihat pemakaian di bawah)
 
   console.log(`memproses ${entries.length} game (2 primer: RoCodes + Roblox Den; indeks Den ${denIndex.size} slug)…`);
 
@@ -584,6 +585,12 @@ async function main() {
     else if (namaDen) { name = namaDen; nameSrc = "den"; }
     else { name = prevNama || entry.name; nameSrc = prevNamaSrc ?? null; }
     if (nameSrc !== "override") name = rapikanNama(name); // override manual dihormati apa adanya
+    // Nama yang berubah-ubah itu mahal: memutus pemetaan playlist, mengubah judul
+    // video, dan bikin penonton ragu apakah ini game yang sama. Sebelumnya
+    // perubahan nama terjadi TANPA jejak — ketahuan hanya karena user melihat
+    // tombol YouTube hilang. Sekarang tiap perubahan dicatat, jadi kalau sebuah
+    // game bolak-balik namanya, itu terlihat di log tanpa perlu beruntung.
+    if (prevNama && prevNama !== name) namaBerubah.push(`${id}: "${prevNama}" → "${name}" [${nameSrc}]`);
     const slugRo = entry.rocodesSlug;
     const slugDen = entry.denSlug;
 
@@ -802,6 +809,7 @@ async function main() {
   const { active: freshDD, archive: freshArchDD } = dedupByUniverse(games, freshActive, freshArchive);
   console.log(`Roblox Den: ${denTarik} halaman ditarik (berubah / game ramai), ${denLewat} dilewati (pakai simpanan)`);
   console.log(`RoCodes.gg: ${roTarik} halaman ditarik (berubah), ${roLewat} dilewati (pakai simpanan)`);
+  if (namaBerubah.length) console.log(`NAMA GAME BERUBAH (${namaBerubah.length}): ${namaBerubah.slice(0, 12).join(" · ")}${namaBerubah.length > 12 ? ` (+${namaBerubah.length - 12})` : ""}`);
   const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshDD, freshArchDD, prev, covered, now);
   const mergedGames = { ...(prev.games ?? {}), ...games };
   // PURGE game DUPLIKAT yg nyangkut di prev.games (universeId sama, slug beda
