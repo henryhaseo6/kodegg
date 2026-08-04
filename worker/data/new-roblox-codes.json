@@ -1,20 +1,36 @@
 {
-  "generatedAt": "2026-08-04T17:01:01.233Z",
-  "codes": [],
+  "generatedAt": "2026-08-04T18:00:50.066Z",
+  "codes": [
+    {
+      "game": "night-at-the-infirmary",
+      "gameName": "Night At The Infirmary",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/night-at-the-infirmary"
+      },
+      "code": "UPD4",
+      "reward": "250 Shards",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1785729266839,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-04T18:00:50.066Z",
+      "fetchedAt": "2026-08-04T18:00:50.066Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "sail-and-sink-simulator",
-      "count": 1,
+      "game": "hide-from-the-villain",
+      "count": 4,
       "fresh": []
     },
     {
-      "game": "street-soccer-2026",
-      "count": 1,
-      "fresh": []
-    },
-    {
-      "game": "trade-squishy-dumplings",
-      "count": 5,
+      "game": "dodge-or-die",
+      "count": 3,
       "fresh": []
     }
   ]
