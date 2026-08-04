@@ -161,6 +161,15 @@ if (st?.promoMonth && st.promoMonth !== bulanWIB) lapor("INFO", "promoMonth belu
     denRewardPct: pct(den.filter((c) => c.reward).length, den.length),
     roRewardPct: pct(ro.filter((c) => c.reward).length, ro.length),
     howToPct: pct(gDen.filter((g) => (g.howTo ?? []).length).length, gDen.length),
+    // Sinyal-sinyal yang SEBELUMNYA tak dipantau sama sekali, padahal tiap satu
+    // dari mereka rusak diam-diam akan mematikan satu fitur tanpa jejak:
+    //   srcNew  → badge BARU & pemicu video "kode baru" berhenti
+    //   notice  → syarat redeem (mis. RIVALS wajib follow) hilang dari situs+video
+    //   denSlug → cakupan sumber kedua menyusut
+    srcNewPct: pct(den.filter((c) => c.srcNew).length, den.length),
+    noticeGame: Object.values(rb.games ?? {}).filter((g) => g.redeemNote).length,
+    denSlugGame: gDen.length,
+    cekDuluPct: pct(aktif.filter((c) => c.check).length, aktif.length),
     game: Object.keys(rb.games ?? {}).length,
   };
 
@@ -179,6 +188,9 @@ if (st?.promoMonth && st.promoMonth !== bulanWIB) lapor("INFO", "promoMonth belu
     ["denKode", "jumlah kode dari Roblox Den"],
     ["roKode", "jumlah kode dari RoCodes"],
     ["aktif", "jumlah kode aktif"],
+    ["srcNewPct", "% kode Den ber-penanda NEW"],
+    ["noticeGame", "game punya syarat redeem"],
+    ["denSlugGame", "game terhubung ke Roblox Den"],
   ]) {
     const dasar = med(kunci), skr = kini[kunci];
     if (dasar == null || skr == null || dasar <= 0) continue;
@@ -188,6 +200,10 @@ if (st?.promoMonth && st.promoMonth !== bulanWIB) lapor("INFO", "promoMonth belu
   // Ini yang akan menangkap kasus 4 Agu bahkan di pemasangan yang masih bersih.
   if (den.length > 200 && kini.denRewardPct === 0) lapor("TINGGI", "parser reward Roblox Den memulangkan NOL", `${den.length} kode dari Den, tak satu pun punya reward`);
   if (gDen.length > 50 && kini.howToPct === 0) lapor("TINGGI", "parser cara-redeem Roblox Den memulangkan NOL", `${gDen.length} game punya halaman Den, tak satu pun punya langkah redeem`);
+  if (den.length > 500 && kini.srcNewPct === 0) lapor("TINGGI", "penanda NEW Roblox Den memulangkan NOL", `${den.length} kode dari Den, tak satu pun ber-penanda — badge BARU & video "kode baru" akan berhenti`);
+  if (gDen.length > 100 && kini.noticeGame === 0) lapor("TINGGI", "spanduk syarat redeem Roblox Den memulangkan NOL", "tak satu pun game punya syarat redeem — parser spanduk kemungkinan rusak");
+  // CEK DULU menumpuk = sapuan cek-mandek macet atau sumber membanjiri kode ragu.
+  if (kini.cekDuluPct != null && kini.cekDuluPct > 25) lapor("SEDANG", "kode CEK DULU menumpuk", `${kini.cekDuluPct}% kode aktif berstatus ragu`);
 
   // Simpan snapshot (maks 72 ≈ 3 hari). Ini SATU-SATUNYA berkas yang ditulis
   // audit — data sumber tak pernah disentuh.

@@ -205,6 +205,28 @@ if (!TANPA_YT && process.env.YT_REFRESH_TOKEN) {
   baris("Dilewati", "kredensial YT tak tersedia");
 }
 
+// ── 8. SISI CHANNEL YOUTUBE ────────────────────────────────────────────────
+// Pemeriksaan ini (playlist yatim/kosong, video kembar, lokalisasi basi, video
+// tak publik) selama ini TERPISAH dan hanya jalan kalau seseorang ingat
+// men-dispatch-nya manual. Itu persis pola yang bikin masalah bertahan lama:
+// pemeriksaannya ada, tapi tak ada yang menjalankannya. Disatukan ke sini.
+if (!TANPA_YT && process.env.YT_REFRESH_TOKEN) {
+  bagian("Channel YouTube");
+  try {
+    const out = execFileSync(process.execPath, [resolve(HERE, "video/yt-maintenance.mjs"), "--mode=audit"], { encoding: "utf8", timeout: 180000 });
+    const skala = out.split("\n").find((l) => /^channel:/.test(l));
+    if (skala) baris("Skala", skala.replace("channel: ", ""));
+    let ada = 0;
+    for (const blok of out.split("\n\n")) {
+      const judul = blok.trim().split("\n")[0];
+      if (/^\[TINGGI\]/.test(judul)) { perhatian(judul.replace(/^\[TINGGI\]\s*/, "TINGGI: ")); ada++; }
+      else if (/^\[SEDANG\]/.test(judul)) { baris("SEDANG", judul.replace(/^\[SEDANG\]\s*/, "")); ada++; }
+    }
+    if (!ada) baris("Temuan", "bersih");
+    ringkas.channelTinggi = (out.match(/^\[TINGGI\]/gm) ?? []).length;
+  } catch (e) { perhatian(`audit channel gagal: ${String(e.message).slice(0, 70)}`); }
+}
+
 // ── keluaran ───────────────────────────────────────────────────────────────
 const teks = [`# Laporan harian KodeGG — ${new Date().toISOString().slice(0, 10)}`, ...L].join("\n");
 if (JSON_ONLY) console.log(JSON.stringify(ringkas, null, 1));
