@@ -645,6 +645,134 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "garden-tower-defense",
+    "name": "Garden Tower Defense",
+    "displayName": "[🌻] Garden Tower Defense 🌻",
+    "slug": "garden-tower-defense",
+    "players": 7019,
+    "redeemNote": null,
+    "rank": 7019,
+    "newCodes": [
+      {
+        "game": "garden-tower-defense",
+        "gameName": "Garden Tower Defense",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/garden-tower-defense"
+        },
+        "code": "CLASSICMODE",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785755330138,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T06:01:09.759Z",
+        "fetchedAt": "2026-08-04T06:01:09.759Z"
+      },
+      {
+        "game": "garden-tower-defense",
+        "gameName": "Garden Tower Defense",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/garden-tower-defense"
+        },
+        "code": "PITY",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785755330138,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T06:01:09.759Z",
+        "fetchedAt": "2026-08-04T06:01:09.759Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-08-04T06:01:09.759Z",
+    "displayCodes": [
+      {
+        "code": "CLASSICMODE",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "PITY",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "HYDRO",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SURGE",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "CLASSICMODE",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "PITY",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "HYDRO",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SURGE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "CLUSTERPLANT",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "VIRIDIAN",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "PROFILE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SENTRY",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "CLASSICMODE",
+      "PITY",
+      "HYDRO",
+      "SURGE",
+      "CLUSTERPLANT",
+      "VIRIDIAN",
+      "PROFILE",
+      "SENTRY"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "car-flipper",
     "name": "Car Flipper",
     "displayName": "Car Flipper [NEW CARS]",
