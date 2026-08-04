@@ -49,11 +49,19 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
     `${name}${cw} (${my}) ${label} ${w.d} ${w.mon}`,
   ].find((t) => t.length <= 100) ?? `${name}${cw} ${w.d} ${w.mon} ${w.y}`.slice(0, 100);
 
-  const codeLines = codes.slice(0, 8).map((c) => `• ${c.code}${c.reward ? ` — ${c.reward}` : ""}`).join("\n");
+  // [NEW] di depan kode yang memang baru — penonton bisa langsung memilah tanpa
+  // membaca seluruh daftar. Penandanya sama dengan badge di kartu video (isNew),
+  // jadi video & deskripsi tak pernah bertentangan.
+  const dipakai = codes.slice(0, 8);
+  const codeLines = dipakai.map((c) => `• ${c.isNew ? "[NEW] " : ""}${c.code}${c.reward ? ` — ${c.reward}` : ""}`).join("\n");
+  // Sisa kode yang tak muat di deskripsi — disebut angkanya supaya penonton tahu
+  // daftarnya jauh lebih panjang, bukan cuma segini.
+  const sisa = Math.max(0, (activeCount || 0) - dipakai.length);
+  const barisSisa = sisa > 0 ? `\n➕ ${sisa} kode aktif lainnya ada di kodegg.com\n` : "";
   const description =
     `${allMode ? `Semua kode redeem ${name} yang masih aktif ${my}!` : `Kode redeem ${name} terbaru & aktif ${my}!`} ${activeCount} kode aktif, semua terverifikasi.\n` +
     `🕒 Update terakhir: ${w.d} ${w.mon} ${w.y}, ${w.hm} WIB\n\n` +
-    `🎁 KODE:\n${codeLines}\n\n` +
+    `🎁 KODE:\n${codeLines}\n${barisSisa}\n` +
     // SYARAT redeem (mis. RIVALS wajib follow developer-nya dulu). Ditaruh
     // SEBELUM tautan: kalau syaratnya tak dipenuhi, kode yang benar & masih
     // aktif pun ditolak game — penonton yang cuma menyalin kode dari video akan

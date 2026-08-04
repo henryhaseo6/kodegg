@@ -106,7 +106,7 @@ function buildCandidates() {
       platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: (g.players ?? 0),
       newCodes: nc, activeCount: countAll(active, nc), fetchedAt: rbNewFile.generatedAt,
-      displayCodes: pickDisplay(nc, active),
+      displayCodes: pickDisplay(nc, active), descCodes: pickDisplay(nc, active, false, DESC_MAX),
     });
   }
   // ROBLOX — KODE FRESH (window-based, dicek TIAP run, bukan sekali saat impor).
@@ -139,7 +139,7 @@ function buildCandidates() {
       platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: freshCodes, activeCount: countAll(active, freshCodes), fetchedAt: rbNewFile.generatedAt,
-      displayCodes: pickDisplay(freshCodes, active),
+      displayCodes: pickDisplay(freshCodes, active), descCodes: pickDisplay(freshCodes, active, false, DESC_MAX),
     });
   }
   // ROBLOX — game BARU masuk pantauan TANPA kode fresh (semua backfill lama) →
@@ -155,7 +155,7 @@ function buildCandidates() {
       platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: active, activeCount: active.length, fetchedAt: rbNewFile.generatedAt, allMode: true,
-      displayCodes: pickDisplay([], active),
+      displayCodes: pickDisplay([], active), descCodes: pickDisplay([], active, false, DESC_MAX),
     });
   }
 
@@ -187,7 +187,7 @@ function buildCandidates() {
       platform: "MOBILE", id, name: meta?.name ?? nc[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
       iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 1e9, // mobile prioritas (game besar, jarang)
       newCodes: nc, activeCount: countAll(active, nc, true), fetchedAt: mNewFile.generatedAt,
-      displayCodes: pickDisplay(nc, active, true),
+      displayCodes: pickDisplay(nc, active, true), descCodes: pickDisplay(nc, active, true, DESC_MAX),
     });
   }
   // MOBILE — KODE FRESH (fallback, dicek TIAP run) — sejajar jalur fresh Roblox.
@@ -206,7 +206,7 @@ function buildCandidates() {
       platform: "MOBILE", id, name: meta?.name ?? active[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
       iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 1e9,
       newCodes: freshCodes, activeCount: countAll(active, freshCodes, true), fetchedAt: mNewFile.generatedAt,
-      displayCodes: pickDisplay(freshCodes, active, true),
+      displayCodes: pickDisplay(freshCodes, active, true), descCodes: pickDisplay(freshCodes, active, true, DESC_MAX),
     });
   }
   // Dedup by universeId: buang kandidat ROBLOX yg universeId-nya SUDAH punya
@@ -235,7 +235,11 @@ function buildCandidates() {
 // TERBARU — tanpa memandang ada/tidaknya reward. Sisanya (bila game punya banyak
 // kode) → teaser "+N lagi" di video.
 const MAX_DISPLAY = 4; // Short harus tetap kebaca; jangan jejalin semua kode.
-function pickDisplay(newCodes, active, ci = false) {
+// Deskripsi video TEKS, bukan kartu — muat lebih banyak tanpa bikin sesak, dan
+// tiap kode di sana ikut terbaca mesin pencari. Kartu tetap 4 (keputusan: video
+// = 4 kode terbaru, arsip lengkap ada di situs).
+const DESC_MAX = 8;
+function pickDisplay(newCodes, active, ci = false, max = MAX_DISPLAY) {
   const seen = new Set();
   const disp = [];
   // Penyortiran DILAKUKAN DI SINI, bukan di pemanggil. Dulu `terbaruDulu()` cuma
@@ -247,7 +251,7 @@ function pickDisplay(newCodes, active, ci = false) {
   // penonton. Ditaruh di dalam fungsi supaya tak bisa terlupa lagi.
   newCodes = terbaruDulu(newCodes);
   active = terbaruDulu(active);
-  for (const c of newCodes) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci))) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward || "", isNew: true }); }
+  for (const c of newCodes) { if (disp.length >= max) break; if (seen.has(norm(c.code, ci))) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward || "", isNew: true }); }
   // Pad MURNI berdasarkan KEBARUAN — reward TIDAK lagi menyalip.
   //
   // Dulu kode ber-reward didahulukan supaya kartunya lebih informatif. Tapi
@@ -255,7 +259,7 @@ function pickDisplay(newCodes, active, ci = false) {
   // kalah oleh kode lama yang kebetulan punya reward — padahal yang dicari
   // penonton adalah kode yang MASIH JALAN, dan kode terbaru paling mungkin
   // begitu. Kartu tanpa reward tetap layak: render mengisinya "Reward in-game".
-  for (const c of active) { if (disp.length >= MAX_DISPLAY) break; if (seen.has(norm(c.code, ci))) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward || "", isNew: false }); }
+  for (const c of active) { if (disp.length >= max) break; if (seen.has(norm(c.code, ci))) continue; seen.add(norm(c.code, ci)); disp.push({ code: c.code, reward: c.reward || "", isNew: false }); }
   return disp;
 }
 
@@ -305,7 +309,7 @@ function buildOnDemand(id) {
     return {
       platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: 0, newCodes: [], activeCount: active.length,
-      fetchedAt: new Date().toISOString(), allMode: true, displayCodes: tandaiBaru(pickDisplay([], terbaruDulu(active)), active),
+      fetchedAt: new Date().toISOString(), allMode: true, displayCodes: tandaiBaru(pickDisplay([], terbaruDulu(active)), active), descCodes: tandaiBaru(pickDisplay([], terbaruDulu(active), false, DESC_MAX), active),
     };
   }
   const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
@@ -316,7 +320,7 @@ function buildOnDemand(id) {
   return {
     platform: "MOBILE", id, name: meta?.name ?? active[0]?.gameName ?? id, slug: gameSlug(id), players: 0,
     iconPath: resolve(ASSETS_GAMES, `${id}.png`), rank: 0, newCodes: [], activeCount: countAll(active, [], true),
-    fetchedAt: new Date().toISOString(), allMode: true, displayCodes: tandaiBaru(pickDisplay([], terbaruDulu(active), true), active, true),
+    fetchedAt: new Date().toISOString(), allMode: true, displayCodes: tandaiBaru(pickDisplay([], terbaruDulu(active), true), active, true), descCodes: tandaiBaru(pickDisplay([], terbaruDulu(active), true, DESC_MAX), active, true),
   };
 }
 
@@ -373,7 +377,7 @@ function buildPromoCandidate(state, now) {
     players: 0, isPromo: true, promoActive: active, rank: 5e8, // prioritas tinggi (di bawah mobile)
     iconPath: resolve(ASSETS_ROBLOX, "roblox-promo.png"),
     newCodes: baru, activeCount: active.length, fetchedAt: promo.updatedAt, allMode,
-    displayCodes: pickDisplay(baru, active),
+    displayCodes: pickDisplay(baru, active), descCodes: pickDisplay(baru, active, false, DESC_MAX),
   };
 }
 
@@ -425,7 +429,7 @@ async function main() {
     await makeVO({ name: c.name, activeCount: c.activeCount, allMode: true, outPath: vo });
     await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
     await thumb(fin, th);
-    const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.displayCodes, activeCount: c.activeCount, allMode: true, redeemNote: c.redeemNote, now });
+    const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: true, redeemNote: c.redeemNote, now });
     const stem = `${today}-${c.id}`;
     copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
     copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
@@ -484,7 +488,7 @@ async function main() {
       await makeVO({ name: c.name, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, outPath: vo });
       await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
       await thumb(fin, th);
-      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, redeemNote: c.redeemNote, now });
+      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, redeemNote: c.redeemNote, now });
       if (DRY_RUN) {
         const dst = resolve(REVIEW, `${c.id}.mp4`); copyFileSync(fin, dst);
         console.log(`  ✓ [DRY] ${dst}\n    judul: ${meta.title}`);
