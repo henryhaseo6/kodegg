@@ -42,6 +42,24 @@ const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 15);
 const SKIP_PLAYLIST = process.env.VIDEO_SKIP_PLAYLIST === "1";
 const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru TANPA kode fresh: min pemain utk video "semua kode"
 const FRESH_MIN_PLAYERS = Number(process.env.VIDEO_FRESH_MIN_PLAYERS || 2000); // game baru DENGAN kode fresh: ambang lebih rendah (kodenya layak)
+// SUSULAN (backlog) — game berkode-aktif yang belum pernah punya video sama
+// sekali. Jalur kode-baru menuntut kode rilis ≤48 jam dan jalur "semua kode"
+// cuma menyapu game yang baru masuk katalog di run itu; game yang lewat dari
+// keduanya tak punya jalan masuk lagi selamanya. Terukur 4 Agu 2026: 218 game,
+// 18 di antaranya >10rb pemain (Berry Avenue 39rb pemain / 182 kode aktif).
+//
+// Dijalankan HANYA di jam terakhir sebelum kuota reset (tengah malam PT), dan
+// hanya memakai slot yang tersisa. Alasannya: kuota yang tak terpakai hari itu
+// akan hangus, sedangkan video kode-baru bersifat mendesak dan harus selalu
+// menang di jam-jam sebelumnya. Karena reset menyusul beberapa menit kemudian,
+// borongan ini tak mengurangi jatah hari berikutnya.
+const BACKLOG_HOUR_PT = Number(process.env.VIDEO_BACKLOG_HOUR_PT || 23); // jam PT mulai boleh borong (23 = jam terakhir)
+const BACKLOG_MIN_PLAYERS = Number(process.env.VIDEO_BACKLOG_MIN_PLAYERS || 2000);
+const BACKLOG_OFF = process.env.VIDEO_BACKLOG === "0";
+// Jam PT saat ini — dipakai utk membuka jendela borongan sekaligus menutupnya
+// tepat sebelum tengah malam.
+const jamPT = (d) => Number(new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", hour: "2-digit", hour12: false }).format(d));
+const hariPT = (d) => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(d);
 // Default PUBLIC: channel sudah live & ratusan video publik, fase "review dulu"
 // lewat. Menyetel YT_PRIVACY sbg Variable terus kelupaan → video diam-diam
 // unlisted (kejadian berhari-hari). Set YT_PRIVACY=unlisted hanya bila memang
@@ -343,6 +361,46 @@ function buildOnDemand(id) {
   };
 }
 
+/**
+ * SUSULAN: game Roblox berkode-aktif yang BELUM PERNAH punya video.
+ *
+ * Sengaja diturunkan ulang dari data terkini tiap run, BUKAN diantrikan ke
+ * berkas. Itu bedanya dengan `bulkGames`: antrian yang sekali-jalan bisa hilang
+ * permanen kalau run-nya gagal, sedangkan daftar ini selalu bisa dihitung lagi.
+ * Konsekuensinya menyenangkan — item yang tak sempat terangkat malam ini otomatis
+ * ikut lagi besok tanpa bookkeeping apa pun.
+ *
+ * Playlist dipakai sebagai bukti "sudah pernah ada video" (sinyal yang sama
+ * dipakai jalur bulk), TAPI tak cukup sendirian: pembuatan playlist bisa gagal
+ * kena rate-limit padahal videonya sudah tayang. Karena itu state `posted` ikut
+ * diperiksa — kalau semua kode aktifnya sudah pernah divideokan, lewati.
+ */
+function buildBacklog(state, batas) {
+  if (batas <= 0) return [];
+  const rb = readJSON(resolve(DATA, "roblox-codes.json"), { games: {}, active: [] });
+  const ytpl = readJSON(resolve(DATA, "yt-playlists.json"), {});
+  const out = [];
+  for (const [id, g] of Object.entries(rb.games)) {
+    if ((g.players ?? 0) < BACKLOG_MIN_PLAYERS) continue;
+    if (ytpl[g.slug ?? id] || ytpl[id]) continue;
+    const active = rb.active.filter((c) => c.game === id && !c.check); // kode "CEK DULU" tak pernah masuk video
+    if (active.length === 0) continue;
+    if (active.every((c) => sudahDiposting(state, id, c.code, "ROBLOX"))) continue;
+    const urut = terbaruDulu(active);
+    out.push({
+      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id,
+      players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
+      iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
+      newCodes: [], activeCount: active.length, fetchedAt: new Date().toISOString(),
+      allMode: true, backlog: true,
+      displayCodes: tandaiBaru(pickDisplay([], urut), active),
+      descCodes: tandaiBaru(pickDisplay([], urut, false, DESC_MAX), active),
+    });
+  }
+  out.sort((a, b) => b.players - a.players); // yang paling ramai duluan
+  return out.slice(0, batas);
+}
+
 // Antrian playlist tertunda (gagal krn rate-limit YouTube). Ditulis ke file →
 // bertahan antar-run → dikuras saat limit playlist sudah reset.
 function enqueuePending(item) {
@@ -504,6 +562,21 @@ async function main() {
   candidates.sort((a, b) => (b.isPromo ? 1 : 0) - (a.isPromo ? 1 : 0) || (b.rank ?? b.players ?? 0) - (a.rank ?? a.players ?? 0)); // rank: mobile=1e9 (prioritas), roblox=players
   let remaining = MAX_PER_DAY - state.todayCount;
   console.log(`kandidat: ${candidates.length} (antrian ${pending.length} + baru ${fresh.length}) | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
+  // BORONGAN SUSULAN di jam terakhir sebelum kuota reset. Ditaruh SETELAH sort
+  // supaya selalu di buntut: kode baru tak boleh kalah oleh susulan, betapa pun
+  // ramai game-nya. Slot yang diisi = sisa kuota hari ini, dipotong RENDER_MAX.
+  if (!BACKLOG_OFF && jamPT(now) >= BACKLOG_HOUR_PT && remaining > 0) {
+    // Dry-run dibatasi 2 supaya jalur ini bisa dipratinjau tanpa menunggu 15
+    // render (~17 menit) — kalau tak bisa dicoba, tak bisa dipercaya.
+    const muat = Math.min(DRY_RUN ? 2 : remaining, RENDER_MAX) - candidates.length;
+    const susulan = buildBacklog(state, muat);
+    if (susulan.length) {
+      candidates.push(...susulan);
+      console.log(`borongan susulan (jam ${jamPT(now)} PT, sisa kuota ${remaining}): +${susulan.length} game belum pernah ada videonya — ${susulan.slice(0, 3).map((c) => `${c.name} (${c.players})`).join(", ")}${susulan.length > 3 ? ", …" : ""}`);
+    } else if (muat > 0) {
+      console.log(`borongan susulan: tak ada game tersisa yang memenuhi syarat (≥${BACKLOG_MIN_PLAYERS} pemain, belum ada video).`);
+    }
+  }
   if (candidates.length === 0) { console.log("tak ada kode baru → tak ada video."); writeFileSync(PENDING_VID, "[]\n"); return; }
   const canUpload = ytConfigured() && !DRY_RUN;
   if (!canUpload && !DRY_RUN) console.log("YT belum di-set (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — semua video dirender utk upload manual. Lihat DEPLOY-YOUTUBE.md.");
@@ -516,7 +589,10 @@ async function main() {
   const picks = candidates.slice(0, RENDER_MAX);
   // Sisa yg tak muat → SIMPAN sbg antrian run berikutnya (bukan di-drop). Promo &
   // on-demand tak diantrikan (punya cadence sendiri). Cap 40 biar tak membengkak.
-  const overflow = candidates.slice(RENDER_MAX).filter((c) => !c.isPromo).slice(0, 40);
+  // Susulan TAK diantrikan: daftarnya diturunkan ulang tiap run, jadi yang tak
+  // terangkat malam ini muncul lagi sendiri. Mengantrikannya justru merugikan —
+  // antrian diproses paling depan, sehingga susulan bakal menyerobot kode baru.
+  const overflow = candidates.slice(RENDER_MAX).filter((c) => !c.isPromo && !c.backlog).slice(0, 40);
   writeFileSync(PENDING_VID, JSON.stringify(overflow.map(({ iconPath, ...d }) => d), null, 2) + "\n"); // iconPath di-recompute saat rekonstruksi
   if (overflow.length) console.log(`(dibatasi ${RENDER_MAX}/run — ${overflow.length} game diantrikan utk run berikutnya)`);
   mkdirSync(TMP, { recursive: true });
@@ -524,6 +600,11 @@ async function main() {
   const requeue = []; // kuota upload habis → antri retry run berikut (JANGAN mark posted)
   for (const c of picks) {
     if (canUpload && remaining <= 0) { requeue.push(c); continue; } // kuota habis → jgn render, antri retry
+    // PENJAGA TENGAH MALAM PT. Borongan susulan sengaja dijadwalkan mepet reset;
+    // kalau run-nya molor dan tanggal PT keburu maju, upload berikutnya memakan
+    // kuota HARI BARU — persis kerugian yang penjadwalan ini ingin hindari.
+    // Dilepas begitu saja (tanpa requeue) karena daftarnya bisa dihitung ulang.
+    if (c.backlog && hariPT(new Date()) !== state.date) { console.log(`  ⏭ ${c.name}: tengah malam PT terlewat, susulan dihentikan (lanjut besok)`); continue; }
     let quotaManual = false;
     try {
       console.log(`\n▶ ${c.name} (${c.platform}) — ${c.newCodes.length} kode baru`);
