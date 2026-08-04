@@ -855,6 +855,115 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "dragon-adventures",
+    "name": "Dragon Adventures",
+    "displayName": "[LEGO] Dragon Adventures 🐉",
+    "slug": "dragon-adventures",
+    "players": 11026,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 11026,
+    "newCodes": [
+      {
+        "game": "dragon-adventures",
+        "gameName": "Dragon Adventures",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/dragon-adventures"
+        },
+        "code": "RIA2026",
+        "reward": "one Billions Theme Potion and one Twin Atlas Preset Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785821176282,
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-08-04T21:02:56.761Z",
+        "fetchedAt": "2026-08-04T21:02:56.761Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-08-04T21:02:56.761Z",
+    "displayCodes": [
+      {
+        "code": "RIA2026",
+        "reward": "one Billions Theme Potion and one Twin Atlas Preset Potion",
+        "isNew": true
+      },
+      {
+        "code": "SeasonXP2",
+        "reward": "1,500 Season Pass XP",
+        "isNew": false
+      },
+      {
+        "code": "DA7THBIRTHDAY2",
+        "reward": "100 Alchemy Elixirs, Sonar Studios Party Hat, Party Cosmetic Trait Potion",
+        "isNew": false
+      },
+      {
+        "code": "JUSTYBLOX",
+        "reward": "Justyblox Preset Potion",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "RIA2026",
+        "reward": "one Billions Theme Potion and one Twin Atlas Preset Potion",
+        "isNew": true
+      },
+      {
+        "code": "SeasonXP2",
+        "reward": "1,500 Season Pass XP",
+        "isNew": false
+      },
+      {
+        "code": "DA7THBIRTHDAY2",
+        "reward": "100 Alchemy Elixirs, Sonar Studios Party Hat, Party Cosmetic Trait Potion",
+        "isNew": false
+      },
+      {
+        "code": "JUSTYBLOX",
+        "reward": "Justyblox Preset Potion",
+        "isNew": false
+      },
+      {
+        "code": "AESUBREALM",
+        "reward": "SubRealm Preset Potion",
+        "isNew": false
+      },
+      {
+        "code": "GALIFRAN",
+        "reward": "Galifran Preset Potion",
+        "isNew": false
+      },
+      {
+        "code": "FLUFFY",
+        "reward": "FluffyTSG Preset Potion",
+        "isNew": false
+      },
+      {
+        "code": "SHAMEWING",
+        "reward": "Shamewing Preset Potion",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "DA7THBIRTHDAY2",
+      "JUSTYBLOX",
+      "AESUBREALM",
+      "GALIFRAN",
+      "FLUFFY",
+      "SHAMEWING",
+      "RIA2026",
+      "SeasonXP2"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "be-the-final-boss",
     "name": "Be The Final Boss",
     "displayName": "[UPD3] Be The Final Boss",
@@ -1738,6 +1847,57 @@
       "TOILET",
       "UPDATE",
       "SKIBIDI"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "heal-your-injuries",
+    "name": "Heal Your Injuries",
+    "displayName": "[HONORED ONE] Heal Your Injuries",
+    "slug": "heal-your-injuries",
+    "players": 2213,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2213,
+    "newCodes": [
+      {
+        "code": "ENERGYREWORK",
+        "reward": "100 Energy, 20 XP"
+      },
+      {
+        "code": "BACKROOMS",
+        "reward": "100 Energy, 50 XP"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-08-04T21:02:56.761Z",
+    "displayCodes": [
+      {
+        "code": "ENERGYREWORK",
+        "reward": "100 Energy, 20 XP",
+        "isNew": true
+      },
+      {
+        "code": "BACKROOMS",
+        "reward": "100 Energy, 50 XP",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ENERGYREWORK",
+        "reward": "100 Energy, 20 XP",
+        "isNew": true
+      },
+      {
+        "code": "BACKROOMS",
+        "reward": "100 Energy, 50 XP",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "ENERGYREWORK",
+      "BACKROOMS"
     ]
   },
   {
