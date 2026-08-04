@@ -75,6 +75,9 @@ function parseDenHowTo(html) {
 function reward(raw) {
   let r = clean(raw)
     .replace(/^(redeem this code (to get|for)|this code (credits your account with|grants you|gives you|will grant you))\s*/i, "")
+    // Sisa kata sandang setelah prefiks dibuang ("…with the Divine Rubber Duck"
+    // → "the Divine Rubber Duck"). Hanya di AWAL frasa, jadi aman.
+    .replace(/^(the|a|an)\s+/i, "")
     .replace(/[.\s]+$/, "")
     .trim();
   return r || null;
@@ -112,7 +115,17 @@ export async function fetchRobloxDen(slug) {
     // status badge & reward tak nyasar ke kode lain.
     const nextIdx = html.indexOf('data-copy="', start);
     const after = html.slice(start, nextIdx > 0 ? Math.min(nextIdx, start + 1600) : start + 1600);
-    const rw = (after.match(/codes-list__description[^"]*">([\s\S]*?)<\/p>/i) || [])[1];
+    // Deskripsi reward. Den MENGUBAH markupnya: dulu <p class="codes-list__
+    // description">, kini <td class="table__td … search-term">. Kelas lama sudah
+    // TAK ADA sama sekali di halaman, jadi parser ini memulangkan null untuk
+    // SEMUA kode — reward dari Den tak pernah terbaca, dan yang tampil di situs
+    // selama ini murni dari RoCodes (ketahuan 4 Agu 2026: Throw a Coin BIGBANG
+    // kosong di situs padahal Den menulis "10x Luck (5 mins)").
+    // Pola lama tetap dicoba lebih dulu supaya halaman yang belum bermigrasi
+    // (kalau ada) tak ikut rusak.
+    const rw = (after.match(/codes-list__description[^"]*">([\s\S]*?)<\/p>/i)
+      || after.match(/<td[^>]*search-term[^>]*>([\s\S]*?)<\/td>/i)
+      || [])[1];
     // "CHECK" = Roblox Den menandai kode AKTIF tapi belum dikonfirmasi-ulang
     // works (class badge--check, beda dari badge--active). BUKAN expired — kode
     // tetap aktif, tapi kita bawa flag `check` supaya bisa ditandai "cek dulu".
