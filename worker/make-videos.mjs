@@ -161,14 +161,23 @@ function buildCandidates() {
 
   // MOBILE
   const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
-  mc.active = (mc.active || []).filter((c) => !c.check); // buang kode "CEK DULU" (konsisten; mobile blm ada check)
+  // Kode "CEK DULU" mobile — disaring SEBELUM daftar aktif dipangkas, supaya
+  // kunci-nya bisa dipakai menyaring kode BARU juga (cermin jalur Roblox).
+  // Saat ini mobile belum pernah punya kode ber-check (0 dari 350), tapi tanpa
+  // saringan ini jalur kode-baru mobile akan meloloskannya diam-diam kalau suatu
+  // saat sumbernya mulai menandai kode ragu.
+  const mChkKey = (game, code) => `${game}:${(code || "").toLowerCase()}`;
+  const mCheckSet = new Set((mc.active || []).filter((c) => c.check).map((c) => mChkKey(c.game, c.code)));
+  mc.active = (mc.active || []).filter((c) => !c.check);
   const cat = readJSON(resolve(DATA, "games.json"), { games: [] });
   const catById = Object.fromEntries((cat.games ?? []).map((g) => [g.id, g]));
   const mNewFile = readJSON(resolve(DATA, "new-codes.json"), { codes: [] });
   const mNew = mNewFile.codes;
   const mNewByGame = {};
   for (const c of mNew) (mNewByGame[c.game] = mNewByGame[c.game] || []).push(c);
-  for (const [id, nc] of Object.entries(mNewByGame)) {
+  for (const [id, nc0] of Object.entries(mNewByGame)) {
+    const nc = nc0.filter((c) => !mCheckSet.has(mChkKey(id, c.code))); // buang kode baru "CEK DULU"
+    if (!nc.length) continue; // semua kode baru game ini meragukan → skip video
     const meta = catById[id];
     const active = mc.active.filter((c) => c.game === id);
     out.push({
