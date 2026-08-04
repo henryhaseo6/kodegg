@@ -38,24 +38,31 @@ const MAX = 3; // maksimal notifikasi kode individual per run (sisanya diringkas
  * tunggu, notif tetap dikirim — telat lebih baik daripada hilang.
  */
 async function tungguSitusSegar(codes, { maksDetik = 360, jedaDetik = 20 } = {}) {
-  const target = codes.slice(0, 5).map((c) => c.code).filter(Boolean);
+  // Dicek di halaman yang PERSIS akan dibuka penerima notifikasi — rumus URL-nya
+  // sama dengan yang dipakai payload di bawah. Dulu selalu menunjuk
+  // /id/kode-redeem/, padahal halaman itu HANYA memuat kode MOBILE: diuji 4 Agu
+  // 2026, 20 dari 20 sampel mobile ada di sana, 0 dari 20 sampel Roblox. Karena
+  // mayoritas kode baru sekarang Roblox, pengecekannya menunggu sesuatu yang tak
+  // akan pernah muncul → SELALU mentok 360 detik (terlihat di 4 dari 5 run
+  // terakhir yang punya kode baru), membakar 6 menit lalu mengirim juga.
+  const target = codes.slice(0, 5).filter((c) => c.code).map((c) => ({
+    code: c.code,
+    url: c.platform === "roblox" ? `${SITE_URL}/id/roblox/${c.gameSlug}/` : `${SITE_URL}/id/game/${c.game}/`,
+  }));
   if (target.length === 0) return;
-  const url = `${SITE_URL}/id/kode-redeem/`;
   const batas = Date.now() + maksDetik * 1000;
   let putaran = 0;
   while (Date.now() < batas) {
     putaran++;
-    try {
-      const r = await fetch(url, { headers: { "cache-control": "no-cache" } });
-      if (r.ok) {
-        const html = await r.text();
-        const ada = target.find((k) => html.includes(k));
-        if (ada) {
-          console.log(`push-notify: situs sudah memuat kode baru (${ada}) setelah ${putaran} pengecekan.`);
+    for (const t of target.slice(0, 3)) { // maks 3 halaman per putaran — cukup, jangan membanjiri
+      try {
+        const r = await fetch(t.url, { headers: { "cache-control": "no-cache" } });
+        if (r.ok && (await r.text()).includes(t.code)) {
+          console.log(`push-notify: situs sudah memuat kode baru (${t.code}) setelah ${putaran} pengecekan.`);
           return;
         }
-      }
-    } catch { /* jaringan goyang → coba lagi */ }
+      } catch { /* jaringan goyang → coba lagi */ }
+    }
     await new Promise((r) => setTimeout(r, jedaDetik * 1000));
   }
   console.log(`push-notify: ⚠ situs belum memuat kode baru setelah ${maksDetik}s — notifikasi tetap dikirim.`);
