@@ -1,6 +1,208 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "throw-a-coin",
+    "name": "Throw a Coin",
+    "displayName": "[🤝] Throw a Coin",
+    "slug": "throw-a-coin",
+    "players": 32266,
+    "redeemNote": null,
+    "alias": [
+      "lempar koin"
+    ],
+    "rank": 32266,
+    "newCodes": [
+      {
+        "game": "throw-a-coin",
+        "gameName": "Throw a Coin",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/throw-a-coin"
+        },
+        "code": "candy",
+        "reward": "5x Luck (10 Minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785755633164,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T14:01:23.211Z",
+        "fetchedAt": "2026-08-04T14:01:23.211Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-08-04T14:01:23.211Z",
+    "displayCodes": [
+      {
+        "code": "candy",
+        "reward": "5x Luck (10 Minutes)",
+        "isNew": true
+      },
+      {
+        "code": "BIGBANG",
+        "reward": "10x Luck (5 mins)",
+        "isNew": false
+      },
+      {
+        "code": "WORLD3",
+        "reward": "x5 Luck (10 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "Luckyducky",
+        "reward": "Divine Rubber Duck",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "candy",
+        "reward": "5x Luck (10 Minutes)",
+        "isNew": true
+      },
+      {
+        "code": "BIGBANG",
+        "reward": "10x Luck (5 mins)",
+        "isNew": false
+      },
+      {
+        "code": "WORLD3",
+        "reward": "x5 Luck (10 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "Luckyducky",
+        "reward": "Divine Rubber Duck",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "BIGBANG",
+      "WORLD3",
+      "Luckyducky",
+      "candy"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "be-the-final-boss",
+    "name": "Be The Final Boss",
+    "displayName": "[UPD3] Be The Final Boss",
+    "slug": "be-the-final-boss",
+    "players": 9245,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 9245,
+    "newCodes": [
+      {
+        "game": "be-the-final-boss",
+        "gameName": "Be The Final Boss",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/be-the-final-boss"
+        },
+        "code": "noherocanwin",
+        "reward": "3 Epic Fusion Shards and 1 Shard Drop Boost",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785755624800,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T14:01:23.211Z",
+        "fetchedAt": "2026-08-04T14:01:23.211Z"
+      }
+    ],
+    "activeCount": 14,
+    "fetchedAt": "2026-08-04T14:01:23.211Z",
+    "displayCodes": [
+      {
+        "code": "noherocanwin",
+        "reward": "3 Epic Fusion Shards and 1 Shard Drop Boost",
+        "isNew": true
+      },
+      {
+        "code": "raidthecastle",
+        "reward": "6 Rare Fusion Shards and 3 Forge Stones",
+        "isNew": false
+      },
+      {
+        "code": "claimthethrone",
+        "reward": "125 Souls, 2 Forge Stones",
+        "isNew": false
+      },
+      {
+        "code": "armyofbosses",
+        "reward": "15 Uncommon Fusion Shards, 2 Spin Tickets",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "noherocanwin",
+        "reward": "3 Epic Fusion Shards and 1 Shard Drop Boost",
+        "isNew": true
+      },
+      {
+        "code": "raidthecastle",
+        "reward": "6 Rare Fusion Shards and 3 Forge Stones",
+        "isNew": false
+      },
+      {
+        "code": "claimthethrone",
+        "reward": "125 Souls, 2 Forge Stones",
+        "isNew": false
+      },
+      {
+        "code": "armyofbosses",
+        "reward": "15 Uncommon Fusion Shards, 2 Spin Tickets",
+        "isNew": false
+      },
+      {
+        "code": "bossmodeon",
+        "reward": "6000 Coins, 2 Forge Stones",
+        "isNew": false
+      },
+      {
+        "code": "ulttheboss",
+        "reward": "Health Booster, a Attack Booster, and 5 Spin Tickets",
+        "isNew": false
+      },
+      {
+        "code": "betheboss",
+        "reward": "1,000 Coins",
+        "isNew": false
+      },
+      {
+        "code": "bigbossman",
+        "reward": "2,500 Coins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "claimthethrone",
+      "armyofbosses",
+      "bossmodeon",
+      "betheboss",
+      "bigbossman",
+      "slaydemheroes",
+      "bigthroneking",
+      "bossman3000",
+      "finalboss4life",
+      "unstoppableboss",
+      "cantkilldaboss",
+      "noherocanwin",
+      "raidthecastle",
+      "ulttheboss"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "pull-a-sword",
     "name": "Pull a Sword",
     "displayName": "[EVENT] Pull a Sword",
