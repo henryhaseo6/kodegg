@@ -431,6 +431,9 @@ async function main() {
   const perluDen = (id, slug, players) => {
     if (!slug) return false;
     if ((players ?? 0) >= DEN_ALWAYS_MIN) return true; // game ramai → jangan digerbangi
+    // Pemain 0 → halaman Den ditarik supaya placeId-nya bisa dipakai memeriksa
+    // ulang identitas (lihat "PERBAIKAN IDENTITAS"). Jumlahnya segelintir game.
+    if (!(players > 0)) return true;
     const lm = denIndex.get(slug) ?? 0;
     const terakhir = Number(prevGamesMap[id]?.denAt ?? 0);
     if (!terakhir) { if (backfillSisa-- > 0) { denBackfill.add(id); return true; } return false; }
@@ -556,6 +559,27 @@ async function main() {
     let universeId = rocodesMeta?.universeId ?? entry.universeId ?? null;
     if (!universeId && denMeta?.placeId) universeId = await resolveUniverse(denMeta.placeId);
     universeId = universeId != null ? Number(universeId) || null : null;
+
+    // PERBAIKAN IDENTITAS: universeId yang ADA pun bisa SALAH, dan gejalanya
+    // diam — jumlah pemain 0 selamanya. Kejadian 4 Agu 2026: Anime Astral
+    // Simulator tersimpan sebagai universe 9797806474 = "[DUNGEON🔥] Simulador de
+    // Astral de Anime", kloning berbahasa Portugis yang sudah mati (0 pemain),
+    // padahal kodenya berasal dari game Inggris yang hidup (10502841145, 22 ribu
+    // pemain). Akibatnya bukan kosmetik: players 0 < ambang 2.000, jadi game
+    // dengan 132 kode aktif itu TAK PERNAH dibuatkan video.
+    //
+    // Dulu placeId Den hanya dipakai bila universeId KOSONG, jadi identitas yang
+    // salah dari RoCodes tak pernah terkoreksi. Sekarang: kalau run sebelumnya
+    // melaporkan 0 pemain DAN placeId Den menunjuk universe LAIN, ambil yang dari
+    // Den — placeId adalah identitas halaman yang kodenya benar-benar kita pakai.
+    // Game yang memang sepi resolve ke universe yang sama → tak berubah.
+    if (universeId && !(prevGamesMap[id]?.players > 0) && denMeta?.placeId) {
+      const uidDen = Number(await resolveUniverse(denMeta.placeId)) || 0;
+      if (uidDen && uidDen !== universeId) {
+        console.log(`  [${id}] universeId dikoreksi ${universeId} → ${uidDen} (dari placeId Den; uid lama 0 pemain)`);
+        universeId = uidDen;
+      }
+    }
 
     // Keputusan EXPIRED (akurasi > kelengkapan; arsip non-destruktif jadi risiko
     // over-expire kecil). Kode aktif dipindah ke arsip bila:
