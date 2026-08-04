@@ -44,8 +44,18 @@ if (MODE === "audit") {
   // nama game → id (sama persis dg fetch-yt-playlists.mjs, biar hasilnya sepadan)
   const normal = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   const namaKe = new Map();
-  for (const g of gj.games ?? []) if (g?.name) namaKe.set(normal(g.name), g.id);
-  for (const [id, g] of Object.entries(rb.games ?? {})) if (g?.name) namaKe.set(normal(g.name), id);
+  // Alias HARUS sama dengan fetch-yt-playlists.mjs, kalau tidak audit ini
+  // melaporkan "tak tercocokkan" untuk playlist yang sebenarnya SUDAH dipetakan
+  // dengan benar — alarm palsu yang berulang tiap run dan lama-lama diabaikan.
+  const daftarNama = (kunci, id) => { const k = normal(kunci || ""); if (k && !namaKe.has(k)) namaKe.set(k, id); };
+  for (const g of gj.games ?? []) if (g?.name) daftarNama(g.name, g.id);
+  for (const [id, g] of Object.entries(rb.games ?? {})) {
+    if (!g) continue;
+    daftarNama(g.name, id);
+    daftarNama(String(g.name || "").replace(/\s*\([^)]*\)\s*/g, " "), id); // nama tanpa tanda kurung
+    daftarNama(g.slug, id);
+    daftarNama(id, id);
+  }
   const judulKeNama = (t) => t.replace(/\s*—\s*Kode Redeem\s*$/i, "").replace(/\s+Codes$/i, "").trim();
 
   const daftar = [];
