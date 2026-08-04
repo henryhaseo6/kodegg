@@ -67,7 +67,11 @@ try {
     dimensions: "insightTrafficSourceDetail",
     filters: "insightTrafficSourceType==YT_SEARCH",
     sort: "-views",
-    maxResults: Math.min(500, TOP * 3),
+    // BATAS KERAS 25. Dimensi insightTrafficSourceDetail menolak maxResults di
+    // atas itu dengan "Internal error encountered" — pesan generik yang terbaca
+    // seperti gangguan Google, padahal salah parameter kita. Diuji 4 Agu 2026:
+    // 25 berhasil, 100 dan 200 gagal.
+    maxResults: Math.min(25, TOP),
   });
   rows = r.data.rows ?? [];
 } catch (e) {
