@@ -100,6 +100,21 @@ const countAll = (active, newCodes, ci = false) => new Set([...active.map((c) =>
 // Path ikon dari deskriptor kandidat (di-recompute saat rekonstruksi antrian).
 const iconFor = (d) => (d.isPromo ? resolve(ASSETS_ROBLOX, "roblox-promo.png") : resolve(d.platform === "ROBLOX" ? ASSETS_ROBLOX : ASSETS_GAMES, `${d.id}.png`));
 
+// Nama yang DICETAK di kartu video. Biasanya `rawName` — nama asli game di
+// Roblox, yang lebih dikenal penonton daripada nama versi situs sumber.
+//
+// Tapi rawName datang dari API Roblox lewat universeId, dan untuk sebagian game
+// justru universeId itulah yang sedang kita ragukan. Terlihat 4 Agu 2026: kartu
+// video Fighting Simulator mencetak "[🌌 DIM 2] Anime Fighting Simulator" —
+// nama game LAIN — dan itu tayang, bukan cuma tersimpan. Judul, deskripsi, dan
+// kodenya benar; hanya nama di kartunya yang berbohong.
+//
+// Untuk game yang identitasnya bersengketa (tercatat di identitas-beda.json),
+// pakai `name` dari halaman sumber yang kodenya benar-benar kita ambil. Nama itu
+// dijamin sepadan dengan kode yang ditampilkan, dan itulah yang penting di sini.
+const idRagu = new Set(readJSON(resolve(DATA, "identitas-beda.json"), []).map((x) => x.game));
+const namaKartu = (id, g) => (idRagu.has(id) ? g.name : g.rawName || g.name).split("|")[0].trim();
+
 // Thumbnail diambil detik 12.5: semua kartu kode sudah ke-reveal (kartu ke-4
 // muncul ~8.7s) DAN baris teaser "+N kode lagi" sudah tampil (11.5s), sebelum
 // transisi outro (14.4s). Detik 8 dulu cuma dapat 3 kartu.
@@ -126,7 +141,7 @@ function buildCandidates() {
     if (!nc.length) continue; // semua kode baru game ini meragukan → skip video
     const active = rb.active.filter((c) => c.game === id);
     out.push({
-      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
+      platform: "ROBLOX", id, name: g.name, displayName: namaKartu(id, g), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: (g.players ?? 0),
       newCodes: nc, activeCount: countAll(active, nc), fetchedAt: rbNewFile.generatedAt,
       displayCodes: pickDisplay(nc, active), descCodes: pickDisplay(nc, active, false, DESC_MAX),
@@ -159,7 +174,7 @@ function buildCandidates() {
     if (fresh.length === 0) continue;
     const freshCodes = fresh.map((c) => ({ code: c.code, reward: c.reward ?? "" }));
     out.push({
-      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
+      platform: "ROBLOX", id, name: g.name, displayName: namaKartu(id, g), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: freshCodes, activeCount: countAll(active, freshCodes), fetchedAt: rbNewFile.generatedAt,
       displayCodes: pickDisplay(freshCodes, active), descCodes: pickDisplay(freshCodes, active, false, DESC_MAX),
@@ -175,7 +190,7 @@ function buildCandidates() {
     const active = rb.active.filter((c) => c.game === id);
     if (active.length === 0) continue;
     out.push({
-      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
+      platform: "ROBLOX", id, name: g.name, displayName: namaKartu(id, g), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: active, activeCount: active.length, fetchedAt: rbNewFile.generatedAt, allMode: true,
       displayCodes: pickDisplay([], active), descCodes: pickDisplay([], active, false, DESC_MAX),
@@ -344,7 +359,7 @@ function buildOnDemand(id) {
     const active = rb.active.filter((c) => c.game === id && !c.check); // buang kode "CEK DULU"
     if (active.length === 0) return null;
     return {
-      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
+      platform: "ROBLOX", id, name: g.name, displayName: namaKartu(id, g), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: 0, newCodes: [], activeCount: active.length,
       fetchedAt: new Date().toISOString(), allMode: true, displayCodes: tandaiBaru(pickDisplay([], terbaruDulu(active)), active), descCodes: tandaiBaru(pickDisplay([], terbaruDulu(active), false, DESC_MAX), active),
     };
@@ -388,7 +403,7 @@ function buildBacklog(state, batas) {
     if (active.every((c) => sudahDiposting(state, id, c.code, "ROBLOX"))) continue;
     const urut = terbaruDulu(active);
     out.push({
-      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id,
+      platform: "ROBLOX", id, name: g.name, displayName: namaKartu(id, g), slug: g.slug ?? id,
       players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: [], activeCount: active.length, fetchedAt: new Date().toISOString(),
