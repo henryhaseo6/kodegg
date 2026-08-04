@@ -134,12 +134,34 @@ if (MODE === "audit") {
   // Penyebabnya sudah ditutup (update-codes kini mengantre, tak dibatalkan),
   // TAPI tak ada satu pun pemeriksaan yang akan memberi tahu kalau terulang —
   // ketahuan hanya karena user kebetulan membuka Studio. Karena itu dicek di sini.
+  //
+  // JUDUL SAMA SAJA BUKAN BUKTI. Judul kita hanya memuat TANGGAL, bukan jam,
+  // jadi beberapa video update untuk game yang sama di hari yang sama memang
+  // ber-judul identik — dan itu SAH: tiap video membawa kode yang bertambah.
+  // Versi pertama pemeriksaan ini menandai 7 kasus, dan KETUJUHNYA salah
+  // (Ever Night: Reawakening 27 Juli: 02.01 / 15.02 / 20.44, kodenya berbeda-beda).
+  //
+  // Ciri kembar yang SEBENARNYA adalah jaraknya: kasus 3 Agu terbit 14 MENIT
+  // berselang karena run diulang setelah dibunuh. Video update yang wajar
+  // berjarak jam-jaman. Jadi yang dipakai: judul sama DAN terbit < AMBANG_MENIT.
+  const AMBANG_MENIT = 60;
   const perJudul = new Map();
   for (const v of vids) {
     const k = (v.snippet.title ?? "").trim().toLowerCase();
     if (k) (perJudul.get(k) ?? perJudul.set(k, []).get(k)).push(v);
   }
-  const kembar = [...perJudul.values()].filter((a) => a.length > 1);
+  const kembar = [];
+  for (const grup of perJudul.values()) {
+    if (grup.length < 2) continue;
+    const urut = [...grup].sort((x, y) => Date.parse(x.snippet.publishedAt) - Date.parse(y.snippet.publishedAt));
+    let blok = [urut[0]];
+    for (let i = 1; i < urut.length; i++) {
+      const jarak = (Date.parse(urut[i].snippet.publishedAt) - Date.parse(urut[i - 1].snippet.publishedAt)) / 60000;
+      if (jarak <= AMBANG_MENIT) blok.push(urut[i]);
+      else { if (blok.length > 1) kembar.push(blok); blok = [urut[i]]; }
+    }
+    if (blok.length > 1) kembar.push(blok);
+  }
   if (kembar.length) T("TINGGI", `${kembar.length} judul punya video KEMBAR (berebut kueri pencarian yang sama)`,
     kembar.slice(0, 12).map((a) => `"${a[0].snippet.title.slice(0, 45)}" → ${a.map((v) => v.id).join(" + ")}`).join("; ") + (kembar.length > 12 ? ` (+${kembar.length - 12} lagi)` : ""));
 
