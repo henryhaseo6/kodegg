@@ -7,7 +7,7 @@
 // Roblox-ONLY, global/English. CTA update per-jam → Shorts. Reuse infra Top 50.
 // ENV: YT_CLIENT_ID/SECRET/REFRESH_TOKEN (upload) · YT_PRIVACY
 // ARG: --date=YYYY-MM-DD  --limit=N(15)  --no-upload  --sfx=0
-import { existsSync, mkdirSync, writeFileSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync, readFileSync, copyFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { renderRoundup, renderRoundupThumb } from "./video/render-roundup.mjs";
@@ -30,6 +30,7 @@ const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.ma
 const MAX_GAMES = Math.max(1, Number(process.env.ROUNDUP_MAX_GAMES || 60));
 const LIMIT = Math.max(1, Number(ARG.limit) || MAX_GAMES);
 const OUT_DIR = resolve(HERE, "../_video-out");
+const THUMB_DIR = resolve(HERE, "data/pending-thumbs"); // bertahan antar-run (di-commit workflow)
 const ASSETS = resolve(HERE, "../site/public/assets/roblox");
 const CACHE = resolve(HERE, "video/assets/roundup-cache");
 const SFX = ARG.sfx !== "0";
@@ -194,7 +195,21 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   try {
     const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en", localizations: locID(meta) });
     console.log(`[roundup] uploaded ✓ ${r.url} (privacy=${privacy})`);
-    if (r.thumbPending) { simpanPending({ videoId: r.thumbPending, kind: "roundup", date: DATE }); console.log(`[roundup] ! thumbnail diantrikan — run berikutnya akan memasangnya`); }
+    if (r.thumbPending) {
+      // BERKASNYA ikut disimpan, bukan cuma tanggalnya. Alasannya soal WAKTU:
+      // workflow ini hanya jalan sekali sehari ~21:45 UTC — persis saat kuota
+      // sudah habis lagi oleh Shorts, jadi pengurasan di sini besar kemungkinan
+      // gagal dengan sebab yang sama. Dengan berkasnya tersimpan, run per-jam
+      // (make-videos) bisa memasangnya begitu kuota pulih 07:00 UTC, tanpa
+      // render sama sekali. Jalur render-ulang dari tanggal tetap ada sebagai
+      // cadangan bila berkasnya hilang.
+      try {
+        mkdirSync(THUMB_DIR, { recursive: true });
+        copyFileSync(thumbPath, resolve(THUMB_DIR, `${r.thumbPending}.png`));
+        simpanPending({ videoId: r.thumbPending, kind: "roundup", date: DATE, file: `${r.thumbPending}.png` });
+      } catch { simpanPending({ videoId: r.thumbPending, kind: "roundup", date: DATE }); }
+      console.log(`[roundup] ! thumbnail diantrikan — run berikutnya akan memasangnya`);
+    }
     if (process.env.GITHUB_STEP_SUMMARY) writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### 🎁 New Roblox Codes Roundup — ${label(DATE)}\n- ${r.url} (privacy=${privacy})\n- ${totalCodes} kode / ${games.length} game (dari ${totalGames} game total)\n`, { flag: "a" });
   } catch (e) { console.log("[roundup] upload gagal:", e.message); }
 })();

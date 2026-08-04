@@ -9,7 +9,7 @@
 //
 // Data 26 Jul PARSIAL (mulai ~08:00) & belum di-compact sampai ganti hari →
 // jalankan otomatis 00:30 WIB utk H-1 yang sudah lengkap. Test lokal: fallback live.
-import { existsSync, mkdirSync, writeFileSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync, readFileSync, copyFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchChartsGames } from "./src/roblox-charts.mjs";
@@ -21,6 +21,7 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
 const LIMIT = Math.max(1, Math.min(50, Number(ARG.limit) || 50));
 const OUT_DIR = resolve(HERE, "../_video-out");
+const THUMB_DIR = resolve(HERE, "data/pending-thumbs"); // bertahan antar-run (di-commit workflow)
 const CACHE = resolve(HERE, "video/assets/top50-cache");
 const SFX = ARG.sfx !== "0";
 
@@ -173,7 +174,21 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   try {
     const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en", localizations: locID(meta) });
     console.log(`[top50] uploaded ✓ ${r.url} (privacy=${privacy})`);
-    if (r.thumbPending) { simpanPending({ videoId: r.thumbPending, kind: "top50", date: DATE }); console.log(`[top50] ! thumbnail diantrikan — run berikutnya akan memasangnya`); }
+    if (r.thumbPending) {
+      // BERKASNYA ikut disimpan, bukan cuma tanggalnya. Alasannya soal WAKTU:
+      // workflow ini hanya jalan sekali sehari ~21:45 UTC — persis saat kuota
+      // sudah habis lagi oleh Shorts, jadi pengurasan di sini besar kemungkinan
+      // gagal dengan sebab yang sama. Dengan berkasnya tersimpan, run per-jam
+      // (make-videos) bisa memasangnya begitu kuota pulih 07:00 UTC, tanpa
+      // render sama sekali. Jalur render-ulang dari tanggal tetap ada sebagai
+      // cadangan bila berkasnya hilang.
+      try {
+        mkdirSync(THUMB_DIR, { recursive: true });
+        copyFileSync(thumbPath, resolve(THUMB_DIR, `${r.thumbPending}.png`));
+        simpanPending({ videoId: r.thumbPending, kind: "top50", date: DATE, file: `${r.thumbPending}.png` });
+      } catch { simpanPending({ videoId: r.thumbPending, kind: "top50", date: DATE }); }
+      console.log(`[top50] ! thumbnail diantrikan — run berikutnya akan memasangnya`);
+    }
     if (process.env.GITHUB_STEP_SUMMARY) writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### 🎬 Top ${games.length} Roblox — ${label(DATE)}\n- ${r.url} (privacy=${privacy})\n- #1: ${games[0].name} (${games[0].peak.toLocaleString()} peak)\n`, { flag: "a" });
   } catch (e) { console.log("[top50] upload gagal:", e.message); }
 })();

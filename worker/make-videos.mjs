@@ -10,7 +10,7 @@ import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
 import { uploadVideo, ytConfigured, attachToPlaylist, ytProjectCount } from "./video/upload.mjs";
 import { gameSlug } from "./src/games.mjs";
-import { simpanPending, buangPending, ambilPending } from "./video/pending-thumbs.mjs";
+import { simpanPending, buangPending, semuaPending } from "./video/pending-thumbs.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA = resolve(HERE, "data");
@@ -438,7 +438,11 @@ async function main() {
   // Kuras thumbnail Shorts yang tertunda (kuota habis di run sebelumnya).
   // Murah: 1 panggilan API per thumbnail, tak ada render sama sekali.
   if (ytConfigured() && !DRY_RUN) {
-    const antre = ambilPending("short");
+    // SEMUA jenis, bukan cuma Shorts: thumbnail roundup & top50 juga menitip
+    // berkasnya ke sini karena workflow harian mereka jalan tepat saat kuota
+    // habis. Run per-jam inilah yang pertama menyentuh kuota setelah reset
+    // 07:00 UTC, jadi di sinilah pemulihan paling mungkin berhasil.
+    const antre = semuaPending().filter((x) => x.file);
     if (antre.length) {
       const { setThumbnail } = await import("./video/upload.mjs");
       let ok = 0;

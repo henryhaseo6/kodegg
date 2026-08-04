@@ -31,7 +31,12 @@ export function buangPending(videoId) {
   tulis(baca().filter((x) => x.videoId !== videoId));
 }
 
-/** Entri yang menunggu untuk jenis tertentu ("roundup" | "top50"). */
+/** Entri yang menunggu untuk jenis tertentu ("short" | "roundup" | "top50"). */
 export function ambilPending(kind) {
   return baca().filter((x) => x.kind === kind);
+}
+
+/** SEMUA entri yang menunggu, apa pun jenisnya. */
+export function semuaPending() {
+  return baca();
 }
