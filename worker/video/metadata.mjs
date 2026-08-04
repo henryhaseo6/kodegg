@@ -24,7 +24,7 @@ function wibParts(now) {
  * @param {{name, platform:'ROBLOX'|'MOBILE', slug, codes:[{code,reward}], activeCount, now:Date}} o
  * @returns {{title, description, tags:string[]}}
  */
-export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, redeemNote = null, now }) {
+export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, redeemNote = null, alias = null, now }) {
   const w = wibParts(now);
   const my = `${w.monEn} ${w.y}`; // bulan WIB — sama dg tanggal di judul/deskripsi/video
   const isRoblox = platform === "ROBLOX";
@@ -75,14 +75,23 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
         "\n"
       : "") +
     `✅ Full list + cara redeem (auto-update tiap jam):\n${url}\n\n` +
+    // Sebut nama alternatifnya di deskripsi juga — membantu pembaca memastikan
+    // ini game yang mereka cari, dan ikut terbaca mesin pencari.
+    (alias?.length ? `🔎 Dikenal juga sebagai: ${alias.join(", ")}\n\n` : "") +
     `KodeGG — portal kode redeem game online & Roblox. 200+ game, kode terverifikasi cross-check, update otomatis tiap jam.\n` +
     `🔔 Subscribe & nyalain lonceng biar gak ketinggalan kode baru!\n\n` +
     (redeemNote?.en ? `— NOTE: ${redeemNote.en}\n\n` : "") +
     `— The latest working ${name} codes for ${my} (updated hourly). Full list + how to redeem: ${urlEn}\n\n` +
     `#Shorts #${tag} #${tag}Codes #${isRoblox ? "RobloxCodes #Roblox" : "GameCodes"} #RedeemCodes #KodeRedeem #KodeGG`;
 
+  // Alias pencarian (nama Indonesia / singkatan komunitas) ikut jadi TAG.
+  // Diukur dari kueri nyata: Throw a Coin ditemukan lewat "kode lempar koin",
+  // Drag Drive Simulator lewat "kode ddc" — istilah yang TIDAK ADA di judul
+  // maupun tag kita. Judul sengaja dibiarkan bersih; tag yang menampung ini.
+  const tagAlias = (alias ?? []).flatMap((a) => [a, `kode ${a}`, `${a} codes`, `kode redeem ${a}`]);
   const tags = [
     name, `${name} codes`, `${name} code`, `${name} redeem codes`, `kode ${name}`, `${name} ${my}`,
+    ...tagAlias,
     isRoblox ? "roblox codes" : "redeem codes", isRoblox ? "roblox" : "game codes",
     "redeem codes", "kode redeem", "free codes", "kodegg", "new codes",
   ];

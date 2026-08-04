@@ -108,7 +108,7 @@ function buildCandidates() {
     if (!nc.length) continue; // semua kode baru game ini meragukan → skip video
     const active = rb.active.filter((c) => c.game === id);
     out.push({
-      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null,
+      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: (g.players ?? 0),
       newCodes: nc, activeCount: countAll(active, nc), fetchedAt: rbNewFile.generatedAt,
       displayCodes: pickDisplay(nc, active), descCodes: pickDisplay(nc, active, false, DESC_MAX),
@@ -141,7 +141,7 @@ function buildCandidates() {
     if (fresh.length === 0) continue;
     const freshCodes = fresh.map((c) => ({ code: c.code, reward: c.reward ?? "" }));
     out.push({
-      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null,
+      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: freshCodes, activeCount: countAll(active, freshCodes), fetchedAt: rbNewFile.generatedAt,
       displayCodes: pickDisplay(freshCodes, active), descCodes: pickDisplay(freshCodes, active, false, DESC_MAX),
@@ -157,7 +157,7 @@ function buildCandidates() {
     const active = rb.active.filter((c) => c.game === id);
     if (active.length === 0) continue;
     out.push({
-      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null,
+      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: active, activeCount: active.length, fetchedAt: rbNewFile.generatedAt, allMode: true,
       displayCodes: pickDisplay([], active), descCodes: pickDisplay([], active, false, DESC_MAX),
@@ -326,7 +326,7 @@ function buildOnDemand(id) {
     const active = rb.active.filter((c) => c.game === id && !c.check); // buang kode "CEK DULU"
     if (active.length === 0) return null;
     return {
-      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null,
+      platform: "ROBLOX", id, name: g.name, displayName: (g.rawName || g.name).split("|")[0].trim(), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: 0, newCodes: [], activeCount: active.length,
       fetchedAt: new Date().toISOString(), allMode: true, displayCodes: tandaiBaru(pickDisplay([], terbaruDulu(active)), active), descCodes: tandaiBaru(pickDisplay([], terbaruDulu(active), false, DESC_MAX), active),
     };
@@ -474,7 +474,7 @@ async function main() {
     await makeVO({ name: c.name, activeCount: c.activeCount, allMode: true, outPath: vo });
     await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
     await thumb(fin, th);
-    const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: true, redeemNote: c.redeemNote, now });
+    const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: true, redeemNote: c.redeemNote, alias: c.alias, now });
     const stem = `${today}-${c.id}`;
     copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
     copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
@@ -533,7 +533,7 @@ async function main() {
       await makeVO({ name: c.name, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, outPath: vo });
       await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
       await thumb(fin, th);
-      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, redeemNote: c.redeemNote, now });
+      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, redeemNote: c.redeemNote, alias: c.alias, now });
       if (DRY_RUN) {
         const dst = resolve(REVIEW, `${c.id}.mp4`); copyFileSync(fin, dst);
         console.log(`  ✓ [DRY] ${dst}\n    judul: ${meta.title}`);

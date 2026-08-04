@@ -32,6 +32,30 @@ export const ROBLOX_NAME_OVERRIDE = {
   "the-strongest-battlegrounds": "The Strongest Battlegrounds Sound",
 };
 
+// ALIAS PENCARIAN per-game — nama Indonesia & singkatan komunitas.
+//
+// Diukur dari YouTube Analytics 4 Agu 2026 (kueri yang BENAR-BENAR membawa
+// penonton, bukan tebakan): pemain Indonesia mencari game dengan nama
+// TERJEMAHAN, dan judul kita seluruhnya Inggris.
+//   Throw a Coin      → 6 dari 6 kueri teratas berbahasa Indonesia, NOL Inggris
+//                       ("kode lempar koin" 171, "kode di lempar koin" 160, …)
+//   Catch a Monster   → "kode redeem tangkap monster" 48, "kode terbaru
+//                       tangkap monster" 28 — bercampur dengan kueri Inggris
+//   Drag Drive Sim    → "kode ddc terbaru" 87, "kode redeem dds" 27
+//                       (DDC & DDS = singkatan komunitas, tak ada di judul kita)
+//
+// SENGAJA manual & berbasis bukti. Menerjemahkan 435 nama game otomatis akan
+// menghasilkan omong kosong untuk sebagian besar (dan melanggar aturan
+// fidelitas: jangan mengarang istilah). Tambahkan hanya bila datanya
+// menunjukkan orang memang mencarinya begitu.
+//
+// Dipakai untuk TAG & deskripsi video — bukan judul, supaya judul tetap bersih.
+export const ROBLOX_ALIAS = {
+  "throw-a-coin": ["lempar koin"],
+  "catch-a-monster": ["tangkap monster"],
+  "drag-drive-simulator": ["ddc", "dds"],
+};
+
 // PIN sumber langkah redeem per-game. Default: RoCodes menang, Den mengisi bila
 // RoCodes kosong (lihat fetch-roblox.mjs). Default itu dipertahankan karena
 // disurvei 3 Agu 2026 pada 40 game teratas, Den TIDAK lebih baru secara umum —

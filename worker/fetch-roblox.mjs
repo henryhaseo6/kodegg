@@ -18,7 +18,7 @@ import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE, ROBLOX_HOWTO_PIN } from "./src/roblox-games.mjs";
+import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE, ROBLOX_HOWTO_PIN, ROBLOX_ALIAS } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
 import { scoutDen } from "./src/den-scout.mjs";
@@ -780,6 +780,9 @@ async function main() {
           const n = ROBLOX_REDEEM_NOTE[id] ?? denMeta?.notice ?? prevGamesMap[id]?.redeemNote;
           return n ? { redeemNote: n } : {};
         })(),
+        // Nama Indonesia / singkatan komunitas — dipakai sbg TAG video supaya
+        // ditemukan lewat kueri yang terbukti dipakai orang (lihat ROBLOX_ALIAS).
+        ...(ROBLOX_ALIAS[id]?.length ? { alias: ROBLOX_ALIAS[id] } : {}),
       },
     };
   });
