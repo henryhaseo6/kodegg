@@ -155,8 +155,17 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
     }
   } catch { /* pengecekan gagal ≠ upload gagal */ }
 
+  let thumbPending = null;
   if (thumbnailPath && existsSync(thumbnailPath)) {
-    try { await yt.thumbnails.set({ videoId: id, media: { body: createReadStream(thumbnailPath) } }); } catch (e) { console.log("  thumbnail gagal (abaikan):", e.message); }
+    try { await yt.thumbnails.set({ videoId: id, media: { body: createReadStream(thumbnailPath) } }); }
+    catch (e) {
+      // JANGAN diam-diam diabaikan: video tanpa thumbnail kustom memakai potongan
+      // frame acak, dan itu hal pertama yang dilihat orang di hasil pencarian.
+      // Dikembalikan sbg `thumbPending` supaya pemanggil bisa mengantrikannya
+      // (thumbnail roundup/top50 bisa dirender ulang dari tanggalnya).
+      console.log("  thumbnail gagal:", e.message, "— dikembalikan utk diantrikan");
+      thumbPending = id;
+    }
   }
   // Playlist per game. Gagal di sini TAK boleh menggagalkan upload yg sudah jadi.
   // `playlistPending` diisi bila gagal (mis. rate-limit playlist YouTube ~10/hari)
@@ -178,7 +187,7 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
       console.log(`  komentar gagal (abaikan): ${e.message}${hint}`);
     }
   }
-  return { id, url: `https://youtu.be/${id}`, playlistPending };
+  return { id, url: `https://youtu.be/${id}`, playlistPending, thumbPending };
 }
 
 /**
@@ -186,6 +195,17 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
  * Return true bila berhasil, false bila gagal (mis. rate-limit playlist YouTube).
  * Dipakai uploadVideo DAN orkestrator utk mengulang antrian playlist tertunda.
  */
+// Pasang thumbnail ke video yang SUDAH ada. Dipakai jalur perbaikan: saat kuota
+// habis, thumbnail gagal dipasang padahal videonya sudah tayang — dan berbeda
+// dari playlist, kegagalan itu dulu cuma "diabaikan" tanpa antrean, jadi tak
+// pernah pulih sendiri. Thumbnail adalah hal PERTAMA yang dilihat orang di hasil
+// pencarian, jadi kehilangannya lebih mahal daripada kelihatannya.
+export async function setThumbnail(videoId, thumbnailPath) {
+  if (!existsSync(thumbnailPath)) throw new Error(`thumbnail tak ada: ${thumbnailPath}`);
+  const yt = await client();
+  await yt.thumbnails.set({ videoId, media: { body: createReadStream(thumbnailPath) } });
+}
+
 export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlistDescription = "", lang = "id", tanpaBuat = false) {
   const yt = ytOrNull ?? (await client());
   try {

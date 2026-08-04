@@ -59,6 +59,15 @@ jobs:
           YT_REFRESH_TOKEN_3: ${{ secrets.YT_REFRESH_TOKEN_3 }}
           YT_PRIVACY: public
         run: |
+          # Kuras antrean thumbnail yang GAGAL dipasang (kuota habis) sebelum
+          # merender hari ini. Thumbnail roundup deterministik dari tanggalnya,
+          # jadi cukup dirender ulang lalu dipasang ke video yang sudah tayang.
+          node -e "try{for(const x of require('./worker/data/pending-thumbs.json').filter(e=>e.kind==='roundup'))console.log(x.date+' '+x.videoId)}catch(e){}" > /tmp/pt.txt || true
+          while read -r D V; do
+            [ -z "$V" ] && continue
+            echo "▶ pasang ulang thumbnail $V (tanggal $D)"
+            node worker/make-codes-roundup.mjs --date="$D" --thumb-only="$V" || echo "  gagal, tetap di antrean"
+          done < /tmp/pt.txt
           ARGS=""
           [ -n "${{ inputs.limit }}" ] && ARGS="$ARGS --limit=${{ inputs.limit }}"
           [ -n "${{ inputs.date }}" ] && ARGS="$ARGS --date=${{ inputs.date }}"

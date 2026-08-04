@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url";
 import { fetchChartsGames } from "./src/roblox-charts.mjs";
 import { renderTop50, renderThumb } from "./video/render-top50.mjs";
 import { localisasiID } from "./video/meta-long.mjs";
+import { simpanPending, buangPending } from "./video/pending-thumbs.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
@@ -148,6 +149,20 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   try { await renderThumb({ games, assetsDir: CACHE, dateLabel: label(DATE), outPath: thumbPath }); console.log("[top50] thumbnail ✓ →", thumbPath); }
   catch (e) { console.log("[top50] thumbnail gagal:", e.message); }
 
+  // MODE PERBAIKAN: pasang thumbnail ke video yang SUDAH tayang (lihat
+  // video/pending-thumbs.mjs). Thumbnail top50 deterministik dari tanggalnya.
+  //   node worker/make-top50.mjs --date=2026-08-03 --thumb-only=sHi3oXV7sMM
+  if (ARG["thumb-only"]) {
+    const { ytConfigured: ok, setThumbnail } = await import("./video/upload.mjs");
+    if (!ok()) { console.log("[top50] YT belum di-set → tak bisa pasang thumbnail."); return; }
+    try {
+      await setThumbnail(ARG["thumb-only"], thumbPath);
+      console.log(`[top50] thumbnail dipasang ke https://youtu.be/${ARG["thumb-only"]}`);
+      buangPending(ARG["thumb-only"]);
+    } catch (e) { console.log("[top50] pasang thumbnail gagal:", e.message); process.exitCode = 1; }
+    return;
+  }
+
   if (ARG["no-upload"] === "1") { console.log("[top50] --no-upload → tidak upload."); return; }
   const { ytConfigured, uploadVideo } = await import("./video/upload.mjs");
   if (!ytConfigured()) { console.log("[top50] YT belum di-set → skip upload (video tersimpan lokal)."); return; }
@@ -158,6 +173,7 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   try {
     const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en", localizations: locID(meta) });
     console.log(`[top50] uploaded ✓ ${r.url} (privacy=${privacy})`);
+    if (r.thumbPending) { simpanPending({ videoId: r.thumbPending, kind: "top50", date: DATE }); console.log(`[top50] ! thumbnail diantrikan — run berikutnya akan memasangnya`); }
     if (process.env.GITHUB_STEP_SUMMARY) writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### 🎬 Top ${games.length} Roblox — ${label(DATE)}\n- ${r.url} (privacy=${privacy})\n- #1: ${games[0].name} (${games[0].peak.toLocaleString()} peak)\n`, { flag: "a" });
   } catch (e) { console.log("[top50] upload gagal:", e.message); }
 })();

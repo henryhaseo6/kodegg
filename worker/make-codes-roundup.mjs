@@ -12,6 +12,7 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { renderRoundup, renderRoundupThumb } from "./video/render-roundup.mjs";
 import { localisasiID } from "./video/meta-long.mjs";
+import { simpanPending, buangPending, ambilPending } from "./video/pending-thumbs.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
@@ -166,6 +167,23 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   try { await renderRoundupThumb({ games, dateLabel: label(DATE), totalCodes, gamesCount: games.length, outPath: thumbPath, seed: seedFromDate(DATE) }); console.log("[roundup] thumbnail ✓ →", thumbPath); }
   catch (e) { console.log("[roundup] thumbnail gagal:", e.message); }
 
+  // MODE PERBAIKAN: pasang thumbnail ke video yang SUDAH tayang, tanpa mengupload
+  // video baru. Dipakai saat thumbnail gagal karena kuota (kejadian 3 Agu 2026:
+  // roundup & top50 jalan 21:45 UTC, setelah 45 upload Shorts menghabiskan kuota
+  // hari Pacific → videonya naik tanpa thumbnail). Thumbnail-nya deterministik
+  // dari tanggal, jadi bisa dirender ulang — tak perlu mengunduh artifact.
+  //   node worker/make-codes-roundup.mjs --date=2026-08-03 --thumb-only=rsq4z95Tp38
+  if (ARG["thumb-only"]) {
+    const { ytConfigured: ok, setThumbnail } = await import("./video/upload.mjs");
+    if (!ok()) { console.log("[roundup] YT belum di-set → tak bisa pasang thumbnail."); return; }
+    try {
+      await setThumbnail(ARG["thumb-only"], thumbPath);
+      console.log(`[roundup] thumbnail dipasang ke https://youtu.be/${ARG["thumb-only"]}`);
+      buangPending(ARG["thumb-only"]);
+    } catch (e) { console.log("[roundup] pasang thumbnail gagal:", e.message); process.exitCode = 1; }
+    return;
+  }
+
   if (ARG["no-upload"] === "1") { console.log("[roundup] --no-upload → tidak upload."); return; }
   const { ytConfigured, uploadVideo } = await import("./video/upload.mjs");
   if (!ytConfigured()) { console.log("[roundup] YT belum di-set → skip upload (video tersimpan lokal)."); return; }
@@ -176,6 +194,7 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   try {
     const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en", localizations: locID(meta) });
     console.log(`[roundup] uploaded ✓ ${r.url} (privacy=${privacy})`);
+    if (r.thumbPending) { simpanPending({ videoId: r.thumbPending, kind: "roundup", date: DATE }); console.log(`[roundup] ! thumbnail diantrikan — run berikutnya akan memasangnya`); }
     if (process.env.GITHUB_STEP_SUMMARY) writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### 🎁 New Roblox Codes Roundup — ${label(DATE)}\n- ${r.url} (privacy=${privacy})\n- ${totalCodes} kode / ${games.length} game (dari ${totalGames} game total)\n`, { flag: "a" });
   } catch (e) { console.log("[roundup] upload gagal:", e.message); }
 })();
