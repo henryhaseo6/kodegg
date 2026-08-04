@@ -23,10 +23,23 @@ on:
         type: boolean
         default: false
 
-# Cukup satu run sekaligus; batalkan yang lama bila menumpuk.
+# Cukup satu run sekaligus — TAPI JANGAN dibatalkan, ANTREKAN.
+#
+# Dulu cancel-in-progress: true. Masalahnya run ini MENGUPLOAD VIDEO di tengah
+# jalan, sedangkan video-state.json baru di-commit di akhir. Kalau run dibunuh
+# setelah mengupload tapi sebelum commit, video-video itu jadi HANTU: sudah
+# tayang di YouTube tapi tak tercatat sebagai "sudah divideokan" — run berikutnya
+# membuatnya lagi.
+#
+# Kejadian 3 Agu 2026: run terjadwal 13:46 UTC dibunuh oleh dispatch 14:00 UTC
+# setelah sempat mengupload 9 video. Run 14:02 membuat ulang KESEMBILANNYA →
+# 9 pasang video kembar, dan jatah upload harian (45) habis oleh pekerjaan dobel.
+#
+# Mengantre aman: run rutin 1-2 menit, yang berat (banyak video) ~9 menit, jadi
+# tak akan menumpuk pada jadwal per jam.
 concurrency:
   group: update-codes
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write # untuk commit codes.json
