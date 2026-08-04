@@ -54,6 +54,9 @@ export const ROBLOX_ALIAS = {
   "throw-a-coin": ["lempar koin"],
   "catch-a-monster": ["tangkap monster"],
   "drag-drive-simulator": ["ddc", "dds"],
+  // Ditemukan oleh laporan harian 4 Agu 2026 sbg "kueri belum dikenali":
+  // "kode redeem tds terbaru" (26 tayangan).
+  "tower-defense-simulator": ["tds"],
 };
 
 // PIN sumber langkah redeem per-game. Default: RoCodes menang, Den mengisi bila

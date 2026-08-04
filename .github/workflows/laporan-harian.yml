@@ -1,0 +1,53 @@
+# Laporan harian KodeGG — satu gambaran utuh tiap pagi.
+#
+# Kenapa dijadwalkan: pemeriksaan proyek ini tersebar di banyak tempat, dan
+# masalah hanya ketahuan kalau kebetulan ada yang membuka tempat yang tepat.
+# Hampir semua bug besar 2-4 Agu 2026 ditemukan begitu. Ini menariknya jadi satu
+# laporan yang siap dibaca tiap pagi tanpa perlu diminta.
+#
+# Hasilnya muncul di ringkasan run (GITHUB_STEP_SUMMARY) dan riwayat ringkasnya
+# di-commit ke worker/data/laporan-riwayat.json supaya TREN kebaca lintas hari.
+name: laporan-harian
+
+on:
+  schedule:
+    - cron: "30 0 * * *" # 07:30 WIB — siap sebelum jam kerja
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: laporan-harian
+  cancel-in-progress: false
+
+jobs:
+  laporan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Susun laporan
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          npm install googleapis --no-save --no-audit --no-fund
+          node worker/laporan-harian.mjs | tee laporan.txt
+          # Temuan TINGGI dinaikkan jadi warning supaya kelihatan tanpa membuka log.
+          if grep -q '⚠️' laporan.txt; then echo "::warning::Laporan harian memuat peringatan — lihat ringkasan run."; fi
+          rm -f laporan.txt
+
+      - name: Commit riwayat
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add worker/data/laporan-riwayat.json || true
+          git diff --cached --quiet || git commit -m "chore: riwayat laporan harian [skip ci]"
+          git push || echo "push gagal (tak fatal)"
