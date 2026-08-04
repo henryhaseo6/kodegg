@@ -538,7 +538,26 @@ async function main() {
       if (resmi && !/roblox/i.test(resmi)) return tanpa;
       return n;
     };
-    const name = ROBLOX_NAME_OVERRIDE[id] || (entry.seed ? entry.name : buangAwalanRoblox(rocodesMeta?.name) || denMeta?.name || entry.name);
+    // NAMA: RoCodes dulu, lalu Den. TAPI sejak RoCodes digerbangi, pada run yang
+    // RoCodes-nya dilewati `rocodesMeta` null — dan tanpa penjaga, namanya jatuh
+    // ke Den lalu BERUBAH-UBAH tiap jam tergantung sumber mana yang kebetulan
+    // ditarik. Kejadian 4 Agu 2026: "Shindo Life" (RoCodes) berganti jadi
+    // "Shindo Life (Shinobi Life 2)" (Den), dan itu memutus pemetaan playlist
+    // sehingga tombol YouTube hilang dari halaman game.
+    //
+    // `nameSrc` mencatat sumber nama yang sedang dipakai: kalau sumber itu tak
+    // ditarik run ini, nama sebelumnya DIPERTAHANKAN alih-alih diganti sumber
+    // lain. Pola sama dengan pilihHowTo.
+    const namaRo = buangAwalanRoblox(rocodesMeta?.name);
+    const namaDen = denMeta?.name;
+    const prevNama = prevGamesMap[id]?.name, prevNamaSrc = prevGamesMap[id]?.nameSrc;
+    let name, nameSrc = null;
+    if (ROBLOX_NAME_OVERRIDE[id]) { name = ROBLOX_NAME_OVERRIDE[id]; nameSrc = "override"; }
+    else if (entry.seed) { name = entry.name; nameSrc = "seed"; }
+    else if (namaRo) { name = namaRo; nameSrc = "rocodes"; }
+    else if (prevNamaSrc === "rocodes" && prevNama) { name = prevNama; nameSrc = "rocodes"; } // RoCodes cuma tak ditarik run ini
+    else if (namaDen) { name = namaDen; nameSrc = "den"; }
+    else { name = prevNama || entry.name; nameSrc = prevNamaSrc ?? null; }
     const slugRo = entry.rocodesSlug;
     const slugDen = entry.denSlug;
 
@@ -682,6 +701,7 @@ async function main() {
       fArchive,
       meta: {
         name,
+        ...(nameSrc ? { nameSrc } : {}),
         slug: robloxSlug(id),
         rocodesSlug: slugRo ?? null,
         // denDilewati: halaman tak berubah & sengaja tak ditarik — slug-nya TETAP
