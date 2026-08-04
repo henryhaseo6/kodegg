@@ -18,7 +18,7 @@ import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE, ROBLOX_HOWTO_PIN, ROBLOX_ALIAS } from "./src/roblox-games.mjs";
+import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE, ROBLOX_HOWTO_PIN, ROBLOX_ALIAS, NAMA_BEDA_OK } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
 import { scoutDen } from "./src/den-scout.mjs";
@@ -899,6 +899,41 @@ async function main() {
   for (const g of Object.values(mergedGames)) {
     const pd = g.universeId ? players[g.universeId] : null;
     if (pd) { if (pd.playing != null) g.players = pd.playing; if (pd.name) g.rawName = pd.name; } // rawName = nama asli Roblox (+emoji/tag) utk visual video
+  }
+
+  // ── AUDIT NAMA (lapis kedua, khusus game TANPA placeId) ───────────────────
+  // Audit identitas di bawah mengadu universeId dengan placeId Den. Itu tak bisa
+  // dipakai untuk game yang cuma bersumber RoCodes: mereka tak punya placeId,
+  // jadi identitasnya tak punya pembanding sama sekali. Terukur 4 Agu 2026: 288
+  // game begitu, 102 di antaranya cukup ramai untuk dibuatkan video.
+  //
+  // Pembandingnya nama universe dari API Roblox — dan ini GRATIS: fetchPlayers
+  // di atas sudah memulangkannya (dipakai jadi rawName), jadi nol panggilan
+  // tambahan. Nama meleset jauh = universeId mungkin menunjuk game lain, gejala
+  // yang sama dengan Fighting Simulator sebelum ketahuan.
+  //
+  // Ambang sengaja longgar: nama game Roblox sering dijejali kata kunci & emoji
+  // ("Haulers" → "🚚 drive and fight") tanpa berganti game. Uji sekali jalan 4
+  // Agu 2026 atas 102 game menghasilkan 1 tanda tanya dan itupun positif palsu —
+  // jadi alarm di sini jarang, dan yang muncul layak dilihat.
+  try {
+    const rapiN = (s) => String(s || "").toLowerCase().replace(/\[[^\]]*\]|\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+    const bedaNama = [];
+    for (const [id, g] of Object.entries(mergedGames)) {
+      if (!g.universeId || g.placeId || !g.rawName) continue; // punya placeId → sudah diadu audit identitas
+      if (NAMA_BEDA_OK[id]) continue; // sudah diperiksa mata & dinyatakan game yang sama
+      const a = rapiN(g.name), b = rapiN(g.rawName);
+      if (!a || !b) continue;
+      const kata = a.split(" ").filter((w) => w.length > 3);
+      const cocok = a === b || b.includes(a) || a.includes(b)
+        || (kata.length > 0 && kata.filter((w) => b.includes(w)).length / kata.length >= 0.5);
+      if (!cocok) bedaNama.push({ game: id, nama: g.name, namaRoblox: g.rawName, universeId: g.universeId, players: g.players ?? 0 });
+    }
+    bedaNama.sort((x, y) => y.players - x.players);
+    await writeFile(resolve(dirname(OUT), "nama-beda.json"), JSON.stringify(bedaNama, null, 1));
+    if (bedaNama.length) console.log(`[audit-nama] ${bedaNama.length} game tanpa placeId namanya jauh beda dari nama Roblox: ${bedaNama.slice(0, 5).map((b) => b.game).join(", ")}`);
+  } catch (e) {
+    console.log(`[audit-nama] dilewati: ${e.message}`);
   }
 
   // Kode PROMO Roblox platform (bukan per-game) — ditukar di roblox.com.

@@ -106,3 +106,19 @@ const slugify = (s) => (s ?? "").toLowerCase().normalize("NFKD").replace(/[^a-z0
 export const ROBLOX_SLUG = Object.fromEntries(Object.keys(ROBLOX_GAMES).map((id) => [id, slugify(ROBLOX_GAMES[id].name)]));
 export const robloxSlug = (id) => ROBLOX_SLUG[id] ?? id;
 export const robloxIdFromSlug = (slug) => Object.keys(ROBLOX_SLUG).find((id) => ROBLOX_SLUG[id] === slug) ?? null;
+
+// Game yang nama Roblox-nya memang JAUH beda dari nama katalog kita, dan sudah
+// DIPERIKSA MATA bahwa itu game yang sama. Dipakai audit nama (fetch-roblox.mjs)
+// supaya temuan yang sudah dinyatakan aman berhenti berteriak tiap pagi —
+// peringatan yang selalu muncul dan selalu tak perlu adalah peringatan yang
+// akhirnya tak dibaca, dan itu justru menutupi temuan yang sungguhan.
+//
+// Isi hanya setelah benar-benar diverifikasi: kreator, pola kode, deskripsi.
+// Kunci = id game kita, nilai = alasan singkat (agar bisa ditinjau ulang nanti).
+export const NAMA_BEDA_OK = {
+  // Ganti judul jadi "🚚 drive and fight" (keyword stuffing khas Roblox).
+  // Diverifikasi 4 Agu 2026: kreator sama (646 Studios), deskripsinya menyebut
+  // kode milestone "25KLIKES" — pola yang sama dengan kode kita (15000LIKES,
+  // 500LIKES, release). Game yang sama, cuma judulnya dirombak.
+  haulers: "ganti judul jadi '🚚 drive and fight', kreator & pola kode sama",
+};

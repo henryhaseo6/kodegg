@@ -123,6 +123,15 @@ const idb = baca("identitas-beda.json", []);
 // bisa ditindaklanjuti adalah namanya — angka telanjang cuma bikin cemas.
 if (idb.length) perhatian(`${idb.length} game universeId-nya beda dari placeId Den — perlu ditinjau: ${idb.slice(0, 5).map((x) => `${x.nama ?? x.game} (${x.players ?? 0} pemain)`).join(", ")}${idb.length > 5 ? ", …" : ""}`);
 else baris("Audit identitas", "cocok semua");
+// Lapis kedua: game TANPA placeId tak bisa diadu ke Den, jadi diadu ke nama
+// universe Roblox. Dipisah menurut ambang video — game di bawah 2.000 pemain
+// tak pernah dibuatkan video, jadi namanya meleset pun tak menyentuh penonton.
+// Tanpa pemisahan ini, alarm bernilai rendah (judul Mandarin, singkatan) ikut
+// berteriak setiap pagi dan bagian ini berhenti dibaca.
+const nmb = baca("nama-beda.json", []);
+const nmbPenting = nmb.filter((x) => (x.players ?? 0) >= 2000);
+if (nmbPenting.length) perhatian(`${nmbPenting.length} game bisa-jadi-video namanya jauh beda dari nama Roblox: ${nmbPenting.slice(0, 4).map((x) => `${x.nama} → ${x.namaRoblox}`).join(" · ")}`);
+else if (nmb.length) baris("Audit nama", `${nmb.length} selisih, semuanya <2rb pemain (tak masuk video)`);
 
 // ── 7. YOUTUBE (butuh kredensial + Analytics API aktif) ────────────────────
 if (!TANPA_YT && process.env.YT_REFRESH_TOKEN) {
