@@ -492,8 +492,13 @@ async function main() {
     const cands = buildCandidates().filter((c) => c.newCodes.some((nc) => !sudahDiposting(state, c.id, nc.code, c.platform)));
     const promoC = buildPromoCandidate(state, now);
     const pv = readJSON(PENDING_VID, []).length, pp = readJSON(PENDING_PL, []).length;
-    const kerja = cands.length + (promoC ? 1 : 0) + pv + pp;
-    console.log(`cek video: ${kerja} unit (fresh ${cands.length}, promo ${promoC ? 1 : 0}, antri-vid ${pv}, antri-pl ${pp})`);
+    // Susulan WAJIB ikut dihitung. Tanpa ini CI menyimpulkan "tak ada kerja" lalu
+    // melewati install deps video — dan itu terjadi justru di malam sepi, yaitu
+    // malam yang kuotanya paling banyak tersisa dan paling butuh borongan.
+    const bl = !BACKLOG_OFF && jamPT(now) >= BACKLOG_HOUR_PT && MAX_PER_DAY - state.todayCount > 0
+      ? buildBacklog(state, RENDER_MAX).length : 0;
+    const kerja = cands.length + (promoC ? 1 : 0) + pv + pp + bl;
+    console.log(`cek video: ${kerja} unit (fresh ${cands.length}, promo ${promoC ? 1 : 0}, antri-vid ${pv}, antri-pl ${pp}, susulan ${bl})`);
     process.exit(kerja > 0 ? 0 : 1);
   }
 
