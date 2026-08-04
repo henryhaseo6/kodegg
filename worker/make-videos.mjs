@@ -352,7 +352,13 @@ function enqueuePending(item) {
 async function drainPending() {
   let q = readJSON(PENDING_PL, []);
   if (q.length === 0) return;
-  console.log(`playlist tertunda: ${q.length} → coba pasang…`);
+  // URUT PEMAIN TERBANYAK DULU. Jatah pembuatan playlist baru di YouTube cuma
+  // ~10/hari, dan pengurasan berhenti di kegagalan pertama — jadi urutan antrean
+  // menentukan siapa yang kebagian. Dulu FIFO: game 48 pemain bisa menghabiskan
+  // jatah sebelum game 22 ribu pemain kebagian. Entri lama tanpa `players`
+  // dianggap 0 dan jatuh ke belakang; itu benar, mereka memang tak terukur.
+  q = [...q].sort((a, b) => (b.players ?? 0) - (a.players ?? 0));
+  console.log(`playlist tertunda: ${q.length} → coba pasang (urut pemain terbanyak)…`);
   const sisa = [];
   for (const item of q) {
     const ok = await attachToPlaylist(null, item.videoId, item.playlistTitle, item.playlistDescription);
@@ -569,7 +575,9 @@ async function main() {
           console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
           state.todayCount += 1; remaining -= 1;
           state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
-          if (playlistPending) enqueuePending(playlistPending); // rate-limit playlist → coba lagi run berikutnya
+          // `players` ikut disimpan supaya pengurasan bisa MENDAHULUKAN game besar
+          // (lihat drainPending). Jatah playlist baru YouTube cuma ~10/hari.
+          if (playlistPending) enqueuePending({ ...playlistPending, players: c.players ?? 0, game: c.id });
         } catch (e) {
           // Error upload HAMPIR SELALU account-wide (kuota / token `invalid_grant` /
           // rate limit) → STOP upload run ini + ANTRI RETRY (JANGAN mark posted) biar
