@@ -1,6 +1,229 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "rivals",
+    "name": "RIVALS",
+    "displayName": "RIVALS",
+    "slug": "rivals",
+    "players": 233347,
+    "redeemNote": {
+      "en": "You must follow the developers Nosniy Games, SenseiWarrior and Nosniy to redeem codes.",
+      "id": "Kamu harus follow developer Nosniy Games, SenseiWarrior, dan Nosniy dulu supaya kode bisa di-redeem.",
+      "links": [
+        {
+          "label": "Nosniy Games",
+          "url": "https://www.roblox.com/communities/3461453/Nosniy-Games"
+        },
+        {
+          "label": "SenseiWarrior",
+          "url": "https://www.roblox.com/users/15941965/profile"
+        },
+        {
+          "label": "Nosniy",
+          "url": "https://www.roblox.com/users/20349956/profile"
+        }
+      ]
+    },
+    "alias": null,
+    "rank": 233347,
+    "newCodes": [
+      {
+        "game": "rivals",
+        "gameName": "RIVALS",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/rivals"
+        },
+        "code": "FREE191",
+        "reward": "3 Keys",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1785728773504,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      }
+    ],
+    "activeCount": 9,
+    "fetchedAt": "2026-08-04T15:01:36.925Z",
+    "displayCodes": [
+      {
+        "code": "FREE191",
+        "reward": "3 Keys",
+        "isNew": true
+      },
+      {
+        "code": "free190",
+        "reward": "3 Keys",
+        "isNew": false
+      },
+      {
+        "code": "COCONUTBONK",
+        "reward": "250 Pearls",
+        "isNew": false
+      },
+      {
+        "code": "COMMUNITY24",
+        "reward": "Community Wrap",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "FREE191",
+        "reward": "3 Keys",
+        "isNew": true
+      },
+      {
+        "code": "free190",
+        "reward": "3 Keys",
+        "isNew": false
+      },
+      {
+        "code": "COCONUTBONK",
+        "reward": "250 Pearls",
+        "isNew": false
+      },
+      {
+        "code": "COMMUNITY24",
+        "reward": "Community Wrap",
+        "isNew": false
+      },
+      {
+        "code": "BOOST",
+        "reward": "One Key",
+        "isNew": false
+      },
+      {
+        "code": "roblox_rtc",
+        "reward": "Redeem this code to get 5 Keys",
+        "isNew": false
+      },
+      {
+        "code": "BONUS",
+        "reward": "Redeem this code to get 1 Key",
+        "isNew": false
+      },
+      {
+        "code": "RIVALSSUMMER",
+        "reward": "3 Tropical Chests",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "COMMUNITY24",
+      "BOOST",
+      "BONUS",
+      "roblox_rtc",
+      "FREE191",
+      "free190",
+      "COCONUTBONK",
+      "RIVALSSUMMER",
+      "ELBILLUG"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "gakuran",
+    "name": "Gakuran",
+    "displayName": "(学乱) Gakuran",
+    "slug": "gakuran",
+    "players": 47869,
+    "redeemNote": {
+      "en": "To play and use codes in Gakuran, you must first join the (学乱) Gakuran Roblox Community",
+      "links": [
+        {
+          "label": "(学乱) Gakuran Roblox Community",
+          "url": "https://www.roblox.com/communities/416091513/Gakuran#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 47869,
+    "newCodes": [
+      {
+        "game": "gakuran",
+        "gameName": "Gakuran",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg",
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/gakuran",
+          "Roblox Den": "https://robloxden.com/game-codes/gakuran"
+        },
+        "code": "QUICKSHUTDOWN",
+        "reward": "30 Rerolls",
+        "date": "2026-08-04T14:55:00.377Z",
+        "srcNew": true,
+        "srcNewAt": 1785729263880,
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-08-04T15:01:36.925Z",
+    "displayCodes": [
+      {
+        "code": "QUICKSHUTDOWN",
+        "reward": "30 Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "ALI",
+        "reward": "50 Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "QUICKPATCH",
+        "reward": "15 Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "MUSICFIXESNOPTIMIZATION",
+        "reward": "25 Rerolls",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "QUICKSHUTDOWN",
+        "reward": "30 Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "ALI",
+        "reward": "50 Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "QUICKPATCH",
+        "reward": "15 Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "MUSICFIXESNOPTIMIZATION",
+        "reward": "25 Rerolls",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "QUICKSHUTDOWN",
+      "ALI",
+      "QUICKPATCH",
+      "MUSICFIXESNOPTIMIZATION"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "throw-a-coin",
     "name": "Throw a Coin",
     "displayName": "[🤝] Throw a Coin",
@@ -84,6 +307,117 @@
       "WORLD3",
       "Luckyducky",
       "candy"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "noob-incremental",
+    "name": "Noob Incremental",
+    "displayName": "[UPD 3🌙] Noob Incremental",
+    "slug": "noob-incremental",
+    "players": 11337,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 11337,
+    "newCodes": [
+      {
+        "game": "noob-incremental",
+        "gameName": "Noob Incremental",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/noob-incremental"
+        },
+        "code": "SPACEREALMISOUT!",
+        "reward": null,
+        "date": "2026-08-04T14:54:40.611Z",
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      }
+    ],
+    "activeCount": 12,
+    "fetchedAt": "2026-08-04T15:01:36.925Z",
+    "displayCodes": [
+      {
+        "code": "SPACEREALMISOUT!",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "500KGROUPMEMBERS!!!",
+        "reward": "500 T1 Trial Chests, 500 T2 Trial Chests, 5,000 Enchant Tokens, 50 Tickets, 50 Double Rune Luck Potions, 50 Double Rune Speed Potions, 50 Double Rune Bulk Potions, 50 Double Drop Luck Potions, 50 Double Expedition Luck Potions, and 50 Double Capsule Luck Potions.Show more",
+        "isNew": false
+      },
+      {
+        "code": "YouFoundMe",
+        "reward": "5 Enchant Tokens and 1 Rune Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "GetBetterSon",
+        "reward": "5 Enchant Tokens and 1 Rune Speed Potion",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "SPACEREALMISOUT!",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "500KGROUPMEMBERS!!!",
+        "reward": "500 T1 Trial Chests, 500 T2 Trial Chests, 5,000 Enchant Tokens, 50 Tickets, 50 Double Rune Luck Potions, 50 Double Rune Speed Potions, 50 Double Rune Bulk Potions, 50 Double Drop Luck Potions, 50 Double Expedition Luck Potions, and 50 Double Capsule Luck Potions.Show more",
+        "isNew": false
+      },
+      {
+        "code": "YouFoundMe",
+        "reward": "5 Enchant Tokens and 1 Rune Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "GetBetterSon",
+        "reward": "5 Enchant Tokens and 1 Rune Speed Potion",
+        "isNew": false
+      },
+      {
+        "code": "BAZALRIGHT",
+        "reward": "5 Enchant Tokens and 1 Bulk Rune Potion",
+        "isNew": false
+      },
+      {
+        "code": "THANKS4JOINING",
+        "reward": "10% Rune Luck (Active).You must paste it in the Special Code box to redeem",
+        "isNew": false
+      },
+      {
+        "code": "ANOTHERLITTLEUPDATE",
+        "reward": "100 Chests, 25 Golden Chests, 10 Golden Dice, 25 Tickets, 10 Double Rune Luck Potions, 10 Double Rune Speed Potions, 10 Double Rune Bulk Potions, 10 Double Drop Luck Potions, 10 Double Expedition Luck Potions, and 10 Double Capsule Luck Potions.Show more",
+        "isNew": false
+      },
+      {
+        "code": "JUSTALITTLEUPDATE",
+        "reward": "50 chests, 10 Golden Chests, 5 Golden Dice, 25 Tickets, 10 2x Rune Luck, 10 2x Rune Speed and 10 2x Rune Bulk",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "SPACEREALMISOUT!",
+      "500KGROUPMEMBERS!!!",
+      "ANOTHERLITTLEUPDATE",
+      "JUSTALITTLEUPDATE",
+      "MINIUPDATE",
+      "FOOTBALLEVENT",
+      "RELEASE",
+      "LABUPDATE",
+      "YouFoundMe",
+      "GetBetterSon",
+      "BAZALRIGHT",
+      "THANKS4JOINING"
     ]
   },
   {
@@ -199,6 +533,460 @@
       "noherocanwin",
       "raidthecastle",
       "ulttheboss"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "five-nights-td-2",
+    "name": "Five Nights TD 2",
+    "displayName": "Five Nights TD 2 [CHALLENGES]",
+    "slug": "five-nights-td-2",
+    "players": 5390,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 5390,
+    "newCodes": [
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "VESSEL",
+        "reward": "25K Tokens, 350 Souls, 50 Season Presents, 5 Raid Coins",
+        "date": "2026-08-04T14:56:17.293Z",
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      },
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "UPDATE41",
+        "reward": "5K Tokens, 100 Souls, 50 Endo Chips, 50 Soldering Irons, 5 Season Presents",
+        "date": "2026-08-04T14:55:57.904Z",
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      },
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "CHALLENGES",
+        "reward": "10K Tokens, 250 Souls, 25 Season Presents",
+        "date": "2026-08-04T14:55:56.942Z",
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      }
+    ],
+    "activeCount": 3,
+    "fetchedAt": "2026-08-04T15:01:36.925Z",
+    "displayCodes": [
+      {
+        "code": "VESSEL",
+        "reward": "25K Tokens, 350 Souls, 50 Season Presents, 5 Raid Coins",
+        "isNew": true
+      },
+      {
+        "code": "UPDATE41",
+        "reward": "5K Tokens, 100 Souls, 50 Endo Chips, 50 Soldering Irons, 5 Season Presents",
+        "isNew": true
+      },
+      {
+        "code": "CHALLENGES",
+        "reward": "10K Tokens, 250 Souls, 25 Season Presents",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "VESSEL",
+        "reward": "25K Tokens, 350 Souls, 50 Season Presents, 5 Raid Coins",
+        "isNew": true
+      },
+      {
+        "code": "UPDATE41",
+        "reward": "5K Tokens, 100 Souls, 50 Endo Chips, 50 Soldering Irons, 5 Season Presents",
+        "isNew": true
+      },
+      {
+        "code": "CHALLENGES",
+        "reward": "10K Tokens, 250 Souls, 25 Season Presents",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "VESSEL",
+      "UPDATE41",
+      "CHALLENGES"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "anime-final-quest",
+    "name": "Anime Final Quest",
+    "displayName": "[FLAMINGO] Anime Final Quest",
+    "slug": "anime-final-quest",
+    "players": 3240,
+    "redeemNote": {
+      "en": "To use codes in Anime Final Quest, you must first join the Anime Final Quest Roblox Community.",
+      "links": [
+        {
+          "label": "Anime Final Quest Roblox Community",
+          "url": "https://www.roblox.com/communities/34258454/Anime-Final-Quest#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 3240,
+    "newCodes": [
+      {
+        "game": "anime-final-quest",
+        "gameName": "Anime Final Quest",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/anime-final-quest"
+        },
+        "code": "TOWERPROTECTION",
+        "reward": "20 Raid Tickets, 50 Weapon Lucky Spins, 75 Runes",
+        "date": "2026-08-04T14:55:18.202Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      },
+      {
+        "game": "anime-final-quest",
+        "gameName": "Anime Final Quest",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/anime-final-quest"
+        },
+        "code": "FLAMINGO",
+        "reward": "150K Gold, 50 Gear Lucky Spins",
+        "date": "2026-08-04T14:55:07.162Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      }
+    ],
+    "activeCount": 86,
+    "fetchedAt": "2026-08-04T15:01:36.925Z",
+    "displayCodes": [
+      {
+        "code": "TOWERPROTECTION",
+        "reward": "20 Raid Tickets, 50 Weapon Lucky Spins, 75 Runes",
+        "isNew": true
+      },
+      {
+        "code": "FLAMINGO",
+        "reward": "150K Gold, 50 Gear Lucky Spins",
+        "isNew": true
+      },
+      {
+        "code": "PROMISEDCODE",
+        "reward": "20 Statue Crowns, 20 Soul Manipulator Hands, 3M Gold",
+        "isNew": false
+      },
+      {
+        "code": "HOLLOWPURPLEGEAR",
+        "reward": "50 Gear Lucky Spins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "TOWERPROTECTION",
+        "reward": "20 Raid Tickets, 50 Weapon Lucky Spins, 75 Runes",
+        "isNew": true
+      },
+      {
+        "code": "FLAMINGO",
+        "reward": "150K Gold, 50 Gear Lucky Spins",
+        "isNew": true
+      },
+      {
+        "code": "PROMISEDCODE",
+        "reward": "20 Statue Crowns, 20 Soul Manipulator Hands, 3M Gold",
+        "isNew": false
+      },
+      {
+        "code": "HOLLOWPURPLEGEAR",
+        "reward": "50 Gear Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "SANDVILLAGE",
+        "reward": "75,000 Gold, 5 Raid Tickets, and 5 Frog Eggs",
+        "isNew": false
+      },
+      {
+        "code": "NEWTRAITFEATURE",
+        "reward": "100 Runes",
+        "isNew": false
+      },
+      {
+        "code": "OLDWEAPONSGRINDFIX",
+        "reward": "85 Runes, 20 Raid Tickets, and 50 Weapon Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "NEWXPREWARDS",
+        "reward": "100 Gear Lucky Spins and 50,000 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "TOWERPROTECTION",
+      "PROMISEDCODE",
+      "FLAMINGO",
+      "BATTLEPASS",
+      "SONKING",
+      "WELCOMEBACKVN",
+      "WELOVEITEMS",
+      "TAILED BEAST",
+      "NEWAFKITEMYAY",
+      "PERFECTION",
+      "THUNDERGOD",
+      "DELAYAPOLOGY",
+      "TUSKQUEST",
+      "ROBLOXSTOPBULLYING",
+      "ORAORAORA!",
+      "CHUMIMIM",
+      "ATOMICISBACK",
+      "GIFTSGIFTS",
+      "USEYOURLUCK",
+      "PITYFIXED",
+      "SOULREAPER",
+      "APOLOGIZEFORTHEDELAY",
+      "AFKISFIXED",
+      "HAKIGEAR",
+      "EVOLUTIONSOON",
+      "QOLINAFQ",
+      "NEXTUPDATEISCRAZY",
+      "VAMPIREINAFQ",
+      "STRAWHATREWORK",
+      "NEWRAIDINAFQ",
+      "RAIDBOSSMONSTER",
+      "DEVELOPERSHAND",
+      "COSMICUPDATE",
+      "BUGFIXUPDATE07",
+      "SOMETHINGCOSMICISNEAR",
+      "SABERUPDATE",
+      "VERGIL",
+      "GRINDTIME5",
+      "KINGRIPPEREVO",
+      "MOVEMENT",
+      "EVOLUTION3",
+      "GEAR5",
+      "SORRYFORBUGSGEAR5",
+      "100MILLIONVISITS",
+      "BUGFIXEDUPDATE",
+      "SORRYFORGAMEMODBUGS",
+      "STARTOFANEWERA",
+      "WORLD2END",
+      "TESTINGPLACEISBACK",
+      "AFQISCLEAN",
+      "BUGFIX",
+      "RAID",
+      "GRINDTIME",
+      "AIZEN",
+      "STRAWHAT",
+      "QOL",
+      "HOLLOWGEAR",
+      "TRIPLET",
+      "APRILFOOLS",
+      "PRIESTEVO",
+      "ATTACKTITAN",
+      "DIORAID",
+      "SORRYFORDELAYANDBUG",
+      "NEWSEASON",
+      "GRAVITATION",
+      "CLANS",
+      "EIDMUBARAK",
+      "THANKSFOR25KCCU",
+      "KINGOFCURSESISBACK",
+      "KINGSVESSEL",
+      "SORRYFORTHEBUG",
+      "GIFTFROMCELLGAMES",
+      "WEEKENDEVENT",
+      "KING",
+      "GENERALEVO",
+      "ADMIRAL",
+      "SIDEUPDATE",
+      "LEVELBUGFIX",
+      "AGRIS2",
+      "LEGEND",
+      "WEEKENDGIFT2",
+      "HOLLOWPURPLEGEAR",
+      "SANDVILLAGE",
+      "NEWTRAITFEATURE",
+      "OLDWEAPONSGRINDFIX",
+      "NEWXPREWARDS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "freeze-for-ugc",
+    "name": "Freeze for UGC",
+    "displayName": "Freeze for UGC 🧊",
+    "slug": "freeze-for-ugc",
+    "players": 2655,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2655,
+    "newCodes": [
+      {
+        "game": "freeze-for-ugc",
+        "gameName": "Freeze for UGC",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/freeze-for-ugc"
+        },
+        "code": "ILOVEART",
+        "reward": null,
+        "date": "2026-08-04T14:54:38.472Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      },
+      {
+        "game": "freeze-for-ugc",
+        "gameName": "Freeze for UGC",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg",
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/freeze-for-ugc",
+          "Roblox Den": "https://robloxden.com/game-codes/freeze-for-ugc"
+        },
+        "code": "FOLLOWED",
+        "reward": "250 Time",
+        "date": "2026-08-04T14:54:34.461Z",
+        "srcNew": true,
+        "srcNewAt": 1785826267031,
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      }
+    ],
+    "activeCount": 13,
+    "fetchedAt": "2026-08-04T15:01:36.925Z",
+    "displayCodes": [
+      {
+        "code": "ILOVEART",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "FOLLOWED",
+        "reward": "250 Time",
+        "isNew": true
+      },
+      {
+        "code": "ALXODEV",
+        "reward": "Time",
+        "isNew": false
+      },
+      {
+        "code": "ICEPOWER",
+        "reward": "Time",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ILOVEART",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "FOLLOWED",
+        "reward": "250 Time",
+        "isNew": true
+      },
+      {
+        "code": "ALXODEV",
+        "reward": "Time",
+        "isNew": false
+      },
+      {
+        "code": "ICEPOWER",
+        "reward": "Time",
+        "isNew": false
+      },
+      {
+        "code": "ILOVEFREEZE",
+        "reward": "Time",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "Time",
+        "isNew": false
+      },
+      {
+        "code": "GroupReward",
+        "reward": "Time",
+        "isNew": false
+      },
+      {
+        "code": "GOAL2024",
+        "reward": "Time",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "ILOVEART",
+      "FOLLOWED",
+      "ALXODEV",
+      "ICEPOWER",
+      "ILOVEFREEZE",
+      "RELEASE",
+      "FREEZE",
+      "Juanes",
+      "GroupReward",
+      "GOAL2024",
+      "TOILET",
+      "UPDATE",
+      "SKIBIDI"
     ]
   },
   {
@@ -679,6 +1467,153 @@
       "100million",
       "90mvisits",
       "400klikes"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "build-a-military-base",
+    "name": "Build a Military Base",
+    "displayName": "[OUTPOSTS!] Build a Military Base",
+    "slug": "build-a-military-base",
+    "players": 1143,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1143,
+    "newCodes": [
+      {
+        "game": "build-a-military-base",
+        "gameName": "Build a Military Base",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/build-a-military-base"
+        },
+        "code": "123BUGFIX",
+        "reward": null,
+        "date": "2026-08-04T14:54:42.391Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      }
+    ],
+    "activeCount": 48,
+    "fetchedAt": "2026-08-04T15:01:36.925Z",
+    "displayCodes": [
+      {
+        "code": "123BUGFIX",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "OUTPOSTS",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "FLAMEON",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "CHIMERA",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "123BUGFIX",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "OUTPOSTS",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "FLAMEON",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "CHIMERA",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "LOGI",
+        "reward": "Logistics Warehouse",
+        "isNew": false
+      },
+      {
+        "code": "9PLUS10",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "PROWLER",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "TEAMWORKMAKESTHEDREAMWORK",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "123BUGFIX",
+      "OUTPOSTS",
+      "FLAMEON",
+      "CHIMERA",
+      "9PLUS10",
+      "PROWLER",
+      "TEAMWORKMAKESTHEDREAMWORK",
+      "QUESTFIX",
+      "SNUGASABUG",
+      "MAMMOTH",
+      "CARRIERHASARRIVED",
+      "150000LIKES",
+      "WORLD2FIXES",
+      "JULY4",
+      "FREEDOM",
+      "FIREWORKS",
+      "10MILLIONVISITS",
+      "145000LIKES",
+      "THINKINGCAPS",
+      "STEALTHHELICOPTER",
+      "B2BUFF",
+      "STEALTHY",
+      "140000LIKES",
+      "135000LIKES",
+      "SANDSTORM",
+      "MECHA",
+      "MOREBOSSES",
+      "MEDICS",
+      "MECHS",
+      "130000LIKES",
+      "200K",
+      "SPECTRE",
+      "BOSS",
+      "WEATHER",
+      "DRONES",
+      "125000LIKES",
+      "PREMIUMDELAY",
+      "CARRIER",
+      "6000",
+      "190000MEMBERS",
+      "120000LIKES",
+      "SHIPS",
+      "VGU",
+      "KABOOM",
+      "5MILLION",
+      "105000LIKES",
+      "110000LIKES",
+      "LOGI"
     ]
   },
   {
@@ -1293,6 +2228,327 @@
       "TRADING",
       "140KMEMBERS",
       "2MVISITS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "reign-piece",
+    "name": "REIGN PIECE",
+    "displayName": "[RESTRICTED TOJI ⛓️⛩️] Reign Piece",
+    "slug": "reign-piece",
+    "players": 283,
+    "redeemNote": {
+      "en": "To use codes in Reign Piece, you must first join the R : S TEAM REIGN PIECE Roblox Community.",
+      "links": [
+        {
+          "label": "R : S TEAM REIGN PIECE Roblox Community",
+          "url": "https://www.roblox.com/communities/759293173/R-S-TEAM-REIGN-PIECE#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 283,
+    "newCodes": [
+      {
+        "game": "reign-piece",
+        "gameName": "REIGN PIECE",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/reign-piece"
+        },
+        "code": "WELOVESLC",
+        "reward": null,
+        "date": "2026-08-04T14:54:41.442Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      }
+    ],
+    "activeCount": 59,
+    "fetchedAt": "2026-08-04T15:01:36.925Z",
+    "displayCodes": [
+      {
+        "code": "WELOVESLC",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "BLAMEMARKUSFORDROPRATES",
+        "reward": "Rewards.You must be at least level 1,500 to claim this code",
+        "isNew": false
+      },
+      {
+        "code": "1500CCU",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "RESTRICTED",
+        "reward": "Free Rewards.You must be at least Level 6,000 to use this code",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "WELOVESLC",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "BLAMEMARKUSFORDROPRATES",
+        "reward": "Rewards.You must be at least level 1,500 to claim this code",
+        "isNew": false
+      },
+      {
+        "code": "1500CCU",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "RESTRICTED",
+        "reward": "Free Rewards.You must be at least Level 6,000 to use this code",
+        "isNew": false
+      },
+      {
+        "code": "SHADOWSARISE",
+        "reward": "Freebies.You must be at least Level 6,000 to use this code",
+        "isNew": false
+      },
+      {
+        "code": "HUGEBALANCINGPATCH",
+        "reward": "100,000 Yen, 10,000 Crystals, 3 Daily Spins, and 5 Clan Relics",
+        "isNew": false
+      },
+      {
+        "code": "THEFIRSTSLAYER",
+        "reward": "Freebies.You must be at least Level 5,000 to use this code",
+        "isNew": false
+      },
+      {
+        "code": "LIMITEDCODEREDEEMQUICKWOAH",
+        "reward": "Freebies.You must be at least Level 6,500 to use this code",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "WELOVESLC",
+      "RESTRICTED",
+      "SHADOWSARISE",
+      "HUGEBALANCINGPATCH",
+      "THEFIRSTSLAYER",
+      "LIMITEDCODEREDEEMQUICKWOAH",
+      "BEGINNERBOOST",
+      "JUDGEMENTCUT",
+      "IAMTHESTORM",
+      "SLCSOHUMBLE",
+      "DEKUVIGILANTE",
+      "LIMITEDCODE",
+      "FOUNDTHEGOAT",
+      "ASTAUPDATE",
+      "ANTIMAGIC",
+      "FROZENKING",
+      "FREERACEREROLLS",
+      "ANOSUPDATE",
+      "RIMURUTEMPEST",
+      "FREECLANRELICS",
+      "ENELEVENT",
+      "CLANS",
+      "SDSUPDATE",
+      "REQSMET!",
+      "PRIDEVSLOVE",
+      "SOVEREIGN",
+      "1500CCU!",
+      "HUGEUPDATE",
+      "AIZENANDSHADOW",
+      "STARRKUPDATE",
+      "FACTIONS",
+      "SORRYFORSLIGHTDELAY",
+      "PRIMERAESPADA",
+      "ULQUPDATE",
+      "GOATOFTHEESPADAS",
+      "AKAZAUPDATE",
+      "750INTERESTED",
+      "SLASHERDEMON",
+      "GYUTARO",
+      "AKAZASOON",
+      "SUNGJINWOO",
+      "DOUBLEDUNGEON",
+      "SORRYFORSJWDELAY",
+      "IGRISUPDATE",
+      "BLESSEDUPBYSLCTHEGOAT",
+      "MAHORAGA",
+      "FREEREROLLS",
+      "500INTERESTED",
+      "NERFMAHORAGAPLSSSSS",
+      "RYOMENSUKUNA",
+      "HUGEUPDATEJJK",
+      "1KINTERESTED",
+      "GOJO",
+      "VALENTINESUPD",
+      "REANIMATEDTOJI",
+      "VOWS",
+      "KINGSLC",
+      "BLAMEMARKUSFORDROPRATES",
+      "1500CCU"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "project-menacing-remake",
+    "name": "Project Menacing Remake",
+    "displayName": "[QOL] Project Menacing : Remake",
+    "slug": "project-menacing-remake",
+    "players": 20,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 20,
+    "newCodes": [
+      {
+        "game": "project-menacing-remake",
+        "gameName": "Project Menacing Remake",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/project-menacing-remake"
+        },
+        "code": "PLEASEPLAYPVP",
+        "reward": null,
+        "date": "2026-08-04T14:54:36.442Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      },
+      {
+        "game": "project-menacing-remake",
+        "gameName": "Project Menacing Remake",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/project-menacing-remake"
+        },
+        "code": "RTZREWORK",
+        "reward": null,
+        "date": "2026-08-04T14:54:35.554Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-04T15:01:36.925Z",
+        "fetchedAt": "2026-08-04T15:01:36.925Z"
+      }
+    ],
+    "activeCount": 37,
+    "fetchedAt": "2026-08-04T15:01:36.925Z",
+    "displayCodes": [
+      {
+        "code": "PLEASEPLAYPVP",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "RTZREWORK",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "NEWMAINMENU",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "UPDATESOONTRUST2",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "PLEASEPLAYPVP",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "RTZREWORK",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "NEWMAINMENU",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "UPDATESOONTRUST2",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "UPDATESOONTRUST",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "PLZPLAYERSTY",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE!!",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "ANUBISCOMING",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "PLEASEPLAYPVP",
+      "RTZREWORK",
+      "NEWMAINMENU",
+      "UPDATESOONTRUST2",
+      "UPDATESOONTRUST",
+      "PLZPLAYERSTY",
+      "UPDATE!!",
+      "ANUBISCOMING",
+      "GETPINGED",
+      "CODE2TWWOOO",
+      "CODEONE",
+      "COPYRIGHTGONE",
+      "GGS",
+      "NERDS",
+      "WELOVETWAU",
+      "THISUPDATEISPERFECT",
+      "GIVEUSMOREMONEY",
+      "YOUGOTWHATYOUWANTED",
+      "PLZTWAU",
+      "WELOVEYOUDAVID",
+      "MIHMETAAGAIN",
+      "NOMOREHECKERS",
+      "ANUBIS",
+      "STONEFREE",
+      "SOMEMOREARROWS",
+      "BPSHOPCHANGES",
+      "FOLLOWOURSTAFFTHX",
+      "NEWGAMEPASSES",
+      "CDBALANCED",
+      "CRAZYDIAMOND",
+      "THEUPDATEISNIGH",
+      "SORRYFORTHEDELAYSLOL",
+      "ITSALLMADEINHEAVEN",
+      "HEAVENSGLIMMER",
+      "6KMEMBERS",
+      "BROITSFEBRUARY",
+      "ALMOSTSPRING"
     ]
   }
 ]
