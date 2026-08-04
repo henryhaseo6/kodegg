@@ -403,12 +403,12 @@ async function main() {
     if (t) prevSeen.set(`${c.game}:${String(c.code).toLowerCase()}`, t);
   }
 
-  const denPunya = {};
+  const denPunya = {}, roPunya = {};
   for (const [kunci, arr] of [["active", prev.active ?? []], ["archive", prev.archive ?? []]]) {
     for (const c of arr) {
       const src = c.sources?.length ? c.sources : [c.source];
-      if (!src.includes("Roblox Den")) continue;
-      ((denPunya[c.game] ??= { active: [], archive: [] })[kunci]).push(c);
+      if (src.includes("Roblox Den")) ((denPunya[c.game] ??= { active: [], archive: [] })[kunci]).push(c);
+      if (src.includes("RoCodes.gg")) ((roPunya[c.game] ??= { active: [], archive: [] })[kunci]).push(c);
     }
   }
   // Backfill awal (game yang belum pernah ditarik dari Den) dibatasi per run
@@ -419,14 +419,36 @@ async function main() {
   // pernah kita lihat pada game-game ini BUKAN kode baru — cuma kejar-tayang
   // sumber kedua (umurnya bisa berbulan-bulan). Lihat pemakaian di `newly`.
   const denBackfill = new Set();
-  const perluDen = (id, slug) => {
+  // Game ramai: halaman Den ditarik TIAP RUN, abaikan gerbang <lastmod>.
+  //
+  // Alasannya terukur (probe 4 Agu 2026, 69 sampel): sitemap Den terbit dalam
+  // BATCH yang tertunda — entri paling segar pun berumur 168 menit, p10 928
+  // menit. Akibatnya kode Den-saja baru kita lihat median 403 menit (6,7 jam)
+  // setelah stempelnya bergerak. Itu cacat struktural di sisi mereka, tak bisa
+  // diperbaiki dari sini; satu-satunya cara memangkasnya adalah berhenti
+  // menggerbangi. Bandingkan RoCodes: median 35 menit, hanya 2% lewat 2 jam.
+  const DEN_ALWAYS_MIN = Number(process.env.DEN_ALWAYS_MIN_PLAYERS || 5000);
+  const perluDen = (id, slug, players) => {
     if (!slug) return false;
+    if ((players ?? 0) >= DEN_ALWAYS_MIN) return true; // game ramai → jangan digerbangi
     const lm = denIndex.get(slug) ?? 0;
     const terakhir = Number(prevGamesMap[id]?.denAt ?? 0);
     if (!terakhir) { if (backfillSisa-- > 0) { denBackfill.add(id); return true; } return false; }
     return lm > terakhir; // hanya bila halamannya memang berubah
   };
-  let denTarik = 0, denLewat = 0;
+  // RoCodes KINI DIGERBANGI. Dulu 427 halaman ditarik tiap jam tanpa syarat =
+  // 10.248 permintaan/hari. Stempel RoCodes terbukti jujur (median 35 menit basi
+  // saat kode muncul, 2% lewat 2 jam), jadi gerbang ini hampir tak berbiaya
+  // kecepatan — sementara hematnya dipakai untuk MEMBUKA Den di game ramai.
+  const perluRo = (id, slug) => {
+    if (!slug) return false;
+    const terakhir = Number(prevGamesMap[id]?.roAt ?? 0);
+    if (!terakhir) return true; // belum pernah ditarik → wajib
+    const lm = roIndexSlug.get(slug) ?? 0;
+    if (!lm) return true; // slug tak ada di sitemap → jangan diam-diam berhenti menariknya
+    return lm > terakhir;
+  };
+  let denTarik = 0, denLewat = 0, roTarik = 0, roLewat = 0;
 
   console.log(`memproses ${entries.length} game (2 primer: RoCodes + Roblox Den; indeks Den ${denIndex.size} slug)…`);
 
@@ -436,23 +458,33 @@ async function main() {
     let rocodesMeta = null;
     let denMeta = null;
     let denAt = Number(prevGamesMap[id]?.denAt ?? 0);
-    let denDilewati = false;
+    let roAt = Number(prevGamesMap[id]?.roAt ?? 0);
+    let denDilewati = false, roDilewati = false;
     for (const p of PRIMARIES) {
       const slug = entry[p.slugKey];
       if (!slug) continue;
-      // Den: lewati bila halamannya tak berubah — pakai kode yang sudah kita
-      // simpan dari penarikan sebelumnya (halaman sama = isi sama).
-      if (p.name === "Roblox Den" && !perluDen(id, slug)) {
+      // Dilewati = halaman tak berubah → pakai kode yang sudah kita simpan dari
+      // penarikan sebelumnya (halaman sama = isi sama). Carry-forward ini WAJIB:
+      // tanpa itu, tiap run yang melewati sebuah sumber akan menghapus seluruh
+      // kode dari sumber tersebut.
+      if (p.name === "Roblox Den" && !perluDen(id, slug, entry.players)) {
         const punya = denPunya[id];
         if (punya) perSource.push({ name: p.name, url: p.url(slug), active: punya.active, archive: punya.archive });
         denLewat++;
         denDilewati = true; // pertahankan denSlug walau tak ditarik run ini
         continue;
       }
+      if (p.name === "RoCodes.gg" && !perluRo(id, slug)) {
+        const punya = roPunya[id];
+        if (punya) perSource.push({ name: p.name, url: p.url(slug), active: punya.active, archive: punya.archive });
+        roLewat++;
+        roDilewati = true;
+        continue;
+      }
       try {
         const r = await p.fetch(slug);
         perSource.push({ name: p.name, url: p.url(slug), active: r.active, archive: r.archive });
-        if (p.name === "RoCodes.gg") rocodesMeta = r.meta;
+        if (p.name === "RoCodes.gg") { rocodesMeta = r.meta; roAt = Math.max(roIndexSlug.get(slug) ?? 0, Date.now()); roTarik++; }
         else {
           denMeta = r.meta;
           // Stempel "Last checked" halaman Den — terbukti identik sampai ke menit
@@ -635,12 +667,17 @@ async function main() {
         // Kapan halaman Den game ini terakhir DITARIK — dibandingkan dg <lastmod>
         // sitemap Den di run berikutnya supaya halaman yang tak berubah dilewati.
         ...(denAt ? { denAt } : {}),
+        // Sama untuk RoCodes — sejak sumber ini ikut digerbangi.
+        ...(roAt ? { roAt } : {}),
         // Kapan cross-check editorial terakhir dijalankan utk game ini — dasar
         // penjadwalan tingkat 2 (jaminan minimal 1× sehari untuk SEMUA game).
         ...(xJalan ? { xAt: Date.now() } : prevGamesMap[id]?.xAt ? { xAt: prevGamesMap[id].xAt } : {}),
         genres: entry.genres?.length ? entry.genres : inferGenres(name, slugRo || slugDen || ""),
         universeId,
-        verified: rocodesMeta?.verified ?? false,
+        // Dibawa-serta saat RoCodes dilewati: tanpa ini status verified game
+        // akan JATUH ke false tiap run yang tak menariknya — regresi yang
+        // langsung terlihat pembaca.
+        verified: rocodesMeta?.verified ?? prevGamesMap[id]?.verified ?? false,
         crossCheck,
         // Cara redeem spesifik: RoCodes dulu, lalu Roblox Den, lalu situs pakai
         // langkah standar bilingual bila keduanya kosong. Urutan itu bisa DIBALIK
@@ -689,7 +726,8 @@ async function main() {
   // firstSeenAt reset ke `now` tiap run → kirim "kode baru" palsu tiap jam (bug
   // notif spam). Dedup dulu → codeKey konsisten → firstSeenAt awet.
   const { active: freshDD, archive: freshArchDD } = dedupByUniverse(games, freshActive, freshArchive);
-  console.log(`Roblox Den: ${denTarik} halaman ditarik (berubah), ${denLewat} dilewati (tak berubah / pakai simpanan)`);
+  console.log(`Roblox Den: ${denTarik} halaman ditarik (berubah / game ramai), ${denLewat} dilewati (pakai simpanan)`);
+  console.log(`RoCodes.gg: ${roTarik} halaman ditarik (berubah), ${roLewat} dilewati (pakai simpanan)`);
   const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshDD, freshArchDD, prev, covered, now);
   const mergedGames = { ...(prev.games ?? {}), ...games };
   // PURGE game DUPLIKAT yg nyangkut di prev.games (universeId sama, slug beda
