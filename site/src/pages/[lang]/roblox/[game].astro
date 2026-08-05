@@ -162,7 +162,14 @@ jsonLd.push({
 const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.02em; color:#fff; margin:0;";
 // Ada kode ber-varian kapitalisasi di halaman ini? → kartu lain ikut memesan
 // ruang sebesar baris kedua agar kotak kode utama sejajar se-baris.
-const adaAlt = (g.active ?? []).some((c) => c.altCode);
+// Pesan ruang HANYA bila varian cukup umum di halaman ini. Diukur 5 Agu
+// 2026: dari 9 halaman yang punya varian, rasionya terbelah tajam —
+// Blox Fruits 19/25 (76%), Bee Swarm 7/12 (58%), tapi Catch a Monster
+// 1/30 (3%) dan DOORS 1/27 (4%). Di rasio kecil, memesan ruang berarti
+// memberi jarak kosong pada 29 kartu demi menyejajarkan 1 — jauh lebih
+// mengganggu daripada satu kartu yang sedikit lebih tinggi.
+const _kode = (g.active ?? []);
+const adaAlt = _kode.length > 0 && _kode.filter((c) => c.altCode).length / _kode.length >= 0.5;
 
 ---
 
