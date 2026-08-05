@@ -1,10 +1,74 @@
 {
-  "updatedAt": "2026-08-05T03:01:12.167Z",
+  "updatedAt": "2026-08-05T04:01:04.495Z",
   "counts": {
-    "active": 105,
+    "active": 106,
     "archived": 53
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Character Introduction and Skill Showcase - \"Swift-Striding Hound\" Alyosha",
+        "id": "Pengenalan dan Demo Skill Karakter — \"Swift-Striding Hound\" Alyosha"
+      },
+      "excerpt": {
+        "en": "Hello, Traveler! The journey to Snezhnaya is about to begin. Get ready to meet Alyosha, our new companion guiding the way! Progress through the Archon Quest \"Everwinter Without Mer",
+        "id": "Halo Traveler! Petualangan di Snezhnaya akan segera dimulai. Yuk kenalan dengan rekan baru yang akan memandu perjalanan kita, Alyosha! Selama Quest Archon \"Negeri Salju Tanpa Kasih"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/0cb95920e2f787ddaea62c048da26f90_6035050865510497220.jpeg",
+      "url": "https://www.hoyolab.com/article/46147444",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-05T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Infrastructure & Commissions",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Infrastruktur dan Kontrak"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the infrastructure and commissions systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. W",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan Infrastruktur dan Kontrak pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\", termasuk pembahasan mengenai riset, pembuatan b"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/0/2a15865a743ac1473e1ac87ded0e8ba6_4344641810319839021.jpeg",
+      "url": "https://www.hoyolab.com/article/46147442",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-05T04:00:04.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "The Version 7.0 Event Calendar exclusive wallpaper is now available!",
+        "id": "Wallpaper Eksklusif \"Kalender Event\" Versi 7.0 kini sudah hadir!"
+      },
+      "excerpt": {
+        "en": "Click to save the wallpaper~",
+        "id": "Traveler bisa mengunduh wallpaper-nya~"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/2e0f97a1b20d6cf5ab37539b3b055f3b_3348879965829628604.jpg",
+      "url": "https://www.hoyolab.com/article/46147441",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-05T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Pom-Pom Gallery: Phone Wallpapers",
+        "id": "Galeri Pom-Pom | Wallpaper Ponsel"
+      },
+      "excerpt": {
+        "en": "The universe is vast, and the journey is long. Sometimes, you need a little \"surprise\" to illuminate the screen, Pom! Pom-Pom has compiled the precious images from the Light Cones ",
+        "id": "Alam semesta sangat luas, perjalanan sangat panjang, kadang kamu juga butuh sedikit \"kejutan\" untuk menerangi layar ponselmu, Pom! Pom-Pom telah menyusun gambar berharga dari Light"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/04/54e08c52e77acd9edf2167745bca1086_8905666996198521194.jpg",
+      "url": "https://www.hoyolab.com/article/46147440",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-05T04:00:02.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -374,22 +438,6 @@
       "publishedAt": "2026-08-01T04:00:04.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Snezhnaya Live Symphony Performance | Genshin Impact",
-        "id": "Pertunjukan Simfoni Live Snezhnaya | Genshin Impact"
-      },
-      "excerpt": {
-        "en": "Conducted by Robert Ziegler, the Snezhnaya Live Symphony Performance features pianist Polina Osetinskaya, the London Symphony Orchestra, London Voices choir, and top folk musicians",
-        "id": "Dengan Robert Ziegler sebagai konduktor, Pertunjukan Simfoni Live Snezhnaya ini menghadirkan pianis Polina Osetinskaya, London Symphony Orchestra, paduan suara London Voices, beser"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/31/0/5de20af9420ee84a01864887259e3bd5_5099201197947035349.jpeg",
-      "url": "https://www.hoyolab.com/article/46090972",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-01T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -692,22 +740,6 @@
       "url": "https://www.hoyolab.com/article/46030622",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-28T10:45:03.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Summer Waves Roll In\" Event Details",
-        "id": "Penjelasan Event \"Deru Ombak Musim Panas\""
-      },
-      "excerpt": {
-        "en": "Hey there, Proxies! This time, we're bringing you all the details on Version 3.1's themed event \"Summer Waves Roll In.\" Let's dive in!",
-        "id": "Halo, Proxy! Kali ini kami akan memperkenalkan event tema \"Deru Ombak Musim Panas\" V3.1. Mari kita lihat bersama!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/28/0/b9b7c8360bb98e7691496a0b30161f8e_5558314051282953730.png",
-      "url": "https://www.hoyolab.com/article/46030478",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-28T10:30:08.000Z"
     },
     {
       "game": "wuwa",
@@ -1220,22 +1252,6 @@
       "url": "https://www.hoyolab.com/article/45889415",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-17T12:30:01.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "[Rewarded Event] Himeko • Nova Spotlight - Reddit Event!",
-        "id": "[Rewarded Event] Himeko • Nova Spotlight - Reddit Event!"
-      },
-      "excerpt": {
-        "en": "Its time to shine a spotlight on Himeko • Nova, ✧ 1st Place in \"Zero Worldly Desires\" ✧! Create original art, memes or discussions focused on Himeko • Nova and post them on our sub",
-        "id": "Its time to shine a spotlight on Himeko • Nova, ✧ 1st Place in \"Zero Worldly Desires\" ✧! Create original art, memes or discussions focused on Himeko • Nova and post them on our sub"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/16/fbf11de2ab8f5f8975c9f7993f279f47_256476995115178366.jpg",
-      "url": "https://www.hoyolab.com/article/45886357",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-17T08:00:01.000Z"
     },
     {
       "game": "wuwa",
