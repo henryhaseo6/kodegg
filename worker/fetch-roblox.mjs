@@ -734,7 +734,12 @@ async function main() {
     // menggantung tanpa ada sumber yang mengonfirmasi.
     const CHECK_STALE_MS = Number(process.env.CHECK_STALE_DAYS || 14) * 24 * 3600 * 1000;
     const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
-    const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, reward: c.reward, date: c.date, ...(c.srcNew ? { srcNew: true } : {}), ...(c.srcNewAt > 0 ? { srcNewAt: c.srcNewAt } : {}), ...extra });
+    // mk() merakit objek kode final dengan daftar field EKSPLISIT — apa pun yang
+    // dihitung mergeCodes tapi tak disebut di sini akan hilang tanpa jejak.
+    // Terjadi pada `altCode` 5 Agu 2026: merge-nya benar, tapi 0 dari 5.929 kode
+    // membawanya sampai ke data. Kalau menambah field baru di mergeCodes,
+    // TAMBAHKAN JUGA DI SINI.
+    const mk = (c, extra) => ({ game: id, gameName: name, source: c.sources[0], sources: c.sources, sourceUrls: c.sourceUrls, code: c.code, ...(c.altCode ? { altCode: c.altCode } : {}), reward: c.reward, date: c.date, ...(c.srcNew ? { srcNew: true } : {}), ...(c.srcNewAt > 0 ? { srcNewAt: c.srcNewAt } : {}), ...extra });
 
     const fActive = [];
     const archFromActive = [];
