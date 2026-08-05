@@ -27,6 +27,7 @@ import { scoutRoCodes } from "./src/rocodes-scout.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
 import { fetchRoCodesIndex } from "./src/roblox-discover.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
+import { scanLevelup, petaExpired, normSlug } from "./src/sources/levelupplay.mjs";
 import { fetchPromoCodes } from "./src/sources/roblox-promo.mjs";
 import { discoverPopularWithCodes, inferGenres } from "./src/roblox-discover.mjs";
 import { mergeWithPrevious } from "./src/archive.mjs";
@@ -460,6 +461,20 @@ async function main() {
   }
   await writeFile(SCOUT_RO, JSON.stringify(memoRoBaru, null, 1));
 
+  // levelupplay.my — sumber KODE EXPIRED saja, dirotasi habis dalam 24 jam.
+  // Sitemap mereka tak punya <lastmod>, jadi tak ada cara tahu halaman mana yang
+  // berubah; satu-satunya jalan memeriksa semuanya bergiliran. Jatah per run =
+  // jumlah halaman / 24, jadi menyesuaikan sendiri saat katalog mereka tumbuh.
+  const LEVELUP = resolve(dirname(OUT), "levelup-expired.json");
+  let memoLU = {};
+  try { memoLU = JSON.parse(await readFile(LEVELUP, "utf8")); } catch { /* pertama kali */ }
+  try {
+    const { memoBaru } = await scanLevelup(memoLU);
+    memoLU = memoBaru;
+    await writeFile(LEVELUP, JSON.stringify(memoLU, null, 1));
+  } catch (e) { console.log(`[levelup] dilewati: ${e.message}`); }
+  const luExpired = petaExpired(memoLU);
+
   const entries = [...set.entries()];
 
   // Kode Den yang SUDAH kita punya, per game — dipakai saat halamannya dilewati.
@@ -678,6 +693,24 @@ async function main() {
     let xJalan = false;
     if (perluCrossCheck(id, entry)) {
       ({ set: xset, bySite, expiredSet: xExpired } = await crossCheckActive(slugRo || slugDen));
+      xJalan = true;
+    }
+    // Vonis expired dari levelupplay — dibaca dari memo, nol tembakan jaringan.
+    // Disuntik ke jalur editorial yang SUDAH ADA, jadi aturan expiry-nya tak
+    // berubah sedikit pun: `olehEditorial` tetap mensyaratkan tak ada editorial
+    // lain yang bilang aktif, dan kode fresh tetap dilindungi grace.
+    // Hanya vonis expired yang dipakai — daftar aktif mereka sengaja diabaikan
+    // (untuk Knockout mereka bilang 31 aktif / 2 expired vs Den 5 / 36).
+    // Dicocokkan lewat BEBERAPA slug: slug situs kita, id internal, lalu slug
+    // kedua sumber primer. Slug levelupplay kadang berbeda dari ketiganya
+    // ("sol-s-rng" vs "sols-rng"), dan normSlug membuang semua tanda hubung
+    // sehingga variasi itu tak lagi jadi soal.
+    const luSet = [robloxSlug(id), id, slugRo, slugDen]
+      .filter(Boolean)
+      .map((x) => luExpired.get(normSlug(x)))
+      .find((x) => x?.size);
+    if (luSet?.size) {
+      if (!xExpired.size) xExpired = new Set(luSet); else for (const k of luSet) xExpired.add(k);
       xJalan = true;
     }
 
