@@ -1,66 +1,29 @@
 {
-  "generatedAt": "2026-08-05T06:03:33.211Z",
-  "codes": [
+  "generatedAt": "2026-08-05T07:01:05.976Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "evade",
-      "gameName": "Evade",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/evade"
-      },
-      "code": "HAPPY4THBIRTHDAYEVADE",
-      "reward": "40 Points",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1785821351781,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-05T06:03:33.211Z",
-      "fetchedAt": "2026-08-05T06:03:33.211Z"
+      "game": "five-nights-td-2",
+      "count": 21,
+      "fresh": [
+        {
+          "code": "VESSEL",
+          "reward": "25K Tokens, 350 Souls, 50 Season Presents, 5 Raid Coins"
+        },
+        {
+          "code": "UPDATE41",
+          "reward": "5K Tokens, 100 Souls, 50 Endo Chips, 50 Soldering Irons, 5 Season Presents"
+        },
+        {
+          "code": "CHALLENGES",
+          "reward": "10K Tokens, 250 Souls, 25 Season Presents"
+        }
+      ]
     },
     {
-      "game": "anime-card-clash",
-      "gameName": "Anime Card Clash",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/anime-card-clash"
-      },
-      "code": "SORRYFORDELAY2",
-      "reward": "20 250,000x Instant Roll Tickets",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1785824072289,
-      "endsAt": null,
-      "verified": true,
-      "firstSeenAt": "2026-08-05T06:03:33.211Z",
-      "fetchedAt": "2026-08-05T06:03:33.211Z"
-    },
-    {
-      "game": "anime-card-clash",
-      "gameName": "Anime Card Clash",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/anime-card-clash"
-      },
-      "code": "SORRYFORDELAY",
-      "reward": "20 250,000x Instant Roll Tickets",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1785824072289,
-      "endsAt": null,
-      "verified": true,
-      "firstSeenAt": "2026-08-05T06:03:33.211Z",
-      "fetchedAt": "2026-08-05T06:03:33.211Z"
+      "game": "beyblade-x-battles",
+      "count": 1,
+      "fresh": []
     }
-  ],
-  "bulkGames": []
+  ]
 }
