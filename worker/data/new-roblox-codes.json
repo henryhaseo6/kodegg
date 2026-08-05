@@ -1,15 +1,31 @@
 {
-  "generatedAt": "2026-08-05T10:01:00.029Z",
-  "codes": [],
+  "generatedAt": "2026-08-05T11:01:15.947Z",
+  "codes": [
+    {
+      "game": "catch-a-monster",
+      "gameName": "Catch a Monster",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/catch-a-monster"
+      },
+      "code": "PSYPEON",
+      "reward": "Pure Chaos Elixir",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1785821756350,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-05T11:01:15.947Z",
+      "fetchedAt": "2026-08-05T11:01:15.947Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "monster-forest",
-      "count": 12,
-      "fresh": []
-    },
-    {
-      "game": "defend-your-plushie",
-      "count": 2,
+      "game": "fruit-battlegrounds",
+      "count": 7,
       "fresh": []
     }
   ]
