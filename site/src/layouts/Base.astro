@@ -7,7 +7,13 @@ import "../styles/fonts.css"; // @font-face self-hosted (public/fonts/*.woff2)
 // paths = {id, en} bila slug beda per bahasa (mis. /id/jelajah vs /en/discover).
 // path = suffix tunggal (fallback, slug sama utk kedua bahasa).
 // jsonLd = array objek Schema.org (dirender sbg <script ld+json>).
-const { lang, title, description, path, paths, jsonLd = [], noindex = false, ogImage: ogImageProp } = Astro.props;
+// defaultLang: bahasa yang ditunjuk hreflang x-default — versi yang disajikan
+// kepada pengunjung yang bahasanya tak kita punya. Default "id" karena situs ini
+// memang menyasar pembaca Indonesia. Halaman yang kueri sasarannya berbahasa
+// Inggris (mis. /roblox/codes-this-week/) menimpanya jadi "en": tanpa itu,
+// pencari dari negara mana pun di luar ID/EN dikirim ke halaman Indonesia —
+// justru menjauhkan halaman itu dari audiens yang dituju.
+const { lang, title, description, path, paths, jsonLd = [], noindex = false, ogImage: ogImageProp, defaultLang = "id" } = Astro.props;
 const other = otherLang(lang);
 // Cloudflare Pages (build.format "directory") menyajikan versi BER-trailing-slash
 // sebagai 200 & me-redirect non-slash → slash (308). Maka canonical/hreflang/og
@@ -36,7 +42,7 @@ const locale = lang === "id" ? "id_ID" : "en_US";
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="id" href={altUrl("id")} />
     <link rel="alternate" hreflang="en" href={altUrl("en")} />
-    <link rel="alternate" hreflang="x-default" href={altUrl("id")} />
+    <link rel="alternate" hreflang="x-default" href={altUrl(defaultLang)} />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="KodeGG" />
