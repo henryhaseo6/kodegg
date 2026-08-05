@@ -28,7 +28,14 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // (Komentar lama bilang "Diset 45" padahal konstantanya 50 — kini disamakan.)
 // Kalau lonjakan kode makin ramai & mentok, sisanya jatuh ke jalur manual (aman).
 // Bisa dioverride lewat Variable repo VIDEO_MAX_PER_DAY.
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 45);
+// DIUKUR ULANG 5 Agu 2026 dari konsol: 10.038 unit / 47 upload = 213,6 unit per
+// video, bukan 209. Dan `todayCount` TIDAK menghitung dua video harian dari
+// workflow terpisah (roundup + top50), jadi angka 45 di sini sebenarnya berarti
+// 47 upload — persis yang membuat kuota tembus 100% hari itu.
+// 10.000 / 213,6 = 46 upload; dikurangi 2 video workflow dan 1 untuk margin
+// pembacaan rutin → 43. Menurunkan ini tak mengurangi hasil: upload ke-46 dst
+// memang gagal, cuma selama ini gagalnya SETELAH menghabiskan waktu render.
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 43);
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
