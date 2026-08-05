@@ -103,7 +103,10 @@ async function fetchPlayers(universeIds) {
     try {
       const res = await fetch(`https://games.roblox.com/v1/games?universeIds=${batch}`);
       if (!res.ok) continue;
-      for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null };
+      // rootPlaceId ikut disimpan: API ini SUDAH dipanggil untuk jumlah pemain,
+      // jadi tautan "buka di Roblox" tak menambah satu pun permintaan. Cakupannya
+      // juga lebih luas daripada placeId Den (478 vs 424 game).
+      for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null, rootPlaceId: g.rootPlaceId ?? null };
     } catch {
       /* pertahankan nilai lama */
     }
@@ -987,7 +990,7 @@ async function main() {
   const players = await fetchPlayers(uids);
   for (const g of Object.values(mergedGames)) {
     const pd = g.universeId ? players[g.universeId] : null;
-    if (pd) { if (pd.playing != null) g.players = pd.playing; if (pd.name) g.rawName = pd.name; } // rawName = nama asli Roblox (+emoji/tag) utk visual video
+    if (pd) { if (pd.playing != null) g.players = pd.playing; if (pd.name) g.rawName = pd.name; if (pd.rootPlaceId) g.rootPlaceId = pd.rootPlaceId; } // rawName = nama asli Roblox (+emoji/tag) utk visual video
   }
 
   // ── AUDIT NAMA (lapis kedua, khusus game TANPA placeId) ───────────────────

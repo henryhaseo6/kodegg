@@ -265,6 +265,12 @@ const adaAlt = _kode.length > 0 && _kode.filter((c) => c.altCode).length / _kode
               {id ? "Salin semua" : "Copy all"}
             </button>
           )}
+          {g.rootPlaceId && (
+            <a href={`https://www.roblox.com/games/${g.rootPlaceId}/`} target="_blank" rel="noopener"
+              style="display:inline-flex; align-items:center; gap:6px; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--ink); background:var(--acc); border-radius:9px; padding:8px 13px; text-decoration:none; white-space:nowrap;">
+              ▶ {id ? "Main di Roblox" : "Play on Roblox"}
+            </a>
+          )}
           {ytPlaylist && (
             <a href={ytPlaylist} target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:#fff; background:#FF0033; border-radius:9px; padding:8px 13px; text-decoration:none; white-space:nowrap;">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>

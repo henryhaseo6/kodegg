@@ -213,6 +213,9 @@ export async function loadRobloxGame(slug) {
     genres: g.genres ?? [],
     universeId: g.universeId ?? null,
     placeId: g.placeId ?? null,
+    // rootPlaceId = alamat game di roblox.com. Dipakai tombol "Buka di Roblox",
+    // dan cakupannya lebih luas daripada placeId (478 vs 424 game).
+    rootPlaceId: g.rootPlaceId ?? null,
     players: g.players ?? 0, // pemain konkuren (realtime, refresh hourly)
     crossCheck: Array.isArray(g.crossCheck) ? g.crossCheck : [], // situs editorial pengonfirmasi
     verifiedCount: active.filter((c) => c.verified).length,
