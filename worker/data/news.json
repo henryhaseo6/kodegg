@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-05T02:00:42.136Z",
+  "updatedAt": "2026-08-05T03:01:12.167Z",
   "counts": {
-    "active": 106,
-    "archived": 52
+    "active": 105,
+    "archived": 53
   },
   "articles": [
     {
@@ -1684,7 +1684,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5009",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-07T07:39:51.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1699,10 +1701,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/30/afba9af6627a1ba788a0e07c1fdca273_5598337211819126732.png",
       "url": "https://www.hoyolab.com/article/45746779",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-06T03:00:05.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-06T03:00:05.000Z",
+      "archivedAt": "2026-08-05T03:01:12.167Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
