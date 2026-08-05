@@ -1,0 +1,154 @@
+---
+// KODE ROBLOX MINGGU INI — halaman agregat lintas-game.
+//
+// Kenapa ada: seluruh strategi SEO kita selama ini per-game (long-tail), padahal
+// kepala kurva di niche ini justru kueri GENERIK. Diukur dari Semrush Juni 2026,
+// dua kueri agregat menyumbang 13% seluruh trafik Roblox Den:
+//   "roblox game codes this week"     135.000/bln  — Den posisi 1
+//   "roblox game codes this weekend"   74.000/bln  — Den posisi 1
+// Den memenanginya dengan halaman INDEKS DATABASE biasa yang tak bisa
+// membedakan kode minggu ini dari kode tahun lalu — mereka menang lewat
+// Authority Score 49, bukan lewat menjawab pertanyaannya. Dan levelupplay.my,
+// situs kecil, menembus posisi 2 semata-mata karena judul & isinya relevan.
+//
+// Keunggulan kita di sini bukan jumlah, melainkan TANGGAL. RoCodes memberi
+// tanggal rilis; Roblox Den tidak punya sama sekali. Jadi kita satu-satunya yang
+// bisa menjawab "minggu ini" secara harfiah, dan memperbaruinya tiap jam —
+// bukan artikel yang diedit manual sebulan sekali.
+//
+// Rute statis → menang atas [game].astro. Slug sengaja berbahasa Inggris di
+// KEDUA bahasa: kueri sasarannya memang Inggris, dan memecah slug per bahasa
+// cuma memecah sinyalnya.
+import Base from "../../../layouts/Base.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Breadcrumb from "../../../components/Breadcrumb.astro";
+import CopyScript from "../../../components/CopyScript.astro";
+import { LANGS } from "../../../lib/i18n.mjs";
+import { loadRobloxThisWeek } from "../../../lib/roblox.mjs";
+import { robloxHome } from "../../../lib/routes.mjs";
+import { monthYear } from "../../../lib/seo.mjs";
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const id = lang === "id";
+const data = await loadRobloxThisWeek(7);
+const my = monthYear(lang);
+const PATHS = { id: "/id/roblox/codes-this-week/", en: "/en/roblox/codes-this-week/" };
+
+const meta = id
+  ? {
+      title: `Kode Roblox Minggu Ini (${my}) — ${data.totalKode} Kode Baru | KodeGG`,
+      desc: `Semua kode Roblox yang rilis 7 hari terakhir: ${data.totalKode} kode dari ${data.totalGame} game, lengkap dengan tanggal rilisnya. Diperbarui otomatis tiap jam dari ${data.katalogGame} game yang dipantau.`,
+    }
+  : {
+      title: `Roblox Game Codes This Week (${my}) — ${data.totalKode} New Codes | KodeGG`,
+      desc: `All Roblox codes released in the last 7 days: ${data.totalKode} codes across ${data.totalGame} games, each with its release date. Auto-updated every hour from ${data.katalogGame} tracked games.`,
+    };
+
+const site = Astro.site.href.replace(/\/$/, "");
+const fmtTgl = (ms) =>
+  new Date(ms).toLocaleDateString(id ? "id-ID" : "en-GB", { day: "numeric", month: "short", timeZone: "Asia/Jakarta" });
+
+const faqs = [
+  {
+    q: id ? "Kode ini dihitung dari kapan?" : "What counts as “this week”?",
+    a: id
+      ? "Kode yang TANGGAL RILISNYA jatuh dalam 7 hari terakhir menurut sumber, bukan kapan kami menemukannya. Kode tanpa tanggal rilis sengaja tidak dimasukkan agar daftar ini bisa dipertanggungjawabkan."
+      : "Codes whose RELEASE DATE falls within the last 7 days according to the source — not when we discovered them. Codes without a release date are deliberately excluded so this list stays accountable.",
+  },
+  {
+    q: id ? "Seberapa sering diperbarui?" : "How often is this updated?",
+    a: id
+      ? "Tiap jam. Halaman ini disusun ulang otomatis dari data yang sama yang menggerakkan seluruh situs, jadi tak pernah ada versi yang basi."
+      : "Every hour. This page is rebuilt automatically from the same data that powers the whole site, so there is never a stale version.",
+  },
+  {
+    q: id ? "Kenapa kodenya harus disalin persis?" : "Why must codes be copied exactly?",
+    a: id
+      ? "Kode Roblox peka huruf besar/kecil — ditukar di dalam game, dan salah satu huruf saja membuatnya ditolak walau kodenya masih aktif."
+      : "Roblox codes are case-sensitive — they are redeemed in-game, and a single wrong letter makes a perfectly active code fail.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "KodeGG", item: `${site}/${lang}/` },
+      { "@type": "ListItem", position: 2, name: "Roblox", item: `${site}${robloxHome(lang)}` },
+      { "@type": "ListItem", position: 3, name: id ? "Kode Minggu Ini" : "Codes This Week", item: `${site}${PATHS[lang]}` },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  },
+];
+---
+
+<Base lang={lang} title={meta.title} description={meta.desc} paths={PATHS} jsonLd={jsonLd} ogImage="/assets/og/roblox-hub.png">
+  <Header lang={lang} active={null} paths={PATHS} />
+  <Breadcrumb items={[{ label: "KodeGG", href: `/${lang}/` }, { label: "Roblox", href: robloxHome(lang) }, { label: id ? "Kode Minggu Ini" : "Codes This Week" }]} />
+
+  <main style="max-width:1280px; margin:0 auto; padding:0 28px 64px;">
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4.5vw,44px); line-height:1.05; letter-spacing:-0.03em; color:#fff; margin:0 0 12px; text-wrap:balance;">
+      {id ? `Kode Roblox Minggu Ini (${my})` : `Roblox Game Codes This Week (${my})`}
+    </h1>
+    <p style="font-family:'Space Mono',monospace; font-size:12.5px; color:var(--muted); margin:0 0 26px; line-height:1.6;">
+      {id
+        ? `${data.totalKode} kode rilis dalam 7 hari terakhir · ${data.totalGame} game · dipantau ${data.katalogGame} game · diperbarui tiap jam`
+        : `${data.totalKode} codes released in the last 7 days · ${data.totalGame} games · ${data.katalogGame} games tracked · updated hourly`}
+    </p>
+
+    {data.games.length === 0 ? (
+      <p style="color:var(--muted);">{id ? "Belum ada kode baru minggu ini." : "No new codes this week yet."}</p>
+    ) : (
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {data.games.map((g) => (
+          <section style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:14px 16px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+              <img src={g.icon} alt="" width="30" height="30" loading="lazy" decoding="async"
+                style="width:30px; height:30px; border-radius:8px; object-fit:cover; flex:none;"
+                onerror="this.style.visibility='hidden';" />
+              <a href={`/${lang}/roblox/${g.slug}/`} style="font-weight:700; font-size:15px; color:var(--txt); text-decoration:none;">{g.name}</a>
+              <span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">
+                {g.players ? `${Math.round(g.players / 1000)}K ${id ? "pemain" : "players"} · ` : ""}{g.codes.length} {id ? "kode baru" : "new"}
+              </span>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              {g.codes.map((c) => (
+                <div style="display:flex; align-items:center; gap:7px; background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:7px 10px;">
+                  <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; color:var(--acc2);">{c.code}</code>
+                  <span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint);">{fmtTgl(c.tanggalMs)}</span>
+                  <button class="gg-copy" data-copy={c.code} data-label={id ? "Salin" : "Copy"} data-done={id ? "Tersalin" : "Copied"} type="button"
+                    style="cursor:pointer; font-family:'Space Mono',monospace; font-size:10.5px; font-weight:700; border:1px solid var(--line2); color:var(--txt2); background:var(--surface2); border-radius:8px; padding:5px 9px;">
+                    {id ? "Salin" : "Copy"}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    )}
+
+    <h2 style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#fff; margin:38px 0 14px;">
+      {id ? "Pertanyaan umum" : "Frequently asked"}
+    </h2>
+    {faqs.map((f) => (
+      <details style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-bottom:8px;">
+        <summary style="cursor:pointer; font-weight:700; font-size:14px; color:var(--txt);">{f.q}</summary>
+        <p style="margin:9px 0 0; font-size:13.5px; color:var(--txt2); line-height:1.6;">{f.a}</p>
+      </details>
+    ))}
+  </main>
+
+  <Footer lang={lang} updatedAt={data.updatedAt} />
+  <CopyScript />
+</Base>

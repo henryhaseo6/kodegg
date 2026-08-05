@@ -232,3 +232,46 @@ export async function loadRobloxGame(slug) {
     archive,
   };
 }
+
+/**
+ * Kode Roblox yang RILIS dalam N hari terakhir, dikelompokkan per game.
+ *
+ * Dasarnya `c.date` — tanggal rilis dari sumber — BUKAN firstSeenAt. Bedanya
+ * menentukan: firstSeenAt cuma mencatat kapan kita pertama membaca halamannya,
+ * jadi game yang baru masuk katalog akan menyeret puluhan kode lama seolah baru
+ * (terlihat 2 Agu 2026: 108 game terbaca "dapat kode baru" padahal itu gelombang
+ * backfill). Kode tanpa tanggal sengaja dibuang — lebih baik daftar ini pendek
+ * dan jujur daripada panjang tapi tak bisa dipertanggungjawabkan.
+ *
+ * Kode ber-badge CEK DULU juga dibuang: halaman ini menjawab "kode apa yang baru
+ * dan bisa dipakai", dan menyertakan kode yang kita sendiri ragukan merusak
+ * justru janji itu.
+ */
+export async function loadRobloxThisWeek(hari = 7) {
+  const raw = await read();
+  const games = raw.games ?? {};
+  const batas = NOW_MS - hari * 24 * 3600 * 1000;
+  const per = new Map();
+  for (const c of raw.active ?? []) {
+    if (c.check) continue;
+    const ms = Date.parse(c.date ?? "") || 0;
+    if (!ms || ms < batas) continue;
+    const g = games[c.game];
+    if (!g) continue;
+    if (!per.has(c.game)) per.set(c.game, { id: c.game, name: g.name, slug: g.slug ?? c.game, icon: robloxIconUrl(c.game), players: g.players ?? 0, codes: [] });
+    per.get(c.game).codes.push({ ...c, verified: c.verified === true, tanggalMs: ms });
+  }
+  const daftar = [...per.values()];
+  for (const g of daftar) g.codes.sort((a, b) => b.tanggalMs - a.tanggalMs);
+  // Diurutkan menurut PEMAIN, bukan tanggal: pembaca datang untuk menemukan kode
+  // game yang mereka mainkan, dan game teramai paling mungkin itu. Tanggal sudah
+  // tercetak di tiap kode, jadi tak ada informasi yang hilang.
+  daftar.sort((a, b) => b.players - a.players || b.codes.length - a.codes.length);
+  return {
+    updatedAt: raw.updatedAt ?? null,
+    games: daftar,
+    totalKode: daftar.reduce((n, g) => n + g.codes.length, 0),
+    totalGame: daftar.length,
+    katalogGame: Object.keys(games).length,
+  };
+}

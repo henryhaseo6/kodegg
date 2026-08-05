@@ -58,6 +58,10 @@ export async function GET() {
   const robloxMod = day(robloxHome.updatedAt);
   entries.push({ paths: { id: "/id/roblox", en: "/en/roblox" }, lastmod: robloxMod });
   entries.push({ paths: { id: "/id/roblox/promo-codes", en: "/en/roblox/promo-codes" }, lastmod: robloxMod });
+  // Halaman agregat "kode minggu ini". WAJIB ada di sitemap: seluruh alasan
+  // halaman itu dibuat adalah menyasar kueri generik ("roblox game codes this
+  // week", 135rb/bln), dan halaman SEO yang tak terdaftar praktis tak ada.
+  entries.push({ paths: { id: "/id/roblox/codes-this-week", en: "/en/roblox/codes-this-week" }, lastmod: robloxMod });
   for (const g of robloxGames) entries.push({ paths: { id: `/id/roblox/${g.slug}`, en: `/en/roblox/${g.slug}` }, lastmod: hariDari(g.lastChangeMs ?? 0, robloxMod) });
 
   const body =
