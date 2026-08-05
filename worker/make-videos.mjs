@@ -625,7 +625,10 @@ async function main() {
   // gede (mis. RIVALS 241K) tak kebuang ke manual saat hari rame. Promo tetap depan.
   candidates.sort((a, b) => (b.isPromo ? 1 : 0) - (a.isPromo ? 1 : 0) || (b.rank ?? b.players ?? 0) - (a.rank ?? a.players ?? 0)); // rank: mobile=1e9 (prioritas), roblox=players
   let remaining = MAX_PER_DAY - state.todayCount;
-  console.log(`kandidat: ${candidates.length} (antrian ${pending.length} + baru ${fresh.length}) | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
+  // Angka dalam kurung = kandidat MENTAH sebelum disaring, jadi sengaja tak
+  // menjumlah ke angka pertama. Ditulis eksplisit "dari" supaya tak terbaca
+  // sebagai penjumlahan yang meleset.
+  console.log(`kandidat: ${candidates.length} perlu video (dari ${pending.length} antrean + ${fresh.length} terdeteksi; sisanya sudah divideokan) | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
   // BORONGAN SUSULAN di jam terakhir sebelum kuota reset. Ditaruh SETELAH sort
   // supaya selalu di buntut: kode baru tak boleh kalah oleh susulan, betapa pun
   // ramai game-nya. Slot yang diisi = sisa kuota hari ini, dipotong RENDER_MAX.
@@ -770,7 +773,13 @@ async function main() {
     writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
   }
   try { rmSync(TMP, { recursive: true, force: true }); } catch {}
-  const manual = state.log.filter((l) => l.mode === "manual" && l.at?.slice(0, 10) === today).length;
+  // Hitung dari BERKAS yang benar-benar ada, bukan dari catatan log. Entri
+  // "manual" bertahan di state (dan ikut ter-commit), sedangkan berkasnya hidup
+  // di mesin yang merendernya. Akibatnya run CI melaporkan "36 video nunggu
+  // upload manual (_video-out/)" untuk video yang sudah diunggah dari laptop —
+  // menyuruh mencari berkas yang tak pernah ada di runner. Terlihat 5 Agu 2026.
+  const manual = state.log.filter((l) => l.mode === "manual" && l.at?.slice(0, 10) === today
+    && l.file && existsSync(resolve(OUTDIR, l.file))).length;
   console.log(`\nselesai — ${state.todayCount}/${MAX_PER_DAY} upload otomatis hari ini${manual ? `, ${manual} video nunggu upload manual (_video-out/)` : ""}.`);
   if (tanpaPlaylist.length) {
     // SENGAJA tak diantrikan ke pending-playlists.json — VIDEO_SKIP_PLAYLIST
