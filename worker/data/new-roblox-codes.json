@@ -1,21 +1,66 @@
 {
-  "generatedAt": "2026-08-05T05:00:59.704Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-08-05T06:03:33.211Z",
+  "codes": [
     {
-      "game": "notoriety",
-      "count": 22,
-      "fresh": []
+      "game": "evade",
+      "gameName": "Evade",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/evade"
+      },
+      "code": "HAPPY4THBIRTHDAYEVADE",
+      "reward": "40 Points",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1785821351781,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-05T06:03:33.211Z",
+      "fetchedAt": "2026-08-05T06:03:33.211Z"
     },
     {
-      "game": "project-new-world",
-      "count": 24,
-      "fresh": []
+      "game": "anime-card-clash",
+      "gameName": "Anime Card Clash",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/anime-card-clash"
+      },
+      "code": "SORRYFORDELAY2",
+      "reward": "20 250,000x Instant Roll Tickets",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1785824072289,
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-05T06:03:33.211Z",
+      "fetchedAt": "2026-08-05T06:03:33.211Z"
     },
     {
-      "game": "livetopia",
-      "count": 4,
-      "fresh": []
+      "game": "anime-card-clash",
+      "gameName": "Anime Card Clash",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/anime-card-clash"
+      },
+      "code": "SORRYFORDELAY",
+      "reward": "20 250,000x Instant Roll Tickets",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1785824072289,
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-05T06:03:33.211Z",
+      "fetchedAt": "2026-08-05T06:03:33.211Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
