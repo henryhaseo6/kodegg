@@ -140,6 +140,10 @@ const jsonLd = [
     })),
   },
 ];
+// Ada kode ber-varian kapitalisasi di halaman ini? Kartu lain ikut memesan
+// ruang sebesar baris kedua agar kotak kode utama sejajar se-baris.
+const adaAlt = (gameCodes ?? []).some((c) => c.altCode);
+
 ---
 
 <Base lang={lang} title={meta.title} description={meta.desc} paths={{ id: `/id/game/${game}/`, en: `/en/game/${game}/` }} jsonLd={jsonLd} ogImage={`/assets/og/games/${gid}.png`}>
@@ -215,7 +219,7 @@ const jsonLd = [
       {
         gameCodes.length > 0 ? (
           <div data-code-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:18px;">
-            {gameCodes.map((card) => <CodeCard card={card} lang={lang} linkGame={false} />)}
+            {gameCodes.map((card) => <CodeCard card={card} lang={lang} linkGame={false} reserveAlt={adaAlt} />)}
           </div>
         ) : (
           <p style="color:var(--muted); font-size:15px;">{id ? "Belum ada kode aktif saat ini." : "No active codes right now."}</p>

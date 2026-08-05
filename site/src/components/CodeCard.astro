@@ -14,7 +14,13 @@ import { t } from "../lib/i18n.mjs";
 // accent: warna aksen kartu — default lime (mobile). Vertikal Roblox pakai ungu
 // (var(--acc2)) supaya konsisten dg section Roblox di homepage. gameBase: prefix
 // path game ("game" mobile / "roblox").
-const { card, lang, linkGame = true, accent = "var(--acc)", gameBase = "game" } = Astro.props;
+// reserveAlt: halaman ini punya SETIDAKNYA satu kode ber-varian → kartu tanpa
+// varian ikut memesan ruang sebesar baris kedua, supaya kotak kode UTAMA sejajar
+// se-baris. Tanpa ini, kartu satu-kode bottom-aligned dan kodenya sejajar dengan
+// kode KEDUA kartu sebelahnya — terlihat seperti perataan yang rusak.
+// Dikirim per-halaman, bukan global: halaman tanpa varian sama sekali (mayoritas)
+// tak ikut melar.
+const { card, lang, linkGame = true, accent = "var(--acc)", gameBase = "game", reserveAlt = false } = Astro.props;
 const tr = t(lang);
 const gameHref = card.gameSlug ? `/${lang}/${gameBase}/${card.gameSlug}/` : null;
 // Turunan aksen (dipakai untuk kode, badge "Baru", sorotan kartu baru).
@@ -202,14 +208,14 @@ if (card.perm) {
             kasus tebakan itu tak punya dasar — jadi varian lain ditawarkan
             sebagai cadangan alih-alih disembunyikan. Muncul hanya saat sumber
             benar-benar berbeda: 4,4% kode (diukur 5 Agu 2026, 52 game). */}
-        {card.altCode && (
-          <div style="display:flex; align-items:center; gap:9px; margin-top:7px;">
+        {(card.altCode || reserveAlt) && (
+          <div aria-hidden={card.altCode ? undefined : "true"} style={`display:flex; align-items:center; gap:9px; margin-top:7px;${card.altCode ? "" : " visibility:hidden;"}`}>
             <code style="flex:1; min-width:0; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:var(--txt2); background:var(--bg); border:1px dashed var(--line); border-radius:10px; padding:10px 12px; text-align:center; overflow:hidden; text-overflow:ellipsis;">
-              {card.altCode}
+              {card.altCode ?? card.code}
             </code>
             <button
               class="gg-copy"
-              data-copy={card.altCode}
+              data-copy={card.altCode ?? ""}
               data-label={tr("card.copy")}
               data-done={tr("card.copied")}
               type="button"
@@ -219,8 +225,8 @@ if (card.perm) {
             </button>
           </div>
         )}
-        {card.altCode && (
-          <p style="margin:5px 0 0; font-family:'Space Mono',monospace; font-size:9px; color:var(--txt3); line-height:1.35;">
+        {(card.altCode || reserveAlt) && (
+          <p aria-hidden={card.altCode ? undefined : "true"} style={`${card.altCode ? "" : "visibility:hidden;"}margin:5px 0 0; font-family:'Space Mono',monospace; font-size:9px; color:var(--txt3); line-height:1.35;`}>
             {lang === "id"
               ? "Penulisan sumber beda — kalau yang atas gagal, coba yang bawah."
               : "Sources spell it differently — if the top one fails, try the other."}

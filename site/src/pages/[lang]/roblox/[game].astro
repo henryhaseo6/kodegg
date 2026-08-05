@@ -160,6 +160,10 @@ jsonLd.push({
 });
 
 const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.02em; color:#fff; margin:0;";
+// Ada kode ber-varian kapitalisasi di halaman ini? → kartu lain ikut memesan
+// ruang sebesar baris kedua agar kotak kode utama sejajar se-baris.
+const adaAlt = (g.active ?? []).some((c) => c.altCode);
+
 ---
 
 <Base lang={lang} title={meta.title} description={meta.desc} paths={robloxGamePaths(slug)} jsonLd={jsonLd} ogImage={existsSync(`public/assets/og/roblox/${g.id}.png`) ? `/assets/og/roblox/${g.id}.png` : "/assets/og/roblox-hub.png"}>
@@ -269,7 +273,7 @@ const SectionHead = "font-family:'Space Grotesk',sans-serif; font-weight:700; fo
       )}
       {g.active.length > 0 ? (
         <div data-code-grid style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:16px;">
-          {g.active.map((c) => <CodeCard card={c} lang={lang} linkGame={false} accent="var(--acc2)" gameBase="roblox" />)}
+          {g.active.map((c) => <CodeCard card={c} lang={lang} linkGame={false} accent="var(--acc2)" gameBase="roblox" reserveAlt={adaAlt} />)}
         </div>
       ) : (
         <p style="color:var(--muted); font-size:15px;">{id ? "Belum ada kode aktif saat ini. Cek arsip di bawah." : "No active codes right now. Check the archive below."}</p>
