@@ -270,11 +270,17 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
                 style="position:absolute; top:8px; right:8px; width:30px; height:30px; border-radius:9px; border:1px solid var(--line2); background:rgba(9,12,18,0.72); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg>
               </button>
-              {g.verified ? (
+              {/* Badge HANYA bila benar-benar ada kode aktif. Sebelumnya biner
+                  (Verified / "Ada kode") tanpa memeriksa jumlahnya, sehingga
+                  Murder Mystery 2 — 395rb pemain, 0 kode aktif, 22 di arsip —
+                  tetap memajang "Ada kode" dan menjanjikan sesuatu yang tak ada
+                  di halamannya. Kartu mobile sudah memakai disiplin ini
+                  (hasActiveCodes); di sini terlewat. */}
+              {g.codeCount > 0 && (g.verified ? (
                 <span style="position:absolute; bottom:8px; left:8px; display:inline-flex; align-items:center; gap:4px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ink); background:var(--ok); padding:3px 7px; border-radius:6px;">✓ Verified</span>
               ) : (
                 <span style="position:absolute; bottom:8px; left:8px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:#fff; background:var(--acc2); padding:3px 7px; border-radius:6px;">{tr("cat.hasCodes")}</span>
-              )}
+              ))}
             </div>
             <div style="padding:12px 13px; display:flex; flex-direction:column; gap:6px; flex:1;">
               <div style="font-size:13.5px; font-weight:700; color:var(--txt); line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{g.name}</div>
