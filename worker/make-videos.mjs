@@ -35,7 +35,12 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // 10.000 / 213,6 = 46 upload; dikurangi 2 video workflow dan 1 untuk margin
 // pembacaan rutin → 43. Menurunkan ini tak mengurangi hasil: upload ke-46 dst
 // memang gagal, cuma selama ini gagalnya SETELAH menghabiskan waktu render.
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 43);
+// Dinaikkan 43 → 52 setelah thumbnails.set dihentikan untuk Shorts (lihat
+// alasannya di pemanggilan uploadVideo). Biaya per Shorts turun 213,6 → 163,6
+// unit, jadi langit-langitnya naik dari 46 ke ~58 video/hari. Diambil 52, bukan
+// 58: angka 163,6 masih turunan dari pengukuran hari-ber-thumbnail, jadi
+// sisakan ruang sampai konsol Google memberi angka baru yang bersih besok.
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 52);
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
@@ -663,7 +668,22 @@ async function main() {
           // SKIP_PLAYLIST menahan PEMBUATAN playlist baru saja. Video untuk game
           // yang playlist-nya SUDAH ada tetap dimasukkan — itu tak memakai jatah
           // harian (yang dibatasi YouTube adalah playlists.insert).
-          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: th, tanpaBuatPlaylist: SKIP_PLAYLIST });
+          // thumbnailPath SENGAJA TIDAK DIKIRIM untuk Shorts. Dibuktikan 5 Agu
+          // 2026 dengan membuka gambarnya, bukan mengukurnya: video AFK Journey
+          // yang diunggah 3 Agu (thumbnails.set dipanggil saat upload, tiga hari
+          // propagasi) tetap menampilkan potongan frame tengah animasi — 3 kartu
+          // kode, tanpa kartu ke-4, tanpa baris "+N kode lagi di kodegg.com" yang
+          // pasti ada di render kita. YouTube mengabaikan thumbnail unggahan untuk
+          // Shorts dan memilih framenya sendiri.
+          //
+          // Panggilannya tetap DIJAWAB "berhasil" oleh API, jadi kesia-siaan ini
+          // tak pernah memunculkan error — sementara thumbnails.set menelan 50
+          // unit. Pada ~45 video/hari itu ~2.250 unit, 22% dari seluruh kuota
+          // harian, dibakar untuk gambar yang tak pernah tampil.
+          //
+          // Video LONG (roundup & top50) tak lewat sini dan tetap memakai
+          // thumbnail kustom — di sana YouTube memang memakainya.
+          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, tanpaBuatPlaylist: SKIP_PLAYLIST });
           // Thumbnail Shorts TAK BISA dirender ulang seperti video long: dia
           // potongan frame dari mp4 yang ikut terhapus bersama runner, dan
           // Shorts tak bisa diberi thumbnail lewat Studio desktop (harus API atau
@@ -671,14 +691,9 @@ async function main() {
           // worker/data/ — yang memang di-commit workflow — supaya run berikutnya
           // bisa memasangnya tanpa perlu videonya lagi. Berkasnya dihapus begitu
           // terpasang, jadi tak menumpuk.
-          if (thumbPending) {
-            try {
-              mkdirSync(THUMB_DIR, { recursive: true });
-              copyFileSync(th, resolve(THUMB_DIR, `${id}.jpg`));
-              simpanPending({ videoId: id, kind: "short", file: `${id}.jpg` });
-              console.log(`  ! thumbnail diantrikan (${id}) — run berikutnya akan memasangnya`);
-            } catch (e2) { console.log(`  ! thumbnail gagal diantrikan: ${e2.message}`); }
-          }
+          // Antrean thumbnail Shorts ikut dihapus: memasangnya ulang nanti pun
+          // tetap diabaikan YouTube, jadi antrean itu cuma menunda pemborosan.
+          void thumbPending;
           if (SKIP_PLAYLIST && playlistPending) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
           console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
           state.todayCount += 1; remaining -= 1;

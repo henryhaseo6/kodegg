@@ -107,7 +107,7 @@ const perHari = {};
 for (const l of log.filter((x) => x.mode === "upload")) perHari[l.at.slice(0, 10)] = (perHari[l.at.slice(0, 10)] ?? 0) + 1;
 const hari = Object.keys(perHari).sort().slice(-7);
 baris("Upload 7 hari terakhir", hari.map((d) => `${d.slice(5)}:${perHari[d]}`).join("  "));
-baris("Jatah hari ini", `${vs.todayCount ?? 0}/43 (hari kuota ${vs.date ?? "—"})`);
+baris("Jatah hari ini", `${vs.todayCount ?? 0}/52 (hari kuota ${vs.date ?? "—"})`);
 const gagal = log.filter((l) => l.mode === "manual" && (l.at ?? "").slice(0, 10) === new Date().toISOString().slice(0, 10));
 if (gagal.length) perhatian(`${gagal.length} video jatuh ke jalur manual hari ini`);
 
