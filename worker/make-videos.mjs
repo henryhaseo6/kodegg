@@ -550,6 +550,27 @@ async function main() {
       }
       if (ok) console.log(`thumbnail tertunda dipasang: ${ok}/${antre.length}`);
     }
+
+    // Entri roundup/top50 TANPA berkas: thumbnail-nya deterministik dari tanggal,
+    // jadi dirender ulang lewat skripnya sendiri (yang punya akses charts/R2).
+    //
+    // Kenapa di sini dan bukan di workflow harian masing-masing: keduanya jalan
+    // 17:30 & 17:35 UTC — sepuluh jam setelah reset kuota, ketika Shorts sudah
+    // menghabiskannya. Itu justru jam terburuk untuk mencoba lagi, dan itulah
+    // sebabnya video 4 Agu terbit tanpa thumbnail lalu tak pernah pulih. Run
+    // per-jam ini menyentuh kuota paling segar tepat setelah 07:00 UTC.
+    const antreLong = semuaPending().filter((x) => !x.file && x.date && (x.kind === "roundup" || x.kind === "top50"));
+    for (const x of antreLong) {
+      const skrip = x.kind === "roundup" ? "make-codes-roundup.mjs" : "make-top50.mjs";
+      console.log(`thumbnail ${x.kind} ${x.date} (${x.videoId}) — render ulang…`);
+      const kode = await new Promise((res) => {
+        const p = spawn(process.execPath, [resolve(HERE, skrip), `--date=${x.date}`, `--thumb-only=${x.videoId}`], { stdio: "inherit" });
+        p.on("close", res); p.on("error", () => res(1));
+      });
+      // Skripnya sendiri yang memanggil buangPending saat berhasil; kalau gagal
+      // entrinya sengaja DIBIARKAN supaya run berikutnya mencoba lagi.
+      if (kode !== 0) { console.log(`  gagal (exit ${kode}) — tetap di antrean`); break; }
+    }
   }
 
   const onDemandId = process.argv.find((a) => a.startsWith("--game="))?.slice(7);
