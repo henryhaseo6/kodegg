@@ -6,7 +6,7 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import { LANGS } from "../../../lib/i18n.mjs";
-import { loadRobloxCatalog, loadRobloxHome } from "../../../lib/roblox.mjs";
+import { loadRobloxCatalog, loadRobloxHome, loadRobloxThisWeek } from "../../../lib/roblox.mjs";
 import { robloxHomePaths } from "../../../lib/routes.mjs";
 import { monthYear } from "../../../lib/seo.mjs";
 
@@ -18,6 +18,9 @@ const { lang } = Astro.params;
 const id = lang === "id";
 const [games, home] = await Promise.all([loadRobloxCatalog(), loadRobloxHome(0)]);
 const my = monthYear(lang);
+// Ringkasan "kode minggu ini" untuk banner — sumber data yang sama, sudah
+// di-cache oleh read(), jadi tak menambah I/O.
+const mingguIni = await loadRobloxThisWeek(7);
 const PAGE = 15; // game per halaman (grid 5 kolom → 3 baris penuh, tak ada sisa)
 
 // Label genre Roblox (istilah game — sama ID/EN). Chip hanya utk genre yg ada.
@@ -86,6 +89,21 @@ function fmtPlayers(n) {
         </div>
       ))}
     </div>
+
+    {mingguIni.totalKode > 0 && (
+      <a href={`/${lang}/roblox/codes-this-week/`} style="display:flex; align-items:center; gap:12px; background:linear-gradient(90deg,rgba(203,255,70,0.12),transparent); border:1px solid rgba(203,255,70,0.35); border-radius:14px; padding:14px 18px; text-decoration:none; margin-bottom:12px;">
+        <span style="font-size:20px;">🗓️</span>
+        <span style="min-width:0;">
+          <span style="display:block; font-size:14.5px; font-weight:700; color:var(--txt);">
+            {id ? `Kode Roblox minggu ini — ${mingguIni.totalKode} kode baru` : `Roblox codes this week — ${mingguIni.totalKode} new codes`}
+          </span>
+          <span style="display:block; font-size:12.5px; color:var(--muted);">
+            {id ? `Rilis 7 hari terakhir dari ${mingguIni.totalGame} game, lengkap dengan tanggalnya` : `Released in the last 7 days across ${mingguIni.totalGame} games, each with its date`}
+          </span>
+        </span>
+        <span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--acc); white-space:nowrap;">{id ? "Lihat" : "View"} →</span>
+      </a>
+    )}
 
     <a href={`/${lang}/roblox/promo-codes/`} style="display:flex; align-items:center; gap:12px; background:linear-gradient(90deg,rgba(139,107,255,0.12),transparent); border:1px solid rgba(139,107,255,0.35); border-radius:14px; padding:14px 18px; text-decoration:none; margin-bottom:22px;">
       <span style="font-size:20px;">🎁</span>
