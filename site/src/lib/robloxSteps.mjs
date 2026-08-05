@@ -35,11 +35,17 @@ export function sasaranUI(howTo = []) {
     .map((x) => String(x).replace(/\s+/g, " ").trim())
     // buang anak kalimat "to redeem/claim/get ..." yang menempel di belakang
     .map((x) => x.replace(/\s+to\s+(redeem|claim|get|use|open|enter).*$/i, "").trim())
+    // "Settings or gear", "P key or click the gear" — sumber menyebut dua cara.
+    // Diambil yang PERTAMA saja: kalimat kita jadi instruksi, bukan daftar pilihan.
+    .map((x) => x.replace(/\s+or\s+.*$/i, "").trim())
     // buang kata benda generik di ekor ("... button", "... icon")
     .map((x) => x.replace(/\s+(button|icon|tab|menu|box|option)$/i, "").trim())
     // label UI ditulis kapital di gamenya; huruf kecil datang dari tengah kalimat
     .map((x) => (x === x.toLowerCase() ? x.charAt(0).toUpperCase() + x.slice(1) : x))
-    .filter((x) => x.length >= 2 && x.length <= 30 && !/^(it|the|then|and|your|code|codes|here)$/i.test(x));
+    // "Codes" SENGAJA tidak dibuang: itu justru nama tombol paling umum di game
+    // Roblox — 161 game menyebutnya. Sebelumnya ikut daftar buangan bersama kata
+    // sambung, sehingga langkah terpentingnya hilang tanpa jejak.
+    .filter((x) => x.length >= 2 && x.length <= 30 && !/^(it|the|then|and|your|here|this|that)$/i.test(x));
   return [...new Set(bersih)];
 }
 
