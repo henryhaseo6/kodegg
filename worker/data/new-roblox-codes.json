@@ -1,25 +1,5 @@
 {
-  "generatedAt": "2026-08-04T23:00:42.066Z",
+  "generatedAt": "2026-08-05T00:01:33.431Z",
   "codes": [],
-  "bulkGames": [
-    {
-      "game": "garden-cleaner-evolution",
-      "count": 2,
-      "fresh": [
-        {
-          "code": "GiveMeRake",
-          "reward": "Free Rake (lasts until rebirth)"
-        },
-        {
-          "code": "GiveMeLeafblower",
-          "reward": "Free Leafblower (lasts until rebirth)"
-        }
-      ]
-    },
-    {
-      "game": "elemental-dungeons",
-      "count": 6,
-      "fresh": []
-    }
-  ]
+  "bulkGames": []
 }
