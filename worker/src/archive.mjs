@@ -73,10 +73,26 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now,
   const active = freshActive.map((item) => {
     const prior = prevByKey.get(K(item)) ?? prevByKeyCI.get(K(item).toLowerCase());
     const bulk = prior ? prior.bulk === true : !prevGames.has(item.game);
+    // PENULISAN ALTERNATIF, dikumpulkan LINTAS-RUN. mergeCodes hanya melihat
+    // ejaan dari sumber yang benar-benar ditarik pada run itu — dan karena
+    // gating, kedua primer jarang tertarik bersamaan (Blox Fruits 5 Agu 2026:
+    // Den 0,6 jam lalu, RoCodes 29,6 jam lalu). Akibatnya varian nyaris tak
+    // pernah terekam, dan yang telanjur terekam hilang di run berikutnya.
+    //
+    // Tiga sumber varian digabung di sini, tempat riwayat memang dipegang:
+    //   item.altCode  — dua sumber terbaca di run yang SAMA
+    //   prior.altCode — pernah terekam sebelumnya, jangan sampai hilang
+    //   prior.code    — ejaan berubah ANTAR-RUN (ini yang menangkap kasus
+    //                   gating: run lalu "FARM", run ini "Farm")
+    // `prior` sendiri sudah ditemukan lintas-kapitalisasi lewat prevByKeyCI,
+    // jadi perubahan ejaan tak lagi terbaca sebagai kode yang berbeda.
+    const dariPrior = prior?.code && prior.code !== item.code ? prior.code : null;
+    const alt = item.altCode ?? prior?.altCode ?? dariPrior ?? null;
     return {
       ...item,
       firstSeenAt: prior?.firstSeenAt ?? prior?.fetchedAt ?? now,
       fetchedAt: now,
+      ...(alt && alt !== item.code ? { altCode: alt } : {}),
       ...(bulk ? { bulk: true } : {}),
     };
   });
