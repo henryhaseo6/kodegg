@@ -98,8 +98,19 @@ const ck = (game, code, platform) => `${game}:${platform === "ROBLOX" ? code : S
 // Kompat mundur: state lama menyimpan kunci mobile apa adanya (belum dikecilkan).
 // Cek KEDUANYA, kalau tidak seluruh kode mobile lama terbaca "belum divideokan"
 // dan langsung dibanjiri video ulang saat rilis ini jalan pertama kali.
+// Indeks case-INsensitive dari kunci `posted`. Kunci Roblox sengaja
+// case-sensitive (kapitalisasi bagian dari kodenya), tapi sumber kadang menulis
+// kode yang sama berbeda — dan sejak kartu bisa menampilkan varian, kode UTAMA
+// pun bisa berpindah kapitalisasi saat sumber lain menyusul ("FARM" → "Farm").
+// Tanpa indeks ini, perpindahan itu terbaca sebagai kode yang BELUM pernah
+// divideokan, lalu game yang sama diunggah lagi untuk kode yang sama persis.
+// Dibangun sekali lalu ikut diperbarui tiap penandaan baru.
+let _postedCI = null;
+const postedCI = (state) => (_postedCI ??= new Set(Object.keys(state.posted ?? {}).map((k) => k.toLowerCase())));
+const tandaiPosted = (state, key) => { state.posted[key] = true; postedCI(state).add(key.toLowerCase()); };
 const sudahDiposting = (state, id, code, platform) =>
-  !!(state.posted[ck(id, code, platform)] || state.posted[`${id}:${code}`]);
+  !!(state.posted[ck(id, code, platform)] || state.posted[`${id}:${code}`])
+  || postedCI(state).has(`${id}:${code}`.toLowerCase());
 // Total kode yg diklaim di video = gabungan unik aktif + baru (kode baru kadang
 // belum ke-merge ke daftar aktif → jangan sampai angka "+N lagi" meleset).
 // `ci` = samakan kode yg cuma beda kapitalisasi (MOBILE). Jaring pengaman lapis
@@ -734,7 +745,7 @@ async function main() {
         simpanManual("YT belum di-set");
       }
       // Mark posted KECUALI ke-antri retry gara2 kuota (biar diulang run berikut).
-      if (!quotaManual) for (const code of c.allCodes ?? c.newCodes.map((n) => n.code)) state.posted[ck(c.id, code, c.platform)] = true;
+      if (!quotaManual) for (const code of c.allCodes ?? c.newCodes.map((n) => n.code)) tandaiPosted(state, ck(c.id, code, c.platform));
       if (!quotaManual && c.isPromo) {
         // Rekap bulan ini beres + semua kode promo saat ini ditandai (jangan
         // ulang bulan ini kecuali muncul kode promo yg benar-benar baru).
