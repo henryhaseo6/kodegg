@@ -180,20 +180,52 @@ if (card.perm) {
         {tr("card.claim")} ↗
       </a>
     ) : (
-      <div style="display:flex; align-items:center; gap:9px; margin-top:auto;">
-        <code style={`flex:1; min-width:0; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:${accent}; background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center; overflow:hidden; text-overflow:ellipsis;`}>
-          {card.code}
-        </code>
-        <button
-          class="gg-copy"
-          data-copy={card.code}
-          data-label={tr("card.copy")}
-          data-done={tr("card.copied")}
-          type="button"
-          style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;"
-        >
-          {tr("card.copy")}
-        </button>
+      <div style="margin-top:auto;">
+        <div style="display:flex; align-items:center; gap:9px;">
+          <code style={`flex:1; min-width:0; font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.05em; color:${accent}; background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:10px 12px; text-align:center; overflow:hidden; text-overflow:ellipsis;`}>
+            {card.code}
+          </code>
+          <button
+            class="gg-copy"
+            data-copy={card.code}
+            data-label={tr("card.copy")}
+            data-done={tr("card.copied")}
+            type="button"
+            style="cursor:pointer; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; border:1px solid var(--line2); color:var(--txt); background:var(--surface2); border-radius:10px; padding:10px 13px; transition:all .15s;"
+          >
+            {tr("card.copy")}
+          </button>
+        </div>
+        {/* PENULISAN ALTERNATIF. Kode Roblox case-sensitive saat ditukar, dan
+            sumber kadang menuliskannya berbeda (RoCodes "FARM", Roblox Den
+            "Farm"). Kita memilih yang paling mungkin asli, tapi untuk sebagian
+            kasus tebakan itu tak punya dasar — jadi varian lain ditawarkan
+            sebagai cadangan alih-alih disembunyikan. Muncul hanya saat sumber
+            benar-benar berbeda: 4,4% kode (diukur 5 Agu 2026, 52 game). */}
+        {card.altCode && (
+          <div style="display:flex; align-items:center; gap:9px; margin-top:7px;">
+            <code style="flex:1; min-width:0; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.05em; color:var(--txt2); background:var(--bg); border:1px dashed var(--line); border-radius:10px; padding:8px 12px; text-align:center; overflow:hidden; text-overflow:ellipsis;">
+              {card.altCode}
+            </code>
+            <button
+              class="gg-copy"
+              data-copy={card.altCode}
+              data-label={tr("card.copy")}
+              data-done={tr("card.copied")}
+              type="button"
+              style="cursor:pointer; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; border:1px solid var(--line); color:var(--txt2); background:var(--surface2); border-radius:10px; padding:8px 11px; transition:all .15s;"
+            >
+              {tr("card.copy")}
+            </button>
+          </div>
+        )}
+        {card.altCode && (
+          <p style="margin:6px 0 0; font-family:'Space Mono',monospace; font-size:10.5px; color:var(--txt3); line-height:1.4;">
+            {lang === "id"
+              ? "Sumber menulis kode ini berbeda. Kode Roblox peka huruf besar/kecil — kalau yang atas gagal, coba yang bawah."
+              : "Sources spell this code differently. Roblox codes are case-sensitive — if the first fails, try the second."}
+          </p>
+        )}
       </div>
     )
   }

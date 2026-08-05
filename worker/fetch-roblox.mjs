@@ -179,7 +179,14 @@ function mergeCodes(perSource) {
         // kebetulan lebih dulu di PRIMARIES. Itu rapuh: untuk 61 game yang slug
         // RoCodes-nya sudah 404, Den jadi satu-satunya sumber dan versi
         // huruf-besarnya yang tampil tanpa perlawanan.
-        it.code = preferCasing(it.code, c.code.trim());
+        const tulis = c.code.trim();
+        it.code = preferCasing(it.code, tulis);
+        // Rekam SEMUA penulisan yang pernah dilihat. Kode Roblox case-sensitive
+        // saat ditukar, dan preferCasing cuma menebak mana yang asli — untuk 16%
+        // kasus (dua-duanya berkapitalisasi campuran) tebakan itu tak punya dasar
+        // sama sekali. Menyimpan varian lain membuat kartu bisa menawarkannya
+        // sebagai cadangan, alih-alih menyembunyikan tebakan sebagai kepastian.
+        (it._tulisan ??= new Set()).add(tulis);
         if (!it.sources.includes(name)) it.sources.push(name);
         it.sourceUrls[name] = url;
         if ((!it.reward || isGeneric(it.reward)) && c.reward && !isGeneric(c.reward)) it.reward = c.reward;
@@ -194,7 +201,16 @@ function mergeCodes(perSource) {
         if (c.srcNewAt > 0 && !(it.srcNewAt >= c.srcNewAt)) it.srcNewAt = c.srcNewAt;
       }
     }
-    for (const it of map.values()) { if (it._check && !it._confident) it.check = true; delete it._check; delete it._confident; }
+    for (const it of map.values()) {
+      if (it._check && !it._confident) it.check = true;
+      delete it._check; delete it._confident;
+      // altCode = penulisan LAIN yang juga dilaporkan sumber. Hanya diisi kalau
+      // benar-benar berbeda dari yang dipilih — kartu tak perlu menampilkan
+      // apa-apa saat semua sumber sepakat (diukur: 95,6% kasus).
+      const lain = [...(it._tulisan ?? [])].filter((t) => t !== it.code);
+      if (lain.length) it.altCode = lain[0];
+      delete it._tulisan;
+    }
     return [...map.values()];
   };
   return {
