@@ -1,28 +1,37 @@
 {
-  "generatedAt": "2026-08-05T19:01:22.432Z",
-  "codes": [],
+  "generatedAt": "2026-08-05T20:01:37.374Z",
+  "codes": [
+    {
+      "game": "win-a-world-championship",
+      "gameName": "Win A World Championship",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/win-a-world-championship"
+      },
+      "code": "LIKES5000",
+      "reward": "7.5K Coins, 5 Team Rerolls and 5 Year Rerolls",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1785910658808,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-05T20:01:37.374Z",
+      "fetchedAt": "2026-08-05T20:01:37.374Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "fall-for-brainrots",
-      "count": 4,
-      "fresh": [
-        {
-          "code": "TRADEUPDATE",
-          "reward": "500 Barrier Tokens, 50 Admin Coins, Spin"
-        },
-        {
-          "code": "3NEWZONES",
-          "reward": "50 Admin Coins, Galaxy Cappuccino Assassin"
-        },
-        {
-          "code": "100KLIKES",
-          "reward": "5000 Barrier Tokens, 100 Admin Coins, 3 Spins, 67 Lucky Block"
-        },
-        {
-          "code": "10MILVISITS",
-          "reward": "100 Admin Coins, 67 Lucky Block, Galaxy Chicleteira Bicicleteira"
-        }
-      ]
+      "game": "keys",
+      "count": 2,
+      "fresh": []
+    },
+    {
+      "game": "traitor-vs-sheriff-duels",
+      "count": 3,
+      "fresh": []
     }
   ]
 }
