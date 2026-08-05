@@ -50,6 +50,14 @@ const meta = id
     };
 
 const site = Astro.site.href.replace(/\/$/, "");
+// Format pemain SAMA dengan halaman lain. Sebelumnya memakai
+// Math.round(players/1000)+"K", sehingga game 10 pemain tampil "0K players" —
+// angka yang salah DAN membuat game kecil terlihat seperti data rusak.
+function fmtPlayers(n) {
+  if (n >= 1e6) { const m = (n / 1e6).toFixed(1); return (m.endsWith(".0") ? m.slice(0, -2) : m) + "M"; }
+  if (n >= 1e3) return Math.round(n / 1e3) + "K";
+  return String(n);
+}
 const fmtTgl = (ms) =>
   new Date(ms).toLocaleDateString(id ? "id-ID" : "en-GB", { day: "numeric", month: "short", timeZone: "Asia/Jakarta" });
 
@@ -118,13 +126,13 @@ const jsonLd = [
                 onerror="this.style.visibility='hidden';" />
               <a href={`/${lang}/roblox/${g.slug}/`} style="font-weight:700; font-size:15px; color:var(--txt); text-decoration:none;">{g.name}</a>
               <span style="font-family:'Space Mono',monospace; font-size:10.5px; color:var(--faint);">
-                {g.players ? `${Math.round(g.players / 1000)}K ${id ? "pemain" : "players"} · ` : ""}{g.codes.length} {id ? "kode baru" : "new"}
+                {g.players ? `${fmtPlayers(g.players)} ${id ? "pemain" : "players"} · ` : ""}{g.codes.length} {id ? "kode baru" : (g.codes.length === 1 ? "new code" : "new codes")}
               </span>
             </div>
             <div style="display:flex; flex-wrap:wrap; gap:8px;">
               {g.codes.map((c) => (
                 <div style="display:flex; align-items:center; gap:7px; background:var(--bg); border:1px dashed var(--line2); border-radius:10px; padding:7px 10px;">
-                  <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; color:var(--acc2);">{c.code}</code>
+                  <code style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; color:var(--acc);">{c.code}</code>
                   <span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint);">{fmtTgl(c.tanggalMs)}</span>
                   <button class="gg-copy" data-copy={c.code} data-label={id ? "Salin" : "Copy"} data-done={id ? "Tersalin" : "Copied"} type="button"
                     style="cursor:pointer; font-family:'Space Mono',monospace; font-size:10.5px; font-weight:700; border:1px solid var(--line2); color:var(--txt2); background:var(--surface2); border-radius:8px; padding:5px 9px;">
