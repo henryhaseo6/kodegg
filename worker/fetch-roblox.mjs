@@ -23,6 +23,7 @@ import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE, ROB
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
 import { scoutDen } from "./src/den-scout.mjs";
+import { scoutRoCodes } from "./src/rocodes-scout.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
 import { fetchRoCodesIndex } from "./src/roblox-discover.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
@@ -337,8 +338,11 @@ async function main() {
   // kita pantau. Discovery utama berbasis chart Roblox → game yang sedang NAIK
   // tak masuk chart, padahal di situ permintaan pencarian kode paling besar.
   const SCOUT = resolve(dirname(OUT), "den-scout.json");
+  const SCOUT_RO = resolve(dirname(OUT), "rocodes-scout.json");
   let memo = {};
   try { memo = JSON.parse(await readFile(SCOUT, "utf8")); } catch { /* pertama kali */ }
+  let memoRo = {};
+  try { memoRo = JSON.parse(await readFile(SCOUT_RO, "utf8")); } catch { /* pertama kali */ }
   // TAMBAL denSlug yang tertinggal. buildGameSet menyusun: seed → game LAMA →
   // populer, dan entri yang sudah ada tak bisa ditimpa. Game lama membawa
   // `denSlug: null` apa adanya — nilai itu dihitung dulu terhadap indeks Den yang
@@ -438,6 +442,23 @@ async function main() {
     set.set(t.slug, { rocodesSlug: t.slug, denSlug: t.slug, name: t.name, genres: [], universeId: t.universeId, players: t.players, needsVerify: false });
   }
   await writeFile(SCOUT, JSON.stringify(memoBaru, null, 1));
+
+  // SCOUT RoCodES. Dijalankan SETELAH scoutDen supaya game yang baru saja
+  // ditemukan Den ikut terhitung "sudah dipantau" — kalau tidak, game yang sama
+  // bisa masuk dua kali lewat dua slug berbeda.
+  const roDipantau = new Set([...set.values()].map((e) => e.rocodesSlug).filter(Boolean));
+  const uidDipantau = new Map();
+  for (const [gid, e] of set) { const u = Number(e.universeId) || 0; if (u && !uidDipantau.has(u)) uidDipantau.set(u, gid); }
+  const { tambah: roTambah, pindah: roPindah, memoBaru: memoRoBaru } = await scoutRoCodes(roIndexSlug, roDipantau, uidDipantau, memoRo);
+  // SLUG PINDAH: game yang sudah dipantau, halaman RoCodes-nya berganti alamat.
+  // Diverifikasi lewat universeId, jadi aman dari jebakan pencocokan nama yang
+  // dulu menolak fitur ini (fighting-simulator → weapon-fighting-simulator).
+  for (const p of roPindah) { const e = set.get(p.game); if (e) e.rocodesSlug = p.slugBaru; }
+  for (const t of roTambah) {
+    if (set.has(t.slug)) continue;
+    set.set(t.slug, { rocodesSlug: t.slug, denSlug: t.slug, name: t.name, genres: [], universeId: t.universeId, players: t.players, needsVerify: false });
+  }
+  await writeFile(SCOUT_RO, JSON.stringify(memoRoBaru, null, 1));
 
   const entries = [...set.entries()];
 
