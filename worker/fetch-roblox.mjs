@@ -18,6 +18,7 @@ import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { preferCasing } from "./src/normalize.mjs";
 import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE, ROBLOX_HOWTO_PIN, ROBLOX_ALIAS, NAMA_BEDA_OK } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
@@ -166,6 +167,19 @@ function mergeCodes(perSource) {
           it = { code: c.code.trim(), reward: null, date: null, endsAt: null, sources: [], sourceUrls: {} };
           map.set(key, it);
         }
+        // KAPITALISASI: pilih yang paling mungkin ASLI, bukan yang kebetulan
+        // datang duluan. Diukur 5 Agu 2026 atas 20 game teratas: 18,6% kode yang
+        // ada di KEDUA sumber berbeda kapitalisasinya, dan polanya sistematis —
+        // Roblox Den menormalkan semuanya jadi huruf besar sementara RoCodes
+        // mempertahankan aslinya (Sub2Fer999 vs SUB2FER999, fudd10_v2 vs
+        // FUDD10_V2). Kode Roblox case-sensitive saat ditukar, jadi memilih yang
+        // salah membuat kode yang benar-benar aktif tampak tak bisa dipakai.
+        //
+        // Selama ini versi yang benar menang secara KEBETULAN, karena RoCodes
+        // kebetulan lebih dulu di PRIMARIES. Itu rapuh: untuk 61 game yang slug
+        // RoCodes-nya sudah 404, Den jadi satu-satunya sumber dan versi
+        // huruf-besarnya yang tampil tanpa perlawanan.
+        it.code = preferCasing(it.code, c.code.trim());
         if (!it.sources.includes(name)) it.sources.push(name);
         it.sourceUrls[name] = url;
         if ((!it.reward || isGeneric(it.reward)) && c.reward && !isGeneric(c.reward)) it.reward = c.reward;
