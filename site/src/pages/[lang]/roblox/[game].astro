@@ -13,6 +13,7 @@ import { LANGS } from "../../../lib/i18n.mjs";
 import { loadRobloxCatalog, loadRobloxGame } from "../../../lib/roblox.mjs";
 import { robloxGamePaths, robloxHome } from "../../../lib/routes.mjs";
 import { monthYear } from "../../../lib/seo.mjs";
+import { langkahRedeem } from "../../../lib/robloxSteps.mjs";
 import { ytPlaylistUrl } from "../../../lib/ytPlaylists.mjs";
 
 export async function getStaticPaths() {
@@ -56,8 +57,11 @@ const redeemStd = {
 // (akurasi > lokalisasi utk langkah redeem). Auto-translate butuh API berbayar &
 // berisiko salah → tak sepadan utk teks prosedural ini. Kalau tak ada langkah
 // spesifik → fallback ke langkah standar (bilingual).
-const isSpecific = Array.isArray(g.howTo) && g.howTo.length >= 2;
-const redeemSteps = { id: isSpecific ? g.howTo : redeemStd.id, en: isSpecific ? g.howTo : redeemStd.en };
+// Langkah redeem DITULIS SENDIRI dari fakta sumber (nama tombol/menu), bukan
+// menyalin kalimatnya. Dua alasan: kalimat sumber adalah satu-satunya bagian
+// situs ini yang bisa diklaim orang lain, dan menyalinnya membuat pembaca
+// Indonesia disuguhi instruksi berbahasa Inggris. Lihat lib/robloxSteps.mjs.
+const redeemSteps = langkahRedeem(g.name, Array.isArray(g.howTo) ? g.howTo : [], redeemStd);
 
 const gname = g.name;
 // Judul H1 kode. EN "{name} Codes" (grammar benar utk kode-musik: "X Music

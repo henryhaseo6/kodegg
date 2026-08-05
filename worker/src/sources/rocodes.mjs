@@ -10,9 +10,11 @@
 // roblox-games.mjs; adapter ini generik untuk semua game.
 import { decodeEntities } from "../normalize.mjs";
 
-const UA =
-  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
-  "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
+// Identitas JUJUR, bukan menyamar sebagai Chrome. Menyamarkan crawler
+// mencabut kemampuan sumber untuk mengatur atau memblokir kita secara wajar,
+// dan dalam sengketa apa pun terbaca sebagai itikad buruk. URL kontak
+// disertakan supaya mereka bisa menghubungi alih-alih langsung memutus.
+const UA = "Mozilla/5.0 (compatible; KodeGGBot/1.0; +https://kodegg.com)";
 
 // key kode Roblox: huruf/angka/underscore/!/-/titik/spasi (sebagian kode berspasi).
 const CODE_OK = /^[\w!.\- ]{3,40}$/;
