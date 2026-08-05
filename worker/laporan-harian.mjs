@@ -109,7 +109,18 @@ const hari = Object.keys(perHari).sort().slice(-7);
 baris("Upload 7 hari terakhir", hari.map((d) => `${d.slice(5)}:${perHari[d]}`).join("  "));
 baris("Jatah hari ini", `${vs.todayCount ?? 0}/52 (hari kuota ${vs.date ?? "—"})`);
 const gagal = log.filter((l) => l.mode === "manual" && (l.at ?? "").slice(0, 10) === new Date().toISOString().slice(0, 10));
-if (gagal.length) perhatian(`${gagal.length} video jatuh ke jalur manual hari ini`);
+// PISAHKAN MENURUT ALASAN. Terbukti 5 Agu 2026: konsol Google menunjukkan
+// 11.919/10.000 (119%) sementara YouTube tetap melayani setiap panggilan —
+// angka di konsol itu metrik yang tertinggal, bukan gerbangnya. Satu-satunya
+// tanda kuota benar-benar habis adalah error quotaExceeded dari API sendiri
+// (diklasifikasikan di upload.mjs). Tanpa pemisahan ini, "28 video jatuh ke
+// jalur manual" terbaca seperti krisis kuota padahal sebabnya lain sama sekali.
+const perAlasan = {};
+for (const g of gagal) perAlasan[g.alasan ?? "?"] = (perAlasan[g.alasan ?? "?"] ?? 0) + 1;
+const kenaKuota = Object.entries(perAlasan).filter(([a]) => /kuota|quota/i.test(a)).reduce((n, [, v]) => n + v, 0);
+if (gagal.length) baris("Jatuh ke jalur manual", `${gagal.length} — ${Object.entries(perAlasan).map(([a, v]) => `${a}: ${v}`).join(", ")}`);
+if (kenaKuota) perhatian(`${kenaKuota} upload DITOLAK kuota YouTube hari ini — ini sinyal batas yang sebenarnya, bukan angka di konsol`);
+else baris("Ditolak kuota YouTube", "0 (batas nyata belum tersentuh)");
 
 // ── 6. SUMBER YANG BERMASALAH ──────────────────────────────────────────────
 bagian("Sumber");
