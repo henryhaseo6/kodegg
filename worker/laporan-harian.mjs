@@ -179,7 +179,12 @@ if (!TANPA_YT && process.env.YT_REFRESH_TOKEN) {
     // "Ever Night: Reawakening" — titik duanya bikin includes() meleset, dan
     // daftar saran jadi penuh game yang sebenarnya sudah kita punya. Saran yang
     // berisik = saran yang berhenti dibaca.
-    const rapi = (x) => String(x).toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
+    // Jamak dipangkas: kueri nyata datang dalam bentuk TUNGGAL ("capybara vs
+  // plant") sedangkan nama resminya jamak ("Capybaras VS Plants") — tanpa ini
+  // game yang jelas-jelas kita punya muncul sebagai "kandidat alias baru", dan
+  // saran yang keliru bikin daftar ini berhenti dipercaya.
+  const rapi = (x) => String(x).toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim()
+    .split(" ").map((w) => (w.length > 3 ? w.replace(/s$/, "") : w)).join(" ");
     const semuaAlias = Object.values(ROBLOX_ALIAS).flat().map(rapi);
     // Katalog MOBILE ikut dipakai — Ever Night: Reawakening & Genshin Impact ada
     // di games.json, bukan di roblox-codes.json, jadi tanpa ini keduanya selalu

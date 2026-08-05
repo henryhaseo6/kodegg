@@ -51,6 +51,9 @@ export const ROBLOX_NAME_OVERRIDE = {
 //
 // Dipakai untuk TAG & deskripsi video — bukan judul, supaya judul tetap bersih.
 export const ROBLOX_ALIAS = {
+  // Orang mengetiknya TUNGGAL ("capybara vs plant", 28 tayangan dlm 7 hari)
+  // sedangkan nama resminya jamak — cukup untuk meleset dari pencocokan.
+  "capybaras-vs-plants": ["capybara vs plant", "capybara vs plants"],
   "throw-a-coin": ["lempar koin"],
   "catch-a-monster": ["tangkap monster"],
   "drag-drive-simulator": ["ddc", "dds"],
