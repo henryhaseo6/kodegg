@@ -40,6 +40,30 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now,
     [...prevByKey].map(([k, v]) => [k, v.firstSeenAt ?? v.fetchedAt ?? now]),
   );
 
+  // JEMBATAN KAPITALISASI. Kunci Roblox sengaja case-sensitive — di sana
+  // kapitalisasi bagian dari kodenya, dan menyamakan "Farm" dengan "FARM" saat
+  // MENUKAR kode bisa keliru. Tapi untuk MEWARISI RIWAYAT, aturan itu justru
+  // merusak: sumber menulis kode yang sama dengan kapitalisasi berbeda
+  // (RoCodes "FARM", Roblox Den "Farm"), sehingga entri arsip tak ketemu dan
+  // kode dianggap belum pernah dilihat.
+  //
+  // Akibatnya berantai dan tak terlihat: firstSeenAt diisi `now` → kode
+  // terhitung "fresh <=48 jam" → grace membuatnya kebal aturan expired → kode
+  // yang sudah mati sejak Juli muncul lagi sebagai kode terbaru di beranda.
+  // Terjadi 5 Agu 2026 pada Knockout: "FARM" diarsipkan 19 Jul (expiredBy
+  // primer), lalu hidup kembali sebagai "Farm".
+  //
+  // Peta ini HANYA dipakai sebagai cadangan saat kunci persis tak ketemu, dan
+  // HANYA untuk mewarisi firstSeenAt/bulk — identitas kode tetap case-sensitive,
+  // jadi tak ada kode berbeda yang tergabung karenanya.
+  const prevByKeyCI = new Map();
+  for (const [k, v] of prevByKey) {
+    const kci = k.toLowerCase();
+    const lama = prevByKeyCI.get(kci);
+    // Yang PALING TUA menang: itulah kapan kode ini benar-benar pertama dilihat.
+    if (!lama || (Date.parse(v.firstSeenAt ?? "") || Infinity) < (Date.parse(lama.firstSeenAt ?? "") || Infinity)) prevByKeyCI.set(kci, v);
+  }
+
   // `bulk` = kode yang umurnya TAK DIKETAHUI: bagian dari IMPORT PERTAMA sebuah
   // game (worker baru mulai memantau game ini). Dibedakan dari kode yang baru
   // dirilis di game yang SUDAH dipantau — yang itu genuine baru dan boleh nongol
@@ -47,7 +71,7 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now,
   // ini yang mencegah seluruh katalog game baru membanjiri puncak (lihat
   // site/src/lib/codes.mjs). Sekali di-set, dipertahankan antar-run.
   const active = freshActive.map((item) => {
-    const prior = prevByKey.get(K(item));
+    const prior = prevByKey.get(K(item)) ?? prevByKeyCI.get(K(item).toLowerCase());
     const bulk = prior ? prior.bulk === true : !prevGames.has(item.game);
     return {
       ...item,
