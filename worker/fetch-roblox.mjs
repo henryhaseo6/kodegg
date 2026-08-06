@@ -668,12 +668,24 @@ async function main() {
   // atau slug-nya tak ada di sitemap SENGAJA di luar rotasi: keduanya ditangani
   // lebih dulu di perluRo, dan memasukkannya ke antrean hanya akan membuat
   // slug mati (75 per 6 Agu 2026) memakan jatah tiap jam tanpa hasil.
-  const roRotasi = buatRotasi(
-    (id, e) => e.rocodesSlug && roIndexSlug.has(e.rocodesSlug) && Number(prevGamesMap[id]?.roAt ?? 0) > 0,
-    (id) => prevGamesMap[id]?.roAt,
-    Number(process.env.RO_TARGET_JAM || 6),
-    "rocodes",
-  );
+  // ROTASI ROCODES BERTINGKAT. Den punya jalur selalu-tarik untuk game ramai;
+  // RoCodes tidak, dan pemercepat <lastmod> tak bisa menggantikannya — diukur
+  // 6 Agu 2026, stempel RoCodes untuk game ≥50K pemain berumur p50 502 jam (21
+  // hari), dan hanya 7% yang lebih muda dari 6 jam. Artinya pemercepat itu
+  // praktis tak pernah menyala di sini dan rotasi adalah SATU-SATUNYA mekanisme.
+  //
+  // (Ini tak membantah temuan lama bahwa stempel RoCodes "jujur": yang diukur
+  // dulu adalah jeda antara stempel BERGERAK dan kode muncul — bukan seberapa
+  // sering ia bergerak. Dua hal berbeda, dan yang kedua yang menentukan di sini.)
+  //
+  // Game ramai dapat sasaran lebih ketat karena merekalah yang dibaca orang, dan
+  // ongkosnya kecil: 66 game pada sasaran 2 jam cuma menambah ~22 tarikan/run.
+  const roLayak = (id, e) => e.rocodesSlug && roIndexSlug.has(e.rocodesSlug) && Number(prevGamesMap[id]?.roAt ?? 0) > 0;
+  const RO_RAMAI = Number(process.env.RO_RAMAI_MIN || 10000);
+  const roRotasi = new Set([
+    ...buatRotasi((id, e) => roLayak(id, e) && (e.players ?? 0) >= RO_RAMAI, (id) => prevGamesMap[id]?.roAt, Number(process.env.RO_TARGET_RAMAI || 2), "rocodes-ramai"),
+    ...buatRotasi((id, e) => roLayak(id, e) && (e.players ?? 0) < RO_RAMAI, (id) => prevGamesMap[id]?.roAt, Number(process.env.RO_TARGET_JAM || 6), "rocodes"),
+  ]);
   const perluRo = (id, slug) => {
     if (!slug) return false;
     const terakhir = Number(prevGamesMap[id]?.roAt ?? 0);
