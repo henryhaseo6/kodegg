@@ -24,7 +24,7 @@ import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
 import { scoutDen } from "./src/den-scout.mjs";
 import { scoutRoCodes } from "./src/rocodes-scout.mjs";
-import { sapuIdentitas, petaUid, petaPlace, sambungUlang } from "./src/uid-map.mjs";
+import { sapuIdentitas, petaUid, petaPlace, sambungUlang, panenSapuan } from "./src/uid-map.mjs";
 import { deteksiMiss, auditBadgeBaru } from "./src/miss-detector.mjs";
 import { catatDeskripsi, laporanDeskripsi } from "./src/desc-probe.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
@@ -507,7 +507,7 @@ async function main() {
   try {
     const r = await sapuIdentitas({
       idx: roIndexSlug, memo: uidRo, jatah: Number(process.env.RO_UID_PER_RUN || 110), label: "rocodes",
-      baca: async (slug) => { const x = await fetchRoCodes(slug); return { uid: Number(x.meta?.universeId) || null, place: Number(x.meta?.placeId) || null }; },
+      baca: async (slug) => { const x = await fetchRoCodes(slug); return { uid: Number(x.meta?.universeId) || null, place: Number(x.meta?.placeId) || null, kode: (x.active ?? []).length, nama: x.meta?.name ?? null }; },
     });
     uidRo = r.memoBaru;
     await writeFile(UIDRO, JSON.stringify(uidRo, null, 1));
@@ -516,11 +516,45 @@ async function main() {
   try {
     const r = await sapuIdentitas({
       idx: denIndex, memo: uidDen, jatah: Number(process.env.DEN_UID_PER_RUN || 175), label: "den",
-      baca: async (slug) => { const x = await fetchRobloxDen(slug); return { uid: null, place: Number(x.meta?.placeId) || null }; },
+      baca: async (slug) => { const x = await fetchRobloxDen(slug); return { uid: null, place: Number(x.meta?.placeId) || null, kode: (x.active ?? []).length, nama: x.meta?.name ?? null }; },
     });
     uidDen = r.memoBaru;
     await writeFile(UIDDEN, JSON.stringify(uidDen, null, 1));
   } catch (e) { console.log(`[uid-map den] dilewati: ${e.message}`); }
+
+  // ─── PANEN SAPUAN ──────────────────────────────────────────────────────────
+  // Game yang halamannya SUDAH kita baca saat memetakan identitas, tapi belum
+  // masuk katalog. Tanpa ini satu-satunya jalan masuk game baru adalah scout —
+  // 15 slug per run, dipilih menurut kesegaran <lastmod>, sehingga ekor panjang
+  // praktis tak pernah tersentuh. Terukur 6 Agu 2026 dari baru 24% indeks
+  // RoCodes tersapu: 18 game ≥2.000 pemain terlewat, termasuk IT GIRL (11.042
+  // pemain) dan Toilet Tower Defense (6.117).
+  //
+  // Jumlah pemainnya tak ada di halaman sumber, tapi menanyakannya murah: 50
+  // universeId per permintaan Roblox — 421 kandidat cuma 9 permintaan.
+  if (process.env.PANEN_OFF !== "1") {
+    try {
+      const uidAda = new Set([...set.values()].map((e) => Number(e.universeId)).filter(Boolean));
+      const kandidat = panenSapuan(uidRo, uidAda).slice(0, Number(process.env.PANEN_MAX || 60));
+      if (kandidat.length) {
+        const pemain = await fetchPlayers(kandidat.map((k) => k.uid));
+        const AMBANG = Number(process.env.PANEN_MIN_PLAYERS || 2000);
+        const lolos = kandidat
+          .map((k) => ({ ...k, players: pemain[k.uid]?.playing ?? 0, name: pemain[k.uid]?.name || k.nama || k.slug }))
+          .filter((k) => k.players >= AMBANG)
+          .sort((a, b) => b.players - a.players);
+        for (const g of lolos) {
+          if (set.has(g.slug)) continue;
+          // denSlug diisi slug yang sama: kalau kebetulan ada di Den, dua primer
+          // langsung aktif; kalau tidak, tarikannya gagal mulus dan penyambung
+          // identitas yang akan mencarikan alamat Den-nya.
+          set.set(g.slug, { rocodesSlug: g.slug, denSlug: g.slug, name: g.name, genres: [], universeId: g.uid, players: g.players, needsVerify: false });
+        }
+        console.log(`[panen] ${kandidat.length} kandidat dari sapuan → ${lolos.length} lolos ambang ${AMBANG} pemain`);
+        for (const g of lolos.slice(0, 8)) console.log(`  + ${g.name} (${g.players} pemain, ${g.kode} kode, ${g.slug})`);
+      }
+    } catch (e) { console.log(`[panen] dilewati: ${e.message}`); }
+  }
 
   {
     const ro = sambungUlang(set, roIndexSlug, petaUid(uidRo), "rocodesSlug", (e) => e.universeId);

@@ -97,11 +97,24 @@ export async function sapuIdentitas({ idx, memo = {}, baca, jatah, label, jeda =
   let ok = 0, gagal = 0;
   for (const slug of antre) {
     try {
-      const { uid, place } = await baca(slug);
+      const { uid, place, kode, nama } = await baca(slug);
       // Halaman terbaca tapi tanpa identitas tetap DICATAT (uid null). Kalau
       // tidak, slug semacam itu akan mengantre lagi tiap run selamanya dan
       // menyumbat jatah sapuan — biaya tetap, hasil selalu nihil.
-      memoBaru[slug] = { at: now, ...(uid ? { uid } : {}), ...(place ? { place } : {}) };
+      //
+      // JUMLAH KODE & NAMA ikut disimpan. Halamannya sudah ditarik penuh, jadi
+      // keduanya sudah lewat di tangan kita — membuangnya berarti membayar
+      // tarikan yang sama dua kali saat scout kelak menilai slug itu. Dan
+      // scout cuma menilai 15 slug per run sementara sapuan ini menyentuh
+      // ratusan; tanpa disimpan, sebagian besar temuan tak pernah sampai ke
+      // penilaian sama sekali.
+      memoBaru[slug] = {
+        at: now,
+        ...(uid ? { uid } : {}),
+        ...(place ? { place } : {}),
+        ...(Number.isFinite(kode) ? { kode } : {}),
+        ...(nama ? { nama } : {}),
+      };
       if (uid || place) ok++;
     } catch {
       // 404/timeout juga dicatat, alasan sama: kegagalan yang tak dicatat
@@ -116,6 +129,40 @@ export async function sapuIdentitas({ idx, memo = {}, baca, jatah, label, jeda =
   const belum = idx.size - Object.keys(memoBaru).length;
   console.log(`[uid-map ${label}] +${ok} dipetakan (${gagal} gagal) · total ${terpetakan}/${idx.size} · sisa belum disentuh ${Math.max(0, belum)}`);
   return { memoBaru, dipetakan: ok, belum: Math.max(0, belum) };
+}
+
+/**
+ * PANEN SAPUAN — game yang halamannya sudah kita baca tapi belum masuk katalog.
+ *
+ * Sapuan identitas menarik ratusan halaman per run dan sudah membaca jumlah kode
+ * serta namanya. Tanpa panen ini, satu-satunya jalan masuk game baru adalah
+ * scout — yang menilai 15 slug per run dan memilihnya menurut kesegaran
+ * <lastmod>, sehingga ekor panjang praktis tak pernah tersentuh.
+ *
+ * Terukur 6 Agu 2026 dari baru 760 slug tersapu (24% indeks RoCodes): 421 slug
+ * beridentitas asing, 18 di antaranya ≥2.000 pemain — termasuk IT GIRL (11.042)
+ * dan Toilet Tower Defense (6.117). Semuanya sudah pernah kita tarik halamannya.
+ *
+ * Jumlah pemainnya TIDAK ada di halaman sumber dan harus ditanyakan ke Roblox,
+ * tapi itu murah: 50 universeId per permintaan — 421 kandidat cuma 9 permintaan.
+ *
+ * @param {object} memo                 isi <sumber>-uid.json
+ * @param {Set<number>} uidDipantau     universeId yang sudah ada di katalog
+ * @param {{minKode?: number}} [opt]
+ * @returns {{slug:string, uid:number, kode:number, nama:string|null}[]}
+ */
+export function panenSapuan(memo = {}, uidDipantau = new Set(), { minKode = 1 } = {}) {
+  const out = [];
+  for (const [slug, v] of Object.entries(memo)) {
+    const uid = Number(v?.uid) || 0;
+    if (!uid || uidDipantau.has(uid)) continue;
+    // Tanpa kode aktif, game itu tak punya alasan tampil di situs kode.
+    if ((Number(v.kode) || 0) < minKode) continue;
+    out.push({ slug, uid, kode: Number(v.kode) || 0, nama: v.nama ?? null });
+  }
+  // Kode terbanyak dulu — pemainnya belum diketahui di tahap ini, dan banyaknya
+  // kode adalah petunjuk terbaik yang tersedia tanpa menembak jaringan.
+  return out.sort((a, b) => b.kode - a.kode);
 }
 
 /** universeId → slug, dari memo. Slug gagal/tanpa identitas diabaikan. */
