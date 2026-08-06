@@ -5,11 +5,28 @@
 // Kalau ya, kita punya jalur hulu gratis untuk sepertiga katalog; kalau tidak,
 // gagasan ini mati dengan bukti, bukan dengan dugaan.
 //
-// KENAPA LAYAK DICOBA padahal hulu lain sudah mati satu per satu (Discord butuh
-// bot di server, X berbayar, group shout Roblox null + throttle 429 setelah ~5
-// permintaan): deskripsi ini SUDAH ikut terbawa di `games.roblox.com/v1/games`
-// yang kita panggil tiap jam untuk jumlah pemain. Nol permintaan tambahan.
-// Diukur 6 Agu 2026: 164 dari 491 game (33%) memuat minimal satu kode kita.
+// KENAPA MASIH DIJALANKAN padahal peluangnya kecil: deskripsi ini SUDAH ikut
+// terbawa di `games.roblox.com/v1/games` yang kita panggil tiap jam untuk jumlah
+// pemain. Nol permintaan tambahan, jadi ongkos salahnya nyaris nihil — sementara
+// hulu lain sudah mati semua (Discord butuh bot di server, X berbayar, group
+// shout Roblox null + throttle 429 setelah ~5 permintaan).
+//
+// PELUANGNYA KECIL, DAN ANGKA PERTAMA YANG DIPAKAI MEMBENARKANNYA SALAH.
+// Ukuran awal "33% game memuat kode kita" (163/491) menyesatkan: sebagian besar
+// kecocokan itu KEBETULAN, karena banyak kode Roblox berupa kata biasa yang
+// memang muncul di deskripsi apa pun — game "Wanted [POLICE]" punya kode
+// "POLICE"; ada pula "SHARDS", "FUTURE", "Pet". Kecocokan seperti itu bukan
+// bukti pengembang mengumumkan kode di sana.
+//
+// Disaring ke satu-satunya kombinasi yang berarti — deskripsi memajang kode
+// TERBARU game itu DAN kodenya berangka (kecil peluang kata biasa):
+//   163 (33%) → 153 (31%) token utuh → 67 (14%) berangka → 23 (4,7%) + terbaru
+// Bahkan dari 23 itu beberapa masih meragukan ("777", "WORLD2", "PART2"), dan
+// mayoritasnya game di bawah 6.000 pemain.
+//
+// Jadi probe ini menjawab pertanyaan kecil dengan ongkos nol, bukan membuka
+// jalur utama. Kalau setelah beberapa hari tak ada satu pun kasus deskripsi
+// benar-benar MENDAHULUI Den/RoCodes, hapus saja modul ini.
 //
 // DUA HAL YANG MEMBUAT PENGUKURAN INI MUDAH KELIRU, dan keduanya ditangani:
 //
