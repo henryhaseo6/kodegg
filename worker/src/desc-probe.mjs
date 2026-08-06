@@ -81,7 +81,20 @@ export function catatDeskripsi({ deskripsi, kodeKita, memo = {}, now = Date.now(
   // Run PERTAMA menjadi garis dasar: semua yang terlihat saat itu dianggap
   // "sudah di sana" dan tak bisa dijadikan bukti (jebakan 1).
   const baseline = !memoBaru._mulai;
-  if (baseline) memoBaru._mulai = now;
+  if (baseline) {
+    memoBaru._mulai = now;
+    // Token yang SUDAH tercatat sebelum garis dasar ditegakkan ikut dicap.
+    // Tanpa ini penjaganya bocor tepat di sambungannya: memo bisa sudah terisi
+    // dari versi probe sebelumnya, dan token-token itu lewat cabang "sudah ada"
+    // di bawah sehingga tak pernah dapat cap — lalu terhitung sebagai bukti,
+    // padahal asal-usulnya persis sama tak diketahuinya. Terjadi 6 Agu 2026:
+    // 1.076 dari 6.359 token lolos tanpa cap karena run sebelumnya memakai versi
+    // probe yang belum mengenal garis dasar.
+    for (const [gid, kodes] of Object.entries(memoBaru)) {
+      if (gid === "_mulai") continue;
+      for (const v of Object.values(kodes)) v.awal = true;
+    }
+  }
 
   const UMUM_MIN = Number(process.env.DESC_UMUM_MIN || 4);
   const sebar = new Map();
