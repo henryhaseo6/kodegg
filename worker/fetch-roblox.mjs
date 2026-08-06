@@ -25,7 +25,7 @@ import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs
 import { scoutDen } from "./src/den-scout.mjs";
 import { scoutRoCodes } from "./src/rocodes-scout.mjs";
 import { sapuIdentitas, petaUid, petaPlace, sambungUlang } from "./src/uid-map.mjs";
-import { deteksiMiss } from "./src/miss-detector.mjs";
+import { deteksiMiss, auditBadgeBaru } from "./src/miss-detector.mjs";
 import { catatDeskripsi, laporanDeskripsi } from "./src/desc-probe.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
 import { fetchRoCodesIndex } from "./src/roblox-discover.mjs";
@@ -238,10 +238,26 @@ function mergeCodes(perSource) {
     }
     return [...map.values()];
   };
-  return {
-    active: merge(perSource.map((p) => ({ name: p.name, url: p.url, items: p.active }))),
-    archive: merge(perSource.map((p) => ({ name: p.name, url: p.url, items: p.archive }))),
-  };
+  const active = merge(perSource.map((p) => ({ name: p.name, url: p.url, items: p.active })));
+  const archive = merge(perSource.map((p) => ({ name: p.name, url: p.url, items: p.archive })));
+
+  // PERSELISIHAN ANTAR-PRIMER: satu sumber mendaftarkannya AKTIF, sumber lain
+  // menyatakannya EXPIRED. Kodenya tetap aktif — kita tak boleh membuang kode
+  // yang satu sumber bersaksi masih jalan — tapi keraguannya WAJIB terlihat.
+  //
+  // Tanpa ini aturannya jadi tak masuk akal ke arah yang salah: sinyal CHECK
+  // ("kami ragu") memunculkan badge CEK DULU, sementara sinyal EXPIRED ("kami
+  // yakin mati") — yang jauh lebih tegas — tak memunculkan apa pun. Pembaca
+  // melihatnya sebagai kode aktif biasa.
+  //
+  // Terukur 6 Agu 2026 lewat audit-kode: Heavyweight Fishing punya 26 kode yang
+  // RoCodes daftarkan aktif sementara Roblox Den sudah mengarsipkannya, dan
+  // seluruhnya tampil tanpa peringatan. Ditemukan pada run PERTAMA audit itu.
+  const matiMenurutSalahSatu = new Set(archive.map((c) => String(c.code).toLowerCase()));
+  for (const c of active) {
+    if (matiMenurutSalahSatu.has(String(c.code).toLowerCase())) c.srcCheck = true;
+  }
+  return { active, archive };
 }
 
 async function buildGameSet(prevGames) {
@@ -1318,18 +1334,25 @@ async function main() {
   // membantahnya saat itu. Lihat src/miss-detector.mjs.
   if (process.env.MISS_OFF !== "1") {
     try {
+      // aktif disimpan sbg Map code→item (bukan Set) supaya badge-nya ikut bisa
+      // diperiksa, bukan cuma keberadaannya.
       const punyaAktif = new Map(), punyaArsip = new Map();
-      const isi = (peta, arr) => { for (const c of arr) { let s = peta.get(c.game); if (!s) peta.set(c.game, (s = new Set())); s.add(String(c.code ?? "").toLowerCase()); } };
-      isi(punyaAktif, active); isi(punyaArsip, archive);
+      for (const c of active) { let m = punyaAktif.get(c.game); if (!m) punyaAktif.set(c.game, (m = new Map())); m.set(String(c.code ?? "").toLowerCase(), c); }
+      for (const c of archive) { let s = punyaArsip.get(c.game); if (!s) punyaArsip.set(c.game, (s = new Set())); s.add(String(c.code ?? "").toLowerCase()); }
+      const ditarik = (gid) => {
+        const g = mergedGames[gid] ?? {};
+        return Math.max(Number(g.denAt) || 0, Number(g.roAt) || 0);
+      };
       await deteksiMiss({
         set,
-        milik: (gid) => ({ aktif: punyaAktif.get(gid) ?? new Set(), arsip: punyaArsip.get(gid) ?? new Set() }),
+        milik: (gid) => ({ aktif: punyaAktif.get(gid) ?? new Map(), arsip: punyaArsip.get(gid) ?? new Set(), ditarikMs: ditarik(gid) }),
         jumlah: Number(process.env.MISS_SAMPLE || 8),
         sumber: [
           { field: "rocodesSlug", nama: "ro", ambil: fetchRoCodes },
           { field: "denSlug", nama: "den", ambil: fetchRobloxDen },
         ],
       });
+      auditBadgeBaru(active);
     } catch (e) { console.log(`[miss] dilewati: ${e.message}`); }
   }
 
