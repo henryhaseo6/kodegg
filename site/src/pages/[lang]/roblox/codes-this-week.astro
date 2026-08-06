@@ -42,11 +42,11 @@ const PATHS = { id: "/id/roblox/codes-this-week/", en: "/en/roblox/codes-this-we
 const meta = id
   ? {
       title: `Kode Roblox Minggu Ini (${my}) — ${data.totalKode} Kode Baru | KodeGG`,
-      desc: `Semua kode Roblox yang rilis 7 hari terakhir: ${data.totalKode} kode dari ${data.totalGame} game, lengkap dengan tanggal rilisnya. Diperbarui otomatis tiap jam dari ${data.katalogGame} game yang dipantau.`,
+      desc: `Semua kode Roblox yang masuk daftar sumber dalam 7 hari terakhir: ${data.totalKode} kode dari ${data.totalGame} game, lengkap dengan tanggal terdaftarnya. Diperbarui otomatis tiap jam dari ${data.katalogGame} game yang dipantau.`,
     }
   : {
       title: `Roblox Game Codes This Week (${my}) — ${data.totalKode} New Codes | KodeGG`,
-      desc: `All Roblox codes released in the last 7 days: ${data.totalKode} codes across ${data.totalGame} games, each with its release date. Auto-updated every hour from ${data.katalogGame} tracked games.`,
+      desc: `All Roblox codes listed by our sources in the last 7 days: ${data.totalKode} codes across ${data.totalGame} games, each with the date it was listed. Auto-updated every hour from ${data.katalogGame} tracked games.`,
     };
 
 const site = Astro.site.href.replace(/\/$/, "");
@@ -65,8 +65,8 @@ const faqs = [
   {
     q: id ? "Kode ini dihitung dari kapan?" : "What counts as “this week”?",
     a: id
-      ? "Kode yang TANGGAL RILISNYA jatuh dalam 7 hari terakhir menurut sumber, bukan kapan kami menemukannya. Kode tanpa tanggal rilis sengaja tidak dimasukkan agar daftar ini bisa dipertanggungjawabkan."
-      : "Codes whose RELEASE DATE falls within the last 7 days according to the source — not when we discovered them. Codes without a release date are deliberately excluded so this list stays accountable.",
+      ? "Kode yang TANGGAL TERDAFTARNYA di sumber jatuh dalam 7 hari terakhir. Sumber kami mencatat kapan sebuah kode masuk ke daftar mereka (kolom “Added On”), bukan kapan pengembang game merilisnya — keduanya biasanya berdekatan, tapi kami tak menyebutnya rilis karena tak punya bukti untuk itu. Kode tanpa tanggal sengaja tidak dimasukkan."
+      : "Codes whose LISTING DATE at the source falls within the last 7 days. Our sources record when a code entered their list (the “Added On” column), not when the game developer released it — the two are usually close, but we do not call it a release date because we cannot prove it. Codes without a date are deliberately excluded.",
   },
   {
     q: id ? "Seberapa sering diperbarui?" : "How often is this updated?",
@@ -110,8 +110,8 @@ const jsonLd = [
     </h1>
     <p style="font-family:'Space Mono',monospace; font-size:12.5px; color:var(--muted); margin:0 0 26px; line-height:1.6;">
       {id
-        ? `${data.totalKode} kode rilis dalam 7 hari terakhir · ${data.totalGame} game · dipantau ${data.katalogGame} game · diperbarui tiap jam`
-        : `${data.totalKode} codes released in the last 7 days · ${data.totalGame} games · ${data.katalogGame} games tracked · updated hourly`}
+        ? `${data.totalKode} kode terdaftar dalam 7 hari terakhir · ${data.totalGame} game · dipantau ${data.katalogGame} game · diperbarui tiap jam`
+        : `${data.totalKode} codes listed in the last 7 days · ${data.totalGame} games · ${data.katalogGame} games tracked · updated hourly`}
     </p>
 
     {data.games.length === 0 ? (

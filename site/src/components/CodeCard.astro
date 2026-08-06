@@ -62,7 +62,12 @@ let badge;
 if (card.perm) {
   badge = { label: lang === "id" ? "Tanpa batas" : "No expiry", value: null, color: "var(--ok)" };
 } else if (card.date) {
-  badge = { label: lang === "id" ? "Rilis" : "Released", value: fmtDate(card.date), color: "var(--faint)" };
+  // "Terdaftar", BUKAN "Rilis". Kolom sumbernya berjudul "Added On" — itu kapan
+  // RoCodes memasukkan kode ke situsnya, bukan kapan pengembang game merilisnya.
+  // Keduanya sering berdekatan, tapi kita tak punya bukti untuk klaim yang kedua,
+  // dan label yang mengklaim lebih dari yang kita tahu merusak justru hal yang
+  // kita jual: bahwa angka di situs ini bisa dipercaya.
+  badge = { label: lang === "id" ? "Terdaftar" : "Listed", value: fmtDate(card.date), color: "var(--faint)" };
 } else if (card.firstSeenAt) {
   badge = { label: tr("card.seen"), value: fmtDate(card.firstSeenAt), color: "var(--faint)" };
 } else {
