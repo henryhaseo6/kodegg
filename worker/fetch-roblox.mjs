@@ -26,6 +26,7 @@ import { scoutDen } from "./src/den-scout.mjs";
 import { scoutRoCodes } from "./src/rocodes-scout.mjs";
 import { sapuIdentitas, petaUid, petaPlace, sambungUlang } from "./src/uid-map.mjs";
 import { deteksiMiss } from "./src/miss-detector.mjs";
+import { catatDeskripsi, laporanDeskripsi } from "./src/desc-probe.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
 import { fetchRoCodesIndex } from "./src/roblox-discover.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
@@ -108,7 +109,10 @@ async function fetchPlayers(universeIds) {
       // rootPlaceId ikut disimpan: API ini SUDAH dipanggil untuk jumlah pemain,
       // jadi tautan "buka di Roblox" tak menambah satu pun permintaan. Cakupannya
       // juga lebih luas daripada placeId Den (478 vs 424 game).
-      for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null, rootPlaceId: g.rootPlaceId ?? null };
+      // `description` ikut dipungut untuk probe hulu (src/desc-probe.mjs). Sama
+      // seperti rootPlaceId: datanya sudah ada di respons ini, jadi mencatatnya
+      // tak menambah satu pun permintaan.
+      for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null, rootPlaceId: g.rootPlaceId ?? null, description: g.description || "" };
     } catch {
       /* pertahankan nilai lama */
     }
@@ -1178,6 +1182,41 @@ async function main() {
   for (const g of Object.values(mergedGames)) {
     const pd = g.universeId ? players[g.universeId] : null;
     if (pd) { if (pd.playing != null) g.players = pd.playing; if (pd.name) g.rawName = pd.name; if (pd.rootPlaceId) g.rootPlaceId = pd.rootPlaceId; } // rawName = nama asli Roblox (+emoji/tag) utk visual video
+  }
+
+  // ── PROBE DESKRIPSI (mencatat saja, tak menyentuh situs) ──────────────────
+  // Menguji satu-satunya jalur hulu yang tersisa setelah yang lain mati satu per
+  // satu (Discord butuh bot di server, X berbayar, group shout Roblox null dan
+  // throttle 429 setelah ~5 permintaan): apakah pengembang menempelkan kode di
+  // deskripsi game LEBIH DULU daripada kode itu sampai ke Den/RoCodes.
+  // Deskripsinya sudah terbawa di fetchPlayers, jadi ini nol permintaan tambahan.
+  if (process.env.DESC_PROBE_OFF !== "1") {
+    try {
+      const PROBE = resolve(dirname(OUT), "desc-probe.json");
+      let memoD = {};
+      try { memoD = JSON.parse(await readFile(PROBE, "utf8")); } catch { /* pertama kali */ }
+      const punyaSemua = new Map();
+      const isiPunya = (arr, ms) => { for (const c of arr) { let m = punyaSemua.get(c.game); if (!m) punyaSemua.set(c.game, (m = new Map())); const k = String(c.code ?? "").toLowerCase(); const t = Date.parse(c.firstSeenAt ?? "") || ms; if (!m.has(k) || t < m.get(k)) m.set(k, t); } };
+      isiPunya(active, Date.now()); isiPunya(archive, Date.now());
+      const deskripsi = new Map();
+      for (const [gid, g] of Object.entries(mergedGames)) {
+        const pd = g.universeId ? players[g.universeId] : null;
+        if (pd?.description) deskripsi.set(g.universeId, { desc: pd.description, gid });
+      }
+      const { memoBaru, baru } = catatDeskripsi({
+        deskripsi,
+        kodeKita: (gid) => new Set((punyaSemua.get(gid) ?? new Map()).keys()),
+        memo: memoD,
+      });
+      await writeFile(PROBE, JSON.stringify(memoBaru, null, 1));
+      // Sengaja disebut KANDIDAT, bukan kode. Ekstraksinya longgar (lihat
+      // desc-probe.mjs) sehingga sebagian besar kandidat memang bukan kode —
+      // menyebutnya "kode baru" di log akan membuat angka ini terbaca sebagai
+      // temuan, padahal penyaring sesungguhnya baru bekerja belakangan.
+      console.log(`[desc-probe] ${deskripsi.size} deskripsi dibaca · ${baru.length} kandidat baru dicatat (BUKAN klaim kode — menunggu pembuktian)`);
+      for (const b of baru.slice(0, 8)) console.log(`  ? ${b.code} — ${b.game}`);
+      laporanDeskripsi(memoBaru, (gid) => punyaSemua.get(gid) ?? new Map());
+    } catch (e) { console.log(`[desc-probe] dilewati: ${e.message}`); }
   }
 
   // ── AUDIT NAMA (lapis kedua, khusus game TANPA placeId) ───────────────────
