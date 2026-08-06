@@ -112,7 +112,7 @@ async function fetchPlayers(universeIds) {
       // `description` ikut dipungut untuk probe hulu (src/desc-probe.mjs). Sama
       // seperti rootPlaceId: datanya sudah ada di respons ini, jadi mencatatnya
       // tak menambah satu pun permintaan.
-      for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null, rootPlaceId: g.rootPlaceId ?? null, description: g.description || "", l1: g.genre_l1 || null, l2: g.genre_l2 || null };
+      for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null, rootPlaceId: g.rootPlaceId ?? null, description: g.description || "", l1: g.genre_l1 || null, l2: g.genre_l2 || null, visits: g.visits ?? null, favorit: g.favoritedCount ?? null, dibuat: g.created || null, diperbarui: g.updated || null };
     } catch {
       /* pertahankan nilai lama */
     }
@@ -1332,6 +1332,21 @@ async function main() {
     // Rivals "sports" padahal Shooter, Anime Expeditions "anime" padahal Tower
     // Defense. Datanya sudah ikut di respons yang sama dengan jumlah pemain;
     // selama ini dibuang.
+    // Empat angka ini datang dari respons yang SAMA dengan jumlah pemain, jadi
+    // menyimpannya tak menambah satu pun permintaan. Semuanya informasi yang
+    // memang dicari pembaca portal game: seberapa besar gamenya (visits,
+    // favorit), seberapa tua (dibuat), dan — yang paling berguna — kapan
+    // pengembangnya terakhir menyentuhnya (diperbarui), karena kode redeem
+    // biasanya turun bersamaan pembaruan.
+    //
+    // `visits` sengaja DIBULATKAN ke ribuan terdekat. Nilai mentahnya bergerak
+    // tiap jam untuk 494 game sekaligus, dan itu membuat seluruh isi
+    // roblox-codes.json berubah tiap run tanpa menambah satu pun informasi yang
+    // berarti bagi pembaca — riwayat git menggelembung tanpa alasan.
+    if (pd?.visits != null) g.visits = Math.round(pd.visits / 1000) * 1000;
+    if (pd?.favorit != null) g.favorit = Math.round(pd.favorit / 100) * 100;
+    if (pd?.dibuat) g.dibuat = pd.dibuat;
+    if (pd?.diperbarui) g.diperbarui = pd.diperbarui;
     if (pd?.l1) {
       const resmi = genreDariRoblox(pd.l1, pd.l2);
       if (resmi.length) {
