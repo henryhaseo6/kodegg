@@ -78,7 +78,18 @@ const bySort = (a, b) => b.rankMs - a.rankMs || b.firstSeenMs - a.firstSeenMs;
 export async function loadRobloxHome(limit = 8) {
   const raw = await read();
   const games = raw.games ?? {};
-  const active = (raw.active ?? []).map((c) => shape(c, games)).sort(bySort);
+  // Kode yang sumbernya ragukan TIDAK masuk etalase. Section ini penempatan
+  // paling menonjol di seluruh situs, dan Roblox Den menerangkan status CHECK
+  // sebagai "This code has likely expired" — memajangnya sebagai "kode terbaru"
+  // berarti menawarkan kode yang sumber kita sendiri duga sudah mati.
+  // Halaman "kode minggu ini" sudah menyaring keduanya sejak awal; beranda
+  // tertinggal, dan justru beranda yang paling banyak dilihat.
+  // Kodenya tak hilang — tetap tampil di halaman gamenya, lengkap dg badge
+  // CEK DULU supaya pembaca tahu harus mencoba dulu.
+  const active = (raw.active ?? [])
+    .filter((c) => !c.check && !c.srcCheck)
+    .map((c) => shape(c, games))
+    .sort(bySort);
   const perGame = {};
   const top = [];
   for (const c of active) {
