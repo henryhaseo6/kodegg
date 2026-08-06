@@ -201,6 +201,20 @@ function mergeCodes(perSource) {
         if (!it.endsAt && c.endsAt) it.endsAt = c.endsAt;
         // check (Roblox Den "CHECK"): ragu bila SEMUA sumber ragu; hilang begitu
         // ADA sumber yg daftarin TANPA check (confident) → confident/verified menang.
+        // srcCheck = keraguan MENTAH sumber, direkam SEBELUM aturan `_confident`
+        // di bawah menghapusnya. Tanpa ini keraguan Den lenyap terlalu dini:
+        // RoCodes tak punya konsep CHECK sama sekali, jadi SETIAP kode yang ia
+        // daftarkan otomatis terhitung "confident" dan membatalkan CHECK dari
+        // Den — bukan karena RoCodes menyatakan kode itu baik-baik saja, tapi
+        // karena ia memang tak punya cara menyatakan sebaliknya. Diamnya sebuah
+        // sumber bukan kesaksian. (TR Legacy 6 Agu 2026: WEHIT25KLIKES &
+        // LETSGO20KLIKES ditandai CHECK oleh Den, tampil "Verified" di kita.)
+        //
+        // DIKUNCI KE DEN, dan itu bukan kehati-hatian berlebihan: denPunya dan
+        // roPunya mendorong OBJEK TERSIMPAN YANG SAMA saat sebuah sumber
+        // dilewati, jadi srcCheck yang diwariskan buta akan menempel selamanya
+        // lewat sisi RoCodes — bahkan setelah Den mencabut keraguannya.
+        if (c.check || (c.srcCheck && name === "Roblox Den")) it.srcCheck = true;
         if (c.check) it._check = true; else it._confident = true;
         if (c.srcNew) it.srcNew = true; // ada sumber menandainya "kode baru"
         // Kapan penanda itu dipasang (= "Last checked" halaman sumber). Ambil yang
@@ -933,7 +947,7 @@ async function main() {
       // Cross-check menghitung berapa SUMBER yang mendaftarkan sebuah kode,
       // bukan berapa yang meyakininya. Suara ragu tak boleh terbaca sebagai
       // suara setuju.
-      fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true } : {}), ...(c.check === true ? { srcCheck: true } : {}) }));
+      fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true } : {}), ...(c.srcCheck === true ? { srcCheck: true } : {}) }));
     }
     const roActive = new Set(fActive.map((c) => c.code.toLowerCase()));
     const edSrc = bySite.filter((s) => [...s.set].some((c) => roActive.has(c))).map((s) => s.name);
