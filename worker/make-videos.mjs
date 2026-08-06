@@ -735,6 +735,17 @@ async function main() {
           // SKIP_PLAYLIST menahan PEMBUATAN playlist baru saja. Video untuk game
           // yang playlist-nya SUDAH ada tetap dimasukkan — itu tak memakai jatah
           // harian (yang dibatasi YouTube adalah playlists.insert).
+          //
+          // BORONGAN SELALU MELEWATI PEMBUATAN PLAYLIST, tanpa perlu SKIP_PLAYLIST.
+          // Alasannya bukan penghematan kuota unit melainkan kenyataan: jatah
+          // playlist baru YouTube ~10/hari sementara borongan menembak sampai 15
+          // per run dan puluhan per hari. Log 6 Agu 2026 penuh baris "jatah
+          // playlist harian sudah habis — pembuatan ditahan", dan sisanya
+          // menumpuk di pending-playlists.json untuk dibuat entah kapan.
+          //
+          // Jalur kode-baru untuk game yang benar-benar baru TIDAK disentuh: di
+          // situ playlist tetap dibuat otomatis dalam jatah 10/hari, karena
+          // game-game itu datang beberapa per hari, bukan puluhan.
           // thumbnailPath SENGAJA TIDAK DIKIRIM untuk Shorts. Dibuktikan 5 Agu
           // 2026 dengan membuka gambarnya, bukan mengukurnya: video AFK Journey
           // yang diunggah 3 Agu (thumbnails.set dipanggil saat upload, tiga hari
@@ -750,7 +761,7 @@ async function main() {
           //
           // Video LONG (roundup & top50) tak lewat sini dan tetap memakai
           // thumbnail kustom — di sana YouTube memang memakainya.
-          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, tanpaBuatPlaylist: SKIP_PLAYLIST });
+          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, tanpaBuatPlaylist: SKIP_PLAYLIST || c.backlog === true });
           // Thumbnail Shorts TAK BISA dirender ulang seperti video long: dia
           // potongan frame dari mp4 yang ikut terhapus bersama runner, dan
           // Shorts tak bisa diberi thumbnail lewat Studio desktop (harus API atau
@@ -761,7 +772,7 @@ async function main() {
           // Antrean thumbnail Shorts ikut dihapus: memasangnya ulang nanti pun
           // tetap diabaikan YouTube, jadi antrean itu cuma menunda pemborosan.
           void thumbPending;
-          if (SKIP_PLAYLIST && playlistPending) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
+          if ((SKIP_PLAYLIST || c.backlog === true) && playlistPending) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
           console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
           state.todayCount += 1; remaining -= 1;
           state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
