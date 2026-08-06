@@ -28,7 +28,7 @@ import { sapuIdentitas, petaUid, petaPlace, sambungUlang, panenSapuan } from "./
 import { deteksiMiss, auditBadgeBaru } from "./src/miss-detector.mjs";
 import { catatDeskripsi, laporanDeskripsi } from "./src/desc-probe.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
-import { fetchRoCodesIndex } from "./src/roblox-discover.mjs";
+import { fetchRoCodesIndex, genreDariRoblox } from "./src/roblox-discover.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
 import { scanLevelup, petaExpired, normSlug } from "./src/sources/levelupplay.mjs";
 import { fetchPromoCodes } from "./src/sources/roblox-promo.mjs";
@@ -112,7 +112,7 @@ async function fetchPlayers(universeIds) {
       // `description` ikut dipungut untuk probe hulu (src/desc-probe.mjs). Sama
       // seperti rootPlaceId: datanya sudah ada di respons ini, jadi mencatatnya
       // tak menambah satu pun permintaan.
-      for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null, rootPlaceId: g.rootPlaceId ?? null, description: g.description || "" };
+      for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null, rootPlaceId: g.rootPlaceId ?? null, description: g.description || "", l1: g.genre_l1 || null, l2: g.genre_l2 || null };
     } catch {
       /* pertahankan nilai lama */
     }
@@ -1323,6 +1323,23 @@ async function main() {
   for (const g of Object.values(mergedGames)) {
     const pd = g.universeId ? players[g.universeId] : null;
     if (pd) { if (pd.playing != null) g.players = pd.playing; if (pd.name) g.rawName = pd.name; if (pd.rootPlaceId) g.rootPlaceId = pd.rootPlaceId; } // rawName = nama asli Roblox (+emoji/tag) utk visual video
+    // GENRE RESMI menggantikan tebakan-dari-nama untuk genre struktural, dan
+    // `anime` dari tebakan dipertahankan karena Roblox tak punya genre itu
+    // padahal bagi pembaca kita ia penanda paling berarti.
+    //
+    // Tebakan lama buruk dan itu terukur (6 Agu 2026, 100 game teratas): 54 tak
+    // menghasilkan genre sama sekali, dan yang menghasilkan kerap salah —
+    // Rivals "sports" padahal Shooter, Anime Expeditions "anime" padahal Tower
+    // Defense. Datanya sudah ikut di respons yang sama dengan jumlah pemain;
+    // selama ini dibuang.
+    if (pd?.l1) {
+      const resmi = genreDariRoblox(pd.l1, pd.l2);
+      if (resmi.length) {
+        const anime = (g.genres ?? []).includes("anime") ? ["anime"] : [];
+        g.genres = [...new Set([...resmi, ...anime])];
+        g.genreSrc = "roblox";
+      }
+    }
   }
 
   // ── PROBE DESKRIPSI (mencatat saja, tak menyentuh situs) ──────────────────

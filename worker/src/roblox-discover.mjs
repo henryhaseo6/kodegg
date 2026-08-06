@@ -163,6 +163,60 @@ function bestTokenMatch(name, slugIndex) {
 
 // Tebak genre dari nama/slug (heuristik ringan) supaya game hasil discovery tetap
 // punya genre untuk filter hub. Konservatif — hanya kategori yang jelas.
+/**
+ * Genre RESMI dari Roblox → kosakata genre situs kita.
+ *
+ * KENAPA. `inferGenres` di bawah menebak genre dari NAMA game, dan tebakan itu
+ * buruk: diukur 6 Agu 2026 atas 100 game teratas, 54 tak menghasilkan genre sama
+ * sekali, dan yang menghasilkan kerap meleset — Rivals ditebak "sports" padahal
+ * Shooter › Deathmatch, Anime Expeditions ditebak "anime" padahal Strategy ›
+ * Tower Defense.
+ *
+ * Sementara itu `games.roblox.com/v1/games` — yang SUDAH kita panggil tiap jam
+ * untuk jumlah pemain — memulangkan `genre_l1`/`genre_l2`, taksonomi dua tingkat
+ * bikinan Roblox sendiri. Kita membayar tarikannya lalu membuang jawabannya.
+ *
+ * Kosakatanya dikumpulkan dari data, bukan dikarang: 250 game teratas
+ * menghasilkan 14 nilai genre_l1, semuanya tertutup di bawah.
+ *
+ * `anime` sengaja TIDAK ada di sini: Roblox tak punya genre itu, padahal bagi
+ * pembaca kita ia penanda yang paling berarti. Tag itu tetap datang dari
+ * inferGenres dan digabung, bukan digantikan.
+ */
+const RBX_L1 = {
+  "Simulation": "simulator",
+  "Action": "fighting",
+  "Survival": "survival",
+  "RPG": "rpg",
+  "Roleplay & Avatar Sim": "roleplay",
+  "Sports & Racing": "sports",
+  "Strategy": "strategy",
+  "Shooter": "shooter",
+  "Adventure": "adventure",
+  "Party & Casual": "casual",
+  "Obby & Platformer": "obby",
+  "Shopping": "casual",
+  "Social": "casual",
+  "Entertainment": "casual",
+};
+// Sub-genre yang memberi keterangan LEBIH TEPAT daripada induknya.
+const RBX_L2 = {
+  "Tower Defense": "td",
+  "Open World Action": "adventure",
+  "Tycoon": "simulator",
+  "Pet Care": "roleplay",
+};
+
+/** @returns {string[]} kunci genre situs, dari genre resmi Roblox. */
+export function genreDariRoblox(l1, l2) {
+  const out = [];
+  const a = RBX_L1[String(l1 ?? "").trim()];
+  if (a) out.push(a);
+  const b = RBX_L2[String(l2 ?? "").trim()];
+  if (b) out.push(b);
+  return [...new Set(out)];
+}
+
 export function inferGenres(name, slug = "") {
   const s = `${name} ${slug}`.toLowerCase();
   const g = [];

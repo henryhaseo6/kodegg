@@ -125,7 +125,10 @@ export async function loadRobloxHome(limit = 8) {
 }
 
 // Label genre Roblox (istilah game, sama ID/EN) untuk kartu.
-const RBX_GENRE = { anime: "Anime", rpg: "RPG", sports: "Sports", fighting: "Fighting", td: "Tower Defense", simulator: "Simulator", adventure: "Adventure", survival: "Survival", casual: "Casual", roleplay: "Roleplay", moba: "MOBA", horror: "Horror" };
+// `shooter`, `strategy`, dan `obby` masuk sejak genre diambil dari taksonomi
+// resmi Roblox (genre_l1/genre_l2) alih-alih ditebak dari nama game — tiga kunci
+// itu memang ada di sana dan sebelumnya tak punya padanan di sini.
+const RBX_GENRE = { anime: "Anime", rpg: "RPG", sports: "Sports", fighting: "Fighting", td: "Tower Defense", simulator: "Simulator", adventure: "Adventure", survival: "Survival", casual: "Casual", roleplay: "Roleplay", moba: "MOBA", horror: "Horror", shooter: "Shooter", strategy: "Strategy", obby: "Obby" };
 function rbxGenreLabel(key) {
   if (!key) return "";
   return RBX_GENRE[key] ?? key.charAt(0).toUpperCase() + key.slice(1);
