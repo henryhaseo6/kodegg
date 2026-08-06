@@ -573,15 +573,13 @@ async function main() {
   // pernah kita lihat pada game-game ini BUKAN kode baru — cuma kejar-tayang
   // sumber kedua (umurnya bisa berbulan-bulan). Lihat pemakaian di `newly`.
   const denBackfill = new Set();
-  // Game ramai: halaman Den ditarik TIAP RUN, abaikan gerbang <lastmod>.
-  //
-  // Alasannya terukur (probe 4 Agu 2026, 69 sampel): sitemap Den terbit dalam
-  // BATCH yang tertunda — entri paling segar pun berumur 168 menit, p10 928
-  // menit. Akibatnya kode Den-saja baru kita lihat median 403 menit (6,7 jam)
-  // setelah stempelnya bergerak. Itu cacat struktural di sisi mereka, tak bisa
-  // diperbaiki dari sini; satu-satunya cara memangkasnya adalah berhenti
-  // menggerbangi. Bandingkan RoCodes: median 35 menit, hanya 2% lewat 2 jam.
-  const DEN_ALWAYS_MIN = Number(process.env.DEN_ALWAYS_MIN_PLAYERS || 5000);
+  // Catatan yang tetap berlaku: sitemap Den terbit dalam BATCH yang tertunda
+  // (probe 4 Agu 2026, 69 sampel — entri paling segar pun berumur 168 menit,
+  // p10 928 menit), sehingga kode Den-saja dulu baru terlihat median 403 menit
+  // setelah stempelnya bergerak. Itu cacat di sisi mereka dan tak bisa
+  // diperbaiki dari sini. Dulu jawabannya "buka gerbang untuk game ramai";
+  // sekarang rotasi di bawah yang menanggungnya, untuk KEDUA sumber, karena
+  // stempel RoCodes ternyata tak lebih baik — ia malah hampir tak pernah maju.
   // ── ROTASI TERTUA-DULUAN ───────────────────────────────────────────────────
   // Menggantikan "langit-langit kebasian + jatah", yang KELAPARAN, bukan antre.
   //
@@ -630,62 +628,62 @@ async function main() {
     }
     return s;
   };
-  const denRotasi = buatRotasi(
-    (id, e) => e.denSlug && (e.players ?? 0) > 0 && (e.players ?? 0) < DEN_ALWAYS_MIN && Number(prevGamesMap[id]?.denAt ?? 0) > 0,
-    (id) => prevGamesMap[id]?.denAt,
-    Number(process.env.DEN_TARGET_JAM || 6),
+  // TINGKATAN SERAGAM UNTUK KEDUA PRIMER.
+  //
+  // Sebelumnya keduanya diperlakukan berbeda: Den punya jalur selalu-tarik untuk
+  // game ≥5.000 pemain, RoCodes tidak punya sama sekali. Pembenarannya dulu
+  // adalah anggapan bahwa stempel RoCodes cukup jujur untuk menggantikan jalur
+  // itu. Anggapan itu gugur hari ini (6 Agu 2026): stempel RoCodes untuk game
+  // ≥50K pemain berumur p50 502 jam — 21 hari — dan untuk 5K-10K, NOL persen
+  // yang lebih muda dari 6 jam. Pemercepat itu nyaris tak pernah menyala.
+  //
+  // Dan memang tak seharusnya ada yang diistimewakan: keduanya sumber PRIMER
+  // yang saling melengkapi, bukan utama dan cadangan. Masing-masing meliput game
+  // yang tak ada di sebelahnya (75 game hanya di Den, 50 hanya di RoCodes), jadi
+  // sumber yang ditarik lebih jarang bukan "cadangan yang tertinggal" — ia satu-
+  // satunya mata untuk sebagian katalog. Memberinya siklus lebih lambat berarti
+  // membutakan bagian itu, bukan menghemat.
+  const RAMAI_MIN = Number(process.env.ROTASI_RAMAI_MIN || 5000);
+  const TARGET_RAMAI = Number(process.env.ROTASI_TARGET_RAMAI || 1);
+  const TARGET_BIASA = Number(process.env.ROTASI_TARGET_JAM || 6);
+  const rotasiSumber = (label, layak, stempel) =>
+    new Set([
+      ...buatRotasi((id, e) => layak(id, e) && (e.players ?? 0) >= RAMAI_MIN, stempel, TARGET_RAMAI, `${label}-ramai`),
+      ...buatRotasi((id, e) => layak(id, e) && (e.players ?? 0) < RAMAI_MIN, stempel, TARGET_BIASA, label),
+    ]);
+
+  const denRotasi = rotasiSumber(
     "den",
+    (id, e) => e.denSlug && (e.players ?? 0) > 0 && Number(prevGamesMap[id]?.denAt ?? 0) > 0,
+    (id) => prevGamesMap[id]?.denAt,
   );
   const perluDen = (id, slug, players) => {
     if (!slug) return false;
-    if ((players ?? 0) >= DEN_ALWAYS_MIN) return true; // game ramai → jangan digerbangi
     // Pemain 0 → halaman Den ditarik supaya placeId-nya bisa dipakai memeriksa
     // ulang identitas (lihat "PERBAIKAN IDENTITAS"). Jumlahnya segelintir game.
     if (!(players > 0)) return true;
     const lm = denIndex.get(slug) ?? 0;
     const terakhir = Number(prevGamesMap[id]?.denAt ?? 0);
     if (!terakhir) { if (backfillSisa-- > 0) { denBackfill.add(id); return true; } return false; }
-    if (lm > terakhir) return true; // sitemap bilang halamannya berubah
-    // LANGIT-LANGIT KEBASIAN. <lastmod> Den adalah PETUNJUK, bukan jaminan:
-    // isi halaman bisa berubah tanpa stempelnya ikut maju. Terlihat 6 Agu 2026
-    // pada Knockout (2.018 pemain, di bawah ambang selalu-tarik): Den sudah
-    // memindahkan "Farm" ke expired, tapi denAt kita beku di 13:01 selama 8 run
-    // berturut-turut — vonis itu tak pernah sampai, dan kode mati sejak Juli
-    // tetap tampil aktif.
-    //
-    // 18 jam dipilih dari sebaran nyata: 246 game basi 12–18 jam tapi hanya 5
-    // yang lewat 18 jam, jadi sitemap memang menyegarkan mayoritas dalam siklus
-    // itu — yang bocor cuma ekornya. Jatah per run dibatasi supaya saat ambang
-    // ini pertama kali menyala, ratusan game tak ditarik sekaligus.
+    // <lastmod> = PEMERCEPAT, bukan penentu. Stempel Den petunjuk yang lemah:
+    // isi halaman bisa berubah tanpa ia ikut maju (Knockout 6 Agu 2026 — "Farm"
+    // sudah dipindah ke expired, denAt kita beku 8 run berturut-turut, vonisnya
+    // tak pernah sampai dan kode mati sejak Juli tetap tampil aktif). Jadi ia
+    // hanya boleh MEMPERCEPAT giliran, tak pernah menggantikannya.
+    if (lm > terakhir) return true;
     if (denRotasi.has(id)) return true;
     return false;
   };
-  // RoCodes KINI DIGERBANGI. Dulu 427 halaman ditarik tiap jam tanpa syarat =
-  // 10.248 permintaan/hari. Stempel RoCodes terbukti jujur (median 35 menit basi
-  // saat kode muncul, 2% lewat 2 jam), jadi gerbang ini hampir tak berbiaya
-  // kecepatan — sementara hematnya dipakai untuk MEMBUKA Den di game ramai.
-  // Rotasi RoCodes, jatahnya terpisah dari Den. Game yang belum pernah ditarik
-  // atau slug-nya tak ada di sitemap SENGAJA di luar rotasi: keduanya ditangani
-  // lebih dulu di perluRo, dan memasukkannya ke antrean hanya akan membuat
-  // slug mati (75 per 6 Agu 2026) memakan jatah tiap jam tanpa hasil.
-  // ROTASI ROCODES BERTINGKAT. Den punya jalur selalu-tarik untuk game ramai;
-  // RoCodes tidak, dan pemercepat <lastmod> tak bisa menggantikannya — diukur
-  // 6 Agu 2026, stempel RoCodes untuk game ≥50K pemain berumur p50 502 jam (21
-  // hari), dan hanya 7% yang lebih muda dari 6 jam. Artinya pemercepat itu
-  // praktis tak pernah menyala di sini dan rotasi adalah SATU-SATUNYA mekanisme.
-  //
-  // (Ini tak membantah temuan lama bahwa stempel RoCodes "jujur": yang diukur
-  // dulu adalah jeda antara stempel BERGERAK dan kode muncul — bukan seberapa
-  // sering ia bergerak. Dua hal berbeda, dan yang kedua yang menentukan di sini.)
-  //
-  // Game ramai dapat sasaran lebih ketat karena merekalah yang dibaca orang, dan
-  // ongkosnya kecil: 66 game pada sasaran 2 jam cuma menambah ~22 tarikan/run.
-  const roLayak = (id, e) => e.rocodesSlug && roIndexSlug.has(e.rocodesSlug) && Number(prevGamesMap[id]?.roAt ?? 0) > 0;
-  const RO_RAMAI = Number(process.env.RO_RAMAI_MIN || 10000);
-  const roRotasi = new Set([
-    ...buatRotasi((id, e) => roLayak(id, e) && (e.players ?? 0) >= RO_RAMAI, (id) => prevGamesMap[id]?.roAt, Number(process.env.RO_TARGET_RAMAI || 2), "rocodes-ramai"),
-    ...buatRotasi((id, e) => roLayak(id, e) && (e.players ?? 0) < RO_RAMAI, (id) => prevGamesMap[id]?.roAt, Number(process.env.RO_TARGET_JAM || 6), "rocodes"),
-  ]);
+  // Rotasi RoCodes — aturan, ambang, dan sasaran PERSIS sama dengan Den.
+  // Game yang belum pernah ditarik atau slug-nya tak ada di sitemap sengaja di
+  // luar antrean: keduanya sudah ditangani lebih dulu di perluRo, dan
+  // memasukkannya hanya akan membuat slug mati (75 per 6 Agu 2026) memakan jatah
+  // tiap jam tanpa hasil.
+  const roRotasi = rotasiSumber(
+    "rocodes",
+    (id, e) => e.rocodesSlug && roIndexSlug.has(e.rocodesSlug) && Number(prevGamesMap[id]?.roAt ?? 0) > 0,
+    (id) => prevGamesMap[id]?.roAt,
+  );
   const perluRo = (id, slug) => {
     if (!slug) return false;
     const terakhir = Number(prevGamesMap[id]?.roAt ?? 0);
