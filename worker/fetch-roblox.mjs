@@ -24,6 +24,8 @@ import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
 import { scoutDen } from "./src/den-scout.mjs";
 import { scoutRoCodes } from "./src/rocodes-scout.mjs";
+import { sapuIdentitas, petaUid, petaPlace, sambungUlang } from "./src/uid-map.mjs";
+import { deteksiMiss } from "./src/miss-detector.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
 import { fetchRoCodesIndex } from "./src/roblox-discover.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
@@ -437,6 +439,51 @@ async function main() {
     if (cocok) { e.denSlug = cocok; ditambal++; }
   }
   if (ditambal) console.log(`denSlug ditambal utk ${ditambal} game (slug ada di sitemap Den tapi belum terhubung)`);
+
+  // ─── PETA IDENTITAS & PENYAMBUNGAN ULANG ───────────────────────────────────
+  // Penambalan di atas bekerja lewat TEBAKAN NAMA, dan itu terbukti tak cukup:
+  // diukur 6 Agu 2026, 75 dari 491 game (15%) menembak halaman RoCodes yang
+  // sudah tak ada — Murderers VS Sheriffs (85.326 pemain), Tower of Hell — dan
+  // pencocokan nama cuma menemukan 2 dari 12 teratas, KEDUANYA game yang salah.
+  // Ditambah 50 game yang tak pernah punya slug Den, seperempat katalog
+  // bersumber tunggal: kalau sumber satu-satunya telat, kita ikut telat dan tak
+  // ada pembanding yang memberitahu.
+  //
+  // Yang dipakai di sini identitas, bukan nama. Sapuan mencatat universeId tiap
+  // slug sumber (RoCodes menyediakannya langsung; Den lewat placeId), lalu
+  // ikatan yang putus disambung dengan mencarinya balik. Lihat src/uid-map.mjs.
+  const UIDRO = resolve(dirname(OUT), "rocodes-uid.json");
+  const UIDDEN = resolve(dirname(OUT), "den-uid.json");
+  let uidRo = {}, uidDen = {};
+  try { uidRo = JSON.parse(await readFile(UIDRO, "utf8")); } catch { /* pertama kali */ }
+  try { uidDen = JSON.parse(await readFile(UIDDEN, "utf8")); } catch { /* pertama kali */ }
+
+  try {
+    const r = await sapuIdentitas({
+      idx: roIndexSlug, memo: uidRo, jatah: Number(process.env.RO_UID_PER_RUN || 60), label: "rocodes",
+      baca: async (slug) => { const x = await fetchRoCodes(slug); return { uid: Number(x.meta?.universeId) || null, place: Number(x.meta?.placeId) || null }; },
+    });
+    uidRo = r.memoBaru;
+    await writeFile(UIDRO, JSON.stringify(uidRo, null, 1));
+  } catch (e) { console.log(`[uid-map rocodes] dilewati: ${e.message}`); }
+
+  try {
+    const r = await sapuIdentitas({
+      idx: denIndex, memo: uidDen, jatah: Number(process.env.DEN_UID_PER_RUN || 40), label: "den",
+      baca: async (slug) => { const x = await fetchRobloxDen(slug); return { uid: null, place: Number(x.meta?.placeId) || null }; },
+    });
+    uidDen = r.memoBaru;
+    await writeFile(UIDDEN, JSON.stringify(uidDen, null, 1));
+  } catch (e) { console.log(`[uid-map den] dilewati: ${e.message}`); }
+
+  {
+    const ro = sambungUlang(set, roIndexSlug, petaUid(uidRo), "rocodesSlug", (e) => e.universeId);
+    const den = sambungUlang(set, denIndex, petaPlace(uidDen), "denSlug", (e) => e.placeId);
+    for (const s of [...ro.sambung, ...den.sambung]) {
+      console.log(`  ↻ ${s.nama}: ${s.lama ?? "(belum ada)"} → ${s.baru}`);
+    }
+    console.log(`[sambung] RoCodes ${ro.sambung.length}/${ro.putus} putus tersambung · Den ${den.sambung.length}/${den.putus}`);
+  }
 
   const slugDipantau = new Set([...set.values()].map((e) => e.denSlug).filter(Boolean));
   const { tambah, memoBaru } = await scoutDen(denIndex, slugDipantau, memo);
@@ -1089,6 +1136,28 @@ async function main() {
     promo,
   };
   await writeFile(OUT, JSON.stringify(payload, null, 2));
+
+  // ── DETEKTOR MISS (lapor saja) ───────────────────────────────────────────
+  // Menjawab "apakah ada kode yang kelewat?" dengan pengukuran, bukan
+  // penalaran. Dua kesimpulan yang ditarik dari penalaran pada 6 Agu 2026
+  // ternyata dua-duanya salah, dan tak ada apa pun di pipeline ini yang bisa
+  // membantahnya saat itu. Lihat src/miss-detector.mjs.
+  if (process.env.MISS_OFF !== "1") {
+    try {
+      const punyaAktif = new Map(), punyaArsip = new Map();
+      const isi = (peta, arr) => { for (const c of arr) { let s = peta.get(c.game); if (!s) peta.set(c.game, (s = new Set())); s.add(String(c.code ?? "").toLowerCase()); } };
+      isi(punyaAktif, active); isi(punyaArsip, archive);
+      await deteksiMiss({
+        set,
+        milik: (gid) => ({ aktif: punyaAktif.get(gid) ?? new Set(), arsip: punyaArsip.get(gid) ?? new Set() }),
+        jumlah: Number(process.env.MISS_SAMPLE || 8),
+        sumber: [
+          { field: "rocodesSlug", nama: "ro", ambil: fetchRoCodes },
+          { field: "denSlug", nama: "den", ambil: fetchRobloxDen },
+        ],
+      });
+    } catch (e) { console.log(`[miss] dilewati: ${e.message}`); }
+  }
 
   // ── AUDIT IDENTITAS (lapor saja) ─────────────────────────────────────────
   // Celah yang paling berbahaya karena DIAM: universeId salah yang menunjuk game
