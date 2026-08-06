@@ -250,9 +250,21 @@ function mergeCodes(perSource) {
   // yakin mati") — yang jauh lebih tegas — tak memunculkan apa pun. Pembaca
   // melihatnya sebagai kode aktif biasa.
   //
-  // Terukur 6 Agu 2026 lewat audit-kode: Heavyweight Fishing punya 26 kode yang
-  // RoCodes daftarkan aktif sementara Roblox Den sudah mengarsipkannya, dan
-  // seluruhnya tampil tanpa peringatan. Ditemukan pada run PERTAMA audit itu.
+  // JANGKAUANNYA SEMPIT, dan itu perlu disebut supaya tak disangka lebih besar.
+  // Kode yang muncul di daftar aktif satu sumber DAN daftar expired sumber lain
+  // hampir selalu langsung diarsipkan oleh `olehPrimer` di bawah, jadi tak
+  // pernah sampai tampil. Yang tersisa untuk penanda ini cuma satu keadaan:
+  // kode BERTANGGAL <48 jam, yang dilindungi grace dari semua vonis expiry.
+  // Di situlah ia berguna — kode yang baru saja terbit tapi sudah dinyatakan
+  // mati oleh salah satu sumber tetap tampil (karena grace) dan sekarang tampil
+  // DENGAN peringatan, bukan sebagai kode aktif biasa.
+  //
+  // Catatan koreksi: penanda ini semula dipasang atas dugaan bahwa 26 kode
+  // Heavyweight Fishing adalah perselisihan sumber. Ternyata bukan — kode-kode
+  // itu berumur 37 hari dan tak terlindung grace, sehingga kalau Den memang
+  // sudah mengarsipkannya saat kita menarik, `olehPrimer` pasti ikut
+  // mengarsipkannya. Yang terjadi cuma Den mengarsipkannya SETELAH tarikan
+  // terakhir kita. Itu jadwal, bukan aturan yang salah.
   const matiMenurutSalahSatu = new Set(archive.map((c) => String(c.code).toLowerCase()));
   for (const c of active) {
     if (matiMenurutSalahSatu.has(String(c.code).toLowerCase())) c.srcCheck = true;
@@ -1339,13 +1351,15 @@ async function main() {
       const punyaAktif = new Map(), punyaArsip = new Map();
       for (const c of active) { let m = punyaAktif.get(c.game); if (!m) punyaAktif.set(c.game, (m = new Map())); m.set(String(c.code ?? "").toLowerCase(), c); }
       for (const c of archive) { let s = punyaArsip.get(c.game); if (!s) punyaArsip.set(c.game, (s = new Set())); s.add(String(c.code ?? "").toLowerCase()); }
+      // Stempel tarikan PER SUMBER — audit menilai selisih memakai umur sumber
+      // yang membuat klaimnya, bukan yang terbaru di antara keduanya.
       const ditarik = (gid) => {
         const g = mergedGames[gid] ?? {};
-        return Math.max(Number(g.denAt) || 0, Number(g.roAt) || 0);
+        return { ro: Number(g.roAt) || 0, den: Number(g.denAt) || 0 };
       };
       await deteksiMiss({
         set,
-        milik: (gid) => ({ aktif: punyaAktif.get(gid) ?? new Map(), arsip: punyaArsip.get(gid) ?? new Set(), ditarikMs: ditarik(gid) }),
+        milik: (gid) => ({ aktif: punyaAktif.get(gid) ?? new Map(), arsip: punyaArsip.get(gid) ?? new Set(), ditarik: ditarik(gid) }),
         jumlah: Number(process.env.MISS_SAMPLE || 8),
         sumber: [
           { field: "rocodesSlug", nama: "ro", ambil: fetchRoCodes },

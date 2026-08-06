@@ -57,8 +57,6 @@ export async function deteksiMiss({ set, milik, sumber, jumlah = 8, jeda = 300 }
 
   for (const [gid, e] of pilih) {
     const punya = milik(gid);
-    const umurJam = punya.ditarikMs ? (Date.now() - punya.ditarikMs) / JAM : Infinity;
-    const masihSegar = umurJam <= 2;
     let terbaca = false;
 
     for (const s of sumber) {
@@ -67,6 +65,15 @@ export async function deteksiMiss({ set, milik, sumber, jumlah = 8, jeda = 300 }
       let r;
       try { r = await s.ambil(slug); } catch { continue; }
       terbaca = true;
+      // UMUR DIAMBIL DARI SUMBER YANG MEMBUAT KLAIMNYA, bukan yang terbaru di
+      // antara keduanya. Versi pertama audit ini memakai max(denAt, roAt), dan
+      // langsung salah menuduh: Heavyweight Fishing punya roAt 0,8 jam tapi
+      // denAt 4,8 jam, sehingga 26 selisih yang murni jadwal Den dilaporkan
+      // sebagai "data masih segar" alias bug. Audit yang menuduh keliru lebih
+      // buruk daripada tak ada audit — sekali orang tahu laporannya bisa salah,
+      // laporan benar berikutnya ikut diabaikan.
+      const umurJam = punya.ditarik?.[s.nama] ? (Date.now() - punya.ditarik[s.nama]) / JAM : Infinity;
+      const masihSegar = umurJam <= 2;
 
       for (const c of r.active ?? []) {
         const k = String(c.code ?? "").toLowerCase();
