@@ -582,9 +582,50 @@ async function main() {
   // diperbaiki dari sini; satu-satunya cara memangkasnya adalah berhenti
   // menggerbangi. Bandingkan RoCodes: median 35 menit, hanya 2% lewat 2 jam.
   const DEN_ALWAYS_MIN = Number(process.env.DEN_ALWAYS_MIN_PLAYERS || 5000);
-  // Langit-langit kebasian data Den (lihat alasannya di perluDen).
-  const DEN_MAX_STALE_MS = Number(process.env.DEN_MAX_STALE_JAM || 18) * 3600 * 1000;
-  let basiSisa = Number(process.env.DEN_STALE_MAX || 25); // jatah tarikan basi per run
+  // ── ROTASI TERTUA-DULUAN ───────────────────────────────────────────────────
+  // Menggantikan "langit-langit kebasian + jatah", yang KELAPARAN, bukan antre.
+  //
+  // Aturan lama: tarik bila data lebih tua dari N jam, maksimal Q per run —
+  // dievaluasi mengikuti urutan katalog. Urutan katalog itu STABIL, jadi begitu
+  // sekelompok besar game melewati ambang bersamaan (dan mereka memang selalu
+  // bersamaan, karena ditarik dalam batch yang sama sehingga kedaluwarsa
+  // serentak), jatah selalu dimenangkan game yang sama. Yang kalah akan kalah
+  // lagi run berikutnya, dan lagi. Bukan menunggu giliran — tak pernah dapat.
+  //
+  // Terukur 6 Agu 2026: jatah 40+25 sebenarnya CUKUP untuk siklus 12 jam (butuh
+  // 35+26), tapi jarak tarikan nyata TR Legacy 23 jam dan RoCodes menggantung
+  // 48 jam. Akibatnya bukan sekadar lambat: halaman kita memajang vonis yang
+  // sumbernya sudah cabut — Roblox Den menghidupkan lagi IDONTGETPAID dan
+  // TY41KLIKES, kita masih menyebutnya expired.
+  //
+  // Aturan baru: tiap run tarik Q game yang datanya PALING TUA. Tak ada ambang,
+  // jadi jatah selalu terpakai penuh; tak ada urutan stabil, jadi tak ada yang
+  // bisa kalah dua kali berturut-turut. Batas terburuknya jadi aritmetika biasa
+  // dan bisa dijanjikan: jumlah ÷ jatah run.
+  //
+  // Q dipilih untuk sasaran ~6 jam (316÷6≈53, 411÷6≈69). <lastmod> tetap dipakai
+  // di atas ini sebagai PEMERCEPAT — bila stempel maju, tarik sekarang juga
+  // tanpa menunggu giliran.
+  const buatRotasi = (layak, stempel, jatah, label) => {
+    const antre = entries
+      .filter(([id, e]) => layak(id, e))
+      .map(([id]) => [id, Number(stempel(id)) || 0])
+      .sort((a, b) => a[1] - b[1]);
+    const pilih = antre.slice(0, Math.max(0, jatah));
+    const s = new Set(pilih.map(([id]) => id));
+    if (antre.length) {
+      const tuaJam = (Date.now() - antre[0][1]) / 3600000;
+      const siklus = jatah > 0 ? (antre.length / jatah).toFixed(1) : "∞";
+      console.log(`[rotasi ${label}] ${s.size} ditarik dari ${antre.length} antre · tertua ${tuaJam.toFixed(1)} jam · siklus penuh ~${siklus} jam`);
+    }
+    return s;
+  };
+  const denRotasi = buatRotasi(
+    (id, e) => e.denSlug && (e.players ?? 0) > 0 && (e.players ?? 0) < DEN_ALWAYS_MIN && Number(prevGamesMap[id]?.denAt ?? 0) > 0,
+    (id) => prevGamesMap[id]?.denAt,
+    Number(process.env.DEN_ROTASI || 55),
+    "den",
+  );
   const perluDen = (id, slug, players) => {
     if (!slug) return false;
     if ((players ?? 0) >= DEN_ALWAYS_MIN) return true; // game ramai → jangan digerbangi
@@ -606,16 +647,23 @@ async function main() {
     // yang lewat 18 jam, jadi sitemap memang menyegarkan mayoritas dalam siklus
     // itu — yang bocor cuma ekornya. Jatah per run dibatasi supaya saat ambang
     // ini pertama kali menyala, ratusan game tak ditarik sekaligus.
-    if (basiSisa > 0 && Date.now() - terakhir > DEN_MAX_STALE_MS) { basiSisa--; return true; }
+    if (denRotasi.has(id)) return true;
     return false;
   };
   // RoCodes KINI DIGERBANGI. Dulu 427 halaman ditarik tiap jam tanpa syarat =
   // 10.248 permintaan/hari. Stempel RoCodes terbukti jujur (median 35 menit basi
   // saat kode muncul, 2% lewat 2 jam), jadi gerbang ini hampir tak berbiaya
   // kecepatan — sementara hematnya dipakai untuk MEMBUKA Den di game ramai.
-  // Langit-langit kebasian RoCodes, jatahnya terpisah dari Den.
-  const RO_MAX_STALE_MS = Number(process.env.RO_MAX_STALE_JAM || 12) * 3600 * 1000;
-  let roBasiSisa = Number(process.env.RO_STALE_MAX || 40);
+  // Rotasi RoCodes, jatahnya terpisah dari Den. Game yang belum pernah ditarik
+  // atau slug-nya tak ada di sitemap SENGAJA di luar rotasi: keduanya ditangani
+  // lebih dulu di perluRo, dan memasukkannya ke antrean hanya akan membuat
+  // slug mati (75 per 6 Agu 2026) memakan jatah tiap jam tanpa hasil.
+  const roRotasi = buatRotasi(
+    (id, e) => e.rocodesSlug && roIndexSlug.has(e.rocodesSlug) && Number(prevGamesMap[id]?.roAt ?? 0) > 0,
+    (id) => prevGamesMap[id]?.roAt,
+    Number(process.env.RO_ROTASI || 70),
+    "rocodes",
+  );
   const perluRo = (id, slug) => {
     if (!slug) return false;
     const terakhir = Number(prevGamesMap[id]?.roAt ?? 0);
@@ -638,7 +686,7 @@ async function main() {
     //
     // 12 jam dengan jatah 40/run: tiap halaman tersentuh minimal ~2x sehari,
     // biayanya ~40 permintaan/jam alih-alih 487 bila gerbang dilepas.
-    if (roBasiSisa > 0 && Date.now() - terakhir > RO_MAX_STALE_MS) { roBasiSisa--; return true; }
+    if (roRotasi.has(id)) return true;
     return false;
   };
   let denTarik = 0, denLewat = 0, roTarik = 0, roLewat = 0;
