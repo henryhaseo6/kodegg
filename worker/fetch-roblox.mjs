@@ -1203,18 +1203,21 @@ async function main() {
         const pd = g.universeId ? players[g.universeId] : null;
         if (pd?.description) deskripsi.set(g.universeId, { desc: pd.description, gid });
       }
-      const { memoBaru, baru } = catatDeskripsi({
+      const { memoBaru, baru, awal } = catatDeskripsi({
         deskripsi,
         kodeKita: (gid) => new Set((punyaSemua.get(gid) ?? new Map()).keys()),
         memo: memoD,
       });
       await writeFile(PROBE, JSON.stringify(memoBaru, null, 1));
-      // Sengaja disebut KANDIDAT, bukan kode. Ekstraksinya longgar (lihat
-      // desc-probe.mjs) sehingga sebagian besar kandidat memang bukan kode —
-      // menyebutnya "kode baru" di log akan membuat angka ini terbaca sebagai
-      // temuan, padahal penyaring sesungguhnya baru bekerja belakangan.
-      console.log(`[desc-probe] ${deskripsi.size} deskripsi dibaca · ${baru.length} kandidat baru dicatat (BUKAN klaim kode — menunggu pembuktian)`);
-      for (const b of baru.slice(0, 8)) console.log(`  ? ${b.code} — ${b.game}`);
+      // Sengaja disebut KANDIDAT, bukan kode: ekstraksinya tak menyaring bentuk
+      // sama sekali (lihat desc-probe.mjs), jadi mayoritasnya memang bukan kode.
+      // Menyebutnya "kode baru" akan membuat angka ini terbaca sebagai temuan,
+      // padahal pembuktiannya baru datang berminggu-minggu kemudian.
+      if (awal) console.log(`[desc-probe] GARIS DASAR dipasang dari ${deskripsi.size} deskripsi — semuanya dicap "sudah di sana", tak satu pun bisa jadi bukti`);
+      else {
+        console.log(`[desc-probe] ${deskripsi.size} deskripsi dibaca · ${baru.length} token BARU muncul (deskripsi disunting sejak run lalu)`);
+        for (const b of baru.slice(0, 8)) console.log(`  ? ${b.code} — ${b.game}`);
+      }
       laporanDeskripsi(memoBaru, (gid) => punyaSemua.get(gid) ?? new Map());
     } catch (e) { console.log(`[desc-probe] dilewati: ${e.message}`); }
   }
