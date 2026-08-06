@@ -1,16 +1,46 @@
 {
-  "generatedAt": "2026-08-06T09:00:55.954Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-08-06T10:01:07.209Z",
+  "codes": [
     {
-      "game": "scp-roleplay",
-      "count": 9,
-      "fresh": []
+      "game": "typesoul",
+      "gameName": "Type Soul",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/type-soul"
+      },
+      "code": "BalanceStage",
+      "reward": null,
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1785909941051,
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-06T10:01:07.209Z",
+      "fetchedAt": "2026-08-06T10:01:07.209Z"
     },
     {
-      "game": "24-hours-overnight",
-      "count": 2,
-      "fresh": []
+      "game": "typesoul",
+      "gameName": "Type Soul",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/type-soul"
+      },
+      "code": "TheSecretIsInUpdateLogs",
+      "reward": null,
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1785909941051,
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-06T10:01:07.209Z",
+      "fetchedAt": "2026-08-06T10:01:07.209Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
