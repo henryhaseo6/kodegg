@@ -430,6 +430,19 @@ function buildBacklog(state, batas) {
       players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
       iconPath: resolve(ASSETS_ROBLOX, `${id}.png`), rank: g.players ?? 0,
       newCodes: [], activeCount: active.length, fetchedAt: new Date().toISOString(),
+      // allCodes WAJIB diisi di sini. Penanda "sudah divideokan" ditulis lewat:
+      //   for (const code of c.allCodes ?? c.newCodes.map(n => n.code)) tandaiPosted(...)
+      // dan item borongan lahir dengan newCodes: [] — jadi tanpa allCodes, loop
+      // itu tak pernah berjalan sekali pun dan video borongan TIDAK MENINGGALKAN
+      // JEJAK APA PUN. Game-nya tetap "belum pernah ada videonya" selamanya.
+      //
+      // Satu-satunya hal lain yang mengeluarkannya dari antrean adalah punya
+      // playlist — padahal pembuatan playlist dibatasi ~10/hari oleh YouTube
+      // sementara borongan menembak sampai 15. Sisanya diunggah ulang tiap hari.
+      // Terbukti 6 Agu 2026: dua run berjarak 25 menit menghasilkan 5 video
+      // duplikat (A Dusty Trip, Build A Boat For Treasure, My Avatar, Realistic
+      // Street Soccer, Tower Defense Simulator).
+      allCodes: active.map((c) => c.code),
       allMode: true, backlog: true,
       displayCodes: tandaiBaru(pickDisplay([], urut), active),
       descCodes: tandaiBaru(pickDisplay([], urut, false, DESC_MAX), active),
