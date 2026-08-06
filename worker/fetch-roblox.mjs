@@ -911,7 +911,29 @@ async function main() {
         continue;
       }
       if (verified) nVer += 1;
-      fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true } : {}) }));
+      // srcCheck = SUMBER PRIMER menandai kode ini CHECK ("kami ragu ini masih
+      // jalan"). Dipisahkan dari `check` di atas dengan sengaja, karena keduanya
+      // menjawab pertanyaan berbeda dan dipakai di tempat berbeda:
+      //
+      //   check     → ikut jadi bahan KEPUTUSAN ARSIP (konflikRagu, terlaluTua,
+      //               mandek). Syarat !verified-nya TIDAK boleh dilonggarkan:
+      //               `mandek` bersandar pada fakta bahwa kode ber-check tak
+      //               punya sumber lain yang membelanya, dan melonggarkannya
+      //               akan mengarsipkan kode yang RoCodes masih daftarkan aktif.
+      //   srcCheck  → murni untuk TAMPILAN, dan tak pernah dibungkam.
+      //
+      // Kenapa perlu: kartu memilih badge dengan `verified ? Verified : check ?
+      // CEK DULU`, sementara `check` sendiri mensyaratkan !verified — jadi kode
+      // yang Den ragukan TAPI juga dilisting RoCodes tampil "Verified" hijau,
+      // klaim kepercayaan paling kuat di halaman, justru saat salah satu sumber
+      // menyatakan ragu. Diukur 6 Agu 2026: 4% kode dua-sumber pada 12 game
+      // teratas (≈120 kode se-situs), mis. TR Legacy "WEHIT25KLIKES" dan
+      // "LETSGO20KLIKES" — Den CHECK, kita cetak Verified.
+      //
+      // Cross-check menghitung berapa SUMBER yang mendaftarkan sebuah kode,
+      // bukan berapa yang meyakininya. Suara ragu tak boleh terbaca sebagai
+      // suara setuju.
+      fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true } : {}), ...(c.check === true ? { srcCheck: true } : {}) }));
     }
     const roActive = new Set(fActive.map((c) => c.code.toLowerCase()));
     const edSrc = bySite.filter((s) => [...s.set].some((c) => roActive.has(c))).map((s) => s.name);

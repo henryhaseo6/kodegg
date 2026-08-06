@@ -218,7 +218,11 @@ export async function loadRobloxGame(slug) {
     rootPlaceId: g.rootPlaceId ?? null,
     players: g.players ?? 0, // pemain konkuren (realtime, refresh hourly)
     crossCheck: Array.isArray(g.crossCheck) ? g.crossCheck : [], // situs editorial pengonfirmasi
-    verifiedCount: active.filter((c) => c.verified).length,
+    // Kode yang sumbernya menandai CHECK tak dihitung, walau ia lolos
+    // cross-check: chip ini berdiri di kepala halaman sebagai janji, dan
+    // menghitung kode yang salah satu sumbernya ragukan membuat janji itu
+    // lebih besar dari buktinya. Kartunya sendiri sudah menampilkan CEK DULU.
+    verifiedCount: active.filter((c) => c.verified && !c.srcCheck).length,
     howTo: Array.isArray(g.howTo) ? g.howTo : [],
     // Syarat redeem (mis. RIVALS wajib follow developer-nya dulu). Bilingual
     // {en,id} dari registry manual worker/src/roblox-games.mjs.
@@ -256,7 +260,10 @@ export async function loadRobloxThisWeek(hari = 7) {
   const batas = NOW_MS - hari * 24 * 3600 * 1000;
   const per = new Map();
   for (const c of raw.active ?? []) {
-    if (c.check) continue;
+    // srcCheck ikut disaring: halaman ini memajang kode sebagai temuan terbaik
+    // minggu ini, dan kode yang salah satu sumbernya ragukan tak layak berdiri
+    // di sana — walau ia lolos cross-check.
+    if (c.check || c.srcCheck) continue;
     const ms = Date.parse(c.date ?? "") || 0;
     if (!ms || ms < batas) continue;
     const g = games[c.game];

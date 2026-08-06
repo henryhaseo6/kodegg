@@ -142,14 +142,16 @@ if (card.perm) {
         </span>
       )}
       {
-        card.verified ? (
-          /* Verified = kode ini juga dilisting AKTIF oleh situs editorial (cross-check).
-             Badge hijau TERISI + centang → sinyal kepercayaan tertinggi. */
-          <span style="display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ink); background:var(--ok); border:1px solid var(--ok); padding:4px 9px; border-radius:8px;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-            Verified
-          </span>
-        ) : card.check ? (
+        /* URUTANNYA: KERAGUAN DULU, BARU KEPERCAYAAN.
+           Dulu `verified` diperiksa lebih dahulu, dan karena `check` di worker
+           mensyaratkan !verified, kode yang Roblox Den tandai CHECK tapi juga
+           dilisting RoCodes tampil "Verified" hijau — klaim terkuat di halaman,
+           justru saat salah satu sumber menyatakan ragu. Diukur 6 Agu 2026: 4%
+           kode dua-sumber (≈120 se-situs), mis. TR Legacy "WEHIT25KLIKES".
+           Cross-check menghitung berapa sumber MENDAFTARKAN sebuah kode, bukan
+           berapa yang MEYAKININYA. Tak ada informasi yang hilang karena badan
+           kartu tetap menampilkan kedua nama sumbernya. */
+        card.check || card.srcCheck ? (
           /* CHECK = sumber (Roblox Den) menandai kode AKTIF tapi belum
              dikonfirmasi-ulang works. Bukan expired → badge kuning "CEK DULU":
              visitor coba dulu, jangan berharap terlalu tinggi. */
@@ -159,6 +161,13 @@ if (card.perm) {
           >
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3" /><path d="M12 17h.01" /></svg>
             {tr("card.check")}
+          </span>
+        ) : card.verified ? (
+          /* Verified = kode ini juga dilisting AKTIF oleh situs editorial (cross-check).
+             Badge hijau TERISI + centang → sinyal kepercayaan tertinggi. */
+          <span style="display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ink); background:var(--ok); border:1px solid var(--ok); padding:4px 9px; border-radius:8px;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+            Verified
           </span>
         ) : !card.isNew ? (
           <span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--ok); background:rgba(55,227,139,0.14); border:1px solid rgba(55,227,139,0.3); padding:4px 9px; border-radius:8px;">
