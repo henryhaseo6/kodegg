@@ -809,7 +809,17 @@ async function main() {
           // memeriksa halamannya lagi, jadi ia bukan bukti "baru hari ini" —
           // halaman yang terakhir dicek seminggu lalu tetap memajang NEW CODE.
           const lm = denIndex.get(slug) ?? 0;
-          if (lm > 0) for (const c of [...(r.active ?? []), ...(r.archive ?? [])]) if (c.srcNew) c.srcNewAt = lm;
+          // Umur penanda "NEW CODE" diambil dari stempel "Last checked" di
+          // HALAMANNYA, bukan dari <lastmod> sitemap. Keduanya dulu dianggap
+          // identik; diukur ulang 6 Agu 2026 ternyata sitemap SELALU jauh lebih
+          // tua — type-soul 27,1 jam · shindo-life 27,7 · blox-fruits 16,8 ·
+          // tr-legacy 15,7. Karena umur badge diambil dari yang paling tua
+          // antara stempel ini dan waktu kita menemukannya, selisih itu
+          // menghapus badge BARU dari kode yang benar-benar baru: Type Soul
+          // "BalanceStage" terhitung 28,8 jam pada hari ia muncul. Sitemap kini
+          // cuma cadangan bila stempel halaman tak terbaca.
+          const cek = Number(r.meta?.lastChecked) || lm;
+          if (cek > 0) for (const c of [...(r.active ?? []), ...(r.archive ?? [])]) if (c.srcNew) c.srcNewAt = cek;
           denAt = Math.max(lm, Date.now());
           denTarik++;
         }

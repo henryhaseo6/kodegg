@@ -50,6 +50,47 @@ function parseDenNotice(html) {
   return { en, links, kind: /\bmust\b|\brequired?\b|\bneed to\b/i.test(en) ? "syarat" : "catatan" };
 }
 
+/**
+ * Stempel "Last checked for codes" dari HALAMANNYA, bukan dari sitemap.
+ *
+ * KENAPA PENTING. Penanda "NEW CODE" Den menempel berhari-hari, jadi ia tak bisa
+ * dibaca sebagai "baru hari ini" — yang menentukan adalah KAPAN Den terakhir
+ * memeriksa halaman itu. Selama ini nilai tersebut diambil dari <lastmod>
+ * sitemap, atas dasar catatan lama bahwa keduanya "terbukti identik sampai ke
+ * menit" (dicek 2 Agu 2026).
+ *
+ * ITU TAK BERLAKU LAGI, dan akibatnya menghapus badge BARU dari kode yang
+ * benar-benar baru. Type Soul, 6 Agu 2026: halaman menyatakan "Last checked:
+ * Today at 09:12AM (08/06/2026)" sementara sitemap-nya masih 05 Agu 06:05 —
+ * beda 27 jam. Karena umur badge diambil dari yang PALING TUA antara stempel
+ * ini dan waktu kita menemukannya, BalanceStage dan TheSecretIsInUpdateLogs
+ * terhitung berumur 28,8 jam dan gugur dari jendela 24 jam — padahal keduanya
+ * muncul hari itu juga, dan videonya sendiri menyebutnya [NEW].
+ *
+ * Sumbernya kini stempel halaman; sitemap tinggal cadangan. Itu juga lebih
+ * masuk akal secara sebab-akibat: sitemap Den terbit berkelompok dan tertunda
+ * (probe 4 Agu 2026: p10 basi 928 menit), sedangkan stempel ini ditulis oleh
+ * proses yang benar-benar memeriksa halamannya.
+ *
+ * @returns {number|null} epoch ms, atau null bila tak terbaca
+ */
+export function parseDenLastChecked(html) {
+  // <span class="game-codes__lc-date">at 09:12AM<span ...> (08/06/2026)</span>
+  const m = /game-codes__lc-date"[^>]*>\s*at\s*(\d{1,2}):(\d{2})\s*(AM|PM)[\s\S]{0,120}?\((\d{2})\/(\d{2})\/(\d{4})\)/i.exec(html);
+  if (!m) return null;
+  let jam = Number(m[1]) % 12;
+  if (/PM/i.test(m[3])) jam += 12;
+  const [, , , , bulan, tgl, tahun] = m;
+  // Zona waktu Den tak dinyatakan di halaman. Diperlakukan sebagai UTC — kalau
+  // meleset, melesetnya paling jauh beberapa jam dan SELALU ke arah yang sama,
+  // sementara galat yang diperbaiki di sini berukuran 27 jam.
+  const t = Date.parse(`${tahun}-${bulan}-${tgl}T${String(jam).padStart(2, "0")}:${m[2]}:00Z`);
+  if (!Number.isFinite(t)) return null;
+  // Stempel di masa depan berarti salah baca (atau beda zona waktu) — jangan
+  // dipakai, karena stempel masa depan membuat kode BARU selamanya.
+  return t > Date.now() + 6 * 3600 * 1000 ? null : t;
+}
+
 // Cara redeem spesifik Roblox Den: paragraf di section "How to Use/Claim Codes
 // in X" (prosa). Batas = section "About" berikutnya.
 //
@@ -142,7 +183,7 @@ export async function fetchRobloxDen(slug) {
 
   const tm = html.match(/<title>(?:Roblox\s+)?([^<]+?)\s+Codes\b/i);
   const pm = html.match(/roblox\.com\/games\/(\d+)/);
-  const meta = { name: tm ? clean(tm[1]) : null, placeId: pm ? Number(pm[1]) : null, howTo: parseDenHowTo(html), notice: parseDenNotice(html) };
+  const meta = { name: tm ? clean(tm[1]) : null, placeId: pm ? Number(pm[1]) : null, howTo: parseDenHowTo(html), notice: parseDenNotice(html), lastChecked: parseDenLastChecked(html) };
   if (active.length === 0 && archive.length === 0) throw new Error("0 kode terparse");
   return { active, archive, meta };
 }
