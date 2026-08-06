@@ -40,7 +40,26 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // unit, jadi langit-langitnya naik dari 46 ke ~58 video/hari. Diambil 52, bukan
 // 58: angka 163,6 masih turunan dari pengukuran hari-ber-thumbnail, jadi
 // sisakan ruang sampai konsol Google memberi angka baru yang bersih besok.
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 52);
+// 52 → 65 (6 Agu 2026), sesudah konsol Google memperlihatkan DUA kuota terpisah
+// yang selama ini tercampur dalam satu angka di kepala:
+//
+//   Video Uploads per day = 100  → puncak pemakaian kita 54%. Kuota KERAS, dan
+//                                  bukan ini yang mengikat. Plafon mutlak 100.
+//   Queries per day = 10.000     → puncak 100%. INILAH yang mengikat.
+//
+// Dengan biaya 163,6 unit/video (sesudah thumbnails.set dihentikan untuk Shorts)
+// plafon unitnya 10.000/163,6 = 61 video, dikurangi 2 video dari workflow
+// terpisah yang tak terhitung `todayCount` → 59. Playlist kini SEPENUHNYA manual
+// (VIDEO_SKIP_PLAYLIST=1), jadi playlists.insert dan playlistItems.insert tak
+// lagi dibayar dari kuota — itu yang memberi ruang di atas 59.
+//
+// Diambil 65, bukan lebih tinggi, karena 163,6 masih ANGKA TURUNAN dari
+// pengukuran hari-ber-thumbnail; belum ada pembacaan konsol yang bersih untuk
+// hari tanpa thumbnail DAN tanpa playlist. Naikkan lagi hanya setelah konsol
+// memberi angka nyata — bukan setelah sehari berjalan tanpa galat, karena
+// kegagalan kuota muncul sebagai upload yang ditolak SETELAH render, bukan
+// sebagai galat yang mencolok.
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 65);
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
