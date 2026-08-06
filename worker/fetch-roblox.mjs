@@ -589,6 +589,19 @@ async function main() {
     if (t) prevSeen.set(`${c.game}:${String(c.code).toLowerCase()}`, t);
   }
 
+  // KAPAN KERAGUAN SEBUAH KODE DIMULAI. Wajib disimpan sendiri karena yang
+  // dinilai aturan "keraguan mandek" adalah usia KERAGUANNYA, bukan usia
+  // kodenya — dan keduanya bisa berbeda jauh. Tanpa ini, kode berumur 90 hari
+  // yang BARU HARI INI diragukan langsung terarsip tanpa pernah kebagian
+  // tenggang sama sekali. Diukur 6 Agu 2026: memakai usia kode akan
+  // mengarsipkan 359 kode sekaligus, 343 di antaranya masih didaftarkan aktif
+  // oleh KEDUA primer.
+  const prevCheckAt = new Map();
+  for (const c of prev.active ?? []) {
+    const t = Number(c.checkAt) || 0;
+    if (t) prevCheckAt.set(`${c.game}:${String(c.code).toLowerCase()}`, t);
+  }
+
   // Kode yang SUDAH kita arsipkan karena SUMBER PRIMER menyatakannya expired.
   // Dipakai menahan kebangkitan-oleh-keraguan (lihat `bangkitRagu` di bawah).
   const arsipPrimer = new Set(
@@ -961,19 +974,10 @@ async function main() {
     // dulu" (BUKAN expire): kemungkinan basi walau sumber lambat (mis. RoCodes)
     // masih daftarin aktif. Non-destruktif; verified selalu menang.
     const AGE_CHECK_MS = 180 * 24 * 3600 * 1000;
-    // SAPU USIA: kode ber-badge CEK DULU yang umurnya sudah lewat ambang ini
-    // dipindah ke arsip, bukan dibiarkan tampil "aktif dengan peringatan".
-    // Alasan: kode Roblox umumnya hidup mingguan-bulanan; yang bertahan setahun
-    // TANPA satu pun sumber kedua mengonfirmasi hampir pasti mati. Membiarkan
-    // 51% daftar aktif berisi kode yang kita sendiri ragukan membuat label
-    // "terverifikasi" kehilangan arti — dan itu jualan utama situs ini.
-    // Pengaman: `check` mensyaratkan !verified (kode yang 2 sumber bilang aktif
-    // tak tersentuh), kode `perm` dikecualikan, dan arsip tetap terlihat pembaca.
-    const AGE_EXPIRE_MS = Number(process.env.AGE_EXPIRE_DAYS || 365) * 24 * 3600 * 1000;
-    // Ambang "CEK DULU mandek" — jauh lebih pendek dari AGE_EXPIRE karena yang
-    // dinilai bukan usia kodenya, melainkan berapa lama keraguan itu dibiarkan
-    // menggantung tanpa ada sumber yang mengonfirmasi.
-    const CHECK_STALE_MS = Number(process.env.CHECK_STALE_DAYS || 14) * 24 * 3600 * 1000;
+    // Ambang "keraguan mandek": berapa lama sebuah kode boleh berdiri dengan
+    // badge CEK DULU tanpa ada satu pun sumber yang mengonfirmasinya. Yang
+    // dinilai BUKAN usia kodenya, melainkan usia keraguannya.
+    const CHECK_STALE_MS = Number(process.env.CHECK_STALE_DAYS || 7) * 24 * 3600 * 1000;
     const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
     // mk() merakit objek kode final dengan daftar field EKSPLISIT — apa pun yang
     // dihitung mergeCodes tapi tak disebut di sini akan hilang tanpa jejak.
@@ -999,7 +1003,30 @@ async function main() {
       // Badge "CEK DULU": sumber menandai CHECK, atau kode tua (>6 bln) yg tak
       // terverifikasi. Dihitung SEBELUM keputusan expiry karena ikut jadi bahan
       // pertimbangannya (lihat konflikRagu).
-      const check = !verified && (c.check === true || oldUnverified);
+      // ── LIMA JALUR KERAGUAN (badge CEK DULU) ─────────────────────────────
+      // Disepakati 6 Agu 2026. Prinsipnya: KEKUATAN REAKSI SEPADAN DENGAN
+      // OTORITAS SUMBERNYA. RoCodes & Den situs kode khusus dengan umpan balik
+      // pembaca (tombol Works/Doesn't work) → vonis matinya MENGARSIPKAN.
+      // Situs editorial content farm dengan jadwal redaksi sendiri → vonis
+      // matinya hanya MERAGUKAN. Terukur: untuk Knockout, levelupplay bilang 31
+      // aktif / 2 expired sementara Den 5 aktif / 36 expired.
+      //
+      //  1. Den menandai CHECK — satu-satunya primer yang punya status itu
+      //  2. cuma satu suara & umur >180 hari — "setahun kami bawa, tak satu pun
+      //     sumber kedua mengonfirmasi" adalah bukti yang setara
+      //  3. dibantah editorial yang menyatakannya expired — BARU. Sebelumnya
+      //     ini langsung MENGARSIPKAN (451 kode, 2,4% arsip); satu suara
+      //     sekunder tak sepadan untuk membunuh kode yang primer masih nyatakan
+      //     hidup, tapi sepadan untuk memperingatkan.
+      //  4. pernah diarsipkan lalu bangkit — BARU. "Pernah mati" itu informasi,
+      //     dan Den terbukti membolak-balik vonisnya (IDONTGETPAID, TY41KLIKES,
+      //     BONUS_SHELLS pada 6 Agu 2026). Sebelumnya kode bangkit kembali tanpa
+      //     jejak apa pun.
+      //  (5. perselisihan antar-primer SENGAJA tak di sini — itu mengarsipkan,
+      //      lihat olehPrimer. Keduanya sumber sekelas.)
+      const pernahMatiPrimer = arsipPrimer.has(`${id}:${key}`);
+      const raguEditorial = xExpired.has(key) && !xset.has(key);
+      const check = c.check === true || (!verified && oldUnverified) || raguEditorial || pernahMatiPrimer;
       // KEBANGKITAN OLEH KERAGUAN — ditolak.
       //
       // Kode yang sudah kita arsipkan atas vonis primer bisa muncul lagi di
@@ -1019,36 +1046,50 @@ async function main() {
       // batal begitu ada satu sumber mendaftarkannya tanpa ragu). Jadi syarat ini
       // tak pernah menahan kode yang benar-benar dihidupkan lagi oleh sumber mana
       // pun — ia hanya menolak kebangkitan yang tak punya satu pun suara yakin.
-      const bangkitRagu = check && arsipPrimer.has(`${id}:${key}`);
+      // ── EMPAT ATURAN ARSIP ───────────────────────────────────────────────
+      // Dari enam jadi empat. Yang dibuang: `editorial` sebagai arsip LANGSUNG
+      // (turun jadi keraguan — lihat jalur 3 di atas), `editorial-konflik`
+      // (redundan begitu bantahan editorial jadi keraguan), dan `usia` >365 hari
+      // — yang terakhir ternyata BUKAN aturan melainkan LABEL: kode ber-check
+      // yang lewat ambang mandek selalu memenuhinya lebih dulu, dan `usia` cuma
+      // menyalip namanya saat umur kodenya kebetulan >365 hari.
+      //
+      // Ringkasnya: PRIMER MEMBUNUH · SEKUNDER MERAGUKAN · KERAGUAN MATI 7 HARI.
+
+      // Kembali ke daftar aktif dengan sinyal RAGU saja tak menghidupkan kode
+      // yang sudah kita vonis mati: tooltip Den sendiri menerangkan CHECK
+      // sebagai "this code has likely expired". Kalau ia kembali lewat
+      // pendaftaran YAKIN, kodenya hidup lagi — tapi tetap membawa badge CEK
+      // DULU lewat `pernahMatiPrimer` di atas, karena "pernah mati" itu
+      // informasi yang pembaca berhak tahu.
+      const bangkitRagu = c.check === true && pernahMatiPrimer;
       const olehPrimer = primExpired.has(key) || bangkitRagu;
-      const olehEditorial = xExpired.has(key) && !xset.has(key);
-      // KONFLIK editorial: sebagian bilang expired, sebagian bilang aktif.
-      // Biasanya suara "aktif" menyelamatkan kode. TAPI kalau kode itu memang
-      // SUDAH kita ragukan (CEK DULU — tua & tak terverifikasi, atau ditandai
-      // CHECK oleh sumber), keraguan + perselisihan sudah cukup untuk
-      // mengarsipkan. Kode terverifikasi tak tersentuh: `check` mensyaratkan
-      // !verified, jadi kode yang 2 sumber bilang aktif tetap aman.
-      const konflikRagu = xExpired.has(key) && xset.has(key) && check;
-      const terlaluTua = check && !c.perm && umurMs > 0 && nowMs - umurMs > AGE_EXPIRE_MS;
-      // CEK DULU yang MANDEK: ditandai ragu dan tak ada satu pun sumber yang
-      // mengonfirmasinya setelah CHECK_STALE_MS. Diukur 3 Agu 2026: 1.537 kode
-      // (19% katalog) berstatus CEK DULU, 858 sudah >7 hari, dan sepanjang
-      // sejarah hanya 88 yang pernah lepas dari status itu — jadi menunggu lebih
-      // lama praktis tak mengubah apa pun. Tak satu pun dari mereka `verified`
-      // atau terdaftar di >1 sumber, jadi tak ada bukti yang ikut terbuang.
-      // Keputusan user: sapu semua yang lewat ambang, termasuk game besar yang
-      // liputan editorialnya nihil (mis. Murder Mystery 2) — konsekuensinya
-      // diterima demi katalog yang lebih bersih. Arsip TIDAK menghapus: kodenya
-      // tetap terlihat pembaca di tab arsip.
-      const mandek = check && !c.perm && umurMs > 0 && nowMs - umurMs > CHECK_STALE_MS;
-      const votedExpired = olehPrimer || olehEditorial || konflikRagu || terlaluTua || mandek;
-      if (endsPassed || (votedExpired && !isFresh)) {
+      // KERAGUAN YANG MANDEK: ditandai ragu dan tak satu pun sumber
+      // mengonfirmasinya setelah CHECK_STALE_MS — 7 hari (keputusan user 6 Agu
+      // 2026, sebelumnya 14). Alasannya: kodenya sudah diragukan sejak awal,
+      // menahannya lebih lama cuma menumpuk. Diukur 3 Agu 2026: dari 1.537 kode
+      // ber-CEK DULU sepanjang sejarah, hanya 88 yang pernah lepas dari status
+      // itu — menunggu lebih lama praktis tak mengubah apa pun.
+      // Arsip TIDAK menghapus: kodenya tetap terlihat pembaca di tab arsip.
+      // checkAt = kapan keraguan ini MULAI. Diwarisi dari run sebelumnya; kalau
+      // kode baru diragukan run ini, jamnya sekarang — jadi tenggang 7 harinya
+      // benar-benar 7 hari sejak diragukan, bukan sejak kodenya terbit.
+      const checkAt = check ? (prevCheckAt.get(`${id}:${key}`) || nowMs) : 0;
+      const mandek = check && !c.perm && checkAt > 0 && nowMs - checkAt > CHECK_STALE_MS;
+
+      // GRACE 48 JAM TIDAK MELINDUNGI DARI VONIS PRIMER (keputusan user).
+      // Grace ada untuk melindungi kode yang baru terbit dari sumber yang BELUM
+      // MENYUSUL — sedangkan vonis "expired" yang eksplisit justru bentuk
+      // menyusul, bukan tertinggal. Memakainya di situ berarti menahan vonis
+      // yang sudah tiba. endsAt menembus grace sejak awal dengan alasan lebih
+      // kuat lagi: kodenya sendiri yang menyatakan batas waktunya.
+      if (endsPassed || olehPrimer || (mandek && !isFresh)) {
         // expiredBy = ALASAN kode ini diarsipkan. Tanpa jejak ini, kode yang
         // hilang dari daftar aktif tak bisa dipertanggungjawabkan: tak ada cara
         // membedakan kode yang memang habis waktunya dari kode yang dibunuh satu
         // situs editorial yang parsing-nya rusak. Penting terutama saat cakupan
         // sumber berubah (mis. gelombang arsip dari Roblox Den).
-        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : olehEditorial ? "editorial" : konflikRagu ? "editorial-konflik" : mandek && !terlaluTua ? "cek-mandek" : "usia";
+        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : "cek-mandek";
         archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt, expiredBy }));
         continue;
       }
@@ -1075,7 +1116,7 @@ async function main() {
       // Cross-check menghitung berapa SUMBER yang mendaftarkan sebuah kode,
       // bukan berapa yang meyakininya. Suara ragu tak boleh terbaca sebagai
       // suara setuju.
-      fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true } : {}), ...(c.srcCheck === true ? { srcCheck: true } : {}) }));
+      fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true, checkAt } : {}), ...(c.srcCheck === true ? { srcCheck: true } : {}) }));
     }
     const roActive = new Set(fActive.map((c) => c.code.toLowerCase()));
     const edSrc = bySite.filter((s) => [...s.set].some((c) => roActive.has(c))).map((s) => s.name);
