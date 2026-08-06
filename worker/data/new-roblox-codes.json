@@ -1,26 +1,24 @@
 {
-  "generatedAt": "2026-08-06T02:01:09.319Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-08-06T03:01:04.507Z",
+  "codes": [
     {
-      "game": "disaster-island",
-      "count": 5,
-      "fresh": []
-    },
-    {
-      "game": "pokemon-brick-bronze-roria-conquest-1skh",
-      "count": 10,
-      "fresh": []
-    },
-    {
-      "game": "build-a-plane",
-      "count": 1,
-      "fresh": []
-    },
-    {
-      "game": "demonfall",
-      "count": 5,
-      "fresh": []
+      "game": "catch-a-monster",
+      "gameName": "Catch a Monster",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/catch-a-monster"
+      },
+      "code": "pzyglor",
+      "reward": null,
+      "date": "2026-08-05T14:26:23.981Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-06T03:01:04.507Z",
+      "fetchedAt": "2026-08-06T03:01:04.507Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }

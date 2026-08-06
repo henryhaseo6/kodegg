@@ -1,9 +1,7 @@
 {
   "date": "2026-08-05",
-  "todayCount": 29,
+  "todayCount": 30,
   "posted": {
-    "nikki:AAuYEKevUdN": true,
-    "nikki:AAuu6Kdqpah": true,
     "nikki:AAuxHNv8eFA": true,
     "volleyballlegends:ENCHO_NERF": true,
     "volleyballlegends:UPDATE_80": true,
@@ -4001,9 +3999,19 @@
     "player-select:Spider": true,
     "player-select:3MILLY": true,
     "player-select:TheBig5K": true,
-    "player-select:COLD": true
+    "player-select:COLD": true,
+    "catch-a-monster:pzyglor": true,
+    "catch-a-monster:voidluna": true
   },
   "log": [
+    {
+      "at": "2026-08-06T03:02:03.580Z",
+      "game": "catch-a-monster",
+      "name": "Catch a Monster",
+      "videoId": "cMTV-aYA5P4",
+      "title": "Catch a Monster Codes (August 2026) 🎁 Kode Terbaru Update 6 Agustus 2026 — KodeGG",
+      "mode": "upload"
+    },
     {
       "at": "2026-08-06T01:02:08.020Z",
       "game": "player-select",
@@ -6443,15 +6451,6 @@
       "mode": "manual",
       "alasan": "upload gagal",
       "file": "2026-07-28-sxs.mp4"
-    },
-    {
-      "at": "2026-07-28T12:50:44.565Z",
-      "game": "zzz",
-      "name": "Zenless Zone Zero",
-      "title": "Zenless Zone Zero Codes (July 2026) 🎁 Kode Terbaru Update 28 Juli 2026 — KodeGG",
-      "mode": "manual",
-      "alasan": "upload gagal",
-      "file": "2026-07-28-zzz.mp4"
     }
   ],
   "promoMonth": "2026-08"
