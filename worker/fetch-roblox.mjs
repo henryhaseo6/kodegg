@@ -561,6 +561,14 @@ async function main() {
     if (t) prevSeen.set(`${c.game}:${String(c.code).toLowerCase()}`, t);
   }
 
+  // Kode yang SUDAH kita arsipkan karena SUMBER PRIMER menyatakannya expired.
+  // Dipakai menahan kebangkitan-oleh-keraguan (lihat `bangkitRagu` di bawah).
+  const arsipPrimer = new Set(
+    (prev.archive ?? [])
+      .filter((c) => c.expiredBy === "primer")
+      .map((c) => `${c.game}:${String(c.code).toLowerCase()}`),
+  );
+
   const denPunya = {}, roPunya = {};
   for (const [kunci, arr] of [["active", prev.active ?? []], ["archive", prev.archive ?? []]]) {
     for (const c of arr) {
@@ -964,7 +972,27 @@ async function main() {
       // terverifikasi. Dihitung SEBELUM keputusan expiry karena ikut jadi bahan
       // pertimbangannya (lihat konflikRagu).
       const check = !verified && (c.check === true || oldUnverified);
-      const olehPrimer = primExpired.has(key);
+      // KEBANGKITAN OLEH KERAGUAN — ditolak.
+      //
+      // Kode yang sudah kita arsipkan atas vonis primer bisa muncul lagi di
+      // daftar aktif sumber, dan pipeline dengan patuh menghidupkannya kembali.
+      // Itu benar kalau sumbernya mendaftarkannya dengan yakin. Yang salah:
+      // menghidupkannya saat satu-satunya sinyal adalah CHECK — dan tooltip Den
+      // sendiri menerangkan CHECK sebagai "This code has likely expired but
+      // other sources are reporting it as active". Jadi kode mati dihidupkan
+      // memakai sinyal yang isinya justru menyatakan kode itu mati.
+      //
+      // Terjadi 6 Agu 2026 pada Volleyball Legends: BONUS_SHELLS dan
+      // DELAY_LEGENDS terarsip `primer` belasan run berturut-turut, lalu di run
+      // 07:00 kembali AKTIF/check — sementara halaman Den saat itu juga tetap
+      // memajang keduanya EXPIRED.
+      //
+      // `check` di sini berarti SEMUA sumber ragu (lihat mergeCodes: keraguan
+      // batal begitu ada satu sumber mendaftarkannya tanpa ragu). Jadi syarat ini
+      // tak pernah menahan kode yang benar-benar dihidupkan lagi oleh sumber mana
+      // pun — ia hanya menolak kebangkitan yang tak punya satu pun suara yakin.
+      const bangkitRagu = check && arsipPrimer.has(`${id}:${key}`);
+      const olehPrimer = primExpired.has(key) || bangkitRagu;
       const olehEditorial = xExpired.has(key) && !xset.has(key);
       // KONFLIK editorial: sebagian bilang expired, sebagian bilang aktif.
       // Biasanya suara "aktif" menyelamatkan kode. TAPI kalau kode itu memang
