@@ -552,13 +552,33 @@ async function main() {
   // 10.248 permintaan/hari. Stempel RoCodes terbukti jujur (median 35 menit basi
   // saat kode muncul, 2% lewat 2 jam), jadi gerbang ini hampir tak berbiaya
   // kecepatan — sementara hematnya dipakai untuk MEMBUKA Den di game ramai.
+  // Langit-langit kebasian RoCodes, jatahnya terpisah dari Den.
+  const RO_MAX_STALE_MS = Number(process.env.RO_MAX_STALE_JAM || 12) * 3600 * 1000;
+  let roBasiSisa = Number(process.env.RO_STALE_MAX || 40);
   const perluRo = (id, slug) => {
     if (!slug) return false;
     const terakhir = Number(prevGamesMap[id]?.roAt ?? 0);
     if (!terakhir) return true; // belum pernah ditarik → wajib
     const lm = roIndexSlug.get(slug) ?? 0;
     if (!lm) return true; // slug tak ada di sitemap → jangan diam-diam berhenti menariknya
-    return lm > terakhir;
+    if (lm > terakhir) return true;
+    // STEMPEL ROCODES TERNYATA TAK LEBIH JUJUR DARI DEN. Dasar gerbang ini dulu
+    // adalah anggapan stempelnya andal, jadi ia dipasang paling ketat: cuma 2
+    // tarikan/jam dari 487 game, dan umur data rata-rata 46,6 jam.
+    //
+    // Dibantah 6 Agu 2026 oleh Player Select: kode "Spider" (rilis 5 Agu) ada di
+    // RoCodes lengkap dengan tanggalnya, tapi <lastmod> slug itu tetap 14:20
+    // sementara kita sudah menarik pukul 15:01 — jadi gerbang menyimpulkan "tak
+    // ada perubahan" dan kodenya hanya masuk lewat Den, TANPA tanggal rilis.
+    //
+    // Kerugiannya lebih besar daripada di Den, karena RoCodes satu-satunya
+    // sumber tanggal rilis kita — dan tanggal itulah yang menggerakkan badge
+    // BARU, urutan "terbaru", jalur video kode-baru, dan halaman "minggu ini".
+    //
+    // 12 jam dengan jatah 40/run: tiap halaman tersentuh minimal ~2x sehari,
+    // biayanya ~40 permintaan/jam alih-alih 487 bila gerbang dilepas.
+    if (roBasiSisa > 0 && Date.now() - terakhir > RO_MAX_STALE_MS) { roBasiSisa--; return true; }
+    return false;
   };
   let denTarik = 0, denLewat = 0, roTarik = 0, roLewat = 0;
   const namaBerubah = []; // jejak perubahan nama game (lihat pemakaian di bawah)
