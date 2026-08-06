@@ -521,6 +521,9 @@ async function main() {
   // diperbaiki dari sini; satu-satunya cara memangkasnya adalah berhenti
   // menggerbangi. Bandingkan RoCodes: median 35 menit, hanya 2% lewat 2 jam.
   const DEN_ALWAYS_MIN = Number(process.env.DEN_ALWAYS_MIN_PLAYERS || 5000);
+  // Langit-langit kebasian data Den (lihat alasannya di perluDen).
+  const DEN_MAX_STALE_MS = Number(process.env.DEN_MAX_STALE_JAM || 18) * 3600 * 1000;
+  let basiSisa = Number(process.env.DEN_STALE_MAX || 25); // jatah tarikan basi per run
   const perluDen = (id, slug, players) => {
     if (!slug) return false;
     if ((players ?? 0) >= DEN_ALWAYS_MIN) return true; // game ramai → jangan digerbangi
@@ -530,7 +533,20 @@ async function main() {
     const lm = denIndex.get(slug) ?? 0;
     const terakhir = Number(prevGamesMap[id]?.denAt ?? 0);
     if (!terakhir) { if (backfillSisa-- > 0) { denBackfill.add(id); return true; } return false; }
-    return lm > terakhir; // hanya bila halamannya memang berubah
+    if (lm > terakhir) return true; // sitemap bilang halamannya berubah
+    // LANGIT-LANGIT KEBASIAN. <lastmod> Den adalah PETUNJUK, bukan jaminan:
+    // isi halaman bisa berubah tanpa stempelnya ikut maju. Terlihat 6 Agu 2026
+    // pada Knockout (2.018 pemain, di bawah ambang selalu-tarik): Den sudah
+    // memindahkan "Farm" ke expired, tapi denAt kita beku di 13:01 selama 8 run
+    // berturut-turut — vonis itu tak pernah sampai, dan kode mati sejak Juli
+    // tetap tampil aktif.
+    //
+    // 18 jam dipilih dari sebaran nyata: 246 game basi 12–18 jam tapi hanya 5
+    // yang lewat 18 jam, jadi sitemap memang menyegarkan mayoritas dalam siklus
+    // itu — yang bocor cuma ekornya. Jatah per run dibatasi supaya saat ambang
+    // ini pertama kali menyala, ratusan game tak ditarik sekaligus.
+    if (basiSisa > 0 && Date.now() - terakhir > DEN_MAX_STALE_MS) { basiSisa--; return true; }
+    return false;
   };
   // RoCodes KINI DIGERBANGI. Dulu 427 halaman ditarik tiap jam tanpa syarat =
   // 10.248 permintaan/hari. Stempel RoCodes terbukti jujur (median 35 menit basi
