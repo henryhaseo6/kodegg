@@ -506,7 +506,7 @@ async function main() {
 
   try {
     const r = await sapuIdentitas({
-      idx: roIndexSlug, memo: uidRo, jatah: Number(process.env.RO_UID_PER_RUN || 60), label: "rocodes",
+      idx: roIndexSlug, memo: uidRo, jatah: Number(process.env.RO_UID_PER_RUN || 110), label: "rocodes",
       baca: async (slug) => { const x = await fetchRoCodes(slug); return { uid: Number(x.meta?.universeId) || null, place: Number(x.meta?.placeId) || null }; },
     });
     uidRo = r.memoBaru;
@@ -515,7 +515,7 @@ async function main() {
 
   try {
     const r = await sapuIdentitas({
-      idx: denIndex, memo: uidDen, jatah: Number(process.env.DEN_UID_PER_RUN || 40), label: "den",
+      idx: denIndex, memo: uidDen, jatah: Number(process.env.DEN_UID_PER_RUN || 175), label: "den",
       baca: async (slug) => { const x = await fetchRobloxDen(slug); return { uid: null, place: Number(x.meta?.placeId) || null }; },
     });
     uidDen = r.memoBaru;

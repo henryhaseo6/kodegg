@@ -31,9 +31,26 @@
 // KONVERGENSI. Sapuan mendahulukan slug yang BELUM pernah dipetakan, bukan yang
 // lastmod-nya paling segar. Bedanya menentukan: penilaian berbasis kesegaran tak
 // pernah sampai ke ekor panjang, dan justru di situlah slug pindah bersembunyi —
-// halaman yang baru dipindah bisa saja membawa lastmod lama. Dengan jatah
-// 60/run, 3.121 slug RoCodes tersapu habis dalam ~2 hari, lalu biayanya turun
-// sendiri karena tinggal slug baru yang perlu dipetakan.
+// halaman yang baru dipindah bisa saja membawa lastmod lama.
+//
+// JATAHNYA SENGAJA BESAR (110 RoCodes + 175 Den) supaya sapuan awal kelar dalam
+// ~24 jam, bukan 2-4 hari. Selama seperempat katalog masih bersumber tunggal,
+// tiap jam yang lewat adalah jam saat sebagian game cuma punya satu mata.
+//
+// Angka itu AMAN karena sapuan ini sekali seumur hidup dan membatasi dirinya
+// sendiri: begitu peta penuh, yang tersisa cuma slug baru + pemetaan ulang
+// 30-harian — 7.559 slug / 30 hari ≈ 10 per run, berapa pun jatahnya. Jadi
+// jatah besar tak meninggalkan biaya permanen.
+//
+// Diukur sebelum dinaikkan: +3,6 menit per run (langkah tarik data 1,7 → 5,3
+// menit, 9% dari jendela satu jam), beban puncak 13.896 permintaan/hari selama
+// sehari — masih jauh di bawah 22.368/hari yang akan terjadi PERMANEN kalau
+// gerbangnya dilepas. Laju permintaannya sendiri tak pernah lebih dari ~1,3 per
+// detik karena tiap tarikan berjeda 300 ms.
+//
+// Catatan: jatah Den semula 40 karena halamannya terukur 2.420 ms dari mesin
+// pengembang. Dari jaringan runner ternyata 475 ms (40 halaman = 19 detik) —
+// ukuran pertama itu didominasi latensi jaringan sendiri, bukan server Den.
 
 const HARI = 24 * 3600 * 1000;
 // Petakan ulang sesekali: halaman bisa dipakai ulang untuk game lain, dan
