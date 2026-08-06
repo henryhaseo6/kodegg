@@ -72,8 +72,21 @@ export async function deteksiMiss({ set, milik, sumber, jumlah = 8, jeda = 300 }
       // sebagai "data masih segar" alias bug. Audit yang menuduh keliru lebih
       // buruk daripada tak ada audit — sekali orang tahu laporannya bisa salah,
       // laporan benar berikutnya ikut diabaikan.
-      const umurJam = punya.ditarik?.[s.nama] ? (Date.now() - punya.ditarik[s.nama]) / JAM : Infinity;
-      const masihSegar = umurJam <= 2;
+      const kitaTarik = punya.ditarik?.[s.nama] ?? 0;
+      const umurJam = kitaTarik ? (Date.now() - kitaTarik) / JAM : Infinity;
+      // SUMBER YANG MEMERIKSA ULANG SETELAH GILIRAN KITA TAK BISA DITUNTUT KE
+      // KITA. Kriteria "data kita masih segar" saja tidak cukup: Huss Valley,
+      // 6 Agu 2026 — kita menarik Den 09:02, Den memeriksa halamannya lagi
+      // 09:31, lalu menambahkan 1500LIKES. Data kita baru 1 jam, tapi kodenya
+      // memang belum ada saat kita datang. Audit melaporkannya sebagai kode
+      // kelewat, dan itu tuduhan yang salah.
+      //
+      // Roblox Den mencetak stempel "Last checked" di halamannya, jadi
+      // perbandingan ini bisa tepat. RoCodes tak punya padanannya — di sana
+      // hanya umur tarikan yang dipakai, dan batas 2 jam tetap berlaku.
+      const sumberCek = Number(r.meta?.lastChecked) || 0;
+      const sesudahKita = sumberCek > 0 && kitaTarik > 0 && sumberCek > kitaTarik;
+      const masihSegar = umurJam <= 2 && !sesudahKita;
 
       for (const c of r.active ?? []) {
         const k = String(c.code ?? "").toLowerCase();
