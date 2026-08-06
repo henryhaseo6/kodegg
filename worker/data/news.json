@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-06T07:00:42.200Z",
+  "updatedAt": "2026-08-06T08:00:51.753Z",
   "counts": {
-    "active": 108,
-    "archived": 53
+    "active": 107,
+    "archived": 54
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Snezhnaya Awaits\" Web Event-Exclusive Wallpapers Now Available",
+        "id": "Wallpaper Eksklusif Event Web \"Snezhnaya Menanti\" Sudah Hadir!"
+      },
+      "excerpt": {
+        "en": "Click to save the wallpaper~ Take part in the event to obtain Primogems >>",
+        "id": "Traveler bisa mengunduh wallpaper-nya~ Ikuti event-nya dan dapatkan Primogem >>"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/06/8e7a1ce11828df2672f50e88bfea1b50_601486849885990467.jpg",
+      "url": "https://www.hoyolab.com/article/46161970",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T08:00:06.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -372,22 +388,6 @@
       "url": "https://www.hoyolab.com/article/46120636",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-03T04:05:07.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.0 - Event Ode Legendary Cosmetics",
-        "id": "Version 7.0 - Event Ode Legendary Cosmetics"
-      },
-      "excerpt": {
-        "en": "★ Legendary Cosmetic | Whimsical Spectacle Master illusionists bent on \"deceiving the very stars\" once wore these formal costumes onto the most exalted stages, with gravitas and gr",
-        "id": "★ Legendary Cosmetic | Whimsical Spectacle Master illusionists bent on \"deceiving the very stars\" once wore these formal costumes onto the most exalted stages, with gravitas and gr"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/02/ff980348f63adc32f44cec7955d8e3d4_1314451015038853721.jpg",
-      "url": "https://www.hoyolab.com/article/46120587",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-03T04:00:05.000Z"
     },
     {
       "game": "zzz",
@@ -1716,7 +1716,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5011",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-07T09:26:12.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1731,10 +1733,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1783353600000/rw64wlr28vtt8nhq6d-1783409446716.png",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5009",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-07T07:39:51.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-07T07:39:51.000Z",
+      "archivedAt": "2026-08-06T08:00:51.753Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
