@@ -1,12 +1,7 @@
 {
   "date": "2026-08-05",
-  "todayCount": 30,
+  "todayCount": 31,
   "posted": {
-    "nikki:AAuxHNv8eFA": true,
-    "volleyballlegends:ENCHO_NERF": true,
-    "volleyballlegends:UPDATE_80": true,
-    "volleyballlegends:HIDARI_FINALLY": true,
-    "gakuran:QUICKPATCH": true,
     "anime-duelists:UPDATE3.5": true,
     "anime-duelists:3MVISITS": true,
     "fisch:HarpoonGunsNextWeek": true,
@@ -4001,9 +3996,22 @@
     "player-select:TheBig5K": true,
     "player-select:COLD": true,
     "catch-a-monster:pzyglor": true,
-    "catch-a-monster:voidluna": true
+    "catch-a-monster:voidluna": true,
+    "roll-anime-to-fight:SRYFORSHUTDOWN2!": true,
+    "roll-anime-to-fight:INFINITETOWER!": true,
+    "roll-anime-to-fight:SLAYERSISHERE!": true,
+    "roll-anime-to-fight:ADMINABUSE!": true,
+    "roll-anime-to-fight:BLEACHPART2!": true
   },
   "log": [
+    {
+      "at": "2026-08-06T05:02:39.561Z",
+      "game": "roll-anime-to-fight",
+      "name": "Roll Anime to Fight",
+      "videoId": "8FtPKQll5IM",
+      "title": "Roll Anime to Fight Codes (August 2026) 🎁 Kode Terbaru Update 6 Agustus 2026 — KodeGG",
+      "mode": "upload"
+    },
     {
       "at": "2026-08-06T03:02:03.580Z",
       "game": "catch-a-monster",
@@ -6442,15 +6450,6 @@
       "mode": "manual",
       "alasan": "upload gagal",
       "file": "2026-07-28-lineage-piece.mp4"
-    },
-    {
-      "at": "2026-07-28T13:02:30.244Z",
-      "game": "sxs",
-      "name": "Sword x Staff",
-      "title": "Sword x Staff Codes (July 2026) 🎁 Kode Terbaru Update 28 Juli 2026 — KodeGG",
-      "mode": "manual",
-      "alasan": "upload gagal",
-      "file": "2026-07-28-sxs.mp4"
     }
   ],
   "promoMonth": "2026-08"

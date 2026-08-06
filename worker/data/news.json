@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-06T04:01:00.063Z",
+  "updatedAt": "2026-08-06T05:00:55.483Z",
   "counts": {
     "active": 108,
     "archived": 53
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Version 7.0 \"Everwinter Without Mercy\" New Artifact Overview",
+        "id": "Penjelasan Artefak Baru Versi 7.0 \"Negeri Salju Tanpa Kasih\""
+      },
+      "excerpt": {
+        "en": "Hello, Traveler~! Today, Paimon wants to introduce you to the brand-new artifact sets that will be appearing in Version 7.0! Come on, let's take a look~",
+        "id": "Halo Traveler semua~ Hari ini Paimon mau kenalkan set Artefak baru yang akan hadir di v7.0. Ayo kita lihat bersama~"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/6fdd9e5551620782d640721ab7550a16_5256922080139038389.jpg",
+      "url": "https://www.hoyolab.com/article/46159967",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T04:05:07.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -452,22 +468,6 @@
       "url": "https://www.hoyolab.com/article/46106589",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-02T04:00:05.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Chronicles of the Land of Snow: A Civilization Tempered by the Cold",
-        "id": "Kronik Bangsa Salju: Peradaban yang Ditempa oleh Dingin"
-      },
-      "excerpt": {
-        "en": "This is a land where wind and snow never cease, and it is this very frozen expanse that forged the nation known as Snezhnaya. Tempered by the bitter cold, this nation has never cea",
-        "id": "Inilah tanah yang selalu diterpa angin dan salju. Hamparan beku inilah yang menempa bangsa bernama Snezhnaya. Bangsa yang ditempa oleh kerasnya dingin ini tak pernah berhenti melaw"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/31/0/f5352627c1471006409fa511f4ec32c9_7978221584749562767.jpeg",
-      "url": "https://www.hoyolab.com/article/46106588",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-02T04:00:04.000Z"
     },
     {
       "game": "zzz",
