@@ -606,24 +606,34 @@ async function main() {
   // Q dipilih untuk sasaran ~6 jam (316÷6≈53, 411÷6≈69). <lastmod> tetap dipakai
   // di atas ini sebagai PEMERCEPAT — bila stempel maju, tarik sekarang juga
   // tanpa menunggu giliran.
-  const buatRotasi = (layak, stempel, jatah, label) => {
+  // JATAH DIHITUNG DARI SASARAN, BUKAN ANGKA MATI. Jaminan rotasi ini adalah
+  // aritmetika `jumlah ÷ jatah`, jadi jatah tetap berarti jaminannya MEMUDAR
+  // diam-diam saat katalog tumbuh: 411 game ÷ 70 = 5,9 jam hari ini, tapi 1.000
+  // game ÷ 70 = 14,3 jam — tanpa satu pun galat atau perubahan setelan, cuma
+  // karena kita menambah game. Persis jenis pembusukan senyap yang sudah dua
+  // kali menggigit di sini (slug mati, kode Den lenyap saat sumber dilewati).
+  // Dengan jatah diturunkan dari sasaran, angka yang dijanjikan tetap sama dan
+  // yang menyesuaikan adalah ongkosnya — dan itu terlihat di log.
+  const TOPI = Number(process.env.ROTASI_MAX || 220); // pengaman ongkos per run
+  const buatRotasi = (layak, stempel, targetJam, label) => {
     const antre = entries
       .filter(([id, e]) => layak(id, e))
       .map(([id]) => [id, Number(stempel(id)) || 0])
       .sort((a, b) => a[1] - b[1]);
-    const pilih = antre.slice(0, Math.max(0, jatah));
-    const s = new Set(pilih.map(([id]) => id));
+    const jatah = Math.min(TOPI, Math.ceil(antre.length / Math.max(1, targetJam)));
+    const s = new Set(antre.slice(0, jatah).map(([id]) => id));
     if (antre.length) {
       const tuaJam = (Date.now() - antre[0][1]) / 3600000;
       const siklus = jatah > 0 ? (antre.length / jatah).toFixed(1) : "∞";
-      console.log(`[rotasi ${label}] ${s.size} ditarik dari ${antre.length} antre · tertua ${tuaJam.toFixed(1)} jam · siklus penuh ~${siklus} jam`);
+      const kena = jatah >= TOPI ? " [KENA TOPI — siklus melar dari sasaran]" : "";
+      console.log(`[rotasi ${label}] ${s.size}/${antre.length} ditarik · tertua ${tuaJam.toFixed(1)} jam · siklus ~${siklus} jam (sasaran ${targetJam})${kena}`);
     }
     return s;
   };
   const denRotasi = buatRotasi(
     (id, e) => e.denSlug && (e.players ?? 0) > 0 && (e.players ?? 0) < DEN_ALWAYS_MIN && Number(prevGamesMap[id]?.denAt ?? 0) > 0,
     (id) => prevGamesMap[id]?.denAt,
-    Number(process.env.DEN_ROTASI || 55),
+    Number(process.env.DEN_TARGET_JAM || 6),
     "den",
   );
   const perluDen = (id, slug, players) => {
@@ -661,7 +671,7 @@ async function main() {
   const roRotasi = buatRotasi(
     (id, e) => e.rocodesSlug && roIndexSlug.has(e.rocodesSlug) && Number(prevGamesMap[id]?.roAt ?? 0) > 0,
     (id) => prevGamesMap[id]?.roAt,
-    Number(process.env.RO_ROTASI || 70),
+    Number(process.env.RO_TARGET_JAM || 6),
     "rocodes",
   );
   const perluRo = (id, slug) => {
