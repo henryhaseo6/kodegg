@@ -558,7 +558,19 @@ async function main() {
 
   {
     const ro = sambungUlang(set, roIndexSlug, petaUid(uidRo), "rocodesSlug", (e) => e.universeId);
-    const den = sambungUlang(set, denIndex, petaPlace(uidDen), "denSlug", (e) => e.placeId);
+    // KUNCI DEN: placeId dulu, lalu rootPlaceId. Urutan ini penting dan bukan
+    // sekadar kehati-hatian — memakai placeId saja membuat penyambung Den
+    // MUSTAHIL bekerja untuk kasus yang paling membutuhkannya.
+    //
+    // Sebabnya melingkar: `placeId` kita dapat dari halaman Roblox Den, jadi
+    // game yang BELUM tersambung ke Den pasti tak punya. Diukur 7 Agu 2026: dari
+    // 49 game tanpa slug Den, yang punya placeId = NOL. Penyambungnya mencari
+    // dengan kunci yang dijamin kosong tepat pada 49 game itu.
+    //
+    // rootPlaceId datang dari API Roblox (ikut di respons jumlah pemain, gratis)
+    // sehingga selalu ada, dan ternyata BUKAN cuma cadangan — ia mencocokkan
+    // lebih banyak daripada placeId: 343 lawan 331 dari peta Den yang sama.
+    const den = sambungUlang(set, denIndex, petaPlace(uidDen), "denSlug", (e) => e.placeId || e.rootPlaceId);
     for (const s of [...ro.sambung, ...den.sambung]) {
       console.log(`  ↻ ${s.nama}: ${s.lama ?? "(belum ada)"} → ${s.baru}`);
     }
