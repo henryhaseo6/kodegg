@@ -1,46 +1,16 @@
 {
-  "generatedAt": "2026-08-07T19:01:48.389Z",
-  "codes": [
+  "generatedAt": "2026-08-07T20:01:49.028Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "1-speed-per-click",
-      "gameName": "+1 Speed Per Click",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/1-speed-per-click"
-      },
-      "code": "10KLIKE",
-      "reward": "Rainbow Egg and a Chaos Beast",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1786121220000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-07T19:01:48.389Z",
-      "fetchedAt": "2026-08-07T19:01:48.389Z"
+      "game": "raft-tycoon",
+      "count": 5,
+      "fresh": []
     },
     {
-      "game": "trade-squishy-dumplings",
-      "gameName": "Trade Squishy Dumplings",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/trade-squishy-dumplings"
-      },
-      "code": "THANKSFORREACTING2",
-      "reward": "$45",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1786115580000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-07T19:01:48.389Z",
-      "fetchedAt": "2026-08-07T19:01:48.389Z"
+      "game": "realistic-car-driving",
+      "count": 4,
+      "fresh": []
     }
-  ],
-  "bulkGames": []
+  ]
 }
