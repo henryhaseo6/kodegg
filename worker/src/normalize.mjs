@@ -94,6 +94,30 @@ export function codeKey(item, ci = false) {
  * normalisasi sumber (hoyo-codes meng-uppercase semuanya). Kalau dua-duanya
  * huruf besar semua (mis. "2BJ64QRZ7RT8"), tak ada bedanya → pertahankan yg ada.
  */
+/**
+ * Bentuk INTI sebuah kode: buang perintah chat yang ikut terbawa sumber.
+ *
+ * Banyak game Roblox menukar kode lewat chat ("!redeem CODE"), dan sumber tak
+ * sepakat berapa banyak dari perintah itu yang ikut dicatat. RoCodes.gg — sedang
+ * dirombak per 7 Agu 2026 — membubuhkan "!" di depan hampir semua kode Asura dan
+ * bahkan menuliskan perintah lengkapnya ("!redeem 15klikes"), sementara Roblox
+ * Den mencatat kodenya bersih ("15klikes"). Karena kunci pencocokan kita adalah
+ * teks kodenya, keduanya jadi DUA kode berbeda — dan vonis expired Den tak
+ * pernah sampai ke versi RoCodes. Akibatnya nyata: "!redeem 15klikes" terpampang
+ * AKTIF padahal "15klikes" sudah kita arsipkan.
+ *
+ * HANYA UNTUK MENCOCOKKAN, tak pernah untuk mengubah kode yang ditampilkan.
+ * Prefiks "!" TIDAK BOLEH dibuang sembarangan: Den sendiri mendaftarkan 160 kode
+ * berawalan "!" yang RoCodes tak punya (mis. "!FIXEDABUG!", "!Shutdown"), jadi
+ * pada sebagian game tanda itu memang bagian kodenya. Pemakainya wajib menuntut
+ * bukti bahwa kedua bentuk hidup berdampingan di game yang sama sebelum
+ * menyamakannya — lihat cara primExpired memakai fungsi ini.
+ */
+export function kodeInti(raw) {
+  const s = String(raw ?? "").trim();
+  return s.replace(/^!redeem\s+/i, "").replace(/^!/, "");
+}
+
 export function preferCasing(current, candidate) {
   if (typeof current !== "string" || typeof candidate !== "string") return current;
   const mixed = (s) => s !== s.toUpperCase();

@@ -1,112 +1,65 @@
 {
-  "generatedAt": "2026-08-07T12:01:49.551Z",
+  "generatedAt": "2026-08-07T12:53:17.888Z",
   "codes": [
     {
-      "game": "anime-final-quest",
-      "gameName": "Anime Final Quest",
+      "game": "death-order-simon-says",
+      "gameName": "Death Order Simon Says",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/anime-final-quest"
+        "RoCodes.gg": "https://rocodes.gg/codes/death-order-simon-says"
       },
-      "code": "NEZHADELAYAPOLOGY",
-      "reward": "100 Raid Tickets, 100 Lucky Weapon Spins, 100 Runes, 1M Gold, 15 Statue Crowns",
-      "date": "2026-08-07T11:14:33.158Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-07T12:01:49.551Z",
-      "fetchedAt": "2026-08-07T12:01:49.551Z"
-    },
-    {
-      "game": "noob-incremental",
-      "gameName": "Noob Incremental",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/noob-incremental"
-      },
-      "code": "SOMEOTHERFIXUPDATE",
-      "reward": null,
-      "date": "2026-08-07T11:14:13.048Z",
+      "code": "LIFE",
+      "reward": "1,000 Cash",
+      "date": "2026-08-07T11:14:13.457Z",
       "endsAt": null,
       "verified": true,
-      "firstSeenAt": "2026-08-07T12:01:49.551Z",
-      "fetchedAt": "2026-08-07T12:01:49.551Z"
+      "firstSeenAt": "2026-08-07T12:53:17.888Z",
+      "fetchedAt": "2026-08-07T12:53:17.888Z"
     },
     {
-      "game": "1-unlimited-world",
-      "gameName": "+1 Unlimited World",
+      "game": "it-girl",
+      "gameName": "IT GIRL",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/1-unlimited-world"
+        "RoCodes.gg": "https://rocodes.gg/codes/it-girl"
       },
-      "code": "G4P9X3",
+      "code": "AQUAMARINE",
       "reward": null,
-      "date": "2026-08-07T11:14:12.007Z",
+      "date": "2026-08-07T11:14:16.022Z",
       "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-07T12:01:49.551Z",
-      "fetchedAt": "2026-08-07T12:01:49.551Z"
+      "verified": true,
+      "firstSeenAt": "2026-08-07T12:53:17.888Z",
+      "fetchedAt": "2026-08-07T12:53:17.888Z"
     },
     {
-      "game": "build-a-zoo",
-      "gameName": "Build a Zoo",
+      "game": "it-girl",
+      "gameName": "IT GIRL",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/build-a-zoo"
+        "RoCodes.gg": "https://rocodes.gg/codes/it-girl"
       },
-      "code": "UPDATE76A1B2C3D",
-      "reward": "3 Lucky Tickets, 500 Diamonds",
-      "date": "2026-08-07T11:14:27.910Z",
+      "code": "SORRY4THEDELAY",
+      "reward": "1,500 Diamonds",
+      "date": "2026-08-07T11:14:15.472Z",
       "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-07T12:01:49.551Z",
-      "fetchedAt": "2026-08-07T12:01:49.551Z"
+      "verified": true,
+      "firstSeenAt": "2026-08-07T12:53:17.888Z",
+      "fetchedAt": "2026-08-07T12:53:17.888Z"
     }
   ],
   "bulkGames": [
     {
-      "game": "roblox-elementalism",
-      "count": 8,
-      "fresh": [
-        {
-          "code": "DOMINATION!",
-          "reward": ""
-        },
-        {
-          "code": "UPD16",
-          "reward": ""
-        }
-      ]
-    },
-    {
       "game": "1-slayer-blade",
-      "count": 107,
-      "fresh": []
-    },
-    {
-      "game": "it-girl",
-      "count": 19,
-      "fresh": []
-    },
-    {
-      "game": "demon-soul-simulator",
-      "count": 8,
-      "fresh": []
-    },
-    {
-      "game": "scoped",
-      "count": 5,
+      "count": 9,
       "fresh": []
     }
   ]

@@ -18,7 +18,7 @@ import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { preferCasing } from "./src/normalize.mjs";
+import { preferCasing, kodeInti } from "./src/normalize.mjs";
 import { ROBLOX_GAMES, robloxSlug, ROBLOX_NAME_OVERRIDE, ROBLOX_REDEEM_NOTE, ROBLOX_HOWTO_PIN, ROBLOX_ALIAS, NAMA_BEDA_OK } from "./src/roblox-games.mjs";
 import { fetchRoCodes } from "./src/sources/rocodes.mjs";
 import { fetchRobloxDen, fetchRobloxDenIndex } from "./src/sources/robloxden.mjs";
@@ -1096,6 +1096,25 @@ async function main() {
     // dinilai BUKAN usia kodenya, melainkan usia keraguannya.
     const CHECK_STALE_MS = Number(process.env.CHECK_STALE_DAYS || 7) * 24 * 3600 * 1000;
     const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
+    // Vonis expired juga dicocokkan lewat bentuk INTI kode — perintah chat yang
+    // ikut terbawa sumber dilucuti dulu. Tanpa ini, "!redeem 15klikes" (RoCodes)
+    // dan "15klikes" (Den) terbaca sebagai dua kode, sehingga vonis Den tak
+    // pernah menyentuh versi RoCodes-nya dan kode mati terpampang aktif.
+    //
+    // Bentuk inti hanya dipakai kalau KEDUA bentuk benar-benar ada di game ini —
+    // itu buktinya mereka satu kode yang dieja beda, bukan dua kode berbeda.
+    // Syarat itu penting: 514 kode ber-"!" di katalog berdiri sendiri tanpa
+    // kembaran, dan pada game-game itu tanda seru memang bagian kodenya.
+    const semuaEjaan = new Set([...active, ...archive].map((c) => String(c.code).toLowerCase()));
+    const intiExpired = new Set();
+    for (const c of archive) {
+      const inti = kodeInti(c.code).toLowerCase();
+      if (inti && inti !== c.code.toLowerCase() && semuaEjaan.has(inti)) intiExpired.add(inti);
+    }
+    for (const c of active) {
+      const inti = kodeInti(c.code).toLowerCase();
+      if (inti && inti !== c.code.toLowerCase() && primExpired.has(inti)) intiExpired.add(String(c.code).toLowerCase());
+    }
     // SIAPA yang menyatakannya expired. Tanpa ini, kode yang RoCodes daftarkan
     // aktif tapi Den nyatakan mati diarsipkan memakai `c` dari daftar AKTIF —
     // sehingga entri arsipnya bersumber "RoCodes.gg" saja, dan fakta bahwa DEN
@@ -1224,7 +1243,7 @@ async function main() {
       // memutuskannya adalah bukti langsung, bukan agregator yang barusan
       // membuktikan diri tak bisa dipegang.
       const bangkitPrimer = pernahMatiPrimer && !ujiHidup.has(`${id}:${key}`);
-      const olehPrimer = primExpired.has(key) || bangkitPrimer;
+      const olehPrimer = primExpired.has(key) || intiExpired.has(key) || bangkitPrimer;
       // RoCodes SENDIRIAN DAN SUDAH TUA → dianggap mati (keputusan user 7 Agu
       // 2026, setelah regresi RoCodes memindahkan katalog expired-nya kembali ke
       // daftar aktif).
