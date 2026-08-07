@@ -14917,6 +14917,16 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-07",
    "awal": true
+  },
+  "blackout": {
+   "tulis": "BLACKOUT",
+   "pertama": 1786143725725,
+   "terakhir": "2026-08-07"
+  },
+  "blitz": {
+   "tulis": "BLITZ",
+   "pertama": 1786143725725,
+   "terakhir": "2026-08-07"
   }
  },
  "build-an-asmr-tower": {
@@ -24103,7 +24113,7 @@
   "zone": {
    "tulis": "zone",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-06",
+   "terakhir": "2026-08-07",
    "awal": true
   },
   "consecutive": {
@@ -30289,7 +30299,7 @@
   "zone": {
    "tulis": "Zone",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-06",
+   "terakhir": "2026-08-07",
    "awal": true
   },
   "realistc": {
@@ -41312,6 +41322,11 @@
   "grade": {
    "tulis": "grade",
    "pertama": 1786025067739,
+   "terakhir": "2026-08-07"
+  },
+  "zone": {
+   "tulis": "zone",
+   "pertama": 1786143725725,
    "terakhir": "2026-08-07"
   }
  },
