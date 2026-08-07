@@ -1,10 +1,62 @@
 {
-  "generatedAt": "2026-08-07T07:01:06.036Z",
-  "codes": [],
+  "generatedAt": "2026-08-07T08:01:57.090Z",
+  "codes": [
+    {
+      "game": "jailbird",
+      "gameName": "Jailbird",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/jailbird"
+      },
+      "code": "SUMMERSIDE",
+      "reward": "2,500 Cash and 1 Cash Booster",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786088160000,
+      "endsAt": null,
+      "verified": false,
+      "check": true,
+      "checkAt": 1786089883272,
+      "srcCheck": true,
+      "firstSeenAt": "2026-08-07T08:01:57.090Z",
+      "fetchedAt": "2026-08-07T08:01:57.090Z"
+    },
+    {
+      "game": "jailbird",
+      "gameName": "Jailbird",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/jailbird"
+      },
+      "code": "SPOOKY",
+      "reward": null,
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786088160000,
+      "endsAt": null,
+      "verified": false,
+      "check": true,
+      "checkAt": 1786089883272,
+      "srcCheck": true,
+      "firstSeenAt": "2026-08-07T08:01:57.090Z",
+      "fetchedAt": "2026-08-07T08:01:57.090Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "dummy-counter-your-friends",
-      "count": 11,
+      "game": "age-of-titans",
+      "count": 2,
+      "fresh": []
+    },
+    {
+      "game": "zee",
+      "count": 1,
       "fresh": []
     }
   ]
