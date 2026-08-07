@@ -87,7 +87,7 @@ export async function loadRobloxHome(limit = 8) {
   // Kodenya tak hilang — tetap tampil di halaman gamenya, lengkap dg badge
   // CEK DULU supaya pembaca tahu harus mencoba dulu.
   const active = (raw.active ?? [])
-    .filter((c) => !c.check && !c.srcCheck)
+    .filter((c) => !c.check && !c.srcCheck && !c.tuaRagu)
     .map((c) => shape(c, games))
     .sort(bySort);
   const perGame = {};
@@ -236,7 +236,7 @@ export async function loadRobloxGame(slug) {
     // cross-check: chip ini berdiri di kepala halaman sebagai janji, dan
     // menghitung kode yang salah satu sumbernya ragukan membuat janji itu
     // lebih besar dari buktinya. Kartunya sendiri sudah menampilkan CEK DULU.
-    verifiedCount: active.filter((c) => c.verified && !c.srcCheck).length,
+    verifiedCount: active.filter((c) => c.verified && !c.srcCheck && !c.tuaRagu).length,
     howTo: Array.isArray(g.howTo) ? g.howTo : [],
     // Syarat redeem (mis. RIVALS wajib follow developer-nya dulu). Bilingual
     // {en,id} dari registry manual worker/src/roblox-games.mjs.
@@ -277,7 +277,7 @@ export async function loadRobloxThisWeek(hari = 7) {
     // srcCheck ikut disaring: halaman ini memajang kode sebagai temuan terbaik
     // minggu ini, dan kode yang salah satu sumbernya ragukan tak layak berdiri
     // di sana — walau ia lolos cross-check.
-    if (c.check || c.srcCheck) continue;
+    if (c.check || c.srcCheck || c.tuaRagu) continue;
     const ms = Date.parse(c.date ?? "") || 0;
     if (!ms || ms < batas) continue;
     const g = games[c.game];

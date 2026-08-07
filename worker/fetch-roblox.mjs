@@ -1190,7 +1190,27 @@ async function main() {
       // Cross-check menghitung berapa SUMBER yang mendaftarkan sebuah kode,
       // bukan berapa yang meyakininya. Suara ragu tak boleh terbaca sebagai
       // suara setuju.
-      fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true, checkAt } : {}), ...(c.srcCheck === true ? { srcCheck: true } : {}) }));
+      // tuaRagu = kode SUDAH SANGAT TUA tapi kedua primer masih mendaftarkannya.
+      //
+      // Aturan umur (>180 hari → CEK DULU) tak pernah bisa menyentuh kode
+      // dua-sumber, karena `check` mensyaratkan !verified dan `verified` cuma
+      // berarti dua sumber MENDAFTARKAN — bukan dua sumber MEYAKINI. Agregator
+      // tak pernah membersihkan kode lama, jadi "masih terdaftar" setelah empat
+      // tahun nyaris tak bernilai sebagai bukti. Diukur 7 Agu 2026: 1.724 kode
+      // (21% daftar aktif) berumur >6 bulan dan kebal aturan itu — termasuk
+      // "test" dan "START" milik Taxi Boss yang berumur 4 tahun dan tetap
+      // tercetak Verified.
+      //
+      // Mekanismenya sama persis dengan yang membuat kode promo salah (3 dari 4
+      // mati padahal kedua sumber sepakat aktif), cuma di skala jauh lebih besar.
+      //
+      // TAMPILAN SAJA, TIDAK menyentuh jalur arsip — keputusan user. `mandek`
+      // tetap bersandar pada `check`, jadi kode ini tak akan hilang sendiri
+      // walau lewat 7 hari; ia baru pindah ke arsip kalau salah satu sumber
+      // benar-benar mencabutnya. Yang berubah cuma satu: kita berhenti menyebut
+      // kode empat tahun sebagai "Verified" ketika satu-satunya bukti adalah
+      // dua daftar yang tak pernah dibersihkan.
+      fActive.push(mk(c, { endsAt: c.endsAt, verified, ...(check ? { check: true, checkAt } : {}), ...(c.srcCheck === true ? { srcCheck: true } : {}), ...(oldUnverified && !check ? { tuaRagu: true } : {}) }));
     }
     const roActive = new Set(fActive.map((c) => c.code.toLowerCase()));
     const edSrc = bySite.filter((s) => [...s.set].some((c) => roActive.has(c))).map((s) => s.name);

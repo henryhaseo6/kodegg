@@ -151,7 +151,7 @@ if (card.perm) {
            Cross-check menghitung berapa sumber MENDAFTARKAN sebuah kode, bukan
            berapa yang MEYAKININYA. Tak ada informasi yang hilang karena badan
            kartu tetap menampilkan kedua nama sumbernya. */
-        card.check || card.srcCheck ? (
+        card.check || card.srcCheck || card.tuaRagu ? (
           /* CHECK = sumber (Roblox Den) menandai kode AKTIF tapi belum
              dikonfirmasi-ulang works. Bukan expired → badge kuning "CEK DULU":
              visitor coba dulu, jangan berharap terlalu tinggi. */
