@@ -1,10 +1,90 @@
 {
-  "updatedAt": "2026-08-07T09:02:09.493Z",
+  "updatedAt": "2026-08-07T10:01:58.741Z",
   "counts": {
     "active": 106,
     "archived": 56
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Snezhnaya Adventure Guide: Prime Ice, Trains, and Firearms",
+        "id": "Panduan Petualangan Snezhnaya: Prime Ice, Kereta, dan Senjata Api"
+      },
+      "excerpt": {
+        "en": "Greetings, Travelers. In Snezhnaya, you will encounter a new companion, the Eye of Graeae. It carries the wisdom and technology of an ancient era, capable of thinking, analyzing, a",
+        "id": "Halo, Traveler. Di Snezhnaya, kamu akan bertemu dengan teman baru, Eye of Graeae. Perangkat ini mewarisi kebijaksanaan dan teknologi dari era kuno, serta mampu berpikir, menganalis"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/06/0/9a314841c3cc32cccf8ee6247abb55c1_527042126843279300.jpeg",
+      "url": "https://www.hoyolab.com/article/46175451",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-07T10:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Agent Record | Roxy",
+        "id": "Profil Agen | Roxy"
+      },
+      "excerpt": {
+        "en": "\"Milady, you said everything was going according to plan... I assume 'getting lost' is also a part of that plan, too.\" Roxy Ifrita Pryce \"Coffins may serve a simple and single purp",
+        "id": "\"Nona, Anda bilang semuanya berjalan sesuai rencana... Berarti... 'tersesat' juga bagian dari rencana itu ya?\" Roxy Ifrita Pryce \"Fungsi peti mati itu cukup sederhana dan hanya ada"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/0/9967de47cdb0fb09e44c6411d63eb433_7133257471608056241.jpeg",
+      "url": "https://www.hoyolab.com/article/46175449",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-07T10:00:05.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Genshin Impact Miliastra Wonderland\" Phantasmagoric Season Overview",
+        "id": "\"Genshin Impact Miliastra Wonderland\" Phantasmagoric Season Overview"
+      },
+      "excerpt": {
+        "en": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Phantasmagoric Season\" is about to begin, so let's check out the benefits and events in this new version update!",
+        "id": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Phantasmagoric Season\" is about to begin, so let's check out the benefits and events in this new version update!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/8b9cc89eb087e014e30982b9024a7608_9067306037895763318.jpg",
+      "url": "https://www.hoyolab.com/article/46175447",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-07T10:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact Snezhnaya Booth will be making its grand debut at gamescom!",
+        "id": "Genshin Impact Snezhnaya Booth will be making its grand debut at gamescom!"
+      },
+      "excerpt": {
+        "en": "Dear Travelers, The Genshin Impact Snezhnaya Booth will be making its grand debut at gamescom from August 26 to August 30. You are welcome to visit us at Koelnmesse Hall 6, Booth B",
+        "id": "Dear Travelers, The Genshin Impact Snezhnaya Booth will be making its grand debut at gamescom from August 26 to August 30. You are welcome to visit us at Koelnmesse Hall 6, Booth B"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/9238c4ce13c4cb0cc55813edbb7eade7_6191933735743582316.png",
+      "url": "https://www.hoyolab.com/article/46175448",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-07T10:00:03.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero gamescom 2026 Booth Events",
+        "id": "Zenless Zone Zero gamescom 2026 Booth Events"
+      },
+      "excerpt": {
+        "en": "Dear Proxies, the gamescom commission series is back on the Inter-Knot from August 26 to 30. We welcome all clever and courageous Proxies to head on down to Koelnmesse Hall 6.1 B03",
+        "id": "Dear Proxies, the gamescom commission series is back on the Inter-Knot from August 26 to 30. We welcome all clever and courageous Proxies to head on down to Koelnmesse Hall 6.1 B03"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/0/a70073069dbb8e668dd9fd97a8bb9b48_3984932247892405846.png",
+      "url": "https://www.hoyolab.com/article/46175114",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-07T09:30:03.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -118,22 +198,6 @@
       "publishedAt": "2026-08-06T04:05:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
-        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
-        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
-      "url": "https://www.hoyolab.com/article/46159934",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T04:00:08.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -146,6 +210,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
       "url": "https://www.hoyolab.com/article/46159935",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T04:00:08.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
+      "url": "https://www.hoyolab.com/article/46159934",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-06T04:00:08.000Z"
     },
@@ -246,22 +326,6 @@
       "publishedAt": "2026-08-05T04:00:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Infrastructure & Commissions",
-        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Infrastruktur dan Kontrak"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! In this issue, we'll be introducing the infrastructure and commissions systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. W",
-        "id": "Halo, Proxy! Edisi ini akan memperkenalkan Infrastruktur dan Kontrak pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\", termasuk pembahasan mengenai riset, pembuatan b"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/0/2a15865a743ac1473e1ac87ded0e8ba6_4344641810319839021.jpeg",
-      "url": "https://www.hoyolab.com/article/46147442",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-05T04:00:04.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -274,6 +338,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/2e0f97a1b20d6cf5ab37539b3b055f3b_3348879965829628604.jpg",
       "url": "https://www.hoyolab.com/article/46147441",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-05T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Infrastructure & Commissions",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Infrastruktur dan Kontrak"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the infrastructure and commissions systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. W",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan Infrastruktur dan Kontrak pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\", termasuk pembahasan mengenai riset, pembuatan b"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/0/2a15865a743ac1473e1ac87ded0e8ba6_4344641810319839021.jpeg",
+      "url": "https://www.hoyolab.com/article/46147442",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-05T04:00:04.000Z"
     },
@@ -358,22 +438,6 @@
       "publishedAt": "2026-08-04T06:00:05.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.0 - Miliastra Shop Exceptional Cosmetics",
-        "id": "Version 7.0 - Miliastra Shop Exceptional Cosmetics"
-      },
-      "excerpt": {
-        "en": "★ Exceptional Cosmetic | Warrior of the Winning Hand A special outfit inspired by playing cards, with the boxy, square-lined silhouette of an armored soldier. In a fierce match, ev",
-        "id": "★ Exceptional Cosmetic | Warrior of the Winning Hand A special outfit inspired by playing cards, with the boxy, square-lined silhouette of an armored soldier. In a fierce match, ev"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/03/57a099eb0bd4528858949cbabce2d1aa_2423008681815204937.jpg",
-      "url": "https://www.hoyolab.com/article/46135635",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-04T05:00:04.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -388,38 +452,6 @@
       "url": "https://www.hoyolab.com/article/46135086",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-04T04:00:05.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "New Stellar Glimmer Reaction: Stellar Swirl",
-        "id": "Reaksi Stellar Glimmer Baru: Stellar Swirl"
-      },
-      "excerpt": {
-        "en": "Following the Stellar-Conduct Reaction introduced in Version Luna VIII, Version 7.0 will bring us a brand-new Stellar Glimmer Reaction: Stellar Swirl. Come, let's take a look~",
-        "id": "Setelah Reaksi Stellar-Conduct yang hadir di Versi \"Candra VIII\", Versi 7.0 akan memperkenalkan satu lagi reaksi Stellar Glimmer yang baru, yaitu Stellar Swirl! Yuk kita lihat bers"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/31/0/9224cef841e13199adb2f6870d5bbfbe_1191743067835871101.jpeg",
-      "url": "https://www.hoyolab.com/article/46135087",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-04T04:00:05.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.0 - Miliastra Shop Elite Cosmetics",
-        "id": "Version 7.0 - Miliastra Shop Elite Cosmetics"
-      },
-      "excerpt": {
-        "en": "★ Elite Cosmetics | Cloudbound Journey & Cloudbound Flight A fleeting traveler through misty waters and cloud-wreathed peaks, moving light as swallows in flight, sweeping away the ",
-        "id": "★ Elite Cosmetics | Cloudbound Journey & Cloudbound Flight A fleeting traveler through misty waters and cloud-wreathed peaks, moving light as swallows in flight, sweeping away the "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/03/a5b88f1ee73c4c04eac989ea37c3877d_6185190256678839667.jpg",
-      "url": "https://www.hoyolab.com/article/46135084",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-04T04:00:03.000Z"
     },
     {
       "game": "zzz",
@@ -646,22 +678,6 @@
       "publishedAt": "2026-07-30T04:15:03.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "🎨 New Zenless Zone Zero Items in the Steam Points Shop! 🎨",
-        "id": "🎨 Item Baru di Toko Poin Steam Zenless Zone Zero! 🎨"
-      },
-      "excerpt": {
-        "en": "Dear Proxies, Feel free to exchange your Steam Points for exclusive Zenless Zone Zero personalized cosmetics and craft your very own Proxy profile! This period's new items include:",
-        "id": "Dear Proxy: Tukarkan Poin Steam kamu untuk mendapatkan dekorasi personalisasi eksklusif Zenless Zone Zero, dan buat arsip Proxy eksklusifmu! Konten yang tersedia di periode ini mel"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/29/0/d0737aaa34e70ef09eb83b28ca0ff6ba_96424507410601892.jpeg",
-      "url": "https://www.hoyolab.com/article/46055683",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-30T03:30:06.000Z"
-    },
-    {
       "game": "tot",
       "gameName": "Tears of Themis",
       "title": {
@@ -692,22 +708,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5236",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-29T09:04:37.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "V3.1 Festival Special & Anniversary Selects",
-        "id": "Promo Festival & Pilihan Anniversary V3.1"
-      },
-      "excerpt": {
-        "en": "Hey Proxies! Today, we're bringing you the latest intel on Version 3.1 updates, including the first purchase double bonus reset, the limited-time event \"Filmgoer Thank-You Gift,\" b",
-        "id": "Halo Proxy! Kali ini membawakan intel terbaru versi 3.1 mengenai reset bonus topup perdana, event terbatas \"Hadiah Apresiasi Penayangan\", Outfit baru, dan lainnya. Mari kita simak "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/29/0/56a00a4657d8c19e0f4d8b654b3e9c40_60038109816005383.jpeg",
-      "url": "https://www.hoyolab.com/article/46043826",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-29T09:00:06.000Z"
     },
     {
       "game": "wuwa",
