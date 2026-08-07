@@ -106,6 +106,9 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A worker/data/pending-thumbs.json worker/data/pending-thumbs 2>/dev/null || true
+          # video-harian.json WAJIB ikut: itu catatan "tanggal ini sudah dibuat".
+          # Tanpa di-commit, penjaganya lupa tiap run dan duplikat bisa terulang.
+          git add -A worker/data/video-harian.json 2>/dev/null || true
           git diff --cached --quiet && echo "antrean tak berubah" && exit 0
           git commit -m "chore(thumb): antrean thumbnail tertunda [skip ci]"
           git pull --rebase --autostash -q || true

@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 import { renderRoundup, renderRoundupThumb } from "./video/render-roundup.mjs";
 import { localisasiID } from "./video/meta-long.mjs";
 import { simpanPending, buangPending, ambilPending } from "./video/pending-thumbs.mjs";
+import { sudahDibuat, catatDibuat } from "./src/video-harian.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
@@ -143,6 +144,13 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
 
 (async () => {
   console.log(`[roundup] tanggal=${DATE} limit=${LIMIT} sfx=${SFX}`);
+  // SATU TANGGAL, SATU VIDEO — diperiksa sebelum render. Lihat
+  // src/video-harian.mjs; kejadian 7 Agu 2026 lahir persis di sini.
+  if (ARG["thumb-only"] !== undefined) { /* jalur pasang-ulang thumbnail */ }
+  else if (!ARG.force) {
+    const ada = sudahDibuat("roundup", DATE);
+    if (ada) { console.log(`[roundup] SUDAH ADA untuk ${DATE} → ${ada.url} (${ada.at.slice(0, 16)}). Pakai --force bila memang ingin dibuat ulang.`); return; }
+  }
   const { list, totalGames, totalCodes: totalCodesAll } = loadGames();
   if (!list.length) { console.log(`[roundup] tidak ada kode baru non-bulk di ${DATE} — skip.`); return; }
   const games = list.slice(0, LIMIT);
@@ -198,6 +206,10 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   try {
     const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en", localizations: locID(meta) });
     console.log(`[roundup] uploaded ✓ ${r.url} (privacy=${privacy})`);
+    // Dicatat SESUDAH unggahan berhasil — bukan sebelum render, supaya render
+    // yang gagal di tengah tak meninggalkan catatan palsu yang memblokir
+    // percobaan berikutnya.
+    try { catatDibuat("roundup", DATE, { id: r.id, url: r.url }); } catch (e) { console.log(`[roundup] catat gagal: ${e.message}`); }
     if (r.thumbPending) {
       // BERKASNYA ikut disimpan, bukan cuma tanggalnya. Alasannya soal WAKTU:
       // workflow ini hanya jalan sekali sehari ~21:45 UTC — persis saat kuota

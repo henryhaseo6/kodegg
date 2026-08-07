@@ -16,6 +16,7 @@ import { fetchChartsGames } from "./src/roblox-charts.mjs";
 import { renderTop50, renderThumb } from "./video/render-top50.mjs";
 import { localisasiID } from "./video/meta-long.mjs";
 import { simpanPending, buangPending } from "./video/pending-thumbs.mjs";
+import { sudahDibuat, catatDibuat } from "./src/video-harian.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ARG = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? "1"] : [a, "1"]; }));
@@ -109,6 +110,15 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
 
 (async () => {
   console.log(`[top50] tanggal=${DATE} limit=${LIMIT} source=${ARG.source || "auto"} sfx=${SFX}`);
+  // SATU TANGGAL, SATU VIDEO. Diperiksa SEBELUM render karena rendernya ~15
+  // menit — menolak setelah itu berarti membakar seluruh waktunya percuma.
+  // Lihat src/video-harian.mjs untuk kejadian yang melahirkannya (7 Agu 2026:
+  // cron telat 8,3 jam menyusul dispatch manual, roundup terunggah dua kali).
+  if (ARG["thumb-only"] !== undefined) { /* jalur pasang-ulang thumbnail: bukan pembuatan video */ }
+  else if (!ARG.force) {
+    const ada = sudahDibuat("top50", DATE);
+    if (ada) { console.log(`[top50] SUDAH ADA untuk ${DATE} → ${ada.url} (${ada.at.slice(0, 16)}). Pakai --force bila memang ingin dibuat ulang.`); return; }
+  }
   let rows = null;
   if (ARG.source !== "live") rows = await fromR2(DATE);
   if (!rows) { console.log("[top50] pakai LIVE charts (data R2 belum ada / --source=live)"); rows = await fromLive(); }
@@ -178,6 +188,10 @@ const locID = (m) => { const id = localisasiID(m); return id ? { id } : undefine
   try {
     const r = await uploadVideo({ videoPath: outPath, title: meta.title, description: meta.description, tags: meta.tags, privacy, thumbnailPath: existsSync(thumbPath) ? thumbPath : undefined, playlistTitle, playlistDescription, lang: "en", localizations: locID(meta) });
     console.log(`[top50] uploaded ✓ ${r.url} (privacy=${privacy})`);
+    // Dicatat SESUDAH unggahan berhasil — bukan sebelum render, supaya render
+    // yang gagal di tengah tak meninggalkan catatan palsu yang memblokir
+    // percobaan berikutnya.
+    try { catatDibuat("top50", DATE, { id: r.id, url: r.url }); } catch (e) { console.log(`[top50] catat gagal: ${e.message}`); }
     if (r.thumbPending) {
       // BERKASNYA ikut disimpan, bukan cuma tanggalnya. Alasannya soal WAKTU:
       // workflow ini hanya jalan sekali sehari ~21:45 UTC — persis saat kuota
