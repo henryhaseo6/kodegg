@@ -38,7 +38,7 @@ const baca = (p, kosong) => (fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "u
  *  keraguan diperiksa LEBIH DULU daripada verified, karena kode yang Den
  *  ragukan tapi RoCodes masih daftarkan tetap `verified` di data. */
 export const badgeDari = (c) =>
-  c.check || c.srcCheck || c.tuaRagu ? "CHECK" : c.verified ? "VERIFIED" : "ACTIVE";
+  c.check || c.srcCheck ? "CHECK" : c.verified ? "VERIFIED" : "ACTIVE";
 
 const umurHari = (c, now) => {
   const lahir = Date.parse(c.date ?? "") || 0;

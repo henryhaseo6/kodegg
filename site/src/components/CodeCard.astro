@@ -151,7 +151,18 @@ if (card.perm) {
            Cross-check menghitung berapa sumber MENDAFTARKAN sebuah kode, bukan
            berapa yang MEYAKININYA. Tak ada informasi yang hilang karena badan
            kartu tetap menampilkan kedua nama sumbernya. */
-        card.check || card.srcCheck || card.tuaRagu ? (
+        /* `tuaRagu` SENGAJA TIDAK di sini — dilepas 7 Agu 2026 atas bukti uji
+           lapangan. Ketiga flag keraguan ternyata TAK setara: kode yang ada
+           sumbernya EKSPLISIT meragukan (check/srcCheck) terbukti mati 22 dari
+           22, sedangkan `tuaRagu` — tua tapi kedua primer masih mendaftarkan —
+           justru 20 hidup dari 23. Memukul rata ketiganya berarti memasang
+           peringatan di atas kode yang berfungsi: Sub2Fer999, Fudd10, kittgaming
+           dan 15 kode Blox Fruits lain yang bertahan bertahun-tahun karena
+           memang dirancang permanen. Di kelas game itu "tua" bukan pertanda
+           mati, melainkan pertanda kode tetap.
+           Flag-nya tetap ditulis worker dan tetap berguna untuk analisis; yang
+           berubah cuma: ia tak lagi berhak menakut-nakuti pembaca. */
+        card.check || card.srcCheck ? (
           /* CHECK = sumber (Roblox Den) menandai kode AKTIF tapi belum
              dikonfirmasi-ulang works. Bukan expired → badge kuning "CEK DULU":
              visitor coba dulu, jangan berharap terlalu tinggi. */

@@ -156,12 +156,12 @@ const More = "font-family:'Space Mono',monospace; font-size:12px; font-weight:70
                     Kode ber-check/srcCheck sudah disaring keluar dari section
                     ini, jadi cabang ini pengaman lapis kedua — kalau saringannya
                     kelak dilonggarkan, badgenya tetap jujur. */}
-                {c.verified && !c.check && !c.srcCheck && !c.tuaRagu && (
+                {c.verified && !c.check && !c.srcCheck && (
                   <span style="display:inline-flex; align-items:center; gap:4px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--ink); background:var(--ok); padding:3px 7px; border-radius:7px;">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>Verified
                   </span>
                 )}
-                {(c.check || c.srcCheck || c.tuaRagu) && (
+                {(c.check || c.srcCheck) && (
                   <span title={tr("card.checkHint")} style="display:inline-flex; align-items:center; gap:4px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; color:var(--warn); background:rgba(255,177,60,0.16); padding:3px 7px; border-radius:7px; cursor:help;">
                     {tr("card.check")}
                   </span>
