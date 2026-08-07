@@ -52,6 +52,60 @@ function extractDate(text) {
   return null;
 }
 
+// Offset zona waktu IANA pada sebuah instant, dalam milidetik. Dipakai
+// menerjemahkan jam dinding sumber ("08:59 PT") ke UTC dengan benar — PT itu
+// UTC-7 di musim panas dan UTC-8 di musim dingin, dan menebak salah satunya
+// menggeser kedaluwarsa satu jam ke arah yang bisa mengarsipkan kode lebih awal.
+function offsetZona(utcMs, zona) {
+  const p = Object.fromEntries(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: zona, hour12: false,
+      year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", second: "2-digit",
+    }).formatToParts(new Date(utcMs)).map((x) => [x.type, x.value]),
+  );
+  return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second) - utcMs;
+}
+
+// Zona yang KITA KENALI. Apa pun di luar daftar ini → null, bukan tebakan.
+// Alasannya asimetris: endsAt yang salah lebih awal LANGSUNG mengarsipkan kode
+// yang masih jalan (lihat `endsPassed`), sedangkan endsAt kosong cuma membuat
+// kartu tak menampilkan hitung mundur. Diam lebih murah daripada keliru.
+const ZONA = { PT: "America/Los_Angeles", PST: "America/Los_Angeles", PDT: "America/Los_Angeles", UTC: "UTC", GMT: "UTC", "UTC+8": "Asia/Shanghai", CST: "Asia/Shanghai", KST: "Asia/Seoul", JST: "Asia/Tokyo" };
+
+/**
+ * "Valid until: August 9, 2026 08:59 (PT)" → ISO UTC.
+ *
+ * Dibaca dari sel Duration wiki, yang untuk WuWa memuat baik "Discovered:" mau
+ * pun "Valid until:". Mengembalikan null untuk "Unknown" (kode permanen) dan
+ * untuk apa pun yang tak terbaca utuh — TAHUN wajib eksplisit, sama seperti
+ * extractDate, karena "August 9" tanpa tahun ambigu.
+ *
+ * Tanpa jam, dipakai 23:59:59 hari itu: kalau harus meleset, meleset ke arah
+ * kode bertahan lebih lama, bukan hilang lebih cepat.
+ */
+function extractExpiry(text) {
+  const v = text.match(/Valid until:\s*'*\s*([^<'\n|]+)/i);
+  if (!v) return null;
+  const s = v[1].trim();
+  if (/unknown|permanent|none|n\/a|indefinite/i.test(s)) return null;
+  const d = s.match(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})\b/i);
+  if (!d) return null;
+  const jam = s.match(/\b(\d{1,2}):(\d{2})\b/);
+  const zm = s.match(/\(([A-Z]{2,4}(?:\+\d)?)\)|\b(PT|PST|PDT|UTC|GMT|CST|KST|JST)\b/);
+  const zona = ZONA[(zm?.[1] ?? zm?.[2] ?? "").toUpperCase()];
+  if (!zona) return null;
+  const [Y, M, D] = [+d[3], MONTHS[d[1].slice(0, 3).toLowerCase()], +d[2]];
+  const [h, mnt, sec] = jam ? [+jam[1], +jam[2], 0] : [23, 59, 59];
+  // Dua langkah: tebak instant-nya, ukur offset di sana, koreksi, lalu ukur
+  // sekali lagi. Iterasi kedua menangani tanggal yang jatuh persis di peralihan
+  // musim panas/dingin, saat offset tebakan pertama bisa keliru satu jam.
+  let ms = Date.UTC(Y, M, D, h, mnt, sec);
+  ms -= offsetZona(ms, zona);
+  ms = Date.UTC(Y, M, D, h, mnt, sec) - offsetZona(ms, zona);
+  return Number.isFinite(ms) ? new Date(ms).toISOString() : null;
+}
+
 async function fetchWikitext(host, page, ua) {
   const url = `https://${host}/api.php?action=parse&page=${encodeURIComponent(page)}&prop=wikitext&format=json`;
   const res = await fetch(url, { headers: { "User-Agent": ua } });
@@ -347,7 +401,10 @@ function parseTable(body, rewardParser) {
     if (!code) continue;
     // Tanggal dicari di sel selain kode/reward (posisi kolom beda antar wiki).
     const date = extractDate(cells.slice(1).join(" "));
-    out.push({ code, reward: REWARD[rewardParser](cells), date });
+    // Kedaluwarsa dari sel yang SAMA dengan tanggal temuan — WuWa menaruh
+    // "Discovered: …<br />Valid until: …" dalam satu sel Duration.
+    const endsAt = extractExpiry(row);
+    out.push({ code, reward: REWARD[rewardParser](cells), date, endsAt });
   }
   return out;
 }
@@ -444,6 +501,7 @@ async function fetchOne(id, meta, ua) {
       code: r.code,
       reward: r.reward,
       date: r.date ?? null, // tanggal sumber (kolom Date/Released), bila ada
+      ...(r.endsAt ? { endsAt: r.endsAt } : {}), // menimpa endsAt:null bawaan dari objek base 
       status: "active",
       perm: false,
     }));
