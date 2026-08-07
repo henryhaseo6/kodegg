@@ -79,7 +79,7 @@ jobs:
           node worker/fetch-codes.mjs || echo "codes gagal, lanjut"
           node worker/fetch-events.mjs || echo "events gagal, lanjut"
           node worker/fetch-news.mjs || echo "news gagal, lanjut"
-          node worker/fetch-roblox.mjs || echo "roblox gagal, lanjut"
+          node worker/fetch-roblox.mjs || { echo "::warning::fetch-roblox GAGAL — data Roblox tidak diperbarui run ini"; echo "roblox gagal, lanjut"; }
           node worker/fetch-roblox-icons.mjs || echo "roblox icons gagal, lanjut"
 
       # Pemantau sumber — 1×/hari (jam 01 UTC / 08 WIB). Melapor saja: game baru

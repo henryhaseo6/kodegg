@@ -1321,15 +1321,21 @@ async function main() {
   // Jadi berhenti menebak dan biarkan run berikutnya menjawab: cetak game
   // dengan stempel tertua SESUDAH pemrosesan, lengkap dengan keputusan yang
   // sebenarnya diambil untuk masing-masing.
+  // Dibaca dari `set` + hasil run ini, BUKAN dari mergedGames: variabel itu baru
+  // dideklarasikan beberapa baris di bawah, dan merujuknya di sini melempar
+  // ReferenceError (TDZ) yang menjatuhkan seluruh worker. Terjadi 7 Agu 2026 —
+  // diagnostik yang dipasang untuk berhenti menebak justru mematikan
+  // pipeline-nya, dan `|| echo "roblox gagal, lanjut"` di workflow menelan
+  // galatnya sehingga langkahnya tetap hijau selama dua run.
   {
     const now2 = Date.now();
-    const tua = Object.entries(mergedGames)
-      .filter(([, g]) => g.denSlug && Number(g.denAt))
-      .map(([id, g]) => ({ id, nama: g.name, jam: (now2 - Number(g.denAt)) / 3600000, pemain: g.players ?? 0 }))
+    const tua = [...set.entries()]
+      .filter(([id, e]) => e.denSlug && Number(prevGamesMap[id]?.denAt))
+      .map(([id, e]) => ({ id, nama: e.name ?? id, jam: (now2 - Number(prevGamesMap[id].denAt)) / 3600000, pemain: e.players ?? 0 }))
       .sort((a, b) => b.jam - a.jam)
       .slice(0, 5);
     if (tua.length && tua[0].jam > 8) {
-      console.log(`[macet] stempel Den tertua sesudah run ini:`);
+      console.log(`[macet] stempel Den tertua (sebelum run ini menulis):`);
       for (const t of tua) {
         console.log(`  ${t.jam.toFixed(1)} jam · ${t.nama} (${t.id}) · ${t.pemain} pemain · di rotasi: ${denRotasi.has(t.id) ? "YA" : "TIDAK"} · hasil: ${hasilPerGame.get(t.id) ?? "tak diproses"}`);
       }
