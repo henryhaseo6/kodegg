@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-07T03:01:05.458Z",
+  "updatedAt": "2026-08-07T04:01:03.299Z",
   "counts": {
     "active": 106,
     "archived": 56
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Agent Record | Claret",
+        "id": "Profil Agen | Claret"
+      },
+      "excerpt": {
+        "en": "\"Let me educate you on something — the 'Flint' in front of Porcelloy isn't just there for show.\" Claret Flint \"You think some limited-edition dessert is gonna get you Porcelloy...?",
+        "id": "\"Biar kalian lihat sendiri——kata 'Flint' di depan Porcelloy, bukan sekadar nama belaka.\" Claret Flint \"Kamu pikir dengan makanan penutup edisi terbatas, kamu bisa mendapatkan Porce"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/0/65391fb8cbebbebaeacd2e0feb3ab935_5686588674724690372.jpeg",
+      "url": "https://www.hoyolab.com/article/46171706",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-07T04:00:04.000Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -70,22 +86,6 @@
       "publishedAt": "2026-08-06T04:05:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
-        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
-        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
-      "url": "https://www.hoyolab.com/article/46159934",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T04:00:08.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -98,6 +98,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
       "url": "https://www.hoyolab.com/article/46159935",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T04:00:08.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
+      "url": "https://www.hoyolab.com/article/46159934",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-06T04:00:08.000Z"
     },
@@ -724,22 +740,6 @@
       "url": "https://www.hoyolab.com/article/46039634",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-29T04:00:03.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero Version 3.1 \"The Long Goodbye\" Is Now Live!",
-        "id": "Zenless Zone Zero Version 3.1 \"The Long Goodbye\" Is Now Live!"
-      },
-      "excerpt": {
-        "en": "",
-        "id": ""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-07-29/transcoded/142082265971815124992_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/46039198",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-29T03:30:02.000Z"
     },
     {
       "game": "zzz",
