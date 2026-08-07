@@ -164,15 +164,34 @@ function thumb(videoPath, outPath) {
   return new Promise((res) => { const ff = spawn(ffmpegBin(), ["-y", "-ss", "12.5", "-i", videoPath, "-frames:v", "1", "-q:v", "3", outPath], { stdio: "ignore" }); ff.on("close", res); });
 }
 
+// Kode yang situs cetak berbadge "CEK DULU" — HARUS memakai uji yang sama persis
+// dengan CodeCard.astro, kalau tidak situs dan video saling membantah.
+//
+// Dulu di sini cuma `c.check`, dan itu bocor: `srcCheck` (Roblox Den sendiri
+// menandai kode ini ragu) lolos ke video, padahal di situs kodenya tampil CEK
+// DULU. Terukur 7 Agu 2026: 438 kode di 244 game. Sebagian game malah 100%
+// begitu — War Tycoon, Arsenal, dan Anime Slashing Simulator seluruh kodenya
+// diragukan, jadi videonya membuka dengan "semua terverifikasi" lalu
+// menyodorkan daftar yang tak satu pun dipercaya situsnya sendiri.
+//
+// Uji lapangan 7 Agu 2026 (29 kode, 3 game) menutup perdebatannya: dari 15 kode
+// srcCheck yang benar-benar dicoba di dalam game, 15 mati. Nol keliru.
+//
+// `tuaRagu` SENGAJA dibiarkan lolos. Ia menandai kode tua yang kedua primer
+// masih daftarkan (1.538 kode, 24 game termasuk Grow a Garden dan Jailbreak),
+// dan sampai kini NOL yang pernah diuji lapangan. Membuangnya berarti menghapus
+// game besar dari kanal atas dasar dugaan. Buang kalau nanti ada buktinya.
+const diragukan = (c) => c.check === true || c.srcCheck === true;
+
 function buildCandidates() {
   const out = [];
   // ROBLOX
   const rb = readJSON(resolve(DATA, "roblox-codes.json"), { games: {}, active: [] });
-  // Kode badge "CEK DULU" (c.check = belum diverifikasi/ragu) TAK dimasukkan ke
-  // video mana pun — jangan umbar kode meragukan (kualitas). Berlaku semua game.
+  // Kode badge "CEK DULU" TAK dimasukkan ke video mana pun — jangan umbar kode
+  // meragukan (kualitas). Berlaku semua game.
   const chkKey = (game, code) => `${game}:${(code || "").toLowerCase()}`;
-  const checkSet = new Set((rb.active || []).filter((c) => c.check).map((c) => chkKey(c.game, c.code)));
-  rb.active = (rb.active || []).filter((c) => !c.check);
+  const checkSet = new Set((rb.active || []).filter(diragukan).map((c) => chkKey(c.game, c.code)));
+  rb.active = (rb.active || []).filter((c) => !diragukan(c));
   const rbNewFile = readJSON(resolve(DATA, "new-roblox-codes.json"), { codes: [] });
   const rbNew = rbNewFile.codes;
   const rbNewByGame = {};
@@ -247,8 +266,8 @@ function buildCandidates() {
   // saringan ini jalur kode-baru mobile akan meloloskannya diam-diam kalau suatu
   // saat sumbernya mulai menandai kode ragu.
   const mChkKey = (game, code) => `${game}:${(code || "").toLowerCase()}`;
-  const mCheckSet = new Set((mc.active || []).filter((c) => c.check).map((c) => mChkKey(c.game, c.code)));
-  mc.active = (mc.active || []).filter((c) => !c.check);
+  const mCheckSet = new Set((mc.active || []).filter(diragukan).map((c) => mChkKey(c.game, c.code)));
+  mc.active = (mc.active || []).filter((c) => !diragukan(c));
   const cat = readJSON(resolve(DATA, "games.json"), { games: [] });
   const catById = Object.fromEntries((cat.games ?? []).map((g) => [g.id, g]));
   const mNewFile = readJSON(resolve(DATA, "new-codes.json"), { codes: [] });
@@ -398,7 +417,7 @@ function buildOnDemand(id) {
   if (!rb.games[id]) { const f = Object.entries(rb.games).find(([, gg]) => (gg.slug ?? "") === id); if (f) id = f[0]; }
   const g = rb.games[id];
   if (g) {
-    const active = rb.active.filter((c) => c.game === id && !c.check); // buang kode "CEK DULU"
+    const active = rb.active.filter((c) => c.game === id && !diragukan(c)); // buang kode "CEK DULU"
     if (active.length === 0) return null;
     return {
       platform: "ROBLOX", id, name: g.name, displayName: namaKartu(id, g), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
@@ -407,7 +426,7 @@ function buildOnDemand(id) {
     };
   }
   const mc = readJSON(resolve(DATA, "codes.json"), { active: [] });
-  const active = mc.active.filter((c) => c.game === id && !c.check); // buang kode "CEK DULU"
+  const active = mc.active.filter((c) => c.game === id && !diragukan(c)); // buang kode "CEK DULU"
   if (active.length === 0) return null;
   const cat = readJSON(resolve(DATA, "games.json"), { games: [] });
   const meta = (cat.games ?? []).find((x) => x.id === id);
@@ -440,7 +459,7 @@ function buildBacklog(state, batas) {
   for (const [id, g] of Object.entries(rb.games)) {
     if ((g.players ?? 0) < BACKLOG_MIN_PLAYERS) continue;
     if (ytpl[g.slug ?? id] || ytpl[id]) continue;
-    const active = rb.active.filter((c) => c.game === id && !c.check); // kode "CEK DULU" tak pernah masuk video
+    const active = rb.active.filter((c) => c.game === id && !diragukan(c)); // kode "CEK DULU" tak pernah masuk video
     if (active.length === 0) continue;
     if (active.every((c) => sudahDiposting(state, id, c.code, "ROBLOX"))) continue;
     const urut = terbaruDulu(active);

@@ -59,7 +59,14 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
   const sisa = Math.max(0, (activeCount || 0) - dipakai.length);
   const barisSisa = sisa > 0 ? `\n➕ ${sisa} kode aktif lainnya ada di kodegg.com\n` : "";
   const description =
-    `${allMode ? `Semua kode redeem ${name} yang masih aktif ${my}!` : `Kode redeem ${name} terbaru & aktif ${my}!`} ${activeCount} kode aktif, semua terverifikasi.\n` +
+    // "semua terverifikasi" dulu dicetak TANPA SYARAT, padahal daftar yang
+    // ditampilkan juga memuat kode berstatus ACTIVE — cuma satu sumber yang
+    // mendaftarkan, belum ada cross-check. Uji lapangan 7 Agu 2026 menunjukkan
+    // bedanya bukan sekadar tata bahasa: VERIFIED 6 dari 6 hidup, ACTIVE 4 hidup
+    // 1 mati. Klaimnya sekarang cuma dipasang kalau memang benar untuk kode yang
+    // BENAR-BENAR tercantum di deskripsi (bukan seluruh activeCount, karena yang
+    // tak muat tak bisa kita pertanggungjawabkan di kalimat ini).
+    `${allMode ? `Semua kode redeem ${name} yang masih aktif ${my}!` : `Kode redeem ${name} terbaru & aktif ${my}!`} ${activeCount} kode aktif${dipakai.every((c) => c.verified) ? ", semua terverifikasi" : ""}.\n` +
     `🕒 Update terakhir: ${w.d} ${w.mon} ${w.y}, ${w.hm} WIB\n\n` +
     `🎁 KODE:\n${codeLines}\n${barisSisa}\n` +
     // SYARAT redeem (mis. RIVALS wajib follow developer-nya dulu). Ditaruh
@@ -74,14 +81,25 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
         (redeemNote.links?.length ? redeemNote.links.map((l) => `   • ${l.label}: ${l.url}`).join("\n") + "\n" : "") +
         "\n"
       : "") +
-    `✅ Full list + cara redeem (auto-update tiap jam):\n${url}\n\n` +
+    // PERINGATAN KEDALUWARSA. Video adalah potret satu jam tertentu, sedangkan
+    // halaman game hidup terus — tapi video tak pernah berhenti ditonton. Diukur
+    // 7 Agu 2026: video Drag Drive terbit 1 Agustus masih menarik 184 view/jam
+    // (tercepat di kanal) padahal keempat kode di deskripsinya sudah mati semua.
+    //
+    // Deskripsi video lama TIDAK diedit (keputusan user 3 Agu) dan kode di LAYAR
+    // memang tak bisa diperbaiki — maka satu-satunya jalan adalah memberi tahu
+    // penonton di muka bahwa potret ini bisa basi, lalu menunjukkan ke mana
+    // harus pergi. Ditaruh persis SETELAH daftar kode, karena di situlah orang
+    // menggulir begitu kode yang disalin ditolak game.
+    `⏳ Kode redeem cepat kedaluwarsa — yang ada di video ini bisa saja sudah lewat saat kamu menonton.\n` +
+    `✅ Daftar terbaru + cara redeem (auto-update tiap jam):\n${url}\n\n` +
     // Sebut nama alternatifnya di deskripsi juga — membantu pembaca memastikan
     // ini game yang mereka cari, dan ikut terbaca mesin pencari.
     (alias?.length ? `🔎 Dikenal juga sebagai: ${alias.join(", ")}\n\n` : "") +
     `KodeGG — portal kode redeem game online & Roblox. 200+ game, kode terverifikasi cross-check, update otomatis tiap jam.\n` +
     `🔔 Subscribe & nyalain lonceng biar gak ketinggalan kode baru!\n\n` +
     (redeemNote?.en ? `— NOTE: ${redeemNote.en}\n\n` : "") +
-    `— The latest working ${name} codes for ${my} (updated hourly). Full list + how to redeem: ${urlEn}\n\n` +
+    `— The latest working ${name} codes for ${my} (updated hourly). Codes expire fast, so some in this video may already be gone — the current list is always at ${urlEn}\n\n` +
     `#Shorts #${tag} #${tag}Codes #${isRoblox ? "RobloxCodes #Roblox" : "GameCodes"} #RedeemCodes #KodeRedeem #KodeGG`;
 
   // Alias pencarian (nama Indonesia / singkatan komunitas) ikut jadi TAG.
