@@ -194,16 +194,35 @@ export async function uploadVideo({ videoPath, title, description, tags, privacy
   // `playlistPending` diisi bila gagal (mis. rate-limit playlist YouTube ~10/hari)
   // → orkestrator mengantrikannya utk dicoba lagi di run berikutnya.
   let playlistPending = null;
+  let pidPlaylist = null;
   if (playlistTitle) {
+    // Sekarang memulangkan ID playlist-nya, bukan sekadar true. Dibutuhkan
+    // komentar di bawah: ID itu baru diketahui DI SINI (playlist bisa saja baru
+    // dibuat detik ini), sehingga metadata.mjs — yang merakit komentar jauh
+    // sebelum upload — mustahil menyisipkannya sendiri.
     const ok = await attachToPlaylist(yt, id, playlistTitle, playlistDescription ?? "", lang, tanpaBuatPlaylist);
     if (!ok) playlistPending = { videoId: id, playlistTitle, playlistDescription: playlistDescription ?? "" };
+    else if (typeof ok === "string") pidPlaylist = ok;
   }
   // Komentar berisi link halaman game — TINGGAL DI-PIN MANUAL di Studio/app,
   // karena API YouTube tak punya endpoint pin. Butuh scope youtube.force-ssl:
   // kalau token lama (upload+youtube saja), akan 403 → jalankan gen-token.mjs lagi.
   if (comment) {
+    // Baris playlist DITAMBAHKAN DI SINI, bukan di metadata.mjs, karena ID-nya
+    // baru pasti setelah playlist benar-benar terpasang. Kalau playlist gagal
+    // (kena rate-limit, atau pembuatannya ditahan demi kuota), barisnya tak
+    // ditulis sama sekali — lebih baik komentar tanpa tautan playlist daripada
+    // tautan ke playlist yang belum ada.
+    //
+    // Gunanya baru terasa belakangan: di hari terbit, video terbaru game ini
+    // ya video ini sendiri. Sebulan kemudian, orang yang mendarat di sini lewat
+    // pencarian bisa langsung melompat ke yang terbaru — dan upload.mjs
+    // menyisipkan tiap video di position 0, jadi yang teratas selalu terbaru.
+    const teksKomentar = pidPlaylist
+      ? `${comment}\n🎬 Video terbaru game ini (paling atas di playlist):\nhttps://youtube.com/playlist?list=${pidPlaylist}`
+      : comment;
     try {
-      await yt.commentThreads.insert({ part: ["snippet"], requestBody: { snippet: { videoId: id, topLevelComment: { snippet: { textOriginal: comment } } } } });
+      await yt.commentThreads.insert({ part: ["snippet"], requestBody: { snippet: { videoId: id, topLevelComment: { snippet: { textOriginal: teksKomentar } } } } });
       console.log("  ↳ komentar diposting (pin manual di Studio)");
     } catch (e) {
       const hint = /insufficient|scope|forbidden/i.test(e.message) ? " — token perlu scope youtube.force-ssl, jalankan: node worker/video/gen-token.mjs" : "";
@@ -270,13 +289,13 @@ export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlis
     // Playlist YouTube BOLEH memuat video sama berkali-kali — insert TAK gagal
     // meski sudah ada (kasus nyata: retry queue menambah ulang video yg sudah
     // dimasukkan manual → dobel). Jadi cek dulu SEBELUM insert (playlist lama).
-    if (!baru && (await sudahMasuk())) { console.log(`  ↳ playlist: ${playlistTitle} (sudah ada)`); return true; }
+    if (!baru && (await sudahMasuk())) { console.log(`  ↳ playlist: ${playlistTitle} (sudah ada)`); return pid; }
     const jedas = baru ? [0, 5, 10, 20] : [0, 3, 6]; // baru: ~8+35s window (propagasi); lama: cepat
     for (let i = 0; i < jedas.length; i++) {
       if (jedas[i]) await tidur(jedas[i]);
-      try { await masukkan(); console.log(`  ↳ playlist: ${playlistTitle}${baru ? " (baru)" : ""}`); return true; }
+      try { await masukkan(); console.log(`  ↳ playlist: ${playlistTitle}${baru ? " (baru)" : ""}`); return pid; }
       catch (e) {
-        if (await sudahMasuk()) { console.log(`  ↳ playlist: ${playlistTitle} (sudah ada)`); return true; }
+        if (await sudahMasuk()) { console.log(`  ↳ playlist: ${playlistTitle} (sudah ada)`); return pid; }
         if (i === jedas.length - 1) throw e;
       }
     }
