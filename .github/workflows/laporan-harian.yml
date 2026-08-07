@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  actions: read # baca riwayat run top50-video & codes-roundup (lihat "Video harian" di laporan)
 
 concurrency:
   group: laporan-harian
@@ -37,6 +38,10 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          # Dipakai memeriksa apakah video harian (Top 50, roundup) benar-benar
+          # dibuat. GITHUB_TOKEN TIDAK otomatis ada di env langkah — wajib
+          # dilewatkan eksplisit. GITHUB_REPOSITORY sudah disediakan runner.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install googleapis --no-save --no-audit --no-fund
           node worker/laporan-harian.mjs | tee laporan.txt

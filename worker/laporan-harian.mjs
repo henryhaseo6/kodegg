@@ -107,7 +107,7 @@ const perHari = {};
 for (const l of log.filter((x) => x.mode === "upload")) perHari[l.at.slice(0, 10)] = (perHari[l.at.slice(0, 10)] ?? 0) + 1;
 const hari = Object.keys(perHari).sort().slice(-7);
 baris("Upload 7 hari terakhir", hari.map((d) => `${d.slice(5)}:${perHari[d]}`).join("  "));
-baris("Jatah hari ini", `${vs.todayCount ?? 0}/52 (hari kuota ${vs.date ?? "—"})`);
+baris("Jatah hari ini", `${vs.todayCount ?? 0}/${process.env.VIDEO_MAX_PER_DAY || 65} (hari kuota ${vs.date ?? "—"})`);
 const gagal = log.filter((l) => l.mode === "manual" && (l.at ?? "").slice(0, 10) === new Date().toISOString().slice(0, 10));
 // PISAHKAN MENURUT ALASAN. Terbukti 5 Agu 2026: konsol Google menunjukkan
 // 11.919/10.000 (119%) sementara YouTube tetap melayani setiap panggilan —
@@ -121,6 +121,46 @@ const kenaKuota = Object.entries(perAlasan).filter(([a]) => /kuota|quota/i.test(
 if (gagal.length) baris("Jatuh ke jalur manual", `${gagal.length} — ${Object.entries(perAlasan).map(([a, v]) => `${a}: ${v}`).join(", ")}`);
 if (kenaKuota) perhatian(`${kenaKuota} upload DITOLAK kuota YouTube hari ini — ini sinyal batas yang sebenarnya, bukan angka di konsol`);
 else baris("Ditolak kuota YouTube", "0 (batas nyata belum tersentuh)");
+
+// ── 5b. VIDEO HARIAN YANG SEHARUSNYA ADA ───────────────────────────────────
+// Satu-satunya kelas kegagalan di proyek ini yang benar-benar TAK BERSUARA.
+//
+// Kalau workflow gagal, ia meninggalkan run merah yang bisa dilihat. Tapi kalau
+// GitHub Actions sedang penuh, workflow TERJADWAL bisa dijatuhkan begitu saja —
+// tak ada run sama sekali, tak ada yang merah, tak ada notifikasi. Terjadi 6 Agu
+// 2026: enam run kode dibatalkan setelah menunggu runner 15 menit dengan NOL
+// langkah terjalan, dan top50-video serta codes-roundup pada 17:30/17:35 UTC
+// tak pernah dibuat. Data kode pulih sendiri lewat rotasi; dua video harian itu
+// tidak, dan bolongnya baru ketahuan karena user kebetulan membuka halaman
+// Actions.
+//
+// Diperiksa lewat API Actions, bukan YouTube: yang ingin dijawab adalah "apakah
+// pekerjaannya berjalan", dan itu gratis. Butuh izin actions:read.
+if (process.env.GITHUB_TOKEN && process.env.GITHUB_REPOSITORY) {
+  bagian("Video harian");
+  const HARIAN = [
+    { file: "top50-video.yml", nama: "Top 50" },
+    { file: "codes-roundup.yml", nama: "Roundup kode" },
+  ];
+  // Ambangnya 30 jam, bukan 24: cron GitHub kerap tertunda berjam-jam (terukur
+  // pada seri ini — jadwal 17:30 UTC sering baru jalan 20:30-22:00). Ambang 24
+  // jam akan mengeluh tiap kali tertunda wajar, dan peringatan yang sering
+  // salah akan diabaikan justru saat benar.
+  const BATAS_MS = 30 * 3600 * 1000;
+  for (const w of HARIAN) {
+    try {
+      const url = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/workflows/${w.file}/runs?per_page=5`;
+      const res = await fetch(url, { headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, Accept: "application/vnd.github+json" } });
+      if (!res.ok) { baris(w.nama, `tak bisa diperiksa (HTTP ${res.status})`); continue; }
+      const runs = (await res.json()).workflow_runs ?? [];
+      const sukses = runs.find((r) => r.conclusion === "success");
+      if (!sukses) { perhatian(`${w.nama}: tak ada run sukses sama sekali di 5 run terakhir`); continue; }
+      const jam = (Date.now() - Date.parse(sukses.created_at)) / 3600000;
+      if (jam > BATAS_MS / 3600000) perhatian(`${w.nama}: video terakhir ${jam.toFixed(1)} jam lalu — jadwal harian kemungkinan DIJATUHKAN GitHub, susulkan manual dg input date`);
+      else baris(w.nama, `terakhir sukses ${jam.toFixed(1)} jam lalu`);
+    } catch (e) { baris(w.nama, `gagal diperiksa: ${String(e.message).slice(0, 50)}`); }
+  }
+}
 
 // ── 6. SUMBER YANG BERMASALAH ──────────────────────────────────────────────
 bagian("Sumber");
