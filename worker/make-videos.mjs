@@ -725,7 +725,19 @@ async function main() {
     // kalau run-nya molor dan tanggal PT keburu maju, upload berikutnya memakan
     // kuota HARI BARU — persis kerugian yang penjadwalan ini ingin hindari.
     // Dilepas begitu saja (tanpa requeue) karena daftarnya bisa dihitung ulang.
-    if (c.backlog && hariPT(new Date()) !== state.date) { console.log(`  ⏭ ${c.name}: tengah malam PT terlewat, susulan dihentikan (lanjut besok)`); continue; }
+    // Dulu penjaga ini cuma memeriksa apakah tengah malam SUDAH lewat, dan itu
+    // membiarkan satu video bocor: yang dimulai 23:59 PT selesai dirender lalu
+    // diunggah pukul 00:00+, memakan jatah HARI BARU — persis kerugian yang
+    // penjadwalan jam 23 PT ingin hindari. Sekarang berhenti sebelum tengah
+    // malam, dengan margin selebar satu video (dihitung dari laju run ini, bukan
+    // ditebak). Keputusan user: lebih baik kehilangan beberapa slot daripada
+    // menyeberang reset.
+    const sisaKeResetMnt = (23 - jamPT(new Date())) * 60 + (60 - new Date().getUTCMinutes());
+    const marginMnt = sudahRender > 0 ? (Date.now() - mulaiMs) / 60000 / sudahRender : 2;
+    if (c.backlog && (hariPT(new Date()) !== state.date || sisaKeResetMnt <= marginMnt)) {
+      console.log(`  ⏭ ${c.name}: mepet reset kuota PT (sisa ${Math.max(0, sisaKeResetMnt)} menit), susulan dihentikan — lanjut besok`);
+      continue;
+    }
     let quotaManual = false;
     try {
       console.log(`\n▶ ${c.name} (${c.platform}) — ${c.newCodes.length} kode baru`);
@@ -845,7 +857,22 @@ async function main() {
       const selesai = Math.max(1, sudahRender);
       const perVideo = menit / selesai;
       const muatWaktu = Math.max(0, Math.floor((MENIT_MAX - menit) / Math.max(0.2, perVideo)));
-      const jatah = Math.min(remaining, RENDER_MAX, muatWaktu);
+      // JANGAN PERNAH MENYEBERANG RESET KUOTA. Penjaga tengah-malam yang lama
+      // bekerja per-video dan diperiksa SEBELUM render, jadi video yang dimulai
+      // pukul 23:59 PT tetap berjalan dan unggahannya jatuh ke jatah HARI BARU —
+      // persis kerugian yang penjadwalan jam 23 PT ingin hindari.
+      //
+      // Di sini gelombang berikutnya dipotong sisa waktu menuju tengah malam PT,
+      // dengan margin satu video. Keputusan user: "yang penting gak sampe
+      // ngelewatin reset APInya, hilang sedikit gpp, yang penting konsisten" —
+      // jadi sisa slot sengaja direlakan daripada mempertaruhkan jatah besok.
+      const kePT00 = (() => {
+        const d = new Date();
+        const j = jamPT(d), m = d.getUTCMinutes();
+        return (23 - j) * 60 + (60 - m); // menit menuju 00:00 PT
+      })();
+      const muatSebelumReset = Math.max(0, Math.floor((kePT00 - perVideo) / Math.max(0.2, perVideo)));
+      const jatah = Math.min(remaining, RENDER_MAX, muatWaktu, muatSebelumReset);
       const lanjut = jatah > 0 ? buildBacklog(state, jatah) : [];
       if (lanjut.length) {
         gelombang += 1;
