@@ -27,6 +27,7 @@ import { scoutRoCodes } from "./src/rocodes-scout.mjs";
 import { sapuIdentitas, petaUid, petaPlace, sambungUlang, panenSapuan } from "./src/uid-map.mjs";
 import { deteksiMiss, auditBadgeBaru } from "./src/miss-detector.mjs";
 import { vonisMati, vonisHidup } from "./src/uji-vonis.mjs";
+import { bacaSeksi, catatSeksi, susunUlang, simpanSeksi } from "./src/seksi-sumber.mjs";
 import { catatDeskripsi, laporanDeskripsi } from "./src/desc-probe.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
 import { fetchRoCodesIndex, genreDariRoblox } from "./src/roblox-discover.mjs";
@@ -680,6 +681,20 @@ async function main() {
   const ujiHidup = vonisHidup(prev.games ?? {});
   if (ujiMati.size) console.log(`uji lapangan: ${ujiMati.size} kode divonis mati manual — selalu diarsipkan, apa pun kata sumber`);
 
+  // Memo seksi mentah: apa yang sumber benar-benar katakan saat terakhir
+  // ditarik. Menggantikan rekonstruksi-dari-keluaran-sendiri yang melingkar.
+  const SEKSI = resolve(dirname(OUT), "sumber-seksi.json");
+  const memoSeksi = await bacaSeksi(SEKSI);
+  // Detail kode per game, TANPA menyaring sumber. Penyaringan itulah yang dulu
+  // merusak: ia memutuskan "Den tak punya kode ini" hanya karena field `sources`
+  // pada entri arsip kebetulan cuma menyebut RoCodes. Di sini detail dan seksi
+  // dipisah — detail boleh dari mana saja, seksi HARUS dari memo.
+  const detailKode = {};
+  for (const c of [...(prev.active ?? []), ...(prev.archive ?? [])]) {
+    (detailKode[c.game] ??= new Map()).set(String(c.code).toLowerCase(), c);
+  }
+  // Cadangan untuk game yang belum punya catatan seksi (rilis pertama memo, atau
+  // game baru). Persis perilaku lama — dipakai HANYA saat memo belum tahu.
   const denPunya = {}, roPunya = {};
   for (const [kunci, arr] of [["active", prev.active ?? []], ["archive", prev.archive ?? []]]) {
     for (const c of arr) {
@@ -688,6 +703,13 @@ async function main() {
       if (src.includes("RoCodes.gg")) ((roPunya[c.game] ??= { active: [], archive: [] })[kunci]).push(c);
     }
   }
+  let seksiPakai = 0, seksiCadangan = 0;
+  const bawaan = (id, sumber, cadangan) => {
+    const dari = susunUlang(memoSeksi, id, sumber, detailKode[id] ?? new Map());
+    if (dari) { seksiPakai++; return dari; }
+    seksiCadangan++;
+    return cadangan;
+  };
   // Backfill awal (game yang belum pernah ditarik dari Den) dibatasi per run
   // supaya rilis ini tak meledak jadi 300 permintaan sekaligus.
   const DEN_BACKFILL_MAX = Number(process.env.DEN_BACKFILL_MAX || 40);
@@ -855,7 +877,7 @@ async function main() {
       // tanpa itu, tiap run yang melewati sebuah sumber akan menghapus seluruh
       // kode dari sumber tersebut.
       if (p.name === "Roblox Den" && !perluDen(id, slug, entry.players)) {
-        const punya = denPunya[id];
+        const punya = bawaan(id, p.name, denPunya[id]);
         if (punya) perSource.push({ name: p.name, url: p.url(slug), active: punya.active, archive: punya.archive });
         denLewat++;
         hasilPerGame.set(id, "Den DILEWATI gerbang");
@@ -863,7 +885,7 @@ async function main() {
         continue;
       }
       if (p.name === "RoCodes.gg" && !perluRo(id, slug)) {
-        const punya = roPunya[id];
+        const punya = bawaan(id, p.name, roPunya[id]);
         if (punya) perSource.push({ name: p.name, url: p.url(slug), active: punya.active, archive: punya.archive });
         roLewat++;
         roDilewati = true;
@@ -872,6 +894,13 @@ async function main() {
       try {
         const r = await p.fetch(slug);
         perSource.push({ name: p.name, url: p.url(slug), active: r.active, archive: r.archive });
+        // Rekam seksi APA ADANYA — ini satu-satunya tempat kita benar-benar tahu
+        // apa kata sumber. Semua pemakaian berikutnya membaca rekaman ini.
+        // Date.now() langsung, BUKAN nowMs — variabel itu baru lahir jauh di
+        // bawah (dalam blok pemrosesan kode), dan memakainya di sini melempar
+        // ReferenceError saat run, bukan saat `node --check`. Persis cara
+        // diagnostik [macet] mematikan worker dua run pada 6 Agu 2026.
+        catatSeksi(memoSeksi, id, p.name, r, Date.now());
         if (p.name === "RoCodes.gg") { rocodesMeta = r.meta; roAt = Math.max(roIndexSlug.get(slug) ?? 0, Date.now()); roTarik++; }
         else {
           denMeta = r.meta;
@@ -1067,6 +1096,23 @@ async function main() {
     // dinilai BUKAN usia kodenya, melainkan usia keraguannya.
     const CHECK_STALE_MS = Number(process.env.CHECK_STALE_DAYS || 7) * 24 * 3600 * 1000;
     const primExpired = new Set(archive.map((c) => c.code.toLowerCase()));
+    // SIAPA yang menyatakannya expired. Tanpa ini, kode yang RoCodes daftarkan
+    // aktif tapi Den nyatakan mati diarsipkan memakai `c` dari daftar AKTIF —
+    // sehingga entri arsipnya bersumber "RoCodes.gg" saja, dan fakta bahwa DEN
+    // yang memvonis hilang. Itulah yang membuat carry-forward melingkar: 245
+    // dari 294 arsip Clover Retribution tercatat milik RoCodes, jadi saat
+    // halaman Den dilewati, `denPunya` merekonstruksi Den sebagai TAK PUNYA
+    // vonis apa pun atas mereka, dan 994 kode mati hidup kembali (7 Agu 2026).
+    const arsipSumber = new Map(archive.map((c) => [c.code.toLowerCase(), c.sources ?? [c.source]]));
+    // DIAMNYA DEN sebagai bukti — hanya sah kalau Den memang membaca game ini
+    // run ini. Kalau Den tak punya halamannya (24 dari 516 game), diamnya tak
+    // berarti apa-apa dan aturan di bawah tak boleh menyala.
+    const denBicara = perSource.some((p) => p.name === "Roblox Den");
+    const denKenal = new Set(
+      perSource.filter((p) => p.name === "Roblox Den")
+        .flatMap((p) => [...(p.active ?? []), ...(p.archive ?? [])])
+        .map((c) => String(c.code).toLowerCase()),
+    );
     // mk() merakit objek kode final dengan daftar field EKSPLISIT — apa pun yang
     // dihitung mergeCodes tapi tak disebut di sini akan hilang tanpa jejak.
     // Terjadi pada `altCode` 5 Agu 2026: merge-nya benar, tapi 0 dari 5.929 kode
@@ -1179,6 +1225,29 @@ async function main() {
       // membuktikan diri tak bisa dipegang.
       const bangkitPrimer = pernahMatiPrimer && !ujiHidup.has(`${id}:${key}`);
       const olehPrimer = primExpired.has(key) || bangkitPrimer;
+      // RoCodes SENDIRIAN DAN SUDAH TUA → dianggap mati (keputusan user 7 Agu
+      // 2026, setelah regresi RoCodes memindahkan katalog expired-nya kembali ke
+      // daftar aktif).
+      //
+      // Dasarnya bukan "RoCodes buruk", melainkan bahwa DIAMNYA DEN atas kode
+      // berumur sebulan itu bermakna. Den membaca game ini (syarat `denBicara`,
+      // kalau tidak aturan ini tak menyala) dan sepanjang bulan itu tak pernah
+      // mencatat kodenya — bahkan di arsipnya. Kode yang benar-benar pernah
+      // terbit hampir selalu terekam salah satu daftar Den.
+      //
+      // Sengaja mensyaratkan TANGGAL: `date` adalah tanggal rilis sumber, dan
+      // kode tanpa tanggal umurnya tak diketahui — bukan diketahui-tua. Diukur
+      // saat dipasang: 1.071 kode kena, nol di antaranya terbukti hidup lewat
+      // uji lapangan, dan nol kode tanpa tanggal ikut terseret.
+      //
+      // Uji lapangan tetap mengalahkan aturan ini, seperti semua aturan sumber.
+      const UMUR_SEPI_MS = Number(process.env.SEPI_DEN_HARI || 30) * 24 * 3600 * 1000;
+      const lahirMs = Date.parse(c.date ?? "") || 0;
+      const sepiDen =
+        denBicara && !denKenal.has(key) &&
+        (c.sources ?? []).includes("RoCodes.gg") && !(c.sources ?? []).includes("Roblox Den") &&
+        lahirMs > 0 && nowMs - lahirMs >= UMUR_SEPI_MS &&
+        !ujiHidup.has(`${id}:${key}`);
       // KERAGUAN YANG MANDEK: ditandai ragu dan tak satu pun sumber
       // mengonfirmasinya setelah CHECK_STALE_MS — 7 hari (keputusan user 6 Agu
       // 2026, sebelumnya 14). Alasannya: kodenya sudah diragukan sejak awal,
@@ -1203,14 +1272,20 @@ async function main() {
       // apa yang terjadi saat kodenya benar-benar dimasukkan ke game. Ditaruh
       // paling depan supaya tak ada syarat lain yang bisa menahannya.
       const matiUji = ujiMati.has(`${id}:${key}`);
-      if (endsPassed || olehPrimer || matiUji || (mandek && !isFresh)) {
+      if (endsPassed || olehPrimer || matiUji || sepiDen || (mandek && !isFresh)) {
         // expiredBy = ALASAN kode ini diarsipkan. Tanpa jejak ini, kode yang
         // hilang dari daftar aktif tak bisa dipertanggungjawabkan: tak ada cara
         // membedakan kode yang memang habis waktunya dari kode yang dibunuh satu
         // situs editorial yang parsing-nya rusak. Penting terutama saat cakupan
         // sumber berubah (mis. gelombang arsip dari Roblox Den).
-        const expiredBy = matiUji ? "uji-manual" : endsPassed ? "endsAt" : olehPrimer ? "primer" : "cek-mandek";
-        archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt, expiredBy }));
+        const expiredBy = matiUji ? "uji-manual" : endsPassed ? "endsAt" : olehPrimer ? "primer" : sepiDen ? "sepi-den" : "cek-mandek";
+        // Sumber PEMVONIS ikut dicatat, bukan cuma sumber yang mendaftarkannya
+        // aktif — lihat `arsipSumber` di atas. Ini yang memutus kelingkaran:
+        // entri arsipnya kini menyebut Den, sehingga saat halaman Den dilewati,
+        // carry-forward mengembalikan vonis Den apa adanya.
+        const pemvonis = arsipSumber.get(key) ?? [];
+        const gabungSumber = [...new Set([...(c.sources ?? []), ...pemvonis])];
+        archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt, expiredBy, sources: gabungSumber }));
         continue;
       }
       if (verified) nVer += 1;
@@ -1610,6 +1685,8 @@ async function main() {
   const alasan = [];
   if (ujiSesudah > ujiSebelum) alasan.push(`vonis-uji-baru:${ujiSesudah - ujiSebelum}`);
   await writeFile(resolve(dirname(OUT), "deploy-alasan.json"), JSON.stringify({ at: new Date().toISOString(), alasan }, null, 1) + "\n");
+  await simpanSeksi(SEKSI, memoSeksi, new Set(Object.keys(mergedGames)), new Date().toISOString());
+  console.log(`[seksi sumber] ${seksiPakai} pemakaian dari memo · ${seksiCadangan} masih pakai cadangan lama · ${Object.keys(memoSeksi.g).length} game terekam`);
   if (alasan.length) console.log(`deploy WAJIB run ini — ${alasan.join(", ")}`);
 
   // ── DETEKTOR MISS (lapor saja) ───────────────────────────────────────────
