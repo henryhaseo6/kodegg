@@ -70,7 +70,12 @@ async function read() {
   }
 }
 
-const bySort = (a, b) => b.rankMs - a.rankMs || b.firstSeenMs - a.firstSeenMs;
+// Pemecah seri srcNew disisipkan SEBELUM firstSeen, menyamai terbaruDulu di
+// worker/make-videos.mjs — kalau tidak, urutan kartu di situs berbeda dari urutan
+// kartu di video, dan pembaca yang menonton lalu membuka halaman game melihat dua
+// daftar "terbaru" yang bertentangan. Alasan sinyalnya dipercaya ada di sana.
+const bySort = (a, b) =>
+  b.rankMs - a.rankMs || (b.srcNew === true ? 1 : 0) - (a.srcNew === true ? 1 : 0) || b.firstSeenMs - a.firstSeenMs;
 
 /** Homepage: N kode Roblox terbaru lintas game + hitungan. Diversifikasi: maks
  * 2 kode per game supaya satu game yang baru drop banyak kode tak memborong

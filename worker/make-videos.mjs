@@ -382,7 +382,31 @@ function pickDisplay(newCodes, active, ci = false, max = MAX_DISPLAY) {
 // NaN — nilainya truthy sehingga cadangan firstSeen tak pernah terpakai. Versi
 // lama lolos karena dibungkus Math.max, di rumus baru ini langsung salah.
 const recency = (c) => (Date.parse(c.date ?? "") || 0) || (c.bulk ? 0 : Date.parse(c.firstSeenAt ?? "") || 0);
-const terbaruDulu = (arr) => [...arr].sort((a, b) => recency(b) - recency(a));
+// PEMECAH SERI: kode yang SUMBER tandai "baru" menang saat skor kebaruannya sama.
+//
+// JUJUR SOAL DAMPAKNYA: diukur 7 Agu 2026, ini mengubah NOL dari 262 game yang
+// kodenya melebihi jumlah slot. Bukan perbaikan, melainkan penghapus
+// kesewenangan. 693 kode (12%) berskor NOL — tanpa tanggal rilis DAN bulk,
+// sehingga cadangan firstSeen pun mati — dan untuk mereka urutan selama ini
+// ditentukan POSISI ARRAY, yang bisa berubah kapan saja tanpa alasan. Kebetulan
+// hari ini posisi array sudah menaruh yang ber-srcNew di depan; besok belum tentu.
+//
+// Alasan srcNew yang dipilih sebagai pemecah, bukan kriteria lain: uji lapangan
+// 7 Agu 2026 (34 kode, 4 game) menunjukkan di antara kode yang kita sebut bisa
+// dipakai, yang ber-srcNew 10 hidup 0 mati, yang tanpa 2 hidup 3 mati. Ketiga
+// kesalahan kita — IDULADHA2026, WEHEARYOU, DRAGDRIVEDANGCAP — semuanya tanpa
+// srcNew.
+//
+// Yang TIDAK boleh disimpulkan dari situ: menyaring kode tanpa srcNew. Dua kode
+// hidup di sampel juga tak punya penanda itu — Den mencabut badge NEW seiring
+// waktu, jadi ketiadaannya berarti "tak tahu", bukan "mati".
+//
+// Sengaja TIDAK memakai srcNewAt sebagai tanggal, walau tersedia di 849 kode:
+// nilainya adalah jam KITA menarik halaman, bukan jam kode dirilis. Memasukkannya
+// ke recency akan membuat kode ber-srcNew selalu mengalahkan kode yang benar-benar
+// rilis hari ini. Sebagai pemecah seri ia aman — hanya bekerja saat recency sama.
+const terbaruDulu = (arr) =>
+  [...arr].sort((a, b) => recency(b) - recency(a) || (b.srcNew === true ? 1 : 0) - (a.srcNew === true ? 1 : 0));
 
 /**
  * Badge "BARU · NEW" pada kartu video on-demand.
