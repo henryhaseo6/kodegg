@@ -1,30 +1,80 @@
 {
-  "generatedAt": "2026-08-07T15:01:22.182Z",
+  "generatedAt": "2026-08-07T16:01:30.332Z",
   "codes": [
     {
-      "game": "rng-heroes",
-      "gameName": "RNG Heroes",
+      "game": "noob-incremental",
+      "gameName": "Noob Incremental",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/noob-incremental"
+      },
+      "code": "SOMEFIXUPDATE",
+      "reward": "25 Card Tokens",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786114920000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-07T16:01:30.332Z",
+      "fetchedAt": "2026-08-07T16:01:30.332Z"
+    },
+    {
+      "game": "arise-shadow-hunt",
+      "gameName": "Arise-Shadow Hunt",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/rng-heroes"
+        "RoCodes.gg": "https://rocodes.gg/codes/arise-shadow-hunt"
       },
-      "code": "UpdateFivePotions",
-      "reward": "Potions",
-      "date": "2026-08-07T14:46:58.865Z",
+      "code": "JWneW3",
+      "reward": null,
+      "date": "2026-08-07T11:14:17.397Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-07T15:01:22.182Z",
-      "fetchedAt": "2026-08-07T15:01:22.182Z"
+      "firstSeenAt": "2026-08-07T16:01:30.332Z",
+      "fetchedAt": "2026-08-07T16:01:30.332Z"
+    },
+    {
+      "game": "1-slayer-blade",
+      "gameName": "+1 Slayer Blade",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/1-slayer-blade"
+      },
+      "code": "3U9S5D",
+      "reward": null,
+      "date": "2026-08-07T11:14:16.657Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-07T16:01:30.332Z",
+      "fetchedAt": "2026-08-07T16:01:30.332Z"
+    },
+    {
+      "game": "demon-soul-simulator",
+      "gameName": "Demon Soul Simulator",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/demon-soul-simulator"
+      },
+      "code": "wbxug",
+      "reward": null,
+      "date": "2026-08-07T11:14:14.612Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-07T16:01:30.332Z",
+      "fetchedAt": "2026-08-07T16:01:30.332Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "musical-chairs",
-      "count": 3,
-      "fresh": []
-    }
-  ]
+  "bulkGames": []
 }
