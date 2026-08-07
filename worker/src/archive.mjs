@@ -25,7 +25,7 @@ import { codeKey } from "./normalize.mjs";
  *   mobile/gacha: sumber menulis kode sama dg kapitalisasi beda). JANGAN untuk
  *   Roblox — di sana kapitalisasi bagian dari kode. Lihat codeKey di normalize.
  */
-export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now, { ci = false } = {}) {
+export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now, { ci = false, sumberBaru = new Set() } = {}) {
   const K = (item) => codeKey(item, ci);
   const prevActive = prev.active ?? [];
   const prevArchive = prev.archive ?? [];
@@ -72,7 +72,22 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now,
   // site/src/lib/codes.mjs). Sekali di-set, dipertahankan antar-run.
   const active = freshActive.map((item) => {
     const prior = prevByKey.get(K(item)) ?? prevByKeyCI.get(K(item).toLowerCase());
-    const bulk = prior ? prior.bulk === true : !prevGames.has(item.game);
+    // `bulk` = umur TAK DIKETAHUI, jadi kode tak boleh diperlakukan sebagai baru.
+    //
+    // Dua keadaan menghasilkan itu, dan yang kedua baru ketahuan 7 Agu 2026:
+    //  (a) game baru masuk pantauan — seluruh katalognya baru bagi kita
+    //  (b) game LAMA yang baru tersambung ke sebuah sumber — katalog sumber itu
+    //      membanjir masuk sekaligus, isinya kode berbulan-bulan
+    //
+    // Keadaan (b) lolos selama ini karena gamenya sudah ada di prevGames,
+    // sehingga bulk=false dan kodenya mendapat rankMs = firstSeen = sekarang —
+    // langsung naik ke puncak "Kode Roblox terbaru" di beranda. Terlihat setelah
+    // penyambung memperbaiki 23 ikatan Den: Booga Booga, K2 Climbing Simulator,
+    // Skibi Defense, dan Hunty Zombies serentak memborong etalase dengan kode
+    // lama. Badge BARU sendiri sudah aman (dijaga usiaMasukAkal), tapi URUTAN
+    // tidak — dan etalase memajang urutan, bukan badge.
+    const baruTersambung = sumberBaru.has(item.game);
+    const bulk = prior ? prior.bulk === true : (!prevGames.has(item.game) || baruTersambung);
     // PENULISAN ALTERNATIF, dikumpulkan LINTAS-RUN. mergeCodes hanya melihat
     // ejaan dari sumber yang benar-benar ditarik pada run itu — dan karena
     // gating, kedua primer jarang tertarik bersamaan (Blox Fruits 5 Agu 2026:

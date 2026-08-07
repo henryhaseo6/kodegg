@@ -566,6 +566,11 @@ async function main() {
     } catch (e) { console.log(`[panen] dilewati: ${e.message}`); }
   }
 
+  // Game yang ikatannya BARU tersambung run ini. Katalog sumber yang baru
+  // terhubung membanjir masuk sekaligus, dan isinya kode berbulan-bulan —
+  // diteruskan ke mergeWithPrevious supaya ditandai `bulk` (umur tak diketahui)
+  // dan tak memborong urutan "terbaru". Lihat alasan lengkapnya di archive.mjs.
+  const sumberBaru = new Set();
   {
     const ro = sambungUlang(set, roIndexSlug, petaUid(uidRo), "rocodesSlug", (e) => e.universeId);
     // KUNCI DEN: placeId dulu, lalu rootPlaceId. Urutan ini penting dan bukan
@@ -582,6 +587,7 @@ async function main() {
     // lebih banyak daripada placeId: 343 lawan 331 dari peta Den yang sama.
     const den = sambungUlang(set, denIndex, petaPlace(uidDen), "denSlug", (e) => e.placeId || e.rootPlaceId);
     for (const s of [...ro.sambung, ...den.sambung]) {
+      sumberBaru.add(s.game);
       console.log(`  ↻ ${s.nama}: ${s.lama ?? "(belum ada)"} → ${s.baru}`);
     }
     console.log(`[sambung] RoCodes ${ro.sambung.length}/${ro.putus} putus tersambung · Den ${den.sambung.length}/${den.putus}`);
@@ -1343,7 +1349,7 @@ async function main() {
   }
   console.log(`RoCodes.gg: ${roTarik} halaman ditarik (berubah), ${roLewat} dilewati (pakai simpanan)`);
   if (namaBerubah.length) console.log(`NAMA GAME BERUBAH (${namaBerubah.length}): ${namaBerubah.slice(0, 12).join(" · ")}${namaBerubah.length > 12 ? ` (+${namaBerubah.length - 12})` : ""}`);
-  const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshDD, freshArchDD, prev, covered, now);
+  const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshDD, freshArchDD, prev, covered, now, { sumberBaru });
   const mergedGames = { ...(prev.games ?? {}), ...games };
   // PURGE game DUPLIKAT yg nyangkut di prev.games (universeId sama, slug beda
   // spt fish-it/roblox-fish-it): buang yg KALAH (kode aktif lebih sedikit; seri →
