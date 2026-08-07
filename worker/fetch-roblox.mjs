@@ -284,7 +284,16 @@ async function buildGameSet(prevGames) {
   };
   // Seed: coba KEDUA primer dg slug yang sama (den gagal → di-skip mulus).
   for (const [id, m] of Object.entries(ROBLOX_GAMES)) add(id, { rocodesSlug: m.slug, denSlug: m.slug, name: m.name, genres: m.genres ?? [], seed: true });
-  for (const [id, g] of Object.entries(prevGames)) add(id, { rocodesSlug: g.rocodesSlug ?? g.slug ?? null, denSlug: g.denSlug ?? null, name: g.name, genres: g.genres ?? [], universeId: g.universeId, players: g.players });
+  // placeId & rootPlaceId WAJIB ikut. Daftar field di sini eksplisit, dan apa
+  // pun yang tak disebut hilang tanpa jejak — pola yang sudah menggigit dua kali
+  // sebelumnya (altCode di mk(), kode Den saat sumbernya dilewati).
+  //
+  // Kali ini korbannya penyambung Den: ia mencari pasangan lewat
+  // `e.placeId || e.rootPlaceId`, dan karena keduanya tak pernah sampai ke sini
+  // nilainya SELALU undefined. Akibatnya [sambung] Den melaporkan 0/51 terus —
+  // bukan karena petanya kurang, tapi karena kuncinya tak pernah ada. Diukur 7
+  // Agu 2026: 15 dari 49 game sebenarnya sudah bisa disambung saat itu juga.
+  for (const [id, g] of Object.entries(prevGames)) add(id, { rocodesSlug: g.rocodesSlug ?? g.slug ?? null, denSlug: g.denSlug ?? null, name: g.name, genres: g.genres ?? [], universeId: g.universeId, players: g.players, placeId: g.placeId ?? null, rootPlaceId: g.rootPlaceId ?? null });
   const popular = await discoverPopularWithCodes();
   for (const g of popular) {
     if (set.size >= MAX_GAMES) break;
