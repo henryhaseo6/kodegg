@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-08-07T02:01:22.899Z",
+  "updatedAt": "2026-08-07T03:01:05.458Z",
   "counts": {
     "active": 106,
-    "archived": 55
+    "archived": 56
   },
   "articles": [
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "New S-rank AstralOp Senadina Debuts",
+        "id": "AstralOp Rank-S Baru \"Senadina\" Debut"
+      },
+      "excerpt": {
+        "en": "Greetings, Captains! Today we will introduce you to the new AstralOp Senadina coming in v9.0. Let's check her out together~ ☆☆☆☆☆ AstralOp Senadina ☆☆☆☆☆ \"So many more wonders are ",
+        "id": "Halo Kapten! Hari ini kami akan memperkenalkan info terkait AstralOp baru v9.0 \"Senadina\". Ayo kita lihat bersama~ ☆☆☆☆☆ AstralOp Senadina ☆☆☆☆☆ \"Di dunia yang begitu luas ini, mas"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/4bd0e71950f0e1b8ff3ca0f258b6253b_6166132770317618900.png",
+      "url": "https://www.hoyolab.com/article/46171269",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-07T03:00:08.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "HoYo FEST 2026 Event Highlights 📸🔥",
+        "id": "Foto-Foto Event HoYo FEST 2026 📸🔥"
+      },
+      "excerpt": {
+        "en": "Dear Traveler, #HoYoFEST2026 has come to a close! ✨ Thank you to all Traveler for your incredible support and participation. Let's take a look back at some of the best moments from",
+        "id": "Dear Traveler, #HoYoFEST2026 berakhir dengan sukses! ✨ Terima kasih kepada semua Traveler atas antusiasme dan dukungannya. Berkat kalian, HoYo FEST dipenuhi begitu banyak momen tak"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/06/65f0ac9ca8af589839e817af1d237103_685183805218794364.jpg",
+      "url": "https://www.hoyolab.com/article/46171268",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-07T03:00:06.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -38,22 +70,6 @@
       "publishedAt": "2026-08-06T04:05:07.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Pom-Pom Doing Overtime | Their Phone Cases",
-        "id": "\"Pom-Pom Lembur | Pelindung Ponsel Mereka\""
-      },
-      "excerpt": {
-        "en": "Phone cases are one of the most important sources of elation during an adventure! Because decorating an important travel essential like your phone helps put you in a better mood~ \"",
-        "id": "Pelindung ponsel adalah salah satu hiburan yang penting dalam petualangan, pom! Mendekorasi barang penting untuk perjalanan akan membuat suasana hati kita jadi lebih baik~ \"Tentu s"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
-      "url": "https://www.hoyolab.com/article/46159935",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T04:00:08.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -66,6 +82,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
       "url": "https://www.hoyolab.com/article/46159934",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T04:00:08.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Pom-Pom Doing Overtime | Their Phone Cases",
+        "id": "\"Pom-Pom Lembur | Pelindung Ponsel Mereka\""
+      },
+      "excerpt": {
+        "en": "Phone cases are one of the most important sources of elation during an adventure! Because decorating an important travel essential like your phone helps put you in a better mood~ \"",
+        "id": "Pelindung ponsel adalah salah satu hiburan yang penting dalam petualangan, pom! Mendekorasi barang penting untuk perjalanan akan membuat suasana hati kita jadi lebih baik~ \"Tentu s"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
+      "url": "https://www.hoyolab.com/article/46159935",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-06T04:00:08.000Z"
     },
@@ -372,22 +404,6 @@
       "url": "https://www.hoyolab.com/article/46121755",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-03T06:00:04.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "When the Curtain Rises, She Lives a Thousand Lives — Odette's Anecdote",
-        "id": "Seribu Wajah Kehidupan di Balik Tirai — Anekdot Odette"
-      },
-      "excerpt": {
-        "en": "Odette is a renowned ballerina of Snezhnaya, but few know that she is also a member of the Fatui. On stage, she becomes countless people, yet she has never shown the world who she ",
-        "id": "Odette adalah balerina ternama dari Snezhnaya. Namun, hanya sedikit yang mengetahui identitasnya sebagai anggota Fatui. Di atas panggung, dia memerankan begitu banyak kehidupan. Ta"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/02/7b2c1f4ff9198e0feceb166566e8bcee_5490622000040292228.jpg",
-      "url": "https://www.hoyolab.com/article/46120636",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-03T04:05:07.000Z"
     },
     {
       "game": "zzz",
@@ -1684,7 +1700,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5039",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-08T12:50:24.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1699,10 +1717,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1783440000000/qj6odi3o309h7ul961-1783477712914.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5023",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-08T02:30:14.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-08T02:30:14.000Z",
+      "archivedAt": "2026-08-07T03:01:05.458Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
