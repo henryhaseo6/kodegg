@@ -685,7 +685,7 @@ async function main() {
   // kuota harian diupload otomatis, sisanya disimpan di _video-out/ + file
   // metadata utk diupload manual. Tanpa ini, kode ke-4 dst hari itu tak pernah
   // dapat video sama sekali.
-  const picks = candidates.slice(0, RENDER_MAX);
+  let picks = candidates.slice(0, RENDER_MAX);
   // Sisa yg tak muat → SIMPAN sbg antrian run berikutnya (bukan di-drop). Promo &
   // on-demand tak diantrikan (punya cadence sendiri). Cap 40 biar tak membengkak.
   // Susulan TAK diantrikan: daftarnya diturunkan ulang tiap run, jadi yang tak
@@ -697,6 +697,28 @@ async function main() {
   mkdirSync(TMP, { recursive: true });
   if (DRY_RUN) mkdirSync(REVIEW, { recursive: true }); else mkdirSync(OUTDIR, { recursive: true });
   const requeue = []; // kuota upload habis → antri retry run berikut (JANGAN mark posted)
+  // ── BORONGAN BERGELOMBANG ──────────────────────────────────────────────────
+  // RENDER_MAX membatasi satu gelombang, bukan satu run. Sebelumnya keduanya
+  // sama, dan itu membuang kuota persis di jam yang dirancang untuk
+  // menghabiskannya: 7 Agu 2026 pukul 23 PT tersisa 42 slot tapi borongan cuma
+  // mengambil 15, dan tak ada run lagi sebelum reset pukul 00:00 PT — 27 slot
+  // hangus.
+  //
+  // Sekarang: render satu gelombang, periksa sisa kuota, susun ulang daftar
+  // borongan, lanjut sampai kuota habis. Daftarnya memang diturunkan ulang tiap
+  // kali (bukan diantrikan), jadi gelombang berikutnya otomatis tak mengulang
+  // yang barusan — tandanya sudah ditulis ke state tiap video selesai.
+  //
+  // Tiga rem, dan ketiganya perlu:
+  //   kuota    — tujuan utamanya; berhenti tepat saat habis
+  //   waktu    — run ini berbagi runner dengan tarikan data per jam; melar
+  //              melewati jam berikutnya membuat run itu mengantre
+  //   tengah malam PT — reset kuota; melewatinya berarti memakai jatah HARI BARU
+  const MENIT_MAX = Number(process.env.VIDEO_MAX_MENIT || 40);
+  const mulaiMs = Date.now();
+  let gelombang = 1;
+  let sudahRender = 0; // laju render dihitung darinya → ukuran gelombang berikutnya
+  while (picks.length) {
   for (const c of picks) {
     if (canUpload && remaining <= 0) { requeue.push(c); continue; } // kuota habis → jgn render, antri retry
     // PENJAGA TENGAH MALAM PT. Borongan susulan sengaja dijadwalkan mepet reset;
@@ -798,9 +820,40 @@ async function main() {
         state.promoMonth = bulanWIB(now); // WIB — HARUS sama dg sisi baca (lihat bulanWIB)
         for (const pc of c.promoActive ?? []) state.posted[`promo:${pc.code}`] = true;
       }
+      sudahRender += 1;
       writeFileSync(STATE_PATH, JSON.stringify(state, null, 2)); // simpan tiap video → aman bila run dibatalkan
     } catch (e) {
       console.log(`  ✗ gagal ${c.name}: ${e.message}`);
+    }
+  }
+    // ── gelombang berikutnya? ────────────────────────────────────────────────
+    picks = [];
+    const menit = (Date.now() - mulaiMs) / 60000;
+    const bolehLanjut = !DRY_RUN && canUpload && remaining > 0
+      && jamPT(new Date()) >= BACKLOG_HOUR_PT && hariPT(new Date()) === state.date;
+    if (bolehLanjut && menit >= MENIT_MAX) {
+      console.log(`(gelombang berhenti: ${menit.toFixed(0)} menit terpakai, batas ${MENIT_MAX} — sisa ${remaining} slot dilanjut besok)`);
+    } else if (bolehLanjut) {
+      // UKURAN GELOMBANG DIPOTONG WAKTU TERSISA, bukan cuma kuota. Memeriksa
+      // batas hanya di ANTARA gelombang tak cukup: gelombang yang mulai di menit
+      // 39 tetap berjalan penuh dan berakhir di menit 55. Disimulasikan sebelum
+      // dikirim — 42 slot menghasilkan 46 menit dengan batas 40.
+      //
+      // Laju dihitung dari gelombang yang SUDAH berjalan run ini, jadi ia
+      // menyesuaikan sendiri saat render melambat (video berkode banyak) tanpa
+      // perlu angka yang ditebak di muka.
+      const selesai = Math.max(1, sudahRender);
+      const perVideo = menit / selesai;
+      const muatWaktu = Math.max(0, Math.floor((MENIT_MAX - menit) / Math.max(0.2, perVideo)));
+      const jatah = Math.min(remaining, RENDER_MAX, muatWaktu);
+      const lanjut = jatah > 0 ? buildBacklog(state, jatah) : [];
+      if (lanjut.length) {
+        gelombang += 1;
+        picks = lanjut;
+        console.log(`\n── gelombang ${gelombang}: ${lanjut.length} game · sisa kuota ${remaining} · ${menit.toFixed(0)}/${MENIT_MAX} menit · ~${perVideo.toFixed(1)} mnt/video ──`);
+      } else if (jatah === 0) {
+        console.log(`(gelombang berhenti: sisa waktu tak cukup untuk video berikutnya — ${menit.toFixed(0)}/${MENIT_MAX} menit, sisa ${remaining} slot dilanjut besok)`);
+      }
     }
   }
   // Antrian retry (kuota habis) + overflow render → PENDING_VID (dedup by id), diproses run berikut.
