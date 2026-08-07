@@ -49,7 +49,20 @@ export function catatSeksi(memo, gameId, sumber, hasil, nowMs) {
 export function susunUlang(memo, gameId, sumber, detail) {
   const s = memo.g?.[gameId]?.[sumber];
   if (!s) return null;
-  const ambil = (arr) => (arr ?? []).map((k) => detail.get(String(k).toLowerCase()) ?? { code: k }).filter(Boolean);
+  // Kode yang detailnya TAK ADA di data dilewati, bukan dikarang.
+  //
+  // Versi pertama fungsi ini memakai cadangan `?? { code: k }`, dan itu bencana
+  // kecil: ia melahirkan kode telanjang tanpa tanggal maupun reward, lalu nilai
+  // kosong itu tersimpan dan jadi sumber bagi penyusunan berikutnya — hilang
+  // selamanya. Terlihat 7 Agu 2026 di Asura: tujuh kode "!redeem …" muncul
+  // sebagai AKTIF tanpa tanggal (sehingga aturan sepi-den yang mensyaratkan umur
+  // tak bisa menyentuhnya) dan tanpa reward ("Source lists no reward details"),
+  // padahal RoCodes memberi keduanya dengan lengkap.
+  //
+  // Tugas memo ini MENGAWETKAN SEKSI — siapa menaruh kode di daftar aktif atau
+  // expired — bukan menghidupkan kode. Kalau detailnya tak kita punya, kode itu
+  // memang tak ada pada kita, dan menampilkannya berarti mengarang.
+  const ambil = (arr) => (arr ?? []).map((k) => detail.get(String(k).toLowerCase())).filter(Boolean);
   return { active: ambil(s.a), archive: ambil(s.x) };
 }
 
