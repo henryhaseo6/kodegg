@@ -818,6 +818,8 @@ async function main() {
     return false;
   };
   let denTarik = 0, denLewat = 0, roTarik = 0, roLewat = 0;
+  // Jejak keputusan per game — dipakai diagnostik stempel macet di bawah.
+  const hasilPerGame = new Map();
   const namaBerubah = []; // jejak perubahan nama game (lihat pemakaian di bawah)
 
   console.log(`memproses ${entries.length} game (2 primer: RoCodes + Roblox Den; indeks Den ${denIndex.size} slug)…`);
@@ -841,6 +843,7 @@ async function main() {
         const punya = denPunya[id];
         if (punya) perSource.push({ name: p.name, url: p.url(slug), active: punya.active, archive: punya.archive });
         denLewat++;
+        hasilPerGame.set(id, "Den DILEWATI gerbang");
         denDilewati = true; // pertahankan denSlug walau tak ditarik run ini
         continue;
       }
@@ -877,15 +880,20 @@ async function main() {
           if (cek > 0) for (const c of [...(r.active ?? []), ...(r.archive ?? [])]) if (c.srcNew) c.srcNewAt = cek;
           denAt = Math.max(lm, Date.now());
           denTarik++;
+          hasilPerGame.set(id, "Den ditarik OK");
         }
-      } catch {
-        /* sumber ini tak punya game / gagal → lanjut */
+      } catch (e) {
+        // Kegagalan tarik SENGAJA tak menggagalkan game (sumber lain masih bisa
+        // menutup), tapi sejak 7 Agu 2026 ia tak lagi diam: stempel yang tak maju
+        // karena tarikan gagal terlihat identik dengan stempel yang tak maju
+        // karena gerbang, dan bedanya itu yang menghabiskan waktu paling lama.
+        if (p.name === "Roblox Den") hasilPerGame.set(id, "Den GAGAL: " + String(e.message).slice(0, 40));
       }
     }
-    if (perSource.length === 0) return { id, ok: false };
+    if (perSource.length === 0) { hasilPerGame.set(id, "keluar dini: tak ada sumber"); return { id, ok: false }; }
 
     const { active, archive } = mergeCodes(perSource);
-    if (active.length === 0 && archive.length === 0) return { id, ok: false };
+    if (active.length === 0 && archive.length === 0) { hasilPerGame.set(id, "keluar dini: nol kode"); return { id, ok: false }; }
 
     // Verifikasi identitas untuk token-match longgar (needsVerify): universeId yg
     // DILAPORKAN sumber harus == universeId API Roblox. Buang false-positive game
@@ -1280,6 +1288,32 @@ async function main() {
   // notif spam). Dedup dulu → codeKey konsisten → firstSeenAt awet.
   const { active: freshDD, archive: freshArchDD } = dedupByUniverse(games, freshActive, freshArchive);
   console.log(`Roblox Den: ${denTarik} halaman ditarik (berubah / game ramai), ${denLewat} dilewati (pakai simpanan)`);
+  // ── DIAGNOSTIK STEMPEL MACET ──────────────────────────────────────────────
+  // Dipasang 7 Agu 2026 karena 18 game bertahan di 12-13 jam sementara 307
+  // lainnya tersebar rata 0-5 jam persis seperti janji rotasi. Semua hipotesis
+  // yang bisa diuji dari luar sudah gugur: game-game itu ADA di urutan teratas
+  // antrean rotasi, lolos semua filter, tarikan kedua sumbernya berhasil 5 dari
+  // 5 percobaan, tak ada tabrakan slug, tak ada universeId kembar, dan lognya
+  // menunjukkan mereka diproses sukses. Yang tersisa cuma dugaan tentang
+  // keadaan produksi yang tak bisa direproduksi dari mesin pengembang.
+  //
+  // Jadi berhenti menebak dan biarkan run berikutnya menjawab: cetak game
+  // dengan stempel tertua SESUDAH pemrosesan, lengkap dengan keputusan yang
+  // sebenarnya diambil untuk masing-masing.
+  {
+    const now2 = Date.now();
+    const tua = Object.entries(mergedGames)
+      .filter(([, g]) => g.denSlug && Number(g.denAt))
+      .map(([id, g]) => ({ id, nama: g.name, jam: (now2 - Number(g.denAt)) / 3600000, pemain: g.players ?? 0 }))
+      .sort((a, b) => b.jam - a.jam)
+      .slice(0, 5);
+    if (tua.length && tua[0].jam > 8) {
+      console.log(`[macet] stempel Den tertua sesudah run ini:`);
+      for (const t of tua) {
+        console.log(`  ${t.jam.toFixed(1)} jam · ${t.nama} (${t.id}) · ${t.pemain} pemain · di rotasi: ${denRotasi.has(t.id) ? "YA" : "TIDAK"} · hasil: ${hasilPerGame.get(t.id) ?? "tak diproses"}`);
+      }
+    }
+  }
   console.log(`RoCodes.gg: ${roTarik} halaman ditarik (berubah), ${roLewat} dilewati (pakai simpanan)`);
   if (namaBerubah.length) console.log(`NAMA GAME BERUBAH (${namaBerubah.length}): ${namaBerubah.slice(0, 12).join(" · ")}${namaBerubah.length > 12 ? ` (+${namaBerubah.length - 12})` : ""}`);
   const { active, archive: fullArchive, newlyArchived } = mergeWithPrevious(freshDD, freshArchDD, prev, covered, now);
