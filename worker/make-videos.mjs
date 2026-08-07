@@ -812,7 +812,18 @@ async function main() {
           state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
           // `players` ikut disimpan supaya pengurasan bisa MENDAHULUKAN game besar
           // (lihat drainPending). Jatah playlist baru YouTube cuma ~10/hari.
-          if (playlistPending) enqueuePending({ ...playlistPending, players: c.players ?? 0, game: c.id });
+          // BORONGAN TIDAK DIANTRIKAN. `tanpaBuatPlaylist` cuma menahan
+          // pembuatan playlist SAAT ITU; tanpa penjaga di sini, permintaannya
+          // tetap masuk pending-playlists.json dan drainPending() membuatnya
+          // otomatis begitu kuota reset — persis yang ingin dihindari, cuma
+          // tertunda beberapa jam.
+          //
+          // Alasannya sama dengan kenapa borongan melewati pembuatan playlist
+          // sejak awal: jatah playlist baru YouTube ~10/hari sementara borongan
+          // menembak puluhan per malam. Yang tak muat menumpuk di antrean lalu
+          // dibuat entah kapan, di luar kendali. Untuk borongan, playlist dibuat
+          // manual — daftarnya dicetak di ringkasan run.
+          if (playlistPending && !c.backlog) enqueuePending({ ...playlistPending, players: c.players ?? 0, game: c.id });
         } catch (e) {
           // Error upload HAMPIR SELALU account-wide (kuota / token `invalid_grant` /
           // rate limit) → STOP upload run ini + ANTRI RETRY (JANGAN mark posted) biar
@@ -907,12 +918,12 @@ async function main() {
   if (tanpaPlaylist.length) {
     // SENGAJA tak diantrikan ke pending-playlists.json — VIDEO_SKIP_PLAYLIST
     // dipakai justru ketika kita ingin jatah playlist harian TIDAK terpakai.
-    console.log(`\n[!] ${tanpaPlaylist.length} video TANPA playlist (VIDEO_SKIP_PLAYLIST=1):`);
+    console.log(`\n[!] ${tanpaPlaylist.length} video TANPA playlist — buat MANUAL (borongan / VIDEO_SKIP_PLAYLIST):`);
     for (const v of tanpaPlaylist) console.log(`    ${v.id}  →  ${v.judul}`);
     console.log(`    Buat manual di Studio, atau: yt-maintenance mode=playlistadd ids=${tanpaPlaylist.map((v) => v.id).join(",")} apply=true`);
     if (process.env.GITHUB_STEP_SUMMARY) {
       const baris = tanpaPlaylist.map((v) => `- \`${v.id}\` → ${v.judul}`).join("\n");
-      try { writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### Video tanpa playlist (hemat kuota): ${tanpaPlaylist.length}\n${baris}\n`, { flag: "a" }); } catch {}
+      try { writeFileSync(process.env.GITHUB_STEP_SUMMARY, `### Playlist untuk dibuat MANUAL: ${tanpaPlaylist.length}\n${baris}\n`, { flag: "a" }); } catch {}
     }
   }
 }
