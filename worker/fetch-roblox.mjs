@@ -26,7 +26,7 @@ import { scoutDen } from "./src/den-scout.mjs";
 import { scoutRoCodes } from "./src/rocodes-scout.mjs";
 import { sapuIdentitas, petaUid, petaPlace, sambungUlang, panenSapuan } from "./src/uid-map.mjs";
 import { deteksiMiss, auditBadgeBaru } from "./src/miss-detector.mjs";
-import { vonisMati } from "./src/uji-vonis.mjs";
+import { vonisMati, vonisHidup } from "./src/uji-vonis.mjs";
 import { catatDeskripsi, laporanDeskripsi } from "./src/desc-probe.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
 import { fetchRoCodesIndex, genreDariRoblox } from "./src/roblox-discover.mjs";
@@ -677,6 +677,7 @@ async function main() {
   // Dibaca dari prev.games, bukan katalog run ini: peta ini hanya dipakai untuk
   // memetakan slug→id, dan game yang diuji sudah pasti ada di run sebelumnya.
   const ujiMati = vonisMati(prev.games ?? {});
+  const ujiHidup = vonisHidup(prev.games ?? {});
   if (ujiMati.size) console.log(`uji lapangan: ${ujiMati.size} kode divonis mati manual — selalu diarsipkan, apa pun kata sumber`);
 
   const denPunya = {}, roPunya = {};
@@ -1149,8 +1150,35 @@ async function main() {
       // pendaftaran YAKIN, kodenya hidup lagi — tapi tetap membawa badge CEK
       // DULU lewat `pernahMatiPrimer` di atas, karena "pernah mati" itu
       // informasi yang pembaca berhak tahu.
-      const bangkitRagu = c.check === true && pernahMatiPrimer;
-      const olehPrimer = primExpired.has(key) || bangkitRagu;
+      // KEBANGKITAN DIKUNCI PENUH — diperketat 7 Agu 2026 setelah 994 kode mati
+      // hidup lagi dalam SATU run.
+      //
+      // Syarat lamanya `c.check === true && pernahMatiPrimer`: kebangkitan hanya
+      // ditolak kalau SEMUA sumber ragu. Itu bertumpu pada asumsi bahwa sumber
+      // yang mendaftarkan kode "dengan yakin" memang sedang menyatakan sesuatu.
+      // Asumsi itu runtuh: RoCodes.gg memindahkan hampir seluruh katalog
+      // expired-nya kembali ke daftar aktif — Clover Retribution dari 245 arsip
+      // jadi 7, Heavyweight Fishing 73 jadi 1, Race Clicker 57 jadi 1. Semuanya
+      // "yakin", semuanya salah. Uji lapangan hari itu memastikan arahnya:
+      // Brainblast a Lucky Block, tiga kode berbadge ACTIVE dari RoCodes, tiga-
+      // tiganya ditolak game.
+      //
+      // Den masih menyatakan kode-kode itu mati, tapi vonisnya tak sampai:
+      // halaman Den dilewati run itu, dan carry-forward `denPunya` direkonstruksi
+      // dari KELUARAN KITA SENDIRI (disaring field `sources`), sehingga hanya 49
+      // dari 294 arsip Clover terhitung "milik Den". Selama carry-forward masih
+      // melingkar begitu, `primExpired` tak bisa diandalkan menahan gelombang.
+      //
+      // Maka aturannya sekarang searah: sekali sumber primer menyatakan sebuah
+      // kode mati, ia TETAP mati. Sumber boleh berubah pikiran; kita tidak.
+      //
+      // Satu-satunya jalan keluar adalah UJI LAPANGAN — user memasukkan kodenya
+      // ke dalam game dan mencatat "hidup". Itu disengaja: kebangkitan sejati
+      // (developer menyalakan lagi kode lama) memang terjadi, tapi yang boleh
+      // memutuskannya adalah bukti langsung, bukan agregator yang barusan
+      // membuktikan diri tak bisa dipegang.
+      const bangkitPrimer = pernahMatiPrimer && !ujiHidup.has(`${id}:${key}`);
+      const olehPrimer = primExpired.has(key) || bangkitPrimer;
       // KERAGUAN YANG MANDEK: ditandai ragu dan tak satu pun sumber
       // mengonfirmasinya setelah CHECK_STALE_MS — 7 hari (keputusan user 6 Agu
       // 2026, sebelumnya 14). Alasannya: kodenya sudah diragukan sejak awal,

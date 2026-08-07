@@ -25,9 +25,10 @@ const BERKAS = path.join(DIR, "..", "data", "uji-lapangan.json");
 
 /**
  * @param {Record<string, {slug?: string}>} games peta game (kunci = id game)
- * @returns {Set<string>} kunci `${idGame}:${kode huruf kecil}` yang TERBUKTI mati
+ * @param {"mati"|"hidup"} vonis vonis yang dicari
+ * @returns {Set<string>} kunci `${idGame}:${kode huruf kecil}`
  */
-export function vonisMati(games = {}) {
+export function vonisMati(games = {}, vonis = "mati") {
   let memo;
   try { memo = JSON.parse(fs.readFileSync(BERKAS, "utf8")); }
   catch { return new Set(); }
@@ -50,5 +51,9 @@ export function vonisMati(games = {}) {
     const lama = akhir.get(k);
     if (!lama || String(u.diuji) >= lama.tgl) akhir.set(k, { tgl: String(u.diuji), vonis: u.vonis });
   }
-  return new Set([...akhir].filter(([, v]) => v.vonis === "mati").map(([k]) => k));
+  return new Set([...akhir].filter(([, v]) => v.vonis === vonis).map(([k]) => k));
 }
+
+/** Kode yang uji lapangan buktikan MASIH JALAN. Dipakai sebagai satu-satunya
+ *  jalan keluar dari penguncian kebangkitan — lihat `bangkitPrimer`. */
+export const vonisHidup = (games = {}) => vonisMati(games, "hidup");
