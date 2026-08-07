@@ -1,5 +1,30 @@
 {
-  "generatedAt": "2026-08-07T14:38:38.795Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-08-07T15:01:22.182Z",
+  "codes": [
+    {
+      "game": "rng-heroes",
+      "gameName": "RNG Heroes",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/rng-heroes"
+      },
+      "code": "UpdateFivePotions",
+      "reward": "Potions",
+      "date": "2026-08-07T14:46:58.865Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-07T15:01:22.182Z",
+      "fetchedAt": "2026-08-07T15:01:22.182Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "musical-chairs",
+      "count": 3,
+      "fresh": []
+    }
+  ]
 }
