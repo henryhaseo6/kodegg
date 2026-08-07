@@ -1,5 +1,113 @@
 {
-  "generatedAt": "2026-08-07T11:01:26.420Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-08-07T12:01:49.551Z",
+  "codes": [
+    {
+      "game": "anime-final-quest",
+      "gameName": "Anime Final Quest",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-final-quest"
+      },
+      "code": "NEZHADELAYAPOLOGY",
+      "reward": "100 Raid Tickets, 100 Lucky Weapon Spins, 100 Runes, 1M Gold, 15 Statue Crowns",
+      "date": "2026-08-07T11:14:33.158Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-07T12:01:49.551Z",
+      "fetchedAt": "2026-08-07T12:01:49.551Z"
+    },
+    {
+      "game": "noob-incremental",
+      "gameName": "Noob Incremental",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/noob-incremental"
+      },
+      "code": "SOMEOTHERFIXUPDATE",
+      "reward": null,
+      "date": "2026-08-07T11:14:13.048Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-07T12:01:49.551Z",
+      "fetchedAt": "2026-08-07T12:01:49.551Z"
+    },
+    {
+      "game": "1-unlimited-world",
+      "gameName": "+1 Unlimited World",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/1-unlimited-world"
+      },
+      "code": "G4P9X3",
+      "reward": null,
+      "date": "2026-08-07T11:14:12.007Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-07T12:01:49.551Z",
+      "fetchedAt": "2026-08-07T12:01:49.551Z"
+    },
+    {
+      "game": "build-a-zoo",
+      "gameName": "Build a Zoo",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/build-a-zoo"
+      },
+      "code": "UPDATE76A1B2C3D",
+      "reward": "3 Lucky Tickets, 500 Diamonds",
+      "date": "2026-08-07T11:14:27.910Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-07T12:01:49.551Z",
+      "fetchedAt": "2026-08-07T12:01:49.551Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "roblox-elementalism",
+      "count": 8,
+      "fresh": [
+        {
+          "code": "DOMINATION!",
+          "reward": ""
+        },
+        {
+          "code": "UPD16",
+          "reward": ""
+        }
+      ]
+    },
+    {
+      "game": "1-slayer-blade",
+      "count": 107,
+      "fresh": []
+    },
+    {
+      "game": "it-girl",
+      "count": 19,
+      "fresh": []
+    },
+    {
+      "game": "demon-soul-simulator",
+      "count": 8,
+      "fresh": []
+    },
+    {
+      "game": "scoped",
+      "count": 5,
+      "fresh": []
+    }
+  ]
 }
