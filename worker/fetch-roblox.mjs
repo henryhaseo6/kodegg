@@ -1561,6 +1561,29 @@ async function main() {
   };
   await writeFile(OUT, JSON.stringify(payload, null, 2));
 
+  // ── ISYARAT DEPLOY ───────────────────────────────────────────────────────
+  // Gerbang deploy di update-codes.yml hemat build (batas Cloudflare 500/bln)
+  // dengan hanya menerbitkan saat ada kode BARU, playlist berubah, atau jam
+  // lantai. Gerbang itu PINCANG: ia cuma melihat kode yang BERTAMBAH.
+  //
+  // Padahal yang membuat situs SALAH justru kode yang HILANG. Terjadi 7 Agu
+  // 2026 — run manual mengarsipkan 22 kode yang user buktikan mati langsung di
+  // dalam game, commit-nya dapat [skip ci], dan situs tetap memajang kode mati
+  // itu berjam-jam sesudahnya.
+  //
+  // Yang ditandai di sini SEMPIT dan jarang: hanya kalau vonis uji lapangan
+  // BARU berlaku run ini (dibanding run sebelumnya). Vonis diterapkan ulang tiap
+  // run, jadi selisihnya nol kecuali user baru saja mencatat uji baru — persis
+  // saat situs perlu segera menyusul. Sengaja TIDAK menandai gelombang arsip
+  // biasa: kode kedaluwarsa setiap jam, dan menerbitkan tiap kali akan
+  // menghabiskan jatah build yang justru dijaga gerbang ini.
+  const ujiSebelum = (prev.archive ?? []).filter((c) => c.expiredBy === "uji-manual").length;
+  const ujiSesudah = archive.filter((c) => c.expiredBy === "uji-manual").length;
+  const alasan = [];
+  if (ujiSesudah > ujiSebelum) alasan.push(`vonis-uji-baru:${ujiSesudah - ujiSebelum}`);
+  await writeFile(resolve(dirname(OUT), "deploy-alasan.json"), JSON.stringify({ at: new Date().toISOString(), alasan }, null, 1) + "\n");
+  if (alasan.length) console.log(`deploy WAJIB run ini — ${alasan.join(", ")}`);
+
   // ── DETEKTOR MISS (lapor saja) ───────────────────────────────────────────
   // Menjawab "apakah ada kode yang kelewat?" dengan pengukuran, bukan
   // penalaran. Dua kesimpulan yang ditarik dari penalaran pada 6 Agu 2026

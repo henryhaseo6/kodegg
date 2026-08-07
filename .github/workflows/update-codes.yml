@@ -240,13 +240,22 @@ jobs:
           # Ongkos terukur: 9 kejadian / 12 hari ≈ +0,75 build/hari, aman thd 500/bln.
           YTPL=0
           if ! git diff --cached --quiet -- worker/data/yt-playlists.json; then YTPL=1; fi
+          # Kode yang HILANG juga wajib terbit, bukan cuma yang bertambah.
+          # fetch-roblox menandai run yang menerapkan vonis uji lapangan BARU —
+          # kode yang user buktikan mati dengan mencobanya langsung di dalam game.
+          # Selama gerbang ini cuma melihat kode baru, situs bisa memajang kode
+          # yang kita SUDAH TAHU mati sampai jam lantai berikutnya (7 Agu 2026:
+          # 22 kode, berjam-jam). Sempit & jarang — vonis diterapkan ulang tiap
+          # run, jadi ini hanya menyala pada run pertama sesudah user mencatat uji.
+          UJI=0
+          if [ -f worker/data/deploy-alasan.json ] && node -e "process.exit((JSON.parse(require('fs').readFileSync('worker/data/deploy-alasan.json','utf8')).alasan||[]).length>0?0:1)" 2>/dev/null; then UJI=1; fi
           # Lantai deploy 10×/hari (~tiap 2-3 jam) di jam UTC berikut → ~300
           # build/bln pasti; sisanya dari run berkode-baru. Total nyaman <500.
           H=$(date -u +%H)
           case " 00 02 05 07 10 12 14 17 19 22 " in
             *" $H "*) FLOOR=1 ;; *) FLOOR=0 ;;
           esac
-          if [ "$NEWCODES" = "1" ] || [ "$FLOOR" = "1" ] || [ "$YTPL" = "1" ]; then
+          if [ "$NEWCODES" = "1" ] || [ "$FLOOR" = "1" ] || [ "$YTPL" = "1" ] || [ "$UJI" = "1" ]; then
             git commit -m "chore: update data (kode/event/berita)"
           else
             git commit -m "chore: update data (kode/event/berita) [skip ci]"
