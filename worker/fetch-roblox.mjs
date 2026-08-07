@@ -32,6 +32,7 @@ import { fetchRoCodesIndex, genreDariRoblox } from "./src/roblox-discover.mjs";
 import { crossCheckActive } from "./src/sources/roblox-crosscheck.mjs";
 import { scanLevelup, petaExpired, normSlug } from "./src/sources/levelupplay.mjs";
 import { fetchPromoCodes } from "./src/sources/roblox-promo.mjs";
+import { terapkanVonis } from "./src/promo-verifikasi.mjs";
 import { discoverPopularWithCodes, inferGenres } from "./src/roblox-discover.mjs";
 import { mergeWithPrevious } from "./src/archive.mjs";
 
@@ -1488,7 +1489,12 @@ async function main() {
   // Kode PROMO Roblox platform (bukan per-game) — ditukar di roblox.com.
   let promo = prev.promo ?? { active: [], archive: [] };
   try {
-    const p = await fetchPromoCodes();
+    // VONIS MANUAL menang atas kedua sumber. Diuji 7 Agu 2026 di akun sungguhan:
+    // 3 dari 4 kode yang RoCodes DAN Den sama-sama sebut aktif ternyata mati.
+    // Lihat src/promo-verifikasi.mjs untuk kenapa di sini manual justru lebih
+    // dipercaya daripada cross-check.
+    const p = terapkanVonis(await fetchPromoCodes());
+    if (p.dipindah.length) console.log(`  promo: ${p.dipindah.length} diarsipkan oleh vonis manual — ${p.dipindah.join(", ")}`);
     if (p.active.length) {
       // firstSeenAt dipertahankan lintas-run (utk deteksi kode promo baru di
       // auto-video). Yang belum pernah terlihat → firstSeenAt = now.
