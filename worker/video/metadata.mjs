@@ -118,7 +118,27 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
   // Komentar utk di-pin: 3 baris supaya kebaca penuh di panel komentar HP tanpa
   // "Read more". URL di baris sendiri biar gampang di-copy (di Shorts, URL pada
   // komentar tak di-linkify YouTube).
-  const comment = `🎁 Semua kode + cara redeem → link ada di DESKRIPSI 👆\n⚠️ Kode CASE-SENSITIVE, salin PERSIS! Sebagian ada syarat/region & sekali pakai.\n✅ Update tiap jam — kode expired auto ke arsip di kodegg.com`;
+  // Dua perubahan dari versi lama, keduanya dari pelajaran 7 Agu 2026:
+  //
+  //  1. TAUTAN SPESIFIK, bukan "kodegg.com". Komentar ini menetap selamanya di
+  //     video yang terus ditonton berbulan-bulan. Menyuruh orang mengetik ulang
+  //     nama situs lalu mencari game-nya sendiri membuang mereka di tengah jalan;
+  //     alamat halaman game-nya langsung menyelesaikan urusan.
+  //
+  //  2. PERINGATAN KEDALUWARSA. Kode di LAYAR video tak bisa diperbaiki setelah
+  //     terbit — video Drag Drive 1 Agustus masih menarik 184 view/jam saat
+  //     keempat kodenya sudah mati. Kalimatnya sengaja dirangkai supaya benar
+  //     baik di hari terbit maupun setahun kemudian: bukan "video ini sudah
+  //     lama" (salah di hari pertama), melainkan "kalau ada yang tak jalan".
+  //
+  // Tetap 4 baris supaya terbaca penuh di panel komentar HP tanpa "Read more",
+  // dan URL berdiri sendiri di barisnya — di Shorts, URL pada komentar TIDAK
+  // di-linkify YouTube, jadi ia harus gampang di-blok dan disalin.
+  const comment =
+    `🎁 Semua kode + cara redeem → link ada di DESKRIPSI 👆\n` +
+    `⚠️ Kode CASE-SENSITIVE, salin PERSIS! Sebagian ada syarat/region & sekali pakai.\n` +
+    `⏳ Kode cepat hangus. Kalau ada yang tak jalan, daftar terbaru (update tiap jam):\n` +
+    `${url}`;
   const playlistTitle = `${name}${cw} — Kode Redeem`;
   // Deskripsi playlist BILINGUAL: YouTube TAK auto-translate deskripsi playlist
   // (beda dari video) → tulis ID + EN langsung supaya penonton luar pun terlayani.
