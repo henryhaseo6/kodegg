@@ -26,6 +26,7 @@ import { scoutDen } from "./src/den-scout.mjs";
 import { scoutRoCodes } from "./src/rocodes-scout.mjs";
 import { sapuIdentitas, petaUid, petaPlace, sambungUlang, panenSapuan } from "./src/uid-map.mjs";
 import { deteksiMiss, auditBadgeBaru } from "./src/miss-detector.mjs";
+import { vonisMati } from "./src/uji-vonis.mjs";
 import { catatDeskripsi, laporanDeskripsi } from "./src/desc-probe.mjs";
 import { rekamProbe, ringkasProbe } from "./src/lastmod-probe.mjs";
 import { fetchRoCodesIndex, genreDariRoblox } from "./src/roblox-discover.mjs";
@@ -672,6 +673,12 @@ async function main() {
       .map((c) => `${c.game}:${String(c.code).toLowerCase()}`),
   );
 
+  // Vonis uji lapangan (kode yang user coba langsung di dalam game dan ditolak).
+  // Dibaca dari prev.games, bukan katalog run ini: peta ini hanya dipakai untuk
+  // memetakan slug→id, dan game yang diuji sudah pasti ada di run sebelumnya.
+  const ujiMati = vonisMati(prev.games ?? {});
+  if (ujiMati.size) console.log(`uji lapangan: ${ujiMati.size} kode divonis mati manual — selalu diarsipkan, apa pun kata sumber`);
+
   const denPunya = {}, roPunya = {};
   for (const [kunci, arr] of [["active", prev.active ?? []], ["archive", prev.archive ?? []]]) {
     for (const c of arr) {
@@ -1163,13 +1170,18 @@ async function main() {
       // menyusul, bukan tertinggal. Memakainya di situ berarti menahan vonis
       // yang sudah tiba. endsAt menembus grace sejak awal dengan alasan lebih
       // kuat lagi: kodenya sendiri yang menyatakan batas waktunya.
-      if (endsPassed || olehPrimer || (mandek && !isFresh)) {
+      // UJI LAPANGAN MENANG ATAS SEMUANYA — termasuk grace 48 jam dan kesepakatan
+      // kedua primer. Aturan lain menimbang apa KATA sumber; yang satu ini tahu
+      // apa yang terjadi saat kodenya benar-benar dimasukkan ke game. Ditaruh
+      // paling depan supaya tak ada syarat lain yang bisa menahannya.
+      const matiUji = ujiMati.has(`${id}:${key}`);
+      if (endsPassed || olehPrimer || matiUji || (mandek && !isFresh)) {
         // expiredBy = ALASAN kode ini diarsipkan. Tanpa jejak ini, kode yang
         // hilang dari daftar aktif tak bisa dipertanggungjawabkan: tak ada cara
         // membedakan kode yang memang habis waktunya dari kode yang dibunuh satu
         // situs editorial yang parsing-nya rusak. Penting terutama saat cakupan
         // sumber berubah (mis. gelombang arsip dari Roblox Den).
-        const expiredBy = endsPassed ? "endsAt" : olehPrimer ? "primer" : "cek-mandek";
+        const expiredBy = matiUji ? "uji-manual" : endsPassed ? "endsAt" : olehPrimer ? "primer" : "cek-mandek";
         archFromActive.push(mk(c, { status: "expired", endsAt: c.endsAt, expiredBy }));
         continue;
       }
