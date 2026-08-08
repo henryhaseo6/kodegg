@@ -711,7 +711,21 @@ async function main() {
     // Dry-run dibatasi 2 supaya jalur ini bisa dipratinjau tanpa menunggu 15
     // render (~17 menit) — kalau tak bisa dicoba, tak bisa dipercaya.
     const muat = Math.min(DRY_RUN ? 2 : remaining, RENDER_MAX) - candidates.length;
-    const susulan = buildBacklog(state, muat);
+    // Game yang SUDAH jadi kandidat run ini dikeluarkan dari susulan.
+    //
+    // buildBacklog menyaring lewat `state.posted` — catatan game yang pernah
+    // punya video. Game yang baru masuk daftar kandidat beberapa baris di atas
+    // belum tercatat di sana, jadi ia lolos dua kali dan terbit DUA video dalam
+    // menit yang sama: satu "Kode Terbaru" (jalur kode baru) dan satu "Semua
+    // Kode Aktif" (jalur susulan). Terjadi 8 Agu 2026 pada Chicken Farm dan
+    // Grow a Chicken Fighter — dua game yang serentak baru masuk katalog DAN
+    // membawa kode baru, sehingga memenuhi syarat kedua jalur sekaligus.
+    //
+    // Ongkosnya bukan cuma 164 unit kuota terbuang: di kanal, dua video judul
+    // nyaris kembar untuk game yang sama, terbit selisih menit, terbaca sebagai
+    // spam oleh penonton maupun YouTube.
+    const sudahJadiKandidat = new Set(candidates.map((c) => c.game).filter(Boolean));
+    const susulan = buildBacklog(state, muat).filter((c) => !sudahJadiKandidat.has(c.game));
     if (susulan.length) {
       candidates.push(...susulan);
       console.log(`borongan susulan (jam ${jamPT(now)} PT, sisa kuota ${remaining}): +${susulan.length} game belum pernah ada videonya — ${susulan.slice(0, 3).map((c) => `${c.name} (${c.players})`).join(", ")}${susulan.length > 3 ? ", …" : ""}`);
