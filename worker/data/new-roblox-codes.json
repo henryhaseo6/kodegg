@@ -1,72 +1,42 @@
 {
-  "generatedAt": "2026-08-08T05:01:22.415Z",
-  "codes": [
-    {
-      "game": "five-nights-td-2",
-      "gameName": "Five Nights TD 2",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
-      },
-      "code": "SPAINWC2026",
-      "reward": null,
-      "date": "2026-08-08T04:18:46.984Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-08T05:01:22.415Z",
-      "fetchedAt": "2026-08-08T05:01:22.415Z"
-    },
-    {
-      "game": "tr-legacy",
-      "gameName": "TR Legacy",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/tr-legacy"
-      },
-      "code": "THX435KLIKES",
-      "reward": null,
-      "date": "2026-08-08T04:16:45.941Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-08T05:01:22.415Z",
-      "fetchedAt": "2026-08-08T05:01:22.415Z"
-    }
-  ],
+  "generatedAt": "2026-08-08T05:57:26.139Z",
+  "codes": [],
   "bulkGames": [
     {
-      "game": "robeats",
-      "count": 6,
+      "game": "grow-a-chicken-fighter",
+      "count": 3,
       "fresh": [
         {
-          "code": "thx2026summer",
-          "reward": "3 Mini Ascension Tokens"
+          "code": "LETMECOOK",
+          "reward": "Money Drop, Thunder Egg, Money Boost (30 minutes)"
         },
         {
-          "code": "thx2026summervip",
-          "reward": "Gift (if you had VIP)"
+          "code": "SERGIOVERSE",
+          "reward": "Scratch Egg, 50 Cash, Double Coins (30 minutes)"
+        },
+        {
+          "code": "WELCOME",
+          "reward": "2 Nest Eggs, 50 Coins"
         }
       ]
     },
     {
-      "game": "bikelife-netherlands",
-      "count": 7,
-      "fresh": []
-    },
-    {
-      "game": "greedy-growers",
-      "count": 1,
-      "fresh": []
-    },
-    {
-      "game": "hide-or-die",
-      "count": 9,
-      "fresh": []
+      "game": "chicken-farm",
+      "count": 3,
+      "fresh": [
+        {
+          "code": "666klikes",
+          "reward": "Double Cash Boost (5 minutes)"
+        },
+        {
+          "code": "50MVisits",
+          "reward": "Hacker Lucky Block"
+        },
+        {
+          "code": "THANKSFOR100K",
+          "reward": "Egg Boost (5 minutes)"
+        }
+      ]
     }
   ]
 }
