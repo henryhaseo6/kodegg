@@ -26487,6 +26487,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-08",
    "awal": true
+  },
+  "antiteam": {
+   "tulis": "ANTITEAM",
+   "pertama": 1786170888435,
+   "terakhir": "2026-08-08"
   }
  },
  "murder-mystery-duels": {
@@ -43531,49 +43536,62 @@
  "grow-a-chicken-fighter": {
   "chicken": {
    "tulis": "Chicken",
-   "pertama": 1786168682389,
+   "pertama": 1786170888435,
    "terakhir": "2026-08-08"
   },
   "chickens": {
    "tulis": "chickens",
-   "pertama": 1786168682389,
+   "pertama": 1786170888435,
    "terakhir": "2026-08-08"
   },
   "mutated": {
    "tulis": "mutated",
-   "pertama": 1786168682389,
+   "pertama": 1786170888435,
    "terakhir": "2026-08-08"
   },
   "laying": {
    "tulis": "laying",
-   "pertama": 1786168682389,
+   "pertama": 1786170888435,
    "terakhir": "2026-08-08"
   }
  },
  "chicken-farm": {
   "chicken": {
    "tulis": "Chicken",
-   "pertama": 1786168682389,
+   "pertama": 1786170888435,
    "terakhir": "2026-08-08"
   },
   "chickens": {
    "tulis": "Chickens",
-   "pertama": 1786168682389,
+   "pertama": 1786170888435,
    "terakhir": "2026-08-08"
   },
   "convert": {
    "tulis": "Convert",
-   "pertama": 1786168682389,
+   "pertama": 1786170888435,
    "terakhir": "2026-08-08"
   },
   "nest": {
    "tulis": "Nest",
-   "pertama": 1786168682389,
+   "pertama": 1786170888435,
    "terakhir": "2026-08-08"
   },
   "laying": {
    "tulis": "laying",
-   "pertama": 1786168682389,
+   "pertama": 1786170888435,
+   "terakhir": "2026-08-08"
+  }
+ },
+ "cozy-town-rp": {
+  "like1000": {
+   "tulis": "like1000",
+   "pertama": 1786170888435,
+   "terakhir": "2026-08-08",
+   "sudahPunya": true
+  },
+  "fancy": {
+   "tulis": "fancy",
+   "pertama": 1786170888435,
    "terakhir": "2026-08-08"
   }
  }
