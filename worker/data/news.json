@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-08T04:01:26.732Z",
+  "updatedAt": "2026-08-08T05:01:18.068Z",
   "counts": {
-    "active": 100,
-    "archived": 62
+    "active": 97,
+    "archived": 65
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Meet the Prima Ballerina — Odette Offstage",
+        "id": "Mengenal Sang Prima Ballerina — \"Odette di Balik Panggung\""
+      },
+      "excerpt": {
+        "en": "How does Odette spend a typical day when she's off the stage? From morning rehearsals to a quiet afternoon at the theater, her daily routine gradually unfolds. Yet beyond the repor",
+        "id": "Seperti apa keseharian Odette di balik sorotan panggung? Dari pagi hingga sore, rutinitas Odette di teater perlahan terungkap. Namun di luar pandangan para reporter, dia diam-diam "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/0/45810df0c87c9af702b3d24add0e5e5b_5983359286785794528.jpeg",
+      "url": "https://www.hoyolab.com/article/46184863",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-08T04:10:09.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -468,22 +484,6 @@
       "url": "https://www.hoyolab.com/article/46137161",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-04T08:00:02.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.0 - Standard Ode Elite Cosmetics",
-        "id": "Version 7.0 - Standard Ode Elite Cosmetics"
-      },
-      "excerpt": {
-        "en": "★ Elite Cosmetic | Crowned by the Breeze A botanist's expedition wear, designed to handle sweltering environments. —————— How to Obtain: During the event, Travelers can obtain this",
-        "id": "★ Elite Cosmetic | Crowned by the Breeze A botanist's expedition wear, designed to handle sweltering environments. —————— How to Obtain: During the event, Travelers can obtain this"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/03/a9858b92a88efc5e65634a1b5d40d2cf_8251715733202845833.jpg",
-      "url": "https://www.hoyolab.com/article/46136576",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-04T07:00:02.000Z"
     },
     {
       "game": "hsr",
@@ -1556,7 +1556,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5091",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-09T07:48:19.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1571,7 +1573,8 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/09/5e35ad1e0890fb67e40c85adfb37cfbf_840431407000798050.png",
       "url": "https://www.hoyolab.com/article/45786210",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-09T05:00:07.000Z"
+      "publishedAt": "2026-07-09T05:00:07.000Z",
+      "archivedAt": "2026-08-08T05:01:18.068Z"
     },
     {
       "game": "wuwa",
@@ -1587,7 +1590,8 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1783526400000/lusfvsk8jii8a44bkq-1783570246928.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5076",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-09T04:11:10.000Z"
+      "publishedAt": "2026-07-09T04:11:10.000Z",
+      "archivedAt": "2026-08-08T05:01:18.068Z"
     },
     {
       "game": "gi",
@@ -1603,10 +1607,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/08/05c288b456815fbaf6aeb54f362f4f9f_8460316244770188753.png",
       "url": "https://www.hoyolab.com/article/45785814",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-09T04:10:05.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-09T04:10:05.000Z",
+      "archivedAt": "2026-08-08T05:01:18.068Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",

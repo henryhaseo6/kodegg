@@ -1,29 +1,71 @@
 {
-  "generatedAt": "2026-08-08T04:01:30.325Z",
+  "generatedAt": "2026-08-08T05:01:22.415Z",
   "codes": [
     {
-      "game": "100-days-at-sea",
-      "gameName": "100 Days At Sea",
+      "game": "five-nights-td-2",
+      "gameName": "Five Nights TD 2",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/100-days-at-sea"
+        "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
       },
-      "code": "DECORATE",
-      "reward": "20 Pearls",
-      "date": "2026-08-08T03:30:45.874Z",
+      "code": "SPAINWC2026",
+      "reward": null,
+      "date": "2026-08-08T04:18:46.984Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-08T04:01:30.325Z",
-      "fetchedAt": "2026-08-08T04:01:30.325Z"
+      "firstSeenAt": "2026-08-08T05:01:22.415Z",
+      "fetchedAt": "2026-08-08T05:01:22.415Z"
+    },
+    {
+      "game": "tr-legacy",
+      "gameName": "TR Legacy",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/tr-legacy"
+      },
+      "code": "THX435KLIKES",
+      "reward": null,
+      "date": "2026-08-08T04:16:45.941Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-08T05:01:22.415Z",
+      "fetchedAt": "2026-08-08T05:01:22.415Z"
     }
   ],
   "bulkGames": [
     {
-      "game": "destroy-grandma",
-      "count": 4,
+      "game": "robeats",
+      "count": 6,
+      "fresh": [
+        {
+          "code": "thx2026summer",
+          "reward": "3 Mini Ascension Tokens"
+        },
+        {
+          "code": "thx2026summervip",
+          "reward": "Gift (if you had VIP)"
+        }
+      ]
+    },
+    {
+      "game": "bikelife-netherlands",
+      "count": 7,
+      "fresh": []
+    },
+    {
+      "game": "greedy-growers",
+      "count": 1,
+      "fresh": []
+    },
+    {
+      "game": "hide-or-die",
+      "count": 9,
       "fresh": []
     }
   ]
