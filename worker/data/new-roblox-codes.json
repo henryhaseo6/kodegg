@@ -1,127 +1,72 @@
 {
-  "generatedAt": "2026-08-08T15:01:34.067Z",
+  "generatedAt": "2026-08-08T16:01:58.123Z",
   "codes": [
     {
-      "game": "final-swarm",
-      "gameName": "Final Swarm",
+      "game": "resource-incremental",
+      "gameName": "Resource Incremental",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/final-swarm"
+        "Roblox Den": "https://robloxden.com/game-codes/resource-incremental"
       },
-      "code": "freevoid",
-      "reward": "3 Void Chests",
+      "code": "10KLikes",
+      "reward": "3 All Potions",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1786199400000,
+      "srcNewAt": 1786200900000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-08T15:01:34.067Z",
-      "fetchedAt": "2026-08-08T15:01:34.067Z"
+      "firstSeenAt": "2026-08-08T16:01:58.123Z",
+      "fetchedAt": "2026-08-08T16:01:58.123Z"
     },
     {
-      "game": "iron-soul-dungeon",
-      "gameName": "Iron Soul: Dungeon",
+      "game": "resource-incremental",
+      "gameName": "Resource Incremental",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/iron-soul-dungeon"
+        "Roblox Den": "https://robloxden.com/game-codes/resource-incremental"
       },
-      "code": "IRONSOULWEEKEND19",
-      "reward": "3 Race Rerolls",
+      "code": "1MVisits",
+      "reward": "50 Tickets and 100 Diamonds",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1786197900000,
+      "srcNewAt": 1786200900000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-08T15:01:34.067Z",
-      "fetchedAt": "2026-08-08T15:01:34.067Z"
+      "firstSeenAt": "2026-08-08T16:01:58.123Z",
+      "fetchedAt": "2026-08-08T16:01:58.123Z"
     },
     {
-      "game": "iron-soul-dungeon",
-      "gameName": "Iron Soul: Dungeon",
+      "game": "haulers",
+      "gameName": "Haulers",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/iron-soul-dungeon"
+        "Roblox Den": "https://robloxden.com/game-codes/haulers"
       },
-      "code": "SEASON3EXPAND",
-      "reward": "2,000 Season Vouchers and 160 Origin Shards",
+      "code": "50KLIKES",
+      "reward": "3x Revives",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1786197900000,
+      "srcNewAt": 1786200480000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-08T15:01:34.067Z",
-      "fetchedAt": "2026-08-08T15:01:34.067Z"
-    },
-    {
-      "game": "iron-soul-dungeon",
-      "gameName": "Iron Soul: Dungeon",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/iron-soul-dungeon"
-      },
-      "code": "SEASON3LIMITED",
-      "reward": null,
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1786197900000,
-      "endsAt": null,
-      "verified": false,
-      "check": true,
-      "checkAt": 1786201330716,
-      "srcCheck": true,
-      "firstSeenAt": "2026-08-08T15:01:34.067Z",
-      "fetchedAt": "2026-08-08T15:01:34.067Z"
-    },
-    {
-      "game": "spin-a-soccer-card",
-      "gameName": "Spin a Soccer Card",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/spin-a-soccer-card"
-      },
-      "code": "REWORKEDCARDSW",
-      "reward": null,
-      "date": "2026-08-08T14:41:39.189Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-08T15:01:34.067Z",
-      "fetchedAt": "2026-08-08T15:01:34.067Z"
-    },
-    {
-      "game": "anime-fighting-simulator-kdmf",
-      "gameName": "Anime Fighting Simulator",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/anime-fighting-simulator-kdmf"
-      },
-      "code": "MIDWEEK",
-      "reward": "500 Tensei Shards, 2 Training Speed Boosts, 2 Yen Boosts, and 10 Trait Rerolls",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1786198620000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-08T15:01:34.067Z",
-      "fetchedAt": "2026-08-08T15:01:34.067Z"
+      "firstSeenAt": "2026-08-08T16:01:58.123Z",
+      "fetchedAt": "2026-08-08T16:01:58.123Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "math-tower-race",
+      "count": 1,
+      "fresh": []
+    }
+  ]
 }
