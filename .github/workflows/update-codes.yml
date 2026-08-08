@@ -272,6 +272,20 @@ jobs:
             echo "push ditolak — integrasikan remote lalu ulang ($i)"
             git pull --rebase -X theirs --autostash origin main \
               || { git rebase --abort 2>/dev/null || true; }
+            # `-X theirs` memenangkan versi LOKAL, dan untuk roblox-codes.json
+            # itu memang yang diinginkan (potret tarikan tersegar menang). Tapi
+            # video-state.json & video-harian.json bukan potret melainkan CATATAN
+            # KUMULATIF — menimpanya menghapus apa yang run lain sudah kerjakan.
+            #
+            # 8 Agu 2026: run A mengunggah 39 video & menulis todayCount 65, run
+            # B menimpanya dengan 43 dari state basi. B tak melihat jejak A, lalu
+            # mengulang 9 game yang sama; batas 65/hari jebol jadi 82 unggahan
+            # dan kuota harian YouTube tembus 100%.
+            node worker/gabung-state.mjs origin/main || echo "  (gabung state dilewati)"
+            if ! git diff --quiet -- worker/data/video-state.json worker/data/video-harian.json; then
+              git add worker/data/video-state.json worker/data/video-harian.json
+              git commit --amend --no-edit --quiet
+            fi
           done
           echo "::error::gagal push setelah 5 percobaan"; exit 1
         # CATATAN [skip ci]: Cloudflare Pages menghormati [skip ci] → MELEWATI
