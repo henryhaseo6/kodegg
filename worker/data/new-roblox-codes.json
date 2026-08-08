@@ -1,62 +1,26 @@
 {
-  "generatedAt": "2026-08-08T19:01:31.176Z",
+  "generatedAt": "2026-08-08T20:01:46.285Z",
   "codes": [
     {
-      "game": "1-magic-evolution",
-      "gameName": "+1 Magic Evolution",
+      "game": "world-zero",
+      "gameName": "World Zero",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/magic-evolution"
+        "Roblox Den": "https://robloxden.com/game-codes/world-zero"
       },
-      "code": "JOIN EVENT",
-      "reward": "Good Stone Slabs",
+      "code": "NEWTUTORIAL",
+      "reward": "Chad Statue",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1786199640000,
+      "srcNewAt": 1786202640000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-08T19:01:31.176Z",
-      "fetchedAt": "2026-08-08T19:01:31.176Z"
-    },
-    {
-      "game": "zombie-island",
-      "gameName": "Zombie Island",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/zombie-island"
-      },
-      "code": "AirStrike",
-      "reward": "1,000 Diamonds",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1786199160000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-08T19:01:31.176Z",
-      "fetchedAt": "2026-08-08T19:01:31.176Z"
+      "firstSeenAt": "2026-08-08T20:01:46.285Z",
+      "fetchedAt": "2026-08-08T20:01:46.285Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "blockade-battlefront",
-      "count": 1,
-      "fresh": []
-    },
-    {
-      "game": "redcliff-city",
-      "count": 1,
-      "fresh": []
-    },
-    {
-      "game": "shrek-in-the-backrooms",
-      "count": 5,
-      "fresh": []
-    }
-  ]
+  "bulkGames": []
 }
