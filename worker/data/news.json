@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-08T07:01:24.360Z",
+  "updatedAt": "2026-08-08T08:01:17.851Z",
   "counts": {
-    "active": 97,
-    "archived": 65
+    "active": 96,
+    "archived": 66
   },
   "articles": [
     {
@@ -1540,7 +1540,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5094",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-09T08:02:45.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1555,10 +1557,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1783526400000/10922ojx4uxpj3ulhe-1783582934286.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5091",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-09T07:48:19.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-09T07:48:19.000Z",
+      "archivedAt": "2026-08-08T08:01:17.851Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
