@@ -1,10 +1,29 @@
 {
-  "generatedAt": "2026-08-08T21:02:19.086Z",
-  "codes": [],
+  "generatedAt": "2026-08-08T22:01:35.905Z",
+  "codes": [
+    {
+      "game": "saber-simulator",
+      "gameName": "Saber Simulator",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/saber-simulator"
+      },
+      "code": "CODE78",
+      "reward": null,
+      "date": "2026-08-08T16:35:11.053Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-08T22:01:35.905Z",
+      "fetchedAt": "2026-08-08T22:01:35.905Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "cali-shootout",
-      "count": 8,
+      "game": "brainrots",
+      "count": 1,
       "fresh": []
     }
   ]
