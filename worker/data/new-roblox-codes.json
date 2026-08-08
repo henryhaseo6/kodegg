@@ -1,5 +1,30 @@
 {
-  "generatedAt": "2026-08-08T03:01:23.521Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-08-08T04:01:30.325Z",
+  "codes": [
+    {
+      "game": "100-days-at-sea",
+      "gameName": "100 Days At Sea",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/100-days-at-sea"
+      },
+      "code": "DECORATE",
+      "reward": "20 Pearls",
+      "date": "2026-08-08T03:30:45.874Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-08T04:01:30.325Z",
+      "fetchedAt": "2026-08-08T04:01:30.325Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "destroy-grandma",
+      "count": 4,
+      "fresh": []
+    }
+  ]
 }
