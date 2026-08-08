@@ -1,26 +1,37 @@
 {
-  "generatedAt": "2026-08-08T00:01:31.085Z",
+  "generatedAt": "2026-08-08T01:01:29.119Z",
   "codes": [
     {
-      "game": "roblox-ken",
-      "gameName": "Ken",
+      "game": "diesel-n-steel",
+      "gameName": "Diesel n' Steel",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/ken"
+        "Roblox Den": "https://robloxden.com/game-codes/diesel-n-steel"
       },
-      "code": "QOLUPDATE",
+      "code": "Oplan paldo",
       "reward": null,
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1786129500000,
+      "srcNewAt": 1786136820000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-08T00:01:31.085Z",
-      "fetchedAt": "2026-08-08T00:01:31.085Z"
+      "firstSeenAt": "2026-08-08T01:01:29.119Z",
+      "fetchedAt": "2026-08-08T01:01:29.119Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "neighbors-17",
+      "count": 5,
+      "fresh": []
+    },
+    {
+      "game": "boxing-beta",
+      "count": 4,
+      "fresh": []
+    }
+  ]
 }
