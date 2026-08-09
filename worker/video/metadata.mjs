@@ -24,7 +24,7 @@ function wibParts(now) {
  * @param {{name, platform:'ROBLOX'|'MOBILE', slug, codes:[{code,reward}], activeCount, now:Date}} o
  * @returns {{title, description, tags:string[]}}
  */
-export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, redeemNote = null, alias = null, now }) {
+export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, redeemNote = null, alias = null, now, shorts = true }) {
   const w = wibParts(now);
   const my = `${w.monEn} ${w.y}`; // bulan WIB — sama dg tanggal di judul/deskripsi/video
   const isRoblox = platform === "ROBLOX";
@@ -100,7 +100,10 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
     `🔔 Subscribe & nyalain lonceng biar gak ketinggalan kode baru!\n\n` +
     (redeemNote?.en ? `— NOTE: ${redeemNote.en}\n\n` : "") +
     `— The latest working ${name} codes for ${my} (updated hourly). Codes expire fast, so some in this video may already be gone — the current list is always at ${urlEn}\n\n` +
-    `#Shorts #${tag} #${tag}Codes #${isRoblox ? "RobloxCodes #Roblox" : "GameCodes"} #RedeemCodes #KodeRedeem #KodeGG`;
+    // #Shorts HANYA untuk video vertikal. Video landscape per-game (render-wide)
+    // 16:9 bukan Short — memasang tagar itu di sana menyesatkan penonton yang
+    // mengkliknya dan menandai video ke format yang bukan formatnya.
+    `${shorts ? "#Shorts " : ""}#${tag} #${tag}Codes #${isRoblox ? "RobloxCodes #Roblox" : "GameCodes"} #RedeemCodes #KodeRedeem #KodeGG`;
 
   // Alias pencarian (nama Indonesia / singkatan komunitas) ikut jadi TAG.
   // Diukur dari kueri nyata: Throw a Coin ditemukan lewat "kode lempar koin",
