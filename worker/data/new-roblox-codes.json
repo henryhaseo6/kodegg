@@ -1,26 +1,82 @@
 {
-  "generatedAt": "2026-08-09T11:02:25.021Z",
+  "generatedAt": "2026-08-09T12:02:01.599Z",
   "codes": [
     {
-      "game": "project-new-world",
-      "gameName": "Haze Piece",
+      "game": "freeze-for-ugc",
+      "gameName": "Freeze for UGC",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/project-new-world"
+        "Roblox Den": "https://robloxden.com/game-codes/freeze-for-ugc"
       },
-      "code": "ABYSSALCTHULHU",
-      "reward": "5 Race Spins",
+      "code": "NEWUGC",
+      "reward": "500 Time",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1786272060000,
+      "srcNewAt": 1786263840000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-09T11:02:25.021Z",
-      "fetchedAt": "2026-08-09T11:02:25.021Z"
+      "firstSeenAt": "2026-08-09T12:02:01.599Z",
+      "fetchedAt": "2026-08-09T12:02:01.599Z"
+    },
+    {
+      "game": "freeze-for-ugc",
+      "gameName": "Freeze for UGC",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/freeze-for-ugc"
+      },
+      "code": "WEEKEND",
+      "reward": "500 Time",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786263840000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-09T12:02:01.599Z",
+      "fetchedAt": "2026-08-09T12:02:01.599Z"
+    },
+    {
+      "game": "mermaid-isle",
+      "gameName": "Mermaid Isle",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/mermaid-isle"
+      },
+      "code": "BugFix1",
+      "reward": "1,500 Pearls",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786275660000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-09T12:02:01.599Z",
+      "fetchedAt": "2026-08-09T12:02:01.599Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "anime-fighting-simulator-kdmf",
+      "count": 9,
+      "fresh": []
+    },
+    {
+      "game": "build-an-island",
+      "count": 12,
+      "fresh": []
+    },
+    {
+      "game": "toilet-tower-defense",
+      "count": 5,
+      "fresh": []
+    }
+  ]
 }
