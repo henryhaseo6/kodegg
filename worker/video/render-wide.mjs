@@ -173,6 +173,11 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // Diisi setelah SEC tersusun; adegan memakainya lewat closure untuk menghitung
   // progres grafik terhadap SELURUH video.
   let total = 0;
+  // Jendela tempat grafik BENAR-BENAR terlihat: dari saat pita muncul sampai
+  // adegan kode terakhir berakhir. Bukan durasi video — intro & outro tak
+  // memajang grafik, jadi menghitungnya membuat garis kehabisan waktu sebelum
+  // ujung (dilaporkan user: berhenti di ~88%).
+  let grafikMulai = 0, grafikAkhir = 0;
   // Durasi adegan mengikuti kode TERPANJANG di dalamnya: waktu ketik + waktu baca.
   // Adegan berisi kode 25 huruf butuh lebih lama daripada yang berisi 8 huruf,
   // dan mematoknya sama membuat yang panjang terasa terburu-buru.
@@ -402,7 +407,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     ctx.fillText("PLAYERS  ·  LAST 24 HOURS", gx, GY + 28);
     ctx.font = "700 18px Mono"; ctx.fillStyle = "rgba(166,175,191,0.55)"; ctx.textAlign = "center";
     ["00:00", "06:00", "12:00", "18:00", "24:00"].forEach((t, k) => ctx.fillText(t, gx + (k / 4) * gw, GY + GH - 10));
-    const prog = clamp(gt / Math.max(0.001, total));
+    const prog = clamp((gt - grafikMulai) / Math.max(0.001, grafikAkhir - grafikMulai));
     const upto = Math.max(1, Math.floor(prog * (n - 1)));
     ctx.beginPath(); ctx.moveTo(px(0), gy + gh);
     for (let i = 0; i <= upto; i++) ctx.lineTo(px(i), py(series[i]));
@@ -447,6 +452,8 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   SEC.push({ D: OUTRO, d: (c, ts, gt) => outro(c, ts, gt) });
   const St = [0]; for (let i = 0; i < SEC.length - 1; i++) St.push(St[i] + SEC[i].D - TRT);
   total = St[SEC.length - 1] + SEC[SEC.length - 1].D;
+  grafikMulai = INTRO * 0.55;                 // saat pita statistik mulai muncul
+  grafikAkhir = St[SEC.length - 1];           // awal outro = adegan kode terakhir habis
 
   const silent = outPath.replace(/\.mp4$/, ".silent.mp4");
   const FF = ffmpegBin();
