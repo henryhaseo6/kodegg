@@ -1,24 +1,11 @@
 {
-  "generatedAt": "2026-08-08T23:02:34.809Z",
-  "codes": [
+  "generatedAt": "2026-08-09T00:02:40.054Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "archer-training",
-      "gameName": "Archer Training",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/archer-training"
-      },
-      "code": "starrynight",
-      "reward": null,
-      "date": "2026-08-08T16:35:08.488Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-08T23:02:34.809Z",
-      "fetchedAt": "2026-08-08T23:02:34.809Z"
+      "game": "ryujin",
+      "count": 47,
+      "fresh": []
     }
-  ],
-  "bulkGames": []
+  ]
 }
