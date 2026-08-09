@@ -140,6 +140,23 @@ jobs:
           PYTHON: python3
         run: |
           if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set — lewati auto-video (lihat DEPLOY-YOUTUBE.md)."; exit 0; fi
+          # TARIK ULANG STATE VIDEO tepat sebelum memutuskan apa yang dibuat.
+          #
+          # actions/checkout jalan di awal job, dan itu terlalu dini: run yang
+          # mengantre di belakang run lain memulai checkout beberapa DETIK setelah
+          # run sebelumnya push, sehingga ref yang diambilnya masih yang lama.
+          # Terukur 9 Agu 2026 — run A push 06:41:42, run B mulai 06:41:47, dan
+          # keduanya membaca "slot upload 38/65" yang sama. B lalu menyusun daftar
+          # borongan yang identik dan membuat 8 video ganda. Kejadian yang sama
+          # 8 Agu (9 video ganda), jadi ini bukan kebetulan sekali lewat.
+          #
+          # gabung-state.mjs menyelamatkan CATATANNYA setelah kejadian, tapi tak
+          # bisa mencegah kerjanya terulang — pada saat ia jalan, videonya sudah
+          # telanjur terunggah. Satu-satunya tempat yang menutup balapan ini
+          # adalah DI SINI, sesaat sebelum daftar disusun.
+          git fetch -q origin main || true
+          git checkout -q origin/main -- worker/data/video-state.json worker/data/video-harian.json 2>/dev/null || true
+          node -e "const s=require('./worker/data/video-state.json');console.log('state video terbaru: '+s.date+' · '+s.todayCount+' terpakai')" || true
           # Cek dulu ADA kerja video (pakai fs saja, TANPA deps berat). Sebagian
           # besar run tak punya video baru → lewati install (~15-30 dtk) & render,
           # hemat menit Actions. make-videos --check exit 1 bila tak ada kerja.
