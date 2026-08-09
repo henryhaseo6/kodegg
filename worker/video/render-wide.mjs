@@ -730,3 +730,159 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   try { unlinkSync(silent); unlinkSync(wav); } catch {}
   return { outPath, durasi: total, adegan: halaman.length, ditampilkan, sisa, ukuran: statSync(outPath).size };
 }
+
+// ── THUMBNAIL LANDSCAPE (1280x720) ──────────────────────────────────────────
+//
+// Beda mendasar dari thumbnail roundup: roundup itu AGREGAT ("57 game"), jadi
+// latarnya kolase ikon banyak game. Yang ini PER-GAME, dan orang yang mengetik
+// "kode drag drive simulator" mencari satu game — jadi latarnya gambar promosi
+// game itu sendiri, bukan kolase.
+//
+// Dirancang untuk ukuran KECIL. Di kisi YouTube thumbnail cuma ~210px lebar, dan
+// di situ yang sampai ke mata cuma tiga hal: gambar gamenya, kata KODE, dan satu
+// angka besar. Semua yang lain (tanggal, logo, label) tak akan terbaca di sana —
+// gunanya baru muncul saat thumbnail tampil besar di halaman tontonan.
+function burstBentuk(ctx, cx, cy, R, duri, warna) {
+  ctx.beginPath();
+  for (let i = 0; i < duri * 2; i++) {
+    const a = (i / (duri * 2)) * Math.PI * 2 - Math.PI / 2, r = i % 2 ? R * 0.8 : R;
+    const X = cx + Math.cos(a) * r, Y = cy + Math.sin(a) * r;
+    i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y);
+  }
+  ctx.closePath(); ctx.fillStyle = warna; ctx.fill();
+}
+
+/**
+ * @param {object}  o
+ * @param {{name:string}} o.game
+ * @param {number}  o.activeCount  jumlah kode aktif — angka besar di badge
+ * @param {string}  o.dateLabel    mis. "9 AGUSTUS"
+ * @param {string}  [o.iconPath]
+ * @param {Buffer[]}[o.media]      gambar promosi; yang pertama jadi latar
+ * @param {string}  o.outPath      .jpg (disarankan) atau .png
+ */
+export async function renderWideThumb({ game, activeCount, dateLabel, iconPath, media = null, outPath }) {
+  const { createCanvas, loadImage } = await canvasLib();
+  const TW = 1280, TH = 720;
+  const cv = createCanvas(TW, TH), ctx = cv.getContext("2d");
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, TW, TH);
+
+  // LATAR: gambar promosi game, di-blur RINGAN saja (7px). Ini bukan latar
+  // bergerak di video yang memang cuma perlu kesan warna — di thumbnail, gambar
+  // yang masih bisa dikenali sebagai gamenya justru itu yang menjual.
+  // Dipilih gambar paling TERANG di antara yang tersedia, bukan yang pertama.
+  // Gambar promosi Roblox banyak yang berupa adegan malam atau interior gelap;
+  // dipakai apa adanya, thumbnail-nya jadi bidang hitam dan gamenya tak
+  // kelihatan sama sekali. Luminansi diukur dari salinan 32x18 — cukup untuk
+  // membandingkan, dan ongkosnya nol koma sekian milidetik.
+  let bg = null, terang = -1;
+  const cek = createCanvas(32, 18), cc = cek.getContext("2d");
+  for (const buf of media ?? []) {
+    try {
+      const img = await loadImage(buf);
+      cc.clearRect(0, 0, 32, 18); cc.drawImage(img, 0, 0, 32, 18);
+      const d = cc.getImageData(0, 0, 32, 18).data;
+      let s = 0;
+      for (let i = 0; i < d.length; i += 4) s += 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2];
+      const l = s / (d.length / 4);
+      if (l > terang) { terang = l; bg = img; }
+    } catch {}
+  }
+  if (!bg && iconPath && existsSync(iconPath)) { try { bg = await loadImage(iconPath); } catch {} }
+  if (bg) {
+    const sk = Math.max(TW / bg.width, TH / bg.height), w = bg.width * sk, h = bg.height * sk;
+    ctx.save(); ctx.filter = "blur(15px)";
+    ctx.drawImage(bg, (TW - w) / 2, (TH - h) / 2, w, h);
+    ctx.restore(); ctx.filter = "none";
+  }
+  // Gelap KUAT di kiri (tempat teks), tipis di kanan (biar gambarnya tetap
+  // kelihatan). Gradien satu arah, bukan lapis rata: lapis rata membunuh
+  // gambarnya sekaligus, padahal gambar itu yang bikin orang mengenali gamenya.
+  const gx = ctx.createLinearGradient(0, 0, TW, 0);
+  gx.addColorStop(0, "rgba(9,12,18,0.86)"); gx.addColorStop(0.58, "rgba(9,12,18,0.58)"); gx.addColorStop(1, "rgba(9,12,18,0.24)");
+  ctx.fillStyle = gx; ctx.fillRect(0, 0, TW, TH);
+  const gy = ctx.createLinearGradient(0, 0, 0, TH);
+  gy.addColorStop(0, "rgba(9,12,18,0.42)"); gy.addColorStop(0.45, "rgba(9,12,18,0)"); gy.addColorStop(1, "rgba(9,12,18,0.58)");
+  ctx.fillStyle = gy; ctx.fillRect(0, 0, TW, TH);
+
+  logoGG(ctx, 52, 44, 0.72, 0.96);
+
+  // BLOK TEKS KIRI. "KODE" lime di atas, nama game putih di bawahnya — maksimal
+  // dua baris, dan ukurannya MENGECIL sampai muat, tak pernah dipotong: nama
+  // game yang terpotong "Drag Drive Simu…" membuat thumbnail gagal pada satu-
+  // satunya tugasnya, yaitu memberi tahu ini game apa.
+  const kiriX = 58, lebarTeks = 740;
+  ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+  const fk = fitR(ctx, "KODE", lebarTeks, 150, 90);
+  ctx.font = `${fk}px Rank`;
+  pop(ctx, "KODE", kiriX, 300, C.acc, 14);
+
+  const kata = String(game.name || "").toUpperCase().split(/\s+/).filter(Boolean);
+  let baris = [kata.join(" ")];
+  ctx.font = "104px Rank";
+  if (ctx.measureText(baris[0]).width > lebarTeks && kata.length > 1) {
+    // Titik potong dipilih yang membuat kedua baris PALING SEIMBANG, bukan yang
+    // pertama kali muat — memotong di kata pertama menyisakan baris kedua yang
+    // panjang dan memaksa font mengecil untuk keduanya.
+    let terbaik = 1, beda = Infinity;
+    for (let i = 1; i < kata.length; i++) {
+      const a = ctx.measureText(kata.slice(0, i).join(" ")).width;
+      const b = ctx.measureText(kata.slice(i).join(" ")).width;
+      if (Math.abs(a - b) < beda) { beda = Math.abs(a - b); terbaik = i; }
+    }
+    baris = [kata.slice(0, terbaik).join(" "), kata.slice(terbaik).join(" ")];
+  }
+  // Nama satu baris boleh jauh lebih besar (132 vs 104). Dipatok 104 untuk
+  // semua, nama pendek seperti "FISCH" tampil lebih kecil daripada kata "KODE"
+  // di atasnya — membalik kepentingannya, karena yang dicari orang nama
+  // gamenya, sedangkan "KODE" cuma kategori.
+  const capNama = baris.length === 1 ? 132 : 104;
+  const fn = Math.min(...baris.map((b) => fitR(ctx, b, lebarTeks, capNama, 44)));
+  ctx.font = `${fn}px Rank`;
+  baris.forEach((b, i) => pop(ctx, b, kiriX, 300 + fk * 0.28 + (i + 1) * fn * 1.02, C.txt, 12));
+
+  // BADGE JUMLAH KODE di kanan. Angkanya alasan utama orang mengklik: "5" beda
+  // artinya dengan "24", dan itu terbaca bahkan di ukuran kisi.
+  const bx = 1052, by = 300, R = 148;
+  ctx.save(); ctx.translate(bx, by); ctx.rotate(-0.09); ctx.translate(-bx, -by);
+  ctx.shadowColor = "rgba(0,0,0,0.5)"; ctx.shadowBlur = 26; ctx.shadowOffsetY = 8;
+  burstBentuk(ctx, bx, by, R, 15, C.acc); ctx.shadowColor = "transparent";
+  burstBentuk(ctx, bx, by, R * 0.87, 15, C.bg);
+  burstBentuk(ctx, bx, by, R * 0.81, 15, C.acc);
+  ctx.fillStyle = C.ink; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  // Ukuran angka MENYESUAIKAN jumlah digitnya. Dipatok 0.92R, "5" tampak pas
+  // tapi "195" menyentuh duri bintang — dan jumlah kode per game berkisar dari
+  // satu sampai ratusan, jadi tiga digit bukan kasus pinggiran.
+  // Batas lebarnya diturunkan dari LEMBAH bintang, bukan ujung durinya: bentuk
+  // isi digambar dengan burstBentuk(R*0.81), yang lembahnya di 0.8*0.81R =
+  // 0.648R. Memakai jari-jari duri membuat batasnya kelonggaran ~30% dan angka
+  // tiga digit lolos padahal menyentuh duri.
+  ctx.font = `${fitR(ctx, String(activeCount), R * 1.05, R * 0.92, R * 0.42)}px Rank`;
+  ctx.fillText(String(activeCount), bx, by - R * 0.16);
+  ctx.font = `700 ${R * 0.155}px Grotesk`; ctx.fillText("KODE AKTIF", bx, by + R * 0.46);
+  ctx.restore();
+
+  // Ikon game + tanggal di kaki. Ikon dipasang walau latarnya sudah gambar game:
+  // gambar promosi sering berupa tangkapan gameplay yang tak menampilkan judul,
+  // sedangkan ikon itu yang dikenali orang dari halaman Roblox-nya.
+  let ikon = null;
+  if (iconPath && existsSync(iconPath)) { try { ikon = await loadImage(iconPath); } catch {} }
+  const ky = TH - 148;
+  if (ikon) {
+    ctx.save(); ctx.shadowColor = "rgba(0,0,0,0.55)"; ctx.shadowBlur = 20; ctx.shadowOffsetY = 6;
+    rr(ctx, kiriX, ky, 112, 112, 26); ctx.fillStyle = C.bg; ctx.fill(); ctx.restore();
+    ikonBulat(ctx, ikon, kiriX, ky, 112, 26);
+  }
+  const tx = kiriX + (ikon ? 140 : 0);
+  ctx.textAlign = "left"; ctx.textBaseline = "middle";
+  ctx.font = "62px Rank"; ctx.fillStyle = C.red;
+  const dl = String(dateLabel || "").toUpperCase();
+  const dw = ctx.measureText(dl).width;
+  ctx.save(); ctx.lineWidth = 7; ctx.strokeStyle = C.red;
+  rr(ctx, tx, ky + 14, dw + 44, 84, 12); ctx.stroke(); ctx.restore();
+  ctx.fillText(dl, tx + 22, ky + 58);
+
+  const jpg = /\.jpe?g$/i.test(outPath);
+  writeFileSync(outPath, jpg ? cv.toBuffer("image/jpeg", 0.92) : cv.toBuffer("image/png"));
+  return { outPath, ukuran: statSync(outPath).size };
+}
