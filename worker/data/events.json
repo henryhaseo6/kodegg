@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-09T10:02:07.443Z",
+  "updatedAt": "2026-08-09T11:02:12.894Z",
   "counts": {
     "active": 59,
     "archived": 80
@@ -383,30 +383,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "Version \"Luna VIII\" HoYoverse Top-Up Center Event: Share the Promotional Image to Win Primogems — Phase 2",
-        "id": "Event Top-Up Center HoYoverse Versi \"Candra VIII\": Bagikan Gambar Promosi untuk Memenangkan Primogem - Tahap 2"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Olah! Hello, Traveler~ Bonus Rewards Are Here for the Version \"Luna VIII\" HoYoverse Top-Up Center Sharing Event! Make a top-up at the Top-Up Center and you'll receive Primogems ×300 if this is your first purchase since the release of Versio",
-        "id": "Olah! Apa kabar, Traveler? Event Berbagi HoYoverse Top-Up Center Versi \"Candra VIII\" hadir dengan hadiah tambahan! Kunjungi Top-Up Center dan dapatkan Primogem ×300 untuk top-up pertamamu sejak Versi \"Candra VI\" dirilis! Kamu juga bisa meni"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/519bc76d605dcc0ef676af5e94605b74_3913478111962950287.jpg",
-      "startsAt": "2026-07-21T04:00:00.000Z",
-      "endsAt": "2026-08-11T15:59:59.000Z",
-      "postedAt": "2026-07-21T04:00:07.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45941011"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "The \"Luna VIII\" Genius Column Submission Event Begins! Share Your Stage Insights to Win Handsome Rewards!",
         "id": "Event Kontes Kolom Bakat \"Candra VIII\" dimulai! Bagikan wawasanmu dan menangkan hadiah!"
       },
@@ -424,6 +400,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45677715"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Version \"Luna VIII\" HoYoverse Top-Up Center Event: Share the Promotional Image to Win Primogems — Phase 2",
+        "id": "Event Top-Up Center HoYoverse Versi \"Candra VIII\": Bagikan Gambar Promosi untuk Memenangkan Primogem - Tahap 2"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Olah! Hello, Traveler~ Bonus Rewards Are Here for the Version \"Luna VIII\" HoYoverse Top-Up Center Sharing Event! Make a top-up at the Top-Up Center and you'll receive Primogems ×300 if this is your first purchase since the release of Versio",
+        "id": "Olah! Apa kabar, Traveler? Event Berbagi HoYoverse Top-Up Center Versi \"Candra VIII\" hadir dengan hadiah tambahan! Kunjungi Top-Up Center dan dapatkan Primogem ×300 untuk top-up pertamamu sejak Versi \"Candra VI\" dirilis! Kamu juga bisa meni"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/519bc76d605dcc0ef676af5e94605b74_3913478111962950287.jpg",
+      "startsAt": "2026-07-21T04:00:00.000Z",
+      "endsAt": "2026-08-11T15:59:59.000Z",
+      "postedAt": "2026-07-21T04:00:07.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45941011"
     },
     {
       "game": "gi",
@@ -1117,7 +1117,7 @@
         "id": "Penjelasan Optimalisasi Game dan Masalah yang Sudah Teridentifikasi"
       },
       "desc": {
-        "en": "Dear Proxies, To reduce the impact brought about by abnormal Hollow fluctuations and ensure Proxies can live happily in New Eridu, we will make sure to take everyone's feedback into account and promptly address any issues that arise. [Known Issues] August 4 • There is a known issue that some Proxies playing on PlayStation®5 may experience extended loading times when entering the game for the first time. This issue only occurs after downloading an update and entering the game for the first time. Proxies can resolve this by restarting the game after the update is complete. July 29 • There is a known issue that may prevent the sharing of content to X (Twitter). This issue is expected to be fixed in a future update. • There is a known issue where, after the Version 3.1 update, some Proxies' participation in Notorious Hunt stages may not have been counted correctly toward the new version's New Eridu City Fund Expansion Tasks progress. If any Proxies have encountered this issue, completing a Notorious Hunt stage again this week will tally your progress correctly. • There is a known issue where Sony Xperia 1 VIII, Sony Xperia 1 VII, and subsequent Sony devices equipped with Snapdragon 8 Elite or 5th Gen Snapdragon 8 Elite processors may experience intermittent lag and stuttering that disrupt normal gameplay. Proxies are advised to switch to a different device to experience the game. • When the NVIDIA graphics card driver version on your PC: i. Is lower than 591.74 (Jan 2026), enabling DX12 mode may cause UI or scene texture display anomalies or crashes. Proxies are advised to update their NVIDIA graphics card drivers before enabling DX12 mode. ii. On Windows 10 in DX12 mode, launching OBS with the source set to [Game Capture] may cause the game to crash. If Proxies run into this issue, just close OBS before starting the game, and you should be good to go. [Issue Fixes & Optimizations Summary] August 8 Update Details • In-game text adjustments, improvements, and fixes for some languages. These changes will not affect gameplay. • Fixed an issue where, under specific circumstances, the timer did not count down properly when searching for supplies in \"Enigma of the Labyrinth: Operation Bagel.\" • Fixed an issue where, under certain circumstances, an incorrect number of Tactical items could be placed in the Inventory while preparing to enter a High-Risk stage in Enigma of the Labyrinth: Operation Bagel. August 7 Update Details • Fixes an issue where the mission item \"Hematite Core\" in Enigma of the Labyrinth: Operation Bagel could not be obtained properly under certain circumstances. August 6 Update Details • Fixes an issue in Zenless Zone Zero · Cloud where interacting with Spinning Tycoon in an \"Enigma of the Labyrinth: Operation Bagel\" stage results in an interface abnormality that prevents normal progression. • Fixes an issue where, under certain circumstances, re-entering the stage in the commission \"Enter the fissure and challenge the Fire Ethereal to rescue Eous\" in Enigma of the Labyrinth: Operation Bagel would automatically trigger the Final Battle. • Optimizes the item types of \"Hound Fang\" and \"Hematite Shard\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue in Enigma of the Labyrinth: Operation Bagel where, under certain circumstances, the mission items \"Heartbreak Ballads Anniversary Edition,\" \"Phantasm TV,\" and \"HAND Tactical Computer\" cannot be consumed properly. • Optimizes the distribution of the item \"Hematite Shard\" after making investments at Tycoon Investor on High-Risk difficulty in Enigma of the Labyrinth: Operation Bagel. • Optimizes the Season Commission \"Etheric Phantom Challenge: Sobek\" in Enigma of the Labyrinth: Operation Bagel, renaming it to \"Etheric Phantom Returns: Sobek\" and updating its commission completion conditions. • Fixes an issue where, under certain circumstances, re-entering the stage during the commission \"Eous is safe at last. Talk to him.\" in Enigma of the Labyrinth: Operation Bagel would result in Proxies being unable to enter the Final Battle properly. August 5 Update Details • Fixes an issue in certain difficulty levels of \"Enigma of the Labyrinth: Operation Bagel,\" where the maximum number of additional reward draw chances is displayed incorrectly in the \"Full Load Extraction\" rule description. • Fixes an issue where badge rankings for \"Enigma of the Labyrinth: Operation Bagel\" are displayed incorrectly under certain circumstances. • Fixes an issue in \"Enigma of the Labyrinth: Operation Bagel,\" where the effects of the R&D Project series \"Soul-Devouring Powerslash\" are not being applied correctly. • Fixes an issue where Support Supplies would not appear properly after entering Enigma of the Labyrinth: Operation Bagel - Suburbs Illusion under certain circumstances. • Fixes an issue where attacks could not properly lock on to the enemy \"Mutant Formicarrier\" in \"Enigma of the Labyrinth: Operation Bagel\" under certain circumstances. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Evacuate from the Hollow\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where the guide marker for the commission \"Enter the fissure and challenge the Fire Ethereal to rescue Eous\" in Enigma of the Labyrinth: Operation Bagel would disappear under certain circumstances. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Head to Janus Illusion and find the computer\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Find the enemy carrying the signal detectors\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Go to the source of the unidentified Bangboo signal\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Search the video store for the Labyrinth Carrot\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Enter the aquarium\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Escape the pursuing Ethereal\" in Enigma of the Labyrinth: Operation Bagel. • In-game text adjustments, improvements, and fixes for some languages. These changes will not affect gameplay. August 4 Update Details • In-game audio adjustments, improvements, and fixes for some languages for the \"Summer Waves Roll In\" event. These changes will not affect gameplay. • Fixes an issue where Remielle's dynamic wallpaper in the Partner Archive was displayed abnormally under certain circumstances. • Fixes an issue where some visual effects and model performance for Agent Remielle appeared abnormal under certain circumstances. • Fixes an issue in the main story chapter \"The Long Goodbye\" where certain art and model animations are displayed abnormally during certain plot dialogues. • Fixes an issue where Agent Ellen's model is displayed abnormally under certain circumstances during the \"Summer Waves Roll In\" event. • Fixes an issue in the \"Summer Waves Roll In\" event where the hint text in \"Treasure Trading\" jumped too quickly. • Fixes an issue where, under certain circumstances in the \"Summer Waves Roll In\" event, the buff \"QC Exempt Dispatch\" from the Treasure Trading gameplay was not properly removed after all its available uses were consumed. • Fixes an issue where, under certain circumstances, the mission guide marker is displayed incorrectly during the \"Get closer to investigate the array\" mission. • Fixes an issue where in the Exploration Collection function of Hollow Zero - Withered Domain, the collectible count for \"The Hollows Bank\" in \"Lost Items From the Old Capital\" is displayed abnormally. • Fixes an issue where the title \"Crisis: First Edge\" displays abnormal colors in the Titles interface. • Fixes an issue where Agent Sigrid abnormally increases Anomaly buildup after hitting enemies with specific skills. • Optimizes the camera performance for some of Agent Sigrid's skills. • Fixes an issue where, after meeting the Inter-Knot Reputation Rank-Up requirements, the rank-up could not proceed normally under certain circumstances. • Fixes an issue where the \"Menu Catalog\" interface in the standard event \"Chronicle of Simmering Flavors\" is displayed abnormally. • Fixes an issue where the W-Engine overclock item \"Twilight Afterimage\" displays an incorrect rarity. • Fixes an issue where certain story dialogue sequences are played abnormally. • Fixes an issue where subtitles might display abnormally during story sequences. • Fixes some issues with abnormal model displays in certain scenes. • Optimizes the text descriptions for some achievements' unlock conditions. • In-game text and audio adjustments, improvements, and fixes for some languages. These changes will not affect gameplay. July 30 Update Details • Fixes an issue where the mission \"Obtain the second key component\" could not progress properly under certain circumstances. • Fixes an issue where the mission \"Bury Your Tears With the Past (B)\" could not progress properly. • Fixes an issue where some key commissions for Suibian Temple could not be completed properly. • Fixes an issue where, under certain circumstances, the NPC would not appear as expected after tracking the Interboo's Bangboo Highlight event \"Research Master\" to the designated location. • Fixes an issue where the Mini Cargo Truck would not appear properly after successfully interacting with the \"Bangboo Who Wants a Makeover\" under certain circumstances. • Fixes an issue where the air bus would abnormally disappear when collecting Torn Picture Book Page \"6\" of the Pixel Fairy Tale in the Interboo under certain circumstances. • Fixes an issue where Proxies would be stuck on the loading screen after completing and tallying the scores of the Withering Garden stage in Hollow Zero under certain circumstances. • In-game text adjustments, improvements, and fixes for some languages. These changes will not affect gameplay.",
+        "en": "Dear Proxies, To reduce the impact brought about by abnormal Hollow fluctuations and ensure Proxies can live happily in New Eridu, we will make sure to take everyone's feedback into account and promptly address any issues that arise. [Known Issues] August 4 • There is a known issue that some Proxies playing on PlayStation®5 may experience extended loading times when entering the game for the first time. This issue only occurs after downloading an update and entering the game for the first time. Proxies can resolve this by restarting the game after the update is complete. July 29 • There is a known issue that may prevent the sharing of content to X (Twitter). This issue is expected to be fixed in a future update. • There is a known issue where, after the Version 3.1 update, some Proxies' participation in Notorious Hunt stages may not have been counted correctly toward the new version's New Eridu City Fund Expansion Tasks progress. If any Proxies have encountered this issue, completing a Notorious Hunt stage again this week will tally your progress correctly. • There is a known issue where Sony Xperia 1 VIII, Sony Xperia 1 VII, and subsequent Sony devices equipped with Snapdragon 8 Elite or 5th Gen Snapdragon 8 Elite processors may experience intermittent lag and stuttering that disrupt normal gameplay. Proxies are advised to switch to a different device to experience the game. • When the NVIDIA graphics card driver version on your PC: i. Is lower than 591.74 (Jan 2026), enabling DX12 mode may cause UI or scene texture display anomalies or crashes. Proxies are advised to update their NVIDIA graphics card drivers before enabling DX12 mode. ii. On Windows 10 in DX12 mode, launching OBS with the source set to [Game Capture] may cause the game to crash. If Proxies run into this issue, just close OBS before starting the game, and you should be good to go. [Issue Fixes & Optimizations Summary] August 9 Update Details • Fixed an issue where the settlement screen would not properly trigger upon completing a stage in \"Enigma of the Labyrinth: Operation Bagel\" under certain conditions. August 8 Update Details • In-game text adjustments, improvements, and fixes for some languages. These changes will not affect gameplay. • Fixed an issue where, under specific circumstances, the timer did not count down properly when searching for supplies in \"Enigma of the Labyrinth: Operation Bagel.\" • Fixed an issue where, under certain circumstances, an incorrect number of Tactical items could be placed in the Inventory while preparing to enter a High-Risk stage in Enigma of the Labyrinth: Operation Bagel. August 7 Update Details • Fixes an issue where the mission item \"Hematite Core\" in Enigma of the Labyrinth: Operation Bagel could not be obtained properly under certain circumstances. August 6 Update Details • Fixes an issue in Zenless Zone Zero · Cloud where interacting with Spinning Tycoon in an \"Enigma of the Labyrinth: Operation Bagel\" stage results in an interface abnormality that prevents normal progression. • Fixes an issue where, under certain circumstances, re-entering the stage in the commission \"Enter the fissure and challenge the Fire Ethereal to rescue Eous\" in Enigma of the Labyrinth: Operation Bagel would automatically trigger the Final Battle. • Optimizes the item types of \"Hound Fang\" and \"Hematite Shard\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue in Enigma of the Labyrinth: Operation Bagel where, under certain circumstances, the mission items \"Heartbreak Ballads Anniversary Edition,\" \"Phantasm TV,\" and \"HAND Tactical Computer\" cannot be consumed properly. • Optimizes the distribution of the item \"Hematite Shard\" after making investments at Tycoon Investor on High-Risk difficulty in Enigma of the Labyrinth: Operation Bagel. • Optimizes the Season Commission \"Etheric Phantom Challenge: Sobek\" in Enigma of the Labyrinth: Operation Bagel, renaming it to \"Etheric Phantom Returns: Sobek\" and updating its commission completion conditions. • Fixes an issue where, under certain circumstances, re-entering the stage during the commission \"Eous is safe at last. Talk to him.\" in Enigma of the Labyrinth: Operation Bagel would result in Proxies being unable to enter the Final Battle properly. August 5 Update Details • Fixes an issue in certain difficulty levels of \"Enigma of the Labyrinth: Operation Bagel,\" where the maximum number of additional reward draw chances is displayed incorrectly in the \"Full Load Extraction\" rule description. • Fixes an issue where badge rankings for \"Enigma of the Labyrinth: Operation Bagel\" are displayed incorrectly under certain circumstances. • Fixes an issue in \"Enigma of the Labyrinth: Operation Bagel,\" where the effects of the R&D Project series \"Soul-Devouring Powerslash\" are not being applied correctly. • Fixes an issue where Support Supplies would not appear properly after entering Enigma of the Labyrinth: Operation Bagel - Suburbs Illusion under certain circumstances. • Fixes an issue where attacks could not properly lock on to the enemy \"Mutant Formicarrier\" in \"Enigma of the Labyrinth: Operation Bagel\" under certain circumstances. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Evacuate from the Hollow\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where the guide marker for the commission \"Enter the fissure and challenge the Fire Ethereal to rescue Eous\" in Enigma of the Labyrinth: Operation Bagel would disappear under certain circumstances. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Head to Janus Illusion and find the computer\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Find the enemy carrying the signal detectors\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Go to the source of the unidentified Bangboo signal\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Search the video store for the Labyrinth Carrot\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Enter the aquarium\" in Enigma of the Labyrinth: Operation Bagel. • Fixes an issue where, under certain circumstances, Proxies could not progress properly through the commission \"Escape the pursuing Ethereal\" in Enigma of the Labyrinth: Operation Bagel. • In-game text adjustments, improvements, and fixes for some languages. These changes will not affect gameplay. August 4 Update Details • In-game audio adjustments, improvements, and fixes for some languages for the \"Summer Waves Roll In\" event. These changes will not affect gameplay. • Fixes an issue where Remielle's dynamic wallpaper in the Partner Archive was displayed abnormally under certain circumstances. • Fixes an issue where some visual effects and model performance for Agent Remielle appeared abnormal under certain circumstances. • Fixes an issue in the main story chapter \"The Long Goodbye\" where certain art and model animations are displayed abnormally during certain plot dialogues. • Fixes an issue where Agent Ellen's model is displayed abnormally under certain circumstances during the \"Summer Waves Roll In\" event. • Fixes an issue in the \"Summer Waves Roll In\" event where the hint text in \"Treasure Trading\" jumped too quickly. • Fixes an issue where, under certain circumstances in the \"Summer Waves Roll In\" event, the buff \"QC Exempt Dispatch\" from the Treasure Trading gameplay was not properly removed after all its available uses were consumed. • Fixes an issue where, under certain circumstances, the mission guide marker is displayed incorrectly during the \"Get closer to investigate the array\" mission. • Fixes an issue where in the Exploration Collection function of Hollow Zero - Withered Domain, the collectible count for \"The Hollows Bank\" in \"Lost Items From the Old Capital\" is displayed abnormally. • Fixes an issue where the title \"Crisis: First Edge\" displays abnormal colors in the Titles interface. • Fixes an issue where Agent Sigrid abnormally increases Anomaly buildup after hitting enemies with specific skills. • Optimizes the camera performance for some of Agent Sigrid's skills. • Fixes an issue where, after meeting the Inter-Knot Reputation Rank-Up requirements, the rank-up could not proceed normally under certain circumstances. • Fixes an issue where the \"Menu Catalog\" interface in the standard event \"Chronicle of Simmering Flavors\" is displayed abnormally. • Fixes an issue where the W-Engine overclock item \"Twilight Afterimage\" displays an incorrect rarity. • Fixes an issue where certain story dialogue sequences are played abnormally. • Fixes an issue where subtitles might display abnormally during story sequences. • Fixes some issues with abnormal model displays in certain scenes. • Optimizes the text descriptions for some achievements' unlock conditions. • In-game text and audio adjustments, improvements, and fixes for some languages. These changes will not affect gameplay. July 30 Update Details • Fixes an issue where the mission \"Obtain the second key component\" could not progress properly under certain circumstances. • Fixes an issue where the mission \"Bury Your Tears With the Past (B)\" could not progress properly. • Fixes an issue where some key commissions for Suibian Temple could not be completed properly. • Fixes an issue where, under certain circumstances, the NPC would not appear as expected after tracking the Interboo's Bangboo Highlight event \"Research Master\" to the designated location. • Fixes an issue where the Mini Cargo Truck would not appear properly after successfully interacting with the \"Bangboo Who Wants a Makeover\" under certain circumstances. • Fixes an issue where the air bus would abnormally disappear when collecting Torn Picture Book Page \"6\" of the Pixel Fairy Tale in the Interboo under certain circumstances. • Fixes an issue where Proxies would be stuck on the loading screen after completing and tallying the scores of the Withering Garden stage in Hollow Zero under certain circumstances. • In-game text adjustments, improvements, and fixes for some languages. These changes will not affect gameplay.",
         "id": "Dear Proxy: Demi mengurangi dampak dari fluktuasi anomali Hollow, kami akan memastikan untuk selalu mendengarkan masukan dari kalian. Kami juga akan merespons dan menangani berbagai masalah yang teridentifikasi dengan cepat untuk memastikan kehidupan sehari-hari kalian di New Eridu berjalan lancar. [Masalah yang Sudah Teridentifikasi] 4 Agustus • Telah teridentifikasi masalah pada waktu loading yang terlalu lama saat pertama kali memasuki game bagi sebagian Proxy yang bermain menggunakan perangkat PlayStation®5. Masalah ini hanya terjadi setelah mengunduh pembaruan dan memasuki game untuk pertama kalinya. Proxy dapat mengatasi masalah ini dengan memulai ulang game setelah selesai mengunduh pembaruan. 29 Juli • Telah teridentifikasi masalah di mana konten kemungkinan tidak dapat dibagikan ke X. Masalah ini diperkirakan akan diperbaiki pada update mendatang. • Telah teridentifikasi bahwa setelah update versi 3.1, untuk sebagian Proxy yang telah berpartisipasi dalam \"Perburuan Keji\", terdapat masalah yang menyebabkan progres Misi Ekspansi \"Dana Kota New Eridu\" versi baru tidak terhitung dengan benar. Jika Proxy mengalami masalah ini, silakan selesaikan \"Perburuan Keji\" sekali lagi dalam minggu ini agar progres dapat terhitung dengan benar. • Diketahui bahwa perangkat Sony Xperia 1 VIII, Sony Xperia 1 VII, serta perangkat Sony seri berikutnya yang menggunakan Snapdragon 8 Elite dan Snapdragon 8 Elite Gen 5 saat ini mengalami masalah lag dan stuttering yang dapat menyebabkan game tidak berjalan dengan normal. Proxy disarankan menggunakan perangkat lain untuk pengalaman bermain yang lebih baik. • Saat memeriksa versi driver kartu grafis Nvidia di PC: 1. Jika versi di bawah 591.74 (2026.01), mengaktifkan mode DX12 mungkin akan membuat tampilan UI atau tekstur lingkungan menjadi tidak normal atau mengakibatkan game mengalami crash. Harap Proxy memperbarui driver kartu grafis NVIDIA sebelum mengaktifkan mode DX12. 2. Pada sistem Win10, mengaktifkan mode DX12 saat menjalankan OBS dengan source mode \"Game Capture\" kemungkinan dapat menyebabkan crash. Jika Proxy mengalami masalah ini, silakan tutup software perekam OBS terlebih dahulu, lalu jalankan game kembali. [Detail Masalah yang Diperbaiki dan Konten Optimalisasi] Konten Update 8 Agustus • Menyesuaikan, mengoptimalisasi, dan memperbaiki beberapa teks dalam game (tidak akan memengaruhi gameplay). Konten Update 7 Agustus • Memperbaiki masalah di mana dalam kondisi tertentu item misi \"Inti Ochre\" tidak dapat diperoleh secara normal di \"Labirin Misterius: Operasi Bagel\". Konten Update 6 Agustus • Memperbaiki masalah antarmuka yang tidak normal setelah berinteraksi dengan \"Roda Keberuntungan\" di stage \"Labirin Misterius: Operasi Bagel\" dan mengakibatkan progres tidak dapat dilanjutkan dengan semestinya di Zenless Zone Zero · Cloud. • Memperbaiki masalah yang menyebabkan pemain otomatis masuk ke \"Pertarungan Terakhir\" saat kembali memasuki stage dalam kondisi tertentu pada kontrak \"Masuki celah dan tantang Ethereal untuk menyelamatkan Eous\" di \"Labirin Misterius: Operasi Bagel\". • Mengoptimalisasi jenis item \"Taring Anjing Pemburu\" dan \"Fragmen Hematit\" di \"Labirin Misterius: Operasi Bagel\". • Memperbaiki masalah di mana dalam kondisi tertentu item misi \"Kumpulan Lagu Galau Edisi Anniversary\", \"TV Bayangan Misterius\", dan \"Komputer Taktis HAND\" tidak dikonsumsi secara normal di \"Labirin Misterius: Operasi Bagel\". • Mengoptimalisasi distribusi item \"Fragmen Hematit\" setelah melakukan investasi Konglomerat pada investigasi tingkat kesulitan Bahaya di \"Labirin Misterius: Operasi Bagel\". • Mengoptimalisasi Kontrak Season \"Tantangan Etheric Phantom - Sobek\" di \"Labirin Misterius: Operasi Bagel\", nama kontrak tersebut akan diubah menjadi \"Replikasi Etheric Phantom - Sobek\" dan syarat penyelesaiannya juga akan diperbarui. • Memperbaiki masalah di mana saat memasuki ulang stage, pemain tidak dapat masuk ke \"Pertarungan Terakhir\" secara normal di kontrak \"Eous akhirnya terselamatkan, ajak dia bicara\" di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. Konten Update 5 Agustus • Memperbaiki masalah tampilan pada jumlah maksimum kesempatan tambahan untuk mengundi hadiah yang tidak normal di aturan \"Evakuasi Hasil Melimpah\" di beberapa tingkat kesulitan di \"Labirin Misterius: Operasi Bagel\". • Memperbaiki masalah tampilan pada peringkat medali \"Labirin Misterius: Operasi Bagel\" yang tidak normal dalam kondisi tertentu. • Memperbaiki masalah di mana efek \"Tebasan Pelahap Jiwa\" seri Rencana Penelitian tidak dapat aktif secara normal di \"Labirin Misterius: Operasi Bagel\". • Memperbaiki masalah di mana Suplai Bantuan Tempur tidak dapat muncul secara normal setelah memasuki \"Labirin Misterius: Operasi Bagel\" - \"Ilusi Pinggir Kota\" dalam kondisi tertentu. • Memperbaiki masalah di mana musuh Mutant Formicarrier tidak dapat diserang menggunakan sistem lacak secara normal di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. • Memperbaiki masalah di mana kontrak \"Keluar dari Hollow\" tidak dapat dilanjutkan secara normal di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. • Memperbaiki masalah di mana titik pemandu dapat hilang saat menjalani kontrak \"Masuki celah dan tantang Ethereal untuk menyelamatkan Eous\" di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. • Memperbaiki masalah di mana kontrak \"Cari komputer di 'Ilusi Janus'\" tidak dapat dilanjutkan secara normal di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. • Memperbaiki masalah di mana kontrak \"Temukan musuh yang membawa Detektor Sinyal\" tidak dapat dilanjutkan secara normal di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. • Memperbaiki masalah di mana kontrak \"Pergi ke sumber sinyal Bangboo Tidak Dikenal\" tidak dapat dilanjutkan secara normal di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. • Memperbaiki masalah di mana kontrak \"Cari Labyrinth Carrot di Toko Video\" tidak dapat dilanjutkan secara normal di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. • Memperbaiki masalah di mana kontrak \"Masuk ke dalam akuarium publik\" tidak dapat dilanjutkan secara normal di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. • Memperbaiki masalah di mana kontrak \"Kabur dari kejaran Ethereal\" tidak dapat dilanjutkan secara normal di \"Labirin Misterius: Operasi Bagel\" dalam kondisi tertentu. • Menyesuaikan, mengoptimalisasi, dan memperbaiki beberapa teks dalam game (tidak akan memengaruhi gameplay). Konten Update 4 Agustus • Menyesuaikan, mengoptimalisasi, dan memperbaiki beberapa audio dalam game untuk event \"Deru Ombak Musim Panas\" dalam beberapa bahasa (tidak akan memengaruhi gameplay). • Memperbaiki masalah pada tampilan Wallpaper Dinamis Remielle di Arsip Kolaborasi yang tidak normal dalam kondisi tertentu. • Memperbaiki masalah pada sebagian efek khusus grafik dan tampilan model Agen Remielle yang tidak normal dalam kondisi tertentu. • Memperbaiki masalah pada tampilan visual dan gerakan model yang tidak normal di sebagian dialog cerita di chapter Cerita Utama \"Sunyi Panjang Sebuah Pamit\". • Memperbaiki masalah pada tampilan model Agen Ellen yang tidak normal di event \"Deru Ombak Musim Panas\" dalam kondisi tertentu. • Memperbaiki masalah pada teks petunjuk \"Penjualan Cerdas Harta Karun\" yang berganti terlalu cepat di \"Deru Ombak Musim Panas\". • Memperbaiki masalah pada efek yang tidak bisa terhapus dengan normal setelah jumlah penggunaan efek buff \"Keluar Tanpa Pemeriksaan\" dari Penjualan Cerdas Harta Karun di event \"Deru Ombak Musim Panas\" telah habis digunakan. • Memperbaiki masalah pada lokasi tampilan panduan misi yang tidak normal saat menjalankan misi \"Dekati formasi untuk menyelidiki\" dalam kondisi tertentu. • Memperbaiki masalah pada tampilan jumlah \"Barang yang Hilang dari Ibu Kota Lama\" tipe \"Bank Hollow\" yang dapat dikumpulkan di fitur \"Koleksi Eksplorasi\" di \"Hollow Zero\" - \"Kota yang Layu\". • Memperbaiki masalah pada tampilan warna gelar \"Ekstrim - Uji Ketajaman\" yang tidak normal di halaman Gelar. • Memperbaiki masalah pada Agen Sigrid yang menambahkan nilai Anomaly Buildup yang tidak normal setelah melancarkan skill tertentu dan mengenai musuh. • Mengoptimalisasi tampilan kamera pada sebagian sebagian skill Agen Sigrid. • Memperbaiki masalah di mana promosi tidak dapat dilakukan secara normal setelah memenuhi syarat Promosi Reputasi Inter-Knot dalam kondisi tertentu. • Memperbaiki masalah pada tampilan antarmuka Arsip Menu yang tidak normal di Event Permanen \"Kisah Rasa Menggugah Selera\". • Memperbaiki masalah pada tampilan tingkat Tier item Overclock W-Engine \"Twilight Afterimage\". • Memperbaiki masalah pada pemutaran dialog cerita yang tidak normal di beberapa bagian. • Memperbaiki masalah pada sebagian subtitle yang mungkin tidak ditampilkan dengan normal saat cutscene berlangsung. • Memperbaiki masalah pada tampilan model yang tidak normal di beberapa adegan. • Mengoptimalisasi deskripsi teks kondisi penyelesaian sejumlah Pencapaian. • Menyesuaikan, mengoptimalisasi, dan memperbaiki beberapa teks dan audio dalam game (tidak akan memengaruhi gameplay). Konten Update 30 Juli • Memperbaiki masalah yang mengakibatkan Proxy tidak dapat melanjutkan misi \"Ambil komponen 'Kunci' kedua\" secara normal dalam kondisi tertentu. • Memperbaiki masalah yang mengakibatkan Proxy tidak dapat melanjutkan misi \"Masa Lalu Terkubur Bersama Air Mata (II)\" dengan normal. • Memperbaiki masalah pada beberapa Kontrak Krusial \"Suibian Temple\" yang tidak dapat diselesaikan dengan normal. • Memperbaiki masalah NPC yang tidak muncul secara normal setelah melacak insiden \"Sorotan Bangboo\" - \"Master Penelitian\" di \"Interboo\" ke lokasi yang ditentukan dalam kondisi tertentu. • Memperbaiki masalah Truk Kargo Mini yang tidak muncul secara normal setelah berhasil berinteraksi dengan \"Bangboo yang Ingin Ganti Kostum\" dalam kondisi tertentu. • Memperbaiki masalah di mana saat mengumpulkan \"Halaman Buku Bergambar 6\" dari \"Pixel Fairy Tale\" di \"Interboo\", bus udara yang ditumpangi menghilang secara tidak normal dalam kondisi tertentu. • Memperbaiki masalah yang menyebabkan Proxy terus berada di layar pemuatan setelah menyelesaikan dan menghitung hasil \"Taman Layu\" di \"Hollow Zero\" dalam kondisi tertentu. • Menyesuaikan, mengoptimalisasi, dan memperbaiki beberapa teks dalam game (tidak akan memengaruhi gameplay)."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2025/12/30/5ec8bdc39053abce65b4afc95899149a_457255027549651735_transformed.png",
@@ -1190,6 +1190,30 @@
       "type": "event",
       "typeName": null,
       "title": {
+        "en": "\"Durandal, awaiting orders!\"",
+        "id": "\"Durandal, menunggu perintah.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Durandal  Today's Topic: Which matters more to you, the process or the outcome?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 C",
+        "id": " Bintang Utama Album Kenangan Hari Ini: Durandal  Topik Kali Ini: Mana yang lebih penting bagimu, proses atau hasil?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa un"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/39c753cd0ab279b8126b12397114e955_5372028776434856330.png",
+      "startsAt": "2026-07-25T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-25T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45991851"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
         "en": "\"Vodka power, discharge!\"",
         "id": "\"Kekuatan Vodka, lepaskan!\""
       },
@@ -1214,71 +1238,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Hi, miss me yet? No matter when or where, Elysia will be there for you ♪\"",
-        "id": "\"Hai, kangen aku ya? Elysia akan selalu ada untukmu, kapan pun dan di mana pun♪\""
+        "en": "\"Proceeding as planned.\"",
+        "id": "\"Semuanya berjalan sesuai rencana.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Elysia  Today's Topic: Which line from Elysia stayed with you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals ",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Elysia  Topik Kali Ini: Dialog Elysia mana yang paling berkesan untukmu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa "
+        "en": " Today's Time Album Spotlight: Natasha Cioara  Today's Topic: If you could hire Raven for a job, what would it be?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 1",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Natasha Cioara  Topik Kali Ini: Jika kamu bisa memberi misi kepada Raven, misi apa yang akan kamu berikan?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/98972058c71c00b6a95ecac01aaaa819_4168558010886360114.png",
-      "startsAt": "2026-07-29T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/b1519bfdf95e8b6d4314362ccc759da2_1621013541774284916.png",
+      "startsAt": "2026-08-02T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-29T04:00:06.000Z",
+      "postedAt": "2026-08-02T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46039636"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Ki Impact!\"",
-        "id": "\"Ki Impact!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Fu Hua  Today's Topic: Which thing Fu Hua said has inspired you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystal",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Fu Hua  Topik Hari Ini: Ucapan Fu Hua mana yang paling menginspirasimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa u"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/b5c777674a21769a921458c1cdaf4d0b_2457112428866899675.png",
-      "startsAt": "2026-07-08T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-08T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45772697"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Fate is what brought us together.\"",
-        "id": "\"Takdirlah yang mempertemukan kita.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
-        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
-      "startsAt": "2026-07-11T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-11T04:00:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45809908"
+      "url": "https://www.hoyolab.com/article/46106590"
     },
     {
       "game": "hi3",
@@ -1310,23 +1286,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Durandal, awaiting orders!\"",
-        "id": "\"Durandal, menunggu perintah.\""
+        "en": "\"Please, the other me!\"",
+        "id": "\"Tolonglah, diriku yang lain!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Durandal  Today's Topic: Which matters more to you, the process or the outcome?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 C",
-        "id": " Bintang Utama Album Kenangan Hari Ini: Durandal  Topik Kali Ini: Mana yang lebih penting bagimu, proses atau hasil?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa un"
+        "en": " Today's Time Album Spotlight: Seele Vollerei  Today's Topic: Which of Seele's dual personalities do you prefer?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Seele Vollerei  Topik Kali Ini: Dari dua kepribadian Seele, kamu lebih suka yang mana?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/39c753cd0ab279b8126b12397114e955_5372028776434856330.png",
-      "startsAt": "2026-07-25T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/a62f839ced1795d5218421d992fe3b5f_618852002642294793.png",
+      "startsAt": "2026-07-23T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-25T04:00:06.000Z",
+      "postedAt": "2026-07-23T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45991851"
+      "url": "https://www.hoyolab.com/article/45967005"
     },
     {
       "game": "hi3",
@@ -1334,23 +1310,47 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Proceeding as planned.\"",
-        "id": "\"Semuanya berjalan sesuai rencana.\""
+        "en": "\"Hi, miss me yet? No matter when or where, Elysia will be there for you ♪\"",
+        "id": "\"Hai, kangen aku ya? Elysia akan selalu ada untukmu, kapan pun dan di mana pun♪\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Natasha Cioara  Today's Topic: If you could hire Raven for a job, what would it be?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 1",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Natasha Cioara  Topik Kali Ini: Jika kamu bisa memberi misi kepada Raven, misi apa yang akan kamu berikan?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+        "en": " Today's Time Album Spotlight: Elysia  Today's Topic: Which line from Elysia stayed with you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals ",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Elysia  Topik Kali Ini: Dialog Elysia mana yang paling berkesan untukmu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa "
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/b1519bfdf95e8b6d4314362ccc759da2_1621013541774284916.png",
-      "startsAt": "2026-08-02T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/98972058c71c00b6a95ecac01aaaa819_4168558010886360114.png",
+      "startsAt": "2026-07-29T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-02T04:00:06.000Z",
+      "postedAt": "2026-07-29T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46106590"
+      "url": "https://www.hoyolab.com/article/46039636"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Fate is what brought us together.\"",
+        "id": "\"Takdirlah yang mempertemukan kita.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
+        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
+      "startsAt": "2026-07-11T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-11T04:00:05.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45809908"
     },
     {
       "game": "hi3",
@@ -1406,23 +1406,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Please, the other me!\"",
-        "id": "\"Tolonglah, diriku yang lain!\""
+        "en": "\"It's time to settle things!\"",
+        "id": "\"Saatnya pertempuran penentu!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Seele Vollerei  Today's Topic: Which of Seele's dual personalities do you prefer?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Seele Vollerei  Topik Kali Ini: Dari dua kepribadian Seele, kamu lebih suka yang mana?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya"
+        "en": " Today's Time Album Spotlight: Murata Himeko  Today's Topic: What is the most important lesson Miss Himeko taught you?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Karakter Utama Album Kenangan Hari Ini: Murata Himeko  Topik Kali Ini: Apa pelajaran terpenting yang diajarkan Guru Himeko padamu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya!"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/a62f839ced1795d5218421d992fe3b5f_618852002642294793.png",
-      "startsAt": "2026-07-23T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/5dcdfb067a5a52af634f58f6869fd0c8_2537018723789932979.png",
+      "startsAt": "2026-07-04T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-23T04:00:06.000Z",
+      "postedAt": "2026-07-06T05:12:09.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45967005"
+      "url": "https://www.hoyolab.com/article/45747948"
     },
     {
       "game": "hi3",
@@ -1478,23 +1478,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"It's time to settle things!\"",
-        "id": "\"Saatnya pertempuran penentu!\""
+        "en": "\"Ki Impact!\"",
+        "id": "\"Ki Impact!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Murata Himeko  Today's Topic: What is the most important lesson Miss Himeko taught you?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Karakter Utama Album Kenangan Hari Ini: Murata Himeko  Topik Kali Ini: Apa pelajaran terpenting yang diajarkan Guru Himeko padamu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya!"
+        "en": " Today's Time Album Spotlight: Fu Hua  Today's Topic: Which thing Fu Hua said has inspired you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystal",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Fu Hua  Topik Hari Ini: Ucapan Fu Hua mana yang paling menginspirasimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa u"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/5dcdfb067a5a52af634f58f6869fd0c8_2537018723789932979.png",
-      "startsAt": "2026-07-04T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/b5c777674a21769a921458c1cdaf4d0b_2457112428866899675.png",
+      "startsAt": "2026-07-08T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-06T05:12:09.000Z",
+      "postedAt": "2026-07-08T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45747948"
+      "url": "https://www.hoyolab.com/article/45772697"
     },
     {
       "game": "gi",
