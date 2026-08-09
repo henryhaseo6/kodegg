@@ -829,15 +829,15 @@ export async function renderWideThumb({ game, activeCount, dateLabel, iconPath, 
 
   logoGG(ctx, 52, 40, 0.68, 0.96);
 
-  // JUDUL: "KODE" putih, nama game lime di bawahnya — sejajar dengan roundup
-  // yang memakai "NEW ROBLOX" putih + "CODES" lime.
+  // JUDUL: "KODE REDEEM" putih, nama game lime di bawahnya — sejajar dengan
+  // roundup yang memakai "NEW ROBLOX" putih + "CODES" lime.
+  const LEBAR = 1140;
   ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
-  ctx.font = "132px Rank";
-  pop(ctx, "KODE", TW / 2, 236, C.txt, 14);
+  ctx.font = `${fitR(ctx, "KODE REDEEM", LEBAR, 132, 76)}px Rank`;
+  pop(ctx, "KODE REDEEM", TW / 2, 236, C.txt, 14);
 
   const nama = String(game.name || "").toUpperCase();
   const kata = nama.split(/\s+/).filter(Boolean);
-  const LEBAR = 1140;
   let baris = [nama];
   // Dipecah dua baris kalau satu baris memaksa font turun sampai 92px. Di bawah
   // itu nama jadi terlalu kecil untuk ukuran kisi YouTube (~210px lebar), dan
