@@ -807,10 +807,13 @@ export async function renderWideThumb({ game, activeCount, dateLabel, iconPath, 
       const w = cw * (1.05 + r() * 0.15), h = w * 0.5625;
       const x = cx * cw + (cw - w) / 2 + (r() - 0.5) * 26;
       const y = ry * ch + (ch - h) / 2 + (r() - 0.5) * 26;
-      // Alpha 0.66, bukan 0.5 seperti roundup: bahan roundup itu IKON yang
-      // memang cerah dan berwarna, sedangkan gambar promosi banyak yang adegan
-      // gelap. Pada 0.5 kolasenya jatuh jadi bidang hitam dan gamenya hilang.
-      ctx.save(); ctx.globalAlpha = 0.66;
+      // Alpha 0.5 — angka roundup, dipakai apa adanya.
+      //
+      // Sempat dinaikkan ke 0.66 karena kolasenya tampak gelap dan berlumpur,
+      // tapi itu salah sasaran: yang gelap bukan kolasenya melainkan kompresi
+      // JPEG-nya (lihat catatan skala kualitas di akhir fungsi). Begitu itu
+      // dibereskan, 0.5 justru lebih baik — teksnya lebih menonjol.
+      ctx.save(); ctx.globalAlpha = 0.5;
       rr(ctx, x, y, w, h, Math.min(w, h) * 0.14); ctx.clip();
       // Cover-fit: gambar promosi 16:9 masuk ke ubin 16:9 tanpa distorsi, dan
       // ikon (persegi) yang jadi cadangan pun tak gepeng.
@@ -821,7 +824,7 @@ export async function renderWideThumb({ game, activeCount, dateLabel, iconPath, 
     }
   }
   const gr = ctx.createLinearGradient(0, 0, 0, TH);
-  gr.addColorStop(0, "rgba(9,12,18,0.30)"); gr.addColorStop(0.5, "rgba(9,12,18,0.62)"); gr.addColorStop(1, "rgba(9,12,18,0.86)");
+  gr.addColorStop(0, "rgba(9,12,18,0.40)"); gr.addColorStop(0.5, "rgba(9,12,18,0.74)"); gr.addColorStop(1, "rgba(9,12,18,0.92)");
   ctx.fillStyle = gr; ctx.fillRect(0, 0, TW, TH);
 
   logoGG(ctx, 52, 40, 0.68, 0.96);
@@ -899,7 +902,14 @@ export async function renderWideThumb({ game, activeCount, dateLabel, iconPath, 
   ctx.fillStyle = C.muted; ctx.fillText(t1, lx, 682);
   ctx.fillStyle = C.acc; ctx.fillText(t2, lx + w1, 682);
 
+  // KUALITAS JPEG DI SINI SKALANYA 0-100, BUKAN 0-1.
+  //
+  // @napi-rs/canvas memakai 0-100, berbeda dari toDataURL() di browser dan dari
+  // node-canvas yang memakai 0-1. Dikirim 0.92, ia dibaca sebagai kualitas ~1:
+  // berkasnya jadi 16 KB dan gambarnya hancur berkotak-kotak. Gejalanya menipu —
+  // terlihat seperti masalah resolusi sumber atau blur yang kelewatan, padahal
+  // murni artefak kompresi. Diukur: q=0.92 → 16 KB, q=92 → 260 KB.
   const jpg = /\.jpe?g$/i.test(outPath);
-  writeFileSync(outPath, jpg ? cv.toBuffer("image/jpeg", 0.92) : cv.toBuffer("image/png"));
+  writeFileSync(outPath, jpg ? cv.toBuffer("image/jpeg", 92) : cv.toBuffer("image/png"));
   return { outPath, ukuran: statSync(outPath).size };
 }
