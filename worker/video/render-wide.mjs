@@ -139,18 +139,18 @@ function fmtWIB(d) {
 const fmtPemain = (n) => (n >= 1000 ? Math.round(n / 1000) + "K" : String(n));
 const nf = (v) => { v = Math.round(v); return v >= 1000 ? (v / 1000).toFixed(1) + "K" : String(v); };
 
-// Deret pemain 24 jam. Riwayat per-game belum kita simpan, jadi bentuknya
-// disintesis dari jumlah pemain SEKARANG memakai kurva harian yang sama dengan
-// roundup — puncak malam, lembah dini hari — lalu digoyang halus oleh seed dari
-// id game supaya tiap game punya jejak sendiri dan tak terlihat kembar.
-function synthSeries(peak, seed) {
-  let a = seed >>> 0;
-  const r = () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
-  const n = 144, o = [];
-  for (let i = 0; i < n; i++) { const t = i / (n - 1), b = 0.55 + 0.45 * (0.5 + 0.5 * Math.cos((t - 0.83) * 2 * Math.PI)); o.push(b * (1 + (r() - 0.5) * 0.06)); }
-  const mx = Math.max(...o);
-  return o.map((v) => Math.round((v / mx) * Math.max(peak, 100)));
-}
+// synthSeries SENGAJA DIHAPUS dari sini (9 Agu 2026).
+//
+// Ia mengarang bentuk grafik dari jumlah pemain sekarang memakai kurva harian
+// umum. Untuk sekadar hiasan latar itu tak apa — tapi begitu turunannya dipajang
+// sebagai "PEAK PLAYERS 53.7K", angka karangan berhenti jadi hiasan dan mulai
+// jadi KLAIM. Video kode kita sudah menegakkan aturan keras soal itu (kode yang
+// terbukti mati diarsipkan, langkah redeem diverifikasi dengan membuka gamenya),
+// dan statistik tak boleh jadi pengecualian.
+//
+// Data nyata dibaca lewat src/player-series.mjs — pengukuran 10 menit sekali
+// yang sudah kita kumpulkan sejak 26 Jul. Tanpa data, pita statistik TIDAK
+// digambar sama sekali: ruang kosong lebih jujur daripada angka yang direka.
 
 // SFX sepalet roundup.
 function sfxSamples(events, durSec) {
@@ -183,7 +183,7 @@ function wavMono(mix) {
   return b;
 }
 
-export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true }) {
+export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null }) {
   const { createCanvas, loadImage } = await canvasLib();
   const ikon = iconPath && existsSync(iconPath) ? await loadImage(iconPath) : null;
   const nAktif = activeCount ?? (codes ?? []).length;
@@ -191,7 +191,11 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   const KETIK = 11; // huruf per detik — sengaja sedang, lihat catatan kepala berkas
 
   const PER = 2, INTRO = 4.0, OUTRO = 3.0, TRT = 0.4, MAKS = 30;
-  const series = synthSeries(game.players || 100, String(game.id ?? game.name).split("").reduce((a, c) => a + c.charCodeAt(0), 0));
+  // Pita statistik HANYA tampil bila ada pengukuran nyata (lihat
+  // src/player-series.mjs). Tanpa data, ia disembunyikan — bukan diisi kurva
+  // karangan. Angka di layar dibaca penonton sebagai fakta, dan "PEAK PLAYERS
+  // 53.7K" yang kita reka sendiri adalah kebohongan kecil yang tak sepadan.
+  const deret = Array.isArray(series) && series.length >= 12 ? series : null;
   // Diisi setelah SEC tersusun; adegan memakainya lewat closure untuk menghitung
   // progres grafik terhadap SELURUH video.
   let total = 0;
@@ -417,9 +421,10 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // menggambar cepat dan video panjang menggambar pelan — dan grafiknya selalu
   // sampai ujung tepat saat video habis, tak pernah berhenti di tengah.
   function pitaStat(ctx, gt) {
+    if (!deret) return; // tanpa pengukuran nyata: ruang dibiarkan kosong
     const a = clamp((gt - INTRO * 0.55) / 0.6);
     if (a <= 0.01) return;
-    const puncak = Math.max(...series), rendah = Math.min(...series), rata = series.reduce((x, y) => x + y, 0) / series.length;
+    const puncak = Math.max(...deret), rendah = Math.min(...deret), rata = deret.reduce((x, y) => x + y, 0) / deret.length;
     const sel = [
       { l: "PEMAIN TERTINGGI", e: "PEAK PLAYERS", v: puncak, c: C.acc, s: C.limeSoft },
       { l: "RATA-RATA PEMAIN", e: "AVERAGE PLAYERS", v: rata, c: C.ungu, s: C.unguSoft },
@@ -440,7 +445,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     rr(ctx, GX, GY, GW, GH, 18); ctx.fillStyle = "rgba(9,12,18,0.55)"; ctx.fill();
     ctx.strokeStyle = "rgba(255,255,255,0.08)"; ctx.lineWidth = 2; ctx.stroke();
     const pad = 22, atas = 42, gx = GX + pad, gy = GY + atas, gw = GW - pad * 2, gh = GH - atas - 32;
-    const n = series.length, mn = Math.min(...series), mx = Math.max(...series), rng = mx - mn || 1;
+    const n = deret.length, mn = Math.min(...deret), mx = Math.max(...deret), rng = mx - mn || 1;
     const px = (i) => gx + (i / (n - 1)) * gw, py = (v) => gy + gh - ((v - mn) / rng) * gh;
     ctx.textAlign = "left"; ctx.font = "700 24px Grotesk"; ctx.fillStyle = C.muted;
     ctx.fillText("PEMAIN  ·  24 JAM TERAKHIR  ·  LAST 24 HOURS", gx, GY + 28);
@@ -449,14 +454,14 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     const prog = clamp((gt - grafikMulai) / Math.max(0.001, grafikAkhir - grafikMulai));
     const upto = Math.max(1, Math.floor(prog * (n - 1)));
     ctx.beginPath(); ctx.moveTo(px(0), gy + gh);
-    for (let i = 0; i <= upto; i++) ctx.lineTo(px(i), py(series[i]));
+    for (let i = 0; i <= upto; i++) ctx.lineTo(px(i), py(deret[i]));
     ctx.lineTo(px(upto), gy + gh); ctx.closePath();
     const grad = ctx.createLinearGradient(0, gy, 0, gy + gh);
     grad.addColorStop(0, "rgba(203,255,70,0.34)"); grad.addColorStop(1, "rgba(203,255,70,0.02)");
     ctx.fillStyle = grad; ctx.fill();
-    ctx.beginPath(); for (let i = 0; i <= upto; i++) { const X = px(i), Y = py(series[i]); i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); }
+    ctx.beginPath(); for (let i = 0; i <= upto; i++) { const X = px(i), Y = py(deret[i]); i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); }
     ctx.strokeStyle = C.acc; ctx.lineWidth = 4; ctx.lineJoin = "round"; ctx.stroke();
-    const hx = px(upto), hy = py(series[upto]);
+    const hx = px(upto), hy = py(deret[upto]);
     ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(hx, hy, 7, 0, 7); ctx.fill();
     ctx.strokeStyle = C.acc; ctx.lineWidth = 3; ctx.stroke();
     ctx.restore(); ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
