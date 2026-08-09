@@ -111,6 +111,28 @@ function drawBell(ctx, cx, cy, s, warna, rot = 0) {
   ctx.beginPath(); ctx.moveTo(-38, 26); ctx.lineTo(38, 26); ctx.stroke();
   ctx.beginPath(); ctx.arc(0, 36, 8, 0, Math.PI * 2); ctx.stroke(); ctx.restore();
 }
+/**
+ * Teks DWIBAHASA: baris Indonesia di atas, Inggris lebih kecil & redup di
+ * bawahnya. Pola yang sama dengan render-short, jadi kanal terbaca satu suara.
+ *
+ * Urutannya sengaja ID dulu: 86,6% penonton kanal ini dari Indonesia dan 7,4%
+ * dari Malaysia (analytics 1 Agu 2026), jadi bahasa utama harus yang dipakai
+ * mayoritas. Baris EN bukan sekadar sopan-santun — ia membuat sisa penonton
+ * tetap terlayani DAN memberi YouTube teks berbahasa Inggris untuk memahami
+ * isi video, yang menolong video ini muncul di pencarian non-Indonesia.
+ *
+ * Jarak antar-baris diskalakan dari ukuran font supaya baris EN tak menabrak
+ * ekor huruf 'g/p/y' di baris ID pada teks besar.
+ */
+function bi(ctx, id, en, x, y, { idFont, enFont, idColor = C.txt, enColor = C.faint, gap, tebal = 0 } = {}) {
+  const px = (f) => Number(/(\d+)px/.exec(f)?.[1] || 32);
+  const dy = gap ?? Math.round(0.34 * px(idFont) + 0.98 * px(enFont));
+  ctx.font = idFont;
+  if (tebal) pop(ctx, id, x, y, idColor, tebal); else { ctx.fillStyle = idColor; ctx.fillText(id, x, y); }
+  ctx.font = enFont; ctx.fillStyle = enColor; ctx.fillText(en, x, y + dy);
+  return dy;
+}
+
 function fmtWIB(d) {
   return new Intl.DateTimeFormat("id-ID", { timeZone: "Asia/Jakarta", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(d).replace(/\./g, ":") + " WIB";
 }
@@ -251,7 +273,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     ctx.font = `${tf}px Rank`; pop(ctx, judul, 0, 0, C.acc, 16); ctx.restore();
 
     ctx.save(); ctx.globalAlpha = clamp((ts - 0.4) / 0.3);
-    ctx.font = "800 60px Grotesk"; ctx.fillStyle = C.txt; ctx.fillText("KODE REDEEM", W / 2, H / 2 - 52);
+    bi(ctx, "KODE REDEEM", "REDEEM CODES", W / 2, H / 2 - 58, { idFont: "800 56px Grotesk", enFont: "700 28px Grotesk", idColor: C.txt, enColor: C.faint });
     ctx.restore();
 
     // Sub-judul DIKETIK — pola yang sama dengan roundup.
@@ -267,6 +289,15 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
       pop(ctx, sub, left, yy, C.txt, 9);
       if (s1 < 1 && Math.floor(ts * 3) % 2 === 0) { ctx.fillStyle = C.acc; ctx.fillRect(left + ctx.measureText(sub).width + 5, yy - 28, 6, 52); }
       ctx.restore();
+      // Baris Inggris menyusul SETELAH ketikan selesai. Kalau ikut diketik, dua
+      // baris berjalan bersamaan dan mata tak tahu harus mengikuti yang mana.
+      const en1 = clamp((ts - 1.55) / 0.4);
+      if (en1 > 0.01) {
+        ctx.save(); ctx.globalAlpha = en1 * 0.9; ctx.textAlign = "center";
+        ctx.font = "700 30px Grotesk"; ctx.fillStyle = C.faint;
+        const txtEn = `${nAktif} ACTIVE CODES` + (game.players ? `  ·  ${fmtPemain(game.players)} PLAYERS` : "");
+        ctx.fillText(txtEn, W / 2, H / 2 + 80); ctx.restore();
+      }
     }
 
     // TANGGAL & JAM pembuatan. Ditaruh di kaki intro supaya penonton tahu
@@ -282,7 +313,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     // Stempel MENGHANTAM + gelombang kejut, persis irama roundup.
     const st0 = 1.85, stp = clamp((ts - st0) / 0.6);
     if (stp > 0) {
-      const impact = 0.6, cx = W / 2, cy = H / 2 + 214; const land = stp >= impact;
+      const impact = 0.6, cx = W / 2, cy = H / 2 + 246; const land = stp >= impact;
       let sc, alpha, rot, shX = 0, shY = 0;
       if (!land) { const q = stp / impact; sc = 3.4 - 2.4 * (q * q); alpha = clamp(q * 1.9); rot = -0.34 + 0.28 * q; }
       else { const q = (stp - impact) / (1 - impact); const o = 0.15 * Math.exp(-q * 6) * Math.cos(q * 24); sc = 1 + o; alpha = 1; rot = -0.07 + 0.055 * Math.exp(-q * 5) * Math.sin(q * 22); const sh = Math.exp(-q * 9) * 9; shX = sh * Math.sin(q * 55); shY = sh * Math.cos(q * 48); }
@@ -292,7 +323,14 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
       ctx.shadowColor = "rgba(0,0,0,0.5)"; ctx.shadowBlur = 14; ctx.lineWidth = 10; ctx.strokeStyle = C.red;
       rr(ctx, -bw / 2, -bh / 2, bw, bh, 16); ctx.stroke(); ctx.shadowColor = "transparent";
       ctx.fillStyle = C.red; ctx.fillText(teks, 0, 4); ctx.restore();
-      if (land) { const q = (stp - impact) / (1 - impact); ring(ctx, cx, cy, 50 + q * 520, 12 * clamp(1 - q), C.red, clamp(1 - q) * 0.5); ring(ctx, cx, cy, 26 + q * 340, 6 * clamp(1 - q), "#fff", clamp(1 - q) * 0.26); }
+      if (land) {
+        const q = (stp - impact) / (1 - impact);
+        ring(ctx, cx, cy, 50 + q * 520, 12 * clamp(1 - q), C.red, clamp(1 - q) * 0.5);
+        ring(ctx, cx, cy, 26 + q * 340, 6 * clamp(1 - q), "#fff", clamp(1 - q) * 0.26);
+        ctx.save(); ctx.globalAlpha = clamp(q * 2.2) * 0.85; ctx.textAlign = "center";
+        ctx.font = "700 26px Grotesk"; ctx.fillStyle = C.faint;
+        ctx.fillText("STILL WORKING", cx, cy + 92); ctx.restore();
+      }
     }
     if (ts < 0.22) { ctx.globalAlpha = 1 - ts / 0.22; ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
     ctx.textBaseline = "alphabetic";
@@ -383,9 +421,9 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     if (a <= 0.01) return;
     const puncak = Math.max(...series), rendah = Math.min(...series), rata = series.reduce((x, y) => x + y, 0) / series.length;
     const sel = [
-      { l: "PEAK PLAYERS", v: puncak, c: C.acc, s: C.limeSoft },
-      { l: "AVERAGE PLAYERS", v: rata, c: C.ungu, s: C.unguSoft },
-      { l: "LOWEST PLAYERS", v: rendah, c: C.biru, s: C.biruSoft },
+      { l: "PEMAIN TERTINGGI", e: "PEAK PLAYERS", v: puncak, c: C.acc, s: C.limeSoft },
+      { l: "RATA-RATA PEMAIN", e: "AVERAGE PLAYERS", v: rata, c: C.ungu, s: C.unguSoft },
+      { l: "PEMAIN TERENDAH", e: "LOWEST PLAYERS", v: rendah, c: C.biru, s: C.biruSoft },
     ];
     const X0 = 150, SW = W - 300, cw = SW / 3, yL = 748, yN = 802;
     ctx.save(); ctx.globalAlpha = a;
@@ -393,7 +431,8 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     sel.forEach((c, i) => {
       const cx = X0 + cw * i + cw / 2;
       ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
-      ctx.font = "700 24px GroteskR"; ctx.fillStyle = c.s; ctx.fillText(c.l, cx, yL);
+      ctx.font = "700 23px GroteskR"; ctx.fillStyle = c.s; ctx.fillText(c.l, cx, yL - 22);
+      ctx.font = "700 18px GroteskR"; ctx.fillStyle = "rgba(166,175,191,0.62)"; ctx.fillText(c.e, cx, yL + 2);
       ctx.font = "700 52px Mono"; pop(ctx, nf(c.v * rev), cx, yN, c.c, 7);
       if (i < 2) { ctx.strokeStyle = "rgba(255,255,255,0.10)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(X0 + cw * (i + 1), yL - 26); ctx.lineTo(X0 + cw * (i + 1), yN - 4); ctx.stroke(); }
     });
@@ -404,7 +443,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     const n = series.length, mn = Math.min(...series), mx = Math.max(...series), rng = mx - mn || 1;
     const px = (i) => gx + (i / (n - 1)) * gw, py = (v) => gy + gh - ((v - mn) / rng) * gh;
     ctx.textAlign = "left"; ctx.font = "700 24px Grotesk"; ctx.fillStyle = C.muted;
-    ctx.fillText("PLAYERS  ·  LAST 24 HOURS", gx, GY + 28);
+    ctx.fillText("PEMAIN  ·  24 JAM TERAKHIR  ·  LAST 24 HOURS", gx, GY + 28);
     ctx.font = "700 18px Mono"; ctx.fillStyle = "rgba(166,175,191,0.55)"; ctx.textAlign = "center";
     ["00:00", "06:00", "12:00", "18:00", "24:00"].forEach((t, k) => ctx.fillText(t, gx + (k / 4) * gw, GY + GH - 10));
     const prog = clamp((gt - grafikMulai) / Math.max(0.001, grafikAkhir - grafikMulai));
@@ -433,7 +472,9 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     ctx.font = "700 116px Grotesk"; ctx.fillStyle = C.acc; ctx.fillText("kodegg.com", 0, 0); ctx.restore();
     const ta = clamp((ts - 0.38) / 0.35);
     ctx.save(); ctx.globalAlpha = ta; ctx.font = "400 36px GroteskR"; ctx.fillStyle = C.muted;
-    ctx.fillText(sisa > 0 ? `+ ${sisa} kode lagi · update tiap jam` : "Semua kode + cara redeem · update tiap jam", W / 2, H / 2 + 22);
+    bi(ctx, sisa > 0 ? `+ ${sisa} kode lagi · update tiap jam` : "Semua kode + cara redeem · update tiap jam",
+       sisa > 0 ? `+ ${sisa} more codes · updated hourly` : "All codes + how to redeem · updated hourly",
+       W / 2, H / 2 + 14, { idFont: "400 36px GroteskR", enFont: "400 27px GroteskR", idColor: C.muted, enColor: C.faint });
     ctx.restore();
     const ca = clamp((ts - 0.55) / 0.35), e = outBack(ca);
     const btnW = 430, btnH = 116, bell = 92, by = H / 2 + 150, bx = W / 2 - (btnW + 60 + bell) / 2;
