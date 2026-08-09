@@ -1,10 +1,47 @@
 {
-  "generatedAt": "2026-08-09T21:02:14.458Z",
-  "codes": [],
+  "generatedAt": "2026-08-09T22:02:18.122Z",
+  "codes": [
+    {
+      "game": "anime-fighters-simulator",
+      "gameName": "Anime Fighters Simulator",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-fighters-simulator"
+      },
+      "code": "AKIRACODE",
+      "reward": "20 Mega Boosts, 100 Heavenly Fruit, 100 Cursed 200 Requiem Tokens, 200 Passive Tokens",
+      "date": "2026-08-09T15:42:51.968Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-09T22:02:18.122Z",
+      "fetchedAt": "2026-08-09T22:02:18.122Z"
+    },
+    {
+      "game": "fire-force-reignition",
+      "gameName": "Fire Force Reignition",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/fire-force-reignition"
+      },
+      "code": "LONGAWAITEDUPDATE",
+      "reward": null,
+      "date": "2026-08-09T15:42:52.408Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-09T22:02:18.122Z",
+      "fetchedAt": "2026-08-09T22:02:18.122Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "blair",
-      "count": 5,
+      "game": "anime-fighting-simulator-kdmf",
+      "count": 9,
       "fresh": []
     }
   ]
