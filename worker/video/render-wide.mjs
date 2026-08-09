@@ -399,7 +399,13 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     // Tinggi & posisi kartu dihitung mundur dari pita statistik di kaki layar:
     // dua kartu harus selesai sebelum y=700, kalau tidak grafik pemain tertimpa.
     pitaStat(ctx, gt);
-    const TB = 196, GAP = 28, y0 = 244;
+    // Tanpa pita statistik, kartu DIPUSATKAN ke ruang yang tersisa. Kalau tidak,
+    // sepertiga bawah layar menganga kosong — dan itu bukan kasus langka: pita
+    // cuma tampil untuk game yang masuk 760 besar Roblox Charts (lihat
+    // src/player-series.mjs), jadi game kecil selalu tampil timpang.
+    const TB = 196, GAP = 28;
+    const tinggiKartu = list.length * TB + (list.length - 1) * GAP;
+    const y0 = deret ? 244 : 244 + (756 - tinggiKartu) / 2;
     // KETIK BERURUTAN (arahan user): kode kedua baru mulai setelah kode pertama
     // SELESAI diketik, bukan bersamaan dengan jeda. Mata cuma bisa mengikuti satu
     // baris huruf pada satu waktu — dua kursor berkedip serentak justru membuat
