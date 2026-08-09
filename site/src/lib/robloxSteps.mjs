@@ -55,7 +55,51 @@ export function sasaranUI(howTo = []) {
  * @param {string[]} howTo langkah mentah dari sumber (hanya dipakai sbg fakta)
  * @param {{id:string[],en:string[]}} standar langkah cadangan milik kita
  */
-export function langkahRedeem(nama, howTo, standar) {
+/**
+ * LANGKAH YANG DIVERIFIKASI SENDIRI DI DALAM GAME — mengalahkan turunan sumber.
+ *
+ * Ekstraksi dari howTo sumber bekerja untuk mayoritas game, tapi ia cuma bisa
+ * sebaik sumbernya. Saat sumber menyebut sasaran yang KELIRU, hasil turunannya
+ * ikut keliru dan tak ada cara mendeteksinya dari teks saja — perlu orang yang
+ * benar-benar membuka gamenya.
+ *
+ * Drag Drive Simulator (diperiksa user 9 Agu 2026, dengan tangkapan layar):
+ * kedua sumber menulis "Tap the Shop button" lalu "Press the Redeem button to
+ * navigate to the codes page". Kenyataannya tombolnya ikon KERANJANG di sudut
+ * kiri bawah — panelnya bernama Store, bukan Shop — dan REDEEM itu TAB di dalam
+ * panel tersebut, berjajar dengan GAMEPASS/CASH/GIFT/MEMBERSHIP, bukan tombol
+ * yang memindahkan halaman. Pembaca yang mencari tombol "Shop" tak akan
+ * menemukannya.
+ *
+ * Isi entri = { id: [...], en: [...] }, ditulis sendiri dalam dua bahasa.
+ * Tambahkan game lain HANYA setelah benar-benar dibuka dan dilihat alurnya;
+ * menebak di sini lebih buruk daripada membiarkan turunan sumber, karena entri
+ * manual tak pernah dikoreksi otomatis saat sumber memperbaiki diri.
+ */
+export const LANGKAH_MANUAL = {
+  "drag-drive-simulator": {
+    id: [
+      "Jalankan Drag Drive Simulator di Roblox dan tunggu sampai masuk sepenuhnya",
+      "Ketuk ikon keranjang belanja di sudut kiri bawah untuk membuka panel Store",
+      "Di dalam panel Store, pilih tab REDEEM",
+      "Ketuk kolom \"Enter Code Here\", lalu tempel kodenya",
+      "Tekan tombol REDEEM — hadiahnya langsung masuk",
+    ],
+    en: [
+      "Launch Drag Drive Simulator on Roblox and wait until you are fully in-game",
+      "Tap the shopping cart icon in the bottom-left corner to open the Store panel",
+      "Inside the Store panel, switch to the REDEEM tab",
+      "Tap the \"Enter Code Here\" field, then paste your code",
+      "Press the REDEEM button — the reward is granted instantly",
+    ],
+  },
+};
+
+export function langkahRedeem(nama, howTo, standar, gameId = null) {
+  // Langkah manual menang atas apa pun: ia lahir dari melihat gamenya langsung,
+  // sedangkan sisanya menebak dari kalimat sumber.
+  const manual = gameId && LANGKAH_MANUAL[gameId];
+  if (manual) return { ...manual, sendiri: true, manual: true };
   const t = sasaranUI(howTo);
   if (!t.length) return { ...standar, sendiri: false };
 
