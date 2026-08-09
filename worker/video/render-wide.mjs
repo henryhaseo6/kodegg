@@ -299,16 +299,52 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     g.addColorStop(0, "rgba(9,12,18,0.10)"); g.addColorStop(1, "rgba(9,12,18,0.72)");
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
   }
-  function kepala(ctx, a = 1) {
+  function kepala(ctx, a = 1, gt = 0) {
     logoGG(ctx, 74, 62, 0.82, a);
     ctx.save(); ctx.globalAlpha = a * 0.9; ctx.textAlign = "right";
     ctx.font = "700 26px Mono"; ctx.fillStyle = C.faint; ctx.fillText("kodegg.com", W - 74, 106);
     ctx.restore(); ctx.textAlign = "left";
+
+    // STEMPEL WAKTU BERDENYUT di tengah header.
+    //
+    // Kenapa ada: pita ini menjawab pertanyaan yang menentukan orang mau repot
+    // menyalin kode atau tidak — "ini video kapan?". Sebelumnya jawabannya cuma
+    // ada di intro (4 detik pertama, di kaki layar); penonton yang mulai
+    // menonton dari tengah tak pernah melihatnya sama sekali.
+    //
+    // Titik yang berdenyut + cincin yang mengembang dipakai karena header yang
+    // diam total terbaca seperti gambar mati — dan seluruh sisa layar memang
+    // sedang diam saat kode sudah selesai diketik. Denyutnya lambat (2,2 rad/s)
+    // supaya jadi tanda hidup, bukan pengalih perhatian dari kodenya.
+    ctx.save(); ctx.globalAlpha = a;
+    ctx.font = "700 25px Mono";
+    const wT = ctx.measureText(stamp).width;
+    const padX = 26, dot = 11, jarak = 16;
+    const lebar = padX * 2 + dot * 2 + jarak + wT, tinggi = 52;
+    const px = W / 2 - lebar / 2, py = 62;
+    rr(ctx, px, py, lebar, tinggi, tinggi / 2);
+    ctx.fillStyle = "rgba(21,27,39,0.72)"; ctx.fill();
+    ctx.strokeStyle = "rgba(203,255,70,0.20)"; ctx.lineWidth = 2; ctx.stroke();
+
+    const cxd = px + padX + dot, cyd = py + tinggi / 2;
+    // Cincin mengembang lalu memudar — satu siklus 1,6 detik.
+    const fase = (gt / 1.6) % 1;
+    // Rentang mengembangnya dibatasi 13px: jari-jari maksimum 24 masih di dalam
+    // pil setinggi 52 (setengahnya 26). Lebih dari itu cincinnya memotong garis
+    // tepi pil dan terbaca sebagai cacat gambar, bukan animasi.
+    ctx.beginPath(); ctx.arc(cxd, cyd, dot + fase * 13, 0, Math.PI * 2);
+    ctx.strokeStyle = `rgba(203,255,70,${(1 - fase) * 0.78 * a})`; ctx.lineWidth = 2.5; ctx.stroke();
+    ctx.beginPath(); ctx.arc(cxd, cyd, dot * (0.82 + 0.18 * Math.sin(gt * 2.2)), 0, Math.PI * 2);
+    ctx.fillStyle = C.acc; ctx.fill();
+
+    ctx.fillStyle = C.txt; ctx.textBaseline = "middle";
+    ctx.fillText(stamp, cxd + dot + jarak, cyd + 1);
+    ctx.textBaseline = "alphabetic"; ctx.restore();
   }
 
   // ── INTRO ala roundup ────────────────────────────────────────────────────
   function intro(ctx, ts) {
-    latar(ctx, ts); kepala(ctx, clamp(ts / 0.4));
+    latar(ctx, ts); kepala(ctx, clamp(ts / 0.4), ts);
     ctx.textAlign = "center"; ctx.textBaseline = "middle";
     const a = outBack(clamp(ts / 0.42));
     const judul = game.name.toUpperCase();
@@ -383,7 +419,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
 
   // ── ADEGAN KODE: diketik ─────────────────────────────────────────────────
   function adegan(ctx, list, ts, idxHal, gt) {
-    latar(ctx, gt); kepala(ctx, 1);
+    latar(ctx, gt); kepala(ctx, 1, gt);
     const x0 = 150, lebar = W - 300;
     ctx.textAlign = "left";
 
