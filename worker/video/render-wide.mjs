@@ -194,7 +194,14 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   const stamp = fmtWIB(fetchedAt ? new Date(fetchedAt) : new Date());
   const KETIK = 11; // huruf per detik — sengaja sedang, lihat catatan kepala berkas
 
-  const PER = 2, INTRO = 4.0, OUTRO = 3.0, TRT = 0.4, MAKS = 30;
+  const PER = 2, INTRO = 4.0, TRT = 0.4, MAKS = 30;
+  // Outro memanjang mengikuti jumlah kode yang direkap — sepuluh kode tak bisa
+  // dibaca dalam waktu yang sama dengan dua. Anggaran 30 detik memesan yang
+  // TERPANJANG (OUTRO_MAKS) sejak awal, karena panjang outro baru diketahui
+  // setelah `halaman` tersusun sementara penyusunannya butuh angka itu duluan.
+  // Memesan yang terpanjang membuat videonya kadang selesai sedikit di bawah 30
+  // detik; memesan yang terpendek akan melewatinya, dan batas itu keras.
+  const OUTRO_MIN = 3.4, OUTRO_MAKS = 5.4;
   // Pita statistik HANYA tampil bila ada pengukuran nyata (lihat
   // src/player-series.mjs). Tanpa data, ia disembunyikan — bukan diisi kurva
   // karangan. Angka di layar dibaca penonton sebagai fakta, dan "PEAK PLAYERS
@@ -223,7 +230,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   const semua = [];
   for (let i = 0; i < (codes ?? []).length; i += PER) semua.push(codes.slice(i, i + PER));
   const halaman = [];
-  let pakai = INTRO + OUTRO;
+  let pakai = INTRO + OUTRO_MAKS;
   for (const h of semua) {
     const d = durAdegan(h);
     if (pakai + d - TRT > MAKS) break;
@@ -232,6 +239,8 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   if (!halaman.length && semua.length) halaman.push(semua[0]);
   const ditampilkan = halaman.reduce((a, h) => a + h.length, 0);
   const sisa = Math.max(0, nAktif - ditampilkan);
+  const rekap = halaman.flat();
+  const OUTRO = clamp(OUTRO_MIN + rekap.length * 0.17, OUTRO_MIN, OUTRO_MAKS);
 
   // ── LATAR BERGERAK ────────────────────────────────────────────────────────
   // Empat salinan ikon, di-blur berat dan diperbesar, hanyut dengan kecepatan &
@@ -499,28 +508,113 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     ctx.restore(); ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
   }
 
+  // ── OUTRO = REKAP SEMUA KODE + branding ──────────────────────────────────
+  // Tiga detik terakhir dulu murni logo + tombol subscribe: nol informasi,
+  // padahal justru bagian video yang paling mungkin di-pause orang. Sekarang ia
+  // mengulang SEMUA kode yang tadi tampil dalam satu bingkai, jadi yang mau
+  // menyalin punya satu frame untuk berhenti alih-alih menggulung mundur.
+  //
+  // KENAPA REKAP, BUKAN MEMINDAHKAN KODE BARU KE BELAKANG. Video ini dipotong
+  // oleh anggaran 30 detik DARI EKOR (lihat perakitan `halaman` di atas: begitu
+  // anggaran habis, sisa adegan di-`break` dan cuma jadi angka "+N kode lagi").
+  // Apa pun yang ditaruh di akhir adalah yang paling berisiko tak pernah
+  // muncul — dan kode BARU justru yang dijanjikan judul videonya. Rekap aman
+  // di posisi ini justru karena ia tak membawa informasi baru: kalau ia
+  // terpotong, tak ada yang hilang.
   function outro(ctx, ts, gt) {
     latar(ctx, gt);
+    ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+    ctx.save(); ctx.globalAlpha = clamp(ts / 0.3);
+    bi(ctx, "SEMUA KODE DI VIDEO INI", "ALL CODES IN THIS VIDEO", W / 2, 132, {
+      idFont: "800 46px Grotesk", enFont: "600 28px GroteskR", idColor: C.txt, enColor: C.faint });
+    ctx.restore();
+
+    // Dua kolom begitu kodenya lebih dari empat: satu kolom panjang memaksa
+    // kartunya memendek dan fontnya ikut mengecil jauh lebih cepat.
+    const n = rekap.length, duaKol = n > 4;
+    const kol = duaKol ? 2 : 1, baris = Math.ceil(n / kol);
+    const M = 160, GAPX = 36, GAPY = 14, RUANG = 452;
+    const penuh = (W - M * 2 - (kol - 1) * GAPX) / kol;
+    // Satu kolom selebar layar bikin kode pendek mengambang di kartu yang
+    // hampir seluruhnya kosong — dipersempit lalu dipusatkan.
+    const lebarKol = duaKol ? penuh : Math.min(penuh, 1180);
+    const xKiri = duaKol ? M : (W - lebarKol) / 2;
+    const TB = clamp(Math.floor((RUANG - (baris - 1) * GAPY) / baris), 54, 104);
+    const yTop = 236 + (RUANG - (baris * TB + (baris - 1) * GAPY)) / 2;
+
+    rekap.forEach((c, i) => {
+      // Urutan muncul = urutan di video, jadi mata menemukan kembali kode yang
+      // tadi dilihat di tempat yang sama relatifnya.
+      const kx = duaKol ? i % 2 : 0, ky = duaKol ? Math.floor(i / 2) : i;
+      const mulai = 0.24 + i * 0.05;
+      const a = easeOut(inv(mulai, mulai + 0.3, ts));
+      if (a <= 0.01) return;
+      const x = xKiri + kx * (lebarKol + GAPX), y = yTop + ky * (TB + GAPY);
+      const cx = x + lebarKol / 2, cy = y + TB / 2, sk = 0.94 + 0.06 * a;
+      ctx.save(); ctx.globalAlpha = a;
+      ctx.translate(cx, cy); ctx.scale(sk, sk); ctx.translate(-cx, -cy);
+      rr(ctx, x, y, lebarKol, TB, Math.min(18, TB / 3)); ctx.fillStyle = C.surf; ctx.fill();
+      ctx.strokeStyle = c.isNew ? "rgba(203,255,70,0.45)" : "rgba(255,255,255,0.08)";
+      ctx.lineWidth = 2; ctx.stroke();
+      rr(ctx, x + 1, y + 1, 7, TB - 2, 4); ctx.fillStyle = c.isNew ? C.acc : C.acc2; ctx.fill();
+
+      // Tag BARU ikut ke rekap. Penanda mana yang paling layak dicoba duluan
+      // tak ada gunanya kalau cuma hidup di adegan yang sudah lewat.
+      let ruang = 30;
+      if (c.isNew) {
+        ctx.font = "800 20px Grotesk";
+        const tw = ctx.measureText("BARU").width + 26;
+        rr(ctx, x + lebarKol - tw - 18, cy - 17, tw, 34, 17);
+        ctx.fillStyle = "rgba(203,255,70,0.16)"; ctx.fill();
+        ctx.fillStyle = C.acc; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+        ctx.fillText("BARU", x + lebarKol - tw / 2 - 18, cy + 1);
+        ruang = tw + 40;
+      }
+      // Sama seperti di adegan utama: kode TAK PERNAH dipotong, fontnya yang
+      // mengecil sampai muat. Rekap yang memotong kode jadi "ABCD…" tak ada
+      // gunanya sama sekali.
+      ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillStyle = C.txt;
+      fontMuat(ctx, c.code, lebarKol - 44 - ruang, { berat: "700", min: 20, maks: Math.floor(TB * 0.52), keluarga: "Mono" });
+      ctx.fillText(c.code, x + 26, cy + 1);
+      ctx.restore();
+    });
+
+    // Branding dipadatkan ke kaki layar — tetap ada, tak lagi memakan bingkai.
+    //
+    // JANGAN pakai logoGG() di sini: ia menggambar lockup LENGKAP (badge + kata
+    // "KODEGG"), jadi menaruhnya di sebelah teks "kodegg.com" membuat wordmark-nya
+    // tertimpa URL. Yang dipakai cuma badge-nya, dirakit di tempat, supaya yang
+    // terbaca satu hal saja: alamat situsnya.
+    ctx.textBaseline = "alphabetic";
+    const ba = clamp((ts - 0.5) / 0.4);
+    ctx.save(); ctx.globalAlpha = ba;
+    const yb = 792, bs = 62;
+    ctx.font = "700 62px Grotesk";
+    const wUrl = ctx.measureText("kodegg.com").width;
+    const lx = W / 2 - (bs + 22 + wUrl) / 2;
+    rr(ctx, lx, yb - bs + 10, bs, bs, 16); ctx.fillStyle = C.acc; ctx.fill();
+    ctx.font = "800 34px Grotesk"; ctx.fillStyle = C.ink;
     ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    logoGG(ctx, W / 2 - 150, H / 2 - 260, 1.05 * (0.7 + 0.3 * outBack(clamp(ts / 0.4))), clamp(ts / 0.3));
-    const ka = clamp((ts - 0.18) / 0.35);
-    ctx.save(); ctx.globalAlpha = ka; ctx.translate(W / 2, H / 2 - 70);
-    ctx.scale(0.82 + 0.18 * outBack(ka), 0.82 + 0.18 * outBack(ka));
-    ctx.font = "700 116px Grotesk"; ctx.fillStyle = C.acc; ctx.fillText("kodegg.com", 0, 0); ctx.restore();
-    const ta = clamp((ts - 0.38) / 0.35);
-    ctx.save(); ctx.globalAlpha = ta; ctx.font = "400 36px GroteskR"; ctx.fillStyle = C.muted;
+    ctx.fillText("GG", lx + bs / 2, yb - bs / 2 + 11);
+    ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+    ctx.font = "700 62px Grotesk"; ctx.fillStyle = C.acc;
+    ctx.fillText("kodegg.com", lx + bs + 22, yb);
+    ctx.textAlign = "center";
     bi(ctx, sisa > 0 ? `+ ${sisa} kode lagi · update tiap jam` : "Semua kode + cara redeem · update tiap jam",
        sisa > 0 ? `+ ${sisa} more codes · updated hourly` : "All codes + how to redeem · updated hourly",
-       W / 2, H / 2 + 14, { idFont: "400 36px GroteskR", enFont: "400 27px GroteskR", idColor: C.muted, enColor: C.faint });
+       W / 2, 862, { idFont: "400 30px GroteskR", enFont: "400 23px GroteskR", idColor: C.muted, enColor: C.faint });
     ctx.restore();
-    const ca = clamp((ts - 0.55) / 0.35), e = outBack(ca);
-    const btnW = 430, btnH = 116, bell = 92, by = H / 2 + 150, bx = W / 2 - (btnW + 60 + bell) / 2;
-    ctx.save(); ctx.globalAlpha = ca; ctx.translate(W / 2, by); ctx.scale(0.85 + 0.15 * e, 0.85 + 0.15 * e); ctx.translate(-W / 2, -by);
-    rr(ctx, bx, by - btnH / 2, btnW, btnH, 22); ctx.fillStyle = "#FF0033";
-    ctx.shadowColor = "rgba(255,0,51,0.45)"; ctx.shadowBlur = 32; ctx.fill(); ctx.shadowBlur = 0;
-    ctx.font = "800 50px Grotesk"; ctx.fillStyle = "#fff"; ctx.fillText("SUBSCRIBE", bx + btnW / 2, by + 2);
-    const wig = Math.sin(ts * 9) * 0.18 * clamp((ts - 0.85) / 0.3);
-    drawBell(ctx, bx + btnW + 60 + bell / 2, by, bell, C.acc, wig);
+
+    const ca = clamp((ts - 0.72) / 0.35), e = outBack(ca);
+    const btnW = 330, btnH = 88, bell = 70, by = 972, bx = W / 2 - (btnW + 44 + bell) / 2;
+    ctx.save(); ctx.globalAlpha = ca;
+    ctx.translate(W / 2, by); ctx.scale(0.85 + 0.15 * e, 0.85 + 0.15 * e); ctx.translate(-W / 2, -by);
+    rr(ctx, bx, by - btnH / 2, btnW, btnH, 18); ctx.fillStyle = "#FF0033";
+    ctx.shadowColor = "rgba(255,0,51,0.45)"; ctx.shadowBlur = 26; ctx.fill(); ctx.shadowBlur = 0;
+    ctx.font = "800 38px Grotesk"; ctx.fillStyle = "#fff"; ctx.textBaseline = "middle";
+    ctx.fillText("SUBSCRIBE", bx + btnW / 2, by + 1);
+    const wig = Math.sin(ts * 9) * 0.18 * clamp((ts - 1.02) / 0.3);
+    drawBell(ctx, bx + btnW + 44 + bell / 2, by, bell, C.acc, wig);
     ctx.restore(); ctx.textBaseline = "alphabetic"; ctx.textAlign = "left";
   }
 
@@ -572,7 +666,8 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     }
   });
   const outroT = St[SEC.length - 1];
-  ev.push({ t: outroT + 0.05, k: "chime" }); ev.push({ t: outroT + 0.62, k: "subup" });
+  // subup mengikuti tombol SUBSCRIBE yang kini muncul di ts 0.72 (dulu 0.55).
+  ev.push({ t: outroT + 0.05, k: "chime" }); ev.push({ t: outroT + 0.78, k: "subup" });
 
   const n2 = Math.ceil(total * SR);
   const mus = music ? synthMusic(total, SR) : null, sx = sfx ? sfxSamples(ev, total) : null;
