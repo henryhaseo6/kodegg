@@ -1,5 +1,57 @@
 {
-  "generatedAt": "2026-08-09T08:01:56.885Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-08-09T09:02:23.121Z",
+  "codes": [
+    {
+      "game": "my-prison",
+      "gameName": "My Prison",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/my-prison"
+      },
+      "code": "OffGrid",
+      "reward": "500 Cash",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786263240000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-09T09:02:23.121Z",
+      "fetchedAt": "2026-08-09T09:02:23.121Z"
+    },
+    {
+      "game": "my-prison",
+      "gameName": "My Prison",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/my-prison"
+      },
+      "code": "BuildModeUpdate",
+      "reward": "350 Cash",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786263240000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-09T09:02:23.121Z",
+      "fetchedAt": "2026-08-09T09:02:23.121Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "emergency-emden",
+      "count": 4,
+      "fresh": []
+    },
+    {
+      "game": "strongman-simulator",
+      "count": 18,
+      "fresh": []
+    }
+  ]
 }
