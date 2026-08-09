@@ -31,6 +31,15 @@ concurrency:
   group: codes-roundup
   cancel-in-progress: true
 
+# Workflow ini MENULIS ke repo (commit video-harian.json & antrean thumbnail),
+# jadi butuh izin tulis eksplisit. Tanpa blok ini GITHUB_TOKEN bersifat baca-saja
+# dan langkah push gagal "Permission denied to github-actions[bot]" — TAPI hanya
+# SETELAH video benar-benar terbit, jadi kegagalannya menipu: videonya ada di
+# YouTube, catatannya tidak. Terjadi dua malam berturut-turut (7 & 8 Agu 2026),
+# dan akibatnya penjaga duplikat jadi buta untuk tanggal itu.
+permissions:
+  contents: write
+
 jobs:
   render:
     runs-on: ubuntu-latest
