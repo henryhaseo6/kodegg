@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-09T07:02:29.308Z",
+  "updatedAt": "2026-08-09T08:01:45.905Z",
   "counts": {
-    "active": 92,
-    "archived": 70
+    "active": 91,
+    "archived": 71
   },
   "articles": [
     {
@@ -358,22 +358,6 @@
       "publishedAt": "2026-08-06T04:05:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
-        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
-        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
-      "url": "https://www.hoyolab.com/article/46159934",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T04:00:08.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -386,6 +370,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
       "url": "https://www.hoyolab.com/article/46159935",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T04:00:08.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
+      "url": "https://www.hoyolab.com/article/46159934",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-06T04:00:08.000Z"
     },
@@ -486,22 +486,6 @@
       "publishedAt": "2026-08-05T04:00:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Infrastructure & Commissions",
-        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Infrastruktur dan Kontrak"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! In this issue, we'll be introducing the infrastructure and commissions systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. W",
-        "id": "Halo, Proxy! Edisi ini akan memperkenalkan Infrastruktur dan Kontrak pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\", termasuk pembahasan mengenai riset, pembuatan b"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/0/2a15865a743ac1473e1ac87ded0e8ba6_4344641810319839021.jpeg",
-      "url": "https://www.hoyolab.com/article/46147442",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-05T04:00:04.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -514,6 +498,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/2e0f97a1b20d6cf5ab37539b3b055f3b_3348879965829628604.jpg",
       "url": "https://www.hoyolab.com/article/46147441",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-05T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Infrastructure & Commissions",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Infrastruktur dan Kontrak"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the infrastructure and commissions systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. W",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan Infrastruktur dan Kontrak pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\", termasuk pembahasan mengenai riset, pembuatan b"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/0/2a15865a743ac1473e1ac87ded0e8ba6_4344641810319839021.jpeg",
+      "url": "https://www.hoyolab.com/article/46147442",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-05T04:00:04.000Z"
     },
@@ -1460,7 +1460,9 @@
       "url": "https://www.hoyolab.com/article/45810418",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-11T05:00:06.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1475,10 +1477,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1783612800000/dne2e6vht6gel0ndih-1783677681633.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5132",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-10T07:42:49.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-10T07:42:49.000Z",
+      "archivedAt": "2026-08-09T08:01:45.905Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
