@@ -183,9 +183,13 @@ function wavMono(mix) {
   return b;
 }
 
-export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null }) {
+export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null, media = null }) {
   const { createCanvas, loadImage } = await canvasLib();
   const ikon = iconPath && existsSync(iconPath) ? await loadImage(iconPath) : null;
+  // media datang sebagai Buffer PNG dari src/game-media.mjs; dimuat di sini
+  // supaya pemanggil tak perlu tahu apa-apa soal canvas.
+  const mediaImg = [];
+  for (const buf of media ?? []) { try { mediaImg.push(await loadImage(buf)); } catch {} }
   const nAktif = activeCount ?? (codes ?? []).length;
   const stamp = fmtWIB(fetchedAt ? new Date(fetchedAt) : new Date());
   const KETIK = 11; // huruf per detik — sengaja sedang, lihat catatan kepala berkas
@@ -234,30 +238,58 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // arah berbeda supaya polanya tak pernah berulang persis. Di atasnya vignette
   // dan lapis gelap tipis — tanpa itu, teks kode kehilangan kontras begitu
   // salinan terang lewat di belakangnya.
-  const NODA = [
-    { x: 0.18, y: 0.30, s: 1080, vx: 0.012, vy: -0.007, r: 0.05, a: 0.62 },
-    { x: 0.74, y: 0.22, s: 920, vx: -0.009, vy: 0.011, r: -0.04, a: 0.52 },
-    { x: 0.52, y: 0.82, s: 1240, vx: 0.007, vy: 0.006, r: 0.03, a: 0.46 },
-    { x: 0.90, y: 0.68, s: 800, vx: -0.013, vy: -0.005, r: 0.06, a: 0.42 },
-  ];
+  // ── LATAR BERGERAK dari GAMBAR PROMOSI GAME ────────────────────────────
+  // Bahannya bukan lagi ikon 128px, melainkan gambar carousel resmi game di
+  // halaman Roblox-nya (768x432, sampai 8 buah): tangkapan gameplay, poster
+  // update, banner event. Tiap game punya set berbeda, jadi latar tiap video
+  // jadi khas tanpa kita merancang apa pun per-game.
+  //
+  // ACAK TIAP RENDER (arahan user). Ukuran, arah, kecepatan, sudut, putaran,
+  // dan gambar mana yang dipakai semuanya diundi saat render dimulai — dua
+  // video game yang sama, dirender dua kali, tak akan identik latarnya.
+  //
+  // Blur SEDANG (26px), bukan berat seperti versi ikon. Ikon 128px yang
+  // diperbesar 8x memang harus di-blur habis supaya tak pecah; gambar 768px
+  // tidak, jadi bentuknya masih bisa dikenali sebagai gamenya — dan itulah
+  // gunanya memakai gambar asli, bukan noda warna.
+  const bahan = mediaImg.length ? mediaImg : ikon ? [ikon] : [];
+  const KEPING = bahan.length
+    ? Array.from({ length: Math.min(6, Math.max(4, bahan.length)) }, (_, i) => {
+        const r = () => Math.random();
+        const arah = r() * Math.PI * 2, laju = 26 + r() * 46; // px per detik
+        return {
+          img: bahan[i % bahan.length],
+          x: r() * W, y: r() * H,
+          s: 520 + r() * 760,
+          vx: Math.cos(arah) * laju, vy: Math.sin(arah) * laju,
+          rot: (r() - 0.5) * 0.5, vr: (r() - 0.5) * 0.05,
+          a: 0.30 + r() * 0.26,
+        };
+      })
+    : [];
+
   function latar(ctx, t) {
     ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
-    if (ikon) {
-      for (const n of NODA) {
-        const cx = ((n.x + n.vx * t) % 1.3 - 0.15) * W, cy = ((n.y + n.vy * t) % 1.3 - 0.15) * H;
-        const sk = n.s * (1 + 0.04 * Math.sin(t * 0.6 + n.x * 9));
-        ctx.save(); ctx.globalAlpha = n.a; ctx.filter = "blur(44px)";
-        ctx.translate(cx, cy); ctx.rotate(n.r * t);
-        ctx.drawImage(ikon, -sk / 2, -sk / 2, sk, sk);
-        ctx.restore();
-      }
-      ctx.filter = "none";
+    for (const k of KEPING) {
+      const w = k.s, h = w * 0.5625; // jaga rasio 16:9 gambar sumber
+      // Bungkus melingkar dengan margin selebar kepingnya sendiri: yang keluar
+      // di kanan masuk lagi dari kiri TANPA pernah muncul mendadak di tengah.
+      const per = W + w * 2, pev = H + h * 2;
+      const x = (((k.x + k.vx * t) % per) + per) % per - w;
+      const y = (((k.y + k.vy * t) % pev) + pev) % pev - h;
+      ctx.save(); ctx.globalAlpha = k.a; ctx.filter = "blur(26px)";
+      ctx.translate(x + w / 2, y + h / 2); ctx.rotate(k.rot + k.vr * t);
+      try { ctx.drawImage(k.img, -w / 2, -h / 2, w, h); } catch {}
+      ctx.restore();
     }
-    const g = ctx.createRadialGradient(W / 2, H / 2, 200, W / 2, H / 2, 1250);
-    g.addColorStop(0, "rgba(9,12,18,0.10)"); g.addColorStop(1, "rgba(9,12,18,0.68)");
+    ctx.filter = "none";
+    // Lapis gelap + vignette. Tanpa ini, keping terang yang lewat di belakang
+    // kartu kode menghapus kontras teksnya persis saat orang membacanya.
+    ctx.fillStyle = "rgba(9,12,18,0.30)"; ctx.fillRect(0, 0, W, H);
+    const g = ctx.createRadialGradient(W / 2, H / 2, 240, W / 2, H / 2, 1280);
+    g.addColorStop(0, "rgba(9,12,18,0.10)"); g.addColorStop(1, "rgba(9,12,18,0.72)");
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
   }
-
   function kepala(ctx, a = 1) {
     logoGG(ctx, 74, 62, 0.82, a);
     ctx.save(); ctx.globalAlpha = a * 0.9; ctx.textAlign = "right";
