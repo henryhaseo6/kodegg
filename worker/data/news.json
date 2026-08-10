@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-10T16:03:05.284Z",
+  "updatedAt": "2026-08-10T17:02:42.733Z",
   "counts": {
     "active": 91,
     "archived": 72
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "The Genshin Impact × Crunchyroll collab will kick off alongside Genshin Impact Version 7.0 on August 12!",
+        "id": "The Genshin Impact × Crunchyroll collab will kick off alongside Genshin Impact Version 7.0 on August 12!"
+      },
+      "excerpt": {
+        "en": "An invitation from Paimon and Hime... What new discoveries await in the land of Cryo? Let's head to Snezhnaya together! ❄️",
+        "id": "An invitation from Paimon and Hime... What new discoveries await in the land of Cryo? Let's head to Snezhnaya together! ❄️"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/10/0/4579463b112f478a9c548a0096c61400_3734165492356152363.jpeg",
+      "url": "https://www.hoyolab.com/article/46216426",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-10T17:00:04.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -438,22 +454,6 @@
       "publishedAt": "2026-08-07T10:00:03.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Genshin Impact Snezhnaya Booth will be making its grand debut at gamescom!",
-        "id": "Genshin Impact Snezhnaya Booth will be making its grand debut at gamescom!"
-      },
-      "excerpt": {
-        "en": "Dear Travelers, The Genshin Impact Snezhnaya Booth will be making its grand debut at gamescom from August 26 to August 30. You are welcome to visit us at Koelnmesse Hall 6, Booth B",
-        "id": "Dear Travelers, The Genshin Impact Snezhnaya Booth will be making its grand debut at gamescom from August 26 to August 30. You are welcome to visit us at Koelnmesse Hall 6, Booth B"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/9238c4ce13c4cb0cc55813edbb7eade7_6191933735743582316.png",
-      "url": "https://www.hoyolab.com/article/46175448",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-07T10:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -534,22 +534,6 @@
       "publishedAt": "2026-08-06T08:20:18.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
-        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
-        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
-      "url": "https://www.hoyolab.com/article/46159934",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T04:00:08.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -562,6 +546,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
       "url": "https://www.hoyolab.com/article/46159935",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T04:00:08.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
+      "url": "https://www.hoyolab.com/article/46159934",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-06T04:00:08.000Z"
     },
