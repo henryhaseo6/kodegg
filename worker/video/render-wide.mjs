@@ -772,7 +772,9 @@ function kotakStempel(ctx, cx, cy, txt, px, rot = -0.03) {
 /**
  * @param {object}   o
  * @param {{name:string}} o.game
- * @param {number}   o.activeCount  jumlah kode aktif — angka badge kiri
+ * @param {number}   o.activeCount  jumlah kode aktif
+ * @param {number}   [o.newCount]   jumlah kode BARU; >0 → badge memajang angka ini
+ *                                  dan berlabel "KODE BARU" + tanda merah
  * @param {string}   o.dateLabel    WAJIB memuat TAHUN — mis. "9 Agustus 2026".
  *                                  Tanpa tahun, thumbnail lama tak bisa dibedakan
  *                                  dari yang baru saat muncul berdampingan di
@@ -782,7 +784,7 @@ function kotakStempel(ctx, cx, cy, txt, px, rot = -0.03) {
  * @param {string}   o.outPath      .jpg (disarankan) atau .png
  * @param {number}   [o.seed]       jitter kolase; tetap → thumbnail reproducible
  */
-export async function renderWideThumb({ game, activeCount, dateLabel, iconPath, media = null, outPath, seed = 3 }) {
+export async function renderWideThumb({ game, activeCount, newCount = 0, dateLabel, iconPath, media = null, outPath, seed = 3 }) {
   const { createCanvas, loadImage } = await canvasLib();
   const TW = 1280, TH = 720;
   const cv = createCanvas(TW, TH), ctx = cv.getContext("2d");
@@ -896,11 +898,39 @@ export async function renderWideThumb({ game, activeCount, dateLabel, iconPath, 
   const lembah = R * 0.81 * 0.8;
   const muatDi = (yOff) => 2 * Math.sqrt(Math.max(0, lembah * lembah - yOff * yOff)) * 0.9;
   const yAngka = -R * 0.16, yLabel = R * 0.44;
-  ctx.font = `${fitR(ctx, String(activeCount), muatDi(yAngka), R * 0.9, R * 0.34)}px Rank`;
-  ctx.fillText(String(activeCount), 185, yBaris + yAngka);
-  fontMuat(ctx, "KODE AKTIF", muatDi(yLabel), { berat: "700", min: 10, maks: Math.round(R * 0.16), keluarga: "Grotesk" });
-  ctx.fillText("KODE AKTIF", 185, yBaris + yLabel);
+  // VIDEO KODE BARU: badge memajang jumlah kode BARU, bukan total aktif.
+  //
+  // Di kisi YouTube (~210px) cuma satu angka yang benar-benar sampai ke mata,
+  // jadi angka itu harus yang paling menentukan orang mengklik sekarang —
+  // "2 KODE BARU" alasan menonton hari ini, "13 KODE AKTIF" alasan menonton
+  // kapan saja. Totalnya tidak hilang, cuma turun ke baris kaki yang memang
+  // baru terbaca saat thumbnail tampil besar.
+  const adaBaru = (newCount ?? 0) > 0;
+  const angka = adaBaru ? newCount : activeCount;
+  ctx.font = `${fitR(ctx, String(angka), muatDi(yAngka), R * 0.9, R * 0.34)}px Rank`;
+  ctx.fillText(String(angka), 185, yBaris + yAngka);
+  const labelBadge = adaBaru ? "KODE BARU" : "KODE AKTIF";
+  fontMuat(ctx, labelBadge, muatDi(yLabel), { berat: "700", min: 10, maks: Math.round(R * 0.16), keluarga: "Grotesk" });
+  ctx.fillText(labelBadge, 185, yBaris + yLabel);
   ctx.restore();
+
+  // TANDA "BARU!" merah, menempel di bahu badge.
+  //
+  // Labelnya sendiri sudah berbunyi "KODE BARU", tapi di ukuran kisi tulisan
+  // sekecil itu tak terbaca — yang sampai cuma bentuk dan warna. Merah di
+  // antara lime bekerja sebagai isyarat, bukan sebagai teks: pembaca tahu ada
+  // yang berbeda dari thumbnail sebelahnya tanpa perlu membaca satu huruf pun.
+  if (adaBaru) {
+    const tx = 185 + R * 0.62, ty = yBaris - R * 0.74;
+    ctx.save(); ctx.translate(tx, ty); ctx.rotate(-0.18);
+    ctx.font = "800 34px Grotesk"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    const w = ctx.measureText("BARU!").width + 42;
+    ctx.shadowColor = "rgba(0,0,0,0.5)"; ctx.shadowBlur = 18; ctx.shadowOffsetY = 5;
+    rr(ctx, -w / 2, -26, w, 52, 26); ctx.fillStyle = C.red; ctx.fill();
+    ctx.shadowColor = "transparent";
+    ctx.fillStyle = "#fff"; ctx.fillText("BARU!", 0, 1);
+    ctx.restore();
+  }
 
   // Badge kanan = IKON GAME, penyeimbang badge angka di kiri. Roundup punya dua
   // badge angka; di sini angka keduanya tak ada yang berarti. Ikon juga yang
@@ -915,7 +945,7 @@ export async function renderWideThumb({ game, activeCount, dateLabel, iconPath, 
   }
 
   ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.font = "700 32px Grotesk";
-  const t1 = "KODE BARU TIAP JAM DI ", t2 = "KODEGG.COM";
+  const t1 = adaBaru ? `${activeCount} KODE AKTIF · UPDATE TIAP JAM DI ` : "KODE BARU TIAP JAM DI ", t2 = "KODEGG.COM";
   const w1 = ctx.measureText(t1).width, w2 = ctx.measureText(t2).width, lx = TW / 2 - (w1 + w2) / 2;
   ctx.fillStyle = C.muted; ctx.fillText(t1, lx, 682);
   ctx.fillStyle = C.acc; ctx.fillText(t2, lx + w1, 682);
