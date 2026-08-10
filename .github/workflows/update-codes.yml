@@ -137,6 +137,15 @@ jobs:
           # benar dapat kode baru. Daftar video yang perlu playlist manual dicetak
           # di log + ringkasan run. Hapus variabelnya begitu kuota pulih.
           VIDEO_SKIP_PLAYLIST: ${{ vars.VIDEO_SKIP_PLAYLIST }}
+          # Database pemain di R2 — dibaca src/player-series.mjs untuk grafik 24
+          # jam di video LANDSCAPE (render-wide). Belum terpakai: renderWide belum
+          # tersambung ke make-videos.mjs. Dipasang sekarang karena kalau tidak,
+          # jebakan yang persis sama menunggu di jalur otomatis: seriesPemain
+          # memulangkan null tanpa kunci, renderWide menyembunyikan pita statistik
+          # tanpa error, dan videonya terbit kekurangan isi tanpa ada yang tahu.
+          # Itu sudah terjadi sekali pada upload manual 9 Agu 2026.
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          TRIGGER_KEY: ${{ secrets.TRIGGER_KEY }}
           PYTHON: python3
         run: |
           if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set — lewati auto-video (lihat DEPLOY-YOUTUBE.md)."; exit 0; fi
