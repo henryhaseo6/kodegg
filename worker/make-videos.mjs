@@ -944,7 +944,19 @@ async function main() {
           //
           // Video LONG (roundup & top50) tak lewat sini dan tetap memakai
           // thumbnail kustom — di sana YouTube memang memakainya.
-          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, tanpaBuatPlaylist: SKIP_PLAYLIST || c.backlog === true });
+          //
+          // LANDSCAPE MEMBALIK KEPUTUSAN DI ATAS. Alasan tak mengirim thumbnail
+          // adalah "YouTube mengabaikannya untuk Shorts", dan itu tak berlaku di
+          // sini — komentar itu sendiri sudah mencatat pengecualiannya pada video
+          // long. Video 16:9 MEMAKAI thumbnail unggahan, dan seluruh rancangan
+          // thumbnail landscape (badge jumlah kode, tanda BARU, kolase gambar
+          // game) tak ada gunanya kalau tak pernah dikirim.
+          //
+          // Terlihat 10 Agu 2026: tiga video landscape pertama terbit memakai
+          // potongan frame pilihan YouTube. Gejalanya diam — API tak mengeluh
+          // karena memang tak ada yang diminta.
+          const kirimThumb = FORMAT === "landscape";
+          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: kirimThumb ? th : undefined, tanpaBuatPlaylist: SKIP_PLAYLIST || c.backlog === true });
           // Thumbnail Shorts TAK BISA dirender ulang seperti video long: dia
           // potongan frame dari mp4 yang ikut terhapus bersama runner, dan
           // Shorts tak bisa diberi thumbnail lewat Studio desktop (harus API atau
@@ -954,7 +966,27 @@ async function main() {
           // terpasang, jadi tak menumpuk.
           // Antrean thumbnail Shorts ikut dihapus: memasangnya ulang nanti pun
           // tetap diabaikan YouTube, jadi antrean itu cuma menunda pemborosan.
-          void thumbPending;
+          //
+          // Untuk LANDSCAPE antrean itu justru penting: thumbnail-nya dipakai,
+          // dan berkasnya hidup di runner yang sekali pakai — kalau gagal dan
+          // tak disimpan, ia hilang bersama runner dan videonya selamanya
+          // memakai frame pilihan YouTube.
+          //
+          // Berkas JPG-nya IKUT DISALIN ke worker/data/pending-thumbs/ — folder
+          // yang ikut ter-commit workflow. Pengurasan antrean membaca dari sana
+          // (baris ~732), dan tanpa salinan itu entrinya langsung dibuang di run
+          // berikutnya karena berkasnya tak ditemukan. Berbeda dari thumbnail
+          // roundup/top50 yang deterministik dari tanggal dan bisa dirender
+          // ulang, thumbnail per-game bergantung pada data kode saat itu.
+          if (kirimThumb && thumbPending) {
+            try {
+              mkdirSync(THUMB_DIR, { recursive: true });
+              const namaThumb = `${id}.jpg`;
+              copyFileSync(th, resolve(THUMB_DIR, namaThumb));
+              simpanPending({ videoId: id, kind: "wide", file: namaThumb, judul: meta.title });
+              console.log("  ↳ thumbnail gagal — diantrikan utk run berikutnya");
+            } catch (e) { console.log(`  ↳ thumbnail gagal & tak bisa diantrikan: ${e.message}`); }
+          } else void thumbPending;
           if ((SKIP_PLAYLIST || c.backlog === true) && playlistPending) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
           console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
           state.todayCount += 1; remaining -= 1;
