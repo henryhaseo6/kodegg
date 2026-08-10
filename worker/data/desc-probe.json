@@ -14502,7 +14502,7 @@
   "sale": {
    "tulis": "SALE",
    "pertama": 1785996161549,
-   "terakhir": 1785996161549,
+   "terakhir": "2026-08-10",
    "n": 1,
    "awal": true
   },
@@ -24559,6 +24559,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-10",
    "awal": true
+  },
+  "sale": {
+   "tulis": "Sale",
+   "pertama": 1786338192794,
+   "terakhir": "2026-08-10"
   }
  },
  "killstreak": {
@@ -24944,6 +24949,11 @@
   "stock": {
    "tulis": "stock",
    "pertama": 1786223004504,
+   "terakhir": "2026-08-10"
+  },
+  "sale": {
+   "tulis": "sale",
+   "pertama": 1786338192794,
    "terakhir": "2026-08-10"
   }
  },
