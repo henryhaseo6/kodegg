@@ -832,6 +832,7 @@ export async function renderWideThumb({ game, activeCount, newCount = 0, dateLab
   gr.addColorStop(0, "rgba(9,12,18,0.40)"); gr.addColorStop(0.5, "rgba(9,12,18,0.74)"); gr.addColorStop(1, "rgba(9,12,18,0.92)");
   ctx.fillStyle = gr; ctx.fillRect(0, 0, TW, TH);
 
+  const adaBaruAwal = (newCount ?? 0) > 0;
   logoGG(ctx, 52, 40, 0.68, 0.96);
 
   // JUDUL: "KODE REDEEM" putih, nama game lime di bawahnya — sejajar dengan
@@ -861,6 +862,21 @@ export async function renderWideThumb({ game, activeCount, newCount = 0, dateLab
   const fn = Math.min(...baris.map((b) => fitR(ctx, b, LEBAR, baris.length === 1 ? 132 : 100, 52)));
   ctx.font = `${fn}px Rank`;
   baris.forEach((b, i) => pop(ctx, b, TW / 2, 236 + 34 + (i + 1) * fn * 0.98, C.acc, 14));
+
+  // BARIS INGGRIS ditaruh di KAKI, bukan di bawah nama game.
+  //
+  // Percobaan menaruhnya tepat di bawah nama gagal: untuk nama dua baris,
+  // ruang antara nama dan stempel tanggal tinggal ~28px dan teksnya tertimpa
+  // kotak stempel. Memaksakannya berarti mengecilkan nama game — padahal nama
+  // itu justru elemen yang paling menentukan.
+  //
+  // Kaki layar tak punya masalah itu, dan tak ada yang hilang: di kisi YouTube
+  // (~210px) baris kaki maupun sub-judul sama-sama TAK terbaca, jadi keduanya
+  // cuma melayani tampilan besar. Isyarat internasional yang benar-benar
+  // bekerja di ukuran kecil tetap tanda merah "NEW!" itu.
+  //
+  // Judul videonya sendiri sudah memuat kata Inggris ("<Game> Codes (August
+  // 2026)"), jadi thumbnail tak perlu memikul beban itu sendirian.
 
   // Baris badge + stempel. Turun kalau namanya dua baris, supaya tak bertumpuk.
   const yBaris = baris.length === 1 ? 528 : 570;
@@ -924,11 +940,11 @@ export async function renderWideThumb({ game, activeCount, newCount = 0, dateLab
     const tx = 185 + R * 0.62, ty = yBaris - R * 0.74;
     ctx.save(); ctx.translate(tx, ty); ctx.rotate(-0.18);
     ctx.font = "800 34px Grotesk"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    const w = ctx.measureText("BARU!").width + 42;
+    const w = ctx.measureText("NEW!").width + 46;
     ctx.shadowColor = "rgba(0,0,0,0.5)"; ctx.shadowBlur = 18; ctx.shadowOffsetY = 5;
     rr(ctx, -w / 2, -26, w, 52, 26); ctx.fillStyle = C.red; ctx.fill();
     ctx.shadowColor = "transparent";
-    ctx.fillStyle = "#fff"; ctx.fillText("BARU!", 0, 1);
+    ctx.fillStyle = "#fff"; ctx.fillText("NEW!", 0, 1);
     ctx.restore();
   }
 
@@ -945,7 +961,7 @@ export async function renderWideThumb({ game, activeCount, newCount = 0, dateLab
   }
 
   ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.font = "700 32px Grotesk";
-  const t1 = adaBaru ? `${activeCount} KODE AKTIF · UPDATE TIAP JAM DI ` : "KODE BARU TIAP JAM DI ", t2 = "KODEGG.COM";
+  const t1 = adaBaru ? `KODE BARU · NEW CODES · ${activeCount} KODE AKTIF · ` : "SEMUA KODE AKTIF · ALL ACTIVE CODES · ", t2 = "KODEGG.COM";
   const w1 = ctx.measureText(t1).width, w2 = ctx.measureText(t2).width, lx = TW / 2 - (w1 + w2) / 2;
   ctx.fillStyle = C.muted; ctx.fillText(t1, lx, 682);
   ctx.fillStyle = C.acc; ctx.fillText(t2, lx + w1, 682);
