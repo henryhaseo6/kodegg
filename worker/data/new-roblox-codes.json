@@ -1,5 +1,30 @@
 {
-  "generatedAt": "2026-08-10T20:03:12.370Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-08-10T21:03:13.094Z",
+  "codes": [
+    {
+      "game": "dungeon-heroes",
+      "gameName": "Dungeon Heroes",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/dungeon-heroes"
+      },
+      "code": "SYLVAN",
+      "reward": null,
+      "date": "2026-08-10T15:21:49.275Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-10T21:03:13.094Z",
+      "fetchedAt": "2026-08-10T21:03:13.094Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "anime-fighting-simulator-kdmf",
+      "count": 9,
+      "fresh": []
+    }
+  ]
 }
