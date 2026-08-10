@@ -886,7 +886,26 @@ export async function renderWideThumb({ game, activeCount, newCount = 0, dateLab
   ctx.font = `${fitR(ctx, "KODE REDEEM", LEBAR, 132, 76)}px Rank`;
   pop(ctx, "KODE REDEEM", TW / 2, 236, C.txt, 14);
 
-  const nama = String(game.name || "").toUpperCase();
+  // NAMA DIBERSIHKAN — HANYA DI THUMBNAIL.
+  //
+  // Nama Roblox banyak yang dibungkus hiasan promosi: "[⏰ AA] Dog Race 🐕💨",
+  // "[🚗350Z + EVO] Corsa Legends [ALPHA]". Di VIDEO hiasan itu dipertahankan
+  // (identitas game apa adanya, dan emoji-nya kini tergambar benar), tapi di
+  // thumbnail ia merugikan dua kali: memakan ruang yang seharusnya dipakai nama
+  // gamenya, dan tak seorang pun mengetik "[AA] dog race" di kotak pencarian.
+  //
+  // Kalau pembersihan menyisakan kosong (nama yang SELURUHNYA di dalam kurung),
+  // nama aslinya dipakai — lebih baik berhias daripada kosong.
+  const namaBersih = (raw) => {
+    const s = String(raw ?? "")
+      .replace(/[[(（【][^\])）】]*[\])）】]/g, " ")
+      .replace(/\p{Extended_Pictographic}|[︎️‍\u{1F3FB}-\u{1F3FF}]/gu, " ")
+      .replace(/\s+/g, " ")
+      .replace(/^[\s\-–—:·|]+|[\s\-–—:·|]+$/g, "")
+      .trim();
+    return s || String(raw ?? "").trim();
+  };
+  const nama = namaBersih(game.name).toUpperCase();
   const kata = nama.split(/\s+/).filter(Boolean);
   let baris = [nama];
   // Dipecah dua baris kalau satu baris memaksa font turun sampai 92px. Di bawah
