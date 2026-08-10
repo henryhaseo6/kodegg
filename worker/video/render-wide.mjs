@@ -773,7 +773,10 @@ function kotakStempel(ctx, cx, cy, txt, px, rot = -0.03) {
  * @param {object}   o
  * @param {{name:string}} o.game
  * @param {number}   o.activeCount  jumlah kode aktif — angka badge kiri
- * @param {string}   o.dateLabel    mis. "9 AGUSTUS"
+ * @param {string}   o.dateLabel    WAJIB memuat TAHUN — mis. "9 Agustus 2026".
+ *                                  Tanpa tahun, thumbnail lama tak bisa dibedakan
+ *                                  dari yang baru saat muncul berdampingan di
+ *                                  hasil pencarian.
  * @param {string}   [o.iconPath]   ikon game — isi badge kanan
  * @param {Buffer[]} [o.media]      gambar promosi; bahan kolase
  * @param {string}   o.outPath      .jpg (disarankan) atau .png
@@ -859,9 +862,24 @@ export async function renderWideThumb({ game, activeCount, dateLabel, iconPath, 
 
   // Baris badge + stempel. Turun kalau namanya dua baris, supaya tak bertumpuk.
   const yBaris = baris.length === 1 ? 528 : 570;
-  kotakStempel(ctx, TW / 2, yBaris, String(dateLabel || "").toUpperCase(), 78, -0.03);
-
   const R = baris.length === 1 ? 130 : 110;
+
+  // UKURAN STEMPEL MENYESUAIKAN RUANG ANTAR-BADGE, bukan dipatok 78px.
+  //
+  // Label tanggal memuat tahun ("9 AGUSTUS 2026"), dan panjangnya berayun jauh
+  // mengikuti nama bulan: "9 MEI 2026" sembilan karakter, "10 SEPTEMBER 2026"
+  // tujuh belas. Dipatok satu ukuran, bulan panjang membuat kotaknya menabrak
+  // badge di kiri-kanan. Ruang yang benar-benar tersedia dihitung dari posisi
+  // kedua badge (pusat 185 dan 1095) dikurangi jari-jarinya, jadi ia ikut
+  // menyesuaikan saat R mengecil untuk nama game dua baris.
+  const tgl = String(dateLabel || "").toUpperCase();
+  const ruangStempel = (1095 - R) - (185 + R) - 48;
+  let pxStempel = 78;
+  for (; pxStempel > 40; pxStempel -= 2) {
+    ctx.font = `${pxStempel}px Rank`;
+    if (ctx.measureText(tgl).width + pxStempel * 0.7 <= ruangStempel) break;
+  }
+  kotakStempel(ctx, TW / 2, yBaris, tgl, pxStempel, -0.03);
   ctx.save(); ctx.translate(185, yBaris); ctx.rotate(-0.1); ctx.translate(-185, -yBaris);
   ctx.shadowColor = "rgba(0,0,0,0.5)"; ctx.shadowBlur = 24; ctx.shadowOffsetY = 8;
   burstBentuk(ctx, 185, yBaris, R, 15, C.acc); ctx.shadowColor = "transparent";
