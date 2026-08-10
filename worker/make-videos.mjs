@@ -261,7 +261,15 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
     series: seri?.series ?? null, media,
   });
   await renderWideThumb({
-    game: { name: c.displayName || c.name },
+    // `c.name` — nama KATALOG, bukan `displayName`.
+    //
+    // displayName memakai rawName Roblox yang penuh hiasan promosi ("[⏰ AA]
+    // Dog Race 🐕💨"); itu benar untuk VIDEO, yang menampilkan game apa adanya.
+    // Untuk thumbnail yang dibutuhkan justru nama yang dicari orang — dan itu
+    // sudah tersedia bersih di c.name, sumber yang sama yang membangun judul
+    // video dan judul playlist. Diukur 10 Agu 2026: 0 dari 588 nama katalog
+    // memuat emoji atau kurung, sementara 453 game punya rawName yang berbeda.
+    game: { name: c.name || c.displayName },
     activeCount: c.activeCount,
     newCount: (c.newCodes ?? []).length,
     dateLabel: stempelTanggal(now),

@@ -886,13 +886,17 @@ export async function renderWideThumb({ game, activeCount, newCount = 0, dateLab
   ctx.font = `${fitR(ctx, "KODE REDEEM", LEBAR, 132, 76)}px Rank`;
   pop(ctx, "KODE REDEEM", TW / 2, 236, C.txt, 14);
 
-  // NAMA DIBERSIHKAN — HANYA DI THUMBNAIL.
+  // JARING PENGAMAN, bukan mekanisme utama.
   //
-  // Nama Roblox banyak yang dibungkus hiasan promosi: "[⏰ AA] Dog Race 🐕💨",
-  // "[🚗350Z + EVO] Corsa Legends [ALPHA]". Di VIDEO hiasan itu dipertahankan
-  // (identitas game apa adanya, dan emoji-nya kini tergambar benar), tapi di
-  // thumbnail ia merugikan dua kali: memakan ruang yang seharusnya dipakai nama
-  // gamenya, dan tak seorang pun mengetik "[AA] dog race" di kotak pencarian.
+  // Pemanggil semestinya sudah mengirim nama KATALOG yang bersih — sumber yang
+  // sama yang membangun judul video dan judul playlist (lihat pemanggilan di
+  // make-videos.mjs). Diukur 10 Agu 2026: 0 dari 588 nama katalog memuat emoji
+  // atau kurung, jadi pembersihan di bawah semestinya tak pernah menggigit.
+  //
+  // Tetap dipertahankan karena ongkosnya nol dan kegagalannya senyap: kalau
+  // suatu saat ada yang mengirim rawName Roblox ("[⏰ AA] Dog Race 🐕💨"),
+  // thumbnail-nya tetap keluar bersih alih-alih memboroskan ruang untuk hiasan
+  // yang tak seorang pun cari.
   //
   // Kalau pembersihan menyisakan kosong (nama yang SELURUHNYA di dalam kurung),
   // nama aslinya dipakai — lebih baik berhias daripada kosong.
