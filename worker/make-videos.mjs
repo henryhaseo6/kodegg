@@ -62,7 +62,22 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // memberi angka nyata — bukan setelah sehari berjalan tanpa galat, karena
 // kegagalan kuota muncul sebagai upload yang ditolak SETELAH render, bukan
 // sebagai galat yang mencolok.
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 65);
+// 65 → 46 (10 Agu 2026), sesudah kanal beralih ke LANDSCAPE.
+//
+// Landscape mengirim thumbnails.set yang untuk Shorts sengaja dilewati, dan
+// panggilan itu 50 unit. Biaya per video kembali dari 163,6 ke 213,6 — persis
+// selisih yang sama yang dulu terukur saat thumbnail dihentikan, cuma arahnya
+// terbalik. Plafonnya jadi 10.000/213,6 = 46,8 video.
+//
+// 65 dibiarkan berarti video ke-47 dan seterusnya ditolak kuota SETELAH
+// menghabiskan waktu render — persis pemborosan yang sudah pernah dicatat di
+// atas. Menurunkannya tak mengurangi hasil sedikit pun; ia cuma memindahkan
+// kegagalan ke sebelum render.
+//
+// Mau lebih dari 46/hari: tambah project Google Cloud kedua (rotasi sudah
+// didukung lewat YT_CLIENT_ID_2/SECRET_2/REFRESH_TOKEN_2) — itu menggandakan
+// kuota query, bukan menaikkan angka ini.
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 46);
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
