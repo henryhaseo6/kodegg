@@ -69,6 +69,22 @@ const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 const outBack = (t) => { const c1 = 1.7, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
 
+// Durasi berkas audio, dibaca dari keluaran ffmpeg. ffprobe tidak dipasang di
+// pipeline (cuma @ffmpeg-installer), jadi durasinya dipungut dari baris
+// "Duration:" yang ffmpeg cetak ke stderr saat membuka berkas.
+function durasiAudio(path) {
+  return new Promise((res) => {
+    let out = "";
+    const p = spawn(ffmpegBin(), ["-hide_banner", "-i", path], { stdio: ["ignore", "ignore", "pipe"] });
+    p.stderr.on("data", (b) => { out += b.toString(); });
+    p.on("close", () => {
+      const m = /Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)/.exec(out);
+      res(m ? Number(m[1]) * 3600 + Number(m[2]) * 60 + Number(m[3]) : 0);
+    });
+    p.on("error", () => res(0));
+  });
+}
+
 function rr(ctx, x, y, w, h, r) {
   ctx.beginPath(); ctx.moveTo(x + r, y);
   ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
@@ -84,7 +100,7 @@ function ring(ctx, cx, cy, r, w, color, a) {
   ctx.save(); ctx.globalAlpha = a; ctx.strokeStyle = color; ctx.lineWidth = Math.max(1, w);
   ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.stroke(); ctx.restore();
 }
-function fitR(ctx, t, mw, base, min) { let f = base; while (f > min) { ctx.font = `${f}px Rank`; if (ctx.measureText(t).width <= mw) break; f -= 3; } return f; }
+function fitR(ctx, t, mw, base, min) { let f = base; while (f > min) { ctx.font = `${f}px Rank, Emoji`; if (ctx.measureText(t).width <= mw) break; f -= 3; } return f; }
 function fontMuat(ctx, teks, maxW, { berat = "700", min, maks, keluarga }) {
   for (let s = maks; s >= min; s -= 2) { ctx.font = `${berat} ${s}px ${keluarga}`; if (ctx.measureText(teks).width <= maxW) return s; }
   ctx.font = `${berat} ${min}px ${keluarga}`; return min;
@@ -351,7 +367,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     const tf = fitR(ctx, judul, W - 260, 172, 74);
     ctx.save(); ctx.globalAlpha = clamp(ts / 0.26);
     ctx.translate(W / 2, H / 2 - 168); ctx.scale(0.86 + 0.14 * a, 0.86 + 0.14 * a);
-    ctx.font = `${tf}px Rank`; pop(ctx, judul, 0, 0, C.acc, 16); ctx.restore();
+    ctx.font = `${tf}px Rank, Emoji`; pop(ctx, judul, 0, 0, C.acc, 16); ctx.restore();
 
     ctx.save(); ctx.globalAlpha = clamp((ts - 0.4) / 0.3);
     bi(ctx, "KODE REDEEM", "REDEEM CODES", W / 2, H / 2 - 58, { idFont: "800 56px Grotesk", enFont: "700 28px Grotesk", idColor: C.txt, enColor: C.faint });
@@ -425,7 +441,11 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
 
     ctx.save(); ctx.globalAlpha = clamp(ts / 0.35);
     if (ikon) ikonBulat(ctx, ikon, x0, 152, 78, 18);
-    ctx.font = "800 40px Grotesk"; ctx.fillStyle = C.txt;
+    // Font-stack "Grotesk, Emoji" — nama game Roblox banyak yang memuat emoji
+    // hias ("[⏰ AA] Dog Race 🐕💨"), dan tanpa fallback Twemoji ia tergambar
+    // sebagai kotak tofu. render-short sudah memakai pola ini sejak awal;
+    // render-wide mendaftarkan fontnya tapi tak pernah memakainya.
+    ctx.font = "800 40px Grotesk, Emoji"; ctx.fillStyle = C.txt;
     ctx.fillText(potong(ctx, game.name, lebar - 460), x0 + 100, 196);
     ctx.textAlign = "right"; ctx.font = "700 30px Mono"; ctx.fillStyle = C.acc;
     const dari = Math.min(idxHal * PER + list.length, nAktif);
@@ -664,8 +684,32 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   const SEC = [{ D: INTRO, d: (c, ts, gt) => intro(c, ts) }];
   halaman.forEach((h, i) => SEC.push({ D: durAdegan(h), d: (c, ts, gt) => adegan(c, h, ts, i, gt) }));
   SEC.push({ D: OUTRO, d: (c, ts, gt) => outro(c, ts, gt) });
-  const St = [0]; for (let i = 0; i < SEC.length - 1; i++) St.push(St[i] + SEC[i].D - TRT);
+  // VIDEO TAK BOLEH LEBIH PENDEK DARIPADA VO-NYA.
+  //
+  // Panjang video mengikuti JUMLAH KODE, sedangkan skrip VO panjangnya tetap
+  // (~20,6 detik) berapa pun kodenya. Game dengan 2 kode menghasilkan video 11
+  // detik — dan 10 detik VO terakhir terpotong, termasuk seluruh ajakan "cek di
+  // kodegg.com" dan "subscribe". Terjadi pada Corsa Legends 10 Agu 2026.
+  //
+  // Kekurangannya diserap dengan MEREGANGKAN SEMUA adegan secara merata, bukan
+  // menambal di outro saja. Alasannya: regangan pada adegan kode berubah jadi
+  // waktu TAHAN setelah kodenya selesai diketik — penonton dapat waktu lebih
+  // lama untuk menyalin, yang justru berguna. Menambal di outro cuma menambah
+  // kartu diam.
+  const voDur = voPath && existsSync(voPath) ? await durasiAudio(voPath) : 0;
+  const hitungSt = () => {
+    const s = [0];
+    for (let i = 0; i < SEC.length - 1; i++) s.push(s[i] + SEC[i].D - TRT);
+    return s;
+  };
+  let St = hitungSt();
   total = St[SEC.length - 1] + SEC[SEC.length - 1].D;
+  if (voDur > 0 && total < voDur + 0.4) {
+    const f = (voDur + 0.4) / total;
+    for (const s of SEC) s.D *= f;
+    St = hitungSt();
+    total = St[SEC.length - 1] + SEC[SEC.length - 1].D;
+  }
   grafikMulai = INTRO * 0.55;                 // saat pita statistik mulai muncul
   grafikAkhir = St[SEC.length - 1];           // awal outro = adegan kode terakhir habis
 
@@ -860,7 +904,7 @@ export async function renderWideThumb({ game, activeCount, newCount = 0, dateLab
     baris = [kata.slice(0, terbaik).join(" "), kata.slice(terbaik).join(" ")];
   }
   const fn = Math.min(...baris.map((b) => fitR(ctx, b, LEBAR, baris.length === 1 ? 132 : 100, 52)));
-  ctx.font = `${fn}px Rank`;
+  ctx.font = `${fn}px Rank, Emoji`;
   baris.forEach((b, i) => pop(ctx, b, TW / 2, 236 + 34 + (i + 1) * fn * 0.98, C.acc, 14));
 
   // BARIS INGGRIS ditaruh di KAKI, bukan di bawah nama game.
