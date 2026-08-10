@@ -6,6 +6,9 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
 import { renderShort, ffmpegBin } from "./video/render-short.mjs";
+import { renderWide, renderWideThumb } from "./video/render-wide.mjs";
+import { gambarGame } from "./src/game-media.mjs";
+import { seriesPemain } from "./src/player-series.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
 import { uploadVideo, ytConfigured, attachToPlaylist, ytProjectCount } from "./video/upload.mjs";
@@ -162,6 +165,93 @@ const namaKartu = (id, g) => (idRagu.has(id) ? g.name : g.rawName || g.name).spl
 // transisi outro (14.4s). Detik 8 dulu cuma dapat 3 kartu.
 function thumb(videoPath, outPath) {
   return new Promise((res) => { const ff = spawn(ffmpegBin(), ["-y", "-ss", "12.5", "-i", videoPath, "-frames:v", "1", "-q:v", "3", outPath], { stdio: "ignore" }); ff.on("close", res); });
+}
+
+// ── FORMAT VIDEO: landscape (bawaan) atau short ────────────────────────────
+//
+// Kanal beralih ke landscape 10 Agu 2026. Alasannya bukan selera melainkan
+// dua hal terukur:
+//
+//  1. Trafik sudah pindah ke PENCARIAN. Diukur pada 2 Shorts Drag Drive
+//     Simulator, 3 hari pertamanya: 93,4% dan 95,3% view datang dari
+//     YT_SEARCH, Shorts feed cuma 5,4% dan 3,3%. Yang membawa penonton bukan
+//     formatnya, melainkan peringkat pencarian — dan pencarian tak peduli
+//     video itu tegak atau mendatar.
+//
+//  2. JAM TAYANG SHORTS TIDAK DIHITUNG untuk ambang 4.000 jam. Data kanal 28
+//     hari: 208 jam total, tapi yang berasal dari video >60 detik cuma 2 jam.
+//     Artinya jalur monetisasi lewat jam tayang praktis jalan di tempat.
+//     Beralih ke landscape membuat ~175 jam per 28 hari itu berlaku.
+//
+// KODE SHORTS SENGAJA TIDAK DISENTUH. Yang bercabang cuma titik render, dan
+// pilihannya dibaca dari variabel workflow — jadi kembali ke Shorts tak perlu
+// commit maupun deploy, cukup set VIDEO_FORMAT=short di GitHub Variables dan
+// run berikutnya sudah memakainya lagi.
+const FORMAT = String(process.env.VIDEO_FORMAT || "landscape").toLowerCase() === "short" ? "short" : "landscape";
+
+// universeId dibaca dari data saat render, BUKAN dititipkan di objek kandidat.
+// Kandidat ikut tersimpan ke pending-videos.json dan bertahan antar-run; nilai
+// yang dititipkan di sana bisa basi, sedangkan pembacaan di sini selalu ikut
+// data terbaru. Juga menghemat penyuntingan 6 tempat pembuat kandidat.
+let _uid = null;
+const uidUntuk = (id) => {
+  _uid ??= readJSON(resolve(DATA, "roblox-codes.json"), { games: {} }).games ?? {};
+  return _uid[id]?.universeId ?? null;
+};
+
+// Label tanggal thumbnail — WIB dan WAJIB memuat tahun (lihat renderWideThumb).
+const stempelTanggal = (d) =>
+  new Intl.DateTimeFormat("id-ID", { timeZone: "Asia/Jakarta", day: "numeric", month: "long", year: "numeric" }).format(d);
+
+/**
+ * Render satu video + thumbnail-nya, sesuai FORMAT. Memulangkan lewat berkas:
+ * `fin` (video final bersuara) dan `th` (thumbnail).
+ *
+ * Perbedaan jalur yang penting: renderShort menghasilkan video BISU lalu
+ * muxAudio menempelkan VO + ding + musik dari berkas MP3, sedangkan renderWide
+ * mensintesis musik & SFX-nya sendiri dan cuma menerima voPath. Jadi muxAudio
+ * TIDAK boleh dipakai untuk landscape — delay ding-nya pun dipatok ke panjang
+ * Shorts (adelay=18150) dan akan meleset di durasi lain.
+ */
+async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
+  await makeVO({ name: c.name, activeCount: c.activeCount, allMode, isPromo: c.isPromo, outPath: vo });
+
+  if (FORMAT === "short") {
+    const moreCount = Math.max(0, c.activeCount - c.displayCodes.length); // sisa kode di situs → teaser "+N lagi"
+    await renderShort({
+      game: { name: c.displayName || c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null },
+      codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt,
+      allMode, iconPath: c.iconPath, outPath: base,
+    });
+    await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
+    await thumb(fin, th);
+    return;
+  }
+
+  // LANDSCAPE. Keempat masukan opsional renderWide dikirim EKSPLISIT.
+  // renderWide memberi nilai bawaan aman untuk semuanya, jadi yang lupa dikirim
+  // hilang tanpa satu pun error — video Drag Drive Simulator 9 Agu terbit tanpa
+  // grafik, tanpa VO, dan tanpa jumlah pemain persis karena itu.
+  const uid = c.platform === "ROBLOX" ? uidUntuk(c.id) : null;
+  // Game mobile tak punya universeId: tak ada gambar promosi (latar jatuh ke
+  // kolase ikon) dan tak ada data pemain (pita statistik disembunyikan).
+  // Keduanya sudah ditangani renderWide, jadi mobile tetap jalan — cuma polos.
+  const media = uid ? await gambarGame(uid, 8) : [];
+  const seri = uid ? await seriesPemain(uid) : null;
+
+  await renderWide({
+    game: { name: c.displayName || c.name, slug: c.slug, players: c.players ?? 0 },
+    codes: c.displayCodes, activeCount: c.activeCount, fetchedAt: c.fetchedAt,
+    iconPath: c.iconPath, outPath: fin, voPath: vo,
+    series: seri?.series ?? null, media,
+  });
+  await renderWideThumb({
+    game: { name: c.displayName || c.name },
+    activeCount: c.activeCount,
+    newCount: (c.newCodes ?? []).length,
+    dateLabel: stempelTanggal(now),
+    iconPath: c.iconPath, media, outPath: th,
+  });
 }
 
 // Kode yang situs cetak berbadge "CEK DULU" — HARUS memakai uji yang sama persis
@@ -333,7 +423,17 @@ function buildCandidates() {
 // Kartu tampil di video: kode BARU dulu (maks MAX_DISPLAY), lalu kode aktif
 // TERBARU — tanpa memandang ada/tidaknya reward. Sisanya (bila game punya banyak
 // kode) → teaser "+N lagi" di video.
-const MAX_DISPLAY = 4; // Short harus tetap kebaca; jangan jejalin semua kode.
+// Batas 4 dipasang untuk SHORTS: layar tegak sempit, dan menjejali kode
+// membuatnya tak terbaca. Landscape punya batas yang berbeda sifatnya —
+// renderWide memangkas sendiri dari ekor sampai muat anggaran 30 detik, jadi
+// mengirim lebih banyak tak pernah membuat videonya kepanjangan, cuma membuat
+// slot yang tersedia benar-benar terpakai.
+//
+// Terukur: Death Ball (13 kode aktif) dengan batas 4 menghasilkan video 15,9
+// detik — separuh anggaran terbuang, padahal jam tayang justru yang sedang
+// dikejar. Batas 10 membiarkan renderWide yang memutuskan, dan ia berhenti
+// tepat sebelum 30 detik.
+const MAX_DISPLAY = String(process.env.VIDEO_FORMAT || "landscape").toLowerCase() === "short" ? 4 : 10;
 // Deskripsi video TEKS, bukan kartu — muat lebih banyak tanpa bikin sesak, dan
 // tiap kode di sana ikut terbaca mesin pencari. Kartu tetap 4 (keputusan: video
 // = 4 kode terbaru, arsip lengkap ada di situs).
@@ -666,12 +766,8 @@ async function main() {
     mkdirSync(TMP, { recursive: true }); mkdirSync(OUTDIR, { recursive: true });
     console.log(`▶ [atas permintaan] ${c.name} (${c.platform}) — ${c.activeCount} kode aktif`);
     const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
-    const moreCount = Math.max(0, c.activeCount - c.displayCodes.length);
-    await renderShort({ game: { name: c.displayName || c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, allMode: true, iconPath: c.iconPath, outPath: base });
-    await makeVO({ name: c.name, activeCount: c.activeCount, allMode: true, outPath: vo });
-    await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
-    await thumb(fin, th);
-    const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: true, redeemNote: c.redeemNote, alias: c.alias, now });
+    await buatVideo(c, { base, vo, fin, th }, true, now);
+    const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: true, redeemNote: c.redeemNote, alias: c.alias, now, shorts: FORMAT === "short" });
     const stem = `${today}-${c.id}`;
     copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
     copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
@@ -799,12 +895,8 @@ async function main() {
     try {
       console.log(`\n▶ ${c.name} (${c.platform}) — ${c.newCodes.length} kode baru`);
       const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
-      const moreCount = Math.max(0, c.activeCount - c.displayCodes.length); // sisa kode di situs → teaser "+N lagi"
-      await renderShort({ game: { name: c.displayName || c.name, platform: c.platform, players: c.players ? fmtPlayers(c.players) : null }, codes: c.displayCodes, activeCount: c.activeCount, moreCount, fetchedAt: c.fetchedAt, allMode: c.allMode, iconPath: c.iconPath, outPath: base });
-      await makeVO({ name: c.name, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, outPath: vo });
-      await muxAudio({ videoPath: base, voPath: vo, outPath: fin });
-      await thumb(fin, th);
-      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, redeemNote: c.redeemNote, alias: c.alias, now });
+      await buatVideo(c, { base, vo, fin, th }, c.allMode, now);
+      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, redeemNote: c.redeemNote, alias: c.alias, now, shorts: FORMAT === "short" });
       if (DRY_RUN) {
         const dst = resolve(REVIEW, `${c.id}.mp4`); copyFileSync(fin, dst);
         console.log(`  ✓ [DRY] ${dst}\n    judul: ${meta.title}`);

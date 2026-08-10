@@ -146,6 +146,12 @@ jobs:
           # Itu sudah terjadi sekali pada upload manual 9 Agu 2026.
           WORKER_URL: ${{ secrets.WORKER_URL }}
           TRIGGER_KEY: ${{ secrets.TRIGGER_KEY }}
+          # FORMAT VIDEO. Kosong = landscape (bawaan sejak 10 Agu 2026). Isi
+          # "short" untuk kembali ke Shorts vertikal — kode Shorts tetap utuh,
+          # yang bercabang cuma titik render. Kembali ke Shorts karena itu tak
+          # butuh commit maupun deploy: ubah variabelnya di GitHub, run
+          # berikutnya sudah memakainya lagi.
+          VIDEO_FORMAT: ${{ vars.VIDEO_FORMAT }}
           PYTHON: python3
         run: |
           if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set — lewati auto-video (lihat DEPLOY-YOUTUBE.md)."; exit 0; fi
