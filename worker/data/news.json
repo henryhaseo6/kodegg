@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-08-11T03:02:56.600Z",
+  "updatedAt": "2026-08-11T04:02:11.142Z",
   "counts": {
     "active": 91,
     "archived": 72
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Character Trailer - \"Odette: An Elegy for Innocence\" | Genshin Impact",
+        "id": "Trailer Karakter - \"Odette: Kidung Tanpa Dosa\" | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "Farewell, and extend your apology to the warm hearth and the dreams by the windowsill. For the path you are bound to embark upon leads toward the pale frost at daybreak.",
+        "id": "Selamat tinggal, ucapkan minta maaf pada kehangatan perapian dan mimpi yang ada di tepi jendela. Karena jalan yang akan engkau tempuh akan menuju embun beku putih nan dingin di pag"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/11/0/ae251639999e7b0ac6da852679df533b_1440880529353653158.jpeg",
+      "url": "https://www.hoyolab.com/article/46221117",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-11T04:00:03.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Aha Instant\" | Pearl",
+        "id": "\"Momen Aha\" | Pearl"
+      },
+      "excerpt": {
+        "en": "\"Welcome. I am 'Pearl,' an artwork investment specialist working for the IPC's Strategic Investment Department, and Planarcadia's current CEO. My calculated outcome: we can start w",
+        "id": "\"'Pearl', ahli investasi seni dari Departemen Investasi Strategis IPC, CEO Planarcadia, menyambut kunjunganmu. Menurut perhitunganku: untuk saling mengenal dengan lebih baik, tidak"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/10/cedd485bd10a45e3aed8d7f1558e7761_6270935288648430097.png",
+      "url": "https://www.hoyolab.com/article/46221118",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-11T04:00:03.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -438,22 +470,6 @@
       "publishedAt": "2026-08-07T10:00:05.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Genshin Impact Miliastra Wonderland\" Phantasmagoric Season Overview",
-        "id": "\"Genshin Impact Miliastra Wonderland\" Phantasmagoric Season Overview"
-      },
-      "excerpt": {
-        "en": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Phantasmagoric Season\" is about to begin, so let's check out the benefits and events in this new version update!",
-        "id": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Phantasmagoric Season\" is about to begin, so let's check out the benefits and events in this new version update!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/8b9cc89eb087e014e30982b9024a7608_9067306037895763318.jpg",
-      "url": "https://www.hoyolab.com/article/46175447",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-07T10:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -534,22 +550,6 @@
       "publishedAt": "2026-08-06T08:20:18.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Pom-Pom Doing Overtime | Their Phone Cases",
-        "id": "\"Pom-Pom Lembur | Pelindung Ponsel Mereka\""
-      },
-      "excerpt": {
-        "en": "Phone cases are one of the most important sources of elation during an adventure! Because decorating an important travel essential like your phone helps put you in a better mood~ \"",
-        "id": "Pelindung ponsel adalah salah satu hiburan yang penting dalam petualangan, pom! Mendekorasi barang penting untuk perjalanan akan membuat suasana hati kita jadi lebih baik~ \"Tentu s"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
-      "url": "https://www.hoyolab.com/article/46159935",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T04:00:08.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -562,6 +562,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
       "url": "https://www.hoyolab.com/article/46159934",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T04:00:08.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Pom-Pom Doing Overtime | Their Phone Cases",
+        "id": "\"Pom-Pom Lembur | Pelindung Ponsel Mereka\""
+      },
+      "excerpt": {
+        "en": "Phone cases are one of the most important sources of elation during an adventure! Because decorating an important travel essential like your phone helps put you in a better mood~ \"",
+        "id": "Pelindung ponsel adalah salah satu hiburan yang penting dalam petualangan, pom! Mendekorasi barang penting untuk perjalanan akan membuat suasana hati kita jadi lebih baik~ \"Tentu s"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
+      "url": "https://www.hoyolab.com/article/46159935",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-06T04:00:08.000Z"
     },
@@ -1300,22 +1316,6 @@
       "url": "https://www.hoyolab.com/article/45966246",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-23T02:00:03.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Gilgamesh: Your Joy Brings Me Joy | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Gilgamesh: Aku Bersukacita Atas Kebahagiaanmu\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "\"Come,\" the golden-haired man raised his chin disdainfully. \"Take a step toward your king. Or are you just a lowly coward?\" The chimera whimpers as it curls into a trembling ball, ",
-        "id": "\"Kemarilah.\" Pria berambut pirang itu mendongak dan menatap remeh. \"Majulah selangkah menuju Rajamu ini. Apakah kamu seorang pengecut rendahan?\" Chimera meringkuk gemetar sambil me"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/0/dd1cf2d3ff40c5f27ab16974c24767a1_4873039298119105013.jpeg",
-      "url": "https://www.hoyolab.com/article/45955086",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-22T04:00:06.000Z"
     },
     {
       "game": "wuwa",
