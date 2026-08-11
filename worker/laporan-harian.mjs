@@ -107,7 +107,14 @@ const perHari = {};
 for (const l of log.filter((x) => x.mode === "upload")) perHari[l.at.slice(0, 10)] = (perHari[l.at.slice(0, 10)] ?? 0) + 1;
 const hari = Object.keys(perHari).sort().slice(-7);
 baris("Upload 7 hari terakhir", hari.map((d) => `${d.slice(5)}:${perHari[d]}`).join("  "));
-baris("Jatah hari ini", `${vs.todayCount ?? 0}/${process.env.VIDEO_MAX_PER_DAY || 65} (hari kuota ${vs.date ?? "—"})`);
+// Angka pembanding dibaca dari make-videos.mjs, bukan disalin ke sini. Dulu
+// 65 ditulis langsung dan jadi usang begitu batasnya diturunkan ke 46 saat
+// kanal beralih ke landscape — laporan melaporkan "46/65" alias masih longgar,
+// padahal jatahnya persis habis.
+const capHarian = Number(process.env.VIDEO_MAX_PER_DAY)
+  || Number(/VIDEO_MAX_PER_DAY \|\| (\d+)/.exec(readFileSync(resolve(HERE, "make-videos.mjs"), "utf8"))?.[1])
+  || 46;
+baris("Jatah hari ini", `${vs.todayCount ?? 0}/${capHarian} (hari kuota ${vs.date ?? "—"})`);
 const gagal = log.filter((l) => l.mode === "manual" && (l.at ?? "").slice(0, 10) === new Date().toISOString().slice(0, 10));
 // PISAHKAN MENURUT ALASAN. Terbukti 5 Agu 2026: konsol Google menunjukkan
 // 11.919/10.000 (119%) sementara YouTube tetap melayani setiap panggilan —
