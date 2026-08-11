@@ -53,13 +53,28 @@ const OUT = resolve(HERE, "data/roblox-codes.json");
 // Itulah kenapa gejalanya muncul perlahan lalu mendadak menutup total.
 //
 // TIDAK dilepas sepenuhnya: cap ini satu-satunya rem kalau discovery/den-scout
-// suatu saat memuntahkan ribuan game. Biaya tiap game = 1 penarikan RoCodes per
-// run (TAK digerbangi) = 24/hari; 385 game ≈ 9.240 permintaan/hari, 600 ≈ 14.400.
-// Durasi bukan kendala (run rutin 1-2 menit). Solusi sebenarnya untuk beban itu
-// adalah menggerbangi RoCodes dg <lastmod> spt Den — menunggu data
-// lastmod-probe.json; kalau terbukti jujur, angkanya turun drastis dan cap ini
-// bisa dilonggarkan lagi tanpa menambah beban.
-const MAX_GAMES = 600;
+// suatu saat memuntahkan ribuan game.
+//
+// 600 → 800 (11 Agu 2026). Cap-nya mengikat lagi: 597 game tercatat, jadi jalur
+// discovery praktis tinggal 3 slot — gejala yang sama persis dengan 3 Agu, dan
+// muncul dengan cara yang sama (prevGames masuk tanpa batas, jatah game baru
+// menyempit perlahan lalu menutup mendadak).
+//
+// ANGKA BEBAN DI KOMENTAR LAMA SUDAH USANG. Ia ditulis saat RoCodes ditarik tiap
+// run tanpa gerbang (600 game ≈ 14.400 permintaan/hari). Rotasi kemudian
+// dipasang ke RoCodes dengan aturan yang sama dengan Den — game ≥5.000 pemain
+// tiap jam, sisanya tiap 6 jam. Diukur 11 Agu 2026 pada 597 game (121 ramai,
+// 476 biasa): 121×24 + 476×4 = 4.808 permintaan/hari, sepertiga dari perkiraan
+// lama. Naik ke 800 menambah ~812 (+17%), bukan melipatgandakan.
+//
+// RENCANA MENGGERBANGI ROCODES DENGAN <lastmod> DIBATALKAN — datanya sudah
+// masuk dan jawabannya TIDAK. Dari 313 sampel lastmod-probe.json, saat kode BARU
+// terdeteksi stempel RoCodes cuma 32% yang berusia <60 menit; mediannya 2.319
+// menit (1,6 hari) dan 13% lebih tua dari 30 hari. Menggerbanginya berarti
+// melewatkan mayoritas kode baru — dan kecepatan deteksi adalah jualan utama
+// KodeGG. Rotasi menurut jumlah pemain sudah memberi penghematan yang dicari,
+// tanpa bergantung pada stempel yang terbukti tak jujur.
+const MAX_GAMES = 800;
 const CONCURRENCY = 5; // game paralel maks (rendah = tak membanjiri RoCodes/Den)
 // Cross-check editorial — dua tingkat, dijadwal supaya cakupan LUAS tapi beban
 // justru TURUN (terukur: 8.760 → 6.665 permintaan/hari):
