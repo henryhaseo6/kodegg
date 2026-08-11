@@ -22,9 +22,10 @@ function wibParts(now) {
 
 /**
  * @param {{name, platform:'ROBLOX'|'MOBILE', slug, codes:[{code,reward}], activeCount, now:Date}} o
+ * @param {string} [o.playlistUrl] tautan playlist game — masuk DESKRIPSI (dulu di komentar)
  * @returns {{title, description, tags:string[]}}
  */
-export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, redeemNote = null, alias = null, now, shorts = true }) {
+export function buildMetadata({ name, platform, slug, codes, activeCount, allMode = false, isPromo = false, redeemNote = null, alias = null, now, shorts = true, playlistUrl = null }) {
   const w = wibParts(now);
   const my = `${w.monEn} ${w.y}`; // bulan WIB — sama dg tanggal di judul/deskripsi/video
   const isRoblox = platform === "ROBLOX";
@@ -91,8 +92,17 @@ export function buildMetadata({ name, platform, slug, codes, activeCount, allMod
     // penonton di muka bahwa potret ini bisa basi, lalu menunjukkan ke mana
     // harus pergi. Ditaruh persis SETELAH daftar kode, karena di situlah orang
     // menggulir begitu kode yang disalin ditolak game.
+    // Peringatan CASE-SENSITIVE dan tautan playlist DIPINDAH KE SINI dari
+    // komentar otomatis (10 Agu 2026). Komentar itu dihentikan: commentThreads
+    // .insert 50 unit — 23% anggaran per video — untuk teks yang hampir tak
+    // pernah terlihat, karena API YouTube tak punya endpoint pin dan 46 video
+    // sehari mustahil di-pin manual satu per satu. Di deskripsi, keduanya justru
+    // selalu tampil.
+    `⚠️ Kode CASE-SENSITIVE — salin PERSIS. Sebagian ada syarat/region & sekali pakai.\n` +
     `⏳ Kode redeem cepat kedaluwarsa — yang ada di video ini bisa saja sudah lewat saat kamu menonton.\n` +
-    `✅ Daftar terbaru + cara redeem (auto-update tiap jam):\n${url}\n\n` +
+    `✅ Daftar terbaru + cara redeem (auto-update tiap jam):\n${url}\n` +
+    (playlistUrl ? `🎬 Semua video ${name} (terbaru di paling atas):\n${playlistUrl}\n` : "") +
+    `\n` +
     // Sebut nama alternatifnya di deskripsi juga — membantu pembaca memastikan
     // ini game yang mereka cari, dan ikut terbaca mesin pencari.
     (alias?.length ? `🔎 Dikenal juga sebagai: ${alias.join(", ")}\n\n` : "") +

@@ -74,10 +74,21 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // atas. Menurunkannya tak mengurangi hasil sedikit pun; ia cuma memindahkan
 // kegagalan ke sebelum render.
 //
-// Mau lebih dari 46/hari: tambah project Google Cloud kedua (rotasi sudah
+// 46 → 57 (11 Agu 2026), sesudah komentar otomatis dihentikan.
+//
+// commentThreads.insert 50 unit ikut hilang, jadi biaya per video 213,6 →
+// 163,6 — sama persis dengan biaya Shorts dulu, karena thumbnail (+50) dan
+// komentar (−50) saling meniadakan. Plafonnya 10.000/163,6 = 61 video;
+// dikurangi 2 video dari workflow terpisah yang tak terhitung `todayCount`
+// dan margin untuk pembacaan rutin → 57.
+//
+// Margin itu bukan kehati-hatian berlebihan: di 46 kemarin, kuota habis persis
+// dan laporan harian gagal membaca YouTube sama sekali.
+//
+// Mau lebih dari 57/hari: tambah project Google Cloud kedua (rotasi sudah
 // didukung lewat YT_CLIENT_ID_2/SECRET_2/REFRESH_TOKEN_2) — itu menggandakan
 // kuota query, bukan menaikkan angka ini.
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 46);
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 57);
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
@@ -212,6 +223,18 @@ let _uid = null;
 const uidUntuk = (id) => {
   _uid ??= readJSON(resolve(DATA, "roblox-codes.json"), { games: {} }).games ?? {};
   return _uid[id]?.universeId ?? null;
+};
+
+// Tautan playlist game, dari peta yang disinkron tiap run. Dulu baris ini
+// ditempel di KOMENTAR saat upload (karena ID playlist baru pasti setelah
+// terpasang); sekarang di DESKRIPSI, dibaca dari peta. Untuk game yang playlist
+// -nya baru dibuat detik itu juga, petanya belum memuatnya dan barisnya
+// dilewati — lebih baik tanpa tautan daripada tautan ke playlist yang belum ada.
+let _ytpl = null;
+const playlistUrlUntuk = (c) => {
+  _ytpl ??= readJSON(resolve(DATA, 'yt-playlists.json'), {});
+  const pid = _ytpl[c.id] ?? _ytpl[c.slug];
+  return pid ? `https://youtube.com/playlist?list=${pid}` : null;
 };
 
 // Label tanggal thumbnail — WIB dan WAJIB memuat tahun (lihat renderWideThumb).
@@ -790,7 +813,7 @@ async function main() {
     console.log(`▶ [atas permintaan] ${c.name} (${c.platform}) — ${c.activeCount} kode aktif`);
     const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
     await buatVideo(c, { base, vo, fin, th }, true, now);
-    const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: true, redeemNote: c.redeemNote, alias: c.alias, now, shorts: FORMAT === "short" });
+    const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: true, redeemNote: c.redeemNote, alias: c.alias, now, shorts: FORMAT === "short", playlistUrl: playlistUrlUntuk(c) });
     const stem = `${today}-${c.id}`;
     copyFileSync(fin, resolve(OUTDIR, `${stem}.mp4`));
     copyFileSync(th, resolve(OUTDIR, `${stem}.jpg`));
@@ -919,7 +942,7 @@ async function main() {
       console.log(`\n▶ ${c.name} (${c.platform}) — ${c.newCodes.length} kode baru`);
       const base = resolve(TMP, "base.mp4"), vo = resolve(TMP, "vo.mp3"), fin = resolve(TMP, "final.mp4"), th = resolve(TMP, "thumb.jpg");
       await buatVideo(c, { base, vo, fin, th }, c.allMode, now);
-      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, redeemNote: c.redeemNote, alias: c.alias, now, shorts: FORMAT === "short" });
+      const meta = buildMetadata({ name: c.name, platform: c.platform, slug: c.slug, codes: c.descCodes ?? c.displayCodes, activeCount: c.activeCount, allMode: c.allMode, isPromo: c.isPromo, redeemNote: c.redeemNote, alias: c.alias, now, shorts: FORMAT === "short", playlistUrl: playlistUrlUntuk(c) });
       if (DRY_RUN) {
         const dst = resolve(REVIEW, `${c.id}.mp4`); copyFileSync(fin, dst);
         console.log(`  ✓ [DRY] ${dst}\n    judul: ${meta.title}`);
@@ -979,7 +1002,24 @@ async function main() {
           // potongan frame pilihan YouTube. Gejalanya diam — API tak mengeluh
           // karena memang tak ada yang diminta.
           const kirimThumb = FORMAT === "landscape";
-          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...meta, privacy: PRIVACY, thumbnailPath: kirimThumb ? th : undefined, tanpaBuatPlaylist: SKIP_PLAYLIST || c.backlog === true });
+          // KOMENTAR OTOMATIS DIHENTIKAN (10 Agu 2026).
+          //
+          // commentThreads.insert 50 unit — 23% anggaran per video — untuk teks
+          // yang hampir tak pernah terlihat: API YouTube tak punya endpoint pin,
+          // jadi komentarnya duduk di dasar kolom komentar, dan 46 video sehari
+          // mustahil di-pin manual satu per satu.
+          //
+          // Isinya tak hilang. Dua hal yang cuma ada di komentar — peringatan
+          // CASE-SENSITIVE dan tautan playlist — sekarang di DESKRIPSI, tempat
+          // yang justru selalu tampil. Sisanya memang sudah ada di sana.
+          //
+          // Hematnya: 213,6 → 163,6 unit/video, plafon 46 → 61 video/hari.
+          //
+          // Jalur upload MANUAL tetap memasang komentar (meta.comment masih
+          // ditulis ke berkas .txt): jumlahnya sedikit dan bisa di-pin tangan,
+          // jadi di sana 50 unit itu terbayar.
+          const { comment: _takDipakai, ...metaUpload } = meta;
+          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...metaUpload, privacy: PRIVACY, thumbnailPath: kirimThumb ? th : undefined, tanpaBuatPlaylist: SKIP_PLAYLIST || c.backlog === true });
           // Thumbnail Shorts TAK BISA dirender ulang seperti video long: dia
           // potongan frame dari mp4 yang ikut terhapus bersama runner, dan
           // Shorts tak bisa diberi thumbnail lewat Studio desktop (harus API atau
