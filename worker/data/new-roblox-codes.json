@@ -1,5 +1,29 @@
 {
-  "generatedAt": "2026-08-11T01:02:42.528Z",
+  "generatedAt": "2026-08-11T02:02:07.732Z",
   "codes": [],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "roblox-gohan",
+      "count": 5,
+      "fresh": [
+        {
+          "code": "Poptropica",
+          "reward": "5 Spins, 5 Trait Spins"
+        },
+        {
+          "code": "Rewind",
+          "reward": "Reset Story"
+        },
+        {
+          "code": "Restyle",
+          "reward": "Reset Style"
+        }
+      ]
+    },
+    {
+      "game": "anime-fighting-simulator-kdmf",
+      "count": 9,
+      "fresh": []
+    }
+  ]
 }
