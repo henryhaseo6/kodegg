@@ -149,7 +149,10 @@ function bi(ctx, id, en, x, y, { idFont, enFont, idColor = C.txt, enColor = C.fa
   return dy;
 }
 
-function fmtWIB(d) {
+// Diekspor supaya thumbnail memakai STRING YANG SAMA dengan pil di video.
+// Kalau pemanggil menyusunnya sendiri, dua stempel yang mestinya kembar bisa
+// berbeda format — atau lebih buruk, berbeda menit karena dihitung dua kali.
+export function fmtWIB(d) {
   return new Intl.DateTimeFormat("id-ID", { timeZone: "Asia/Jakarta", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(d).replace(/\./g, ":") + " WIB";
 }
 const fmtPemain = (n) => (n >= 1000 ? Math.round(n / 1000) + "K" : String(n));
@@ -819,6 +822,8 @@ function kotakStempel(ctx, cx, cy, txt, px, rot = -0.03) {
  * @param {number}   o.activeCount  jumlah kode aktif
  * @param {number}   [o.newCount]   jumlah kode BARU; >0 → badge memajang angka ini
  *                                  dan berlabel "KODE BARU" + tanda merah
+ * @param {string}   [o.timeLabel]  stempel waktu lengkap utk pil atas, mis.
+ *                                  "10 Agustus 2026 pukul 17:03 WIB"
  * @param {string}   o.dateLabel    WAJIB memuat TAHUN — mis. "9 Agustus 2026".
  *                                  Tanpa tahun, thumbnail lama tak bisa dibedakan
  *                                  dari yang baru saat muncul berdampingan di
@@ -828,7 +833,7 @@ function kotakStempel(ctx, cx, cy, txt, px, rot = -0.03) {
  * @param {string}   o.outPath      .jpg (disarankan) atau .png
  * @param {number}   [o.seed]       jitter kolase; tetap → thumbnail reproducible
  */
-export async function renderWideThumb({ game, activeCount, newCount = 0, dateLabel, iconPath, media = null, outPath, seed = 3 }) {
+export async function renderWideThumb({ game, activeCount, newCount = 0, dateLabel, timeLabel = null, iconPath, media = null, outPath, seed = 3 }) {
   const { createCanvas, loadImage } = await canvasLib();
   const TW = 1280, TH = 720;
   const cv = createCanvas(TW, TH), ctx = cv.getContext("2d");
@@ -878,6 +883,37 @@ export async function renderWideThumb({ game, activeCount, newCount = 0, dateLab
 
   const adaBaruAwal = (newCount ?? 0) > 0;
   logoGG(ctx, 52, 40, 0.68, 0.96);
+
+  // PIL WAKTU di atas-tengah — cermin dari pil berdenyut di header video.
+  //
+  // Stempel merah di bawah sudah memuat tanggal, jadi ini bukan pengulangan
+  // melainkan ketelitian yang berbeda: stempel menjawab "hari apa" dalam sekali
+  // lirik, pil ini menjawab "jam berapa dicek" bagi yang membuka thumbnail
+  // besar. Dipisah karena kalau jam digabung ke stempel merah, kotaknya melebar
+  // sampai ~945px dan pengaman lebar memaksanya mengecil dari 78 ke ~54px —
+  // menukar jangkar visual terkuat thumbnail demi detail yang tak terbaca di
+  // ukuran kisi.
+  //
+  // Titiknya diam, tidak berdenyut: gambar diam tak punya waktu, dan denyut
+  // yang dibekukan cuma tampak seperti noda.
+  if (timeLabel) {
+    ctx.save();
+    ctx.font = "700 30px Mono";
+    const wT = ctx.measureText(timeLabel).width;
+    const padX = 26, dot = 10, jarak = 16, tinggi = 54;
+    const lebar = padX * 2 + dot * 2 + jarak + wT;
+    const px = TW / 2 - lebar / 2, py = 34;
+    ctx.shadowColor = "rgba(0,0,0,0.55)"; ctx.shadowBlur = 16; ctx.shadowOffsetY = 4;
+    rr(ctx, px, py, lebar, tinggi, tinggi / 2);
+    ctx.fillStyle = "rgba(9,12,18,0.82)"; ctx.fill();
+    ctx.shadowColor = "transparent";
+    ctx.strokeStyle = "rgba(203,255,70,0.34)"; ctx.lineWidth = 2; ctx.stroke();
+    const cxd = px + padX + dot, cyd = py + tinggi / 2;
+    ctx.beginPath(); ctx.arc(cxd, cyd, dot, 0, Math.PI * 2); ctx.fillStyle = C.acc; ctx.fill();
+    ctx.fillStyle = C.txt; ctx.textAlign = "left"; ctx.textBaseline = "middle";
+    ctx.fillText(timeLabel, cxd + dot + jarak, cyd + 1);
+    ctx.restore();
+  }
 
   // JUDUL: "KODE REDEEM" putih, nama game lime di bawahnya — sejajar dengan
   // roundup yang memakai "NEW ROBLOX" putih + "CODES" lime.

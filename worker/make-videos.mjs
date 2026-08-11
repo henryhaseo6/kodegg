@@ -6,7 +6,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
 import { renderShort, ffmpegBin } from "./video/render-short.mjs";
-import { renderWide, renderWideThumb } from "./video/render-wide.mjs";
+import { renderWide, renderWideThumb, fmtWIB } from "./video/render-wide.mjs";
 import { gambarGame } from "./src/game-media.mjs";
 import { seriesPemain } from "./src/player-series.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
@@ -296,6 +296,10 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
     activeCount: c.activeCount,
     newCount: (c.newCodes ?? []).length,
     dateLabel: stempelTanggal(now),
+    // Instan yang SAMA dengan pil di video (c.fetchedAt), bukan waktu render —
+    // dua stempel kembar yang berbeda menit lebih membingungkan daripada tak
+    // ada stempel sama sekali.
+    timeLabel: fmtWIB(c.fetchedAt ? new Date(c.fetchedAt) : now),
     iconPath: c.iconPath, media, outPath: th,
   });
 }
