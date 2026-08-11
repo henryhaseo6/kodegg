@@ -1,217 +1,10 @@
 {
-  "updatedAt": "2026-08-11T15:02:23.480Z",
+  "updatedAt": "2026-08-11T16:03:15.783Z",
   "counts": {
-    "active": 61,
-    "archived": 82
+    "active": 53,
+    "archived": 90
   },
   "events": [
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "The new limited-time web event \"Snezhnaya Awaits\" is now available.",
-        "id": "Event Web \"Snezhnaya Menanti\" telah hadir untuk waktu terbatas."
-      },
-      "subtitle": "",
-      "desc": {
-        "en": ">> Press to Take Part in Event << 〓Event Duration〓 July 31, 2026 – August 11, 2026 23:59 (UTC+8) *Rewards cannot be claimed after the event ends. Please claim your rewards in time. Rewards will be sent to your in-game mail after the Version",
-        "id": ">> Ikuti Event << 〓 Waktu Event 〓 31 Juli 2026 - 11 Agustus 2026 23:59 (UTC+8) *Hadiah tidak dapat diambil setelah event berakhir. Harap Traveler segera mengambilnya ya. Hadiah akan didistribusikan melalui pesan dalam game setelah update Ve"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/0/07d3966b6f081982f78250c0df4050b1_4729318823073395703.jpeg",
-      "startsAt": "2026-07-31T04:00:00.000Z",
-      "endsAt": "2026-08-11T15:59:59.000Z",
-      "postedAt": "2026-07-31T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46068352"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "The \"Luna VIII\" Genius Column Submission Event Begins! Share Your Stage Insights to Win Handsome Rewards!",
-        "id": "Event Kontes Kolom Bakat \"Candra VIII\" dimulai! Bagikan wawasanmu dan menangkan hadiah!"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Hello, Traveler! Version \"Luna VIII\" is now live! Share your stage insights for a chance to win Primogems and Arcane Keystones! Event Duration July 1, 2026 – August 11, 2026 23:59 (UTC+8) Results: The list of winners will be updated in this",
-        "id": "Halo, Traveler! Versi \"Candra VIII\" sudah hadir! Ayo bagikan pendapatmu tentang stage-nya untuk mendapatkan Primogem dan Arcane Keystone~ [Waktu Event] 1 Juli 2026 - 11 Agustus 2026 23:59 (UTC+8) Pengumuman Pemenang: Daftar pemenang akan di"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/3e631891971850fb9e3df14190ada889_568876503192255408.png",
-      "startsAt": "2026-06-30T16:00:00.000Z",
-      "endsAt": "2026-08-11T15:59:59.000Z",
-      "postedAt": "2026-07-01T09:04:30.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45677715"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Version \"Luna VIII\" HoYoverse Top-Up Center Event: Share the Promotional Image to Win Primogems — Phase 2",
-        "id": "Event Top-Up Center HoYoverse Versi \"Candra VIII\": Bagikan Gambar Promosi untuk Memenangkan Primogem - Tahap 2"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Olah! Hello, Traveler~ Bonus Rewards Are Here for the Version \"Luna VIII\" HoYoverse Top-Up Center Sharing Event! Make a top-up at the Top-Up Center and you'll receive Primogems ×300 if this is your first purchase since the release of Versio",
-        "id": "Olah! Apa kabar, Traveler? Event Berbagi HoYoverse Top-Up Center Versi \"Candra VIII\" hadir dengan hadiah tambahan! Kunjungi Top-Up Center dan dapatkan Primogem ×300 untuk top-up pertamamu sejak Versi \"Candra VI\" dirilis! Kamu juga bisa meni"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/519bc76d605dcc0ef676af5e94605b74_3913478111962950287.jpg",
-      "startsAt": "2026-07-21T04:00:00.000Z",
-      "endsAt": "2026-08-11T15:59:59.000Z",
-      "postedAt": "2026-07-21T04:00:07.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45941011"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": "Event",
-      "title": {
-        "en": "\"Witch's Revelation\" Gameplay Details",
-        "id": "Penjelasan Gameplay \"Ramalan Penyihir\""
-      },
-      "subtitle": {
-        "en": "\"Witch's Revelation\"",
-        "id": "Ramalan Penyihir"
-      },
-      "desc": {
-        "en": "Complete the quest \"Revelations by Chance\" to obtain the \"Witch's Revelation Case\" . Reveal the revelations from the Witch's Revelation Case to unlock the corresponding character's additional Talent and gain character buffs. 〓Duration〓 Permanently available after the Version \"Luna VIII\" update 〓Eligibility〓 Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\"",
-        "id": "Selesaikan Quest \"Ramalan yang Kebetulan\" untuk mendapatkan \"Witch's Revelation Case\" . Ungkap ramalan di dalam \"Witch's Revelation Case\" untuk membuka Talenta tambahan Karakter yang bersangkutan dan mendapatkan Buff Karakter. 〓 Waktu Pembukaan Gameplay 〓 Hadir permanen setelah update Versi \"Candra VIII\" 〓 Syarat Partisipasi 〓 Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\""
-      },
-      "image": "https://sdk.hoyoverse.com/upload/ann/2026/06/17/49208ed32b9337e6a56f880390da1f93_3716451833882423464_transformed.jpg",
-      "startsAt": "2026-06-28T21:00:00.000Z",
-      "endsAt": "2026-08-11T16:00:00.000Z",
-      "postedAt": "2026-06-28T21:00:00.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoverse",
-      "url": "https://genshin.hoyoverse.com/en/news"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": "Event",
-      "title": {
-        "en": "\"Genius Invokation TCG\" The Forge Realm's Temper: Endless Swarm",
-        "id": "Penempaan dan Latihan \"Genius Invokation TCG\": Duel Tak Berujung"
-      },
-      "subtitle": {
-        "en": "Genius Invokation TCG - The Forge Realm's Temper",
-        "id": "Penempaan dan Latihan \"Genius Invokation TCG\""
-      },
-      "desc": {
-        "en": "〓Event Rewards〓 〓Event Duration〓 Available throughout the entirety of Version \"Luna VIII\" 〓Eligibility〓 Adventure Rank 32 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" And complete the World Quest \"Battlefield of Dice, Cats, and Cards\" 〓Event Details〓 ● After the event starts, Travelers can go to Prince at The Cat's Tail to select stages to challenge. ● This event includes 4 stages and each stage has its distinctive challenge rules. ● Defeat opponents within these stages to accrue score. Defeat as many opponents as possible within the Round limit to score more points. ● After completing the challenge, points will be obtained based on the number of opponents defeated. Achieving the required scores will allow Travelers to claim the corresponding rewards.",
-        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 Setelah update Versi \"Candra VIII\" 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 32 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" Dan telah menyelesaikan Quest Dunia \"Perang Dadu, Kucing, dan Kartu\" 〓 Penjelasan Event 〓 ● Setelah event dimulai, Traveler dapat menuju ke tempat Prince di Cat's Tail untuk memilih stage tantangan. ● Ada 4 stage dalam event kali ini dan masing-masing tantangan memiliki aturan yang berbeda. ● Kalahkan musuh yang ada di dalam stage untuk meraih skor yang ditentukan. Traveler harus mengalahkan sebanyak mungkin musuh untuk mendapatkan skor yang lebih tinggi dalam jumlah ronde yang terbatas. ● Setelah menyelesaikan tantangan, skor stage akan dihitung berdasarkan jumlah musuh yang dikalahkan oleh Traveler. Hadiah dapat diambil jika skor sudah mencapai jumlah yang ditentukan."
-      },
-      "image": "https://sdk.hoyoverse.com/upload/ann/2024/11/05/cf324597e5d687e26d86f297e59c9ebd_2179973999643752178.jpg",
-      "startsAt": "2026-06-28T21:00:00.000Z",
-      "endsAt": "2026-08-11T16:00:00.000Z",
-      "postedAt": "2026-06-28T21:00:00.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoverse",
-      "url": "https://genshin.hoyoverse.com/en/news"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": "Event",
-      "title": {
-        "en": "\"The Clink Clank Whiz-Kid!\" Event: Progress the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves\" and invite \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro)",
-        "id": "Event \"Si Anak Mesin Ajaib!\": Mainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\" untuk mengundang \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro)"
-      },
-      "subtitle": {
-        "en": "The Clink Clank Whiz-Kid!",
-        "id": "Si Anak Mesin Ajaib!"
-      },
-      "desc": {
-        "en": "〓Event Duration〓 Permanently available after the Version \"Luna I\" update 〓Event Rewards〓 〓Eligibility〓 Complete the Archon Quest \"The Journey Home\" ※ After completing the Archon Quest \"A New Star Approaches,\" you can use the \"Quick Start\" function on the event page to begin the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves\" directly. 〓Event Details〓 Progress through the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves\" to invite \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) . ※ You can only invite \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) once while progressing through the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves.\" The event page will close once you have invited the character. ※ Before you invite the character, the event page will be available throughout the \"Song of the Welkin Moon\" game version, and the event page will close once the \"Song of the Welkin Moon\" version ends. Then you will no longer be able to use the \"Quick Start\" function via the event page, but you can still invite \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) while progressing through the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves.\"",
-        "id": "〓 Waktu Event 〓 Hadir permanen setelah update Versi \"Candra I\" 〓 Hadiah Event 〓 〓 Syarat Partisipasi 〓 Selesaikan Quest Archon \"Perjalanan Pulang\" ※ Setelah menyelesaikan Quest Archon \"Bintang Baru yang Mendekat\", gunakan fitur \"Mulai Cepat\" di halaman event untuk langsung memainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\". 〓 Penjelasan Event 〓 Selama memainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\", Traveler bisa mengundang \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) ! ※ Kamu hanya dapat mengundang \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) sekali selama memainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\". Halaman event akan ditutup setelah kamu mengundangnya. ※ Sebelum mengundang Karakter, halaman event akan tersedia selama Versi \"Senandung Bulan Hampa\". Setelah Versi \"Senandung Bulan Hampa\" berakhir, halaman event ini akan ditutup dan kamu kamu tidak lagi dapat menggunakan fitur \"Mulai Cepat\" di halaman event, tapi kamu masih bisa mengundang \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) selama memainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\"."
-      },
-      "image": "https://sdk.hoyoverse.com/upload/ann/2025/08/28/8dbda65d63a584a0eaedee3fed63c0c4_4369780166988778346_transformed.png",
-      "startsAt": "2025-09-07T21:00:00.000Z",
-      "endsAt": "2026-08-11T16:00:00.000Z",
-      "postedAt": "2025-09-07T21:00:00.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoverse",
-      "url": "https://genshin.hoyoverse.com/en/news"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": "Miliastra Wonderland",
-      "title": {
-        "en": "\"Fatebound Sea Season\" Season Opening Announcement",
-        "id": "Pengumuman Dimulainya \"Musim Laut Takdir\""
-      },
-      "subtitle": {
-        "en": "Fatebound Sea Season",
-        "id": "Musim Laut Takdir"
-      },
-      "desc": {
-        "en": "〓Season Duration〓 Preparation Phase: After the Version \"Luna VIII\" update – 2026/07/02 09:59 Play Phase: 2026/07/02 10:00 – 2026/08/11 03:59 Showcase Phase: 2026/08/11 04:00 – End of Version \"Luna VIII\" 〓Eligibility〓 After awakening your Miliastra Wonderland Manekin 〓Season Details〓 ● Each season consists of three phases: The Preparation Phase, Play Phase, and Showcase Phase. ● During the Play Phase, Travelers can earn points or leaderboard scores by participating in Wonderlands that feature ranks or leaderboards. ※ In some Wonderlands, points and leaderboard scores cannot be earned through Room Mode. For specific details, please refer to the Craftsperson's configuration for each Wonderland. ● During the Preparation and Showcase Phases, Travelers can still participate in Wonderlands, though points and leaderboard scores will no longer be awarded. ● After each season ends, ranked Wonderlands may or may not carry over their corresponding stage points to the next season, and those with leaderboards may reset their rankings. For specific details on point retention and leaderboard resets, please refer to the configuration set by each Craftsperson for their Wonderland.",
-        "id": "〓 Waktu Musim 〓 Periode Persiapan: Setelah update Versi Candra VIII - 2026/07/02 09:59 Periode Bermain: 2026/07/02 10:00 - 2026/08/11 03:59 Periode Penampilan: 2026/08/11 04:00 - Akhir Versi Candra VIII 〓 Syarat Partisipasi 〓 Setelah membangunkan Manekin Miliastra Wonderland 〓 Penjelasan Musim 〓 ● Satu musim terbagi menjadi tiga tahap: Periode Persiapan, Periode Bermain, dan Periode Penampilan. ● Selama periode bermain, kamu bisa mendapatkan poin kompetisi atau skor Papan Peringkat dengan berpartisipasi dalam Wonderland yang memiliki sistem Rank atau Papan Peringkat. ※ Beberapa Wonderland tidak dapat meningkatkan poin kompetisi dan skor Papan Peringkat melalui mode Ruangan. Detail spesifiknya bergantung pada rencana Pengrajin di setiap Wonderland. ● Selama periode Persiapan Musim dan periode Penampilan Musim, kamu masih dapat memainkan Wonderland tetapi tidak akan mendapatkan poin kompetisi atau skor Papan Peringkat. ● Setelah berganti musim, apakah Wonderland dengan Rank akan mewarisi poin kompetitif dari stage yang sesuai dan apakah Papan Peringkat Wonderland akan direset, akan ditentukan berdasarkan rencana Pengrajin untuk setiap Wonderland."
-      },
-      "image": "https://sdk.hoyoverse.com/upload/ann/2026/06/22/7035ca31cd8498b0ef0a7d0c9761df57_6810033499703056196_transformed.jpg",
-      "startsAt": "2026-06-29T21:00:00.000Z",
-      "endsAt": "2026-08-11T16:00:00.000Z",
-      "postedAt": "2026-06-29T21:00:00.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoverse",
-      "url": "https://genshin.hoyoverse.com/en/news"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": "Miliastra Wonderland",
-      "title": {
-        "en": "Participate in \"Raiment Collection: Mellow Warmth\" to Obtain the \"Dreamy Summer Leisure\" Manekin Cosmetics Set of Your Choice",
-        "id": "Ikuti \"Apresiasi Adibusana: Kehangatan Lembut\" untuk mendapatkan Set Kostum Manekin \"Dreamy Summer Leisure\" pilihan"
-      },
-      "subtitle": {
-        "en": "Raiment Collection: Mellow Warmth",
-        "id": "Apresiasi Adibusana: Kehangatan Lembut"
-      },
-      "desc": {
-        "en": "〓Event Duration〓 After the Version \"Luna VIII\" update – 2026/08/12 05:59 〓Event Rewards〓 A \"Dreamy Summer Leisure\" Manekin Cosmetics Set of your choice and Geodes of Replication 〓Eligibility〓 After awakening your Miliastra Wonderland Manekin 〓Event Details〓 ● During the event, Travelers can obtain corresponding \"Treasured Insights\" and Geodes of Replication by completing Treasured Quests. Rewards from these quests are subject to a weekly limit. ● During the event, once your total accumulated \"Treasured Insights\" reach the required amount, you can claim the Manekin Cosmetics Set \"Dreamy Summer Leisure.\" ● Before claiming your first component of the \"Dreamy Summer Leisure\" Manekin Cosmetics Set, you may freely switch between available set rewards. Once you've claimed any component of the set, your choice will be locked and cannot be changed. ※ The Manekin Cosmetic Set \"Dreamy Summer Leisure\" will be available for a limited time in the Miliastra Shop after Version Luna VIII ends. Please visit the Miliastra Shop for more details.",
-        "id": "〓 Waktu Event 〓 Setelah update Versi \"Candra VIII\" - 2026/08/12 05:59 〓 Hadiah Event 〓 Satu Set Kostum Manekin \"Dreamy Summer Leisure\" yang diinginkan, Geode of Replication 〓 Syarat Partisipasi 〓 Setelah membangunkan Manekin Miliastra Wonderland 〓 Penjelasan Event 〓 ● Selama event berlangsung, Traveler bisa mendapatkan \"Treasured Insight\" dan Geode of Replication dengan menyelesaikan Treasured Quest. Jumlah hadiah yang bisa didapatkan melalui Treasured Quest setiap minggunya memiliki batas maksimum. ● Selama event berlangsung, setelah total nilai \"Treasured Insight\" mencapai jumlah tertentu, kamu akan mendapatkan Set Kostum Manekin \"Dreamy Summer Leisure\". ● Sebelum menerima bagian dari hadiah event Set Kostum Manekin \"Dreamy Summer Leisure\" untuk pertama kalinya, Traveler bisa dengan bebas mengganti pilihan hadiah set yang dipilih. Setelah menerimanya untuk pertama kalinya, hadiah set yang sudah dipilih tidak bisa diubah lagi. ※ Set Kostum Manekin \"Dreamy Summer Leisure\" akan tersedia untuk waktu terbatas di Toko Miliastra setelah Versi \"Candra VIII\" berakhir. Silakan lihat detailnya di Toko Miliastra."
-      },
-      "image": "https://sdk.hoyoverse.com/upload/ann/2026/06/22/cdc7d9f8c21fc84cbbe9c8c1698f7e3f_7620124751577152017_transformed.jpg",
-      "startsAt": "2026-06-29T21:00:00.000Z",
-      "endsAt": "2026-08-11T16:00:00.000Z",
-      "postedAt": "2026-06-29T21:00:00.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoverse",
-      "url": "https://genshin.hoyoverse.com/en/news"
-    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -245,30 +38,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "Version 3.1 Twitch Drops Event Now Live",
-        "id": "Event Twitch Drops Ver.3.1 sudah dibuka!"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Watch streams, win Polychrome! Join the Twitch Drops event and unlock your viewer rewards! ▼ Event Rewards Watch for 15 mins in total >> Denny ×12,000 Watch for 30 mins in total >> Senior Investigator Log ×2 Watch for 45 mins in total >> W-",
-        "id": "Tonton siaran langsungnya dan menangkan Polychrome! Ayo ikuti event Twitch Drops untuk mendapatkan hadiah~ ▼ Hadiah Event Tonton total 15 menit >> Denny ×12.000 Tonton total 30 menit >> Senior Investigator Log ×2 Tonton total 45 menit >> W-"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/28/0/9aaa215d99240b580a037e6bde854285_2756659738657378673.jpeg",
-      "startsAt": "2026-07-29T02:00:00.000Z",
-      "endsAt": "2026-08-19T15:59:59.000Z",
-      "postedAt": "2026-07-29T02:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46038142"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "\"Phaethon's Grand Reveal of the Year\" Special Program is now live! Join the event to win exclusive decorations!",
         "id": "Acara Khusus \"Pengungkapan Besar Phaethon\" sedang berlangsung! Ikuti event untuk memenangkan item terbatas!"
       },
@@ -286,6 +55,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46038839"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Version 3.1 Twitch Drops Event Now Live",
+        "id": "Event Twitch Drops Ver.3.1 sudah dibuka!"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Watch streams, win Polychrome! Join the Twitch Drops event and unlock your viewer rewards! ▼ Event Rewards Watch for 15 mins in total >> Denny ×12,000 Watch for 30 mins in total >> Senior Investigator Log ×2 Watch for 45 mins in total >> W-",
+        "id": "Tonton siaran langsungnya dan menangkan Polychrome! Ayo ikuti event Twitch Drops untuk mendapatkan hadiah~ ▼ Hadiah Event Tonton total 15 menit >> Denny ×12.000 Tonton total 30 menit >> Senior Investigator Log ×2 Tonton total 45 menit >> W-"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/28/0/9aaa215d99240b580a037e6bde854285_2756659738657378673.jpeg",
+      "startsAt": "2026-07-29T02:00:00.000Z",
+      "endsAt": "2026-08-19T15:59:59.000Z",
+      "postedAt": "2026-07-29T02:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46038142"
     },
     {
       "game": "tot",
@@ -1166,6 +959,126 @@
       "type": "event",
       "typeName": null,
       "title": {
+        "en": "\"Ki Impact!\"",
+        "id": "\"Ki Impact!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Fu Hua  Today's Topic: Which thing Fu Hua said has inspired you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystal",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Fu Hua  Topik Hari Ini: Ucapan Fu Hua mana yang paling menginspirasimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa u"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/b5c777674a21769a921458c1cdaf4d0b_2457112428866899675.png",
+      "startsAt": "2026-07-08T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-08T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45772697"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Please, the other me!\"",
+        "id": "\"Tolonglah, diriku yang lain!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Seele Vollerei  Today's Topic: Which of Seele's dual personalities do you prefer?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Seele Vollerei  Topik Kali Ini: Dari dua kepribadian Seele, kamu lebih suka yang mana?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/a62f839ced1795d5218421d992fe3b5f_618852002642294793.png",
+      "startsAt": "2026-07-23T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-23T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45967005"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Proceeding as planned.\"",
+        "id": "\"Semuanya berjalan sesuai rencana.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Natasha Cioara  Today's Topic: If you could hire Raven for a job, what would it be?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 1",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Natasha Cioara  Topik Kali Ini: Jika kamu bisa memberi misi kepada Raven, misi apa yang akan kamu berikan?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/b1519bfdf95e8b6d4314362ccc759da2_1621013541774284916.png",
+      "startsAt": "2026-08-02T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-02T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46106590"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Hi, miss me yet? No matter when or where, Elysia will be there for you ♪\"",
+        "id": "\"Hai, kangen aku ya? Elysia akan selalu ada untukmu, kapan pun dan di mana pun♪\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Elysia  Today's Topic: Which line from Elysia stayed with you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals ",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Elysia  Topik Kali Ini: Dialog Elysia mana yang paling berkesan untukmu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/98972058c71c00b6a95ecac01aaaa819_4168558010886360114.png",
+      "startsAt": "2026-07-29T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-29T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46039636"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Can, are you ready?\"",
+        "id": "\"Can, apa kamu sudah siap?\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Pardofelis  Today's Topic: Show us your own \"Can\"!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals code [TimeAlbum]~ Eve",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Pardofelis  Topik Hari Ini: Ayo pamerkan \"Can\" milikmu!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa untuk menukar kod"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/377ee1dfcc686331fe65d07d7231f8da_2415714207030074487.png",
+      "startsAt": "2026-08-11T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-11T04:00:07.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46221119"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
         "en": "\"Durandal, awaiting orders!\"",
         "id": "\"Durandal, menunggu perintah.\""
       },
@@ -1183,6 +1096,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45991851"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Rita, at your service.\"",
+        "id": "\"Rita, siap melayani Anda.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Rita Rossweisse  Today's Topic: Rita's wardrobe: Which of her outfits is your favorite?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Rita Rossweisse  Topik Hari Ini: Lemari pakaian Rita: Outfit mana yang menjadi favoritmu?  Like dan tulis komentar berkesempatan memenangkan [100USD], bundle merchandise, dan lainnya! Jangan "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/13/72e70558025b1ccae45366e686718404_1837434251712324176.png",
+      "startsAt": "2026-07-14T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-14T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45842949"
     },
     {
       "game": "hi3",
@@ -1238,78 +1175,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Please, the other me!\"",
-        "id": "\"Tolonglah, diriku yang lain!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Seele Vollerei  Today's Topic: Which of Seele's dual personalities do you prefer?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Seele Vollerei  Topik Kali Ini: Dari dua kepribadian Seele, kamu lebih suka yang mana?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/a62f839ced1795d5218421d992fe3b5f_618852002642294793.png",
-      "startsAt": "2026-07-23T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-23T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45967005"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Hi, miss me yet? No matter when or where, Elysia will be there for you ♪\"",
-        "id": "\"Hai, kangen aku ya? Elysia akan selalu ada untukmu, kapan pun dan di mana pun♪\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Elysia  Today's Topic: Which line from Elysia stayed with you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals ",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Elysia  Topik Kali Ini: Dialog Elysia mana yang paling berkesan untukmu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/98972058c71c00b6a95ecac01aaaa819_4168558010886360114.png",
-      "startsAt": "2026-07-29T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-29T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46039636"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Proceeding as planned.\"",
-        "id": "\"Semuanya berjalan sesuai rencana.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Natasha Cioara  Today's Topic: If you could hire Raven for a job, what would it be?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 1",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Natasha Cioara  Topik Kali Ini: Jika kamu bisa memberi misi kepada Raven, misi apa yang akan kamu berikan?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/b1519bfdf95e8b6d4314362ccc759da2_1621013541774284916.png",
-      "startsAt": "2026-08-02T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-02T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46106590"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "\"Carole reporting in!\"",
         "id": "\"Carole melapor!\""
       },
@@ -1358,30 +1223,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Ki Impact!\"",
-        "id": "\"Ki Impact!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Fu Hua  Today's Topic: Which thing Fu Hua said has inspired you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystal",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Fu Hua  Topik Hari Ini: Ucapan Fu Hua mana yang paling menginspirasimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa u"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/b5c777674a21769a921458c1cdaf4d0b_2457112428866899675.png",
-      "startsAt": "2026-07-08T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-08T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45772697"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "\"It's time to settle things!\"",
         "id": "\"Saatnya pertempuran penentu!\""
       },
@@ -1406,47 +1247,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Rita, at your service.\"",
-        "id": "\"Rita, siap melayani Anda.\""
+        "en": "\"Theresa is the World's No. 1 Cutie! Pew!\"",
+        "id": "\"Theresa adalah gadis terimut sedunia, biu!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Rita Rossweisse  Today's Topic: Rita's wardrobe: Which of her outfits is your favorite?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Rita Rossweisse  Topik Hari Ini: Lemari pakaian Rita: Outfit mana yang menjadi favoritmu?  Like dan tulis komentar berkesempatan memenangkan [100USD], bundle merchandise, dan lainnya! Jangan "
+        "en": " Today's Time Album Spotlight: Theresa Apocalypse  Today's Topic: Share your favorite Principal stickers with us!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 10",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Theresa Apocalypse  Topik Kali Ini: Bagikan stiker Kepala Sekolah favoritmu dengan kami!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainn"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/13/72e70558025b1ccae45366e686718404_1837434251712324176.png",
-      "startsAt": "2026-07-14T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/eadc089868a7d4808be4f7722372ec9c_8818077989149360608.png",
+      "startsAt": "2026-07-02T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-14T04:00:06.000Z",
+      "postedAt": "2026-07-06T05:12:05.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45842949"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Can, are you ready?\"",
-        "id": "\"Can, apa kamu sudah siap?\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Pardofelis  Today's Topic: Show us your own \"Can\"!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals code [TimeAlbum]~ Eve",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Pardofelis  Topik Hari Ini: Ayo pamerkan \"Can\" milikmu!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa untuk menukar kod"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/377ee1dfcc686331fe65d07d7231f8da_2415714207030074487.png",
-      "startsAt": "2026-08-11T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-11T04:00:07.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46221119"
+      "url": "https://www.hoyolab.com/article/45747945"
     },
     {
       "game": "hi3",
@@ -1471,30 +1288,6 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45635894"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Theresa is the World's No. 1 Cutie! Pew!\"",
-        "id": "\"Theresa adalah gadis terimut sedunia, biu!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Theresa Apocalypse  Today's Topic: Share your favorite Principal stickers with us!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 10",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Theresa Apocalypse  Topik Kali Ini: Bagikan stiker Kepala Sekolah favoritmu dengan kami!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainn"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/eadc089868a7d4808be4f7722372ec9c_8818077989149360608.png",
-      "startsAt": "2026-07-02T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-06T05:12:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45747945"
     },
     {
       "game": "gi",
@@ -1579,6 +1372,221 @@
     }
   ],
   "archive": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Event",
+      "title": {
+        "en": "\"Witch's Revelation\" Gameplay Details",
+        "id": "Penjelasan Gameplay \"Ramalan Penyihir\""
+      },
+      "subtitle": {
+        "en": "\"Witch's Revelation\"",
+        "id": "Ramalan Penyihir"
+      },
+      "desc": {
+        "en": "Complete the quest \"Revelations by Chance\" to obtain the \"Witch's Revelation Case\" . Reveal the revelations from the Witch's Revelation Case to unlock the corresponding character's additional Talent and gain character buffs. 〓Duration〓 Permanently available after the Version \"Luna VIII\" update 〓Eligibility〓 Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\"",
+        "id": "Selesaikan Quest \"Ramalan yang Kebetulan\" untuk mendapatkan \"Witch's Revelation Case\" . Ungkap ramalan di dalam \"Witch's Revelation Case\" untuk membuka Talenta tambahan Karakter yang bersangkutan dan mendapatkan Buff Karakter. 〓 Waktu Pembukaan Gameplay 〓 Hadir permanen setelah update Versi \"Candra VIII\" 〓 Syarat Partisipasi 〓 Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\""
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/06/17/49208ed32b9337e6a56f880390da1f93_3716451833882423464_transformed.jpg",
+      "startsAt": "2026-06-28T21:00:00.000Z",
+      "endsAt": "2026-08-11T16:00:00.000Z",
+      "postedAt": "2026-06-28T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news",
+      "archivedAt": "2026-08-11T16:03:15.783Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Event",
+      "title": {
+        "en": "\"Genius Invokation TCG\" The Forge Realm's Temper: Endless Swarm",
+        "id": "Penempaan dan Latihan \"Genius Invokation TCG\": Duel Tak Berujung"
+      },
+      "subtitle": {
+        "en": "Genius Invokation TCG - The Forge Realm's Temper",
+        "id": "Penempaan dan Latihan \"Genius Invokation TCG\""
+      },
+      "desc": {
+        "en": "〓Event Rewards〓 〓Event Duration〓 Available throughout the entirety of Version \"Luna VIII\" 〓Eligibility〓 Adventure Rank 32 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" And complete the World Quest \"Battlefield of Dice, Cats, and Cards\" 〓Event Details〓 ● After the event starts, Travelers can go to Prince at The Cat's Tail to select stages to challenge. ● This event includes 4 stages and each stage has its distinctive challenge rules. ● Defeat opponents within these stages to accrue score. Defeat as many opponents as possible within the Round limit to score more points. ● After completing the challenge, points will be obtained based on the number of opponents defeated. Achieving the required scores will allow Travelers to claim the corresponding rewards.",
+        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 Setelah update Versi \"Candra VIII\" 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 32 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" Dan telah menyelesaikan Quest Dunia \"Perang Dadu, Kucing, dan Kartu\" 〓 Penjelasan Event 〓 ● Setelah event dimulai, Traveler dapat menuju ke tempat Prince di Cat's Tail untuk memilih stage tantangan. ● Ada 4 stage dalam event kali ini dan masing-masing tantangan memiliki aturan yang berbeda. ● Kalahkan musuh yang ada di dalam stage untuk meraih skor yang ditentukan. Traveler harus mengalahkan sebanyak mungkin musuh untuk mendapatkan skor yang lebih tinggi dalam jumlah ronde yang terbatas. ● Setelah menyelesaikan tantangan, skor stage akan dihitung berdasarkan jumlah musuh yang dikalahkan oleh Traveler. Hadiah dapat diambil jika skor sudah mencapai jumlah yang ditentukan."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2024/11/05/cf324597e5d687e26d86f297e59c9ebd_2179973999643752178.jpg",
+      "startsAt": "2026-06-28T21:00:00.000Z",
+      "endsAt": "2026-08-11T16:00:00.000Z",
+      "postedAt": "2026-06-28T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news",
+      "archivedAt": "2026-08-11T16:03:15.783Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Event",
+      "title": {
+        "en": "\"The Clink Clank Whiz-Kid!\" Event: Progress the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves\" and invite \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro)",
+        "id": "Event \"Si Anak Mesin Ajaib!\": Mainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\" untuk mengundang \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro)"
+      },
+      "subtitle": {
+        "en": "The Clink Clank Whiz-Kid!",
+        "id": "Si Anak Mesin Ajaib!"
+      },
+      "desc": {
+        "en": "〓Event Duration〓 Permanently available after the Version \"Luna I\" update 〓Event Rewards〓 〓Eligibility〓 Complete the Archon Quest \"The Journey Home\" ※ After completing the Archon Quest \"A New Star Approaches,\" you can use the \"Quick Start\" function on the event page to begin the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves\" directly. 〓Event Details〓 Progress through the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves\" to invite \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) . ※ You can only invite \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) once while progressing through the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves.\" The event page will close once you have invited the character. ※ Before you invite the character, the event page will be available throughout the \"Song of the Welkin Moon\" game version, and the event page will close once the \"Song of the Welkin Moon\" version ends. Then you will no longer be able to use the \"Quick Start\" function via the event page, but you can still invite \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) while progressing through the Archon Quest \"A Dance of Snowy Tides and Hoarfrost Groves.\"",
+        "id": "〓 Waktu Event 〓 Hadir permanen setelah update Versi \"Candra I\" 〓 Hadiah Event 〓 〓 Syarat Partisipasi 〓 Selesaikan Quest Archon \"Perjalanan Pulang\" ※ Setelah menyelesaikan Quest Archon \"Bintang Baru yang Mendekat\", gunakan fitur \"Mulai Cepat\" di halaman event untuk langsung memainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\". 〓 Penjelasan Event 〓 Selama memainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\", Traveler bisa mengundang \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) ! ※ Kamu hanya dapat mengundang \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) sekali selama memainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\". Halaman event akan ditutup setelah kamu mengundangnya. ※ Sebelum mengundang Karakter, halaman event akan tersedia selama Versi \"Senandung Bulan Hampa\". Setelah Versi \"Senandung Bulan Hampa\" berakhir, halaman event ini akan ditutup dan kamu kamu tidak lagi dapat menggunakan fitur \"Mulai Cepat\" di halaman event, tapi kamu masih bisa mengundang \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) selama memainkan Quest Archon \"Tarian Ombak Salju dan Hutan Rimbun\"."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2025/08/28/8dbda65d63a584a0eaedee3fed63c0c4_4369780166988778346_transformed.png",
+      "startsAt": "2025-09-07T21:00:00.000Z",
+      "endsAt": "2026-08-11T16:00:00.000Z",
+      "postedAt": "2025-09-07T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news",
+      "archivedAt": "2026-08-11T16:03:15.783Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Miliastra Wonderland",
+      "title": {
+        "en": "\"Fatebound Sea Season\" Season Opening Announcement",
+        "id": "Pengumuman Dimulainya \"Musim Laut Takdir\""
+      },
+      "subtitle": {
+        "en": "Fatebound Sea Season",
+        "id": "Musim Laut Takdir"
+      },
+      "desc": {
+        "en": "〓Season Duration〓 Preparation Phase: After the Version \"Luna VIII\" update – 2026/07/02 09:59 Play Phase: 2026/07/02 10:00 – 2026/08/11 03:59 Showcase Phase: 2026/08/11 04:00 – End of Version \"Luna VIII\" 〓Eligibility〓 After awakening your Miliastra Wonderland Manekin 〓Season Details〓 ● Each season consists of three phases: The Preparation Phase, Play Phase, and Showcase Phase. ● During the Play Phase, Travelers can earn points or leaderboard scores by participating in Wonderlands that feature ranks or leaderboards. ※ In some Wonderlands, points and leaderboard scores cannot be earned through Room Mode. For specific details, please refer to the Craftsperson's configuration for each Wonderland. ● During the Preparation and Showcase Phases, Travelers can still participate in Wonderlands, though points and leaderboard scores will no longer be awarded. ● After each season ends, ranked Wonderlands may or may not carry over their corresponding stage points to the next season, and those with leaderboards may reset their rankings. For specific details on point retention and leaderboard resets, please refer to the configuration set by each Craftsperson for their Wonderland.",
+        "id": "〓 Waktu Musim 〓 Periode Persiapan: Setelah update Versi Candra VIII - 2026/07/02 09:59 Periode Bermain: 2026/07/02 10:00 - 2026/08/11 03:59 Periode Penampilan: 2026/08/11 04:00 - Akhir Versi Candra VIII 〓 Syarat Partisipasi 〓 Setelah membangunkan Manekin Miliastra Wonderland 〓 Penjelasan Musim 〓 ● Satu musim terbagi menjadi tiga tahap: Periode Persiapan, Periode Bermain, dan Periode Penampilan. ● Selama periode bermain, kamu bisa mendapatkan poin kompetisi atau skor Papan Peringkat dengan berpartisipasi dalam Wonderland yang memiliki sistem Rank atau Papan Peringkat. ※ Beberapa Wonderland tidak dapat meningkatkan poin kompetisi dan skor Papan Peringkat melalui mode Ruangan. Detail spesifiknya bergantung pada rencana Pengrajin di setiap Wonderland. ● Selama periode Persiapan Musim dan periode Penampilan Musim, kamu masih dapat memainkan Wonderland tetapi tidak akan mendapatkan poin kompetisi atau skor Papan Peringkat. ● Setelah berganti musim, apakah Wonderland dengan Rank akan mewarisi poin kompetitif dari stage yang sesuai dan apakah Papan Peringkat Wonderland akan direset, akan ditentukan berdasarkan rencana Pengrajin untuk setiap Wonderland."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/06/22/7035ca31cd8498b0ef0a7d0c9761df57_6810033499703056196_transformed.jpg",
+      "startsAt": "2026-06-29T21:00:00.000Z",
+      "endsAt": "2026-08-11T16:00:00.000Z",
+      "postedAt": "2026-06-29T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news",
+      "archivedAt": "2026-08-11T16:03:15.783Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Miliastra Wonderland",
+      "title": {
+        "en": "Participate in \"Raiment Collection: Mellow Warmth\" to Obtain the \"Dreamy Summer Leisure\" Manekin Cosmetics Set of Your Choice",
+        "id": "Ikuti \"Apresiasi Adibusana: Kehangatan Lembut\" untuk mendapatkan Set Kostum Manekin \"Dreamy Summer Leisure\" pilihan"
+      },
+      "subtitle": {
+        "en": "Raiment Collection: Mellow Warmth",
+        "id": "Apresiasi Adibusana: Kehangatan Lembut"
+      },
+      "desc": {
+        "en": "〓Event Duration〓 After the Version \"Luna VIII\" update – 2026/08/12 05:59 〓Event Rewards〓 A \"Dreamy Summer Leisure\" Manekin Cosmetics Set of your choice and Geodes of Replication 〓Eligibility〓 After awakening your Miliastra Wonderland Manekin 〓Event Details〓 ● During the event, Travelers can obtain corresponding \"Treasured Insights\" and Geodes of Replication by completing Treasured Quests. Rewards from these quests are subject to a weekly limit. ● During the event, once your total accumulated \"Treasured Insights\" reach the required amount, you can claim the Manekin Cosmetics Set \"Dreamy Summer Leisure.\" ● Before claiming your first component of the \"Dreamy Summer Leisure\" Manekin Cosmetics Set, you may freely switch between available set rewards. Once you've claimed any component of the set, your choice will be locked and cannot be changed. ※ The Manekin Cosmetic Set \"Dreamy Summer Leisure\" will be available for a limited time in the Miliastra Shop after Version Luna VIII ends. Please visit the Miliastra Shop for more details.",
+        "id": "〓 Waktu Event 〓 Setelah update Versi \"Candra VIII\" - 2026/08/12 05:59 〓 Hadiah Event 〓 Satu Set Kostum Manekin \"Dreamy Summer Leisure\" yang diinginkan, Geode of Replication 〓 Syarat Partisipasi 〓 Setelah membangunkan Manekin Miliastra Wonderland 〓 Penjelasan Event 〓 ● Selama event berlangsung, Traveler bisa mendapatkan \"Treasured Insight\" dan Geode of Replication dengan menyelesaikan Treasured Quest. Jumlah hadiah yang bisa didapatkan melalui Treasured Quest setiap minggunya memiliki batas maksimum. ● Selama event berlangsung, setelah total nilai \"Treasured Insight\" mencapai jumlah tertentu, kamu akan mendapatkan Set Kostum Manekin \"Dreamy Summer Leisure\". ● Sebelum menerima bagian dari hadiah event Set Kostum Manekin \"Dreamy Summer Leisure\" untuk pertama kalinya, Traveler bisa dengan bebas mengganti pilihan hadiah set yang dipilih. Setelah menerimanya untuk pertama kalinya, hadiah set yang sudah dipilih tidak bisa diubah lagi. ※ Set Kostum Manekin \"Dreamy Summer Leisure\" akan tersedia untuk waktu terbatas di Toko Miliastra setelah Versi \"Candra VIII\" berakhir. Silakan lihat detailnya di Toko Miliastra."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/06/22/cdc7d9f8c21fc84cbbe9c8c1698f7e3f_7620124751577152017_transformed.jpg",
+      "startsAt": "2026-06-29T21:00:00.000Z",
+      "endsAt": "2026-08-11T16:00:00.000Z",
+      "postedAt": "2026-06-29T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news",
+      "archivedAt": "2026-08-11T16:03:15.783Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Version \"Luna VIII\" HoYoverse Top-Up Center Event: Share the Promotional Image to Win Primogems — Phase 2",
+        "id": "Event Top-Up Center HoYoverse Versi \"Candra VIII\": Bagikan Gambar Promosi untuk Memenangkan Primogem - Tahap 2"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Olah! Hello, Traveler~ Bonus Rewards Are Here for the Version \"Luna VIII\" HoYoverse Top-Up Center Sharing Event! Make a top-up at the Top-Up Center and you'll receive Primogems ×300 if this is your first purchase since the release of Versio",
+        "id": "Olah! Apa kabar, Traveler? Event Berbagi HoYoverse Top-Up Center Versi \"Candra VIII\" hadir dengan hadiah tambahan! Kunjungi Top-Up Center dan dapatkan Primogem ×300 untuk top-up pertamamu sejak Versi \"Candra VI\" dirilis! Kamu juga bisa meni"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/17/519bc76d605dcc0ef676af5e94605b74_3913478111962950287.jpg",
+      "startsAt": "2026-07-21T04:00:00.000Z",
+      "endsAt": "2026-08-11T15:59:59.000Z",
+      "postedAt": "2026-07-21T04:00:07.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45941011",
+      "archivedAt": "2026-08-11T16:03:15.783Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "The \"Luna VIII\" Genius Column Submission Event Begins! Share Your Stage Insights to Win Handsome Rewards!",
+        "id": "Event Kontes Kolom Bakat \"Candra VIII\" dimulai! Bagikan wawasanmu dan menangkan hadiah!"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Hello, Traveler! Version \"Luna VIII\" is now live! Share your stage insights for a chance to win Primogems and Arcane Keystones! Event Duration July 1, 2026 – August 11, 2026 23:59 (UTC+8) Results: The list of winners will be updated in this",
+        "id": "Halo, Traveler! Versi \"Candra VIII\" sudah hadir! Ayo bagikan pendapatmu tentang stage-nya untuk mendapatkan Primogem dan Arcane Keystone~ [Waktu Event] 1 Juli 2026 - 11 Agustus 2026 23:59 (UTC+8) Pengumuman Pemenang: Daftar pemenang akan di"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/01/3e631891971850fb9e3df14190ada889_568876503192255408.png",
+      "startsAt": "2026-06-30T16:00:00.000Z",
+      "endsAt": "2026-08-11T15:59:59.000Z",
+      "postedAt": "2026-07-01T09:04:30.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45677715",
+      "archivedAt": "2026-08-11T16:03:15.783Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "The new limited-time web event \"Snezhnaya Awaits\" is now available.",
+        "id": "Event Web \"Snezhnaya Menanti\" telah hadir untuk waktu terbatas."
+      },
+      "subtitle": "",
+      "desc": {
+        "en": ">> Press to Take Part in Event << 〓Event Duration〓 July 31, 2026 – August 11, 2026 23:59 (UTC+8) *Rewards cannot be claimed after the event ends. Please claim your rewards in time. Rewards will be sent to your in-game mail after the Version",
+        "id": ">> Ikuti Event << 〓 Waktu Event 〓 31 Juli 2026 - 11 Agustus 2026 23:59 (UTC+8) *Hadiah tidak dapat diambil setelah event berakhir. Harap Traveler segera mengambilnya ya. Hadiah akan didistribusikan melalui pesan dalam game setelah update Ve"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/0/07d3966b6f081982f78250c0df4050b1_4729318823073395703.jpeg",
+      "startsAt": "2026-07-31T04:00:00.000Z",
+      "endsAt": "2026-08-11T15:59:59.000Z",
+      "postedAt": "2026-07-31T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46068352",
+      "archivedAt": "2026-08-11T16:03:15.783Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
