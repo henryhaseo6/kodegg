@@ -65,7 +65,25 @@ const tidur = (detik) => new Promise((r) => setTimeout(r, detik * 1000));
 // Kunci pencocokan playlist = nama GAME saja (buang "— Kode Redeem" & "Codes").
 // Cegah duplikat saat format judul bergeser: playlist lama "X — Kode Redeem"
 // (batch manual awal) dan baru "X Codes — Kode Redeem" (auto) dianggap sama.
-const plKey = (t) => (t || "").toLowerCase().replace(/\s*—\s*kode redeem\s*$/i, "").replace(/\s+codes$/i, "").trim();
+// TANDA BACA IKUT DINORMALKAN — samakan dengan `normalize` di
+// fetch-yt-playlists.mjs, yang sudah begitu sejak awal.
+//
+// Dua komponen ini mencocokkan hal yang sama dengan aturan berbeda, dan itu
+// yang membuat playlist kembar: pemetaan game→playlist menganggap "Death Order:
+// Simon Says" sama dengan "Death Order Simon Says", sedangkan pembuatan
+// playlist di sini menganggapnya berbeda. Saat sumber mengubah cara menulis
+// judul game (titik duanya hilang antara 29–30 Jul 2026), ensurePlaylist tak
+// menemukan yang lama lalu membuat yang kedua — dan videonya terbelah 2 lawan 4.
+//
+// Nama game di Roblox memang berubah-ubah tanda bacanya, dan katalog kita
+// mengikuti judul halaman sumber. Jadi pencocokan playlist tak boleh bergantung
+// pada tanda baca sama sekali.
+const plKey = (t) => (t || "")
+  .toLowerCase()
+  .replace(/\s*—\s*kode redeem\s*$/i, "")
+  .replace(/\s+codes$/i, "")
+  .replace(/[^a-z0-9]+/g, " ")
+  .trim();
 
 /** Cari playlist by nama game; kalau belum ada, bikin. `baru` = true bila baru dibuat.
  *  lang = bahasa metadata playlist ("id" Shorts, "en" Top 50/Roundup).
