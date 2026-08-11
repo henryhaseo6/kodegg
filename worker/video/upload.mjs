@@ -78,6 +78,21 @@ const tidur = (detik) => new Promise((r) => setTimeout(r, detik * 1000));
 // Nama game di Roblox memang berubah-ubah tanda bacanya, dan katalog kita
 // mengikuti judul halaman sumber. Jadi pencocokan playlist tak boleh bergantung
 // pada tanda baca sama sekali.
+// Daftar playlist yang terbukti bersortir OTOMATIS (menolak `position`).
+// Disimpan di worker/data/ yang ikut ter-commit workflow, jadi pengetahuannya
+// bertahan antar-run — runner CI sekali pakai, tanpa ini tiap run belajar ulang
+// dengan cara yang sama mahalnya.
+const FILE_SORTIR = resolve(dirname(fileURLToPath(import.meta.url)), "../data/playlist-tersortir.json");
+const tersortirOtomatis = new Set(((() => {
+  try { return JSON.parse(readFileSync(FILE_SORTIR, "utf8")); } catch { return []; }
+})()));
+function catatTersortir(pid) {
+  if (tersortirOtomatis.has(pid)) return;
+  tersortirOtomatis.add(pid);
+  try { writeFileSync(FILE_SORTIR, JSON.stringify([...tersortirOtomatis], null, 1) + "\n"); }
+  catch { /* CI read-only? jangan gagalkan upload */ }
+}
+
 const plKey = (t) => (t || "")
   .toLowerCase()
   .replace(/\s*—\s*kode redeem\s*$/i, "")
@@ -290,13 +305,27 @@ export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlis
     // pada playlist tersortir itu KELIRU. Jadi: coba dengan posisi dulu (biar
     // video baru di atas), kalau ditolak karena sortir → ulangi tanpa posisi.
     // Di playlist tersortir, urutan tampilannya memang sudah diatur sortirnya.
+    // PLAYLIST TERSORTIR OTOMATIS DIINGAT, tak dicoba-gagal tiap kali.
+    //
+    // Percobaan dengan `position: 0` pada playlist bersortir otomatis SELALU
+    // ditolak, lalu diulang tanpa posisi — dua playlistItems.insert, 100 unit,
+    // untuk satu video. Sortirnya sifat playlist yang tak berubah-ubah, jadi
+    // kegagalan pertama itu bisa diprediksi dan tak perlu diulang tiap upload.
+    //
+    // Terukur 11 Agu 2026 dari tab Metrics konsol: PlaylistItemService.Insert
+    // punya 26,92% error — artinya sekitar sepertiga video membayar dobel.
+    // Sortir playlist TIDAK bisa dibaca lewat Data API (resource playlists tak
+    // memuatnya), jadi satu-satunya cara mengetahuinya memang dengan mencoba —
+    // tapi cukup SEKALI per playlist, bukan sekali per video.
     const insertPl = (snippet) => yt.playlistItems.insert({ part: ["snippet"], requestBody: { snippet } });
     const dasar = { playlistId: pid, resourceId: { kind: "youtube#video", videoId } };
     const masukkan = async () => {
+      if (tersortirOtomatis.has(pid)) return insertPl(dasar);
       try { return await insertPl({ ...dasar, position: 0 }); }
       catch (e) {
         if (!/manual sorting/i.test(e.message ?? "")) throw e;
-        console.log("  ↳ playlist tersortir otomatis → masuk tanpa posisi");
+        console.log("  ↳ playlist tersortir otomatis → masuk tanpa posisi (dicatat)");
+        catatTersortir(pid);
         return insertPl(dasar);
       }
     };
