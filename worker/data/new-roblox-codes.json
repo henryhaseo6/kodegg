@@ -1,11 +1,42 @@
 {
-  "generatedAt": "2026-08-12T13:02:56.683Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-08-12T14:03:42.335Z",
+  "codes": [
     {
-      "game": "anime-fighting-simulator-kdmf",
-      "count": 9,
-      "fresh": []
+      "game": "noob-incremental",
+      "gameName": "Noob Incremental",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/noob-incremental"
+      },
+      "code": "PATCHUPDATE",
+      "reward": null,
+      "date": "2026-08-12T13:40:20.066Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-12T14:03:42.335Z",
+      "fetchedAt": "2026-08-12T14:03:42.335Z"
+    },
+    {
+      "game": "mermaid-isle",
+      "gameName": "Mermaid Isle",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/mermaid-isle"
+      },
+      "code": "BugFix4",
+      "reward": "500 Pearls",
+      "date": "2026-08-12T13:40:18.882Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-12T14:03:42.335Z",
+      "fetchedAt": "2026-08-12T14:03:42.335Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
