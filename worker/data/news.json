@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-12T07:02:45.066Z",
+  "updatedAt": "2026-08-12T08:02:49.646Z",
   "counts": {
     "active": 89,
     "archived": 76
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Welcome to Snezhnaya — Everwinter Without Mercy",
+        "id": "Selamat datang di Snezhnaya, Negeri Salju Tanpa Kasih"
+      },
+      "excerpt": {
+        "en": "You've battled dragons and sea monsters, defeated creations of the gods, and faced prophecies of doom and the threat of the Abyss. You've even made it all the way to the moon. Now,",
+        "id": "Kamu sudah pernah melawan naga dan monster laut, menaklukkan ciptaan dewa, menghadapi ramalan kehancuran dan ancaman Abyss ... bahkan menginjakkan kaki di bulan. Kini, badai salju "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/11/f14e822e63173453c891f3acaa51ae69_3467050668176955179.jpg",
+      "url": "https://www.hoyolab.com/article/46242571",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-12T08:00:06.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -306,22 +322,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/eb6c69fd2dafac1cbee1bc5d1d177783_1258523341612948725.jpg",
       "url": "https://www.hoyolab.com/article/46208551",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-10T04:00:04.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Genius Invokation TCG\" The Forge Realm's Temper: Game of Wits",
-        "id": "Penempaan dan Latihan \"Genius Invokation TCG\": Adu Siasat"
-      },
-      "excerpt": {
-        "en": "〓Event Rewards〓 〓Event Duration〓 Available throughout the entirety of Version 7.0 〓Eligibility〓 Adventure Rank 32 or above Complete Archon Quest Prologue: Act III \"Song of the Drag",
-        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 Dibuka selama v7.0 berlangsung 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 32 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga da"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/7c1b771e1ae3a4d32e4678b313edf881_793367308635485327.jpg",
-      "url": "https://www.hoyolab.com/article/46208553",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-10T04:00:04.000Z"
     },
