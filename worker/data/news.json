@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-12T05:03:12.309Z",
+  "updatedAt": "2026-08-12T06:02:41.059Z",
   "counts": {
-    "active": 90,
-    "archived": 75
+    "active": 89,
+    "archived": 76
   },
   "articles": [
     {
@@ -1428,7 +1428,9 @@
       "url": "https://www.hoyolab.com/article/45842578",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-14T03:00:08.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1443,10 +1445,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/10/92489c5956aae5609c9b7bcd7e9f8e6f_2428408202700121987.png",
       "url": "https://www.hoyolab.com/article/45832917",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-13T06:00:05.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-13T06:00:05.000Z",
+      "archivedAt": "2026-08-12T06:02:41.059Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
