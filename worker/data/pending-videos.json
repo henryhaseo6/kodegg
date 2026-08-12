@@ -97,6 +97,91 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "throw-a-coin",
+    "name": "Throw a Coin",
+    "displayName": "[🌎W4] Throw a Coin",
+    "slug": "throw-a-coin",
+    "players": 21231,
+    "redeemNote": null,
+    "alias": [
+      "lempar koin"
+    ],
+    "rank": 21231,
+    "newCodes": [
+      {
+        "game": "throw-a-coin",
+        "gameName": "Throw a Coin",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/throw-a-coin"
+        },
+        "code": "Champion",
+        "reward": null,
+        "date": "2026-08-12T13:40:13.979Z",
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-08-12T15:04:19.345Z",
+        "fetchedAt": "2026-08-12T15:04:19.345Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-08-12T15:04:19.345Z",
+    "displayCodes": [
+      {
+        "code": "Champion",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "abracadabra",
+        "reward": "1 Rainbow Treasure Chest",
+        "isNew": false
+      },
+      {
+        "code": "WORLD4",
+        "reward": "2 Astral Potion",
+        "isNew": false
+      },
+      {
+        "code": "candy",
+        "reward": "5x Luck (10 Minutes)",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "Champion",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "abracadabra",
+        "reward": "1 Rainbow Treasure Chest",
+        "isNew": false
+      },
+      {
+        "code": "WORLD4",
+        "reward": "2 Astral Potion",
+        "isNew": false
+      },
+      {
+        "code": "candy",
+        "reward": "5x Luck (10 Minutes)",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "Champion",
+      "abracadabra",
+      "WORLD4",
+      "candy"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "noob-incremental",
     "name": "Noob Incremental",
     "displayName": "[UPD 3🌙] Noob Incremental",
