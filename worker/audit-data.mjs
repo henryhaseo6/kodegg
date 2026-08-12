@@ -121,6 +121,65 @@ if (mati.length) {
     `${mati.length} game${besar.length ? ` — besar: ${potong(besar, 6)}` : ""}`);
 }
 
+// 8d. MOBILE BEKU — game yang sumbernya gagal ditarik berturut-turut.
+//
+// Kegagalan penarikan per-game DIAM: mergeWithPrevious mempertahankan kode lama
+// dengan `stale: true` (benar — hilangnya kode saat sumber gagal tak bermakna),
+// tapi tak ada satu pun yang melapor. Terbukti 12 Agu 2026: crimsonwitch —
+// SATU-SATUNYA sumber Infinity Nikki — gagal sejak 7 Agu 12.21 dan baru pulih 11
+// Agu. Empat hari game itu menyajikan daftar beku, dan yang akhirnya menyadari
+// bukan pipeline melainkan pemilik situs yang curiga badge BARU tak muncul.
+// Saat sumber pulih, 3 kode masuk sekaligus → video menandai semuanya baru.
+//
+// SENGAJA hanya MOBILE. Di Roblox, `stale` adalah keadaan NORMAL: penarikan
+// dirotasi per-pemain (MAX_GAMES < jumlah game), jadi mayoritas game memang tak
+// disentuh tiap run dan pemeriksaan ini akan berbunyi ratusan kali tanpa arti.
+// Sumber Roblox yang benar-benar mati sudah ditangani 8c (slug-404.json).
+//
+// BUTA TERHADAP: game yang SELURUH kode aktifnya keburu terarsip — tak ada baris
+// tersisa yang membawa `fetchedAt`, jadi kebekuannya tak terlihat di sini.
+let bekuJamMax = 0; // dipakai lagi di blok KESEHATAN PARSER (disimpan ke health.json)
+let bekuGame = 0;
+{
+  const perGame = new Map();
+  for (const c of mc.active ?? []) {
+    if (!c.game) continue;
+    const g = perGame.get(c.game) ?? { beku: 0, terakhir: 0, sumber: new Set(), nama: c.gameName ?? c.game };
+    if (c.stale) g.beku += 1;
+    const t = Date.parse(c.fetchedAt ?? "") || 0;
+    if (t > g.terakhir) g.terakhir = t; // penarikan SUKSES terakhir utk game ini
+    for (const s of (c.sources?.length ? c.sources : [c.source])) if (s) g.sumber.add(s);
+    perGame.set(c.game, g);
+  }
+  // `stale` dipasang saat TAK ADA satu pun sumber yang meng-cover game itu, jadi
+  // satu kode beku = seluruh game beku. Umur dihitung dari fetchedAt TERBARU.
+  const beku = [...perGame.entries()]
+    .filter(([, g]) => g.beku > 0 && g.terakhir > 0)
+    .map(([id, g]) => ({ id, ...g, jam: Math.round((Date.now() - g.terakhir) / 36e5) }))
+    .sort((a, b) => b.jam - a.jam);
+  // Cron mobile jalan tiap jam. Satu-dua run meleset itu wajar (sumber ngadat
+  // sesaat, rate-limit) → jangan berbunyi. Yang tak wajar adalah kebekuan yang
+  // BERTAHAN: 6 jam = sudah ~6 run gagal beruntun, 24 jam = sumbernya mati.
+  const mati = beku.filter((g) => g.jam >= 24);
+  const goyah = beku.filter((g) => g.jam >= 6 && g.jam < 24);
+  const sebut = (arr) => potong(arr.map((g) => `${g.nama} ${g.jam}j (${[...g.sumber].join("+") || "?"})`), 6);
+  if (mati.length) lapor("TINGGI", "game MOBILE beku ≥24 jam", `${sebut(mati)} — sumbernya gagal ditarik berturut-turut; kode baru tak akan masuk & daftarnya menyesatkan`);
+  if (goyah.length) lapor("SEDANG", "game MOBILE beku ≥6 jam", `${sebut(goyah)} — pantau, kalau tembus 24 jam berarti sumbernya mati`);
+  // Sumber yang SEMUA gamenya beku = sumbernya yang mati, bukan game-nya. Beda
+  // penanganan: satu game beku bisa jadi slug berubah; satu sumber beku total
+  // berarti markup/akses berubah (crimsonwitch 403, host memblokir, dst).
+  const perSumber = new Map();
+  for (const [, g] of perGame) for (const s of g.sumber) {
+    const v = perSumber.get(s) ?? { n: 0, beku: 0 };
+    v.n += 1; if (g.beku > 0) v.beku += 1;
+    perSumber.set(s, v);
+  }
+  const sumberMati = [...perSumber.entries()].filter(([, v]) => v.n >= 2 && v.beku === v.n).map(([s, v]) => `${s} (${v.n} game)`);
+  if (sumberMati.length) lapor("TINGGI", "sumber MOBILE tak menghasilkan apa pun", `${sumberMati.join(", ")} — seluruh game yang bergantung padanya beku`);
+  bekuJamMax = beku[0]?.jam ?? 0;
+  bekuGame = beku.filter((g) => g.jam >= 6).length;
+}
+
 // 9. Antrian tertunda — kalau bertahan berhari-hari berarti pengurasnya macet.
 const pv = baca("pending-videos.json", []), pp = baca("pending-playlists.json", []);
 if (pp.length) lapor("SEDANG", "antrian playlist tertunda", `${pp.length} video sudah naik tapi belum masuk playlist`);
@@ -171,6 +230,11 @@ if (st?.promoMonth && st.promoMonth !== bulanWIB) lapor("INFO", "promoMonth belu
     denSlugGame: gDen.length,
     cekDuluPct: pct(aktif.filter((c) => c.check).length, aktif.length),
     game: Object.keys(rb.games ?? {}).length,
+    // Kebekuan MOBILE (lihat 8d). Disimpan walau sudah dilaporkan, karena yang
+    // dicari justru POLANYA: sumber yang tiap hari beku 3-4 jam lalu pulih tak
+    // pernah memicu ambang 6 jam, tapi riwayatnya menunjukkan ia rapuh.
+    mobileBekuJam: bekuJamMax,
+    mobileBekuGame: bekuGame,
   };
 
   let riwayat = baca("health.json", []);
