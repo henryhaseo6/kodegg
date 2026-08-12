@@ -51,8 +51,13 @@ const primarySource = card.source ?? allSources[0] ?? null;
 const srcUrl = (s) => card.sourceUrls?.[s] ?? (s === primarySource ? card.sourceUrl : null);
 
 // Countdown kedaluwarsa: hanya untuk kode berbatas waktu (endsAt di masa depan,
-// mis. kode livestream ~48 jam). Ticker real-time via CountdownScript. Tampil
-// menggantikan label tanggal — lebih mendesak & berguna untuk kode ini.
+// mis. kode livestream ~48 jam). Ticker real-time via CountdownScript. Countdown
+// tampil sebagai baris UTAMA (lebih mendesak), tapi tanggal terdaftar/terpantau
+// TETAP ikut sebagai baris kecil di atasnya — dulu countdown MENGGANTIKAN label
+// tanggal, sehingga umur kode hilang sama sekali dari kartu. Akibatnya (12 Agu
+// 2026, Infinity Nikki EYESONTHEGOLDENFEAST) kode berumur 39 jam tampak seperti
+// kode yang baru keluar, dan hilangnya badge BARU terlihat seperti bug — padahal
+// datanya benar, cuma buktinya tak ditampilkan.
 const endsMs = card.endsAt ? Date.parse(card.endsAt) : NaN;
 const hasCountdown = !card.perm && Number.isFinite(endsMs) && endsMs > Date.now();
 
@@ -285,6 +290,13 @@ if (card.perm) {
     {
       hasCountdown ? (
         <span style="display:flex; flex-direction:column; align-items:flex-end; gap:2px; flex:0 0 auto; text-align:right;">
+          {/* Label + tanggal digabung satu baris (bukan 2 baris seperti mode
+              tanpa countdown) supaya kolom kanan tak jadi 4 baris. */}
+          {badge.value && (
+            <span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); opacity:0.75; white-space:nowrap;">
+              {badge.label} {badge.value}
+            </span>
+          )}
           <span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--faint); white-space:nowrap;">{tr("ev.endsIn")}</span>
           <span data-deadline={card.endsAt} data-ended={lang === "id" ? "Berakhir" : "Ended"} style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--warn); white-space:nowrap;">—</span>
         </span>
