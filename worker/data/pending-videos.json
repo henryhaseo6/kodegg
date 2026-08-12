@@ -96,6 +96,131 @@
     ]
   },
   {
+    "platform": "MOBILE",
+    "id": "r1999",
+    "name": "Reverse: 1999",
+    "slug": "reverse-1999",
+    "players": 0,
+    "rank": 1000000000,
+    "newCodes": [
+      {
+        "code": "AllHailBechan",
+        "game": "r1999",
+        "gameName": "Reverse: 1999",
+        "reward": "Clear Drop ×30 · Jar of Picrasma Candy ×1 · Sharpodonty ×20000 · Dust ×20000"
+      }
+    ],
+    "activeCount": 11,
+    "fetchedAt": "2026-08-12T19:02:59.474Z",
+    "displayCodes": [
+      {
+        "code": "AllHailBechan",
+        "reward": "Clear Drop ×30 · Jar of Picrasma Candy ×1 · Sharpodonty ×20000 · Dust ×20000",
+        "isNew": true
+      },
+      {
+        "code": "DancingAlloy",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "HappeeBirdzDae",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "RhiannonfromGwingland",
+        "reward": "Clear Drop ×80 · Jar of Picrasma Candy ×1 · Thoughts in Entirety ×10 · Rhizobox Rabbit ×1 · Glowing Mothwing ×1 · Wilderness Shell ×200",
+        "isNew": false
+      },
+      {
+        "code": "AtomicEcho",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "Crazytobe",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "1999AnimeWatchParty",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "DreadfulTruth",
+        "reward": "Clear Drop ×30 · Enlighten III ×3 · Sharpodonty ×20000 · Fine Insight Package ×2",
+        "isNew": false
+      },
+      {
+        "code": "5YRBRF9",
+        "reward": "Dust ×19,999 · Sharpodonty ×19,999 · Fine Insight Package ×3",
+        "isNew": false
+      },
+      {
+        "code": "1999GIFT",
+        "reward": "Clear Drop ×50 · Dust ×19,999",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "AllHailBechan",
+        "reward": "Clear Drop ×30 · Jar of Picrasma Candy ×1 · Sharpodonty ×20000 · Dust ×20000",
+        "isNew": true
+      },
+      {
+        "code": "DancingAlloy",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "HappeeBirdzDae",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "RhiannonfromGwingland",
+        "reward": "Clear Drop ×80 · Jar of Picrasma Candy ×1 · Thoughts in Entirety ×10 · Rhizobox Rabbit ×1 · Glowing Mothwing ×1 · Wilderness Shell ×200",
+        "isNew": false
+      },
+      {
+        "code": "AtomicEcho",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "Crazytobe",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "1999AnimeWatchParty",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "DreadfulTruth",
+        "reward": "Clear Drop ×30 · Enlighten III ×3 · Sharpodonty ×20000 · Fine Insight Package ×2",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "5YRBRF9",
+      "1999GIFT",
+      "GachaGaming1999",
+      "AllHailBechan",
+      "HappeeBirdzDae",
+      "RhiannonfromGwingland",
+      "1999AnimeWatchParty",
+      "AtomicEcho",
+      "DancingAlloy",
+      "Crazytobe",
+      "DreadfulTruth"
+    ]
+  },
+  {
     "platform": "ROBLOX",
     "id": "throw-a-coin",
     "name": "Throw a Coin",
