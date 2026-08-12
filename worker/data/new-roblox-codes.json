@@ -1,26 +1,17 @@
 {
-  "generatedAt": "2026-08-12T20:02:55.717Z",
-  "codes": [
-    {
-      "game": "lowball",
-      "gameName": "Lowball",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/lowball"
-      },
-      "code": "REPORTBUGSPLS",
-      "reward": null,
-      "date": "2026-08-12T13:40:14.755Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-12T20:02:55.717Z",
-      "fetchedAt": "2026-08-12T20:02:55.717Z"
-    }
-  ],
+  "generatedAt": "2026-08-12T21:02:57.580Z",
+  "codes": [],
   "bulkGames": [
+    {
+      "game": "tv-defense",
+      "count": 25,
+      "fresh": [
+        {
+          "code": "EP80",
+          "reward": "20 Red Crystals"
+        }
+      ]
+    },
     {
       "game": "anime-fighting-simulator-kdmf",
       "count": 9,
