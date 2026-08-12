@@ -118,6 +118,11 @@ jobs:
           # video-harian.json WAJIB ikut: itu catatan "tanggal ini sudah dibuat".
           # Tanpa di-commit, penjaganya lupa tiap run dan duplikat bisa terulang.
           git add -A worker/data/video-harian.json 2>/dev/null || true
+          # kuota-yt.json: video harian ini membakar kuota YouTube yang SAMA
+          # dengan upload per jam. Tanpa ikut di-commit, pemakaiannya cuma hidup
+          # di runner ini lalu hilang, dan rem unit di make-videos.mjs mengira
+          # kuotanya masih utuh — persis cara kuota tembus tanpa ada yang tahu.
+          git add -A worker/data/kuota-yt.json 2>/dev/null || true
           git diff --cached --quiet && echo "antrean tak berubah" && exit 0
           git commit -m "chore(thumb): antrean thumbnail tertunda [skip ci]"
           git pull --rebase --autostash -q || true

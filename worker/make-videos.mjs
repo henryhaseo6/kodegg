@@ -12,6 +12,7 @@ import { seriesPemain } from "./src/player-series.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
 import { uploadVideo, ytConfigured, attachToPlaylist, ytProjectCount } from "./video/upload.mjs";
+import { UNIT_PER_VIDEO, unitSisa, ringkas as ringkasKuota } from "./video/yt-kuota.mjs";
 import { gameSlug } from "./src/games.mjs";
 import { simpanPending, buangPending, semuaPending } from "./video/pending-thumbs.mjs";
 
@@ -656,8 +657,15 @@ function buildBacklog(state, batas) {
       // Street Soccer, Tower Defense Simulator).
       allCodes: active.map((c) => c.code),
       allMode: true, backlog: true,
-      displayCodes: tandaiBaru(pickDisplay([], urut), active),
-      descCodes: tandaiBaru(pickDisplay([], urut, false, DESC_MAX), active),
+      // SENGAJA TANPA tandaiBaru — video borongan TIDAK BOLEH memasang badge/[NEW]
+      // (keputusan 12 Agu 2026). Alasannya bukan estetika: game borongan justru
+      // yang baru MASUK pantauan kita, jadi kode lamanya berulang kali ber-firstSeen
+      // baru, dan `recency` jatuh ke firstSeen saat sumber tak memberi tanggal
+      // (praktis semua kode Roblox Den) → hampir seluruh kartunya akan dicap BARU
+      // padahal isinya arsip. Jalur pemicu (newCodes) & on-demand tetap menandai:
+      // di sana penandanya memang menjawab "kode ini baru buat penonton".
+      displayCodes: pickDisplay([], urut),
+      descCodes: pickDisplay([], urut, false, DESC_MAX),
     });
   }
   out.sort((a, b) => b.players - a.players); // yang paling ramai duluan
@@ -846,6 +854,25 @@ async function main() {
   // gede (mis. RIVALS 241K) tak kebuang ke manual saat hari rame. Promo tetap depan.
   candidates.sort((a, b) => (b.isPromo ? 1 : 0) - (a.isPromo ? 1 : 0) || (b.rank ?? b.players ?? 0) - (a.rank ?? a.players ?? 0)); // rank: mobile=1e9 (prioritas), roblox=players
   let remaining = MAX_PER_DAY - state.todayCount;
+  // REM KEDUA: UNIT, bukan cuma hitungan video.
+  //
+  // MAX_PER_DAY menghitung VIDEO dan diam-diam berasumsi hari ini cuma berisi
+  // video. Yang tak terhitung: antrean playlist & thumbnail tertunda, yang tiap
+  // satunya 50 unit dan bisa datang berpuluh sekaligus. 12 Agu 2026 run pertama
+  // sesudah reset menghabiskan 1.483 unit dengan hanya 3 upload — 990 di antaranya
+  // milik 7 playlist + 6 thumbnail tertunda dari kemarin. Hari yang begitu memulai
+  // "57 slot" dengan kuota yang sudah bocor 10% dan berakhir dengan penolakan di
+  // tengah jalan, yang justru MELAHIRKAN antrean baru untuk besok.
+  //
+  // Sisa unit dibaca dari catatan panggilan nyata (data/kuota-yt.json), bukan
+  // ditebak dari konstanta. CADANGAN disisakan untuk pembacaan rutin yang bukan
+  // video: sinkron playlist tiap jam (~9 unit × 24) + audit laporan harian.
+  const CADANGAN = Number(process.env.YT_UNIT_CADANGAN || 500);
+  const slotUnit = Math.floor((unitSisa() - CADANGAN) / UNIT_PER_VIDEO);
+  if (slotUnit < remaining) {
+    console.log(`rem kuota: sisa ~${unitSisa()} unit (cadangan ${CADANGAN}) → ${Math.max(0, slotUnit)} video, di bawah slot ${remaining} — pakai yang lebih kecil`);
+    remaining = slotUnit;
+  }
   // Angka dalam kurung = kandidat MENTAH sebelum disaring, jadi sengaja tak
   // menjumlah ke angka pertama. Ditulis eksplisit "dari" supaya tak terbaca
   // sebagai penjumlahan yang meleset.
@@ -924,6 +951,13 @@ async function main() {
   while (picks.length) {
   for (const c of picks) {
     if (canUpload && remaining <= 0) { requeue.push(c); continue; } // kuota habis → jgn render, antri retry
+    // Dicek ULANG tiap video, bukan sekali di awal: pengurasan antrean playlist/
+    // thumbnail di run yang sama ikut memakan unit SESUDAH slot dihitung. Tanpa
+    // pemeriksaan ini, video terakhir dirender penuh lalu ditolak saat upload.
+    if (canUpload && unitSisa() < UNIT_PER_VIDEO) {
+      console.log(`  ⏭ ${c.name}: sisa unit kuota ~${unitSisa()} < ongkos satu video (~${UNIT_PER_VIDEO}) — diantrikan ke run berikutnya`);
+      requeue.push(c); continue;
+    }
     // PENJAGA TENGAH MALAM PT. Borongan susulan sengaja dijadwalkan mepet reset;
     // kalau run-nya molor dan tanggal PT keburu maju, upload berikutnya memakan
     // kuota HARI BARU — persis kerugian yang penjadwalan ini ingin hindari.
@@ -1163,6 +1197,13 @@ async function main() {
   const manual = state.log.filter((l) => l.mode === "manual" && l.at?.slice(0, 10) === today
     && l.file && existsSync(resolve(OUTDIR, l.file))).length;
   console.log(`\nselesai — ${state.todayCount}/${MAX_PER_DAY} upload otomatis hari ini${manual ? `, ${manual} video nunggu upload manual (_video-out/)` : ""}.`);
+  // Rincian panggilan API run ini + akumulasi hari PT. Dicetak SELALU, bukan cuma
+  // saat mepet: angka inilah yang selama ini cuma bisa dibaca dari konsol Google
+  // sehari kemudian — dan karena itu tiap penyetelan MAX_PER_DAY jadi tebak-tebakan.
+  {
+    const k = ringkasKuota();
+    console.log(`kuota YouTube (hari PT ${k.hari}): ~${k.unit} unit terpakai, sisa ~${k.sisa}${k.rinci ? `\n  ${k.rinci}` : ""}`);
+  }
   if (tanpaPlaylist.length) {
     // SENGAJA tak diantrikan ke pending-playlists.json — VIDEO_SKIP_PLAYLIST
     // dipakai justru ketika kita ingin jatah playlist harian TIDAK terpakai.

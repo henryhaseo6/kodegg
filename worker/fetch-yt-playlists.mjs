@@ -13,10 +13,16 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { GAMES, gameSlug } from "./src/games.mjs";
-import { ytConfigured } from "./video/upload.mjs";
+import { ytConfigured, plKey } from "./video/upload.mjs";
+import { pantau } from "./video/yt-kuota.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, "data/yt-playlists.json");
+// Peta JUDUL→ID untuk upload.mjs. Ditulis di sini karena langkah ini memang
+// sudah menyisir seluruh playlist tiap jam — jadi petanya gratis, sementara
+// tanpa peta setiap upload harus menyisir ulang (9 unit) untuk mencari ID yang
+// sebetulnya sudah lewat di depan mata di sini.
+const OUT_PLID = resolve(HERE, "data/playlist-id.json");
 
 // "Gakuran Codes — Kode Redeem" / "Reverse: 1999 — Kode Redeem" → "gakuran" / "reverse 1999"
 const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -28,7 +34,7 @@ async function listPlaylists() {
   const { google } = await import("googleapis");
   const o = new google.auth.OAuth2(process.env.YT_CLIENT_ID, process.env.YT_CLIENT_SECRET);
   o.setCredentials({ refresh_token: process.env.YT_REFRESH_TOKEN });
-  const yt = google.youtube({ version: "v3", auth: o });
+  const yt = pantau(google.youtube({ version: "v3", auth: o }));
   const out = [];
   let pageToken;
   do {
@@ -88,6 +94,13 @@ async function main() {
   // urutkan key biar diff commit stabil
   const sorted = Object.fromEntries(Object.keys(map).sort().map((k) => [k, map[k]]));
   writeFileSync(OUT, JSON.stringify(sorted, null, 2) + "\n");
+
+  // Peta judul→ID: SEMUA playlist, bukan cuma yang tercocokkan ke game. Yang tak
+  // cocok pun (Top 50, roundup, promo) tetap dicari ensurePlaylist tiap kali
+  // videonya naik — justru itu yang paling sering dibuat.
+  const plid = {};
+  for (const p of playlists) { const k = plKey(p.title); if (k && !plid[k]) plid[k] = p.id; }
+  writeFileSync(OUT_PLID, JSON.stringify(Object.fromEntries(Object.keys(plid).sort().map((k) => [k, plid[k]])), null, 1) + "\n");
   console.log(`✓ data/yt-playlists.json — ${cocok}/${playlists.length} playlist tercocokkan ke game.`);
   const takCocok = playlists.filter((p) => !/roblox promo/i.test(p.title) && !byName.has(normalize(gameNameFromTitle(p.title))));
   if (takCocok.length) console.log(`  (tak tercocokkan: ${takCocok.map((p) => p.title).join(", ")})`);

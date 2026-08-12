@@ -16,11 +16,15 @@
 //   node worker/laporan-harian.mjs --json       (keluaran mesin)
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
+import { ringkas as ringkasKuota, KUOTA_HARIAN } from "./video/yt-kuota.mjs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const DATA = resolve(HERE, "data");
+// KODEGG_DATA: samakan dengan audit-data.mjs — laporan ini MEMANGGIL audit lewat
+// execFileSync yang mewarisi env, jadi kalau hanya audit yang menghormati env-nya,
+// dua bagian dari laporan yang sama membaca dua direktori data berbeda.
+const DATA = process.env.KODEGG_DATA || resolve(HERE, "data");
 const ARG = new Set(process.argv.slice(2));
 const TANPA_YT = ARG.has("--tanpa-yt");
 const JSON_ONLY = ARG.has("--json");
@@ -89,6 +93,31 @@ else {
   tren("howToPct", "Game punya cara redeem");
   tren("denKode", "Kode dari Den", "");
   tren("roKode", "Kode dari RoCodes", "");
+  // Kesegaran sumber MOBILE. Ditampilkan walau nol: yang ingin dilihat pemilik
+  // situs bukan cuma "ada yang mati" tapi juga "hari ini semua sumber hidup" —
+  // laporan yang cuma bicara saat rusak tak bisa dibedakan dari laporan yang mogok.
+  if (kini.mobileBekuJam != null) {
+    baris("Sumber mobile beku", kini.mobileBekuGame > 0
+      ? `${kini.mobileBekuGame} game ≥6 jam (terlama ${kini.mobileBekuJam} jam)`
+      : "tak ada — semua game mobile tertarik segar");
+  }
+}
+
+// ── 3b. KUOTA YOUTUBE (dari catatan panggilan, bukan tebakan) ──────────────
+{
+  // Tarif TIDAK ditulis ulang di sini — diambil dari yt-kuota.mjs. Dua salinan
+  // tabel harga akan berpisah diam-diam begitu salah satunya dikalibrasi ulang,
+  // dan laporan yang angkanya beda dari rem produksinya lebih buruk daripada
+  // tak ada laporan.
+  const k = baca("kuota-yt.json", null)?.panggilan ? ringkasKuota() : null;
+  if (k) {
+    bagian("Kuota YouTube");
+    baris("Hari PT", `${k.hari} — ~${angka(k.unit)} unit dari ${angka(KUOTA_HARIAN)} (${persen(k.unit, KUOTA_HARIAN)}), sisa ~${angka(k.sisa)}`);
+    // Rincian per metode: ini yang membedakan "banyak upload" dari "antrean
+    // playlist/thumbnail menguras". Dua-duanya tampak sama di angka total.
+    baris("Rincian", k.rinci || "—");
+    if (k.unit > KUOTA_HARIAN * 0.9) perhatian("kuota YouTube >90% — upload berikutnya ditolak & antreannya menumpuk ke besok");
+  }
 }
 
 // ── 4. ANTREAN (yang menumpuk = ada yang macet) ────────────────────────────

@@ -110,6 +110,9 @@ jobs:
           # video-harian.json WAJIB ikut: itu catatan "tanggal ini sudah dibuat".
           # Tanpa di-commit, penjaganya lupa tiap run dan duplikat bisa terulang.
           git add -A worker/data/video-harian.json 2>/dev/null || true
+          # kuota-yt.json: alasan sama dengan top50-video.yml — pemakaian kuota
+          # video harian harus terlihat oleh rem unit di jalur per jam.
+          git add -A worker/data/kuota-yt.json 2>/dev/null || true
           git diff --cached --quiet && echo "antrean tak berubah" && exit 0
           git commit -m "chore(thumb): antrean thumbnail tertunda [skip ci]"
           git pull --rebase --autostash -q || true

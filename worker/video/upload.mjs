@@ -13,6 +13,8 @@ import { createReadStream, existsSync, readFileSync, writeFileSync } from "node:
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { pantau } from "./yt-kuota.mjs";
+
 // Kumpulkan set kredensial: project 1 (tanpa suffix) + _2.._9 bila ada.
 function credentialSets() {
   const S = [], E = process.env;
@@ -32,7 +34,10 @@ async function activeClient() {
   const s = sets()[Math.min(_idx, sets().length - 1)];
   const o = new google.auth.OAuth2(s.clientId, s.clientSecret);
   o.setCredentials({ refresh_token: s.refreshToken });
-  return google.youtube({ version: "v3", auth: o });
+  // pantau(): tiap panggilan tercatat ke data/kuota-yt.json. Dibungkus DI SINI,
+  // di satu-satunya tempat klien dibuat, supaya pemanggil baru ikut tercatat
+  // tanpa harus ingat menambahkannya.
+  return pantau(google.youtube({ version: "v3", auth: o }));
 }
 const client = activeClient; // alias — playlist & komentar pakai project aktif
 const activeLabel = () => sets()[Math.min(_idx, sets().length - 1)]?.label ?? "P?";
@@ -50,7 +55,10 @@ function quotaOrAuth(e) {
 // Penanda "jatah playlist harian sudah habis", bertahan antar-run lewat berkas
 // di worker/data (folder yang di-commit workflow). Kuncinya hari PACIFIC karena
 // itulah siklus reset kuota YouTube.
-const PL_LIMIT = resolve(dirname(fileURLToPath(import.meta.url)), "../data/playlist-limit.json");
+// KODEGG_DATA: bisa diarahkan ke direktori lain untuk MENGUJI tanpa mengotori
+// data asli — sama seperti audit-data.mjs & yt-kuota.mjs.
+const DATA = process.env.KODEGG_DATA || resolve(dirname(fileURLToPath(import.meta.url)), "../data");
+const PL_LIMIT = resolve(DATA, "playlist-limit.json");
 const hariPT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 function jatahPlaylistHabis() {
   try { return JSON.parse(readFileSync(PL_LIMIT, "utf8"))?.hari === hariPT(); } catch { return false; }
@@ -82,7 +90,7 @@ const tidur = (detik) => new Promise((r) => setTimeout(r, detik * 1000));
 // Disimpan di worker/data/ yang ikut ter-commit workflow, jadi pengetahuannya
 // bertahan antar-run — runner CI sekali pakai, tanpa ini tiap run belajar ulang
 // dengan cara yang sama mahalnya.
-const FILE_SORTIR = resolve(dirname(fileURLToPath(import.meta.url)), "../data/playlist-tersortir.json");
+const FILE_SORTIR = resolve(DATA, "playlist-tersortir.json");
 const tersortirOtomatis = new Set(((() => {
   try { return JSON.parse(readFileSync(FILE_SORTIR, "utf8")); } catch { return []; }
 })()));
@@ -93,12 +101,34 @@ function catatTersortir(pid) {
   catch { /* CI read-only? jangan gagalkan upload */ }
 }
 
-const plKey = (t) => (t || "")
+export const plKey = (t) => (t || "")
   .toLowerCase()
   .replace(/\s*—\s*kode redeem\s*$/i, "")
   .replace(/\s+codes$/i, "")
   .replace(/[^a-z0-9]+/g, " ")
   .trim();
+
+// PETA JUDUL→ID PLAYLIST (data/playlist-id.json, ditulis fetch-yt-playlists.mjs
+// yang memang sudah menyisir seluruh playlist tiap jam — jadi peta ini gratis).
+//
+// Tanpanya, ensurePlaylist menyisir SELURUH playlist channel tiap kali dipanggil:
+// 424 playlist ÷ 50 per halaman = 9 panggilan = 9 unit, untuk mencari sesuatu
+// yang ID-nya sudah kita simpan. Di 57 video/hari itu ~500 unit (5% kuota
+// harian) dibayar berulang untuk jawaban yang sama. Dengan peta: 1 unit.
+//
+// Tetap DIVERIFIKASI ke API (playlists.list by id), bukan dipercaya buta —
+// playlist bisa dihapus manual di Studio, dan ID basi akan membuat video masuk
+// ke playlist yang tak ada. Kalau verifikasi kosong → jatuh ke penyisiran penuh.
+const FILE_PLID = resolve(DATA, "playlist-id.json");
+const petaPlaylist = (() => {
+  try { return JSON.parse(readFileSync(FILE_PLID, "utf8")); } catch { return {}; }
+})();
+function catatPlaylistId(kunci, pid) {
+  if (!kunci || !pid || petaPlaylist[kunci] === pid) return;
+  petaPlaylist[kunci] = pid;
+  try { writeFileSync(FILE_PLID, JSON.stringify(petaPlaylist, null, 1) + "\n"); }
+  catch { /* CI read-only? jangan gagalkan upload */ }
+}
 
 /** Cari playlist by nama game; kalau belum ada, bikin. `baru` = true bila baru dibuat.
  *  lang = bahasa metadata playlist ("id" Shorts, "en" Top 50/Roundup).
@@ -107,30 +137,22 @@ const plKey = (t) => (t || "")
  *  otomatis dinormalisasi ke judul+deskripsi+bahasa yang benar. */
 async function ensurePlaylist(yt, title, description, lang = "id", tanpaBuat = false) {
   const want = plKey(title);
+  // Jalur cepat: ID sudah dikenal → 1 unit untuk memastikan playlistnya masih
+  // ada + mengambil snippet-nya (dibutuhkan pemeriksaan normalisasi di bawah).
+  const tersimpan = petaPlaylist[want];
+  if (tersimpan) {
+    try {
+      const r = await yt.playlists.list({ part: ["snippet"], id: [tersimpan] });
+      const p = r.data.items?.[0];
+      if (p) return await pakaiPlaylist(yt, p, title, description, lang, want);
+      console.log(`  ↳ playlist "${title}" tak ada lagi di channel (ID tersimpan basi) — menyisir ulang`);
+    } catch (e) { console.log(`  ↳ cek playlist lewat ID gagal (${e.message}) — menyisir ulang`); }
+  }
   let pageToken;
   do {
     const r = await yt.playlists.list({ part: ["snippet"], mine: true, maxResults: 50, pageToken });
     const hit = (r.data.items ?? []).find((p) => plKey(p.snippet?.title) === want);
-    if (hit) {
-      const cur = hit.snippet ?? {};
-      if (cur.title !== title || (cur.defaultLanguage || "") !== lang || (description && (cur.description || "") !== description)) {
-        try {
-          // localizations WAJIB ikut dikirim. playlists.update MENGGANTI snippet,
-          // dan `defaultLanguage` sendirian tak membuat YouTube menyimpan bahasa —
-          // yang dipakai Studio ("Title and description language") adalah entri
-          // localizations. Tanpa ini: setelan bahasa yang di-set manual di Studio
-          // TERHAPUS tiap ada video baru masuk playlist, lalu kosongnya memicu
-          // update ini lagi di upload berikutnya — loop penulisan sia-sia yang
-          // membakar 50 unit kuota per video. (Dilaporkan user 1 Agt 2026.)
-          await yt.playlists.update({
-            part: ["snippet", "localizations"],
-            requestBody: { id: hit.id, snippet: { title, description, defaultLanguage: lang }, localizations: { [lang]: { title, description } } },
-          });
-          console.log(`  ↳ playlist dinormalisasi: "${cur.title}" → "${title}" [${lang}]`);
-        } catch (e) { console.log(`  playlist normalisasi gagal (abaikan): ${e.message}`); }
-      }
-      return { id: hit.id, baru: false };
-    }
+    if (hit) return await pakaiPlaylist(yt, hit, title, description, lang, want);
     pageToken = r.data.nextPageToken;
   } while (pageToken);
   // tanpaBuat: playlist belum ada & kita sedang menghemat jatah pembuatan
@@ -157,7 +179,32 @@ async function ensurePlaylist(yt, title, description, lang = "id", tanpaBuat = f
       localizations: { [lang]: { title, description } },
     },
   });
+  catatPlaylistId(want, made.data.id);
   return { id: made.data.id, baru: true };
+}
+
+/** Playlist ketemu (lewat peta ID atau penyisiran): normalisasi judul/bahasa
+ *  bila perlu, ingat ID-nya, pulangkan. */
+async function pakaiPlaylist(yt, hit, title, description, lang, want) {
+  catatPlaylistId(want, hit.id);
+  const cur = hit.snippet ?? {};
+  if (cur.title !== title || (cur.defaultLanguage || "") !== lang || (description && (cur.description || "") !== description)) {
+    try {
+      // localizations WAJIB ikut dikirim. playlists.update MENGGANTI snippet,
+      // dan `defaultLanguage` sendirian tak membuat YouTube menyimpan bahasa —
+      // yang dipakai Studio ("Title and description language") adalah entri
+      // localizations. Tanpa ini: setelan bahasa yang di-set manual di Studio
+      // TERHAPUS tiap ada video baru masuk playlist, lalu kosongnya memicu
+      // update ini lagi di upload berikutnya — loop penulisan sia-sia yang
+      // membakar 50 unit kuota per video. (Dilaporkan user 1 Agt 2026.)
+      await yt.playlists.update({
+        part: ["snippet", "localizations"],
+        requestBody: { id: hit.id, snippet: { title, description, defaultLanguage: lang }, localizations: { [lang]: { title, description } } },
+      });
+      console.log(`  ↳ playlist dinormalisasi: "${cur.title}" → "${title}" [${lang}]`);
+    } catch (e) { console.log(`  playlist normalisasi gagal (abaikan): ${e.message}`); }
+  }
+  return { id: hit.id, baru: false };
 }
 
 /** Upload 1 video. privacy: 'unlisted'|'public'|'private'. */

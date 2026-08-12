@@ -314,8 +314,11 @@ jobs:
             # mengulang 9 game yang sama; batas 65/hari jebol jadi 82 unggahan
             # dan kuota harian YouTube tembus 100%.
             node worker/gabung-state.mjs origin/main || echo "  (gabung state dilewati)"
-            if ! git diff --quiet -- worker/data/video-state.json worker/data/video-harian.json; then
-              git add worker/data/video-state.json worker/data/video-harian.json
+            # kuota-yt.json ikut: sama-sama catatan kumulatif, jadi hasil
+            # penggabungannya harus masuk commit — kalau tidak, yang ter-push
+            # tetap versi lokal yang kehilangan hitungan run lain.
+            if ! git diff --quiet -- worker/data/video-state.json worker/data/video-harian.json worker/data/kuota-yt.json; then
+              git add worker/data/video-state.json worker/data/video-harian.json worker/data/kuota-yt.json
               git commit --amend --no-edit --quiet
             fi
           done

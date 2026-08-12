@@ -84,5 +84,34 @@ let berubah = [];
   }
 }
 
+// ── kuota-yt.json ───────────────────────────────────────────────────────────
+// Catatan pemakaian kuota YouTube — kumulatif per hari PT, jadi kena masalah yang
+// PERSIS sama dengan video-state: `-X theirs` akan membuang hitungan run lain,
+// dan rem unit di make-videos.mjs lalu mengira kuotanya masih longgar.
+//
+// Digabung pakai MAX per metode, bukan penjumlahan: keduanya berisi total sejak
+// awal hari, bukan selisih, jadi menjumlahkan akan menghitung dobel bagian yang
+// sama. MAX memang MENGHITUNG TERLALU SEDIKIT bila dua run benar-benar barengan
+// — tapi arah salahnya bisa dipilih, dan kehilangan seluruh catatan run lain
+// jauh lebih berbahaya daripada meremehkan selisih beberapa panggilan.
+{
+  const rel = "worker/data/kuota-yt.json";
+  const abs = path.join(DIR, "data", "kuota-yt.json");
+  const a = bacaLokal(abs), b = bacaRemote(rel);
+  if (a && b && a.hari === b.hari) {
+    let naik = 0;
+    a.panggilan = a.panggilan ?? {};
+    for (const [m, n] of Object.entries(b.panggilan ?? {})) {
+      if ((a.panggilan[m] ?? 0) < n) { a.panggilan[m] = n; naik += 1; }
+    }
+    if (naik) { fs.writeFileSync(abs, JSON.stringify(a, null, 1) + "\n"); berubah.push(`kuota-yt: ${naik} metode diambil dari remote (lebih tinggi)`); }
+  } else if (a && b && String(b.hari) > String(a.hari)) {
+    // Remote sudah menyeberang ke hari PT baru: catatan lokal milik hari kemarin
+    // dan tak boleh menimpanya (kalau ditimpa, kuota hari baru terlihat terpakai).
+    fs.writeFileSync(abs, JSON.stringify(b, null, 1) + "\n");
+    berubah.push(`kuota-yt: hari remote ${b.hari} lebih baru → pakai catatan remote`);
+  }
+}
+
 if (berubah.length) { console.log("  gabung state:"); for (const b of berubah) console.log(`    ${b}`); }
 else console.log("  gabung state: tak ada yang perlu digabung");

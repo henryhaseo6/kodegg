@@ -24,7 +24,11 @@ if (!process.env.YT_REFRESH_TOKEN) { console.error("kredensial YouTube belum di-
 const { google } = await import("googleapis");
 const o = new google.auth.OAuth2(process.env.YT_CLIENT_ID, process.env.YT_CLIENT_SECRET);
 o.setCredentials({ refresh_token: process.env.YT_REFRESH_TOKEN });
-const yt = google.youtube({ version: "v3", auth: o });
+// pantau(): perawatan ikut membakar kuota yang sama dengan upload — mode audit
+// menyisir seluruh playlist + tiap video. Kalau tak tercatat, rem unit di
+// make-videos.mjs mengira kuotanya masih utuh padahal sudah terpakai di sini.
+const { pantau } = await import("./yt-kuota.mjs");
+const yt = pantau(google.youtube({ version: "v3", auth: o }));
 
 console.log(APPLY ? `=== APPLY · mode=${MODE} · ${IDS.length} video ===` : `=== DRY-RUN · mode=${MODE} · ${IDS.length} video (tak mengubah apa pun) ===`);
 
