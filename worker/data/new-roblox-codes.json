@@ -1,10 +1,29 @@
 {
-  "generatedAt": "2026-08-12T19:03:30.552Z",
-  "codes": [],
+  "generatedAt": "2026-08-12T20:02:55.717Z",
+  "codes": [
+    {
+      "game": "lowball",
+      "gameName": "Lowball",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/lowball"
+      },
+      "code": "REPORTBUGSPLS",
+      "reward": null,
+      "date": "2026-08-12T13:40:14.755Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-12T20:02:55.717Z",
+      "fetchedAt": "2026-08-12T20:02:55.717Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "vesteria",
-      "count": 16,
+      "game": "anime-fighting-simulator-kdmf",
+      "count": 9,
       "fresh": []
     }
   ]

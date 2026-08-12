@@ -543,6 +543,111 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "lowball",
+    "name": "Lowball",
+    "displayName": "Lowball 💰",
+    "slug": "lowball",
+    "players": 862,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 862,
+    "newCodes": [
+      {
+        "game": "lowball",
+        "gameName": "Lowball",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/lowball"
+        },
+        "code": "REPORTBUGSPLS",
+        "reward": null,
+        "date": "2026-08-12T13:40:14.755Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-12T20:02:55.717Z",
+        "fetchedAt": "2026-08-12T20:02:55.717Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-08-12T20:02:55.717Z",
+    "displayCodes": [
+      {
+        "code": "REPORTBUGSPLS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SPARKLES",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "1MVISITS",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "GOTOTHEMALL",
+        "reward": "2 Lucky Potions, Cash Pack, 150 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "NEWWEEK",
+        "reward": "Jukebox, 150 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "Lucky Potion, 50 Diamonds",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "REPORTBUGSPLS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SPARKLES",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "1MVISITS",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "GOTOTHEMALL",
+        "reward": "2 Lucky Potions, Cash Pack, 150 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "NEWWEEK",
+        "reward": "Jukebox, 150 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "Lucky Potion, 50 Diamonds",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "REPORTBUGSPLS",
+      "SPARKLES",
+      "1MVISITS",
+      "GOTOTHEMALL",
+      "NEWWEEK",
+      "RELEASE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "clean-the-golf-yard",
     "name": "Clean the Golf Yard",
     "displayName": "[UPD3.7] Clean the Golf Yard",
