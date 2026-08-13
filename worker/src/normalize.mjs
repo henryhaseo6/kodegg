@@ -44,7 +44,20 @@ export function normalizeReward(raw) {
 // Entity bernama yang benar-benar muncul di sumber (HTML biasa). Sisanya
 // ditangani jalur numerik &#NN; / &#xNN; — itu yang dipakai Next.js/Nuxt saat
 // meng-escape teks ke dalam <title> & payload JSON.
-const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", rsquo: "’", lsquo: "‘", ldquo: "“", rdquo: "”", ndash: "–", mdash: "—", hellip: "…", eacute: "é" };
+const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", rsquo: "’", lsquo: "‘", ldquo: "“", rdquo: "”", ndash: "–", mdash: "—", hellip: "…", eacute: "é", times: "×", middot: "·", bull: "•" };
+
+// Entity bernama yang TAK ada di tabel di atas lolos apa adanya — dan diamnya
+// itu masalahnya. `&times;` luput berbulan-bulan lalu terbaca di layar video
+// sebagai "Primogem &times;60" (Genshin, ketahuan 13 Agu 2026 saat meninjau
+// frame sample, bukan dari log mana pun). Sekali per entity per proses supaya
+// log tak banjir, tapi cukup untuk muncul di run CI berikutnya.
+const entityTakDikenal = new Set();
+function laporEntity(e) {
+  const k = e.toLowerCase();
+  if (entityTakDikenal.has(k)) return;
+  entityTakDikenal.add(k);
+  console.log(`  [!] entity HTML tak dikenal: &${k}; — tambahkan ke NAMED di src/normalize.mjs`);
+}
 
 /**
  * Decode entity HTML jadi karakter aslinya.
@@ -59,12 +72,18 @@ const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", rsq
  */
 export function decodeEntities(s) {
   if (typeof s !== "string" || !s.includes("&")) return s;
-  const sekali = (t) => t.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => {
+  // `[a-z][a-z0-9]*`, bukan `[a-z]+`: entity bernama boleh memuat angka
+  // (&frac12;, &sup2;). Dengan pola lama entity semacam itu tak cocok sama
+  // sekali — bukan cuma gagal di-decode, tapi juga tak terlihat oleh alarm
+  // di bawah, jadi kebocorannya tetap senyap persis seperti &times; dulu.
+  const sekali = (t) => t.replace(/&(#x[0-9a-f]+|#\d+|[a-z][a-z0-9]*);/gi, (m, e) => {
     if (e[0] === "#") {
       const n = e[1] === "x" || e[1] === "X" ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10);
       return Number.isFinite(n) && n > 0 && n <= 0x10ffff ? String.fromCodePoint(n) : m;
     }
-    return NAMED[e.toLowerCase()] ?? m;
+    const tahu = NAMED[e.toLowerCase()];
+    if (tahu === undefined) { laporEntity(e); return m; }
+    return tahu;
   });
   return sekali(sekali(s));
 }

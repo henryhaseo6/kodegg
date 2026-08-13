@@ -7,7 +7,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 
 import { mergeWithPrevious } from "../src/archive.mjs";
-import { normalizeReward } from "../src/normalize.mjs";
+import { normalizeReward, decodeEntities } from "../src/normalize.mjs";
 
 const NOW = "2026-07-16T10:00:00Z";
 const OLD = "2026-07-01T00:00:00Z";
@@ -146,6 +146,22 @@ test("normalizeReward: gaya terstruktur dirapikan, nama item utuh", () => {
 test("normalizeReward: gaya prosa dibiarkan VERBATIM", () => {
   const prosa = "30 stellar jade, three traveler's guides, and 20k credits";
   assert.equal(normalizeReward(prosa), prosa);
+});
+
+test("decodeEntities: &times; jadi ×, dan entity tak dikenal berteriak", () => {
+  // `&times;` luput dari tabel NAMED berbulan-bulan dan baru ketahuan saat
+  // terbaca di layar video sample: "Primogem &times;60" (Genshin, 13 Agu 2026).
+  // Tak ada satu pun log yang menyebutkannya — itu bagian yang diperbaiki.
+  assert.equal(decodeEntities("Primogem &times;60"), "Primogem ×60");
+  assert.equal(decodeEntities("A &middot; B"), "A · B");
+
+  const log = [];
+  const asli = console.log;
+  console.log = (...a) => log.push(a.join(" "));
+  let hasil;
+  try { hasil = decodeEntities("Setengah &frac12; porsi"); } finally { console.log = asli; }
+  assert.equal(hasil, "Setengah &frac12; porsi", "yang tak dikenal dibiarkan utuh, bukan dirusak");
+  assert.match(log.join("\n"), /entity HTML tak dikenal: &frac12;/);
 });
 
 test("normalizeReward: sumber kosong → null, bukan karangan", () => {

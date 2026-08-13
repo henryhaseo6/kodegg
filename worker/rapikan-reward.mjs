@@ -19,6 +19,7 @@
 // ulang dari sumber tiap run). Tetap dibersihkan di sini supaya situs dan video
 // tak memajang cacat itu sampai run berikutnya tiba.
 import { readFileSync, writeFileSync } from "node:fs";
+import { decodeEntities } from "./src/normalize.mjs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -32,7 +33,12 @@ const TULIS = process.argv.includes("--tulis");
  *  dan berubah jadi "Bo×20". Diuji di bawah supaya tak perlu dipercaya begitu
  *  saja. */
 export const RAPIKAN = /(?<=\s)(?:[×x]\s*){2,}(?=\d)/gi;
-export const rapikan = (t) => (typeof t === "string" ? t.replace(RAPIKAN, "×") : t);
+// Entity HTML yang lolos ke data ikut dibereskan di sini. Ditemukan 13 Agu 2026
+// pada dua kode Genshin: "Primogem &times;60" terbaca apa adanya di layar video.
+// Sumbernya sudah diperbaiki (`times` ditambahkan ke NAMED di src/normalize.mjs),
+// jadi ini cuma membereskan yang telanjur — terutama entri arsip, yang tak
+// pernah disusun ulang dari sumber.
+export const rapikan = (t) => (typeof t === "string" ? decodeEntities(t).replace(RAPIKAN, "×") : t);
 
 // Uji cepat, dicetak tiap dijalankan: pembersih data yang salah lebih berbahaya
 // daripada data yang kotor, jadi buktinya ditunjukkan sebelum menyentuh apa pun.
@@ -42,6 +48,7 @@ const UJI = [
   ["Box x20", "Box x20"],                 // nama berakhiran x — JANGAN disentuh
   ["Gold ×20000", "Gold ×20000"],         // sudah benar — idempoten
   ["Mix 5 Pack ×x2", "Mix 5 Pack ×2"],
+  ["Primogem &times;60", "Primogem ×60"],   // entity HTML ikut dibereskan
 ];
 let lulus = 0;
 for (const [masuk, harap] of UJI) {
