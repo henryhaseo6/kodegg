@@ -78,4 +78,27 @@ test("pencatat menghitung tiap panggilan & memberi harga tulis 50 / baca 1", () 
   })();
 });
 
+// Klien PALSU tak cukup untuk menguji pembungkus: yang bikin celaka justru
+// bentuk objek googleapis ASLI — `videos`/`playlists` dipasang sebagai properti
+// non-writable & non-configurable, dan mem-Proxy objek layanannya melanggar
+// invarian Proxy sehingga AKSES PERTAMA melempar TypeError. 12 Agu 2026 itu
+// mematikan seluruh upload ~17 jam. Tes ini menyentuh objek aslinya.
+test("pembungkus tak merusak klien googleapis sungguhan", async (t) => {
+  let google;
+  try { ({ google } = await import("googleapis")); }
+  catch { return t.skip("googleapis tak terpasang (dipasang di CI saat perlu)"); }
+  const o = new google.auth.OAuth2("x", "y");
+  o.setCredentials({ refresh_token: "z" });
+  const p = pantau(google.youtube({ version: "v3", auth: o }));
+  // Akses properti — persis langkah yang dulu melempar TypeError.
+  assert.equal(typeof p.videos.insert, "function");
+  assert.equal(typeof p.videos.list, "function");
+  assert.equal(typeof p.playlists.list, "function");
+  assert.equal(typeof p.playlistItems.insert, "function");
+  assert.equal(typeof p.thumbnails.set, "function");
+  // Panggilan sungguhan: WAJIB gagal karena kredensial, bukan karena proxy.
+  await assert.rejects(() => p.videos.list({ part: ["id"], id: ["x"] }), (e) => !/on proxy/i.test(e.message));
+  assert.equal(ringkas().panggilan["videos.list"] >= 1, true, "panggilannya tetap tercatat");
+});
+
 test.after(() => { try { rmSync(DATA, { recursive: true, force: true }); } catch {} });

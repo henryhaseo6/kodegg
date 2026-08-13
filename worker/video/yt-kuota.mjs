@@ -97,21 +97,54 @@ export function ringkas() {
   return { hari: b.hari, unit: unitTerpakai(), sisa: unitSisa(), panggilan: { ...b.panggilan }, rinci };
 }
 
+// Resource yang dipakai proyek ini. DAFTAR TETAP, bukan hasil enumerasi:
+// googleapis mendefinisikan resource sebagai properti non-enumerable, jadi
+// Object.keys(yt) memulangkan kosong dan pembungkus otomatis akan diam-diam
+// tak membungkus apa pun.
+const RESOURCE = ["videos", "playlists", "playlistItems", "thumbnails", "commentThreads", "channels", "search", "captions"];
+
 /** Bungkus klien googleapis supaya TIAP panggilan tercatat tanpa harus menyentuh
  *  satu per satu tempat pemanggilnya — yang justru cara paling gampang membuat
- *  catatan ini bolong begitu ada pemanggil baru. */
+ *  catatan ini bolong begitu ada pemanggil baru.
+ *
+ *  JANGAN mem-Proxy objek layanannya langsung. googleapis memasang `videos`,
+ *  `playlists`, dst sebagai properti data non-writable & non-configurable, dan
+ *  spesifikasi Proxy MEWAJIBKAN trap `get` memulangkan nilai yang sama persis
+ *  untuk properti seperti itu. Membungkusnya melanggar invarian dan melempar
+ *  TypeError pada AKSES PERTAMA:
+ *    'get' on proxy: property 'videos' is a read-only and non-configurable
+ *    data property ... but the proxy did not return its actual value
+ *  Terjadi 12 Agu 2026: seluruh upload gagal ~17 jam (jatuh ke _video-out/,
+ *  jadi tak ada yang hilang, tapi tak ada yang tayang) sampai user menyadari
+ *  tak ada video baru. Instrumentasi TAK BOLEH ada di jalur kritis.
+ *
+ *  Yang dipakai sekarang: objek turunan (prototype = klien asli) dengan
+ *  properti resource DIDEFINISIKAN ULANG lewat defineProperty — membayangi
+ *  properti non-writable induknya secara sah. Resource-nya sendiri boleh
+ *  di-Proxy: metodenya ada di prototype, bukan properti own yang beku. */
 export function pantau(yt) {
-  return new Proxy(yt, {
-    get(target, sumber) {
-      const nilai = target[sumber];
-      if (typeof sumber !== "string" || !nilai || typeof nilai !== "object") return nilai;
-      return new Proxy(nilai, {
-        get(res, metode) {
-          const fn = res[metode];
-          if (typeof sumber !== "string" || typeof metode !== "string" || typeof fn !== "function") return fn;
-          return (...arg) => { catat(`${sumber}.${metode}`); return fn.apply(res, arg); };
+  try {
+    const bungkus = Object.create(yt);
+    for (const nama of RESOURCE) {
+      const res = yt?.[nama];
+      if (!res || typeof res !== "object") continue;
+      const dipantau = new Proxy(res, {
+        get(target, metode) {
+          const fn = target[metode];
+          if (typeof metode !== "string" || typeof fn !== "function") return fn;
+          return (...arg) => {
+            try { catat(`${nama}.${metode}`); } catch { /* catatan gagal ≠ panggilan gagal */ }
+            return fn.apply(target, arg);
+          };
         },
       });
-    },
-  });
+      Object.defineProperty(bungkus, nama, { value: dipantau, enumerable: true, configurable: true });
+    }
+    return bungkus;
+  } catch (e) {
+    // Gagal membungkus = kehilangan CATATAN, bukan kehilangan fungsi. Pulangkan
+    // klien apa adanya; lebih baik kuotanya tak tercatat daripada video tak naik.
+    console.log(`  (pencatat kuota dilewati: ${e.message})`);
+    return yt;
+  }
 }
