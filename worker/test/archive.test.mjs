@@ -92,6 +92,49 @@ test("arsip eksplisit tidak menang atas kode AKTIF (dedup: aktif menang)", () =>
   assert.equal(archive.length, 0, "kode aktif tidak boleh ikut ke arsip");
 });
 
+// ── endsAt: waktu berakhir yang SUDAH LEWAT ────────────────────────────────
+// Kasus nyata 13 Agu 2026: Wuthering Waves memajang 4 kode aktif padahal cuma 1
+// yang hidup. Tiga sisanya mati 9 Agu dan endsAt-nya tersimpan benar — Fandom
+// wiki cuma tak pernah menghapus barisnya, jadi pemicu "hilang dari sumber"
+// tak pernah menyala.
+const wuwaMati = (code) => ({
+  game: "wuwa", code, source: "wiki", firstSeenAt: OLD,
+  endsAt: "2026-07-10T00:00:00Z", // NOW = 16 Jul → sudah lewat 6 hari
+});
+
+test("endsAt sudah lewat → diarsipkan walau sumber masih memajangnya sbg aktif", () => {
+  const fresh = [wuwaMati("HEARTOFSWORD"), { game: "wuwa", code: "WUTHERINGGIFT", source: "wiki", endsAt: null }];
+  const { active, archive } = mergeWithPrevious(fresh, [], { active: [], archive: [] }, new Set(["wuwa"]), NOW);
+
+  assert.deepEqual(active.map((c) => c.code), ["WUTHERINGGIFT"], "kode tanpa endsAt tetap aktif");
+  assert.equal(archive.length, 1);
+  assert.equal(archive[0].code, "HEARTOFSWORD");
+  assert.equal(archive[0].status, "expired");
+  assert.equal(archive[0].expiredBy, "endsAt");
+  // Waktu matinya yang sebenarnya, bukan waktu kita menyadarinya.
+  assert.equal(archive[0].expiredAt, "2026-07-10T00:00:00Z");
+});
+
+test("endsAt masih di masa depan → tetap aktif", () => {
+  // Sisi lain ambang. Tanpa tes ini, perbandingan yang kebalik (< vs >) tetap
+  // hijau di tes atas sambil mengarsipkan MASSAL kode yang masih hidup — dan
+  // arsip itu permanen.
+  const fresh = [{ game: "gi", code: "MASIHHIDUP", source: "hoyo-codes", endsAt: "2026-08-01T00:00:00Z" }];
+  const { active, archive } = mergeWithPrevious(fresh, [], { active: [], archive: [] }, new Set(["gi"]), NOW);
+  assert.deepEqual(active.map((c) => c.code), ["MASIHHIDUP"]);
+  assert.equal(archive.length, 0);
+});
+
+test("endsAt lewat menembus pengaman 'sumber gagal ditarik'", () => {
+  // Pengaman itu melindungi kode yang nasibnya TAK DIKETAHUI. Kode ber-endsAt
+  // lewat justru satu-satunya yang kita tahu pasti sudah mati.
+  const prev = prevWith(wuwaMati("THEANSWER"), hoyoCode("gi", "NASIBTAKJELAS"));
+  const { active, archive } = mergeWithPrevious([], [], prev, new Set(), NOW); // tak ada game yang sukses
+
+  assert.ok(active.some((c) => c.code === "NASIBTAKJELAS" && c.stale === true), "yang tanpa endsAt dipertahankan");
+  assert.ok(archive.some((c) => c.code === "THEANSWER" && c.expiredBy === "endsAt"));
+});
+
 test("normalizeReward: gaya terstruktur dirapikan, nama item utuh", () => {
   assert.equal(
     normalizeReward("Primogem*60;Adventurer's Experience*5"),

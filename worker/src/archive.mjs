@@ -8,10 +8,37 @@
 //     wiki) langsung dimasukkan ke arsip → database arsip terisi dari awal.
 //  3. Arsip OTOMATIS — kode aktif yang hilang dari sumber dianggap expired dan
 //     DIPINDAH ke arsip. Tidak pernah dihapus (arsip = database).
+//  4. Arsip lewat endsAt — kode yang WAKTU BERAKHIRNYA SUDAH LEWAT, walau sumber
+//     masih memajangnya sebagai aktif. Lihat catatan di bawah.
 //
 // Pengaman: hanya kode milik game yang tarikannya SUKSES yang boleh diarsipkan
 // otomatis (biar sumber down tak mengarsipkan massal). Arsip eksplisit tidak
 // kena pengaman ini karena memang ditandai kadaluarsa oleh sumber.
+//
+// TANGGUNG JAWAB (4) DULU TIDAK ADA, dan itu membuat kode mati bertahan di
+// etalase selama sumbernya belum merapikan tabelnya sendiri. Terlihat 13 Agu
+// 2026 di Wuthering Waves: situs memajang 4 kode aktif padahal cuma
+// WUTHERINGGIFT yang hidup. HEARTOFSWORD, ETERNALFLAME, dan THEANSWER mati 9
+// Agu 08:59 PT — dan kita SUDAH TAHU itu: ketiganya tersimpan dengan
+// endsAt "2026-08-09T15:59:00.000Z", dibaca benar oleh parser wiki. Yang tak ada
+// cuma satu baris yang menegakkannya.
+//
+// Kenapa lolos begitu lama: satu-satunya pemicu arsip otomatis adalah kode
+// HILANG dari sumber. Fandom wiki tidak menghapus baris yang kedaluwarsa — ia
+// membiarkannya di tabel (bahkan tetap berlatar hijau), jadi kodenya tak pernah
+// "hilang" dan tak pernah diarsipkan. Sumber lain (wuwastatus) sudah benar
+// memindahkannya ke arsip, tapi kode yang cuma dipegang wiki tak tertolong.
+//
+// Jalur ROBLOX sudah punya aturan ini sejak lama (fetch-roblox.mjs: "endsAt
+// sudah lewat → definitif, tanpa grace", expiredBy "endsAt"); jalur mobile/gacha
+// tak pernah kebagian. Ditaruh di sini, bukan di fetch-codes.mjs, supaya kedua
+// pipeline dijaga aturan yang sama — di Roblox ia jadi jaring lapis kedua yang
+// tak mengubah apa-apa karena keputusannya sudah diambil lebih dulu.
+//
+// TANPA GRACE, sengaja. Grace 48 jam yang dipakai aturan lain melindungi kode
+// BARU dari sumber yang telat update — itu soal tebakan. endsAt bukan tebakan:
+// sumbernya sendiri yang menyatakan kapan kode berhenti berlaku. Menahannya
+// hanya memperpanjang umur kode yang sudah pasti mati di tangan pembaca.
 
 import { codeKey } from "./normalize.mjs";
 
@@ -70,7 +97,25 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now,
   // paling atas di sort "Terbaru". Untuk kode tanpa tanggal-rilis sumber, flag
   // ini yang mencegah seluruh katalog game baru membanjiri puncak (lihat
   // site/src/lib/codes.mjs). Sekali di-set, dipertahankan antar-run.
-  const active = freshActive.map((item) => {
+  // Waktu run dipakai dari parameter `now`, BUKAN Date.now(): seluruh fungsi ini
+  // memang menerima jamnya dari pemanggil (dan tesnya menyuntikkan jam tetap).
+  const nowMs = Date.parse(now) || Date.now();
+  /** Kode yang waktu berakhirnya sudah lewat. endsAt null/kosong = tak berbatas
+   *  waktu (kode permanen), BUKAN "sudah lewat" — jangan sampai terbalik. */
+  const kedaluwarsa = (it) => {
+    const t = it?.endsAt ? Date.parse(it.endsAt) : 0;
+    return t > 0 && t < nowMs;
+  };
+  /** Tanda arsip untuk kode ber-endsAt lewat. expiredAt = endsAt (waktu matinya
+   *  yang sebenarnya, kita tahu persis), bukan `now` (waktu kita menyadarinya). */
+  const tandaiKedaluwarsa = (it) => ({ ...it, status: "expired", expiredBy: "endsAt", expiredAt: it.endsAt });
+
+  // Kode yang sumber pulangkan sebagai aktif tapi endsAt-nya sudah lewat
+  // dibelokkan ke jalur arsip eksplisit sebelum apa pun yang lain.
+  const freshHidup = [], freshKedaluwarsa = [];
+  for (const item of freshActive) (kedaluwarsa(item) ? freshKedaluwarsa : freshHidup).push(item);
+
+  const active = freshHidup.map((item) => {
     const prior = prevByKey.get(K(item)) ?? prevByKeyCI.get(K(item).toLowerCase());
     // `bulk` = umur TAK DIKETAHUI, jadi kode tak boleh diperlakukan sebagai baru.
     //
@@ -144,17 +189,30 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now,
   // (2) Arsip eksplisit dari sumber (section Legacy/Expired).
   for (const item of freshArchive) addToArchive(item);
 
+  // (4) Arsip lewat endsAt: sumber masih memajangnya, waktunya sudah habis.
+  for (const item of freshKedaluwarsa) addToArchive(tandaiKedaluwarsa(item));
+
   // (3) Arsip otomatis: kode aktif sebelumnya yang kini hilang.
   for (const item of prevActive) {
     const key = K(item);
     if (activeKeys.has(key) || archiveByKey.has(key)) continue;
     if (!covered.has(item.game)) {
       // Sumber game ini gagal ditarik → hilangnya tak bermakna. Pertahankan.
-      active.push({ ...item, fetchedAt: item.fetchedAt ?? now, stale: true });
-      activeKeys.add(key);
+      //
+      // KECUALI endsAt-nya sudah lewat. Pengaman ini melindungi kode yang
+      // nasibnya TAK DIKETAHUI karena sumber down; kode yang waktu berakhirnya
+      // sudah lewat nasibnya justru satu-satunya yang kita tahu pasti. Tanpa
+      // pengecualian ini, sumber yang mati berhari-hari (kejadian nyata: NIKKE
+      // ~10 hari, Guardian Tales ~24 hari) menahan kode mati tetap tayang.
+      if (!kedaluwarsa(item)) {
+        active.push({ ...item, fetchedAt: item.fetchedAt ?? now, stale: true });
+        activeKeys.add(key);
+        continue;
+      }
+      addToArchive(tandaiKedaluwarsa(item));
       continue;
     }
-    addToArchive(item);
+    addToArchive(kedaluwarsa(item) ? tandaiKedaluwarsa(item) : item);
   }
 
   // Kode yang HIDUP LAGI: sempat diarsipkan (hilang dari sumber), lalu muncul
