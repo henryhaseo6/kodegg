@@ -9,8 +9,23 @@ import { fetchWuwaStatus } from "../src/sources/wuwastatus.mjs";
 const UA = "test";
 const games = { wuwa: { name: "Wuthering Waves" } };
 
+// Tanggal "Last updated" WAJIB relatif ke saat tes dijalankan, karena sumbernya
+// punya guard kesegaran (MAX_AGE_DAYS = 30) yang membandingkan ke Date.now().
+//
+// Fixture lama menulis "July 11, 2026" — segar waktu tesnya dibuat, lalu lewat
+// ambang 30 hari pada 10 Agu 2026 dan membuat tiga tes ini merah tanpa ada satu
+// baris pun berubah di kode produksi (wuwastatus tetap normal: run 13 Agu 2026
+// memulangkan 1 kode). Tes yang membusuk sendiri lebih buruk daripada tak ada
+// tes: yang merah permanen berhenti dibaca, dan kegagalan asli ikut tenggelam.
+// Pola relatif ini sudah dipakai wiki.test.mjs (ageDays); di sini luput.
+const BULAN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const hariEN = (mundurHari) => {
+  const d = new Date(Date.now() - mundurHari * 86400000);
+  return `${BULAN[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
+};
+
 // HTML mini meniru struktur wuwastatus: section Active + Archive terpisah.
-function pageHTML({ updated = "July 11, 2026", active = "", archive = "" }) {
+function pageHTML({ updated = hariEN(3), active = "", archive = "" }) {
   return `
     <div>Last updated: <strong>${updated}</strong></div>
     <h2>Active Codes</h2>
@@ -84,6 +99,21 @@ test("guard kesegaran: 'Last updated' terlalu lama → skip", async () => {
   assert.equal(r.items.length, 0, "situs basi tak menyumbang kode");
   assert.ok(!r.covered.has("wuwa"));
   assert.equal(r.failed, 1);
+});
+
+// Ambang MAX_AGE_DAYS = 30 dipatok dari DUA sisi. Tanpa sisi "masih dipercaya",
+// guard yang kelewat ketat (mis. ambang tak sengaja jadi 3 hari) tetap hijau —
+// dan sumbernya hilang diam-diam dari produksi, persis kegagalan yang paling
+// susah kelihatan karena hasilnya cuma "kode wuwa berkurang".
+test("guard kesegaran: 29 hari masih dipercaya, 31 hari ditolak", async () => {
+  const isi = card("WUTHERINGGIFT", "permanent", "<strong>50 Astrites</strong>");
+  const muda = await run(pageHTML({ updated: hariEN(29), active: isi }));
+  assert.deepEqual(muda.items.map((i) => i.code), ["WUTHERINGGIFT"], "29 hari harus lolos");
+  assert.equal(muda.failed, 0);
+
+  const tua = await run(pageHTML({ updated: hariEN(31), active: isi }));
+  assert.equal(tua.items.length, 0, "31 hari harus ditolak");
+  assert.equal(tua.failed, 1);
 });
 
 test("layout berubah (section Active hilang) → skip, bukan sampah", async () => {
