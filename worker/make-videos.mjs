@@ -89,6 +89,19 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // Mau lebih dari 57/hari: tambah project Google Cloud kedua (rotasi sudah
 // didukung lewat YT_CLIENT_ID_2/SECRET_2/REFRESH_TOKEN_2) — itu menggandakan
 // kuota query, bukan menaikkan angka ini.
+//
+// KOREKSI 13 Agu 2026 — PREMIS SELURUH PARAGRAF DI ATAS TERNYATA KELIRU.
+// Dengan jumlah panggilan yang akhirnya tercatat (video/yt-kuota.mjs), selisih
+// konsol satu run bisa dipecah persis: 2.017 unit untuk 13 video, dan SEMUANYA
+// milik playlist + thumbnail + pembacaan. videos.insert tak menyumbang satu unit
+// pun ke "Queries per day" — upload dibatasi kuota terpisah "Video Uploads per
+// day" (100). Jadi "163,6 unit per video" bukan harga upload, melainkan harga
+// rombongan yang menyertainya.
+//
+// Artinya plafon unit sekarang ~10.000/103 ≈ 97 video, jauh di atas 57. Angka 57
+// SENGAJA DIBIARKAN: menaikkannya keputusan pemilik kanal (menyangkut berapa
+// banyak yang layak terbit sehari), bukan konsekuensi otomatis dari kuota yang
+// ternyata lebih longgar. Batas kerasnya tetap 100 upload/hari.
 const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 57);
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke

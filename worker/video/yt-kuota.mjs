@@ -35,19 +35,26 @@ export const KUOTA_HARIAN = Number(process.env.YT_KUOTA_HARIAN || 10000);
 // 75.200 unit, sementara konsol hari itu mencatat 10.038 — jadi tarif yang
 // ditagihkan ke project ini jelas bukan 1.600.
 //
-// 60 DIPILIH SUPAYA COCOK DENGAN ANGKA KONSOL YANG SUDAH TERUKUR, bukan
-// diturunkan sendiri: make-videos.mjs mencatat 163,6 unit per video otomatis
-// (pengukuran konsol 5–11 Agu 2026). Satu video memanggil videos.insert +
-// videos.list (cek privacy) + playlists.list + playlistItems.list +
-// playlistItems.insert (50) + thumbnails.set (50) = insert + 103 → insert ≈ 60.
+// NOL — DIUKUR, bukan ditaksir. 13 Agu 2026, run dengan jumlah panggilan yang
+// tercatat lengkap (inilah gunanya pencatat ini): konsol 1.660 → 3.677 unit,
+// selisih 2.017. Panggilan run itu, dihargai dengan tarif dokumentasi (tulis 50,
+// baca 1) dan videos.insert DIABAIKAN:
+//   playlistItems.insert ×22, thumbnails.set ×13, playlists.insert ×2,
+//   playlists.update ×1                                        = 1.900
+//   playlists.list ×93, videos.list ×13, playlistItems.list ×11 =   117
+//                                                          jumlah = 2.017  ← PAS
+// Sisa untuk 13 videos.insert: 0. Jadi upload TIDAK ditagih ke "Queries per day"
+// sama sekali; yang membatasinya kuota TERPISAH "Video Uploads per day" (100).
 //
-// Sengaja TIDAK memakai angka yang lebih besar walau hitungan 12 Agu 2026 sempat
-// cocok di ~110: menaksir terlalu mahal membuat rem menahan produksi di ~44
-// video padahal jatahnya 57 — kerugian yang nyata, ditukar dengan bahaya yang
-// cuma perkiraan. Kalau konsol nanti bilang lain, ubah DI SINI (atau lewat env
-// YT_UNIT_UPLOAD); jangan lagi menggeser MAX_PER_DAY, karena itu mencampur ulang
-// dua hal yang beda — jumlah video vs harga per panggilan.
-const TARIF_UPLOAD = Number(process.env.YT_UNIT_UPLOAD || 60);
+// Ini membatalkan premis yang dipakai bertahun di make-videos.mjs — angka
+// "163,6 unit per video" itu ternyata ongkos playlist+thumbnail+pembacaan yang
+// MENYERTAI upload, bukan harga uploadnya. Dokumentasi Google menyebut 1.600
+// untuk videos.insert; yang ditagihkan ke project ini bukan itu.
+//
+// Kalau suatu hari konsol tak lagi cocok, ubah DI SINI (atau lewat env
+// YT_UNIT_UPLOAD) — jangan menggeser MAX_PER_DAY, karena itu mencampur ulang dua
+// hal yang beda: jumlah video vs harga per panggilan.
+const TARIF_UPLOAD = Number(process.env.YT_UNIT_UPLOAD || 0);
 const tarif = (metode) => {
   if (metode === "videos.insert") return TARIF_UPLOAD;
   if (metode === "search.list") return 100; // termahal — jangan dipakai di jalur otomatis
@@ -81,8 +88,11 @@ export function unitTerpakai() {
 }
 export const unitSisa = () => Math.max(0, KUOTA_HARIAN - unitTerpakai());
 
-/** Ongkos satu video otomatis: insert + cek privacy (1) + cari playlist (1) +
- *  cek isi playlist (1) + masukkan ke playlist (50) + thumbnail (50) ≈ 163.
+/** Ongkos satu video otomatis: insert (0) + cek privacy (1) + cari playlist (1)
+ *  + cek isi playlist (1) + masukkan ke playlist (50) + thumbnail (50) = 103.
+ *  Terukur 155/video pada run 13 Agu 2026 — selisihnya dari playlist yang masih
+ *  disisir penuh (peta ID baru terisi run itu juga) dan insert-dobel pada
+ *  playlist bersortir otomatis yang belum dikenali; dua-duanya menyusut sendiri.
  *  Dipakai sebagai REM: berhenti SEBELUM unitnya kurang, bukan sesudah upload
  *  ditolak — penolakan terjadi setelah render, jadi waktunya telanjur terbuang. */
 export const UNIT_PER_VIDEO = TARIF_UPLOAD + 1 + 1 + 1 + 50 + 50;
