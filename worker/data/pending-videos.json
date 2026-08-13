@@ -222,6 +222,159 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "shindo-life",
+    "name": "Shindo Life",
+    "displayName": "Shindo Life [250]",
+    "slug": "shindo-life",
+    "players": 27656,
+    "redeemNote": {
+      "en": "Once your character has reached 500 Spins in-game, these codes will no longer grant you with any further Spins. Please ensure your Spin balance is below 500 in order to redeem more Spins.",
+      "links": [],
+      "kind": "catatan"
+    },
+    "alias": null,
+    "rank": 27656,
+    "newCodes": [
+      {
+        "game": "shindo-life",
+        "gameName": "Shindo Life",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/shindo-life"
+        },
+        "code": "ThankYouForPatience250Patch!",
+        "reward": "10,000 RELLcoins and 100 Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1786576920000,
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-08-13T00:02:56.694Z",
+        "fetchedAt": "2026-08-13T00:02:56.694Z"
+      }
+    ],
+    "activeCount": 18,
+    "fetchedAt": "2026-08-13T00:02:56.694Z",
+    "displayCodes": [
+      {
+        "code": "ThankYouForPatience250Patch!",
+        "reward": "10,000 RELLcoins and 100 Spins",
+        "isNew": true
+      },
+      {
+        "code": "FixUpdateIsOutEarly!",
+        "reward": "10,000 RELLcoins and 100 Spins",
+        "isNew": false
+      },
+      {
+        "code": "20NewCloaksAdded!",
+        "reward": "10,000 RELLcoins and 100 Spins",
+        "isNew": false
+      },
+      {
+        "code": "NewBugPatchandFixes250!",
+        "reward": "25,000 RELLcoins and 250 Spins",
+        "isNew": false
+      },
+      {
+        "code": "NewFREEFALLings2026!",
+        "reward": "25,000 RELLcoins and 45 Spins",
+        "isNew": false
+      },
+      {
+        "code": "FACEIDFIXUPD!",
+        "reward": "150 Spins and 15,000 RELL Coins",
+        "isNew": false
+      },
+      {
+        "code": "ThankYouForPatience249Patch!",
+        "reward": "100 Spins and 10,000 RELL Coins",
+        "isNew": false
+      },
+      {
+        "code": "2mLikesC0d3d!",
+        "reward": "40,000 Rell Coins",
+        "isNew": false
+      },
+      {
+        "code": "RELLGems!",
+        "reward": "10,000 RELL Coins.You can buy the Spin Storage gamepass to increase the maximum spin storage from 500 to 1000",
+        "isNew": false
+      },
+      {
+        "code": "TickDamageBugs!",
+        "reward": "Rell Coins, Spins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ThankYouForPatience250Patch!",
+        "reward": "10,000 RELLcoins and 100 Spins",
+        "isNew": true
+      },
+      {
+        "code": "FixUpdateIsOutEarly!",
+        "reward": "10,000 RELLcoins and 100 Spins",
+        "isNew": false
+      },
+      {
+        "code": "20NewCloaksAdded!",
+        "reward": "10,000 RELLcoins and 100 Spins",
+        "isNew": false
+      },
+      {
+        "code": "NewBugPatchandFixes250!",
+        "reward": "25,000 RELLcoins and 250 Spins",
+        "isNew": false
+      },
+      {
+        "code": "NewFREEFALLings2026!",
+        "reward": "25,000 RELLcoins and 45 Spins",
+        "isNew": false
+      },
+      {
+        "code": "FACEIDFIXUPD!",
+        "reward": "150 Spins and 15,000 RELL Coins",
+        "isNew": false
+      },
+      {
+        "code": "ThankYouForPatience249Patch!",
+        "reward": "100 Spins and 10,000 RELL Coins",
+        "isNew": false
+      },
+      {
+        "code": "2mLikesC0d3d!",
+        "reward": "40,000 Rell Coins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "TickDamageBugs!",
+      "LetsGOOOO40k!",
+      "FixingShindoBuggyTimes!",
+      "PatchUpdate249point5!",
+      "Shindo4Life2026!",
+      "6YearsofShindoSoon!",
+      "ShindoLife2026Peak!",
+      "WalkingOnTheWalls!",
+      "WePerfectedRELLSeas!",
+      "ThankYouForPatience250Patch!",
+      "FixUpdateIsOutEarly!",
+      "20NewCloaksAdded!",
+      "NewBugPatchandFixes250!",
+      "NewFREEFALLings2026!",
+      "FACEIDFIXUPD!",
+      "ThankYouForPatience249Patch!",
+      "2mLikesC0d3d!",
+      "RELLGems!"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "throw-a-coin",
     "name": "Throw a Coin",
     "displayName": "[🌎W4] Throw a Coin",
