@@ -59,8 +59,17 @@ function parseCodes(html) {
     if (!code || !CODE_RE.test(code)) continue;
     const rwMatch = c.match(/\\"rewards\\":\[([\s\S]*?)\]/);
     const rw = rwMatch ? rwMatch[1] : "";
+    // `quantity` di sumber ini BUKAN angka murni — sebagiannya sudah membawa
+    // penanda kalinya sendiri ("x20"), sebagian tidak ("20"). Menempelkan "×" ke
+    // dua-duanya menghasilkan "Invite Letters ×x20": tanda kali dobel yang
+    // tampil apa adanya di kartu situs DAN di layar video.
+    //
+    // Terhitung 13 Agu 2026: 110 kode di 14 game (Star Sailors 24, Isekai 16,
+    // Mongil 13, Dragon Traveler 13, AFK Journey 8). Ketahuan justru saat naskah
+    // VO membacakannya — "Diamonds kali x seribu" — karena teks yang dibaca
+    // keras memaksa kita memperhatikan teks yang selama ini cuma dilewati mata.
     const rewards = [...rw.matchAll(/\\"quantity\\":\\"([^\\"]*)\\",\\"name\\":\\"([^\\"]*)\\"/g)].map(
-      (m) => `${m[2]} ×${m[1]}`,
+      (m) => `${m[2]} ×${m[1].replace(/^\s*[×x]\s*/i, "")}`,
     );
     out.push({
       code,
