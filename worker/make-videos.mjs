@@ -15,6 +15,7 @@ import { uploadVideo, ytConfigured, attachToPlaylist, ytProjectCount } from "./v
 import { UNIT_PER_VIDEO, unitSisa, ringkas as ringkasKuota } from "./video/yt-kuota.mjs";
 import { gameSlug } from "./src/games.mjs";
 import { simpanPending, buangPending, semuaPending } from "./video/pending-thumbs.mjs";
+import { saringSusulan } from "./video/susulan.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA = resolve(HERE, "data");
@@ -910,8 +911,13 @@ async function main() {
     // Ongkosnya bukan cuma 164 unit kuota terbuang: di kanal, dua video judul
     // nyaris kembar untuk game yang sama, terbit selisih menit, terbaca sebagai
     // spam oleh penonton maupun YouTube.
-    const sudahJadiKandidat = new Set(candidates.map((c) => c.game).filter(Boolean));
-    const susulan = buildBacklog(state, muat).filter((c) => !sudahJadiKandidat.has(c.game));
+    //
+    // 13 Agu 2026: saringan yang dipasang di sini ternyata TAK PERNAH BEKERJA —
+    // ia mencocokkan `c.game`, padahal kandidat berkunci `c.id` (`game` itu nama
+    // field di record KODE dan di entri log). Himpunannya selalu kosong, jadi
+    // semua lolos. Pindah ke video/susulan.mjs supaya ada tesnya + alarm bila
+    // field identitas berganti nama lagi.
+    const susulan = saringSusulan(buildBacklog(state, muat), candidates);
     if (susulan.length) {
       candidates.push(...susulan);
       console.log(`borongan susulan (jam ${jamPT(now)} PT, sisa kuota ${remaining}): +${susulan.length} game belum pernah ada videonya — ${susulan.slice(0, 3).map((c) => `${c.name} (${c.players})`).join(", ")}${susulan.length > 3 ? ", …" : ""}`);
