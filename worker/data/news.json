@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T16:03:11.948Z",
+  "updatedAt": "2026-08-13T17:03:22.730Z",
   "counts": {
     "active": 89,
     "archived": 77
@@ -54,22 +54,6 @@
       "publishedAt": "2026-08-12T18:00:07.000Z"
     },
     {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "v9.0 Maintenance Announcement and New Events Preview",
-        "id": "Pengumuman Maintenance v9.0 dan Preview Event Baru"
-      },
-      "excerpt": {
-        "en": "SEA Dear Captain, to provide a better gaming experience, Battleship Hyperion will undergo server maintenance from 10:00 to 16:00 on AUG 20 (UTC+8). Hyperion will be updated to v9.0",
-        "id": "Dear Kapten, untuk memberikan pengalaman bermain yang lebih baik bagi Kapten, Hyperion akan melakukan maintenance server pada 20 Agustus 09:00 - 15:00 WIB. Hyperion akan diupdate k"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/07/05542df5ad5d9fe29b8a44d8b781e812_4547267349494376010.png",
-      "url": "https://www.hoyolab.com/article/46245284",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-12T10:00:02.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -82,6 +66,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
       "url": "https://www.hoyolab.com/article/46245283",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-12T10:00:02.000Z"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "v9.0 Maintenance Announcement and New Events Preview",
+        "id": "Pengumuman Maintenance v9.0 dan Preview Event Baru"
+      },
+      "excerpt": {
+        "en": "SEA Dear Captain, to provide a better gaming experience, Battleship Hyperion will undergo server maintenance from 10:00 to 16:00 on AUG 20 (UTC+8). Hyperion will be updated to v9.0",
+        "id": "Dear Kapten, untuk memberikan pengalaman bermain yang lebih baik bagi Kapten, Hyperion akan melakukan maintenance server pada 20 Agustus 09:00 - 15:00 WIB. Hyperion akan diupdate k"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/07/05542df5ad5d9fe29b8a44d8b781e812_4547267349494376010.png",
+      "url": "https://www.hoyolab.com/article/46245284",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-12T10:00:02.000Z"
     },
@@ -630,22 +630,6 @@
       "publishedAt": "2026-08-06T08:20:18.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
-        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
-        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
-      "url": "https://www.hoyolab.com/article/46159934",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T04:00:08.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -658,6 +642,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
       "url": "https://www.hoyolab.com/article/46159935",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T04:00:08.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
+      "url": "https://www.hoyolab.com/article/46159934",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-06T04:00:08.000Z"
     },
