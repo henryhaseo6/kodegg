@@ -1,14 +1,66 @@
 {
-  "generatedAt": "2026-08-13T18:03:41.061Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-08-13T19:03:34.160Z",
+  "codes": [
     {
-      "game": "anime-fighting-simulator-kdmf",
-      "count": 9,
-      "fresh": []
+      "game": "inazuma-strikers",
+      "gameName": "Inazuma Strikers",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/inazuma-strikers"
+      },
+      "code": "PROJECT",
+      "reward": null,
+      "date": "2026-08-13T13:40:52.968Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-13T19:03:34.160Z",
+      "fetchedAt": "2026-08-13T19:03:34.160Z"
     },
     {
-      "game": "st-blockade-reboot",
+      "game": "monsterverze",
+      "gameName": "MonsterVerze",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/monsterverze"
+      },
+      "code": "FREEUS7",
+      "reward": null,
+      "date": "2026-08-13T13:40:52.534Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-13T19:03:34.160Z",
+      "fetchedAt": "2026-08-13T19:03:34.160Z"
+    },
+    {
+      "game": "inside-brainrot-head",
+      "gameName": "INSIDE BRAINROT HEAD",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/inside-brainrot-head"
+      },
+      "code": "Sunday",
+      "reward": "20,000 Trade Tokens",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786629120000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-13T19:03:34.160Z",
+      "fetchedAt": "2026-08-13T19:03:34.160Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "blockade-battlefront",
       "count": 1,
       "fresh": []
     }
