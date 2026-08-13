@@ -1,71 +1,82 @@
 {
-  "generatedAt": "2026-08-13T03:03:33.109Z",
-  "codes": [
-    {
-      "game": "bloxstrike",
-      "gameName": "BloxStrike",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/bloxstrike"
-      },
-      "code": "HAPPYBDAYYUUTO",
-      "reward": "125 Credits",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1786586100000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-13T03:03:33.109Z",
-      "fetchedAt": "2026-08-13T03:03:33.109Z"
-    },
-    {
-      "game": "murder-duels",
-      "gameName": "Murder Duels",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/murder-duels"
-      },
-      "code": "150KLIKES",
-      "reward": "Recruit Case",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1786590180000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-13T03:03:33.109Z",
-      "fetchedAt": "2026-08-13T03:03:33.109Z"
-    },
-    {
-      "game": "battle-for-dream-island-again",
-      "gameName": "Battle for Dream Island Again",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/battle-for-dream-island-again"
-      },
-      "code": "30m",
-      "reward": "2 Gems",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1786584060000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-13T03:03:33.109Z",
-      "fetchedAt": "2026-08-13T03:03:33.109Z"
-    }
-  ],
+  "generatedAt": "2026-08-13T04:03:35.952Z",
+  "codes": [],
   "bulkGames": [
     {
-      "game": "anime-final-strike",
-      "count": 22,
+      "game": "ghost-driver",
+      "count": 1,
+      "fresh": [
+        {
+          "code": "SORRYFORLATE",
+          "reward": "Get 10K Cash"
+        }
+      ]
+    },
+    {
+      "game": "mutant-plants-base-defense",
+      "count": 14,
+      "fresh": [
+        {
+          "code": "BUGFIX05549",
+          "reward": "10 Void Grenades"
+        },
+        {
+          "code": "BUGFIX0983",
+          "reward": "10 Shadow Grenades"
+        },
+        {
+          "code": "UPD1665452",
+          "reward": "10 Frozen Grenades"
+        },
+        {
+          "code": "UPD6512356",
+          "reward": "10 Flame Grenades"
+        },
+        {
+          "code": "BUGFIX000",
+          "reward": "200 Gems"
+        },
+        {
+          "code": "BUGFIX999",
+          "reward": "200 Gems"
+        },
+        {
+          "code": "BUGFIX785",
+          "reward": "200 Gems"
+        },
+        {
+          "code": "BUGFIX154",
+          "reward": "5 Venom Fruit"
+        },
+        {
+          "code": "BUGFIX652",
+          "reward": "5 Void Fruit"
+        },
+        {
+          "code": "BUGFIX56954",
+          "reward": "5 Shadow Fruit"
+        },
+        {
+          "code": "RELEASE3",
+          "reward": "10 Reversion Fruit"
+        },
+        {
+          "code": "RELEASE2",
+          "reward": "10 Void Fruit"
+        },
+        {
+          "code": "RELEASE1",
+          "reward": "500 Gems"
+        },
+        {
+          "code": "RELEASE",
+          "reward": "100 Gems"
+        }
+      ]
+    },
+    {
+      "game": "muscle-transform-simulator",
+      "count": 5,
       "fresh": []
     }
   ]
