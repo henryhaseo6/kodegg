@@ -1,5 +1,52 @@
 {
-  "generatedAt": "2026-08-13T05:03:10.833Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-08-13T06:03:31.090Z",
+  "codes": [
+    {
+      "game": "roll-an-anime",
+      "gameName": "Roll an Anime",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/roll-an-anime"
+      },
+      "code": "ORIGINAL",
+      "reward": "25x Cash (2 Hours)",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786594020000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-13T06:03:31.090Z",
+      "fetchedAt": "2026-08-13T06:03:31.090Z"
+    },
+    {
+      "game": "build-a-basketball-team",
+      "gameName": "Build A Basketball Team",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/build-a-basketball-team"
+      },
+      "code": "SURPRISE",
+      "reward": "25 Rerolls and 15 Refreshes",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1786586280000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-13T06:03:31.090Z",
+      "fetchedAt": "2026-08-13T06:03:31.090Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "anime-fighting-simulator-kdmf",
+      "count": 9,
+      "fresh": []
+    }
+  ]
 }
