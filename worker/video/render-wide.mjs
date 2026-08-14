@@ -255,7 +255,7 @@ function wavMono(mix) {
   return b;
 }
 
-export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null, media = null, wawasan = null, redeem = null, maksDetik = null }) {
+export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null, media = null, wawasan = null, redeem = null, maksDetik = null, seriesWaktu = null }) {
   const { createCanvas, loadImage } = await canvasLib();
   const ikon = iconPath && existsSync(iconPath) ? await loadImage(iconPath) : null;
   // media datang sebagai Buffer PNG dari src/game-media.mjs; dimuat di sini
@@ -642,9 +642,22 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     const n = deret.length, mn = Math.min(...deret), mx = Math.max(...deret), rng = mx - mn || 1;
     const px = (i) => gx + (i / (n - 1)) * gw, py = (v) => gy + gh - ((v - mn) / rng) * gh;
     ctx.textAlign = "left"; ctx.font = "700 24px Grotesk"; ctx.fillStyle = C.muted;
-    ctx.fillText("PEMAIN  ·  24 JAM TERAKHIR  ·  LAST 24 HOURS", gx, GY + 28);
+    // Judul pita ikut jujur: jendela bergulir memang "24 jam terakhir", berkas
+    // harian TIDAK — itu hari kalender kemarin, dan menyebutnya 24 jam terakhir
+    // adalah klaim yang meleset 13-37 jam untuk video yang terbit siang hari.
+    ctx.fillText(seriesWaktu ? "PEMAIN  ·  24 JAM TERAKHIR  ·  LAST 24 HOURS" : "PEMAIN  ·  KEMARIN  ·  YESTERDAY", gx, GY + 28);
+    // SUMBU WAKTU MENGIKUTI DATANYA.
+    //
+    // "00:00 … 24:00" hanya benar untuk berkas harian (hari kalender kemarin).
+    // Untuk jendela BERGULIR — 24 jam sampai detik render — label itu bohong:
+    // titik paling kanan bukan tengah malam melainkan sekarang. Jamnya dihitung
+    // dari waktu titik pertama & terakhir yang benar-benar dipulangkan sumber.
     ctx.font = "700 18px Mono"; ctx.fillStyle = "rgba(166,175,191,0.55)"; ctx.textAlign = "center";
-    ["00:00", "06:00", "12:00", "18:00", "24:00"].forEach((t, k) => ctx.fillText(t, gx + (k / 4) * gw, GY + GH - 10));
+    const jamWIB = (ms) => new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Jakarta", hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date(ms));
+    const sumbu = seriesWaktu?.mulaiMs && seriesWaktu?.sampaiMs
+      ? Array.from({ length: 5 }, (_, k) => jamWIB(seriesWaktu.mulaiMs + (k / 4) * (seriesWaktu.sampaiMs - seriesWaktu.mulaiMs)))
+      : ["00:00", "06:00", "12:00", "18:00", "24:00"];
+    sumbu.forEach((t, k) => ctx.fillText(t, gx + (k / 4) * gw, GY + GH - 10));
     const prog = clamp((gt - grafikMulai) / Math.max(0.001, grafikAkhir - grafikMulai));
     const upto = Math.max(1, Math.floor(prog * (n - 1)));
     ctx.beginPath(); ctx.moveTo(px(0), gy + gh);

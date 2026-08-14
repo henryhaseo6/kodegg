@@ -22,6 +22,48 @@
  * @param {string} [tanggal]          YYYY-MM-DD (WIB); bawaan = kemarin
  * @returns {Promise<{series:number[], puncak:number, rata:number, rendah:number, titik:number, tanggal:string}|null>}
  */
+/**
+ * Deret pemain BERGULIR: 24 jam terakhir sampai saat render, bukan hari kalender
+ * kemarin.
+ *
+ * Kenapa ini ada terpisah dari seriesPemain: berkas harian R2 baru terbentuk
+ * setelah harinya lewat, jadi ia SELALU memulangkan kemarin. Untuk video yang
+ * terbit jam 13:00, itu berarti data berumur 13-37 jam di bawah label "24 JAM
+ * TERAKHIR". Endpoint /roblox-series membacanya dari buffer KV yang memuat hari
+ * berjalan.
+ *
+ * MEMULANGKAN null BILA ENDPOINT-NYA BELUM ADA (Worker versi lama menjawab 404).
+ * Pemanggil wajib jatuh ke seriesPemain — dengan begitu perubahan ini bisa
+ * mendarat sebelum Worker-nya di-deploy tanpa mematikan grafik siapa pun.
+ * Worker di-deploy manual lewat dashboard (lihat DEPLOY-CRON.md), jadi jeda
+ * antara kode mendarat dan Worker diperbarui itu normal, bukan kecelakaan.
+ */
+export async function seriesPemainBergulir(universeId, { jam = 24, minTitik = 12 } = {}) {
+  const base = process.env.WORKER_URL, key = process.env.TRIGGER_KEY;
+  if (!base || !key || !universeId) return null;
+  try {
+    const r = await fetch(`${base.replace(/\/$/, "")}/roblox-series?uid=${encodeURIComponent(universeId)}&jam=${jam}&key=${encodeURIComponent(key)}`, { headers: { accept: "application/json" } });
+    if (!r.ok) return null; // 404 = Worker belum diperbarui → pemanggil pakai jalur lama
+    const j = await r.json();
+    const titik = Array.isArray(j?.titik) ? j.titik.filter((p) => typeof p?.v === "number") : [];
+    if (titik.length < minTitik) return null; // terlalu bolong untuk disebut "24 jam"
+    const isi = titik.map((p) => p.v);
+    return {
+      series: isi,
+      puncak: Math.max(...isi),
+      rendah: Math.min(...isi),
+      rata: Math.round(isi.reduce((a, b) => a + b, 0) / isi.length),
+      titik: isi.length,
+      // Dipakai renderer untuk melabeli sumbu dengan JAM SEBENARNYA. Tanpa ini
+      // sumbunya akan tetap tertulis 00:00-24:00 — label hari kalender pada
+      // data yang bukan hari kalender.
+      mulaiMs: titik[0].ms,
+      sampaiMs: titik[titik.length - 1].ms,
+      bergulir: true,
+    };
+  } catch { return null; }
+}
+
 export async function seriesPemain(universeId, tanggal = null) {
   const base = process.env.WORKER_URL, key = process.env.TRIGGER_KEY;
   if (!base || !key || !universeId) return null;

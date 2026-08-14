@@ -38,6 +38,8 @@ export default {
     if (url.pathname === "/roblox-daily") return robloxDaily(url, env);
     // Baca file harian PADAT dari R2 (database permanen). ?date=YYYY-MM-DD atau ?list=1
     if (url.pathname === "/roblox-db") return robloxDb(url, env);
+    // Deret CCU BERGULIR utk SATU game: /roblox-series?uid=...&jam=24&key=...
+    if (url.pathname === "/roblox-series") return robloxSeries(url, env);
     // Log manual sekali (uji): /log?key=...
     if (url.pathname === "/log") {
       if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) return new Response("unauthorized", { status: 401 });
@@ -123,6 +125,69 @@ async function logPlayers(env) {
 
 // GET /roblox-daily?date=YYYY-MM-DD&key=TRIGGER_KEY → {date, count, names, snapshots:[{uid:ccu}]}
 // Default date = hari WIB ini. Pipeline video ambil H-1 lalu hitung rollup Node.
+/**
+ * Deret CCU BERGULIR untuk SATU game: N jam terakhir sampai DETIK INI.
+ *
+ * KENAPA ADA. Grafik di video Roblox memakai berkas harian R2, dan berkas itu
+ * baru ada setelah harinya lewat — jadi yang tergambar selalu HARI KALENDER
+ * KEMARIN. Untuk video yang terbit jam 13:00, datanya berumur 13-37 jam,
+ * sementara labelnya menulis "24 JAM TERAKHIR". Endpoint ini membuat label itu
+ * jadi benar.
+ *
+ * Sumbernya KV, bukan R2, karena hanya KV yang punya data HARI BERJALAN (buffer
+ * TTL 4 hari). Waktu tiap titik hidup di NAMA KUNCI (`snap:<tanggal>:<HHMM>`),
+ * bukan di isinya — itu sebabnya /roblox-daily tak bisa dipakai untuk ini: ia
+ * memulangkan isi snapshot tanpa nama kuncinya, jadi titiknya tak bisa
+ * ditempatkan di waktu mana pun.
+ *
+ * Jendelanya dipotong dari daftar kunci DULU, baru isinya diambil — supaya
+ * jumlah pembacaan KV mengikuti lebar jendela (±144 utk 24 jam), bukan seluruh
+ * isi buffer.
+ */
+async function robloxSeries(url, env) {
+  if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) return new Response("unauthorized", { status: 401 });
+  if (!env.ROBLOX_LOG) return new Response("KV ROBLOX_LOG belum di-bind", { status: 503 });
+  const uid = String(url.searchParams.get("uid") || "").trim();
+  if (!uid) return new Response("uid wajib", { status: 400 });
+  const jam = Math.min(48, Math.max(1, Number(url.searchParams.get("jam")) || 24));
+
+  const now = Date.now();
+  const batas = now - jam * 3600e3;
+  // Dua hari WIB sudah cukup menutup jendela apa pun sampai 48 jam? Tidak —
+  // 48 jam bisa menyentuh tiga tanggal WIB. Dihitung dari batasnya, bukan
+  // ditebak dua hari ke belakang.
+  const tanggal = [];
+  for (let t = batas; t <= now + 864e5; t += 864e5) {
+    const d = wibNow(new Date(t)).date;
+    if (!tanggal.includes(d)) tanggal.push(d);
+  }
+  const kunci = [];
+  for (const d of tanggal) {
+    const list = await env.ROBLOX_LOG.list({ prefix: `snap:${d}:` });
+    for (const k of list.keys) {
+      const hhmm = k.name.split(":").pop();
+      if (!/^\d{4}$/.test(hhmm)) continue;
+      // Kunci ditulis dengan jam WIB, jadi offsetnya eksplisit di sini.
+      const ms = Date.parse(`${d}T${hhmm.slice(0, 2)}:${hhmm.slice(2)}:00+07:00`);
+      if (Number.isFinite(ms) && ms >= batas && ms <= now) kunci.push({ name: k.name, ms });
+    }
+  }
+  kunci.sort((a, b) => a.ms - b.ms);
+
+  const titik = [];
+  for (const k of kunci) {
+    const v = await env.ROBLOX_LOG.get(k.name);
+    if (!v) continue;
+    const snap = JSON.parse(v);
+    const ccu = snap.ccu ?? snap; // kompat format lama {uid:ccu}
+    const c = ccu[uid];
+    // Game yang sedang keluar dari chart TIDAK dicatat nol — titiknya memang
+    // tak ada, dan itu beda artinya. Dilewati, bukan diisi.
+    if (typeof c === "number" && c >= 0) titik.push({ ms: k.ms, v: c });
+  }
+  return Response.json({ uid, jam, sampai: now, mulai: batas, count: titik.length, titik });
+}
+
 async function robloxDaily(url, env) {
   if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) return new Response("unauthorized", { status: 401 });
   if (!env.ROBLOX_LOG) return new Response("KV ROBLOX_LOG belum di-bind", { status: 503 });

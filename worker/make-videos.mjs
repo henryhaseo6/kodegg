@@ -8,7 +8,7 @@ import { spawn } from "node:child_process";
 import { renderShort, ffmpegBin } from "./video/render-short.mjs";
 import { renderWide, renderWideThumb, fmtWIB } from "./video/render-wide.mjs";
 import { gambarGame } from "./src/game-media.mjs";
-import { seriesPemain } from "./src/player-series.mjs";
+import { seriesPemain, seriesPemainBergulir } from "./src/player-series.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
 import { uploadVideo, ytConfigured, attachToPlaylist, ytProjectCount } from "./video/upload.mjs";
@@ -347,13 +347,19 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
   // kolase ikon) dan tak ada data pemain (pita statistik disembunyikan).
   // Keduanya sudah ditangani renderWide, jadi mobile tetap jalan — cuma polos.
   const media = uid ? await gambarGame(uid, 8) : [];
-  const seri = uid ? await seriesPemain(uid) : null;
+  // BERGULIR DULU (24 jam sampai detik ini), baru jatuh ke berkas harian.
+  // Jalur lama memulangkan hari kalender KEMARIN, jadi grafiknya berumur 13-37
+  // jam padahal berlabel "24 JAM TERAKHIR". Fallback dipertahankan karena
+  // endpoint bergulir hidup di Worker yang di-deploy manual — sebelum itu
+  // di-deploy, videonya tetap bergrafik seperti biasa.
+  const seri = uid ? ((await seriesPemainBergulir(uid)) ?? (await seriesPemain(uid))) : null;
+  if (seri) console.log(`  ↳ grafik pemain: ${seri.titik} titik (${seri.bergulir ? "24 jam bergulir" : "hari kalender " + seri.tanggal})`);
 
   await renderWide({
     game: { name: c.displayName || c.name, slug: c.slug, players: c.players ?? 0 },
     codes: c.displayCodes, activeCount: c.activeCount, fetchedAt: c.fetchedAt,
     iconPath: c.iconPath, outPath: fin, voPath: vo,
-    series: seri?.series ?? null, media,
+    series: seri?.series ?? null, seriesWaktu: seri?.bergulir ? { mulaiMs: seri.mulaiMs, sampaiMs: seri.sampaiMs } : null, media,
     // null utk Roblox → kedua adegan wawasan dilewati, videonya persis seperti
     // sebelum perubahan ini.
     wawasan, redeem,
