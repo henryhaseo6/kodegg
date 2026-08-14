@@ -1,26 +1,99 @@
 {
-  "generatedAt": "2026-08-14T19:08:36.994Z",
+  "generatedAt": "2026-08-14T20:04:51.628Z",
   "codes": [
     {
-      "game": "hell-rails-the-scary-train",
-      "gameName": "Hell Rails The Scary Train",
+      "game": "catch-a-monster",
+      "gameName": "Catch a Monster",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg",
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/catch-a-monster",
+        "Roblox Den": "https://robloxden.com/game-codes/catch-a-monster"
+      },
+      "code": "sylvar",
+      "altCode": "SYLVAR",
+      "reward": "Conduit Egg",
+      "date": "2026-08-10T15:22:08.853Z",
+      "srcNew": true,
+      "srcNewAt": 1786687500000,
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-14T20:04:51.628Z",
+      "fetchedAt": "2026-08-14T20:04:51.628Z"
+    },
+    {
+      "game": "rivals",
+      "gameName": "Rivals",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg",
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/roblox-rivals",
+        "Roblox Den": "https://robloxden.com/game-codes/rivals"
+      },
+      "code": "FREE192",
+      "reward": "x3 Keys",
+      "date": "2026-08-12T16:24:50.327Z",
+      "srcNew": true,
+      "srcNewAt": 1786714320000,
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-14T20:04:51.628Z",
+      "fetchedAt": "2026-08-14T20:04:51.628Z"
+    },
+    {
+      "game": "robong-megabonk",
+      "gameName": "Robong Megabonk",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/hell-rails-the-scary-train-2w7q"
+        "Roblox Den": "https://robloxden.com/game-codes/robong-megabonk"
       },
-      "code": "BUGFIX",
-      "reward": "Money Pack 350 and Clear Mistake Single",
+      "code": "Diamondgamers",
+      "reward": "3,000 Gems",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1786714140000,
+      "srcNewAt": 1786713600000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-14T19:08:36.994Z",
-      "fetchedAt": "2026-08-14T19:08:36.994Z"
+      "firstSeenAt": "2026-08-14T20:04:51.628Z",
+      "fetchedAt": "2026-08-14T20:04:51.628Z"
+    },
+    {
+      "game": "chicken-farm",
+      "gameName": "Chicken Farm",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg",
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/chicken-farm",
+        "Roblox Den": "https://robloxden.com/game-codes/chicken-farm"
+      },
+      "code": "666klikes",
+      "reward": "Double Cash Boost (5 minutes)",
+      "date": "2026-08-08T05:01:35.909Z",
+      "srcNew": true,
+      "srcNewAt": 1786687680000,
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-08-14T20:04:51.628Z",
+      "fetchedAt": "2026-08-14T20:04:51.628Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "royale-high",
+      "count": 1,
+      "fresh": []
+    }
+  ]
 }
