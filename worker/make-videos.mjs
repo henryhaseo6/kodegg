@@ -3,7 +3,7 @@
 // Jalan di GitHub Actions setelah fetch. Aman-dilewati bila YT belum di-set.
 import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync, copyFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { spawn } from "node:child_process";
 import { renderShort, ffmpegBin } from "./video/render-short.mjs";
 import { renderWide, renderWideThumb, fmtWIB } from "./video/render-wide.mjs";
@@ -16,6 +16,8 @@ import { UNIT_PER_VIDEO, unitSisa, ringkas as ringkasKuota } from "./video/yt-ku
 import { gameSlug } from "./src/games.mjs";
 import { simpanPending, buangPending, semuaPending } from "./video/pending-thumbs.mjs";
 import { saringSusulan } from "./video/susulan.mjs";
+import { susunNaskah } from "./video/naskah.mjs";
+import { siklusRilis, kodeSekarat, kodeBaru, kedalamanArsip, ringkasWawasan } from "./video/wawasan.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA = resolve(HERE, "data");
@@ -266,8 +268,63 @@ const stempelTanggal = (d) =>
  * TIDAK boleh dipakai untuk landscape — delay ding-nya pun dipatok ke panjang
  * Shorts (adelay=18150) dan akan meleset di durasi lain.
  */
+// ── WAWASAN & CARA REDEEM — MOBILE SAJA (14 Agu 2026) ────────────────────────
+//
+// Dibuka bertahap, mobile dulu, atas keputusan pemilik kanal. Alasannya bukan
+// teknis melainkan blast radius: mobile 28 game (yang video-nya juga paling
+// telanjang dan yang kebetulan direview manusia), Roblox 586 game dengan volume
+// harian tinggi — cacat yang lolos di sana menggandakan diri jauh lebih cepat
+// daripada bisa kita perbaiki. Roblox tinggal dibuka dengan mencabut penjagaan
+// platform di bawah, setelah mobile terbukti mulus beberapa hari.
+//
+// Registry redeem dimuat SEKALI per proses. Ia tinggal di site/, jadi impornya
+// dibungkus try: worker harus tetap jalan kalau berkas situs berubah bentuk,
+// dan kehilangan satu adegan jauh lebih ringan daripada kehilangan videonya.
+let _redeem = undefined;
+async function redeemRegistry() {
+  if (_redeem !== undefined) return _redeem;
+  try {
+    const { REDEEM } = await import(pathToFileURL(resolve(HERE, "../site/src/lib/redeem.mjs")).href);
+    _redeem = REDEEM ?? null;
+  } catch (e) {
+    console.log(`  (registry redeem dilewati: ${e.message})`);
+    _redeem = null;
+  }
+  return _redeem;
+}
+
+/** Wawasan per-game dari data kita sendiri. null utk selain MOBILE. */
+function wawasanUntuk(c) {
+  if (c.platform !== "MOBILE") return null;
+  const mc = readJSON(resolve(DATA, "codes.json"), { active: [], archive: [] });
+  const aktif = (mc.active ?? []).filter((x) => x.game === c.id);
+  const arsip = (mc.archive ?? []).filter((x) => x.game === c.id);
+  if (!aktif.length) return null;
+  const nowMs = Date.now();
+  return {
+    siklus: siklusRilis([...aktif, ...arsip], { nowMs }),
+    sekarat: kodeSekarat(aktif, { nowMs }),
+    baru: kodeBaru(aktif, { nowMs }),
+    arsip: kedalamanArsip(aktif, arsip),
+  };
+}
+
 async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
-  await makeVO({ name: c.name, activeCount: c.activeCount, allMode, isPromo: c.isPromo, outPath: vo });
+  // Naskah berbasis fakta hanya untuk MOBILE LANDSCAPE. Shorts & Roblox tetap
+  // memakai voScript lama — mengubah semuanya sekaligus berarti dua perubahan
+  // yang tak bisa dinilai terpisah kalau hasilnya meleset.
+  const wawasan = FORMAT === "short" ? null : wawasanUntuk(c);
+  const reg = wawasan ? await redeemRegistry() : null;
+  const r = reg?.[c.id];
+  const redeem = r?.ingame?.id?.length
+    ? { req: r.req?.id ?? null, reqEn: r.req?.en ?? null, steps: r.ingame.id, stepsEn: r.ingame.en ?? [] }
+    : null;
+  const naskah = wawasan
+    ? susunNaskah({ name: c.name, activeCount: c.activeCount, codes: c.displayCodes, wawasan, redeem, allMode, isPromo: c.isPromo })
+    : null;
+  if (wawasan) console.log(`  ↳ wawasan: ${ringkasWawasan(wawasan)}${redeem ? ` · redeem ${redeem.steps.length} langkah` : " · redeem —"} · naskah ${naskah.dipakai.length} kalimat`);
+
+  await makeVO({ name: c.name, activeCount: c.activeCount, allMode, isPromo: c.isPromo, outPath: vo, text: naskah?.teks ?? null });
 
   if (FORMAT === "short") {
     const moreCount = Math.max(0, c.activeCount - c.displayCodes.length); // sisa kode di situs → teaser "+N lagi"
@@ -297,6 +354,9 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
     codes: c.displayCodes, activeCount: c.activeCount, fetchedAt: c.fetchedAt,
     iconPath: c.iconPath, outPath: fin, voPath: vo,
     series: seri?.series ?? null, media,
+    // null utk Roblox → kedua adegan wawasan dilewati, videonya persis seperti
+    // sebelum perubahan ini.
+    wawasan, redeem,
   });
   await renderWideThumb({
     // `c.name` — nama KATALOG, bukan `displayName`.
