@@ -319,10 +319,29 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
   const redeem = r?.ingame?.id?.length
     ? { req: r.req?.id ?? null, reqEn: r.req?.en ?? null, steps: r.ingame.id, stepsEn: r.ingame.en ?? [] }
     : null;
-  const naskah = wawasan
-    ? susunNaskah({ name: c.name, activeCount: c.activeCount, codes: c.displayCodes, wawasan, redeem, allMode, isPromo: c.isPromo })
+  // GAMBAR PROMOSI & DERET PEMAIN DIAMBIL DI SINI, sebelum naskah — bukan di
+  // jalur landscape seperti dulu.
+  //
+  // Kalimat pemain ("sekarang ada 271 ribu orang main, 24 jam terakhir bergerak
+  // antara 240 sampai 300 ribu") butuh angka dari `seri`. Selama naskah disusun
+  // sebelum pemanggilan itu, kalimat tersebut MUSTAHIL ikut — dan itu justru
+  // bahan yang cuma dipunyai Roblox, satu-satunya yang tak bisa ditiru kanal
+  // lain karena datang dari pengukuran 10-menit milik kita sendiri.
+  const uid = FORMAT !== "short" && c.platform === "ROBLOX" ? uidUntuk(c.id) : null;
+  const media = uid ? await gambarGame(uid, 8) : [];
+  // BERGULIR DULU (24 jam sampai detik ini), baru jatuh ke berkas harian.
+  const seri = uid ? ((await seriesPemainBergulir(uid)) ?? (await seriesPemain(uid))) : null;
+  if (seri) console.log(`  ↳ grafik pemain: ${seri.titik} titik (${seri.bergulir ? "24 jam bergulir" : "hari kalender " + seri.tanggal})`);
+
+  const naskah = (wawasan || uid)
+    ? susunNaskah({
+        name: c.name, activeCount: c.activeCount, codes: c.displayCodes,
+        wawasan, redeem,
+        pemain: c.players > 0 ? { sekarang: c.players, puncak: seri?.puncak ?? 0, rendah: seri?.rendah ?? 0, bergulir: !!seri?.bergulir } : null,
+        allMode, isPromo: c.isPromo,
+      })
     : null;
-  if (wawasan) console.log(`  ↳ wawasan: ${ringkasWawasan(wawasan)}${redeem ? ` · redeem ${redeem.steps.length} langkah` : " · redeem —"} · naskah ${naskah.dipakai.length} kalimat`);
+  if (naskah) console.log(`  ↳ wawasan: ${wawasan ? ringkasWawasan(wawasan) : "—"}${redeem ? ` · redeem ${redeem.steps.length} langkah` : ""} · naskah ${naskah.dipakai.length} kalimat (${naskah.dipakai.join(", ")})`);
 
   await makeVO({ name: c.name, activeCount: c.activeCount, allMode, isPromo: c.isPromo, outPath: vo, text: naskah?.teks ?? null });
 
@@ -338,23 +357,12 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
     return;
   }
 
-  // LANDSCAPE. Keempat masukan opsional renderWide dikirim EKSPLISIT.
-  // renderWide memberi nilai bawaan aman untuk semuanya, jadi yang lupa dikirim
-  // hilang tanpa satu pun error — video Drag Drive Simulator 9 Agu terbit tanpa
-  // grafik, tanpa VO, dan tanpa jumlah pemain persis karena itu.
-  const uid = c.platform === "ROBLOX" ? uidUntuk(c.id) : null;
-  // Game mobile tak punya universeId: tak ada gambar promosi (latar jatuh ke
-  // kolase ikon) dan tak ada data pemain (pita statistik disembunyikan).
-  // Keduanya sudah ditangani renderWide, jadi mobile tetap jalan — cuma polos.
-  const media = uid ? await gambarGame(uid, 8) : [];
-  // BERGULIR DULU (24 jam sampai detik ini), baru jatuh ke berkas harian.
-  // Jalur lama memulangkan hari kalender KEMARIN, jadi grafiknya berumur 13-37
-  // jam padahal berlabel "24 JAM TERAKHIR". Fallback dipertahankan karena
-  // endpoint bergulir hidup di Worker yang di-deploy manual — sebelum itu
-  // di-deploy, videonya tetap bergrafik seperti biasa.
-  const seri = uid ? ((await seriesPemainBergulir(uid)) ?? (await seriesPemain(uid))) : null;
-  if (seri) console.log(`  ↳ grafik pemain: ${seri.titik} titik (${seri.bergulir ? "24 jam bergulir" : "hari kalender " + seri.tanggal})`);
-
+  // LANDSCAPE. Masukan opsional renderWide dikirim EKSPLISIT. renderWide memberi
+  // nilai bawaan aman untuk semuanya, jadi yang lupa dikirim hilang tanpa satu
+  // pun error — video Drag Drive Simulator 9 Agu terbit tanpa grafik, tanpa VO,
+  // dan tanpa jumlah pemain persis karena itu.
+  //
+  // `uid`, `media`, dan `seri` sudah diambil di atas (naskah membutuhkannya).
   await renderWide({
     game: { name: c.displayName || c.name, slug: c.slug, players: c.players ?? 0 },
     codes: c.displayCodes, activeCount: c.activeCount, fetchedAt: c.fetchedAt,

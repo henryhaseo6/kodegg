@@ -18,6 +18,7 @@ import { renderWide } from "./video/render-wide.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { susunNaskah, perkiraanDetik } from "./video/naskah.mjs";
 import { siklusRilis, kodeSekarat, kodeBaru, kedalamanArsip, ringkasWawasan } from "./video/wawasan.mjs";
+import { gambarGame } from "./src/game-media.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA = resolve(HERE, "data");
@@ -83,9 +84,10 @@ console.log(`\n"${teks}"\n`);
 
 // ── render ───────────────────────────────────────────────────────────────────
 mkdirSync(OUT, { recursive: true });
-const fin = resolve(OUT, `pratinjau-${id}.mp4`);
-const bisu = resolve(OUT, `pratinjau-${id}.base.mp4`);
-const vo = resolve(OUT, `pratinjau-${id}.vo.mp3`);
+const namaDasar = process.env.PRATINJAU_NAMA || `pratinjau-${id}`;
+const fin = resolve(OUT, `${namaDasar}.mp4`);
+const bisu = resolve(OUT, `${namaDasar}.base.mp4`);
+const vo = resolve(OUT, `${namaDasar}.vo.mp3`);
 
 if (process.env.TANPA_VO === "1") { console.log("VO dilewati (TANPA_VO=1)."); }
 else { await makeVO({ outPath: vo, text: teks }); console.log("VO dibuat."); }
@@ -94,13 +96,18 @@ const adaVO = existsSync(vo) && process.env.TANPA_VO !== "1";
 const ikon = resolve(HERE, `../site/public/assets/${platform === "ROBLOX" ? "roblox" : "games"}/${id}.png`);
 // LATAR_VIDEO=<path> → klip dipakai sebagai latar (uji). Kosong = latar biasa.
 const latarVideo = process.env.LATAR_VIDEO || null;
-if (latarVideo) console.log(`latar    : video ${latarVideo}`);
+// Gambar promosi game — SAMA seperti yang ditarik make-videos. Harness ini dulu
+// tak menariknya sama sekali, jadi latarnya cuma memakai ikon; untuk menilai
+// mode "klip + gambar promosi" itu tak cukup mewakili.
+const uid = platform === "ROBLOX" ? rob.games?.[id]?.universeId : null;
+const media = uid ? await gambarGame(uid, 8) : [];
+if (latarVideo) console.log(`latar    : video ${latarVideo}${process.env.LATAR_ART > 0 ? ` + ${media.length} gambar promosi (alpha ${process.env.LATAR_ART})` : " (polos)"}`);
 const hasil = await renderWide({
   game: { name: nama, slug: id, players: rob.games?.[id]?.players ?? 0 },
   codes: display, activeCount: aktif.length, fetchedAt: new Date().toISOString(),
   iconPath: existsSync(ikon) ? ikon : null,
   outPath: adaVO ? bisu : fin, voPath: adaVO ? vo : null,
-  wawasan, redeem, latarVideo,
+  wawasan, redeem, latarVideo, media,
 });
 if (adaVO) await muxAudio({ videoPath: bisu, voPath: vo, outPath: fin });
 console.log(`\n✓ ${fin}`);

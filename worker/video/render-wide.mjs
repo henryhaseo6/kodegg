@@ -362,20 +362,68 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // tidak, jadi bentuknya masih bisa dikenali sebagai gamenya — dan itulah
   // gunanya memakai gambar asli, bukan noda warna.
   const bahan = mediaImg.length ? mediaImg : ikon ? [ikon] : [];
+
+  /** Keping dengan TEPI MEMUDAR, dirender SEKALI di awal.
+   *
+   *  Selama kepingnya di-blur 26px, batas kotaknya ikut lenyap sendiri. Begitu
+   *  blur dilepas (mode latar video, supaya gambar gamenya bisa dikenali), batas
+   *  itu muncul sebagai garis lurus tegas di tengah layar — terlihat seperti
+   *  potongan tempelan, bukan lapisan.
+   *
+   *  Dikerjakan di kanvas terpisah sekali per keping, BUKAN tiap frame: ukuran
+   *  tiap keping tetap sepanjang video, jadi menghitung ulang 850 kali cuma
+   *  membuang waktu render tanpa mengubah hasilnya sedikit pun.
+   */
+  const kepingLembut = (img, w, h) => {
+    const cv = createCanvas(Math.round(w), Math.round(h));
+    const c2 = cv.getContext("2d");
+    c2.drawImage(img, 0, 0, w, h);
+    // destination-out = menghapus, bukan menimpa dengan hitam — yang terhapus
+    // jadi TRANSPARAN, sehingga klip di bawahnya tetap terlihat.
+    c2.globalCompositeOperation = "destination-out";
+    const g = c2.createRadialGradient(w / 2, h / 2, Math.min(w, h) * 0.16, w / 2, h / 2, Math.max(w, h) * 0.60);
+    g.addColorStop(0, "rgba(0,0,0,0)");
+    g.addColorStop(0.55, "rgba(0,0,0,0)");
+    g.addColorStop(1, "rgba(0,0,0,1)");
+    c2.fillStyle = g; c2.fillRect(0, 0, w, h);
+    return cv;
+  };
   const KEPING = bahan.length
     ? Array.from({ length: Math.min(6, Math.max(4, bahan.length)) }, (_, i) => {
         const r = () => Math.random();
         const arah = r() * Math.PI * 2, laju = 26 + r() * 46; // px per detik
+        const s0 = 520 + r() * 760;
+        const img0 = bahan[i % bahan.length];
         return {
-          img: bahan[i % bahan.length],
+          // Tepi dilembutkan HANYA di mode latar video: di latar lama, blur 26px
+          // sudah menghapus batasnya, jadi tak ada yang perlu diperbaiki di sana.
+          img: latarVideo ? kepingLembut(img0, s0, s0 * 0.5625) : img0,
           x: r() * W, y: r() * H,
-          s: 520 + r() * 760,
+          s: s0,
           vx: Math.cos(arah) * laju, vy: Math.sin(arah) * laju,
           rot: (r() - 0.5) * 0.5, vr: (r() - 0.5) * 0.05,
           a: 0.30 + r() * 0.26,
         };
       })
     : [];
+
+  /** Keping gambar promosi yang hanyut & di-blur. Dipakai dua jalur: latar lama
+   *  (faktor 1) dan lapisan di atas klip video (faktor < 1). */
+  function gambarKeping(ctx, t, faktor, blurPx = 26) {
+    for (const k of KEPING) {
+      const w = k.s, h = w * 0.5625; // jaga rasio 16:9 gambar sumber
+      // Bungkus melingkar dengan margin selebar kepingnya sendiri: yang keluar
+      // di kanan masuk lagi dari kiri TANPA pernah muncul mendadak di tengah.
+      const per = W + w * 2, pev = H + h * 2;
+      const x = (((k.x + k.vx * t) % per) + per) % per - w;
+      const y = (((k.y + k.vy * t) % pev) + pev) % pev - h;
+      ctx.save(); ctx.globalAlpha = k.a * faktor; ctx.filter = `blur(${blurPx}px)`;
+      ctx.translate(x + w / 2, y + h / 2); ctx.rotate(k.rot + k.vr * t);
+      try { ctx.drawImage(k.img, -w / 2, -h / 2, w, h); } catch {}
+      ctx.restore();
+    }
+    ctx.filter = "none";
+  }
 
   function latar(ctx, t) {
     // MODE LATAR VIDEO: kanvas dibiarkan TRANSPARAN di lapisan latar, dan yang
@@ -400,21 +448,26 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
       // Menaruhnya di ffmpeg juga menghapus seluruh kelas bug ini: klip diredupkan
       // SEKALI, berapa pun lapisan kanvas yang menumpuk di atasnya.
       ctx.clearRect(0, 0, W, H);
+      // LAPIS GAMBAR PROMOSI GAME DI ATAS KLIP (LATAR_ART > 0).
+      //
+      // Klip yang sama di semua video Roblox membuat latarnya SERAGAM — arah
+      // berlawanan dengan yang sedang kita kejar sejak surat YouTube ("templated").
+      // Dengan lapisan ini, klip jadi dasar yang bergerak sementara pembeda
+      // per-game tetap ada: keping gambar promosi game itu sendiri, hanyut dan
+      // di-blur seperti pada latar lama.
+      //
+      // Alphanya dikalikan LATAR_ART karena di sini kepingnya berdiri di atas
+      // klip yang SUDAH diredupkan ffmpeg — memakai alpha penuh akan menutup
+      // klipnya lagi, dan kita kembali ke titik awal.
+      // Blur lebih RINGAN di mode ini. 26px dipilih untuk latar diam berbidang
+      // gelap, tempat noda warna sudah cukup; di atas klip yang bergerak dan
+      // penuh detail, noda selebar itu tenggelam dan gamenya tak lagi dikenali —
+      // yang justru satu-satunya alasan lapisan ini ada.
+      if (LATAR_ART > 0) gambarKeping(ctx, t, LATAR_ART, LATAR_ART_BLUR);
       return;
     }
     ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
-    for (const k of KEPING) {
-      const w = k.s, h = w * 0.5625; // jaga rasio 16:9 gambar sumber
-      // Bungkus melingkar dengan margin selebar kepingnya sendiri: yang keluar
-      // di kanan masuk lagi dari kiri TANPA pernah muncul mendadak di tengah.
-      const per = W + w * 2, pev = H + h * 2;
-      const x = (((k.x + k.vx * t) % per) + per) % per - w;
-      const y = (((k.y + k.vy * t) % pev) + pev) % pev - h;
-      ctx.save(); ctx.globalAlpha = k.a; ctx.filter = "blur(26px)";
-      ctx.translate(x + w / 2, y + h / 2); ctx.rotate(k.rot + k.vr * t);
-      try { ctx.drawImage(k.img, -w / 2, -h / 2, w, h); } catch {}
-      ctx.restore();
-    }
+    gambarKeping(ctx, t, 1);
     ctx.filter = "none";
     // Lapis gelap + vignette. Tanpa ini, keping terang yang lewat di belakang
     // kartu kode menghapus kontras teksnya persis saat orang membacanya.
@@ -1143,6 +1196,9 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // huruf per huruf. Itu sebabnya keduanya dipisah dan blur yang jadi bawaan:
   // ia mengecilkan berkas tanpa menyentuh apa pun yang harus dibaca.
   const LATAR_BLUR = Number(process.env.LATAR_BLUR ?? 4);
+  // Kepekatan lapisan gambar promosi di atas klip. 0 = klip polos (mode 1).
+  const LATAR_ART = Number(process.env.LATAR_ART ?? 0);
+  const LATAR_ART_BLUR = Number(process.env.LATAR_ART_BLUR ?? 14);
   const CRF = String(Number(process.env.VIDEO_CRF) || 23);
   const argVid = latarVideo
     ? ["-y", "-stream_loop", "-1", "-i", latarVideo,

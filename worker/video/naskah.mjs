@@ -43,6 +43,17 @@ function rewardUcap(teks) {
     .trim();
 }
 
+/** Angka besar → cara orang mengucapkannya. TTS membaca "271486" digit per
+ *  digit ("dua tujuh satu…") — tak ada penonton yang menangkap itu sebagai
+ *  jumlah pemain. */
+function jumlahUcap(n) {
+  if (!Number.isFinite(n) || n < 0) return null;
+  if (n >= 1e6) return `${(n / 1e6).toFixed(1).replace(".", ",")} juta`;
+  if (n >= 1e4) return `${Math.round(n / 1e3)} ribu`;
+  if (n >= 1e3) return `${(n / 1e3).toFixed(1).replace(".", ",")} ribu`;
+  return String(n);
+}
+
 /** Syarat redeem → enak diucapkan. Tanda kurung dibaca TTS sebagai jeda mati di
  *  tengah kalimat ("Union Level 2 ... kalahkan boss tutorial pertama"); dijadikan
  *  koma supaya mengalir sebagai satu kalimat. */
@@ -55,13 +66,16 @@ const syaratUcap = (t) => String(t ?? "").replace(/\s*\(([^)]*)\)/g, ", $1").rep
  * @param {string} p.name            nama game
  * @param {number} p.activeCount     jumlah kode aktif
  * @param {object[]} [p.codes]       kode yang tampil (butuh .reward utk kalimat hadiah)
- * @param {object} [p.wawasan]       {siklus, sekarat, baru} dari video/wawasan.mjs
+ * @param {object} [p.wawasan]       {siklus, sekarat, baru, arsip} dari video/wawasan.mjs
+ * @param {object} [p.pemain]        {sekarang, puncak, rendah, bergulir} — data
+ *   pemain nyata dari src/player-series.mjs. HANYA Roblox: game mobile tak punya
+ *   universeId, jadi selamanya null di sana.
  * @param {object} [p.redeem]        {req, steps[]} dari registry redeem
  * @param {boolean} [p.allMode]      video "semua kode aktif" (umur kode tak diketahui)
  * @param {boolean} [p.isPromo]      Roblox promo codes (ditukar di web, bukan in-game)
  * @returns {{teks:string, dipakai:string[]}} dipakai = daftar kalimat yang lolos syarat
  */
-export function susunNaskah({ name, activeCount, codes = [], wawasan = null, redeem = null, allMode = false, isPromo = false }) {
+export function susunNaskah({ name, activeCount, codes = [], wawasan = null, redeem = null, pemain = null, allMode = false, isPromo = false }) {
   const n = activeCount || codes.length || 0;
   const baru = wawasan?.baru ?? [];
   const sekarat = wawasan?.sekarat ?? [];
@@ -119,6 +133,23 @@ export function susunNaskah({ name, activeCount, codes = [], wawasan = null, red
         ? ` Yang terakhir ${siklus.hariSejak} hari lalu, jadi sekarang sudah masuk rentangnya.`
         : ` Yang terakhir ${siklus.hariSejak} hari lalu.`;
     tambah("siklus", inti + ekor);
+  }
+
+  // 4a. PEMAIN — bahan yang HANYA dipunyai Roblox, dan yang paling dekat dengan
+  //     "original commentary" yang diminta peninjau YouTube: bukan mengulang
+  //     kodenya, melainkan mengabarkan keadaan gamenya hari ini.
+  //
+  //     Sumbernya pengukuran 10-menit milik kita sendiri (database R2 sejak 26
+  //     Jul), bukan angka sesaat. Kalau jendela 24 jamnya tak tersedia — Worker
+  //     belum di-deploy, game di luar Roblox Charts, atau datanya bolong — yang
+  //     tersisa cuma "sekarang sekian pemain", dan bagian rentangnya HILANG,
+  //     bukan ditambal taksiran.
+  if (pemain?.sekarang > 0) {
+    const kini = jumlahUcap(pemain.sekarang);
+    const rentang = pemain.bergulir && pemain.puncak > 0 && pemain.rendah >= 0
+      ? ` Dalam 24 jam terakhir jumlahnya bergerak antara ${jumlahUcap(pemain.rendah)} sampai ${jumlahUcap(pemain.puncak)} orang.`
+      : "";
+    tambah("pemain", `Sekarang ada ${kini} orang lagi main ${name}.${rentang}`);
   }
 
   // 4b. KEDALAMAN ARSIP. Disebut hanya bila ADA kode mati yang tersimpan —
