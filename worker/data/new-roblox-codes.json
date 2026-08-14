@@ -1,43 +1,6 @@
 {
-  "generatedAt": "2026-08-14T04:03:35.814Z",
-  "codes": [
-    {
-      "game": "one-shot",
-      "gameName": "One Shot",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/one-shot"
-      },
-      "code": "FREE13",
-      "reward": "Summer Crate",
-      "date": "2026-08-14T03:04:49.911Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-14T04:03:35.814Z",
-      "fetchedAt": "2026-08-14T04:03:35.814Z"
-    },
-    {
-      "game": "one-shot",
-      "gameName": "One Shot",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/one-shot"
-      },
-      "code": "SUMMER",
-      "reward": "Release Crate",
-      "date": "2026-08-14T03:02:27.264Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-14T04:03:35.814Z",
-      "fetchedAt": "2026-08-14T04:03:35.814Z"
-    }
-  ],
+  "generatedAt": "2026-08-14T05:04:07.958Z",
+  "codes": [],
   "bulkGames": [
     {
       "game": "anime-fighting-simulator-kdmf",
@@ -47,6 +10,11 @@
     {
       "game": "st-blockade-reboot",
       "count": 1,
+      "fresh": []
+    },
+    {
+      "game": "case-paradise",
+      "count": 7,
       "fresh": []
     }
   ]
