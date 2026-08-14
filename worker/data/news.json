@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-14T06:03:27.372Z",
+  "updatedAt": "2026-08-14T07:56:02.355Z",
   "counts": {
-    "active": 87,
-    "archived": 78
+    "active": 86,
+    "archived": 79
   },
   "articles": [
     {
@@ -678,22 +678,6 @@
       "publishedAt": "2026-08-06T08:20:18.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
-        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
-        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
-      "url": "https://www.hoyolab.com/article/46159934",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T04:00:08.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -706,6 +690,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
       "url": "https://www.hoyolab.com/article/46159935",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-06T04:00:08.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
+        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
+        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
+      "url": "https://www.hoyolab.com/article/46159934",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-06T04:00:08.000Z"
     },
@@ -1380,7 +1380,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5160",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-15T09:48:36.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1395,10 +1397,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1784044800000/x3n1n795dvmzdgtqw5-1784095729088.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5150",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-15T06:14:00.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-15T06:14:00.000Z",
+      "archivedAt": "2026-08-14T07:56:02.355Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
