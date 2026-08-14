@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-08-14T10:04:09.986Z",
+  "updatedAt": "2026-08-14T11:04:28.820Z",
   "counts": {
-    "active": 84,
+    "active": 85,
     "archived": 81
   },
   "articles": [
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "v9.0 The Light at Dream's End | Content Overview",
+        "id": "V9.0 Fajar di Ujung Mimpi | Preview Konten"
+      },
+      "excerpt": {
+        "en": "Greetings, Captains! v9.0 The Light at Dream's End is coming soon~ New AstralOp \"Senadina\", new Divine Key \"Vermillion Liuli\", the featured event \"Captain's Wishing Tree Secrets\", ",
+        "id": "Halo, Kapten! v9.0 Fajar di Ujung Mimpi akan segera hadir~ AstralOp baru \"Senadina\", Divine Key baru \"Vermillion Liuli\", event pilihan \"Rahasia Kapten dan Pohon Harapan\", Story Cha"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/10/07fd4d018458fc2728661b8582d6e805_6512170473913957483.png",
+      "url": "https://www.hoyolab.com/article/46286010",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T11:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Operation Yum × HoYoverse Café 2026 Recap Video",
+        "id": "Operation Yum × HoYoverse Café 2026 Recap Video"
+      },
+      "excerpt": {
+        "en": "Dear Proxies, Let's look back at the highlights from the Operation Yum × HoYoverse Café DE Special Pop-Up event together! Thanks to all the Proxies for your company and enthusiasm.",
+        "id": "Dear Proxies, Let's look back at the highlights from the Operation Yum × HoYoverse Café DE Special Pop-Up event together! Thanks to all the Proxies for your company and enthusiasm."
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/ba0e780c05c1ddad213d7c0d04b6116f_8773612318822450254.jpg",
+      "url": "https://www.hoyolab.com/article/46286009",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T11:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Agent Mechanics Intro | Sigrid",
+        "id": "Pengenalan Mekanisme Agen | Sigrid"
+      },
+      "excerpt": {
+        "en": "The update is almost complete... Combat-related information for Sigrid has been recorded in the database. Key content analysis complete. Please take a look. \"The skies are not your",
+        "id": "Update akan segera selesai... Informasi terkait pertarungan dari Agen Sigrid telah dicatat di database. Analisis informasi krusial telah selesai. Silakan diperiksa! \"Tak seorang pu"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/0/e73ddcb4df8711eb41c89f36cc56fe30_8042239145195560661.jpeg",
+      "url": "https://www.hoyolab.com/article/46285596",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T10:30:08.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -166,22 +214,6 @@
       "publishedAt": "2026-08-12T18:00:07.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0",
-        "id": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0"
-      },
-      "excerpt": {
-        "en": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7",
-        "id": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
-      "url": "https://www.hoyolab.com/article/46245283",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-12T10:00:02.000Z"
-    },
-    {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
       "title": {
@@ -194,6 +226,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/07/05542df5ad5d9fe29b8a44d8b781e812_4547267349494376010.png",
       "url": "https://www.hoyolab.com/article/46245284",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-12T10:00:02.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0",
+        "id": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0"
+      },
+      "excerpt": {
+        "en": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7",
+        "id": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
+      "url": "https://www.hoyolab.com/article/46245283",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-12T10:00:02.000Z"
     },
@@ -644,38 +692,6 @@
       "url": "https://www.hoyolab.com/article/46175449",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-07T10:00:05.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero gamescom 2026 Booth Events",
-        "id": "Zenless Zone Zero gamescom 2026 Booth Events"
-      },
-      "excerpt": {
-        "en": "Dear Proxies, the gamescom commission series is back on the Inter-Knot from August 26 to 30. We welcome all clever and courageous Proxies to head on down to Koelnmesse Hall 6.1 B03",
-        "id": "Dear Proxies, the gamescom commission series is back on the Inter-Knot from August 26 to 30. We welcome all clever and courageous Proxies to head on down to Koelnmesse Hall 6.1 B03"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/04/0/a70073069dbb8e668dd9fd97a8bb9b48_3984932247892405846.png",
-      "url": "https://www.hoyolab.com/article/46175114",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-07T09:30:03.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Agent Record | Claret",
-        "id": "Agent Record | Claret"
-      },
-      "excerpt": {
-        "en": "",
-        "id": ""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-08-07/transcoded/142085569619911544832_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/46171755",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-07T04:05:01.000Z"
     },
     {
       "game": "hi3",
