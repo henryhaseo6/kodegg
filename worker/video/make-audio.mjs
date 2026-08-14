@@ -32,17 +32,48 @@ export function voScript({ name, activeCount, allMode = false, isPromo = false }
   return `${buka} ${cara} Buruan ya, sebagian cuma aktif beberapa hari. Kode lengkap semua game, cek di kode gg dot com. Jangan lupa subscribe dan nyalain loncengnya biar gak ketinggalan kode baru!`;
 }
 
-/** Generate voiceover MP3 (edge-tts). Coba `python` lalu `python3`. */
-export async function makeVO({ name, activeCount, allMode = false, isPromo = false, outPath }) {
-  const text = voScript({ name, activeCount, allMode, isPromo });
-  const args = ["-m", "edge_tts", "--voice", "id-ID-ArdiNeural", "--rate=+7%", "--text", text, "--write-media", outPath];
-  try {
-    await run(PY, args);
-  } catch (e) {
-    if (PY === "python") await run("python3", args);
-    else throw e;
-  }
-  return outPath;
+// MESIN TTS — sengaja dipisah di balik satu nama.
+//
+// edge-tts gratis dan itu sebabnya dipakai sejak awal, tapi hasilnya terdengar
+// seperti mesin: intonasinya datar dan jeda kalimatnya seragam. Begitu naskahnya
+// jadi panjang & informatif (video/naskah.mjs), kelemahan itu makin terasa —
+// suara robot yang bicara 8 detik masih bisa dimaafkan, yang bicara 40 detik
+// tidak.
+//
+// Ditulis sebagai peta supaya menambah mesin berbayar nanti = menambah SATU
+// fungsi di sini, tanpa menyentuh pemanggil mana pun. Pilihannya lewat env
+// VO_MESIN, suaranya lewat VO_VOICE — jadi bisa diuji di satu run tanpa deploy.
+const MESIN = {
+  /** edge-tts (gratis, suara Microsoft). Coba `python` lalu `python3`. */
+  async edge(text, outPath) {
+    const voice = process.env.VO_VOICE || "id-ID-ArdiNeural";
+    const rate = process.env.VO_RATE || "+7%";
+    const args = ["-m", "edge_tts", "--voice", voice, `--rate=${rate}`, "--text", text, "--write-media", outPath];
+    try {
+      await run(PY, args);
+    } catch (e) {
+      if (PY === "python") await run("python3", args);
+      else throw e;
+    }
+    return outPath;
+  },
+};
+
+/**
+ * Generate voiceover MP3.
+ *
+ * `text` boleh dikirim langsung (naskah dari video/naskah.mjs). Tanpa itu ia
+ * jatuh ke voScript lama — jalur Shorts masih memakainya, dan mengubah keduanya
+ * sekaligus berarti dua perubahan yang tak bisa dinilai terpisah.
+ */
+export async function makeVO({ name, activeCount, allMode = false, isPromo = false, outPath, text = null, mesin = process.env.VO_MESIN || "edge" }) {
+  const naskah = text ?? voScript({ name, activeCount, allMode, isPromo });
+  const fn = MESIN[mesin];
+  // Nama mesin yang salah ketik JANGAN diam-diam jatuh ke edge: kalau kita sudah
+  // bayar suara yang lebih baik, video yang terbit dengan suara robot adalah
+  // kegagalan yang tak terlihat sampai ada yang menontonnya.
+  if (!fn) throw new Error(`VO_MESIN "${mesin}" tak dikenal (ada: ${Object.keys(MESIN).join(", ")})`);
+  return fn(naskah, outPath);
 }
 
 /** Mux: video bisu + VO + ding + musik → MP4 final (audio ter-mix, voice di atas). */

@@ -140,7 +140,9 @@ function drawBell(ctx, cx, cy, s, warna, rot = 0) {
  * Jarak antar-baris diskalakan dari ukuran font supaya baris EN tak menabrak
  * ekor huruf 'g/p/y' di baris ID pada teks besar.
  */
-function bi(ctx, id, en, x, y, { idFont, enFont, idColor = C.txt, enColor = C.faint, gap, tebal = 0 } = {}) {
+// enColor bawaan = EN_WARNA (kebiruan), bukan abu-abu pudar: satu aturan warna
+// bahasa untuk SELURUH video, jadi penonton tak perlu belajar dua kali.
+function bi(ctx, id, en, x, y, { idFont, enFont, idColor = C.txt, enColor = EN_WARNA, gap, tebal = 0 } = {}) {
   const px = (f) => Number(/(\d+)px/.exec(f)?.[1] || 32);
   const dy = gap ?? Math.round(0.34 * px(idFont) + 0.98 * px(enFont));
   ctx.font = idFont;
@@ -154,6 +156,20 @@ function bi(ctx, id, en, x, y, { idFont, enFont, idColor = C.txt, enColor = C.fa
 // berbeda format — atau lebih buruk, berbeda menit karena dihitung dua kali.
 export function fmtWIB(d) {
   return new Intl.DateTimeFormat("id-ID", { timeZone: "Asia/Jakarta", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(d).replace(/\./g, ":") + " WIB";
+}
+
+/** Versi Inggris dari stempel waktu yang sama, zonanya ditulis "UTC+7".
+ *
+ *  Intro memajang waktu DUA KALI (pil di kepala + baris di kaki), dan sebelumnya
+ *  keduanya identik — pengulangan yang tak menambah apa pun. Yang bawah kini
+ *  jadi versi Inggrisnya, sehingga ruang yang sama sekalian melayani penonton
+ *  berbahasa Inggris. "WIB" tak berarti apa-apa di luar Indonesia; "UTC+7" bisa
+ *  langsung dikonversi siapa pun. */
+export function fmtUTC7(d) {
+  const s = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Jakarta", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }).format(d);
+  // en-GB memulangkan "14 August 2026, 09:49" — koma diganti "at" supaya
+  // sejajar dengan bentuk Indonesianya ("… pukul 09:49").
+  return s.replace(/,\s*/, " at ") + " UTC+7";
 }
 const fmtPemain = (n) => (n >= 1000 ? Math.round(n / 1000) + "K" : String(n));
 const nf = (v) => { v = Math.round(v); return v >= 1000 ? (v / 1000).toFixed(1) + "K" : String(v); };
@@ -170,6 +186,43 @@ const nf = (v) => { v = Math.round(v); return v >= 1000 ? (v / 1000).toFixed(1) 
 // Data nyata dibaca lewat src/player-series.mjs — pengukuran 10 menit sekali
 // yang sudah kita kumpulkan sejak 26 Jul. Tanpa data, pita statistik TIDAK
 // digambar sama sekali: ruang kosong lebih jujur daripada angka yang direka.
+
+// Warna khusus teks Inggris pada baris dwibahasa. Sengaja BERBEDA RONA (kebiruan
+// dingin), bukan sekadar lebih pudar: dua bahasa yang cuma beda kecerahan masih
+// terbaca sebagai satu kalimat panjang yang membingungkan. Dengan rona berbeda,
+// mata langsung tahu mana bagiannya tanpa harus membaca dulu.
+const EN_WARNA = "rgba(150,200,235,0.72)";
+const SEP_WARNA = "rgba(255,255,255,0.22)";
+
+/** Satu baris dwibahasa "ID · EN" dengan DUA WARNA.
+ *
+ *  `bi()` di atas menumpuk keduanya (Indonesia di atas, Inggris di bawah) dan
+ *  dipakai untuk judul. Yang ini untuk label sebaris, tempat menumpuk akan
+ *  memakan tinggi yang tak ada.
+ *
+ *  @param {"left"|"center"|"right"} rata  posisi x diperlakukan sesuai ini
+ */
+function biSebaris(ctx, id, en, x, y, { font, warnaId, rata = "left", sep = " · " }) {
+  ctx.font = font;
+  const wId = ctx.measureText(id).width, wSep = ctx.measureText(sep).width, wEn = ctx.measureText(en).width;
+  const total = wId + wSep + wEn;
+  const x0 = rata === "center" ? x - total / 2 : rata === "right" ? x - total : x;
+  const simpan = ctx.textAlign;
+  ctx.textAlign = "left";
+  ctx.fillStyle = warnaId; ctx.fillText(id, x0, y);
+  ctx.fillStyle = SEP_WARNA; ctx.fillText(sep, x0 + wId, y);
+  ctx.fillStyle = EN_WARNA; ctx.fillText(en, x0 + wId + wSep, y);
+  ctx.textAlign = simpan;
+  return total;
+}
+
+/** "10 Agu" — label sumbu garis waktu siklus. Sengaja ringkas: sumbu cuma butuh
+ *  penanda ujung, dan tanggal panjang menabrak batang di layar sempit. */
+function fmtTgl(ms) {
+  const B = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+  const d = new Date(ms);
+  return `${d.getUTCDate()} ${B[d.getUTCMonth()]}`;
+}
 
 // SFX sepalet roundup.
 function sfxSamples(events, durSec) {
@@ -202,7 +255,7 @@ function wavMono(mix) {
   return b;
 }
 
-export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null, media = null }) {
+export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null, media = null, wawasan = null, redeem = null, maksDetik = null }) {
   const { createCanvas, loadImage } = await canvasLib();
   const ikon = iconPath && existsSync(iconPath) ? await loadImage(iconPath) : null;
   // media datang sebagai Buffer PNG dari src/game-media.mjs; dimuat di sini
@@ -210,10 +263,35 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   const mediaImg = [];
   for (const buf of media ?? []) { try { mediaImg.push(await loadImage(buf)); } catch {} }
   const nAktif = activeCount ?? (codes ?? []).length;
-  const stamp = fmtWIB(fetchedAt ? new Date(fetchedAt) : new Date());
+  const waktu = fetchedAt ? new Date(fetchedAt) : new Date();
+  const stamp = fmtWIB(waktu), stampEN = fmtUTC7(waktu);
   const KETIK = 11; // huruf per detik — sengaja sedang, lihat catatan kepala berkas
 
-  const PER = 2, INTRO = 4.0, TRT = 0.4, MAKS = 30;
+  // ADEGAN WAWASAN — dua adegan opsional yang isinya BUKAN daftar kode.
+  //
+  // `wawasan` (video/wawasan.mjs) diturunkan dari arsip kode kita sendiri:
+  // seberapa sering game ini merilis kode, dan kapan gelombang terakhirnya.
+  // `redeem` = langkah tukar terverifikasi per game (site/src/lib/redeem.mjs).
+  //
+  // Keduanya null-aman dengan sengaja: game tanpa riwayat cukup tak mendapat
+  // adegannya, TIDAK mendapat versi tebakan. Ini aturan yang sama dengan pita
+  // statistik — ruang kosong lebih jujur daripada angka yang direka.
+  //
+  // Nilainya paling besar justru untuk game MOBILE, yang tak punya universeId
+  // sehingga grafik pemain & pita statistik selamanya kosong. Sebelum ini,
+  // video mobile terbit paling telanjang di antara semuanya — dan itulah yang
+  // kebetulan direview YouTube (Whiteout Survival, 13 Agu 2026).
+  const adaSiklus = !!(wawasan?.siklus && wawasan.siklus.gelombang >= 5);
+  const adaRedeem = !!(redeem?.steps?.length);
+  const PER = 2, INTRO = 4.0, TRT = 0.4;
+  const SIKLUS_D = 6.4, REDEEM_D = 1.9 + (redeem?.steps?.length ?? 0) * 1.25;
+  // Batas 30 detik dilonggarkan HANYA sebanyak adegan tambahan yang benar-benar
+  // dipakai. Angka 30 dulu dipilih untuk video yang isinya daftar kode saja —
+  // di sana durasi ekstra cuma berarti kode lebih banyak, dan itu sudah kalah
+  // guna dibanding mengarahkan penonton ke situs. Adegan wawasan beda: ia
+  // membawa informasi yang tak ada di tempat lain, jadi ia membeli waktunya
+  // sendiri, bukan mengambil jatah adegan kode.
+  const MAKS = maksDetik ?? (30 + (adaSiklus ? SIKLUS_D : 0) + (adaRedeem ? REDEEM_D : 0));
   // Outro memanjang mengikuti jumlah kode yang direkap — sepuluh kode tak bisa
   // dibaca dalam waktu yang sama dengan dua. Anggaran 30 detik memesan yang
   // TERPANJANG (OUTRO_MAKS) sejak awal, karena panjang outro baru diketahui
@@ -249,7 +327,10 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   const semua = [];
   for (let i = 0; i < (codes ?? []).length; i += PER) semua.push(codes.slice(i, i + PER));
   const halaman = [];
-  let pakai = INTRO + OUTRO_MAKS;
+  // Adegan wawasan DIPESAN di anggaran, bukan cuma menaikkan plafonnya. Kalau
+  // plafon naik tanpa pemesanan, adegan kode langsung memakan ruang tambahan itu
+  // dan adegan wawasan terdorong keluar — persis kebalikan dari maksudnya.
+  let pakai = INTRO + OUTRO_MAKS + (adaSiklus ? SIKLUS_D - TRT : 0) + (adaRedeem ? REDEEM_D - TRT : 0);
   for (const h of semua) {
     const d = durAdegan(h);
     if (pakai + d - TRT > MAKS) break;
@@ -358,7 +439,17 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
 
     ctx.fillStyle = C.txt; ctx.textBaseline = "middle";
     ctx.fillText(stamp, cxd + dot + jarak, cyd + 1);
-    ctx.textBaseline = "alphabetic"; ctx.restore();
+    ctx.textBaseline = "alphabetic";
+
+    // Versi Inggris DITEMPEL DI BAWAH PIL, bukan di kaki intro.
+    //
+    // Di kaki intro ia cuma hidup 4 detik lalu hilang bersama introonya —
+    // penonton yang masuk dari tengah, atau yang baru menoleh, tak pernah
+    // melihatnya. Di sini ia ikut ke mana pun kepala ikut, jadi kedua bahasa
+    // selalu terbaca berdampingan (arahan user 14 Agu 2026).
+    ctx.textAlign = "center"; ctx.font = "700 21px Mono"; ctx.fillStyle = EN_WARNA;
+    ctx.fillText(stampEN, W / 2, py + tinggi + 26);
+    ctx.textAlign = "left"; ctx.restore();
   }
 
   // ── INTRO ala roundup ────────────────────────────────────────────────────
@@ -373,7 +464,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     ctx.font = `${tf}px Rank, Emoji`; pop(ctx, judul, 0, 0, C.acc, 16); ctx.restore();
 
     ctx.save(); ctx.globalAlpha = clamp((ts - 0.4) / 0.3);
-    bi(ctx, "KODE REDEEM", "REDEEM CODES", W / 2, H / 2 - 58, { idFont: "800 56px Grotesk", enFont: "700 28px Grotesk", idColor: C.txt, enColor: C.faint });
+    bi(ctx, "KODE REDEEM", "REDEEM CODES", W / 2, H / 2 - 58, { idFont: "800 56px Grotesk", enFont: "700 28px Grotesk", idColor: C.txt, enColor: EN_WARNA });
     ctx.restore();
 
     // Sub-judul DIKETIK — pola yang sama dengan roundup.
@@ -394,21 +485,18 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
       const en1 = clamp((ts - 1.55) / 0.4);
       if (en1 > 0.01) {
         ctx.save(); ctx.globalAlpha = en1 * 0.9; ctx.textAlign = "center";
-        ctx.font = "700 30px Grotesk"; ctx.fillStyle = C.faint;
+        ctx.font = "700 30px Grotesk"; ctx.fillStyle = EN_WARNA;
         const txtEn = `${nAktif} ACTIVE CODES` + (game.players ? `  ·  ${fmtPemain(game.players)} PLAYERS` : "");
         ctx.fillText(txtEn, W / 2, H / 2 + 80); ctx.restore();
       }
     }
 
-    // TANGGAL & JAM pembuatan. Ditaruh di kaki intro supaya penonton tahu
-    // kesegarannya sebelum menyalin apa pun — kode redeem cepat hangus, dan
-    // "video ini dari kapan" adalah pertanyaan pertama yang wajar.
-    const dt = clamp((ts - 1.5) / 0.5);
-    if (dt > 0.01) {
-      ctx.save(); ctx.globalAlpha = dt * 0.95; ctx.textAlign = "center";
-      ctx.font = "700 30px Mono"; ctx.fillStyle = C.limeSoft;
-      ctx.fillText(stamp, W / 2, H - 68); ctx.restore();
-    }
+    // TANGGAL & JAM pembuatan DULU ada di kaki intro (Indonesia), lalu sempat
+    // jadi versi Inggrisnya. Keduanya dipindah ke bawah pil header 14 Agu 2026:
+    // di kaki intro ia cuma hidup 4 detik dan hilang bersama introonya, jadi
+    // penonton yang masuk dari tengah tak pernah melihat kesegaran videonya —
+    // padahal "ini video kapan?" justru pertanyaan yang menentukan orang mau
+    // repot menyalin kode atau tidak.
 
     // Stempel MENGHANTAM + gelombang kejut, persis irama roundup.
     const st0 = 1.85, stp = clamp((ts - st0) / 0.6);
@@ -428,7 +516,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
         ring(ctx, cx, cy, 50 + q * 520, 12 * clamp(1 - q), C.red, clamp(1 - q) * 0.5);
         ring(ctx, cx, cy, 26 + q * 340, 6 * clamp(1 - q), "#fff", clamp(1 - q) * 0.26);
         ctx.save(); ctx.globalAlpha = clamp(q * 2.2) * 0.85; ctx.textAlign = "center";
-        ctx.font = "700 26px Grotesk"; ctx.fillStyle = C.faint;
+        ctx.font = "700 26px Grotesk"; ctx.fillStyle = EN_WARNA;
         ctx.fillText("STILL WORKING", cx, cy + 92); ctx.restore();
       }
     }
@@ -543,7 +631,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
       const cx = X0 + cw * i + cw / 2;
       ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
       ctx.font = "700 23px GroteskR"; ctx.fillStyle = c.s; ctx.fillText(c.l, cx, yL - 22);
-      ctx.font = "700 18px GroteskR"; ctx.fillStyle = "rgba(166,175,191,0.62)"; ctx.fillText(c.e, cx, yL + 2);
+      ctx.font = "700 18px GroteskR"; ctx.fillStyle = EN_WARNA; ctx.fillText(c.e, cx, yL + 2);
       ctx.font = "700 52px Mono"; pop(ctx, nf(c.v * rev), cx, yN, c.c, 7);
       if (i < 2) { ctx.strokeStyle = "rgba(255,255,255,0.10)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(X0 + cw * (i + 1), yL - 26); ctx.lineTo(X0 + cw * (i + 1), yN - 4); ctx.stroke(); }
     });
@@ -573,6 +661,253 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     ctx.restore(); ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
   }
 
+  // ── ADEGAN SIKLUS KODE ────────────────────────────────────────────────────
+  // Ini jawaban jalur MOBILE untuk grafik pemain, dan sumbernya barang yang tak
+  // dimiliki kanal lain: arsip kode kita sendiri. Yang dipajang bukan ramalan
+  // ("besok keluar kode baru") melainkan PENGAMATAN atas riwayat — berapa kali
+  // game ini merilis, tiap berapa hari, dan sudah berapa lama sejak terakhir.
+  //
+  // Batangnya = satu gelombang rilis (satu HARI rilis, bukan satu kode; tiga
+  // kode livestream yang keluar bersamaan adalah satu peristiwa). Tinggi batang
+  // sengaja seragam: yang bercerita jarak antar-batang, bukan tingginya, dan
+  // membuatnya bervariasi akan menyiratkan besaran yang tak kita ukur.
+  function adeganSiklus(ctx, ts, gt) {
+    latar(ctx, gt);
+    const s = wawasan.siklus;
+    const a = clamp(ts / 0.35);
+    ctx.save(); ctx.globalAlpha = a;
+    ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+    bi(ctx, "SIKLUS RILIS KODE", "CODE RELEASE CYCLE", W / 2, 128, {
+      idFont: "800 46px Grotesk", enFont: "600 28px GroteskR", idColor: C.txt, enColor: EN_WARNA });
+    // y=210, BUKAN 172: `bi()` menaruh baris Inggrisnya sendiri tepat di bawah
+    // judul, dan baris ini menabraknya persis — dua teks abu-abu bertumpuk yang
+    // sama-sama jadi tak terbaca.
+    biSebaris(ctx, "DARI ARSIP KODEGG", "FROM KODEGG'S OWN ARCHIVE", W / 2, 210,
+      { font: "700 22px GroteskR", warnaId: "rgba(166,175,191,0.82)", rata: "center" });
+
+    // Tiga angka besar. Muncul berurutan supaya mata sempat membaca satu-satu.
+    const rev = easeOut(clamp(ts / 1.1));
+    // Satuan ditaruh di LABEL, bukan disingkat jadi "9h" di angkanya. "h" untuk
+    // "hari" terbaca sebagai "hours" oleh penonton berbahasa Inggris — dan
+    // videonya bilingual, jadi singkatan itu menyesatkan separuh penontonnya.
+    const sel = [
+      { l: "GELOMBANG TERCATAT", e: "RELEASE WAVES", v: String(Math.round(s.gelombang * rev)), c: C.acc, s: C.limeSoft },
+      // RENTANG, bukan median. "~7" terbaca sebagai jadwal; "4–21" jujur bahwa
+      // yang kita punya cuma sebaran, bukan tanggal yang bisa dipastikan.
+      { l: "JARAK ANTAR-RILIS (HARI)", e: "GAP RANGE (DAYS)", v: rev < 0.99 ? `${Math.round(s.jedaMin * rev)}` : `${s.jedaMin}–${s.jedaMaks}`, c: C.ungu, s: C.unguSoft },
+      { l: "SEJAK TERAKHIR (HARI)", e: "SINCE LAST DROP (DAYS)", v: String(Math.round(s.hariSejak * rev)), c: s.jatuhTempo ? C.acc : C.biru, s: s.jatuhTempo ? C.limeSoft : C.biruSoft },
+    ];
+    const X0 = 150, SW = W - 300, cw = SW / 3, yL = 330, yN = 410;
+    sel.forEach((c, i) => {
+      const cx = X0 + cw * i + cw / 2;
+      ctx.font = "700 24px GroteskR"; ctx.fillStyle = c.s; ctx.fillText(c.l, cx, yL - 22);
+      ctx.font = "700 18px GroteskR"; ctx.fillStyle = EN_WARNA; ctx.fillText(c.e, cx, yL + 2);
+      ctx.font = "700 76px Mono"; pop(ctx, c.v, cx, yN, c.c, 8);
+      if (i < 2) { ctx.strokeStyle = "rgba(255,255,255,0.10)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(X0 + cw * (i + 1), yL - 26); ctx.lineTo(X0 + cw * (i + 1), yN - 4); ctx.stroke(); }
+    });
+
+    // Garis waktu gelombang. Batang tumbuh dari kiri ke kanan mengikuti ts.
+    // KEDALAMAN ARSIP — pengganti meteran posisi siklus.
+    //
+    // Meteran itu menjawab "sudah sejauh mana kita menunggu", dan di video yang
+    // dipicu KODE BARU jawabannya selalu "baru mulai" — barnya kosong melompong
+    // justru di keadaan yang paling sering terbit. Ia juga mengulang cerita yang
+    // sudah disampaikan deretan tanggal di bawahnya, dengan cara yang lebih buruk.
+    //
+    // Yang dipajang sekarang tak punya keadaan canggung: berapa kode game ini yang
+    // masih hidup, berapa yang sudah mati, dan sejak kapan kami mencatatnya.
+    // Angka "sudah mati" itu justru buktinya — kode expired TIDAK dihapus di sini
+    // (prinsip CLAUDE.md: arsip = database), jadi jumlah itu memperlihatkan game
+    // ini benar-benar diikuti dari waktu ke waktu, bukan disalin sekali dari
+    // agregator lain. Itu hal yang tak bisa ditiru dalam semalam.
+    const GX = 150, GY = 486, GW = SW, GH = 424;
+    rr(ctx, GX, GY, GW, GH, 18); ctx.fillStyle = "rgba(9,12,18,0.55)"; ctx.fill();
+    ctx.strokeStyle = "rgba(255,255,255,0.08)"; ctx.lineWidth = 2; ctx.stroke();
+    biSebaris(ctx, "YANG KAMI CATAT UNTUK GAME INI", "WHAT WE TRACK", GX + 30, GY + 44,
+      { font: "700 24px Grotesk", warnaId: C.muted });
+
+    const ar = wawasan.arsip;
+    const tx = GX + 30, tw = GW - 60;
+    if (ar) {
+      // TANPA BAR PERBANDINGAN aktif-vs-mati. Bar itu dicoba dan dibuang 14 Agu
+      // 2026, karena yang diukurnya bukan apa yang kita kira.
+      //
+      // Arsip tak pernah dihapus (prinsip CLAUDE.md), sedangkan jumlah kode aktif
+      // relatif tetap — jadi segmen "mati" TUMBUH SELAMANYA dan segmen "aktif"
+      // menyusut ke nol berapa pun bagusnya kita bekerja. Bukan masalah nanti:
+      // sudah terjadi sekarang. Honkai Impact 3 aktif / 341 mati = 1%; Grand
+      // Piece Online 1 / 300 = 0%. AFK Journey kelihatan sehat (48%) semata
+      // karena game itu baru dipantau sebulan — artinya bar itu sebenarnya
+      // mengukur KAPAN KITA MULAI, bukan apa pun tentang gamenya.
+      //
+      // Grafik pertumbuhan arsip juga sudah dipertimbangkan dan gugur: 344 dari
+      // 344 kode Honkai pertama kali terlihat di bulan yang sama (impor awal
+      // Juli 2026), jadi bentuknya satu lonjakan lalu datar — menyesatkan ke
+      // arah sebaliknya.
+      //
+      // Yang tersisa dan tetap jujur seiring waktu: ANGKANYA. "27 kode tercatat"
+      // justru makin mengesankan tiap bulan, dan "dipantau sejak" ikut menua
+      // dengan sendirinya. Ruang yang dibebaskan diberikan ke deretan tanggal di
+      // bawah — elemen terkuat di adegan ini.
+      const maju = easeOut(clamp((ts - 0.4) / 1.2));
+      const kol = [
+        { v: ar.total, id: "KODE TERCATAT", en: "CODES TRACKED", c: C.acc },
+        { v: ar.aktif, id: "MASIH AKTIF", en: "STILL ACTIVE", c: C.biru },
+      ];
+      const punyaSejak = !!ar.sejakMs;
+      const nKol = punyaSejak ? 3 : 2;
+      const cw3 = tw / nKol;
+      kol.forEach((k, i) => {
+        const cx3 = tx + cw3 * i + cw3 / 2;
+        ctx.textAlign = "center";
+        ctx.font = "800 62px Mono"; pop(ctx, String(Math.round(k.v * maju)), cx3, GY + 128, k.c, 8);
+        ctx.font = "700 23px GroteskR"; ctx.fillStyle = k.c === C.acc ? C.limeSoft : C.biruSoft;
+        ctx.fillText(k.id, cx3, GY + 164);
+        ctx.font = "600 19px GroteskR"; ctx.fillStyle = EN_WARNA;
+        ctx.fillText(k.en, cx3, GY + 188);
+      });
+      if (punyaSejak) {
+        // Tanggal, bukan angka — jadi ditulis lebih kecil supaya tak beradu
+        // dengan dua angka di sebelahnya.
+        const cx3 = tx + cw3 * 2 + cw3 / 2;
+        const d = new Date(ar.sejakMs);
+        ctx.textAlign = "center";
+        ctx.font = "800 42px Mono"; ctx.fillStyle = C.txt;
+        ctx.fillText(`${fmtTgl(ar.sejakMs)} ${d.getUTCFullYear()}`, cx3, GY + 124);
+        ctx.font = "700 23px GroteskR"; ctx.fillStyle = "rgba(238,241,246,0.72)";
+        ctx.fillText("DIPANTAU SEJAK", cx3, GY + 164);
+        ctx.font = "600 19px GroteskR"; ctx.fillStyle = EN_WARNA;
+        ctx.fillText("TRACKED SINCE", cx3, GY + 188);
+      }
+      biSebaris(ctx, "KODE KEDALUWARSA TIDAK DIHAPUS, TETAP TERSIMPAN DI ARSIP",
+        "EXPIRED CODES ARE NEVER DELETED", W / 2, GY + 232,
+        { font: "600 21px GroteskR", warnaId: "rgba(166,175,191,0.82)", rata: "center" });
+    }
+
+    // RITME — TANGGAL rilis terakhir, dengan jedanya ditulis di antaranya.
+    //
+    // Versi pertama cuma memajang angka jedanya saja (30 · 21 · 7 · 4 · 3 · 4).
+    // Itu tak terbaca: angka terakhirnya kebetulan 4, SAMA dengan "sejak
+    // terakhir: 4" di atasnya, sehingga terbaca sebagai "kode terakhir muncul 4
+    // hari lalu" — padahal artinya jarak antara dua rilis terakhir. Dua angka 4
+    // yang artinya beda dalam satu layar; pemilik kanal sendiri salah baca.
+    // Dengan tanggalnya ditulis, jedanya tak bisa lagi tertukar dengan apa pun.
+    // Delapan tanggal, bukan enam, dan kartunya lebih besar: ruang bekas bar
+    // perbandingan dipakai di sini karena inilah bagian yang paling banyak
+    // bercerita — jaraknya mengecil ke kanan = rilisnya makin rapat.
+    const tgl = (s.hari ?? []).slice(-8);
+    if (tgl.length >= 2) {
+      const cy = GY + GH - 76;
+      biSebaris(ctx, "RILIS TERAKHIR & JEDANYA (HARI)", "RECENT DROPS & GAPS (DAYS)", tx + 4, cy - 58,
+      { font: "700 22px GroteskR", warnaId: "rgba(166,175,191,0.82)" });
+      const cw2 = tgl.length > 6 ? 116 : 138, gapW = tgl.length > 6 ? 58 : 84, totalW = tgl.length * cw2 + (tgl.length - 1) * gapW;
+      let cx2 = W / 2 - totalW / 2;
+      tgl.forEach((d, i) => {
+        const av = clamp((ts - 1.5 - i * 0.16) / 0.35);
+        if (av > 0.01) {
+          ctx.save(); ctx.globalAlpha = av;
+          const akhir = i === tgl.length - 1;
+          rr(ctx, cx2, cy - 30, cw2, 70, 14);
+          ctx.fillStyle = akhir ? "rgba(203,255,70,0.14)" : "rgba(21,27,39,0.85)"; ctx.fill();
+          ctx.strokeStyle = akhir ? "rgba(203,255,70,0.45)" : "rgba(255,255,255,0.08)"; ctx.lineWidth = 2; ctx.stroke();
+          ctx.textAlign = "center"; ctx.fillStyle = akhir ? C.acc : C.txt;
+          fontMuat(ctx, fmtTgl(Date.parse(d)), cw2 - 18, { berat: "800", min: 20, maks: 28, keluarga: "Mono" });
+          ctx.fillText(fmtTgl(Date.parse(d)), cx2 + cw2 / 2, cy + 14);
+          ctx.restore();
+        }
+        // Jeda ditulis DI ANTARA dua tanggal, di atas garis penghubung — posisinya
+        // sendiri yang menjelaskan bahwa angka itu milik jarak, bukan milik tanggal.
+        if (i > 0) {
+          const av2 = clamp((ts - 1.42 - i * 0.16) / 0.35);
+          if (av2 > 0.01) {
+            const g = Math.round((Date.parse(d) - Date.parse(tgl[i - 1])) / 86400000);
+            const x0 = cx2 - gapW, x1 = cx2;
+            ctx.save(); ctx.globalAlpha = av2 * 0.9;
+            ctx.strokeStyle = "rgba(255,255,255,0.16)"; ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.moveTo(x0 + 10, cy + 4); ctx.lineTo(x1 - 10, cy + 4); ctx.stroke();
+            ctx.textAlign = "center"; ctx.font = "700 22px Mono"; ctx.fillStyle = C.muted;
+            ctx.fillText(String(g), (x0 + x1) / 2, cy - 8);
+            ctx.restore();
+          }
+        }
+        cx2 += cw2 + gapW;
+      });
+    }
+    ctx.restore(); ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+  }
+
+  // ── ADEGAN CARA REDEEM ────────────────────────────────────────────────────
+  // Langkah tukar BERBEDA TIAP GAME dan diverifikasi manual dengan membuka
+  // gamenya (site/src/lib/redeem.mjs) — persis "how-to-redeem walkthrough" yang
+  // diminta peninjau YouTube, dan salah satu dari sedikit hal di video ini yang
+  // tak bisa disalin dari agregator mana pun.
+  function adeganRedeem(ctx, ts, gt) {
+    latar(ctx, gt);
+    const a = clamp(ts / 0.35);
+    ctx.save(); ctx.globalAlpha = a;
+    ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+    bi(ctx, "CARA TUKAR KODE", "HOW TO REDEEM", W / 2, 128, {
+      idFont: "800 46px Grotesk", enFont: "600 28px GroteskR", idColor: C.txt, enColor: EN_WARNA });
+    if (redeem.req) {
+      // y=196: di 152 pil ini menimpa baris Inggris yang digambar `bi()`.
+      //
+      // Syarat versi Inggris ditulis DI BAWAH pil, bukan digabung ke dalamnya:
+      // digabung, pilnya jadi selebar layar untuk kalimat yang panjang di dua
+      // bahasa sekaligus dan berhenti terbaca sebagai peringatan.
+      const teks = `BUTUH: ${redeem.req}`.toUpperCase();
+      ctx.font = "700 22px GroteskR";
+      const w = ctx.measureText(teks).width + 44;
+      rr(ctx, W / 2 - w / 2, 196, w, 44, 22); ctx.fillStyle = "rgba(255,177,60,0.14)"; ctx.fill();
+      ctx.strokeStyle = "rgba(255,177,60,0.45)"; ctx.lineWidth = 2; ctx.stroke();
+      ctx.fillStyle = "#FFB13C"; ctx.fillText(teks, W / 2, 225);
+      if (redeem.reqEn) {
+        ctx.font = "600 20px GroteskR"; ctx.fillStyle = "rgba(255,177,60,0.62)";
+        ctx.fillText(`NEEDS: ${redeem.reqEn}`.toUpperCase(), W / 2, 266);
+      }
+    }
+    // Kartu langkah MENGISI tinggi yang tersedia, bukan berhenti di tengah layar
+    // dengan sepertiga bawah kosong (versi pertama: batas 112px membuat empat
+    // langkah selesai di y=706 dari 1080).
+    const langkah = redeem.steps;
+    const langkahEn = redeem.stepsEn ?? [];
+    const y0 = redeem.req ? (redeem.reqEn ? 342 : 300) : 250;
+    const gapY = Math.min(168, Math.max(96, (H - y0 - 120) / Math.max(1, langkah.length)));
+    ctx.textAlign = "left";
+    langkah.forEach((t, i) => {
+      // Muncul satu per satu: langkah yang serentak nongol terbaca sebagai
+      // paragraf, bukan urutan yang harus diikuti.
+      const av = clamp((ts - 0.45 - i * 0.5) / 0.4);
+      if (av <= 0.01) return;
+      ctx.save(); ctx.globalAlpha = a * av;
+      const y = y0 + i * gapY, x = 210;
+      const geser = (1 - easeOut(av)) * 26;
+      rr(ctx, x - geser, y - 42, W - 420 + geser, gapY - 16, 16);
+      ctx.fillStyle = "rgba(21,27,39,0.72)"; ctx.fill();
+      ctx.strokeStyle = "rgba(255,255,255,0.07)"; ctx.lineWidth = 2; ctx.stroke();
+      ctx.beginPath(); ctx.arc(x + 34 - geser, y - 42 + (gapY - 16) / 2, 24, 0, 7);
+      ctx.fillStyle = C.acc; ctx.fill();
+      ctx.fillStyle = C.ink; ctx.font = "800 26px Mono"; ctx.textAlign = "center";
+      ctx.fillText(String(i + 1), x + 34 - geser, y - 42 + (gapY - 16) / 2 + 9);
+      ctx.textAlign = "left"; ctx.fillStyle = C.txt;
+      // Dua bahasa → teks Indonesia naik sedikit supaya barisan Inggris muat di
+      // bawahnya tanpa menabrak dasar kartu.
+      const en = langkahEn[i];
+      const yTengah = y - 42 + (gapY - 16) / 2;
+      // fontMuat MENYETEL ctx.font sendiri dan memulangkan ANGKA ukurannya —
+      // menugaskannya kembali ke ctx.font akan menulis "28" (bukan CSS font) dan
+      // canvas diam-diam mengabaikannya, teks jatuh ke font bawaan.
+      fontMuat(ctx, t, W - 560, { berat: "700", min: 22, maks: 32, keluarga: "Grotesk" });
+      ctx.fillText(potong(ctx, t, W - 560), x + 76 - geser, en ? yTengah - 2 : yTengah + 11);
+      if (en) {
+        ctx.fillStyle = EN_WARNA;
+        fontMuat(ctx, en, W - 560, { berat: "600", min: 18, maks: 24, keluarga: "GroteskR" });
+        ctx.fillText(potong(ctx, en, W - 560), x + 76 - geser, yTengah + 32);
+      }
+      ctx.restore();
+    });
+    ctx.restore(); ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+  }
+
   // ── OUTRO = REKAP SEMUA KODE + branding ──────────────────────────────────
   // Tiga detik terakhir dulu murni logo + tombol subscribe: nol informasi,
   // padahal justru bagian video yang paling mungkin di-pause orang. Sekarang ia
@@ -591,7 +926,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
     ctx.save(); ctx.globalAlpha = clamp(ts / 0.3);
     bi(ctx, "SEMUA KODE DI VIDEO INI", "ALL CODES IN THIS VIDEO", W / 2, 132, {
-      idFont: "800 46px Grotesk", enFont: "600 28px GroteskR", idColor: C.txt, enColor: C.faint });
+      idFont: "800 46px Grotesk", enFont: "600 28px GroteskR", idColor: C.txt, enColor: EN_WARNA });
     ctx.restore();
 
     // Dua kolom begitu kodenya lebih dari empat: satu kolom panjang memaksa
@@ -667,7 +1002,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     ctx.textAlign = "center";
     bi(ctx, sisa > 0 ? `+ ${sisa} kode lagi · update tiap jam` : "Semua kode + cara redeem · update tiap jam",
        sisa > 0 ? `+ ${sisa} more codes · updated hourly` : "All codes + how to redeem · updated hourly",
-       W / 2, 862, { idFont: "400 30px GroteskR", enFont: "400 23px GroteskR", idColor: C.muted, enColor: C.faint });
+       W / 2, 862, { idFont: "400 30px GroteskR", enFont: "400 23px GroteskR", idColor: C.muted, enColor: EN_WARNA });
     ctx.restore();
 
     const ca = clamp((ts - 0.72) / 0.35), e = outBack(ca);
@@ -686,6 +1021,12 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // ── susunan adegan + cross-fade ──────────────────────────────────────────
   const SEC = [{ D: INTRO, d: (c, ts, gt) => intro(c, ts) }];
   halaman.forEach((h, i) => SEC.push({ D: durAdegan(h), d: (c, ts, gt) => adegan(c, h, ts, i, gt) }));
+  // Wawasan ditaruh SESUDAH kode, sebelum outro. Kodenya yang dijanjikan judul,
+  // jadi ia harus tampil lebih dulu; wawasan alasan untuk BERTAHAN, bukan alasan
+  // untuk mengklik. Urutan cara-redeem paling belakang karena ia berguna justru
+  // setelah penonton memegang kodenya.
+  if (adaSiklus) SEC.push({ D: SIKLUS_D, d: (c, ts, gt) => adeganSiklus(c, ts, gt) });
+  if (adaRedeem) SEC.push({ D: REDEEM_D, d: (c, ts, gt) => adeganRedeem(c, ts, gt) });
   SEC.push({ D: OUTRO, d: (c, ts, gt) => outro(c, ts, gt) });
   // VIDEO TAK BOLEH LEBIH PENDEK DARIPADA VO-NYA.
   //
@@ -714,7 +1055,13 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     total = St[SEC.length - 1] + SEC[SEC.length - 1].D;
   }
   grafikMulai = INTRO * 0.55;                 // saat pita statistik mulai muncul
-  grafikAkhir = St[SEC.length - 1];           // awal outro = adegan kode terakhir habis
+  // Ujung garis grafik = saat adegan KODE terakhir habis, bukan awal adegan
+  // terakhir video. Dulu keduanya sama karena outro langsung menyusul kode.
+  // Sejak ada adegan wawasan di antaranya, memakai SEC.length-1 membuat garis
+  // dijadwalkan sampai ujung yang tak pernah terlihat — pita statistik sudah
+  // hilang dari layar — sehingga garisnya berhenti di tengah, persis regresi
+  // "berhenti di ~88%" yang dulu dilaporkan user.
+  grafikAkhir = St[1 + halaman.length];
 
   const silent = outPath.replace(/\.mp4$/, ".silent.mp4");
   const FF = ffmpegBin();
