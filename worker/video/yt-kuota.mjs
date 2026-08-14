@@ -97,6 +97,25 @@ export const unitSisa = () => Math.max(0, KUOTA_HARIAN - unitTerpakai());
  *  ditolak — penolakan terjadi setelah render, jadi waktunya telanjur terbuang. */
 export const UNIT_PER_VIDEO = TARIF_UPLOAD + 1 + 1 + 1 + 50 + 50;
 
+// JATAH PLAYLIST BARU PER HARI — batas yang TERPISAH dari kuota unit, dan yang
+// justru lebih sering mengikat. Angkanya tak didokumentasikan Google; ~10/hari
+// adalah pengamatan (pembuatan ke-11 dst ditolak). Bisa disetel lewat env kalau
+// pengamatannya berubah.
+export const PLAYLIST_HARIAN = Number(process.env.YT_PLAYLIST_HARIAN || 10);
+
+/** Sisa jatah playlist BARU hari PT ini, menurut catatan panggilan kita sendiri.
+ *
+ *  Dipakai jalur borongan untuk memutuskan boleh-tidaknya membuat playlist.
+ *  Sebelumnya borongan menahan diri TANPA SYARAT, dan itu membuang jatah yang
+ *  masih ada: 13 Agu 2026 hanya 7 dari ~10 terpakai, tapi dua video borongan
+ *  tetap terbit tanpa playlist dan jadi yatim permanen (kodenya sudah ditandai
+ *  posted, jadi takkan diulang).
+ *
+ *  Angkanya ESTIMASI — kalau meleset dan YouTube menolak, uploadVideo memulangkan
+ *  playlistPending dan videonya masuk daftar "buat MANUAL" seperti biasa. Jadi
+ *  salah tebak di sini menurunkan mutu, bukan menggagalkan upload. */
+export const sisaPlaylist = () => Math.max(0, PLAYLIST_HARIAN - (muat().panggilan["playlists.insert"] ?? 0));
+
 /** Ringkasan satu baris + rincian panggilan, untuk log run & laporan harian. */
 export function ringkas() {
   const b = muat();

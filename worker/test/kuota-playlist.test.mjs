@@ -102,3 +102,25 @@ test("pembungkus tak merusak klien googleapis sungguhan", async (t) => {
 });
 
 test.after(() => { try { rmSync(DATA, { recursive: true, force: true }); } catch {} });
+
+// ── Jatah playlist harian ────────────────────────────────────────────────────
+// Batas yang TERPISAH dari kuota unit, dan yang lebih sering mengikat. Borongan
+// dulu menahan pembuatan playlist tanpa melihat sisa jatah — 13 Agu 2026 baru 7
+// dari 10 terpakai, tapi dua video tetap terbit tanpa playlist dan jadi yatim
+// permanen (kodenya sudah ditandai posted, jadi tak pernah diulang).
+test("sisaPlaylist: dihitung dari playlists.insert hari ini, tak menyentuh kuota unit", async () => {
+  const { catat, sisaPlaylist, PLAYLIST_HARIAN, unitTerpakai } = await import("../video/yt-kuota.mjs?jatah");
+  assert.equal(sisaPlaylist(), PLAYLIST_HARIAN, "buku kosong → jatah utuh");
+
+  for (let i = 0; i < 7; i++) catat("playlists.insert");
+  assert.equal(sisaPlaylist(), PLAYLIST_HARIAN - 7, "7 terpakai → sisa 3, bukan 0");
+
+  // Panggilan lain TIDAK ikut mengurangi jatah playlist, walau memakan unit.
+  const unitSebelum = unitTerpakai();
+  for (let i = 0; i < 20; i++) catat("playlistItems.insert");
+  assert.equal(sisaPlaylist(), PLAYLIST_HARIAN - 7, "playlistItems bukan playlist baru");
+  assert.ok(unitTerpakai() > unitSebelum, "tapi unitnya tetap terhitung");
+
+  for (let i = 0; i < 5; i++) catat("playlists.insert");
+  assert.equal(sisaPlaylist(), 0, "tak pernah negatif");
+});

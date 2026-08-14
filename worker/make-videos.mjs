@@ -12,7 +12,7 @@ import { seriesPemain, seriesPemainBergulir } from "./src/player-series.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
 import { uploadVideo, ytConfigured, attachToPlaylist, ytProjectCount } from "./video/upload.mjs";
-import { UNIT_PER_VIDEO, unitSisa, ringkas as ringkasKuota } from "./video/yt-kuota.mjs";
+import { UNIT_PER_VIDEO, unitSisa, sisaPlaylist, PLAYLIST_HARIAN, ringkas as ringkasKuota } from "./video/yt-kuota.mjs";
 import { gameSlug } from "./src/games.mjs";
 import { simpanPending, buangPending, semuaPending } from "./video/pending-thumbs.mjs";
 import { saringSusulan } from "./video/susulan.mjs";
@@ -1088,12 +1088,31 @@ async function main() {
           // yang playlist-nya SUDAH ada tetap dimasukkan — itu tak memakai jatah
           // harian (yang dibatasi YouTube adalah playlists.insert).
           //
-          // BORONGAN SELALU MELEWATI PEMBUATAN PLAYLIST, tanpa perlu SKIP_PLAYLIST.
-          // Alasannya bukan penghematan kuota unit melainkan kenyataan: jatah
-          // playlist baru YouTube ~10/hari sementara borongan menembak sampai 15
-          // per run dan puluhan per hari. Log 6 Agu 2026 penuh baris "jatah
-          // playlist harian sudah habis — pembuatan ditahan", dan sisanya
-          // menumpuk di pending-playlists.json untuk dibuat entah kapan.
+          // BORONGAN MENAHAN PEMBUATAN PLAYLIST — TAPI HANYA SAAT JATAHNYA MEMANG
+          // TIPIS (sejak 14 Agu 2026; sebelumnya tanpa syarat).
+          //
+          // Alasan aslinya tetap berlaku: jatah playlist baru YouTube ~10/hari
+          // sementara borongan menembak sampai 15 per run. Log 6 Agu 2026 penuh
+          // baris "jatah playlist harian sudah habis — pembuatan ditahan".
+          //
+          // Yang keliru adalah menahannya TANPA MELIHAT SISA. 13 Agu 2026 baru 7
+          // dari ~10 terpakai, tapi dua video borongan tetap terbit tanpa playlist
+          // — dan jadi yatim PERMANEN, karena kodenya sudah ditandai posted
+          // sehingga tak pernah diulang. Efeknya sampai ke situs: game punya
+          // video, tapi tombol "Video di YouTube" tak muncul (dibaca dari
+          // yt-playlists.json). Ketahuan dari user yang bertanya "kenapa ada video
+          // yang tak ada playlistnya padahal kuota longgar" — dan "kuota longgar"
+          // yang dia lihat memang benar, cuma menunjuk batas yang berbeda.
+          //
+          // Borongan jalan di JAM TERAKHIR sebelum reset (23:00 PT), jadi jatah
+          // yang tersisa saat itu akan hangus dalam hitungan menit kalau tak
+          // dipakai. Menyisakannya untuk "kode baru nanti" tak ada gunanya —
+          // nantinya sudah hari berikutnya, dengan jatah yang baru.
+          const jatahPlaylist = sisaPlaylist();
+          const tahanPlaylist = SKIP_PLAYLIST || (c.backlog === true && jatahPlaylist <= 0);
+          if (c.backlog === true && !SKIP_PLAYLIST) {
+            console.log(`  ↳ jatah playlist hari ini: sisa ${jatahPlaylist}/${PLAYLIST_HARIAN} → ${tahanPlaylist ? "ditahan" : "boleh dibuat"}`);
+          }
           //
           // Jalur kode-baru untuk game yang benar-benar baru TIDAK disentuh: di
           // situ playlist tetap dibuat otomatis dalam jatah 10/hari, karena
@@ -1142,7 +1161,7 @@ async function main() {
           // ditulis ke berkas .txt): jumlahnya sedikit dan bisa di-pin tangan,
           // jadi di sana 50 unit itu terbayar.
           const { comment: _takDipakai, ...metaUpload } = meta;
-          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...metaUpload, privacy: PRIVACY, thumbnailPath: kirimThumb ? th : undefined, tanpaBuatPlaylist: SKIP_PLAYLIST || c.backlog === true });
+          const { id, url, playlistPending, thumbPending } = await uploadVideo({ videoPath: fin, ...metaUpload, privacy: PRIVACY, thumbnailPath: kirimThumb ? th : undefined, tanpaBuatPlaylist: tahanPlaylist });
           // Thumbnail Shorts TAK BISA dirender ulang seperti video long: dia
           // potongan frame dari mp4 yang ikut terhapus bersama runner, dan
           // Shorts tak bisa diberi thumbnail lewat Studio desktop (harus API atau
@@ -1173,7 +1192,12 @@ async function main() {
               console.log("  ↳ thumbnail gagal — diantrikan utk run berikutnya");
             } catch (e) { console.log(`  ↳ thumbnail gagal & tak bisa diantrikan: ${e.message}`); }
           } else void thumbPending;
-          if ((SKIP_PLAYLIST || c.backlog === true) && playlistPending) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
+          // Daftar "buat MANUAL" hanya untuk yang TAK akan dicoba ulang sendiri.
+          // Jalur normal sudah diantrikan ke pending-playlists.json beberapa baris
+          // di bawah (`playlistPending && !c.backlog`), jadi memasukkannya ke sini
+          // juga akan menyuruh orang mengerjakan tangan sesuatu yang sudah beres
+          // otomatis di run berikutnya.
+          if (playlistPending && (SKIP_PLAYLIST || c.backlog === true)) tanpaPlaylist.push({ id, judul: meta.playlistTitle });
           console.log(`  ✓ upload (${PRIVACY}): ${url} — "${meta.title}"`);
           state.todayCount += 1; remaining -= 1;
           state.log.unshift({ at: now.toISOString(), game: c.id, name: c.name, videoId: id, title: meta.title, mode: "upload" });
