@@ -388,23 +388,78 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     c2.fillStyle = g; c2.fillRect(0, 0, w, h);
     return cv;
   };
+  // UKURAN & TATA LETAK KEPING.
+  //
+  // Mode latar video memakai ukuran TETAP 266x150 dan sebaran yang dijaga tak
+  // saling menimpa (arahan user). Latar lama tetap memakai keping besar acak
+  // 520-1280 — di sana kepingnya di-blur 26px dan memang berperan sebagai noda
+  // warna, jadi bertumpuk justru bagian dari tampilannya.
+  const KEPING_SEMENTARA = []; // penampung saat menebar, dibaca pemeriksa jarak
+  const ART_W = 266, ART_H = 150, ART_TOL = 0.15; // toleransi tumpang tindih 15%
+  const jmlKeping = Math.min(8, Math.max(4, bahan.length));
+
+  /** Kotak pembatas setelah keping dimiringkan. Dipakai menghitung jarak aman —
+   *  memakai lebar aslinya akan meremehkan tempat yang benar-benar dipakai. */
+  const bbox = (rot) => ({
+    w: Math.abs(ART_W * Math.cos(rot)) + Math.abs(ART_H * Math.sin(rot)),
+    h: Math.abs(ART_W * Math.sin(rot)) + Math.abs(ART_H * Math.cos(rot)),
+  });
+
+  // SATU kecepatan untuk SEMUA keping — inilah yang membuat janji "tak saling
+  // menimpa" bertahan sepanjang video, bukan cuma di frame pertama. Kalau tiap
+  // keping punya arah sendiri, jarak antar-keping berubah terus dan cepat atau
+  // lambat pasti bersinggungan; dengan kecepatan sama, susunan relatifnya beku.
+  const arahBersama = Math.random() * Math.PI * 2, lajuBersama = 22 + Math.random() * 26;
+  const VX = Math.cos(arahBersama) * lajuBersama, VY = Math.sin(arahBersama) * lajuBersama;
+  // Bidang gulung (torus) — sama dengan yang dipakai saat menggambar. Jaraknya
+  // dihitung MELINGKAR: dua keping di tepi berlawanan sebenarnya bertetangga
+  // begitu yang satu membungkus ke sisi lain.
+  const GULUNG_X = W + ART_W * 2, GULUNG_Y = H + ART_H * 2;
+  const jarakTorus = (a, b, per) => { const d = Math.abs(a - b) % per; return Math.min(d, per - d); };
+
   const KEPING = bahan.length
-    ? Array.from({ length: Math.min(6, Math.max(4, bahan.length)) }, (_, i) => {
-        const r = () => Math.random();
-        const arah = r() * Math.PI * 2, laju = 26 + r() * 46; // px per detik
-        const s0 = 520 + r() * 760;
-        const img0 = bahan[i % bahan.length];
-        return {
-          // Tepi dilembutkan HANYA di mode latar video: di latar lama, blur 26px
-          // sudah menghapus batasnya, jadi tak ada yang perlu diperbaiki di sana.
-          img: latarVideo ? kepingLembut(img0, s0, s0 * 0.5625) : img0,
-          x: r() * W, y: r() * H,
-          s: s0,
-          vx: Math.cos(arah) * laju, vy: Math.sin(arah) * laju,
-          rot: (r() - 0.5) * 0.5, vr: (r() - 0.5) * 0.05,
-          a: 0.30 + r() * 0.26,
-        };
-      })
+    ? (latarVideo
+        ? Array.from({ length: jmlKeping }, (_, i) => {
+            const img0 = bahan[i % bahan.length];
+            let pos = null;
+            // Tebar-lalu-tolak: coba posisi acak, tolak yang melanggar jarak
+            // aman. 400 percobaan cukup longgar untuk 8 keping kecil di 1920x1080;
+            // kalau toh mentok, posisi terakhir dipakai apa adanya — lebih baik
+            // satu keping berdekatan daripada layar kehilangan kepingnya.
+            for (let coba = 0; coba < 400 && !pos; coba++) {
+              const rot = (Math.random() - 0.5) * 0.24;
+              const b = bbox(rot);
+              const x = Math.random() * GULUNG_X, y = Math.random() * GULUNG_Y;
+              const bentrok = (KEPING_SEMENTARA).some((k) => {
+                const bk = bbox(k.rot);
+                const dx = jarakTorus(x, k.x, GULUNG_X), dy = jarakTorus(y, k.y, GULUNG_Y);
+                return dx < ((b.w + bk.w) / 2) * (1 - ART_TOL) && dy < ((b.h + bk.h) / 2) * (1 - ART_TOL);
+              });
+              if (!bentrok || coba === 399) pos = { x, y, rot };
+            }
+            const k = {
+              img: kepingLembut(img0, ART_W, ART_H),
+              x: pos.x, y: pos.y, s: ART_W,
+              vx: VX, vy: VY,
+              rot: pos.rot, vr: 0, // TANPA putaran: berputar mengubah kotak pembatas
+              a: 1,                // alpha tunggal diatur LATAR_ART
+            };
+            KEPING_SEMENTARA.push(k);
+            return k;
+          })
+        : Array.from({ length: Math.min(6, Math.max(4, bahan.length)) }, (_, i) => {
+            const r = () => Math.random();
+            const arah = r() * Math.PI * 2, laju = 26 + r() * 46; // px per detik
+            const s0 = 520 + r() * 760;
+            return {
+              img: bahan[i % bahan.length],
+              x: r() * W, y: r() * H,
+              s: s0,
+              vx: Math.cos(arah) * laju, vy: Math.sin(arah) * laju,
+              rot: (r() - 0.5) * 0.5, vr: (r() - 0.5) * 0.05,
+              a: 0.30 + r() * 0.26,
+            };
+          }))
     : [];
 
   /** Keping gambar promosi yang hanyut & di-blur. Dipakai dua jalur: latar lama
