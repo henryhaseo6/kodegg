@@ -92,12 +92,15 @@ else { await makeVO({ outPath: vo, text: teks }); console.log("VO dibuat."); }
 const adaVO = existsSync(vo) && process.env.TANPA_VO !== "1";
 
 const ikon = resolve(HERE, `../site/public/assets/${platform === "ROBLOX" ? "roblox" : "games"}/${id}.png`);
+// LATAR_VIDEO=<path> → klip dipakai sebagai latar (uji). Kosong = latar biasa.
+const latarVideo = process.env.LATAR_VIDEO || null;
+if (latarVideo) console.log(`latar    : video ${latarVideo}`);
 const hasil = await renderWide({
   game: { name: nama, slug: id, players: rob.games?.[id]?.players ?? 0 },
   codes: display, activeCount: aktif.length, fetchedAt: new Date().toISOString(),
   iconPath: existsSync(ikon) ? ikon : null,
   outPath: adaVO ? bisu : fin, voPath: adaVO ? vo : null,
-  wawasan, redeem,
+  wawasan, redeem, latarVideo,
 });
 if (adaVO) await muxAudio({ videoPath: bisu, voPath: vo, outPath: fin });
 console.log(`\n✓ ${fin}`);

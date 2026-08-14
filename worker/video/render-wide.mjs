@@ -255,7 +255,7 @@ function wavMono(mix) {
   return b;
 }
 
-export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null, media = null, wawasan = null, redeem = null, maksDetik = null, seriesWaktu = null }) {
+export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null, media = null, wawasan = null, redeem = null, maksDetik = null, seriesWaktu = null, latarVideo = null }) {
   const { createCanvas, loadImage } = await canvasLib();
   const ikon = iconPath && existsSync(iconPath) ? await loadImage(iconPath) : null;
   // media datang sebagai Buffer PNG dari src/game-media.mjs; dimuat di sini
@@ -378,6 +378,30 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     : [];
 
   function latar(ctx, t) {
+    // MODE LATAR VIDEO: kanvas dibiarkan TRANSPARAN di lapisan latar, dan yang
+    // digambar cuma peredupnya. Klip video-nya ditimpakan oleh ffmpeg saat
+    // encode (overlay), bukan didekode per-frame di Node — mendekode 1.830 frame
+    // 1080p ke dalam kanvas akan jauh lebih lambat dan boros memori daripada
+    // membiarkan ffmpeg melakukannya, dan hasilnya sama persis.
+    //
+    // Peredupnya TETAP di kanvas (bukan filter ffmpeg) supaya kekuatannya bisa
+    // berbeda per-adegan nanti — mis. tajam saat intro, gelap saat kartu kode
+    // dibaca.
+    if (latarVideo) {
+      // BENAR-BENAR TRANSPARAN — peredupnya dipindah ke ffmpeg (drawbox+vignette
+      // pada klip latar), BUKAN digambar di sini.
+      //
+      // Versi pertama menggambar peredup 52% di tiap adegan, dan itu rusak
+      // tepat di CROSS-FADE: transisi menggambar adegan lama lalu adegan baru di
+      // atasnya, jadi dua peredup BERTUMPUK dan latarnya melompat gelap (0,52 →
+      // ~0,77) tiap ganti halaman. Persis yang dilaporkan user: "pas perpindahan
+      // slidenya kelihatan banget".
+      //
+      // Menaruhnya di ffmpeg juga menghapus seluruh kelas bug ini: klip diredupkan
+      // SEKALI, berapa pun lapisan kanvas yang menumpuk di atasnya.
+      ctx.clearRect(0, 0, W, H);
+      return;
+    }
     ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
     for (const k of KEPING) {
       const w = k.s, h = w * 0.5625; // jaga rasio 16:9 gambar sumber
@@ -520,7 +544,18 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
         ctx.fillText("STILL WORKING", cx, cy + 92); ctx.restore();
       }
     }
-    if (ts < 0.22) { ctx.globalAlpha = 1 - ts / 0.22; ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
+    // FADE-IN DARI HITAM — 0,22 detik pertama. Diperpendek jadi 0,08 detik, dan
+    // dilewati sama sekali saat latar video dipakai.
+    //
+    // Peninjau YouTube menulis "trim the initial black screen at 00:00", dan
+    // terukur: 5 frame pertama (167 ms) rata-rata terangnya 0-14. Untuk video
+    // yang keputusan tontonnya diambil di detik pertama, itu mahal.
+    //
+    // Di mode latar video ia bahkan merugikan dua kali: klipnya sudah punya
+    // gerak sejak frame nol, jadi menutupnya dengan hitam justru membuang satu-
+    // satunya pembuka yang menarik perhatian.
+    const fadeMasuk = latarVideo ? 0 : 0.08;
+    if (fadeMasuk && ts < fadeMasuk) { ctx.globalAlpha = 1 - ts / fadeMasuk; ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
     ctx.textBaseline = "alphabetic";
   }
 
@@ -569,7 +604,14 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
       if (masuk <= 0.01) return;
       const y = y0 + i * (TB + GAP), geser = (1 - masuk) * 40;
       ctx.globalAlpha = masuk;
-      rr(ctx, x0 + geser, y, lebar, TB, 26); ctx.fillStyle = C.surf; ctx.fill();
+      // KEPEKATAN KARTU. C.surf = rgba(21,27,39,0.82) — dipilih untuk latar LAMA
+      // (kolase ikon yang sudah blur & gelap), tempat 82% terbaca wajar. Di atas
+      // latar VIDEO ia menutup hampir seluruh aksi justru di area terbesar layar.
+      //
+      // Yang tampak "transparan lalu memekat" BUKAN perubahan keadaan: itu
+      // animasi masuk (`masuk` 0→1 selama 0,42 dtk) yang mengalikan alpha kartu.
+      // Keadaan diamnya selalu sama pekat.
+      rr(ctx, x0 + geser, y, lebar, TB, 26); ctx.fillStyle = KARTU_ISI; ctx.fill();
       ctx.strokeStyle = c.isNew ? "rgba(203,255,70,0.5)" : "rgba(255,255,255,0.09)"; ctx.lineWidth = 2; ctx.stroke();
       rr(ctx, x0 + geser + 1, y + 1, 9, TB - 2, 5); ctx.fillStyle = c.isNew ? C.acc : C.acc2; ctx.fill();
 
@@ -1078,7 +1120,40 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
 
   const silent = outPath.replace(/\.mp4$/, ".silent.mp4");
   const FF = ffmpegBin();
-  const ff = spawn(FF, ["-y", "-f", "rawvideo", "-pixel_format", "rgba", "-video_size", `${W}x${H}`, "-framerate", String(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p", "-r", String(FPS), "-g", "60", "-movflags", "+faststart", silent, "-loglevel", "error"], { stdio: ["pipe", "ignore", "inherit"] });
+  // `-stream_loop -1` mengulang klip latar bila videonya lebih panjang; `shortest`
+  // menghentikan keluaran saat aliran kanvas habis, jadi durasi tetap ditentukan
+  // kanvas — bukan panjang klipnya.
+  // Kekuatan peredup klip latar. Bisa disetel tanpa menyentuh kode saat menakar
+  // keterbacaan teks di atas klip yang berbeda-beda.
+  const LATAR_REDUP = process.env.LATAR_REDUP || "0.45";
+  // Kepekatan kartu kode. Bawaan = C.surf supaya latar non-video tak berubah
+  // sedikit pun; di mode latar video bisa diturunkan agar klipnya terlihat
+  // menembus kartu.
+  const KARTU_ISI = process.env.LATAR_KARTU ? `rgba(21,27,39,${process.env.LATAR_KARTU})` : C.surf;
+  // BLUR KLIP LATAR — tuas ukuran berkas yang PALING AMAN. H.264 membayar mahal
+  // untuk detail frekuensi tinggi; blur menghapusnya sebelum encoder melihatnya.
+  //
+  // Diukur pada klip Gakuran (10 dtk, diskalakan ke MB/menit):
+  //   tanpa blur, crf 23 ......... 23,1     blur 4, crf 23 ...... 16,8  (-27%)
+  //   blur 8, crf 23 ............. 14,3     blur 4, crf 28 ...... 10,9  (-53%)
+  //   preset medium .............. 26,1  <- JUSTRU LEBIH BESAR, bukan lebih kecil
+  //
+  // Blur cuma menyentuh LATAR. CRF menyentuh SELURUH frame — termasuk teks kode
+  // dan tepi kartu, yang justru harus setajam mungkin karena penonton menyalinnya
+  // huruf per huruf. Itu sebabnya keduanya dipisah dan blur yang jadi bawaan:
+  // ia mengecilkan berkas tanpa menyentuh apa pun yang harus dibaca.
+  const LATAR_BLUR = Number(process.env.LATAR_BLUR ?? 4);
+  const CRF = String(Number(process.env.VIDEO_CRF) || 23);
+  const argVid = latarVideo
+    ? ["-y", "-stream_loop", "-1", "-i", latarVideo,
+       "-f", "rawvideo", "-pixel_format", "rgba", "-video_size", `${W}x${H}`, "-framerate", String(FPS), "-i", "-",
+       // Peredup + vignette dipasang DI SINI, sekali, pada klip latarnya.
+       // drawbox t=fill = tirai hitam rata (setara scrim kanvas); vignette
+       // menggelapkan tepi supaya teks di tengah tetap menang.
+       "-filter_complex", `[0:v]scale=${W}:${H},fps=${FPS},setsar=1,drawbox=x=0:y=0:w=iw:h=ih:color=black@${LATAR_REDUP}:t=fill,vignette=PI/4.4${LATAR_BLUR > 0 ? `,gblur=sigma=${LATAR_BLUR}` : ""}[bg];[bg][1:v]overlay=shortest=1:format=auto[v]`,
+       "-map", "[v]", "-an"]
+    : ["-y", "-f", "rawvideo", "-pixel_format", "rgba", "-video_size", `${W}x${H}`, "-framerate", String(FPS), "-i", "-"];
+  const ff = spawn(FF, [...argVid, "-c:v", "libx264", "-preset", "veryfast", "-crf", CRF, "-pix_fmt", "yuv420p", "-r", String(FPS), "-g", "60", "-movflags", "+faststart", silent, "-loglevel", "error"], { stdio: ["pipe", "ignore", "inherit"] });
   const mk = () => createCanvas(W, H).getContext("2d");
   const mc = mk(), ac = mk(), bc = mk();
   const N = Math.round(total * FPS);
@@ -1089,7 +1164,24 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     if (tr >= 0) {
       SEC[tr - 1].d(ac, gt - St[tr - 1], gt); SEC[tr].d(bc, gt - St[tr], gt);
       const p = easeIO((gt - St[tr]) / TRT);
-      mc.globalAlpha = 1; mc.drawImage(ac.canvas, 0, 0);
+      // DUA HAL YANG HANYA SALAH SAAT LATAR TRANSPARAN:
+      //
+      // 1. mc TAK PERNAH DIBERSIHKAN. Dengan latar opak itu tak terasa — tiap
+      //    adegan mengecat penuh satu layar. Dengan latar video, kanvasnya
+      //    berlubang, jadi isi frame SEBELUMNYA mengintip dari bawah dan
+      //    menumpuk terus.
+      //
+      // 2. Adegan lama digambar pada alpha PENUH sepanjang transisi, dan yang
+      //    baru memudar masuk di atasnya. Itu benar untuk latar opak (yang baru
+      //    menutupi yang lama), tapi untuk kanvas transparan hasilnya kedua
+      //    adegan terbaca UTUH bersamaan — judul outro menimpa pil jam dan kartu
+      //    kode sekaligus. Dilaporkan user 14 Agu 2026: "pas perpindahan transisi
+      //    kelihatan bertumpuk".
+      //
+      // Perbaikannya cross-dissolve sungguhan: yang lama memudar KELUAR sementara
+      // yang baru memudar masuk, jadi jumlah kepekatannya tetap ~1.
+      mc.clearRect(0, 0, W, H);
+      mc.globalAlpha = latarVideo ? 1 - p : 1; mc.drawImage(ac.canvas, 0, 0);
       mc.globalAlpha = p; mc.drawImage(bc.canvas, 0, 0); mc.globalAlpha = 1;
     } else {
       let i = 0; for (let k = 0; k < SEC.length; k++) if (St[k] <= gt) i = k;
