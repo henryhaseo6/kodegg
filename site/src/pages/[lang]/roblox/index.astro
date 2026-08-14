@@ -16,7 +16,13 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const id = lang === "id";
-const [games, home] = await Promise.all([loadRobloxCatalog(), loadRobloxHome(0)]);
+// Game yang sudah HILANG dari Roblox (dihapus/di-private) disaring DI SINI,
+// bukan di loadRobloxCatalog — fungsi itu juga memberi makan getStaticPaths
+// halaman game, jadi menyaring di sana akan menghapus halamannya. Halamannya
+// sengaja dipertahankan (URL-nya sudah terindeks) dengan peringatan di kepala;
+// yang disembunyikan adalah daftar, pencarian, dan hitungan di halaman ini.
+const [semuaGame, home] = await Promise.all([loadRobloxCatalog(), loadRobloxHome(0)]);
+const games = semuaGame.filter((g) => !g.hilang);
 const my = monthYear(lang);
 // Ringkasan "kode minggu ini" untuk banner — sumber data yang sama, sudah
 // di-cache oleh read(), jadi tak menambah I/O.

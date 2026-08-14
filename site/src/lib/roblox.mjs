@@ -92,6 +92,11 @@ export async function loadRobloxHome(limit = 8) {
   // Kodenya tak hilang — tetap tampil di halaman gamenya, lengkap dg badge
   // CEK DULU supaya pembaca tahu harus mencoba dulu.
   const active = (raw.active ?? [])
+    // Game yang sudah HILANG dari Roblox ikut disaring dari etalase, dengan
+    // alasan yang sama seperti kode CHECK: beranda adalah penempatan paling
+    // menonjol, dan kode untuk experience yang menjawab "Content not accessible"
+    // tak bisa dipakai siapa pun. Halaman gamenya tetap ada, dengan peringatan.
+    .filter((c) => !games[c.game]?.hilangSejak)
     .filter((c) => !c.check && !c.srcCheck)
     .map((c) => shape(c, games))
     .sort(bySort);
@@ -107,6 +112,7 @@ export async function loadRobloxHome(limit = 8) {
   const activeByGame = {};
   for (const c of raw.active ?? []) activeByGame[c.game] = (activeByGame[c.game] ?? 0) + 1;
   const trending = Object.entries(games)
+    .filter(([, g]) => !g.hilangSejak)
     .map(([gid, g]) => ({
       id: gid,
       name: g.name,
@@ -190,6 +196,13 @@ export async function loadRobloxCatalog() {
       newestMs: newestByGame[id] ?? 0, // tanggal kode terbaru → sort "terbaru"
       lastChangeMs: lastChangeByGame[id] ?? 0, // perubahan isi halaman → <lastmod> sitemap
       players: g.players ?? 0, // pemain konkuren realtime → sort "terpopuler"
+      // GAME HILANG DARI ROBLOX (dihapus/di-private). DITANDAI, BUKAN DISARING:
+      // getStaticPaths halaman game memakai fungsi ini, jadi menyaring di sini
+      // berarti MENGHAPUS halamannya — kebalikan dari yang diinginkan. Halaman
+      // tetap ada (URL-nya sudah terindeks) dengan peringatan; yang menyaring
+      // adalah daftar & pencarian, di pemanggilnya.
+      hilang: !!g.hilangSejak,
+      hilangSejak: g.hilangSejak ?? null,
     }))
     .sort((a, b) => b.newestMs - a.newestMs || b.activeCount - a.activeCount || a.name.localeCompare(b.name));
 }
@@ -199,6 +212,7 @@ export async function loadRobloxCatalog() {
 export async function loadRobloxGameList() {
   const raw = await read();
   return Object.entries(raw.games ?? {})
+    .filter(([, g]) => !g.hilangSejak) // jangan tawarkan langganan game yang sudah hilang
     .map(([id, g]) => ({ id, name: g.name }))
     .sort((a, b) => a.name.localeCompare(b.name));
 }
@@ -236,6 +250,9 @@ export async function loadRobloxGame(slug) {
     // dan cakupannya lebih luas daripada placeId (478 vs 424 game).
     rootPlaceId: g.rootPlaceId ?? null,
     players: g.players ?? 0, // pemain konkuren (realtime, refresh hourly)
+    // Diisi worker setelah 3 run berturut API Roblox tak menjawab universeId-nya
+    // = experience dihapus/di-private. Halaman tetap terbit dengan peringatan.
+    hilangSejak: g.hilangSejak ?? null,
     crossCheck: Array.isArray(g.crossCheck) ? g.crossCheck : [], // situs editorial pengonfirmasi
     // Kode yang sumbernya menandai CHECK tak dihitung, walau ia lolos
     // cross-check: chip ini berdiri di kepala halaman sebagai janji, dan
@@ -287,6 +304,7 @@ export async function loadRobloxThisWeek(hari = 7) {
     if (!ms || ms < batas) continue;
     const g = games[c.game];
     if (!g) continue;
+    if (g.hilangSejak) continue; // game sudah hilang dari Roblox — kodenya tak bisa dipakai siapa pun
     if (!per.has(c.game)) per.set(c.game, { id: c.game, name: g.name, slug: g.slug ?? c.game, icon: robloxIconUrl(c.game), players: g.players ?? 0, codes: [] });
     per.get(c.game).codes.push({ ...c, verified: c.verified === true, tanggalMs: ms });
   }
