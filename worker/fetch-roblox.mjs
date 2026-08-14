@@ -117,13 +117,67 @@ async function mapLimit(items, limit, fn) {
   return out;
 }
 
+const tidur = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Jumlah pemain + metadata game dari API Roblox, 50 universeId per permintaan.
+ *
+ * BATAS LAJU ITU NYATA DAN DIAM. games.roblox.com menolak permintaan ke-12 dst
+ * yang datang beruntun dengan HTTP 429. Versi lama menembak 13 permintaan tanpa
+ * jeda dan menulis `if (!res.ok) continue` — jadi 50 game per batch gagal LENYAP
+ * tanpa satu baris log pun.
+ *
+ * Akibatnya bukan acak, dan itu yang membuatnya berbahaya: urutan permintaan
+ * mengikuti urutan katalog, dan game BARU selalu ditambahkan di EKOR. Jadi yang
+ * jatuh di batch terakhir persis game-game yang paling baru — yang justru paling
+ * sering dilihat orang karena nangkring di "Kode Roblox terbaru". Mereka tak
+ * pernah dapat jumlah pemain maupun rootPlaceId, sehingga halamannya memajang
+ * "0 players" dan kehilangan tombol "Buka di Roblox" SELAMANYA: sekali gagal,
+ * tak ada yang mencoba lagi karena run berikutnya gagal di titik yang sama.
+ *
+ * Terukur 14 Agu 2026 dari data produksi: 80 game tanpa data, sebarannya batch
+ * 11 (50 game, seluruhnya) dan batch 12 (28, seluruhnya) — dua batch terakhir
+ * dari 13. Direproduksi persis dengan menembak 13 permintaan beruntun: 0-10
+ * HTTP 200, 11 & 12 HTTP 429.
+ *
+ * Batch tak bisa diperbesar untuk mengurangi jumlah permintaan: 100 universeId
+ * dijawab HTTP 400 (diuji), jadi 50 memang plafonnya.
+ */
 async function fetchPlayers(universeIds) {
   const out = {};
+  // 5 DETIK, DIUKUR BUKAN DITEBAK. 13 permintaan beruntun tanpa jeda: batch 11
+  // & 12 kena 429. Dengan jeda 5 detik: 13/13 lolos. Batasnya per MENIT (~11
+  // permintaan), bukan lonjakan sesaat — itu sebabnya coba-ulang bermundur
+  // pendek (0,8-3,2 dtk) sempat dicoba dan tetap gagal empat kali berturut.
+  //
+  // Ongkosnya ~60 detik per run untuk 628 game. Job ini jalan tiap jam dan sudah
+  // memakan beberapa menit, jadi itu terbayar oleh 80 game yang selama ini
+  // permanen tanpa data.
+  const JEDA = Number(process.env.ROBLOX_JEDA_MS || 5000);
+  const COBA = 4;
+  let batchGagal = 0, uidGagal = 0;
   for (let i = 0; i < universeIds.length; i += 50) {
-    const batch = universeIds.slice(i, i + 50).join(",");
+    const potong = universeIds.slice(i, i + 50);
+    const batch = potong.join(",");
+    if (i) await tidur(JEDA); // jeda antar-batch: menahan 429 sebelum terjadi
+    let sukses = false;
+    for (let coba = 1; coba <= COBA && !sukses; coba++) {
     try {
       const res = await fetch(`https://games.roblox.com/v1/games?universeIds=${batch}`);
-      if (!res.ok) continue;
+      if (!res.ok) {
+        // 429/5xx = layak dicoba lagi. Hormati Retry-After bila ada; kalau tidak,
+        // mundur eksponensial (0,8 → 1,6 → 3,2 detik).
+        if ((res.status === 429 || res.status >= 500) && coba < COBA) {
+          const ra = Number(res.headers.get("retry-after")) || 0;
+          await tidur(ra ? ra * 1000 : 20000 * coba); // 20/40/60 dtk — jendela batasnya per menit
+          continue;
+        }
+        // Menyerah: DICATAT, tidak lagi lenyap diam-diam.
+        batchGagal += 1; uidGagal += potong.length;
+        console.log(`[players] batch ${i / 50} gagal HTTP ${res.status} setelah ${coba} percobaan — ${potong.length} game tak dapat data`);
+        break;
+      }
+      sukses = true;
       // rootPlaceId ikut disimpan: API ini SUDAH dipanggil untuk jumlah pemain,
       // jadi tautan "buka di Roblox" tak menambah satu pun permintaan. Cakupannya
       // juga lebih luas daripada placeId Den (478 vs 424 game).
@@ -131,10 +185,16 @@ async function fetchPlayers(universeIds) {
       // seperti rootPlaceId: datanya sudah ada di respons ini, jadi mencatatnya
       // tak menambah satu pun permintaan.
       for (const g of (await res.json()).data ?? []) out[g.id] = { playing: g.playing ?? 0, name: g.name || null, rootPlaceId: g.rootPlaceId ?? null, description: g.description || "", l1: g.genre_l1 || null, l2: g.genre_l2 || null, visits: g.visits ?? null, favorit: g.favoritedCount ?? null, dibuat: g.created || null, diperbarui: g.updated || null };
-    } catch {
-      /* pertahankan nilai lama */
+    } catch (e) {
+      // Jaringan putus: setara 5xx — layak dicoba lagi, dan bila habis
+      // percobaannya tetap DICATAT, bukan didiamkan seperti dulu.
+      if (coba < COBA) { await tidur(20000 * coba); continue; }
+      batchGagal += 1; uidGagal += potong.length;
+      console.log(`[players] batch ${i / 50} gagal (${e.message}) setelah ${coba} percobaan — ${potong.length} game tak dapat data`);
+    }
     }
   }
+  if (batchGagal) console.log(`[players] ${batchGagal} batch gagal → ${uidGagal} game tak dapat jumlah pemain/rootPlaceId run ini`);
   return out;
 }
 
@@ -1555,7 +1615,21 @@ async function main() {
     for (const c of arr.slice(0, ARCHIVE_CAP)) archive.push(c);
   }
 
-  const uids = [...new Set(Object.values(mergedGames).map((g) => g.universeId).filter(Boolean))];
+  // YANG BELUM PUNYA DATA DIDAHULUKAN.
+  //
+  // Urutan permintaan = urutan katalog, dan game baru selalu ditambahkan di
+  // EKOR. Waktu batch ekor kena 429, yang jatuh selalu game yang paling baru —
+  // dan karena run berikutnya gagal di titik yang sama, mereka tak pernah dapat
+  // giliran. Begitulah 80 game berakhir "0 players" permanen.
+  //
+  // Jeda 5 detik di fetchPlayers seharusnya sudah mencegah 429 sama sekali. Ini
+  // lapis kedua: kalau toh ada batch yang gagal, yang dikorbankan adalah game
+  // yang SUDAH punya angka dari run sebelumnya (nilainya tetap terbawa), bukan
+  // game yang belum punya apa-apa.
+  const semuaUid = [...new Set(Object.values(mergedGames).map((g) => g.universeId).filter(Boolean))];
+  const belumAda = new Set(Object.values(mergedGames).filter((g) => g.universeId && g.players == null).map((g) => String(g.universeId)));
+  const uids = [...semuaUid.filter((u) => belumAda.has(String(u))), ...semuaUid.filter((u) => !belumAda.has(String(u)))];
+  if (belumAda.size) console.log(`[players] ${belumAda.size} game belum pernah dapat data — didahulukan di antrean permintaan`);
   const players = await fetchPlayers(uids);
   for (const g of Object.values(mergedGames)) {
     const pd = g.universeId ? players[g.universeId] : null;
