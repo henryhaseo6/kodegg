@@ -363,6 +363,16 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
   // dan tanpa jumlah pemain persis karena itu.
   //
   // `uid`, `media`, dan `seri` sudah diambil di atas (naskah membutuhkannya).
+  // LATAR VIDEO — ROBLOX SAJA, dan itu bukan pilihan gaya melainkan isi klipnya:
+  // di dalamnya karakter Roblox berkelahi. Memasangnya di belakang kode Genshin
+  // atau Honkai akan menampilkan game yang salah di layar.
+  //
+  // Klipnya disediakan workflow (aset rilis `aset-latar`). Kalau variabelnya tak
+  // dinyalakan atau unduhannya gagal, nilainya kosong → renderWide memakai latar
+  // lama seperti biasa.
+  const latarVideo = (c.platform === "ROBLOX" && process.env.LATAR_VIDEO) || null;
+  if (latarVideo) console.log("  ↳ latar video aktif");
+
   await renderWide({
     game: { name: c.displayName || c.name, slug: c.slug, players: c.players ?? 0 },
     codes: c.displayCodes, activeCount: c.activeCount, fetchedAt: c.fetchedAt,
@@ -370,7 +380,7 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
     series: seri?.series ?? null, seriesWaktu: seri?.bergulir ? { mulaiMs: seri.mulaiMs, sampaiMs: seri.sampaiMs } : null, media,
     // null utk Roblox → kedua adegan wawasan dilewati, videonya persis seperti
     // sebelum perubahan ini.
-    wawasan, redeem,
+    wawasan, redeem, latarVideo,
   });
   await renderWideThumb({
     // `c.name` — nama KATALOG, bukan `displayName`.

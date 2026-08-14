@@ -152,9 +152,39 @@ jobs:
           # butuh commit maupun deploy: ubah variabelnya di GitHub, run
           # berikutnya sudah memakainya lagi.
           VIDEO_FORMAT: ${{ vars.VIDEO_FORMAT }}
+          # LATAR VIDEO untuk video Roblox landscape. Klipnya TIDAK di repo (27 MB
+          # biner akan menempel di riwayat git selamanya) melainkan aset rilis
+          # bertag `aset-latar`, diunduh di langkah terpisah di bawah.
+          #
+          # Kosongkan Variable LATAR_VIDEO_AKTIF untuk mematikannya seketika —
+          # tanpa deploy, tanpa revert. Itu sengaja: ini perubahan tampilan yang
+          # kena ke SEMUA video Roblox, jadi jalan mundurnya harus semurah
+          # mengubah satu variabel.
+          LATAR_VIDEO_AKTIF: ${{ vars.LATAR_VIDEO_AKTIF }}
+          # `gh release download` butuh token; langkah ini sebelumnya tak punya.
+          GH_TOKEN: ${{ github.token }}
+          # Blur & peredup SUDAH DIPANGGANG ke dalam klipnya (lihat catatan rilis
+          # aset), jadi di sini nol — kalau tidak, latarnya diblur & digelapkan
+          # dua kali.
+          LATAR_BLUR: "0"
+          LATAR_REDUP: "0"
+          LATAR_ART: ${{ vars.LATAR_ART || '0.5' }}
+          LATAR_ART_BLUR: ${{ vars.LATAR_ART_BLUR || '0' }}
+          LATAR_KARTU: ${{ vars.LATAR_KARTU || '0.62' }}
           PYTHON: python3
         run: |
           if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YT belum di-set — lewati auto-video (lihat DEPLOY-YOUTUBE.md)."; exit 0; fi
+          # Unduh klip latar HANYA bila dinyalakan & belum ada. Gagal unduh TIDAK
+          # menggagalkan run: LATAR_VIDEO dibiarkan kosong dan videonya terbit
+          # dengan latar lama — kehilangan latar jauh lebih ringan daripada
+          # kehilangan videonya.
+          if [ -n "$LATAR_VIDEO_AKTIF" ]; then
+            if [ ! -f _aset/latar-roblox-v1.mp4 ]; then
+              mkdir -p _aset
+              gh release download aset-latar -p 'latar-roblox-v1.mp4' -D _aset --clobber                 && echo "klip latar diunduh ($(du -h _aset/latar-roblox-v1.mp4 | cut -f1))"                 || echo "[!] unduh klip latar gagal — lanjut dengan latar lama"
+            fi
+            [ -f _aset/latar-roblox-v1.mp4 ] && export LATAR_VIDEO="$PWD/_aset/latar-roblox-v1.mp4"
+          fi
           # TARIK ULANG STATE VIDEO tepat sebelum memutuskan apa yang dibuat.
           #
           # actions/checkout jalan di awal job, dan itu terlalu dini: run yang
