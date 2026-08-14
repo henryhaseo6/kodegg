@@ -156,6 +156,11 @@ async function fetchPlayers(universeIds) {
   const JEDA = Number(process.env.ROBLOX_JEDA_MS || 5000);
   const COBA = 4;
   let batchGagal = 0, uidGagal = 0;
+  // Uid yang batch-nya SUKSES. Absen dari respons batch yang sukses = bukti
+  // gamenya hilang (dihapus/di-private). Absen karena batch GAGAL bukan bukti
+  // apa-apa — dan membedakan keduanya itu wajib, karena kalau tidak, satu batch
+  // 429 akan memvonis 50 game sekaligus "mati".
+  const diperiksa = new Set();
   for (let i = 0; i < universeIds.length; i += 50) {
     const potong = universeIds.slice(i, i + 50);
     const batch = potong.join(",");
@@ -178,6 +183,7 @@ async function fetchPlayers(universeIds) {
         break;
       }
       sukses = true;
+      for (const u of potong) diperiksa.add(String(u));
       // rootPlaceId ikut disimpan: API ini SUDAH dipanggil untuk jumlah pemain,
       // jadi tautan "buka di Roblox" tak menambah satu pun permintaan. Cakupannya
       // juga lebih luas daripada placeId Den (478 vs 424 game).
@@ -195,7 +201,9 @@ async function fetchPlayers(universeIds) {
     }
   }
   if (batchGagal) console.log(`[players] ${batchGagal} batch gagal → ${uidGagal} game tak dapat jumlah pemain/rootPlaceId run ini`);
-  return out;
+  // Dua nilai, bukan satu peta yang diam-diam membawa metadata: `hasil` peta
+  // uid→data, `diperiksa` daftar uid yang batch-nya sukses.
+  return { hasil: out, diperiksa };
 }
 
 // placeId (dari Roblox Den) → universeId (untuk thumbnail & player count).
@@ -624,7 +632,7 @@ async function main() {
       const uidAda = new Set([...set.values()].map((e) => Number(e.universeId)).filter(Boolean));
       const kandidat = panenSapuan(uidRo, uidAda).slice(0, Number(process.env.PANEN_MAX || 60));
       if (kandidat.length) {
-        const pemain = await fetchPlayers(kandidat.map((k) => k.uid));
+        const { hasil: pemain } = await fetchPlayers(kandidat.map((k) => k.uid));
         const AMBANG = Number(process.env.PANEN_MIN_PLAYERS || 2000);
         const lolos = kandidat
           .map((k) => ({ ...k, players: pemain[k.uid]?.playing ?? 0, name: pemain[k.uid]?.name || k.nama || k.slug }))
@@ -1630,10 +1638,29 @@ async function main() {
   const belumAda = new Set(Object.values(mergedGames).filter((g) => g.universeId && g.players == null).map((g) => String(g.universeId)));
   const uids = [...semuaUid.filter((u) => belumAda.has(String(u))), ...semuaUid.filter((u) => !belumAda.has(String(u)))];
   if (belumAda.size) console.log(`[players] ${belumAda.size} game belum pernah dapat data — didahulukan di antrean permintaan`);
-  const players = await fetchPlayers(uids);
+  const { hasil: players, diperiksa: uidDiperiksa } = await fetchPlayers(uids);
+  const hilang = [];
   for (const g of Object.values(mergedGames)) {
     const pd = g.universeId ? players[g.universeId] : null;
     if (pd) { if (pd.playing != null) g.players = pd.playing; if (pd.name) g.rawName = pd.name; if (pd.rootPlaceId) g.rootPlaceId = pd.rootPlaceId; } // rawName = nama asli Roblox (+emoji/tag) utk visual video
+    // GAME HILANG DARI ROBLOX (dihapus/di-private). Halaman roblox.com-nya
+    // menjawab "Content not accessible", jadi kodenya tak bisa dipakai siapa pun
+    // — kita masih menerbitkan halaman berisi kode untuk game yang tak bisa
+    // dimainkan (14 Agu 2026: soccer-card-draft 2 kode, zee 1 kode).
+    //
+    // BUKTINYA HARUS DARI BATCH YANG SUKSES. Absen karena batch kena 429 bukan
+    // bukti apa pun — tanpa syarat ini, satu batch gagal akan memvonis 50 game
+    // sekaligus, dan itu persis kegagalan yang baru saja kita perbaiki.
+    //
+    // Tiga run berturut sebelum divonis: API Roblox sesekali melewatkan satu
+    // entri walau batch-nya 200, dan menghapus game dari katalog karena satu
+    // respons yang kebetulan pelit itu tak sepadan.
+    else if (g.universeId && uidDiperiksa.has(String(g.universeId))) {
+      g.hilangBerturut = (g.hilangBerturut ?? 0) + 1;
+      if (g.hilangBerturut >= 3 && !g.hilangSejak) g.hilangSejak = new Date().toISOString();
+      if (g.hilangSejak) hilang.push(g.slug ?? g.name);
+    }
+    if (pd && g.hilangBerturut) { delete g.hilangBerturut; delete g.hilangSejak; } // muncul lagi → bersihkan
     // GENRE RESMI menggantikan tebakan-dari-nama untuk genre struktural, dan
     // `anime` dari tebakan dipertahankan karena Roblox tak punya genre itu
     // padahal bagi pembaca kita ia penanda paling berarti.
@@ -1667,6 +1694,7 @@ async function main() {
       }
     }
   }
+  if (hilang.length) console.log(`[players] ${hilang.length} game HILANG dari Roblox (≥3 run berturut tak dijawab API): ${hilang.join(", ")}`);
 
   // ── PROBE DESKRIPSI (mencatat saja, tak menyentuh situs) ──────────────────
   // Menguji satu-satunya jalur hulu yang tersisa setelah yang lain mati satu per
