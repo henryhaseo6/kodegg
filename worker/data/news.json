@@ -1,10 +1,74 @@
 {
-  "updatedAt": "2026-08-14T09:04:38.569Z",
+  "updatedAt": "2026-08-14T10:04:09.986Z",
   "counts": {
-    "active": 86,
-    "archived": 79
+    "active": 84,
+    "archived": 81
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "HoYo FEST 2026 has officially come to a close 🎉",
+        "id": "HoYo FEST 2026 telah resmi berakhir 🎉"
+      },
+      "excerpt": {
+        "en": "Hello Trailblazer, HoYo FEST 2026 offline event has officially ended! Thank you for your support and enthusiasm throughout the event~ We hope this journey brought you unforgettable",
+        "id": "Halo Trailblazer, Event offline HoYo FEST 2026 telah resmi berakhir! Terima kasih atas dukungan kalian semua~ Semoga perjalanan ini meninggalkan kenangan yang indah bagi para Trail"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/13/138fb5b87321fdcfe41d5d0c84a03643_8524099567463195624.jpg",
+      "url": "https://www.hoyolab.com/article/46285174",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T10:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "For Display Only | Sigrid",
+        "id": "For Display Only | Sigrid"
+      },
+      "excerpt": {
+        "en": "\"Logging patrol records...\" \"...Hm?\" \"Device compromised! Wha—Why won't it shut down?!\" \"Working for the Airspace Patrol is... certainly never short on danger.\"",
+        "id": "\"Logging patrol records...\" \"...Hm?\" \"Device compromised! Wha—Why won't it shut down?!\" \"Working for the Airspace Patrol is... certainly never short on danger.\""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-08-14/transcoded/142088187755596910592_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/46285172",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T10:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event",
+        "id": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event"
+      },
+      "excerpt": {
+        "en": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness",
+        "id": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/c4897eb1d5cfea2961ce2d97dec244bd_3034695040207453336.jpg",
+      "url": "https://www.hoyolab.com/article/46285173",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T10:00:03.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero gamescom 2026 Merchandise Guide",
+        "id": "Zenless Zone Zero gamescom 2026 Merchandise Guide"
+      },
+      "excerpt": {
+        "en": "Dear Proxies, \"Eridu Commodities\" is coming to gamescom 2026, bringing many limited Zenless Zone Zero merchandise. Reach certain spending tiers to unlock exclusive gifts! August 26",
+        "id": "Dear Proxies, \"Eridu Commodities\" is coming to gamescom 2026, bringing many limited Zenless Zone Zero merchandise. Reach certain spending tiers to unlock exclusive gifts! August 26"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/0/171d5109340d8f32f54c7c6cc3862057_5358468560725400667.jpeg",
+      "url": "https://www.hoyolab.com/article/46284782",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T09:30:03.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -102,22 +166,6 @@
       "publishedAt": "2026-08-12T18:00:07.000Z"
     },
     {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "v9.0 Maintenance Announcement and New Events Preview",
-        "id": "Pengumuman Maintenance v9.0 dan Preview Event Baru"
-      },
-      "excerpt": {
-        "en": "SEA Dear Captain, to provide a better gaming experience, Battleship Hyperion will undergo server maintenance from 10:00 to 16:00 on AUG 20 (UTC+8). Hyperion will be updated to v9.0",
-        "id": "Dear Kapten, untuk memberikan pengalaman bermain yang lebih baik bagi Kapten, Hyperion akan melakukan maintenance server pada 20 Agustus 09:00 - 15:00 WIB. Hyperion akan diupdate k"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/07/05542df5ad5d9fe29b8a44d8b781e812_4547267349494376010.png",
-      "url": "https://www.hoyolab.com/article/46245284",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-12T10:00:02.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -130,6 +178,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
       "url": "https://www.hoyolab.com/article/46245283",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-12T10:00:02.000Z"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "v9.0 Maintenance Announcement and New Events Preview",
+        "id": "Pengumuman Maintenance v9.0 dan Preview Event Baru"
+      },
+      "excerpt": {
+        "en": "SEA Dear Captain, to provide a better gaming experience, Battleship Hyperion will undergo server maintenance from 10:00 to 16:00 on AUG 20 (UTC+8). Hyperion will be updated to v9.0",
+        "id": "Dear Kapten, untuk memberikan pengalaman bermain yang lebih baik bagi Kapten, Hyperion akan melakukan maintenance server pada 20 Agustus 09:00 - 15:00 WIB. Hyperion akan diupdate k"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/07/05542df5ad5d9fe29b8a44d8b781e812_4547267349494376010.png",
+      "url": "https://www.hoyolab.com/article/46245284",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-12T10:00:02.000Z"
     },
@@ -425,22 +489,6 @@
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
-        "en": "Character Trailer - \"Alyosha: Wintry Hunt\" | Genshin Impact",
-        "id": "Trailer Karakter - \"Alyosha: Perburuan Musim Dingin\" | Genshin Impact"
-      },
-      "excerpt": {
-        "en": "To most people, the snow plains are probably just barren and desolate land. But in the eyes of a skilled hunter, this very same land brims with generous gifts, and all one needs is",
-        "id": "Mungkin sebagian besar orang berpikir bahwa padang salju adalah tanah yang gersang. Namun di mata pemburu yang mumpuni, tempat ini dipenuhi berkah yang berlimpah. Hanya butuh sedik"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/10/0/9f540326dfe751e9d4f2c6da7afd70a8_8799407557001035135.jpeg",
-      "url": "https://www.hoyolab.com/article/46208548",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-10T04:00:03.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
         "en": "Version 7.0 Update Maintenance Preview",
         "id": "Pemberitahuan Maintenance Update Versi 7.0"
       },
@@ -630,22 +678,6 @@
       "publishedAt": "2026-08-07T04:05:01.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Agent Record | Claret",
-        "id": "Profil Agen | Claret"
-      },
-      "excerpt": {
-        "en": "\"Let me educate you on something — the 'Flint' in front of Porcelloy isn't just there for show.\" Claret Flint \"You think some limited-edition dessert is gonna get you Porcelloy...?",
-        "id": "\"Biar kalian lihat sendiri——kata 'Flint' di depan Porcelloy, bukan sekadar nama belaka.\" Claret Flint \"Kamu pikir dengan makanan penutup edisi terbatas, kamu bisa mendapatkan Porce"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/07/0/65391fb8cbebbebaeacd2e0feb3ab935_5686588674724690372.jpeg",
-      "url": "https://www.hoyolab.com/article/46171706",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-07T04:00:04.000Z"
-    },
-    {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
       "title": {
@@ -690,22 +722,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/05/30cd86b9a076d19e0a62f11b66222e29_1937591900504836160.jpg",
       "url": "https://www.hoyolab.com/article/46159935",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T04:00:08.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Enigma of the Labyrinth\" Gameplay Guide — Maps & Items",
-        "id": "Penjelasan Gameplay \"Labirin Misterius\" — Peta dan Item"
-      },
-      "excerpt": {
-        "en": "Hi, Proxies! In this issue, we'll be introducing the map and item systems in Enigma of the Labyrinth — a brand-new permanent game mode launching in Version 3.1. Let's dive in!",
-        "id": "Halo, Proxy! Edisi ini akan memperkenalkan sistem peta dan item pada gameplay permanen baru di versi 3.1 — \"Labirin Misterius\". Mari kita simak bersama!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/05/0/c55626719b1300e3adb0948546362d97_5614381709070232168.jpeg",
-      "url": "https://www.hoyolab.com/article/46159934",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-06T04:00:08.000Z"
     },
@@ -1332,23 +1348,9 @@
       "url": "https://www.hoyolab.com/article/45967008",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-23T04:00:07.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Honkai: Star Rail × Fate[UBW] Collab Trailer — \"A Long Awaited Reunion\"",
-        "id": "Trailer Kolaborasi \"Honkai: Star Rail\" × Fate[UBW] — \"Apa Kabarmu\""
-      },
-      "excerpt": {
-        "en": "\"Hahahahaha! I don't care if you're a powerless goddess or a mage, hand over my Holy Grail!\" \"You talk too much, Goldy! I'm super reliable when it matters~\" \"Has anyone seen Lancer",
-        "id": "\"Hahahaha, tidak peduli kamu ini dewi tak berguna atau mage, serahkan Cawan Suci milikku!\" \"Bawel banget, si bling-bling! Aku ini sangat bisa diandalkan lho di saat-saat genting~\" "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/23/0/27a444c5a460ab88afeb74cab64dbad7_6481449975435632892.jpeg",
-      "url": "https://www.hoyolab.com/article/45967007",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-23T04:00:07.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1363,7 +1365,8 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1784044800000/eglulrod4owb9d2rru-1784109073157.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5162",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-15T09:54:16.000Z"
+      "publishedAt": "2026-07-15T09:54:16.000Z",
+      "archivedAt": "2026-08-14T10:04:09.986Z"
     },
     {
       "game": "wuwa",
@@ -1379,10 +1382,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1784044800000/zdlrbss850qrpeuo6a-1784108516336.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5160",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-15T09:48:36.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-15T09:48:36.000Z",
+      "archivedAt": "2026-08-14T10:04:09.986Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
