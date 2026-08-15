@@ -1,5 +1,44 @@
 {
-  "generatedAt": "2026-08-15T03:04:17.479Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-08-15T04:04:43.477Z",
+  "codes": [
+    {
+      "game": "nights99",
+      "gameName": "99 Nights in the Forest",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/99-nights-in-the-forest"
+      },
+      "code": "SURVIVOR",
+      "reward": null,
+      "date": "2026-08-15T03:57:27.488Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-15T04:04:43.477Z",
+      "fetchedAt": "2026-08-15T04:04:43.477Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "roblox-color-escape",
+      "count": 2,
+      "fresh": [
+        {
+          "code": "TopColorEscaper",
+          "reward": "Get 1 Free Revive"
+        },
+        {
+          "code": "ReviveMePls",
+          "reward": "Get 1 Free Revive"
+        }
+      ]
+    },
+    {
+      "game": "burgeria-tycoon",
+      "count": 5,
+      "fresh": []
+    }
+  ]
 }
