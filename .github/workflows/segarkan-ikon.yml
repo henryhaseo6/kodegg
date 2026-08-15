@@ -1,26 +1,38 @@
-# Tarik ULANG semua ikon game, sebulan sekali.
+# Segarkan ikon game — BERGILIR TIAP HARI, seluruh katalog tuntas dalam 30 hari.
 #
-# KENAPA PERLU. Kedua pengambil ikon idempoten — mereka MELEWATI berkas yang
-# sudah ada. Itu benar untuk run harian (hemat ratusan permintaan), tapi
-# akibatnya ikon yang sudah terunduh TAK PERNAH diperbarui: game yang berganti
-# ikon (rebrand, event musiman, anniversary) akan memakai gambar lama selamanya.
+# KENAPA PERLU. Kedua pengambil ikon idempoten: mereka MELEWATI berkas yang sudah
+# ada. Itu benar untuk run harian (hemat ratusan permintaan), tapi akibatnya ikon
+# yang sekali terunduh TAK PERNAH diperbarui — game yang berganti ikon (rebrand,
+# event musiman, anniversary) memakai gambar lama selamanya.
 #
-# Bukan dugaan. Diuji 15 Agu 2026 terhadap ikon yang ditarik 19-21 Jul: 3 dari 3
-# game yang disampel BERUBAH (drr, dtrav, isekai). Encoder-nya sendiri
-# deterministik — sumber yang sama menghasilkan byte yang identik — jadi
-# perubahan itu memang datang dari penerbit gamenya, bukan dari kompresi.
+# Bukan dugaan, diuji 15 Agu 2026 terhadap ikon yang ditarik 19-21 Jul:
+#   mobile : 3 dari 3 sampel BERUBAH (drr, dtrav, isekai)
+#   Roblox : 4 dari 8 sampel BERUBAH (animevanguards, adoptme, fisch,
+#            volleyballlegends)
+# Encoder-nya deterministik (sumber sama → byte identik, diuji), jadi perubahan
+# itu memang dari penerbit gamenya, bukan artefak kompresi.
 #
-# Sebulan sekali dipilih karena ikon berubah dalam hitungan bulan, bukan hari.
-# Lebih sering cuma menambah lalu lintas & commit tanpa menambah kebenaran.
+# KENAPA BERGILIR, BUKAN SEKALIGUS SEBULAN SEKALI. Katalog Roblox 632 game;
+# menariknya serentak berarti ratusan permintaan dalam satu run, dan satu commit
+# raksasa berisi ratusan gambar. Dibagi 30, bebannya rata (~22 game/hari) dan
+# tiap game tetap tersegarkan dalam sebulan.
+#
+# Jatah harian DIHITUNG (total ÷ 30), tidak dipatok. Katalog tumbuh terus — 544
+# game enam hari lalu, 632 hari ini — dan angka mati akan diam-diam
+# memperpanjang siklusnya tiap kali katalog bertambah.
+#
+# Gilirannya dicatat di worker/data/ikon-giliran-*.json, BUKAN dari mtime berkas:
+# di CI semua berkas datang dari `git checkout` sehingga mtime-nya seragam, dan
+# pemilihan giliran akan mengulang game yang sama terus.
 name: segarkan-ikon
 
 on:
   schedule:
-    - cron: "0 20 1 * *" # tiap tanggal 1, 03:00 WIB (20:00 UTC tanggal sebelumnya)
+    - cron: "0 20 * * *" # tiap hari 03:00 WIB (20:00 UTC hari sebelumnya)
   workflow_dispatch:
     inputs:
-      roblox:
-        description: "Ikut segarkan ikon Roblox (632 game — jauh lebih lama)"
+      penuh:
+        description: "Tarik ULANG SEMUA ikon sekaligus (abaikan giliran — ratusan permintaan)"
         type: boolean
         default: false
 
@@ -40,35 +52,31 @@ jobs:
         with:
           node-version: 22
 
-      # sharp WAJIB di sini, tak seperti run harian. Tanpa sharp, fetch-icons
-      # menulis ikon ukuran ASLI (>=512px) ke folder situs — jadi bukan cuma
-      # gagal mengecilkan, tapi membengkakkan aset yang dikirim ke pengunjung.
+      # sharp WAJIB. Tanpa sharp, fetch-icons menulis ikon ukuran ASLI (>=512px)
+      # ke folder situs — bukan cuma gagal mengecilkan, tapi membengkakkan aset
+      # yang dikirim ke pengunjung.
       - name: Pasang deps
         run: cd worker && npm i --no-audit --no-fund
 
-      - name: Segarkan ikon game mobile
-        run: node worker/fetch-icons.mjs --force
-
-      # Roblox 632 game — sengaja TIDAK ikut jadwal bulanan. Ikon Roblox jarang
-      # berubah (thumbnail experience, bukan ikon toko), dan menariknya ulang
-      # tiap bulan berarti ratusan permintaan untuk perubahan yang nyaris nihil.
-      # Tetap bisa dijalankan manual saat memang dibutuhkan.
-      - name: Segarkan ikon Roblox (opsional)
-        if: ${{ inputs.roblox }}
-        run: node worker/fetch-roblox-icons.mjs --force || echo "ikon roblox gagal, lanjut"
+      - name: Segarkan giliran hari ini
+        run: |
+          MODE="--gilir"
+          if [ "${{ inputs.penuh }}" = "true" ]; then MODE="--force"; fi
+          node worker/fetch-icons.mjs $MODE
+          node worker/fetch-roblox-icons.mjs $MODE || echo "ikon roblox gagal, lanjut"
 
       - name: Commit bila ada yang berubah
         run: |
           git config user.name "kodegg-bot"
           git config user.email "bot@kodegg.com"
-          git add site/public/assets/games worker/data/ikon-besar site/public/assets/roblox 2>/dev/null || true
+          git add site/public/assets/games site/public/assets/roblox worker/data/ikon-besar worker/data/ikon-giliran-*.json 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "tak ada ikon yang berubah bulan ini."
+            echo "giliran hari ini tak menghasilkan perubahan ikon."
             exit 0
           fi
-          BERUBAH=$(git diff --cached --name-only | wc -l)
-          # Ikon = perubahan TAMPILAN, jadi situs wajib dibangun ulang. Karena
-          # itu pesan commit ini TIDAK memakai penanda pelewat CI.
-          git commit -m "chore(ikon): segarkan $BERUBAH berkas ikon (jadwal bulanan)"
+          # Catatan giliran SELALU berubah tiap hari, jadi hitung gambarnya saja —
+          # kalau tidak, ringkasannya akan selalu bilang "ada yang berubah".
+          GAMBAR=$(git diff --cached --name-only | grep -cE '\.(png|webp)$' || true)
+          git commit -m "chore(ikon): segarkan $GAMBAR ikon (giliran harian)"
           git push
-          echo "$BERUBAH berkas ikon diperbarui." >> "$GITHUB_STEP_SUMMARY"
+          echo "$GAMBAR ikon diperbarui hari ini." >> "$GITHUB_STEP_SUMMARY"

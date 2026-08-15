@@ -55,6 +55,8 @@ const OUT_BESAR = resolve(HERE, "data/ikon-besar");
 const BESAR_PX = 384;
 const UA = "KodeGGBot/1.0 (+https://kodegg.com)";
 const FORCE = process.argv.includes("--force");
+const GILIR = process.argv.includes("--gilir");
+const SIKLUS = Number(process.env.IKON_SIKLUS_HARI || 30);
 
 async function exists(path) {
   try {
@@ -69,14 +71,29 @@ async function main() {
   await mkdir(OUT_DIR, { recursive: true });
   await mkdir(OUT_BESAR, { recursive: true });
 
+  // Giliran hari ini — sama seperti jalur Roblox, supaya kedua katalog memakai
+  // aturan yang sama dan sama-sama tuntas dalam satu siklus.
+  let giliran = null, sasaran = null;
+  const punyaIkon = Object.entries(GAMES).filter(([, m]) => m.iconFile).map(([id]) => id);
+  if (GILIR) {
+    const { giliranIkon, ringkasGiliran } = await import("./src/gilir-ikon.mjs");
+    const berkas = resolve(HERE, "data/ikon-giliran-mobile.json");
+    giliran = giliranIkon(punyaIkon, berkas, { siklusHari: SIKLUS });
+    sasaran = new Set(giliran.pilih);
+    console.error(`giliran ikon mobile: ${giliran.perHari}/hari dari ${punyaIkon.length} game (siklus ${SIKLUS} hari) · ${ringkasGiliran(punyaIkon, berkas)}`);
+  }
+
   const results = await Promise.all(
     Object.entries(GAMES).map(async ([id, meta]) => {
       if (!meta.iconFile) return { id, skipped: "tanpa iconFile" };
+      if (GILIR && !sasaran.has(id)) return { id, skipped: "bukan giliran" };
 
       const out = resolve(OUT_DIR, meta.iconFile);
       // Ikon kecil sudah ada TAPI yang besar belum → tetap unduh. Tanpa ini,
       // seluruh katalog lama tak akan pernah punya versi besarnya.
-      if (!FORCE && (await exists(out)) && (await exists(resolve(OUT_BESAR, meta.iconFile.replace(/\.png$/i, ".webp"))))) return { id, skipped: "sudah ada" };
+      // Mode giliran sengaja MENGABAIKAN "sudah ada": menyegarkan yang sudah ada
+      // justru inti dari giliran ini.
+      if (!GILIR && !FORCE && (await exists(out)) && (await exists(resolve(OUT_BESAR, meta.iconFile.replace(/\.png$/i, ".webp"))))) return { id, skipped: "sudah ada" };
 
       const { bytes, source } = await fetchIcon(meta, {
         userAgent: UA,
@@ -103,6 +120,7 @@ async function main() {
     }),
   );
 
+  if (giliran) giliran.catat(results.filter((r) => r.bytes).map((r) => r.id));
   for (const r of results) {
     if (r.failed) continue;
     if (r.skipped) console.log(`· ${r.id} — ${r.skipped}`);
