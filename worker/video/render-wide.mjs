@@ -480,7 +480,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
     ctx.filter = "none";
   }
 
-  function latar(ctx, t) {
+  function latar(ctx, t, faktorArt = 1) {
     // MODE LATAR VIDEO: kanvas dibiarkan TRANSPARAN di lapisan latar, dan yang
     // digambar cuma peredupnya. Klip video-nya ditimpakan oleh ffmpeg saat
     // encode (overlay), bukan didekode per-frame di Node — mendekode 1.830 frame
@@ -518,7 +518,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
       // gelap, tempat noda warna sudah cukup; di atas klip yang bergerak dan
       // penuh detail, noda selebar itu tenggelam dan gamenya tak lagi dikenali —
       // yang justru satu-satunya alasan lapisan ini ada.
-      if (LATAR_ART > 0) gambarKeping(ctx, t, LATAR_ART, LATAR_ART_BLUR);
+      if (LATAR_ART > 0) gambarKeping(ctx, t, LATAR_ART * faktorArt, LATAR_ART_BLUR);
       return;
     }
     ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
@@ -835,7 +835,12 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // sengaja seragam: yang bercerita jarak antar-batang, bukan tingginya, dan
   // membuatnya bervariasi akan menyiratkan besaran yang tak kita ukur.
   function adeganSiklus(ctx, ts, gt) {
-    latar(ctx, gt);
+    // Keping art DIREDAM di adegan wawasan (arahan user 15 Agu 2026). Di adegan
+    // kode ia tak mengganggu karena kartu menutupi bagian tengah; di sini
+    // panelnya tembus pandang, dan gambar promosi Roblox membawa TULISANNYA
+    // SENDIRI ("LUXURY VEHICLES", "MODIFICATION") yang berdiri tepat di samping
+    // label kita. Dua teks berebut di layar yang justru paling banyak angka.
+    latar(ctx, gt, ART_WAWASAN);
     const s = wawasan.siklus;
     const a = clamp(ts / 0.35);
     ctx.save(); ctx.globalAlpha = a;
@@ -1005,7 +1010,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // diminta peninjau YouTube, dan salah satu dari sedikit hal di video ini yang
   // tak bisa disalin dari agregator mana pun.
   function adeganRedeem(ctx, ts, gt) {
-    latar(ctx, gt);
+    latar(ctx, gt, ART_WAWASAN);
     const a = clamp(ts / 0.35);
     ctx.save(); ctx.globalAlpha = a;
     ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
@@ -1254,6 +1259,8 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // Kepekatan lapisan gambar promosi di atas klip. 0 = klip polos (mode 1).
   const LATAR_ART = Number(process.env.LATAR_ART ?? 0);
   const LATAR_ART_BLUR = Number(process.env.LATAR_ART_BLUR ?? 14);
+  // Pengali kepekatan keping KHUSUS adegan wawasan (siklus & cara redeem).
+  const ART_WAWASAN = Number(process.env.LATAR_ART_WAWASAN ?? 0.4);
   const CRF = String(Number(process.env.VIDEO_CRF) || 23);
   const argVid = latarVideo
     ? ["-y", "-stream_loop", "-1", "-i", latarVideo,

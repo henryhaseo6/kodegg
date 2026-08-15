@@ -281,6 +281,30 @@ const stempelTanggal = (d) =>
 // dibungkus try: worker harus tetap jalan kalau berkas situs berubah bentuk,
 // dan kehilangan satu adegan jauh lebih ringan daripada kehilangan videonya.
 let _redeem = undefined;
+let _rbSteps = undefined;
+async function robloxSteps() {
+  if (_rbSteps !== undefined) return _rbSteps;
+  try { _rbSteps = await import(pathToFileURL(resolve(HERE, "../site/src/lib/robloxSteps.mjs")).href); }
+  catch (e) { console.log(`  (langkah redeem Roblox dilewati: ${e.message})`); _rbSteps = null; }
+  return _rbSteps;
+}
+
+/** Langkah redeem bilingual untuk kartu video, apa pun platformnya. */
+async function redeemUntuk(c) {
+  if (c.platform === "ROBLOX") {
+    const m = await robloxSteps();
+    if (!m?.langkahRedeem) return null;
+    const rb = readJSON(resolve(DATA, "roblox-codes.json"), { games: {} });
+    const g = rb.games?.[c.id] ?? {};
+    const r = m.langkahRedeem(c.name, Array.isArray(g.howTo) ? g.howTo : [], m.LANGKAH_STANDAR, c.id);
+    return r?.id?.length ? { req: null, reqEn: null, steps: r.id, stepsEn: r.en ?? [] } : null;
+  }
+  const reg = await redeemRegistry();
+  const r = reg?.[c.id];
+  return r?.ingame?.id?.length
+    ? { req: r.req?.id ?? null, reqEn: r.req?.en ?? null, steps: r.ingame.id, stepsEn: r.ingame.en ?? [] }
+    : null;
+}
 async function redeemRegistry() {
   if (_redeem !== undefined) return _redeem;
   try {
@@ -321,11 +345,19 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
   // 2026, setelah mobile jalan sehari penuh tanpa keluhan). Shorts tetap memakai
   // voScript lama — jalur itu tak punya adegan wawasan sama sekali.
   const wawasan = FORMAT === "short" ? null : wawasanUntuk(c);
-  const reg = wawasan ? await redeemRegistry() : null;
-  const r = reg?.[c.id];
-  const redeem = r?.ingame?.id?.length
-    ? { req: r.req?.id ?? null, reqEn: r.req?.en ?? null, steps: r.ingame.id, stepsEn: r.ingame.en ?? [] }
-    : null;
+  // CARA REDEEM — dua sumber berbeda, karena dua platform menyimpannya di tempat
+  // berbeda:
+  //   MOBILE → registry manual site/src/lib/redeem.mjs (26 game, diverifikasi
+  //            dengan membuka gamenya)
+  //   ROBLOX → site/src/lib/robloxSteps.mjs, yang sudah dipakai halaman game.
+  //            Ia menyusun langkah BILINGUAL dari howTo sumber (620 dari 632
+  //            game punya), dengan langkah baku sebagai jaring pengaman.
+  //
+  // Kemarin aku menyimpulkan Roblox "tak punya data cara redeem" karena cuma
+  // memeriksa registry manual — padahal situs sudah menampilkannya per-game
+  // sejak lama. Yang kurang bukan datanya, melainkan videonya tak pernah
+  // menengok ke sana.
+  const redeem = await redeemUntuk(c);
   // GAMBAR PROMOSI & DERET PEMAIN DIAMBIL DI SINI, sebelum naskah — bukan di
   // jalur landscape seperti dulu.
   //

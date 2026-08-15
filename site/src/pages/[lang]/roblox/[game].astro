@@ -13,7 +13,7 @@ import { LANGS } from "../../../lib/i18n.mjs";
 import { loadRobloxCatalog, loadRobloxGame } from "../../../lib/roblox.mjs";
 import { robloxGamePaths, robloxHome } from "../../../lib/routes.mjs";
 import { monthYear } from "../../../lib/seo.mjs";
-import { langkahRedeem } from "../../../lib/robloxSteps.mjs";
+import { langkahRedeem, LANGKAH_STANDAR } from "../../../lib/robloxSteps.mjs";
 import { ytPlaylistUrl } from "../../../lib/ytPlaylists.mjs";
 
 export async function getStaticPaths() {
@@ -37,20 +37,7 @@ const ARCH_PAGE = 20; // arsip dipaginasi 20/halaman (klien)
 // Redemption Roblox sangat seragam (tombol Codes → masukkan → Redeem), jadi
 // langkah standar ini akurat untuk hampir semua game. (Spesifik per-game =
 // perbaikan Fase 3 bila sumber menyediakan langkah bersih & terlokalisasi.)
-const redeemStd = {
-  id: [
-    "Buka game-nya di Roblox",
-    "Cari tombol Codes — biasanya di layar utama, atau lewat ikon Twitter/burung atau menu Settings",
-    "Tempel kode dari daftar di atas (case-sensitive — salin persis)",
-    "Tekan Redeem — hadiah langsung masuk",
-  ],
-  en: [
-    "Open the game in Roblox",
-    "Find the Codes button — usually on the main screen, or via a Twitter/bird icon or the Settings menu",
-    "Paste a code from the list above (case-sensitive — copy exactly)",
-    "Press Redeem — the reward is granted instantly",
-  ],
-};
+const redeemStd = LANGKAH_STANDAR;
 // Cara redeem SPESIFIK per-game dari sumber (mis. Island of Move "walk over to
 // the NPC…") lebih akurat dari langkah standar — TAPI hanya berbahasa Inggris.
 // Keputusan user (23 Jul): pakai langkah spesifik APA ADANYA di kedua bahasa

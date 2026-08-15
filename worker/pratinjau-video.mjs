@@ -49,8 +49,16 @@ const wawasan = {
 // ── langkah redeem terverifikasi (registry situs) ────────────────────────────
 let redeem = null;
 try {
+  if (platform === "ROBLOX") {
+    // Jalur yang SAMA dengan make-videos: langkah bilingual dari howTo sumber,
+    // dengan langkah baku sebagai jaring pengaman.
+    const { langkahRedeem, LANGKAH_STANDAR } = await import(pathToFileURL(resolve(HERE, "../site/src/lib/robloxSteps.mjs")).href);
+    const g = rob.games?.[id] ?? {};
+    const r = langkahRedeem(nama, Array.isArray(g.howTo) ? g.howTo : [], LANGKAH_STANDAR, id);
+    if (r?.id?.length) redeem = { req: null, reqEn: null, steps: r.id, stepsEn: r.en ?? [] };
+  }
   const { REDEEM } = await import(pathToFileURL(resolve(HERE, "../site/src/lib/redeem.mjs")).href);
-  const r = REDEEM?.[id];
+  const r = redeem ? null : REDEEM?.[id];
   // Dua bahasa dikirim sekaligus: registry memang menyimpan keduanya, dan situs
   // sudah bilingual — video yang cuma Indonesia membuang separuh penonton yang
   // justru paling mungkin datang dari pencarian berbahasa Inggris.

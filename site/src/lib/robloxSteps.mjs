@@ -76,6 +76,25 @@ export function sasaranUI(howTo = []) {
  * menebak di sini lebih buruk daripada membiarkan turunan sumber, karena entri
  * manual tak pernah dikoreksi otomatis saat sumber memperbaiki diri.
  */
+/** Langkah baku Roblox — dipakai saat sumber tak memberi langkah spesifik.
+ *  DIEKSPOR supaya halaman game DAN video memakai kalimat yang sama persis;
+ *  sebelumnya teks ini hidup inline di [game].astro, dan video yang menyalinnya
+ *  akan diam-diam menyimpang begitu salah satunya diperbaiki. */
+export const LANGKAH_STANDAR = {
+  id: [
+    "Buka game-nya di Roblox",
+    "Cari tombol Codes — biasanya di layar utama, atau lewat ikon Twitter/burung atau menu Settings",
+    "Tempel kode dari daftar di atas (case-sensitive — salin persis)",
+    "Tekan Redeem — hadiah langsung masuk",
+  ],
+  en: [
+    "Open the game in Roblox",
+    "Find the Codes button — usually on the main screen, or via a Twitter/bird icon or the Settings menu",
+    "Paste a code from the list above (case-sensitive — copy exactly)",
+    "Press Redeem — the reward is granted instantly",
+  ],
+};
+
 export const LANGKAH_MANUAL = {
   "drag-drive-simulator": {
     id: [
