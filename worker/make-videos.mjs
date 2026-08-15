@@ -7,7 +7,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { spawn } from "node:child_process";
 import { renderShort, ffmpegBin } from "./video/render-short.mjs";
 import { renderWide, renderWideThumb, fmtWIB } from "./video/render-wide.mjs";
-import { gambarGame } from "./src/game-media.mjs";
+import { gambarGame, coverMobile } from "./src/game-media.mjs";
 import { seriesPemain, seriesPemainBergulir } from "./src/player-series.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { buildMetadata } from "./video/metadata.mjs";
@@ -368,6 +368,19 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
   // lain karena datang dari pengukuran 10-menit milik kita sendiri.
   const uid = FORMAT !== "short" && c.platform === "ROBLOX" ? uidUntuk(c.id) : null;
   const media = uid ? await gambarGame(uid, 8) : [];
+  // KOLASE LATAR MOBILE — cover seluruh game mobile berkode, jadi satu wallpaper
+  // diam. Game mobile tak punya universeId, jadi tak ada gambar promosi
+  // per-game; sebelum ini latarnya cuma ikon 128px yang diperbesar 8x, praktis
+  // bidang gelap polos.
+  //
+  // Menyala secara bawaan (bukan lewat variabel "aktifkan") karena kegagalannya
+  // sudah aman dengan sendirinya: coverMobile memulangkan array kosong saat
+  // jaringan atau katalog bermasalah, dan renderWide jatuh ke latar lama.
+  // KOLASE_MATI=1 tetap disediakan sebagai jalan mundur tanpa deploy.
+  const kolase = c.platform === "MOBILE" && process.env.KOLASE_MATI !== "1"
+    ? await coverMobile(DATA)
+    : null;
+  if (kolase?.length) console.log(`  ↳ kolase latar: ${kolase.length} cover game mobile`);
   // BERGULIR DULU (24 jam sampai detik ini), baru jatuh ke berkas harian.
   const seri = uid ? ((await seriesPemainBergulir(uid)) ?? (await seriesPemain(uid))) : null;
   if (seri) console.log(`  ↳ grafik pemain: ${seri.titik} titik (${seri.bergulir ? "24 jam bergulir" : "hari kalender " + seri.tanggal})`);
@@ -419,7 +432,7 @@ async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
     series: seri?.series ?? null, seriesWaktu: seri?.bergulir ? { mulaiMs: seri.mulaiMs, sampaiMs: seri.sampaiMs } : null, media,
     // null utk Roblox → kedua adegan wawasan dilewati, videonya persis seperti
     // sebelum perubahan ini.
-    wawasan, redeem, latarVideo,
+    wawasan, redeem, latarVideo, kolase,
   });
   await renderWideThumb({
     // `c.name` — nama KATALOG, bukan `displayName`.

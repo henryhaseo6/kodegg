@@ -255,7 +255,7 @@ function wavMono(mix) {
   return b;
 }
 
-export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null, media = null, wawasan = null, redeem = null, maksDetik = null, seriesWaktu = null, latarVideo = null }) {
+export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath, outPath, voPath = null, music = true, sfx = true, series = null, media = null, wawasan = null, redeem = null, maksDetik = null, seriesWaktu = null, latarVideo = null, kolase = null }) {
   const { createCanvas, loadImage } = await canvasLib();
   const ikon = iconPath && existsSync(iconPath) ? await loadImage(iconPath) : null;
   // media datang sebagai Buffer PNG dari src/game-media.mjs; dimuat di sini
@@ -361,6 +361,63 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
   // diperbesar 8x memang harus di-blur habis supaya tak pecah; gambar 768px
   // tidak, jadi bentuknya masih bisa dikenali sebagai gamenya — dan itulah
   // gunanya memakai gambar asli, bukan noda warna.
+  // ── LATAR KOLASE (mobile) ─────────────────────────────────────────────────
+  //
+  // Game mobile tak punya universeId, jadi tak ada gambar promosi per-game —
+  // latarnya selama ini cuma ikon 128px yang diperbesar 8x dan di-blur, praktis
+  // bidang gelap polos. Kolase ini memakai bahan yang memang kita punya: cover
+  // SELURUH game mobile berkode, dicampur jadi satu wallpaper.
+  //
+  // DIAM, bukan bergerak (arahan user). Tiga untungnya sekaligus: tak ada gerak
+  // yang bersaing dengan teks, dirender SEKALI lalu dipakai ulang tiap frame,
+  // dan encoder nyaris tak membayar apa pun setelah frame pertama karena
+  // latarnya tak berubah.
+  //
+  // Ukuran, posisi, dan kemiringan tiap keping diundi tiap render — jadi dua
+  // video tak pernah berlatar susunan yang sama persis. Itu memang tujuannya:
+  // latar yang identik di semua video mobile adalah bentuk lain dari
+  // "templated".
+  // Disetel di sini, bukan di dekat argumen ffmpeg: wallpaper dibangun SEKARANG
+  // (IIFE di bawah), jadi konstantanya harus sudah ada sebelum baris itu jalan.
+  const KOLASE_BLUR = Number(process.env.KOLASE_BLUR ?? 7);
+  const KOLASE_REDUP = Number(process.env.KOLASE_REDUP ?? 0.62);
+  const kolaseImg = [];
+  for (const buf of kolase ?? []) { try { kolaseImg.push(await loadImage(buf)); } catch {} }
+  const WALLPAPER = kolaseImg.length >= 4 ? (() => {
+    const cv = createCanvas(W, H), c2 = cv.getContext("2d");
+    c2.fillStyle = C.bg; c2.fillRect(0, 0, W, H);
+    // Ditebar mengikuti kisi berjitter, BUKAN acak murni. Acak murni meninggalkan
+    // lubang gelap di beberapa tempat dan menumpuk tebal di tempat lain; kisi
+    // menjamin seluruh bidang tertutup, jitter menjaga hasilnya tak terlihat
+    // seperti kisi.
+    const KOL = 6, BAR = 4, sel = W / KOL, selY = H / BAR;
+    const urut = kolaseImg.map((im, i) => ({ im, r: Math.random(), i })).sort((a, b) => a.r - b.r);
+    let n = 0;
+    for (let by = -1; by <= BAR; by++) {
+      for (let bx = -1; bx <= KOL; bx++) {
+        const im = urut[n++ % urut.length].im;
+        const s = sel * (0.85 + Math.random() * 0.75);
+        const cx = bx * sel + sel / 2 + (Math.random() - 0.5) * sel * 0.6;
+        const cy = by * selY + selY / 2 + (Math.random() - 0.5) * selY * 0.6;
+        c2.save();
+        c2.globalAlpha = 0.55 + Math.random() * 0.35;
+        c2.translate(cx, cy); c2.rotate((Math.random() - 0.5) * 0.5);
+        try { c2.drawImage(im, -s / 2, -s / 2, s, s); } catch {}
+        c2.restore();
+      }
+    }
+    // Blur TIPIS: cukup melunakkan sambungan antar-keping tanpa menghapus wajah
+    // & warna gamenya — itu yang membuat latar ini terbaca sebagai "portal
+    // banyak game", bukan noda.
+    const cv2 = createCanvas(W, H), c3 = cv2.getContext("2d");
+    c3.filter = `blur(${KOLASE_BLUR}px)`; c3.drawImage(cv, 0, 0); c3.filter = "none";
+    c3.fillStyle = `rgba(9,12,18,${KOLASE_REDUP})`; c3.fillRect(0, 0, W, H);
+    const gv = c3.createRadialGradient(W / 2, H / 2, 240, W / 2, H / 2, 1280);
+    gv.addColorStop(0, "rgba(9,12,18,0.05)"); gv.addColorStop(1, "rgba(9,12,18,0.55)");
+    c3.fillStyle = gv; c3.fillRect(0, 0, W, H);
+    return cv2;
+  })() : null;
+
   const bahan = mediaImg.length ? mediaImg : ikon ? [ikon] : [];
 
   /** Keping dengan TEPI MEMUDAR, dirender SEKALI di awal.
@@ -521,6 +578,7 @@ export async function renderWide({ game, codes, activeCount, fetchedAt, iconPath
       if (LATAR_ART > 0) gambarKeping(ctx, t, LATAR_ART * faktorArt, LATAR_ART_BLUR);
       return;
     }
+    if (WALLPAPER) { ctx.drawImage(WALLPAPER, 0, 0); return; } // kolase diam
     ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
     gambarKeping(ctx, t, 1);
     ctx.filter = "none";

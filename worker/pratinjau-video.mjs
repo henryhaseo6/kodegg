@@ -18,7 +18,7 @@ import { renderWide } from "./video/render-wide.mjs";
 import { makeVO, muxAudio } from "./video/make-audio.mjs";
 import { susunNaskah, perkiraanDetik } from "./video/naskah.mjs";
 import { siklusRilis, kodeSekarat, kodeBaru, kedalamanArsip, ringkasWawasan } from "./video/wawasan.mjs";
-import { gambarGame } from "./src/game-media.mjs";
+import { gambarGame, coverMobile } from "./src/game-media.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA = resolve(HERE, "data");
@@ -109,13 +109,16 @@ const latarVideo = process.env.LATAR_VIDEO || null;
 // mode "klip + gambar promosi" itu tak cukup mewakili.
 const uid = platform === "ROBLOX" ? rob.games?.[id]?.universeId : null;
 const media = uid ? await gambarGame(uid, 8) : [];
+// Kolase latar untuk MOBILE: cover seluruh game mobile berkode.
+const kolase = platform === "MOBILE" ? await coverMobile(DATA) : null;
+if (kolase?.length) console.log(`latar    : kolase ${kolase.length} cover game mobile`);
 if (latarVideo) console.log(`latar    : video ${latarVideo}${process.env.LATAR_ART > 0 ? ` + ${media.length} gambar promosi (alpha ${process.env.LATAR_ART})` : " (polos)"}`);
 const hasil = await renderWide({
   game: { name: nama, slug: id, players: rob.games?.[id]?.players ?? 0 },
   codes: display, activeCount: aktif.length, fetchedAt: new Date().toISOString(),
   iconPath: existsSync(ikon) ? ikon : null,
   outPath: adaVO ? bisu : fin, voPath: adaVO ? vo : null,
-  wawasan, redeem, latarVideo, media,
+  wawasan, redeem, latarVideo, media, kolase,
 });
 if (adaVO) await muxAudio({ videoPath: bisu, voPath: vo, outPath: fin });
 console.log(`\n✓ ${fin}`);
