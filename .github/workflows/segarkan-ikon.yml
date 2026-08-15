@@ -1,0 +1,74 @@
+# Tarik ULANG semua ikon game, sebulan sekali.
+#
+# KENAPA PERLU. Kedua pengambil ikon idempoten — mereka MELEWATI berkas yang
+# sudah ada. Itu benar untuk run harian (hemat ratusan permintaan), tapi
+# akibatnya ikon yang sudah terunduh TAK PERNAH diperbarui: game yang berganti
+# ikon (rebrand, event musiman, anniversary) akan memakai gambar lama selamanya.
+#
+# Bukan dugaan. Diuji 15 Agu 2026 terhadap ikon yang ditarik 19-21 Jul: 3 dari 3
+# game yang disampel BERUBAH (drr, dtrav, isekai). Encoder-nya sendiri
+# deterministik — sumber yang sama menghasilkan byte yang identik — jadi
+# perubahan itu memang datang dari penerbit gamenya, bukan dari kompresi.
+#
+# Sebulan sekali dipilih karena ikon berubah dalam hitungan bulan, bukan hari.
+# Lebih sering cuma menambah lalu lintas & commit tanpa menambah kebenaran.
+name: segarkan-ikon
+
+on:
+  schedule:
+    - cron: "0 20 1 * *" # tiap tanggal 1, 03:00 WIB (20:00 UTC tanggal sebelumnya)
+  workflow_dispatch:
+    inputs:
+      roblox:
+        description: "Ikut segarkan ikon Roblox (632 game — jauh lebih lama)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: segarkan-ikon
+  cancel-in-progress: false
+
+jobs:
+  ikon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # sharp WAJIB di sini, tak seperti run harian. Tanpa sharp, fetch-icons
+      # menulis ikon ukuran ASLI (>=512px) ke folder situs — jadi bukan cuma
+      # gagal mengecilkan, tapi membengkakkan aset yang dikirim ke pengunjung.
+      - name: Pasang deps
+        run: cd worker && npm i --no-audit --no-fund
+
+      - name: Segarkan ikon game mobile
+        run: node worker/fetch-icons.mjs --force
+
+      # Roblox 632 game — sengaja TIDAK ikut jadwal bulanan. Ikon Roblox jarang
+      # berubah (thumbnail experience, bukan ikon toko), dan menariknya ulang
+      # tiap bulan berarti ratusan permintaan untuk perubahan yang nyaris nihil.
+      # Tetap bisa dijalankan manual saat memang dibutuhkan.
+      - name: Segarkan ikon Roblox (opsional)
+        if: ${{ inputs.roblox }}
+        run: node worker/fetch-roblox-icons.mjs --force || echo "ikon roblox gagal, lanjut"
+
+      - name: Commit bila ada yang berubah
+        run: |
+          git config user.name "kodegg-bot"
+          git config user.email "bot@kodegg.com"
+          git add site/public/assets/games worker/data/ikon-besar site/public/assets/roblox 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "tak ada ikon yang berubah bulan ini."
+            exit 0
+          fi
+          BERUBAH=$(git diff --cached --name-only | wc -l)
+          # Ikon = perubahan TAMPILAN, jadi situs wajib dibangun ulang. Karena
+          # itu pesan commit ini TIDAK memakai penanda pelewat CI.
+          git commit -m "chore(ikon): segarkan $BERUBAH berkas ikon (jadwal bulanan)"
+          git push
+          echo "$BERUBAH berkas ikon diperbarui." >> "$GITHUB_STEP_SUMMARY"
