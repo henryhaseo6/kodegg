@@ -37,6 +37,22 @@ async function optimize(bytes) {
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = resolve(HERE, "../site/public/assets/games");
+// IKON UKURAN PENUH (>=512px) DISIMPAN JUGA, bukan cuma versi 128px-nya.
+//
+// fetchIcon SUDAH mengunduh 512px dari sumber resmi (artworkUrl512 Apple, atau
+// Play Store =s512), lalu optimize() mengecilkannya ke 128 untuk kartu situs —
+// jadi selama ini bahan beresolusi penuh diunduh lalu dibuang tiap kali.
+//
+// Renderer video butuh yang besar: keping kolase digambar 272-512px, dan ikon
+// 128px yang dipaksa sebesar itu terlihat pecah. Menyimpannya di sini menutup
+// ketergantungan ke CDN Apple saat render — sesuai prinsip CLAUDE.md, "cache
+// aset di server sendiri, jangan bergantung pihak ketiga".
+//
+// Ditaruh di worker/data (ikut di-commit workflow), BUKAN di site/public:
+// gambar ini cuma dipakai perender video, dan mengirimkannya ke build situs
+// berarti ~1,8 MB yang tak pernah diminta pengunjung mana pun.
+const OUT_BESAR = resolve(HERE, "data/ikon-besar");
+const BESAR_PX = 384;
 const UA = "KodeGGBot/1.0 (+https://kodegg.com)";
 const FORCE = process.argv.includes("--force");
 
@@ -51,13 +67,16 @@ async function exists(path) {
 
 async function main() {
   await mkdir(OUT_DIR, { recursive: true });
+  await mkdir(OUT_BESAR, { recursive: true });
 
   const results = await Promise.all(
     Object.entries(GAMES).map(async ([id, meta]) => {
       if (!meta.iconFile) return { id, skipped: "tanpa iconFile" };
 
       const out = resolve(OUT_DIR, meta.iconFile);
-      if (!FORCE && (await exists(out))) return { id, skipped: "sudah ada" };
+      // Ikon kecil sudah ada TAPI yang besar belum → tetap unduh. Tanpa ini,
+      // seluruh katalog lama tak akan pernah punya versi besarnya.
+      if (!FORCE && (await exists(out)) && (await exists(resolve(OUT_BESAR, meta.iconFile.replace(/\.png$/i, ".webp"))))) return { id, skipped: "sudah ada" };
 
       const { bytes, source } = await fetchIcon(meta, {
         userAgent: UA,
@@ -67,6 +86,19 @@ async function main() {
 
       const optimized = await optimize(bytes);
       await writeFile(out, optimized);
+      // Versi besar: 384px WebP, bukan PNG 512 apa adanya.
+      //
+      // Ia cuma dipakai sebagai keping kolase yang di-blur 7px lalu diredupkan
+      // 62% — mutu piksel demi piksel tak pernah terlihat. Diukur untuk 30
+      // ikon: PNG 512 = 11,2 MB, WebP 384 = 0,7 MB. Selisih 10,5 MB itu masuk
+      // riwayat git SELAMANYA dan tak bisa dihapus, jadi tak sepadan ditukar
+      // dengan ketajaman yang tenggelam di balik blur.
+      try {
+        const besar = sharp
+          ? await sharp(bytes).resize(BESAR_PX, BESAR_PX, { fit: "cover" }).webp({ quality: 80 }).toBuffer()
+          : bytes;
+        await writeFile(resolve(OUT_BESAR, meta.iconFile.replace(/\.png$/i, ".webp")), besar);
+      } catch { /* besar gagal != ikon gagal */ }
       return { id, bytes: optimized.length, source };
     }),
   );

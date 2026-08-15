@@ -16,7 +16,7 @@
 // Kegagalan tak pernah fatal: memulangkan array kosong, dan renderer jatuh ke
 // ikon seperti sebelumnya. Latar adalah hiasan — ia tak boleh menggagalkan video.
 
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 
 const UA = { "User-Agent": "KodeGG/1.0 (+https://kodegg.com)", Accept: "application/json" };
@@ -79,12 +79,25 @@ export async function coverMobile(dataDir) {
     const cat = JSON.parse(readFileSync(resolve(dataDir, "games.json"), "utf8"));
     const kode = JSON.parse(readFileSync(resolve(dataDir, "codes.json"), "utf8"));
     const berkode = new Set((kode.active ?? []).map((c) => c.game));
-    for (const g of (cat.games ?? []).filter((g) => g.cover && berkode.has(g.id))) {
+    const daftar = (cat.games ?? []).filter((g) => berkode.has(g.id));
+    let lokal = 0, jaring = 0;
+    for (const g of daftar) {
+      // BERKAS LOKAL DULU. Disimpan fetch-icons.mjs dari unduhan yang sama yang
+      // menghasilkan ikon situs, jadi tak ada permintaan jaringan saat render.
+      const berkas = resolve(dataDir, "ikon-besar", `${g.id}.webp`);
+      try {
+        if (existsSync(berkas)) { out.push(readFileSync(berkas)); lokal += 1; continue; }
+      } catch { /* jatuh ke jaringan */ }
+      // Cadangan: game yang ikon besarnya belum pernah ditarik (mis. baru masuk
+      // katalog sebelum fetch-icons jalan lagi). Sekali `npm run icons` jalan,
+      // cabang ini tak terpakai lagi.
+      if (!g.cover) continue;
       try {
         const r = await fetch(g.cover.replace(/\/\d+x\d+bb/, "/512x512bb"), { headers: UA });
-        if (r.ok) out.push(Buffer.from(await r.arrayBuffer()));
+        if (r.ok) { out.push(Buffer.from(await r.arrayBuffer())); jaring += 1; }
       } catch { /* satu gambar gagal ≠ kolase gagal */ }
     }
+    if (jaring) console.log(`  (kolase: ${lokal} dari berkas lokal, ${jaring} ditarik dari CDN — jalankan \`npm run icons\` supaya semuanya lokal)`);
   } catch { /* katalog tak terbaca → kolase dilewati, latar jatuh ke ikon */ }
   _coverMobile = out;
   return out;
