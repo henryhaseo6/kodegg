@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-15T04:04:40.227Z",
+  "updatedAt": "2026-08-15T05:00:04.024Z",
   "counts": {
     "active": 89,
     "archived": 81
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Knight's Extolment W-Engine Showcase",
+        "id": "Knight's Extolment W-Engine Showcase"
+      },
+      "excerpt": {
+        "en": "The \"Knight's Extolment\" Signal Search event is about to begin! From 2026/08/19 12:00 (server time) – 2026/09/08 14:59 (server time), reception rate for the limited S-Rank W-Engine",
+        "id": "The \"Knight's Extolment\" Signal Search event is about to begin! From 2026/08/19 12:00 (server time) – 2026/09/08 14:59 (server time), reception rate for the limited S-Rank W-Engine"
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-08-15/transcoded/142088192319381344256_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/46298206",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-15T04:30:01.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -820,22 +836,6 @@
       "url": "https://www.hoyolab.com/article/46175842",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-07T10:30:07.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Agent Record | Roxy",
-        "id": "Agent Record | Roxy"
-      },
-      "excerpt": {
-        "en": "",
-        "id": ""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-08-07/transcoded/142085608771071807488_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/46175503",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-07T10:05:03.000Z"
     },
     {
       "game": "hi3",
