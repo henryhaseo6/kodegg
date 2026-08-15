@@ -124,3 +124,28 @@ test("sisaPlaylist: dihitung dari playlists.insert hari ini, tak menyentuh kuota
   for (let i = 0; i < 5; i++) catat("playlists.insert");
   assert.equal(sisaPlaylist(), 0, "tak pernah negatif");
 });
+
+// ── Penanda "jatah playlist habis" ───────────────────────────────────────────
+// 14 Agu 2026: penanda dipasang pukul 00:59 PT — 59 menit setelah hari PT
+// dimulai — lalu memblokir pembuatan playlist selama ~23 jam sisanya. Buku
+// kuota hari itu mencatat playlists.insert = 1 dari ~10; empat video terbit
+// tanpa playlist padahal jatahnya nyaris utuh.
+//
+// Sebabnya pola `/exhaust|rate|quota/` ikut menangkap `rateLimitExceeded` —
+// batas SESAAT karena menembak terlalu cepat, bukan plafon harian.
+test("penanda 'jatah habis' DIABAIKAN bila buku kuota menunjukkan jatah masih ada", async () => {
+  const D = mkdtempSync(resolve(tmpdir(), "kodegg-plimit-"));
+  process.env.KODEGG_DATA = D;
+  const hariPT = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  writeFileSync(resolve(D, "playlist-limit.json"), JSON.stringify({ hari: hariPT }));
+  writeFileSync(resolve(D, "kuota-yt.json"), JSON.stringify({ hari: hariPT, panggilan: { "playlists.insert": 1 } }));
+
+  const { attachToPlaylist } = await import(`../video/upload.mjs?plimit=${Date.now()}`);
+  const yt = ytPalsu({ adaId: false, halaman: 1 });
+  const ok = await attachToPlaylist(yt.yt, "VID", "Game Baru Codes — Kode Redeem", "D", "id");
+
+  assert.ok(ok, "pembuatan playlist harus tetap dicoba, bukan ditahan penanda basi");
+  assert.ok(yt.jejak.some((j) => j === "insert" || j === "list-mine" || j === "list-by-id"),
+    "API playlist memang disentuh");
+  rmSync(D, { recursive: true, force: true });
+});

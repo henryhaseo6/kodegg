@@ -13,7 +13,7 @@ import { createReadStream, existsSync, readFileSync, writeFileSync } from "node:
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { pantau } from "./yt-kuota.mjs";
+import { pantau, sisaPlaylist, PLAYLIST_HARIAN } from "./yt-kuota.mjs";
 
 // Kumpulkan set kredensial: project 1 (tanpa suffix) + _2.._9 bila ada.
 function credentialSets() {
@@ -61,7 +61,15 @@ const DATA = process.env.KODEGG_DATA || resolve(dirname(fileURLToPath(import.met
 const PL_LIMIT = resolve(DATA, "playlist-limit.json");
 const hariPT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 function jatahPlaylistHabis() {
-  try { return JSON.parse(readFileSync(PL_LIMIT, "utf8"))?.hari === hariPT(); } catch { return false; }
+  try {
+    if (JSON.parse(readFileSync(PL_LIMIT, "utf8"))?.hari !== hariPT()) return false;
+    // PENANDA BASI SEMBUH SENDIRI. Kalau catatan panggilan kita menunjukkan jatah
+    // hari ini masih ada, penanda itu pasti dipasang oleh penolakan sesaat —
+    // bukan oleh plafon harian. Tanpa jalan pulih ini, satu penolakan di menit
+    // ke-59 mengunci pembuatan playlist selama 23 jam berikutnya (14 Agu 2026).
+    if (sisaPlaylist() > 0) return false;
+    return true;
+  } catch { return false; }
 }
 function tandaiJatahHabis() {
   try { writeFileSync(PL_LIMIT, JSON.stringify({ hari: hariPT(), pada: new Date().toISOString() }, null, 1) + "\n"); } catch { /* jangan gagalkan upload */ }
@@ -396,10 +404,26 @@ export async function attachToPlaylist(ytOrNull, videoId, playlistTitle, playlis
     return false;
   } catch (e) {
     const kena = /exhaust|rate|quota/i.test(e.message);
-    // Sekali ditolak = jatah harian habis. Ditandai supaya percobaan berikutnya
-    // hari itu tak lagi menembak API (tiap tembakan 50 unit walau pasti gagal).
-    if (kena) tandaiJatahHabis();
-    console.log(`  playlist gagal (abaikan): ${e.message}${kena ? " (jatah playlist harian habis — pembuatan ditahan sampai reset)" : ""}`);
+    // SATU PENOLAKAN ≠ JATAH HARIAN HABIS.
+    //
+    // Pola `/exhaust|rate|quota/` ikut menangkap `rateLimitExceeded` dan
+    // `userRateLimitExceeded` — itu batas SESAAT (terlalu cepat menembak), bukan
+    // plafon playlist harian. Menandainya sebagai "habis" mengunci pembuatan
+    // playlist untuk SISA HARI PT itu.
+    //
+    // Terjadi 14 Agu 2026 dan mahal: penanda ditulis 00:59 PT — 59 menit setelah
+    // hari PT dimulai — lalu memblokir sisanya ~23 jam. Buku kuota hari itu
+    // mencatat playlists.insert = 1 dari ~10. Empat video terbit tanpa playlist
+    // padahal jatahnya nyaris utuh.
+    //
+    // Sekarang penandanya baru dipasang kalau catatan kita sendiri memang
+    // menunjukkan jatahnya sudah terpakai. Kalau belum, penolakan diperlakukan
+    // sebagai gangguan sesaat: videonya masuk antrean pending-playlists.json dan
+    // dicoba lagi di run berikutnya — jalur yang memang sudah ada.
+    const sisa = sisaPlaylist();
+    const benarHabis = kena && sisa <= 0;
+    if (benarHabis) tandaiJatahHabis();
+    console.log(`  playlist gagal (abaikan): ${e.message}${benarHabis ? " (jatah playlist harian habis — ditahan sampai reset)" : kena ? ` (penolakan sesaat; jatah masih ${sisa}/${PLAYLIST_HARIAN} — akan dicoba lagi run berikutnya)` : ""}`);
     return false;
   }
 }
