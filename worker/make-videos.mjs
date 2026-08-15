@@ -293,10 +293,17 @@ async function redeemRegistry() {
   return _redeem;
 }
 
-/** Wawasan per-game dari data kita sendiri. null utk selain MOBILE. */
+/** Wawasan per-game dari data kita sendiri (Roblox & mobile).
+ *
+ *  SUMBER BERKASNYA IKUT PLATFORM. Versi pertama selalu membaca codes.json —
+ *  berkas MOBILE — karena waktu itu memang khusus mobile. Mencabut penjagaan
+ *  platform tanpa membetulkan ini tak akan menyalakan apa pun: game Roblox tak
+ *  ada di codes.json, jadi `aktif` kosong dan fungsinya memulangkan null diam-
+ *  diam. Kelihatan seperti fitur yang menolak jalan tanpa sebab.
+ */
 function wawasanUntuk(c) {
-  if (c.platform !== "MOBILE") return null;
-  const mc = readJSON(resolve(DATA, "codes.json"), { active: [], archive: [] });
+  const berkas = c.platform === "ROBLOX" ? "roblox-codes.json" : "codes.json";
+  const mc = readJSON(resolve(DATA, berkas), { active: [], archive: [] });
   const aktif = (mc.active ?? []).filter((x) => x.game === c.id);
   const arsip = (mc.archive ?? []).filter((x) => x.game === c.id);
   if (!aktif.length) return null;
@@ -310,9 +317,9 @@ function wawasanUntuk(c) {
 }
 
 async function buatVideo(c, { base, vo, fin, th }, allMode, now) {
-  // Naskah berbasis fakta hanya untuk MOBILE LANDSCAPE. Shorts & Roblox tetap
-  // memakai voScript lama — mengubah semuanya sekaligus berarti dua perubahan
-  // yang tak bisa dinilai terpisah kalau hasilnya meleset.
+  // Naskah & adegan wawasan untuk SEMUA game landscape (Roblox dibuka 15 Agu
+  // 2026, setelah mobile jalan sehari penuh tanpa keluhan). Shorts tetap memakai
+  // voScript lama — jalur itu tak punya adegan wawasan sama sekali.
   const wawasan = FORMAT === "short" ? null : wawasanUntuk(c);
   const reg = wawasan ? await redeemRegistry() : null;
   const r = reg?.[c.id];
