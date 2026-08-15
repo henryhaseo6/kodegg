@@ -1,85 +1,24 @@
 {
-  "generatedAt": "2026-08-15T21:04:41.841Z",
+  "generatedAt": "2026-08-15T22:04:36.532Z",
   "codes": [
     {
-      "game": "midnight-chasers-highway-racing",
-      "gameName": "Midnight Chasers Highway Racing",
+      "game": "anime-jackpot",
+      "gameName": "Anime Jackpot",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/midnight-chasers-highway-racing"
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-jackpot"
       },
-      "code": "ThanksFor940k",
-      "reward": null,
-      "date": "2026-08-15T19:35:17.128Z",
+      "code": "TRADING",
+      "reward": "Itsuwari Dice",
+      "date": "2026-08-15T21:16:40.263Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-15T21:04:41.841Z",
-      "fetchedAt": "2026-08-15T21:04:41.841Z"
-    },
-    {
-      "game": "gakuran",
-      "gameName": "Gakuran",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/gakuran"
-      },
-      "code": "SINGALONG",
-      "reward": "20 Rerolls",
-      "date": "2026-08-15T20:13:06.147Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-15T21:04:41.841Z",
-      "fetchedAt": "2026-08-15T21:04:41.841Z"
-    },
-    {
-      "game": "gakuran",
-      "gameName": "Gakuran",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/gakuran"
-      },
-      "code": "EATUP",
-      "reward": "20 Rerolls",
-      "date": "2026-08-15T20:13:06.019Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-15T21:04:41.841Z",
-      "fetchedAt": "2026-08-15T21:04:41.841Z"
+      "firstSeenAt": "2026-08-15T22:04:36.532Z",
+      "fetchedAt": "2026-08-15T22:04:36.532Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "anime-jackpot",
-      "count": 1,
-      "fresh": [
-        {
-          "code": "TRADINGSOON",
-          "reward": "Get 9,000 Stars"
-        }
-      ]
-    },
-    {
-      "game": "anime-stars",
-      "count": 2,
-      "fresh": [
-        {
-          "code": "Release",
-          "reward": "50.0 Kx Coins, 250x Gems, 10x Summons, 2x Coins Potion, 2x Damage Potion, Lucky Potion, 2x Power Potion"
-        },
-        {
-          "code": "BANNERFIXED",
-          "reward": "15x Legendary Summons, 5x Premium Summons"
-        }
-      ]
-    }
-  ]
+  "bulkGames": []
 }
