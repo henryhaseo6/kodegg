@@ -88,14 +88,26 @@ export function unitTerpakai() {
 }
 export const unitSisa = () => Math.max(0, KUOTA_HARIAN - unitTerpakai());
 
-/** Ongkos satu video otomatis: insert (0) + cek privacy (1) + cari playlist (1)
- *  + cek isi playlist (1) + masukkan ke playlist (50) + thumbnail (50) = 103.
- *  Terukur 155/video pada run 13 Agu 2026 — selisihnya dari playlist yang masih
- *  disisir penuh (peta ID baru terisi run itu juga) dan insert-dobel pada
- *  playlist bersortir otomatis yang belum dikenali; dua-duanya menyusut sendiri.
+/** Ongkos satu video otomatis. DIUKUR, bukan dijumlah dari daftar tarif.
+ *
+ *  Penjumlahan teoretis memberi 103: insert (0) + cek privacy (1) + cari
+ *  playlist (1) + cek isi playlist (1) + masukkan ke playlist (50) + thumbnail
+ *  (50). Angka itu MELESET 45% dari kenyataan, dan melesetnya selalu ke arah
+ *  yang sama — terlalu murah.
+ *
+ *  Ukuran 15 Agu 2026: konsol 7.323 unit untuk 49 video = 149/video. Selisihnya
+ *  bukan kejutan sekali lewat melainkan biaya tetap yang tak masuk daftar itu:
+ *  pengurasan antrean playlist tertunda (insert untuk video hari sebelumnya),
+ *  pembuatan playlist baru (50), dan penyisiran playlists.list (344 panggilan).
+ *  Angka serupa terukur 13 Agu (155/video).
+ *
+ *  KENAPA INI PENTING. Nilai ini dipakai sebagai REM: rem yang menaksir terlalu
+ *  murah akan meloloskan video yang unitnya sebenarnya tak cukup — dan
+ *  penolakannya baru terjadi SETELAH render, jadi waktunya sudah telanjur
+ *  terbuang. Lebih baik berhenti satu video terlalu awal.
  *  Dipakai sebagai REM: berhenti SEBELUM unitnya kurang, bukan sesudah upload
  *  ditolak — penolakan terjadi setelah render, jadi waktunya telanjur terbuang. */
-export const UNIT_PER_VIDEO = TARIF_UPLOAD + 1 + 1 + 1 + 50 + 50;
+export const UNIT_PER_VIDEO = Number(process.env.YT_UNIT_PER_VIDEO || 150);
 
 // JATAH PLAYLIST BARU PER HARI — batas yang TERPISAH dari kuota unit, dan yang
 // justru lebih sering mengikat. Angkanya tak didokumentasikan Google; ~10/hari

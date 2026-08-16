@@ -104,8 +104,21 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // Artinya plafon unit sekarang ~10.000/103 ≈ 97 video, jauh di atas 57. Angka 57
 // SENGAJA DIBIARKAN: menaikkannya keputusan pemilik kanal (menyangkut berapa
 // banyak yang layak terbit sehari), bukan konsekuensi otomatis dari kuota yang
-// ternyata lebih longgar. Batas kerasnya tetap 100 upload/hari.
-const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 57);
+// ternyata lebih longgar.
+//
+// DINAIKKAN 57 → 75 pada 16 Agu 2026 atas permintaan pemilik kanal, DAN karena
+// pembagian kerjanya berubah: angka ini sekarang jaring pengaman, bukan
+// pengatur utama. Yang mengatur adalah REM UNIT di bawah — dan rem itu baru
+// bisa dipercaya setelah UNIT_PER_VIDEO diperbaiki dari 103 (jumlah teoretis)
+// ke 150 (terukur: 7.323 unit untuk 49 video, 15 Agu).
+//
+// Efeknya: pada hari yang overhead-nya berat, rem berhenti di ~63 video; pada
+// hari yang ringan, ia boleh sampai 75. Sebelumnya 57 dipatok rata untuk
+// dua-duanya, jadi hari ringan kehilangan jatah yang sebenarnya ada.
+//
+// Batas KERAS tetap 100 upload/hari dari Google Cloud (bukan kuota unit), dan
+// 75 sengaja di bawahnya — upload manual & perawatan juga memakai jatah itu. Batas kerasnya tetap 100 upload/hari.
+const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 75);
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
