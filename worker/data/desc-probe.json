@@ -3153,6 +3153,21 @@
    "tulis": "MEGALOFRIEND",
    "pertama": 1786240987490,
    "terakhir": "2026-08-16"
+  },
+  "pirate": {
+   "tulis": "PIRATE",
+   "pertama": 1786846030883,
+   "terakhir": "2026-08-16"
+  },
+  "cove": {
+   "tulis": "COVE",
+   "pertama": 1786846030883,
+   "terakhir": "2026-08-16"
+  },
+  "guitar": {
+   "tulis": "GUITAR",
+   "pertama": 1786846030883,
+   "terakhir": "2026-08-16"
   }
  },
  "chameleon": {
@@ -22922,7 +22937,7 @@
   "enchant": {
    "tulis": "Enchant",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-08",
+   "terakhir": "2026-08-16",
    "awal": true
   },
   "artifacts": {
@@ -27491,6 +27506,12 @@
    "tulis": "DARKMATTER",
    "pertama": 1786810019943,
    "terakhir": "2026-08-16"
+  },
+  "enchant": {
+   "tulis": "ENCHANT",
+   "pertama": 1786846030883,
+   "terakhir": "2026-08-16",
+   "sudahPunya": true
   }
  },
  "superstar-baseball": {
@@ -41931,7 +41952,7 @@
   "enchant": {
    "tulis": "Enchant",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-08",
+   "terakhir": "2026-08-16",
    "awal": true
   }
  },
