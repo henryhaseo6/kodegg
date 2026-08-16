@@ -1,26 +1,35 @@
 {
-  "generatedAt": "2026-08-16T06:05:05.451Z",
+  "generatedAt": "2026-08-16T07:06:03.467Z",
   "codes": [
     {
-      "game": "final-swarm",
-      "gameName": "Final Swarm",
+      "game": "asylum-life",
+      "gameName": "Asylum Life",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/final-swarm"
+        "Roblox Den": "https://robloxden.com/game-codes/asylum-life"
       },
-      "code": "skillz",
-      "reward": "2,500 Keys",
+      "code": "BLUE_VOID",
+      "reward": "3x EXP Booster",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1786858620000,
+      "srcNewAt": 1786860420000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-16T06:05:05.451Z",
-      "fetchedAt": "2026-08-16T06:05:05.451Z"
+      "check": true,
+      "checkAt": 1786863987633,
+      "srcCheck": true,
+      "firstSeenAt": "2026-08-16T07:06:03.467Z",
+      "fetchedAt": "2026-08-16T07:06:03.467Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "subterra",
+      "count": 7,
+      "fresh": []
+    }
+  ]
 }
