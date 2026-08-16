@@ -1,6 +1,10 @@
 // Daftar video yang belum punya playlist — siap tempel ke YouTube Studio.
 //
-// Jalankan: node worker/daftar-playlist-manual.mjs [> keluaran.txt]
+// Jalankan: node worker/daftar-playlist-manual.mjs
+//
+// Hasilnya ditulis ke _video-review/playlist-manual.txt (folder itu di-gitignore)
+// selain dicetak ke layar — menyalin dari terminal Windows menyakitkan, dan
+// deskripsi bilingualnya panjang.
 //
 // KENAPA ADA. Video BORONGAN yang gagal dapat playlist tidak diantrekan ulang
 // (keputusan: daftar borongan disusun ulang tiap malam, jadi antrean dianggap
@@ -16,12 +20,25 @@
 //
 // Video kode-baru TIDAK ikut daftar ini: yang itu sudah diantrekan ke
 // pending-playlists.json dan terpasang sendiri saat jatah harian pulih.
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA = process.env.KODEGG_DATA || resolve(HERE, "data");
+const KELUARAN = process.env.KODEGG_KELUARAN || resolve(HERE, "..", "_video-review", "playlist-manual.txt");
+
+const baris = [];
+const tulis = (s = "") => { baris.push(s); console.log(s); };
+/** Menyimpan gagal (folder read-only, disk penuh) tak boleh membatalkan daftarnya
+ *  — isinya sudah tercetak ke layar. */
+function simpan() {
+  try {
+    mkdirSync(dirname(KELUARAN), { recursive: true });
+    writeFileSync(KELUARAN, baris.join("\n") + "\n");
+    console.log(`\n→ tersimpan: ${KELUARAN}`);
+  } catch (e) { console.log(`\n(gagal menyimpan ke ${KELUARAN}: ${e.message})`); }
+}
 const baca = (n, d) => { try { return JSON.parse(readFileSync(resolve(DATA, n), "utf8")); } catch { return d; } };
 
 const st = baca("video-state.json", { log: [] });
@@ -40,12 +57,15 @@ const kurang = (st.log ?? [])
   .sort((a, b) => (rb.games?.[b.game]?.players ?? 0) - (rb.games?.[a.game]?.players ?? 0));
 
 if (!kurang.length) {
-  console.log("Semua video sudah punya playlist — tak ada yang perlu dibuat manual.");
+  tulis("Semua video sudah punya playlist — tak ada yang perlu dibuat manual.");
+  simpan();
   process.exit(0);
 }
 
-console.log(`PLAYLIST YANG PERLU DIBUAT MANUAL — ${kurang.length} video`);
-console.log("Urut dari pemain terbanyak. Video yang sudah masuk antrean otomatis TIDAK ikut.\n");
+tulis(`PLAYLIST YANG PERLU DIBUAT MANUAL — ${kurang.length} video`);
+tulis("Urut dari pemain terbanyak. Video yang sudah masuk antrean otomatis TIDAK ikut.");
+tulis("Judul JANGAN diubah — itu satu-satunya penanda milik game mana, meleset satu");
+tulis("karakter dan run berikutnya akan membuat playlist kedua untuk game yang sama.\n");
 
 kurang.forEach((e, i) => {
   const g = rb.games?.[e.game];
@@ -54,11 +74,13 @@ kurang.forEach((e, i) => {
   const jalur = g ? "roblox/" : "game/";
   const urlId = `https://kodegg.com/id/${jalur}${slug}/`;
   const urlEn = `https://kodegg.com/en/${jalur}${slug}/`;
-  console.log(`${i + 1}. ${nama} Codes — Kode Redeem`);
-  console.log(`   Video     : https://youtu.be/${e.videoId}`);
-  console.log(`   Deskripsi :`);
-  console.log(`Semua kode redeem ${nama} dari KodeGG, diupdate tiap ada kode baru. Full list + cara redeem: ${urlId}`);
-  console.log("");
-  console.log(`All ${nama} redeem codes from KodeGG, updated whenever new codes drop. Full list + how to redeem: ${urlEn}`);
-  console.log("");
+  tulis(`${i + 1}. ${nama} Codes — Kode Redeem`);
+  tulis(`   Video     : https://youtu.be/${e.videoId}`);
+  tulis(`   Deskripsi :`);
+  tulis(`Semua kode redeem ${nama} dari KodeGG, diupdate tiap ada kode baru. Full list + cara redeem: ${urlId}`);
+  tulis("");
+  tulis(`All ${nama} redeem codes from KodeGG, updated whenever new codes drop. Full list + how to redeem: ${urlEn}`);
+  tulis("");
 });
+
+simpan();
