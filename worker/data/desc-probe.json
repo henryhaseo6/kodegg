@@ -9945,7 +9945,7 @@
   "rotate": {
    "tulis": "rotate",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "costumes": {
@@ -12782,7 +12782,7 @@
   "rotate": {
    "tulis": "Rotate",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "pause": {
@@ -14793,7 +14793,7 @@
   "complex": {
    "tulis": "complex",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "automated": {
@@ -24900,7 +24900,7 @@
   "rotate": {
    "tulis": "Rotate",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "10million": {
@@ -38978,7 +38978,7 @@
   "complex": {
    "tulis": "complex",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "layouts": {
@@ -42848,37 +42848,37 @@
   "loops": {
    "tulis": "loops",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "jumps": {
    "tulis": "jumps",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "peoples": {
    "tulis": "peoples",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "racetracks": {
    "tulis": "racetracks",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "racecars": {
    "tulis": "racecars",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "generating": {
    "tulis": "generating",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-08-17",
    "awal": true
   },
   "overhaul": {
@@ -47308,7 +47308,7 @@
   "complex": {
    "tulis": "Complex",
    "pertama": 1786511027980,
-   "terakhir": "2026-08-13"
+   "terakhir": "2026-08-17"
   }
  },
  "kite-combat": {
@@ -52548,6 +52548,12 @@
    "tulis": "Countless",
    "pertama": 1786828018987,
    "terakhir": "2026-08-17"
+  },
+  "evil": {
+   "tulis": "EVIL",
+   "pertama": 1786943153052,
+   "terakhir": "2026-08-17",
+   "sudahPunya": true
   }
  },
  "anime-stars": {
