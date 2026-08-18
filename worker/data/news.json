@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-18T03:04:22.877Z",
+  "updatedAt": "2026-08-18T04:04:45.663Z",
   "counts": {
     "active": 91,
     "archived": 81
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Fleet of Form, Sweet of Song",
+        "id": "Lincah dalam Gerakan, Merdu dalam Lantunan"
+      },
+      "excerpt": {
+        "en": "\"...Oh, enough, Paraskeva, I know. I'll hit those high notes, no sweat! And Xenia... Xenia, I've already memorized your piece by heart, too. I won't forget a single note. I won't..",
+        "id": "\"... Cukup, Paraskeva. Aku tahu, nada tinggi itu bukan masalah bagiku! Lalu Xenia ... Xenia, lagumu juga sudah melekat dalam hatiku. Aku tidak akan lupakan itu, tidak akan ....\" — "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/18/e7f1340cd472aa0cefe85de2c0bf303e_7412578159781114108.jpg",
+      "url": "https://www.hoyolab.com/article/46345084",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-18T04:00:06.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -662,22 +678,6 @@
       "publishedAt": "2026-08-12T18:00:07.000Z"
     },
     {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "v9.0 Maintenance Announcement and New Events Preview",
-        "id": "Pengumuman Maintenance v9.0 dan Preview Event Baru"
-      },
-      "excerpt": {
-        "en": "SEA Dear Captain, to provide a better gaming experience, Battleship Hyperion will undergo server maintenance from 10:00 to 16:00 on AUG 20 (UTC+8). Hyperion will be updated to v9.0",
-        "id": "Dear Kapten, untuk memberikan pengalaman bermain yang lebih baik bagi Kapten, Hyperion akan melakukan maintenance server pada 20 Agustus 09:00 - 15:00 WIB. Hyperion akan diupdate k"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/07/05542df5ad5d9fe29b8a44d8b781e812_4547267349494376010.png",
-      "url": "https://www.hoyolab.com/article/46245284",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-12T10:00:02.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -690,6 +690,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
       "url": "https://www.hoyolab.com/article/46245283",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-12T10:00:02.000Z"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "v9.0 Maintenance Announcement and New Events Preview",
+        "id": "Pengumuman Maintenance v9.0 dan Preview Event Baru"
+      },
+      "excerpt": {
+        "en": "SEA Dear Captain, to provide a better gaming experience, Battleship Hyperion will undergo server maintenance from 10:00 to 16:00 on AUG 20 (UTC+8). Hyperion will be updated to v9.0",
+        "id": "Dear Kapten, untuk memberikan pengalaman bermain yang lebih baik bagi Kapten, Hyperion akan melakukan maintenance server pada 20 Agustus 09:00 - 15:00 WIB. Hyperion akan diupdate k"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/07/05542df5ad5d9fe29b8a44d8b781e812_4547267349494376010.png",
+      "url": "https://www.hoyolab.com/article/46245284",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-12T10:00:02.000Z"
     },
@@ -788,22 +804,6 @@
       "url": "https://www.hoyolab.com/article/46224327",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-11T09:00:06.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Take Part in \"Raiment Collection: Gentle Warmth\" to Obtain an \"Amber Nectar\" Manekin Cosmetic Set of Your Choice",
-        "id": "\"Apresiasi Adibusana: Kehangatan Lembut\": Ikuti untuk mendapatkan Set Kostum Manekin \"Amber Nectar\" pilihan"
-      },
-      "excerpt": {
-        "en": "〓Event Duration〓 After Version 7.0 Update – 2026/09/23 05:59 〓Event Rewards〓 An \"Amber Nectar\" Manekin Cosmetics Set of your choice and Geodes of Replication 〓Eligibility〓 After aw",
-        "id": "〓 Waktu Event 〓 Setelah update v7.0 - 2026/09/23 05:59 〓 Hadiah Event 〓 Satu Set Kostum Manekin \"Amber Nectar\" yang diinginkan, Geode of Replication 〓 Syarat Partisipasi 〓 Setelah "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/11/fde225e5b3f95bafb0627efd42495a80_7227650697431862824.jpg",
-      "url": "https://www.hoyolab.com/article/46223710",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-11T08:00:04.000Z"
     },
     {
       "game": "hsr",
