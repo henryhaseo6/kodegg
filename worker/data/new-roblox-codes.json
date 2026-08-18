@@ -1,86 +1,37 @@
 {
-  "generatedAt": "2026-08-18T12:05:32.754Z",
+  "generatedAt": "2026-08-18T13:04:58.710Z",
   "codes": [
     {
-      "game": "be-a-youtuber",
-      "gameName": "Be a YouTuber",
+      "game": "resource-incremental",
+      "gameName": "Resource Incremental",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/be-a-youtuber"
+        "Roblox Den": "https://robloxden.com/game-codes/resource-incremental"
       },
-      "code": "880kfavs",
-      "reward": "80 Rebirth Coins",
+      "code": "nicecoconutpalm",
+      "reward": "x1.25 Coconuts",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1787036040000,
+      "srcNewAt": 1787051880000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-18T12:05:32.754Z",
-      "fetchedAt": "2026-08-18T12:05:32.754Z"
-    },
-    {
-      "game": "win-a-world-championship",
-      "gameName": "Win A World Championship",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/win-a-world-championship"
-      },
-      "code": "VISIT5M",
-      "reward": "10K Coins, 5 Cup Tickets, 5 Team Rerolls and 5 Year Rerolls",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1787037360000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-18T12:05:32.754Z",
-      "fetchedAt": "2026-08-18T12:05:32.754Z"
-    },
-    {
-      "game": "win-a-world-championship",
-      "gameName": "Win A World Championship",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/win-a-world-championship"
-      },
-      "code": "LIKES10K",
-      "reward": "10K Coins, 5 Cup Tickets, 5 Team Rerolls and 5 Year Rerolls",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1787037360000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-18T12:05:32.754Z",
-      "fetchedAt": "2026-08-18T12:05:32.754Z"
-    },
-    {
-      "game": "camper-van",
-      "gameName": "Camper Van",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/camper-van"
-      },
-      "code": "SummerUpdate26",
-      "reward": "67 Tokens",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1787035920000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-18T12:05:32.754Z",
-      "fetchedAt": "2026-08-18T12:05:32.754Z"
+      "firstSeenAt": "2026-08-18T13:04:58.710Z",
+      "fetchedAt": "2026-08-18T13:04:58.710Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "land-or-die",
+      "count": 8,
+      "fresh": []
+    },
+    {
+      "game": "ophelia",
+      "count": 5,
+      "fresh": []
+    }
+  ]
 }
