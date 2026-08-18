@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-18T07:04:30.973Z",
+  "updatedAt": "2026-08-18T08:05:09.234Z",
   "counts": {
-    "active": 91,
+    "active": 92,
     "archived": 81
   },
   "articles": [
@@ -36,6 +36,22 @@
       "url": "https://www.hoyolab.com/article/46333421",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-17T10:00:09.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Wuthering Waves Update Content | Version 3.6 \"Lamplight in Mirage, Sword's Resolve in Heart\" Planned for Release on August 20 (UTC+8)",
+        "id": "Wuthering Waves Update Content | Version 3.6 \"Lamplight in Mirage, Sword's Resolve in Heart\" Planned for Release on August 20 (UTC+8)"
+      },
+      "excerpt": {
+        "en": "",
+        "id": ""
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1786896000000/ftdv86ecjg0taqe583-1786954549066.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5310",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-08-17T08:27:29.000Z"
     },
     {
       "game": "zzz",
@@ -518,22 +534,6 @@
       "publishedAt": "2026-08-14T10:00:04.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event",
-        "id": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event"
-      },
-      "excerpt": {
-        "en": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness",
-        "id": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/c4897eb1d5cfea2961ce2d97dec244bd_3034695040207453336.jpg",
-      "url": "https://www.hoyolab.com/article/46285173",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-14T10:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -546,6 +546,22 @@
       },
       "image": "https://vod-static.hoyolab.com/4/2026-08-14/transcoded/142088187755596910592_captions.0000000.jpg",
       "url": "https://www.hoyolab.com/article/46285172",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T10:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event",
+        "id": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event"
+      },
+      "excerpt": {
+        "en": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness",
+        "id": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/c4897eb1d5cfea2961ce2d97dec244bd_3034695040207453336.jpg",
+      "url": "https://www.hoyolab.com/article/46285173",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-14T10:00:03.000Z"
     },
