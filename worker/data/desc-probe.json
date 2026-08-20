@@ -53942,5 +53942,38 @@
    "pertama": 1787159337436,
    "terakhir": "2026-08-20"
   }
+ },
+ "airline-idle": {
+  "airline": {
+   "tulis": "airline",
+   "pertama": 1787209441889,
+   "terakhir": "2026-08-20"
+  },
+  "seats": {
+   "tulis": "seats",
+   "pertama": 1787209441889,
+   "terakhir": "2026-08-20"
+  },
+  "prices": {
+   "tulis": "prices",
+   "pertama": 1787209441889,
+   "terakhir": "2026-08-20"
+  },
+  "advance": {
+   "tulis": "ADVANCE",
+   "pertama": 1787209441889,
+   "terakhir": "2026-08-20"
+  },
+  "gifts": {
+   "tulis": "gifts",
+   "pertama": 1787209441889,
+   "terakhir": "2026-08-20"
+  },
+  "takeoff": {
+   "tulis": "TAKEOFF",
+   "pertama": 1787209441889,
+   "terakhir": "2026-08-20",
+   "sudahPunya": true
+  }
  }
 }
