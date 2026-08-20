@@ -1,6 +1,339 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "rivals",
+    "name": "Rivals",
+    "displayName": "RIVALS",
+    "slug": "rivals",
+    "players": 142097,
+    "redeemNote": {
+      "en": "You must follow the developers Nosniy Games, SenseiWarrior and Nosniy to redeem codes.",
+      "id": "Kamu harus follow developer Nosniy Games, SenseiWarrior, dan Nosniy dulu supaya kode bisa di-redeem.",
+      "links": [
+        {
+          "label": "Nosniy Games",
+          "url": "https://www.roblox.com/communities/3461453/Nosniy-Games"
+        },
+        {
+          "label": "SenseiWarrior",
+          "url": "https://www.roblox.com/users/15941965/profile"
+        },
+        {
+          "label": "Nosniy",
+          "url": "https://www.roblox.com/users/20349956/profile"
+        }
+      ]
+    },
+    "alias": null,
+    "rank": 142097,
+    "newCodes": [
+      {
+        "game": "rivals",
+        "gameName": "Rivals",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/rivals"
+        },
+        "code": "FREE194",
+        "reward": "3 Keys",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787195100000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-20T04:01:44.059Z",
+        "fetchedAt": "2026-08-20T04:01:44.059Z"
+      }
+    ],
+    "activeCount": 11,
+    "fetchedAt": "2026-08-20T04:01:44.059Z",
+    "displayCodes": [
+      {
+        "code": "FREE194",
+        "reward": "3 Keys",
+        "isNew": true
+      },
+      {
+        "code": "IMMELTINGHELP",
+        "reward": "2 Keys",
+        "isNew": false
+      },
+      {
+        "code": "FREE193",
+        "reward": "3 Keys",
+        "isNew": false
+      },
+      {
+        "code": "FREE192",
+        "reward": "x3 Keys",
+        "isNew": false
+      },
+      {
+        "code": "COCONUTBONK",
+        "reward": "250 Pearls",
+        "isNew": false
+      },
+      {
+        "code": "COMMUNITY24",
+        "reward": "Community Wrap",
+        "isNew": false
+      },
+      {
+        "code": "BOOST",
+        "reward": "One Key",
+        "isNew": false
+      },
+      {
+        "code": "roblox_rtc",
+        "reward": "Redeem this code to get 5 Keys",
+        "isNew": false
+      },
+      {
+        "code": "BONUS",
+        "reward": "Redeem this code to get 1 Key",
+        "isNew": false
+      },
+      {
+        "code": "RIVALSSUMMER",
+        "reward": "3 Tropical Chests",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "FREE194",
+        "reward": "3 Keys",
+        "isNew": true
+      },
+      {
+        "code": "IMMELTINGHELP",
+        "reward": "2 Keys",
+        "isNew": false
+      },
+      {
+        "code": "FREE193",
+        "reward": "3 Keys",
+        "isNew": false
+      },
+      {
+        "code": "FREE192",
+        "reward": "x3 Keys",
+        "isNew": false
+      },
+      {
+        "code": "COCONUTBONK",
+        "reward": "250 Pearls",
+        "isNew": false
+      },
+      {
+        "code": "COMMUNITY24",
+        "reward": "Community Wrap",
+        "isNew": false
+      },
+      {
+        "code": "BOOST",
+        "reward": "One Key",
+        "isNew": false
+      },
+      {
+        "code": "roblox_rtc",
+        "reward": "Redeem this code to get 5 Keys",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "FREE192",
+      "COMMUNITY24",
+      "BOOST",
+      "BONUS",
+      "roblox_rtc",
+      "FREE194",
+      "IMMELTINGHELP",
+      "FREE193",
+      "COCONUTBONK",
+      "RIVALSSUMMER",
+      "ELBILLUG"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "catch-a-monster",
+    "name": "Catch a Monster",
+    "displayName": "[⛏️] Catch a Monster",
+    "slug": "catch-a-monster",
+    "players": 7285,
+    "redeemNote": null,
+    "alias": [
+      "tangkap monster"
+    ],
+    "rank": 7285,
+    "newCodes": [
+      {
+        "game": "catch-a-monster",
+        "gameName": "Catch a Monster",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/catch-a-monster"
+        },
+        "code": "limitshop",
+        "reward": "10 Treasure Shovels",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787195880000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-20T04:01:44.059Z",
+        "fetchedAt": "2026-08-20T04:01:44.059Z"
+      }
+    ],
+    "activeCount": 41,
+    "fetchedAt": "2026-08-20T04:01:44.059Z",
+    "displayCodes": [
+      {
+        "code": "limitshop",
+        "reward": "10 Treasure Shovels",
+        "isNew": true
+      },
+      {
+        "code": "EVENTBUG",
+        "reward": "10 Treasure Shovel",
+        "isNew": false
+      },
+      {
+        "code": "scared",
+        "reward": "1 Dawnflare Egg",
+        "isNew": false
+      },
+      {
+        "code": "scaryharvest",
+        "reward": "1 Mythical Chest",
+        "isNew": false
+      },
+      {
+        "code": "rifcht",
+        "reward": "1 Rift Chest",
+        "isNew": false
+      },
+      {
+        "code": "ROLLBK",
+        "reward": "10 Treasure Shovels and 50 Forge Coins",
+        "isNew": false
+      },
+      {
+        "code": "FORGEBUG",
+        "reward": "100 Forge Coin",
+        "isNew": false
+      },
+      {
+        "code": "EVOBUG",
+        "reward": "10 Treasure Shovels and 1 Dawnflare Egg",
+        "isNew": false
+      },
+      {
+        "code": "CELESTIAL",
+        "reward": "2,000 Straw Coins and 5 Treasure Shovels",
+        "isNew": false
+      },
+      {
+        "code": "splash",
+        "reward": "1 Mythical Chest",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "limitshop",
+        "reward": "10 Treasure Shovels",
+        "isNew": true
+      },
+      {
+        "code": "EVENTBUG",
+        "reward": "10 Treasure Shovel",
+        "isNew": false
+      },
+      {
+        "code": "scared",
+        "reward": "1 Dawnflare Egg",
+        "isNew": false
+      },
+      {
+        "code": "scaryharvest",
+        "reward": "1 Mythical Chest",
+        "isNew": false
+      },
+      {
+        "code": "rifcht",
+        "reward": "1 Rift Chest",
+        "isNew": false
+      },
+      {
+        "code": "ROLLBK",
+        "reward": "10 Treasure Shovels and 50 Forge Coins",
+        "isNew": false
+      },
+      {
+        "code": "FORGEBUG",
+        "reward": "100 Forge Coin",
+        "isNew": false
+      },
+      {
+        "code": "EVOBUG",
+        "reward": "10 Treasure Shovels and 1 Dawnflare Egg",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "scared",
+      "sylvar",
+      "pzyglor",
+      "dmupner",
+      "lolteag",
+      "coin",
+      "cam",
+      "limitshop",
+      "EVENTBUG",
+      "scaryharvest",
+      "rifcht",
+      "ROLLBK",
+      "FORGEBUG",
+      "EVOBUG",
+      "CELESTIAL",
+      "splash",
+      "RIFDUNCH",
+      "DUNGEONFIXED",
+      "SPLUSH",
+      "WOODURY",
+      "VORTUR",
+      "PSYPEON",
+      "stardust",
+      "BUFEXX",
+      "FROXY",
+      "BJNEMDY",
+      "EVENTBUFF",
+      "buffviolet",
+      "fixdungeon",
+      "AASchest",
+      "DJENEMBY",
+      "egexos",
+      "ANTPANTER",
+      "buffediv",
+      "SPIFIX",
+      "DEVINGLEW",
+      "fspegg",
+      "SPABLING",
+      "HOREXIE",
+      "RUBYMON",
+      "xp"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "anime-jackpot",
     "name": "Anime Jackpot",
     "displayName": "[🌦️UPD] Anime Jackpot 🎲",
