@@ -160,6 +160,156 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "murder-duels",
+    "name": "Murder Duels",
+    "displayName": "Murder Duels",
+    "slug": "murder-duels",
+    "players": 9847,
+    "redeemNote": {
+      "en": "To use codes in Murder Duels, you must join the Breakfast Roblox Community and be at least level 5.",
+      "links": [
+        {
+          "label": "Breakfast Roblox Community",
+          "url": "https://www.roblox.com/share/g/43252617"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 9847,
+    "newCodes": [
+      {
+        "game": "murder-duels",
+        "gameName": "Murder Duels",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/murder-duels"
+        },
+        "code": "170KLIKES",
+        "reward": "1 Recruit Case",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787198700000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-20T04:08:22.630Z",
+        "fetchedAt": "2026-08-20T04:08:22.630Z"
+      }
+    ],
+    "activeCount": 10,
+    "fetchedAt": "2026-08-20T04:08:22.630Z",
+    "displayCodes": [
+      {
+        "code": "170KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": true
+      },
+      {
+        "code": "160KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "150KLIKES",
+        "reward": "Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "130KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "100MOG",
+        "reward": "Exclusive OG Knife",
+        "isNew": false
+      },
+      {
+        "code": "100KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "80KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "50KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "1,000 Coins.You must be at least level 5 to redeem this code",
+        "isNew": false
+      },
+      {
+        "code": "MATCHMAKINGDELAY",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "170KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": true
+      },
+      {
+        "code": "160KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "150KLIKES",
+        "reward": "Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "130KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "100MOG",
+        "reward": "Exclusive OG Knife",
+        "isNew": false
+      },
+      {
+        "code": "100KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "80KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "50KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "MATCHMAKINGDELAY",
+      "170KLIKES",
+      "160KLIKES",
+      "150KLIKES",
+      "130KLIKES",
+      "100MOG",
+      "100KLIKES",
+      "80KLIKES",
+      "50KLIKES",
+      "RELEASE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "catch-a-monster",
     "name": "Catch a Monster",
     "displayName": "[⛏️] Catch a Monster",
