@@ -1,5 +1,172 @@
 [
   {
+    "platform": "MOBILE",
+    "id": "nikki",
+    "name": "Infinity Nikki",
+    "slug": "infinity-nikki",
+    "players": 0,
+    "rank": 1000000000,
+    "newCodes": [
+      {
+        "code": "AAujNje6sk2",
+        "game": "nikki",
+        "gameName": "Infinity Nikki",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000"
+      },
+      {
+        "code": "AAuTVhQjaqX",
+        "game": "nikki",
+        "gameName": "Infinity Nikki",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000"
+      }
+    ],
+    "activeCount": 47,
+    "fetchedAt": "2026-08-20T05:01:26.213Z",
+    "displayCodes": [
+      {
+        "code": "AAujNje6sk2",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": true
+      },
+      {
+        "code": "AAuTVhQjaqX",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": true
+      },
+      {
+        "code": "HEAVENSREACHSEA",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AAxmBaFCVrJ",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AAxnJxPbvUj",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AAuR3UpfvMS",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "EYESONTHEGOLDENFEAST",
+        "reward": "Flavorful Moments ×1",
+        "isNew": false
+      },
+      {
+        "code": "AAu2FAUSPUa",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AAuFNDw2bs6",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AAuJTUa7U9D",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "AAujNje6sk2",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": true
+      },
+      {
+        "code": "AAuTVhQjaqX",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": true
+      },
+      {
+        "code": "HEAVENSREACHSEA",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AAxmBaFCVrJ",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AAxnJxPbvUj",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AAuR3UpfvMS",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "EYESONTHEGOLDENFEAST",
+        "reward": "Flavorful Moments ×1",
+        "isNew": false
+      },
+      {
+        "code": "AAu2FAUSPUa",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "AAujNje6sk2",
+      "AAuTVhQjaqX",
+      "HEAVENSREACHSEA",
+      "AAxmBaFCVrJ",
+      "AAxnJxPbvUj",
+      "AAuR3UpfvMS",
+      "EYESONTHEGOLDENFEAST",
+      "AAu2FAUSPUa",
+      "AAuFNDw2bs6",
+      "AAuJTUa7U9D",
+      "AAxtye9AVTq",
+      "AAxM6fYVAY5",
+      "AAuMuv96x7r",
+      "AAuMe6F9MPU",
+      "AAuEDFnQFpu",
+      "AAuPeEK4vvp",
+      "AAu6hcK7cBp",
+      "AAuQ8sMjHEC",
+      "AAukBUSQ46N",
+      "AAuw8HYBSAx",
+      "AAuYEKevUdN",
+      "AAuu6Kdqpah",
+      "AAuxHNv8eFA",
+      "MOMOWISHESNIKKILISTENS",
+      "AAu6PtVVwcm",
+      "AAuFeBhPEkM",
+      "AAummr87RDy",
+      "AAuTVkrfABT",
+      "AAuDddhhUwQ",
+      "AAuwVQrwCej",
+      "AAuBmw9SVfR",
+      "AAu6dCVDexJ",
+      "AAudQYNNFwQ",
+      "AAusYSexacN",
+      "AAu3eSY69Nq",
+      "AAuhpJyNQ3D",
+      "AAuykuAek55",
+      "AAutbsQbEH3",
+      "AAuReuNhRVd",
+      "AAuwU68MB2Q",
+      "AAuKheuwYen",
+      "AAuAjjDCveM",
+      "AAuMrUryMpV",
+      "AAvsY5KY7qK",
+      "MachineControlFB",
+      "GoldenFeastDC",
+      "SongofGoldReddit"
+    ]
+  },
+  {
     "platform": "ROBLOX",
     "id": "rivals",
     "name": "Rivals",
@@ -816,6 +983,262 @@
       "palacecountdown",
       "ErikkiMonth",
       "SmallPatchYay"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "anime-astral-simulator",
+    "name": "Anime Astral Simulator",
+    "displayName": "[DUNGEON🔥] Simulador de Astral de Anime",
+    "slug": "anime-astral-simulator",
+    "players": 0,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 0,
+    "newCodes": [
+      {
+        "game": "anime-astral-simulator",
+        "gameName": "Anime Astral Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-astral-simulator"
+        },
+        "code": "MINI10.5",
+        "reward": "Tower Cooldown Reset, 200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787199180000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-20T05:01:41.724Z",
+        "fetchedAt": "2026-08-20T05:01:41.724Z"
+      },
+      {
+        "game": "anime-astral-simulator",
+        "gameName": "Anime Astral Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-astral-simulator"
+        },
+        "code": "AUTOENTERGAMEMODE",
+        "reward": "Tower Cooldown Reset, 200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787199180000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-20T05:01:41.724Z",
+        "fetchedAt": "2026-08-20T05:01:41.724Z"
+      },
+      {
+        "game": "anime-astral-simulator",
+        "gameName": "Anime Astral Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-astral-simulator"
+        },
+        "code": "GAMEBOOSTS",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787199180000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-20T05:01:41.724Z",
+        "fetchedAt": "2026-08-20T05:01:41.724Z"
+      }
+    ],
+    "activeCount": 85,
+    "fetchedAt": "2026-08-20T05:01:41.724Z",
+    "displayCodes": [
+      {
+        "code": "MINI10.5",
+        "reward": "Tower Cooldown Reset, 200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": true
+      },
+      {
+        "code": "AUTOENTERGAMEMODE",
+        "reward": "Tower Cooldown Reset, 200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": true
+      },
+      {
+        "code": "GAMEBOOSTS",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": true
+      },
+      {
+        "code": "UPD10PATCH",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE10",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      },
+      {
+        "code": "SORRY4DEL4Y!",
+        "reward": "1,000 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      },
+      {
+        "code": "PRIMORDIALS",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      },
+      {
+        "code": "TITANPASSIVES",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE10FIXES",
+        "reward": "500 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE9.5",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "MINI10.5",
+        "reward": "Tower Cooldown Reset, 200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": true
+      },
+      {
+        "code": "AUTOENTERGAMEMODE",
+        "reward": "Tower Cooldown Reset, 200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": true
+      },
+      {
+        "code": "GAMEBOOSTS",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": true
+      },
+      {
+        "code": "UPD10PATCH",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE10",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      },
+      {
+        "code": "SORRY4DEL4Y!",
+        "reward": "1,000 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      },
+      {
+        "code": "PRIMORDIALS",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      },
+      {
+        "code": "TITANPASSIVES",
+        "reward": "200 F2P Tickets, 1 Damage II Potion, 1 Luck II Potion, 1 Power II Potion, 1 XP II Potion, and 1 Yen II Potion",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "UPDATE5.5",
+      "SKILLTREE",
+      "UPDATE5",
+      "PETPASSIVES",
+      "DUNGEONS",
+      "MINIUPDATE4.75",
+      "UPDATE4",
+      "SUMMERMOUNT",
+      "UPDATE3.5",
+      "TRIALMEDIUM",
+      "WAIFU",
+      "UPDATE3",
+      "GRIMOIRES",
+      "UPDATE2.5",
+      "TRACKER",
+      "MOUNTS",
+      "UPDATE2",
+      "BATTLEPASS",
+      "REWARDSFIXED",
+      "UPDATE1.5",
+      "UPDATE1",
+      "EXCHANGE",
+      "RELEASE",
+      "MINI10.5",
+      "AUTOENTERGAMEMODE",
+      "GAMEBOOSTS",
+      "UPD10PATCH",
+      "UPDATE10",
+      "SORRY4DEL4Y!",
+      "PRIMORDIALS",
+      "TITANPASSIVES",
+      "UPDATE10FIXES",
+      "UPDATE9.5",
+      "SPAWNBOSS",
+      "HEROTEST",
+      "SORRYFORUPGRADES",
+      "UPDATE9",
+      "ONIPUNCHI",
+      "MONSTERS",
+      "UPD9FIXE",
+      "DEMONKING",
+      "GODDESS",
+      "UPDATE8.5",
+      "COMMANDMENTS",
+      "LIONKINGDOM",
+      "FIXEDRANKS",
+      "UPDATE8FIXES",
+      "!FIXEDABUG!",
+      "UPDATE8",
+      "GATESNOTCLOSINGANYMORE",
+      "AUTOCOLLECTFINGER",
+      "UPDATE7.5",
+      "UPDATE7",
+      "CURSEDRUSH",
+      "KINGOFCURSES",
+      "YETANOTHERFIXSHUTDOWN",
+      "UPDATE7FIXES",
+      "FIXEDINDEX",
+      "UPDATE6.1",
+      "KIEVOLUTION",
+      "UPDATE6EXTRAFIXES",
+      "UPDATE6.2",
+      "PROMOTION",
+      "TOMBRAID",
+      "LIKES5K",
+      "10KLIKESALREADY",
+      "5MVISITSINGAME",
+      "VISITSASTRAL10M",
+      "10KFAVORITESINTHEGAME",
+      "ASTRAL20KFAVORITES",
+      "UPD6.2FIXES",
+      "FIXEDWHITEBEARDQUEST",
+      "UPDATE6FIXES",
+      "OPTIMIZATIONS",
+      "UPDATE6RELEASE",
+      "LIKES3KNEW",
+      "2MVISITSNEW",
+      "20KACTIVE",
+      "30KACTIVE",
+      "7.5KFAVORITES",
+      "!ASTRAL40KCCU!",
+      "FIXEDAVATAR",
+      "UPDATE4.5",
+      "DIVINEPASSIVES",
+      "NPCNERF"
     ]
   }
 ]
