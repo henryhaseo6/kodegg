@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-20T09:01:45.005Z",
+  "updatedAt": "2026-08-20T10:01:54.963Z",
   "counts": {
-    "active": 100,
+    "active": 101,
     "archived": 81
   },
   "articles": [
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "🎁Limited-time Twitch Drops available! Watch Honkai Impact 3rd live streams and claim up to 120 Crystals!🎁",
+        "id": "🎁Twitch Drops waktu terbatas hadir! Tonton live stream konten Honkai Impact 3 dan dapatkan hingga 120 Crystal!🎁"
+      },
+      "excerpt": {
+        "en": "Tune in to Twitch live streams with drops and watch for a specific amount of time to claim fabulous in-game rewards! >>https://hoyo.link/sKebfrCFo Time: 18:00, AUG 20 ~ 18:00, SEP ",
+        "id": "Tonton live stream Twitch dengan drops dan tonton selama waktu tertentu untuk mendapatkan banyak hadiah dalam game! >>https://hoyo.link/sKebfrCFo Waktu: 20 Agustus 17:00 - 17 Septe"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/19/23ad545d709e01ca326c1dde49785096_1551652053015429967.png",
+      "url": "https://www.hoyolab.com/article/46378674",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-20T10:00:02.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
