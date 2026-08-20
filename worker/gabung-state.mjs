@@ -54,6 +54,12 @@ let berubah = [];
     // run yang bertabrakan sama-sama benar-benar mengunggah.
     if (String(b.date) > String(a.date)) { a.date = b.date; a.todayCount = b.todayCount ?? 0; }
     else if (String(b.date) === String(a.date)) a.todayCount = Math.max(a.todayCount ?? 0, b.todayCount ?? 0);
+    // PLAFON UPLOAD (batas channel yang dipelajari). Kalau kedua sisi punya,
+    // yang TERENDAH menang: satu-satunya cara plafon turun adalah YouTube benar
+    // -benar menolak, jadi angka lebih rendah selalu berarti bukti yang lebih
+    // baru. Kalau cuma remote yang punya, ambil — tanpa ini penolakan yang
+    // dipelajari run lain lenyap, dan run ini kembali menabrak batas yang sama.
+    if (b.plafon && (!a.plafon || (b.plafon.nilai ?? Infinity) < (a.plafon.nilai ?? Infinity))) a.plafon = b.plafon;
     a.posted = { ...(b.posted ?? {}), ...(a.posted ?? {}) };
     // Cap 4000 dipertahankan: buang yang paling lama DISISIPKAN (urutan kunci
     // objek = urutan sisip), bukan acak.
@@ -110,6 +116,42 @@ let berubah = [];
     // dan tak boleh menimpanya (kalau ditimpa, kuota hari baru terlihat terpakai).
     fs.writeFileSync(abs, JSON.stringify(b, null, 1) + "\n");
     berubah.push(`kuota-yt: hari remote ${b.hari} lebih baru → pakai catatan remote`);
+  }
+}
+
+// ── pending-thumbs.json ─────────────────────────────────────────────────────
+// Antrean thumbnail. Ditambahkan 20 Agu 2026 setelah run top50-video 19 Agu
+// GAGAL persis di sini: `git pull --rebase` bentrok di berkas ini (run per jam
+// menguras antrean sementara run harian menambahinya), `|| true` menelan
+// kegagalannya, dan `git push` berikutnya jalan di HEAD terlepas → exit 128.
+// Videonya sendiri sudah terbit; yang hilang justru catatannya — termasuk
+// thumbnail video itu, yang jadi tak pernah terpasang.
+//
+// Digabung sebagai HIMPUNAN (union by videoId), bukan pilih-satu-menang: kedua
+// sisi hanya MENGHAPUS entri saat thumbnail benar-benar terpasang, jadi entri
+// yang cuma ada di satu sisi hampir selalu berarti "baru ditambahkan di sana".
+//
+// Risikonya jujur disebut: bila remote menghapus entri (berhasil dipasang) tepat
+// saat lokal masih memegangnya, union MENGHIDUPKANNYA kembali. Ongkosnya satu
+// pemasangan ulang (50 unit) yang mubazir, lalu entrinya hilang sendiri. Arah
+// salah itu sengaja dipilih — kebalikannya berarti thumbnail yang belum
+// terpasang lenyap diam-diam, dan videonya selamanya memakai frame acak.
+{
+  const rel = "worker/data/pending-thumbs.json";
+  const abs = path.join(DIR, "data", "pending-thumbs.json");
+  const a = bacaLokal(abs), b = bacaRemote(rel);
+  if (Array.isArray(a) && Array.isArray(b)) {
+    const peta = new Map();
+    // Lokal dimasukkan belakangan supaya menang saat videoId-nya sama: dialah
+    // yang baru saja mencoba, jadi jeda & hitungan gagalnya yang paling segar.
+    for (const x of [...b, ...a]) if (x?.videoId) peta.set(x.videoId, x);
+    const gab = [...peta.values()]
+      .sort((x, y) => String(y.gagalPada ?? "").localeCompare(String(x.gagalPada ?? "")))
+      .slice(0, 50); // batas sama dengan simpanPending()
+    if (gab.length !== a.length) {
+      fs.writeFileSync(abs, JSON.stringify(gab, null, 1) + "\n");
+      berubah.push(`pending-thumbs: ${a.length} lokal + ${b.length} remote → ${gab.length}`);
+    }
   }
 }
 

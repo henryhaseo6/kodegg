@@ -115,5 +115,28 @@ jobs:
           git add -A worker/data/kuota-yt.json 2>/dev/null || true
           git diff --cached --quiet && echo "antrean tak berubah" && exit 0
           git commit -m "chore(thumb): antrean thumbnail tertunda [skip ci]"
-          git pull --rebase --autostash -q || true
-          git push -q
+          # PUSH TAHAN-BALAPAN. Dulu satu baris `git pull --rebase --autostash
+          # -q || true` diikuti `git push -q`, dan 19 Agu 2026 itu gagal persis
+          # seperti yang bisa diduga: run per jam menguras pending-thumbs.json
+          # sementara run ini menambahinya -> rebase konflik -> `|| true` menelan
+          # kegagalannya -> `git push` jalan di HEAD TERLEPAS di tengah rebase ->
+          # exit 128. Videonya sudah terbit, tapi catatannya hilang semua:
+          # video-harian (penjaga duplikat), kuota, dan antrean thumbnail video
+          # itu sendiri - yang berarti thumbnail-nya tak akan pernah terpasang.
+          #
+          # Pola ini menyalin yang sudah dipakai update-codes.yml: coba push,
+          # kalau ditolak rebase lalu GABUNG berkas kumulatif (gabung-state.mjs)
+          # sebelum mengulang. `-X theirs` sendirian tidak cukup - ia memenangkan
+          # versi lokal dan dengan itu menghapus jejak run lain.
+          for i in 1 2 3 4 5; do
+            if git push -q; then echo "push berhasil (percobaan $i)"; exit 0; fi
+            echo "push ditolak - integrasikan remote lalu ulang ($i)"
+            git pull --rebase -X theirs --autostash -q origin main \
+              || { git rebase --abort 2>/dev/null || true; }
+            node worker/gabung-state.mjs origin/main || echo "  (gabung state dilewati)"
+            if ! git diff --quiet -- worker/data/pending-thumbs.json worker/data/video-harian.json worker/data/kuota-yt.json; then
+              git add -A worker/data/pending-thumbs.json worker/data/pending-thumbs worker/data/video-harian.json worker/data/kuota-yt.json
+              git commit --amend --no-edit --quiet
+            fi
+          done
+          echo "::error::gagal push antrean thumbnail setelah 5 percobaan"; exit 1

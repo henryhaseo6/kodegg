@@ -14,7 +14,7 @@ import { buildMetadata } from "./video/metadata.mjs";
 import { uploadVideo, ytConfigured, attachToPlaylist, ytProjectCount } from "./video/upload.mjs";
 import { UNIT_PER_VIDEO, unitSisa, sisaPlaylist, PLAYLIST_HARIAN, ringkas as ringkasKuota } from "./video/yt-kuota.mjs";
 import { gameSlug } from "./src/games.mjs";
-import { simpanPending, buangPending, semuaPending } from "./video/pending-thumbs.mjs";
+import { simpanPending, buangPending, semuaPending, siapDicoba, tundaPending } from "./video/pending-thumbs.mjs";
 import { saringSusulan } from "./video/susulan.mjs";
 import { susunNaskah } from "./video/naskah.mjs";
 import { siklusRilis, kodeSekarat, kodeBaru, kedalamanArsip, ringkasWawasan } from "./video/wawasan.mjs";
@@ -119,6 +119,54 @@ const PENDING_VID = resolve(DATA, "pending-videos.json"); // kandidat yg tak mua
 // Batas KERAS tetap 100 upload/hari dari Google Cloud (bukan kuota unit), dan
 // 75 sengaja di bawahnya — upload manual & perawatan juga memakai jatah itu. Batas kerasnya tetap 100 upload/hari.
 const MAX_PER_DAY = Number(process.env.VIDEO_MAX_PER_DAY || 75);
+// PLAFON YANG DIPELAJARI SENDIRI — rem KETIGA, dan satu-satunya yang mengukur
+// batas yang benar.
+//
+// MAX_PER_DAY dan rem unit sama-sama menakar KUOTA API: unit/hari (10.000) dan
+// "Video Uploads per day" (100) di Google Cloud. Keduanya masih longgar 19-20
+// Agu 2026 — konsol menunjukkan 27% terpakai, puncak 30 hari 82 — tapi upload
+// tetap ditolak:
+//
+//   The user has exceeded the number of videos they may upload.
+//
+// Itu `uploadLimitExceeded`: batas per-CHANNEL milik YouTube, bukan kuota
+// project. Besarnya tidak diumumkan, tidak muncul di konsol mana pun, dan
+// BERUBAH — kanal ini pernah menerima 80 video/hari, lalu 19 Agu berhenti di
+// 21. Karena tak bisa dibaca, satu-satunya cara mengetahuinya adalah dari
+// penolakan itu sendiri: berapa yang LOLOS sebelum ditolak = plafon hari itu.
+//
+// Tanpa ini setiap video di atas plafon tetap dirender penuh (TTS + ffmpeg +
+// unggah, ~1,5 menit) baru ditolak, tiap jam, dengan game yang sama.
+//
+// Naik-turunnya sengaja tak simetris (AIMD, seperti kontrol kongesti):
+//   TURUN seketika & tepat — ke jumlah yang benar-benar lolos, tanpa menebak.
+//   NAIK pelan & hanya sebagai percobaan — +25%/hari, dan HANYA kalau plafon
+//   kemarin benar-benar habis terpakai. Hari sepi tak membuktikan apa-apa:
+//   10 video yang lolos dari 10 yang ada bukan berarti plafonnya 10.
+// Begitu percobaannya menyentuh MAX_PER_DAY, plafon dilepas — kanal dianggap
+// pulih dan rem lama yang memegang kendali lagi.
+const PLAFON_MIN = 5;           // jangan pernah mengunci diri sampai nol upload
+const PLAFON_NAIK = 1.25;       // 21 → 27 → 34 → 43 → 54 → 68 → lepas (±6 hari)
+const PLAFON_JEDA_JAM = 3;      // sesudah ditolak, boleh 1 video percobaan tiap 3 jam
+/** Plafon yang berlaku hari ini: hasil belajar, dibatasi jaring pengaman lama. */
+function batasHarian(state) {
+  const n = state.plafon?.nilai;
+  // `Number.isFinite`, bukan sekadar `n ?`: plafon 0 itu ANGKA SAH (ditolak
+  // sebelum satu pun lolos) tapi falsy, dan cek falsy diam-diam mengembalikannya
+  // ke 75 — plafon terketat justru jadi paling longgar. PLAFON_MIN yang menjaga
+  // agar nol tak mengunci kanal, bukan kebetulan tipe data.
+  return Number.isFinite(n) ? Math.min(MAX_PER_DAY, Math.max(PLAFON_MIN, n)) : MAX_PER_DAY;
+}
+/** Plafon untuk hari BARU. Dipanggil sebelum todayCount direset — angka kemarin
+ *  itulah buktinya. Mengembalikan null = plafon dilepas (kembali ke MAX_PER_DAY). */
+function plafonBesok(state) {
+  const p = state.plafon;
+  if (!Number.isFinite(p?.nilai)) return null;
+  // Belum habis terpakai → tak ada bukti baru, plafonnya dibiarkan apa adanya.
+  if (state.todayCount < batasHarian(state)) return p;
+  const naik = Math.ceil(p.nilai * PLAFON_NAIK);
+  return naik >= MAX_PER_DAY ? null : { nilai: naik, pada: state.date, sebab: "percobaan naik" };
+}
 // Batas RENDER/run: sisanya antre ke run berikutnya. Dulu 8 utk hemat menit
 // Actions (repo private); kini repo PUBLIC → menit unlimited, jadi dinaikkan ke
 // 15 agar kode baru lebih cepat jadi video (catch-up lebih gesit). Total upload
@@ -917,7 +965,8 @@ async function main() {
   // tersimpan bisa lebih DEPAN dari hari PT — kalau direset juga, counter jadi
   // 0 persis di jendela yang kuotanya justru sedang habis. Lebih aman kurang
   // pakai daripada gagal berulang.
-  if (hariKuota > state.date) { state.date = hariKuota; state.todayCount = 0; }
+  // Plafon dihitung SEBELUM counter direset: buktinya justru angka kemarin.
+  if (hariKuota > state.date) { state.plafon = plafonBesok(state); state.date = hariKuota; state.todayCount = 0; }
 
   // Mode --check: tentukan ADA kerja video/playlist tanpa render/upload/deps berat.
   // Dipakai CI utk melewati install deps video (canvas/ffmpeg/edge-tts) & render
@@ -929,7 +978,7 @@ async function main() {
     // Susulan WAJIB ikut dihitung. Tanpa ini CI menyimpulkan "tak ada kerja" lalu
     // melewati install deps video — dan itu terjadi justru di malam sepi, yaitu
     // malam yang kuotanya paling banyak tersisa dan paling butuh borongan.
-    const bl = !BACKLOG_OFF && jamPT(now) >= BACKLOG_HOUR_PT && MAX_PER_DAY - state.todayCount > 0
+    const bl = !BACKLOG_OFF && jamPT(now) >= BACKLOG_HOUR_PT && batasHarian(state) - state.todayCount > 0
       ? buildBacklog(state, RENDER_MAX).length : 0;
     const kerja = cands.length + (promoC ? 1 : 0) + pv + pp + bl;
     console.log(`cek video: ${kerja} unit (fresh ${cands.length}, promo ${promoC ? 1 : 0}, antri-vid ${pv}, antri-pl ${pp}, susulan ${bl})`);
@@ -945,7 +994,9 @@ async function main() {
     // berkasnya ke sini karena workflow harian mereka jalan tepat saat kuota
     // habis. Run per-jam inilah yang pertama menyentuh kuota setelah reset
     // 07:00 UTC, jadi di sinilah pemulihan paling mungkin berhasil.
-    const antre = semuaPending().filter((x) => x.file);
+    const antre = siapDicoba(null, now).filter((x) => x.file);
+    const dijeda = semuaPending().filter((x) => x.file).length - antre.length;
+    if (dijeda) console.log(`thumbnail tertunda: ${dijeda} sedang dijeda (gagal beruntun) — dilewati run ini`);
     if (antre.length) {
       const { setThumbnail } = await import("./video/upload.mjs");
       let ok = 0;
@@ -953,7 +1004,21 @@ async function main() {
         const f = resolve(THUMB_DIR, x.file || `${x.videoId}.jpg`);
         if (!existsSync(f)) { buangPending(x.videoId); continue; } // berkasnya hilang → jangan menggantung selamanya
         try { await setThumbnail(x.videoId, f); rmSync(f, { force: true }); buangPending(x.videoId); ok++; }
-        catch (e) { console.log(`  thumbnail ${x.videoId} masih gagal: ${e.message}`); break; } // kuota belum pulih → hentikan, coba lagi run berikutnya
+        catch (e) {
+          console.log(`  thumbnail ${x.videoId} masih gagal: ${e.message}`);
+          // Dua jenis penolakan yang harus dibedakan:
+          //
+          // SEKANAL (kuota habis, batas laju thumbnail) — entri lain pasti
+          // bernasib sama, jadi hentikan dan jeda SEMUANYA. Ini alasan `break`
+          // yang asli, dan tetap benar.
+          //
+          // SATU VIDEO (video dihapus, gambar ditolak) — dulu ikut menghentikan
+          // seluruh antrean, jadi satu entri rusak menyandera sisanya tanpa batas
+          // waktu. Sekarang entri itu saja yang dijeda, sisanya jalan terus.
+          const sekanal = /quota|too many|rate ?limit|exceeded|forbidden|401|403/i.test(e.message);
+          tundaPending(sekanal ? antre.map((y) => y.videoId) : [x.videoId], now);
+          if (sekanal) { console.log(`  → penolakan sekanal: ${antre.length} entri dijeda, dicoba lagi nanti`); break; }
+        }
       }
       if (ok) console.log(`thumbnail tertunda dipasang: ${ok}/${antre.length}`);
     }
@@ -966,7 +1031,7 @@ async function main() {
     // menghabiskannya. Itu justru jam terburuk untuk mencoba lagi, dan itulah
     // sebabnya video 4 Agu terbit tanpa thumbnail lalu tak pernah pulih. Run
     // per-jam ini menyentuh kuota paling segar tepat setelah 07:00 UTC.
-    const antreLong = semuaPending().filter((x) => !x.file && x.date && (x.kind === "roundup" || x.kind === "top50"));
+    const antreLong = siapDicoba(null, now).filter((x) => !x.file && x.date && (x.kind === "roundup" || x.kind === "top50"));
     for (const x of antreLong) {
       const skrip = x.kind === "roundup" ? "make-codes-roundup.mjs" : "make-top50.mjs";
       console.log(`thumbnail ${x.kind} ${x.date} (${x.videoId}) — render ulang…`);
@@ -975,8 +1040,10 @@ async function main() {
         p.on("close", res); p.on("error", () => res(1));
       });
       // Skripnya sendiri yang memanggil buangPending saat berhasil; kalau gagal
-      // entrinya sengaja DIBIARKAN supaya run berikutnya mencoba lagi.
-      if (kode !== 0) { console.log(`  gagal (exit ${kode}) — tetap di antrean`); break; }
+      // entrinya sengaja DIBIARKAN supaya run berikutnya mencoba lagi — tapi
+      // dengan jeda, karena render ulangnya mahal (unduh charts + gambar) dan
+      // sebab gagalnya biasanya sama seperti run sebelumnya.
+      if (kode !== 0) { console.log(`  gagal (exit ${kode}) — tetap di antrean, dijeda`); tundaPending([x.videoId], now); break; }
     }
   }
 
@@ -1016,7 +1083,24 @@ async function main() {
   // PRIORITAS slot upload (kuota API ~45/hari): game player TERBESAR duluan → game
   // gede (mis. RIVALS 241K) tak kebuang ke manual saat hari rame. Promo tetap depan.
   candidates.sort((a, b) => (b.isPromo ? 1 : 0) - (a.isPromo ? 1 : 0) || (b.rank ?? b.players ?? 0) - (a.rank ?? a.players ?? 0)); // rank: mobile=1e9 (prioritas), roblox=players
-  let remaining = MAX_PER_DAY - state.todayCount;
+  let remaining = batasHarian(state) - state.todayCount;
+  // Plafon habis, tapi harinya masih panjang. Batas channel YouTube itu jendela
+  // BERGULIR, bukan penanggalan — yang ditolak pukul 06:00 sering diterima lagi
+  // beberapa jam kemudian. Menutup sisa hari sepenuhnya berarti merelakan 18 jam
+  // hanya karena satu penolakan pagi. Jadi tiap PLAFON_JEDA_JAM dibuka SATU slot
+  // percobaan: cukup untuk menemukan bahwa jendelanya sudah bergeser, dan kalau
+  // ternyata belum, ongkosnya satu render tiap 3 jam — bukan tiap jam.
+  if (remaining <= 0 && state.plafon?.at) {
+    const jamSejak = (now - new Date(state.plafon.at)) / 3600e3;
+    if (jamSejak >= PLAFON_JEDA_JAM) {
+      remaining = 1;
+      console.log(`plafon channel (${batasHarian(state)}) sudah habis — 1 slot percobaan (${jamSejak.toFixed(1)} jam sejak ditolak)`);
+    } else {
+      console.log(`plafon channel (${batasHarian(state)}) sudah habis — percobaan berikutnya ${(PLAFON_JEDA_JAM - jamSejak).toFixed(1)} jam lagi`);
+    }
+  } else if (state.plafon?.nilai) {
+    console.log(`plafon channel dipelajari: ${batasHarian(state)}/hari (${state.plafon.sebab}, ${state.plafon.pada}) — terpakai ${state.todayCount}`);
+  }
   // REM KEDUA: UNIT, bukan cuma hitungan video.
   //
   // MAX_PER_DAY menghitung VIDEO dan diam-diam berasumsi hari ini cuma berisi
@@ -1039,7 +1123,7 @@ async function main() {
   // Angka dalam kurung = kandidat MENTAH sebelum disaring, jadi sengaja tak
   // menjumlah ke angka pertama. Ditulis eksplisit "dari" supaya tak terbaca
   // sebagai penjumlahan yang meleset.
-  console.log(`kandidat: ${candidates.length} perlu video (dari ${pending.length} antrean + ${fresh.length} terdeteksi; sisanya sudah divideokan) | slot upload hari ini: ${Math.max(0, remaining)}/${MAX_PER_DAY}`);
+  console.log(`kandidat: ${candidates.length} perlu video (dari ${pending.length} antrean + ${fresh.length} terdeteksi; sisanya sudah divideokan) | slot upload hari ini: ${Math.max(0, remaining)}/${batasHarian(state)}`);
   // BORONGAN SUSULAN di jam terakhir sebelum kuota reset. Ditaruh SETELAH sort
   // supaya selalu di buntut: kode baru tak boleh kalah oleh susulan, betapa pun
   // ramai game-nya. Slot yang diisi = sisa kuota hari ini, dipotong RENDER_MAX.
@@ -1303,6 +1387,14 @@ async function main() {
           // rate limit) → STOP upload run ini + ANTRI RETRY (JANGAN mark posted) biar
           // auto-upload begitu beres (mis. token di-refresh). Queue di-cap 40, aman.
           console.log(`  ✗ upload gagal: ${e.message}`);
+          // Penolakan batas-channel PUNYA angka yang bisa dipelajari; penolakan
+          // lain (token, jaringan, kuota unit) tidak — menyetel plafon dari itu
+          // justru mengunci kanal gara-gara gangguan yang tak ada hubungannya.
+          if (/exceeded the number of videos|uploadLimitExceeded/i.test(e.message)) {
+            const lolos = Math.max(PLAFON_MIN, state.todayCount);
+            state.plafon = { nilai: lolos, pada: state.date, sebab: "ditolak YouTube", at: now.toISOString() };
+            console.log(`  ↳ batas upload channel: ${state.todayCount} video lolos hari ini → plafon disetel ${lolos}`);
+          }
           remaining = 0; requeue.push(c); quotaManual = true;
           simpanManual("upload gagal");
         }
@@ -1388,7 +1480,7 @@ async function main() {
   // menyuruh mencari berkas yang tak pernah ada di runner. Terlihat 5 Agu 2026.
   const manual = state.log.filter((l) => l.mode === "manual" && l.at?.slice(0, 10) === today
     && l.file && existsSync(resolve(OUTDIR, l.file))).length;
-  console.log(`\nselesai — ${state.todayCount}/${MAX_PER_DAY} upload otomatis hari ini${manual ? `, ${manual} video nunggu upload manual (_video-out/)` : ""}.`);
+  console.log(`\nselesai — ${state.todayCount}/${batasHarian(state)} upload otomatis hari ini${manual ? `, ${manual} video nunggu upload manual (_video-out/)` : ""}.`);
   // Rincian panggilan API run ini + akumulasi hari PT. Dicetak SELALU, bukan cuma
   // saat mepet: angka inilah yang selama ini cuma bisa dibaca dari konsol Google
   // sehari kemudian — dan karena itu tiap penyetelan MAX_PER_DAY jadi tebak-tebakan.

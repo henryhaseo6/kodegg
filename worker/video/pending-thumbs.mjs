@@ -40,3 +40,30 @@ export function ambilPending(kind) {
 export function semuaPending() {
   return baca();
 }
+
+/** Entri yang boleh DICOBA sekarang — yang masih dalam masa jeda dilewati.
+ *
+ *  Kenapa perlu jeda. 19 Agu 2026 YouTube menolak semua thumbnail dengan
+ *  "The user has uploaded too many thumbnails recently" — batas laju per-KANAL,
+ *  bukan kuota unit (kuota hari itu baru 31% terpakai). Antreannya tetap dicoba
+ *  tiap jam selama 11 jam, 28 kali, semuanya gagal. Percobaan yang ditolak tetap
+ *  dihitung sebagai `thumbnails.set`, jadi rem kuota kita ikut terkikis oleh
+ *  panggilan yang sejak awal mustahil berhasil — dan mengetuk terus-menerus
+ *  persis saat kanal sedang dibatasi laju bukan cara membuat batasnya dibuka.
+ */
+export function siapDicoba(kind = null, sekarang = new Date()) {
+  return baca().filter((x) => (!kind || x.kind === kind) && !(x.tungguSampai && new Date(x.tungguSampai) > sekarang));
+}
+
+/** Pasang jeda sesudah gagal — makin sering gagal, makin panjang: 1, 2, 4, 8,
+ *  maksimum 12 jam. Dipakai untuk penolakan yang sifatnya SEKANAL (semua entri
+ *  ikut dijeda) maupun yang cuma mengenai satu video (entri itu saja). */
+export function tundaPending(videoIds, sekarang = new Date()) {
+  const set = new Set(videoIds);
+  tulis(baca().map((x) => {
+    if (!set.has(x.videoId)) return x;
+    const n = (x.gagalBerturut ?? 0) + 1;
+    const jam = Math.min(12, 2 ** (n - 1));
+    return { ...x, gagalBerturut: n, tungguSampai: new Date(sekarang.getTime() + jam * 3600e3).toISOString() };
+  }));
+}
