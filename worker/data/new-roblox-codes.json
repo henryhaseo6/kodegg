@@ -1,89 +1,24 @@
 {
-  "generatedAt": "2026-08-20T14:02:18.420Z",
+  "generatedAt": "2026-08-20T15:02:19.692Z",
   "codes": [
     {
-      "game": "tr-legacy",
-      "gameName": "TR Legacy",
+      "game": "prism-runway-show",
+      "gameName": "Prism Runway Show",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/tr-legacy"
+        "RoCodes.gg": "https://rocodes.gg/codes/prism-runway-show"
       },
-      "code": "WOAH2POINT5MIL",
+      "code": "PIRATEYARRR",
       "reward": null,
-      "date": "2026-08-20T13:39:17.998Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-20T14:02:18.420Z",
-      "fetchedAt": "2026-08-20T14:02:18.420Z"
-    },
-    {
-      "game": "1-unlimited-world",
-      "gameName": "+1 Unlimited World",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/1-unlimited-world"
-      },
-      "code": "J2L6V4",
-      "reward": null,
-      "date": "2026-08-20T13:39:22.288Z",
+      "date": "2026-08-20T13:39:17.605Z",
       "endsAt": null,
       "verified": true,
-      "firstSeenAt": "2026-08-20T14:02:18.420Z",
-      "fetchedAt": "2026-08-20T14:02:18.420Z"
-    },
-    {
-      "game": "jojos-bizarre-incremental",
-      "gameName": "JoJo's Bizarre Incremental",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/jojos-bizarre-incremental"
-      },
-      "code": "LESDIABOLIQUE",
-      "reward": null,
-      "date": "2026-08-20T13:39:11.679Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-20T14:02:18.420Z",
-      "fetchedAt": "2026-08-20T14:02:18.420Z"
-    },
-    {
-      "game": "jojos-bizarre-incremental",
-      "gameName": "JoJo's Bizarre Incremental",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/jojos-bizarre-incremental"
-      },
-      "code": "LEDIABOLIQUE",
-      "reward": null,
-      "date": "2026-08-20T13:39:10.796Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-20T14:02:18.420Z",
-      "fetchedAt": "2026-08-20T14:02:18.420Z"
+      "firstSeenAt": "2026-08-20T15:02:19.692Z",
+      "fetchedAt": "2026-08-20T15:02:19.692Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "heroes-world",
-      "count": 10,
-      "fresh": []
-    },
-    {
-      "game": "phonk-clicker",
-      "count": 1,
-      "fresh": []
-    }
-  ]
+  "bulkGames": []
 }
