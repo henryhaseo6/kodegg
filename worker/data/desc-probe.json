@@ -5291,7 +5291,7 @@
   "deck": {
    "tulis": "DECK",
    "pertama": 1785996161549,
-   "terakhir": 1785996161549,
+   "terakhir": "2026-08-21",
    "n": 1,
    "awal": true
   },
@@ -9394,6 +9394,11 @@
    "tulis": "elements",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "deck": {
+   "tulis": "deck",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
   }
  },
  "titan-tower-defense": {
@@ -27380,6 +27385,46 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-14",
    "awal": true
+  },
+  "cinematic": {
+   "tulis": "cinematic",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "weathers": {
+   "tulis": "WEATHERS",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "corrupted": {
+   "tulis": "CORRUPTED",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "variants": {
+   "tulis": "variants",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "auction": {
+   "tulis": "auction",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "genie": {
+   "tulis": "Genie",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "wishes": {
+   "tulis": "wishes",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "auto-rejoin": {
+   "tulis": "Auto-rejoin",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
   }
  },
  "car-driving-indonesia": {
@@ -27514,7 +27559,7 @@
   "cosmic": {
    "tulis": "cosmic",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-20",
+   "terakhir": "2026-08-21",
    "awal": true
   },
   "mayhem": {
@@ -39875,7 +39920,7 @@
   "cosmic": {
    "tulis": "cosmic",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-20",
+   "terakhir": "2026-08-21",
    "awal": true
   },
   "catches": {
@@ -42159,6 +42204,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-21",
    "awal": true
+  },
+  "deck": {
+   "tulis": "deck",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
   }
  },
  "nuke-your-city": {
@@ -54570,6 +54620,11 @@
    "tulis": "farther",
    "pertama": 1787231045366,
    "terakhir": "2026-08-21"
+  },
+  "cosmic": {
+   "tulis": "cosmic",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
   }
  },
  "evolve-and-survive": {
@@ -54843,6 +54898,114 @@
    "tulis": "continue",
    "pertama": 1787342877547,
    "terakhir": "2026-08-21"
+  }
+ },
+ "prison-pump": {
+  "nothing": {
+   "tulis": "nothing",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "scrawny": {
+   "tulis": "scrawny",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "nobody": {
+   "tulis": "nobody",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "beaten": {
+   "tulis": "Beaten",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "humiliated": {
+   "tulis": "humiliated",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "yard": {
+   "tulis": "yard",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "belongs": {
+   "tulis": "belongs",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "lifting": {
+   "tulis": "LIFTING",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "pushed": {
+   "tulis": "pushed",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "aside": {
+   "tulis": "aside",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "ruling": {
+   "tulis": "ruling",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "baddest": {
+   "tulis": "baddest",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "feared": {
+   "tulis": "feared",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "prisoner": {
+   "tulis": "prisoner",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "seen": {
+   "tulis": "seen",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "forgotten": {
+   "tulis": "forgotten",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "inmate": {
+   "tulis": "inmate",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "rotting": {
+   "tulis": "rotting",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "bars": {
+   "tulis": "bars",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "pump": {
+   "tulis": "Pump",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21"
+  },
+  "200kboom": {
+   "tulis": "200KBOOM",
+   "pertama": 1787353555935,
+   "terakhir": "2026-08-21",
+   "sudahPunya": true
   }
  }
 }
