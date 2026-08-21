@@ -178,6 +178,44 @@ const RENDER_MAX = Number(process.env.VIDEO_RENDER_MAX || 15);
 // Video yang terdampak dicetak di akhir run + ringkasan Actions supaya bisa
 // dibuatkan playlist manual (atau lewat yt-maintenance mode=playlistadd).
 const SKIP_PLAYLIST = process.env.VIDEO_SKIP_PLAYLIST === "1";
+// Jalur KODE BARU: ambang PUNCAK pemain 7 hari, bukan jumlah pemain sesaat.
+//
+// Sampai 21 Agu 2026 jalur ini sama sekali tak bergerbang — game 200 pemain pun
+// dapat video asal ada satu kode baru. Ukurannya (14 hari s/d 20 Agu, 744 video
+// game): 526 di antaranya lewat jalur ini, bermedian 10 view, separuh dari jalur
+// borongan yang justru bergerbang. 258 dari 526 itu tak sampai 10 view.
+//
+// Yang diukur PUNCAK 7 HARI, bukan angka sesaat, karena angka sesaat menghukum
+// game yang kebetulan disurvei saat sepi: puncak 7 hari rata-rata 2,09x angka
+// sesaat, dan 43 game yang terbaca <1.000 sebenarnya menyentuh >1.000 dalam
+// sepekan. Konsekuensinya gerbang ini LEBIH LONGGAR dari angka yang sama pada
+// pemain sesaat — ambang puncak 1.000 kira-kira sekeras ambang sesaat 477.
+// Perkiraan dampak: −19% video, −12% view.
+//
+// `peak7` diisi fetch-roblox.mjs (max harian bergulir, lihat catatPuncak di sana)
+// dan baru penuh setelah 7 hari. Sebelum itu ia berisi puncak dari hari-hari yang
+// sudah terkumpul — selalu ≥ pemain sesaat, jadi tak ada game yang terblokir
+// gara-gara riwayatnya masih kosong.
+const KODEBARU_MIN_PEAK = Number(process.env.VIDEO_KODEBARU_MIN_PEAK || 1000);
+/** Puncak pemain yang dipakai gerbang.
+ *
+ *  MASA PEMANASAN. Selama riwayat sebuah game belum mencakup dua hari penuh —
+ *  hari pertama fitur ini hidup, atau game yang baru masuk katalog — `peak7`
+ *  cuma memuat sampel beberapa jam terakhir, dan itu terlalu dekat dengan angka
+ *  sesaat yang justru ingin kita hindari. Contoh nyata saat gerbang ini dipasang:
+ *  Type Soul terbaca 352 pemain, dan tanpa riwayat ia langsung tergunting padahal
+ *  puncak hariannya belum pernah diukur. Kode kode-baru itu SEKALI JALAN — kalau
+ *  videonya dilewati, kodenya tak pernah dapat video susulan. Jadi selama
+ *  pemanasan, sampel sesaat dikalikan dua: nisbah puncak-7-hari terhadap angka
+ *  sesaat terukur 2,09x (median 331 game, 21 Agu 2026), jadi mengalikan dua itu
+ *  perkiraan yang wajar dan sengaja condong ke MELOLOSKAN, bukan menggunting.
+ *  Begitu dua hari terkumpul, angka tebakan ini berhenti dipakai. */
+const puncakPemain = (g) => {
+  const hari = g?.peakHari && typeof g.peakHari === "object" ? Object.keys(g.peakHari).length : 0;
+  const nyata = Math.max(g?.peak7 ?? 0, g?.players ?? 0);
+  return hari >= 2 ? nyata : Math.max(nyata, (g?.players ?? 0) * 2);
+};
+
 const BULK_MIN_PLAYERS = Number(process.env.VIDEO_BULK_MIN_PLAYERS || 10000); // game baru TANPA kode fresh: min pemain utk video "semua kode"
 const FRESH_MIN_PLAYERS = Number(process.env.VIDEO_FRESH_MIN_PLAYERS || 2000); // game baru DENGAN kode fresh: ambang lebih rendah (kodenya layak)
 // SUSULAN (backlog) — game berkode-aktif yang belum pernah punya video sama
@@ -548,10 +586,14 @@ function buildCandidates() {
   const rbNew = rbNewFile.codes;
   const rbNewByGame = {};
   for (const c of rbNew) (rbNewByGame[c.game] = rbNewByGame[c.game] || []).push(c);
+  const kecilDilewati = [];
   for (const [id, nc0] of Object.entries(rbNewByGame)) {
     const g = rb.games[id]; if (!g) continue;
     const nc = nc0.filter((c) => !checkSet.has(chkKey(id, c.code))); // buang kode baru yg "CEK DULU"
     if (!nc.length) continue; // semua kode baru game ini meragukan → skip video
+    // GERBANG PUNCAK PEMAIN. Kodenya tetap masuk situs & notifikasi seperti biasa —
+    // yang dilewati cuma videonya.
+    if (puncakPemain(g) < KODEBARU_MIN_PEAK) { kecilDilewati.push({ nama: g.name, peak: puncakPemain(g), kode: nc.length }); continue; }
     const active = rb.active.filter((c) => c.game === id);
     out.push({
       platform: "ROBLOX", id, name: g.name, displayName: namaKartu(id, g), slug: g.slug ?? id, players: g.players ?? 0, redeemNote: g.redeemNote ?? null, alias: g.alias ?? null,
@@ -560,6 +602,15 @@ function buildCandidates() {
       displayCodes: pickDisplay(nc, active), descCodes: pickDisplay(nc, active, false, DESC_MAX),
     });
   }
+  // Dicetak, bukan didiam-diamkan: gerbang yang memangkas seperlima output harus
+  // bisa diaudit dari log run — kalau ada game bagus yang ikut tergunting, di
+  // sinilah ia terlihat, bukan setelah berminggu-minggu tak ada videonya.
+  if (kecilDilewati.length) {
+    kecilDilewati.sort((a, b) => b.peak - a.peak);
+    const contoh = kecilDilewati.slice(0, 5).map((x) => `${x.nama} (${x.peak})`).join(", ");
+    console.log(`[gerbang kode-baru] ${kecilDilewati.length} game dilewati — puncak 7 hari < ${KODEBARU_MIN_PEAK} pemain: ${contoh}${kecilDilewati.length > 5 ? ", …" : ""}`);
+  }
+
   // ROBLOX — KODE FRESH (window-based, dicek TIAP run, bukan sekali saat impor).
   // Game mana pun dg kode ber-tanggal ≤48 jam & pemain ≥ FRESH_MIN → video "KODE
   // BARU". Tahan thd (a) fluktuasi jumlah pemain real-time (game di ambang 2K bisa

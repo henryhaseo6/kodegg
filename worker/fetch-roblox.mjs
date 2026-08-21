@@ -119,6 +119,56 @@ async function mapLimit(items, limit, fn) {
 
 const tidur = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// ── PUNCAK PEMAIN 7 HARI ──────────────────────────────────────────────────────
+// `players` itu potret sesaat: angka pada detik run ini berjalan. Untuk memutuskan
+// sebuah game layak divideokan, potret itu menyesatkan — game ramai yang kebetulan
+// disurvei jam 3 pagi terbaca sepi. Terukur 21 Agu 2026 dari 331 game yang punya
+// riwayat di R2: puncak 7 hari rata-rata 2,09x angka sesaatnya, dan 43 game yang
+// terbaca <1.000 pemain sebenarnya menyentuh >1.000 dalam sepekan (Duck Duck 594
+// → 9.252, Loomian Legacy 849 → 4.314).
+//
+// KENAPA TIDAK MEMBACA R2 SAJA. Basis data pemain di R2 mencatat tiap 10 menit —
+// jauh lebih rapat daripada ini — tapi isinya CHARTS Roblox, bukan katalog kita:
+// 331 dari 661 game punya seri di sana, dan 146 game di atas 1.000 pemain tak
+// terlacak sama sekali, termasuk Gakuran (20.515 pemain) yang justru salah satu
+// game paling laku di kanal. Sementara di sini kita sudah menarik jumlah pemain
+// SELURUH katalog tiap jam — datanya cuma tak pernah disimpan. 24 sampel/hari
+// lebih jarang daripada 144, tapi cakupannya 100%, dan untuk ambang seribuan
+// selisih ketelitian itu tak menentukan.
+const hariWIB = (d = new Date()) =>
+  new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta", year: "numeric", month: "2-digit", day: "2-digit" }).format(d);
+
+/** Catat sampel pemain ke riwayat harian game & hitung ulang `peak7`.
+ *  Disimpan sebagai max PER HARI (7 angka), bukan tiap sampel: cukup untuk
+ *  puncak bergulir, dan menjaga roblox-codes.json tak membengkak.
+ *
+ *  `riwayatLama` WAJIB dikirim. Objek game untuk yang diproses run ini dibangun
+ *  ulang dari daftar-putih field di `meta` (~baris 1490), jadi field apa pun yang
+ *  tak disebut di sana hilang tiap run — persis jebakan yang sudah menggigit
+ *  altCode, kode Den, dan placeId sebelumnya. Membaca riwayat dari `prev.games`
+ *  membuat pencatat ini kebal terhadap daftar-putih itu: peak tak akan diam-diam
+ *  ter-reset jadi "sampel jam ini saja" kalau kelak ada yang menyunting meta. */
+function catatPuncak(g, playing, riwayatLama = null) {
+  if (typeof playing !== "number" || playing < 0) return;
+  const hari = hariWIB();
+  const sumber = (g.peakHari && typeof g.peakHari === "object" && !Array.isArray(g.peakHari)) ? g.peakHari
+    : (riwayatLama && typeof riwayatLama === "object" && !Array.isArray(riwayatLama)) ? riwayatLama : {};
+  const per = { ...sumber };
+  per[hari] = Math.max(per[hari] ?? 0, playing);
+  // Sisakan 7 hari TERBARU menurut kunci tanggalnya, bukan 7 entri terakhir yang
+  // masuk: game yang sempat hilang beberapa hari akan menaruh kunci lama, dan
+  // membuang menurut urutan sisip akan menyimpan tanggal yang sudah kedaluwarsa.
+  //
+  // Batas tanggal (bukan cuma "ambil 7 teratas") supaya jendelanya benar-benar
+  // 7 HARI, bukan "7 hari terakhir yang kebetulan tersampel". Game yang sampelnya
+  // putus tiga hari — API Roblox sesekali menjatuhkan batch — kalau tidak akan
+  // memakai puncak dari sepuluh hari lalu dan terus lolos gerbang meski sudah sepi.
+  const batas = hariWIB(new Date(Date.now() - 6 * 864e5));
+  g.peakHari = Object.fromEntries(
+    Object.entries(per).filter(([h]) => h >= batas).sort((a, b) => b[0].localeCompare(a[0])).slice(0, 7));
+  g.peak7 = Math.max(...Object.values(g.peakHari));
+}
+
 /**
  * Jumlah pemain + metadata game dari API Roblox, 50 universeId per permintaan.
  *
@@ -1640,9 +1690,9 @@ async function main() {
   if (belumAda.size) console.log(`[players] ${belumAda.size} game belum pernah dapat data — didahulukan di antrean permintaan`);
   const { hasil: players, diperiksa: uidDiperiksa } = await fetchPlayers(uids);
   const hilang = [];
-  for (const g of Object.values(mergedGames)) {
+  for (const [gid, g] of Object.entries(mergedGames)) {
     const pd = g.universeId ? players[g.universeId] : null;
-    if (pd) { if (pd.playing != null) g.players = pd.playing; if (pd.name) g.rawName = pd.name; if (pd.rootPlaceId) g.rootPlaceId = pd.rootPlaceId; } // rawName = nama asli Roblox (+emoji/tag) utk visual video
+    if (pd) { if (pd.playing != null) { g.players = pd.playing; catatPuncak(g, pd.playing, prev.games?.[gid]?.peakHari); } if (pd.name) g.rawName = pd.name; if (pd.rootPlaceId) g.rootPlaceId = pd.rootPlaceId; } // rawName = nama asli Roblox (+emoji/tag) utk visual video
     // GAME HILANG DARI ROBLOX (dihapus/di-private). Halaman roblox.com-nya
     // menjawab "Content not accessible", jadi kodenya tak bisa dipakai siapa pun
     // — kita masih menerbitkan halaman berisi kode untuk game yang tak bisa
