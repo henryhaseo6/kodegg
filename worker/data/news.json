@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T15:01:52.496Z",
+  "updatedAt": "2026-08-21T16:02:07.608Z",
   "counts": {
     "active": 103,
     "archived": 81
@@ -342,22 +342,6 @@
       "publishedAt": "2026-08-19T06:00:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "The Long Goodbye | Version 3.1 Content Overview (Phase II)",
-        "id": "Sunyi Panjang Sebuah Pamit | Preview Konten Versi 3.1 (Tahap 2)"
-      },
-      "excerpt": {
-        "en": "Hey Proxies, the second half of Version 3.1 is now live! S-Rank Agent Sigrid (Ice - Attack) and S-Rank W-Engine Knight's Extolment (Attack) are now available in the limited-time Si",
-        "id": "Halo Proxy, tahap kedua versi 3.1 telah hadir! Agen Tier-S Sigrid (Ice - Attack) dan W-Engine Tier-S Knight's Extolment (Attack) ditambahkan ke dalam FM Waktu Terbatas. FM \"Siaran "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/18/0/ebd407d85651bc757493f9257632516d_9140222084701881730.jpeg",
-      "url": "https://www.hoyolab.com/article/46359612",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-19T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -370,6 +354,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/19/0/b8eff31ff0c19bdf8804f5a745131d17_3135834945355951834.jpeg",
       "url": "https://www.hoyolab.com/article/46359610",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-19T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "The Long Goodbye | Version 3.1 Content Overview (Phase II)",
+        "id": "Sunyi Panjang Sebuah Pamit | Preview Konten Versi 3.1 (Tahap 2)"
+      },
+      "excerpt": {
+        "en": "Hey Proxies, the second half of Version 3.1 is now live! S-Rank Agent Sigrid (Ice - Attack) and S-Rank W-Engine Knight's Extolment (Attack) are now available in the limited-time Si",
+        "id": "Halo Proxy, tahap kedua versi 3.1 telah hadir! Agen Tier-S Sigrid (Ice - Attack) dan W-Engine Tier-S Knight's Extolment (Attack) ditambahkan ke dalam FM Waktu Terbatas. FM \"Siaran "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/18/0/ebd407d85651bc757493f9257632516d_9140222084701881730.jpeg",
+      "url": "https://www.hoyolab.com/article/46359612",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-19T04:00:06.000Z"
     },
@@ -1110,22 +1110,6 @@
       "publishedAt": "2026-08-12T18:00:07.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0",
-        "id": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0"
-      },
-      "excerpt": {
-        "en": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7",
-        "id": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
-      "url": "https://www.hoyolab.com/article/46245283",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-12T10:00:02.000Z"
-    },
-    {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
       "title": {
@@ -1138,6 +1122,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/07/05542df5ad5d9fe29b8a44d8b781e812_4547267349494376010.png",
       "url": "https://www.hoyolab.com/article/46245284",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-12T10:00:02.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0",
+        "id": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0"
+      },
+      "excerpt": {
+        "en": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7",
+        "id": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
+      "url": "https://www.hoyolab.com/article/46245283",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-12T10:00:02.000Z"
     },

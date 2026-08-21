@@ -1,103 +1,26 @@
 {
-  "generatedAt": "2026-08-21T15:01:59.354Z",
+  "generatedAt": "2026-08-21T16:02:13.045Z",
   "codes": [
     {
-      "game": "neighbors",
-      "gameName": "Neighbors",
-      "source": "RoCodes.gg",
+      "game": "resource-incremental",
+      "gameName": "Resource Incremental",
+      "source": "Roblox Den",
       "sources": [
-        "RoCodes.gg"
+        "Roblox Den"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/neighbors"
+        "Roblox Den": "https://robloxden.com/game-codes/resource-incremental"
       },
-      "code": "BTS",
-      "reward": "50 Credits",
-      "date": "2026-08-21T14:08:05.115Z",
+      "code": "moreshrineluck321",
+      "reward": "1.25x Shrine Luck",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1787323320000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-21T15:01:59.354Z",
-      "fetchedAt": "2026-08-21T15:01:59.354Z"
-    },
-    {
-      "game": "build-a-base-and-steal",
-      "gameName": "Build a Base and Steal",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/build-a-base-and-steal"
-      },
-      "code": "RADIOACTIVE",
-      "reward": null,
-      "date": "2026-08-21T14:08:00.744Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-21T15:01:59.354Z",
-      "fetchedAt": "2026-08-21T15:01:59.354Z"
-    },
-    {
-      "game": "fire-force-reignition",
-      "gameName": "Fire Force Reignition",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/fire-force-reignition"
-      },
-      "code": "STOPABUSINGBUGS",
-      "reward": null,
-      "date": "2026-08-21T14:08:02.020Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-21T15:01:59.354Z",
-      "fetchedAt": "2026-08-21T15:01:59.354Z"
-    },
-    {
-      "game": "anime-card-battle-x",
-      "gameName": "Anime Card Battle X",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/anime-card-battle-x"
-      },
-      "code": "UPD11.5COMPENSATION",
-      "reward": null,
-      "date": "2026-08-21T14:07:59.337Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-21T15:01:59.354Z",
-      "fetchedAt": "2026-08-21T15:01:59.354Z"
+      "firstSeenAt": "2026-08-21T16:02:13.045Z",
+      "fetchedAt": "2026-08-21T16:02:13.045Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "1-drain-water-per-click",
-      "count": 2,
-      "fresh": [
-        {
-          "code": "MythicFish",
-          "reward": "Random Pet"
-        },
-        {
-          "code": "WaterHappy",
-          "reward": "Shark"
-        }
-      ]
-    },
-    {
-      "game": "target-practice-simulator",
-      "count": 2,
-      "fresh": [
-        {
-          "code": "2000likes",
-          "reward": ""
-        }
-      ]
-    }
-  ]
+  "bulkGames": []
 }
