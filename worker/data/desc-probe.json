@@ -149,6 +149,56 @@
    "tulis": "Witness",
    "pertama": 1786720012264,
    "terakhir": "2026-08-21"
+  },
+  "backpack": {
+   "tulis": "Backpack",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "releaser": {
+   "tulis": "Releaser",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "refresh": {
+   "tulis": "Refresh",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "unused": {
+   "tulis": "unused",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "smoother": {
+   "tulis": "smoother",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "sort": {
+   "tulis": "Sort",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "tabs": {
+   "tulis": "tabs",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "kiwi": {
+   "tulis": "Kiwi",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "strawberry": {
+   "tulis": "Strawberry",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "tortle": {
+   "tulis": "Tortle",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
   }
  },
  "bladeball": {
@@ -4039,6 +4089,21 @@
    "tulis": "Matchmaking",
    "pertama": 1786820820432,
    "terakhir": "2026-08-15"
+  },
+  "21st": {
+   "tulis": "21st",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "medusa": {
+   "tulis": "Medusa",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "bouncebloom": {
+   "tulis": "Bouncebloom",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
   }
  },
  "bloxstrike": {
@@ -7392,7 +7457,7 @@
   "case": {
    "tulis": "Case",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-08-21",
    "awal": true
   },
   "turns": {
@@ -15722,6 +15787,11 @@
   "knuckles": {
    "tulis": "Knuckles",
    "pertama": 1786810019943,
+   "terakhir": "2026-08-21"
+  },
+  "case": {
+   "tulis": "CASE",
+   "pertama": 1787324757245,
    "terakhir": "2026-08-21"
   }
  },
@@ -52343,7 +52413,7 @@
   "case": {
    "tulis": "Case",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-08-21"
   },
   "paradise": {
    "tulis": "Paradise",
@@ -54467,6 +54537,51 @@
    "tulis": "Pond",
    "pertama": 1787281534768,
    "terakhir": "2026-08-21"
+  }
+ },
+ "1-drain-water-per-click": {
+  "drain": {
+   "tulis": "Drain",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "pool": {
+   "tulis": "Pool",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "empty": {
+   "tulis": "Empty",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "pools": {
+   "tulis": "Pools",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "lakes": {
+   "tulis": "Lakes",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "surprises": {
+   "tulis": "surprises",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  }
+ },
+ "target-practice-simulator": {
+  "jungle": {
+   "tulis": "Jungle",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21"
+  },
+  "2000likes": {
+   "tulis": "2000likes",
+   "pertama": 1787324757245,
+   "terakhir": "2026-08-21",
+   "sudahPunya": true
   }
  }
 }
