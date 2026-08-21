@@ -1,5 +1,95 @@
 {
-  "generatedAt": "2026-08-21T02:02:48.000Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-08-21T03:02:06.782Z",
+  "codes": [
+    {
+      "game": "ryujin",
+      "gameName": "Ryujin",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/ryujin"
+      },
+      "code": "likesmilestone23",
+      "reward": "200 Ryujin Coins, 5 Clan Rerolls, 7 Psyche Rerolls, 3 Single Psyche Rerolls",
+      "date": "2026-08-21T02:10:36.784Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-21T03:02:06.782Z",
+      "fetchedAt": "2026-08-21T03:02:06.782Z"
+    },
+    {
+      "game": "ryujin",
+      "gameName": "Ryujin",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/ryujin"
+      },
+      "code": "thanksfor7kactive!",
+      "reward": "300 Ryujin Coins, 15 Clan Rerolls, 10 Psyche Rerolls, 1 Single Psyche Reroll, 100 Summer Tokens",
+      "date": "2026-08-21T02:10:36.311Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-08-21T03:02:06.782Z",
+      "fetchedAt": "2026-08-21T03:02:06.782Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "spin-a-superhero",
+      "count": 5,
+      "fresh": [
+        {
+          "code": "GROUP",
+          "reward": "25 Diamond Dice"
+        },
+        {
+          "code": "LUCKY",
+          "reward": "25 Gold Dice"
+        },
+        {
+          "code": "HEROES",
+          "reward": "50K Coins"
+        },
+        {
+          "code": "FLOOR3",
+          "reward": "250 Gems"
+        },
+        {
+          "code": "RELEASE",
+          "reward": "250 Gems"
+        }
+      ]
+    },
+    {
+      "game": "fish-an-anime-rng",
+      "count": 5,
+      "fresh": [
+        {
+          "code": "1000MEMBERS",
+          "reward": "5 Cosmic Boxes"
+        },
+        {
+          "code": "2kCCU",
+          "reward": "5 Cosmic Boxes"
+        },
+        {
+          "code": "1kLIKES",
+          "reward": "5 Cosmic Boxes"
+        },
+        {
+          "code": "ANGELIA",
+          "reward": "5 Cosmic Boxes"
+        },
+        {
+          "code": "EXODIA",
+          "reward": "5 Cosmic Boxes"
+        }
+      ]
+    }
+  ]
 }
