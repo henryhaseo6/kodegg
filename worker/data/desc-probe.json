@@ -3527,7 +3527,7 @@
   "affect": {
    "tulis": "affect",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "shutdowns": {
@@ -15448,6 +15448,27 @@
    "tulis": "Mech",
    "pertama": 1786820820432,
    "terakhir": "2026-08-22"
+  },
+  "mechaworm": {
+   "tulis": "Mechaworm",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22"
+  },
+  "mecha": {
+   "tulis": "MECHA",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22",
+   "sudahPunya": true
+  },
+  "worm": {
+   "tulis": "WORM",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22"
+  },
+  "spaceship": {
+   "tulis": "Spaceship",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22"
   }
  },
  "racket-rivals": {
@@ -18223,7 +18244,7 @@
   "able": {
    "tulis": "able",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-20",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "process": {
@@ -20683,7 +20704,7 @@
   "prevent": {
    "tulis": "Prevent",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "riot": {
@@ -24431,7 +24452,7 @@
   "accessory": {
    "tulis": "Accessory",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "royal": {
@@ -24484,7 +24505,7 @@
   "entity": {
    "tulis": "Entity",
    "pertama": 1786302188038,
-   "terakhir": "2026-08-20"
+   "terakhir": "2026-08-22"
   },
   "mutant": {
    "tulis": "Mutant",
@@ -24499,7 +24520,7 @@
   "suburbs": {
    "tulis": "Suburbs",
    "pertama": 1786302188038,
-   "terakhir": "2026-08-16"
+   "terakhir": "2026-08-22"
   },
   "shows": {
    "tulis": "shows",
@@ -24549,7 +24570,7 @@
   "neighborhood": {
    "tulis": "Neighborhood",
    "pertama": 1786579435240,
-   "terakhir": "2026-08-16"
+   "terakhir": "2026-08-22"
   },
   "increases": {
    "tulis": "increases",
@@ -24614,7 +24635,7 @@
   "jumping": {
    "tulis": "jumping",
    "pertama": 1786917941951,
-   "terakhir": "2026-08-20"
+   "terakhir": "2026-08-22"
   },
   "optimization": {
    "tulis": "Optimization",
@@ -24654,6 +24675,21 @@
   "scales": {
    "tulis": "scales",
    "pertama": 1787202215421,
+   "terakhir": "2026-08-22"
+  },
+  "swimmer": {
+   "tulis": "Swimmer",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22"
+  },
+  "adjusted": {
+   "tulis": "Adjusted",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22"
+  },
+  "prices": {
+   "tulis": "prices",
+   "pertama": 1787425389164,
    "terakhir": "2026-08-22"
   }
  },
@@ -27793,7 +27829,7 @@
   "prevent": {
    "tulis": "PREVENT",
    "pertama": 1785996161549,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-22",
    "n": 1,
    "awal": true
   },
@@ -29074,7 +29110,7 @@
   "able": {
    "tulis": "able",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-20",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "silence": {
@@ -32585,6 +32621,21 @@
    "tulis": "moves",
    "pertama": 1786273376420,
    "terakhir": "2026-08-14"
+  },
+  "transformation": {
+   "tulis": "transformation",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22"
+  },
+  "boosted": {
+   "tulis": "boosted",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22"
+  },
+  "rate": {
+   "tulis": "rate",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22"
   }
  },
  "win-a-world-championship": {
@@ -33304,7 +33355,7 @@
   "able": {
    "tulis": "able",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-20",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "mask": {
@@ -36629,7 +36680,7 @@
   "sniper": {
    "tulis": "Sniper",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "mercy": {
@@ -42433,7 +42484,7 @@
   "affect": {
    "tulis": "affect",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "ruin": {
@@ -43650,7 +43701,7 @@
   "sniper": {
    "tulis": "Sniper",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "middle": {
@@ -47310,6 +47361,11 @@
    "tulis": "auto-lock",
    "pertama": 1786104162836,
    "terakhir": "2026-08-22"
+  },
+  "sniper": {
+   "tulis": "sniper",
+   "pertama": 1787425389164,
+   "terakhir": "2026-08-22"
   }
  },
  "art-244": {
@@ -47600,7 +47656,7 @@
   "affect": {
    "tulis": "affect",
    "pertama": 1786132945989,
-   "terakhir": "2026-08-09"
+   "terakhir": "2026-08-22"
   },
   "networks": {
    "tulis": "networks",
@@ -49462,6 +49518,11 @@
   "peace": {
    "tulis": "peace",
    "pertama": 1786695454025,
+   "terakhir": "2026-08-22"
+  },
+  "prevent": {
+   "tulis": "prevent",
+   "pertama": 1787425389164,
    "terakhir": "2026-08-22"
   }
  },
