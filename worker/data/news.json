@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-22T03:02:34.108Z",
+  "updatedAt": "2026-08-22T04:01:46.256Z",
   "counts": {
-    "active": 103,
-    "archived": 81
+    "active": 102,
+    "archived": 82
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Cutscene Animation: \"Death Is Near\" | Genshin Impact",
+        "id": "Adegan Animasi \"'Kematian' Ada di Dekatmu\" | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "Death may never have to bargain, but she must face the wrath of the living nevertheless. Even as she casts a steely gaze at the afterlife, she remains confined by the limits of dea",
+        "id": "Kematian tidak pernah bernegosiasi, namun ia pun tetap harus menghadapi amarah mereka yang masih hidup. Meski ia melemparkan pandangannya pada alam baka, namun ia juga terjebak ole"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/bfcbe0a3d0d61c5d1200bf46136b02bc_3960350542800838173.jpeg",
+      "url": "https://www.hoyolab.com/article/46402011",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-22T04:00:07.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -54,22 +70,6 @@
       "publishedAt": "2026-08-21T04:15:06.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Cutscene Animation: \"The Exaiphanes\" | Genshin Impact",
-        "id": "Adegan Animasi \"Bilah Bintang\" | Genshin Impact"
-      },
-      "excerpt": {
-        "en": "Before you know it, a longsword is in your hand, gleaming with the light of the Pale Star.",
-        "id": "Pedang panjang yang entah kapan muncul di genggaman tangan, bersinar dengan cahaya Bintang Pucat."
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/82c598961213a5423eda3b56f3e5a549_7349478805934104937.jpeg",
-      "url": "https://www.hoyolab.com/article/46388400",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-21T04:00:05.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -82,6 +82,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/6cadd52922cb0f5e26b807596e8c14d5_3359261723155782055.jpeg",
       "url": "https://www.hoyolab.com/article/46388401",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-21T04:00:05.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Cutscene Animation: \"The Exaiphanes\" | Genshin Impact",
+        "id": "Adegan Animasi \"Bilah Bintang\" | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "Before you know it, a longsword is in your hand, gleaming with the light of the Pale Star.",
+        "id": "Pedang panjang yang entah kapan muncul di genggaman tangan, bersinar dengan cahaya Bintang Pucat."
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/82c598961213a5423eda3b56f3e5a549_7349478805934104937.jpeg",
+      "url": "https://www.hoyolab.com/article/46388400",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-21T04:00:05.000Z"
     },
@@ -374,22 +390,6 @@
       "publishedAt": "2026-08-19T06:00:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Robin • Summeretto: Happy Birds | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Robin • Summeretto: Burung Kecil yang Bahagia\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "\"Brother, you're here too? Have you heard my new song?\" \"Of course, it sounds wonderful. You must be pretty busy lately. What have you been up to?\" \"Lately, I've been working on an",
-        "id": "\"Kamu juga di sini, Kak? Sudah dengar lagu baruku?\" \"Tentu saja, lagunya indah sekali. Belakangan ini kamu pasti cukup sibuk. Kamu sibuk ngapain saja?\" \"Belakangan ini aku sedang m"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/19/0/b8eff31ff0c19bdf8804f5a745131d17_3135834945355951834.jpeg",
-      "url": "https://www.hoyolab.com/article/46359610",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-19T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -402,6 +402,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/18/0/ebd407d85651bc757493f9257632516d_9140222084701881730.jpeg",
       "url": "https://www.hoyolab.com/article/46359612",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-19T04:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — Robin • Summeretto: Happy Birds | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — \"Robin • Summeretto: Burung Kecil yang Bahagia\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "\"Brother, you're here too? Have you heard my new song?\" \"Of course, it sounds wonderful. You must be pretty busy lately. What have you been up to?\" \"Lately, I've been working on an",
+        "id": "\"Kamu juga di sini, Kak? Sudah dengar lagu baruku?\" \"Tentu saja, lagunya indah sekali. Belakangan ini kamu pasti cukup sibuk. Kamu sibuk ngapain saja?\" \"Belakangan ini aku sedang m"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/19/0/b8eff31ff0c19bdf8804f5a745131d17_3135834945355951834.jpeg",
+      "url": "https://www.hoyolab.com/article/46359610",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-19T04:00:06.000Z"
     },
@@ -982,22 +998,6 @@
       "publishedAt": "2026-08-14T10:30:08.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event",
-        "id": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event"
-      },
-      "excerpt": {
-        "en": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness",
-        "id": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/c4897eb1d5cfea2961ce2d97dec244bd_3034695040207453336.jpg",
-      "url": "https://www.hoyolab.com/article/46285173",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-14T10:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -1010,6 +1010,22 @@
       },
       "image": "https://vod-static.hoyolab.com/4/2026-08-14/transcoded/142088187755596910592_captions.0000000.jpg",
       "url": "https://www.hoyolab.com/article/46285172",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T10:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event",
+        "id": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event"
+      },
+      "excerpt": {
+        "en": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness",
+        "id": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/c4897eb1d5cfea2961ce2d97dec244bd_3034695040207453336.jpg",
+      "url": "https://www.hoyolab.com/article/46285173",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-14T10:00:03.000Z"
     },
@@ -1126,22 +1142,6 @@
       "publishedAt": "2026-08-12T18:00:07.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0",
-        "id": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0"
-      },
-      "excerpt": {
-        "en": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7",
-        "id": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
-      "url": "https://www.hoyolab.com/article/46245283",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-12T10:00:02.000Z"
-    },
-    {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
       "title": {
@@ -1161,17 +1161,17 @@
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
-        "en": "Welcome to Snezhnaya — Everwinter Without Mercy",
-        "id": "Selamat datang di Snezhnaya, Negeri Salju Tanpa Kasih"
+        "en": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0",
+        "id": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0"
       },
       "excerpt": {
-        "en": "You've battled dragons and sea monsters, defeated creations of the gods, and faced prophecies of doom and the threat of the Abyss. You've even made it all the way to the moon. Now,",
-        "id": "Kamu sudah pernah melawan naga dan monster laut, menaklukkan ciptaan dewa, menghadapi ramalan kehancuran dan ancaman Abyss ... bahkan menginjakkan kaki di bulan. Kini, badai salju "
+        "en": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7",
+        "id": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/11/f14e822e63173453c891f3acaa51ae69_3467050668176955179.jpg",
-      "url": "https://www.hoyolab.com/article/46242571",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
+      "url": "https://www.hoyolab.com/article/46245283",
       "source": "HoYoLAB",
-      "publishedAt": "2026-08-12T08:00:06.000Z"
+      "publishedAt": "2026-08-12T10:00:02.000Z"
     },
     {
       "game": "gi",
@@ -1636,7 +1636,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5199",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-24T10:10:02.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1651,10 +1653,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/22/e301e1b98c55ef4fb6f15958e5da5721_3804165673471540676.png",
       "url": "https://www.hoyolab.com/article/45967008",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-23T04:00:07.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-23T04:00:07.000Z",
+      "archivedAt": "2026-08-22T04:01:46.256Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
