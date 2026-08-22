@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-22T09:01:50.842Z",
+  "updatedAt": "2026-08-22T10:02:21.641Z",
   "counts": {
     "active": 102,
     "archived": 82
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Cutscene Animation: \"The Hour of Resurrection Draws Near\" | Genshin Impact",
+        "id": "Adegan Animasi \"Waktu 'Kebangkitan' Segera Tiba\" | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "To her, death is merely an instrument. Thus, she will never understand why mortals hold so fast to life and to all they love.",
+        "id": "Karena ia memandang kematian sebagai sebuah alat, maka ia tidak akan pernah bisa memahami keterikatan manusia pada kehidupan dan hal-hal yang mereka cintai."
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/9972ac4c55bde1f51263cbb070a9dca1_4688473978147432264.jpeg",
+      "url": "https://www.hoyolab.com/article/46405425",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-22T10:00:05.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -70,22 +86,6 @@
       "publishedAt": "2026-08-21T04:15:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Myriad Celestia Trailer: \"Beyond the Chorus\" | Honkai: Star Rail",
-        "id": "Trailer Perjalanan Seribu Bintang: \"Di Balik Riuh Suara\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "Countless voices have tried to describe her and name her. When all the clamoring faded into silence, she heard a resonance from deep within her chest. English Voice: Robin — Alice ",
-        "id": "Tak terhitung suara pernah mencoba menggambarkannya, memberinya sebuah nama. Ketika seluruh hiruk-pikuk akhirnya tenggelam dalam kesunyian, ia mendengar gaung yang berasal dari lub"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/6cadd52922cb0f5e26b807596e8c14d5_3359261723155782055.jpeg",
-      "url": "https://www.hoyolab.com/article/46388401",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-21T04:00:05.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -98,6 +98,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/82c598961213a5423eda3b56f3e5a549_7349478805934104937.jpeg",
       "url": "https://www.hoyolab.com/article/46388400",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-21T04:00:05.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Myriad Celestia Trailer: \"Beyond the Chorus\" | Honkai: Star Rail",
+        "id": "Trailer Perjalanan Seribu Bintang: \"Di Balik Riuh Suara\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "Countless voices have tried to describe her and name her. When all the clamoring faded into silence, she heard a resonance from deep within her chest. English Voice: Robin — Alice ",
+        "id": "Tak terhitung suara pernah mencoba menggambarkannya, memberinya sebuah nama. Ketika seluruh hiruk-pikuk akhirnya tenggelam dalam kesunyian, ia mendengar gaung yang berasal dari lub"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/6cadd52922cb0f5e26b807596e8c14d5_3359261723155782055.jpeg",
+      "url": "https://www.hoyolab.com/article/46388401",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-21T04:00:05.000Z"
     },
@@ -998,22 +1014,6 @@
       "publishedAt": "2026-08-14T10:30:08.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "For Display Only | Sigrid",
-        "id": "For Display Only | Sigrid"
-      },
-      "excerpt": {
-        "en": "\"Logging patrol records...\" \"...Hm?\" \"Device compromised! Wha—Why won't it shut down?!\" \"Working for the Airspace Patrol is... certainly never short on danger.\"",
-        "id": "\"Logging patrol records...\" \"...Hm?\" \"Device compromised! Wha—Why won't it shut down?!\" \"Working for the Airspace Patrol is... certainly never short on danger.\""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-08-14/transcoded/142088187755596910592_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/46285172",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-14T10:00:03.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -1026,6 +1026,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/c4897eb1d5cfea2961ce2d97dec244bd_3034695040207453336.jpg",
       "url": "https://www.hoyolab.com/article/46285173",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T10:00:03.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "For Display Only | Sigrid",
+        "id": "For Display Only | Sigrid"
+      },
+      "excerpt": {
+        "en": "\"Logging patrol records...\" \"...Hm?\" \"Device compromised! Wha—Why won't it shut down?!\" \"Working for the Airspace Patrol is... certainly never short on danger.\"",
+        "id": "\"Logging patrol records...\" \"...Hm?\" \"Device compromised! Wha—Why won't it shut down?!\" \"Working for the Airspace Patrol is... certainly never short on danger.\""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-08-14/transcoded/142088187755596910592_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/46285172",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-14T10:00:03.000Z"
     },
@@ -1154,22 +1170,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/07/05542df5ad5d9fe29b8a44d8b781e812_4547267349494376010.png",
       "url": "https://www.hoyolab.com/article/46245284",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-12T10:00:02.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0",
-        "id": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.0"
-      },
-      "excerpt": {
-        "en": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7",
-        "id": "Event Duration August 12, 2026 11:00 (UTC+8) – September 22, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version 7"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/3f4ac2d70e15ba2962c0628c38fd1c2f_5732629321969018565.jpg",
-      "url": "https://www.hoyolab.com/article/46245283",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-12T10:00:02.000Z"
     },
