@@ -6103,6 +6103,61 @@
    "tulis": "CTBUFFS",
    "pertama": 1786810019943,
    "terakhir": "2026-08-22"
+  },
+  "curse": {
+   "tulis": "CURSE",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "calamity": {
+   "tulis": "CALAMITY",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "refinements": {
+   "tulis": "REFINEMENTS",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "refinement": {
+   "tulis": "Refinement",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "prep": {
+   "tulis": "PREP",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "rains": {
+   "tulis": "Rains",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "accessory": {
+   "tulis": "Accessory",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "removed": {
+   "tulis": "removed",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "moved": {
+   "tulis": "moved",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "crafting": {
+   "tulis": "Crafting",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "overhaul": {
+   "tulis": "Overhaul",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
   }
  },
  "midnight-chasers-highway-racing": {
@@ -7179,7 +7234,7 @@
   "rates": {
    "tulis": "rates",
    "pertama": 1785999727547,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-08-22"
   },
   "getting": {
    "tulis": "getting",
@@ -11294,7 +11349,7 @@
   "rates": {
    "tulis": "Rates",
    "pertama": 1785999727547,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-08-22"
   },
   "humanity": {
    "tulis": "humanity",
@@ -11416,7 +11471,7 @@
   "area": {
    "tulis": "Area",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-08",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "traveling": {
@@ -12072,7 +12127,7 @@
   "changelog": {
    "tulis": "Changelog",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-08",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "tier": {
@@ -12207,6 +12262,41 @@
   "vintagefixup": {
    "tulis": "VINTAGEFIXUP",
    "pertama": 1786806392785,
+   "terakhir": "2026-08-22"
+  },
+  "gamepad": {
+   "tulis": "Gamepad",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "trial": {
+   "tulis": "Trial",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "single-player": {
+   "tulis": "Single-Player",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "trials": {
+   "tulis": "trials",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "variants": {
+   "tulis": "Variants",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "keybind": {
+   "tulis": "Keybind",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "adjustments": {
+   "tulis": "adjustments",
+   "pertama": 1787414598237,
    "terakhir": "2026-08-22"
   }
  },
@@ -15673,7 +15763,7 @@
   "ruby": {
    "tulis": "RUBY",
    "pertama": 1785996161549,
-   "terakhir": "2026-08-08",
+   "terakhir": "2026-08-22",
    "n": 1,
    "awal": true
   },
@@ -15927,6 +16017,76 @@
   "case": {
    "tulis": "CASE",
    "pertama": 1787324757245,
+   "terakhir": "2026-08-22"
+  },
+  "grand": {
+   "tulis": "GRAND",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "prix": {
+   "tulis": "PRIX",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "whirlwind": {
+   "tulis": "Whirlwind",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "sport": {
+   "tulis": "Sport",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "landsmasher": {
+   "tulis": "Landsmasher",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "speedster": {
+   "tulis": "Speedster",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "obtaining": {
+   "tulis": "obtaining",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "metal": {
+   "tulis": "Metal",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "omega": {
+   "tulis": "Omega",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "rouge": {
+   "tulis": "Rouge",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "guardian": {
+   "tulis": "Guardian",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "whisper": {
+   "tulis": "Whisper",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "pink": {
+   "tulis": "Pink",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "cabriolet": {
+   "tulis": "Cabriolet",
+   "pertama": 1787414598237,
    "terakhir": "2026-08-22"
   }
  },
@@ -27054,7 +27214,7 @@
   "area": {
    "tulis": "area",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-08",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "eat-in": {
@@ -28238,6 +28398,11 @@
    "pertama": 1786846030883,
    "terakhir": "2026-08-22",
    "sudahPunya": true
+  },
+  "atlantis": {
+   "tulis": "ATLANTIS",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
   }
  },
  "superstar-baseball": {
@@ -29262,7 +29427,7 @@
   "trail": {
    "tulis": "Trail",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "update6": {
@@ -29841,7 +30006,7 @@
   "area": {
    "tulis": "area",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-08",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "hostile": {
@@ -31086,7 +31251,7 @@
   "optimizations": {
    "tulis": "Optimizations",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "extended": {
@@ -32709,7 +32874,7 @@
   "dyno": {
    "tulis": "DYNO",
    "pertama": 1785996161549,
-   "terakhir": "2026-08-08",
+   "terakhir": "2026-08-22",
    "n": 1,
    "awal": true
   },
@@ -32933,6 +33098,21 @@
   "station": {
    "tulis": "STATION",
    "pertama": 1786208515719,
+   "terakhir": "2026-08-22"
+  },
+  "buying": {
+   "tulis": "BUYING",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "swaps": {
+   "tulis": "SWAPS",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "dealership": {
+   "tulis": "DEALERSHIP",
+   "pertama": 1787414598237,
    "terakhir": "2026-08-22"
   }
  },
@@ -36643,7 +36823,7 @@
   "trail": {
    "tulis": "Trail",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-22",
    "awal": true
   },
   "velocidad": {
@@ -40584,7 +40764,7 @@
   "rates": {
    "tulis": "rates",
    "pertama": 1785999727547,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-08-22"
   },
   "soul": {
    "tulis": "Soul",
@@ -52170,6 +52350,11 @@
    "tulis": "Mega",
    "pertama": 1787310323517,
    "terakhir": "2026-08-22"
+  },
+  "trail": {
+   "tulis": "trail",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
   }
  },
  "nightmares": {
@@ -52826,7 +53011,7 @@
   "optimizations": {
    "tulis": "optimizations",
    "pertama": 1786705571807,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-08-22"
   },
   "improved": {
    "tulis": "Improved",
@@ -53759,6 +53944,11 @@
   "shared": {
    "tulis": "shared",
    "pertama": 1786885588485,
+   "terakhir": "2026-08-22"
+  },
+  "optimizations": {
+   "tulis": "Optimizations",
+   "pertama": 1787414598237,
    "terakhir": "2026-08-22"
   }
  },
@@ -55238,6 +55428,76 @@
   "outside": {
    "tulis": "outside",
    "pertama": 1787407371658,
+   "terakhir": "2026-08-22"
+  }
+ },
+ "the-house-td": {
+  "house50k": {
+   "tulis": "House50k",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22",
+   "sudahPunya": true
+  },
+  "voodoo": {
+   "tulis": "Voodoo",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "h75k": {
+   "tulis": "H75k",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22",
+   "sudahPunya": true
+  },
+  "wow100k": {
+   "tulis": "Wow100k",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22",
+   "sudahPunya": true
+  },
+  "urns": {
+   "tulis": "Urns",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "125k": {
+   "tulis": "125k",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "chapter": {
+   "tulis": "Chapter",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "groups": {
+   "tulis": "groups",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "evil": {
+   "tulis": "Evil",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "lurks": {
+   "tulis": "lurks",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "elevator": {
+   "tulis": "elevator",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "tomb": {
+   "tulis": "tomb",
+   "pertama": 1787414598237,
+   "terakhir": "2026-08-22"
+  },
+  "fears": {
+   "tulis": "fears",
+   "pertama": 1787414598237,
    "terakhir": "2026-08-22"
   }
  }
