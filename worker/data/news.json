@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-23T11:00:57.400Z",
+  "updatedAt": "2026-08-23T12:00:56.451Z",
   "counts": {
-    "active": 101,
-    "archived": 83
+    "active": 100,
+    "archived": 84
   },
   "articles": [
     {
@@ -518,22 +518,6 @@
       "publishedAt": "2026-08-19T06:00:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Robin • Summeretto: Happy Birds | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Robin • Summeretto: Burung Kecil yang Bahagia\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "\"Brother, you're here too? Have you heard my new song?\" \"Of course, it sounds wonderful. You must be pretty busy lately. What have you been up to?\" \"Lately, I've been working on an",
-        "id": "\"Kamu juga di sini, Kak? Sudah dengar lagu baruku?\" \"Tentu saja, lagunya indah sekali. Belakangan ini kamu pasti cukup sibuk. Kamu sibuk ngapain saja?\" \"Belakangan ini aku sedang m"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/19/0/b8eff31ff0c19bdf8804f5a745131d17_3135834945355951834.jpeg",
-      "url": "https://www.hoyolab.com/article/46359610",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-19T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -546,6 +530,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/18/0/ebd407d85651bc757493f9257632516d_9140222084701881730.jpeg",
       "url": "https://www.hoyolab.com/article/46359612",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-19T04:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — Robin • Summeretto: Happy Birds | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — \"Robin • Summeretto: Burung Kecil yang Bahagia\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "\"Brother, you're here too? Have you heard my new song?\" \"Of course, it sounds wonderful. You must be pretty busy lately. What have you been up to?\" \"Lately, I've been working on an",
+        "id": "\"Kamu juga di sini, Kak? Sudah dengar lagu baruku?\" \"Tentu saja, lagunya indah sekali. Belakangan ini kamu pasti cukup sibuk. Kamu sibuk ngapain saja?\" \"Belakangan ini aku sedang m"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/19/0/b8eff31ff0c19bdf8804f5a745131d17_3135834945355951834.jpeg",
+      "url": "https://www.hoyolab.com/article/46359610",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-19T04:00:06.000Z"
     },
@@ -1604,7 +1604,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5208",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-27T10:09:29.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1619,10 +1621,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1784822400000/bf7bns1taqiqke56cp-1784890636855.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5200",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-24T11:05:29.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-24T11:05:29.000Z",
+      "archivedAt": "2026-08-23T12:00:56.451Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
