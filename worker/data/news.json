@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-08-23T09:00:56.401Z",
+  "updatedAt": "2026-08-23T10:01:02.697Z",
   "counts": {
     "active": 102,
     "archived": 82
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Cutscene Animation: \"Triumphant Return\" | Genshin Impact",
+        "id": "Adegan Animasi \"Kepulangan yang Gemilang\" | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "The throne upon the frozen earth seems to be for eternity. She seeks victory not for the glory but as the means, the necessary path, to her dream.",
+        "id": "Takhtanya di atas daratan beku ini seolah abadi. Kemenangan bukanlah kemuliaan yang ia rindukan, melainkan jalan yang harus dilalui menuju impiannya."
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/2324a39e3787b12a0892a3599cd1babd_4420302505368900457.jpeg",
+      "url": "https://www.hoyolab.com/article/46418024",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-23T10:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Honkai: Star Rail × Gratte, at animate cafe Kuala Lumpur collaboration is about to begin!",
+        "id": "Honkai: Star Rail × Gratte, at animate cafe Kuala Lumpur collaboration is about to begin!"
+      },
+      "excerpt": {
+        "en": "Dear Trailblazer, Honkai: Star Rail × Gratte, at animate cafe Kuala Lumpur collaboration is about to begin! Get ready and stay tuned! ✨ Limited-time special promotion! Enjoy Aventu",
+        "id": "Dear Trailblazer, Honkai: Star Rail × Gratte, at animate cafe Kuala Lumpur collaboration is about to begin! Get ready and stay tuned! ✨ Limited-time special promotion! Enjoy Aventu"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/1e58d3f8decedf147e5b1add72c3ab99_8735436049250835346.png",
+      "url": "https://www.hoyolab.com/article/46418022",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-23T10:00:05.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -486,22 +518,6 @@
       "publishedAt": "2026-08-19T06:00:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Robin • Summeretto: Happy Birds | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Robin • Summeretto: Burung Kecil yang Bahagia\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "\"Brother, you're here too? Have you heard my new song?\" \"Of course, it sounds wonderful. You must be pretty busy lately. What have you been up to?\" \"Lately, I've been working on an",
-        "id": "\"Kamu juga di sini, Kak? Sudah dengar lagu baruku?\" \"Tentu saja, lagunya indah sekali. Belakangan ini kamu pasti cukup sibuk. Kamu sibuk ngapain saja?\" \"Belakangan ini aku sedang m"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/19/0/b8eff31ff0c19bdf8804f5a745131d17_3135834945355951834.jpeg",
-      "url": "https://www.hoyolab.com/article/46359610",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-19T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -514,6 +530,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/18/0/ebd407d85651bc757493f9257632516d_9140222084701881730.jpeg",
       "url": "https://www.hoyolab.com/article/46359612",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-19T04:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — Robin • Summeretto: Happy Birds | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — \"Robin • Summeretto: Burung Kecil yang Bahagia\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "\"Brother, you're here too? Have you heard my new song?\" \"Of course, it sounds wonderful. You must be pretty busy lately. What have you been up to?\" \"Lately, I've been working on an",
+        "id": "\"Kamu juga di sini, Kak? Sudah dengar lagu baruku?\" \"Tentu saja, lagunya indah sekali. Belakangan ini kamu pasti cukup sibuk. Kamu sibuk ngapain saja?\" \"Belakangan ini aku sedang m"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/19/0/b8eff31ff0c19bdf8804f5a745131d17_3135834945355951834.jpeg",
+      "url": "https://www.hoyolab.com/article/46359610",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-19T04:00:06.000Z"
     },
@@ -937,22 +969,6 @@
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
-        "en": "Version 4.5 \"To Roll the Stars in Astropolis\" highlights page is now live",
-        "id": "Halaman Preview Versi 4.5 \"Pertaruhan di Astropolis\" Sudah Dirilis"
-      },
-      "excerpt": {
-        "en": "What price must be paid to keep the arcadia breathing? What tone must resound to catch Amber's downcast eyes? The balance has silently aligned, and you are left with nothing but a ",
-        "id": "Dengan harga apa, sekejap keberlangsungan utopia dapat ditukar? Dengan suara apa, yang dapat menarik pandangan Amber? Timbangan telah diam-diam diselaraskan. Sedangkan kamu, hanya "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/13/7ea85c2709ea95095dc6f5412dcb8817_1794282833692977192.jpg",
-      "url": "https://www.hoyolab.com/article/46287720",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-14T12:45:03.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
         "en": "Honkai: Star Rail × Zenless Zone Zero collaboration goes live in Winter 2026!",
         "id": "\"Honkai: Star Rail\" × \"Zenless Zone Zero\" akan berkolaborasi dan segera hadir pada musim dingin 2026~"
       },
@@ -1074,22 +1090,6 @@
       },
       "image": "https://vod-static.hoyolab.com/4/2026-08-14/transcoded/142088187755596910592_captions.0000000.jpg",
       "url": "https://www.hoyolab.com/article/46285172",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-14T10:00:03.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event",
-        "id": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event"
-      },
-      "excerpt": {
-        "en": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness",
-        "id": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/c4897eb1d5cfea2961ce2d97dec244bd_3034695040207453336.jpg",
-      "url": "https://www.hoyolab.com/article/46285173",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-14T10:00:03.000Z"
     },
