@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-23T07:01:09.739Z",
+  "updatedAt": "2026-08-23T08:01:04.306Z",
   "counts": {
     "active": 102,
     "archived": 82
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Beep! Clocking in at Astropolis!",
+        "id": "Bip! Kartu Karyawan Astropolis!"
+      },
+      "excerpt": {
+        "en": "Name Card recognized... Identity verified... Facial scan passed... Beep! Clock in complete. Internal system logged in~ Please get yourself into a working mood, get fully motivated,",
+        "id": "Kartu tanda pengenal teridentifikasi .... Identitas terverifikasi .... Pemindaian wajah berhasil .... Bip! Absen masuk kerja selesai, telah log in ke sistem internal~ Silakan sesua"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/13/8ee83dbb4a0b3a6bdc9a17dd524abc11_4061048919015703721.jpg",
+      "url": "https://www.hoyolab.com/article/46416839",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-23T08:00:07.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -937,22 +953,6 @@
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
-        "en": "You will hold the final weight to tilt the scales of the IPC's decisions.",
-        "id": "Timbangan keputusan IPC, kamulah yang akan meletakkan pemberat terakhirnya."
-      },
-      "excerpt": {
-        "en": "The activity index of the husk in Planarcadia is rising exponentially, and on the other end, the Marketing Development Department has already started taking action. At Pearl's requ",
-        "id": "Aktivitas cangkang di Planarcadia sedang meningkat secara eksponensial, dan di sisi lain, Departemen Pengembangan Pemasaran sudah beraksi. Membawa amanat Pearl dan memikul takdir u"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/13/dee882c369f4f245db6f5cf0c24b8657_433699857623072636.jpg",
-      "url": "https://www.hoyolab.com/article/46287525",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-14T12:35:03.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
         "en": "Honkai: Star Rail × Zenless Zone Zero collaboration goes live in Winter 2026!",
         "id": "\"Honkai: Star Rail\" × \"Zenless Zone Zero\" akan berkolaborasi dan segera hadir pada musim dingin 2026~"
       },
@@ -1062,22 +1062,6 @@
       "publishedAt": "2026-08-14T10:30:08.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event",
-        "id": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event"
-      },
-      "excerpt": {
-        "en": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness",
-        "id": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/c4897eb1d5cfea2961ce2d97dec244bd_3034695040207453336.jpg",
-      "url": "https://www.hoyolab.com/article/46285173",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-14T10:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -1090,6 +1074,22 @@
       },
       "image": "https://vod-static.hoyolab.com/4/2026-08-14/transcoded/142088187755596910592_captions.0000000.jpg",
       "url": "https://www.hoyolab.com/article/46285172",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-14T10:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event",
+        "id": "\"Everwinter Without Mercy\" Version 7.0 Miliastra Wonderland Stage Creation Guide Submission Event"
+      },
+      "excerpt": {
+        "en": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness",
+        "id": "Create your own Wonderland stage creation guide for a chance to win up to Creation Ticket No.1 ×6,000! Since the official launch of the Miliastra Wonderland gameplay, we've witness"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/c4897eb1d5cfea2961ce2d97dec244bd_3034695040207453336.jpg",
+      "url": "https://www.hoyolab.com/article/46285173",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-14T10:00:03.000Z"
     },
