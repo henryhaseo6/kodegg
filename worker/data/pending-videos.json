@@ -327,6 +327,113 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "nfl-universe-football",
+    "name": "NFL Universe Football",
+    "displayName": "[🏈⌛] NFL Universe Football",
+    "slug": "nfl-universe-football",
+    "players": 5467,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 5467,
+    "newCodes": [
+      {
+        "game": "nfl-universe-football",
+        "gameName": "NFL Universe Football",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/nfl-universe-football-1"
+        },
+        "code": "NFLPLAYERS",
+        "reward": "1 Pro Pack",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787540580000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T04:01:53.793Z",
+        "fetchedAt": "2026-08-24T04:01:53.793Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-08-24T04:01:53.793Z",
+    "displayCodes": [
+      {
+        "code": "NFLPLAYERS",
+        "reward": "1 Pro Pack",
+        "isNew": true
+      },
+      {
+        "code": "STREETWEAR",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "BLACKOUT",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "FRESHPACK",
+        "reward": "1 Play Maker Pack",
+        "isNew": false
+      },
+      {
+        "code": "UNIFORMS26",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "MIXTAPE",
+        "reward": "1 Pro Pack",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "NFLPLAYERS",
+        "reward": "1 Pro Pack",
+        "isNew": true
+      },
+      {
+        "code": "STREETWEAR",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "BLACKOUT",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "FRESHPACK",
+        "reward": "1 Play Maker Pack",
+        "isNew": false
+      },
+      {
+        "code": "UNIFORMS26",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "MIXTAPE",
+        "reward": "1 Pro Pack",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "STREETWEAR",
+      "BLACKOUT",
+      "FRESHPACK",
+      "UNIFORMS26",
+      "NFLPLAYERS",
+      "MIXTAPE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "anime-stars",
     "name": "Anime Stars",
     "displayName": "[UPDATE 1] Anime Stars",
