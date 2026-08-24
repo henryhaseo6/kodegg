@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-24T05:01:23.261Z",
+  "updatedAt": "2026-08-24T06:01:23.607Z",
   "counts": {
-    "active": 100,
+    "active": 101,
     "archived": 84
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Version 4.5 Update and Maintenance Notice",
+        "id": "Pengumuman Update dan Maintenance Versi 4.5"
+      },
+      "excerpt": {
+        "en": "Hello, Trailblazers! The Version 4.5 pre-installation will begin at 2026/08/24 14:00 (UTC+8). Trailblazers can download some resources in advance, allowing for faster game access a",
+        "id": "Halo, Trailblazer! Pra-unduh Versi 4.5 akan dimulai pada 2026/08/24 14:00 (UTC+8). Trailblazer dapat mengunduh sebagian sumber data lebih awal agar dapat masuk ke dalam game dengan"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/21/0cd437cd5bd9750280dd6c50ffddfd10_6841585809904748808.png",
+      "url": "https://www.hoyolab.com/article/46428208",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-24T06:00:07.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",

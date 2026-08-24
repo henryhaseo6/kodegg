@@ -902,6 +902,489 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "anime-card-collection",
+    "name": "Anime Card Collection",
+    "displayName": "[Summer⛱️] Anime Card Collection",
+    "slug": "anime-card-collection",
+    "players": 4895,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 4895,
+    "newCodes": [
+      {
+        "game": "anime-card-collection",
+        "gameName": "Anime Card Collection",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-card-collection"
+        },
+        "code": "FiftyNinecode",
+        "reward": "200 Pet Tokens, 200 Trait Tokens, and 200 Grade Tokens",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787549220000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      }
+    ],
+    "activeCount": 64,
+    "fetchedAt": "2026-08-24T06:01:29.085Z",
+    "displayCodes": [
+      {
+        "code": "FiftyNinecode",
+        "reward": "200 Pet Tokens, 200 Trait Tokens, and 200 Grade Tokens",
+        "isNew": true
+      },
+      {
+        "code": "FiftyEightCode",
+        "reward": "200 Pet Tokens, 200 Trait Tokens, and 200 Grade Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SummerCode3",
+        "reward": "2,000 Summer Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SummerCode2",
+        "reward": "2,000 Summer Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SummerCode1",
+        "reward": "1,000 Summer Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SummerCode",
+        "reward": "1,000 Summer Tokens",
+        "isNew": false
+      },
+      {
+        "code": "FiftySevenCode",
+        "reward": "200 Pet Tokens, 200 Trait Tokens and 200 Grade Tokens",
+        "isNew": false
+      },
+      {
+        "code": "TwentyFifthCode",
+        "reward": "100 Pet Tokens, 100 Trait Tokens, and 100 Grade Tokens",
+        "isNew": false
+      },
+      {
+        "code": "FiftySixCode",
+        "reward": "200 Pet Tokens, 200 Trait Tokens, and 200 Grade Tokens",
+        "isNew": false
+      },
+      {
+        "code": "FiftyFiveCode",
+        "reward": "200 Pet Tokens, 200 Trait Tokens, and 200 Grade Tokens",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "FiftyNinecode",
+        "reward": "200 Pet Tokens, 200 Trait Tokens, and 200 Grade Tokens",
+        "isNew": true
+      },
+      {
+        "code": "FiftyEightCode",
+        "reward": "200 Pet Tokens, 200 Trait Tokens, and 200 Grade Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SummerCode3",
+        "reward": "2,000 Summer Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SummerCode2",
+        "reward": "2,000 Summer Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SummerCode1",
+        "reward": "1,000 Summer Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SummerCode",
+        "reward": "1,000 Summer Tokens",
+        "isNew": false
+      },
+      {
+        "code": "FiftySevenCode",
+        "reward": "200 Pet Tokens, 200 Trait Tokens and 200 Grade Tokens",
+        "isNew": false
+      },
+      {
+        "code": "TwentyFifthCode",
+        "reward": "100 Pet Tokens, 100 Trait Tokens, and 100 Grade Tokens",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "FiftyEightCode",
+      "SummerCode3",
+      "SummerCode2",
+      "SummerCode1",
+      "SummerCode",
+      "FiftySevenCode",
+      "FiftySixCode",
+      "FiftyFiveCode",
+      "FiftyFourCode",
+      "FiftyThreeCode",
+      "FiftyTwoCode",
+      "FiftyOneCode",
+      "FiftyCode",
+      "FortyNineCode",
+      "FortyEightCode",
+      "FortySevenCode",
+      "FortySixCode",
+      "FortyFiveCode",
+      "FortyFourCode",
+      "FortyThreeCode",
+      "FortyTwoCode",
+      "FortyOneCode",
+      "FortyCode",
+      "ThirtyNineCode",
+      "ThirtyEightCode",
+      "ThirtySevenCode",
+      "ThirtySixCode",
+      "ThirtyFiveCode",
+      "sorry",
+      "ThirtyFourCode",
+      "ThirtyThreeCode",
+      "ThirtyTwoCode",
+      "ThirtyOneCode",
+      "ThirtyCode",
+      "TwentyNinthCode",
+      "TwentyEighthCode",
+      "TwentySeventhCode",
+      "TwentySixthCode",
+      "TwentyFourthCode",
+      "TwentyThirdCode",
+      "TwentySecondCode",
+      "TwentyFirstCode",
+      "TwentiethCode",
+      "NineteenthCode",
+      "EighteenthCode",
+      "SeventeenthCode",
+      "SixteenthCode",
+      "FifteenthCode",
+      "FourteenthCode",
+      "ThirteenthCode",
+      "TwelfthCode",
+      "EleventhCode",
+      "TenthCode",
+      "NinthCode",
+      "EighthCode",
+      "SeventhCode",
+      "SixthCode",
+      "FifthCode",
+      "FourthCode",
+      "ThirdCode",
+      "SecondCode",
+      "FirstCode",
+      "FiftyNinecode",
+      "TwentyFifthCode"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "anime-girl-rng",
+    "name": "Anime Girl RNG",
+    "displayName": "[☀️ NEW] Anime Girl RNG",
+    "slug": "anime-girl-rng",
+    "players": 4040,
+    "redeemNote": {
+      "en": "To use codes in Anime Girl RNG, you must join The Rolling Society community.",
+      "links": [
+        {
+          "label": "The Rolling Society",
+          "url": "https://www.roblox.com/communities/35119567/The-Rolling-Society#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 4040,
+    "newCodes": [
+      {
+        "game": "anime-girl-rng",
+        "gameName": "Anime Girl RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-girl-rng"
+        },
+        "code": "ILIKEPOTIONS",
+        "reward": "50 Summer Crates, 1 Sovereign Pot, 1 Omega Pot, 1 Transcendent Pot, and 1 Glitched Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787544840000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      },
+      {
+        "game": "anime-girl-rng",
+        "gameName": "Anime Girl RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-girl-rng"
+        },
+        "code": "ISWEARITSLAST",
+        "reward": "50 Summer Crates and 50 Premium Crates",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787544840000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      },
+      {
+        "game": "anime-girl-rng",
+        "gameName": "Anime Girl RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-girl-rng"
+        },
+        "code": "KILLTACTFUL",
+        "reward": "50 Premium Potion Crates, 50 Premium Goodie Crates, and 50 Summer Crates",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787544840000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      },
+      {
+        "game": "anime-girl-rng",
+        "gameName": "Anime Girl RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-girl-rng"
+        },
+        "code": "12KCCU",
+        "reward": "1 Sovereign Pot, 1 Omega Pot, 1 Glitched Potion, 1 Elementals Pot, 1 Holy Grail, 200 Premium Potion Crates, 200 Premium Goodie Crates, and 50 Summer Crates",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787544840000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      },
+      {
+        "game": "anime-girl-rng",
+        "gameName": "Anime Girl RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-girl-rng"
+        },
+        "code": "KILLCODES",
+        "reward": "200 Premium Potion Crates and 200 Premium Goodie Crates",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787544840000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      },
+      {
+        "game": "anime-girl-rng",
+        "gameName": "Anime Girl RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-girl-rng"
+        },
+        "code": "KILLACHILLES",
+        "reward": "100 Premium Potion Crates and 100 Premium Goodie Crates",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787544840000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      }
+    ],
+    "activeCount": 48,
+    "fetchedAt": "2026-08-24T06:01:29.085Z",
+    "displayCodes": [
+      {
+        "code": "ILIKEPOTIONS",
+        "reward": "50 Summer Crates, 1 Sovereign Pot, 1 Omega Pot, 1 Transcendent Pot, and 1 Glitched Potion",
+        "isNew": true
+      },
+      {
+        "code": "ISWEARITSLAST",
+        "reward": "50 Summer Crates and 50 Premium Crates",
+        "isNew": true
+      },
+      {
+        "code": "KILLTACTFUL",
+        "reward": "50 Premium Potion Crates, 50 Premium Goodie Crates, and 50 Summer Crates",
+        "isNew": true
+      },
+      {
+        "code": "12KCCU",
+        "reward": "1 Sovereign Pot, 1 Omega Pot, 1 Glitched Potion, 1 Elementals Pot, 1 Holy Grail, 200 Premium Potion Crates, 200 Premium Goodie Crates, and 50 Summer Crates",
+        "isNew": true
+      },
+      {
+        "code": "KILLCODES",
+        "reward": "200 Premium Potion Crates and 200 Premium Goodie Crates",
+        "isNew": true
+      },
+      {
+        "code": "KILLACHILLES",
+        "reward": "100 Premium Potion Crates and 100 Premium Goodie Crates",
+        "isNew": true
+      },
+      {
+        "code": "FIVEHUNDREDHEAVENPOTS",
+        "reward": "500 Heavens Pots",
+        "isNew": false
+      },
+      {
+        "code": "KILLSEL",
+        "reward": "100 Premium Potion Crates and 100 Premium Goodie Crates",
+        "isNew": false
+      },
+      {
+        "code": "10KCCUW",
+        "reward": "100k Astralis, 1M Gold, 3 Command Seals, 2 of each Potion, 100 Crate Bundle, 100 Goodie Crates, 1 Present 3, 2 Presents, 1 Weekly Token, 2 RNG Tokens, 2 Caller Stars, 2 Essences, 2 Shell Phones, 100 Summer Crates, and 100 Halloween Crates.Show more",
+        "isNew": false
+      },
+      {
+        "code": "KILLNIAPLIXPT2",
+        "reward": "1 Holy Grail",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ILIKEPOTIONS",
+        "reward": "50 Summer Crates, 1 Sovereign Pot, 1 Omega Pot, 1 Transcendent Pot, and 1 Glitched Potion",
+        "isNew": true
+      },
+      {
+        "code": "ISWEARITSLAST",
+        "reward": "50 Summer Crates and 50 Premium Crates",
+        "isNew": true
+      },
+      {
+        "code": "KILLTACTFUL",
+        "reward": "50 Premium Potion Crates, 50 Premium Goodie Crates, and 50 Summer Crates",
+        "isNew": true
+      },
+      {
+        "code": "12KCCU",
+        "reward": "1 Sovereign Pot, 1 Omega Pot, 1 Glitched Potion, 1 Elementals Pot, 1 Holy Grail, 200 Premium Potion Crates, 200 Premium Goodie Crates, and 50 Summer Crates",
+        "isNew": true
+      },
+      {
+        "code": "KILLCODES",
+        "reward": "200 Premium Potion Crates and 200 Premium Goodie Crates",
+        "isNew": true
+      },
+      {
+        "code": "KILLACHILLES",
+        "reward": "100 Premium Potion Crates and 100 Premium Goodie Crates",
+        "isNew": true
+      },
+      {
+        "code": "FIVEHUNDREDHEAVENPOTS",
+        "reward": "500 Heavens Pots",
+        "isNew": false
+      },
+      {
+        "code": "KILLSEL",
+        "reward": "100 Premium Potion Crates and 100 Premium Goodie Crates",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "SUGGESTREWORKS",
+      "REWORKUPDATE",
+      "NEWREWORKS",
+      "IWANTMYROLLS",
+      "UMA",
+      "SUGGESTIONSPT2",
+      "COMMUNITYUPD",
+      "90PERCENT",
+      "UNSEALING",
+      "SOULSOCIETY",
+      "THXFORSUPPORT",
+      "BLEACHPT2",
+      "MBAPPESPECIAL",
+      "AIZEN",
+      "YOKOSO",
+      "IWANTMYSPEED",
+      "BLEACHPART1",
+      "60KMEMBERS",
+      "SORRYLOL",
+      "ILIKEPOTIONS",
+      "ISWEARITSLAST",
+      "KILLTACTFUL",
+      "12KCCU",
+      "KILLCODES",
+      "KILLACHILLES",
+      "FIVEHUNDREDHEAVENPOTS",
+      "KILLSEL",
+      "10KCCUW",
+      "KILLNIAPLIXPT2",
+      "TOMATO",
+      "KILLPHI",
+      "FISH",
+      "KILLGRANT",
+      "BLACKCLOVER",
+      "SECONDISLAND",
+      "THEBIGGESTUPDATEOAT",
+      "SLIMENIAPLIX",
+      "100KFAV",
+      "70KMEMBERS",
+      "NIAPLIXISTHEGOAT",
+      "STORYGOATISABUMTOMATOEMOJI",
+      "NIAPLIXISOVERJOYED",
+      "STORYGOAT",
+      "COOLCODEEZ",
+      "TAGDEMON",
+      "LIVEEVENT",
+      "LIVEANNOUNCE",
+      "4KCCU"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "anime-stars",
     "name": "Anime Stars",
     "displayName": "[UPDATE 1] Anime Stars",
@@ -1029,6 +1512,154 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "dino-hunters",
+    "name": "Dino Hunters",
+    "displayName": "Dino Hunters[UPD]",
+    "slug": "dino-hunters",
+    "players": 3788,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3788,
+    "newCodes": [
+      {
+        "game": "dino-hunters",
+        "gameName": "Dino Hunters",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/dino-hunters"
+        },
+        "code": "QDWWAA",
+        "reward": "5K Coins and 100 Fossils",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787534580000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      }
+    ],
+    "activeCount": 17,
+    "fetchedAt": "2026-08-24T06:01:29.085Z",
+    "displayCodes": [
+      {
+        "code": "QDWWAA",
+        "reward": "5K Coins and 100 Fossils",
+        "isNew": true
+      },
+      {
+        "code": "V3C9LA",
+        "reward": "2 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "1DFEH",
+        "reward": "5,000 Coins and 75 Fossils",
+        "isNew": false
+      },
+      {
+        "code": "Z5R1KT",
+        "reward": "2 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "HWQFIL",
+        "reward": "100 Fossils",
+        "isNew": false
+      },
+      {
+        "code": "R25K8T",
+        "reward": "2,000 Coins, 150 Fossils, and two Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "W2R0KL",
+        "reward": "10,000 Coins, 1,000 Fossils, and 10 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "HGZFIL",
+        "reward": "25 Fossils",
+        "isNew": false
+      },
+      {
+        "code": "Q2Y7FB",
+        "reward": "2 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "A7K2QM",
+        "reward": "1 Dino Cloner",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "QDWWAA",
+        "reward": "5K Coins and 100 Fossils",
+        "isNew": true
+      },
+      {
+        "code": "V3C9LA",
+        "reward": "2 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "1DFEH",
+        "reward": "5,000 Coins and 75 Fossils",
+        "isNew": false
+      },
+      {
+        "code": "Z5R1KT",
+        "reward": "2 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "HWQFIL",
+        "reward": "100 Fossils",
+        "isNew": false
+      },
+      {
+        "code": "R25K8T",
+        "reward": "2,000 Coins, 150 Fossils, and two Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "W2R0KL",
+        "reward": "10,000 Coins, 1,000 Fossils, and 10 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "HGZFIL",
+        "reward": "25 Fossils",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "QDWWAA",
+      "V3C9LA",
+      "1DFEH",
+      "Z5R1KT",
+      "HWQFIL",
+      "R25K8T",
+      "W2R0KL",
+      "HGZFIL",
+      "Q2Y7FB",
+      "A7K2QM",
+      "W2K7FH",
+      "H8N5RW",
+      "Y7DGYB",
+      "S8NCAS",
+      "L6PZ3C",
+      "P9PDX8",
+      "BP7M38"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "car-crushers-2",
     "name": "Car Crushers 2",
     "displayName": "[SHIFT UPD💥] Car Crushers 2 - Physics Simulation",
@@ -1099,6 +1730,155 @@
       "VINTAGEFIXUP",
       "REDLINE",
       "CROSSRACING"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "mutant-plants-base-defense",
+    "name": "Mutant Plants Base Defense",
+    "displayName": "Mutant Plants: Base Defense[✨UPD-2]",
+    "slug": "mutant-plants-base-defense",
+    "players": 1915,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1915,
+    "newCodes": [
+      {
+        "game": "mutant-plants-base-defense",
+        "gameName": "Mutant Plants Base Defense",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/mutant-plants-base-defense"
+        },
+        "code": "BUGFIX5452197",
+        "reward": "10 Secret Shards",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787534040000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      }
+    ],
+    "activeCount": 18,
+    "fetchedAt": "2026-08-24T06:01:29.085Z",
+    "displayCodes": [
+      {
+        "code": "BUGFIX5452197",
+        "reward": "10 Secret Shards",
+        "isNew": true
+      },
+      {
+        "code": "BUGFIX74656",
+        "reward": "20 Secret Shards",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX045214",
+        "reward": "10 Shadow Grenades",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX051223",
+        "reward": "Common Relic Chest",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX05549",
+        "reward": "10 Void Grenades",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX0983",
+        "reward": "10 Shadow Grenades",
+        "isNew": false
+      },
+      {
+        "code": "UPD1665452",
+        "reward": "10 Frozen Grenades",
+        "isNew": false
+      },
+      {
+        "code": "UPD6512356",
+        "reward": "10 Flame Grenades",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX000",
+        "reward": "200 Gems",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX999",
+        "reward": "200 Gems",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "BUGFIX5452197",
+        "reward": "10 Secret Shards",
+        "isNew": true
+      },
+      {
+        "code": "BUGFIX74656",
+        "reward": "20 Secret Shards",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX045214",
+        "reward": "10 Shadow Grenades",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX051223",
+        "reward": "Common Relic Chest",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX05549",
+        "reward": "10 Void Grenades",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIX0983",
+        "reward": "10 Shadow Grenades",
+        "isNew": false
+      },
+      {
+        "code": "UPD1665452",
+        "reward": "10 Frozen Grenades",
+        "isNew": false
+      },
+      {
+        "code": "UPD6512356",
+        "reward": "10 Flame Grenades",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "BUGFIX05549",
+      "BUGFIX0983",
+      "UPD1665452",
+      "UPD6512356",
+      "BUGFIX000",
+      "BUGFIX999",
+      "BUGFIX785",
+      "BUGFIX154",
+      "BUGFIX652",
+      "BUGFIX56954",
+      "RELEASE3",
+      "RELEASE2",
+      "RELEASE1",
+      "RELEASE",
+      "BUGFIX5452197",
+      "BUGFIX74656",
+      "BUGFIX045214",
+      "BUGFIX051223"
     ]
   },
   {
@@ -1791,6 +2571,240 @@
       "Oneof5",
       "Borninthelightdestinedtobeinthedark",
       "Jeffrey"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "scp-architect-x",
+    "name": "SCP Architect X",
+    "displayName": "SCP Architect X",
+    "slug": "scp-architect-x",
+    "players": 1223,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1223,
+    "newCodes": [
+      {
+        "game": "scp-architect-x",
+        "gameName": "SCP Architect X",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/scp-architect-x"
+        },
+        "code": "1kSubz",
+        "reward": "2K Gems and 2 Money Boost (10 Minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787550420000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      }
+    ],
+    "activeCount": 1,
+    "fetchedAt": "2026-08-24T06:01:29.085Z",
+    "displayCodes": [
+      {
+        "code": "1kSubz",
+        "reward": "2K Gems and 2 Money Boost (10 Minutes)",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "1kSubz",
+        "reward": "2K Gems and 2 Money Boost (10 Minutes)",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "1kSubz"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "build-a-military-base",
+    "name": "Build a Military Base",
+    "displayName": "[MECHA WORM!] Build a Military Base",
+    "slug": "build-a-military-base",
+    "players": 1052,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1052,
+    "newCodes": [
+      {
+        "game": "build-a-military-base",
+        "gameName": "Build a Military Base",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/build-a-military-base"
+        },
+        "code": "MECHAWORM",
+        "reward": "1 Premium Crate",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787535840000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      },
+      {
+        "game": "build-a-military-base",
+        "gameName": "Build a Military Base",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/build-a-military-base"
+        },
+        "code": "LIBERATOR",
+        "reward": "1 Premium Crate",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787535840000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      },
+      {
+        "game": "build-a-military-base",
+        "gameName": "Build a Military Base",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/build-a-military-base"
+        },
+        "code": "REBIRTH20WOW",
+        "reward": "1 Premium Crate",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787535840000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-24T06:01:29.085Z",
+        "fetchedAt": "2026-08-24T06:01:29.085Z"
+      }
+    ],
+    "activeCount": 11,
+    "fetchedAt": "2026-08-24T06:01:29.085Z",
+    "displayCodes": [
+      {
+        "code": "MECHAWORM",
+        "reward": "1 Premium Crate",
+        "isNew": true
+      },
+      {
+        "code": "LIBERATOR",
+        "reward": "1 Premium Crate",
+        "isNew": true
+      },
+      {
+        "code": "REBIRTH20WOW",
+        "reward": "1 Premium Crate",
+        "isNew": true
+      },
+      {
+        "code": "MORETWEAKS",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "MARAUDER",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "INDEX",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "ACHIEVEMENTS",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "LOGI",
+        "reward": "Logistics Warehouse",
+        "isNew": false
+      },
+      {
+        "code": "150000LIKES",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "145000LIKES",
+        "reward": "Premium Crate",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "MECHAWORM",
+        "reward": "1 Premium Crate",
+        "isNew": true
+      },
+      {
+        "code": "LIBERATOR",
+        "reward": "1 Premium Crate",
+        "isNew": true
+      },
+      {
+        "code": "REBIRTH20WOW",
+        "reward": "1 Premium Crate",
+        "isNew": true
+      },
+      {
+        "code": "MORETWEAKS",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "MARAUDER",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "INDEX",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "ACHIEVEMENTS",
+        "reward": "1 Premium Crate",
+        "isNew": false
+      },
+      {
+        "code": "LOGI",
+        "reward": "Logistics Warehouse",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "MARAUDER",
+      "INDEX",
+      "ACHIEVEMENTS",
+      "150000LIKES",
+      "145000LIKES",
+      "140000LIKES",
+      "MECHAWORM",
+      "LIBERATOR",
+      "REBIRTH20WOW",
+      "MORETWEAKS",
+      "LOGI"
     ]
   },
   {
