@@ -1,5 +1,123 @@
 [
   {
+    "platform": "MOBILE",
+    "id": "r1999",
+    "name": "Reverse: 1999",
+    "slug": "reverse-1999",
+    "players": 0,
+    "rank": 1000000000,
+    "newCodes": [
+      {
+        "code": "SPDM",
+        "game": "r1999",
+        "gameName": "Reverse: 1999",
+        "reward": "Clear Drop ×30 · Jar of Picrasma Candy ×1 · Enlighten II ×10 · Sharpodonty ×20000"
+      }
+    ],
+    "activeCount": 9,
+    "fetchedAt": "2026-08-24T21:01:46.457Z",
+    "displayCodes": [
+      {
+        "code": "SPDM",
+        "reward": "Clear Drop ×30 · Jar of Picrasma Candy ×1 · Enlighten II ×10 · Sharpodonty ×20000",
+        "isNew": true
+      },
+      {
+        "code": "DesperateCounter",
+        "reward": "Clear Drop ×30 · Delicate Insight Casket ×1 · Dust ×10000 · Moment of Dissonance ×3",
+        "isNew": false
+      },
+      {
+        "code": "ShelterDoves",
+        "reward": "Clear Drop ×30 · Enlighten III ×3 · Sharpodonty ×20000 · Fine Insight Package ×2",
+        "isNew": false
+      },
+      {
+        "code": "ForwardTime",
+        "reward": "Enlighten III ×3 · Delicate Insight Casket ×1 · Dust ×20000 · Sharpodonty ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AllHailBechan",
+        "reward": "Clear Drop ×30 · Jar of Picrasma Candy ×1 · Sharpodonty ×20000 · Dust ×20000",
+        "isNew": false
+      },
+      {
+        "code": "1999AnimeWatchParty",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "5YRBRF9",
+        "reward": "Dust ×19,999 · Sharpodonty ×19,999 · Fine Insight Package ×3",
+        "isNew": false
+      },
+      {
+        "code": "1999GIFT",
+        "reward": "Clear Drop ×50 · Dust ×19,999",
+        "isNew": false
+      },
+      {
+        "code": "GachaGaming1999",
+        "reward": "Picrasma Candy ×1 · Fine Insight Casket ×1 · Enlighten II ×5 · Dust ×15000 · Moment of Dissonance ×3",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "SPDM",
+        "reward": "Clear Drop ×30 · Jar of Picrasma Candy ×1 · Enlighten II ×10 · Sharpodonty ×20000",
+        "isNew": true
+      },
+      {
+        "code": "DesperateCounter",
+        "reward": "Clear Drop ×30 · Delicate Insight Casket ×1 · Dust ×10000 · Moment of Dissonance ×3",
+        "isNew": false
+      },
+      {
+        "code": "ShelterDoves",
+        "reward": "Clear Drop ×30 · Enlighten III ×3 · Sharpodonty ×20000 · Fine Insight Package ×2",
+        "isNew": false
+      },
+      {
+        "code": "ForwardTime",
+        "reward": "Enlighten III ×3 · Delicate Insight Casket ×1 · Dust ×20000 · Sharpodonty ×20000",
+        "isNew": false
+      },
+      {
+        "code": "AllHailBechan",
+        "reward": "Clear Drop ×30 · Jar of Picrasma Candy ×1 · Sharpodonty ×20000 · Dust ×20000",
+        "isNew": false
+      },
+      {
+        "code": "1999AnimeWatchParty",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "5YRBRF9",
+        "reward": "Dust ×19,999 · Sharpodonty ×19,999 · Fine Insight Package ×3",
+        "isNew": false
+      },
+      {
+        "code": "1999GIFT",
+        "reward": "Clear Drop ×50 · Dust ×19,999",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "5YRBRF9",
+      "1999GIFT",
+      "GachaGaming1999",
+      "SPDM",
+      "DesperateCounter",
+      "ShelterDoves",
+      "AllHailBechan",
+      "ForwardTime",
+      "1999AnimeWatchParty"
+    ]
+  },
+  {
     "platform": "ROBLOX",
     "id": "skibidi-masters-tower-defense",
     "name": "Skibidi Masters Tower Defense",
