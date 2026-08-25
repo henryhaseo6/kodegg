@@ -31433,7 +31433,7 @@
   "void": {
    "tulis": "Void",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-09",
+   "terakhir": "2026-08-25",
    "awal": true
   },
   "entity": {
@@ -41234,6 +41234,12 @@
    "tulis": "reveal",
    "pertama": 1787447030666,
    "terakhir": "2026-08-25"
+  },
+  "void": {
+   "tulis": "Void",
+   "pertama": 1787666619064,
+   "terakhir": "2026-08-25",
+   "sudahPunya": true
   }
  },
  "anime-fighters-simulator": {
@@ -52686,6 +52692,11 @@
   "near": {
    "tulis": "near",
    "pertama": 1787605455838,
+   "terakhir": "2026-08-25"
+  },
+  "void": {
+   "tulis": "void",
+   "pertama": 1787666619064,
    "terakhir": "2026-08-25"
   }
  },
