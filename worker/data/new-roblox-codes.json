@@ -1,34 +1,5 @@
 {
-  "generatedAt": "2026-08-25T17:01:29.181Z",
+  "generatedAt": "2026-08-25T18:02:09.933Z",
   "codes": [],
-  "bulkGames": [
-    {
-      "game": "rng-battles",
-      "count": 2,
-      "fresh": [
-        {
-          "code": "GiveMeGold",
-          "reward": "5k Gold"
-        },
-        {
-          "code": "HiddenCode321",
-          "reward": "Divine Potion x1"
-        }
-      ]
-    },
-    {
-      "game": "clicker-simulator",
-      "count": 5,
-      "fresh": [
-        {
-          "code": "volcano",
-          "reward": "5 Hatch Speed Potions"
-        },
-        {
-          "code": "release",
-          "reward": "10 Rebirtths"
-        }
-      ]
-    }
-  ]
+  "bulkGames": []
 }
