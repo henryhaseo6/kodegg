@@ -734,6 +734,69 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "blair",
+    "name": "Blair",
+    "displayName": "[ACHIEVEMENTS] Blair",
+    "slug": "blair",
+    "players": 1091,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1091,
+    "newCodes": [
+      {
+        "game": "blair",
+        "gameName": "Blair",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/blair"
+        },
+        "code": "WORLDCUP2026",
+        "reward": "Spain Flag EMF and the Soccer Ball Incense Burner",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1787601300000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-25T00:01:38.553Z",
+        "fetchedAt": "2026-08-25T00:01:38.553Z"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-08-25T00:01:38.553Z",
+    "displayCodes": [
+      {
+        "code": "WORLDCUP2026",
+        "reward": "Spain Flag EMF and the Soccer Ball Incense Burner",
+        "isNew": true
+      },
+      {
+        "code": "loveandthunder2025",
+        "reward": "sls_lightning Skin",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "WORLDCUP2026",
+        "reward": "Spain Flag EMF and the Soccer Ball Incense Burner",
+        "isNew": true
+      },
+      {
+        "code": "loveandthunder2025",
+        "reward": "sls_lightning Skin",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "loveandthunder2025",
+      "WORLDCUP2026"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "anime-eternal",
     "name": "Anime Eternal",
     "displayName": "[Part 4] Anime Eternal",
