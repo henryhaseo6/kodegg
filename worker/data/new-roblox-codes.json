@@ -1,26 +1,32 @@
 {
-  "generatedAt": "2026-08-25T00:01:38.553Z",
+  "generatedAt": "2026-08-25T01:01:21.946Z",
   "codes": [
     {
-      "game": "blair",
-      "gameName": "Blair",
+      "game": "trench-decay",
+      "gameName": "Trench Decay",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/blair"
+        "Roblox Den": "https://robloxden.com/game-codes/trench-ww1"
       },
-      "code": "WORLDCUP2026",
-      "reward": "Spain Flag EMF and the Soccer Ball Incense Burner",
+      "code": "DEFENSEWEEKENDBASH",
+      "reward": "400 Medals",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1787601300000,
+      "srcNewAt": 1787600340000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-25T00:01:38.553Z",
-      "fetchedAt": "2026-08-25T00:01:38.553Z"
+      "firstSeenAt": "2026-08-25T01:01:21.946Z",
+      "fetchedAt": "2026-08-25T01:01:21.946Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "karinderya",
+      "count": 5,
+      "fresh": []
+    }
+  ]
 }
