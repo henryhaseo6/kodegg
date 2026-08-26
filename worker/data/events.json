@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-26T03:01:15.649Z",
+  "updatedAt": "2026-08-26T04:01:13.608Z",
   "counts": {
-    "active": 58,
+    "active": 61,
     "archived": 104
   },
   "events": [
@@ -428,30 +428,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "First-Generation Void Hunter Returns",
-        "id": "Void Hunter Generasi Pertama Telah Kembali"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Dear Proxies, the pre-registration & returning event for Zenless Zone Zero Version 3.1 \"First-Generation Void Hunter Returns\" is now underway. Participate Now >> https://hoyo.link/TYcCrU4IL Pre-register on the webpage to get Polychrome ×160",
-        "id": "Dear Proxy, event pra-registrasi & event kembali Zenless Zone Zero V3.1 \"Void Hunter Generasi Pertama Telah Kembali\" telah dimulai. Ikuti Sekarang >> https://hoyo.link/TYcCrU4IL Ikuti event pra-registrasi di halaman web untuk mendapatkan 16"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/16/0/bfef013c66cc071d5410e270c82b6180_1664205291583278703.jpeg",
-      "startsAt": "2026-07-17T12:00:00.000Z",
-      "endsAt": "2026-09-08T21:59:59.000Z",
-      "postedAt": "2026-07-17T12:22:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45889282"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "Dear Proxies, the Version 3.1 \"Return to Ridu: Feathers of Reunion\" web event is still underway!",
         "id": "Dear Proxy, event web V3.1 \"Kembali ke Ridu: Bersua kala Bulu Luruh\" sedang berlangsung!"
       },
@@ -469,6 +445,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46039426"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "First-Generation Void Hunter Returns",
+        "id": "Void Hunter Generasi Pertama Telah Kembali"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Dear Proxies, the pre-registration & returning event for Zenless Zone Zero Version 3.1 \"First-Generation Void Hunter Returns\" is now underway. Participate Now >> https://hoyo.link/TYcCrU4IL Pre-register on the webpage to get Polychrome ×160",
+        "id": "Dear Proxy, event pra-registrasi & event kembali Zenless Zone Zero V3.1 \"Void Hunter Generasi Pertama Telah Kembali\" telah dimulai. Ikuti Sekarang >> https://hoyo.link/TYcCrU4IL Ikuti event pra-registrasi di halaman web untuk mendapatkan 16"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/16/0/bfef013c66cc071d5410e270c82b6180_1664205291583278703.jpeg",
+      "startsAt": "2026-07-17T12:00:00.000Z",
+      "endsAt": "2026-09-08T21:59:59.000Z",
+      "postedAt": "2026-07-17T12:22:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45889282"
     },
     {
       "game": "zzz",
@@ -631,6 +631,84 @@
       "rewards": [],
       "source": "HoYoverse",
       "url": "https://zenless.hoyoverse.com/en/news"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "[Stellar Jade Reward] Take Part in the Discussions for Robin • Summeretto's Debut and Win Stellar Jades",
+        "id": "[Hadiah Stellar Jade] Ikuti Diskusi Tentang Debut Karakter Robin • Summeretto dan Menangkan Stellar Jade"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Greetings, Trailblazers! Following the lingering echoes of memory, embracing the unexpected along the way, seeking inspiration for a melodic variation— What kind of unique inspiration will the Trailblazer bring to Robin's new song? Particip",
+        "id": "Mi~ Hai, Trailblazer! Menelusuri gema kenangan, merangkul setiap kebetulan di sepanjang jalan, mencari ilham untuk sebuah variasi— Inspirasi unik seperti apa yang bisa Trailblazer berikan untuk lagu baru Robin? Ayo ikuti event untuk mendapa"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/26/21c28b17912aef9554830bf8397ced16_832958149227342158.png",
+      "startsAt": "2026-08-26T04:00:00.000Z",
+      "endsAt": "2026-09-09T15:59:59.000Z",
+      "postedAt": "2026-08-26T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46451354"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": "Announcements",
+      "title": {
+        "en": "\"Ding-Dong! Delivery Training in Progress\" Event Details",
+        "id": "\"Ting Tong! Ada Paket dari Kurir Magang\" | Penjelasan Event"
+      },
+      "subtitle": {
+        "en": "\"Ding-Dong! Delivery Training in Progress\" Event Details",
+        "id": "\"Ting Tong! Ada Paket dari Kurir Magang\" | Penjelasan Event"
+      },
+      "desc": {
+        "en": "Event Duration 2026/08/28 10:00 (server time) – 2026/09/14 03:59 (server time) Event Rewards Requirements Reach Inter-Knot Lv. 20 and complete Main Story Chapter 1 - Intermission to participate Event Details • During the event, Proxies can talk to Batti in Booastrum to help the Bangboo deliver Wish Letters. • During the event, Proxies can obtain 1 Wish Letter the first time they log in and the first time they consume battery each day, for up to 2 daily. • Upon delivering a set amount of Wish Letters, obtain Polychrome rewards.",
+        "id": "[Waktu Event] 2026/08/28 10:00 (waktu server) - 2026/09/14 03:59 (waktu server) [Hadiah Event] [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 20 dan menyelesaikan Cerita Utama Chapter 1 - Intermission. [Penjelasan Event] • Selama event berlangsung, Proxy dapat pergi ke Booastrum untuk berbicara dengan Batti dan membantu para Bangboo kecil mengirimkan \"Surat Harapan\". • Selama event berlangsung, Proxy bisa mendapatkan 1 Surat Harapan saat melakukan login harian atau saat mengonsumsi Battery untuk pertama kalinya setiap hari. Maksimum bisa mendapatkan 2 Surat Harapan setiap hari. • Proxy bisa mendapatkan hadiah Polychrome setelah mengirimkan sejumlah Surat Harapan tertentu."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/08/14/a9dadfb049ecc17cae3ffed6fade4103_1562767182602306593_transformed.jpg",
+      "startsAt": "2026-08-26T04:00:00.000Z",
+      "endsAt": "2026-09-13T19:59:00.000Z",
+      "postedAt": "2026-08-26T04:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://zenless.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Event",
+      "title": {
+        "en": "\"Great Expeditionist Challenge\" Event: Take Part to Invite \"Kätzlein Cocktail\" Diona (Cryo)",
+        "id": "Event \"Kompetisi Penakluk Segala Medan\": Ikuti untuk Mengundang \"Kätzlein Cocktail\" Diona (Cryo)"
+      },
+      "subtitle": {
+        "en": "Great Expeditionist Challenge",
+        "id": "Kompetisi Penakluk Segala Medan"
+      },
+      "desc": {
+        "en": "〓Event Rewards〓 〓Event Duration〓 Event Details Start Time End Time Event Phases Phase I 2026/08/28 10:00 2026/09/14 03:59 Phase II 2026/08/30 04:00 Phase III 2026/09/01 04:00 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" Complete the \"Gunfire in the Silent Lands\" quest of the Archon Quest Chapter VII: Act I \"Everwinter Without Mercy.\" ※ Complete Archon Quest Chapter VII: Act II \"Wraith's Nocturne\" first to get the best experience from this event. 〓Event Details〓 ● During the event, four game modes will be available: \"Precision Express Handling,\" \"Roly-Poly Domain Raid,\" \"Maze of Frost and Foresight,\" and \"Trigger Reflex Trial.\" ● In the \"Precision Express Handling\" game, you will drive a train and control its movement according to the instructions, ensuring it safely reaches the target station within the time limit. ● In the \"Roly-Poly Domain Raid\" game, you can raise your \"Snowball Level\" through combat, and control snowballs to defeat enemies during the \"Snowball Phase.\" ● In the \"Maze of Frost and Foresight\" game, you need to use Prime Ice Constructs and various mechanisms to map out routes and help Jack Frosts reach the destination. ● In the \"Trigger Reflex Trial\" game, you need to use firearms to knock down as many targets as possible within the time limit to earn a higher score. ● Complete various challenges to earn Tournament Points and improve your ranking. Reaching a specified rank allows you to invite \"Kätzlein Cocktail\" Diona (Cryo) . You can also obtain Primogems, Crown of Insight , and other rewards.",
+        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 Konten Event Waktu Mulai Waktu Selesai Tahap Event Tahap 1 2026/08/28 10:00 2026/09/14 03:59 Tahap 2 2026/08/30 04:00 Tahap 3 2026/09/01 04:00 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" Selesaikan \"Suara Senapan di Tanah Sunyi\" dalam Quest Archon Chapter VII: Bag. I \"Negeri Salju Tanpa Kasih\". ※ Selesaikan Quest Archon Chapter VII: Bag. II \"Nyanyian Malam Sang Arwah\" terlebih dahulu untuk pengalaman bermain yang lebih baik. 〓 Penjelasan Event 〓 ● Selama event berlangsung, gameplay \"Teknik Kereta Ekspres Presisi\", \"Penyerbuan Domain Bulat nan Dahsyat\", \"Labirin Salju dan Antisipasi\", dan \"Pertempuran Refleks Menembak\" akan dibuka. ● Dalam gameplay \"Teknik Kereta Ekspres Presisi\", Traveler perlu mengemudikan kereta sesuai instruksi dan pastikan kereta tiba dengan selamat di stasiun tujuan dalam waktu yang ditentukan. ● Dalam gameplay \"Penyerbuan Domain Bulat nan Dahsyat\", Traveler dapat meningkatkan \"Level Bola Salju\" melalui pertempuran. Setelah memasuki Fase Bola Salju, Traveler dapat mengendalikan bola salju untuk mengalahkan musuh. ● Dalam gameplay \"Labirin Salju dan Antisipasi\", Traveler perlu memanfaatkan Prime Ice Construct dan berbagai mekanisme untuk merencanakan rute dengan cermat untuk membantu Jack Frost mencapai titik akhir. ● Dalam gameplay \"Pertempuran Refleks Menembak\", Traveler perlu menggunakan senjata api untuk mengalahkan sebanyak mungkin target dalam batas waktu dan raih skor setinggi mungkin. ● Selesaikan berbagai tantangan untuk mendapatkan \"Tournament Point\" dan meningkatkan peringkat. Saat mencapai peringkat tertentu, Traveler dapat mengundang \"Kätzlein Cocktail\" Diona (Cryo) , serta mendapatkan Primogem, Crown of Insight , dan hadiah lainnya."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/08/04/f7aa9696c4a261cfac3b8ce9759f0a7f_3318447584942285303_transformed.jpg",
+      "startsAt": "2026-08-26T04:00:00.000Z",
+      "endsAt": "2026-09-13T19:59:59.000Z",
+      "postedAt": "2026-08-26T04:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
     },
     {
       "game": "gi",
@@ -1091,54 +1169,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Durandal, awaiting orders!\"",
-        "id": "\"Durandal, menunggu perintah.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Durandal  Today's Topic: Which matters more to you, the process or the outcome?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 C",
-        "id": " Bintang Utama Album Kenangan Hari Ini: Durandal  Topik Kali Ini: Mana yang lebih penting bagimu, proses atau hasil?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa un"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/39c753cd0ab279b8126b12397114e955_5372028776434856330.png",
-      "startsAt": "2026-07-25T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-25T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45991851"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Vodka power, discharge!\"",
-        "id": "\"Kekuatan Vodka, lepaskan!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Olenyevas  Today's Topic: Please describe Rozaliya and Liliya in one sentence!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Olenyeva bersaudara  Topik Kali Ini: Deskripsikan Rozaliya dan Liliya dalam satu kalimat!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lain"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/14/ddae622c8b46e04768b5adc8fd76b3a5_6832252828787114953.png",
-      "startsAt": "2026-07-18T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-18T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45901660"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "\"Can, are you ready?\"",
         "id": "\"Can, apa kamu sudah siap?\""
       },
@@ -1180,6 +1210,54 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46402009"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Hi, miss me yet? No matter when or where, Elysia will be there for you ♪\"",
+        "id": "\"Hai, kangen aku ya? Elysia akan selalu ada untukmu, kapan pun dan di mana pun♪\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Elysia  Today's Topic: Which line from Elysia stayed with you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals ",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Elysia  Topik Kali Ini: Dialog Elysia mana yang paling berkesan untukmu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/98972058c71c00b6a95ecac01aaaa819_4168558010886360114.png",
+      "startsAt": "2026-07-29T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-29T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46039636"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Rita, at your service.\"",
+        "id": "\"Rita, siap melayani Anda.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Rita Rossweisse  Today's Topic: Rita's wardrobe: Which of her outfits is your favorite?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Rita Rossweisse  Topik Hari Ini: Lemari pakaian Rita: Outfit mana yang menjadi favoritmu?  Like dan tulis komentar berkesempatan memenangkan [100USD], bundle merchandise, dan lainnya! Jangan "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/13/72e70558025b1ccae45366e686718404_1837434251712324176.png",
+      "startsAt": "2026-07-14T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-14T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45842949"
     },
     {
       "game": "hi3",
@@ -1235,23 +1313,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Hi, miss me yet? No matter when or where, Elysia will be there for you ♪\"",
-        "id": "\"Hai, kangen aku ya? Elysia akan selalu ada untukmu, kapan pun dan di mana pun♪\""
+        "en": "\"Fate is what brought us together.\"",
+        "id": "\"Takdirlah yang mempertemukan kita.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Elysia  Today's Topic: Which line from Elysia stayed with you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals ",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Elysia  Topik Kali Ini: Dialog Elysia mana yang paling berkesan untukmu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa "
+        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
+        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/98972058c71c00b6a95ecac01aaaa819_4168558010886360114.png",
-      "startsAt": "2026-07-29T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
+      "startsAt": "2026-07-11T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-29T04:00:06.000Z",
+      "postedAt": "2026-07-11T04:00:05.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46039636"
+      "url": "https://www.hoyolab.com/article/45809908"
     },
     {
       "game": "hi3",
@@ -1283,71 +1361,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Carole reporting in!\"",
-        "id": "\"Carole melapor!\""
+        "en": "\"I have long awaited this destined reunion.\"",
+        "id": "\"Aku sudah lama menantikan reuni yang ditakdirkan ini.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Carole Pepper  Today's Topic: Have you ever been lifted up by Carole's energy?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
-        "id": " Bintang Utama Album Kenangan Hari Ini: Carole Pepper  Topik Kali Ini: Apakah kamu pernah merasa terhibur karena energi dan keceriaan Carole?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, da"
+        "en": " Today's Time Album Spotlight: Aponia  Today's Topic: If you already knew the ending, would you still choose to begin?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Tokoh Utama Album Kenangan Hari Ini: Aponia  Topik Kali Ini: Jika kamu sudah tahu akhir ceritanya, apakah kamu tetap akan memilih untuk memulainya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchand"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/20eb3a959109a04de9794c4385cda0f2_2051842664185105867.png",
-      "startsAt": "2026-08-08T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/39f8257d2237aa8886b340a54a8e65d5_2337216238225372107.png",
+      "startsAt": "2026-08-19T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-08T04:00:06.000Z",
+      "postedAt": "2026-08-19T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46184758"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Fate is what brought us together.\"",
-        "id": "\"Takdirlah yang mempertemukan kita.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
-        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
-      "startsAt": "2026-07-11T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-11T04:00:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45809908"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Rita, at your service.\"",
-        "id": "\"Rita, siap melayani Anda.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Rita Rossweisse  Today's Topic: Rita's wardrobe: Which of her outfits is your favorite?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Rita Rossweisse  Topik Hari Ini: Lemari pakaian Rita: Outfit mana yang menjadi favoritmu?  Like dan tulis komentar berkesempatan memenangkan [100USD], bundle merchandise, dan lainnya! Jangan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/13/72e70558025b1ccae45366e686718404_1837434251712324176.png",
-      "startsAt": "2026-07-14T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-14T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45842949"
+      "url": "https://www.hoyolab.com/article/46359609"
     },
     {
       "game": "hi3",
@@ -1379,23 +1409,71 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"I have long awaited this destined reunion.\"",
-        "id": "\"Aku sudah lama menantikan reuni yang ditakdirkan ini.\""
+        "en": "\"Durandal, awaiting orders!\"",
+        "id": "\"Durandal, menunggu perintah.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Aponia  Today's Topic: If you already knew the ending, would you still choose to begin?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Tokoh Utama Album Kenangan Hari Ini: Aponia  Topik Kali Ini: Jika kamu sudah tahu akhir ceritanya, apakah kamu tetap akan memilih untuk memulainya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchand"
+        "en": " Today's Time Album Spotlight: Durandal  Today's Topic: Which matters more to you, the process or the outcome?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 C",
+        "id": " Bintang Utama Album Kenangan Hari Ini: Durandal  Topik Kali Ini: Mana yang lebih penting bagimu, proses atau hasil?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa un"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/39f8257d2237aa8886b340a54a8e65d5_2337216238225372107.png",
-      "startsAt": "2026-08-19T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/39c753cd0ab279b8126b12397114e955_5372028776434856330.png",
+      "startsAt": "2026-07-25T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-19T04:00:06.000Z",
+      "postedAt": "2026-07-25T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46359609"
+      "url": "https://www.hoyolab.com/article/45991851"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Vodka power, discharge!\"",
+        "id": "\"Kekuatan Vodka, lepaskan!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Olenyevas  Today's Topic: Please describe Rozaliya and Liliya in one sentence!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Olenyeva bersaudara  Topik Kali Ini: Deskripsikan Rozaliya dan Liliya dalam satu kalimat!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lain"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/14/ddae622c8b46e04768b5adc8fd76b3a5_6832252828787114953.png",
+      "startsAt": "2026-07-18T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-18T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45901660"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Carole reporting in!\"",
+        "id": "\"Carole melapor!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Carole Pepper  Today's Topic: Have you ever been lifted up by Carole's energy?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
+        "id": " Bintang Utama Album Kenangan Hari Ini: Carole Pepper  Topik Kali Ini: Apakah kamu pernah merasa terhibur karena energi dan keceriaan Carole?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, da"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/20eb3a959109a04de9794c4385cda0f2_2051842664185105867.png",
+      "startsAt": "2026-08-08T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-08T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46184758"
     },
     {
       "game": "gi",

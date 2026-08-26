@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-08-26T03:01:18.829Z",
+  "updatedAt": "2026-08-26T04:01:16.957Z",
   "counts": {
     "active": 104,
     "archived": 84
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Great Expeditionist Challenge\" Event: Take Part to Invite \"Kätzlein Cocktail\" Diona (Cryo)",
+        "id": "Event \"Kompetisi Penakluk Segala Medan\": Ikuti untuk Mengundang \"Kätzlein Cocktail\" Diona (Cryo)"
+      },
+      "excerpt": {
+        "en": "〓Event Rewards〓 〓Event Duration〓 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" Complete the \"Gunfire in the Sile",
+        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" Selesaikan \"Suara "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/f7aa9696c4a261cfac3b8ce9759f0a7f_503834544847449902.jpg",
+      "url": "https://www.hoyolab.com/article/46451352",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+      },
+      "excerpt": {
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
+      "url": "https://www.hoyolab.com/article/46451351",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Ding-Dong! Delivery Training in Progress\" Event Details",
+        "id": "\"Ting Tong! Ada Paket dari Kurir Magang\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/08/28 10:00 (server time) – 2026/09/14 03:59 (server time) Requirements Reach Inter-Knot Lv. 20 and complete Main Story Chapter 1 - Intermission to participate ",
+        "id": "[Waktu Event] 2026/08/28 10:00 (waktu server) - 2026/09/14 03:59 (waktu server) [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 20 dan menyelesaikan"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
+      "url": "https://www.hoyolab.com/article/46451353",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
@@ -134,22 +182,6 @@
       "publishedAt": "2026-08-24T06:00:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program Announcement",
-        "id": "Pengumuman Acara Khusus Pra-Rilis Zenless Zone Zero Versi 3.2 \"Kisah Rahasia Mereka\""
-      },
-      "excerpt": {
-        "en": "Dear Proxies, The Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program will begin on August 28 at 19:30 (UTC+8)! The mastermind behind the Bangboo manipulation is",
-        "id": "Dear Proxy: Acara Khusus Pra-Rilis Zenless Zone Zero V3.2 \"Kisah Rahasia Mereka\" akan resmi dimulai pada 28 Agustus 19:30 (UTC+8)! Dalang di balik manipulasi Bangboo masih belum te"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/f1da4c944df50860ee39c2f18e255b92_2388387132862854906.jpeg",
-      "url": "https://www.hoyolab.com/article/46427336",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-24T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -162,6 +194,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/24/81b9a71197fce4166e16f5c4179ded44_549661776826062591.jpg",
       "url": "https://www.hoyolab.com/article/46427337",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-24T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program Announcement",
+        "id": "Pengumuman Acara Khusus Pra-Rilis Zenless Zone Zero Versi 3.2 \"Kisah Rahasia Mereka\""
+      },
+      "excerpt": {
+        "en": "Dear Proxies, The Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program will begin on August 28 at 19:30 (UTC+8)! The mastermind behind the Bangboo manipulation is",
+        "id": "Dear Proxy: Acara Khusus Pra-Rilis Zenless Zone Zero V3.2 \"Kisah Rahasia Mereka\" akan resmi dimulai pada 28 Agustus 19:30 (UTC+8)! Dalang di balik manipulasi Bangboo masih belum te"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/f1da4c944df50860ee39c2f18e255b92_2388387132862854906.jpeg",
+      "url": "https://www.hoyolab.com/article/46427336",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-24T04:00:06.000Z"
     },
@@ -358,22 +406,6 @@
       "publishedAt": "2026-08-21T04:15:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Myriad Celestia Trailer: \"Beyond the Chorus\" | Honkai: Star Rail",
-        "id": "Trailer Perjalanan Seribu Bintang: \"Di Balik Riuh Suara\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "Countless voices have tried to describe her and name her. When all the clamoring faded into silence, she heard a resonance from deep within her chest. English Voice: Robin — Alice ",
-        "id": "Tak terhitung suara pernah mencoba menggambarkannya, memberinya sebuah nama. Ketika seluruh hiruk-pikuk akhirnya tenggelam dalam kesunyian, ia mendengar gaung yang berasal dari lub"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/6cadd52922cb0f5e26b807596e8c14d5_3359261723155782055.jpeg",
-      "url": "https://www.hoyolab.com/article/46388401",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-21T04:00:05.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -386,6 +418,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/82c598961213a5423eda3b56f3e5a549_7349478805934104937.jpeg",
       "url": "https://www.hoyolab.com/article/46388400",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-21T04:00:05.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Myriad Celestia Trailer: \"Beyond the Chorus\" | Honkai: Star Rail",
+        "id": "Trailer Perjalanan Seribu Bintang: \"Di Balik Riuh Suara\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "Countless voices have tried to describe her and name her. When all the clamoring faded into silence, she heard a resonance from deep within her chest. English Voice: Robin — Alice ",
+        "id": "Tak terhitung suara pernah mencoba menggambarkannya, memberinya sebuah nama. Ketika seluruh hiruk-pikuk akhirnya tenggelam dalam kesunyian, ia mendengar gaung yang berasal dari lub"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/6cadd52922cb0f5e26b807596e8c14d5_3359261723155782055.jpeg",
+      "url": "https://www.hoyolab.com/article/46388401",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-21T04:00:05.000Z"
     },
@@ -678,22 +726,6 @@
       "publishedAt": "2026-08-19T06:00:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "The Long Goodbye | Version 3.1 Content Overview (Phase II)",
-        "id": "Sunyi Panjang Sebuah Pamit | Preview Konten Versi 3.1 (Tahap 2)"
-      },
-      "excerpt": {
-        "en": "Hey Proxies, the second half of Version 3.1 is now live! S-Rank Agent Sigrid (Ice - Attack) and S-Rank W-Engine Knight's Extolment (Attack) are now available in the limited-time Si",
-        "id": "Halo Proxy, tahap kedua versi 3.1 telah hadir! Agen Tier-S Sigrid (Ice - Attack) dan W-Engine Tier-S Knight's Extolment (Attack) ditambahkan ke dalam FM Waktu Terbatas. FM \"Siaran "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/18/0/ebd407d85651bc757493f9257632516d_9140222084701881730.jpeg",
-      "url": "https://www.hoyolab.com/article/46359612",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-19T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -706,6 +738,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/19/0/b8eff31ff0c19bdf8804f5a745131d17_3135834945355951834.jpeg",
       "url": "https://www.hoyolab.com/article/46359610",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-19T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "The Long Goodbye | Version 3.1 Content Overview (Phase II)",
+        "id": "Sunyi Panjang Sebuah Pamit | Preview Konten Versi 3.1 (Tahap 2)"
+      },
+      "excerpt": {
+        "en": "Hey Proxies, the second half of Version 3.1 is now live! S-Rank Agent Sigrid (Ice - Attack) and S-Rank W-Engine Knight's Extolment (Attack) are now available in the limited-time Si",
+        "id": "Halo Proxy, tahap kedua versi 3.1 telah hadir! Agen Tier-S Sigrid (Ice - Attack) dan W-Engine Tier-S Knight's Extolment (Attack) ditambahkan ke dalam FM Waktu Terbatas. FM \"Siaran "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/18/0/ebd407d85651bc757493f9257632516d_9140222084701881730.jpeg",
+      "url": "https://www.hoyolab.com/article/46359612",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-19T04:00:06.000Z"
     },
@@ -740,22 +788,6 @@
       "url": "https://www.hoyolab.com/article/46358978",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-19T03:00:08.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Stellar Photography | \"Dear, care to join me for a relaxing boat ride on the lake?\"",
-        "id": "Foto Perjalanan Antarbintang | \"Sayang, mau temani aku berperahu di danau untuk bersantai?\""
-      },
-      "excerpt": {
-        "en": "\"Dear, care to join me for a relaxing boat ride on the lake? I've prepared some freshly preserved treats.\" \"Life always reveals new facets when you least expect it. Sometimes quiet",
-        "id": "\"Sayang, mau temani aku berperahu di danau untuk bersantai? Aku sudah siapkan beberapa kue.\" \"Kehidupan selalu menunjukkan wujud barunya tanpa disadari, terkadang tenang, terkadang"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/18/584a06ca51c75a9ee849231ad4bf2016_148069992874938238.jpg",
-      "url": "https://www.hoyolab.com/article/46358735",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-19T02:30:02.000Z"
     },
     {
       "game": "gi",
@@ -980,22 +1012,6 @@
       "url": "https://www.hoyolab.com/article/46314604",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-16T06:00:02.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "A Wedding Invitation from the Snegovik",
-        "id": "Undangan Pernikahan dari Snegovik"
-      },
-      "excerpt": {
-        "en": "It is said that has it that marriages between a human and a Snegovik are exceedingly rare. Yet recently, rumor has it that a wedding ceremony is about to be held for the most disti",
-        "id": "Konon, pernikahan antara Snegovik dan manusia sangatlah langka, dan belakangan ini, Tuan Putri yang paling terkemuka dari ras Snegurochka kebetulan akan mengadakan pernikahan. Dan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/0/9c7b227ca3fa441c592ae91325231dff_3468638439684272754.jpeg",
-      "url": "https://www.hoyolab.com/article/46313170",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-16T04:05:06.000Z"
     },
     {
       "game": "zzz",
@@ -1636,22 +1652,6 @@
       "url": "https://www.hoyolab.com/article/46027894",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-28T05:30:07.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "New Arrival in \"An Outstanding Partner\"",
-        "id": "\"Partner Terbaik\" | Detail Update"
-      },
-      "excerpt": {
-        "en": "New Bangboo available in \"An Outstanding Partner\"! After the Version 3.1 update, the S-Rank Bangboo Ariel will permanently join the Bangboo Channel. Signal Search Details • Before ",
-        "id": "Bangboo baru akan hadir di FM \"Partner Terbaik\"! Setelah update V3.1, Bangboo Tier-S \"Ariel\" akan tersedia di FM Bangboo secara permanen. [Penjelasan FM] • Sebelum melakukan Pencar"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/27/0/ef42eb06afea77f93dd0716ed472c2bf_3929658668944415073.jpeg",
-      "url": "https://www.hoyolab.com/article/46027787",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-07-28T05:15:07.000Z"
     },
     {
       "game": "wuwa",
