@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-26T10:01:24.221Z",
+  "updatedAt": "2026-08-26T11:01:24.676Z",
   "counts": {
-    "active": 104,
-    "archived": 84
+    "active": 103,
+    "archived": 85
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "The Long Goodbye | Video Archive Sharing",
+        "id": "Sunyi Panjang Sebuah Pamit | Berbagi Arsip Video"
+      },
+      "excerpt": {
+        "en": "The Version 3.1 Video Archive wallpapers are now available to download! Feel free to download & use them, Proxies! ▼ More Wallpapers https://hoyo.link/nwU54qlvy — Welcome to New Er",
+        "id": "Hari ini kami membawakan wallpaper Arsip Video V3.1 untuk Proxy! Jangan lupa untuk mengunduh & menggunakannya ya~ ▼ Wallpaper Lainnya https://hoyo.link/nwU54qlvy —— Selamat datang "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/d5c504c31b5e37ac7cee7dc6264200da_1612135131002789808.jpeg",
+      "url": "https://www.hoyolab.com/article/46455814",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T10:15:06.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1238,22 +1254,6 @@
       "publishedAt": "2026-08-14T09:49:43.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero gamescom 2026 Merchandise Guide",
-        "id": "Zenless Zone Zero gamescom 2026 Merchandise Guide"
-      },
-      "excerpt": {
-        "en": "Dear Proxies, \"Eridu Commodities\" is coming to gamescom 2026, bringing many limited Zenless Zone Zero merchandise. Reach certain spending tiers to unlock exclusive gifts! August 26",
-        "id": "Dear Proxies, \"Eridu Commodities\" is coming to gamescom 2026, bringing many limited Zenless Zone Zero merchandise. Reach certain spending tiers to unlock exclusive gifts! August 26"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/14/0/171d5109340d8f32f54c7c6cc3862057_5358468560725400667.jpeg",
-      "url": "https://www.hoyolab.com/article/46284782",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-14T09:30:03.000Z"
-    },
-    {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
       "title": {
@@ -1652,7 +1652,9 @@
       "url": "https://www.hoyolab.com/article/46027894",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-28T05:30:07.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1667,10 +1669,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1785081600000/okhrprqu3k7zcjhyj6-1785146894790.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5208",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-07-27T10:09:29.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-27T10:09:29.000Z",
+      "archivedAt": "2026-08-26T11:01:24.676Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
