@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T06:01:09.268Z",
+  "updatedAt": "2026-08-26T07:02:13.703Z",
   "counts": {
     "active": 62,
     "archived": 104
@@ -50,9 +50,9 @@
         "id": "Kunjungi HoYoLAB, setelah log in ke akun, Trailblazer dapat melihat riwayat Warp Karakter/Light Cone 5★ terbaru di fitur \"Riwayat Warp\" HoYoLAB."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/08/17/282a3d746b05dc003cf36291efd74b19_7028411859748011411_transformed.jpg",
-      "startsAt": "2026-08-25T23:00:00.000Z",
-      "endsAt": "2026-08-29T09:00:00.000Z",
-      "postedAt": "2026-08-25T23:00:00.000Z",
+      "startsAt": "2026-08-25T17:00:00.000Z",
+      "endsAt": "2026-08-29T03:00:00.000Z",
+      "postedAt": "2026-08-25T17:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -254,9 +254,9 @@
         "id": "Dengarkan Lagu Melambai pada angin laut dan percikan ombak, menyanyikan melodi yang paling bebas. Rangkullah hal yang tak terduga, terimalah setiap not musik yang menari— Bersiaplah, gunakan gelombang suara lagu untuk mengawal mesin yang bergemuruh. Saat ini, setiap burung membumbung terbang mengejar angin! Single terbaru Robin \"Only by Chasing the Wind\" telah resmi dirilis! Kami mengundang semua Trailblazer untuk mendengar dan menikmatinya~"
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/08/17/e4c98e3a69a68211a6a436aa300c9b37_3616796427999606944_transformed.jpg",
-      "startsAt": "2026-08-25T23:00:00.000Z",
-      "endsAt": "2026-09-02T09:00:00.000Z",
-      "postedAt": "2026-08-25T23:00:00.000Z",
+      "startsAt": "2026-08-25T17:00:00.000Z",
+      "endsAt": "2026-09-02T03:00:00.000Z",
+      "postedAt": "2026-08-25T17:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -455,30 +455,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "Dear Proxies, the Version 3.1 \"Return to Ridu: Feathers of Reunion\" web event is still underway!",
-        "id": "Dear Proxy, event web V3.1 \"Kembali ke Ridu: Bersua kala Bulu Luruh\" sedang berlangsung!"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Go >> https://hoyo.link/TYcCrU4IL Invite friends to return or register for the game and receive up to Polychrome ×340! Earn Polychrome ×60 when New, Returning, or Inactive Proxies link your invite code! Join the lucky draw on the event page",
-        "id": "Tekan untuk pergi >> https://hoyo.link/TYcCrU4IL Undang teman untuk kembali bermain atau mendaftar game, dan dapatkan hingga 340 Polychrome! Proxy Pemula, Proxy yang Kembali dan Proxy Inaktif bisa menghubungkan Kode Undangan untuk mendapatk"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/28/0/978208ed40d27368b607968548a1367e_1037431367481711724.jpeg",
-      "startsAt": "2026-07-29T03:00:00.000Z",
-      "endsAt": "2026-09-08T21:59:59.000Z",
-      "postedAt": "2026-07-29T03:45:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46039426"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "First-Generation Void Hunter Returns",
         "id": "Void Hunter Generasi Pertama Telah Kembali"
       },
@@ -496,6 +472,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45889282"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Dear Proxies, the Version 3.1 \"Return to Ridu: Feathers of Reunion\" web event is still underway!",
+        "id": "Dear Proxy, event web V3.1 \"Kembali ke Ridu: Bersua kala Bulu Luruh\" sedang berlangsung!"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Go >> https://hoyo.link/TYcCrU4IL Invite friends to return or register for the game and receive up to Polychrome ×340! Earn Polychrome ×60 when New, Returning, or Inactive Proxies link your invite code! Join the lucky draw on the event page",
+        "id": "Tekan untuk pergi >> https://hoyo.link/TYcCrU4IL Undang teman untuk kembali bermain atau mendaftar game, dan dapatkan hingga 340 Polychrome! Proxy Pemula, Proxy yang Kembali dan Proxy Inaktif bisa menghubungkan Kode Undangan untuk mendapatk"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/28/0/978208ed40d27368b607968548a1367e_1037431367481711724.jpeg",
+      "startsAt": "2026-07-29T03:00:00.000Z",
+      "endsAt": "2026-09-08T21:59:59.000Z",
+      "postedAt": "2026-07-29T03:45:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46039426"
     },
     {
       "game": "zzz",
@@ -1073,9 +1073,9 @@
         "id": "Dear Trailblazer, Selama event berlangsung, Trailblazer dapat meningkatkan level \"Kehormatan Tanpa Nama\" untuk memperoleh Star Rail Pass, Self-Modeling Resin, Tracks of Destiny dan hadiah lainnya. Setelah membuka \"Nameless Glory\", kamu akan langsung mendapatkan Stellar Jade ×680. Tingkatkan level \"Kehormatan Tanpa Nama\" untuk memperoleh tambahan Light Cone Memory Shard ×1, Star Rail Special Pass ×4, Light Cone 4★ yang diinginkan, Variable Dice ×1, Self-Modeling Resin ×2, Relic Remains, Material Path Umum \"Tears of Dreams\", dan hadiah lainnya! Jika Trailblazer membuka \"Nameless Medal\", maka selain hadiah yang di atas, Trailblazer dapat langsung menaikkan 10 level Kehormatan Tanpa Nama, juga memperoleh hadiah avatar \"Robin • Summeretto: Kompetisi\", avatar \"Aventurine • Waveflair: Kompetisi\", Light Cone Memory Shard ×1, Stellar Jade ×200, Fuel dan hadiah lainnya! ※ EXP yang diperlukan untuk menaikkan level \"Kehormatan Tanpa Nama\" periode ini akan dikurangi, EXP yang diperoleh dari sebagian Misi Kehormatan juga akan disesuaikan, agar Trailblazer dapat memperoleh Hadiah Level lebih cepat dalam 5 minggu. Silakan masuk ke dalam game untuk detail lebih lanjut. Waktu Dibuka Setelah update Versi 4.5 - 2026/09/28 03:59:00 Syarat Partisipasi Level Trailblaze ≥ Lv. 12 dan telah menyelesaikan Misi Trailblaze \"Jarilo-Ⅵ\" - \"Penantian Lama Menunggu Ujung Pisau\" Penjelasan \"Kehormatan Tanpa Nama\" Setelah membuka \"Kehormatan Tanpa Nama\", \"Nameless Gift\" akan terbuka secara otomatis. Trailblazer dapat memperoleh EXP untuk meningkatkan Level Kehormatan Tanpa Nama dengan cara menyelesaikan Misi Minggu Ini dan Misi Periode Ini. Maksimum level Kehormatan Tanpa Nama adalah Lv. 70. Setelah mencapai Level Kehormatan Tanpa Nama yang ditentukan, Trailblazer akan mendapatkan Star Rail Pass, Self-Modeling Resin, Tracks of Destiny, dan hadiah lainnya. Misi Minggu Ini akan reset setiap hari Senin pukul 04:00 (waktu server). Jika perlu, Trailblazer yang telah membuka \"Nameless Glory\" dapat meng-upgrade ke \"Nameless Medal\" dengan membeli \"Honor Badge\". Perhatian Selama event ini berlangsung, Trailblazer tidak akan bisa mendapatkan EXP melalui misi jika sudah mencapai level maksimum. Jika kondisi khusus menyebabkan Trailblazer melakukan pembelian \"Nameless Glory\" atau \"Nameless Medal\" secara berulang, \"The Nameless EXP\" tidak akan bertambah dan Trailblazer akan mendapatkan pengembalian Oneiric Shard sebesar nilai pembelian Oneiric Shard ×750 atau nilai pembelian Oneiric Shard ×1.410. Jika kondisi khusus menyebabkan Trailblazer melakukan pembelian \"Honor Badge\" secara berulang, Trailblazer akan mendapatkan pengembalian Oneiric Shard sebesar nilai pembelian Oneiric Shard ×860. Pada 2026/09/28 02:59:00 , pembelian \"Nameless Glory\", \"Nameless Medal\", dan \"Honor Badge\" untuk periode event kali ini akan ditutup. Setelah pembelian ditutup, Trailblazer masih bisa menyelesaikan misi Kehormatan Tanpa Nama dan mengambil hadiah. Harap Trailblazer perhatikan waktu pembelian dan durasi event. Waktu pembelian item \"Nameless Glory\", \"Nameless Medal\" dan \"Honor Badge\" di pusat top-up web akan berakhir pada 2026/09/27 03:59:00 . Harap Trailblazer yang menggunakan top-up web perhatikan waktu pembelian."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/07/29/199f245429a56f7b31927a1558c1edd4_4067361509318608779_transformed.png",
-      "startsAt": "2026-08-16T20:30:00.000Z",
-      "endsAt": "2026-09-27T12:59:00.000Z",
-      "postedAt": "2026-08-16T20:30:00.000Z",
+      "startsAt": "2026-08-16T14:30:00.000Z",
+      "endsAt": "2026-09-27T06:59:00.000Z",
+      "postedAt": "2026-08-16T14:30:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1100,9 +1100,9 @@
         "id": "Tiga hari, dua puluh miliar, sebuah permainan menghabiskan uang ... Takdir justru bersikeras menggenggam erat kekayaan itu untukmu: Semakin kamu ingin melepaskannya, semakin ia mengencangkan pegangannya .... Waktu Dibuka Dibuka secara permanen setelah update Versi 4.5 Syarat Dibuka Level Trailblaze ≥ Lv. 21 ※ Selama periode Versi 4.5, konten ini dapat dimainkan lebih awal melalui fitur \"Pandangan Finality\". ※ Trailblazer disarankan untuk memainkan konten ini setelah menyelesaikan Misi Trailblaze \"Astropolis\" - \"Pertaruhan di Astropolis\". Hadiah Misi"
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/07/29/bf8d1de4e2f9655305d732735cf1b77a_5491594792224678972_transformed.jpg",
-      "startsAt": "2026-08-20T22:00:00.000Z",
-      "endsAt": "2026-09-27T15:00:00.000Z",
-      "postedAt": "2026-08-20T22:00:00.000Z",
+      "startsAt": "2026-08-20T16:00:00.000Z",
+      "endsAt": "2026-09-27T09:00:00.000Z",
+      "postedAt": "2026-08-20T16:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1127,9 +1127,9 @@
         "id": "Dengan harga apa, sekejap keberlangsungan utopia dapat ditukar? Dengan suara apa, yang dapat menarik pandangan Amber? Timbangan telah diam-diam diselaraskan. Sedangkan kamu, hanya bisa mempertaruhkan segalanya dalam satu lemparan dadu. Waktu Dibuka Dibuka secara permanen setelah update Versi 4.5 Syarat Dibuka Level Trailblaze ≥ Lv. 21 ※ Selama periode Versi 4.5, konten ini dapat dimainkan lebih awal melalui fitur \"Pandangan Finality\". ※ Trailblazer disarankan untuk memainkan konten ini setelah menyelesaikan Misi Trailblaze \"Planarcadia\" - \"Gema Peluit di Ambang Kesunyian\". Hadiah Misi"
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/08/17/e215c4eaa262d852f7e15d918a529c4c_5896509249571435495_transformed.png",
-      "startsAt": "2026-08-20T22:00:00.000Z",
-      "endsAt": "2026-09-27T15:00:00.000Z",
-      "postedAt": "2026-08-20T22:00:00.000Z",
+      "startsAt": "2026-08-20T16:00:00.000Z",
+      "endsAt": "2026-09-27T09:00:00.000Z",
+      "postedAt": "2026-08-20T16:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1154,9 +1154,9 @@
         "id": "Dengan harga apa, sekejap keberlangsungan utopia dapat ditukar? Dengan suara apa, yang dapat menarik pandangan Amber? Timbangan telah diam-diam diselaraskan. Sedangkan kamu, hanya bisa mempertaruhkan segalanya dalam satu lemparan dadu. Dear Trailblazer, Selamat datang di Versi 4.5 \"Pertaruhan di Astropolis\"! Penjelasan Update dan Kompensasi Durasi Versi 4.5: Setelah update Versi 4.5 - 2026/09/28 06:00:00 . ■ Waktu Update Dimulai pada 2026/08/26 06:00:00 , diperkirakan selesai dalam waktu 5 jam. ■ Penjelasan Kompensasi Kompensasi Update dan Penghentian Server Detail Kompensasi: Stellar Jade ×300 Target Kompensasi: Trailblazer dengan Level Trailblaze ≥ Lv. 4, sebelum 2026/08/26 06:00:00 ※ Batas waktu pengambilan kompensasi: Sebelum Versi 4.5 berakhir. Kompensasi Perbaikan Masalah Detail Kompensasi: Stellar Jade ×300 Target Kompensasi: Trailblazer dengan Level Trailblaze ≥ Lv. 4, sebelum 2026/08/26 06:00:00 ※ Harap Trailblazer log in ke dalam game dan terima pesan sebelum 2026/09/25 23:59:00 . Kru Express akan mengirimkan kompensasi tersebut kepada para Trailblazer melalui pesan dalam game, dalam waktu 5 jam setelah update selesai. Harap mengambil kompensasi tepat waktu ya. ■ Metode Update PC: Setelah menutup game, buka ulang launcher dan tekan update Android: Setelah masuk ke dalam game, ikuti pemberitahuan pop-up dalam game untuk menyelesaikan update iOS: Masuk ke App Store dan tekan update PS5®: Setelah masuk ke dalam game, game akan otomatis mengunduh dan menginstal update Konten Baru Versi 1. Alur Cerita Baru ■ Misi Trailblaze \"Astropolis\" - \"Pertaruhan di Astropolis\" Dengan harga apa, sekejap keberlangsungan utopia dapat ditukar? Dengan suara apa, yang dapat menarik pandangan Amber? Timbangan telah diam-diam diselaraskan. Sedangkan kamu, hanya bisa mempertaruhkan segalanya dalam satu lemparan dadu. Waktu Dibuka: Dibuka secara permanen setelah update Versi 4.5 Syarat Partisipasi: Level Trailblaze ≥ Lv. 21 ※ Selama periode Versi 4.5, konten ini dapat dimainkan lebih awal melalui \"Pandangan Finality\". ※ Trailblazer disarankan untuk memainkan konten ini setelah menyelesaikan Misi Trailblaze \"Planarcadia\" - \"Gema Peluit di Ambang Kesunyian\". ■ Misi Trailblaze Lanjutan \"Astropolis\" - \"Dari Rugi Menuju Puncak, Dimulai dari Strategi Nol Biaya\" Tiga hari, dua puluh miliar, sebuah permainan menghabiskan uang ... Takdir justru bersikeras menggenggam erat kekayaan itu untukmu: Semakin kamu ingin melepaskannya, semakin ia mengencangkan pegangannya .... Waktu Dibuka: Dibuka secara permanen setelah update Versi 4.5 Syarat Partisipasi: Level Trailblaze ≥ Lv. 21 ※ Selama periode Versi 4.5, konten ini dapat dimainkan lebih awal melalui \"Pandangan Finality\". ※ Trailblazer disarankan untuk memainkan konten ini setelah menyelesaikan Misi Trailblaze \"Astropolis\" - \"Pertaruhan di Astropolis\". 2. Karakter Baru ■ 5★ \"Robin • Summeretto (Remembrance: Wind)\" Robin • Summeretto adalah karakter tipe support yang dapat memanggil Memosprite \"Summer Songbird\" untuk membantu pertempuran. Dia dapat mendahulukan aksi rekan yang ditargetkan dan memulihkan Energy, sekaligus memberikan berbagai Buff seperti pengabaian DEF kepada seluruh anggota tim. Makin tinggi frekuensi aksi rekan tim, makin kuat juga sebagian Buff yang diberikan oleh Robin • Summeretto. ■ 5★ \"Aventurine • Waveflair (Elation: Quantum)\" Aventurine • Waveflair adalah karakter tipe DPS yang bersinergi dengan jumlah serangan seluruh anggota tim dan dapat sering melancarkan Elation Skill. Serangan seluruh anggota tim dapat memberikannya \"Fervor\" dan Punchline. Berdasarkan poin \"Fervor\", dia dapat melancarkan Elation Skill tambahan dan memperkuat Elation Skill miliknya pada Aha Instant yang berikutnya. Saat melancarkan Elation Skill yang diperkuat, akan mengonsumsi \"Fervor\" untuk mengakibatkan DMG yang lebih tinggi. 3. Light Cone Baru ■ 5★ \"Rise and Sing (Remembrance)\" Dapat diperoleh melalui Event Warp Light Cone \"Fiksasi Brilian: Rise and Sing\". ■ 5★ \"Summer Rides the Surf (Elation)\" Dapat diperoleh melalui Event Warp Light Cone \"Fiksasi Brilian: Summer Rides the Surf\". ■ 4★ \"A Little Getaway (Elation)\" Dapat diperoleh melalui Event Warp Light Cone Versi 4.5 \"Fiksasi Brilian: Rise and Sing\" dan \"Mengulang Kenangan: Long May Rainbows Adorn the Sky\". ※ Light Cone 4★ \"A Little Getaway (Elation)\" akan bergabung dalam \"Warp Bintang-Bintang\" di versi 4.6, tapi tidak akan bergabung dalam \"Warp Keberangkatan\". ■ 4★ \"Race to the Horizon (Hunt)\" Dapat diperoleh melalui event \"Melampaui Batas: Turnamen Balap Kecepatan\". 4. Kostum Baru ■ Gaya Perintis - Aksesori Kepala \"Jangan Lihat Aku, Lihat Ia\" Dapat dibeli di Toko menggunakan Stellar Jade. 5. Latar Tempat Baru ■ Distrik Pusat Astropolis Markas besar Interastral Peace Entertainment, juga merupakan medan pertempuran rahasia di mana faksi-faksi besar IPC bersaing untuk memberikan pengaruhnya. Banyak orang meremehkan kekuatan media, padahal yang dapat dilakukannya jauh lebih banyak daripada sekadar \"hiburan\" (entertainment). ■ Menara Penunjuk Tempat ini adalah bagian \"di balik layar\" Astropolis. Para pekerja menggunakan kerja keras dan keringat mereka untuk menciptakan keajaiban dan sihir. ■ Paviliun Suara Hampa Bangunan yang melayang di puncak Menara Penunjuk, tepat di pusat Astropolis. Pada sebagian besar waktu, bangunan ini adalah jantung dari seluruh Astropolis, dan pada saat-saat yang sangat jarang terjadi, bangunan ini untuk sementara bertindak sebagai jantung dari seluruh Sistem Perdagangan Pan-Galaksi. 6. Event Baru ■ Melampaui Batas: Turnamen Balap Kecepatan Kompetisi balap baru di Astropolis akan meniru \"Permainan Bulan Imajinasi\". Satu-satunya tim yang menang akan mencapai tingkat dewa dan menjadi \"Dewa Pengatur (Aturan) Lalu Lintas\". Waktu Event: Setelah update Versi 4.5 - 2026/09/28 03:59:00 Syarat Partisipasi: Level Trailblaze ≥ Lv. 21 ※ Konten ini dapat dimainkan lebih awal melalui fitur \"Pandangan Finality\". ※ Trailblazer disarankan untuk memainkan konten ini setelah menyelesaikan Misi Trailblaze Lanjutan \"Astropolis\" - \"Dari Rugi Menuju Puncak, Dimulai dari Strategi Nol Biaya\". ■ Petualangan Ruang Sempit Mulailah petualangan ruang sempit yang menakjubkan, tempat berkumpulnya lebih dari setengah masalah galaksi. Kumpulkan tim pahlawanmu, hadapi berbagai rintangan sulit, dan kalahkan semua musuh kuat di hadapanmu. Waktu Event: 2026/09/12 12:00:00 - 2026/09/28 03:59:00 Syarat Partisipasi: Level Trailblaze ≥ Lv. 21 ■ Karunia Pengembaraan Selama event berlangsung, log in ke dalam game setiap hari untuk mendapatkan hadiah Check In. Check in selama 7 hari dan dapatkan Star Rail Special Pass ×10! ※ Harap pantau pengumuman resmi untuk informasi event lainnya. 7. Lainnya ■ Korosi \"Voracity\" Aeon kuno \"Voracity\" perlahan bangkit, kekuatannya yang rakus terus menggerogoti ke luar. Sebagian musuh di dalam game terinfeksi olehnya, memperoleh penguatan dari kekuatan \"Voracity\". Monster yang tercemar memperoleh Kekuatan \"Voracity\", tidak akan musnah setelah menerima DMG mematikan, melainkan langsung memulihkan sejumlah persentase tertentu HP. Mengakibatkan DMG padanya dapat terus menekan Max HP-nya. Setelah ditekan hingga sejumlah persentase tertentu, musuh dapat dimusnahkan sepenuhnya. ■ Musuh \"Lighthouse\", \"Astropolis Sentinel\", \"Unwaning Ageless Immortal\" ■ Gameplay Gameplay tantangan dengan tingkat kesulitan tinggi, \"Arbitrase Anomali\", akan diperbarui seiring dengan update versi. Kamu dapat memperoleh hadiah Lone Stardust, Interference Key, Self-Modeling Resin, dan bingkai avatar waktu terbatas. Tema Periode Ini: \"Arbitrase Anomali: Kembalinya Pasukan\" \"Harta Menuju Cahaya\": Mode Game Permanen \"Apocalyptic Shadow\" dan \"Pure Fiction\" akan diperbarui secara bergantian. Karena penyesuaian durasi Versi 4.5, durasi \"Apocalyptic Shadow\" dan \"Pure Fiction\" periode kali ini akan dipersingkat menjadi 5 minggu. Untuk informasi lebih lanjut, silakan lihat penjelasan berikut. Apocalyptic Shadow: Serigala Akasa Surgawi 2026/08/31 04:00:00 - 2026/10/05 03:59:00 Saat musuh yang memiliki \"Steadfast Safeguard\" terkena Weakness Break, akan membuat seluruh rekan tim menghapus Crowd Control Debuff dan mengaktifkan Ultimate. Skill DMG yang diterima seluruh target musuh meningkat 25%, Elation Skill DMG meningkat 15%. Pure Fiction: Prolog Batas Dimensi 2026/09/14 04:00:00 - 2026/10/19 03:59:00 Setiap kali memperoleh Punchline, akan membuat rekan tim mengakumulasi ekstra 2 poin \"Nilai Ketangguhan\". ※ Konten \"Forgotten Hall: Memory of Chaos\" edisi baru akan dibuka secara bersamaan setelah update Versi 4.6. Silakan mengacu pada pengumuman update Versi 4.6 untuk informasi lebih lanjut. ■ Sistem Menambahkan fitur \"Percepat Dialog\": Trailblazer dapat mengaktifkan tombol di pojok kanan atas antarmuka dialog saat menikmati alur cerita untuk mempercepat pemutaran teks, suara, dan konten lainnya dalam adegan cerita (tidak termasuk animasi cerita dan adegan di dalam pertempuran, dll.). Setelah update Versi 4.5, semua misi pada Versi 4.0-4.5, dialog yang dipicu di latar tempat \"Planarcadia\" dan \"Astropolis\", serta misi baru yang ke depannya ditambahkan, semuanya akan mendukung fitur \"Percepat Dialog\". Fitur \"Percepat Dialog\" untuk versi sebelumnya akan diimplementasikan secara bertahap pada versi mendatang. ■ Lainnya Update \"Berita Rakun\": Setelah melanjutkan Misi Trailblaze Versi 4.5 hingga tahap tertentu, panel manajemen \"Urusan Redaksi\" akan ditambahkan. Trailblazer dapat menugaskan anjing rakun untuk menindaklanjuti berita baru, menyiapkan program televisi, serta mengecek pekerjaan dan berinteraksi dengan karyawan rakun di kantor berita. ※ Sebagian konten update \"Berita Rakun\" tidak dapat dimainkan lebih awal melalui \"Pandangan Finality\". Menambahkan Alat Pencari Harta Karun \"Energy Sensor\". Setelah digunakan, akan menampilkan lokasi 1 Peti Harta Biasa di peta terkait \"Astropolis\". Trailblazer dapat memperoleh item ini dengan meningkatkan level \"Rakun Berbagi Hadiah\". Menambahkan beberapa konten item bacaan, pesan singkat, disk, Achievement, entri Arsip, teks pengenalan di layar pemuatan, dan konten lainnya. Semua itu akan dibuka secara bertahap seiring dengan majunya progres perintisan. Penyesuaian dan Optimalisasi ■ Karakter dan Musuh Mengoptimalisasi sebagian tampilan efek khusus dari Skill karakter \"Gilgamesh (Destruction: Lightning)\". ■ Pertempuran Menyesuaikan logika pelancaran kemampuan milik sebagian karakter saat bertempur dalam auto-battle pada kondisi tertentu. ■ Misi Mengoptimalisasi ekspresi \"Trailblazer (Wanita)\" dalam alur cerita tertentu selama proses Misi Trailblaze \"Planarcadia\" - \"Panggung Kehidupan\". ■ Latar Tempat Mengoptimalkan tampilan latar tempat saat berjalan di pantai pada beberapa latar tempat. Mengoptimalkan posisi penempatan dekorasi rumah \"Stand Himekat\" di \"Kamar Trailblazer\" - \"Foyer\". ■ Sistem Seiring dengan kemajuan progres perintisan, nama dan konten stage tertentu di beberapa antarmuka terkait misi akan diperbarui, dari \"Planarcadia\" menjadi \"Planarcadia/Astropolis\". Seiring dengan kemajuan progres perintisan, teks pengenalan beberapa Barang Berharga yang diperoleh di \"Planarcadia\", serta teks deskripsi entri tertentu dalam \"Tutorial\" yang terbuka di \"Planarcadia\" akan diperbarui. Menyesuaikan dan mengoptimalkan beberapa petunjuk serta tampilan saat menggunakan fitur \"Pandangan Finality: Menyalip Perintisan\". Untuk \"Astropolis\", pemain dapat membuka akses pengalaman lebih awal setelah menyelesaikan misi Trailblaze di dunia prasyarat, \"Planarcadia\". Menyesuaikan rekomendasi urutan Prioritas Utama Trace untuk Karakter \"Trailblazer (Elation: Lightning)\". ■ Audio Menambahkan informasi pengisi suara karakter \"Welt (Nihility: Imaginary)\" pada antarmuka suara karakter saat menggunakan suara Bahasa Inggris. Menyesuaikan dan mengoptimalkan suara dialog dalam progres Misi Trailblaze \"Penacony\" - \"Kucing di Tengah Kawanan Merpati\" dan sebagian cutscene cerita untuk suara Bahasa Inggris. Mengoptimalkan sebagian suara dialog dalam progres Misi Trailblaze \"Planarcadia\" - \"Haru Biru Pemecah Fajar\" saat menggunakan suara Bahasa Inggris. Menyesuaikan sebagian suara dialog dalam progres Misi Trailblaze \"Planarcadia\" - \"Gema Peluit di Ambang Kesunyian\" saat menggunakan suara Bahasa Jepang. Mengoptimalkan sebagian suara interaksi karakter \"Evernight (Remembrance: Ice)\" saat menggunakan suara Bahasa Korea. Mengoptimalkan sebagian suara dialog dalam progres Misi Trailblaze \"Planarcadia\" - \"Terbenam di Sungai Kelupaan Milik Kehidupan\" saat menggunakan suara Bahasa Korea. ■ Lainnya Selama Versi 4.5, durasi Kehormatan Tanpa Nama dipersingkat, dan EXP yang diperlukan untuk meningkatkan setiap level Kehormatan Tanpa Nama dikurangi. Selain itu, penyesuaian yang sesuai telah dilakukan terhadap EXP yang diperoleh dari sebagian misi Kehormatan Tanpa Nama. Mengoptimalisasi logika tampilan data stage tertinggi \"Pure Fiction\" dalam \"Profil Trailblazer\" - \"Jurnal Petualangan\" yang terjadi dalam kondisi tertentu. Mengoptimalisasi sebagian tampilan UI pada antarmuka obrolan. Perbaikan Masalah ■ Karakter dan Musuh Memperbaiki masalah ketidaknormalan tampilan sebagian model dan efek visual yang berpeluang terjadi setelah karakter \"Himeko • Nova (Erudition: Fire)\" melancarkan Technique dan melakukan aksi tertentu. Memperbaiki masalah ketidaknormalan tampilan adegan dan efek Technique yang secara tidak normal terpotong, yang terjadi dalam kondisi tertentu saat karakter \"Himeko • Nova (Erudition: Fire)\" melancarkan Tehcnique dan berpindah di sebagian latar tempat. Memperbaiki masalah di mana setelah melakukan tindakan tertentu, sebagian efek khusus pada Aksi Siaga Karakter \"Himeko • Nova (Erudition: Fire)\" tertinggal secara abnormal di latar tempat. Memperbaiki masalah di mana setelah karakter \"Gilgamesh (Destruction: Lightning)\" melancarkan Technique pada beberapa target musuh, beberapa karakter tidak dapat menyerang target tersebut dalam kondisi tertentu. Memperbaiki masalah karakter \"Jingliu (Destruction: Ice)\" yang dalam kondisi tertentu tidak dapat memasuki status \"Spectral Transmigration\" secara normal saat dirinya sedang diperkuat. Memperbaiki masalah ketidaknormalan tampilan beberapa efek khusus dari \"Aksi Siaga 2\", yang dalam kondisi tertentu terjadi saat karakter \"Cyrene (Remembrance: Ice)\" menggunakan Kustomisasi Antarbintang. Memperbaiki masalah detail tertentu yang tampil tidak normal pada gambar Eidolon 4 karakter \"Yao Guang (Elation: Physical)\". Memperbaiki masalah ketidaknormalan sebagian model, efek visual, tampilan gerakan tubuh, dan tampilan kamera sebagian karakter, NPC, dan musuh. Memperbaiki masalah pada pertempuran melawan musuh \"Anti-Creator, Hatred Inundate\", di mana setelah musuh memasuki tahap berikutnya pada kondisi tertentu, aksi musuh menjadi tidak normal. Memperbaiki masalah efek \"Memberikan Shield pada seluruh target musuh\" yang tidak efektif secara normal saat bertempur melawan musuh \"Lord of Saṃvartasthāyi, Asat Pramad\". ■ Pertempuran Memperbaiki masalah ketidaknormalan tampilan UI atau tombol Skill karakter \"Mortenax Blade (Nihility: Fire)\" yang dalam kondisi tertentu berpeluang mengalami ketidaknormalan interaksi di dalam pertempuran. Memperbaiki masalah ketidaknormalan tampilan hasil foto dari kemampuan \"Ugly Close-Up\" yang dilancarkan musuh \"Furbo Journalist\", yang dalam kondisi tertentu terjadi saat Auto-Battle. Memperbaiki masalah ketidaknormalan tampilan UI Susunan Aksi dari sebagian karakter saat melancarkan Serangan Lanjutan pada kondisi tertentu. Masalah ini tidak memengaruhi efek yang sebenarnya. Memperbaiki masalah ketidaknormalan stats Break DMG dan tampilan UI kemampuan rekan tim \"Alloy Pommy\", yang terjadi saat bertempur melawan musuh \"Alloy Mechatron: King Pom-Pom\". Memperbaiki masalah pada saat pertempuran melawan musuh \"Lord of Saṃvartasthāyi, Asat Pramad\", pemilihan target saat melancarkan kemampuan \"Meme Carnival\" menjadi tidak normal dalam kondisi tertentu. Memperbaiki masalah pada saat pertempuran melawan musuh \"Lord of Saṃvartasthāyi, Asat Pramad\", progres game menjadi tidak normal dalam kondisi tertentu. Memperbaiki masalah pada saat pertempuran melawan musuh \"@SparxiConOfficial\", tampilan Gaya Perintis menjadi tidak normal dalam kondisi tertentu. Memperbaiki masalah pada saat pertempuran melawan musuh \"Paramount Bliss Inverted: Illwish Archlotus\", di mana efek \"Outrage\" dan \"Dominated\" aktif secara tidak normal dalam kondisi tertentu. Memperbaiki masalah pada saat pertempuran melawan musuh \"Svarog\", di mana setelah karakter \"Himeko • Nova (Erudition: Fire)\" terkena status \"Restrained\", tampilan game dari Skill Dukungan menjadi tidak normal dalam kondisi tertentu. ■ Misi Memperbaiki masalah ketidaknormalan fitur \"Teleport\" dalam sebagian progres Misi Petualangan yang berkaitan dengan \"Planarcadia\", yang dalam kondisi tertentu terjadi saat melakukan pelacakan misi. Memperbaiki kesalahan dalam beberapa paragraf di ringkasan alur cerita, yang terjadi dalam progres Misi Trailblaze \"Xianzhou 'Luofu'\" - \"Tidak Ada Jalan Untuk Kembali\". Memperbaiki masalah pada saat jaringan tidak stabil, di mana sebagian cutscene cerita pada Event Kolaborasi \"Fate/Malam Rel Bintang\" terpicu di latar tempat yang salah dalam kondisi tertentu. ■ Latar Tempat Memperbaiki sebagian titik navigasi di \"Navigasi\" - \"Planarcadia\" yang dapat dilacak dalam kondisi tertentu secara tidak normal menampilkan tombol \"Teleport\". Memperbaiki masalah hilangnya sebagian efek khusus wujud air pada zona tertentu di latar tempat \"Pertapaan Inkford\". Memperbaiki masalah ketidaknormalan tampilan efek khusus di sebagian latar tempat, yang terjadi dalam kondisi tertentu saat meninggalkan pertempuran di latar tempat \"Scalegorge Waterscape\". Memperbaiki masalah di mana beberapa opsi Peristiwa ditampilkan secara salah setelah berbicara dengan \"Polaroid Kucing Hitam\" di latar tempat \"Teater Delusi: Atap\". ■ Gameplay Memperbaiki masalah pada \"Perang Mata Uang\" di mana dalam kondisi tertentu, efek equipment tidak berfungsi secara normal saat karakter \"Rin Tohsaka (Erudition: Quantum)\" mengenakan \"Komponen Takdir\" \"Ultimate: Pedang Permata Zelretch\". Memperbaiki masalah pada \"Perang Mata Uang\", di mana setelah Karakter \"Himeko • Nova (Erudition: Fire)\" mengaktifkan Ikatan independen \"Navigator\" untuk menyalin equipment, dalam kondisi tertentu karakter tersebut tidak dapat memperoleh equipment melalui Ikatan independen \"Pesulap\", Komponen Takdir \"Kanshou and Bakuya\", dan \"Ultimate: Kanshou and Bakuya\". Memperbaiki masalah pada \"Perang Mata Uang\", di mana karakter \"Mortenax Blade (Nihility: Fire)\" tidak dapat melancarkan Ultimate di Off-Field dalam kondisi tertentu. Memperbaiki masalah pada \"Perang Mata Uang\", di mana sebagian efek Eidolon 6 Karakter \"Mortenax Blade (Nihility: Fire)\" menjadi tidak normal dalam kondisi tertentu. Memperbaiki masalah pada \"Perang Mata Uang\", di mana progres game menjadi tidak normal saat karakter \"Silver Wolf LV.999 (Elation: Imaginary)\" dan \"Black Swan (Nihility: Wind)\" mencapai 3★ dan hadir secara bersamaan. Memperbaiki masalah pada \"Perang Mata Uang\", di mana saat karakter \"Sunday (Harmony: Imaginary)\" membuat karakter tertentu dan objek panggilan langsung beraksi, tampilan Susunan Aksi menjadi tidak normal. Memperbaiki masalah pada \"Perang Mata Uang\", di mana dalam kondisi tertentu, durasi dari sebagian efek Ultimate Pemberdayaan Karakter \"Supernova Overload\" milik karakter \"Firefly (Destruction: Fire)\" menjadi tidak normal. Memperbaiki masalah pada \"Perang Mata Uang\", di mana efek aktivasi dari Ikatan independen \"Pengembara Antarbintang\" ditampilkan secara tidak normal dalam kondisi tertentu. Memperbaiki masalah pada \"Perang Mata Uang\", di mana setelah mengaktifkan Ikatan independen \"Navigator\" dan memilih \"March 7th\", terdapat kesalahan pada tampilan nilai efek Quake. Masalah ini tidak memengaruhi efek sebenarnya. Memperbaiki masalah pada \"Perang Mata Uang\", di mana setelah mengaktifkan Ikatan \"Stellaron Hunter\", memicu efek Ikatan dalam pertempuran pada kondisi tertentu berpeluang menyebabkan progres game menjadi tidak normal. Memperbaiki masalah pada \"Perang Mata Uang\", di mana setelah sebagian karakter mengenakan \"Komponen Takdir\" \"Gáe Bolg\", efeknya menjadi tidak normal dalam kondisi tertentu. Memperbaiki masalah pada \"Perang Mata Uang\" di mana dalam kondisi tertentu, total Lucky Strike Rate dari efek \"Komponen Takdir\" \"Gáe Bolg\" dihitung secara tidak normal. Memperbaiki masalah pada \"Perang Mata Uang\" di mana pada kondisi tertentu, jumlah pelancaran Ultimate pada Ujian Permohonan \"Mimpi Ideal\" dihitung secara tidak normal. Memperbaiki masalah pada \"Perang Mata Uang\" di mana Komponen Takdir \"Kekayaan\" tidak berfungsi secara normal. Memperbaiki masalah pada \"Perang Mata Uang\" di mana efek \"Gáe Bolg\" dalam pertempuran aktif secara tidak normal saat memilih Strategi Investasi \"Peppy & Peppi\" dan \"Anjing Buas Asta\" secara bersamaan. Memperbaiki masalah hilangnya musik latar saat bertempur melawan musuh \"Paramount Bliss Inverted: Illwish Archlotus\" dalam \"Perang Mata Uang\". Memperbaiki masalah ketidaknormalan tampilan sebagian nilai dalam antarmuka informasi karakter, yang pada kondisi tertentu terjadi dalam \"Perang Mata Uang\". Masalah ini tidak memengaruhi efek yang sebenarnya. Memperbaiki masalah kesalahan tag kategori yang terjadi dalam antarmuka \"Sortir Karakter\" di \"Perang Mata Uang\" - \"Edit Lineup\". Memperbaiki masalah kesalahan tampilan Path pada avatar di \"Perang Mata Uang\" - \"Detail Strategi\", yang terjadi dalam kondisi tertentu saat karakter \"Trailblazer\" berada di posisi on-field. Memperbaiki masalah layar tersendat dalam \"Perang Cawan Suci Imagenae\", yang terjadi pada kondisi tertentu saat menggunakan Mystic Code Konseptual \"Gate of Babylon!\". Memperbaiki masalah pada \"Perang Cawan Suci Imagenae\", di mana terdapat kesalahan pada sebagian teks petunjuk saat bertarung melawan musuh \"Imagenae Apex Depredator\". Masalah ini tidak memengaruhi efek sebenarnya. Memperbaiki masalah pada \"Perang Cawan Suci Imagenae\", di mana dalam kondisi tertentu saat bertempur melawan musuh \"Imagenae Apex Depredator\", HP tim tidak dapat menampilkan DMG yang akan diterima. Memperbaiki masalah pada \"Fate/stay night\", di mana lineup tim menjadi tidak normal dalam kondisi tertentu. Memperbaiki masalah platform terjatuh secara tidak normal dalam kondisi tertentu, yang terjadi setelah menggunakan beberapa kemampuan dalam \"Tukang Balok Anti Korup\". Memperbaiki masalah pengoperasian yang berpeluang terjadi dalam kondisi tertentu di Mode Tanpa Batas \"Tukang Balok Anti Korup\". Memperbaiki masalah ketidaknormalan tampilan nama beberapa musuh di \"Memory of Chaos: Badai Pembersihan\" stage 10. Memperbaiki masalah pada \"Apocalyptic Shadow\" di mana pada kondisi tertentu, sebagian efek \"Ruinous Embers\" berfungsi secara tidak normal. Memperbaiki masalah di mana pada kondisi tertentu, penghitungan akhir tidak dapat berjalan dengan normal setelah pertempuran berakhir saat mengaktifkan \"Mode Nyala Bintang\" di \"Apocalyptic Shadow\", \"Pure Fiction\", dan \"Forgotten Hall: Memory of Chaos\". Memperbaiki masalah menu persiapan di \"Kekuatan Galaksi, Lempar Dadu Lagi!\" yang berpeluang mengalami ketidaknormalan, yang dalam kondisi tertentu terjadi saat masuk melalui undangan multipemain. ■ Sistem Memperbaiki masalah ketidaknormalan hilangnya teks notifikasi tertentu, yang terjadi saat memperkuat Relic. ■ Audio Memperbaiki masalah ketidaknormalan sebagian musik dan efek suara dalam kondisi tertentu. Memperbaiki masalah kesalahan urutan beberapa entri suara pertempuran milik karakter \"Phainon (Destruction: Physical)\". Memperbaiki masalah ketidaknormalan efek suara langkah kaki NPC \"Rin Tohsaka\" dan \"Himeko • Nova\" yang dalam kondisi tertentu terjadi selama progres Misi Trailblaze dan Misi Trailblaze Lanjutan. Memperbaiki masalah kesalahan sebagian suara dialog NPC \"Pengantar Maut\" pada progres Misi Trailblaze \"Planarcadia\" - \"Terbenam di Sungai Kelupaan Milik Kehidupan\" saat menggunakan suara Bahasa Mandarin. Memperbaiki masalah di mana saat bahasa pengisi suara adalah Bahasa Inggris, sinkronisasi bibir pada beberapa dialog karakter \"Trailblazer (Pria)\" dalam Misi Trailblaze \"Planarcadia\" - \"Gema Peluit di Ambang Kesunyian\" tampil secara tidak normal. Memperbaiki masalah kesalahan pada sebagian suara dialog dalam progres Misi Trailblaze \"Planarcadia\" - \"Terbenam di Sungai Kelupaan Milik Kehidupan\" dan \"Gema Peluit di Ambang Kesunyian\" saat menggunakan suara Bahasa Jepang. Memperbaiki masalah kesalahan sebagian suara pada kisah \"Naga Penghantam Bumi\" di \"Seperti yang Kutulis\" - \"Kronik Pahlawan Amphoreus\" saat menggunakan suara Bahasa Jepang. Memperbaiki masalah kesalahan sebagian suara dialog pada progres Misi Trailblaze \"Planarcadia\" - \"Gema Peluit di Ambang Kesunyian\" saat menggunakan suara Bahasa Korea. ■ Lainnya Memperbaiki masalah ketidaknormalan sebagian tampilan UI dalam game. Memperbaiki masalah ketidaknormalan pada beberapa interaksi dalam kondisi tertentu saat bermain game menggunakan controller. Memperbaiki masalah ketidaknormalan status \"Saat Poin Technique tidak cukup, otomatis menggunakan Bahan Konsumsi\" di pengaturan sistem, yang terjadi dalam kondisi tertentu. Memperbaiki masalah di mana sebagian model Peliharaan \"Tim Reporter Rakun\" ditampilkan secara tidak normal dalam kondisi tertentu. Memperbaiki masalah resolusi model Peliharaan \"Emoti Pancarasa\" yang terlalu rendah, saat bermain game menggunakan perangkat tertentu. Menyesuaikan, mengoptimalkan, dan memperbaiki teks pada 13 bahasa dalam game. Penyesuaian ini tidak akan memengaruhi efek yang sebenarnya. Trailblazer dapat mengganti bahasa melalui \"Halaman Ponsel - Pengaturan - Bahasa\", dan melihat perubahan yang termasuk dalam pengumuman. Perbaikan dan penyempurnaan untuk bahasa Indonesia termasuk (tidak memengaruhi efek sebenarnya): Menyesuaikan dan mengoptimalkan beberapa deskripsi teks di dialog alur cerita, item bacaan, nama item, dll. Menyesuaikan dan mengoptimalkan deskripsi terkait \"Nyonya Mata Berparut\", \"Senar-Senar Harmoni\", \"Penyetem\", dan \"Ujung Dunia\"."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/07/30/9220017a94d0dd75ba28e4b55ef935e6_1086622710499242170_transformed.png",
-      "startsAt": "2026-08-25T16:00:00.000Z",
-      "endsAt": "2026-09-27T16:00:00.000Z",
-      "postedAt": "2026-08-25T16:00:00.000Z",
+      "startsAt": "2026-08-25T10:00:00.000Z",
+      "endsAt": "2026-09-27T10:00:00.000Z",
+      "postedAt": "2026-08-25T10:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1181,86 +1181,14 @@
         "id": "Dear Trailblazer, Di Versi 4.5, toko dalam game akan menambahkan Gaya Perintis - Aksesori Kepala \"Jangan Lihat Aku, Lihat Ia\"! Pada saat bersamaan, jumlah batas pembelian Paket \"Herta Contract\" akan di-refresh. Gaya Perintis \"Jangan Lihat Aku, Lihat Ia\" Kini TersediaBeli untuk memperoleh Gaya Perintis - Aksesori Kepala \"Jangan Lihat Aku, Lihat Ia\"! ■ Harga Aksesori Kepala Stellar Jade ×680 ■ Waktu Penjualan Setelah update Versi 4.5 ■ Penjelasan Khusus Gaya Perintis - Aksesori Kepala \"Jangan Lihat Aku, Lihat Ia\" akan disembunyikan dalam beberapa pertunjukan dan saat berganti ke \"Trailblazer: Harmony\" dalam kondisi tertentu. Silakan lihat penjelasan dalam game untuk informasi lebih lanjut. Baru di \"Toko Perjanjian\" Versi 4.5■ Waktu Penjualan Setelah update Versi 4.5 - 2026/09/28 03:59:00 ■ The Herta Contract: Strategic Support Isi Perjanjian: Bundle kombinasi pilihan. Trailblazer dapat memilih 2 item mana saja dari pilihan berikut (item yang sama dapat dipilih secara berulang): Self-Modeling Resin ×1, Relic Remains ×800, Tears of Dreams ×240, Traveler's Guide ×100, Refined Aether ×80, Lost Crystal ×120 Harga Contract: Oneiric Shard ×720. Hanya dapat dibeli 5 kali selama masa penjualan. ■ The Herta Contract: Strategic Cooperation Isi Perjanjian: Bundle kombinasi pilihan. Trailblazer akan memperoleh Star Rail Special Pass ×10 dan dapat memilih 3 item mana saja dari pilihan berikut (item yang sama dapat dipilih secara berulang): Self-Modeling Resin ×2, Relic Remains ×1.600, Tears of Dreams ×480, Lost Crystal ×240 Harga Contract: Oneiric Shard ×2.680. Hanya dapat dibeli 5 kali selama masa penjualan. ■ Herta Contract: Roaming Refill Isi Contract: Traveler's Guide ×20, Refined Aether ×15, Credit ×60.000 Harga Contract: Oneiric Shard ×330. Hanya dapat dibeli 8 kali selama masa penjualan. ■ Herta Contract: Resource Supply V2 Isi Contract: Material Path Umum \"Tears of Dreams\" ×150, Credit ×60.000 Harga Contract: Oneiric Shard ×660. Hanya dapat dibeli 5 kali selama masa penjualan."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/08/03/add2fbdcc33eff72595d792ef067e2bc_3197574472107734244_transformed.png",
-      "startsAt": "2026-08-14T05:00:00.000Z",
+      "startsAt": "2026-08-13T23:00:00.000Z",
       "endsAt": "2026-09-27T22:00:00.000Z",
-      "postedAt": "2026-08-14T05:00:00.000Z",
+      "postedAt": "2026-08-13T23:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoverse",
       "url": "https://hsr.hoyoverse.com/en/news"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"I have long awaited this destined reunion.\"",
-        "id": "\"Aku sudah lama menantikan reuni yang ditakdirkan ini.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Aponia  Today's Topic: If you already knew the ending, would you still choose to begin?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Tokoh Utama Album Kenangan Hari Ini: Aponia  Topik Kali Ini: Jika kamu sudah tahu akhir ceritanya, apakah kamu tetap akan memilih untuk memulainya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchand"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/39f8257d2237aa8886b340a54a8e65d5_2337216238225372107.png",
-      "startsAt": "2026-08-19T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-19T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46359609"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Can, are you ready?\"",
-        "id": "\"Can, apa kamu sudah siap?\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Pardofelis  Today's Topic: Show us your own \"Can\"!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals code [TimeAlbum]~ Eve",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Pardofelis  Topik Hari Ini: Ayo pamerkan \"Can\" milikmu!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa untuk menukar kod"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/377ee1dfcc686331fe65d07d7231f8da_2415714207030074487.png",
-      "startsAt": "2026-08-11T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-11T04:00:07.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46221119"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Carole reporting in!\"",
-        "id": "\"Carole melapor!\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Carole Pepper  Today's Topic: Have you ever been lifted up by Carole's energy?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
-        "id": " Bintang Utama Album Kenangan Hari Ini: Carole Pepper  Topik Kali Ini: Apakah kamu pernah merasa terhibur karena energi dan keceriaan Carole?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, da"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/20eb3a959109a04de9794c4385cda0f2_2051842664185105867.png",
-      "startsAt": "2026-08-08T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-08T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46184758"
     },
     {
       "game": "hi3",
@@ -1316,6 +1244,30 @@
       "type": "event",
       "typeName": null,
       "title": {
+        "en": "\"I have long awaited this destined reunion.\"",
+        "id": "\"Aku sudah lama menantikan reuni yang ditakdirkan ini.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Aponia  Today's Topic: If you already knew the ending, would you still choose to begin?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Tokoh Utama Album Kenangan Hari Ini: Aponia  Topik Kali Ini: Jika kamu sudah tahu akhir ceritanya, apakah kamu tetap akan memilih untuk memulainya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchand"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/39f8257d2237aa8886b340a54a8e65d5_2337216238225372107.png",
+      "startsAt": "2026-08-19T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-19T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46359609"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
         "en": "\"Little lab rat, do you want to do something fun with me?\"",
         "id": "\"Tikus lab kecil, apa kamu mau melakukan hal yang menyenangkan denganku?\""
       },
@@ -1333,54 +1285,6 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46147443"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Proceeding as planned.\"",
-        "id": "\"Semuanya berjalan sesuai rencana.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Natasha Cioara  Today's Topic: If you could hire Raven for a job, what would it be?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 1",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Natasha Cioara  Topik Kali Ini: Jika kamu bisa memberi misi kepada Raven, misi apa yang akan kamu berikan?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/b1519bfdf95e8b6d4314362ccc759da2_1621013541774284916.png",
-      "startsAt": "2026-08-02T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-02T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46106590"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Durandal, awaiting orders!\"",
-        "id": "\"Durandal, menunggu perintah.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Durandal  Today's Topic: Which matters more to you, the process or the outcome?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 C",
-        "id": " Bintang Utama Album Kenangan Hari Ini: Durandal  Topik Kali Ini: Mana yang lebih penting bagimu, proses atau hasil?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa un"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/39c753cd0ab279b8126b12397114e955_5372028776434856330.png",
-      "startsAt": "2026-07-25T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-25T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45991851"
     },
     {
       "game": "hi3",
@@ -1412,6 +1316,54 @@
       "type": "event",
       "typeName": null,
       "title": {
+        "en": "\"Can, are you ready?\"",
+        "id": "\"Can, apa kamu sudah siap?\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Pardofelis  Today's Topic: Show us your own \"Can\"!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals code [TimeAlbum]~ Eve",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Pardofelis  Topik Hari Ini: Ayo pamerkan \"Can\" milikmu!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa untuk menukar kod"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/377ee1dfcc686331fe65d07d7231f8da_2415714207030074487.png",
+      "startsAt": "2026-08-11T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-11T04:00:07.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46221119"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Carole reporting in!\"",
+        "id": "\"Carole melapor!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Carole Pepper  Today's Topic: Have you ever been lifted up by Carole's energy?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
+        "id": " Bintang Utama Album Kenangan Hari Ini: Carole Pepper  Topik Kali Ini: Apakah kamu pernah merasa terhibur karena energi dan keceriaan Carole?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, da"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/20eb3a959109a04de9794c4385cda0f2_2051842664185105867.png",
+      "startsAt": "2026-08-08T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-08T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46184758"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
         "en": "\"Rita, at your service.\"",
         "id": "\"Rita, siap melayani Anda.\""
       },
@@ -1429,30 +1381,6 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45842949"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Fate is what brought us together.\"",
-        "id": "\"Takdirlah yang mempertemukan kita.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
-        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
-      "startsAt": "2026-07-11T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-07-11T04:00:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45809908"
     },
     {
       "game": "hi3",
@@ -1484,6 +1412,30 @@
       "type": "event",
       "typeName": null,
       "title": {
+        "en": "\"Durandal, awaiting orders!\"",
+        "id": "\"Durandal, menunggu perintah.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Durandal  Today's Topic: Which matters more to you, the process or the outcome?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 C",
+        "id": " Bintang Utama Album Kenangan Hari Ini: Durandal  Topik Kali Ini: Mana yang lebih penting bagimu, proses atau hasil?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa un"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/22/39c753cd0ab279b8126b12397114e955_5372028776434856330.png",
+      "startsAt": "2026-07-25T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-25T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45991851"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
         "en": "\"Hi, miss me yet? No matter when or where, Elysia will be there for you ♪\"",
         "id": "\"Hai, kangen aku ya? Elysia akan selalu ada untukmu, kapan pun dan di mana pun♪\""
       },
@@ -1501,6 +1453,54 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46039636"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Fate is what brought us together.\"",
+        "id": "\"Takdirlah yang mempertemukan kita.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Kallen Kaslana  Today's Topic: Of all the love and obsession surrounding Kallen, which scene moved you the most?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And",
+        "id": " Tokoh Utama Album Kenangan Hari Ini: Kallen Kaslana  Topik Kali Ini: Dari semua kisah cinta dan obsesi Kallen, adegan mana yang paling berkesan bagimu?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/02/73dee0590be0d93e8e948b515119a2b0_6028819829760283959.png",
+      "startsAt": "2026-07-11T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-07-11T04:00:05.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/45809908"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Proceeding as planned.\"",
+        "id": "\"Semuanya berjalan sesuai rencana.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Natasha Cioara  Today's Topic: If you could hire Raven for a job, what would it be?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 1",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Natasha Cioara  Topik Kali Ini: Jika kamu bisa memberi misi kepada Raven, misi apa yang akan kamu berikan?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/b1519bfdf95e8b6d4314362ccc759da2_1621013541774284916.png",
+      "startsAt": "2026-08-02T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-02T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46106590"
     },
     {
       "game": "gi",
