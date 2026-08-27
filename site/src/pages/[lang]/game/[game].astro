@@ -43,6 +43,15 @@ const gameEvents = events.events.filter((e) => e.game === gid);
 const ARCH_PAGE = 20;
 const gameArchive = codes.archive.filter((c) => c.game === gid);
 
+// Game PENSIUN: sumber kodenya sudah tidak ada (lihat worker/src/games.mjs).
+// Halamannya sengaja TETAP hidup — URL-nya sudah terindeks & arsipnya tetap
+// berguna — tapi "0 kode aktif" tanpa penjelasan terbaca sebagai "kebetulan
+// lagi kosong, cek lagi besok". Padahal besok pun tak akan ada.
+const pensiun = gameMeta.pensiun ?? null;
+const pensiunSejak = pensiun?.sejak
+  ? new Date(pensiun.sejak).toLocaleDateString(id ? "id-ID" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" })
+  : null;
+
 // Cara redeem (spesifik per game, terverifikasi — lihat lib/redeem.mjs).
 const rd = redeemInfo(gid, lang);
 
@@ -195,6 +204,19 @@ const adaAlt = _kode.length > 0 && _kode.filter((c) => c.altCode).length / _kode
       )}
     </section>
 
+    {pensiun && (
+      <section style="max-width:1280px; margin:0 auto; padding:20px 28px 0;">
+        <p style="margin:0; padding:14px 16px; border-radius:12px; background:rgba(255,177,60,0.09); border:1px solid rgba(255,177,60,0.35); font-size:13.5px; line-height:1.6; color:var(--warn);">
+          <strong style="font-family:'Space Mono',monospace; font-size:11.5px; letter-spacing:0.06em; display:block; margin-bottom:5px;">
+            {id ? "TIDAK LAGI DIPANTAU" : "NO LONGER TRACKED"}
+          </strong>
+          {id
+            ? `Sumber kode ${gameMeta.name} sudah tidak tersedia${pensiunSejak ? ` sejak ${pensiunSejak}` : ""}, jadi tak ada lagi yang bisa memastikan sebuah kode masih berlaku. Kode yang pernah kami catat tetap tersimpan di arsip di bawah — tapi anggap semuanya sudah kedaluwarsa. Halaman ini akan aktif lagi dengan sendirinya kalau sumbernya kembali.`
+            : `The code source for ${gameMeta.name} is no longer available${pensiunSejak ? ` (since ${pensiunSejak})` : ""}, so nothing can confirm whether a code still works. Every code we recorded stays in the archive below — but treat them all as expired. This page will come back on its own if the source returns.`}
+        </p>
+      </section>
+    )}
+
     <!-- KODE -->
     <section style="max-width:1280px; margin:0 auto; padding:24px 28px 8px;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px; gap:12px; flex-wrap:wrap;">
@@ -229,7 +251,9 @@ const adaAlt = _kode.length > 0 && _kode.filter((c) => c.altCode).length / _kode
             {gameCodes.map((card) => <CodeCard card={card} lang={lang} linkGame={false} reserveAlt={adaAlt} />)}
           </div>
         ) : (
-          <p style="color:var(--muted); font-size:15px;">{id ? "Belum ada kode aktif saat ini." : "No active codes right now."}</p>
+          <p style="color:var(--muted); font-size:15px;">{pensiun
+            ? (id ? "Tidak ada — game ini sudah tidak dipantau (lihat catatan di atas). Riwayat kodenya ada di arsip." : "None — this game is no longer tracked (see the note above). Its code history is in the archive.")
+            : (id ? "Belum ada kode aktif saat ini." : "No active codes right now.")}</p>
         )
       }
       <nav data-code-pager aria-label="Pagination" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; margin-top:26px;"></nav>

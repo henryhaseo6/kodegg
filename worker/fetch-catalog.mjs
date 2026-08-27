@@ -52,6 +52,7 @@ async function main() {
         name: meta.name,
         genres: meta.genres,
         hasCodes: meta.hasCodes,
+        pensiun: meta.pensiun ?? null,
         online: true,
       };
       if (!meta.appleId) return { ...base, rating: null, ratingCount: 0, releasedAt: null, cover: null };

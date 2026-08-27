@@ -21,7 +21,10 @@ import { GAMES } from "./games.mjs";
 export const CATALOG = Object.fromEntries(
   Object.entries(GAMES).map(([id, meta]) => [
     id,
-    { name: meta.name, genres: meta.genres ?? [], appleId: meta.appleId, hasCodes: true },
+    // pensiun ikut dibawa: halaman game & katalog perlu tahu bahwa sumber kode
+    // game ini sudah tak ada, supaya "0 kode aktif" tidak terbaca sebagai
+    // "kebetulan lagi kosong".
+    { name: meta.name, genres: meta.genres ?? [], appleId: meta.appleId, hasCodes: true, pensiun: meta.pensiun ?? null },
   ]),
 );
 

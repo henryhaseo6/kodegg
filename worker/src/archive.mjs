@@ -47,12 +47,14 @@ import { codeKey } from "./normalize.mjs";
  * @param {object[]} freshArchive  kode yang sumber tandai kadaluarsa (eksplisit)
  * @param {object}   prev          isi codes.json run sebelumnya
  * @param {Set<string>} covered    id game yang sukses ditarik
+ * @param {Set<string>} [opts.pensiun] id game PENSIUN — sumbernya sudah tak ada
+ *   sama sekali, jadi "gagal ditarik" bukan lagi keadaan sementara.
  * @param {string}   now           ISO timestamp run ini
  * @param {{ci?: boolean}} opt       ci=true → kunci kode case-INsensitive (jalur
  *   mobile/gacha: sumber menulis kode sama dg kapitalisasi beda). JANGAN untuk
  *   Roblox — di sana kapitalisasi bagian dari kode. Lihat codeKey di normalize.
  */
-export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now, { ci = false, sumberBaru = new Set() } = {}) {
+export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now, { ci = false, sumberBaru = new Set(), pensiun = new Set() } = {}) {
   const K = (item) => codeKey(item, ci);
   const prevActive = prev.active ?? [];
   const prevArchive = prev.archive ?? [];
@@ -196,6 +198,15 @@ export function mergeWithPrevious(freshActive, freshArchive, prev, covered, now,
   for (const item of prevActive) {
     const key = K(item);
     if (activeKeys.has(key) || archiveByKey.has(key)) continue;
+    // Game PENSIUN: sumbernya sudah dicabut, bukan sedang ngadat. Menahannya
+    // sbg `stale` berarti memajang kode yang tak akan pernah diverifikasi lagi
+    // (Guardian Tales: 39 hari). Arsipkan — kodenya TIDAK hilang, statusnya
+    // saja yang jujur, dan alarm "MOBILE beku" padam karena tak ada kode
+    // aktif yang tersisa untuk dihitung.
+    if (pensiun.has(item.game)) {
+      addToArchive({ ...item, expiredBy: "pensiun" });
+      continue;
+    }
     if (!covered.has(item.game)) {
       // Sumber game ini gagal ditarik → hilangnya tak bermakna. Pertahankan.
       //

@@ -31,6 +31,28 @@ test("kode yang hilang dari sumber sehat → diarsipkan sebagai expired", () => 
   assert.equal(archive[0].expiredAt, NOW);
 });
 
+test("game PENSIUN → kodenya diarsipkan, bukan ditahan sbg stale selamanya", () => {
+  // Pengaman "sumber gagal → pertahankan" mengasumsikan kegagalan itu SEMENTARA.
+  // Untuk game yang sumbernya dicabut permanen asumsi itu salah, dan kodenya
+  // dipajang sbg aktif tanpa batas (Guardian Tales: 39 hari). Yang benar bukan
+  // menghapusnya — arsip = database (CLAUDE.md) — tapi memindahkannya ke arsip.
+  const prev = prevWith(hoyoCode("gtales", "NEMESIS"), hoyoCode("gi", "GI_BEKU"));
+  const covered = new Set(["hsr"]); // gtales & gi sama-sama tak tertarik run ini
+
+  const { active, archive } = mergeWithPrevious([], [], prev, covered, NOW, {
+    pensiun: new Set(["gtales"]),
+  });
+
+  const arsip = archive.find((c) => c.code === "NEMESIS");
+  assert.ok(arsip, "kode game pensiun harus pindah ke arsip");
+  assert.equal(arsip.expiredBy, "pensiun", "alasannya harus terbaca di audit");
+  assert.ok(!active.some((c) => c.code === "NEMESIS"));
+
+  // Game yang sumbernya cuma SEDANG ngadat tak boleh ikut kena.
+  const gi = active.find((c) => c.code === "GI_BEKU");
+  assert.ok(gi, "game non-pensiun tetap dipertahankan saat sumbernya gagal");
+  assert.equal(gi.stale, true);
+});
 test("sumber gagal ditarik → kodenya DIPERTAHANKAN, bukan diarsipkan", () => {
   // Regresi: tanpa pengaman ini, satu kali sumber down mengarsipkan massal
   // seluruh kode aktif game tersebut — dan arsip tidak bisa dibatalkan.

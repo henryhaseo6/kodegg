@@ -12,6 +12,17 @@
 //   androidId  package Play Store  → sumber icon #2 (fallback bila App Store gagal).
 //   iconFile   nama berkas hasil fetch di site/public/assets/games/.
 //
+// Field OPSIONAL:
+//   pensiun    { sejak, alasan } — game yang SUMBER KODENYA SUDAH TIDAK ADA.
+//              Bukan penghapusan: halaman & arsipnya tetap hidup (URL yang
+//              sudah terindeks jangan jadi 404, dan arsip kode = database).
+//              Yang berhenti hanyalah klaim "ini aktif": kode aktif yang
+//              tersisa diarsipkan (expiredBy "pensiun") karena tak ada lagi
+//              sumber yang bisa memverifikasinya, dan halaman game memasang
+//              pemberitahuan. Alarm "MOBILE beku" ikut padam dengan sendirinya
+//              — ia dihitung dari kode aktif, dan game pensiun tak punya lagi.
+//              Mencabutnya kembali = hapus field ini setelah sumbernya pulih.
+//
 // Icon & kode sama-sama pakai RANTAI banyak sumber (lihat src/chain.mjs) supaya
 // tidak bergantung pada satu penyedia.
 
@@ -148,6 +159,14 @@ export const GAMES = {
   },
   gtales: {
     name: "Guardian Tales",
+    // PENSIUN 27 Agu 2026. redeem-code-tracker menghapus gamenya (slug
+    // dicabut 21 Jul 2026, /games/guardian-tales masih 404 saat dicek
+    // ulang 27 Agu) dan tak ada sumber pengganti. Sejak itu satu-satunya
+    // kode aktifnya ("nemesis", tertarik terakhir 18 Jul) hanya menetap
+    // sbg `stale` — dipajang 39 hari tanpa ada yang bisa memverifikasinya.
+    // codeSource dibiarkan tertulis: kalau trackernya memuat game ini lagi,
+    // cukup pasang balik slug-nya di redeemtracker.mjs & hapus field ini.
+    pensiun: { sejak: "2026-07-21", alasan: "dihapus dari redeem-code-tracker" },
     codeSource: "redeemtracker",
     redeemUrl: null,
     genres: ["action", "adventure", "rpg"],
@@ -315,6 +334,12 @@ export const GAME_SLUG = Object.fromEntries(Object.keys(GAMES).map((id) => [id, 
 export const gameSlug = (id) => GAME_SLUG[id] ?? id;
 export const gameIdFromSlug = (slug) => Object.keys(GAME_SLUG).find((id) => GAME_SLUG[id] === slug) ?? null;
 
+/**
+ * Id game PENSIUN — sumber kodenya sudah tidak ada, jadi tak ada lagi yang bisa
+ * memverifikasi status kodenya. Dipakai arsip (kode aktif sisa → diarsipkan,
+ * bukan ditahan sbg `stale` selamanya) dan situs (pemberitahuan di halaman game).
+ */
+export const PENSIUN_IDS = new Set(Object.entries(GAMES).filter(([, m]) => m.pensiun).map(([id]) => id));
 /** Id internal semua game HoYoverse (punya rantai sumber kode). */
 export const HOYO_IDS = Object.entries(GAMES)
   .filter(([, meta]) => meta.isHoyo)

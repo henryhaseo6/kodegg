@@ -3,7 +3,7 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-import { gameSlug } from "../../../worker/src/games.mjs";
+import { GAMES, gameSlug } from "../../../worker/src/games.mjs";
 
 const CACHE = process.env.KODEGG_GAMES ?? resolve(process.cwd(), "../worker/data/games.json");
 const CODES = process.env.KODEGG_CODES ?? resolve(process.cwd(), "../worker/data/codes.json");
@@ -57,6 +57,11 @@ export async function loadCatalog() {
     // hasCodes = game terdaftar sbg game-berkode (punya halaman per-game).
     // hasActiveCodes = benar-benar ada kode aktif SEKARANG (untuk badge).
     hasActiveCodes: active.has(g.id),
+    // pensiun dibaca dari REGISTRY, bukan dari cache games.json. Cache itu
+    // ditulis ulang oleh worker terjadwal, jadi kalau situs menunggunya,
+    // pemberitahuan "tidak lagi dipantau" baru muncul beberapa jam setelah
+    // keputusannya diambil. Registry adalah sumber kebenarannya.
+    pensiun: GAMES[g.id]?.pensiun ?? g.pensiun ?? null,
   }));
 
   // Chip genre = hanya genre yang benar-benar ada gamenya, urut sesuai preferensi.

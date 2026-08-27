@@ -16,7 +16,7 @@ import { writeFile, readFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { GAMES } from "./src/games.mjs";
+import { GAMES, PENSIUN_IDS } from "./src/games.mjs";
 import { fetchHoyo } from "./src/sources/hoyo.mjs";
 import { fetchWiki } from "./src/sources/wiki.mjs";
 import { fetchWuwaStatus } from "./src/sources/wuwastatus.mjs";
@@ -128,7 +128,11 @@ async function main() {
     // ci: jalur mobile/gacha — kode yg sama ditulis beda kapitalisasi antar
     // sumber. Tanpa ini, kapitalisasi yg berubah dianggap KODE BARU →
     // firstSeenAt ke-reset & bisa memicu notif/video ulang. (Roblox: tidak.)
-    { ci: true },
+    // pensiun: game yang sumbernya sudah tak ada (lihat games.mjs). Tanpa ini,
+    // kode aktif terakhirnya ditahan sbg `stale` selamanya karena gamenya tak
+    // pernah masuk `covered` — persis yang menahan 1 kode Guardian Tales tayang
+    // 39 hari setelah sumbernya menghapus gamenya.
+    { ci: true, pensiun: PENSIUN_IDS },
   );
 
   const payload = {
