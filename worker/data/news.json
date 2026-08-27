@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-27T10:01:12.154Z",
+  "updatedAt": "2026-08-27T11:01:43.752Z",
   "counts": {
-    "active": 99,
-    "archived": 88
+    "active": 98,
+    "archived": 89
   },
   "articles": [
     {
@@ -1572,7 +1572,9 @@
       "url": "https://www.hoyolab.com/article/46037106",
       "source": "HoYoLAB",
       "publishedAt": "2026-07-28T23:11:51.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1587,10 +1589,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/27/0/b4a3d1c26464a528826bbc957fa8170b_4355627841573030542.jpeg",
       "url": "https://www.hoyolab.com/article/46030622",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-28T10:45:03.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-28T10:45:03.000Z",
+      "archivedAt": "2026-08-27T11:01:43.752Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
