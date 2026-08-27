@@ -1,95 +1,44 @@
 {
-  "generatedAt": "2026-08-27T14:28:41.374Z",
+  "generatedAt": "2026-08-27T15:02:00.458Z",
   "codes": [
     {
-      "game": "prism-runway-show",
-      "gameName": "Prism Runway Show",
+      "game": "gym-star-simulator",
+      "gameName": "GYM Star Simulator",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/prism-runway-show"
+        "RoCodes.gg": "https://rocodes.gg/codes/gym-star-simulator"
       },
-      "code": "NICECATCH",
-      "reward": null,
-      "date": "2026-08-27T14:25:29.219Z",
+      "code": "BOOTCAMP",
+      "reward": "1,250 Gym Tokens",
+      "date": "2026-08-27T14:25:39.360Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-27T14:28:41.374Z",
-      "fetchedAt": "2026-08-27T14:28:41.374Z"
+      "firstSeenAt": "2026-08-27T15:02:00.458Z",
+      "fetchedAt": "2026-08-27T15:02:00.458Z"
     },
     {
-      "game": "card-chronicles",
-      "gameName": "Card Chronicles",
+      "game": "bikelife-society-uggd",
+      "gameName": "BikeLife Society",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/card-chronicles"
+        "Roblox Den": "https://robloxden.com/game-codes/bikelife-society-uggd"
       },
-      "code": "UPDATE3!",
-      "reward": null,
+      "code": "WEBACK",
+      "reward": "50,000 Cash",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1787839740000,
+      "srcNewAt": 1787837160000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-27T14:28:41.374Z",
-      "fetchedAt": "2026-08-27T14:28:41.374Z"
-    },
-    {
-      "game": "card-chronicles",
-      "gameName": "Card Chronicles",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/card-chronicles"
-      },
-      "code": "DUNGEONS!",
-      "reward": "Rewards.To use this code, you must at least have** 50,000 Rolls**",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1787839740000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-27T14:28:41.374Z",
-      "fetchedAt": "2026-08-27T14:28:41.374Z"
-    },
-    {
-      "game": "card-chronicles",
-      "gameName": "Card Chronicles",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/card-chronicles"
-      },
-      "code": "LONGEVITY!",
-      "reward": "Rewards.To use this code, you must at least have 100,000 Rolls",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1787839740000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-27T14:28:41.374Z",
-      "fetchedAt": "2026-08-27T14:28:41.374Z"
+      "firstSeenAt": "2026-08-27T15:02:00.458Z",
+      "fetchedAt": "2026-08-27T15:02:00.458Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "emote-rng",
-      "count": 8,
-      "fresh": []
-    },
-    {
-      "game": "air-traffic-simulator",
-      "count": 5,
-      "fresh": []
-    }
-  ]
+  "bulkGames": []
 }
