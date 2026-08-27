@@ -89,9 +89,24 @@ const iso = (s) => {
 async function fetchOne(id, slug, meta, ua, now) {
   const url = `https://www.redeem-code-tracker.com/games/${slug}`;
   const res = await fetch(url, { headers: { "User-Agent": ua } });
+  // TEMBOK LOGIN. Tracker mulai menutup halaman game satu per satu: 307 ke
+  // /login?callbackUrl=... . fetch() mengikuti redirect, jadi tanpa cek ini yang
+  // diparse adalah halaman login — 0 kode, dan gejalanya menyamar sempurna jadi
+  // "layout berubah". 27 Agu 2026 Diablo Immortal terbaca begitu selama 18 jam,
+  // mengirim orang mencari parser rusak yang sebenarnya sehat.
+  const tujuan = (() => { try { return new URL(res.url).pathname; } catch { return ""; } })();
+  if (/^\/login(\/|$)/.test(tujuan)) throw new Error(`butuh login — dialihkan ke ${tujuan}`);
+  // 404 = game DIHAPUS dari katalog tracker, bukan gangguan sesaat. Bedakan:
+  // yang ini tak akan pulih sendiri & ujungnya keputusan pensiun (lihat
+  // GAMES.pensiun di src/games.mjs), sementara 5xx cukup ditunggu.
+  if (res.status === 404) throw new Error("HTTP 404 — game hilang dari katalog tracker");
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const rows = parseCodes(await res.text());
-  if (rows.length === 0) throw new Error("0 kode terparse — layout redeem-code-tracker berubah");
+  // JANGAN klaim "layout berubah" dari satu game. Layout itu milik SITUS: kalau
+  // benar berubah, semua game gagal bersamaan. Satu game 0 kode jauh lebih sering
+  // berarti trackernya memang sedang tak punya kode aktif untuk game itu.
+  // Kesimpulan sesitus ditarik di fetchRedeemTracker, setelah semua hasil masuk.
+  if (rows.length === 0) throw new Error("0 kode terparse");
 
   const base = { game: id, gameName: meta.name, source: "redeem-code-tracker", sourceUrl: url, claimUrl: null, perm: false };
   const items = [];
@@ -118,12 +133,16 @@ export async function fetchRedeemTracker({ games, userAgent, log = () => {} }) {
   const expired = new Set();
   const covered = new Set();
   let failed = 0;
+  const failedGames = []; // dinamai di annotation CI - "rct(1)" saja bikin harus menebak
+  let nolParse = 0;       // gagal khusus "0 kode terparse" (kandidat gejala layout)
+  let dicoba = 0;
   const now = Date.now();
 
   await Promise.all(
     Object.entries(SLUGS)
       .filter(([id]) => games[id])
       .map(async ([id, slug]) => {
+        dicoba += 1;
         try {
           const { items: act, expiredItems: exp } = await fetchOne(id, slug, games[id], userAgent, now);
           covered.add(id);
@@ -135,10 +154,19 @@ export async function fetchRedeemTracker({ games, userAgent, log = () => {} }) {
           log(`[${id}] ✓ ${act.length} aktif + ${exp.length} expired dari redeem-code-tracker`);
         } catch (err) {
           failed += 1;
+          failedGames.push(`${id} (${err.message})`);
+          if (err.message === "0 kode terparse") nolParse += 1;
           log(`[${id}] · redeem-code-tracker gagal: ${err.message}`);
         }
       }),
   );
 
-  return { items, expiredItems, expired, covered, failed };
+  // Kesimpulan yang HANYA boleh ditarik sesitus: kalau setiap game yang dicoba
+  // pulang dengan 0 kode, yang rusak parsernya - bukan 17 game sekaligus
+  // kehabisan kode di jam yang sama.
+  if (dicoba > 1 && nolParse === dicoba) {
+    log(`[redeem-code-tracker] ⚠ SEMUA ${dicoba} game 0 kode - layout situs berubah, parser perlu diperbarui`);
+  }
+
+  return { items, expiredItems, expired, covered, failed, failedGames };
 }
