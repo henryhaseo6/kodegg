@@ -78,3 +78,22 @@ test("sisipan iklan di tengah list tak memutus pembacaan kode", () => {
     ["PUNYQUEEN", "IAMNAYUTA"],
   );
 });
+
+test("judul 'Recently Expired' juga dikenali sebagai batas section", () => {
+  // Judul section tak seragam antar-halaman destructoid: NIKKE memakai
+  // "Expired … codes" (id h-expired-…), Honkai: Star Rail "Recently Expired …
+  // Codes" (id h-recently-expired-…). Anchor ketat "h-expired" MELESET di
+  // halaman kedua, dan melesetnya ke arah berbahaya: batas tak ketemu → semua
+  // kode mati ikut terbaca aktif.
+  const html = `
+    <h3 id="h-all-working-codes-for-honkai-star-rail-active">All Working Codes (Active)</h3>
+    <ul>${li("PROTECTARKSTAR", "600 gems")}</ul>
+    <h3 id="h-recently-expired-honkai-star-rail-codes-expired">Recently Expired Codes (Expired)</h3>
+    <ul>${li("STARRAIL2023", "free rewards")}</ul>`;
+  const { active, expired } = SITES.destructoid.parse(html);
+  assert.deepEqual(
+    active.map((c) => c.code),
+    ["PROTECTARKSTAR"],
+  );
+  assert.deepEqual(expired, ["STARRAIL2023"]);
+});

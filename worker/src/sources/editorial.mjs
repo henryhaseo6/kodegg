@@ -96,14 +96,20 @@ export const SITES = {
     // batas section — di sini judulnya "Expired <nama game> codes", bukan
     // "Codes (Expired)".
     //
-    // Potongnya lewat ATRIBUT id heading (id="h-expired…"), bukan teks "expired
-    // codes": halaman ini menyebut "Expired list" lagi di prosa penutup, dan
-    // memotong pada kemunculan teks yang salah akan melempar SELURUH daftar aktif
-    // ke sisi expired — bukan salah sedikit, tapi mengarsipkan semua kode hidup
-    // sekaligus.
+    // Potongnya lewat ATRIBUT id heading, bukan teks "expired codes": halaman ini
+    // menyebut "Expired list" lagi di prosa penutup, dan memotong pada kemunculan
+    // teks yang salah akan melempar SELURUH daftar aktif ke sisi expired — bukan
+    // salah sedikit, tapi mengarsipkan semua kode hidup sekaligus.
+    //
+    // Id-nya dicocokkan LONGGAR ("h-…expired…", bukan "h-expired…") karena judul
+    // section-nya tak seragam antar-halaman: NIKKE "Expired … codes" (id
+    // h-expired-…) tapi Honkai: Star Rail "Recently Expired … Codes" (id
+    // h-recently-expired-…). Anchor yang terlalu ketat meleset ke arah yang
+    // BERBAHAYA — batasnya tak ketemu, lalu seluruh isi halaman (termasuk kode
+    // mati) terbaca sebagai aktif.
     url: (slug) => `https://www.destructoid.com/${slug}/`,
     parse(html) {
-      const cut = html.search(/<h[23][^>]*\bid="h-expired[^"]*"/i);
+      const cut = html.search(/<h[23][^>]*\bid="h-[^"]*expired[^"]*"/i);
       const aHtml = cut > 0 ? html.slice(0, cut) : html;
       const eHtml = cut > 0 ? html.slice(cut) : "";
       const grab = (h) => {
@@ -263,11 +269,23 @@ export const GAMES_CFG = {
   // editorial ini lapis tambahan supaya kode livestream/acara yang belum masuk API
   // tetap tertangkap — tetap wajib ≥2 sumber sepakat, jadi tak menurunkan akurasi.
   gi: { sources: { game8: "Genshin-Impact", pocketgamer: "genshin-impact/codes" } },
+  // hsr TIDAK ditambah destructoid meski halamannya ada: dateModified-nya
+  // 2025-08-02 (setahun lebih basi) dan judul section-nya "Recently Expired"
+  // dengan 162 kode terdaftar aktif — sumber sebasi itu cuma menambah kode mati
+  // ke kolam cross-check. HSR juga tak butuh: API resmi HoYo tetap primer, dan
+  // game8 masih hidup sebagai pasangan editorialnya.
   hsr: { sources: { game8: "Honkai-Star-Rail", progameguides: "honkai-star-rail/honkai-star-rail-codes" } },
   zzz: { sources: { game8: "Zenless-Zone-Zero", pocketgamer: "zenless-zone-zero/codes" } },
   drr: {
     // Dragon Raja: ReRise — cross-check pendamping redeem-code-tracker.
-    sources: { progameguides: "dragon-raja-rerise/dragon-raja-rerise-codes", pocketgamer: "dragon-raja-rerise/codes" },
+    // destructoid ditambah sebagai sumber ketiga saat progameguides ditutup
+    // Cloudflare (lihat catatan di gov). Datanya tak pernah putus — tracker
+    // tetap primer — tapi tanpa ini lapis editorialnya batal tiap run.
+    sources: {
+      progameguides: "dragon-raja-rerise/dragon-raja-rerise-codes",
+      pocketgamer: "dragon-raja-rerise/codes",
+      destructoid: "dragon-raja-rerise-codes",
+    },
   },
   // Guardian Tales (gtales) DI-HOLD: dihapus dari redeem-code-tracker (404 sejak
   // ~21 Jul 2026) dan tak ada 2 sumber editorial yang bisa dipakai — progameguides
