@@ -7326,7 +7326,7 @@
   "playtime": {
    "tulis": "Playtime",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-21",
+   "terakhir": "2026-08-27",
    "awal": true
   },
   "interface": {
@@ -19089,7 +19089,7 @@
   "playtime": {
    "tulis": "playtime",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-21",
+   "terakhir": "2026-08-27",
    "awal": true
   },
   "creature": {
@@ -27826,6 +27826,11 @@
    "tulis": "Auto-rejoin",
    "pertama": 1787353555935,
    "terakhir": "2026-08-27"
+  },
+  "playtime": {
+   "tulis": "playtime",
+   "pertama": 1787821406397,
+   "terakhir": "2026-08-27"
   }
  },
  "car-driving-indonesia": {
@@ -33677,7 +33682,7 @@
   "comfort": {
    "tulis": "comfort",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-27",
    "awal": true
   },
   "boating": {
@@ -33721,6 +33726,21 @@
   "freshen": {
    "tulis": "freshen",
    "pertama": 1786698400762,
+   "terakhir": "2026-08-27"
+  },
+  "cost": {
+   "tulis": "cost",
+   "pertama": 1787821406397,
+   "terakhir": "2026-08-27"
+  },
+  "advantage": {
+   "tulis": "advantage",
+   "pertama": 1787821406397,
+   "terakhir": "2026-08-27"
+  },
+  "discounts": {
+   "tulis": "discounts",
+   "pertama": 1787821406397,
    "terakhir": "2026-08-27"
   }
  },
