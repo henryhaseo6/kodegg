@@ -90,6 +90,32 @@ export const SITES = {
       return { active: grab(aHtml), expired: grab(eHtml).map((x) => x.code) };
     },
   },
+  destructoid: {
+    // Jaringan yang sama dengan progameguides (GAMURS), jadi markup daftarnya
+    // identik: <li><strong>KODE</strong>—Redeem for <reward></li>. Yang beda cuma
+    // batas section — di sini judulnya "Expired <nama game> codes", bukan
+    // "Codes (Expired)".
+    //
+    // Potongnya lewat ATRIBUT id heading (id="h-expired…"), bukan teks "expired
+    // codes": halaman ini menyebut "Expired list" lagi di prosa penutup, dan
+    // memotong pada kemunculan teks yang salah akan melempar SELURUH daftar aktif
+    // ke sisi expired — bukan salah sedikit, tapi mengarsipkan semua kode hidup
+    // sekaligus.
+    url: (slug) => `https://www.destructoid.com/${slug}/`,
+    parse(html) {
+      const cut = html.search(/<h[23][^>]*\bid="h-expired[^"]*"/i);
+      const aHtml = cut > 0 ? html.slice(0, cut) : html;
+      const eHtml = cut > 0 ? html.slice(cut) : "";
+      const grab = (h) => {
+        const out = [];
+        for (const m of h.matchAll(/<li>\s*<strong>([A-Za-z0-9]{4,30})<\/strong>([^<]*)/g)) {
+          out.push({ code: m[1], reward: reward(m[2]) });
+        }
+        return out;
+      };
+      return { active: grab(aHtml), expired: grab(eHtml).map((x) => x.code) };
+    },
+  },
   pocketgamer: {
     // Struktur sama pockettactics: <li><strong>CODE</strong> - reward</li>,
     // batas section = heading "Expired codes".
@@ -189,8 +215,23 @@ export const SITES = {
 export const GAMES_CFG = {
   gov: {
     // Goddess of Victory: NIKKE (id "nikke" sudah dipakai Infinity Nikki)
+    //
+    // TIGA sumber untuk DUA slot. progameguides ditutup Cloudflare sejak ~23 Agu
+    // 2026 (403 langsung MAUPUN lewat proxy sendiri, dan dari IP rumah juga —
+    // jadi bukan soal rentang IP GitHub Actions), dan karena NIKKE cuma punya dua
+    // sumber, cross-check batal tiap run: daftarnya beku 109 jam tanpa satu kode
+    // baru pun masuk. Sumber ketiga = cadangan hidup, bukan kemewahan.
+    //
+    // destructoid satu jaringan dengan progameguides (GAMURS) → markupnya sama,
+    // tapi CATATAN: halaman NIKKE-nya tak pernah mengisi section Expired (81
+    // aktif, 0 expired, kode 2023 masih terdaftar). Jadi ia menyumbang "hadir di
+    // ≥2 sumber", BUKAN daya saring kedaluwarsa — yang menyaring tetap
+    // pockettactics (66 aktif / 45 expired). Diuji 27 Agu 2026: irisannya 55 kode,
+    // beda 2 masuk 2 keluar dari daftar beku yang tersimpan — output pasangan ini
+    // praktis sama dengan pasangan lama, jadi menukarnya bukan penurunan mutu.
     sources: {
       pockettactics: "nikke",
+      destructoid: "goddess-of-victory-nikke-codes",
       progameguides: "nikke-goddess-of-victory/goddess-of-victory-nikke-codes",
     },
   },
