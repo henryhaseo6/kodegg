@@ -135,7 +135,15 @@ jobs:
               || { git rebase --abort 2>/dev/null || true; }
             node worker/gabung-state.mjs origin/main || echo "  (gabung state dilewati)"
             if ! git diff --quiet -- worker/data/pending-thumbs.json worker/data/video-harian.json worker/data/kuota-yt.json; then
-              git add -A worker/data/pending-thumbs.json worker/data/pending-thumbs worker/data/video-harian.json worker/data/kuota-yt.json
+              # pending-thumbs (DIREKTORI) hanya ada saat antrean tak kosong - ia dibuat
+              # saat thumbnail gagal dipasang, lalu dihapus saat antrean terkuras. Digabung
+              # ke satu pathspec ketat, ketidakhadirannya jadi `fatal: pathspec did not
+              # match any files` -> exit 128 -> loop retry ini mati SEBELUM push. 24 Agu
+              # 2026 persis begitu: video terbit, tapi catatan video-harian & kuota hari
+              # itu hilang - kerusakan yang blok komentar di atas justru dibuat untuk
+              # mencegah. Jalur normal di atas sudah menjaganya; di sini dulu tidak.
+              git add -A worker/data/pending-thumbs.json worker/data/video-harian.json worker/data/kuota-yt.json
+              git add -A worker/data/pending-thumbs 2>/dev/null || true
               git commit --amend --no-edit --quiet
             fi
           done
