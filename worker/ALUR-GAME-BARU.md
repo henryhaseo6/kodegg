@@ -52,7 +52,7 @@ tiap situs, dan nama bukan identitas.** Satu-satunya identitas sejati adalah
 **(b) prevGames tanpa batas** — sekali masuk, game tak boleh terlempar keluar
 hanya karena discovery run itu tak memuatnya. Konsekuensinya: cap `MAX_GAMES`
 hanya membatasi jalur (c), dan makin penuh daftar makin sempit jatah game baru
-(lihat catatan MAX_GAMES di fetch-roblox.mjs).
+(lihat catatan MAX_GAMES di src/roblox-games.mjs).
 
 **(c) discovery** — dua jalur: slug persis dari homepage RoCodes (identitas
 pasti), dan explore-api Roblox. Untuk yang kedua, nama game dicocokkan ke slug;
@@ -84,7 +84,7 @@ situlah permintaan pencarian kode paling besar.
 | 1 | Penambal `denSlug` tak mencoba slug dari NAMA game | 1 game (`chainsaw-man-devils-heart`) tak terhubung ke Den | Sengaja dibiarkan — melonggarkan pencocokan pernah bikin salah kait |
 | 2 | universeId salah yang menunjuk game LAIN yang RAMAI | Tak terdeteksi: koreksi otomatis hanya jalan bila pemain 0 | **Belum tertutup** |
 | 3 | 50 slug RoCodes 404 | Game jalan dengan satu sumber, tak ada cross-check primer | Dicatat di `slug-404.json`, perlu tinjauan manual |
-| 4 | `MAX_GAMES` membatasi hanya jalur discovery | Makin penuh daftar, makin sempit jatah game baru | Dinaikkan ke 600; perlu dipantau |
+| 4 | `MAX_GAMES` membatasi hanya jalur discovery | Makin penuh daftar, makin sempit jatah game baru | Dinaikkan bertahap 400→600→800→900 (27 Agu 2026); perlu dipantau |
 | 5 | Game Den-only tak pernah punya `rocodesSlug` | Tak ada sumber pembanding untuk kode | Diterima — Den sudah primer penuh |
 
 Celah **#2** yang paling berbahaya karena benar-benar diam: kalau uid salah

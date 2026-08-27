@@ -17,6 +17,10 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { ringkas as ringkasKuota, KUOTA_HARIAN } from "./video/yt-kuota.mjs";
+// Cap game Roblox diimpor, tak disalin: pernah ditulis 600 di sini sementara
+// fetch-roblox sudah 800, jadi laporan berbunyi "705 / 600" — seolah tembus
+// batas padahal aman. Angka salinan akan basi lagi pada kenaikan berikutnya.
+import { MAX_GAMES } from "./src/roblox-games.mjs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -57,7 +61,7 @@ bagian("Skala");
 const nGame = Object.keys(rb.games ?? {}).length;
 baris("Kode Roblox aktif", `${angka(rb.active.length)} (arsip ${angka((rb.archive ?? []).length)})`);
 baris("Kode mobile aktif", angka(mc.active.length));
-baris("Game Roblox dipantau", `${angka(nGame)} / cap 600`);
+baris("Game Roblox dipantau", `${angka(nGame)} / cap ${angka(MAX_GAMES)}`);
 baris("Playlist tersinkron", angka(Object.keys(pl).length));
 Object.assign(ringkas, { aktif: rb.active.length, game: nGame, playlist: Object.keys(pl).length });
 

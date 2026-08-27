@@ -6,6 +6,51 @@
 //
 // Aturan CLAUDE.md: game online/live-service. Roblox experience = online.
 
+// Batas atas jumlah game. HARUS ≥ ukuran semesta "populer + punya kode" dari
+// discoverPopularWithCodes (~367), kalau tidak prevGames (data run lalu) mengunci
+// semua slot dan game HOT baru tak pernah bisa masuk (bug: game 9.9K pemain +
+// featured RoCodes kejebak di luar karena cap 250 keburu penuh oleh prevGames).
+// Game tanpa kode aktif tetap gugur → angka final natural di bawah cap ini.
+// Dinaikkan 400 → 600 (3 Agu 2026) karena cap-nya SUDAH mengikat: game tercatat
+// 385, semesta discovery memuat 20 game yang benar-benar belum dipantau, jadi 5
+// tertahan — termasuk Catalog Avatar Creator (86.329 pemain). Perhatikan cap ini
+// hanya membatasi jalur discovery (lihat `break` di buildGameSet, fetch-roblox.mjs);
+// prevGames masuk TANPA batas, jadi makin penuh daftar kita, makin sempit jatah
+// game baru.
+// Itulah kenapa gejalanya muncul perlahan lalu mendadak menutup total.
+//
+// TIDAK dilepas sepenuhnya: cap ini satu-satunya rem kalau discovery/den-scout
+// suatu saat memuntahkan ribuan game.
+//
+// 600 → 800 (11 Agu 2026). Cap-nya mengikat lagi: 597 game tercatat, jadi jalur
+// discovery praktis tinggal 3 slot — gejala yang sama persis dengan 3 Agu, dan
+// muncul dengan cara yang sama (prevGames masuk tanpa batas, jatah game baru
+// menyempit perlahan lalu menutup mendadak).
+//
+// ANGKA BEBAN DI KOMENTAR LAMA SUDAH USANG. Ia ditulis saat RoCodes ditarik tiap
+// run tanpa gerbang (600 game ≈ 14.400 permintaan/hari). Rotasi kemudian
+// dipasang ke RoCodes dengan aturan yang sama dengan Den — game ≥5.000 pemain
+// tiap jam, sisanya tiap 6 jam. Diukur 11 Agu 2026 pada 597 game (121 ramai,
+// 476 biasa): 121×24 + 476×4 = 4.808 permintaan/hari, sepertiga dari perkiraan
+// lama. Naik ke 800 menambah ~812 (+17%), bukan melipatgandakan.
+//
+// RENCANA MENGGERBANGI ROCODES DENGAN <lastmod> DIBATALKAN — datanya sudah
+// masuk dan jawabannya TIDAK. Dari 313 sampel lastmod-probe.json, saat kode BARU
+// terdeteksi stempel RoCodes cuma 32% yang berusia <60 menit; mediannya 2.319
+// menit (1,6 hari) dan 13% lebih tua dari 30 hari. Menggerbanginya berarti
+// melewatkan mayoritas kode baru — dan kecepatan deteksi adalah jualan utama
+// KodeGG. Rotasi menurut jumlah pemain sudah memberi penghematan yang dicari,
+// tanpa bergantung pada stempel yang terbukti tak jujur.
+//
+// 800 → 900 (27 Agu 2026). BELUM mengikat — 705 game tercatat, jadi jalur
+// discovery masih punya ~95 slot. Dinaikkan lebih awal justru karena dua
+// kenaikan sebelumnya baru ketahuan SETELAH cap-nya menutup: gejalanya diam
+// (game baru sekadar tak pernah muncul), bukan error. Beban tambahannya kecil
+// dan tak dibayar di muka — satu game "biasa" = 4 permintaan/hari pada rotasi
+// sekarang, jadi 100 slot ekstra ≈ +400/hari di atas 4.808 terukur (+8%), dan
+// hanya kalau slotnya benar-benar terisi.
+export const MAX_GAMES = 900;
+
 export const ROBLOX_GAMES = {
   bloxfruits: { slug: "blox-fruits", name: "Blox Fruits", genres: ["rpg", "adventure", "anime"] },
   bluelock: { slug: "blue-lock-rivals", name: "Blue Lock Rivals", genres: ["sports", "anime", "fighting"] },
