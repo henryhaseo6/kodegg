@@ -1,5 +1,31 @@
 {
-  "generatedAt": "2026-08-28T13:01:18.137Z",
+  "generatedAt": "2026-08-28T14:02:27.664Z",
   "codes": [],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "incommunication",
+      "count": 5,
+      "fresh": []
+    },
+    {
+      "game": "carolina-leaners",
+      "count": 2,
+      "fresh": []
+    },
+    {
+      "game": "merge-and-dig-simulator",
+      "count": 1,
+      "fresh": []
+    },
+    {
+      "game": "legacy-piece",
+      "count": 33,
+      "fresh": []
+    },
+    {
+      "game": "build-a-pet-factory",
+      "count": 16,
+      "fresh": []
+    }
+  ]
 }
