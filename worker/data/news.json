@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-28T02:02:41.741Z",
+  "updatedAt": "2026-08-28T03:02:42.406Z",
   "counts": {
-    "active": 95,
-    "archived": 92
+    "active": 94,
+    "archived": 93
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Welcome to Astropolis | Branch Landing Guide",
+        "id": "Selamat Datang di Astropolis | Panduan Pengenalan Cabang"
+      },
+      "excerpt": {
+        "en": "Thanks to you, President, the agency is flourishing, and we've even set up shop in Astropolis! As expected of the Interastral Peace Entertainment headquarters, I just took a quick ",
+        "id": "Berkat presdir, kantor berita kita semakin maju, bahkan sudah buka cabang di Astropolis! Markas Interastral Peace Entertainment memang beda ya! Aku baru saja ke pusat kota, influen"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/27/8b56fc1a061ebd317790fafb979cf004_4323087527325449046.jpg",
+      "url": "https://www.hoyolab.com/article/46480492",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-28T03:00:10.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -650,11 +666,11 @@
       "gameName": "Honkai: Star Rail",
       "title": {
         "en": "\"Divergent Universe: Arcadian Chronicles\" Update Details V4.5",
-        "id": "Penjelasan Update Versi 4.5 \"Divergent Universe: Catatan Perjalanan Utopia\""
+        "id": "\"Divergent Universe: Arcadian Chronicles\" Update Details V4.5"
       },
       "excerpt": {
         "en": "Divergent Universe: Arcadian Chronicles is about to get some updates in Version 4.5. Come and find out what's coming!",
-        "id": "\"Divergent Universe: Catatan Perjalanan Utopia\" di Versi 4.5 akan segera diperbarui, ayo lihat ada konten baru apa saja!"
+        "id": "Divergent Universe: Arcadian Chronicles is about to get some updates in Version 4.5. Come and find out what's coming!"
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/19/c3111583ae25c585ba8746132d623d99_3107314579380139247.jpg",
       "url": "https://www.hoyolab.com/article/46375186",
@@ -692,22 +708,6 @@
       "url": "https://www.hoyolab.com/article/46375144",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-20T04:00:05.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "BestSummerMemories",
-        "id": "BestSummerMemories"
-      },
-      "excerpt": {
-        "en": "Trailblazer, what's your best summer memory...? Join us for a summer rendezvous and share your very own summer memories~",
-        "id": "Trailblazer, what's your best summer memory...? Join us for a summer rendezvous and share your very own summer memories~"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/19/3dea1c562b890786f54e0aae9202745d_6873460813813620357.png",
-      "url": "https://www.hoyolab.com/article/46374893",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-20T03:30:03.000Z"
     },
     {
       "game": "hi3",
@@ -1508,7 +1508,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5227",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-29T08:58:33.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1523,10 +1525,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/28/0/7ec226acc9635a793bddfb48ef7e8b31_8226028763726671983.jpeg",
       "url": "https://www.hoyolab.com/article/46038768",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-29T03:00:03.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-29T03:00:03.000Z",
+      "archivedAt": "2026-08-28T03:02:42.406Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
