@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-27T23:01:46.077Z",
+  "updatedAt": "2026-08-28T00:01:37.851Z",
   "counts": {
-    "active": 98,
-    "archived": 89
+    "active": 96,
+    "archived": 91
   },
   "articles": [
     {
@@ -1540,7 +1540,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5224",
       "source": "Wuthering Waves",
       "publishedAt": "2026-07-29T01:53:34.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1555,7 +1557,8 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/28/0/c1eeda2f8b0a174a49fbbae15eec75cb_2696428840074243539.png",
       "url": "https://www.hoyolab.com/article/46037423",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-29T00:00:06.000Z"
+      "publishedAt": "2026-07-29T00:00:06.000Z",
+      "archivedAt": "2026-08-28T00:01:37.851Z"
     },
     {
       "game": "zzz",
@@ -1571,10 +1574,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/28/0/8dd8936c28235b7bc4c67795f26f2d1a_1934085723242109393.jpeg",
       "url": "https://www.hoyolab.com/article/46037106",
       "source": "HoYoLAB",
-      "publishedAt": "2026-07-28T23:11:51.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-07-28T23:11:51.000Z",
+      "archivedAt": "2026-08-28T00:01:37.851Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
