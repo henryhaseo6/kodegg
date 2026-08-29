@@ -1,66 +1,67 @@
 {
-  "generatedAt": "2026-08-29T16:02:01.281Z",
+  "generatedAt": "2026-08-29T17:01:45.213Z",
   "codes": [
     {
-      "game": "collect-the-alphabet",
-      "gameName": "Collect The Alphabet",
-      "source": "Roblox Den",
+      "game": "1-drain-water-per-click",
+      "gameName": "+1 Drain Water Per Click",
+      "source": "RoCodes.gg",
       "sources": [
-        "Roblox Den"
+        "RoCodes.gg"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/collect-the-alphabet"
+        "RoCodes.gg": "https://rocodes.gg/codes/1-drain-water-per-click"
       },
-      "code": "5MVISITS",
-      "reward": "1 Mystic Pack",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1788017760000,
+      "code": "Fixed2",
+      "reward": null,
+      "date": "2026-08-29T17:00:00.220Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-29T16:02:01.281Z",
-      "fetchedAt": "2026-08-29T16:02:01.281Z"
+      "firstSeenAt": "2026-08-29T17:01:45.213Z",
+      "fetchedAt": "2026-08-29T17:01:45.213Z"
     },
     {
-      "game": "collect-the-alphabet",
-      "gameName": "Collect The Alphabet",
-      "source": "Roblox Den",
+      "game": "1-drain-water-per-click",
+      "gameName": "+1 Drain Water Per Click",
+      "source": "RoCodes.gg",
       "sources": [
-        "Roblox Den"
+        "RoCodes.gg"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/collect-the-alphabet"
+        "RoCodes.gg": "https://rocodes.gg/codes/1-drain-water-per-click"
       },
-      "code": "NUMBERS",
-      "reward": "3 Mystic Packs",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1788017760000,
+      "code": "Fixed1",
+      "reward": null,
+      "date": "2026-08-29T16:59:59.915Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-08-29T16:02:01.281Z",
-      "fetchedAt": "2026-08-29T16:02:01.281Z"
-    },
-    {
-      "game": "collect-the-alphabet",
-      "gameName": "Collect The Alphabet",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/collect-the-alphabet"
-      },
-      "code": "AURA",
-      "reward": "1 2x Opening Luck Potion",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1788017760000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-08-29T16:02:01.281Z",
-      "fetchedAt": "2026-08-29T16:02:01.281Z"
+      "firstSeenAt": "2026-08-29T17:01:45.213Z",
+      "fetchedAt": "2026-08-29T17:01:45.213Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "arcade-basketball",
+      "count": 29,
+      "fresh": []
+    },
+    {
+      "game": "superhero-universe-battlegrounds",
+      "count": 12,
+      "fresh": [
+        {
+          "code": "SuperBoy",
+          "reward": "50 Coins"
+        },
+        {
+          "code": "21000likes",
+          "reward": "150 Coins"
+        }
+      ]
+    },
+    {
+      "game": "heads-please",
+      "count": 7,
+      "fresh": []
+    }
+  ]
 }
