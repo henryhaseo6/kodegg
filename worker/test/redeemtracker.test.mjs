@@ -12,6 +12,17 @@ import { fetchRedeemTracker, SLUGS } from "../src/sources/redeemtracker.mjs";
 
 const GAMES_UJI = Object.fromEntries(Object.keys(SLUGS).map((id) => [id, { name: id.toUpperCase() }]));
 
+// Game yang dipakai sbg contoh di tes-tes di bawah. SENGAJA dinamai di satu
+// tempat: tes ini menguji PERILAKU (diagnosis kegagalan), bukan game tertentu,
+// tapi fixture-nya harus ada di SLUGS supaya benar-benar ikut ditarik. Diablo
+// Immortal dulu dipakai di sini lalu dipensiunkan (29 Agu 2026) dan tesnya
+// mati — kalau itu terjadi lagi, ganti konstanta ini, jangan hapus tesnya.
+const UJI = { id: "e7", slug: "epic-seven" };
+const LAIN = { id: "afkj", slug: "afk-journey" }; // kontrol: tak boleh ikut terseret
+for (const g of [UJI, LAIN]) {
+  assert.equal(SLUGS[g.id], g.slug, `fixture tes "${g.id}" sudah tak ada di SLUGS — pilih game lain yang masih aktif`);
+}
+
 // Satu objek kode berbentuk payload RSC Next.js (backslash-escaped seperti aslinya).
 const payload = (code) =>
   `x{\\"id\\":\\"1\\",\\"value\\":\\"${code}\\",\\"expiresAt\\":\\"\\",` +
@@ -41,18 +52,18 @@ async function jalankan(balas) {
 
 test("tembok login (307 → /login) dilaporkan sbg butuh login, bukan layout berubah", async () => {
   const r = await jalankan((slug) =>
-    slug === "diablo-immortal"
-      ? { status: 200, url: "https://www.redeem-code-tracker.com/login?callbackUrl=%2Fgames%2Fdiablo-immortal", body: "<html>masuk dulu</html>" }
+    slug === UJI.slug
+      ? { status: 200, url: `https://www.redeem-code-tracker.com/login?callbackUrl=%2Fgames%2F${UJI.slug}`, body: "<html>masuk dulu</html>" }
       : null,
   );
 
-  const baris = r.log.find((l) => l.startsWith("[diablo]"));
+  const baris = r.log.find((l) => l.startsWith(`[${UJI.id}]`));
   assert.match(baris, /butuh login/);
   assert.doesNotMatch(baris, /layout/, "tembok login tak boleh menuduh parser");
-  assert.ok(!r.covered.has("diablo"), "game di balik login tidak boleh dihitung ter-cover");
-  assert.ok(r.failedGames.some((g) => g.startsWith("diablo ")), "game gagal harus dinamai untuk annotation CI");
+  assert.ok(!r.covered.has(UJI.id), "game di balik login tidak boleh dihitung ter-cover");
+  assert.ok(r.failedGames.some((g) => g.startsWith(`${UJI.id} `)), "game gagal harus dinamai untuk annotation CI");
   // Game lain tak ikut terseret.
-  assert.ok(r.covered.has("afkj"));
+  assert.ok(r.covered.has(LAIN.id));
 });
 
 test("404 dilaporkan sbg game hilang dari katalog — sinyal untuk keputusan pensiun", async () => {

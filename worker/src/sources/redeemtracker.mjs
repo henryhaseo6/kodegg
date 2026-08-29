@@ -14,7 +14,10 @@ export const SLUGS = {
   e7: "epic-seven",
   endfield: "arknights-endfield",
   nte: "nte",
-  diablo: "diablo-immortal",
+  // diablo (Diablo Immortal) DICABUT 29 Agu 2026: halamannya tidak hilang, tapi
+  // ditutup di balik login (307 → /login) sejak 26 Agu 13:00 UTC, jadi tiap jam
+  // hanya menghasilkan peringatan "butuh login" tanpa data. Lihat GAMES.pensiun
+  // di src/games.mjs untuk syarat mengaktifkannya kembali.
   afka: "afk-arena-classic",
   // gtales (Guardian Tales) DICABUT 21 Jul 2026: dihapus dari daftar game
   // redeem-code-tracker → /games/guardian-tales 404 tiap jam. Lihat catatan di

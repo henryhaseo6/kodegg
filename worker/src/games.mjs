@@ -141,6 +141,19 @@ export const GAMES = {
   },
   diablo: {
     name: "Diablo Immortal",
+    // PENSIUN 29 Agu 2026. redeem-code-tracker tidak menghapus gamenya, tapi
+    // MENUTUPNYA di balik login: /games/diablo-immortal membalas 307 ke
+    // /login?callbackUrl=... untuk siapa pun tanpa sesi. Diverifikasi dari luar
+    // CI (bukan sekadar IP Actions yang diblokir): dari IP rumahan pun halaman
+    // ini mendarat di /login sementara /games/genshin-impact tetap 200.
+    // Tarikan terakhir yang berhasil 26 Agu 12:00 UTC; gagal beruntun sejak
+    // 13:00 UTC hari yang sama — 61 jam saat diputuskan.
+    // Bedanya dengan gtales: yang itu 404 (game dicabut), yang ini masih ada
+    // tapi berbayar-akses. Sama-sama tak bisa diverifikasi, jadi 2 kode aktif
+    // yang tersisa (tanggal terakhir 18 Agu) diarsipkan alih-alih terus
+    // dipajang sebagai "aktif" tanpa ada yang bisa mengeceknya.
+    // Mencabut pensiun: hapus field ini + pasang balik slug di redeemtracker.mjs.
+    pensiun: { sejak: "2026-08-26", alasan: "ditutup di balik login redeem-code-tracker" },
     codeSource: "redeemtracker",
     redeemUrl: null,
     genres: ["action", "rpg", "mmorpg"],
