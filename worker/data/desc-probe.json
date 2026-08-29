@@ -1647,7 +1647,7 @@
   "invasion": {
    "tulis": "INVASION",
    "pertama": 1785996161549,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-29",
    "n": 1,
    "awal": true
   },
@@ -15313,7 +15313,7 @@
   "invasion": {
    "tulis": "invasion",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-08-29",
    "awal": true
   },
   "relive": {
@@ -15757,7 +15757,7 @@
   "production": {
    "tulis": "Production",
    "pertama": 1786215727823,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-08-29"
   },
   "drag": {
    "tulis": "Drag",
@@ -50924,6 +50924,11 @@
    "tulis": "AUTUMNSOON",
    "pertama": 1788008645967,
    "terakhir": "2026-08-29"
+  },
+  "optimization": {
+   "tulis": "OPTIMIZATION",
+   "pertama": 1788030256028,
+   "terakhir": "2026-08-29"
   }
  },
  "restaurant-tycoon-2": {
@@ -51891,6 +51896,36 @@
    "tulis": "Creature",
    "pertama": 1786695454025,
    "terakhir": "2026-08-20"
+  },
+  "fortress": {
+   "tulis": "Fortress",
+   "pertama": 1788030256028,
+   "terakhir": "2026-08-29"
+  },
+  "kyodai": {
+   "tulis": "Kyodai",
+   "pertama": 1788030256028,
+   "terakhir": "2026-08-29"
+  },
+  "ambush": {
+   "tulis": "ambush",
+   "pertama": 1788030256028,
+   "terakhir": "2026-08-29"
+  },
+  "predator": {
+   "tulis": "predator",
+   "pertama": 1788030256028,
+   "terakhir": "2026-08-29"
+  },
+  "lorgath": {
+   "tulis": "Lorgath",
+   "pertama": 1788030256028,
+   "terakhir": "2026-08-29"
+  },
+  "redux": {
+   "tulis": "Redux",
+   "pertama": 1788030256028,
+   "terakhir": "2026-08-29"
   }
  },
  "the-foundation": {
@@ -53185,6 +53220,11 @@
   "gmes": {
    "tulis": "Gmes",
    "pertama": 1786695454025,
+   "terakhir": "2026-08-29"
+  },
+  "invasion": {
+   "tulis": "invasion",
+   "pertama": 1788030256028,
    "terakhir": "2026-08-29"
   }
  },
