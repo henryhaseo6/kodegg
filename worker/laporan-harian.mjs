@@ -376,8 +376,18 @@ if (JSON_ONLY) console.log(JSON.stringify(ringkas, null, 1));
 else console.log(teks);
 
 // Riwayat ringkas → tren bisa dibaca lintas hari tanpa menyimpan teks penuh.
+//
+// SATU ENTRI PER HARI: jalan dua kali sehari itu normal (Cloudflare Cron
+// men-dispatch pagi, jadwal GitHub tinggal jadi jaring pengaman), dan dulu
+// tiap kali jalan menambah baris sendiri — 4 Agu 2026 tercatat dua entri
+// berjarak 9 detik. Riwayat yang dibaca sebagai deret HARIAN jadi bohong
+// soal jaraknya. Yang belakangan menimpa yang duluan: laporan siang lebih
+// baru daripada laporan pagi. Tanggal dibaca UTC, sama dengan judul laporan
+// di atas — supaya baris yang tertimpa selalu baris berjudul tanggal sama.
 try {
   const riwayat = baca("laporan-riwayat.json", []);
-  writeFileSync(resolve(DATA, "laporan-riwayat.json"), JSON.stringify([ringkas, ...(Array.isArray(riwayat) ? riwayat : [])].slice(0, 60), null, 1) + "\n");
+  const hariIni = ringkas.pada.slice(0, 10);
+  const lama = (Array.isArray(riwayat) ? riwayat : []).filter((r) => String(r?.pada ?? "").slice(0, 10) !== hariIni);
+  writeFileSync(resolve(DATA, "laporan-riwayat.json"), JSON.stringify([ringkas, ...lama].slice(0, 60), null, 1) + "\n");
 } catch { /* jangan pernah menggagalkan laporan */ }
 if (process.env.GITHUB_STEP_SUMMARY) { try { writeFileSync(process.env.GITHUB_STEP_SUMMARY, teks + "\n", { flag: "a" }); } catch {} }

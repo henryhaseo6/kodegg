@@ -11,11 +11,34 @@
 //   TRIGGER_KEY   (Secret, opsional) : kunci utk uji manual via URL
 //   ROBLOX_LOG    (KV)     : log CCU 10-menit (buffer, TTL 4 hari)
 //   ROBLOX_DB     (R2)     : database permanen — file harian padat (10-menit utuh)
-// Trigger: Cron Triggers → "0 * * * *" (dispatch) + "*/10 * * * *" (log+compact).
+// Trigger: Cron Triggers → "0 * * * *" (dispatch update-codes)
+//                        + "*/10 * * * *" (log+compact)
+//                        + "30 0 * * *"  (dispatch laporan-harian, 07:30 WIB).
+
+// Jadwal cron → workflow yang di-dispatch.
+//
+// KENAPA di sini dan bukan di `schedule:` milik workflow-nya: cron GitHub
+// ditunda saat antreannya padat, dan penundaannya menumpuk. Terukur pada
+// laporan-harian: target 00:30 UTC, nyatanya 02:06 (26 Agu) → 10:02 (27 Agu) →
+// 11:34 (28 Agu), sampai laporan yang gunanya dibaca pagi baru tiba sore. Pada
+// top50-video penundaan yang sama sempat men-DROP jadwal 24 Agu sama sekali.
+// Cron Cloudflare presisi, jadi jadwal yang jamnya penting dipindahkan ke sini.
+//
+// null = pakai env.GH_WORKFLOW (biar deploy lama tak berubah perilaku).
+const JADWAL = {
+  "0 * * * *": null, // tiap jam → update-codes.yml
+  "30 0 * * *": "laporan-harian.yml", // 07:30 WIB
+};
+
+// Workflow yang boleh di-dispatch lewat URL manual. Tertutup seperti
+// HOST_DIIZINKAN: TRIGGER_KEY memang rahasia, tapi kunci yang bocor jangan
+// sampai bisa menjalankan workflow SEMBARANG di repo.
+const WF_DIIZINKAN = new Set(Object.values(JADWAL).filter(Boolean));
 
 export default {
-  // Dipanggil otomatis oleh Cron Trigger. DUA jadwal:
-  //   "0 * * * *"    → dispatch workflow GitHub Actions (update kode, tiap jam)
+  // Dipanggil otomatis oleh Cron Trigger. TIGA jadwal:
+  //   "0 * * * *"    → dispatch update-codes (tiap jam)
+  //   "30 0 * * *"   → dispatch laporan-harian (07:30 WIB)
   //   "*/10 * * * *" → log CCU game teratas Roblox ke KV (tiap 10 menit)
   // event.cron = string jadwal yang memicu invocation ini (dipisah CF per jadwal).
   async scheduled(event, env, ctx) {
@@ -26,7 +49,10 @@ export default {
         await maybeCompact(env).catch((e) => console.log("kodegg-compact gagal:", e.message));
       })());
     } else {
-      ctx.waitUntil(trigger(env)); // "0 * * * *" (default bila cron tak dikenal)
+      // Cron tak dikenal jatuh ke default (update-codes) — sengaja: kalau jadwal
+      // di dashboard CF diubah tanpa menyentuh berkas ini, lebih baik pemicu
+      // utamanya tetap jalan daripada senyap.
+      ctx.waitUntil(trigger(env, JADWAL[event.cron] ?? undefined));
     }
   },
 
@@ -54,7 +80,13 @@ export default {
     if (!env.TRIGGER_KEY || url.searchParams.get("key") !== env.TRIGGER_KEY) {
       return new Response("kodegg-cron aktif. Tambah ?key=... utk uji manual.", { status: 200 });
     }
-    return new Response(await trigger(env));
+    // ?wf=<file>.yml → dispatch workflow lain (mis. laporan-harian.yml) tanpa
+    // menunggu jadwalnya. Tanpa ?wf, perilakunya sama seperti sebelumnya.
+    const wf = url.searchParams.get("wf");
+    if (wf && !WF_DIIZINKAN.has(wf)) {
+      return new Response(`workflow tidak diizinkan (boleh: ${[...WF_DIIZINKAN].join(", ")})`, { status: 403 });
+    }
+    return new Response(await trigger(env, wf || undefined));
   },
 };
 
@@ -320,9 +352,10 @@ async function proxy(url, env) {
   return new Response(res.body, { status: res.status, headers: { "content-type": res.headers.get("content-type") ?? "text/html" } });
 }
 
-async function trigger(env) {
+/** Dispatch satu workflow. @param workflow nama berkas; default env.GH_WORKFLOW. */
+async function trigger(env, workflow) {
   const repo = env.GH_REPO || "henryhaseo6/kodegg";
-  const wf = env.GH_WORKFLOW || "update-codes.yml";
+  const wf = workflow || env.GH_WORKFLOW || "update-codes.yml";
   const res = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/${wf}/dispatches`, {
     method: "POST",
     headers: {
@@ -334,7 +367,7 @@ async function trigger(env) {
     body: JSON.stringify({ ref: "main" }),
   });
   // GitHub balas 204 No Content saat sukses.
-  const msg = res.status === 204 ? "dispatched ✓" : `gagal ${res.status}: ${await res.text()}`;
+  const msg = res.status === 204 ? `${wf} dispatched ✓` : `${wf} gagal ${res.status}: ${await res.text()}`;
   console.log("kodegg-cron:", msg);
   return msg;
 }

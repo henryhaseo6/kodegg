@@ -11,7 +11,18 @@ name: laporan-harian
 
 on:
   schedule:
-    - cron: "30 0 * * *" # 07:30 WIB — siap sebelum jam kerja
+    # JARING PENGAMAN saja. Pemicu UTAMA = Cloudflare Cron Worker (cron/worker.js)
+    # yang men-dispatch jam 00:30 UTC / 07:30 WIB.
+    #
+    # Kenapa dipindah: cron GitHub menunda laporan ini makin jauh tiap hari —
+    # 02:06 (26 Agu) → 10:02 (27 Agu) → 11:34 (28 Agu) UTC. Laporan yang gunanya
+    # dibaca tiap PAGI jadi tiba sore, dan alarm seperti "MOBILE beku" baru
+    # terbaca setengah hari setelah pantas ditindak.
+    #
+    # Jam segini (bukan 00:30 lagi) supaya kalau CF-nya hidup, jadwal ini tidak
+    # bertabrakan dengannya. Kalaupun dua-duanya jalan, riwayat menyimpan satu
+    # entri per hari (lihat laporan-harian.mjs) — yang belakangan menimpa.
+    - cron: "17 3 * * *" # 10:17 WIB
   workflow_dispatch:
 
 permissions:
