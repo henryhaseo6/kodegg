@@ -11,7 +11,13 @@ name: codes-roundup
 
 on:
   schedule:
-    - cron: "35 17 * * *" # 00:35 WIB (UTC+7) = 17:35 UTC — tepat setelah Top 50
+    # JARING PENGAMAN saja — pemicu UTAMA = Cloudflare Cron Worker (cron/worker.js),
+    # 17:35 UTC / 00:35 WIB. Alasan & syarat jamnya sama persis dengan top50-video.yml;
+    # jeda 5 menit terhadapnya dipertahankan di kedua jalur.
+    #
+    # Penjaga "satu tanggal satu video" lahir dari workflow INI: 7 Agu 2026 cron 6 Agu
+    # telat 8,3 jam, disusul dispatch manual, dan roundup terunggah dua kali.
+    - cron: "28 20 * * *" # 03:28 WIB
   workflow_dispatch:
     inputs:
       date:

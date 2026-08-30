@@ -13,7 +13,9 @@
 //   ROBLOX_DB     (R2)     : database permanen — file harian padat (10-menit utuh)
 // Trigger: Cron Triggers → "0 * * * *" (dispatch update-codes)
 //                        + "*/10 * * * *" (log+compact)
-//                        + "30 0 * * *"  (dispatch laporan-harian, 07:30 WIB).
+//                        + "30 0 * * *"  (dispatch laporan-harian, 07:30 WIB)
+//                        + "30 17 * * *" (dispatch top50-video, 00:30 WIB)
+//                        + "35 17 * * *" (dispatch codes-roundup, 00:35 WIB).
 
 // Jadwal cron → workflow yang di-dispatch.
 //
@@ -28,6 +30,11 @@
 const JADWAL = {
   "0 * * * *": null, // tiap jam → update-codes.yml
   "30 0 * * *": "laporan-harian.yml", // 07:30 WIB
+  // Video harian. Jamnya SENGAJA tepat setelah ganti hari WIB: data H-1 baru
+  // dipadatkan ke R2 oleh tick "*/10 * * * *" pertama sesudah 00:00 WIB, jadi
+  // lebih awal dari ini berarti merender dari berkas yang belum ada.
+  "30 17 * * *": "top50-video.yml", // 00:30 WIB
+  "35 17 * * *": "codes-roundup.yml", // 00:35 WIB — jeda 5 menit biar uploadnya tak bertabrakan
 };
 
 // Workflow yang boleh di-dispatch lewat URL manual. Tertutup seperti
@@ -36,9 +43,11 @@ const JADWAL = {
 const WF_DIIZINKAN = new Set(Object.values(JADWAL).filter(Boolean));
 
 export default {
-  // Dipanggil otomatis oleh Cron Trigger. TIGA jadwal:
+  // Dipanggil otomatis oleh Cron Trigger. LIMA jadwal:
   //   "0 * * * *"    → dispatch update-codes (tiap jam)
   //   "30 0 * * *"   → dispatch laporan-harian (07:30 WIB)
+  //   "30 17 * * *"  → dispatch top50-video (00:30 WIB)
+  //   "35 17 * * *"  → dispatch codes-roundup (00:35 WIB)
   //   "*/10 * * * *" → log CCU game teratas Roblox ke KV (tiap 10 menit)
   // event.cron = string jadwal yang memicu invocation ini (dipisah CF per jadwal).
   async scheduled(event, env, ctx) {

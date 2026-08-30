@@ -10,7 +10,21 @@ name: top50-video
 
 on:
   schedule:
-    - cron: "30 17 * * *" # 00:30 WIB (UTC+7) = 17:30 UTC — H-1 sudah di-compact
+    # JARING PENGAMAN saja. Pemicu UTAMA = Cloudflare Cron Worker (cron/worker.js)
+    # yang men-dispatch 17:30 UTC / 00:30 WIB — jam yang sama seperti dulu, bedanya
+    # sekarang benar-benar ditepati.
+    #
+    # Kenapa dipindah: cron GitHub menerbitkan video ini kapan saja. 27 Agu terbit
+    # 08:42 WIB, 24 Agu jadwalnya DIJATUHKAN sama sekali (tak ada video hari itu),
+    # dan 29 Agu melompat balik ke 03:02 WIB. "Top 50 HARIAN" yang datang tengah
+    # hari bukan lagi video harian.
+    #
+    # Jam segini supaya tak bertabrakan dengan CF kalau CF-nya hidup, TAPI tetap
+    # di hari WIB yang sama — H-1 otomatis harus jatuh ke tanggal yang sama dengan
+    # run CF, kalau tidak jaring pengaman ini malah membuat video tanggal lain.
+    # Kalau dua-duanya jalan, penjaga "satu tanggal satu video"
+    # (src/video-harian.mjs) menolak yang kedua sebelum render.
+    - cron: "23 20 * * *" # 03:23 WIB
   workflow_dispatch:
     inputs:
       date:
