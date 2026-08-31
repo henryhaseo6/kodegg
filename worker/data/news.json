@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-08-31T11:01:32.087Z",
+  "updatedAt": "2026-08-31T12:02:33.030Z",
   "counts": {
     "active": 96,
     "archived": 96
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Astral Express Strategy Guide\" Website Update: Version 4.5 Strategy Guides Contest Event Is In Full Swing!",
+        "id": "Update Halaman Web \"Panduan Strategi Astral Express\", Event Pengumpulan Panduan Strategi Versi 4.5 Sedang Berlangsung"
+      },
+      "excerpt": {
+        "en": "Hello, Trailblazers! Team comp secrets for Robin • Summeretto, build experiences for Aventurine • Waveflair, strategy considerations for the Treasures Lightward gameplay, flashes o",
+        "id": "Dear Trailblazer, Rahasia lineup tim \"Robin • Summeretto\", pengalaman pengembangan \"Aventurine • Waveflair\", ide panduan strategi dalam gameplay Harta Menuju Cahaya, momen penuh in"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/28/22552105e32a1d722c4918e8001620b9_5719540715032420050.jpg",
+      "url": "https://www.hoyolab.com/article/46525074",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-31T12:00:03.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -22,22 +38,6 @@
       "publishedAt": "2026-08-31T04:00:02.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Allow Me to Tell You Some Ancient Stories to Pass the Time? | Flins: Side Notes",
-        "id": "Mungkin Aku Bisa Menceritakan Beberapa Kisah Zaman Dulu untuk Mengisi Waktu? | Flins: Catatan Sampingan"
-      },
-      "excerpt": {
-        "en": "Hello, Traveler! The Event Wish \"The Lone Light Knocks at Night\" will be available from September 1, 18:00. There will be a huge drop-rate boost for \"Shadowy Lights, Stranger Wight",
-        "id": "Halo, Traveler! Event Permohonan \"Cahaya Temaram Mengetuk di Kala Malam\" akan dimulai pada 1 September pukul 18:00. Persentase perolehan \"Shadowy Lights, Stranger Wights\" Flins aka"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/28/0ca5e2e152a405f3a463b29481c87188_9142553814964478314.jpg",
-      "url": "https://www.hoyolab.com/article/46508017",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-30T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -50,6 +50,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/28/0/0861a4f134b549905d7e11b8717d7f9d_8909072184603252318.png",
       "url": "https://www.hoyolab.com/article/46508018",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-30T04:00:04.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Allow Me to Tell You Some Ancient Stories to Pass the Time? | Flins: Side Notes",
+        "id": "Mungkin Aku Bisa Menceritakan Beberapa Kisah Zaman Dulu untuk Mengisi Waktu? | Flins: Catatan Sampingan"
+      },
+      "excerpt": {
+        "en": "Hello, Traveler! The Event Wish \"The Lone Light Knocks at Night\" will be available from September 1, 18:00. There will be a huge drop-rate boost for \"Shadowy Lights, Stranger Wight",
+        "id": "Halo, Traveler! Event Permohonan \"Cahaya Temaram Mengetuk di Kala Malam\" akan dimulai pada 1 September pukul 18:00. Persentase perolehan \"Shadowy Lights, Stranger Wights\" Flins aka"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/28/0ca5e2e152a405f3a463b29481c87188_9142553814964478314.jpg",
+      "url": "https://www.hoyolab.com/article/46508017",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-30T04:00:04.000Z"
     },
@@ -390,6 +406,22 @@
       "publishedAt": "2026-08-26T06:00:04.000Z"
     },
     {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Ding-Dong! Delivery Training in Progress\" Event Details",
+        "id": "\"Ting Tong! Ada Paket dari Kurir Magang\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/08/28 10:00 (server time) – 2026/09/14 03:59 (server time) Requirements Reach Inter-Knot Lv. 20 and complete Main Story Chapter 1 - Intermission to participate ",
+        "id": "[Waktu Event] 2026/08/28 10:00 (waktu server) - 2026/09/14 03:59 (waktu server) [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 20 dan menyelesaikan"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
+      "url": "https://www.hoyolab.com/article/46451353",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
+    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -418,22 +450,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/f7aa9696c4a261cfac3b8ce9759f0a7f_503834544847449902.jpg",
       "url": "https://www.hoyolab.com/article/46451352",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-26T04:00:04.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Ding-Dong! Delivery Training in Progress\" Event Details",
-        "id": "\"Ting Tong! Ada Paket dari Kurir Magang\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration 2026/08/28 10:00 (server time) – 2026/09/14 03:59 (server time) Requirements Reach Inter-Knot Lv. 20 and complete Main Story Chapter 1 - Intermission to participate ",
-        "id": "[Waktu Event] 2026/08/28 10:00 (waktu server) - 2026/09/14 03:59 (waktu server) [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 20 dan menyelesaikan"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
-      "url": "https://www.hoyolab.com/article/46451353",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
@@ -566,22 +582,6 @@
       "publishedAt": "2026-08-24T06:00:07.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Holy Furboly? Furbobo Weekly Officially Arrives in Astropolis!",
-        "id": "Demi Rakun? Mingguan Rakun Resmi Hadir di Astropolis!"
-      },
-      "excerpt": {
-        "en": "Astropolis Branch of Furbobo Press Now Founded! New Gossip HQ Under Construction~ Direct Confrontation With the IPC Media, Furbos are Aiming to be Astropolis's News Tycoon! Officia",
-        "id": "Koran Rakun Cabang Astropolis telah resmi didirikan, markas gosip baru sedang dibangun~ Berani Tantang Media IPC Terang-terangan, Anjing Rakun Mau Jadi Raja Media di Astropolis! Pr"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/24/81b9a71197fce4166e16f5c4179ded44_549661776826062591.jpg",
-      "url": "https://www.hoyolab.com/article/46427337",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-24T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -594,6 +594,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/f1da4c944df50860ee39c2f18e255b92_2388387132862854906.jpeg",
       "url": "https://www.hoyolab.com/article/46427336",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-24T04:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Holy Furboly? Furbobo Weekly Officially Arrives in Astropolis!",
+        "id": "Demi Rakun? Mingguan Rakun Resmi Hadir di Astropolis!"
+      },
+      "excerpt": {
+        "en": "Astropolis Branch of Furbobo Press Now Founded! New Gossip HQ Under Construction~ Direct Confrontation With the IPC Media, Furbos are Aiming to be Astropolis's News Tycoon! Officia",
+        "id": "Koran Rakun Cabang Astropolis telah resmi didirikan, markas gosip baru sedang dibangun~ Berani Tantang Media IPC Terang-terangan, Anjing Rakun Mau Jadi Raja Media di Astropolis! Pr"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/24/81b9a71197fce4166e16f5c4179ded44_549661776826062591.jpg",
+      "url": "https://www.hoyolab.com/article/46427337",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-24T04:00:06.000Z"
     },
@@ -788,22 +804,6 @@
       "url": "https://www.hoyolab.com/article/46388581",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-21T04:15:06.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Myriad Celestia Trailer: \"Beyond the Chorus\" | Honkai: Star Rail",
-        "id": "Trailer Perjalanan Seribu Bintang: \"Di Balik Riuh Suara\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "Countless voices have tried to describe her and name her. When all the clamoring faded into silence, she heard a resonance from deep within her chest. English Voice: Robin — Alice ",
-        "id": "Tak terhitung suara pernah mencoba menggambarkannya, memberinya sebuah nama. Ketika seluruh hiruk-pikuk akhirnya tenggelam dalam kesunyian, ia mendengar gaung yang berasal dari lub"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/6cadd52922cb0f5e26b807596e8c14d5_3359261723155782055.jpeg",
-      "url": "https://www.hoyolab.com/article/46388401",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-21T04:00:05.000Z"
     },
     {
       "game": "zzz",
