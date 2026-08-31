@@ -1,6 +1,220 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "super-league-soccer",
+    "name": "Super League Soccer",
+    "displayName": "FIFA Super Soccer",
+    "slug": "super-league-soccer",
+    "players": 14128,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 14128,
+    "newCodes": [
+      {
+        "game": "super-league-soccer",
+        "gameName": "Super League Soccer",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/super-league-soccer"
+        },
+        "code": "checkgoalpack",
+        "reward": "Summer Pack",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1788200940000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-31T19:02:21.952Z",
+        "fetchedAt": "2026-08-31T19:02:21.952Z"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-08-31T19:02:21.952Z",
+    "displayCodes": [
+      {
+        "code": "checkgoalpack",
+        "reward": "Summer Pack",
+        "isNew": true
+      },
+      {
+        "code": "basicallyasummerevent",
+        "reward": "Summer (95%) or Exotic Pack (5%)",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "checkgoalpack",
+        "reward": "Summer Pack",
+        "isNew": true
+      },
+      {
+        "code": "basicallyasummerevent",
+        "reward": "Summer (95%) or Exotic Pack (5%)",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "checkgoalpack",
+      "basicallyasummerevent"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "basketball-legends",
+    "name": "Basketball Legends",
+    "displayName": "🏀Basketball Legends🏀",
+    "slug": "basketball-legends",
+    "players": 2918,
+    "redeemNote": {
+      "en": "To use codes in Basketball Legends, you must first join the InfinitySports Roblox Community.",
+      "links": [
+        {
+          "label": "InfinitySports Roblox Community",
+          "url": "https://www.roblox.com/communities/32333865/InfinitySports#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 2918,
+    "newCodes": [
+      {
+        "game": "basketball-legends",
+        "gameName": "Basketball Legends",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/basketball-legends"
+        },
+        "code": "650KLIKES",
+        "reward": "1,000 Coins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1788201240000,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-08-31T19:02:21.952Z",
+        "fetchedAt": "2026-08-31T19:02:21.952Z"
+      }
+    ],
+    "activeCount": 11,
+    "fetchedAt": "2026-08-31T19:02:21.952Z",
+    "displayCodes": [
+      {
+        "code": "650KLIKES",
+        "reward": "1,000 Coins",
+        "isNew": true
+      },
+      {
+        "code": "640KLIKES",
+        "reward": "1,000 Coins",
+        "isNew": false
+      },
+      {
+        "code": "MAGIC",
+        "reward": "Summer Skin Case",
+        "isNew": false
+      },
+      {
+        "code": "BOTS",
+        "reward": "Summer Effect Case",
+        "isNew": false
+      },
+      {
+        "code": "PARKHELMETS",
+        "reward": "Summer Trail Case",
+        "isNew": false
+      },
+      {
+        "code": "CATCH",
+        "reward": "Summer Skin Case",
+        "isNew": false
+      },
+      {
+        "code": "630KLIKES",
+        "reward": "1,000 Coins",
+        "isNew": false
+      },
+      {
+        "code": "GREEN",
+        "reward": "Summer Skin Case",
+        "isNew": false
+      },
+      {
+        "code": "BLOCKS",
+        "reward": "Summer Effect Case",
+        "isNew": false
+      },
+      {
+        "code": "620KLIKES",
+        "reward": "1,000 Coins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "650KLIKES",
+        "reward": "1,000 Coins",
+        "isNew": true
+      },
+      {
+        "code": "640KLIKES",
+        "reward": "1,000 Coins",
+        "isNew": false
+      },
+      {
+        "code": "MAGIC",
+        "reward": "Summer Skin Case",
+        "isNew": false
+      },
+      {
+        "code": "BOTS",
+        "reward": "Summer Effect Case",
+        "isNew": false
+      },
+      {
+        "code": "PARKHELMETS",
+        "reward": "Summer Trail Case",
+        "isNew": false
+      },
+      {
+        "code": "CATCH",
+        "reward": "Summer Skin Case",
+        "isNew": false
+      },
+      {
+        "code": "630KLIKES",
+        "reward": "1,000 Coins",
+        "isNew": false
+      },
+      {
+        "code": "GREEN",
+        "reward": "Summer Skin Case",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "MAGIC",
+      "BOTS",
+      "GREEN",
+      "BLOCKS",
+      "650KLIKES",
+      "640KLIKES",
+      "PARKHELMETS",
+      "CATCH",
+      "630KLIKES",
+      "620KLIKES",
+      "610KLIKES"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "rogue-piece",
     "name": "Rogue Piece",
     "displayName": "[🟢ULQUIORRA] Rogue Piece: Rebirth",
