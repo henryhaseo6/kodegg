@@ -1,5 +1,135 @@
 [
   {
+    "platform": "MOBILE",
+    "id": "gi",
+    "name": "Genshin Impact",
+    "slug": "genshin-impact",
+    "players": 0,
+    "rank": 1000000000,
+    "newCodes": [
+      {
+        "code": "DUGODWKRHAKDNJ",
+        "game": "gi",
+        "gameName": "Genshin Impact",
+        "reward": "Primogem ×30 · Mora ×10,000 · Hero's Wit ×3 · Mystic Enhancement Ore ×3"
+      }
+    ],
+    "activeCount": 16,
+    "fetchedAt": "2026-09-01T04:01:11.595Z",
+    "displayCodes": [
+      {
+        "code": "DUGODWKRHAKDNJ",
+        "reward": "Primogem ×30 · Mora ×10,000 · Hero's Wit ×3 · Mystic Enhancement Ore ×3",
+        "isNew": true
+      },
+      {
+        "code": "XVIZN7DK9P83",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Jueyun Chili Chicken ×5 · Stir-Fried Fish Noodles ×5",
+        "isNew": false
+      },
+      {
+        "code": "XVIZA2H2YWKX",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Jueyun Chili Chicken ×5 · Stir-Fried Fish Noodles ×5",
+        "isNew": false
+      },
+      {
+        "code": "Y1INABQB6DEX",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      },
+      {
+        "code": "BALLETCOLLAB",
+        "reward": "Primogem ×30 · Mora ×10000 · Hero's Wit ×3 · Mystic Enhancement Ore ×3",
+        "isNew": false
+      },
+      {
+        "code": "MySnezhnayaCareer",
+        "reward": "Primogem ×160 · Mora ×20000 · Hero's Wit ×3",
+        "isNew": false
+      },
+      {
+        "code": "XVIZDH2B9WGX",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Jueyun Chili Chicken ×5 · Stir-Fried Fish Noodles ×5",
+        "isNew": false
+      },
+      {
+        "code": "GS70XRNWFB",
+        "reward": "Mora ×30000 · Hero's Wit ×3 · Fine Enhancement Ore ×5",
+        "isNew": false
+      },
+      {
+        "code": "Snezhnaya",
+        "reward": "Mora ×30000 · Hero's Wit ×5 · Mystic Enhancement Ore ×5",
+        "isNew": false
+      },
+      {
+        "code": "GS70YTASTJ",
+        "reward": "Mora ×30000 · Hero's Wit ×5 · Mystic Enhancement Ore ×5",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "DUGODWKRHAKDNJ",
+        "reward": "Primogem ×30 · Mora ×10,000 · Hero's Wit ×3 · Mystic Enhancement Ore ×3",
+        "isNew": true
+      },
+      {
+        "code": "XVIZN7DK9P83",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Jueyun Chili Chicken ×5 · Stir-Fried Fish Noodles ×5",
+        "isNew": false
+      },
+      {
+        "code": "XVIZA2H2YWKX",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Jueyun Chili Chicken ×5 · Stir-Fried Fish Noodles ×5",
+        "isNew": false
+      },
+      {
+        "code": "Y1INABQB6DEX",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      },
+      {
+        "code": "BALLETCOLLAB",
+        "reward": "Primogem ×30 · Mora ×10000 · Hero's Wit ×3 · Mystic Enhancement Ore ×3",
+        "isNew": false
+      },
+      {
+        "code": "MySnezhnayaCareer",
+        "reward": "Primogem ×160 · Mora ×20000 · Hero's Wit ×3",
+        "isNew": false
+      },
+      {
+        "code": "XVIZDH2B9WGX",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Jueyun Chili Chicken ×5 · Stir-Fried Fish Noodles ×5",
+        "isNew": false
+      },
+      {
+        "code": "GS70XRNWFB",
+        "reward": "Mora ×30000 · Hero's Wit ×3 · Fine Enhancement Ore ×5",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "BALLETCOLLAB",
+      "Y1INABQB6DEX",
+      "2BJ64QRZ7RT8",
+      "P7G0XA30H0Q3",
+      "XVIZDH2B9WGX",
+      "DUGODWKRHAKDNJ",
+      "MySnezhnayaCareer",
+      "LEGEDILJKSGM",
+      "Snezhnaya",
+      "XVIZA2H2YWKX",
+      "XVIZN7DK9P83",
+      "GS70YTASTJ",
+      "OntoSnezhnaya",
+      "Odette0812",
+      "GS70XRNWFB",
+      "GENSHINGIFT"
+    ]
+  },
+  {
     "platform": "ROBLOX",
     "id": "rivals",
     "name": "Rivals",
