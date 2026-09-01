@@ -354,6 +354,144 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "murder-duels",
+    "name": "Murder Duels",
+    "displayName": "Murder Duels",
+    "slug": "murder-duels",
+    "players": 9995,
+    "redeemNote": {
+      "en": "To use codes in Murder Duels, you must join the Breakfast Roblox Community and be at least level 5.",
+      "links": [
+        {
+          "label": "Breakfast Roblox Community",
+          "url": "https://www.roblox.com/share/g/43252617"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 9995,
+    "newCodes": [
+      {
+        "game": "murder-duels",
+        "gameName": "Murder Duels",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/murder-duels"
+        },
+        "code": "LATE",
+        "reward": "1 Recruit Case",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1788242100000,
+        "endsAt": null,
+        "verified": true,
+        "firstSeenAt": "2026-09-01T06:01:36.820Z",
+        "fetchedAt": "2026-09-01T06:01:36.820Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-09-01T06:01:36.820Z",
+    "displayCodes": [
+      {
+        "code": "LATE",
+        "reward": "1 Recruit Case",
+        "isNew": true
+      },
+      {
+        "code": "180KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "160KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "100MOG",
+        "reward": "Exclusive OG Knife",
+        "isNew": false
+      },
+      {
+        "code": "80KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "50KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "1,000 Coins.You must be at least level 5 to redeem this code",
+        "isNew": false
+      },
+      {
+        "code": "MATCHMAKINGDELAY",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "LATE",
+        "reward": "1 Recruit Case",
+        "isNew": true
+      },
+      {
+        "code": "180KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "160KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "100MOG",
+        "reward": "Exclusive OG Knife",
+        "isNew": false
+      },
+      {
+        "code": "80KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "50KLIKES",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "1,000 Coins.You must be at least level 5 to redeem this code",
+        "isNew": false
+      },
+      {
+        "code": "MATCHMAKINGDELAY",
+        "reward": "1 Recruit Case",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "MATCHMAKINGDELAY",
+      "LATE",
+      "180KLIKES",
+      "160KLIKES",
+      "100MOG",
+      "80KLIKES",
+      "50KLIKES",
+      "RELEASE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "dungeon-lootr",
     "name": "Dungeon Lootr",
     "displayName": "Dungeon Lootr [🎉RELEASE]",
