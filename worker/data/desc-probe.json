@@ -516,7 +516,7 @@
   "joining": {
    "tulis": "joining",
    "pertama": 1786402956547,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-09-02"
   }
  },
  "petsim99": {
@@ -1421,7 +1421,7 @@
   "pickup": {
    "tulis": "Pickup",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "squishy": {
@@ -2038,6 +2038,11 @@
    "tulis": "Thunderchord",
    "pertama": 1787310323517,
    "terakhir": "2026-09-02"
+  },
+  "notes": {
+   "tulis": "NOTES",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "blockspin": {
@@ -2117,7 +2122,7 @@
   "county": {
    "tulis": "county",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-30",
+   "terakhir": "2026-09-02",
    "awal": true
   }
  },
@@ -2167,7 +2172,7 @@
   "panel": {
    "tulis": "PANEL",
    "pertama": 1785996161549,
-   "terakhir": "2026-08-28",
+   "terakhir": "2026-09-02",
    "n": 1,
    "awal": true
   },
@@ -2437,6 +2442,11 @@
   "decorations": {
    "tulis": "Decorations",
    "pertama": 1788005049969,
+   "terakhir": "2026-09-02"
+  },
+  "flash": {
+   "tulis": "Flash",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -2741,7 +2751,7 @@
   "swarm": {
    "tulis": "swarm",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "auto-mines": {
@@ -3163,7 +3173,7 @@
   "notes": {
    "tulis": "notes",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "stepping": {
@@ -8043,7 +8053,7 @@
   "rumble": {
    "tulis": "Rumble",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-30",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "option": {
@@ -8184,6 +8194,11 @@
   "stratus": {
    "tulis": "Stratus",
    "pertama": 1787940278068,
+   "terakhir": "2026-09-02"
+  },
+  "competition": {
+   "tulis": "Competition",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -8608,7 +8623,7 @@
   "wall": {
    "tulis": "Wall",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "unlocked": {
@@ -8690,7 +8705,7 @@
   "roam": {
    "tulis": "roam",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "punishing": {
@@ -8952,7 +8967,7 @@
   "kills": {
    "tulis": "kills",
    "pertama": 1787493822099,
-   "terakhir": "2026-08-28"
+   "terakhir": "2026-09-02"
   }
  },
  "jujutsu-infinite": {
@@ -9873,7 +9888,7 @@
   "begins": {
    "tulis": "begins",
    "pertama": 1788113057044,
-   "terakhir": "2026-08-30"
+   "terakhir": "2026-09-02"
   }
  },
  "titan-tower-defense": {
@@ -9960,6 +9975,16 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "strictly": {
+   "tulis": "strictly",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "prohibited": {
+   "tulis": "prohibited",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "anime-fighting-simulator-endless": {
@@ -10193,6 +10218,16 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "strictly": {
+   "tulis": "strictly",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "prohibited": {
+   "tulis": "prohibited",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "devil-hunter": {
@@ -10545,7 +10580,7 @@
   "ring": {
    "tulis": "Ring",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "rate": {
@@ -10777,6 +10812,11 @@
    "tulis": "Wolf",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "shinobi": {
+   "tulis": "Shinobi",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "daybreak": {
@@ -10864,7 +10904,7 @@
   "objective": {
    "tulis": "objective",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "defender": {
@@ -10912,7 +10952,12 @@
   "diverse": {
    "tulis": "diverse",
    "pertama": 1786402956547,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-09-02"
+  },
+  "either": {
+   "tulis": "either",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "spear-training": {
@@ -11560,7 +11605,7 @@
   "makeup": {
    "tulis": "makeup",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "runway": {
@@ -11672,7 +11717,7 @@
   "ingame": {
    "tulis": "ingame",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "tolerance": {
@@ -11941,6 +11986,11 @@
    "terakhir": "2026-08-18",
    "awal": true,
    "sudahPunya": true
+  },
+  "shinobi": {
+   "tulis": "Shinobi",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "star-fishing": {
@@ -12507,7 +12557,7 @@
   "destroying": {
    "tulis": "destroying",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "stuff": {
@@ -13282,7 +13332,7 @@
   "criminal": {
    "tulis": "CRIMINAL",
    "pertama": 1785996161549,
-   "terakhir": 1785996161549,
+   "terakhir": "2026-09-02",
    "n": 1,
    "awal": true
   },
@@ -13357,6 +13407,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "sabotage": {
+   "tulis": "sabotage",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "slap-battles": {
@@ -13453,7 +13508,7 @@
   "hell": {
    "tulis": "hell",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "itself": {
@@ -13571,7 +13626,7 @@
   "constantly": {
    "tulis": "constantly",
    "pertama": 1786140129111,
-   "terakhir": "2026-09-01"
+   "terakhir": "2026-09-02"
   }
  },
  "sing-it-karaoke-battles": {
@@ -13676,7 +13731,7 @@
   "page": {
    "tulis": "Page",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "keijucat": {
@@ -13730,7 +13785,12 @@
   "socialize": {
    "tulis": "Socialize",
    "pertama": 1786402956547,
-   "terakhir": "2026-09-01"
+   "terakhir": "2026-09-02"
+  },
+  "winner": {
+   "tulis": "winner",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "zombie-island": {
@@ -13926,7 +13986,7 @@
   "throttle": {
    "tulis": "throttle",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-29",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "interactive": {
@@ -14002,6 +14062,11 @@
   "120k": {
    "tulis": "120K",
    "pertama": 1787418215964,
+   "terakhir": "2026-09-02"
+  },
+  "highways": {
+   "tulis": "highways",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -14742,7 +14807,7 @@
   "counts": {
    "tulis": "counts",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-31",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "steps": {
@@ -15332,6 +15397,11 @@
    "tulis": "encounter",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "works": {
+   "tulis": "works",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "toy-defense": {
@@ -15744,6 +15814,11 @@
    "tulis": "completing",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "villain": {
+   "tulis": "Villain",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "roll-an-anime": {
@@ -15943,7 +16018,7 @@
   "awakening": {
    "tulis": "AWAKENING",
    "pertama": 1785996161549,
-   "terakhir": "2026-08-18",
+   "terakhir": "2026-09-02",
    "n": 1,
    "awal": true
   },
@@ -16195,6 +16270,16 @@
    "tulis": "legend",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "ancient": {
+   "tulis": "ancient",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "materials": {
+   "tulis": "materials",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "sonic-speed-simulator": {
@@ -16759,6 +16844,11 @@
    "tulis": "Wolf",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "nightmare": {
+   "tulis": "Nightmare",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "driving-empire": {
@@ -16907,7 +16997,7 @@
   "property": {
    "tulis": "property",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "offroading": {
@@ -16978,6 +17068,11 @@
   "circuit": {
    "tulis": "Circuit",
    "pertama": 1787936639782,
+   "terakhir": "2026-09-02"
+  },
+  "respective": {
+   "tulis": "respective",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -17052,7 +17147,7 @@
   "meditate": {
    "tulis": "Meditate",
    "pertama": 1786402956547,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-09-02"
   }
  },
  "nfl-universe-football": {
@@ -17891,7 +17986,7 @@
   "ranked": {
    "tulis": "RANKED",
    "pertama": 1785996161549,
-   "terakhir": 1785996161549,
+   "terakhir": "2026-09-02",
    "n": 1,
    "awal": true
   },
@@ -18017,7 +18112,7 @@
   "anywhere": {
    "tulis": "anywhere",
    "pertama": 1787605455838,
-   "terakhir": "2026-08-25"
+   "terakhir": "2026-09-02"
   }
  },
  "build-an-ore-crusher": {
@@ -18043,7 +18138,7 @@
   "crush": {
    "tulis": "Crush",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "pickaxes": {
@@ -18240,7 +18335,7 @@
   "diverse": {
    "tulis": "Diverse",
    "pertama": 1786402956547,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-09-02"
   },
   "working": {
    "tulis": "Working",
@@ -18729,7 +18824,7 @@
   "strongly": {
    "tulis": "strongly",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "advise": {
@@ -19008,7 +19103,7 @@
   "pickup": {
    "tulis": "pickup",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "radius": {
@@ -19762,7 +19857,7 @@
   "return": {
    "tulis": "Return",
    "pertama": 1787148481288,
-   "terakhir": "2026-08-22"
+   "terakhir": "2026-09-02"
   },
   "flightspeed": {
    "tulis": "Flightspeed",
@@ -19841,7 +19936,7 @@
   "throttle": {
    "tulis": "throttle",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-29",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "maximize": {
@@ -20111,7 +20206,7 @@
   "animation": {
    "tulis": "Animation",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-29",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "fabi": {
@@ -20802,7 +20897,7 @@
   "rumble": {
    "tulis": "Rumble",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-30",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "teleport": {
@@ -20977,6 +21072,11 @@
    "tulis": "remodel",
    "pertama": 1786637029124,
    "terakhir": "2026-09-02"
+  },
+  "highways": {
+   "tulis": "highways",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "flood-escape-2": {
@@ -21039,7 +21139,7 @@
   "offers": {
    "tulis": "offers",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "swimming": {
@@ -21087,7 +21187,7 @@
   "award": {
    "tulis": "Award",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "nominee": {
@@ -21111,6 +21211,11 @@
    "tulis": "working",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "winner": {
+   "tulis": "Winner",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "dog-race": {
@@ -21620,7 +21725,7 @@
   "leopard": {
    "tulis": "Leopard",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-30",
+   "terakhir": "2026-09-02",
    "awal": true,
    "sudahPunya": true
   },
@@ -21881,6 +21986,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "shape": {
+   "tulis": "shape",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "project-mugetsu": {
@@ -22106,7 +22216,7 @@
   "meditate": {
    "tulis": "Meditate",
    "pertama": 1786402956547,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-09-02"
   }
  },
  "looksmax-and-mog": {
@@ -22225,7 +22335,7 @@
   "forums": {
    "tulis": "forums",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-23",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "disturbing": {
@@ -22332,7 +22442,7 @@
   "dpad": {
    "tulis": "DPad",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-28",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "signals": {
@@ -22350,7 +22460,7 @@
   "offers": {
    "tulis": "offers",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "drive-to-earn": {
@@ -23380,7 +23490,7 @@
   "slow": {
    "tulis": "Slow",
    "pertama": 1786402956547,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-09-02"
   },
   "hope": {
    "tulis": "hope",
@@ -23391,6 +23501,16 @@
    "tulis": "Elemental",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "works": {
+   "tulis": "works",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "respective": {
+   "tulis": "respective",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "trench-decay": {
@@ -23627,6 +23747,11 @@
   "battlepass": {
    "tulis": "BATTLEPASS",
    "pertama": 1786748775858,
+   "terakhir": "2026-09-02"
+  },
+  "nightmare": {
+   "tulis": "Nightmare",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -24277,7 +24402,7 @@
   "superhero": {
    "tulis": "Superhero",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-29",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "unlocking": {
@@ -24360,6 +24485,11 @@
   "80klikes": {
    "tulis": "80KLIKES",
    "pertama": 1787529860456,
+   "terakhir": "2026-09-02"
+  },
+  "villain": {
+   "tulis": "Villain",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -24469,7 +24599,7 @@
   "justice": {
    "tulis": "justice",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-29",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "robloxia": {
@@ -24543,6 +24673,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "winner": {
+   "tulis": "winner",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "coach-a-fighter": {
@@ -24666,7 +24801,7 @@
   "ring": {
    "tulis": "ring",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "shut": {
@@ -24895,7 +25030,7 @@
   "makeup": {
    "tulis": "Makeup",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true,
    "sudahPunya": true
   },
@@ -25047,7 +25182,7 @@
   "appeals": {
    "tulis": "appeals",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-26",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "submitted": {
@@ -26141,6 +26276,16 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-14",
    "awal": true
+  },
+  "ragdolled": {
+   "tulis": "ragdolled",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "ranked": {
+   "tulis": "Ranked",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "samurai-duels": {
@@ -26891,7 +27036,7 @@
   "copyright": {
    "tulis": "Copyright",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-25",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "izzyan": {
@@ -26913,6 +27058,11 @@
   "beach": {
    "tulis": "beach",
    "pertama": 1787335536214,
+   "terakhir": "2026-09-02"
+  },
+  "hospital": {
+   "tulis": "Hospital",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -27741,6 +27891,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-25",
    "awal": true
+  },
+  "awakening": {
+   "tulis": "Awakening",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "soccer-zero": {
@@ -28068,7 +28223,7 @@
   "july": {
    "tulis": "JULY",
    "pertama": 1785996161549,
-   "terakhir": 1785996161549,
+   "terakhir": "2026-09-02",
    "n": 1,
    "awal": true
   },
@@ -28583,6 +28738,16 @@
    "tulis": "Friday-Sun",
    "pertama": 1788213819609,
    "terakhir": "2026-09-02"
+  },
+  "rarities": {
+   "tulis": "rarities",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "mon-tue": {
+   "tulis": "Mon-Tue",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "car-driving-indonesia": {
@@ -28755,6 +28920,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-23",
    "awal": true
+  },
+  "ragdolled": {
+   "tulis": "ragdolled",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "pop-for-free-oboz": {
@@ -29038,6 +29208,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "hospital": {
+   "tulis": "Hospital",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "twilight-daycare": {
@@ -29345,7 +29520,7 @@
   "wall": {
    "tulis": "wall",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "glider": {
@@ -30341,7 +30516,7 @@
   "counts": {
    "tulis": "counts",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-31",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "ripping": {
@@ -30478,7 +30653,7 @@
   "forums": {
    "tulis": "forums",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "heal": {
@@ -31143,7 +31318,7 @@
   "competition": {
    "tulis": "competition",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-07",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "dreams": {
@@ -31883,7 +32058,7 @@
   "kills": {
    "tulis": "kills",
    "pertama": 1787493822099,
-   "terakhir": "2026-08-28"
+   "terakhir": "2026-09-02"
   }
  },
  "kung-fu-simulator": {
@@ -32011,7 +32186,7 @@
   "flips": {
    "tulis": "flips",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-31",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "yard": {
@@ -32355,6 +32530,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-17",
    "awal": true
+  },
+  "july": {
+   "tulis": "July",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "dank-murder-mystery": {
@@ -32471,6 +32651,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-14",
    "awal": true
+  },
+  "criminal": {
+   "tulis": "criminal",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "winx-the-fairy-guardians": {
@@ -33234,7 +33419,7 @@
   "anywhere": {
    "tulis": "anywhere",
    "pertama": 1787605455838,
-   "terakhir": "2026-08-25"
+   "terakhir": "2026-09-02"
   }
  },
  "raygun-battle": {
@@ -33443,6 +33628,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "slow": {
+   "tulis": "Slow",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "super-league-soccer": {
@@ -33967,6 +34157,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "ranked": {
+   "tulis": "Ranked",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "roanoke-va": {
@@ -34234,6 +34429,11 @@
    "tulis": "DEALERSHIP",
    "pertama": 1787414598237,
    "terakhir": "2026-09-02"
+  },
+  "reduced": {
+   "tulis": "REDUCED",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "project-new-world": {
@@ -34253,13 +34453,13 @@
   "despawn": {
    "tulis": "Despawn",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "clan": {
    "tulis": "Clan",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "conq": {
@@ -34332,13 +34532,13 @@
   "leopard": {
    "tulis": "Leopard",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-30",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "dough": {
    "tulis": "Dough",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "sneakpeeks": {
@@ -34350,7 +34550,7 @@
   "spike": {
    "tulis": "Spike",
    "pertama": 1786820820432,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-09-02"
   }
  },
  "notoriety": {
@@ -34474,7 +34674,7 @@
   "joining": {
    "tulis": "joining",
    "pertama": 1786006947643,
-   "terakhir": "2026-08-29"
+   "terakhir": "2026-09-02"
   },
   "suit": {
    "tulis": "suit",
@@ -34802,7 +35002,7 @@
   "extreme": {
    "tulis": "Extreme",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "stamina": {
@@ -34947,7 +35147,7 @@
   "return": {
    "tulis": "return",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-22",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "flag": {
@@ -35305,7 +35505,7 @@
   "mmorpg": {
    "tulis": "MMORPG",
    "pertama": 1785996161549,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "n": 1,
    "awal": true
   },
@@ -35609,7 +35809,7 @@
   "mmorpg": {
    "tulis": "MMORPG",
    "pertama": 1785996161549,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "n": 1,
    "awal": true
   },
@@ -35623,7 +35823,7 @@
   "adventures": {
    "tulis": "adventures",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "landscapes": {
@@ -35647,6 +35847,11 @@
   "crawler": {
    "tulis": "Crawler",
    "pertama": 1786806392785,
+   "terakhir": "2026-09-02"
+  },
+  "diverse": {
+   "tulis": "diverse",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -35713,7 +35918,7 @@
   "crush": {
    "tulis": "Crush",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-12",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "barriers": {
@@ -35886,7 +36091,7 @@
   "flash": {
    "tulis": "flash",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-29",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "floods": {
@@ -36057,7 +36262,7 @@
   "dough": {
    "tulis": "Dough",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "tiger": {
@@ -36081,7 +36286,7 @@
   "despawn": {
    "tulis": "despawn",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "mins": {
@@ -36128,7 +36333,7 @@
   "spike": {
    "tulis": "Spike",
    "pertama": 1786402956547,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-09-02"
   },
   "phoenix": {
    "tulis": "Phoenix",
@@ -36897,6 +37102,11 @@
    "tulis": "Genres",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "hospital": {
+   "tulis": "hospital",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "build-a-boat-for-treasure": {
@@ -36981,7 +37191,7 @@
   "firefighter": {
    "tulis": "firefighter",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-01",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "medic": {
@@ -37059,7 +37269,7 @@
   "traffic": {
    "tulis": "traffic",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "transport": {
@@ -37154,13 +37364,18 @@
    "tulis": "write",
    "pertama": 1786795590846,
    "terakhir": "2026-09-02"
+  },
+  "criminal": {
+   "tulis": "criminal",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "bee-swarm-simulator": {
   "swarm": {
    "tulis": "swarm",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "bees": {
@@ -37234,7 +37449,7 @@
   "brand-new": {
    "tulis": "brand-new",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-28",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "lane": {
@@ -37374,7 +37589,7 @@
   "adventures": {
    "tulis": "adventures",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "cease": {
@@ -37623,6 +37838,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "ragdolled": {
+   "tulis": "ragdolled",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "tower-of-hell": {
@@ -37747,6 +37967,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-25",
    "awal": true
+  },
+  "highways": {
+   "tulis": "highways",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "run-a-restaurant": {
@@ -39666,6 +39891,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "sabotage": {
+   "tulis": "Sabotage",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "gym-league": {
@@ -39838,7 +40068,7 @@
   "collected": {
    "tulis": "collected",
    "pertama": 1786810019943,
-   "terakhir": "2026-08-20"
+   "terakhir": "2026-09-02"
   },
   "gaming": {
    "tulis": "Gaming",
@@ -39950,6 +40180,16 @@
    "tulis": "Deploy",
    "pertama": 1786273376420,
    "terakhir": "2026-08-14"
+  },
+  "strictly": {
+   "tulis": "strictly",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "prohibited": {
+   "tulis": "prohibited",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "clover-retribution": {
@@ -40005,7 +40245,7 @@
   "feed": {
    "tulis": "Feed",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-25",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "baby": {
@@ -40232,6 +40472,11 @@
    "tulis": "earning",
    "pertama": 1788019451970,
    "terakhir": "2026-08-29"
+  },
+  "makeup": {
+   "tulis": "Makeup",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "inazuma-strikers": {
@@ -40543,6 +40788,11 @@
    "tulis": "Beach",
    "pertama": 1787335536214,
    "terakhir": "2026-09-02"
+  },
+  "speeds": {
+   "tulis": "speeds",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "roblox-knockout": {
@@ -40751,7 +41001,7 @@
   "begins": {
    "tulis": "begins",
    "pertama": 1788113057044,
-   "terakhir": "2026-08-30"
+   "terakhir": "2026-09-02"
   }
  },
  "noob-incremental": {
@@ -40801,7 +41051,7 @@
   "highway": {
    "tulis": "Highway",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "swerve": {
@@ -40813,7 +41063,7 @@
   "traffic": {
    "tulis": "traffic",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "hypercars": {
@@ -40897,7 +41147,7 @@
   "dpad": {
    "tulis": "Dpad",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-28",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "hazards": {
@@ -40933,6 +41183,11 @@
    "tulis": "cruise",
    "pertama": 1786402956547,
    "terakhir": "2026-08-14"
+  },
+  "speeds": {
+   "tulis": "speeds",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "anime-ultron-simulator": {
@@ -41051,7 +41306,7 @@
   "awakening": {
    "tulis": "awakening",
    "pertama": 1786741606790,
-   "terakhir": "2026-08-18"
+   "terakhir": "2026-09-02"
   },
   "crasher": {
    "tulis": "Crasher",
@@ -41111,7 +41366,7 @@
   "staff": {
    "tulis": "staff",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-23",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "class-d": {
@@ -41338,7 +41593,7 @@
   "mon-tue": {
    "tulis": "Mon-Tue",
    "pertama": 1788134655367,
-   "terakhir": "2026-08-31"
+   "terakhir": "2026-09-02"
   },
   "wed-thu": {
    "tulis": "Wed-Thu",
@@ -41409,7 +41664,7 @@
   "constantly": {
    "tulis": "constantly",
    "pertama": 1786140129111,
-   "terakhir": "2026-09-01"
+   "terakhir": "2026-09-02"
   },
   "cozy": {
    "tulis": "cozy",
@@ -41420,6 +41675,11 @@
    "tulis": "fall",
    "pertama": 1786402956547,
    "terakhir": "2026-08-16"
+  },
+  "ancient": {
+   "tulis": "ancient",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "bloxy-bingo": {
@@ -41528,7 +41788,7 @@
   "reduced": {
    "tulis": "reduced",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-22",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "manual": {
@@ -41713,6 +41973,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-14",
    "awal": true
+  },
+  "shape": {
+   "tulis": "shape",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "climb-waterslide-and-slide": {
@@ -41984,6 +42249,11 @@
   "biscuit": {
    "tulis": "Biscuit",
    "pertama": 1788134655367,
+   "terakhir": "2026-09-02"
+  },
+  "leopard": {
+   "tulis": "Leopard",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -42307,7 +42577,7 @@
   "award": {
    "tulis": "Award",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "excellence": {
@@ -42667,7 +42937,7 @@
   "mon-tue": {
    "tulis": "Mon-Tue",
    "pertama": 1788123888936,
-   "terakhir": "2026-08-31"
+   "terakhir": "2026-09-02"
   },
   "toki": {
    "tulis": "Toki",
@@ -42682,6 +42952,16 @@
   "friday-sun": {
    "tulis": "Friday-Sun",
    "pertama": 1788123888936,
+   "terakhir": "2026-09-02"
+  },
+  "shinobi": {
+   "tulis": "Shinobi",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "ancient": {
+   "tulis": "ancient",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -43230,7 +43510,7 @@
   "objective": {
    "tulis": "Objective",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "builds": {
@@ -43242,7 +43522,7 @@
   "rarities": {
    "tulis": "Rarities",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-21",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "out-flex": {
@@ -43479,6 +43759,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "july": {
+   "tulis": "July",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "mine": {
@@ -43551,7 +43836,7 @@
   "practice": {
    "tulis": "practice",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "testers": {
@@ -43630,7 +43915,7 @@
   "return": {
    "tulis": "return",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-22",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "above": {
@@ -43734,6 +44019,11 @@
   "deck": {
    "tulis": "deck",
    "pertama": 1787353555935,
+   "terakhir": "2026-09-02"
+  },
+  "nightmare": {
+   "tulis": "Nightmare",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -43879,7 +44169,7 @@
   "feed": {
    "tulis": "Feed",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-25",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "kraken": {
@@ -44040,7 +44330,7 @@
   "decide": {
    "tulis": "Decide",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-19",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "faction": {
@@ -44185,6 +44475,11 @@
    "tulis": "gaming",
    "pertama": 1787223829534,
    "terakhir": "2026-09-02"
+  },
+  "materials": {
+   "tulis": "materials",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "prior-extinction": {
@@ -44305,7 +44600,7 @@
   "locked": {
    "tulis": "locked",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-21",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "gates": {
@@ -44420,7 +44715,7 @@
   "brand-new": {
    "tulis": "brand-new",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-28",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "lottery": {
@@ -44522,6 +44817,11 @@
   "rankings": {
    "tulis": "rankings",
    "pertama": 1787223829534,
+   "terakhir": "2026-09-02"
+  },
+  "collected": {
+   "tulis": "collected",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -44710,7 +45010,7 @@
   "destroying": {
    "tulis": "destroying",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "defences": {
@@ -44759,7 +45059,7 @@
   "collected": {
    "tulis": "collected",
    "pertama": 1786810019943,
-   "terakhir": "2026-08-20"
+   "terakhir": "2026-09-02"
   }
  },
  "the-presentation-experience": {
@@ -44913,6 +45213,11 @@
   "supersonic": {
    "tulis": "Supersonic",
    "pertama": 1787943801599,
+   "terakhir": "2026-09-02"
+  },
+  "either": {
+   "tulis": "either",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -45275,6 +45580,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "villain": {
+   "tulis": "villain",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "garden-cleaner-evolution": {
@@ -45510,7 +45820,7 @@
   "socialize": {
    "tulis": "socialize",
    "pertama": 1786795590846,
-   "terakhir": "2026-09-01"
+   "terakhir": "2026-09-02"
   },
   "lego": {
    "tulis": "LEGO",
@@ -45973,7 +46283,7 @@
   "quickly": {
    "tulis": "quickly",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-12",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "interesting": {
@@ -46087,7 +46397,7 @@
   "strongly": {
    "tulis": "strongly",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-12",
+   "terakhir": "2026-09-02",
    "awal": true
   },
   "minute": {
@@ -46181,6 +46491,11 @@
    "tulis": "achievements",
    "pertama": 1786442594062,
    "terakhir": "2026-08-11"
+  },
+  "slow": {
+   "tulis": "slow",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "pokemon-brick-bronze-roria-conquest-1skh": {
@@ -46420,6 +46735,11 @@
    "pertama": 1785997647571,
    "terakhir": "2026-09-02",
    "awal": true
+  },
+  "meditate": {
+   "tulis": "Meditate",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "anime-astral-simulator": {
@@ -46578,6 +46898,11 @@
    "tulis": "Portal",
    "pertama": 1786230188339,
    "terakhir": "2026-08-15"
+  },
+  "roam": {
+   "tulis": "roam",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "camper-van": {
@@ -46599,7 +46924,7 @@
   "highway": {
    "tulis": "highway",
    "pertama": 1786014129348,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-09-02"
   },
   "supersized": {
    "tulis": "supersized",
@@ -46640,7 +46965,7 @@
   "panel": {
    "tulis": "panel",
    "pertama": 1786014129348,
-   "terakhir": "2026-08-28"
+   "terakhir": "2026-09-02"
   },
   "setting": {
    "tulis": "setting",
@@ -46660,7 +46985,7 @@
   "forums": {
    "tulis": "forums",
    "pertama": 1787306743659,
-   "terakhir": "2026-08-23"
+   "terakhir": "2026-09-02"
   }
  },
  "anime-fighting-simulator-kdmf": {
@@ -47010,7 +47335,7 @@
   "pickups": {
    "tulis": "pickups",
    "pertama": 1786021440182,
-   "terakhir": "2026-08-17"
+   "terakhir": "2026-09-02"
   },
   "micro-cars": {
    "tulis": "micro-cars",
@@ -47037,7 +47362,7 @@
   "justice": {
    "tulis": "Justice",
    "pertama": 1786025067739,
-   "terakhir": "2026-08-29"
+   "terakhir": "2026-09-02"
   },
   "sorcere": {
    "tulis": "Sorcere",
@@ -47190,7 +47515,7 @@
   "shooting": {
    "tulis": "Shooting",
    "pertama": 1786028694473,
-   "terakhir": "2026-08-27"
+   "terakhir": "2026-09-02"
   },
   "sidedash": {
    "tulis": "Sidedash",
@@ -47309,7 +47634,7 @@
   "regular": {
    "tulis": "Regular",
    "pertama": 1786028694473,
-   "terakhir": "2026-08-08"
+   "terakhir": "2026-09-02"
   },
   "triple": {
    "tulis": "Triple",
@@ -47383,6 +47708,11 @@
    "tulis": "display",
    "pertama": 1786615475048,
    "terakhir": "2026-09-02"
+  },
+  "offers": {
+   "tulis": "offers",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "roblox-ken": {
@@ -47409,7 +47739,7 @@
   "gangs": {
    "tulis": "gangs",
    "pertama": 1786057644726,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-09-02"
   },
   "tough": {
    "tulis": "tough",
@@ -47890,7 +48220,7 @@
   "appeals": {
    "tulis": "appeals",
    "pertama": 1786680249966,
-   "terakhir": "2026-08-26"
+   "terakhir": "2026-09-02"
   }
  },
  "fnaf-eternal-nights": {
@@ -48616,6 +48946,11 @@
    "tulis": "sniper",
    "pertama": 1787425389164,
    "terakhir": "2026-09-02"
+  },
+  "competition": {
+   "tulis": "Competition",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "art-244": {
@@ -49047,6 +49382,11 @@
    "tulis": "begun",
    "pertama": 1787915058175,
    "terakhir": "2026-08-29"
+  },
+  "brand-new": {
+   "tulis": "brand-new",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "neighbors-17": {
@@ -49144,6 +49484,21 @@
    "tulis": "transfer",
    "pertama": 1786150926822,
    "terakhir": "2026-09-02"
+  },
+  "quickly": {
+   "tulis": "quickly",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "regular": {
+   "tulis": "Regular",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "strongly": {
+   "tulis": "strongly",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "boxing-beta": {
@@ -49191,6 +49546,11 @@
    "tulis": "WEIGHT",
    "pertama": 1786150926822,
    "terakhir": "2026-09-02"
+  },
+  "ring": {
+   "tulis": "RING",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "destroy-grandma": {
@@ -49222,6 +49582,11 @@
   "404problems": {
    "tulis": "404problems",
    "pertama": 1786161731763,
+   "terakhir": "2026-09-02"
+  },
+  "pickup": {
+   "tulis": "pickup",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -49337,6 +49702,11 @@
   "kingdom": {
    "tulis": "Kingdom",
    "pertama": 1787972678574,
+   "terakhir": "2026-09-02"
+  },
+  "award": {
+   "tulis": "Award",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -49492,7 +49862,7 @@
   "morph": {
    "tulis": "Morph",
    "pertama": 1786165328752,
-   "terakhir": "2026-08-24"
+   "terakhir": "2026-09-02"
   },
   "props": {
    "tulis": "props",
@@ -49797,6 +50167,11 @@
    "tulis": "Interceptors",
    "pertama": 1787134082962,
    "terakhir": "2026-09-02"
+  },
+  "crush": {
+   "tulis": "Crush",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "kite-combat": {
@@ -49846,12 +50221,12 @@
   "hell": {
    "tulis": "Hell",
    "pertama": 1786190611308,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-09-02"
   },
   "obstacle": {
    "tulis": "Obstacle",
    "pertama": 1786190611308,
-   "terakhir": "2026-08-27"
+   "terakhir": "2026-09-02"
   },
   "course": {
    "tulis": "Course",
@@ -49883,6 +50258,11 @@
   "review": {
    "tulis": "Review",
    "pertama": 1786204966995,
+   "terakhir": "2026-09-02"
+  },
+  "practice": {
+   "tulis": "Practice",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -50084,7 +50464,7 @@
   "shooting": {
    "tulis": "Shooting",
    "pertama": 1786208515719,
-   "terakhir": "2026-08-27"
+   "terakhir": "2026-09-02"
   },
   "spiderweb": {
    "tulis": "spiderweb",
@@ -50323,6 +50703,11 @@
    "tulis": "ending",
    "pertama": 1786810019943,
    "terakhir": "2026-08-27"
+  },
+  "materials": {
+   "tulis": "Materials",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "cali-shootout": {
@@ -50404,7 +50789,7 @@
   "gangs": {
    "tulis": "GANGS",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-09-02"
   },
   "compatible": {
    "tulis": "compatible",
@@ -50721,6 +51106,11 @@
    "pertama": 1786695454025,
    "terakhir": "2026-09-02",
    "sudahPunya": true
+  },
+  "page": {
+   "tulis": "page",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "burgerz": {
@@ -50810,6 +51200,11 @@
   "fisher": {
    "tulis": "Fisher",
    "pertama": 1786695454025,
+   "terakhir": "2026-09-02"
+  },
+  "swarm": {
+   "tulis": "Swarm",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -50916,6 +51311,16 @@
    "tulis": "QuadraTech",
    "pertama": 1786695454025,
    "terakhir": "2026-09-02"
+  },
+  "property": {
+   "tulis": "property",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "respective": {
+   "tulis": "respective",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "hide-and-seek-extreme": {
@@ -50948,6 +51353,11 @@
    "tulis": "hiders",
    "pertama": 1787447030666,
    "terakhir": "2026-08-26"
+  },
+  "extreme": {
+   "tulis": "Extreme",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "emergency-emden": {
@@ -51004,7 +51414,7 @@
   "firefighter": {
    "tulis": "firefighter",
    "pertama": 1786695454025,
-   "terakhir": "2026-09-01"
+   "terakhir": "2026-09-02"
   },
   "lives": {
    "tulis": "lives",
@@ -51823,6 +52233,11 @@
    "pertama": 1786695454025,
    "terakhir": "2026-09-02",
    "sudahPunya": true
+  },
+  "notes": {
+   "tulis": "Notes",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "blair": {
@@ -51849,7 +52264,7 @@
   "evidence": {
    "tulis": "evidence",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-25"
+   "terakhir": "2026-09-02"
   },
   "identifying": {
    "tulis": "identifying",
@@ -51931,7 +52346,7 @@
   "flash": {
    "tulis": "Flash",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-29"
+   "terakhir": "2026-09-02"
   },
   "instinct": {
    "tulis": "Instinct",
@@ -51966,12 +52381,12 @@
   "dough": {
    "tulis": "Dough",
    "pertama": 1786820820432,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-09-02"
   },
   "despawn": {
    "tulis": "despawn",
    "pertama": 1786820820432,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-09-02"
   }
  },
  "survive-the-killer": {
@@ -52794,7 +53209,7 @@
   "reduced": {
    "tulis": "reduced",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-22"
+   "terakhir": "2026-09-02"
   },
   "payout": {
    "tulis": "payout",
@@ -53093,6 +53508,11 @@
    "pertama": 1787180911987,
    "terakhir": "2026-09-02",
    "sudahPunya": true
+  },
+  "shape": {
+   "tulis": "shape",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "build-a-dinosaur": {
@@ -53141,7 +53561,7 @@
   "destroying": {
    "tulis": "destroying",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-15"
+   "terakhir": "2026-09-02"
   },
   "pixelated": {
    "tulis": "pixelated",
@@ -53171,7 +53591,7 @@
   "decide": {
    "tulis": "Decide",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-19"
+   "terakhir": "2026-09-02"
   },
   "defeated": {
    "tulis": "defeated",
@@ -53206,6 +53626,11 @@
   "third": {
    "tulis": "Third",
    "pertama": 1788120240525,
+   "terakhir": "2026-09-02"
+  },
+  "hell": {
+   "tulis": "Hell",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -53348,6 +53773,11 @@
   "registered": {
    "tulis": "registered",
    "pertama": 1786695454025,
+   "terakhir": "2026-09-02"
+  },
+  "mmorpg": {
+   "tulis": "MMORPG",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -53666,6 +54096,21 @@
    "tulis": "Headlights",
    "pertama": 1786695454025,
    "terakhir": "2026-09-02"
+  },
+  "traffic": {
+   "tulis": "traffic",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "highway": {
+   "tulis": "highway",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "speeds": {
+   "tulis": "speeds",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "mutant-plants-base-defense": {
@@ -53850,7 +54295,7 @@
   "pickups": {
    "tulis": "pickups",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-17"
+   "terakhir": "2026-09-02"
   },
   "rapid": {
    "tulis": "Rapid",
@@ -54244,6 +54689,11 @@
    "tulis": "galaxy",
    "pertama": 1787605455838,
    "terakhir": "2026-08-29"
+  },
+  "clan": {
+   "tulis": "Clan",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "fishies": {
@@ -54629,6 +55079,11 @@
    "tulis": "offense",
    "pertama": 1787947422039,
    "terakhir": "2026-09-02"
+  },
+  "kills": {
+   "tulis": "kills",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "ship-defense-simulator": {
@@ -54715,6 +55170,16 @@
    "tulis": "link",
    "pertama": 1787824990426,
    "terakhir": "2026-09-01"
+  },
+  "ingame": {
+   "tulis": "INGAME",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "property": {
+   "tulis": "PROPERTY",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "squishy-dumpling-trading": {
@@ -54787,7 +55252,7 @@
   "rarities": {
    "tulis": "rarities",
    "pertama": 1786755979972,
-   "terakhir": "2026-08-21"
+   "terakhir": "2026-09-02"
   },
   "quantities": {
    "tulis": "quantities",
@@ -54915,6 +55380,11 @@
    "tulis": "Sign",
    "pertama": 1786885588485,
    "terakhir": "2026-08-27"
+  },
+  "objective": {
+   "tulis": "objective",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "burgeria-tycoon": {
@@ -55044,6 +55514,16 @@
    "tulis": "marketplace",
    "pertama": 1786770823708,
    "terakhir": "2026-09-02"
+  },
+  "gangs": {
+   "tulis": "gangs",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "ingame": {
+   "tulis": "ingame",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "saiyan-incremental": {
@@ -55096,6 +55576,11 @@
    "tulis": "GREATEST",
    "pertama": 1786770823708,
    "terakhir": "2026-08-29"
+  },
+  "adventures": {
+   "tulis": "adventures",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "battle-of-alliance": {
@@ -55181,6 +55666,11 @@
   "2years": {
    "tulis": "2YEARS",
    "pertama": 1787396623499,
+   "terakhir": "2026-09-02"
+  },
+  "wall": {
+   "tulis": "wall",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -55989,7 +56479,7 @@
   "obstacle": {
    "tulis": "obstacle",
    "pertama": 1786961213951,
-   "terakhir": "2026-08-27"
+   "terakhir": "2026-09-02"
   },
   "stickmen": {
    "tulis": "stickmen",
@@ -56009,7 +56499,7 @@
   "morph": {
    "tulis": "morph",
    "pertama": 1786961213951,
-   "terakhir": "2026-08-24"
+   "terakhir": "2026-09-02"
   },
   "backrooms": {
    "tulis": "backrooms",
@@ -56099,6 +56589,11 @@
    "tulis": "Matchmaking",
    "pertama": 1788037577354,
    "terakhir": "2026-08-29"
+  },
+  "pickups": {
+   "tulis": "Pickups",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "immortality-incremental": {
@@ -56485,7 +56980,12 @@
   "locked": {
    "tulis": "locked",
    "pertama": 1787144935969,
-   "terakhir": "2026-08-21"
+   "terakhir": "2026-09-02"
+  },
+  "decide": {
+   "tulis": "decide",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "dino-hunters": {
@@ -56683,6 +57183,11 @@
    "tulis": "revamps",
    "pertama": 1787231045366,
    "terakhir": "2026-08-24"
+  },
+  "morph": {
+   "tulis": "morph",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "heroes-world": {
@@ -56790,7 +57295,7 @@
   "superhero": {
    "tulis": "Superhero",
    "pertama": 1787281534768,
-   "terakhir": "2026-08-29"
+   "terakhir": "2026-09-02"
   },
   "selling": {
    "tulis": "selling",
@@ -56805,6 +57310,11 @@
   "villians": {
    "tulis": "Villians",
    "pertama": 1787281534768,
+   "terakhir": "2026-09-02"
+  },
+  "either": {
+   "tulis": "either",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -56878,6 +57388,11 @@
    "pertama": 1787324757245,
    "terakhir": "2026-09-02",
    "sudahPunya": true
+  },
+  "practice": {
+   "tulis": "Practice",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "broken-blade": {
@@ -57052,6 +57567,11 @@
    "pertama": 1787353555935,
    "terakhir": "2026-09-02",
    "sudahPunya": true
+  },
+  "locked": {
+   "tulis": "Locked",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "start-your-soccer-career": {
@@ -57444,6 +57964,11 @@
    "tulis": "450K",
    "pertama": 1787493822099,
    "terakhir": "2026-09-02"
+  },
+  "staff": {
+   "tulis": "staff",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "driving-school-taipei-taiwan": {
@@ -57500,7 +58025,7 @@
   "throttle": {
    "tulis": "throttle",
    "pertama": 1787497413161,
-   "terakhir": "2026-08-29"
+   "terakhir": "2026-09-02"
   },
   "pedal": {
    "tulis": "pedal",
@@ -57924,6 +58449,16 @@
    "tulis": "Phasmophobia",
    "pertama": 1787634222420,
    "terakhir": "2026-09-02"
+  },
+  "evidence": {
+   "tulis": "evidence",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "copyright": {
+   "tulis": "copyright",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "care-for-cats": {
@@ -57945,6 +58480,11 @@
   "bonds": {
    "tulis": "bonds",
    "pertama": 1787644973527,
+   "terakhir": "2026-09-02"
+  },
+  "feed": {
+   "tulis": "Feed",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -58128,6 +58668,11 @@
    "tulis": "Clicks",
    "pertama": 1787698996760,
    "terakhir": "2026-08-27"
+  },
+  "anywhere": {
+   "tulis": "anywhere",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "runaways": {
@@ -58572,6 +59117,11 @@
    "tulis": "abuse",
    "pertama": 1787753041931,
    "terakhir": "2026-09-02"
+  },
+  "appeals": {
+   "tulis": "appeals",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "san-diego-border-roleplay": {
@@ -58747,6 +59297,11 @@
    "tulis": "steam",
    "pertama": 1787839428456,
    "terakhir": "2026-09-02"
+  },
+  "shooting": {
+   "tulis": "shooting",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "collect-the-alphabet": {
@@ -58907,7 +59462,7 @@
   "flips": {
    "tulis": "flips",
    "pertama": 1787835815310,
-   "terakhir": "2026-08-31"
+   "terakhir": "2026-09-02"
   },
   "visuals": {
    "tulis": "visuals",
@@ -58949,11 +59504,16 @@
   "flips": {
    "tulis": "flips",
    "pertama": 1787835815310,
-   "terakhir": "2026-08-31"
+   "terakhir": "2026-09-02"
   },
   "visuals": {
    "tulis": "visuals",
    "pertama": 1788062630467,
+   "terakhir": "2026-09-02"
+  },
+  "obstacle": {
+   "tulis": "obstacle",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -58972,6 +59532,11 @@
    "tulis": "skilltree",
    "pertama": 1787835815310,
    "terakhir": "2026-08-29"
+  },
+  "clan": {
+   "tulis": "clan",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "breakdoor": {
@@ -59523,6 +60088,16 @@
    "tulis": "APPS",
    "pertama": 1787925860388,
    "terakhir": "2026-09-02"
+  },
+  "panel": {
+   "tulis": "panel",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "copyright": {
+   "tulis": "Copyright",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "carolina-leaners": {
@@ -59569,6 +60144,11 @@
   "horn": {
    "tulis": "Horn",
    "pertama": 1787925860388,
+   "terakhir": "2026-09-02"
+  },
+  "dpad": {
+   "tulis": "DPad",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -59914,6 +60494,16 @@
    "tulis": "evil",
    "pertama": 1788134655367,
    "terakhir": "2026-09-02"
+  },
+  "superhero": {
+   "tulis": "Superhero",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "justice": {
+   "tulis": "justice",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "heads-please": {
@@ -59926,12 +60516,22 @@
    "tulis": "bugfix",
    "pertama": 1788023040138,
    "terakhir": "2026-09-02"
+  },
+  "animation": {
+   "tulis": "animation",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "rocket-rumble": {
   "launchers": {
    "tulis": "Launchers",
    "pertama": 1788102306373,
+   "terakhir": "2026-09-02"
+  },
+  "rumble": {
+   "tulis": "Rumble",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -60170,6 +60770,16 @@
    "tulis": "looking",
    "pertama": 1788131022747,
    "terakhir": "2026-09-02"
+  },
+  "county": {
+   "tulis": "County",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "joining": {
+   "tulis": "joining",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "real-futbol-24": {
@@ -60270,6 +60880,21 @@
    "tulis": "citizens",
    "pertama": 1788293014048,
    "terakhir": "2026-09-02"
+  },
+  "firefighter": {
+   "tulis": "firefighter",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "socialize": {
+   "tulis": "Socialize",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "constantly": {
+   "tulis": "constantly",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "stream-a-cheese-pull": {
@@ -60293,6 +60918,11 @@
    "pertama": 1788311097607,
    "terakhir": "2026-09-02",
    "sudahPunya": true
+  },
+  "stream": {
+   "tulis": "Stream",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "agartha-mog-or-die": {
@@ -60501,6 +61131,11 @@
    "tulis": "submitted",
    "pertama": 1788311097607,
    "terakhir": "2026-09-02"
+  },
+  "coolest": {
+   "tulis": "coolest",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "debt-hunt": {
@@ -60562,6 +61197,16 @@
   "nzteam": {
    "tulis": "NZTeam",
    "pertama": 1788311097607,
+   "terakhir": "2026-09-02"
+  },
+  "begins": {
+   "tulis": "begins",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "idea": {
+   "tulis": "idea",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  },
@@ -60811,6 +61456,21 @@
    "tulis": "missile",
    "pertama": 1788329068099,
    "terakhir": "2026-09-02"
+  },
+  "heal": {
+   "tulis": "heal",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "nuke": {
+   "tulis": "nuke",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
+  },
+  "explosion": {
+   "tulis": "explosion",
+   "pertama": 1788362338242,
+   "terakhir": "2026-09-02"
   }
  },
  "the-cosalazo": {
@@ -60918,6 +61578,11 @@
   "towns": {
    "tulis": "Towns",
    "pertama": 1788347145053,
+   "terakhir": "2026-09-02"
+  },
+  "environment": {
+   "tulis": "environment",
+   "pertama": 1788362338242,
    "terakhir": "2026-09-02"
   }
  }
