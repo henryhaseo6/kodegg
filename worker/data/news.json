@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-09-03T01:01:10.133Z",
+  "updatedAt": "2026-09-03T02:01:11.301Z",
   "counts": {
-    "active": 96,
+    "active": 97,
     "archived": 96
   },
   "articles": [
+    {
+      "game": "tot",
+      "gameName": "Tears of Themis",
+      "title": {
+        "en": "✦ Limited-Time Rerun ✦",
+        "id": "✦ Limited-Time Rerun ✦"
+      },
+      "excerpt": {
+        "en": "Hazy light filters through the leaves, as the gentle breeze carries thoughts of longing. On 2026/9/5 11:00 (UTC+9), the Treasures of Flight event will be back for a limited time! ✦",
+        "id": "Hazy light filters through the leaves, as the gentle breeze carries thoughts of longing. On 2026/9/5 11:00 (UTC+9), the Treasures of Flight event will be back for a limited time! ✦"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/01/f3f0cbd4ea9535ab77fa8b2e145f0dfc_1908233628532342039.jpg",
+      "url": "https://www.hoyolab.com/article/46559963",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-03T02:00:04.000Z"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "Main Story Part 2 Finale \"The Future We Embrace\" Coming Soon",
+        "id": "Story Chapter Finale Bagian 2 \"Merengkuh Masa Depan\" Segera Hadir"
+      },
+      "excerpt": {
+        "en": "Everyone falls asleep beneath the same night, yet no two dreams born beneath it are ever alike. If surprises await at every turn, then what dream is left for Dreamseeker to seek? M",
+        "id": "Semua orang tertidur di malam yang sama, tetapi dunia mimpi yang tercipta di malam ini tidak akan pernah sama. Jika kejutan menanti di setiap sudut, lalu mimpi apa lagi yang tersis"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/01/19aec21e9cdb2e39c6bd1b5ee28692fa_2895338545390433001.png",
+      "url": "https://www.hoyolab.com/article/46559796",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-03T01:30:02.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -502,22 +534,6 @@
       "publishedAt": "2026-08-26T06:00:04.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Ding-Dong! Delivery Training in Progress\" Event Details",
-        "id": "\"Ting Tong! Ada Paket dari Kurir Magang\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration 2026/08/28 10:00 (server time) – 2026/09/14 03:59 (server time) Requirements Reach Inter-Knot Lv. 20 and complete Main Story Chapter 1 - Intermission to participate ",
-        "id": "[Waktu Event] 2026/08/28 10:00 (waktu server) - 2026/09/14 03:59 (waktu server) [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 20 dan menyelesaikan"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
-      "url": "https://www.hoyolab.com/article/46451353",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-26T04:00:04.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -530,6 +546,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
       "url": "https://www.hoyolab.com/article/46451351",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Ding-Dong! Delivery Training in Progress\" Event Details",
+        "id": "\"Ting Tong! Ada Paket dari Kurir Magang\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/08/28 10:00 (server time) – 2026/09/14 03:59 (server time) Requirements Reach Inter-Knot Lv. 20 and complete Main Story Chapter 1 - Intermission to participate ",
+        "id": "[Waktu Event] 2026/08/28 10:00 (waktu server) - 2026/09/14 03:59 (waktu server) [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 20 dan menyelesaikan"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
+      "url": "https://www.hoyolab.com/article/46451353",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
@@ -678,22 +710,6 @@
       "publishedAt": "2026-08-24T06:00:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program Announcement",
-        "id": "Pengumuman Acara Khusus Pra-Rilis Zenless Zone Zero Versi 3.2 \"Kisah Rahasia Mereka\""
-      },
-      "excerpt": {
-        "en": "Dear Proxies, The Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program will begin on August 28 at 19:30 (UTC+8)! The mastermind behind the Bangboo manipulation is",
-        "id": "Dear Proxy: Acara Khusus Pra-Rilis Zenless Zone Zero V3.2 \"Kisah Rahasia Mereka\" akan resmi dimulai pada 28 Agustus 19:30 (UTC+8)! Dalang di balik manipulasi Bangboo masih belum te"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/f1da4c944df50860ee39c2f18e255b92_2388387132862854906.jpeg",
-      "url": "https://www.hoyolab.com/article/46427336",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-24T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -706,6 +722,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/24/81b9a71197fce4166e16f5c4179ded44_549661776826062591.jpg",
       "url": "https://www.hoyolab.com/article/46427337",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-24T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program Announcement",
+        "id": "Pengumuman Acara Khusus Pra-Rilis Zenless Zone Zero Versi 3.2 \"Kisah Rahasia Mereka\""
+      },
+      "excerpt": {
+        "en": "Dear Proxies, The Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program will begin on August 28 at 19:30 (UTC+8)! The mastermind behind the Bangboo manipulation is",
+        "id": "Dear Proxy: Acara Khusus Pra-Rilis Zenless Zone Zero V3.2 \"Kisah Rahasia Mereka\" akan resmi dimulai pada 28 Agustus 19:30 (UTC+8)! Dalang di balik manipulasi Bangboo masih belum te"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/f1da4c944df50860ee39c2f18e255b92_2388387132862854906.jpeg",
+      "url": "https://www.hoyolab.com/article/46427336",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-24T04:00:06.000Z"
     },
@@ -1444,22 +1476,6 @@
       "url": "https://www.hoyolab.com/article/46208075",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-10T03:00:02.000Z"
-    },
-    {
-      "game": "tot",
-      "gameName": "Tears of Themis",
-      "title": {
-        "en": "✦ Fervent Desires ✦ Event Trailer & Details",
-        "id": "✦ Fervent Desires ✦ Event Trailer & Details"
-      },
-      "excerpt": {
-        "en": "Where love leads, the heart follows. On 2026/08/13, the Fervent Desires limited-time event will begin, and Union Chapter MR cards will be available! If this is an interlude, let it",
-        "id": "Where love leads, the heart follows. On 2026/08/13, the Fervent Desires limited-time event will begin, and Union Chapter MR cards will be available! \"If this is an interlude, let i"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/06/d413dd3a166c3ecc93aa92c8a48786a3_1098336212353437150.jpg",
-      "url": "https://www.hoyolab.com/article/46195679",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-09T02:00:03.000Z"
     },
     {
       "game": "hi3",
