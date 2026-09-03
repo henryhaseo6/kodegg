@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T04:01:17.474Z",
+  "updatedAt": "2026-09-03T05:02:08.020Z",
   "counts": {
     "active": 96,
     "archived": 97
@@ -422,22 +422,6 @@
       "publishedAt": "2026-08-27T08:10:07.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.0 Event Wishes Notice - Phase II",
-        "id": "Pengumuman Event Permohonan v7.0: Edisi 2"
-      },
-      "excerpt": {
-        "en": "Event Wish \"The Lone Light Knocks at Night\" - Boosted Drop Rate for \"Shadowy Lights, Stranger Wights\" Flins (Electro)! Travelers, stock up on weapons and characters in the event wi",
-        "id": "Event Permohonan \"Cahaya Temaram Mengetuk di Kala Malam\": Persentase Perolehan \"Shadowy Lights, Stranger Wights\" Flins (Electro) Meningkat! Dapatkan Senjata dan Karakter di Event P"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/26/e9d18405ee86a224e70bc77fa52d5e6b_3072283650260724961.jpg",
-      "url": "https://www.hoyolab.com/article/46469782",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-27T08:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -450,6 +434,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/26/349b2176467a69151ff88fc3ca5e15f1_5459829866865405242.jpg",
       "url": "https://www.hoyolab.com/article/46469781",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-27T08:00:06.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Version 7.0 Event Wishes Notice - Phase II",
+        "id": "Pengumuman Event Permohonan v7.0: Edisi 2"
+      },
+      "excerpt": {
+        "en": "Event Wish \"The Lone Light Knocks at Night\" - Boosted Drop Rate for \"Shadowy Lights, Stranger Wights\" Flins (Electro)! Travelers, stock up on weapons and characters in the event wi",
+        "id": "Event Permohonan \"Cahaya Temaram Mengetuk di Kala Malam\": Persentase Perolehan \"Shadowy Lights, Stranger Wights\" Flins (Electro) Meningkat! Dapatkan Senjata dan Karakter di Event P"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/26/e9d18405ee86a224e70bc77fa52d5e6b_3072283650260724961.jpg",
+      "url": "https://www.hoyolab.com/article/46469782",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-27T08:00:06.000Z"
     },
@@ -550,6 +550,22 @@
       "publishedAt": "2026-08-26T06:00:04.000Z"
     },
     {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+      },
+      "excerpt": {
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
+      "url": "https://www.hoyolab.com/article/46451351",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
+    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -578,22 +594,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
       "url": "https://www.hoyolab.com/article/46451353",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-26T04:00:04.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Project Astro-Warp Beta Sign-Up Reminder",
-        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
-      },
-      "excerpt": {
-        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
-        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
-      "url": "https://www.hoyolab.com/article/46451351",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
@@ -726,22 +726,6 @@
       "publishedAt": "2026-08-24T06:00:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program Announcement",
-        "id": "Pengumuman Acara Khusus Pra-Rilis Zenless Zone Zero Versi 3.2 \"Kisah Rahasia Mereka\""
-      },
-      "excerpt": {
-        "en": "Dear Proxies, The Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program will begin on August 28 at 19:30 (UTC+8)! The mastermind behind the Bangboo manipulation is",
-        "id": "Dear Proxy: Acara Khusus Pra-Rilis Zenless Zone Zero V3.2 \"Kisah Rahasia Mereka\" akan resmi dimulai pada 28 Agustus 19:30 (UTC+8)! Dalang di balik manipulasi Bangboo masih belum te"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/f1da4c944df50860ee39c2f18e255b92_2388387132862854906.jpeg",
-      "url": "https://www.hoyolab.com/article/46427336",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-24T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -754,6 +738,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/24/81b9a71197fce4166e16f5c4179ded44_549661776826062591.jpg",
       "url": "https://www.hoyolab.com/article/46427337",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-24T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program Announcement",
+        "id": "Pengumuman Acara Khusus Pra-Rilis Zenless Zone Zero Versi 3.2 \"Kisah Rahasia Mereka\""
+      },
+      "excerpt": {
+        "en": "Dear Proxies, The Zenless Zone Zero Version 3.2 \"Their Secret Histories\" Special Program will begin on August 28 at 19:30 (UTC+8)! The mastermind behind the Bangboo manipulation is",
+        "id": "Dear Proxy: Acara Khusus Pra-Rilis Zenless Zone Zero V3.2 \"Kisah Rahasia Mereka\" akan resmi dimulai pada 28 Agustus 19:30 (UTC+8)! Dalang di balik manipulasi Bangboo masih belum te"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/f1da4c944df50860ee39c2f18e255b92_2388387132862854906.jpeg",
+      "url": "https://www.hoyolab.com/article/46427336",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-24T04:00:06.000Z"
     },
