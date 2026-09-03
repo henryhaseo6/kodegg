@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-03T02:01:11.301Z",
+  "updatedAt": "2026-09-03T03:01:50.763Z",
   "counts": {
     "active": 97,
     "archived": 96
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Chase the New Dawn",
+        "id": "Mengejar Fajar Baru"
+      },
+      "excerpt": {
+        "en": "\"New songs are always a bit tricky at first. When practicing, imagine yourself riding the waves of the melody. Perhaps, you'll feel more relaxed.\" \"Once the show's over, it's your ",
+        "id": "\"Lagu baru pada awalnya selalu terasa agak sulit. Saat berlatih, bayangkan dirimu berada di atas ombak melodi, mungkin kamu akan merasa jauh lebih rileks.\" \"Setelah pertunjukan sel"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/02/38325836069a508b54efa11427d1d885_1921579165023578824.jpg",
+      "url": "https://www.hoyolab.com/article/46560307",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-03T03:00:08.000Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
@@ -534,22 +550,6 @@
       "publishedAt": "2026-08-26T06:00:04.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Project Astro-Warp Beta Sign-Up Reminder",
-        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
-      },
-      "excerpt": {
-        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
-        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
-      "url": "https://www.hoyolab.com/article/46451351",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-26T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -562,6 +562,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
       "url": "https://www.hoyolab.com/article/46451353",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+      },
+      "excerpt": {
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
+      "url": "https://www.hoyolab.com/article/46451351",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
@@ -710,22 +726,6 @@
       "publishedAt": "2026-08-24T06:00:07.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Holy Furboly? Furbobo Weekly Officially Arrives in Astropolis!",
-        "id": "Demi Rakun? Mingguan Rakun Resmi Hadir di Astropolis!"
-      },
-      "excerpt": {
-        "en": "Astropolis Branch of Furbobo Press Now Founded! New Gossip HQ Under Construction~ Direct Confrontation With the IPC Media, Furbos are Aiming to be Astropolis's News Tycoon! Officia",
-        "id": "Koran Rakun Cabang Astropolis telah resmi didirikan, markas gosip baru sedang dibangun~ Berani Tantang Media IPC Terang-terangan, Anjing Rakun Mau Jadi Raja Media di Astropolis! Pr"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/24/81b9a71197fce4166e16f5c4179ded44_549661776826062591.jpg",
-      "url": "https://www.hoyolab.com/article/46427337",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-24T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -738,6 +738,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/0/f1da4c944df50860ee39c2f18e255b92_2388387132862854906.jpeg",
       "url": "https://www.hoyolab.com/article/46427336",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-24T04:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Holy Furboly? Furbobo Weekly Officially Arrives in Astropolis!",
+        "id": "Demi Rakun? Mingguan Rakun Resmi Hadir di Astropolis!"
+      },
+      "excerpt": {
+        "en": "Astropolis Branch of Furbobo Press Now Founded! New Gossip HQ Under Construction~ Direct Confrontation With the IPC Media, Furbos are Aiming to be Astropolis's News Tycoon! Officia",
+        "id": "Koran Rakun Cabang Astropolis telah resmi didirikan, markas gosip baru sedang dibangun~ Berani Tantang Media IPC Terang-terangan, Anjing Rakun Mau Jadi Raja Media di Astropolis! Pr"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/24/81b9a71197fce4166e16f5c4179ded44_549661776826062591.jpg",
+      "url": "https://www.hoyolab.com/article/46427337",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-24T04:00:06.000Z"
     },
@@ -868,22 +884,6 @@
       "url": "https://www.hoyolab.com/article/46405425",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-22T10:00:05.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Update Radio | V4.5 To Roll the Stars in Astropolis",
-        "id": "Radio Pembaruan | Versi 4.5 Pertaruhan di Astropolis"
-      },
-      "excerpt": {
-        "en": "Version 4.5 \"To Roll the Stars in Astropolis\" is coming soon... In this episode of Update Radio, we'll introduce some optimizations and new features coming in Version 4.5!",
-        "id": "Versi 4.5 \"Pertaruhan di Astropolis\" akan segera dirilis .... Radio Pembaruan edisi ini akan memperkenalkan beberapa pengoptimalan dan penambahan fitur baru di Versi 4.5 ke Trailbl"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/20/82d8379740e68c0fb1c9f4bcd49cf184_3568809146830434697.jpg",
-      "url": "https://www.hoyolab.com/article/46401547",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-22T03:00:05.000Z"
     },
     {
       "game": "tot",
