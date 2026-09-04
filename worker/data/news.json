@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-04T04:01:42.496Z",
+  "updatedAt": "2026-09-04T05:01:17.387Z",
   "counts": {
     "active": 97,
     "archived": 97
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Unarchived Agent Footage | Claret",
+        "id": "Video Agen Non-Arsip: Claret"
+      },
+      "excerpt": {
+        "en": "\"See what I'm capable of now?\"",
+        "id": "\"Sekarang tahu kan betapa hebatnya aku?\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/03/0/fa0f9ab9ebd0b40826d616eea1b9b6ec_24808161808265007.png",
+      "url": "https://www.hoyolab.com/article/46571238",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-04T04:30:06.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -948,22 +964,6 @@
       "url": "https://www.hoyolab.com/article/46388581",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-21T04:15:06.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Random Play | Pranks Come After the Tea Party",
-        "id": "Random Play | Pranks Come After the Tea Party"
-      },
-      "excerpt": {
-        "en": "\"These are... Bangboo pop-up dolls...! They're surprises with a Roscaelifer flair that we specially prepared for the welcoming tea party!\" \"Yeah, that's it.\" \"—I completely underst",
-        "id": "\"These are... Bangboo pop-up dolls...! They're surprises with a Roscaelifer flair that we specially prepared for the welcoming tea party!\" \"Yeah, that's it.\" \"—I completely underst"
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-08-21/transcoded/142090269669058957312_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/46388399",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-21T04:00:03.000Z"
     },
     {
       "game": "wuwa",
