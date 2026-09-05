@@ -1347,7 +1347,7 @@
   "nuke": {
    "tulis": "nuke",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-02",
+   "terakhir": "2026-09-05",
    "awal": true
   },
   "playable": {
@@ -6235,7 +6235,7 @@
   "domain": {
    "tulis": "Domain",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-15",
+   "terakhir": "2026-09-05",
    "awal": true
   },
   "chimera": {
@@ -6513,6 +6513,26 @@
   "qols": {
    "tulis": "QOLs",
    "pertama": 1788019451970,
+   "terakhir": "2026-09-05"
+  },
+  "eyes": {
+   "tulis": "Eyes",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "sorting": {
+   "tulis": "Sorting",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "infinitevoid": {
+   "tulis": "INFINITEVOID",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "210klikes": {
+   "tulis": "210KLIKES",
+   "pertama": 1788624350886,
    "terakhir": "2026-09-05"
   }
  },
@@ -44399,7 +44419,7 @@
   "nuke": {
    "tulis": "Nuke",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-02",
+   "terakhir": "2026-09-05",
    "awal": true
   },
   "explode": {
@@ -62110,7 +62130,7 @@
   "nuke": {
    "tulis": "nuke",
    "pertama": 1788362338242,
-   "terakhir": "2026-09-02"
+   "terakhir": "2026-09-05"
   },
   "explosion": {
    "tulis": "explosion",
@@ -62584,6 +62604,63 @@
    "pertama": 1788581088617,
    "terakhir": "2026-09-05",
    "sudahPunya": true
+  }
+ },
+ "slime-seas": {
+  "crafting": {
+   "tulis": "crafting",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "upgrading": {
+   "tulis": "upgrading",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "increasingly": {
+   "tulis": "increasingly",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "slimes": {
+   "tulis": "slimes",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "guilds": {
+   "tulis": "Guilds",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "volcano": {
+   "tulis": "Volcano",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "javelin": {
+   "tulis": "Javelin",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "cannon": {
+   "tulis": "Cannon",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "shadowstep": {
+   "tulis": "Shadowstep",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "firestorm": {
+   "tulis": "Firestorm",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
+  },
+  "thunderlord": {
+   "tulis": "Thunderlord",
+   "pertama": 1788624350886,
+   "terakhir": "2026-09-05"
   }
  }
 }
