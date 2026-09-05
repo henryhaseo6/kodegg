@@ -1,26 +1,48 @@
 {
-  "generatedAt": "2026-09-05T03:02:12.024Z",
+  "generatedAt": "2026-09-05T04:02:22.507Z",
   "codes": [
     {
-      "game": "grand-blue",
-      "gameName": "Grand Blue",
-      "source": "Roblox Den",
+      "game": "anime-avatar-fighting",
+      "gameName": "Anime Avatar Fighting",
+      "source": "RoCodes.gg",
       "sources": [
-        "Roblox Den"
+        "RoCodes.gg"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/grand-blue"
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-avatar-fighting"
       },
-      "code": "CelestialBlessing",
-      "reward": "1,000 Celestial Coins",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1788574920000,
+      "code": "2KLIKES",
+      "reward": "50 Gems, XP Potion II, Spin",
+      "date": "2026-09-05T03:50:15.878Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-09-05T03:02:12.024Z",
-      "fetchedAt": "2026-09-05T03:02:12.024Z"
+      "firstSeenAt": "2026-09-05T04:02:22.507Z",
+      "fetchedAt": "2026-09-05T04:02:22.507Z"
+    },
+    {
+      "game": "anime-avatar-fighting",
+      "gameName": "Anime Avatar Fighting",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-avatar-fighting"
+      },
+      "code": "300KVISITS",
+      "reward": "65 Gems, Damage Potion II, Gem Potion II, Spin",
+      "date": "2026-09-05T03:50:15.347Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-05T04:02:22.507Z",
+      "fetchedAt": "2026-09-05T04:02:22.507Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "yba-nu",
+      "count": 26,
+      "fresh": []
+    }
+  ]
 }
