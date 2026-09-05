@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-05T02:02:12.718Z",
+  "updatedAt": "2026-09-05T03:02:04.850Z",
   "counts": {
     "active": 96,
-    "archived": 98
+    "archived": 99
   },
   "articles": [
     {
@@ -36,6 +36,22 @@
       "url": "https://www.hoyolab.com/article/46573782",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-04T10:00:01.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Post-Lament Anthropocene: Stars Intertwined | Jingran",
+        "id": "Post-Lament Anthropocene: Stars Intertwined | Jingran"
+      },
+      "excerpt": {
+        "en": "\"Jingran, a Nethermancer. I roam the edge between Yin and Yang. Chasing a path that could lead to fortune or ruin. I walk among the shadows to see the other end of this road.\" Jing",
+        "id": "\"Jingran, a Nethermancer. I roam the edge between Yin and Yang. Chasing a path that could lead to fortune or ruin. I walk among the shadows to see the other end of this road.\" Jing"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1788451200000/6xzzhy0ad8s4dv2toz-1788502902812.png",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5398",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-09-04T06:44:10.000Z"
     },
     {
       "game": "zzz",
@@ -1524,7 +1540,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5245",
       "source": "Wuthering Waves",
       "publishedAt": "2026-08-06T08:20:18.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1539,10 +1557,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/07/31/5c1ea85a68b0c406c3bb4b81035e1de0_8255358484390917295.png",
       "url": "https://www.hoyolab.com/article/46159523",
       "source": "HoYoLAB",
-      "publishedAt": "2026-08-06T03:00:05.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-08-06T03:00:05.000Z",
+      "archivedAt": "2026-09-05T03:02:04.850Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
