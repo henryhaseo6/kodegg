@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-09-08T09:02:16.482Z",
+  "updatedAt": "2026-09-08T10:02:25.954Z",
   "counts": {
-    "active": 103,
+    "active": 104,
     "archived": 101
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Ridu Renovation Talk Vol. 14 | System & Gameplay",
+        "id": "Bincang-bincang Renovasi Ridu Vol. 14: Sistem & Gameplay"
+      },
+      "excerpt": {
+        "en": "Hi, Proxies! This time, we're bringing you Version 3.2 system optimizations, Enigma of the Labyrinth: Operation Bagel II updates, and more. Let's check them out!",
+        "id": "Halo, Proxy! Kali ini kami akan membawakan intel mengenai optimalisasi sistem versi 3.2, update \"Labirin Misterius: Operasi Bagel II\", dan lainnya. Ayo kita lihat sama-sama!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/0/7d7b50fa560ecaa51f7310a0fc66cc8a_3949210352168316723.jpeg",
+      "url": "https://www.hoyolab.com/article/46616939",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-08T10:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Version 3.2 New Stock in the Store",
+        "id": "Toko V3.2 | Detail Update"
+      },
+      "excerpt": {
+        "en": "Dear Proxies, After the Version 3.2 update, new Agent outfits will be available in Today's Outfit! Lucy: Princess on Holiday • After the Version 3.2 update, Lucy's Princess on Holi",
+        "id": "Dear Proxy: Setelah update V3.2, Outfit Agen baru akan ditambahkan di \"Outfit Hari Ini\"! Outfit \"Lucy - Liburan sang Putri\" • Outfit Lucy \"Liburan sang Putri\" akan tersedia permane"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/08/0/d3f8ff6eee2ebb82198df28cbd3592df_6353287326549869987.jpeg",
+      "url": "https://www.hoyolab.com/article/46616696",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-08T09:30:02.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Resonator Review | Futures' Tithe — Hiyuki",
+        "id": "Resonator Review | Futures' Tithe — Hiyuki"
+      },
+      "excerpt": {
+        "en": "Hailing from Ashinohara, the Miko of Flaming Sakura now remains in Lahai-Roi as the last and only member of the Special Response Force.",
+        "id": "Hailing from Ashinohara, the Miko of Flaming Sakura now remains in Lahai-Roi as the last and only member of the Special Response Force."
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1788796800000/s9mv8jupeyiewfex4j-1788850028527.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5429",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-09-08T06:57:55.000Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -406,22 +454,6 @@
       "publishedAt": "2026-09-04T04:30:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Aventurine • Waveflair: How Much Did SoulGlad Pay? | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Aventurine • Waveflair: Berapa yang Dibayar SoulGlad?\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "According to a report by Furbobo Weekly: Recently, in response to the question of whether he \"really came to Astropolis just for a vacation\"... Aventurine of the Ten Stonehearts re",
-        "id": "Menurut laporan \"Mingguan Rakun\": Baru-baru ini, menanggapi pertanyaan \"apakah datang ke Astropolis benar-benar hanya untuk liburan\" ... Aventurine dari \"Sepuluh Orang Berhati Batu"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/04/0/f8407fadef8c5afaa491f6c0d91af636_2975114155973523257.jpeg",
-      "url": "https://www.hoyolab.com/article/46570956",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-04T04:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -434,6 +466,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/04/0dc281096f07f27719088ada76b381d5_7753534833013782240.jpg",
       "url": "https://www.hoyolab.com/article/46570955",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-04T04:00:03.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — Aventurine • Waveflair: How Much Did SoulGlad Pay? | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — \"Aventurine • Waveflair: Berapa yang Dibayar SoulGlad?\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "According to a report by Furbobo Weekly: Recently, in response to the question of whether he \"really came to Astropolis just for a vacation\"... Aventurine of the Ten Stonehearts re",
+        "id": "Menurut laporan \"Mingguan Rakun\": Baru-baru ini, menanggapi pertanyaan \"apakah datang ke Astropolis benar-benar hanya untuk liburan\" ... Aventurine dari \"Sepuluh Orang Berhati Batu"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/04/0/f8407fadef8c5afaa491f6c0d91af636_2975114155973523257.jpeg",
+      "url": "https://www.hoyolab.com/article/46570956",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-04T04:00:03.000Z"
     },
@@ -644,22 +692,6 @@
       "url": "https://www.hoyolab.com/article/46520645",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-31T04:00:02.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Alice | Bunny on the Waves",
-        "id": "Selamat Ulang Tahun, Alice | Kelinci di Tengah Debur Ombak"
-      },
-      "excerpt": {
-        "en": "\"Yuzuha said there's a thread on the forum recommending a bunch of special graffiti that can 'tame the waves.'\" \"But do we really have to draw this many...\" \"Huh? Even Yuzuha didn'",
-        "id": "\"Yuzuha bilang, ada postingan di forum yang merekomendasikan banyak grafiti khusus yang seolah 'menjinakkan ombak'.\" \"Tapi memangnya harus menggambar sebanyak ini ya...\" \"Eh? Kali "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/28/0/0861a4f134b549905d7e11b8717d7f9d_8909072184603252318.png",
-      "url": "https://www.hoyolab.com/article/46508018",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-30T04:00:04.000Z"
     },
     {
       "game": "gi",
@@ -918,22 +950,6 @@
       "publishedAt": "2026-08-26T06:00:04.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Project Astro-Warp Beta Sign-Up Reminder",
-        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
-      },
-      "excerpt": {
-        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
-        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
-      "url": "https://www.hoyolab.com/article/46451351",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-26T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -946,6 +962,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
       "url": "https://www.hoyolab.com/article/46451353",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+      },
+      "excerpt": {
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
+      "url": "https://www.hoyolab.com/article/46451351",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
@@ -1412,22 +1444,6 @@
       "url": "https://www.hoyolab.com/article/46329896",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-17T05:15:07.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "V3.1 Limited-Time Channels (Phase II)",
-        "id": "FM Waktu Terbatas V3.1 (Tahap 2)"
-      },
-      "excerpt": {
-        "en": "Dear Proxies, The Agent and W-Engine Signal Search event period is as follows: 2026/08/19 12:00 (server time) – 2026/09/08 14:59 (server time). The Signal Search event includes the",
-        "id": "Dear Proxy: Waktu event Pencarian Sinyal W-Engine dan Agen Periode Ini: 2026/08/19 12:00 (waktu server) - 2026/09/08 14:59 (waktu server). Kontennya adalah sebagai berikut: \"Hingga"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/15/0/e20bbde9ea3480d4842e00a0d3e5ab6a_7263384350558295935.jpeg",
-      "url": "https://www.hoyolab.com/article/46329735",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-17T05:00:07.000Z"
     },
     {
       "game": "hsr",
