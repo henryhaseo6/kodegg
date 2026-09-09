@@ -1,11 +1,29 @@
 {
-  "generatedAt": "2026-09-09T16:02:40.532Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-09-09T17:03:22.940Z",
+  "codes": [
     {
-      "game": "clicker-simulator",
-      "count": 6,
-      "fresh": []
+      "game": "coach-a-fighter",
+      "gameName": "Coach a Fighter",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/coach-a-fighter"
+      },
+      "code": "fixes!",
+      "reward": null,
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1788960240000,
+      "endsAt": null,
+      "verified": false,
+      "check": true,
+      "checkAt": 1788973436753,
+      "srcCheck": true,
+      "firstSeenAt": "2026-09-09T17:03:22.940Z",
+      "fetchedAt": "2026-09-09T17:03:22.940Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
