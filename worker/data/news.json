@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-09T09:02:36.670Z",
+  "updatedAt": "2026-09-09T10:03:03.660Z",
   "counts": {
-    "active": 103,
+    "active": 104,
     "archived": 103
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "✨Honkai: Star Rail Sparxie × MOONDROP | Now Available ✨",
+        "id": "✨Honkai: Star Rail Sparxie × MOONDROP | Resmi Dirilis ✨"
+      },
+      "excerpt": {
+        "en": "Sparxie's Fanclub, assemble! The MOONDROP Sparxie Edition collaboration earphones are now available for pre-sale in North America! Buy now and get a limited-edition Sparxie acrylic",
+        "id": "Klub penggemar Sparxie, ayo berkumpul! Pre-order Earphone Edisi Kolaborasi Sparxie × MOONDROP di Indonesia Utara Kini Telah Dibuka! Beli dan dapatkan Stand Akrilik Sparxie + Gantun"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/09/17091fdc7873da4734ef765d47acada4_4982418146513652542.jpg",
+      "url": "https://www.hoyolab.com/article/46626826",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-09T10:00:04.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -20,6 +36,22 @@
       "url": "https://www.hoyolab.com/article/46624462",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-09T04:30:04.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Resonator Review | Astral Mapping — Mornye",
+        "id": "Resonator Review | Astral Mapping — Mornye"
+      },
+      "excerpt": {
+        "en": "Mornye, a Spacetrek Collective Research Institute engineer and a Department of Exostrider Engineering professor at Startorch Academy. Each step on her prosthetic legs carries her t",
+        "id": "Mornye, a Spacetrek Collective Research Institute engineer and a Department of Exostrider Engineering professor at Startorch Academy. Each step on her prosthetic legs carries her t"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1788883200000/2ixv1b4uac73jbjpod-1788927380611.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5437",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-09-09T04:22:12.000Z"
     },
     {
       "game": "zzz",
@@ -326,22 +358,6 @@
       "publishedAt": "2026-09-07T04:05:06.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Genshin Impact Version 7.1 Special Program Preview",
-        "id": "Preview Acara Khusus Versi 7.1 | Genshin Impact"
-      },
-      "excerpt": {
-        "en": "Dear Traveler, it's announcement time! The special program for Genshin Impact's new version will premiere on the official Twitch and YouTube channels on 09/12/2026 at 08:00 AM (UTC",
-        "id": "Dear Traveler, ada pengumuman baru nih! Acara Khusus untuk versi baru Genshin Impact akan ditayangkan perdana di Twitch dan YouTube pada 12 September 2026 08:00 AM (UTC-4)! Acara K"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/3b807be584794bdac0cddc9ddf05bcec_5145680818623480549.jpg",
-      "url": "https://www.hoyolab.com/article/46604275",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-07T04:00:05.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -354,6 +370,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
       "url": "https://www.hoyolab.com/article/46604274",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-07T04:00:05.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact Version 7.1 Special Program Preview",
+        "id": "Preview Acara Khusus Versi 7.1 | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "Dear Traveler, it's announcement time! The special program for Genshin Impact's new version will premiere on the official Twitch and YouTube channels on 09/12/2026 at 08:00 AM (UTC",
+        "id": "Dear Traveler, ada pengumuman baru nih! Acara Khusus untuk versi baru Genshin Impact akan ditayangkan perdana di Twitch dan YouTube pada 12 September 2026 08:00 AM (UTC-4)! Acara K"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/3b807be584794bdac0cddc9ddf05bcec_5145680818623480549.jpg",
+      "url": "https://www.hoyolab.com/article/46604275",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-07T04:00:05.000Z"
     },
@@ -1014,22 +1046,6 @@
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Great Expeditionist Challenge\" Event: Take Part to Invite \"Kätzlein Cocktail\" Diona (Cryo)",
-        "id": "Event \"Kompetisi Penakluk Segala Medan\": Ikuti untuk Mengundang \"Kätzlein Cocktail\" Diona (Cryo)"
-      },
-      "excerpt": {
-        "en": "〓Event Rewards〓 〓Event Duration〓 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" Complete the \"Gunfire in the Sile",
-        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" Selesaikan \"Suara "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/f7aa9696c4a261cfac3b8ce9759f0a7f_503834544847449902.jpg",
-      "url": "https://www.hoyolab.com/article/46451352",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-26T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -1042,6 +1058,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
       "url": "https://www.hoyolab.com/article/46451353",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Great Expeditionist Challenge\" Event: Take Part to Invite \"Kätzlein Cocktail\" Diona (Cryo)",
+        "id": "Event \"Kompetisi Penakluk Segala Medan\": Ikuti untuk Mengundang \"Kätzlein Cocktail\" Diona (Cryo)"
+      },
+      "excerpt": {
+        "en": "〓Event Rewards〓 〓Event Duration〓 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" Complete the \"Gunfire in the Sile",
+        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" Selesaikan \"Suara "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/f7aa9696c4a261cfac3b8ce9759f0a7f_503834544847449902.jpg",
+      "url": "https://www.hoyolab.com/article/46451352",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
@@ -1172,22 +1204,6 @@
       "url": "https://www.hoyolab.com/article/46428208",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-24T06:00:07.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Holy Furboly? Furbobo Weekly Officially Arrives in Astropolis!",
-        "id": "Demi Rakun? Mingguan Rakun Resmi Hadir di Astropolis!"
-      },
-      "excerpt": {
-        "en": "Astropolis Branch of Furbobo Press Now Founded! New Gossip HQ Under Construction~ Direct Confrontation With the IPC Media, Furbos are Aiming to be Astropolis's News Tycoon! Officia",
-        "id": "Koran Rakun Cabang Astropolis telah resmi didirikan, markas gosip baru sedang dibangun~ Berani Tantang Media IPC Terang-terangan, Anjing Rakun Mau Jadi Raja Media di Astropolis! Pr"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/24/81b9a71197fce4166e16f5c4179ded44_549661776826062591.jpg",
-      "url": "https://www.hoyolab.com/article/46427337",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-24T04:00:06.000Z"
     },
     {
       "game": "tot",
