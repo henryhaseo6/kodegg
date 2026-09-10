@@ -1,5 +1,49 @@
 {
-  "generatedAt": "2026-09-10T06:02:12.460Z",
-  "codes": [],
+  "generatedAt": "2026-09-10T07:02:41.951Z",
+  "codes": [
+    {
+      "game": "pixel-blade",
+      "gameName": "Pixel Blade",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/pixel-blade"
+      },
+      "code": "BLADE",
+      "reward": "1 Super Ring, 1 Class Dice, and 500 Coins",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1789013700000,
+      "endsAt": null,
+      "verified": false,
+      "check": true,
+      "checkAt": 1789023786987,
+      "srcCheck": true,
+      "firstSeenAt": "2026-09-10T07:02:41.951Z",
+      "fetchedAt": "2026-09-10T07:02:41.951Z"
+    },
+    {
+      "game": "sword-hunter",
+      "gameName": "Sword Hunter",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/sword-hunter"
+      },
+      "code": "NEW",
+      "reward": "1 Frog Egg and 2x Money Boost (30 Minutes)",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1789019100000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-10T07:02:41.951Z",
+      "fetchedAt": "2026-09-10T07:02:41.951Z"
+    }
+  ],
   "bulkGames": []
 }
