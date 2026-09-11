@@ -1,5 +1,47 @@
 {
-  "generatedAt": "2026-09-11T02:02:31.108Z",
-  "codes": [],
+  "generatedAt": "2026-09-11T03:02:49.019Z",
+  "codes": [
+    {
+      "game": "tr-legacy",
+      "gameName": "TR Legacy",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/tr-legacy"
+      },
+      "code": "OHMAN75K",
+      "reward": null,
+      "date": "2026-09-10T21:00:58.858Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-11T03:02:49.019Z",
+      "fetchedAt": "2026-09-11T03:02:49.019Z"
+    },
+    {
+      "game": "one-fruit-simulator",
+      "gameName": "One Fruit Simulator",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/one-fruit"
+      },
+      "code": "HALLOWEENINCOMING",
+      "reward": null,
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1789093560000,
+      "endsAt": null,
+      "verified": false,
+      "check": true,
+      "checkAt": 1789095803896,
+      "srcCheck": true,
+      "firstSeenAt": "2026-09-11T03:02:49.019Z",
+      "fetchedAt": "2026-09-11T03:02:49.019Z"
+    }
+  ],
   "bulkGames": []
 }
