@@ -21460,7 +21460,7 @@
   "bounty": {
    "tulis": "Bounty",
    "pertama": 1786741606790,
-   "terakhir": "2026-08-29"
+   "terakhir": "2026-09-11"
   },
   "extraterrestrial": {
    "tulis": "Extraterrestrial",
@@ -21577,6 +21577,37 @@
   "holding": {
    "tulis": "holding",
    "pertama": 1788800691337,
+   "terakhir": "2026-09-11"
+  },
+  "autumn": {
+   "tulis": "Autumn",
+   "pertama": 1789149895964,
+   "terakhir": "2026-09-11",
+   "sudahPunya": true
+  },
+  "redesign": {
+   "tulis": "Redesign",
+   "pertama": 1789149895964,
+   "terakhir": "2026-09-11"
+  },
+  "leaf": {
+   "tulis": "Leaf",
+   "pertama": 1789149895964,
+   "terakhir": "2026-09-11"
+  },
+  "variant": {
+   "tulis": "Variant",
+   "pertama": 1789149895964,
+   "terakhir": "2026-09-11"
+  },
+  "autumnevent": {
+   "tulis": "AutumnEvent",
+   "pertama": 1789149895964,
+   "terakhir": "2026-09-11"
+  },
+  "fallupdate": {
+   "tulis": "FallUpdate",
+   "pertama": 1789149895964,
    "terakhir": "2026-09-11"
   }
  },
@@ -46655,7 +46686,7 @@
   "leaves": {
    "tulis": "leaves",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-09",
+   "terakhir": "2026-09-11",
    "awal": true
   },
   "leaf": {
@@ -48225,7 +48256,7 @@
   "leaves": {
    "tulis": "leaves",
    "pertama": 1788782696820,
-   "terakhir": "2026-09-09"
+   "terakhir": "2026-09-11"
   },
   "collectible": {
    "tulis": "collectible",
@@ -64380,6 +64411,11 @@
   "haystack": {
    "tulis": "Haystack",
    "pertama": 1788915901836,
+   "terakhir": "2026-09-11"
+  },
+  "leaves": {
+   "tulis": "Leaves",
+   "pertama": 1789149895964,
    "terakhir": "2026-09-11"
   }
  },
