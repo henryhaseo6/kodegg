@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T00:01:45.264Z",
+  "updatedAt": "2026-09-11T01:01:46.085Z",
   "counts": {
     "active": 104,
     "archived": 104
@@ -54,22 +54,6 @@
       "publishedAt": "2026-09-10T05:00:05.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Aventurine • Waveflair Character Trailer: \"Exclusive Scoop\" | Honkai: Star Rail",
-        "id": "Trailer Karakter Aventurine • Waveflair: \"Bocoran Eksklusif\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "\"Mr. Aventurine, do... do you really not mind playing the full video?\" English Voice: Aventurine • Waveflair — Camden Sutkowski Female Trailblazer — Chloe Eves 「 Look at that pose,",
-        "id": "\"Tuan Aventurine, Anda ... Anda benar-benar tidak keberatan memutar seluruh videonya?\" CV Bahasa Inggris: Aventurine • Waveflair — Camden Sutkowski Trailblazer Wanita — Chloe Eves "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
-      "url": "https://www.hoyolab.com/article/46634121",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-10T04:00:07.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -82,6 +66,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/09/0/c82342dfb959655caffae99dd1a622fe_4292099502424711681.jpeg",
       "url": "https://www.hoyolab.com/article/46634122",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-10T04:00:07.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Aventurine • Waveflair Character Trailer: \"Exclusive Scoop\" | Honkai: Star Rail",
+        "id": "Trailer Karakter Aventurine • Waveflair: \"Bocoran Eksklusif\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "\"Mr. Aventurine, do... do you really not mind playing the full video?\" English Voice: Aventurine • Waveflair — Camden Sutkowski Female Trailblazer — Chloe Eves 「 Look at that pose,",
+        "id": "\"Tuan Aventurine, Anda ... Anda benar-benar tidak keberatan memutar seluruh videonya?\" CV Bahasa Inggris: Aventurine • Waveflair — Camden Sutkowski Trailblazer Wanita — Chloe Eves "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
+      "url": "https://www.hoyolab.com/article/46634121",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-10T04:00:07.000Z"
     },
@@ -1110,22 +1110,6 @@
       "publishedAt": "2026-08-26T06:00:04.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Project Astro-Warp Beta Sign-Up Reminder",
-        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
-      },
-      "excerpt": {
-        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
-        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
-      "url": "https://www.hoyolab.com/article/46451351",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-26T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -1138,6 +1122,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/0/4a128a4b10abc0218060f0e956157549_7590244493382973965.jpeg",
       "url": "https://www.hoyolab.com/article/46451353",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-26T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+      },
+      "excerpt": {
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
+      "url": "https://www.hoyolab.com/article/46451351",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
