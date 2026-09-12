@@ -1,66 +1,47 @@
 {
-  "generatedAt": "2026-09-12T04:01:49.286Z",
+  "generatedAt": "2026-09-12T05:02:47.856Z",
   "codes": [
     {
-      "game": "ninja-time",
-      "gameName": "Ninja Time",
-      "source": "Roblox Den",
+      "game": "dig-into-secrets",
+      "gameName": "Dig Into Secrets!",
+      "source": "RoCodes.gg",
       "sources": [
-        "Roblox Den"
+        "RoCodes.gg"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/ninja-time"
+        "RoCodes.gg": "https://rocodes.gg/codes/1-dig-into-secrets"
       },
-      "code": "EnvyClan!",
-      "reward": "15 Spins of all types",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1789181220000,
+      "code": "NEWUPDATE",
+      "reward": "Double Strength (30 minutes), Double Money (30 minutes)",
+      "date": "2026-09-12T04:54:40.885Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-09-12T04:01:49.286Z",
-      "fetchedAt": "2026-09-12T04:01:49.286Z"
-    },
-    {
-      "game": "ninja-time",
-      "gameName": "Ninja Time",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/ninja-time"
-      },
-      "code": "NewRebirthSystem!",
-      "reward": "15 Spins of all types",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1789181220000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-09-12T04:01:49.286Z",
-      "fetchedAt": "2026-09-12T04:01:49.286Z"
-    },
-    {
-      "game": "ninja-time",
-      "gameName": "Ninja Time",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/ninja-time"
-      },
-      "code": "ThankYouFor2KSubs!",
-      "reward": "50 Spins of all types",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1789181220000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-09-12T04:01:49.286Z",
-      "fetchedAt": "2026-09-12T04:01:49.286Z"
+      "firstSeenAt": "2026-09-12T05:02:47.856Z",
+      "fetchedAt": "2026-09-12T05:02:47.856Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "custom-keyboards",
+      "count": 4,
+      "fresh": [
+        {
+          "code": "200KMEMBERS",
+          "reward": "50% Slower Wave Item (20 minutes), Legendary Pack, Double Luck Item (10 minutes), 4x Rolls Item (10 minutes), 2 Wheel Spins"
+        },
+        {
+          "code": "200KFAVS",
+          "reward": "50% Slower Wave Item (20 minutes), Legendary Pack, Double Luck Item (10 minutes), 4x Rolls Item (10 minutes), 2 Wheel Spins"
+        },
+        {
+          "code": "5000LIKES",
+          "reward": "50 Boba, Legendary Pack, 50% Slower Wave Item (10 minutes), Double Luck Item (10 minutes), Double Kick Power Item (10 minutes), 4x Rolls Item (10 minutes)"
+        },
+        {
+          "code": "4MILVISITS",
+          "reward": "Double Kick Power Item (15 minutes), Double Cash Item (10 minutes), Boba Pack, Legendary Pack, Wheel Spin"
+        }
+      ]
+    }
+  ]
 }
