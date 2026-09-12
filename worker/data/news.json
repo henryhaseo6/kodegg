@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-12T02:02:28.923Z",
+  "updatedAt": "2026-09-12T03:01:39.003Z",
   "counts": {
     "active": 102,
     "archived": 106
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Agent Record | Phoenix",
+        "id": "Profil Agen | Phoenix"
+      },
+      "excerpt": {
+        "en": "\"I'm Phoenix, one of Krampus's... judge, of sorts. Standing around's a little tiring — mind if I sit?\" Phoenix Reffaella \"Today's weather is perfect for passing out on the street..",
+        "id": "\"Namaku Phoenix, semacam hakim dari Krampus... bisa dibilang begitu. Berbicara sambil berdiri agak melelahkan. Apa aku boleh duduk?\" Phoenix Reffaella \"Cuaca hari ini... sangat coc"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/11/0/57e062424d408ffde9976b84f62620e1_1982622596463044024.jpeg",
+      "url": "https://www.hoyolab.com/article/46653231",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-12T03:00:04.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -54,22 +70,6 @@
       "publishedAt": "2026-09-10T05:00:05.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Aventurine • Waveflair Character Trailer: \"Exclusive Scoop\" | Honkai: Star Rail",
-        "id": "Trailer Karakter Aventurine • Waveflair: \"Bocoran Eksklusif\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "\"Mr. Aventurine, do... do you really not mind playing the full video?\" English Voice: Aventurine • Waveflair — Camden Sutkowski Female Trailblazer — Chloe Eves 「 Look at that pose,",
-        "id": "\"Tuan Aventurine, Anda ... Anda benar-benar tidak keberatan memutar seluruh videonya?\" CV Bahasa Inggris: Aventurine • Waveflair — Camden Sutkowski Trailblazer Wanita — Chloe Eves "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
-      "url": "https://www.hoyolab.com/article/46634121",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-10T04:00:07.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -82,6 +82,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/09/0/c82342dfb959655caffae99dd1a622fe_4292099502424711681.jpeg",
       "url": "https://www.hoyolab.com/article/46634122",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-10T04:00:07.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Aventurine • Waveflair Character Trailer: \"Exclusive Scoop\" | Honkai: Star Rail",
+        "id": "Trailer Karakter Aventurine • Waveflair: \"Bocoran Eksklusif\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "\"Mr. Aventurine, do... do you really not mind playing the full video?\" English Voice: Aventurine • Waveflair — Camden Sutkowski Female Trailblazer — Chloe Eves 「 Look at that pose,",
+        "id": "\"Tuan Aventurine, Anda ... Anda benar-benar tidak keberatan memutar seluruh videonya?\" CV Bahasa Inggris: Aventurine • Waveflair — Camden Sutkowski Trailblazer Wanita — Chloe Eves "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
+      "url": "https://www.hoyolab.com/article/46634121",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-10T04:00:07.000Z"
     },
@@ -454,22 +470,6 @@
       "publishedAt": "2026-09-07T04:05:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Ridu Happenings 丨 Delectable Bribery",
-        "id": "Kejadian di Ridu | Bujukan Manis"
-      },
-      "excerpt": {
-        "en": "\"Oh right! Claret, there's something I wanna run by you...\" \"Ahem, I've gone over Airspace Patrol's recent consumption figures, and well... would it be possible to increase this qu",
-        "id": "\"Oh iya! Claret... ada yang ingin kubicarakan denganmu...\" \"Ehem, aku sudah menghitung kebutuhan Airspace Patrol akhir-akhir ini. Dan... apakah pasokan Porcelloy untuk kuartal ini "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
-      "url": "https://www.hoyolab.com/article/46604274",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-07T04:00:05.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -482,6 +482,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/3b807be584794bdac0cddc9ddf05bcec_5145680818623480549.jpg",
       "url": "https://www.hoyolab.com/article/46604275",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-07T04:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Ridu Happenings 丨 Delectable Bribery",
+        "id": "Kejadian di Ridu | Bujukan Manis"
+      },
+      "excerpt": {
+        "en": "\"Oh right! Claret, there's something I wanna run by you...\" \"Ahem, I've gone over Airspace Patrol's recent consumption figures, and well... would it be possible to increase this qu",
+        "id": "\"Oh iya! Claret... ada yang ingin kubicarakan denganmu...\" \"Ehem, aku sudah menghitung kebutuhan Airspace Patrol akhir-akhir ini. Dan... apakah pasokan Porcelloy untuk kuartal ini "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
+      "url": "https://www.hoyolab.com/article/46604274",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-07T04:00:05.000Z"
     },
@@ -676,22 +692,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5398",
       "source": "Wuthering Waves",
       "publishedAt": "2026-09-04T06:44:10.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Unarchived Agent Footage | Claret",
-        "id": "Video Agen Non-Arsip: Claret"
-      },
-      "excerpt": {
-        "en": "\"See what I'm capable of now?\"",
-        "id": "\"Sekarang tahu kan betapa hebatnya aku?\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/03/0/fa0f9ab9ebd0b40826d616eea1b9b6ec_24808161808265007.png",
-      "url": "https://www.hoyolab.com/article/46571238",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-04T04:30:06.000Z"
     },
     {
       "game": "hsr",
@@ -1014,22 +1014,6 @@
       "publishedAt": "2026-08-27T08:10:07.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "【Rewarded Event】Robin • Summeretto Strategy Discussion Event",
-        "id": "[Event Berhadiah] Event Diskusi Panduan Strategi Robin • Summeretto"
-      },
-      "excerpt": {
-        "en": "Following the lingering echoes of memory, she embraces the unexpected along the way, seeking inspiration for a melodic variation— Robin • Summeretto has just released and we are in",
-        "id": "Menelusuri gema kenangan, dia merangkul setiap kebetulan di sepanjang jalan, mencari ilham untuk sebuah variasi— Robin • Summeretto telah hadir! Kami mengundang para Trailblazer un"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/26/349b2176467a69151ff88fc3ca5e15f1_5459829866865405242.jpg",
-      "url": "https://www.hoyolab.com/article/46469781",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-27T08:00:06.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -1042,6 +1026,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/26/e9d18405ee86a224e70bc77fa52d5e6b_3072283650260724961.jpg",
       "url": "https://www.hoyolab.com/article/46469782",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-08-27T08:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "【Rewarded Event】Robin • Summeretto Strategy Discussion Event",
+        "id": "[Event Berhadiah] Event Diskusi Panduan Strategi Robin • Summeretto"
+      },
+      "excerpt": {
+        "en": "Following the lingering echoes of memory, she embraces the unexpected along the way, seeking inspiration for a melodic variation— Robin • Summeretto has just released and we are in",
+        "id": "Menelusuri gema kenangan, dia merangkul setiap kebetulan di sepanjang jalan, mencari ilham untuk sebuah variasi— Robin • Summeretto telah hadir! Kami mengundang para Trailblazer un"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/26/349b2176467a69151ff88fc3ca5e15f1_5459829866865405242.jpg",
+      "url": "https://www.hoyolab.com/article/46469781",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-27T08:00:06.000Z"
     },
@@ -1110,18 +1110,18 @@
       "publishedAt": "2026-08-26T06:00:04.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
+      "game": "gi",
+      "gameName": "Genshin Impact",
       "title": {
-        "en": "Project Astro-Warp Beta Sign-Up Reminder",
-        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+        "en": "\"Great Expeditionist Challenge\" Event: Take Part to Invite \"Kätzlein Cocktail\" Diona (Cryo)",
+        "id": "Event \"Kompetisi Penakluk Segala Medan\": Ikuti untuk Mengundang \"Kätzlein Cocktail\" Diona (Cryo)"
       },
       "excerpt": {
-        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
-        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
+        "en": "〓Event Rewards〓 〓Event Duration〓 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" Complete the \"Gunfire in the Sile",
+        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" Selesaikan \"Suara "
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
-      "url": "https://www.hoyolab.com/article/46451351",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/f7aa9696c4a261cfac3b8ce9759f0a7f_503834544847449902.jpg",
+      "url": "https://www.hoyolab.com/article/46451352",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
@@ -1142,18 +1142,18 @@
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
       "title": {
-        "en": "\"Great Expeditionist Challenge\" Event: Take Part to Invite \"Kätzlein Cocktail\" Diona (Cryo)",
-        "id": "Event \"Kompetisi Penakluk Segala Medan\": Ikuti untuk Mengundang \"Kätzlein Cocktail\" Diona (Cryo)"
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
       },
       "excerpt": {
-        "en": "〓Event Rewards〓 〓Event Duration〓 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" Complete the \"Gunfire in the Sile",
-        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" Selesaikan \"Suara "
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 31/08/2"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/24/f7aa9696c4a261cfac3b8ce9759f0a7f_503834544847449902.jpg",
-      "url": "https://www.hoyolab.com/article/46451352",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/25/addec2d24a1f50df8d94fec2c70705f1_3865073600926186373.png",
+      "url": "https://www.hoyolab.com/article/46451351",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-26T04:00:04.000Z"
     },
