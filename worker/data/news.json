@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-13T10:02:04.567Z",
+  "updatedAt": "2026-09-13T11:02:00.740Z",
   "counts": {
-    "active": 101,
-    "archived": 107
+    "active": 99,
+    "archived": 109
   },
   "articles": [
     {
@@ -710,22 +710,6 @@
       "publishedAt": "2026-09-07T04:05:06.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Genshin Impact Version 7.1 Special Program Preview",
-        "id": "Preview Acara Khusus Versi 7.1 | Genshin Impact"
-      },
-      "excerpt": {
-        "en": "Dear Traveler, it's announcement time! The special program for Genshin Impact's new version will premiere on the official Twitch and YouTube channels on 09/12/2026 at 08:00 AM (UTC",
-        "id": "Dear Traveler, ada pengumuman baru nih! Acara Khusus untuk versi baru Genshin Impact akan ditayangkan perdana di Twitch dan YouTube pada 12 September 2026 08:00 AM (UTC-4)! Acara K"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/3b807be584794bdac0cddc9ddf05bcec_5145680818623480549.jpg",
-      "url": "https://www.hoyolab.com/article/46604275",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-07T04:00:05.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -738,6 +722,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
       "url": "https://www.hoyolab.com/article/46604274",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-07T04:00:05.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact Version 7.1 Special Program Preview",
+        "id": "Preview Acara Khusus Versi 7.1 | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "Dear Traveler, it's announcement time! The special program for Genshin Impact's new version will premiere on the official Twitch and YouTube channels on 09/12/2026 at 08:00 AM (UTC",
+        "id": "Dear Traveler, ada pengumuman baru nih! Acara Khusus untuk versi baru Genshin Impact akan ditayangkan perdana di Twitch dan YouTube pada 12 September 2026 08:00 AM (UTC-4)! Acara K"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/3b807be584794bdac0cddc9ddf05bcec_5145680818623480549.jpg",
+      "url": "https://www.hoyolab.com/article/46604275",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-07T04:00:05.000Z"
     },
@@ -1588,7 +1588,9 @@
       "url": "https://www.hoyolab.com/article/46286871",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-14T12:00:00.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1603,7 +1605,8 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/10/07fd4d018458fc2728661b8582d6e805_6512170473913957483.png",
       "url": "https://www.hoyolab.com/article/46286010",
       "source": "HoYoLAB",
-      "publishedAt": "2026-08-14T11:00:05.000Z"
+      "publishedAt": "2026-08-14T11:00:05.000Z",
+      "archivedAt": "2026-09-13T11:02:00.740Z"
     },
     {
       "game": "wuwa",
@@ -1619,10 +1622,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1786636800000/rkm9b1o9dhzropfc94-1786702659003.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5294",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-08-14T10:30:33.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-08-14T10:30:33.000Z",
+      "archivedAt": "2026-09-13T11:02:00.740Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
