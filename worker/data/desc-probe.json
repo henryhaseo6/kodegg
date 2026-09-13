@@ -519,7 +519,7 @@
   "outfit": {
    "tulis": "outfit",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-03",
+   "terakhir": "2026-09-13",
    "awal": true
   },
   "impress": {
@@ -19453,6 +19453,11 @@
    "tulis": "UPDATEGHOUL",
    "pertama": 1788717928541,
    "terakhir": "2026-09-13"
+  },
+  "updatefire": {
+   "tulis": "UPDATEFIRE",
+   "pertama": 1789326247460,
+   "terakhir": "2026-09-13"
   }
  },
  "tr-legacy": {
@@ -19840,6 +19845,11 @@
    "tulis": "KEEPER",
    "pertama": 1788127396358,
    "terakhir": "2026-09-07"
+  },
+  "express": {
+   "tulis": "Express",
+   "pertama": 1789326247460,
+   "terakhir": "2026-09-13"
   }
  },
  "clean-the-golf-yard": {
@@ -26289,13 +26299,13 @@
   "craftable": {
    "tulis": "craftable",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-12",
+   "terakhir": "2026-09-13",
    "awal": true
   },
   "snackrooms": {
    "tulis": "Snackrooms",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-09",
+   "terakhir": "2026-09-13",
    "awal": true
   },
   "growlers": {
@@ -26372,7 +26382,7 @@
   "entity": {
    "tulis": "Entity",
    "pertama": 1786302188038,
-   "terakhir": "2026-08-30"
+   "terakhir": "2026-09-13"
   },
   "mutant": {
    "tulis": "Mutant",
@@ -26512,7 +26522,7 @@
   "booth": {
    "tulis": "Booth",
    "pertama": 1787202215421,
-   "terakhir": "2026-08-25"
+   "terakhir": "2026-09-13"
   },
   "booths": {
    "tulis": "Booths",
@@ -26758,6 +26768,36 @@
   "outfit": {
    "tulis": "Outfit",
    "pertama": 1789322668931,
+   "terakhir": "2026-09-13"
+  },
+  "warhammer": {
+   "tulis": "Warhammer",
+   "pertama": 1789326247460,
+   "terakhir": "2026-09-13"
+  },
+  "joker": {
+   "tulis": "Joker",
+   "pertama": 1789326247460,
+   "terakhir": "2026-09-13"
+  },
+  "image": {
+   "tulis": "image",
+   "pertama": 1789326247460,
+   "terakhir": "2026-09-13"
+  },
+  "directly": {
+   "tulis": "directly",
+   "pertama": 1789326247460,
+   "terakhir": "2026-09-13"
+  },
+  "shrink": {
+   "tulis": "shrink",
+   "pertama": 1789326247460,
+   "terakhir": "2026-09-13"
+  },
+  "dropped": {
+   "tulis": "dropped",
+   "pertama": 1789326247460,
    "terakhir": "2026-09-13"
   }
  },
