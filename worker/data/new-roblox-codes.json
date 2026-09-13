@@ -1,24 +1,55 @@
 {
-  "generatedAt": "2026-09-13T03:03:22.424Z",
+  "generatedAt": "2026-09-13T04:02:01.742Z",
   "codes": [
     {
-      "game": "midnight-chasers-highway-racing",
-      "gameName": "Midnight Chasers Highway Racing",
+      "game": "superhero-evolution",
+      "gameName": "Superhero Evolution",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/superhero-evolution"
+      },
+      "code": "GIVEADMINEGG",
+      "reward": "1 Admin Egg",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1789271880000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-13T04:02:01.742Z",
+      "fetchedAt": "2026-09-13T04:02:01.742Z"
+    },
+    {
+      "game": "web-swing-escape",
+      "gameName": "Web Swing Escape",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/midnight-chasers-highway-racing"
+        "RoCodes.gg": "https://rocodes.gg/codes/1-web-swing-escape"
       },
-      "code": "ThanksFor970k",
-      "reward": null,
-      "date": "2026-09-13T01:21:15.815Z",
+      "code": "UPDATE",
+      "reward": "90 Wins",
+      "date": "2026-09-13T03:53:43.856Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-09-13T03:03:22.424Z",
-      "fetchedAt": "2026-09-13T03:03:22.424Z"
+      "firstSeenAt": "2026-09-13T04:02:01.742Z",
+      "fetchedAt": "2026-09-13T04:02:01.742Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "1-speed-verity-backroom-escape",
+      "count": 1,
+      "fresh": [
+        {
+          "code": "100CCU",
+          "reward": "100,000 Speed, 5x Treadmill"
+        }
+      ]
+    }
+  ]
 }
