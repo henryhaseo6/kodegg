@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-13T08:29:52.878Z",
+  "updatedAt": "2026-09-13T10:02:04.567Z",
   "counts": {
-    "active": 102,
-    "archived": 106
+    "active": 101,
+    "archived": 107
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Starlit Gala Special Event Preview",
+        "id": "Starlit Gala Special Event Preview"
+      },
+      "excerpt": {
+        "en": "Hello, Traveler! Welcome to Miliastra Wonderland. The Starlit Gala is about to begin. Let's take a closer look at the event!",
+        "id": "Hello, Traveler! Welcome to Miliastra Wonderland. The Starlit Gala is about to begin. Let's take a closer look at the event!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/11/b15b6778563acae7b871519a042ca02a_1546735866496432654.jpg",
+      "url": "https://www.hoyolab.com/article/46677987",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-13T10:00:04.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -694,22 +710,6 @@
       "publishedAt": "2026-09-07T04:05:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Ridu Happenings 丨 Delectable Bribery",
-        "id": "Kejadian di Ridu | Bujukan Manis"
-      },
-      "excerpt": {
-        "en": "\"Oh right! Claret, there's something I wanna run by you...\" \"Ahem, I've gone over Airspace Patrol's recent consumption figures, and well... would it be possible to increase this qu",
-        "id": "\"Oh iya! Claret... ada yang ingin kubicarakan denganmu...\" \"Ehem, aku sudah menghitung kebutuhan Airspace Patrol akhir-akhir ini. Dan... apakah pasokan Porcelloy untuk kuartal ini "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
-      "url": "https://www.hoyolab.com/article/46604274",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-07T04:00:05.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -722,6 +722,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/3b807be584794bdac0cddc9ddf05bcec_5145680818623480549.jpg",
       "url": "https://www.hoyolab.com/article/46604275",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-07T04:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Ridu Happenings 丨 Delectable Bribery",
+        "id": "Kejadian di Ridu | Bujukan Manis"
+      },
+      "excerpt": {
+        "en": "\"Oh right! Claret, there's something I wanna run by you...\" \"Ahem, I've gone over Airspace Patrol's recent consumption figures, and well... would it be possible to increase this qu",
+        "id": "\"Oh iya! Claret... ada yang ingin kubicarakan denganmu...\" \"Ehem, aku sudah menghitung kebutuhan Airspace Patrol akhir-akhir ini. Dan... apakah pasokan Porcelloy untuk kuartal ini "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
+      "url": "https://www.hoyolab.com/article/46604274",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-07T04:00:05.000Z"
     },
@@ -996,22 +1012,6 @@
       "url": "https://www.hoyolab.com/article/46520645",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-31T04:00:02.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Allow Me to Tell You Some Ancient Stories to Pass the Time? | Flins: Side Notes",
-        "id": "Mungkin Aku Bisa Menceritakan Beberapa Kisah Zaman Dulu untuk Mengisi Waktu? | Flins: Catatan Sampingan"
-      },
-      "excerpt": {
-        "en": "Hello, Traveler! The Event Wish \"The Lone Light Knocks at Night\" will be available from September 1, 18:00. There will be a huge drop-rate boost for \"Shadowy Lights, Stranger Wight",
-        "id": "Halo, Traveler! Event Permohonan \"Cahaya Temaram Mengetuk di Kala Malam\" akan dimulai pada 1 September pukul 18:00. Persentase perolehan \"Shadowy Lights, Stranger Wights\" Flins aka"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/28/0ca5e2e152a405f3a463b29481c87188_9142553814964478314.jpg",
-      "url": "https://www.hoyolab.com/article/46508017",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-30T04:00:04.000Z"
     },
     {
       "game": "hi3",
@@ -1620,7 +1620,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5294",
       "source": "Wuthering Waves",
       "publishedAt": "2026-08-14T10:30:33.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1635,10 +1637,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1786636800000/ps3y6nh5a92i60cip3-1786700364361.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5292",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-08-14T09:49:43.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-08-14T09:49:43.000Z",
+      "archivedAt": "2026-09-13T10:02:04.567Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
