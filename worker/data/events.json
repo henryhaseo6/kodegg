@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T20:01:54.417Z",
+  "updatedAt": "2026-09-13T21:01:34.140Z",
   "counts": {
     "active": 59,
     "archived": 127
@@ -59,30 +59,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "Version 7.1 Preview Discussion Room! Intertwined Fate ×500 Giveaway!",
-        "id": "Ruang Diskusi Versi 7.1! Dapatkan 500 Intertwined Fate Gratis!"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Olah! Hello, Traveler~ The new version is coming soon! Let's chat about it! Participation Method 1: Version Discussion Room After the Version 7.1 Special Program starts, share the screenshot that left the deepest impression on you and your ",
-        "id": "Olah~ Apa kabar, Traveler? Versi baru sudah mau dimulai nih! Ayo diskusikan tentang konten versi terbaru! [Cara Partisipasi 1: Ruang Diskusi Versi] Setelah Acara Khusus Versi 7.1 dimulai, bagikan tangkapan layar konten yang paling berkesan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/11/0d389e7e282c50b00f8384fe97056d65_1439630836620105269.jpg",
-      "startsAt": "2026-09-12T12:00:00.000Z",
-      "endsAt": "2026-09-16T15:59:59.000Z",
-      "postedAt": "2026-09-12T11:55:04.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46659242"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "Take part in the event and get a chance to win Intertwined Fate ×10!",
         "id": "Ikuti event ini untuk kesempatan mendapatkan Intertwined Fate ×10!"
       },
@@ -100,6 +76,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46657762"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Version 7.1 Preview Discussion Room! Intertwined Fate ×500 Giveaway!",
+        "id": "Ruang Diskusi Versi 7.1! Dapatkan 500 Intertwined Fate Gratis!"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Olah! Hello, Traveler~ The new version is coming soon! Let's chat about it! Participation Method 1: Version Discussion Room After the Version 7.1 Special Program starts, share the screenshot that left the deepest impression on you and your ",
+        "id": "Olah~ Apa kabar, Traveler? Versi baru sudah mau dimulai nih! Ayo diskusikan tentang konten versi terbaru! [Cara Partisipasi 1: Ruang Diskusi Versi] Setelah Acara Khusus Versi 7.1 dimulai, bagikan tangkapan layar konten yang paling berkesan "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/11/0d389e7e282c50b00f8384fe97056d65_1439630836620105269.jpg",
+      "startsAt": "2026-09-12T12:00:00.000Z",
+      "endsAt": "2026-09-16T15:59:59.000Z",
+      "postedAt": "2026-09-12T11:55:04.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46659242"
     },
     {
       "game": "gi",
@@ -920,6 +920,54 @@
       "type": "event",
       "typeName": null,
       "title": {
+        "en": "\"Leave the stage to me!\"",
+        "id": "\"Serahkan panggung ini kepadaku.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "📸 Today's Time Album Spotlight: Shigure Kira 💬 Today's Topic: Use emojis to show your support for your idol, Shigure Kira!👏👏👍👍🎉🎉 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't f",
+        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Shigure Kira 💬 Topik Hari Ini: Ayo dukung sang idola, Shigure Kira dengan emoji 👏👏👍👍🎉🎉 🎁 Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan m"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/45f577eb9dfe2dedf0dacb1f22cce014_6622766547934295661.png",
+      "startsAt": "2026-09-12T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-09-12T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46653677"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Coordinates confirmed. Launch!\"",
+        "id": "\"Koordinat telah dikonfirmasi, luncurkan.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: PROMETHEUS  Today's Topic: What happens when artificial intelligence gains humanity?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the ",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: PROMETHEUS  Topik Hari Ini: Ketika AI punya sisi kemanusiaan...  Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan masih banyak lagi! Jangan lupa u"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/bf04675624850e2964e074acebe415d3_5901877393515125102.png",
+      "startsAt": "2026-09-05T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-09-05T04:00:05.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46581909"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
         "en": "\"Listen, this is the resounding roar of a miracle.\"",
         "id": "\"Dengarkan, ini adalah gemuruh keajaiban.\""
       },
@@ -937,30 +985,6 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46439495"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Little lab rat, do you want to do something fun with me?\"",
-        "id": "\"Tikus lab kecil, apa kamu mau melakukan hal yang menyenangkan denganku?\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Mobius  Today's Topic: Are you willing to be Mobius's lab rat?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals code [Tim",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Mobius  Topik Kali Ini: Apa kamu bersedia menjadi tikus lab Mobius?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa untuk"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/be72508044ac90227b3ac5b4df588b94_2306388003995446088.png",
-      "startsAt": "2026-08-05T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-05T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46147443"
     },
     {
       "game": "hi3",
@@ -992,23 +1016,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Proceeding as planned.\"",
-        "id": "\"Semuanya berjalan sesuai rencana.\""
+        "en": "\"Let's dance our hearts out before the music stops.\"",
+        "id": "\"Menarilah sepuasmu sebelum musik berhenti.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Natasha Cioara  Today's Topic: If you could hire Raven for a job, what would it be?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 1",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Natasha Cioara  Topik Kali Ini: Jika kamu bisa memberi misi kepada Raven, misi apa yang akan kamu berikan?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+        "en": " Today's Time Album Spotlight: Susannah  Today's Topic: What score would you give Susannah's dance?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals cod",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Susannah  Topik Hari Ini: Berapa nilai yang kamu berikan untuk tarian Susannah?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Janga"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/b1519bfdf95e8b6d4314362ccc759da2_1621013541774284916.png",
-      "startsAt": "2026-08-02T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/92a3f82d9ab1d58b0dd225b62a4656ec_5760471921105658481.png",
+      "startsAt": "2026-09-01T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-02T04:00:06.000Z",
+      "postedAt": "2026-09-01T04:00:05.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46106590"
+      "url": "https://www.hoyolab.com/article/46533707"
     },
     {
       "game": "hi3",
@@ -1016,23 +1040,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Coordinates confirmed. Launch!\"",
-        "id": "\"Koordinat telah dikonfirmasi, luncurkan.\""
+        "en": "Within this dream, all is revealed.",
+        "id": "Di dalam mimpi ini, semua kebenaran akan terungkap."
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: PROMETHEUS  Today's Topic: What happens when artificial intelligence gains humanity?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the ",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: PROMETHEUS  Topik Hari Ini: Ketika AI punya sisi kemanusiaan...  Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan masih banyak lagi! Jangan lupa u"
+        "en": "📸 Today's Time Album Spotlight: Misteln Schariac 💬 Today's Topic: What would you most like to learn about Misteln? 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the ",
+        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Misteln Schariac 💬 Topik Hari Ini: Apa yang paling ingin kamu ketahui tentang Misteln? 🎁 Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan masih b"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/bf04675624850e2964e074acebe415d3_5901877393515125102.png",
-      "startsAt": "2026-09-05T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/88a751d0b6a3f93f3bf9fd8eac9d282c_6511878988023570493.png",
+      "startsAt": "2026-09-08T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-09-05T04:00:05.000Z",
+      "postedAt": "2026-09-08T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46581909"
+      "url": "https://www.hoyolab.com/article/46614592"
     },
     {
       "game": "hi3",
@@ -1136,78 +1160,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Let's dance our hearts out before the music stops.\"",
-        "id": "\"Menarilah sepuasmu sebelum musik berhenti.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Susannah  Today's Topic: What score would you give Susannah's dance?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals cod",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Susannah  Topik Hari Ini: Berapa nilai yang kamu berikan untuk tarian Susannah?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Janga"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/92a3f82d9ab1d58b0dd225b62a4656ec_5760471921105658481.png",
-      "startsAt": "2026-09-01T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-09-01T04:00:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46533707"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Within this dream, all is revealed.",
-        "id": "Di dalam mimpi ini, semua kebenaran akan terungkap."
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "📸 Today's Time Album Spotlight: Misteln Schariac 💬 Today's Topic: What would you most like to learn about Misteln? 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the ",
-        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Misteln Schariac 💬 Topik Hari Ini: Apa yang paling ingin kamu ketahui tentang Misteln? 🎁 Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan masih b"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/88a751d0b6a3f93f3bf9fd8eac9d282c_6511878988023570493.png",
-      "startsAt": "2026-09-08T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-09-08T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46614592"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Leave the stage to me!\"",
-        "id": "\"Serahkan panggung ini kepadaku.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "📸 Today's Time Album Spotlight: Shigure Kira 💬 Today's Topic: Use emojis to show your support for your idol, Shigure Kira!👏👏👍👍🎉🎉 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't f",
-        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Shigure Kira 💬 Topik Hari Ini: Ayo dukung sang idola, Shigure Kira dengan emoji 👏👏👍👍🎉🎉 🎁 Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan m"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/45f577eb9dfe2dedf0dacb1f22cce014_6622766547934295661.png",
-      "startsAt": "2026-09-12T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-09-12T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46653677"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "\"Hi, miss me yet? No matter when or where, Elysia will be there for you ♪\"",
         "id": "\"Hai, kangen aku ya? Elysia akan selalu ada untukmu, kapan pun dan di mana pun♪\""
       },
@@ -1225,6 +1177,54 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46039636"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Little lab rat, do you want to do something fun with me?\"",
+        "id": "\"Tikus lab kecil, apa kamu mau melakukan hal yang menyenangkan denganku?\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Mobius  Today's Topic: Are you willing to be Mobius's lab rat?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals code [Tim",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Mobius  Topik Kali Ini: Apa kamu bersedia menjadi tikus lab Mobius?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa untuk"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/be72508044ac90227b3ac5b4df588b94_2306388003995446088.png",
+      "startsAt": "2026-08-05T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-05T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46147443"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Proceeding as planned.\"",
+        "id": "\"Semuanya berjalan sesuai rencana.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Natasha Cioara  Today's Topic: If you could hire Raven for a job, what would it be?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 1",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Natasha Cioara  Topik Kali Ini: Jika kamu bisa memberi misi kepada Raven, misi apa yang akan kamu berikan?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merc"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/b1519bfdf95e8b6d4314362ccc759da2_1621013541774284916.png",
+      "startsAt": "2026-08-02T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-02T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46106590"
     },
     {
       "game": "zzz",
