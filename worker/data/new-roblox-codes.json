@@ -1,16 +1,24 @@
 {
-  "generatedAt": "2026-09-14T03:02:04.872Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-09-14T04:01:55.741Z",
+  "codes": [
     {
-      "game": "1-fist-per-click",
-      "count": 1,
-      "fresh": [
-        {
-          "code": "Golden",
-          "reward": "Strength Bonus"
-        }
-      ]
+      "game": "jujutsu-zero",
+      "gameName": "Jujutsu Zero",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/jujutsu-zero"
+      },
+      "code": "QOLYAY",
+      "reward": "1000 Cursed Crystals, 10000 Lumens, 50 Clan Rolls",
+      "date": "2026-09-14T02:31:42.667Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-14T04:01:55.741Z",
+      "fetchedAt": "2026-09-14T04:01:55.741Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
