@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-09-15T03:01:29.913Z",
+  "updatedAt": "2026-09-15T04:01:40.295Z",
   "counts": {
-    "active": 100,
+    "active": 101,
     "archived": 113
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Aha Instant\" | Aeon ★ Aha",
+        "id": "\"Momen Aha\" | Aeon ★ Aha"
+      },
+      "excerpt": {
+        "en": "\"Akivili, who has set forth once more... can you guess who I am now? A comic artist? A Mourning Actor? A Nameless? The Lotto Goddess...? In this cosmic drama, Aha has worn countles",
+        "id": "\"Akivili, yang sekali lagi telah memulai perjalanan ... Bisa tebak siapa aku sekarang? Komikus? Mourning Actor? The Nameless? Dewi Lotere ...? Dalam drama semesta ini, Aha telah me"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/14/b3059f329d8379726dd4d67956904eba_888629943095647086.png",
+      "url": "https://www.hoyolab.com/article/46701189",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-15T04:00:04.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact - Initial Top-Up Bonus Reset",
+        "id": "Genshin Impact - Reset Bonus Top-Up Perdana"
+      },
+      "excerpt": {
+        "en": "After the Genshin Impact Version 7.1 update, each top-up level of Genesis Crystals in the Crystal Top-Up page will be reset to provide a double bonus for the first top-up. 〓Reset T",
+        "id": "Setelah update Genshin Impact v7.1, semua tingkatan Top-Up di menu Top-Up Crystal akan direset ulang dan memberikan bonus ganda untuk Top-Up Perdana sekali lagi. 〓 Waktu Reset 〓 Se"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/d062e1eb109c1fbf3e19a66ad5794fe0_3269469838199715988.jpg",
+      "url": "https://www.hoyolab.com/article/46701187",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-15T04:00:03.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Stickers from the ClaretsForgingTrial event are now available",
+        "id": "Stiker dari event LatihanPenempaanClaret telah tersedia"
+      },
+      "excerpt": {
+        "en": "Stickers from the #ClaretsForgingTrial event are now available. Feel free to use them, Proxies! ▼ Download https://hoyo.link/gyUebbXgH",
+        "id": "Stiker dari event #LatihanPenempaanClaret telah tersedia. Silakan diunduh, Proxy! ▼ Unduh https://hoyo.link/gyUebbXgH"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/f0cd72c6fef7113966279ea8e9224782_2811267817377925024.jpg",
+      "url": "https://www.hoyolab.com/article/46701188",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-15T04:00:03.000Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
@@ -502,22 +550,6 @@
       "publishedAt": "2026-09-10T05:00:05.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero Version 3.2 Character Avatars",
-        "id": "Foto Profil Karakter V3.2 | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "Thank you for supporting Version 3.2 \"Their Secret Histories,\" Proxies! Claret & Roxy's avatars are now available. Feel free to give them a try~ ▼ Download https://hoyo.link/jCw9TJ",
-        "id": "Terima kasih atas dukungan para Proxy terhadap V3.2 \"Kisah Rahasia Mereka\"! Foto Profil Karakter Claret dan Roxy telah dirilis. Silakan dipakai ya, Proxy~ ▼ Unduh https://hoyo.link"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/09/0/c82342dfb959655caffae99dd1a622fe_4292099502424711681.jpeg",
-      "url": "https://www.hoyolab.com/article/46634122",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-10T04:00:07.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -530,6 +562,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
       "url": "https://www.hoyolab.com/article/46634121",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-10T04:00:07.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Version 3.2 Character Avatars",
+        "id": "Foto Profil Karakter V3.2 | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "Thank you for supporting Version 3.2 \"Their Secret Histories,\" Proxies! Claret & Roxy's avatars are now available. Feel free to give them a try~ ▼ Download https://hoyo.link/jCw9TJ",
+        "id": "Terima kasih atas dukungan para Proxy terhadap V3.2 \"Kisah Rahasia Mereka\"! Foto Profil Karakter Claret dan Roxy telah dirilis. Silakan dipakai ya, Proxy~ ▼ Unduh https://hoyo.link"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/09/0/c82342dfb959655caffae99dd1a622fe_4292099502424711681.jpeg",
+      "url": "https://www.hoyolab.com/article/46634122",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-10T04:00:07.000Z"
     },
@@ -902,22 +950,6 @@
       "publishedAt": "2026-09-07T04:05:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Ridu Happenings 丨 Delectable Bribery",
-        "id": "Kejadian di Ridu | Bujukan Manis"
-      },
-      "excerpt": {
-        "en": "\"Oh right! Claret, there's something I wanna run by you...\" \"Ahem, I've gone over Airspace Patrol's recent consumption figures, and well... would it be possible to increase this qu",
-        "id": "\"Oh iya! Claret... ada yang ingin kubicarakan denganmu...\" \"Ehem, aku sudah menghitung kebutuhan Airspace Patrol akhir-akhir ini. Dan... apakah pasokan Porcelloy untuk kuartal ini "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
-      "url": "https://www.hoyolab.com/article/46604274",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-07T04:00:05.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -930,6 +962,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/3b807be584794bdac0cddc9ddf05bcec_5145680818623480549.jpg",
       "url": "https://www.hoyolab.com/article/46604275",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-07T04:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Ridu Happenings 丨 Delectable Bribery",
+        "id": "Kejadian di Ridu | Bujukan Manis"
+      },
+      "excerpt": {
+        "en": "\"Oh right! Claret, there's something I wanna run by you...\" \"Ahem, I've gone over Airspace Patrol's recent consumption figures, and well... would it be possible to increase this qu",
+        "id": "\"Oh iya! Claret... ada yang ingin kubicarakan denganmu...\" \"Ehem, aku sudah menghitung kebutuhan Airspace Patrol akhir-akhir ini. Dan... apakah pasokan Porcelloy untuk kuartal ini "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
+      "url": "https://www.hoyolab.com/article/46604274",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-07T04:00:05.000Z"
     },
@@ -948,22 +996,6 @@
       "url": "https://www.hoyolab.com/article/46603925",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-07T03:00:02.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Crimson Thirst\" W-Engine Showcase",
-        "id": "\"Crimson Thirst\" W-Engine Showcase"
-      },
-      "excerpt": {
-        "en": "The \"Crimson Thirst\" Signal Search event is about to begin! After the Version 3.2 update – 2026/09/29 11:59 (server time), reception rate for the limited S-Rank W-Engine Crimson Th",
-        "id": "The \"Crimson Thirst\" Signal Search event is about to begin! After the Version 3.2 update – 2026/09/29 11:59 (server time), reception rate for the limited S-Rank W-Engine Crimson Th"
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-09-06/transcoded/142096282414174720000_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/46595870",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-06T10:00:01.000Z"
     },
     {
       "game": "hsr",
@@ -1252,22 +1284,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5379",
       "source": "Wuthering Waves",
       "publishedAt": "2026-08-28T03:28:26.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Welcome to Astropolis | Branch Landing Guide",
-        "id": "Selamat Datang di Astropolis | Panduan Pengenalan Cabang"
-      },
-      "excerpt": {
-        "en": "Thanks to you, President, the agency is flourishing, and we've even set up shop in Astropolis! As expected of the Interastral Peace Entertainment headquarters, I just took a quick ",
-        "id": "Berkat presdir, kantor berita kita semakin maju, bahkan sudah buka cabang di Astropolis! Markas Interastral Peace Entertainment memang beda ya! Aku baru saja ke pusat kota, influen"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/27/8b56fc1a061ebd317790fafb979cf004_4323087527325449046.jpg",
-      "url": "https://www.hoyolab.com/article/46480492",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-08-28T03:00:10.000Z"
     },
     {
       "game": "zzz",
