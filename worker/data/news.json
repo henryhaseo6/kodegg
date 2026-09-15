@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T07:01:47.776Z",
+  "updatedAt": "2026-09-15T08:01:37.733Z",
   "counts": {
     "active": 102,
     "archived": 113
@@ -38,22 +38,6 @@
       "publishedAt": "2026-09-15T04:00:04.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Stickers from the ClaretsForgingTrial event are now available",
-        "id": "Stiker dari event LatihanPenempaanClaret telah tersedia"
-      },
-      "excerpt": {
-        "en": "Stickers from the #ClaretsForgingTrial event are now available. Feel free to use them, Proxies! ▼ Download https://hoyo.link/gyUebbXgH",
-        "id": "Stiker dari event #LatihanPenempaanClaret telah tersedia. Silakan diunduh, Proxy! ▼ Unduh https://hoyo.link/gyUebbXgH"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/f0cd72c6fef7113966279ea8e9224782_2811267817377925024.jpg",
-      "url": "https://www.hoyolab.com/article/46701188",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-15T04:00:03.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -66,6 +50,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/d062e1eb109c1fbf3e19a66ad5794fe0_3269469838199715988.jpg",
       "url": "https://www.hoyolab.com/article/46701187",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-15T04:00:03.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Stickers from the ClaretsForgingTrial event are now available",
+        "id": "Stiker dari event LatihanPenempaanClaret telah tersedia"
+      },
+      "excerpt": {
+        "en": "Stickers from the #ClaretsForgingTrial event are now available. Feel free to use them, Proxies! ▼ Download https://hoyo.link/gyUebbXgH",
+        "id": "Stiker dari event #LatihanPenempaanClaret telah tersedia. Silakan diunduh, Proxy! ▼ Unduh https://hoyo.link/gyUebbXgH"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/f0cd72c6fef7113966279ea8e9224782_2811267817377925024.jpg",
+      "url": "https://www.hoyolab.com/article/46701188",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-15T04:00:03.000Z"
     },
@@ -966,22 +966,6 @@
       "publishedAt": "2026-09-07T04:05:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Ridu Happenings 丨 Delectable Bribery",
-        "id": "Kejadian di Ridu | Bujukan Manis"
-      },
-      "excerpt": {
-        "en": "\"Oh right! Claret, there's something I wanna run by you...\" \"Ahem, I've gone over Airspace Patrol's recent consumption figures, and well... would it be possible to increase this qu",
-        "id": "\"Oh iya! Claret... ada yang ingin kubicarakan denganmu...\" \"Ehem, aku sudah menghitung kebutuhan Airspace Patrol akhir-akhir ini. Dan... apakah pasokan Porcelloy untuk kuartal ini "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
-      "url": "https://www.hoyolab.com/article/46604274",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-07T04:00:05.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -994,6 +978,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/3b807be584794bdac0cddc9ddf05bcec_5145680818623480549.jpg",
       "url": "https://www.hoyolab.com/article/46604275",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-07T04:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Ridu Happenings 丨 Delectable Bribery",
+        "id": "Kejadian di Ridu | Bujukan Manis"
+      },
+      "excerpt": {
+        "en": "\"Oh right! Claret, there's something I wanna run by you...\" \"Ahem, I've gone over Airspace Patrol's recent consumption figures, and well... would it be possible to increase this qu",
+        "id": "\"Oh iya! Claret... ada yang ingin kubicarakan denganmu...\" \"Ehem, aku sudah menghitung kebutuhan Airspace Patrol akhir-akhir ini. Dan... apakah pasokan Porcelloy untuk kuartal ini "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/a6a010a8be80e3c8f27a0ae093c51901_7115090989432414803.jpeg",
+      "url": "https://www.hoyolab.com/article/46604274",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-07T04:00:05.000Z"
     },
@@ -1088,7 +1088,7 @@
         "en": "According to a report by Furbobo Weekly: Recently, in response to the question of whether he \"really came to Astropolis just for a vacation\"... Aventurine of the Ten Stonehearts re",
         "id": "Menurut laporan \"Mingguan Rakun\": Baru-baru ini, menanggapi pertanyaan \"apakah datang ke Astropolis benar-benar hanya untuk liburan\" ... Aventurine dari \"Sepuluh Orang Berhati Batu"
       },
-      "image": null,
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/04/0/f8407fadef8c5afaa491f6c0d91af636_2975114155973523257.jpeg",
       "url": "https://www.hoyolab.com/article/46570956",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-04T04:00:03.000Z"
@@ -1104,7 +1104,7 @@
         "en": "Hello, Trailblazers~ Today, we bring you the preview for the character Aventurine • Waveflair (Elation: Quantum) and the Light Cone Summer Rides the Surf (Elation)!",
         "id": "Halo Trailblazer~ Hari ini kami membawakan preview karakter \"Aventurine • Waveflair (Elation: Quantum)\" dan Light Cone \"Summer Rides the Surf (Elation)\"!"
       },
-      "image": null,
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/03/5267c3bde35af34b83e9fee8000ba690_7654656984044400140.jpg",
       "url": "https://www.hoyolab.com/article/46570570",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-04T03:00:11.000Z"
