@@ -65135,7 +65135,7 @@
   "claimit": {
    "tulis": "CLAIMIT",
    "pertama": 1789038274659,
-   "terakhir": "2026-09-11"
+   "terakhir": "2026-09-15"
   },
   "pickle": {
    "tulis": "Pickle",
@@ -65146,8 +65146,13 @@
   "newupdate": {
    "tulis": "NEWUPDATE",
    "pertama": 1789038274659,
-   "terakhir": "2026-09-11",
+   "terakhir": "2026-09-15",
    "sudahPunya": true
+  },
+  "secretgift": {
+   "tulis": "SECRETGIFT",
+   "pertama": 1789455826757,
+   "terakhir": "2026-09-15"
   }
  },
  "search-for-the-needle": {
