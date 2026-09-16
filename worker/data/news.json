@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-16T02:01:59.655Z",
+  "updatedAt": "2026-09-16T03:01:53.066Z",
   "counts": {
-    "active": 102,
-    "archived": 113
+    "active": 101,
+    "archived": 114
   },
   "articles": [
     {
@@ -1620,7 +1620,9 @@
       "url": "https://www.hoyolab.com/article/46328730",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-17T03:30:05.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1635,10 +1637,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/06/08f4c19105eeeb8fa803fb263eb286e9_4533021513625892336.png",
       "url": "https://www.hoyolab.com/article/46328437",
       "source": "HoYoLAB",
-      "publishedAt": "2026-08-17T03:00:02.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-08-17T03:00:02.000Z",
+      "archivedAt": "2026-09-16T03:01:53.066Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
