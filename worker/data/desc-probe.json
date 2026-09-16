@@ -30693,6 +30693,36 @@
    "pertama": 1785997647571,
    "terakhir": "2026-08-14",
    "awal": true
+  },
+  "2xall": {
+   "tulis": "2XALL",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "rift": {
+   "tulis": "RIFT",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "jungle": {
+   "tulis": "JUNGLE",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "titleluck": {
+   "tulis": "TITLELUCK",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "world6": {
+   "tulis": "WORLD6",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "temple": {
+   "tulis": "TEMPLE",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
   }
  },
  "1-speed-per-click": {
@@ -66490,6 +66520,51 @@
   "merchant": {
    "tulis": "Merchant",
    "pertama": 1789524241465,
+   "terakhir": "2026-09-16"
+  }
+ },
+ "1-dmg-fps": {
+  "attacking": {
+   "tulis": "ATTACKING",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "medals": {
+   "tulis": "Medals",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "buddy": {
+   "tulis": "Buddy",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16",
+   "sudahPunya": true
+  }
+ },
+ "steal-a-tree": {
+  "gnomes": {
+   "tulis": "gnomes",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "juice": {
+   "tulis": "juice",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "treadmill": {
+   "tulis": "treadmill",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "entire": {
+   "tulis": "entire",
+   "pertama": 1789563861247,
+   "terakhir": "2026-09-16"
+  },
+  "index": {
+   "tulis": "Index",
+   "pertama": 1789563861247,
    "terakhir": "2026-09-16"
   }
  }
