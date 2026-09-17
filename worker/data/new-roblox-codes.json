@@ -1,24 +1,33 @@
 {
-  "generatedAt": "2026-09-17T13:02:13.819Z",
-  "codes": [],
+  "generatedAt": "2026-09-17T14:02:32.725Z",
+  "codes": [
+    {
+      "game": "roll-anime-to-fight",
+      "gameName": "Roll Anime to Fight",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/roll-anime-to-fight"
+      },
+      "code": "SORRYFORSHUTDOWN!!",
+      "reward": null,
+      "date": "2026-09-17T13:58:14.250Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-17T14:02:32.725Z",
+      "fetchedAt": "2026-09-17T14:02:32.725Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "kick-an-uma",
-      "count": 5,
+      "game": "the-vampire-legacies-2",
+      "count": 3,
       "fresh": []
     },
     {
-      "game": "bombanana",
-      "count": 1,
-      "fresh": []
-    },
-    {
-      "game": "build-a-country",
-      "count": 7,
-      "fresh": []
-    },
-    {
-      "game": "spider-rising-spider-man",
+      "game": "basketball-stars-3",
       "count": 3,
       "fresh": []
     }
