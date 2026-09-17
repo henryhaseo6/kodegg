@@ -1,35 +1,24 @@
 {
-  "generatedAt": "2026-09-17T14:02:32.725Z",
+  "generatedAt": "2026-09-17T15:01:53.501Z",
   "codes": [
     {
-      "game": "roll-anime-to-fight",
-      "gameName": "Roll Anime to Fight",
+      "game": "search-for-the-needle",
+      "gameName": "Search for the Needle",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/roll-anime-to-fight"
+        "RoCodes.gg": "https://rocodes.gg/codes/search-for-the-needle"
       },
-      "code": "SORRYFORSHUTDOWN!!",
-      "reward": null,
-      "date": "2026-09-17T13:58:14.250Z",
+      "code": "WEATHER",
+      "reward": "120 Gems",
+      "date": "2026-09-17T13:58:12.609Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-09-17T14:02:32.725Z",
-      "fetchedAt": "2026-09-17T14:02:32.725Z"
+      "firstSeenAt": "2026-09-17T15:01:53.501Z",
+      "fetchedAt": "2026-09-17T15:01:53.501Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "the-vampire-legacies-2",
-      "count": 3,
-      "fresh": []
-    },
-    {
-      "game": "basketball-stars-3",
-      "count": 3,
-      "fresh": []
-    }
-  ]
+  "bulkGames": []
 }
