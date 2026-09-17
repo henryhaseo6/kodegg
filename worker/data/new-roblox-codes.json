@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-09-17T12:01:55.172Z",
-  "codes": [
+  "generatedAt": "2026-09-17T13:02:13.819Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "spin-a-fem",
-      "gameName": "Spin a Fem",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/spin-a-femboy"
-      },
-      "code": "MINIUPD",
-      "reward": "100 Gems, 5 Mutation Rerolls, 15 Golden Dice, 10 Platinum Dice, 5 Molten Dice and 3 Holy Dice",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1789641600000,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-09-17T12:01:55.172Z",
-      "fetchedAt": "2026-09-17T12:01:55.172Z"
+      "game": "kick-an-uma",
+      "count": 5,
+      "fresh": []
+    },
+    {
+      "game": "bombanana",
+      "count": 1,
+      "fresh": []
+    },
+    {
+      "game": "build-a-country",
+      "count": 7,
+      "fresh": []
+    },
+    {
+      "game": "spider-rising-spider-man",
+      "count": 3,
+      "fresh": []
     }
-  ],
-  "bulkGames": []
+  ]
 }
