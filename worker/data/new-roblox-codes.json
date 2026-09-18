@@ -1,5 +1,26 @@
 {
-  "generatedAt": "2026-09-18T00:01:29.538Z",
+  "generatedAt": "2026-09-18T01:01:37.984Z",
   "codes": [],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "build-and-kill-zombies",
+      "count": 5,
+      "fresh": []
+    },
+    {
+      "game": "pop-bubbles",
+      "count": 3,
+      "fresh": []
+    },
+    {
+      "game": "poly-loot",
+      "count": 3,
+      "fresh": []
+    },
+    {
+      "game": "beat-the-anime-boss",
+      "count": 11,
+      "fresh": []
+    }
+  ]
 }
