@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-19T02:01:37.342Z",
+  "updatedAt": "2026-09-19T03:01:57.969Z",
   "counts": {
-    "active": 92,
-    "archived": 124
+    "active": 91,
+    "archived": 125
   },
   "articles": [
     {
@@ -678,22 +678,6 @@
       "publishedAt": "2026-09-10T05:00:05.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Aventurine • Waveflair Character Trailer: \"Exclusive Scoop\" | Honkai: Star Rail",
-        "id": "Trailer Karakter Aventurine • Waveflair: \"Bocoran Eksklusif\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "\"Mr. Aventurine, do... do you really not mind playing the full video?\" English Voice: Aventurine • Waveflair — Camden Sutkowski Female Trailblazer — Chloe Eves 「 Look at that pose,",
-        "id": "\"Tuan Aventurine, Anda ... Anda benar-benar tidak keberatan memutar seluruh videonya?\" CV Bahasa Inggris: Aventurine • Waveflair — Camden Sutkowski Trailblazer Wanita — Chloe Eves "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
-      "url": "https://www.hoyolab.com/article/46634121",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-10T04:00:07.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -706,6 +690,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/09/0/c82342dfb959655caffae99dd1a622fe_4292099502424711681.jpeg",
       "url": "https://www.hoyolab.com/article/46634122",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-10T04:00:07.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Aventurine • Waveflair Character Trailer: \"Exclusive Scoop\" | Honkai: Star Rail",
+        "id": "Trailer Karakter Aventurine • Waveflair: \"Bocoran Eksklusif\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "\"Mr. Aventurine, do... do you really not mind playing the full video?\" English Voice: Aventurine • Waveflair — Camden Sutkowski Female Trailblazer — Chloe Eves 「 Look at that pose,",
+        "id": "\"Tuan Aventurine, Anda ... Anda benar-benar tidak keberatan memutar seluruh videonya?\" CV Bahasa Inggris: Aventurine • Waveflair — Camden Sutkowski Trailblazer Wanita — Chloe Eves "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
+      "url": "https://www.hoyolab.com/article/46634121",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-10T04:00:07.000Z"
     },
@@ -1460,7 +1460,9 @@
       "url": "https://www.hoyolab.com/article/46375144",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-20T04:00:05.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1475,10 +1477,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/17/c4b04aa5748d694d485da80db904178c_5991310462368870224.png",
       "url": "https://www.hoyolab.com/article/46374643",
       "source": "HoYoLAB",
-      "publishedAt": "2026-08-20T03:00:01.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-08-20T03:00:01.000Z",
+      "archivedAt": "2026-09-19T03:01:57.969Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
