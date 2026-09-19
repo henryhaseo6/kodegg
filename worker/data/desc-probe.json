@@ -1736,6 +1736,11 @@
    "tulis": "Warlock",
    "pertama": 1789747518058,
    "terakhir": "2026-09-19"
+  },
+  "black": {
+   "tulis": "Black",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
   }
  },
  "mini-war": {
@@ -4979,6 +4984,36 @@
   "camo": {
    "tulis": "Camo",
    "pertama": 1789229082646,
+   "terakhir": "2026-09-19"
+  },
+  "mv-75": {
+   "tulis": "MV-75",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "cheyenne": {
+   "tulis": "Cheyenne",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "tornado": {
+   "tulis": "Tornado",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "assta": {
+   "tulis": "ASSTA",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "implemented": {
+   "tulis": "Implemented",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "stealing": {
+   "tulis": "stealing",
+   "pertama": 1789833895228,
    "terakhir": "2026-09-19"
   }
  },
@@ -17787,7 +17822,7 @@
   "black": {
    "tulis": "Black",
    "pertama": 1786132945989,
-   "terakhir": "2026-09-18"
+   "terakhir": "2026-09-19"
   },
   "element": {
    "tulis": "Element",
@@ -19713,7 +19748,7 @@
   "black": {
    "tulis": "black",
    "pertama": 1786132945989,
-   "terakhir": "2026-09-18"
+   "terakhir": "2026-09-19"
   },
   "playable": {
    "tulis": "Playable",
@@ -36095,7 +36130,7 @@
   "revamped": {
    "tulis": "REVAMPED",
    "pertama": 1785996161549,
-   "terakhir": "2026-09-05",
+   "terakhir": "2026-09-19",
    "n": 1,
    "awal": true
   },
@@ -36341,6 +36376,36 @@
   "charger": {
    "tulis": "CHARGER",
    "pertama": 1788627879220,
+   "terakhir": "2026-09-19"
+  },
+  "formula": {
+   "tulis": "FORMULA",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "cart": {
+   "tulis": "CART",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "golf": {
+   "tulis": "GOLF",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "lfas": {
+   "tulis": "LFAs",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "viper": {
+   "tulis": "VIPER",
+   "pertama": 1789833895228,
+   "terakhir": "2026-09-19"
+  },
+  "onboarding": {
+   "tulis": "ONBOARDING",
+   "pertama": 1789833895228,
    "terakhir": "2026-09-19"
   }
  },
@@ -68491,6 +68556,13 @@
   "mako": {
    "tulis": "Mako",
    "pertama": 1789779837560,
+   "terakhir": "2026-09-19"
+  }
+ },
+ "race-your-lucky-block": {
+  "destinations": {
+   "tulis": "destinations",
+   "pertama": 1789833895228,
    "terakhir": "2026-09-19"
   }
  }

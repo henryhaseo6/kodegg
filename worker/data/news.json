@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-19T15:01:55.196Z",
+  "updatedAt": "2026-09-19T16:02:36.935Z",
   "counts": {
-    "active": 91,
-    "archived": 127
+    "active": 90,
+    "archived": 128
   },
   "articles": [
     {
@@ -198,22 +198,6 @@
       "publishedAt": "2026-09-16T10:00:05.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Where Mercy Endures｜Genshin Impact",
-        "id": "Where Mercy Endures｜Genshin Impact"
-      },
-      "excerpt": {
-        "en": "Genshin Impact's Snezhnaya OST album \"Where Mercy Endures\" is now available! The album's four discs, \"Swept in Frost,\" \"The Endless Road,\" \"Untroubled Bliss,\" and \"Shifting Shadows",
-        "id": "Album OST Snezhnaya Genshin Impact \"Where Mercy Endures\" sudah dirilis! Album ini terbagi menjadi empat bagian, yaitu \"Swept in Frost\", \"The Endless Road\", \"Untroubled Bliss\", dan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/16/0/bef3cdc231b1f02b068fdfc6f9fa6253_1604172284978103464.jpeg",
-      "url": "https://www.hoyolab.com/article/46716167",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-16T10:00:03.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -226,6 +210,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/15/8a88513a5baca6c3c07c4fa1bafe80d3_1849697383244525876.jpg",
       "url": "https://www.hoyolab.com/article/46716166",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-16T10:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Where Mercy Endures｜Genshin Impact",
+        "id": "Where Mercy Endures｜Genshin Impact"
+      },
+      "excerpt": {
+        "en": "Genshin Impact's Snezhnaya OST album \"Where Mercy Endures\" is now available! The album's four discs, \"Swept in Frost,\" \"The Endless Road,\" \"Untroubled Bliss,\" and \"Shifting Shadows",
+        "id": "Album OST Snezhnaya Genshin Impact \"Where Mercy Endures\" sudah dirilis! Album ini terbagi menjadi empat bagian, yaitu \"Swept in Frost\", \"The Endless Road\", \"Untroubled Bliss\", dan "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/16/0/bef3cdc231b1f02b068fdfc6f9fa6253_1604172284978103464.jpeg",
+      "url": "https://www.hoyolab.com/article/46716167",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-16T10:00:03.000Z"
     },
@@ -374,22 +374,6 @@
       "publishedAt": "2026-09-15T04:00:04.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Genshin Impact - Initial Top-Up Bonus Reset",
-        "id": "Genshin Impact - Reset Bonus Top-Up Perdana"
-      },
-      "excerpt": {
-        "en": "After the Genshin Impact Version 7.1 update, each top-up level of Genesis Crystals in the Crystal Top-Up page will be reset to provide a double bonus for the first top-up. 〓Reset T",
-        "id": "Setelah update Genshin Impact v7.1, semua tingkatan Top-Up di menu Top-Up Crystal akan direset ulang dan memberikan bonus ganda untuk Top-Up Perdana sekali lagi. 〓 Waktu Reset 〓 Se"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/d062e1eb109c1fbf3e19a66ad5794fe0_3269469838199715988.jpg",
-      "url": "https://www.hoyolab.com/article/46701187",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-15T04:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -402,6 +386,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/f0cd72c6fef7113966279ea8e9224782_2811267817377925024.jpg",
       "url": "https://www.hoyolab.com/article/46701188",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-15T04:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact - Initial Top-Up Bonus Reset",
+        "id": "Genshin Impact - Reset Bonus Top-Up Perdana"
+      },
+      "excerpt": {
+        "en": "After the Genshin Impact Version 7.1 update, each top-up level of Genesis Crystals in the Crystal Top-Up page will be reset to provide a double bonus for the first top-up. 〓Reset T",
+        "id": "Setelah update Genshin Impact v7.1, semua tingkatan Top-Up di menu Top-Up Crystal akan direset ulang dan memberikan bonus ganda untuk Top-Up Perdana sekali lagi. 〓 Waktu Reset 〓 Se"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/d062e1eb109c1fbf3e19a66ad5794fe0_3269469838199715988.jpg",
+      "url": "https://www.hoyolab.com/article/46701187",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-15T04:00:03.000Z"
     },
@@ -1444,7 +1444,9 @@
       "url": "https://www.hoyolab.com/article/46428208",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-24T06:00:07.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1459,10 +1461,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1787155200000/iepbmhjkqrie075dos-1787237448257.png",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5365",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-08-20T15:06:15.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-08-20T15:06:15.000Z",
+      "archivedAt": "2026-09-19T16:02:36.935Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
