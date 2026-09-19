@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-19T06:02:20.437Z",
+  "updatedAt": "2026-09-19T07:01:56.094Z",
   "counts": {
     "active": 90,
     "archived": 126
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Version 7.1 - Event Ode Elite Cosmetics",
+        "id": "Version 7.1 - Event Ode Elite Cosmetics"
+      },
+      "excerpt": {
+        "en": "★Elite Cosmetics | Idyllic Melodies This is a simple yet heartwarming outfit inspired by adorable dairy cows grazing at pasture. ★Elite Cosmetics | Feathers of Justice The doves th",
+        "id": "★Elite Cosmetics | Idyllic Melodies This is a simple yet heartwarming outfit inspired by adorable dairy cows grazing at pasture. ★Elite Cosmetics | Feathers of Justice The doves th"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/18/2e89e1f92bbfa9f7812373cf0bfde7b0_5056568283938868852.jpg",
+      "url": "https://www.hoyolab.com/article/46748743",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-19T07:00:02.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -502,22 +518,6 @@
       "publishedAt": "2026-09-14T02:00:03.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Starlit Gala Special Event Preview",
-        "id": "Starlit Gala Special Event Preview"
-      },
-      "excerpt": {
-        "en": "Hello, Traveler! Welcome to Miliastra Wonderland. The Starlit Gala is about to begin. Let's take a closer look at the event!",
-        "id": "Hello, Traveler! Welcome to Miliastra Wonderland. The Starlit Gala is about to begin. Let's take a closer look at the event!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/11/b15b6778563acae7b871519a042ca02a_1546735866496432654.jpg",
-      "url": "https://www.hoyolab.com/article/46677987",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-13T10:00:04.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -678,22 +678,6 @@
       "publishedAt": "2026-09-10T05:00:05.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Aventurine • Waveflair Character Trailer: \"Exclusive Scoop\" | Honkai: Star Rail",
-        "id": "Trailer Karakter Aventurine • Waveflair: \"Bocoran Eksklusif\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "\"Mr. Aventurine, do... do you really not mind playing the full video?\" English Voice: Aventurine • Waveflair — Camden Sutkowski Female Trailblazer — Chloe Eves 「 Look at that pose,",
-        "id": "\"Tuan Aventurine, Anda ... Anda benar-benar tidak keberatan memutar seluruh videonya?\" CV Bahasa Inggris: Aventurine • Waveflair — Camden Sutkowski Trailblazer Wanita — Chloe Eves "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
-      "url": "https://www.hoyolab.com/article/46634121",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-10T04:00:07.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -706,6 +690,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/09/0/c82342dfb959655caffae99dd1a622fe_4292099502424711681.jpeg",
       "url": "https://www.hoyolab.com/article/46634122",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-10T04:00:07.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Aventurine • Waveflair Character Trailer: \"Exclusive Scoop\" | Honkai: Star Rail",
+        "id": "Trailer Karakter Aventurine • Waveflair: \"Bocoran Eksklusif\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "\"Mr. Aventurine, do... do you really not mind playing the full video?\" English Voice: Aventurine • Waveflair — Camden Sutkowski Female Trailblazer — Chloe Eves 「 Look at that pose,",
+        "id": "\"Tuan Aventurine, Anda ... Anda benar-benar tidak keberatan memutar seluruh videonya?\" CV Bahasa Inggris: Aventurine • Waveflair — Camden Sutkowski Trailblazer Wanita — Chloe Eves "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
+      "url": "https://www.hoyolab.com/article/46634121",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-10T04:00:07.000Z"
     },
