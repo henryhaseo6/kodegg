@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-19T07:01:56.094Z",
+  "updatedAt": "2026-09-19T08:01:39.192Z",
   "counts": {
     "active": 90,
     "archived": 126
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Version 7.1 - Standard Ode Elite Cosmetics",
+        "id": "Version 7.1 - Standard Ode Elite Cosmetics"
+      },
+      "excerpt": {
+        "en": "★Elite Cosmetics | The Art of Spontaneity Bursting with creative passion and daring imagination that pushes the boundaries of convention, and an ambition to turn the world into a c",
+        "id": "★Elite Cosmetics | The Art of Spontaneity Bursting with creative passion and daring imagination that pushes the boundaries of convention, and an ambition to turn the world into a c"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/18/8d06b3078ab4c93b902668beb478deed_5943837755188317694.jpg",
+      "url": "https://www.hoyolab.com/article/46749283",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-19T08:00:05.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -470,22 +486,6 @@
       "publishedAt": "2026-09-14T04:00:05.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.1 - Event Ode Legendary Cosmetics",
-        "id": "Version 7.1 - Event Ode Legendary Cosmetics"
-      },
-      "excerpt": {
-        "en": "★Legendary Cosmetic | Osmanthus in the Moonlight The crisp, cool air of fall has arrived, and the osmanthus gleams bright beneath the moon. Though misfortune may still reign for a ",
-        "id": "★Legendary Cosmetic | Osmanthus in the Moonlight The crisp, cool air of fall has arrived, and the osmanthus gleams bright beneath the moon. Though misfortune may still reign for a "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/bfe6f21e65eb2d53399c7c90d5fffc07_5187100750862420130.jpg",
-      "url": "https://www.hoyolab.com/article/46688700",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-14T04:00:03.000Z"
-    },
-    {
       "game": "tot",
       "gameName": "Tears of Themis",
       "title": {
@@ -678,22 +678,6 @@
       "publishedAt": "2026-09-10T05:00:05.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero Version 3.2 Character Avatars",
-        "id": "Foto Profil Karakter V3.2 | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "Thank you for supporting Version 3.2 \"Their Secret Histories,\" Proxies! Claret & Roxy's avatars are now available. Feel free to give them a try~ ▼ Download https://hoyo.link/jCw9TJ",
-        "id": "Terima kasih atas dukungan para Proxy terhadap V3.2 \"Kisah Rahasia Mereka\"! Foto Profil Karakter Claret dan Roxy telah dirilis. Silakan dipakai ya, Proxy~ ▼ Unduh https://hoyo.link"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/09/0/c82342dfb959655caffae99dd1a622fe_4292099502424711681.jpeg",
-      "url": "https://www.hoyolab.com/article/46634122",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-10T04:00:07.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -706,6 +690,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/0/c214adbcbfb0ff49964096bb2e2a4388_8194614339385768836.jpeg",
       "url": "https://www.hoyolab.com/article/46634121",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-10T04:00:07.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Version 3.2 Character Avatars",
+        "id": "Foto Profil Karakter V3.2 | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "Thank you for supporting Version 3.2 \"Their Secret Histories,\" Proxies! Claret & Roxy's avatars are now available. Feel free to give them a try~ ▼ Download https://hoyo.link/jCw9TJ",
+        "id": "Terima kasih atas dukungan para Proxy terhadap V3.2 \"Kisah Rahasia Mereka\"! Foto Profil Karakter Claret dan Roxy telah dirilis. Silakan dipakai ya, Proxy~ ▼ Unduh https://hoyo.link"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/09/0/c82342dfb959655caffae99dd1a622fe_4292099502424711681.jpeg",
+      "url": "https://www.hoyolab.com/article/46634122",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-10T04:00:07.000Z"
     },
