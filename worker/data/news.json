@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-19T09:02:22.150Z",
+  "updatedAt": "2026-09-19T10:01:55.311Z",
   "counts": {
-    "active": 90,
-    "archived": 126
+    "active": 89,
+    "archived": 127
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Genshin Impact Miliastra Wonderland\" Moonlit Season Overview",
+        "id": "\"Genshin Impact Miliastra Wonderland\" Moonlit Season Overview"
+      },
+      "excerpt": {
+        "en": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Moonlit Season\" is about to begin, so let's check out the benefits and events in this new version update!",
+        "id": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Moonlit Season\" is about to begin, so let's check out the benefits and events in this new version update!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/18/4b3da059c48d7c635b222de42fce34c4_14133709113743140.jpg",
+      "url": "https://www.hoyolab.com/article/46750389",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-19T10:00:04.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -420,22 +436,6 @@
       "url": "https://www.hoyolab.com/article/46691962",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-14T10:10:36.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Character Skill Showcase — \"Lingering Siren-Song\" Vodyanitsa",
-        "id": "Demo Skill Karakter — \"Lingering Siren-Song\" Vodyanitsa"
-      },
-      "excerpt": {
-        "en": "Hello, Traveler! Vodyanitsa's song rises from the depths, its echoes carrying onto the battlefield... Come listen to an old hymn she rarely performs on the theater stage~ The \"Surg",
-        "id": "Halo, Traveler! Nyanyian Vodyanitsa berasal dari kedalaman air dan bergema dalam pertempuran ... Ayo kita dengarkan lagu himne kuno yang jarang dinyanyikannya di teater~ Event Perm"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/0/1f4ab59cfd086ff306eb128b1cebb4f0_8340976598882921594.jpeg",
-      "url": "https://www.hoyolab.com/article/46691872",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-14T10:00:07.000Z"
     },
     {
       "game": "tot",
@@ -1428,7 +1428,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5365",
       "source": "Wuthering Waves",
       "publishedAt": "2026-08-20T15:06:15.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1443,10 +1445,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/19/23ad545d709e01ca326c1dde49785096_1551652053015429967.png",
       "url": "https://www.hoyolab.com/article/46378674",
       "source": "HoYoLAB",
-      "publishedAt": "2026-08-20T10:00:02.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-08-20T10:00:02.000Z",
+      "archivedAt": "2026-09-19T10:01:55.311Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
