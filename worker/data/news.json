@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-20T02:01:29.044Z",
+  "updatedAt": "2026-09-20T03:01:52.625Z",
   "counts": {
-    "active": 90,
+    "active": 91,
     "archived": 128
   },
   "articles": [
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Post-Lament Anthropocene: Enemies — Collection of Small & Medium Size Echoes in Mengzhou: Land of Xuanfang",
+        "id": "Post-Lament Anthropocene: Enemies — Collection of Small & Medium Size Echoes in Mengzhou: Land of Xuanfang"
+      },
+      "excerpt": {
+        "en": "",
+        "id": ""
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1789747200000/hlq18x10w318qwsrye-1789819710039.png",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5460",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-09-19T12:14:01.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
