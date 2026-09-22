@@ -1,26 +1,63 @@
 {
-  "generatedAt": "2026-09-22T14:02:05.085Z",
+  "generatedAt": "2026-09-22T15:01:49.557Z",
   "codes": [
     {
-      "game": "anime-squadron",
-      "gameName": "Anime Squadron",
+      "game": "carolina-leaners",
+      "gameName": "Carolina Leaners",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/anime-squadron"
+        "Roblox Den": "https://robloxden.com/game-codes/carolina-leaners"
       },
-      "code": "BigDelay!",
-      "reward": "5 Dragon Coins and 100 Trait Shards",
+      "code": "COUNTS",
+      "reward": "2x Job XP (60 Minutes) and 10,000 Cash",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1790083320000,
+      "srcNewAt": 1790089020000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-09-22T14:02:05.085Z",
-      "fetchedAt": "2026-09-22T14:02:05.085Z"
+      "firstSeenAt": "2026-09-22T15:01:49.557Z",
+      "fetchedAt": "2026-09-22T15:01:49.557Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "catch-dragons-to-defend",
+      "count": 4,
+      "fresh": [
+        {
+          "code": "EggTime",
+          "reward": "Epic Egg"
+        },
+        {
+          "code": "7400Likes",
+          "reward": "2 Apex Capture Balls"
+        },
+        {
+          "code": "FirstUpdate",
+          "reward": "5 Elite Capture Balls"
+        },
+        {
+          "code": "Release",
+          "reward": "3 Elite Capture Balls"
+        }
+      ]
+    },
+    {
+      "game": "motor-legends",
+      "count": 40,
+      "fresh": [
+        {
+          "code": "REVAMP26",
+          "reward": ""
+        },
+        {
+          "code": "LateUpdateSorry",
+          "reward": ""
+        }
+      ]
+    }
+  ]
 }
