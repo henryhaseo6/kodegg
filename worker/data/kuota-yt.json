@@ -4,9 +4,10 @@
   "videos.insert": 16,
   "videos.list": 16,
   "thumbnails.set": 17,
-  "playlists.list": 267,
+  "playlists.list": 281,
   "playlistItems.list": 15,
   "playlistItems.insert": 17,
-  "playlists.insert": 1
+  "playlists.insert": 1,
+  "playlists.update": 1
  }
 }
