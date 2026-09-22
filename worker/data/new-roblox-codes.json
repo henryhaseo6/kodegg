@@ -1,63 +1,52 @@
 {
-  "generatedAt": "2026-09-22T15:01:49.557Z",
+  "generatedAt": "2026-09-22T16:02:20.255Z",
   "codes": [
     {
-      "game": "carolina-leaners",
-      "gameName": "Carolina Leaners",
+      "game": "grand-blue",
+      "gameName": "Grand Blue",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/carolina-leaners"
+        "Roblox Den": "https://robloxden.com/game-codes/grand-blue"
       },
-      "code": "COUNTS",
-      "reward": "2x Job XP (60 Minutes) and 10,000 Cash",
+      "code": "BlessedRolls",
+      "reward": "Fruit Chest, Race Rerolls, and Trait Rerolls",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1790089020000,
+      "srcNewAt": 1790089440000,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-09-22T15:01:49.557Z",
-      "fetchedAt": "2026-09-22T15:01:49.557Z"
+      "firstSeenAt": "2026-09-22T16:02:20.255Z",
+      "fetchedAt": "2026-09-22T16:02:20.255Z"
+    },
+    {
+      "game": "grand-blue",
+      "gameName": "Grand Blue",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/grand-blue"
+      },
+      "code": "GrandHarvest",
+      "reward": "Fruit Chest, Race Rerolls, and Trait Rerolls",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790089440000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-22T16:02:20.255Z",
+      "fetchedAt": "2026-09-22T16:02:20.255Z"
     }
   ],
   "bulkGames": [
     {
-      "game": "catch-dragons-to-defend",
-      "count": 4,
-      "fresh": [
-        {
-          "code": "EggTime",
-          "reward": "Epic Egg"
-        },
-        {
-          "code": "7400Likes",
-          "reward": "2 Apex Capture Balls"
-        },
-        {
-          "code": "FirstUpdate",
-          "reward": "5 Elite Capture Balls"
-        },
-        {
-          "code": "Release",
-          "reward": "3 Elite Capture Balls"
-        }
-      ]
-    },
-    {
       "game": "motor-legends",
-      "count": 40,
-      "fresh": [
-        {
-          "code": "REVAMP26",
-          "reward": ""
-        },
-        {
-          "code": "LateUpdateSorry",
-          "reward": ""
-        }
-      ]
+      "count": 1,
+      "fresh": []
     }
   ]
 }
