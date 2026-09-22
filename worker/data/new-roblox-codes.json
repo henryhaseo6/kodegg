@@ -1,42 +1,30 @@
 {
-  "generatedAt": "2026-09-22T20:01:42.753Z",
+  "generatedAt": "2026-09-22T21:01:50.659Z",
   "codes": [
     {
-      "game": "1-speed-evolve",
-      "gameName": "+1 Speed Evolve",
+      "game": "tr-legacy",
+      "gameName": "TR Legacy",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/1-speed-evolve"
+        "RoCodes.gg": "https://rocodes.gg/codes/tr-legacy"
       },
-      "code": "World5Complete",
-      "reward": "Admin Spin",
-      "date": "2026-09-22T14:01:22.128Z",
+      "code": "SHEESH85K",
+      "reward": null,
+      "date": "2026-09-22T20:22:24.801Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-09-22T20:01:42.753Z",
-      "fetchedAt": "2026-09-22T20:01:42.753Z"
-    },
-    {
-      "game": "1-speed-evolve",
-      "gameName": "+1 Speed Evolve",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/1-speed-evolve"
-      },
-      "code": "4MFavourites",
-      "reward": "Double Wins Boost (10 minutes)",
-      "date": "2026-09-22T14:01:21.732Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-09-22T20:01:42.753Z",
-      "fetchedAt": "2026-09-22T20:01:42.753Z"
+      "firstSeenAt": "2026-09-22T21:01:50.659Z",
+      "fetchedAt": "2026-09-22T21:01:50.659Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "murder",
+      "count": 1,
+      "fresh": []
+    }
+  ]
 }
