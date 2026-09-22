@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-09-22T03:01:25.879Z",
+  "updatedAt": "2026-09-22T04:01:06.299Z",
   "counts": {
-    "active": 64,
+    "active": 70,
     "archived": 130
   },
   "events": [
@@ -165,30 +165,6 @@
       "url": "https://www.hoyolab.com/article/46243924"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Version 7.0 Share HoYoverse Top-Up Center Event: Win Primogems, Phase 2",
-        "id": "Event Berbagi Top-Up Center HoYoverse Versi 7.0 untuk Memenangkan Primogem — Tahap 2"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Olah! Hello, Traveler~ Bonus Rewards Are Here for the Version 7.0 HoYoverse Top-Up Center Sharing Event! Make a top-up at the Top-Up Center and you'll receive Primogems ×300 if this is your first purchase since the release of Version \"Luna ",
-        "id": "Olah! Apa kabar, Traveler? Event Berbagi HoYoverse Top-Up Center Versi 7.0 hadir dengan hadiah tambahan! Kunjungi Top-Up Center dan dapatkan Primogem ×300 untuk top-up pertamamu sejak Versi \"Candra VI\" dirilis! Kamu juga bisa menikmati"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/27/3f81a5492557989ffe266bc25a05bb6e_4080674091440805762.jpg",
-      "startsAt": "2026-09-01T04:00:00.000Z",
-      "endsAt": "2026-09-22T15:59:59.000Z",
-      "postedAt": "2026-09-01T04:00:09.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46533710"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "type": "event",
@@ -211,6 +187,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46653679"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Version 7.0 Share HoYoverse Top-Up Center Event: Win Primogems, Phase 2",
+        "id": "Event Berbagi Top-Up Center HoYoverse Versi 7.0 untuk Memenangkan Primogem — Tahap 2"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Olah! Hello, Traveler~ Bonus Rewards Are Here for the Version 7.0 HoYoverse Top-Up Center Sharing Event! Make a top-up at the Top-Up Center and you'll receive Primogems ×300 if this is your first purchase since the release of Version \"Luna ",
+        "id": "Olah! Apa kabar, Traveler? Event Berbagi HoYoverse Top-Up Center Versi 7.0 hadir dengan hadiah tambahan! Kunjungi Top-Up Center dan dapatkan Primogem ×300 untuk top-up pertamamu sejak Versi \"Candra VI\" dirilis! Kamu juga bisa menikmati"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/27/3f81a5492557989ffe266bc25a05bb6e_4080674091440805762.jpg",
+      "startsAt": "2026-09-01T04:00:00.000Z",
+      "endsAt": "2026-09-22T15:59:59.000Z",
+      "postedAt": "2026-09-01T04:00:09.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46533710"
     },
     {
       "game": "gi",
@@ -480,30 +480,6 @@
       "url": "https://hsr.hoyoverse.com/en/news"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "[Prize Event] Operation: Hollow Tycoon",
-        "id": "[Event Berhadiah] Nama Kode Operasi: Taipan Hollow"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "In the ever-shifting Hollow, fortune and danger always go hand in hand! Show off your loot and join the ranks of the Hollow tycoons! How to Participate 1. Share your highest single-round extraction record, along with the hashtag",
-        "id": "Di dalam Hollow yang misterius, kekayaan dan risiko selalu berjalan berdampingan! Pamerkan hasil perjuangannya dan jadilah bagian dari Taipan Hollow! Cara Partisipasi 1. Bagikan rekor hasil perolehan tertinggi dalam satu sesi dengan menyert"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/11/0/7fc07638b703ec420950746281f3fd35_7243974035286601815.webp",
-      "startsAt": "2026-09-13T04:00:00.000Z",
-      "endsAt": "2026-09-27T15:59:59.000Z",
-      "postedAt": "2026-09-13T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46673263"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "type": "event",
@@ -531,6 +507,30 @@
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "[Prize Event] Operation: Hollow Tycoon",
+        "id": "[Event Berhadiah] Nama Kode Operasi: Taipan Hollow"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "In the ever-shifting Hollow, fortune and danger always go hand in hand! Show off your loot and join the ranks of the Hollow tycoons! How to Participate 1. Share your highest single-round extraction record, along with the hashtag",
+        "id": "Di dalam Hollow yang misterius, kekayaan dan risiko selalu berjalan berdampingan! Pamerkan hasil perjuangannya dan jadilah bagian dari Taipan Hollow! Cara Partisipasi 1. Bagikan rekor hasil perolehan tertinggi dalam satu sesi dengan menyert"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/11/0/7fc07638b703ec420950746281f3fd35_7243974035286601815.webp",
+      "startsAt": "2026-09-13T04:00:00.000Z",
+      "endsAt": "2026-09-27T15:59:59.000Z",
+      "postedAt": "2026-09-13T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46673263"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
       "typeName": "Announcements",
       "title": {
         "en": "\"Advanced Bounty: Area Patrol\" Event Details",
@@ -545,9 +545,9 @@
         "id": "[Waktu Event] 2026/09/23 04:00 (waktu server) - 2026/09/28 03:59 (waktu server) [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 21, menyelesaikan misi Promosi Reputasi Inter-Knot \"Jalan Proxy I\", serta membuka \"Patroli Area\". [Penjelasan Event] • Selama event \"Hadiah Bounty di Muka - Patroli Area\" berlangsung, Proxy dapat menyelesaikan tantangan stage Patroli Area mana pun dan mendapatkan hadiah dengan jumlah dobel ! • Selama event berlangsung, Proxy dapat meningkatkan jumlah hadiah dari 2 tantangan setiap hari. Efek buff akan direset pada jam 04:00 (waktu server) setiap hari."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/21/f571e13259ca792fc67cb7409cd8e76d_1414176512131894153_transformed.png",
-      "startsAt": "2026-09-20T15:30:00.000Z",
+      "startsAt": "2026-09-20T21:30:00.000Z",
       "endsAt": "2026-09-27T19:59:59.000Z",
-      "postedAt": "2026-09-20T15:30:00.000Z",
+      "postedAt": "2026-09-20T21:30:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -647,9 +647,9 @@
         "id": "[Waktu Event] 2026/09/16 10:00 (waktu server) - 2026/10/05 03:59 (waktu server) [Hadiah Event] [Syarat Partisipasi] Capai Inter-Knot Lv. 20 dan selesaikan Cerita Utama Chapter 1 - Intermission [Penjelasan Event] • Selama event berlangsung, Proxy dapat berbicara dengan Nangong Yu di Lumina Square untuk mencari informasi, lalu menemui Lyla di Klub HIA untuk mengikuti stage tantangan VR baru. • Selama event berlangsung, 6 stage \"Alliance\" dan 3 stage \"Special Offensive\" akan tersedia. • Selama event berlangsung, satu stage tema baru akan terbuka setiap harinya. Stage \"Special Offensive\" juga akan terbuka secara bertahap seiring berjalannya kemajuan event. • Di stage \"Alliance\" terdapat mekanisme \"Efek Buff\" yang sesuai, dan di stage \"Special Offensive\", terdapat mekanisme \"Buff Taktis\" yang sesuai. Proxy bisa memanfaatkan \"Efek Buff\" dan \"Buff Taktis\" sebaik mungkin untuk mendapatkan skor yang lebih tinggi. • Di stage \"Alliance\", Proxy dapat menggunakan Agen Uji Coba dan Bangboo yang tersedia dalam stage untuk menjalani tantangan. Di stage \"Special Offensive\", Proxy hanya dapat menggunakan Agen Uji Coba yang tersedia untuk menjalani tantangan. • Stage \"Special Offensive\" akan menggunakan sistem penilaian stage yang baru. Proxy akan mendapatkan skor yang sesuai saat menggunakan Agen untuk mengakibatkan DMG dan melancarkan Skill tertentu . Saat menggunakan Agen Claret dalam periode waktu tertentu dan terus melancarkan berbagai Skill, Proxy akan mengakumulasi Skill Combo . Skill Combo akan memberikan bonus Kelipatan Skor tambahan. Saat berada dalam status Skill Combo , jika tidak melancarkan Skill dalam waktu yang lama, status Skill Combo dan bonus Kelipatan Skor akan hilang. • Skor dalam stage \"Special Offensive\" terdiri dari \"Skor DMG\", \"Skor Teknik\", dan \"Nilai Koefisien Waktu\" yang sesuai dengan waktu penyelesaian stage. • Selesaikan misi tantangan event untuk mendapatkan Tuning Calibrator , Polychrome , dan hadiah lainnya."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/14/7d7abe20618a0dfda44541352ef7ad8e_3129949393510820789_transformed.jpg",
-      "startsAt": "2026-09-13T15:00:00.000Z",
+      "startsAt": "2026-09-13T21:00:00.000Z",
       "endsAt": "2026-10-04T19:59:59.000Z",
-      "postedAt": "2026-09-13T15:00:00.000Z",
+      "postedAt": "2026-09-13T21:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -701,9 +701,9 @@
         "id": "Hari libur Flint Workshop! Jadwal perjalanan Claret dan Roxy sedang direncanakan... Pilih untuk melihat matahari terbenam di Booastrum atau pergi ke pantai di Vyrium ya? Atau... apakah ini kesempatan bagus untuk lembur? Bagaimana para pengelola Flint Workshop akan menghabiskan waktu liburan mereka? Proxy, ayo bantu berikan ide! Dear Proxy, web interaktif \"Album Liburan Vyrium\" telah dibuka! Rencanakan jadwal liburan untuk Claret dan Roxy, lalu buka berbagai kenangan perjalanan! Selain itu, ada hadiah 30 Polychrome yang menantimu loh~ Tekan untuk berpartisipasi dalam event [Waktu Event] 9 September - 10 Oktober 23:59 (UTC+8)"
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/09/eabf4c85b4f85593428ee5f7801a29b5_5891331140329275368_transformed.jpg",
-      "startsAt": "2026-09-08T15:00:00.000Z",
-      "endsAt": "2026-10-10T02:59:59.000Z",
-      "postedAt": "2026-09-08T15:00:00.000Z",
+      "startsAt": "2026-09-08T21:00:00.000Z",
+      "endsAt": "2026-10-10T08:59:59.000Z",
+      "postedAt": "2026-09-08T21:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -733,6 +733,33 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46624270"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Event",
+      "title": {
+        "en": "\"Silverwing in Pursuit of the Moon\" Event: Take Part to Obtain the Event-Exclusive Weapon \"Silver Light (Sword)\"",
+        "id": "Event \"Sayap Perak Menyusuri Rembulan\": Ikuti dan Dapatkan Senjata Eksklusif Event, \"Silver Light (Sword)\""
+      },
+      "subtitle": {
+        "en": "Silverwing in Pursuit of the Moon",
+        "id": "Sayap Perak Menyusuri Rembulan"
+      },
+      "desc": {
+        "en": "〓Event Rewards〓 〓Event Duration〓 Event Details Start Time End Time Event Gameplay Phases Phase I 2026/09/24 10:00 2026/10/12 03:59 Phase II 2026/09/26 04:00 Phase III 2026/09/28 04:00 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" ※ Complete the Story Quests \"Dulciaria Structura Chapter: Act I\" and \"Tapirus Somniator Chapter: Act I,\" and the Event Quest \"A Lanternlit Ode to the Silver Moon\" first to get the best experience from this event. 〓Event Details〓 ● During the event, three gameplay modes will be available: \"The Great Chase and Dispelling,\" \"Banner Against the Dark,\" and \"Spiritshot Salvo.\" ● In \"The Great Chase and Dispelling,\" Travelers need to control a rattan figure to move along specific paths, collecting adeptal power or dispelling evil energy encountered along the way to achieve a higher score. ● In \"Banner Against the Dark,\" Travelers need to defeat as many normal opponents as possible in the first phase, and deal as much damage as possible to the boss in the second phase to achieve a higher score. ● In \"Spiritshot Salvo,\" Travelers need to use Sigils and spells to fire Spiritshots and defeat as many enemies as possible. ● During the event, Travelers can also accept \"Festive Priorities\" and \"Wondrous Anecdotes\" quests. Complete these quests to obtain Primogems and other rewards. ● Complete the various gameplay modes to obtain \"Festive Cheer.\" Accumulate \"Festive Cheer\" and reach the specified amounts to claim rewards including Silver Light (Sword), Primogems, Crown of Insight, and event-exclusive Weapon Refinement Materials .",
+        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 Konten Event Waktu Mulai Waktu Selesai Tahap Gameplay Event Tahap 1 2026/09/24 10:00 2026/10/12 03:59 Tahap 2 2026/09/26 04:00 Tahap 3 2026/09/28 04:00 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" ※ Selesaikan Quest Story \"Chapter Dulciaria Structura: Bag. I\", Quest Story \"Chapter Tapirus Somniator: Bag. I\", dan quest Peristiwa Terkini \"Pujian Lentera untuk Bulan Perak\" terlebih dahulu untuk pengalaman bermain yang lebih baik. 〓 Penjelasan Event 〓 ● Selama event berlangsung, akan dibuka tiga buah gameplay, yaitu \"Hikayat Pengusiran Setan\", \"Wayang Kertas: Kronik Panji Eksorsisme\", dan \"Taktik Peluru Roh Sigil\". ● Dalam gameplay \"Hikayat Pengusiran Setan\", Traveler perlu mengendalikan figurin rotan untuk bergerak di jalur tertentu, mengumpulkan kekuatan adeptus atau mengusir energi jahat di sepanjang perjalanan untuk mendapatkan skor yang lebih tinggi. ● Dalam gameplay \"Wayang Kertas: Kronik Panji Eksorsisme\", Traveler harus mengalahkan sebanyak mungkin musuh biasa di fase pertama, dan mengakibatkan DMG sebesar mungkin terhadap musuh boss di fase kedua untuk mendapatkan skor yang lebih tinggi. ● Dalam gameplay \"Taktik Peluru Roh Sigil\", Traveler perlu menembakkan peluru roh menggunakan sigil dan sihir untuk mengalahkan musuh sebanyak mungkin. ● Selama event berlangsung, kamu juga bisa menerima berbagai quest \"Prioritas Festival\" dan \"Anekdot Ajaib\". Selesaikan quest tersebut untuk mendapatkan Primogem dan hadiah lainnya. ● Selesaikan setiap gameplay untuk mendapatkan \"Festive Cheer\". Setelah Festive Cheer mencapai tingkat tertentu, Traveler akan mendapatkan Silver Light (Sword), Primogem, Crown of Insight, Material Refinement Senjata Eksklusif Event dan berbagai hadiah lainnya."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/11/22f2f523e19349f439b81b1c8e7a18f4_8177819633981078287_transformed.jpg",
+      "startsAt": "2026-09-21T21:00:00.000Z",
+      "endsAt": "2026-10-11T19:59:59.000Z",
+      "postedAt": "2026-09-21T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
     },
     {
       "game": "gi",
@@ -869,78 +896,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Let's dance our hearts out before the music stops.\"",
-        "id": "\"Menarilah sepuasmu sebelum musik berhenti.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Susannah  Today's Topic: What score would you give Susannah's dance?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals cod",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Susannah  Topik Hari Ini: Berapa nilai yang kamu berikan untuk tarian Susannah?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Janga"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/92a3f82d9ab1d58b0dd225b62a4656ec_5760471921105658481.png",
-      "startsAt": "2026-09-01T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-09-01T04:00:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46533707"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"I have long awaited this destined reunion.\"",
-        "id": "\"Aku sudah lama menantikan reuni yang ditakdirkan ini.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Aponia  Today's Topic: If you already knew the ending, would you still choose to begin?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
-        "id": " Tokoh Utama Album Kenangan Hari Ini: Aponia  Topik Kali Ini: Jika kamu sudah tahu akhir ceritanya, apakah kamu tetap akan memilih untuk memulainya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchand"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/39f8257d2237aa8886b340a54a8e65d5_2337216238225372107.png",
-      "startsAt": "2026-08-19T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-19T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46359609"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Listen, this is the resounding roar of a miracle.\"",
-        "id": "\"Dengarkan, ini adalah gemuruh keajaiban.\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Vill-V  Today's Topic: It's Open Day at Vill-V's Workshop! What extraordinary invention would you like to commission?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Vill-V  Topik Hari Ini: Hari Buka Lokakarya Vill-V: Penemuan luar biasa apa yang ingin kamu wujudkan?  Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/7da848a95aaf0efdb3d3d8b8c7402ebc_6308954101900854569.png",
-      "startsAt": "2026-08-25T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-25T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46439495"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "Within this dream, all is revealed.",
         "id": "Di dalam mimpi ini, semua kebenaran akan terungkap."
       },
@@ -965,23 +920,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Is it finally my turn?\"",
-        "id": "\"Apa sekarang giliranku untuk tampil?\""
+        "en": "\"Leave the stage to me!\"",
+        "id": "\"Serahkan panggung ini kepadaku.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Li Sushang  Today's Topic: Which of Li Sushang's battlesuits do you think best captures her spirit?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Li Sushang  Topik Hari Ini: Menurutmu Battlesuit Li Sushang mana yang paling cocok dengan karakternya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchand"
+        "en": "📸 Today's Time Album Spotlight: Shigure Kira 💬 Today's Topic: Use emojis to show your support for your idol, Shigure Kira!👏👏👍👍🎉🎉 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't f",
+        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Shigure Kira 💬 Topik Hari Ini: Ayo dukung sang idola, Shigure Kira dengan emoji 👏👏👍👍🎉🎉 🎁 Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan m"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/4649e63cecfc8b84767189bdbac93b78_4296674607291600773.png",
-      "startsAt": "2026-08-29T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/45f577eb9dfe2dedf0dacb1f22cce014_6622766547934295661.png",
+      "startsAt": "2026-09-12T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-29T04:00:05.000Z",
+      "postedAt": "2026-09-12T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46495077"
+      "url": "https://www.hoyolab.com/article/46653677"
     },
     {
       "game": "hi3",
@@ -989,47 +944,23 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Carole reporting in!\"",
-        "id": "\"Carole melapor!\""
+        "en": "\"The banquet is upon us. Now, you are to raise your cups — and acclaim my name!\"",
+        "id": "\"Perjamuan telah tiba. Kini, angkatlah cawan kalian—dan serukan namaku!\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Carole Pepper  Today's Topic: Have you ever been lifted up by Carole's energy?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
-        "id": " Bintang Utama Album Kenangan Hari Ini: Carole Pepper  Topik Kali Ini: Apakah kamu pernah merasa terhibur karena energi dan keceriaan Carole?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, da"
+        "en": " Today's Time Album Spotlight: Thelema  Today's Topic: Define your idea of pleasure in one sentence!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals co",
+        "id": " Bintang Utama Album Kenangan Waktu Kali Ini: Thelema  Topik Kali Ini: Definisikan makna kesenangan bagimu dalam satu kalimat!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jang"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/20eb3a959109a04de9794c4385cda0f2_2051842664185105867.png",
-      "startsAt": "2026-08-08T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/18/dd40a85daf5f7958ffab790806a72676_306689873518559395.png",
+      "startsAt": "2026-09-22T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-08T04:00:06.000Z",
+      "postedAt": "2026-09-22T04:00:06.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46184758"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "\"Can, are you ready?\"",
-        "id": "\"Can, apa kamu sudah siap?\""
-      },
-      "subtitle": "",
-      "desc": {
-        "en": " Today's Time Album Spotlight: Pardofelis  Today's Topic: Show us your own \"Can\"!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals code [TimeAlbum]~ Eve",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Pardofelis  Topik Hari Ini: Ayo pamerkan \"Can\" milikmu!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa untuk menukar kod"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/377ee1dfcc686331fe65d07d7231f8da_2415714207030074487.png",
-      "startsAt": "2026-08-11T04:00:00.000Z",
-      "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-11T04:00:07.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46221119"
+      "url": "https://www.hoyolab.com/article/46782341"
     },
     {
       "game": "hi3",
@@ -1061,23 +992,47 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Little lab rat, do you want to do something fun with me?\"",
-        "id": "\"Tikus lab kecil, apa kamu mau melakukan hal yang menyenangkan denganku?\""
+        "en": "\"Let's dance our hearts out before the music stops.\"",
+        "id": "\"Menarilah sepuasmu sebelum musik berhenti.\""
       },
       "subtitle": "",
       "desc": {
-        "en": " Today's Time Album Spotlight: Mobius  Today's Topic: Are you willing to be Mobius's lab rat?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals code [Tim",
-        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Mobius  Topik Kali Ini: Apa kamu bersedia menjadi tikus lab Mobius?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa untuk"
+        "en": " Today's Time Album Spotlight: Susannah  Today's Topic: What score would you give Susannah's dance?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals cod",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Susannah  Topik Hari Ini: Berapa nilai yang kamu berikan untuk tarian Susannah?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Janga"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/be72508044ac90227b3ac5b4df588b94_2306388003995446088.png",
-      "startsAt": "2026-08-05T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/92a3f82d9ab1d58b0dd225b62a4656ec_5760471921105658481.png",
+      "startsAt": "2026-09-01T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-08-05T04:00:06.000Z",
+      "postedAt": "2026-09-01T04:00:05.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46147443"
+      "url": "https://www.hoyolab.com/article/46533707"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Listen, this is the resounding roar of a miracle.\"",
+        "id": "\"Dengarkan, ini adalah gemuruh keajaiban.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Vill-V  Today's Topic: It's Open Day at Vill-V's Workshop! What extraordinary invention would you like to commission?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Vill-V  Topik Hari Ini: Hari Buka Lokakarya Vill-V: Penemuan luar biasa apa yang ingin kamu wujudkan?  Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/7da848a95aaf0efdb3d3d8b8c7402ebc_6308954101900854569.png",
+      "startsAt": "2026-08-25T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-25T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46439495"
     },
     {
       "game": "hi3",
@@ -1109,23 +1064,95 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "\"Leave the stage to me!\"",
-        "id": "\"Serahkan panggung ini kepadaku.\""
+        "en": "\"Can, are you ready?\"",
+        "id": "\"Can, apa kamu sudah siap?\""
       },
       "subtitle": "",
       "desc": {
-        "en": "📸 Today's Time Album Spotlight: Shigure Kira 💬 Today's Topic: Use emojis to show your support for your idol, Shigure Kira!👏👏👍👍🎉🎉 🎁 Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't f",
-        "id": "📸 Bintang Utama Album Kenangan Waktu Hari Ini: Shigure Kira 💬 Topik Hari Ini: Ayo dukung sang idola, Shigure Kira dengan emoji 👏👏👍👍🎉🎉 🎁 Like + tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan m"
+        "en": " Today's Time Album Spotlight: Pardofelis  Today's Topic: Show us your own \"Can\"!  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Crystals code [TimeAlbum]~ Eve",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Pardofelis  Topik Hari Ini: Ayo pamerkan \"Can\" milikmu!  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, dan lainnya! Jangan lupa untuk menukar kod"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/07/45f577eb9dfe2dedf0dacb1f22cce014_6622766547934295661.png",
-      "startsAt": "2026-09-12T04:00:00.000Z",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/377ee1dfcc686331fe65d07d7231f8da_2415714207030074487.png",
+      "startsAt": "2026-08-11T04:00:00.000Z",
       "endsAt": "2026-10-15T16:00:00.000Z",
-      "postedAt": "2026-09-12T04:00:06.000Z",
+      "postedAt": "2026-08-11T04:00:07.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
       "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46653677"
+      "url": "https://www.hoyolab.com/article/46221119"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Carole reporting in!\"",
+        "id": "\"Carole melapor!\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Carole Pepper  Today's Topic: Have you ever been lifted up by Carole's energy?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem the 100 Cr",
+        "id": " Bintang Utama Album Kenangan Hari Ini: Carole Pepper  Topik Kali Ini: Apakah kamu pernah merasa terhibur karena energi dan keceriaan Carole?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchandise, da"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/07/30/20eb3a959109a04de9794c4385cda0f2_2051842664185105867.png",
+      "startsAt": "2026-08-08T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-08T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46184758"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"Is it finally my turn?\"",
+        "id": "\"Apa sekarang giliranku untuk tampil?\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Li Sushang  Today's Topic: Which of Li Sushang's battlesuits do you think best captures her spirit?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget",
+        "id": " Bintang Utama Album Kenangan Waktu Hari Ini: Li Sushang  Topik Hari Ini: Menurutmu Battlesuit Li Sushang mana yang paling cocok dengan karakternya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchand"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/21/4649e63cecfc8b84767189bdbac93b78_4296674607291600773.png",
+      "startsAt": "2026-08-29T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-29T04:00:05.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46495077"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "\"I have long awaited this destined reunion.\"",
+        "id": "\"Aku sudah lama menantikan reuni yang ditakdirkan ini.\""
+      },
+      "subtitle": "",
+      "desc": {
+        "en": " Today's Time Album Spotlight: Aponia  Today's Topic: If you already knew the ending, would you still choose to begin?  Leave a like and comment for a chance to win a $100 Gift Card, a merch bundle, and more! And don't forget to redeem t",
+        "id": " Tokoh Utama Album Kenangan Hari Ini: Aponia  Topik Kali Ini: Jika kamu sudah tahu akhir ceritanya, apakah kamu tetap akan memilih untuk memulainya?  Like dan tulis komentar berkesempatan memenangkan kartu hadiah 100 USD, bundle merchand"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/08/12/39f8257d2237aa8886b340a54a8e65d5_2337216238225372107.png",
+      "startsAt": "2026-08-19T04:00:00.000Z",
+      "endsAt": "2026-10-15T16:00:00.000Z",
+      "postedAt": "2026-08-19T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46359609"
     },
     {
       "game": "zzz",
@@ -1145,9 +1172,9 @@
         "id": "Dear Proxy: Selama event berlangsung, Proxy bisa mendapatkan hadiah berlimpah dengan cara meningkatkan Level Dana Kota di Dana Kota New Eridu! Buka \"Rencana Ekspansi\" dan langsung dapatkan Polychrome ×680 dan Avatar Eksklusif \"Titik Awal Badai\" . Buka \"Rencana Premium\" untuk langsung mendapatkan hadiah tambahan berupa Polychrome ×208, \"Dekorasi\", W-Engine Microcontroller Unit, Resonating Core, dan Ether Battery! Setelah membuka Rencana Ekspansi atau Rencana Premium, kamu juga bisa mendapatkan Kartu Nama Eksklusif \"Sebelum Kembali ke Lautan\" , W-Engine Microcontroller Unit, Resonating Core, Hamster Cage Pass, material pengembangan, dan hadiah lainnya dengan meningkatkan Level Dana Kota! Untuk material pengembangan, Proxy dapat memilih jenis material yang ingin didapatkan. [Waktu Event] Setelah update V3.2 - 2026/10/19 03:59 (waktu server) ※ 2026/10/19 02:59 (waktu server) adalah batas waktu untuk membeli Rencana Ekspansi, Rencana Premium, dan Peningkatan Level. Namun, setelah batas waktu berakhir, Proxy masih bisa menyelesaikan Misi Ekspansi dan mengambil hadiahnya. Mohon perhatikan waktu pembelian dan durasi event. [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si Kucing\" [Penjelasan Event] • Saat periode Dana Kota New Eridu dimulai, Rencana Dasar akan terbuka secara otomatis. Proxy dapat menyelesaikan Misi Ekspansi untuk mendapatkan EXP Dana Kota dan meningkatkan Level Dana Kota agar bisa mendapatkan lebih banyak hadiah. • Proxy yang sudah membuka Rencana Ekspansi bisa membeli Peningkatan Level untuk meningkatkan Rencana Dasar ke Rencana Premium. • Hadiah \"Dana Kota New Eridu\" juga akan menambahkan W-Engine yang cocok untuk Agen Armorer . Setelah membuka \"Rencana Ekspansi\" atau \"Rencana Premium\", meningkatkan Level Dana Kota ke Lv. 30, kamu dapat memilih 1 dari 7 W-Engine termasuk W-Engine Tier-A \"Bloodmarrow Coffer\" setelah mengambil \"Great Builder's Certificate\". Great Builder's Certificate merupakan hadiah terbatas periode saat ini dan tidak akan diteruskan ke Dana Kota New Eridu periode berikutnya. Item ini akan hangus jika tidak digunakan sebelum periode berakhir. • Untuk detail lainnya, silakan merujuk pada Dana Kota New Eridu dalam game."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/08/e98490ff93e03d920f63a47b5c690256_2812462885582981150.jpg",
-      "startsAt": "2026-09-07T15:45:00.000Z",
+      "startsAt": "2026-09-07T21:45:00.000Z",
       "endsAt": "2026-10-18T19:59:59.000Z",
-      "postedAt": "2026-09-07T15:45:00.000Z",
+      "postedAt": "2026-09-07T21:45:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1172,9 +1199,9 @@
         "id": "[Waktu Event] Setelah update V3.2 - 2026/10/20 03:59 (waktu server) [Syarat Partisipasi] Capai Inter-Knot Lv. 5 dan selesaikan Prolog Cerita Utama \"Kelinci dan Proxy\", serta buka fitur Event [Penjelasan Event] • Selama event \"Program Terbaru\" berlangsung, login total 7 hari untuk mendapatkan hadiah Encrypted Master Tape ×10 !"
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/08/5c357ddac1fbfff771ee722013616e53_9066859229436458628_transformed.jpg",
-      "startsAt": "2026-09-07T16:15:00.000Z",
+      "startsAt": "2026-09-07T22:15:00.000Z",
       "endsAt": "2026-10-19T19:59:59.000Z",
-      "postedAt": "2026-09-07T16:15:00.000Z",
+      "postedAt": "2026-09-07T22:15:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1199,9 +1226,9 @@
         "id": "[Waktu Event] Setelah update V3.2 hingga akhir V3.2 [Syarat Partisipasi] Buka Mingguan Ridu di Chapter 1 Cerita Utama [Penjelasan Event] • Selama event berlangsung, Proxy dapat menggunakan formasi tim yang ditentukan untuk memainkan ulang stage uji coba \"Latihan Koordinasi\" sebelum mengaktifkan Potensi Agen dan stage uji coba Hipotesis Potensi setelah mengaktifkan Potensi. • Dalam stage uji coba, formasi tim, W-Engine Agen, dan Drive Disc Agen tidak dapat diubah. [Hadiah Event] • Setelah menyelesaikan tantangan stage \"Hipotesis Potensi\" untuk pertama kalinya, kamu akan mendapatkan hadiah stage uji coba secara otomatis di halaman finalisasi stage. Hadiah setiap stage uji coba hanya dapat diambil satu kali selama event berlangsung."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/08/d5bb2c88b3ad68d8cd5006ebabe9817f_4584243160458285765_transformed.jpg",
-      "startsAt": "2026-09-07T16:00:00.000Z",
-      "endsAt": "2026-10-20T08:59:59.000Z",
-      "postedAt": "2026-09-07T16:00:00.000Z",
+      "startsAt": "2026-09-07T22:00:00.000Z",
+      "endsAt": "2026-10-20T14:59:59.000Z",
+      "postedAt": "2026-09-07T22:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1226,9 +1253,9 @@
         "id": "Dear Proxy: Setelah update V3.2, Outfit Agen baru akan ditambahkan di \"Outfit Hari Ini\" ! Outfit \"Lucy - Liburan sang Putri\" • Outfit Lucy \"Liburan sang Putri\" akan tersedia permanen di \"Toko\" - \"Outfit Hari Ini\" setelah update V3.2 dengan harga 980 Monochrome ."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/08/d997bd634fbea9a5c6b69f9e0a2002c5_2790632526758815581_transformed.jpg",
-      "startsAt": "2026-09-07T18:00:00.000Z",
-      "endsAt": "2026-10-20T09:00:00.000Z",
-      "postedAt": "2026-09-07T18:00:00.000Z",
+      "startsAt": "2026-09-08T00:00:00.000Z",
+      "endsAt": "2026-10-20T15:00:00.000Z",
+      "postedAt": "2026-09-08T00:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1253,9 +1280,9 @@
         "id": "Dear Proxy: Berikut adalah konten update dan kompensasi untuk versi 3.2 \"Kisah Rahasia Mereka\". [Waktu Update] 2026/09/09 06:00 (UTC+8) Update diperkirakan akan selesai dalam waktu 5 jam. [Penjelasan Kompensasi] • Kompensasi Maintenance Update Versi Kompensasi: Polychrome ×300 Lingkup Kompensasi: Proxy yang mencapai Inter-Knot Lv. 4 sebelum 2026/09/09 06:00 (UTC+8). ※ Pengambilan tersedia hingga versi 3.2 berakhir, yaitu pada 2026/10/21 06:00 (UTC+8). Mohon diperhatikan bahwa versi ini akan berlangsung selama 42 hari. • Kompensasi Perbaikan Masalah Kompensasi: Polychrome ×300 Lingkup Kompensasi: Proxy yang mencapai Inter-Knot Lv. 4 sebelum 2026/09/09 06:00 (UTC+8). Mohon login ke dalam game untuk mengambilnya sebelum 2026/10/09 23:59 (UTC+8). Tim pengembang akan mengirimkan kompensasi di atas melalui pesan in-game setelah maintenance selesai. Pesan akan berlaku selama 30 hari, jadi jangan lupa mengambilnya ya. [Cara Update] • PC Setelah game ditutup, buka ulang launcher dan tekan \"Update\". • Android Setelah masuk ke dalam game, ikuti petunjuk pop-up di dalam game untuk menyelesaikan update. • iOS Masuk ke App Store dan tekan \"Update\". • PS5™ atau PS5™ Pro Buka halaman utama PS5 > Sorot Zenless Zone Zero > Tekan tombol Options di controller > Pilih periksa update. • Xbox Series X|S Buka antarmuka utama sistem Xbox > \"Game dan Aplikasiku\" > \"Pengaturan\" > \"Update\", lalu tekan Zenless Zone Zero di halaman \"Update\" dan konfirmasi update. [Konten Versi Baru] 1. Agen Baru • Agen Tier-S Claret (Electric - Armorer) Bisa didapatkan dari Pencarian Sinyal \"Purnama Bersimbah Merah Darah\". • Agen Tier-S Roxy (Wind - Stun) Bisa didapatkan dari Pencarian Sinyal \"Tatkala Bara Menjadi Abu\". II. W-Engine Baru • W-Engine Tier-S Crimson Thirst (Armorer) Bisa didapatkan dari Pencarian Sinyal \"Crimson Thirst\". • W-Engine Tier-S \"Crimson Moon Casket (Stun)\" Bisa didapatkan dari Pencarian Sinyal \"Crimson Moon Casket\". • W-Engine Tier-A Bloodmarrow Coffer (Armorer) Mulai V3.2, setelah membuka Rencana Ekspansi atau Rencana Premium, meningkatkannya hingga Lv. 30, dan mengambil Great Builder's Certificate di \"Dana Kota New Eridu\", kamu dapat memilih W-Engine Tier-A \"Bloodmarrow Coffer (Armorer)\" dari Hadiah Dana Kota sebagai hadiah. • W-Engine Tier-A Catty Luck (Armorer) Bisa didapatkan dari Pencarian Sinyal dan dapat dibeli di \"Toko Gadget\" setelah V3.2. • W-Engine Tier-B [Lunar] Semiluna (Armorer) Bisa didapatkan dari Pencarian Sinyal dan dapat dibeli di \"Toko Gadget\" setelah V3.2. III. Cerita Baru • Cerita Utama Season 3 Chapter 3 \"Kisah Rahasia Mereka\" Keajaiban tidak pernah datang sendirian. Mereka selalu datang diiringi oleh burung-burung dan cahaya fajar. Waktu Buka: Tersedia permanen setelah update V3.2. Syarat Buka: Selesaikan Cerita Utama Season 3 Chapter 2 \"Sunyi Panjang Sebuah Pamit\". ※ Kamu dapat memainkan konten Cerita Utama Season 3 lebih awal melalui fitur \"Pemutaran Lebih Awal\" setelah menyelesaikan Promosi di Cerita Utama Season 1 Chapter 1 - Intermission. • Insiden Kepercayaan Agen dan Sesi Jalan Bersama Menambahkan Insiden Kepercayaan & Sesi Jalan Bersama untuk Agen \"Claret\" dan \"Roxy\". Waktu Buka: Tersedia permanen setelah update V3.2. Syarat Buka: Dapatkan Agen terkait dan selesaikan cerita prasyarat (Untuk detail lebih lanjut, kunjungi Meja Kerja - Arsip Kolaborasi). IV. Area Baru • Menambahkan \"Roscaelifer\" - \"Area Vyrium\" Syarat Buka: Buka Cerita Utama Season 3 Chapter 1 \"Pengakuan Seorang Parasomnia\". • Menambahkan \"Roscaelifer\" - \"Area Terlarang Institut Penelitian Porcelloy\" Syarat Buka: Terbuka selama Cerita Utama Season 3 Chapter 3 \"Kisah Rahasia Mereka\". • Menambahkan \"Roscaelifer\" - \"Area Terlarang Stasiun Transit Shrouded Reef\" Syarat Buka: Terbuka selama Cerita Utama Season 3 Chapter 3 \"Kisah Rahasia Mereka\". V. Outfit Baru • Nangong Yu - Sorak Sepenuh Hati Peraturan para Angel #1: Sang Kapten Gurita harus memberi contoh! Meriahkanlah musim panas dengan warna pink! ※ Ikuti event terbatas \"Operasi Dukungan Malaikat\" dan selesaikan misi terkait untuk mendapatkannya. • Aria - Memuat Keimutan Peraturan para Angel #2: Tidak peduli wujud proyeksinya, senyuman sang idola energetik harus ceria seperti biasa! ※ Ikuti event terbatas \"Operasi Dukungan Malaikat\" dan selesaikan misi terkait untuk mendapatkannya. • Sunna - Delusi Sedang Beroperasi Peraturan para Angel #3: Jangan lupa kenakan sayapmu sebelum keluar, perjalanan para malaikat bisa dimulai kapan saja! ※ Ikuti event terbatas \"Operasi Dukungan Malaikat\" dan selesaikan misi terkait untuk mendapatkannya. VI. Event Baru • Program Terbaru Selama event berlangsung, login total 7 hari untuk mendapatkan Encrypted Master Tape ×10! Waktu Event: Setelah update V3.2 - 2026/10/20 03:59 (waktu server) Syarat Partisipasi: Capai Inter-Knot Lv. 5, selesaikan Prolog Cerita Utama \"Kelinci dan Proxy\", dan buka fitur Event untuk berpartisipasi. • Operasi Dukungan Malaikat Perhentian berikutnya——lokasi yang membuat hati para Delulu berdebar! Ikuti event versi ini untuk mendapatkan Outfit terbatas Angels of Delusion! Waktu Event: Setelah update V3.2 - 2026/11/30 03:59 (waktu server) Syarat Partisipasi: Capai Inter-Knot Lv. 20 dan selesaikan Cerita Utama Chapter 1 - Intermission. • Hipotesis Potensi - Lahir Kembali dalam Api \"Proxy, sudah lama tidak bertemu! Sedang sibuk apa akhir-akhir ini?\" \"Selama kita tidak bertemu, Belobog Heavy Industries juga terus berusaha mengejar langkahmu!\" Waktu Event: Setelah update V3.2 hingga akhir V3.2 Syarat Partisipasi: Buka Mingguan Ridu di Cerita Utama Chapter 1. • \"Pahlawan Pinball Klang, Klang!\" Di dunia yang tandus, para \"Pahlawan Pinball\" melawan takdir, dan bersama-sama mencari makna sejati dari keindahan! Catatan: Game masih dalam tahap uji coba, hak interpretasi akhir dimiliki oleh Manajer \"Chic Bootique\". Waktu Event: 2026/09/10 10:00 (waktu server) - 2026/10/19 03:59 (waktu server) Syarat Partisipasi: Capai Inter-Knot Lv. 20 dan selesaikan Cerita Utama Chapter 1 - Intermission. • Pertarungan Perburuan Bayangan Syarat utama untuk menjadi \"Pemain Legendaris\" adalah— Menciptakan keajaiban yang nyata dalam pertarungan virtual apa pun yang dihadapi. Waktu Event: 2026/09/16 10:00 (waktu server) - 2026/10/05 03:59 (waktu server) Syarat Partisipasi: Capai Inter-Knot Lv. 20 dan selesaikan Cerita Utama Chapter 1 - Intermission. • Program Siaran Kejutan Login untuk mendapatkan hadiah berupa Outfit Pilihan \"Angels of Delusion\", Avatar, Polychrome, dan lainnya. Waktu Event: 2026/09/23 10:00 (waktu server) - 2026/10/20 03:59 (waktu server) Syarat Partisipasi: Capai Inter-Knot Lv. 5, selesaikan Prolog Cerita Utama \"Kelinci dan Proxy\", dan buka fitur Event untuk berpartisipasi. • Hadiah Bounty di Muka - Patroli Area Selama event berlangsung, hadiah dari tantangan \"Patroli Area\" akan digandakan. \"Pertempuran hampir tiba! Tenang saja, Defense Force akan menunjukkan siapa kami sebenarnya.\" Waktu Event: 2026/09/23 04:00 (waktu server) - 2026/09/28 03:59 (waktu server) Syarat Partisipasi: Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 21, menyelesaikan misi Promosi Reputasi Inter-Knot \"Jalan Proxy I\", serta membuka \"Patroli Area\". • Jreng Jreng! Buku Harian Pertumbuhan Orbie Tekan tombol, beri makan—— Ikatan level maks! Orbie kamu juga tumbuh dengan sehat hari ini~ Waktu Event: 2026/09/30 10:00 (waktu server) - 2026/10/19 03:59 (waktu server) Syarat Partisipasi: Capai Inter-Knot Lv. 20 dan selesaikan Cerita Utama Chapter 1 - Intermission. • \"Ehn-Nah\" Jatuh dari Langit Selama event berlangsung, login total 7 hari untuk mendapatkan Boopon ×10! Waktu Event: 2026/09/30 10:00 (waktu server) - 2026/10/20 03:59 (waktu server) Syarat Partisipasi: Capai Inter-Knot Lv. 5, selesaikan Prolog Cerita Utama \"Kelinci dan Proxy\", dan buka fitur Event untuk berpartisipasi. • Kronik si Gagak Pincang Setelah selesai mengeliminasi semua hal yang mustahil, apa pun yang tersisa, tidak peduli seaneh apa pun itu, pasti adalah kebenarannya... benar, kan? Waktu Event: 2026/10/03 10:00 (waktu server) - 2026/10/19 03:59 (waktu server) Syarat Partisipasi: Capai Inter-Knot Lv. 20 dan selesaikan Cerita Utama Chapter 1 - Intermission. • Bounty Data: Simulasi Pertempuran Selama event berlangsung, hadiah tantangan \"Ruang Simulasi Pertempuran\" akan digandakan. \"Kerjaannya memang banyak, tapi bayarannya juga akan setimpal kok~\" Waktu Event: 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) Syarat Partisipasi: Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si Kucing\". VII. Konten Update Lainnya ▶ Konten Baru & Penyesuaian • Menambahkan hadiah Agen Tier-S & W-Engine terbatas pilihan di \"Panduan Proxy Pemula\". Jika Proxy belum mendapatkan Agen Tier-S & W-Engine terbatas pilihan melalui event \"Hadiah Anniversary Marcel\" di versi 3.1, maka setelah update versi 3.2, Proxy dapat mengunjungi antarmuka \"Panduan Proxy Pemula\" untuk memilih salah satu dari Agen Tier-S terbatas \"Jane\", \"Hugo\", \"Soldier 0 - Anby\". Setelah menyelesaikan misi wajib tahap ke-2 \"Panduan Proxy Pemula\", Proxy dapat memilih salah satu dari W-Engine Tier-S \"Sharpened Stinger\", \"Myriad Eclipse\", \"Severed Innocence\". • Menambahkan musuh \"Integrated - Scorched Horizon - ???\", \"Autonomous Tactical Unit: Ares\", \"Special Offensive: Lightfoot Rover\", \"Special Offensive: Heavy Striker\", \"Special Offensive: Grenadier Jaeger\", \"Special Offensive: Light Jaeger\", \"Special Offensive: Strike Jaeger\", \"Special Offensive: Guard Jaeger\", \"Kusarikku\", \"Autonomous Tactical Unit: Conqueror\", \"Airspace Patrol Vanguard\", \"Airspace Patrol Spearguard\", \"Airspace Patrol Shieldguard\". • Menambahkan hadiah \"Potential Silhouette - Koleda\" yang dapat ditukarkan di \"Arsip Potensi\". • Menambahkan Wallpaper Dinamis Agen Claret dan Roxy. Setelah mendapatkan dan meningkatkan Level Kepercayaan Agen, pemain dapat membuka Wallpaper Dinamis dari Agen terkait. • Menambahkan hadiah W-Engine yang dapat dipilih di \"Dana Kota New Eridu\" - Great Builder's Certificate. Setelah mengaktifkan Hadiah Dana Kota, kamu bisa memilih salah satu W-Engine berikut: Bloodmarrow Coffer, Radiowave Journey, Cannon Rotor, Six Shooter, Electro-Lip Gloss, Unfettered Game Ball, Spring Embrace. • Menambahkan beberapa aksesori Proxy. • Menambahkan Dekorasi: Gantungan - \"Gelombang Suara Ehn-Nah\", Tema \"Gelombang Suara Ehn-Nah\". • Menambahkan Pencapaian terkait \"Riwayat Phaethon\", \"Kepercayaan Agen\", \"Trending Inter-Knot\", \"Roscaelifer\", \"Labirin Misterius\", \"Teknik Bertarung\", \"Target Musuh\", \"Eksplorasi Area\", termasuk beberapa Pencapaian Tersembunyi. • Menambahkan set trofi Zenless Zone Zero - \"Kisah Rahasia Mereka\" untuk platform PS5™ dan PS5™ Pro. • Menambahkan pencapaian untuk platform Xbox Series X | S. • Menambahkan kartu nama \"Sebelum Kembali ke Lautan\". • Menambahkan Avatar \"Titik Awal Badai\" dan \"Avatar Baru Eous\". • Menambahkan kelompok medali \"Labirin Misterius: Operasi Bagel II\". • Menambahkan gelar terkait \"Jreng Jreng! Buku Harian Pertumbuhan Orbie\", \"Kepercayaan Agen\", \"target musuh\", dan \"Labirin Misterius\". • Menambahkan data rekomendasi Drive Disc untuk Agen baru sejak hari pertama. • Menambahkan 2 Kontrak Sampingan tipe \"Urban\". • Menambahkan 2 kontrak penjelajahan \"Ruang Tersembunyi\". • Menambahkan stage \"Promosi Agen\" - \"Latihan Armorer\". Setelah menyelesaikan tantangan bisa mendapatkan Basic Armorer Certification Seal, Advanced Armorer Certification Seal, dan Bladebearer Certification Seal. • Menambahkan stage \"Uji Sinergi Armorer\" di \"Modifikasi W-Engine\". Setelah menyelesaikan tantangan bisa mendapatkan Armorer Component, Reinforced Armorer Component, dan Specialized Armorer Component. Menambahkan stage \"Conqueror\" di \"Ruang Tantangan Profesional\". Setelah menyelesaikan tantangan bisa mendapatkan item peningkatan Skill Inti \"Higher Dimensional Data: Imitation Core\". • Menambahkan stage \"Kusarikku\" pada Perburuan Keji, yang akan memberikan item peningkatan Skill Inti \"Counterfeit Nucleus\" setelah menyelesaikan tantangan. Item ini juga dapat ditukarkan melalui \"Hidden Treasure\" di Toko Logistik Outpost. • Menambahkan hadiah yang dapat ditukarkan di \"Toko Sinyal\": Advanced Armorer Certification Seal dan Reinforced Armorer Component. • Menambahkan tampilan informasi pribadi Proxy di \"Daftar Teman\". • Menambahkan penanda konten rekomendasi utama pada antarmuka event. • Menambahkan teks sinopsis cerita saat melewati beberapa adegan cerita. • Menambahkan mekanisme respons Agen terhadap \"Control Skill\" yang dilancarkan oleh beberapa musuh: serangan pertama dari beberapa \"Control Skill\" dapat ditangani dengan \"Defensive Assist\". • Meningkatkan batas level maksimum \"Interboo\" hingga Lv. 35, dan menambahkan hadiah terkait. • Memperbesar tampilan ikon Anomaly Buildup musuh. • Mengoptimalisasi pilihan default pada HDD setelah berganti chapter saat menggunakan controller. • Mengoptimalisasi logika penyimpanan filter di antarmuka Agen. Saat kembali dari halaman Detail Agen, hasil filter akan tetap tersimpan. • Mengoptimalisasi urutan item pada antarmuka pemilihan item penukaran di Hidden Treasure. • Mengoptimalisasi data Drive Disc pada modul rekomendasi sistem di Rencana Pelatihan Khusus sebagian Agen. • Mengoptimalisasi logika panduan pengembangan pada Penilaian Persiapan Pertempuran Agen. • Mengoptimalisasi tampilan titik merah pada gameplay \"Bangbang! Si Jenius dan Chip Ajaib!\" di Panduan. • Mengoptimalisasi status default tombol \"Bintang Dapat Ditingkatkan\" saat memasuki antarmuka \"Dataset Pembangtoo\" dalam gameplay \"Bangbang! Si Jenius dan Chip Ajaib!\". • Mengoptimalisasi pilihan default untuk arah pembaruan modul dan item rekonstruksi saat membuka antarmuka Rekonstruksi Modul Bangboo dalam gameplay \"Bangbang! Si Jenius dan Chip Ajaib!\". • Mengoptimalisasi logika rekomendasi W-Engine. • Mengoptimalisasi pengalaman saat menekan kotak dialog untuk melihat halaman berikutnya dengan cepat dalam beberapa adegan cerita. • Mengoptimalisasi tampilan pencahayaan pada sebagian skill Agen \"Remielle\". • Menyesuaikan nama kelompok medali terkait \"Labirin Misterius: Operasi Bagel\". • Menyesuaikan tampilan model Agen \"Claret\". • Menyesuaikan tampilan model NPC \"Lindverne Sunbringer\" dan \"Eldreda Sunbringer\". • Menyesuaikan efek visual dan efek suara setelah musuh melancarkan \"Control Skill\". • Menyesuaikan arti kilatan pada musuh. Kilatan emas menandakan bahwa serangan tersebut dapat ditangkis dengan Defensive Assist, sedangkan kilatan merah menandakan bahwa serangan tersebut tidak dapat ditangkis dengan Defensive Assist. • Menyesuaikan urutan rekomendasi peningkatan untuk sebagian Skill milik Agen \"Remielle\". • Memperbaiki tampilan teks pada perisai Agen \"Sigrid\" saat mengenakan Outfit \"Sang Penakluk Ombak\". • Menggabungkan tampilan medali dari beberapa gameplay yang sama. ▶ Shiyu Defense Setelah update V3.2, Critical Node akan memiliki efek buff berikut: Tahap 1: • Sharp DMG Agen meningkat 25%, DEF meningkat 15%. Saat Agen mengenai musuh dan memicu CRIT, jika musuh dalam status Stun, Kelipatan Stun DMG meningkat 20% selama 10 detik. Memicu ulang akan memperbarui durasi. • Anomaly Buildup Rate yang diakibatkan Agen meningkat 15%, Attribute Anomaly DMG yang diakibatkan meningkat 20%. Jika ada 2/3 Agen dengan spesialisasi Anomaly di dalam tim, Anomaly Proficiency Agen meningkat 20/60 poin. • Ether DMG Agen meningkat 20% dan Anomaly Proficiency meningkat 20 poin. Setelah Agen mengakibatkan status Attribute Anomaly pada musuh, Kelipatan Stun DMG meningkat 20% selama 15 detik. Memicu ulang akan memperbarui durasi. Tahap 2: • Sharp DMG Agen meningkat 20%, setelah membunuh Musuh Normal, Agen dengan Spesialisasi Stun memulihkan 15 poin Energy. Setelah Chain Attack Agen mengenai musuh, kecepatan pulih dari status Stun mereka berkurang 15%, berlangsung selama 15 detik. Memicu ulang akan memperbarui durasi. • Ice DMG dan Ether DMG Agen meningkat 25%, Ice dan Ether Anomaly Buildup Rate meningkat 15%. Setelah Agen membuat musuh masuk ke status Attribute Anomaly, DEF musuh berkurang 10% selama 10 detik. Memicu ulang akan memperbarui durasi. • Fire DMG dan Electric DMG Agen meningkat 35%, Daze yang diakibatkan oleh Agen dengan Spesialisasi Stun meningkat 15%. Setelah Agen membuat musuh masuk ke status Stun, Kelipatan Stun DMG musuh meningkat 30%, dan kecepatan pulih dari status Stun berkurang sebesar 15%, berlangsung selama 20 detik. Memicu ulang akan memperbarui durasi. Tahap 3: • Sharp DMG Agen meningkat 20%, setelah membunuh Musuh Normal, Agen dengan Spesialisasi Stun memulihkan 15 poin Energy. Saat Special Attack, EX Special Attack, dan Ultimate Agen mengenai musuh, PEN Ratio meningkat 10%, jika musuh berada dalam Status Stun, akan mengabaikan 15% Ketahanan Electric DMG. • Jika ada 2/3 Agen dengan spesialisasi Anomaly di dalam tim, Attribute Anomaly DMG yang diakibatkan Agen meningkat 10%/50%. Semua anggota tim mendapatkan 500/1500 Decibel saat memasuki pertarungan. • Fire DMG dan Ether DMG Agen meningkat 15%, Sheer DMG meningkat 15%. DMG yang dihasilkan oleh Ultimate Agen meningkat 30%, saat serangan Ultimate mengenai musuh, mengabaikan 10% ketahanan semua atribut musuh tersebut. ▶ Operasi Serbuan Maut Setelah update V3.2, musuh yang perlu dihadapi di Operasi Serbuan Maut kali ini sebagai berikut: Latihan Fase 1: Kusarikku, Girtablullu - Stagnant Aberrant, The Thrall - Ye Shiyuan Adversity Fase 1: Integrated - Scorched Horizon - ??? Latihan Fase 2: Kusarikku, Miasmic Fiend - Unfathomable, The Thrall - Ye Shiyuan Adversity Fase 2: Integrated - Scorched Horizon - ??? Latihan Fase 3: Scorched Horizon - ???, Infernal Revenant, Kusarikku Adversity Fase 3: Integrated - Girtablullu ▶ Hollow Zero • Menambahkan Skema Prisma Taktis untuk Agen Claret dan Roxy, serta \"Misi Eksplorasi\" yang sesuai. ▶ Labirin Misterius: Operasi Bagel II • Menambahkan Prisma Taktis untuk Claret, Roxy, Tsukishiro Yanagi, Zhao, Banyue, Yidhari, dan \"Starlight Billy\". • Menambahkan senjata Umum \"Armorer\". • Menambahkan item taktis \"Suar Perlindungan\" yang dapat diperoleh secara acak dengan mencari Tas Dokumen pada tingkat kesulitan Sulit/Berbahaya. • Menambahkan hadiah yang dapat ditukar di Toko: aksesori Proxy \"Poni Pink Imut\" & \"Poni Pink Lucu\", aksesori Proxy \"Saatnya Kuda Meringkik\", item Plug-in Ekspansi Tas Season. Dapat ditukar menggunakan Koin Musim. • Menambahkan beberapa barang berharga Tier-Z. • Menambahkan halaman finalisasi season. • Memperbarui ronde baru Kontrak Season. • Mereset peringkat seluruh server dan tahap medali. • Meningkatkan batas maksimum Gear Coin yang dapat diinvestasikan di Investasi Konglomerat menjadi 3 juta. Pada tingkatan ini, tingkat kesulitan stage meningkat dan hadiahnya menjadi lebih banyak. • Menambahkan fitur yang memungkinkan pemain melihat detail peralatan yang dibawa di Tas, serta menjual, memindahkan, mengganti, dan melakukan tindakan lainnya. • Menambahkan notifikasi di antarmuka Bengkel Manufaktur Cerdas yang memberi tahu jika material untuk membuat item sudah mencukupi. • Menambahkan saran penjualan untuk sebagian item. • Menambahkan fitur yang memungkinkan pemain untuk melakukan penyelesaian dan keluar lebih awal saat dalam status \"Pause\". • Menambahkan petunjuk kontrol untuk menggulir daftar dengan roda mouse dan memindahkan item dengan mengeklik dua kali tombol kiri mouse saat menggunakan PC. • Menambahkan umpan balik getaran pada situasi tertentu saat menggunakan controller. • Menambahkan petunjuk untuk \"Pindahkan Item\" dan \"Buang\" saat menggunakan controller ketika \"Detail Item\" belum dibuka. • Menambahkan fitur untuk menggunakan tab di sisi kiri \"Tas\" guna mengarahkan fokus dengan cepat saat menggunakan controller. • Menambahkan operasi dan petunjuk untuk keluar dari proses membuka brankas menggunakan \"Tombol Kembali\" saat menggunakan controller, selama tidak terjadi konflik tombol. • Mengoptimalisasi tampilan antarmuka Toko, menambahkan tab kategori baru, dan menyesuaikan posisi sebagian barang. • Mengoptimalisasi pengalaman operasi saat memindahkan sebagian item, peralatan, dan barang. • Mengoptimalisasi pengalaman saat berinteraksi dengan kontainer dan perangkat di dalam stage. • Mengoptimalisasi pengalaman penggunaan pintasan saat mengganti peralatan dan barang berharga di dalam stage. • Mengoptimalisasi pengalaman operasi menyeret dan memindahkan item di \"Tas\" dan \"Pusat Gudang Penyimpanan\". • Mengoptimalisasi efek visual saat \"Pyrois\" menggunakan Skill Alter di dalam stage. • Mengoptimalisasi tampilan pop-up notifikasi jeda sementara, serta menambahkan pop-up konfirmasi kedua. • Mengoptimalisasi tampilan dan teks petunjuk pada sebagian antarmuka. • Mengoptimalisasi prioritas barang berharga yang secara otomatis dimasukkan ke dalam brankas. • Mengoptimalisasi logika penanganan item taktis di dalam Tas setelah item tersebut habis digunakan. • Mengoptimalisasi tampilan sebagian efek visual dan suara. • Mengoptimalisasi mekanisme bos \"Infernal Revenant\" dalam mengakibatkan DMG berkelanjutan kepada Agen setelah memasuki status Fire Rain. Agen tidak akan dikalahkan oleh Fire Rain. • Mengoptimalisasi pengalaman menggulir daftar dengan roda mouse di \"Tas\" dan \"Pusat Gudang Penyimpanan\" saat menggunakan perangkat PC. • Mengoptimalisasi tampilan sebagian tombol interaktif saat menggunakan perangkat mobile. • Mengoptimalisasi tampilan beberapa antarmuka saat menggunakan perangkat mobile. • Mengoptimalisasi pengalaman mengambil item di perangkat mobile. • Mengoptimalisasi prioritas respons saat \"Tombol Dodge\" dan \"Tombol Ambil\" mengalami konflik fungsi ketika menggunakan controller: saat memasuki pertarungan, tombol \"Dodge\" akan diprioritaskan, sedangkan di luar pertarungan, tombol \"Ambil\" akan diprioritaskan • Mengoptimalisasi prioritas respons saat \"Tombol Skill Alter\" dan \"Tombol Masuk Rel Kereta\" mengalami konflik fungsi dalam pertarungan. \"Skill Alter\" akan diprioritaskan saat menggunakan controller. • Mengoptimalisasi logika navigasi horizontal antara area \"Tas\" dan area \"Gudang\" di antarmuka \"Pusat Gudang Penyimpanan\" serta layar terkait lainnya saat menggunakan controller. • Mengoptimalisasi logika navigasi horizontal antara area \"Tas\" dan area \"Brankas\" di antarmuka \"Pusat Gudang Penyimpanan\" serta layar terkait lainnya saat menggunakan controller. • Mengoptimalisasi logika navigasi horizontal antara area \"Tas\" dan fitur \"Jalur Sumber Item\" di antarmuka \"Pusat Gudang Penyimpanan\" serta layar terkait lainnya saat menggunakan controller. • Mengoptimalisasi pengalaman operasi saat melihat \"Detail Item\" secara berturut-turut ketika menggunakan controller. • Mengoptimalisasi pengalaman mengeluarkan Agen dari tim aktif saat menggunakan controller. • Mengoptimalisasi waktu respons saat menahan untuk membuka \"Tas\" dan \"Ambil Semua\" di dalam stage ketika menggunakan controller. • Mengoptimalisasi pengalaman interaksi beberapa tombol saat menggunakan controller. • Menyesuaikan tampilan tingkat hadiah Boojee pada halaman finalisasi setelah berhasil evakuasi. • Menyesuaikan tampilan antarmuka saat memasuki stage. • Menyesuaikan posisi dan tampilan sebagian tombol. • Menyesuaikan posisi sebagian teks petunjuk. • Menyesuaikan urutan kemunculan item saat mencari kontainer. • Menyesuaikan titik pengambilan untuk sebagian item di dalam kontainer. • Menyesuaikan tampilan tombol Tas dan Brankas di halaman persiapan. • Menyesuaikan jangkauan interaksi beberapa kontainer dan perangkat dalam stage. • Menyesuaikan tingkat kualitas item \"Z-Merit\", dari Tier-Z menjadi Tier-S. • Menyesuaikan posisi petunjuk tombol \"Ganti Target Pengambilan\" saat menggunakan controller. • Menyesuaikan posisi default fokus controller saat membuka \"Tas\" selama pertarungan. • Menyesuaikan tombol \"Muat Ulang\" saat menggunakan controller. [Perbaikan Masalah] ▶ Agen dan Musuh • Memperbaiki masalah pada Kelipatan Stun DMG yang diakibatkan dari sebagian Skill saat mengenai musuh \"Ye Shiyuan - The Thrall\" yang berada dalam status Stun pada kondisi tertentu. • Memperbaiki masalah yang menyebabkan mekanisme \"Preheated Chamber\" tidak dikonsumsi secara normal setelah Agen \"Norma\" memicu \"Quick Assist\" rekan tim melalui \"Basic Attack: Hat Trick\" dan menggantinya dengan \"Chain Attack\" dalam kondisi tertentu. • Memperbaiki masalah efek visual sebagian skill musuh \"Girtablullu - Stagnant Aberrant\" yang tidak normal. • Memperbaiki masalah tampilan rambut yang kemungkinan tidak normal pada \"Wallpaper Dinamis\" Agen \"Norma\". • Memperbaiki masalah tampilan mata yang tidak normal pada \"Wallpaper Dinamis\" Agen \"Ju Fufu\". • Memperbaiki masalah model Agen \"Lucy\" yang kemungkinan tampil tidak normal saat mengenakan Outfit \"Liburan sang Putri\". • Memperbaiki masalah mata Agen \"Norma\" yang kemungkinan tampil tidak normal dalam adegan. • Memperbaiki masalah UI yang kemungkinan muncul dengan tidak normal pada Avatar Agen \"Remielle\" di ruang obrolan. • Memperbaiki masalah efek visual kotak pedang yang kemungkinan tidak normal pada animasi idle Agen \"Ye Shunguang\". • Memperbaiki masalah ekspresi wajah beberapa Agen dan NPC yang mungkin tidak normal. ▶ Musik & Efek Suara • Memperbaiki masalah musik dan efek suara yang kemungkinan abnormal dalam kondisi tertentu. ▶ Hollow Zero • Memperbaiki masalah konsumsi \"Solar Prominence\" menjadi tidak normal setelah Pyrois membawa senjata \"Sword of Dawn\" di \"Hollow Zero: Operasi Matriks\". • Mengoptimalisasi deskripsi teks beberapa Resonium dan Kartu di \"Hollow Zero: Operasi Matriks\" (penyesuaian ini hanya untuk revisi teks dan tidak memengaruhi efek Skill yang sebenarnya). Sebelum penyesuaian: Memulihkan/Memperoleh Setelah penyesuaian: Memulihkan ▶ Labirin Misterius • Memperbaiki masalah tampilan yang tidak normal saat bermain gameplay \"Labirin Misterius\" saat terputus dari jaringan. • Memperbaiki masalah beberapa efek modifier tertentu dari \"Prisma Taktis Tier-Z\" tidak menampilkan atribut tambahan dengan benar di gameplay \"Labirin Misterius\". • Memperbaiki masalah di mana efek khusus di titik evakuasi mungkin tampil tidak normal dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah efek visual pada Hound yang mungkin tidak ditampilkan dengan benar dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah pada fitur dan tampilan controller mengalami gangguan di gameplay \"Labirin Misterius\" dalam kondisi tertentu. • Memperbaiki masalah di mana beberapa fitur dan petunjuk mungkin tidak ditampilkan dengan benar dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah pada \"Power Slash\" yang terkadang tidak dapat mengakibatkan DMG setelah digunakan di gameplay \"Labirin Misterius\". • Memperbaiki masalah pada UI yang tidak normal di gameplay \"Labirin Misterius\" pada kondisi tertentu. • Memperbaiki masalah di mana tampilan EXP mungkin tidak normal setelah evakuasi dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah sebagian efek visual tidak ditampilkan dengan benar dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah tampilan beberapa adegan dan peta yang mungkin tidak normal dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah di mana lift mungkin tidak dapat beroperasi dengan normal dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah yang menyebabkan posisi musuh tidak normal dalam gameplay \"Labirin Misterius\" • Memperbaiki masalah tampilan yang tidak normal yang mungkin muncul setelah menggunakan fitur \"Muat Ulang\" dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah CD beberapa item yang tidak normal dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah yang menyebabkan area selain \"Medan Cacophony\" ditampilkan secara tidak normal sebagai area \"Medan Cacophony\" pada peta dalam gameplay \"Labirin Misterius\". • Memperbaiki masalah yang memungkinkan pemain berinteraksi dengan kontainer di dalam ruang terkunci tanpa benar-benar memasuki ruangan tersebut di Labirin Misterius dalam kondisi tertentu. • Memperbaiki masalah di mana Agen dapat secara tidak normal melancarkan 1 kali Ultimate tanpa mengonsumsi sumber daya setelah menggunakan \"Etheric Phantom: Primordial Nightmare\", tanpa mengenakan Prisma Taktis \"Ye Shunguang\" Frosted Blade di gameplay \"Labirin Misterius\". • Memperbaiki masalah deskripsi teks yang salah pada \"Etheric Phantom: Thracian\" dalam gameplay \"Labirin Misterius\". Penyesuaian ini hanya untuk revisi teks dan tidak memengaruhi efek sebenarnya. • Memperbaiki masalah pada tombol \"Beralih ke Agen Sebelumnya\" tidak berfungsi saat tombol \"Beralih ke Agen Sebelumnya\" dan \"Tombol Aksi\" diatur ke tombol yang sama saat menggunakan controller untuk memainkan gameplay \"Labirin Misterius\". ▶ Adegan • Memperbaiki masalah tampilan lingkungan yang kemungkinan abnormal dalam kondisi tertentu. ▶ Lainnya • Memperbaiki masalah teks dan tanda baca pada beberapa misi, antarmuka, dan deskripsi. • Menyesuaikan, mengoptimalisasi, dan memperbaiki beberapa teks dalam game (tidak akan memengaruhi gameplay atau sistem)."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/08/290086ac8de0f822d9f3bc664e990204_6845122499881057767_transformed.jpg",
-      "startsAt": "2026-09-08T10:00:00.000Z",
-      "endsAt": "2026-10-20T09:59:59.000Z",
-      "postedAt": "2026-09-08T10:00:00.000Z",
+      "startsAt": "2026-09-08T16:00:00.000Z",
+      "endsAt": "2026-10-20T15:59:59.000Z",
+      "postedAt": "2026-09-08T16:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1280,9 +1307,9 @@
         "id": "Dear Proxy: Demi mengurangi dampak dari fluktuasi anomali Hollow, kami akan memastikan untuk selalu mendengarkan masukan dari kalian. Kami juga akan merespons dan menangani berbagai masalah yang teridentifikasi dengan cepat untuk memastikan kehidupan sehari-hari kalian di New Eridu berjalan lancar. [Masalah yang Sudah Teridentifikasi] 9 September • Telah teridentifikasi masalah di mana informasi Sinyal kustom Agen W-Engine yang ditambahkan mungkin tidak sesuai dengan pilihan sesungguhnya atau ditampilkan secara tidak normal di halaman [Detail] - [Sinyal] & [Penjelasan Pencarian Sinyal] pada FM eksklusif dan FM W-Engine untuk perangkat PS5™, PS5™ Pro, dan Xbox Series X|S. Masalah ini hanya kendala pada tampilan dan tidak memengaruhi efek Pencarian Sinyal. Harap Proxy mengacu pada pilihan aktual di halaman \"Pencarian Sinyal Kustom\". • Diketahui bahwa perangkat Sony Xperia 1 VIII, Sony Xperia 1 VII, serta perangkat Sony seri berikutnya yang menggunakan Snapdragon 8 Elite dan Snapdragon 8 Elite Gen 5 saat ini mengalami masalah lag dan stuttering yang dapat menyebabkan game tidak berjalan dengan normal. Proxy disarankan menggunakan perangkat lain untuk pengalaman bermain yang lebih baik. • Saat memeriksa versi driver kartu grafis Nvidia di PC: 1. Jika versi di bawah 591.74 (2026.01), mengaktifkan mode DX12 mungkin akan membuat tampilan UI atau tekstur lingkungan menjadi tidak normal atau mengakibatkan game mengalami crash. Harap Proxy memperbarui driver kartu grafis NVIDIA sebelum mengaktifkan mode DX12. 2. Pada sistem Win10, mengaktifkan mode DX12 saat menjalankan OBS dengan source mode \"Game Capture\" kemungkinan dapat menyebabkan crash. Jika Proxy mengalami masalah ini, silakan tutup software perekam OBS terlebih dahulu, lalu jalankan game kembali. [Detail Masalah yang Diperbaiki dan Konten Optimalisasi] Konten Update 16 September • Memperbaiki masalah tampilan Kelipatan Daze pada \"Assist: More Overtime?\" milik Roxy yang tidak normal. Penyesuaian ini hanya pada teks dan tidak memengaruhi efek sebenarnya. • Memperbaiki masalah model Agen \"Nangong Yu\" yang tidak normal dalam kondisi tertentu. • Memperbaiki masalah misi \"Kunjungi Chic Bootique\" dalam event \"Pahlawan Pinball Klang, Klang!\" yang tidak dapat dilanjutkan dengan normal dalam kondisi tertentu. • Memperbaiki masalah NPC \"Khakiboo\" yang menghilang secara tidak normal dalam kondisi tertentu. • Memperbaiki masalah tampilan \"Intel Terkini\" yang tidak normal pada beberapa musuh. • Mengoptimalisasi urutan setelah berinteraksi dengan beberapa kontainer di stage \"Labirin Misterius: Operasi Bagel II\". • Memperbaiki masalah tampilan \"Investasi Konglomerat\" yang tidak normal di \"Labirin Misterius: Operasi Bagel II\". • Memperbaiki masalah yang menyebabkan sebagian item tidak dapat diambil setelah memasuki \"akuarium publik\" di \"Labirin Misterius: Operasi Bagel II\" dalam kondisi tertentu. • Memperbaiki masalah angka hasil perolehan ditampilkan secara tidak normal saat membagikan hasil evakuasi yang berhasil dalam satu sesi \"Labirin Misterius: Operasi Bagel II\" di \"Channel Terenkripsi\" dalam kondisi tertentu. • Memperbaiki masalah tampilan bayangan beberapa Agen yang tidak normal di \"Kota\" dalam kondisi tertentu. • Memperbaiki masalah jumlah item yang ditampilkan tidak normal setelah mengambil item dalam stage \"Labirin Misterius: Operasi Bagel II\" pada model perangkat tertentu. • Memperbaiki masalah yang menyebabkan operasi tertentu pada layar pemilihan hidangan tidak dapat dikonfirmasi menggunakan controller saat memainkan event \"Kisah Rasa Menggugah Selera\". • Memperbaiki masalah \"botol terapung\" yang tidak muncul dengan normal di event \"Deru Ombak Musim Panas\". • Memperbaiki masalah akses \"Panduan Proxy Pemula\" yang menghilang secara tidak normal sehingga \"Kotak Kejutan Mainan\" tidak dapat diambil dengan semestinya. • Memperbaiki masalah sebagian konten video yang ditampilkan secara tidak normal dalam Panduan Pertarungan Agen Roxy. • Memperbaiki masalah yang menyebabkan \"Etheric Phantom\" tidak dapat digunakan secara normal di stage \"Labirin Misterius: Operasi Bagel II\" pada kondisi tertentu. • Memperbaiki masalah yang menyebabkan kemampuan \"Power Slash\" dari \"Skill Alter\" tidak berfungsi dengan normal di stage \"Labirin Misterius: Operasi Bagel II\" dalam kondisi tertentu. • Memperbaiki masalah yang menyebabkan efek visual adegan yang ditampilkan tidak normal setelah menggunakan \"Skill Alter\" di stage \"Labirin Misterius: Operasi Bagel II\" dalam kondisi tertentu. • Memperbaiki masalah alur misi yang kemungkinan tidak dapat dilanjutkan dengan normal setelah menggunakan \"Skill Alter\" untuk menyerang Mutant Formicarrier saat menjalankan insiden \"Kejar Mutant Formicarrier\" di \"Labirin Misterius: Operasi Bagel II\". • Memperbaiki masalah arah gerak beberapa musuh yang tidak normal dalam stage saat menjalankan misi \"Cari Cara untuk Menyelinap Masuk ke Gerbang Stasiun Transit\". • Memperbaiki masalah tampilan beberapa adegan yang tidak normal di stage \"Ilusi Pinggir Kota\" pada \"Labirin Misterius: Operasi Bagel II\" dalam kondisi tertentu. • Memperbaiki masalah kecepatan gerak Agen yang tidak normal di \"Kota\" dalam kondisi tertentu. • Memperbaiki masalah efek visual pertarungan Bangboo \"Biggest Fan\" yang tidak normal dalam kondisi tertentu. • Memperbaiki masalah model Agen \"Claret\" yang tidak normal dalam kondisi tertentu. • Memperbaiki masalah pada status beradu kekuatan yang tidak aktif secara normal setelah Control Skill yang dilancarkan anjing pemburu \"Ulidim\" berhasil ditangkis oleh Agen tertentu saat di \"Labirin Misterius: Operasi Bagel II\" dalam kondisi tertentu. • Memperbaiki masalah terkait kesalahan deskripsi pada panduan permainan \"Investasi Konglomerat: 3.000.000\" di stage tingkat Bahaya dalam \"Labirin Misterius: Operasi Bagel II\". • Memperbaiki masalah yang menyebabkan panduan hilang pada misi \"Observasi Kondisi Bunga\" dalam Rahasia Agen \"Flora dari Lembah Berbunga\". • Memperbaiki masalah peta area yang tidak terbuka dengan normal pada sebagian stage di \"Labirin Misterius: Operasi Bagel II\" dalam kondisi tertentu. • Menyesuaikan, mengoptimalisasi, dan memperbaiki beberapa teks serta audio dalam game (tidak akan memengaruhi gameplay). Konten Update 11 September • Memperbaiki masalah yang menyebabkan musuh \"Kusarikku\" tidak dapat memasuki status Stun dengan normal dalam kondisi tertentu. • Memperbaiki masalah efek suara tombol pintasan untuk tombol Atur di antarmuka Tas pada PC dalam \"Labirin Misterius: Operasi Bagel II\". Konten Update 10 September • Memperbaiki masalah gangguan proses pembukaan sebagian kontainer yang terinterupsi saat menahan tombol untuk membukanya ketika memainkan \"Labirin Misterius: Operasi Bagel II\" menggunakan perangkat mobile. • Memperbaiki masalah tampilan pada sebagian objek adegan untuk perangkat dengan kartu grafis tertentu saat opsi \"Setelan - Grafik - Anti-Aliasing\" diatur ke \"SMAA\" atau \"Off\". • Memperbaiki masalah di mana membuka sebagian kontainer saat dikejar oleh Hound Ulidim dapat memicu kewaspadaannya secara tidak normal dalam gameplay \"Labirin Misterius: Operasi Bagel II\". • Menambahkan tombol pintasan untuk tombol Atur di antarmuka Tas pada PC dalam \"Labirin Misterius: Operasi Bagel II\". • Mengoptimalisasi deskripsi teks sebagian Misi Season di \"Labirin Misterius: Operasi Bagel II\". • Memperbaiki masalah di mana misi Kontrak Utama \"Lanjut menuju markas Geng Ehn-Nah\" tidak dapat berjalan dengan normal dalam kondisi tertentu. • Memperbaiki masalah yang menyebabkan Hound Ulidim muncul di posisi yang tidak normal setelah menggunakan Control Skill ketika memasuki \"Wilayah Hound Ulidim\" di stage \"Labirin Misterius: Operasi Bagel II\" dalam kondisi tertentu."
       },
       "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/08/5ec8bdc39053abce65b4afc95899149a_7547432052268146337_transformed.png",
-      "startsAt": "2026-09-08T10:00:00.000Z",
-      "endsAt": "2026-10-20T10:00:00.000Z",
-      "postedAt": "2026-09-08T10:00:00.000Z",
+      "startsAt": "2026-09-08T16:00:00.000Z",
+      "endsAt": "2026-10-20T16:00:00.000Z",
+      "postedAt": "2026-09-08T16:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1337,6 +1364,60 @@
       "startsAt": "2026-09-20T21:00:00.000Z",
       "endsAt": "2026-11-01T19:59:59.000Z",
       "postedAt": "2026-09-20T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Miliastra Wonderland",
+      "title": {
+        "en": "\"Wonderland Treasures: Phantom Night Candlelight\" – New Manekin Cosmetics Now Available",
+        "id": "Kostum Baru Manekin \"Harta Karun Wonderland: Cahaya Lilin Malam Berbayang\" Telah Tersedia"
+      },
+      "subtitle": {
+        "en": "Wonderland Treasures: Phantom Night Candlelight",
+        "id": "Harta Karun Wonderland: Cahaya Lilin Malam Berbayang"
+      },
+      "desc": {
+        "en": "〓Event Ode Details〓 Event Ode Duration Limited Legendary (5-Star) Cosmetic Elite (4-Star) Cosmetics After the Version 7.1 update — 2026/11/03 14:59 \"Candlelit Revelry\" \"Fervent Fighter\" \"Mystic Forest\" \"Sonic Ruins\" ● During the event, the limited Legendary (5-Star) Cosmetic \"Candlelit Revelry\" and Elite (4-Star) Cosmetics \"Fervent Fighter,\" \"Mystic Forest,\" and \"Sonic Ruins\" will be available in the Manekin Cosmetic Event Ode 2! ● During the event, upon obtaining the event-exclusive Legendary (5-Star) Cosmetic \"Candlelit Revelry\" for the same Manekin/Manekina a second time (whether obtained in an Ode, redeemed at the Shop, or received as a gift), you will unlock its Ascension \"Candlelit Revelry: Pumpkin Candy.\" ※ Event Ode 2 for this event follows the same rules as previous events. For more information on Event Odes, go to the Event Ode screen and select Details in the bottom-left corner. ※ Manekin cosmetics and actions are for reference only. Please refer to the actual in-game appearance.",
+        "id": "〓 Keterangan Event Pengharapan 〓 Waktu Pengharapan Kostum Legendary (5★) Terbatas Kostum Elite (4★) Setelah update v7.1 - 2026/11/03 14:59 \"Candlelit Revelry\" \"Fervent Fighter\" \"Mystic Forest\" \"Sonic Ruins\" ● Selama event berlangsung, Kostum Legendary (5★) \"Candlelit Revelry\" serta Kostum Elite (4★) \"Fervent Fighter\", \"Mystic Forest\", dan \"Sonic Ruins\" akan tersedia di Event Pengharapan-2! ● Selama event berlangsung, ketika mendapatkan Kostum Legendary (5★) \"Candlelit Revelry\" dengan jenis kelamin yang sama untuk kedua kalinya melalui cara apa pun (termasuk, namun tidak terbatas pada Pengharapan, penukaran di Toko, Pemberian Kostum, dll.), pemain akan membuka efek Ascension \"Candlelit Revelry: Pumpkin Candy\" untuk Kostum 5★ tersebut. ※ Aturan Event Pengharapan-2 periode ini sama dengan aturan Event Pengharapan. Untuk keterangan lebih lanjut mengenai Event Pengharapan, silakan tekan tombol Rincian di pojok kiri bawah halaman Event Pengharapan. ※ Kosmetik dan aksi Manekin hanya sebagai referensi saja, harap mengacu pada tampilan asli di dalam game."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/20/340e68125846d03db634d6c9a2c46f03_854875324930933494_transformed.jpg",
+      "startsAt": "2026-09-21T21:00:00.000Z",
+      "endsAt": "2026-11-01T19:59:59.000Z",
+      "postedAt": "2026-09-21T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Miliastra Wonderland",
+      "title": {
+        "en": "\"Wonderland Treasures: Moonlight After the Rain\" – New Manekin Cosmetics Now Available",
+        "id": "Kostum Manekin \"Harta Karun Wonderland: Cahaya Rembulan Selepas Hujan\" Telah Tersedia"
+      },
+      "subtitle": {
+        "en": "Wonderland Treasures: Moonlight After the Rain",
+        "id": "Harta Karun Wonderland: Cahaya Rembulan Selepas Hujan"
+      },
+      "desc": {
+        "en": "During the event, Travelers can obtain desired Manekin Cosmetics via the \"Moonlight After the Rain\" Event Ode, Silvery Moonlight Chronicle, or the Miliastra Shop! Play Popular Miliastra Wonderland stages with your new Sets or Try-On Capes equipped to obtain a Primogems ×60 reward! 〓Event Ode Details〓 Event Ode Duration Limited Legendary (5-Star) Cosmetic Elite (4-Star) Cosmetics After the Version 7.1 update — 2026/11/03 14:59 \"Osmanthus in the Moonlight\" \"Sweet Baker's Dreams\" \"Feathers of Justice\" \"Idyllic Melodies\" ● During the event, the limited Legendary (5-Star) Cosmetic \"Osmanthus in the Moonlight\" and Elite (4-Star) Cosmetics \"Sweet Baker's Dreams,\" \"Feathers of Justice,\" and \"Idyllic Melodies\" will be available in the Manekin Cosmetic Event Ode! During the event, upon obtaining the event-exclusive Legendary (5-Star) Cosmetic \"Osmanthus in the Moonlight\" for the same Manekin/Manekina a second time (whether obtained in an Ode, redeemed at the Shop, or received as a gift), you will unlock its Ascension \"Osmanthus in the Moonlight: Silken Elegance.\" ※ The current Event Ode follows the same rules as previous events. For more information on Event Odes, go to the Event Ode screen and select Details in the bottom-left corner. ※ Manekin cosmetics and actions are for reference only. Please refer to the actual in-game appearance. 〓Gala: Initial Top-Up Reward〓 After the Version 7.1 update, your first purchase of each Chronal Nexus tier in the Miliastra Shop will also grant a corresponding amount of Celebration Chronal Nexus. This bonus is available once per tier. This bonus is available once per tier. Limited Celebration Chronal Nexus of each tier can only be used by yourself and cannot be gifted to friends. 〓Limited-Time Rerun〓 Selected Cosmetics are back for a limited-time rerun! Enjoy 20% off up to 3 Cosmetics during the rerun. Rerun Period: After Version 7.1 Update – 2026/11/03 03:59 〓Miliastra Shop〓 ● \"Gala: Special Offers\" is available for a limited time. All new Cosmetics listed in the Miliastra Shop during this period enjoy a 40% discount. Cosmetic Availability Period After the Version 7.1 update Available for 3 consecutive versions Limited-Time Discount Period After the Version 7.1 update — 2026/11/02 03:59 Elite (4-Star) Cosmetics Exceptional (3-Star) Cosmetics Manekin Cosmetic \"Twilight Web\" Manekina Cosmetic \"Twilight Web\" Manekin Cosmetic \"Ribbit-Tibbit\" Manekina Cosmetic \"Ribbit-Tibbit\" Manekin Cosmetic \"Amber Nectar\" Manekina Cosmetic \"Amber Nectar\" Manekin Cosmetic \"Radiance After the Rain\" Manekina Cosmetic \"Radiance After the Rain\" Manekin Cosmetic \"Rose's Lament\" Manekina Cosmetic \"Rose's Lament\" ● After the Version 7.1 update, a total of 6 Elite (4-Star) Cosmetics and 4 Exceptional (3-Star) Cosmetics will be available in the Miliastra Shop for a limited time . Each Cosmetic can be purchased once during its availability period. ● New Cosmetic Sets for Version 7.1! The featured Elite (4-Star) Cosmetic Sets in the current event are available for Chronal Nexus ×720 during the discount period and will revert to Chronal Nexus ×1,200 once the offer ends. The featured Exceptional (3-Star) Cosmetic Set \"Ribbit-Tibbit\" in the current event is available for Chronal Nexus ×180 during the discount period and will revert to Chronal Nexus ×300 once the offer ends. The \"Radiance After the Rain\" Cosmetic Set is available for Chronal Nexus ×120 during the discount period and will revert to Chronal Nexus ×200 once the offer ends. ● New themed Cosmetic Sets can be purchased as bundles that include both the Manekin and Manekina versions. For the current event, the featured Elite (4-Star) Cosmetic Bundle is priced at Chronal Nexus ×1,080 while the featured Exceptional (3-Star) Cosmetic Bundle \"Ribbit-Tibbit\" is priced at Chronal Nexus ×270 . In addition, the \"Radiance After the Rain\" Set Bundle is priced at Chronal Nexus ×180 . These bundles are only available during the limited-time discount period for the corresponding Cosmetic Sets. For more details about Cosmetic Bundles, please visit the Miliastra Shop. ● After the Version 7.1 update, more information on the available Facial Makeup will be provided in the Miliastra Shop. ● You can check your purchased Manekina Cosmetics via Paimon Menu > Cosmetic Plans. 〓Silvery Moonlight Chronicle〓 ● Event Duration: After the Version 7.1 update – 2026/11/02 03:59 ● During the event, Travelers can earn an abundance of rewards through the Miliastra Pass. By unlocking \"Chronicles of the Realms\" or \"Epic of the Realms,\" you'll obtain the limited 4-Star Cosmetic \"Fireflies of Hope\" ! Those who purchase Epic of the Realms directly will also receive the Miliastra Pass-exclusive lobby \"Osmanthus Retreat: Solace Among Blossoms.\" ※ Travelers who have already unlocked Chronicles of the Realms need only exchange the remaining difference in cost through purchasing Chronicle Recompilation in order to unlock Epic of the Realms. ※ The purchase of Chronicles of the Realms, Epic of the Realms, and Chronicle Recompilation for this Miliastra Pass period will be available until 2026/11/02 02:59 . After the purchase period ends, you can still complete Chronicle Missions and claim rewards. Traveler, please take note of the purchase period and event duration of the Miliastra Pass. ● After unlocking Chronicles of the Realms or Epic of the Realms, you will unlock the \"Battle Pass Boon\" effect, granting a discount when purchasing the corresponding Battle Pass in Teyvat. Likewise, unlocking Gnostic Hymn or Gnostic Chorus will grant the \"Chronicle Boon\" effect, offering a discount when purchasing the corresponding Miliastra Pass in Miliastra Wonderland. You can check the Boon button on the Miliastra Pass or Battle Pass purchase screen for more details. The Boon effect can only be activated once during the current event period. ● The Miliastra Pass and Battle Pass share the same start and end dates each period. Please be sure to check the time and claim your rewards promptly. 〓New Standard Ode Set Catalog〓 ● After the Version 7.1 update, a new Elite (4-Star) Set Catalog \"The Art of Spontaneity\" will be added to the Standard Ode \"Encounter Echoes.\" ※ For more information, go to the Standard Ode screen and select Details in the bottom-left corner.",
+        "id": "Selama event berlangsung, Traveler bisa mendapatkan Kostum Manekin melalui Event Pengharapan \"Cahaya Rembulan Selepas Hujan\", Perjalanan Cahaya Rembulan, atau Toko Miliastra! Mainkan Stage Miliastra Wonderland Populer mengenakan Set atau Try-On Cape baru untuk mendapatkan hadiah 60 Primogem! 〓 Keterangan Event Pengharapan 〓 Waktu Pengharapan Kostum Legendary (5★) Terbatas Kostum Elite (4★) Setelah update Versi 7.1 - 2026/11/03 14:59 Osmanthus in the Moonlight Sweet Baker's Dreams Feathers of Justice Idyllic Melodies ● Selama event berlangsung, Kostum Legendary (5★) \"Osmanthus in the Moonlight\" serta Kostum Elite (4★) \"Sweet Baker's Dreams\", \"Feathers of Justice\", dan \"Idyllic Melodies\" akan tersedia di Event Pengharapan Manekin! ● Selama event berlangsung, ketika mendapatkan Kostum Legendary (5★) \"Osmanthus in the Moonlight\" dengan jenis kelamin yang sama untuk kedua kalinya melalui cara apa pun (termasuk namun tidak terbatas pada Pengharapan, Penukaran di Toko, Pemberian Kostum, dll.), akan membuka efek Ascension \"Osmanthus in the Moonlight: Silken Elegance\" untuk Kostum 5★ tersebut. ※ Aturan Event Pengharapan periode ini sama dengan aturan pada periode sebelumnya. Untuk keterangan lebih lanjut mengenai Event Pengharapan, silakan tekan tombol Rincian di pojok kiri bawah halaman Event Pengharapan. ※ Kosmetik dan aksi Manekin hanya sebagai referensi saja, harap mengacu pada tampilan asli di dalam game. 〓 Perayaan: Hadiah Top-Up Perdana 〓 Setelah update v7.1, saat membeli Chronal Nexus untuk pertama kalinya di tiap tingkatan nominal di Toko Miliastra, kamu akan mendapatkan Celebration Chronal Nexus tambahan dengan jumlah yang sesuai. Bonus tambahan ini hanya bisa didapatkan sekali untuk tiap tingkatan nominal. Celebration Chronal Nexus hanya dapat digunakan untuk sendiri dan tidak dapat dihadiahkan kepada teman. 〓 Hadir Kembali untuk Waktu Terbatas 〓 Beberapa kostum yang sudah tidak tersedia di Toko Miliastra, akan kembali hadir untuk waktu terbatas. Selama periode ini, kamu dapat membeli hingga 3 kostum dengan diskon 20%. Waktu Hadir Kembali: Setelah update v7.1 - 2026/11/03 03:59 〓 Toko Miliastra 〓 ● Penawaran Eksklusif Perayaan tersedia untuk waktu terbatas. Selama periode ini, dapatkan diskon 40% untuk kostum baru yang tersedia di Toko Miliastra. Waktu Rilis Kostum Setelah update v7.1 Tersedia selama tiga versi berturut-turut Waktu Diskon Terbatas Setelah update v7.1 - 2026/11/02 03:59 Kostum Elite (4★) Kostum Exceptional (3★) Kostum Laki-Laki \"Twilight Web\" Kostum Perempuan \"Twilight Web\" Kostum Laki-Laki \"Ribbit-Tibbit\" Kostum Perempuan \"Ribbit-Tibbit\" Kostum Laki-Laki \"Amber Nectar\" Kostum Perempuan \"Amber Nectar\" Kostum Laki-Laki \"Radiance After the Rain\" Kostum Perempuan \"Radiance After the Rain\" Kostum Laki-Laki \"Rose's Lament\" Kostum Perempuan \"Rose's Lament\" ● Setelah update v7.1, total 6 set Kostum Elite (4★) dan 4 set Kostum Exceptional (3★) akan tersedia secara terbatas di Toko Miliastra, dengan batas pembelian 1 kali untuk setiap kostum selama periode tersedia. ● Set Kostum baru Versi 7.1! Harga Set Kostum Elite (4★) pada periode diskon adalah 720 Chronal Nexus , setelah periode diskon berakhir harga akan kembali menjadi 1.200 Chronal Nexus . Harga Set Kostum Exceptional (3★) \"Ribbit-Tibbit\" selama periode diskon adalah 180 Chronal Nexus , setelah periode diskon berakhir harga akan kembali menjadi 300 Chronal Nexus . Sedangkan harga Set \"Radiance After the Rain\" selama periode diskon adalah 120 Chronal Nexus , setelah periode diskon berakhir harga akan kembali menjadi 200 Chronal Nexus . ● Pada periode ini, set baru dapat dibeli dalam bentuk Bundle Kostum, yang memungkinkanmu membeli Kostum Laki-Laki dan Kostum Perempuan dengan tema yang sama sekaligus. Harga Bundle Kostum Elite (4★) pada periode ini adalah 1.080 Chronal Nexus . Harga Bundle Kostum Exceptional (3★) \"Ribbit-Tibbit\" pada periode ini adalah 270 Chronal Nexus , sedangkan harga Set \"Radiance After the Rain\" adalah 180 Chronal Nexus . Bundle Kostum hanya tersedia selama periode diskon set terbatas. Untuk detail penjualan Bundle Kostum lainnya, silakan kunjungi Toko Miliastra. ● Setelah update Versi 7.1, informasi penjualan Rias Wajah lainnya dapat dilihat di Toko Miliastra. ● Setelah membeli kostum Manekin, kamu dapat melihatnya di Menu Paimon > Kombinasi Kostum. 〓 Perjalanan Cahaya Rembulan 〓 ● Waktu Event: Setelah update v7.1 - 2026/11/02 03:59 ● Selama event berlangsung, Traveler dapat memperoleh hadiah berlimpah dari Miliastra Pass. Buka \"Chronicles of the Realms\" atau \"Epic of the Realms\" untuk mendapatkan Kostum 4★ terbatas \"Fireflies of Hope\" ! Membeli Epic of the Realms secara langsung juga akan memberikan Lobi eksklusif dari Miliastra Pass, yaitu \"Istana Osmanthus: Solace Among Blossoms\" . ※ Traveler yang telah membuka Chronicles of the Realms dapat membeli Chronicle Recompilation dengan membayar selisih harga tambahan untuk membuka Epic of the Realms jika diperlukan. ※ Pembelian Chronicles of the Realms, Epic of the Realms, dan Chronicle Recompilation untuk periode ini akan berakhir pada 2026/11/02 02:59 . Traveler tetap dapat menyelesaikan Misi Chronicle dan mengambil hadiah setelah periode pembelian berakhir. Harap Traveler perhatikan waktu pembelian Miliastra Pass dan waktu pembukaannya dengan baik. ● Setelah membuka \"Chronicles of the Realms\" atau \"Epic of the Realms\", Traveler dapat menikmati Keuntungan Battle Pass, menikmati diskon saat membeli Battle Pass terkait di Teyvat. Begitu pula, jika Traveler telah membuka \"Gnostic Hymn\" atau \"Gnostic Chorus\", Traveler juga dapat menikmati Keuntungan Chronicle saat membeli Miliastra Pass terkait di Miliastra Wonderland. Penjelasan lebih detail dapat dilihat di tombol Keuntungan pada halaman pembelian Miliastra Pass atau Battle Pass. Keuntungan ini hanya berlaku satu kali untuk periode saat ini. ● Periode Miliastra Pass dan Battle Pass memiliki waktu mulai dan berakhir yang sama. Harap Traveler memperhatikan waktunya dan jangan lupa untuk mengambil hadiah. 〓 Penambahan Katalog Set Pengharapan Standar 〓 ● Setelah update v7.1, Katalog Set Elite (4★) \"The Art of Spontaneity\" akan ditambahkan ke dalam Pengharapan Standar \"Encounter Echoes\". ※ Untuk keterangan lebih lanjut, silakan mengacu ke halaman Rincian yang dapat diakses dari pojok kiri bawah halaman Pengharapan Standar."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/17/b6d8da824c5ff19f4fbe724c9f54f0d4_7068514292336761559_transformed.jpg",
+      "startsAt": "2026-09-21T21:00:00.000Z",
+      "endsAt": "2026-11-01T19:59:59.000Z",
+      "postedAt": "2026-09-21T21:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
@@ -1607,6 +1688,87 @@
       "startsAt": "2026-09-12T07:00:00.000Z",
       "endsAt": "2026-11-03T16:00:00.000Z",
       "postedAt": "2026-09-12T07:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Miliastra Wonderland",
+      "title": {
+        "en": "Cosmetic Event Ode 2 New Mechanics Description",
+        "id": "Event Pengharapan Kostum - 2: Penjelasan Mekanisme Baru"
+      },
+      "subtitle": {
+        "en": "Cosmetic Event Ode 2 Mechanics Description",
+        "id": "Event Pengharapan Kostum - 2"
+      },
+      "desc": {
+        "en": "After the Version 7.1 update, a new Ode type will be added: Cosmetic Event Ode 2 . The guarantee count is shared between Cosmetic Event Ode and Cosmetic Event Ode 2 and will continue to accumulate across both Cosmetic Event Ode and Cosmetic Event Ode 2 . It is calculated independently from the guarantee counts of other Ode types (Standard Odes), and neither will affect the other. The base rates and rules for items of each rarity in Cosmetic Event Ode 2 are the same as those in Cosmetic Event Ode . (For details on base rates, please refer to the in-game Ode Details.) The rules for gifting cosmetics through Cosmetic Event Ode 2 are the same as those for Cosmetic Event Ode . When gifting to the same friend, Cosmetic Event Ode and Cosmetic Event Ode 2 share the same guarantee count. ※ In Gifting Mode, you can switch between Cosmetic Event Ode and Cosmetic Event Ode 2 . Cosmetics obtained from both can be combined into one gift and sent together. Q: When will the Cosmetics Event Ode 2 become available? A: Cosmetic Event Ode 2 is an Event Ode featuring returning cosmetics. It will become available periodically alongside Cosmetic Event Ode . Details on its availability will be announced in future notices. Q: Does the guarantee count from Cosmetic Event Ode carry over to Cosmetic Event Ode 2 ? A: The guarantee count is shared between Cosmetic Event Ode and Cosmetic Event Ode 2 and will continue to accumulate across both Cosmetic Event Ode and Cosmetic Event Ode 2 . This count is calculated independently from the guarantee counts for other Ode types, and they do not affect one another. For example: Legendary (5-Star) Cosmetics If you perform 40 pulls in Cosmetic Event Ode without obtaining a Legendary (5-Star) Cosmetic, then continue pulling in Cosmetic Event Ode 2 , you are guaranteed to obtain a Legendary (5-Star) Cosmetic from Cosmetic Event Ode 2 within the next 30 pulls. Elite (4-Star) Cosmetics If you perform 6 pulls in Cosmetic Event Ode without obtaining an Elite (4-Star) Cosmetic, then continue pulling in Cosmetic Event Ode 2 , you are guaranteed to obtain an Elite (4-Star) or higher-rarity Cosmetic from Cosmetic Event Ode 2 within the next 4 pulls. Q: After Cosmetic Event Ode 2 ends, will the guarantee count from Cosmetic Event Ode 2 carry over? A: Yes. The guarantee count is shared between Cosmetic Event Ode and Cosmetic Event Ode 2 . Even after Cosmetic Event Ode 2 ends, its guarantee count will carry over to future runs of Cosmetic Event Ode and Cosmetic Event Ode 2 .",
+        "id": "Setelah update Versi 7.1 selesai, akan ditambahkan sebuah kategori Pengharapan baru: Event Pengharapan Kostum - 2 . Hitungan jaminan pada Event Pengharapan Kostum dan Event Pengharapan Kostum - 2 akan dihitung bersama, tapi terpisah dari hitungan jaminan untuk kategori Pengharapan lainnya (Pengharapan Standar), dan tidak saling memengaruhi. Peraturan dan persentase dasar perolehan setiap item level ★ di Event Pengharapan Kostum - 2 sama dengan peraturan dan persentase dasar item Event Pengharapan Kostum . (Silakan mengacu ke penjelasan Permohonan dalam game untuk detail tentang persentase dasar perolehan) Saat memberikan hadiah kostum melalui Pengharapan, Event Pengharapan Kostum - 2 menggunakan aturan yang sama dengan Event Pengharapan Kostum . Untuk pengiriman hadiah kepada satu teman yang sama, Event Pengharapan Kostum dan Event Pengharapan Kostum - 2 menggunakan perhitungan jaminan yang sama. ※ Dalam Mode Pemberian, kamu dapat berganti antara Event Pengharapan Kostum dan Event Pengharapan Kostum - 2 , dan kostum yang diperoleh dari keduanya dapat digabungkan menjadi satu hadiah untuk dikirimkan bersama. Q: Kapan Event Pengharapan Kostum - 2 akan hadir? A: Event Pengharapan Kostum - 2 adalah Event Pengharapan untuk kostum yang dirilis kembali. Event Pengharapan ini akan hadir secara berkala bersama dengan Event Pengharapan Kostum . Jadwal spesifiknya akan diumumkan melalui pengumuman resmi. Q: Apakah Event Pengharapan Kostum - 2 akan mewarisi jaminan perolehan dari Event Pengharapan Kostum ? A: Hitungan jaminan pada Event Pengharapan Kostum dan Event Pengharapan Kostum - 2 akan dihitung bersama, tapi terpisah dari hitungan jaminan untuk kategori Pengharapan lainnya. Contohnya: Kostum Legendary (5★) Jika setelah melakukan 40 kali Pengharapan di Event Pengharapan Kostum masih belum mendapatkan kostum Legendary (5★), berarti saat Traveler lanjut melakukan Pengharapan di Event Pengharapan Kostum - 2 , Traveler dijamin akan mendapatkan salah satu kostum Legendary (5★) dari Event Pengharapan Kostum - 2 dalam maksimal 30 kali Pengharapan selanjutnya. Kostum Elite (4★) Jika setelah melakukan 6 kali Pengharapan di Event Pengharapan Kostum masih belum mendapatkan kostum Elite (4★), berarti saat Traveler lanjut melakukan Pengharapan di Event Pengharapan Kostum - 2 , Traveler dijamin akan mendapatkan salah satu kostum Elite (4★) ke atas dari Event Pengharapan Kostum - 2 dalam maksimal 4 kali Pengharapan selanjutnya. Q: Setelah Event Pengharapan Kostum - 2 berakhir, apakah jaminan perolehan Event Pengharapan Kostum akan tetap diteruskan ke Pengharapan selanjutnya? A: Ya. Hitungan jaminan pada Event Pengharapan Kostum dan Event Pengharapan Kostum - 2 akan dihitung bersama. Meski Event Pengharapan Kostum - 2 sudah berakhir, hitungan jaminannya akan diteruskan ke Event Pengharapan Kostum dan Event Pengharapan Kostum - 2 berikutnya."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/17/4d86ed525f736bb2443e75e7e5407678_445197683755154974_transformed.jpg",
+      "startsAt": "2026-09-21T21:00:00.000Z",
+      "endsAt": "2026-11-03T16:00:00.000Z",
+      "postedAt": "2026-09-21T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Miliastra Wonderland",
+      "title": {
+        "en": "\"Moonlit Season\" Season Opening Announcement",
+        "id": "Pengumuman Dimulainya \"Musim Pendar Rembulan\""
+      },
+      "subtitle": {
+        "en": "Moonlit Season",
+        "id": "Musim Pendar Rembulan"
+      },
+      "desc": {
+        "en": "〓Season Duration〓 Preparation Phase: After the Version 7.1 update – 2026/09/24 09:59 Play Phase: 2026/09/24 10:00 – 2026/11/03 03:59 Showcase Phase: 2026/11/03 04:00 – End of Version 7.1 〓Eligibility〓 After awakening your Miliastra Wonderland Manekin 〓Season Details〓 ● Each season is divided into three phases: Preparation Phase, Play Phase, and Showcase Phase. ● During the Play Phase, you can earn points or leaderboard scores by participating in Wonderlands that feature ranks or leaderboards. ※ In some Wonderlands, points and leaderboard scores cannot be earned through Room Mode. For specific details, please refer to the Craftsperson's configuration for each Wonderland. ● During the Preparation and Showcase Phases, Travelers can still participate in Wonderlands, though points and leaderboard scores cannot be earned. ● After each season ends, ranked Wonderlands may or may not carry over their corresponding stage points to the next season, and those with leaderboards may reset their rankings. For specific details on point retention and leaderboard resets, please refer to the configuration set by each Craftsperson for their Wonderland.",
+        "id": "〓 Waktu Musim 〓 Periode Persiapan: Setelah update v7.1 - 2026/09/24 09:59 Periode Bermain Musim: 2026/09/24 10:00 - 2026/11/03 03:59 Periode Penampilan Musim: 2026/11/03 04:00 - Akhir Versi 7.1 〓 Syarat Partisipasi 〓 Setelah membangunkan Manekin Miliastra Wonderland 〓 Penjelasan Musim 〓 ● Satu musim terbagi menjadi tiga tahap: Periode Persiapan, Periode Bermain, dan Periode Penampilan. ● Selama periode bermain, kamu bisa mendapatkan poin kompetisi atau skor Papan Peringkat dengan berpartisipasi dalam Wonderland yang memiliki sistem Rank atau Papan Peringkat. ※ Beberapa Wonderland tidak dapat meningkatkan poin kompetisi dan skor Papan Peringkat melalui mode Ruangan. Detail spesifiknya bergantung pada rencana Pengrajin di setiap Wonderland. ● Selama periode Persiapan Musim dan periode Penampilan Musim, kamu masih dapat memainkan Wonderland tetapi tidak akan mendapatkan poin kompetisi atau skor Papan Peringkat. ● Setelah berganti musim, apakah Wonderland dengan Rank akan mewarisi poin kompetitif dari stage yang sesuai dan apakah Papan Peringkat Wonderland akan direset, akan ditentukan berdasarkan rencana Pengrajin untuk setiap Wonderland."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/17/cab851438c4c9925181bf92e30b63b77_7080916296890345353_transformed.jpg",
+      "startsAt": "2026-09-21T21:00:00.000Z",
+      "endsAt": "2026-11-03T16:00:00.000Z",
+      "postedAt": "2026-09-21T21:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Miliastra Wonderland",
+      "title": {
+        "en": "Take Part in \"Raiment Collection: Warmth of a Sunny Day\" to Obtain an \"Afternoon Nectar\" Manekin Cosmetic Set of Your Choice",
+        "id": "\"Apresiasi Adibusana: Kehangatan yang Cerah\": Ikuti untuk Mendapatkan Set Kostum Manekin \"Afternoon Nectar\" Pilihanmu"
+      },
+      "subtitle": {
+        "en": "Raiment Collection: Warmth of a Sunny Day",
+        "id": "Apresiasi Adibusana: Kehangatan yang Cerah"
+      },
+      "desc": {
+        "en": "〓Event Duration〓 After the Version 7.1 update – 2026/11/04 05:59 〓Event Rewards〓 An \"Afternoon Nectar\" Manekin Cosmetic Set of your choice and Geodes of Replication 〓Eligibility〓 After awakening your Miliastra Wonderland Manekin 〓Event Details〓 ● During the event, Travelers can obtain corresponding \"Treasured Insights\" and Geodes of Replication by completing Treasured Quests. Rewards from these quests are subject to a weekly limit. ● During the event, once your total accumulated \"Treasured Insights\" reaches the required amount, you can claim the Manekin Cosmetics Set \"Afternoon Nectar.\" ● Before claiming your first component of the \"Afternoon Nectar\" Manekin Cosmetic Set, you may freely switch between available set rewards. Once you've claimed any component of the set, your choice will be locked and cannot be changed. ※ The Manekin Cosmetic Set \"Afternoon Nectar\" will be available for a limited time in the Miliastra Shop after Version 7.1 ends. Please visit the Miliastra Shop for more details.",
+        "id": "〓 Waktu Event 〓 Setelah update v7.1 - 2026/11/04 05:59 〓 Hadiah Event 〓 Satu Set Kostum Manekin \"Afternoon Nectar\" pilihan sendiri dan Geode of Replication 〓 Syarat Partisipasi 〓 Setelah membangunkan Manekin Miliastra Wonderland 〓 Penjelasan Event 〓 ● Selama event berlangsung, Traveler bisa mendapatkan \"Treasured Insight\" dan Geode of Replication dengan menyelesaikan Treasured Quest. Jumlah hadiah yang bisa didapatkan melalui Treasured Quest setiap minggunya memiliki batas maksimum. ● Selama event berlangsung, setelah total nilai \"Treasured Insight\" mencapai jumlah tertentu, kamu akan mendapatkan Set Kostum Manekin \"Afternoon Nectar\". ● Sebelum menerima bagian dari hadiah event Set Kostum Manekin \"Afternoon Nectar\" untuk pertama kalinya, Traveler bisa dengan bebas mengganti pilihan hadiah set yang dipilih. Setelah menerimanya untuk pertama kalinya, hadiah set yang sudah dipilih tidak bisa diubah lagi. ※ Set Kostum Manekin \"Afternoon Nectar\" akan tersedia untuk waktu terbatas di Toko Miliastra setelah Versi 7.1 berakhir. Silakan lihat detailnya di Toko Miliastra."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/17/2540d4a69437b8837ef02fce07c54d01_2651486398650125616_transformed.jpg",
+      "startsAt": "2026-09-21T21:00:00.000Z",
+      "endsAt": "2026-11-03T16:00:00.000Z",
+      "postedAt": "2026-09-21T21:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
