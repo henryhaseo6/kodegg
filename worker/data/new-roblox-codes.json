@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-21T23:01:57.011Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-09-22T00:02:13.596Z",
+  "codes": [
     {
-      "game": "automate-a-laundromat",
-      "count": 2,
-      "fresh": []
+      "game": "ghost-driver",
+      "gameName": "Ghost Driver",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/ghost-driver"
+      },
+      "code": "CAT",
+      "reward": "Gwagwa Vehicle",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790035020000,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-22T00:02:13.596Z",
+      "fetchedAt": "2026-09-22T00:02:13.596Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
