@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-09-23T03:01:37.484Z",
+  "updatedAt": "2026-09-23T04:01:22.293Z",
   "counts": {
-    "active": 97,
+    "active": 98,
     "archived": 128
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday Rina 丨 Back to Basics",
+        "id": "Selamat Ulang Tahun, Rina | Mengasah Kemampuan Dasar"
+      },
+      "excerpt": {
+        "en": "\"Well, well~ Who would've thought Corin would actually volunteer to cook today?\" \"That look when she mustered up all her courage... It's really unlike her~\" \"Still, Lycaon has a po",
+        "id": "\"Wah, siapa sangka Corin hari ini menawarkan diri untuk memasak~\" \"Tampangnya yang penuh keberanian itu sama sekali tidak seperti dia biasanya~\" \"Tapi apa yang dikatakan Lycaon jug"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/7853160bcbb920ea5abb0b821da5b5c2_1274627690907488897.jpeg",
+      "url": "https://www.hoyolab.com/article/46794605",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-23T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Improv Tour Trailer: \"It Became Art\" | Honkai: Star Rail",
+        "id": "Trailer Tur Impromptu: \"Dengan Ini, Terciptalah Seni\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "OP [Anonymous]: Is my art good enough for taking commissions? ID [Jade]: Daily aesthetic quota met ID [GoldenTouch]: This draft looks somewhat familiar. Might you be... ID [Trotter",
+        "id": "Pemosting [Anonim]: Karya seperti ini ... apa bisa terima komisi? ID [Jade]: Akumulasi estetika harian telah tercapai. ID [Sentuhan Emas]: Drafnya terasa agak familier, jangan-jang"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/10cd74594b6b70b62681aa4b2ea04c58_4251150502585980606.jpeg",
+      "url": "https://www.hoyolab.com/article/46794604",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-23T04:00:04.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "V7.1 Known Issues & Update",
+        "id": "V7.1 Perbaikan dan Optimalisasi Versi"
+      },
+      "excerpt": {
+        "en": "Dear Travelers: To ensure that all Travelers have the best-possible Genshin Impact experience, our developers continually make optimizations and bug fixes to the game based on Trav",
+        "id": "Dear Traveler: Untuk meningkatkan pengalaman bermain yang lebih baik dalam Genshin Impact, dengan berdasarkan masukan dari para Traveler, tim kami akan terus melakukan optimalisasi"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/270ba92afc6021d49ae27083b89a96b2_5163406159021114653.webp",
+      "url": "https://www.hoyolab.com/article/46794217",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-23T03:36:54.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -886,22 +934,6 @@
       "publishedAt": "2026-09-13T04:30:03.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Pom-Pom Gallery | How to Lose Your Way to the Top: The Zero-Dollar Strategy",
-        "id": "\"Galeri Pom-Pom | Dari Rugi Menuju Puncak, Dimulai dari Strategi Nol Biaya\""
-      },
-      "excerpt": {
-        "en": "\"Now's the time! I'm betting every last dime on you!\"",
-        "id": "\"Sekarang saatnya! Aku mempertaruhkan semuanya padamu!\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/11/717dfabcd363468ae7fa30441ad6392a_2890985112428710779.jpg",
-      "url": "https://www.hoyolab.com/article/46673262",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-13T04:00:05.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -1076,22 +1108,6 @@
       "url": "https://www.hoyolab.com/article/46624064",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-09T03:30:03.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Their Secret Histories | Version 3.2 Content Overview (Phase I)",
-        "id": "Kisah Rahasia Mereka | Preview Konten Versi 3.2 (Tahap 1)"
-      },
-      "excerpt": {
-        "en": "Hey Proxies, Version 3.2 is now live! S-Rank Agents Claret (Electric - Armorer) and Nangong Yu (Ether - Stun), along with S-Rank W-Engines Crimson Thirst (Armorer) and Neon Fantasi",
-        "id": "Halo, Proxy! Versi 3.2 sudah dirilis! Agen Tier-S Claret (Electric - Armorer) & Nangong Yu (Ether - Stun) serta W-Engine Tier-S Crimson Thirst (Armorer) & Neon Fantasies (Stun) tel"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/08/0/c71deb1ce52c0ff47c8602661564ce3e_552726558932236888.jpeg",
-      "url": "https://www.hoyolab.com/article/46623871",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-09T03:00:05.000Z"
     },
     {
       "game": "zzz",
