@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-24T09:01:54.541Z",
+  "updatedAt": "2026-09-24T10:01:36.525Z",
   "counts": {
     "active": 100,
     "archived": 130
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Ding-Dong, Message From Your Friend: Pearl's \"Beautiful Voice Generator\"",
+        "id": "Ding Dong, Ada Pesan Suara dari Temanmu: \"Penghasil Suara Emas\" Pearl"
+      },
+      "excerpt": {
+        "en": "\"The Master Artist Voice Changer, purchased for you by your friend Jelena, has been activated.\" \"You have received 3 transfers. Please check them.\"",
+        "id": "\"Pengubah Suara Maestro yang dibelikan oleh temanmu Jelena, telah diatur dan diaktifkan.\" \"Kamu telah menerima 3 transfer, silakan periksa\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/23/3d2f6e7ccc60250a0b73b2f3dd58a5e9_6914674523432421741.jpg",
+      "url": "https://www.hoyolab.com/article/46816599",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-24T10:00:10.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -916,22 +932,6 @@
       "url": "https://www.hoyolab.com/article/46691870",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-14T10:00:02.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "[Rewarded Event] Aventurine • Waveflair Spotlight!",
-        "id": "[Rewarded Event] Aventurine • Waveflair Spotlight!"
-      },
-      "excerpt": {
-        "en": "Secret orders in hand, he steps back into the eye of the storm to shake up this long holiday— Its time to shine a spotlight on Aventurine • Waveflair! Create original art, memes or",
-        "id": "Secret orders in hand, he steps back into the eye of the storm to shake up this long holiday— Its time to shine a spotlight on Aventurine • Waveflair! Create original art, memes or"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/10/fb16ae401befff7c3d9629551154e933_4565887865780055260.png",
-      "url": "https://www.hoyolab.com/article/46690728",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-14T08:00:01.000Z"
     },
     {
       "game": "zzz",
