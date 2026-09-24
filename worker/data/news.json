@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-24T11:02:01.706Z",
+  "updatedAt": "2026-09-24T12:01:51.592Z",
   "counts": {
-    "active": 99,
+    "active": 100,
     "archived": 130
   },
   "articles": [
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "About Tiered Client Resource Downloads",
+        "id": "About Tiered Client Resource Downloads"
+      },
+      "excerpt": {
+        "en": "Dear Rovers, To deliver a higher-quality gaming experience across a wide range of device specifications, the \"Tiered Client Resource Downloads\" feature is scheduled to be launched ",
+        "id": "Dear Rovers, To deliver a higher-quality gaming experience across a wide range of device specifications, the \"Tiered Client Resource Downloads\" feature is scheduled to be launched "
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/akiwebsite/website2.0/images/1790179200000/ra44knce3qj436ld16-1790244779956.jpeg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5513",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-09-24T10:20:49.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
