@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-24T08:41:06.539Z",
+  "updatedAt": "2026-09-24T09:01:54.541Z",
   "counts": {
     "active": 100,
     "archived": 130
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Publish New Wonderlands and Get More Support!",
+        "id": "Publikasikan Wonderland Baru dan Dapatkan Lebih Banyak Dukungan!"
+      },
+      "excerpt": {
+        "en": "Starting in Version 7.1, we're expanding our support program to fuel Wonderland creation and foster a healthier creative ecosystem. All newly published stages and existing stages w",
+        "id": "Untuk mendorong para Pengrajin lebih aktif berpartisipasi dalam pembuatan Wonderland dan membangun ekosistem kreasi yang lebih sehat, mulai dari versi 7.1, Wonderland yang baru dit"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/24/ac13b78117c994353a5a741464e07a72_3109657255651315805.jpg",
+      "url": "https://www.hoyolab.com/article/46815951",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-24T09:00:03.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -468,22 +484,6 @@
       "url": "https://www.hoyolab.com/article/46771693",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-21T04:15:04.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"A Rekviem for the Underworld\" Version 7.1 Events Preview - Phase I",
-        "id": "Preview Event Versi 7.1 \"Rekuiem bagi Alam Baka\" - Edisi 1"
-      },
-      "excerpt": {
-        "en": "Hello, Traveler~ Version 7.1 \"A Rekviem for the Underworld\" is coming! Let's take a look at what kind of benefits and events will be in this new Version update~ *Please refer to Ve",
-        "id": "Halo Traveler~ Versi 7.1 \"Rekuiem bagi Alam Baka\" sudah mau hadir nih! Yuk kita simak bersama ada hadiah dan event apa saja di versi kali ini! * Silakan kunjungi pengumuman Versi 7"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/20/0/64cd1cd9e837010fed432fbd5e7d30a2_6375223315843614910.jpeg",
-      "url": "https://www.hoyolab.com/article/46771641",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-21T04:10:05.000Z"
     },
     {
       "game": "zzz",
