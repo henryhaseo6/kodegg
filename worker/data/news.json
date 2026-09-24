@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-24T04:01:56.518Z",
+  "updatedAt": "2026-09-24T05:01:31.592Z",
   "counts": {
-    "active": 97,
+    "active": 98,
     "archived": 130
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Dance With the Beast Before Moonrise\" Mission Description",
+        "id": "Penjelasan Misi \"Sebelum Bulan Terbit, Menari Bersama Sang Buas\""
+      },
+      "excerpt": {
+        "en": "The beast stirring in the darkness opens THEIR maw once more, demanding a god as a sacrifice. Before the moon rises again, only the blood of the wise can sate THEIR hunger... ▌Avai",
+        "id": "Sang buas yang menggeliat di kegelapan kembali membuka mulutnya, menuntut seorang dewa sebagai korban persembahan. Sebelum bulan kembali terbit, hanya darah yang bijak yang mampu m"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/23/2a5326956e85c9c289fb36d51462b8f0_1293785826997550883.png",
+      "url": "https://www.hoyolab.com/article/46813777",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-24T05:00:06.000Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
@@ -102,22 +118,6 @@
       "publishedAt": "2026-09-23T04:10:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Rina 丨 Back to Basics",
-        "id": "Selamat Ulang Tahun, Rina | Mengasah Kemampuan Dasar"
-      },
-      "excerpt": {
-        "en": "\"Well, well~ Who would've thought Corin would actually volunteer to cook today?\" \"That look when she mustered up all her courage... It's really unlike her~\" \"Still, Lycaon has a po",
-        "id": "\"Wah, siapa sangka Corin hari ini menawarkan diri untuk memasak~\" \"Tampangnya yang penuh keberanian itu sama sekali tidak seperti dia biasanya~\" \"Tapi apa yang dikatakan Lycaon jug"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/7853160bcbb920ea5abb0b821da5b5c2_1274627690907488897.jpeg",
-      "url": "https://www.hoyolab.com/article/46794605",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-23T04:00:04.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -130,6 +130,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/10cd74594b6b70b62681aa4b2ea04c58_4251150502585980606.jpeg",
       "url": "https://www.hoyolab.com/article/46794604",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-23T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday Rina 丨 Back to Basics",
+        "id": "Selamat Ulang Tahun, Rina | Mengasah Kemampuan Dasar"
+      },
+      "excerpt": {
+        "en": "\"Well, well~ Who would've thought Corin would actually volunteer to cook today?\" \"That look when she mustered up all her courage... It's really unlike her~\" \"Still, Lycaon has a po",
+        "id": "\"Wah, siapa sangka Corin hari ini menawarkan diri untuk memasak~\" \"Tampangnya yang penuh keberanian itu sama sekali tidak seperti dia biasanya~\" \"Tapi apa yang dikatakan Lycaon jug"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/7853160bcbb920ea5abb0b821da5b5c2_1274627690907488897.jpeg",
+      "url": "https://www.hoyolab.com/article/46794605",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-23T04:00:04.000Z"
     },
