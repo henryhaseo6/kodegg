@@ -1,5 +1,21 @@
 [
  {
+  "at": "2026-09-24T17:03:59.898Z",
+  "aktif": 10783,
+  "denKode": 10559,
+  "roKode": 6350,
+  "denRewardPct": 95.2,
+  "roRewardPct": 94,
+  "howToPct": 99.8,
+  "srcNewPct": 13.7,
+  "noticeGame": 122,
+  "denSlugGame": 832,
+  "cekDuluPct": 12.7,
+  "game": 849,
+  "mobileBekuJam": 173,
+  "mobileBekuGame": 1
+ },
+ {
   "at": "2026-09-24T16:04:09.920Z",
   "aktif": 10785,
   "denKode": 10556,
@@ -1133,22 +1149,6 @@
   "cekDuluPct": 13.6,
   "game": 842,
   "mobileBekuJam": 105,
-  "mobileBekuGame": 1
- },
- {
-  "at": "2026-09-21T20:04:37.468Z",
-  "aktif": 10688,
-  "denKode": 10435,
-  "roKode": 6320,
-  "denRewardPct": 95.3,
-  "roRewardPct": 93.6,
-  "howToPct": 99.8,
-  "srcNewPct": 14,
-  "noticeGame": 120,
-  "denSlugGame": 827,
-  "cekDuluPct": 12.8,
-  "game": 842,
-  "mobileBekuJam": 104,
   "mobileBekuGame": 1
  }
 ]
