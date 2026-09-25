@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-25T04:02:22.902Z",
+  "updatedAt": "2026-09-25T05:02:00.785Z",
   "counts": {
     "active": 100,
     "archived": 131
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Full Moon's Glow 丨 Flint Workshop",
+        "id": "Cahaya Bulan Purnama | Flint Workshop"
+      },
+      "excerpt": {
+        "en": "\"Milady, Porcelloy reactivity peaks on the day of the full moon, and it'll last approximately six hours. It's all been documented.\" \"...Yeah. I feel it too. My body feels like it's",
+        "id": "\"Nona, aktivitas Porcelloy mencapai puncaknya saat bulan purnama dan berlangsung sekitar enam jam. Semua sudah aku catat.\" \"...Iya. Aku juga merasakannya, tubuhku seperti mengalami"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/24/0/f97f32078e4deab625421895c2d406a2_34706266943945318.jpeg",
+      "url": "https://www.hoyolab.com/article/46826500",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-25T04:15:07.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1188,22 +1204,6 @@
       "url": "https://www.hoyolab.com/article/46627441",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-09T11:15:21.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Clink, Clank, Pinball Knight!\" Event Details",
-        "id": "Penjelasan Event \"Pahlawan Pinball Klang, Klang!\""
-      },
-      "excerpt": {
-        "en": "In this barren world, the Pinball Knights fight destiny in their search for the essence of beauty! Hi, Proxies! This time, we're bringing you all the details on Version 3.2's theme",
-        "id": "Di dunia yang tandus, para \"Pahlawan Pinball\" melawan takdir, dan bersama-sama mencari makna sejati dari keindahan! Halo, Proxy! Kali ini kami akan memperkenalkan event tema \"Pahla"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/08/0/8b099bede3cfe242ef779871a3e50caf_2818303039116872130.jpeg",
-      "url": "https://www.hoyolab.com/article/46624462",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-09T04:30:04.000Z"
     },
     {
       "game": "wuwa",
