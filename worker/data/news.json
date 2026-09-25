@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-25T10:02:22.753Z",
+  "updatedAt": "2026-09-25T11:01:59.818Z",
   "counts": {
     "active": 99,
     "archived": 131
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Ridu Happenings 丨 For Display Only (Really)",
+        "id": "Kejadian di Ridu | Video Super Eksklusif"
+      },
+      "excerpt": {
+        "en": "Regarding this \"commemorative image\" that the head of the household insisted on keeping, the chief assistant wrote this in the archive notes: \"With all due respect, the aesthetic m",
+        "id": "Mengenai \"Video Kenangan\" yang bersikeras ingin disimpan oleh kepala keluarga, asisten utama menulis di bagian arsip: \"Jika boleh berterus terang, nilai estetika dari komposisi sep"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/4265d9b0f7b4174c8116ab58bb4fede2_2409750763243137011.jpeg",
+      "url": "https://www.hoyolab.com/article/46829591",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-25T10:15:04.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -534,6 +550,22 @@
       "publishedAt": "2026-09-22T04:00:04.000Z"
     },
     {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — Pearl: Deep Learning in Progress | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — \"Pearl: Dalam Proses Pembelajaran Mendalam\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "I will now give you the most straightforward, direct, to-the-point, clear-cut, hard-hitting, no-nonsense, ultimate, unambiguous, fluff-free, unvarnished, unfiltered, honest, crysta",
+        "id": "Sekarang aku akan memberimu jawaban yang paling lugas, langsung, tepat sasaran, jelas, tegas, tanpa basa-basi, tanpa hiasan, tanpa penyamaran, tanpa filter, jujur, gamblang, brutal"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/1e4947aba27d9ebe216c18f8d583f5f4_657822185937237310.jpeg",
+      "url": "https://www.hoyolab.com/article/46782338",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-22T04:00:03.000Z"
+    },
+    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -562,22 +594,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/21/22f2f523e19349f439b81b1c8e7a18f4_168466381933631898.jpg",
       "url": "https://www.hoyolab.com/article/46782339",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-22T04:00:03.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Pearl: Deep Learning in Progress | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Pearl: Dalam Proses Pembelajaran Mendalam\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "I will now give you the most straightforward, direct, to-the-point, clear-cut, hard-hitting, no-nonsense, ultimate, unambiguous, fluff-free, unvarnished, unfiltered, honest, crysta",
-        "id": "Sekarang aku akan memberimu jawaban yang paling lugas, langsung, tepat sasaran, jelas, tegas, tanpa basa-basi, tanpa hiasan, tanpa penyamaran, tanpa filter, jujur, gamblang, brutal"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/1e4947aba27d9ebe216c18f8d583f5f4_657822185937237310.jpeg",
-      "url": "https://www.hoyolab.com/article/46782338",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-22T04:00:03.000Z"
     },
@@ -950,22 +966,6 @@
       "publishedAt": "2026-09-15T04:00:04.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Genshin Impact - Initial Top-Up Bonus Reset",
-        "id": "Genshin Impact - Reset Bonus Top-Up Perdana"
-      },
-      "excerpt": {
-        "en": "After the Genshin Impact Version 7.1 update, each top-up level of Genesis Crystals in the Crystal Top-Up page will be reset to provide a double bonus for the first top-up. 〓Reset T",
-        "id": "Setelah update Genshin Impact v7.1, semua tingkatan Top-Up di menu Top-Up Crystal akan direset ulang dan memberikan bonus ganda untuk Top-Up Perdana sekali lagi. 〓 Waktu Reset 〓 Se"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/d062e1eb109c1fbf3e19a66ad5794fe0_3269469838199715988.jpg",
-      "url": "https://www.hoyolab.com/article/46701187",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-15T04:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -978,6 +978,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/f0cd72c6fef7113966279ea8e9224782_2811267817377925024.jpg",
       "url": "https://www.hoyolab.com/article/46701188",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-15T04:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact - Initial Top-Up Bonus Reset",
+        "id": "Genshin Impact - Reset Bonus Top-Up Perdana"
+      },
+      "excerpt": {
+        "en": "After the Genshin Impact Version 7.1 update, each top-up level of Genesis Crystals in the Crystal Top-Up page will be reset to provide a double bonus for the first top-up. 〓Reset T",
+        "id": "Setelah update Genshin Impact v7.1, semua tingkatan Top-Up di menu Top-Up Crystal akan direset ulang dan memberikan bonus ganda untuk Top-Up Perdana sekali lagi. 〓 Waktu Reset 〓 Se"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/d062e1eb109c1fbf3e19a66ad5794fe0_3269469838199715988.jpg",
+      "url": "https://www.hoyolab.com/article/46701187",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-15T04:00:03.000Z"
     },
@@ -1156,22 +1172,6 @@
       "url": "https://www.hoyolab.com/article/46653271",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-12T03:05:01.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Agent Record | Phoenix",
-        "id": "Profil Agen | Phoenix"
-      },
-      "excerpt": {
-        "en": "\"I'm Phoenix, one of Krampus's... judge, of sorts. Standing around's a little tiring — mind if I sit?\" Phoenix Reffaella \"Today's weather is perfect for passing out on the street..",
-        "id": "\"Namaku Phoenix, semacam hakim dari Krampus... bisa dibilang begitu. Berbicara sambil berdiri agak melelahkan. Apa aku boleh duduk?\" Phoenix Reffaella \"Cuaca hari ini... sangat coc"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/11/0/57e062424d408ffde9976b84f62620e1_1982622596463044024.jpeg",
-      "url": "https://www.hoyolab.com/article/46653231",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-12T03:00:04.000Z"
     },
     {
       "game": "hsr",
