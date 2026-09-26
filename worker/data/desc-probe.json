@@ -549,7 +549,7 @@
   "outfit": {
    "tulis": "outfit",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-15",
+   "terakhir": "2026-09-26",
    "awal": true
   },
   "impress": {
@@ -7030,7 +7030,7 @@
   "accessory": {
    "tulis": "Accessory",
    "pertama": 1787414598237,
-   "terakhir": "2026-08-29"
+   "terakhir": "2026-09-26"
   },
   "removed": {
    "tulis": "removed",
@@ -7055,7 +7055,7 @@
   "awakened": {
    "tulis": "AWAKENED",
    "pertama": 1788019451970,
-   "terakhir": "2026-09-13"
+   "terakhir": "2026-09-26"
   },
   "output": {
    "tulis": "Output",
@@ -7200,6 +7200,56 @@
   "tsuguri": {
    "tulis": "Tsuguri",
    "pertama": 1789841036369,
+   "terakhir": "2026-09-26"
+  },
+  "projection": {
+   "tulis": "PROJECTION",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
+  },
+  "frame": {
+   "tulis": "Frame",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
+  },
+  "freeze": {
+   "tulis": "Freeze",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
+  },
+  "snap": {
+   "tulis": "Snap",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
+  },
+  "naoya": {
+   "tulis": "Naoya",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
+  },
+  "killing": {
+   "tulis": "Killing",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
+  },
+  "intent": {
+   "tulis": "Intent",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
+  },
+  "organized": {
+   "tulis": "organized",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
+  },
+  "questing": {
+   "tulis": "questing",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
+  },
+  "220klikes": {
+   "tulis": "220KLIKES",
+   "pertama": 1790438725491,
    "terakhir": "2026-09-26"
   }
  },
@@ -17876,7 +17926,7 @@
   "bundle": {
    "tulis": "Bundle",
    "pertama": 1788660298062,
-   "terakhir": "2026-09-07"
+   "terakhir": "2026-09-26"
   },
   "riders": {
    "tulis": "RIDERS",
@@ -25021,7 +25071,7 @@
   "bundle": {
    "tulis": "Bundle",
    "pertama": 1788660298062,
-   "terakhir": "2026-09-07"
+   "terakhir": "2026-09-26"
   }
  },
  "resource-incremental": {
@@ -48050,7 +48100,7 @@
   "outfit": {
    "tulis": "outfit",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-15",
+   "terakhir": "2026-09-26",
    "awal": true
   },
   "catalog": {
@@ -66844,6 +66894,11 @@
    "tulis": "Sticker",
    "pertama": 1789747518058,
    "terakhir": "2026-09-25"
+  },
+  "bundle": {
+   "tulis": "Bundle",
+   "pertama": 1790438725491,
+   "terakhir": "2026-09-26"
   }
  },
  "football-legends": {
@@ -68069,6 +68124,11 @@
   "worst": {
    "tulis": "WORST",
    "pertama": 1789434244898,
+   "terakhir": "2026-09-26"
+  },
+  "outfit": {
+   "tulis": "Outfit",
+   "pertama": 1790438725491,
    "terakhir": "2026-09-26"
   }
  },
