@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-09-26T10:03:26.866Z",
+  "updatedAt": "2026-09-26T11:03:02.333Z",
   "counts": {
-    "active": 101,
+    "active": 102,
     "archived": 131
   },
   "articles": [
@@ -20,6 +20,22 @@
       "url": "https://www.hoyolab.com/article/46841518",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-26T10:00:02.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "New Region Preview I | Simulacrum Nexus of Mengzhou, Coming Soon!",
+        "id": "New Region Preview I | Simulacrum Nexus of Mengzhou, Coming Soon!"
+      },
+      "excerpt": {
+        "en": "Discover the environments and gameplay of the new region!",
+        "id": "Discover the environments and gameplay of the new region!"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1790352000000/r91mvk48mbsl1q730y-1790399204157.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5521",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-09-26T05:08:39.000Z"
     },
     {
       "game": "zzz",
@@ -406,22 +422,6 @@
       "publishedAt": "2026-09-23T04:10:02.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Improv Tour Trailer: \"It Became Art\" | Honkai: Star Rail",
-        "id": "Trailer Tur Impromptu: \"Dengan Ini, Terciptalah Seni\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "OP [Anonymous]: Is my art good enough for taking commissions? ID [Jade]: Daily aesthetic quota met ID [GoldenTouch]: This draft looks somewhat familiar. Might you be... ID [Trotter",
-        "id": "Pemosting [Anonim]: Karya seperti ini ... apa bisa terima komisi? ID [Jade]: Akumulasi estetika harian telah tercapai. ID [Sentuhan Emas]: Drafnya terasa agak familier, jangan-jang"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/10cd74594b6b70b62681aa4b2ea04c58_4251150502585980606.jpeg",
-      "url": "https://www.hoyolab.com/article/46794604",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-23T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -434,6 +434,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/7853160bcbb920ea5abb0b821da5b5c2_1274627690907488897.jpeg",
       "url": "https://www.hoyolab.com/article/46794605",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-23T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Improv Tour Trailer: \"It Became Art\" | Honkai: Star Rail",
+        "id": "Trailer Tur Impromptu: \"Dengan Ini, Terciptalah Seni\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "OP [Anonymous]: Is my art good enough for taking commissions? ID [Jade]: Daily aesthetic quota met ID [GoldenTouch]: This draft looks somewhat familiar. Might you be... ID [Trotter",
+        "id": "Pemosting [Anonim]: Karya seperti ini ... apa bisa terima komisi? ID [Jade]: Akumulasi estetika harian telah tercapai. ID [Sentuhan Emas]: Drafnya terasa agak familier, jangan-jang"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/10cd74594b6b70b62681aa4b2ea04c58_4251150502585980606.jpeg",
+      "url": "https://www.hoyolab.com/article/46794604",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-23T04:00:04.000Z"
     },
@@ -1030,22 +1046,6 @@
       "publishedAt": "2026-09-16T02:00:02.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Genshin Impact - Initial Top-Up Bonus Reset",
-        "id": "Genshin Impact - Reset Bonus Top-Up Perdana"
-      },
-      "excerpt": {
-        "en": "After the Genshin Impact Version 7.1 update, each top-up level of Genesis Crystals in the Crystal Top-Up page will be reset to provide a double bonus for the first top-up. 〓Reset T",
-        "id": "Setelah update Genshin Impact v7.1, semua tingkatan Top-Up di menu Top-Up Crystal akan direset ulang dan memberikan bonus ganda untuk Top-Up Perdana sekali lagi. 〓 Waktu Reset 〓 Se"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/d062e1eb109c1fbf3e19a66ad5794fe0_3269469838199715988.jpg",
-      "url": "https://www.hoyolab.com/article/46701187",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-15T04:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -1058,6 +1058,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/f0cd72c6fef7113966279ea8e9224782_2811267817377925024.jpg",
       "url": "https://www.hoyolab.com/article/46701188",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-15T04:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact - Initial Top-Up Bonus Reset",
+        "id": "Genshin Impact - Reset Bonus Top-Up Perdana"
+      },
+      "excerpt": {
+        "en": "After the Genshin Impact Version 7.1 update, each top-up level of Genesis Crystals in the Crystal Top-Up page will be reset to provide a double bonus for the first top-up. 〓Reset T",
+        "id": "Setelah update Genshin Impact v7.1, semua tingkatan Top-Up di menu Top-Up Crystal akan direset ulang dan memberikan bonus ganda untuk Top-Up Perdana sekali lagi. 〓 Waktu Reset 〓 Se"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/d062e1eb109c1fbf3e19a66ad5794fe0_3269469838199715988.jpg",
+      "url": "https://www.hoyolab.com/article/46701187",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-15T04:00:03.000Z"
     },
