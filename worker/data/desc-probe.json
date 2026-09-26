@@ -5650,7 +5650,7 @@
   "arrive": {
    "tulis": "arrive",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-05",
+   "terakhir": "2026-09-26",
    "awal": true
   },
   "examine": {
@@ -5698,7 +5698,7 @@
   "anomaly": {
    "tulis": "Anomaly",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-19",
+   "terakhir": "2026-09-26",
    "awal": true
   },
   "haunted": {
@@ -7398,6 +7398,11 @@
   "thanksfor970k": {
    "tulis": "ThanksFor970k",
    "pertama": 1789236279713,
+   "terakhir": "2026-09-26"
+  },
+  "thanksfor980k": {
+   "tulis": "ThanksFor980k",
+   "pertama": 1790442352532,
    "terakhir": "2026-09-26"
   }
  },
@@ -12255,7 +12260,7 @@
   "arrive": {
    "tulis": "Arrive",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-05",
+   "terakhir": "2026-09-26",
    "awal": true
   },
   "anniversary": {
@@ -17673,7 +17678,7 @@
   "luminosity": {
    "tulis": "Luminosity",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-08",
+   "terakhir": "2026-09-26",
    "awal": true
   },
   "werehog": {
@@ -17751,7 +17756,7 @@
   "tails": {
    "tulis": "Tails",
    "pertama": 1786810019943,
-   "terakhir": "2026-08-29"
+   "terakhir": "2026-09-26"
   },
   "zebra": {
    "tulis": "Zebra",
@@ -17821,7 +17826,7 @@
   "rouge": {
    "tulis": "Rouge",
    "pertama": 1787414598237,
-   "terakhir": "2026-09-05"
+   "terakhir": "2026-09-26"
   },
   "guardian": {
    "tulis": "Guardian",
@@ -17921,7 +17926,7 @@
   "burning": {
    "tulis": "Burning",
    "pertama": 1788638668772,
-   "terakhir": "2026-09-12"
+   "terakhir": "2026-09-26"
   },
   "bundle": {
    "tulis": "Bundle",
@@ -17997,6 +18002,51 @@
   "cyclon": {
    "tulis": "Cyclon",
    "pertama": 1789841036369,
+   "terakhir": "2026-09-26"
+  },
+  "cyber": {
+   "tulis": "CYBER",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "heist": {
+   "tulis": "HEIST",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "espio": {
+   "tulis": "Espio",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "terminal": {
+   "tulis": "Terminal",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "suits": {
+   "tulis": "suits",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "hacking": {
+   "tulis": "hacking",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "terminals": {
+   "tulis": "terminals",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "sneaking": {
+   "tulis": "sneaking",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "agent": {
+   "tulis": "Agent",
+   "pertama": 1790442352532,
    "terakhir": "2026-09-26"
   }
  },
@@ -23252,7 +23302,7 @@
   "number": {
    "tulis": "number",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-19",
+   "terakhir": "2026-09-26",
    "awal": true
   },
   "hotbar": {
@@ -28468,7 +28518,7 @@
   "airport": {
    "tulis": "airport",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-12",
+   "terakhir": "2026-09-26",
    "awal": true
   },
   "landing": {
@@ -29896,6 +29946,61 @@
   "110k": {
    "tulis": "110K",
    "pertama": 1789229082646,
+   "terakhir": "2026-09-26"
+  },
+  "destructible": {
+   "tulis": "destructible",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "ferris": {
+   "tulis": "Ferris",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "cliffside": {
+   "tulis": "cliffside",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "lighthouses": {
+   "tulis": "lighthouses",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "perhaps": {
+   "tulis": "perhaps",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "demand": {
+   "tulis": "demand",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "option": {
+   "tulis": "option",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "enable": {
+   "tulis": "enable",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "disable": {
+   "tulis": "disable",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "cleaner": {
+   "tulis": "cleaner",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "streamlined": {
+   "tulis": "streamlined",
+   "pertama": 1790442352532,
    "terakhir": "2026-09-26"
   }
  },
@@ -45929,7 +46034,7 @@
   "airport": {
    "tulis": "airport",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-12",
+   "terakhir": "2026-09-26",
    "awal": true,
    "sudahPunya": true
   },
@@ -46638,7 +46743,7 @@
   "number": {
    "tulis": "number",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-19",
+   "terakhir": "2026-09-26",
    "awal": true
   },
   "boxes": {
@@ -47952,7 +48057,7 @@
   "number": {
    "tulis": "number",
    "pertama": 1789643075881,
-   "terakhir": "2026-09-19"
+   "terakhir": "2026-09-26"
   },
   "guaranteed": {
    "tulis": "guaranteed",
@@ -49993,7 +50098,7 @@
   "anomaly": {
    "tulis": "ANOMALY",
    "pertama": 1786006947643,
-   "terakhir": "2026-09-19"
+   "terakhir": "2026-09-26"
   },
   "scientist": {
    "tulis": "Scientist",
@@ -52067,7 +52172,7 @@
   "arrive": {
    "tulis": "arrive",
    "pertama": 1786104162836,
-   "terakhir": "2026-09-05"
+   "terakhir": "2026-09-26"
   },
   "updascension": {
    "tulis": "updascension",
@@ -63933,7 +64038,7 @@
   "airport": {
    "tulis": "airport",
    "pertama": 1787841050167,
-   "terakhir": "2026-09-12"
+   "terakhir": "2026-09-26"
   },
   "guiding": {
    "tulis": "guiding",
@@ -68262,7 +68367,7 @@
   "anomaly": {
    "tulis": "Anomaly",
    "pertama": 1789520691807,
-   "terakhir": "2026-09-19"
+   "terakhir": "2026-09-26"
   },
   "anomalies": {
    "tulis": "anomalies",
@@ -70615,6 +70720,26 @@
    "tulis": "Guidelines",
    "pertama": 1790348705799,
    "terakhir": "2026-09-26"
+  },
+  "express": {
+   "tulis": "express",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "wherever": {
+   "tulis": "wherever",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "pose": {
+   "tulis": "pose",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "ease": {
+   "tulis": "ease",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
   }
  },
  "lifetogether": {
@@ -70745,6 +70870,192 @@
   "weave": {
    "tulis": "weave",
    "pertama": 1790427977375,
+   "terakhir": "2026-09-26"
+  }
+ },
+ "blox-cards-tcg": {
+  "booth": {
+   "tulis": "Booth",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "crossover": {
+   "tulis": "Crossover",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26",
+   "sudahPunya": true
+  },
+  "arrives": {
+   "tulis": "arrives",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "sets": {
+   "tulis": "sets",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "chronicling": {
+   "tulis": "chronicling",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "subjugation": {
+   "tulis": "subjugation",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "demonkind": {
+   "tulis": "demonkind",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "restrictions": {
+   "tulis": "restrictions",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "initiation": {
+   "tulis": "Initiation",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26",
+   "sudahPunya": true
+  },
+  "blox": {
+   "tulis": "Blox",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "alternate-arts": {
+   "tulis": "alternate-arts",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "consoles": {
+   "tulis": "Consoles",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "planned": {
+   "tulis": "planned",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "apologies": {
+   "tulis": "apologies",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "bloxbux": {
+   "tulis": "Bloxbux",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "foil": {
+   "tulis": "Foil",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "oldest": {
+   "tulis": "oldest",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "largest": {
+   "tulis": "largest",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "bots": {
+   "tulis": "bots",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "endlessly": {
+   "tulis": "endlessly",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "expanding": {
+   "tulis": "expanding",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "t0m_q": {
+   "tulis": "t0m_q",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "perisheep": {
+   "tulis": "PeriSheep",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "chiptrone": {
+   "tulis": "Chiptrone",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "rayburn": {
+   "tulis": "Rayburn",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "thumbnails": {
+   "tulis": "thumbnails",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "artworks": {
+   "tulis": "artworks",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "cheers": {
+   "tulis": "Cheers",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "snyfort": {
+   "tulis": "SnyFort",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "intros": {
+   "tulis": "intros",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  }
+ },
+ "fishing-master": {
+  "thousand": {
+   "tulis": "Thousand",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "pounds": {
+   "tulis": "Pounds",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "gigantic": {
+   "tulis": "gigantic",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "weighing": {
+   "tulis": "weighing",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "kilograms": {
+   "tulis": "Kilograms",
+   "pertama": 1790442352532,
+   "terakhir": "2026-09-26"
+  },
+  "instantly": {
+   "tulis": "instantly",
+   "pertama": 1790442352532,
    "terakhir": "2026-09-26"
   }
  }
