@@ -1,46 +1,62 @@
 {
-  "generatedAt": "2026-09-26T12:02:50.741Z",
+  "generatedAt": "2026-09-26T13:03:19.564Z",
   "codes": [
     {
-      "game": "bubble-gum-simulator",
-      "gameName": "Bubble Gum Simulator",
+      "game": "saber-simulator",
+      "gameName": "Saber Simulator",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/bubble-gum-simulator"
+        "Roblox Den": "https://robloxden.com/game-codes/saber-simulator"
       },
-      "code": "FallPart2",
-      "reward": "2x Luck and 2x Hatch Speed (4 Hours)",
+      "code": "FALL26",
+      "reward": "35 Void Charms, 35 Shiny Charms, and 35 Rainbow Charms",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1790305907622,
+      "srcNewAt": 1790422226898,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-09-26T12:02:50.741Z",
-      "fetchedAt": "2026-09-26T12:02:50.741Z"
+      "firstSeenAt": "2026-09-26T13:03:19.564Z",
+      "fetchedAt": "2026-09-26T13:03:19.564Z"
     },
     {
-      "game": "bubble-gum-simulator",
-      "gameName": "Bubble Gum Simulator",
+      "game": "spin-a-kitty",
+      "gameName": "Spin a Kitty",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/bubble-gum-simulator"
+        "Roblox Den": "https://robloxden.com/game-codes/spin-a-kitty"
       },
-      "code": "Wayfarer",
-      "reward": "2x Luck and 2x Hatch Speed (4 Hours)",
+      "code": "bigcheddar",
+      "reward": "100 Gems, 5 Refined Dice, 15 Gold Dice, 7 Obsidian Dice, and 25 Bronze Dice",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1790305907622,
+      "srcNewAt": 1790423601367,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-09-26T12:02:50.741Z",
-      "fetchedAt": "2026-09-26T12:02:50.741Z"
+      "firstSeenAt": "2026-09-26T13:03:19.564Z",
+      "fetchedAt": "2026-09-26T13:03:19.564Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "lifetogether",
+      "count": 9,
+      "fresh": []
+    },
+    {
+      "game": "chinaside-tycoon",
+      "count": 18,
+      "fresh": []
+    },
+    {
+      "game": "untitled-wheelie-game",
+      "count": 3,
+      "fresh": []
+    }
+  ]
 }
