@@ -3160,7 +3160,7 @@
   "600k": {
    "tulis": "600K",
    "pertama": 1785996161549,
-   "terakhir": "2026-09-06",
+   "terakhir": "2026-09-27",
    "n": 1,
    "awal": true
   },
@@ -12755,7 +12755,7 @@
   "600k": {
    "tulis": "600K",
    "pertama": 1785996161549,
-   "terakhir": "2026-09-06",
+   "terakhir": "2026-09-27",
    "n": 1,
    "awal": true
   },
@@ -57581,7 +57581,7 @@
   "accessory": {
    "tulis": "Accessory",
    "pertama": 1786695454025,
-   "terakhir": "2026-09-11"
+   "terakhir": "2026-09-27"
   },
   "increasing": {
    "tulis": "increasing",
@@ -57696,7 +57696,7 @@
   "displayed": {
    "tulis": "displayed",
    "pertama": 1788440672091,
-   "terakhir": "2026-09-08"
+   "terakhir": "2026-09-27"
   },
   "selecting": {
    "tulis": "selecting",
@@ -57837,6 +57837,22 @@
    "tulis": "decimal",
    "pertama": 1790046244472,
    "terakhir": "2026-09-27"
+  },
+  "obtainable": {
+   "tulis": "obtainable",
+   "pertama": 1790492713582,
+   "terakhir": "2026-09-27"
+  },
+  "songkran": {
+   "tulis": "Songkran",
+   "pertama": 1790492713582,
+   "terakhir": "2026-09-27"
+  },
+  "halloween": {
+   "tulis": "Halloween",
+   "pertama": 1790492713582,
+   "terakhir": "2026-09-27",
+   "sudahPunya": true
   }
  },
  "my-dino-life": {
@@ -66598,6 +66614,11 @@
   "scan": {
    "tulis": "Scan",
    "pertama": 1788678317163,
+   "terakhir": "2026-09-27"
+  },
+  "600k": {
+   "tulis": "600K",
+   "pertama": 1790492713582,
    "terakhir": "2026-09-27"
   }
  },
