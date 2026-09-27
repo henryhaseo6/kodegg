@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-09-27T03:02:43.206Z",
+  "updatedAt": "2026-09-27T04:02:51.007Z",
   "counts": {
-    "active": 102,
-    "archived": 131
+    "active": 101,
+    "archived": 132
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Agent Mechanics Intro | Roxy",
+        "id": "Pengenalan Mekanisme Agen | Roxy"
+      },
+      "excerpt": {
+        "en": "The update is almost complete... Combat-related information for Roxy has been recorded in the database. Key content analysis complete. Please take a look. \"I'll grant you a peacefu",
+        "id": "Update akan segera selesai... Informasi terkait pertarungan dari Agen \"Roxy\" telah dicatat di database. Analisis informasi krusial telah selesai. Silakan diperiksa! \"Aku akan membe"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/25/0/2ce1de1f5b28f5b5ccda69cfac59aec8_7181959146994367779.jpeg",
+      "url": "https://www.hoyolab.com/article/46850516",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-27T04:00:07.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Pearl Character Trailer: \"The Way to Paint a Form of Hope\" | Honkai: Star Rail",
+        "id": "Trailer Karakter Pearl: \"Cara Melukis Sebuah Harapan\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "Motif: What is perfect art? As she wielded her pen for the fate of the world, she forgot the question, yet found the answer. English Voice: Pearl — Cat Protano",
+        "id": "Topik Utama: Apa itu seni yang sempurna? Saat mengayunkan pena demi kelangsungan dunia, dia melupakan pertanyaannya, namun mendapatkan jawabannya. CV Bahasa Inggris: Pearl — Cat Pr"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/26/0/f987d71990752cfa81383b2d48721ce2_8504847668261211199.jpeg",
+      "url": "https://www.hoyolab.com/article/46850515",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-27T04:00:04.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "You've Received a Handwritten Reply From Vodyanitsa",
+        "id": "Silakan Terima Surat Balasan dari Vodyanitsa"
+      },
+      "excerpt": {
+        "en": "During the quiet moments between performances, Vodyanitsa sits at her desk as always, writing back to every single letter from her audience... To discover more about Vodyanitsa, Tr",
+        "id": "Di sela-sela pertunjukan, Vodyanitsa seperti biasa akan duduk di depan meja dan membalas sendiri setiap surat dari para penonton ... Untuk mengetahui lebih banyak kisah tentang Vod"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/d088efe7eef38c08b0ee54d695a4ac8e_5324553449447311128.jpeg",
+      "url": "https://www.hoyolab.com/article/46850514",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-27T04:00:04.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -438,22 +486,6 @@
       "publishedAt": "2026-09-23T04:10:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Rina 丨 Back to Basics",
-        "id": "Selamat Ulang Tahun, Rina | Mengasah Kemampuan Dasar"
-      },
-      "excerpt": {
-        "en": "\"Well, well~ Who would've thought Corin would actually volunteer to cook today?\" \"That look when she mustered up all her courage... It's really unlike her~\" \"Still, Lycaon has a po",
-        "id": "\"Wah, siapa sangka Corin hari ini menawarkan diri untuk memasak~\" \"Tampangnya yang penuh keberanian itu sama sekali tidak seperti dia biasanya~\" \"Tapi apa yang dikatakan Lycaon jug"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/7853160bcbb920ea5abb0b821da5b5c2_1274627690907488897.jpeg",
-      "url": "https://www.hoyolab.com/article/46794605",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-23T04:00:04.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -466,6 +498,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/10cd74594b6b70b62681aa4b2ea04c58_4251150502585980606.jpeg",
       "url": "https://www.hoyolab.com/article/46794604",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-23T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday Rina 丨 Back to Basics",
+        "id": "Selamat Ulang Tahun, Rina | Mengasah Kemampuan Dasar"
+      },
+      "excerpt": {
+        "en": "\"Well, well~ Who would've thought Corin would actually volunteer to cook today?\" \"That look when she mustered up all her courage... It's really unlike her~\" \"Still, Lycaon has a po",
+        "id": "\"Wah, siapa sangka Corin hari ini menawarkan diri untuk memasak~\" \"Tampangnya yang penuh keberanian itu sama sekali tidak seperti dia biasanya~\" \"Tapi apa yang dikatakan Lycaon jug"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/7853160bcbb920ea5abb0b821da5b5c2_1274627690907488897.jpeg",
+      "url": "https://www.hoyolab.com/article/46794605",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-23T04:00:04.000Z"
     },
@@ -690,22 +738,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/b7659c4af7f572c6481efe7799871fa4_7370557263266498893.jpeg",
       "url": "https://www.hoyolab.com/article/46782337",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-22T04:00:03.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Silverwing in Pursuit of the Moon\" Event: Take Part to Obtain the Event-Exclusive Weapon \"Silver Light (Sword)\"",
-        "id": "Event \"Sayap Perak Menyusuri Rembulan\": Ikuti dan Dapatkan Senjata Eksklusif Event, \"Silver Light (Sword)\""
-      },
-      "excerpt": {
-        "en": "〓Event Rewards〓 〓Event Duration〓 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" ※ Complete the Story Quests \"Dulc",
-        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" ※ Selesaikan Quest"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/21/22f2f523e19349f439b81b1c8e7a18f4_168466381933631898.jpg",
-      "url": "https://www.hoyolab.com/article/46782339",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-22T04:00:03.000Z"
     },
@@ -1014,22 +1046,6 @@
       "publishedAt": "2026-09-16T10:00:05.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Pom-Pom Gallery | To Roll the Stars in Astropolis",
-        "id": "Galeri Pom-Pom | Pertaruhan di Astropolis"
-      },
-      "excerpt": {
-        "en": "\"But now, for the sake of the entire universe, and for you, I am willing to take off my mask.\"",
-        "id": "\"Demi seluruh alam semesta, dan demi dirimu, aku bersedia menanggalkan topengku ....\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/15/8a88513a5baca6c3c07c4fa1bafe80d3_1849697383244525876.jpg",
-      "url": "https://www.hoyolab.com/article/46716166",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-16T10:00:03.000Z"
-    },
-    {
       "game": "tot",
       "gameName": "Tears of Themis",
       "title": {
@@ -1046,22 +1062,6 @@
       "publishedAt": "2026-09-16T02:00:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Stickers from the ClaretsForgingTrial event are now available",
-        "id": "Stiker dari event LatihanPenempaanClaret telah tersedia"
-      },
-      "excerpt": {
-        "en": "Stickers from the #ClaretsForgingTrial event are now available. Feel free to use them, Proxies! ▼ Download https://hoyo.link/gyUebbXgH",
-        "id": "Stiker dari event #LatihanPenempaanClaret telah tersedia. Silakan diunduh, Proxy! ▼ Unduh https://hoyo.link/gyUebbXgH"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/f0cd72c6fef7113966279ea8e9224782_2811267817377925024.jpg",
-      "url": "https://www.hoyolab.com/article/46701188",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-15T04:00:03.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -1074,6 +1074,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/d062e1eb109c1fbf3e19a66ad5794fe0_3269469838199715988.jpg",
       "url": "https://www.hoyolab.com/article/46701187",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-15T04:00:03.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Stickers from the ClaretsForgingTrial event are now available",
+        "id": "Stiker dari event LatihanPenempaanClaret telah tersedia"
+      },
+      "excerpt": {
+        "en": "Stickers from the #ClaretsForgingTrial event are now available. Feel free to use them, Proxies! ▼ Download https://hoyo.link/gyUebbXgH",
+        "id": "Stiker dari event #LatihanPenempaanClaret telah tersedia. Silakan diunduh, Proxy! ▼ Unduh https://hoyo.link/gyUebbXgH"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/14/f0cd72c6fef7113966279ea8e9224782_2811267817377925024.jpg",
+      "url": "https://www.hoyolab.com/article/46701188",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-15T04:00:03.000Z"
     },
@@ -1220,22 +1236,6 @@
       "url": "https://www.hoyolab.com/article/46653738",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-12T04:05:03.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Agent Record | Severian",
-        "id": "Profil Agen | Severian"
-      },
-      "excerpt": {
-        "en": "\"Public Security Commissioner, Severian Lowell. No need for pleasantries — what's the situation?\" Severian Lowell \"During the last joint operation, your squad served as the vanguar",
-        "id": "\"Komisaris Public Security, Severian Lowell. Tidak perlu basa-basi, bagaimana situasinya sekarang?\" Severian Lowell \"Dalam operasi gabungan sebelumnya, tim Zhu Yuan sebagai tim ter"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/11/0/52acffadfcaab6b7b4af90bd9d081dab_3163832611909898183.jpeg",
-      "url": "https://www.hoyolab.com/article/46653676",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-12T04:00:06.000Z"
     },
     {
       "game": "hsr",
@@ -1620,7 +1620,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5385",
       "source": "Wuthering Waves",
       "publishedAt": "2026-08-28T13:32:22.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1635,10 +1637,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1787846400000/xfmkeo6nkltjxcwsvy-1787887643289.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5379",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-08-28T03:28:26.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-08-28T03:28:26.000Z",
+      "archivedAt": "2026-09-27T04:02:51.007Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
