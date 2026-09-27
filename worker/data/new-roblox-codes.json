@@ -1,24 +1,26 @@
 {
-  "generatedAt": "2026-09-26T23:02:38.277Z",
-  "codes": [
+  "generatedAt": "2026-09-27T00:02:50.472Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "blox-cards-tcg",
-      "gameName": "Blox Cards TCG",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/blox-cards-tcg"
-      },
-      "code": "BOOTH",
-      "reward": null,
-      "date": "2026-09-26T16:34:57.096Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-09-26T23:02:38.277Z",
-      "fetchedAt": "2026-09-26T23:02:38.277Z"
+      "game": "war-tycoon",
+      "count": 11,
+      "fresh": []
+    },
+    {
+      "game": "cowboy-duels",
+      "count": 2,
+      "fresh": []
+    },
+    {
+      "game": "build-a-base",
+      "count": 5,
+      "fresh": []
+    },
+    {
+      "game": "stop-the-timer",
+      "count": 7,
+      "fresh": []
     }
-  ],
-  "bulkGames": []
+  ]
 }
