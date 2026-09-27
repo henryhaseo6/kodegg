@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-27T13:02:55.402Z",
+  "updatedAt": "2026-09-27T14:03:06.042Z",
   "counts": {
-    "active": 102,
-    "archived": 132
+    "active": 101,
+    "archived": 133
   },
   "articles": [
     {
@@ -518,22 +518,6 @@
       "publishedAt": "2026-09-23T04:10:02.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Improv Tour Trailer: \"It Became Art\" | Honkai: Star Rail",
-        "id": "Trailer Tur Impromptu: \"Dengan Ini, Terciptalah Seni\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "OP [Anonymous]: Is my art good enough for taking commissions? ID [Jade]: Daily aesthetic quota met ID [GoldenTouch]: This draft looks somewhat familiar. Might you be... ID [Trotter",
-        "id": "Pemosting [Anonim]: Karya seperti ini ... apa bisa terima komisi? ID [Jade]: Akumulasi estetika harian telah tercapai. ID [Sentuhan Emas]: Drafnya terasa agak familier, jangan-jang"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/10cd74594b6b70b62681aa4b2ea04c58_4251150502585980606.jpeg",
-      "url": "https://www.hoyolab.com/article/46794604",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-23T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -546,6 +530,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/7853160bcbb920ea5abb0b821da5b5c2_1274627690907488897.jpeg",
       "url": "https://www.hoyolab.com/article/46794605",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-23T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Improv Tour Trailer: \"It Became Art\" | Honkai: Star Rail",
+        "id": "Trailer Tur Impromptu: \"Dengan Ini, Terciptalah Seni\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "OP [Anonymous]: Is my art good enough for taking commissions? ID [Jade]: Daily aesthetic quota met ID [GoldenTouch]: This draft looks somewhat familiar. Might you be... ID [Trotter",
+        "id": "Pemosting [Anonim]: Karya seperti ini ... apa bisa terima komisi? ID [Jade]: Akumulasi estetika harian telah tercapai. ID [Sentuhan Emas]: Drafnya terasa agak familier, jangan-jang"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/10cd74594b6b70b62681aa4b2ea04c58_4251150502585980606.jpeg",
+      "url": "https://www.hoyolab.com/article/46794604",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-23T04:00:04.000Z"
     },
@@ -1620,7 +1620,9 @@
       "url": "https://www.hoyolab.com/article/46507561",
       "source": "HoYoLAB",
       "publishedAt": "2026-08-30T03:00:04.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1635,10 +1637,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1787846400000/5r1c9tdl8zfwswlx87-1787923928485.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5385",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-08-28T13:32:22.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-08-28T13:32:22.000Z",
+      "archivedAt": "2026-09-27T14:03:06.042Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
