@@ -5512,7 +5512,7 @@
   "jailbreak": {
    "tulis": "Jailbreak",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-13",
+   "terakhir": "2026-09-28",
    "awal": true
   },
   "innovation": {
@@ -5663,6 +5663,11 @@
   "star-truck": {
    "tulis": "Star-Truck",
    "pertama": 1789661048072,
+   "terakhir": "2026-09-28"
+  },
+  "remaining": {
+   "tulis": "remaining",
+   "pertama": 1790629544528,
    "terakhir": "2026-09-28"
   }
  },
@@ -20397,7 +20402,7 @@
   "handbrake": {
    "tulis": "Handbrake",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-28",
+   "terakhir": "2026-09-28",
    "awal": true
   },
   "transmission": {
@@ -44358,7 +44363,7 @@
   "handbrake": {
    "tulis": "Handbrake",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-28",
+   "terakhir": "2026-09-28",
    "awal": true
   },
   "clutch": {
@@ -58098,7 +58103,7 @@
   "handbrake": {
    "tulis": "Handbrake",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-28"
+   "terakhir": "2026-09-28"
   },
   "headlights": {
    "tulis": "Headlights",
@@ -71774,6 +71779,18 @@
   "producer": {
    "tulis": "Producer",
    "pertama": 1790618752008,
+   "terakhir": "2026-09-28"
+  }
+ },
+ "sticks-incremental-2": {
+  "sticks": {
+   "tulis": "Sticks",
+   "pertama": 1790629544528,
+   "terakhir": "2026-09-28"
+  },
+  "automations": {
+   "tulis": "automations",
+   "pertama": 1790629544528,
    "terakhir": "2026-09-28"
   }
  }
