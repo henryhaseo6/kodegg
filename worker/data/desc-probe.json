@@ -33711,7 +33711,7 @@
   "mission": {
    "tulis": "mission",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-25",
+   "terakhir": "2026-09-28",
    "awal": true
   },
   "objectives": {
@@ -39967,7 +39967,7 @@
   "mission": {
    "tulis": "mission",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-25",
+   "terakhir": "2026-09-28",
    "awal": true
   },
   "middle": {
@@ -49340,6 +49340,11 @@
   "astrothi": {
    "tulis": "Astrothi",
    "pertama": 1790370287233,
+   "terakhir": "2026-09-28"
+  },
+  "mission": {
+   "tulis": "Mission",
+   "pertama": 1790622332696,
    "terakhir": "2026-09-28"
   }
  },
@@ -71718,6 +71723,11 @@
   "variants": {
    "tulis": "variants",
    "pertama": 1790615229624,
+   "terakhir": "2026-09-28"
+  },
+  "shiny": {
+   "tulis": "shiny",
+   "pertama": 1790622332696,
    "terakhir": "2026-09-28"
   }
  },
