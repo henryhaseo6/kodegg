@@ -18604,7 +18604,7 @@
   "improved": {
    "tulis": "Improved",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-22",
+   "terakhir": "2026-09-28",
    "awal": true
   },
   "knuppsama": {
@@ -59116,7 +59116,7 @@
   "improved": {
    "tulis": "Improved",
    "pertama": 1787321120011,
-   "terakhir": "2026-08-22"
+   "terakhir": "2026-09-28"
   },
   "deaths": {
    "tulis": "deaths",
@@ -67334,6 +67334,11 @@
    "tulis": "animated",
    "pertama": 1788977102286,
    "terakhir": "2026-09-28"
+  },
+  "improved": {
+   "tulis": "Improved",
+   "pertama": 1790618752008,
+   "terakhir": "2026-09-28"
   }
  },
  "defend-bunker-from-zombies": {
@@ -68934,6 +68939,11 @@
   "buddies": {
    "tulis": "Buddies",
    "pertama": 1790183098661,
+   "terakhir": "2026-09-28"
+  },
+  "coop": {
+   "tulis": "coop",
+   "pertama": 1790618752008,
    "terakhir": "2026-09-28"
   }
  },
@@ -71708,6 +71718,52 @@
   "variants": {
    "tulis": "variants",
    "pertama": 1790615229624,
+   "terakhir": "2026-09-28"
+  }
+ },
+ "shigaku": {
+  "shigaku": {
+   "tulis": "shigaku",
+   "pertama": 1790618752008,
+   "terakhir": "2026-09-28"
+  },
+  "classroom": {
+   "tulis": "Classroom",
+   "pertama": 1790618752008,
+   "terakhir": "2026-09-28"
+  },
+  "slice": {
+   "tulis": "slice",
+   "pertama": 1790618752008,
+   "terakhir": "2026-09-28"
+  }
+ },
+ "zhuan-incremental": {
+  "zhuan": {
+   "tulis": "Zhuan",
+   "pertama": 1790618752008,
+   "terakhir": "2026-09-28"
+  },
+  "tier": {
+   "tulis": "Tier",
+   "pertama": 1790618752008,
+   "terakhir": "2026-09-28"
+  }
+ },
+ "magnet-incremental": {
+  "tier": {
+   "tulis": "Tier",
+   "pertama": 1790618752008,
+   "terakhir": "2026-09-28"
+  },
+  "stellarscript": {
+   "tulis": "StellarScript",
+   "pertama": 1790618752008,
+   "terakhir": "2026-09-28"
+  },
+  "producer": {
+   "tulis": "Producer",
+   "pertama": 1790618752008,
    "terakhir": "2026-09-28"
   }
  }
