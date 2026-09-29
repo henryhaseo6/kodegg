@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-29T09:03:17.282Z",
+  "updatedAt": "2026-09-29T10:03:22.195Z",
   "counts": {
-    "active": 104,
+    "active": 105,
     "archived": 134
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Discipline Down to the Second",
+        "id": "Disiplin Hingga di Setiap Detiknya"
+      },
+      "excerpt": {
+        "en": "\"Oh, that officer? Don't go thinking all he does is chase me around announcing the time and nagging me to get back to work. If anyone threatens the Armory Palace's projects or rese",
+        "id": "\"Jangan kira kerja Pak Perwira itu hanya mengejarku untuk absen dan mendesakku kembali bekerja. Jika ada yang berniat jahat terhadap proyek dan peneliti di Armory Palace, kamu akan"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/bebfc52fb7865576faa2c8e4f0c20e96_4636316328271998029.jpg",
+      "url": "https://www.hoyolab.com/article/46887682",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-29T10:00:04.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -20,6 +36,22 @@
       "url": "https://www.hoyolab.com/article/46886438",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-29T08:05:06.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Resonator Review | Stasis, Cycle, Renewal — Iuno",
+        "id": "Resonator Review | Stasis, Cycle, Renewal — Iuno"
+      },
+      "excerpt": {
+        "en": "She is favored by fate under one name, and swept away by it in another. Yet never once has she been defeated, nor has she ever yielded. Now, witness the defiant Priestess. Witness ",
+        "id": "She is favored by fate under one name, and swept away by it in another. Yet never once has she been defeated, nor has she ever yielded. Now, witness the defiant Priestess. Witness "
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1790611200000/ozezjqhf2qr46xr2jz-1790663786434.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5557",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-09-29T06:41:51.000Z"
     },
     {
       "game": "wuwa",
@@ -102,22 +134,6 @@
       "publishedAt": "2026-09-29T04:01:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Roxy Character Teaser - \"Clockwork Knight\" | Zenless Zone Zero",
-        "id": "Kisah Karakter Roxy - Kesatria Mekanis | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "\"Little Roxy, you'll stay by my side forever, won't you?\" \"By this heart, born of blood. I swear to stay by your side forever.\" Just like that, the knight defeated the demon lord a",
-        "id": "\"Roxy, kamu akan selalu menemaniku, kan?\" \"Dengan hati yang berlumuran darah ini, aku bersumpah akan selalu ada di sisimu.\" Begitulah sang kesatria mengalahkan Raja Iblis dan memba"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
-      "url": "https://www.hoyolab.com/article/46883997",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-29T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -130,6 +146,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
       "url": "https://www.hoyolab.com/article/46883998",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-29T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Roxy Character Teaser - \"Clockwork Knight\" | Zenless Zone Zero",
+        "id": "Kisah Karakter Roxy - Kesatria Mekanis | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "\"Little Roxy, you'll stay by my side forever, won't you?\" \"By this heart, born of blood. I swear to stay by your side forever.\" Just like that, the knight defeated the demon lord a",
+        "id": "\"Roxy, kamu akan selalu menemaniku, kan?\" \"Dengan hati yang berlumuran darah ini, aku bersumpah akan selalu ada di sisimu.\" Begitulah sang kesatria mengalahkan Raja Iblis dan memba"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
+      "url": "https://www.hoyolab.com/article/46883997",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-29T04:00:06.000Z"
     },
@@ -886,22 +918,6 @@
       "publishedAt": "2026-09-23T04:10:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Rina 丨 Back to Basics",
-        "id": "Selamat Ulang Tahun, Rina | Mengasah Kemampuan Dasar"
-      },
-      "excerpt": {
-        "en": "\"Well, well~ Who would've thought Corin would actually volunteer to cook today?\" \"That look when she mustered up all her courage... It's really unlike her~\" \"Still, Lycaon has a po",
-        "id": "\"Wah, siapa sangka Corin hari ini menawarkan diri untuk memasak~\" \"Tampangnya yang penuh keberanian itu sama sekali tidak seperti dia biasanya~\" \"Tapi apa yang dikatakan Lycaon jug"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/7853160bcbb920ea5abb0b821da5b5c2_1274627690907488897.jpeg",
-      "url": "https://www.hoyolab.com/article/46794605",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-23T04:00:04.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -914,6 +930,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/0/10cd74594b6b70b62681aa4b2ea04c58_4251150502585980606.jpeg",
       "url": "https://www.hoyolab.com/article/46794604",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-23T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday Rina 丨 Back to Basics",
+        "id": "Selamat Ulang Tahun, Rina | Mengasah Kemampuan Dasar"
+      },
+      "excerpt": {
+        "en": "\"Well, well~ Who would've thought Corin would actually volunteer to cook today?\" \"That look when she mustered up all her courage... It's really unlike her~\" \"Still, Lycaon has a po",
+        "id": "\"Wah, siapa sangka Corin hari ini menawarkan diri untuk memasak~\" \"Tampangnya yang penuh keberanian itu sama sekali tidak seperti dia biasanya~\" \"Tapi apa yang dikatakan Lycaon jug"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/7853160bcbb920ea5abb0b821da5b5c2_1274627690907488897.jpeg",
+      "url": "https://www.hoyolab.com/article/46794605",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-23T04:00:04.000Z"
     },
@@ -996,22 +1028,6 @@
       "url": "https://www.hoyolab.com/article/46785013",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-22T10:00:05.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Moonlit Season\" Season Opening Announcement",
-        "id": "Pengumuman Dimulainya \"Musim Pendar Rembulan\""
-      },
-      "excerpt": {
-        "en": "〓Season Duration〓 Preparation Phase: After the Version 7.1 update – 2026/09/24 09:59 Play Phase: 2026/09/24 10:00 – 2026/11/03 03:59 Showcase Phase: 2026/11/03 04:00 – End of Versi",
-        "id": "〓 Waktu Musim 〓 Periode Persiapan: Setelah update v7.1 - 2026/09/24 09:59 Periode Bermain Musim: 2026/09/24 10:00 - 2026/11/03 03:59 Periode Penampilan Musim: 2026/11/03 04:00 - Ak"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/cab851438c4c9925181bf92e30b63b77_6696377935873871867.jpg",
-      "url": "https://www.hoyolab.com/article/46784520",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-22T09:00:03.000Z"
     },
     {
       "game": "zzz",
