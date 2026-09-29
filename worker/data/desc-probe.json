@@ -7332,7 +7332,7 @@
   "swerve": {
    "tulis": "swerve",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-26",
+   "terakhir": "2026-09-29",
    "awal": true
   },
   "traffic": {
@@ -7356,13 +7356,13 @@
   "highway": {
    "tulis": "highway",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-09-29",
    "awal": true
   },
   "hesitation": {
    "tulis": "hesitation",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-18",
+   "terakhir": "2026-09-29",
    "awal": true
   },
   "pushing": {
@@ -28474,7 +28474,7 @@
   "hesitation": {
    "tulis": "HESITATION",
    "pertama": 1785996161549,
-   "terakhir": "2026-09-18",
+   "terakhir": "2026-09-29",
    "n": 1,
    "awal": true
   },
@@ -35206,7 +35206,7 @@
   "underground": {
    "tulis": "underground",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-17",
+   "terakhir": "2026-09-29",
    "awal": true
   },
   "july": {
@@ -44290,13 +44290,13 @@
   "highway": {
    "tulis": "Highway",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-02",
+   "terakhir": "2026-09-29",
    "awal": true
   },
   "swerve": {
    "tulis": "swerve",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-26",
+   "terakhir": "2026-09-29",
    "awal": true
   },
   "traffic": {
@@ -50424,7 +50424,7 @@
   "highway": {
    "tulis": "highway",
    "pertama": 1786014129348,
-   "terakhir": "2026-09-02"
+   "terakhir": "2026-09-29"
   },
   "supersized": {
    "tulis": "supersized",
@@ -55009,7 +55009,7 @@
   "underground": {
    "tulis": "Underground",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-17"
+   "terakhir": "2026-09-29"
   },
   "tunnels": {
    "tulis": "Tunnels",
@@ -60584,6 +60584,11 @@
    "tulis": "Beginner",
    "pertama": 1787868216689,
    "terakhir": "2026-08-27"
+  },
+  "underground": {
+   "tulis": "underground",
+   "pertama": 1790715910745,
+   "terakhir": "2026-09-29"
   }
  },
  "get-tall-and-fall": {
@@ -69977,6 +69982,11 @@
    "tulis": "X-Kira",
    "pertama": 1789977823443,
    "terakhir": "2026-09-29"
+  },
+  "hesitation": {
+   "tulis": "HESITATION",
+   "pertama": 1790715910745,
+   "terakhir": "2026-09-29"
   }
  },
  "hide-the-body": {
@@ -71202,6 +71212,11 @@
   "weave": {
    "tulis": "weave",
    "pertama": 1790427977375,
+   "terakhir": "2026-09-29"
+  },
+  "swerve": {
+   "tulis": "Swerve",
+   "pertama": 1790715910745,
    "terakhir": "2026-09-29"
   }
  },
