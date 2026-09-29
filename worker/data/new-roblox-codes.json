@@ -1,56 +1,86 @@
 {
-  "generatedAt": "2026-09-29T13:03:41.301Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-09-29T14:03:35.189Z",
+  "codes": [
     {
-      "game": "build-the-pyramid",
-      "count": 4,
-      "fresh": []
+      "game": "da-hood",
+      "gameName": "Da Hood",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/da-hood"
+      },
+      "code": "ESKETIT",
+      "reward": "1M DHC",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790396036844,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-29T14:03:35.189Z",
+      "fetchedAt": "2026-09-29T14:03:35.189Z"
     },
     {
-      "game": "drive-a-kukirin",
-      "count": 2,
-      "fresh": []
+      "game": "driving-empire",
+      "gameName": "Driving Empire",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/driving-empire"
+      },
+      "code": "RAMBO",
+      "reward": "$50,000",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790428467190,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-29T14:03:35.189Z",
+      "fetchedAt": "2026-09-29T14:03:35.189Z"
     },
     {
-      "game": "roll-a-fisherman",
-      "count": 7,
-      "fresh": []
+      "game": "grand-piece-online",
+      "gameName": "Grand Piece Online",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/grand-piece-online"
+      },
+      "code": "FREE_Drops8",
+      "reward": "2x Drop Rates (1 Day)",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790617871465,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-29T14:03:35.189Z",
+      "fetchedAt": "2026-09-29T14:03:35.189Z"
     },
     {
-      "game": "dream-car-collection",
-      "count": 5,
-      "fresh": []
-    },
-    {
-      "game": "anomaly-cafe",
-      "count": 5,
-      "fresh": []
-    },
-    {
-      "game": "mini-race",
-      "count": 3,
-      "fresh": []
-    },
-    {
-      "game": "nebulous",
-      "count": 3,
-      "fresh": []
-    },
-    {
-      "game": "fleet-empire",
-      "count": 4,
-      "fresh": []
-    },
-    {
-      "game": "my-toll-farm",
-      "count": 7,
-      "fresh": []
-    },
-    {
-      "game": "jump-for-animals",
-      "count": 3,
-      "fresh": []
+      "game": "ultimate-tower-defense",
+      "gameName": "Ultimate Tower Defense",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/ultimate-tower-defense"
+      },
+      "code": "TraitRework2026",
+      "reward": "150x Trait Reroll, 75x Perk Reroll, and 8x Impure Soul",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790518857455,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-09-29T14:03:35.189Z",
+      "fetchedAt": "2026-09-29T14:03:35.189Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
