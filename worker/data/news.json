@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-09-30T08:02:58.305Z",
+  "updatedAt": "2026-09-30T09:02:51.780Z",
   "counts": {
-    "active": 107,
+    "active": 108,
     "archived": 134
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Rewarded Event] Pearl Spotlight - Reddit Event!",
+        "id": "Rewarded Event] Pearl Spotlight - Reddit Event!"
+      },
+      "excerpt": {
+        "en": "Its time to shine a spotlight on Pearl, ✧ 1st Place in \"I'll Be Right Here to Catch You\" ✧! Create original art, memes or discussions focused on Pearl and post them on our subreddi",
+        "id": "Its time to shine a spotlight on Pearl, ✧ 1st Place in \"I'll Be Right Here to Catch You\" ✧! Create original art, memes or discussions focused on Pearl and post them on our subreddi"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/1ad373c20cd132c7263ef57c573799aa_5701636913407192992.jpg",
+      "url": "https://www.hoyolab.com/article/46901073",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-30T08:10:02.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "[Rewarded Event] Discord Trivia Event!",
+        "id": "[Event Berhadiah] Event Kuis Trivia Discord!"
+      },
+      "excerpt": {
+        "en": "How well do you know Honkai: Star Rail? Pearl is ready to put everyone to the test! Join the event and answer the trivia questions that randomly appear in the server for a chance t",
+        "id": "Seberapa dalam pengetahuanmu tentang \"Honkai: Star Rail\"? Pearl sudah siap menguji kalian semua! Ikuti event, jawab pertanyaan kuis yang muncul secara acak di dalam server, dan rai"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/29/e97da18d6569df818fc178d676877331_6039916130323886284.jpg",
+      "url": "https://www.hoyolab.com/article/46901023",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-30T08:05:04.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -52,6 +84,22 @@
       "url": "https://www.hoyolab.com/article/46898605",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-30T04:00:08.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "V3.7 Wuthering Waves Battle Rush",
+        "id": "V3.7 Wuthering Waves Battle Rush"
+      },
+      "excerpt": {
+        "en": "Dear Rovers, The Wuthering Waves Battle Rush is now live! Record and share your most exciting battle moments with the hashtags #WutheringWaves and #WuwaBattle on X (Twitter)/YouTub",
+        "id": "Dear Rovers, The Wuthering Waves Battle Rush is now live! Record and share your most exciting battle moments with the hashtags #WutheringWaves and #WuwaBattle on X (Twitter)/YouTub"
+      },
+      "image": null,
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5574",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-09-30T03:55:03.000Z"
     },
     {
       "game": "hsr",
@@ -742,22 +790,6 @@
       "publishedAt": "2026-09-25T03:30:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "\"Dance With the Beast Before Moonrise\" Version 4.6 Preview",
-        "id": "Preview Versi 4.6 \"Sebelum Bulan Terbit, Menari Bersama Sang Buas\""
-      },
-      "excerpt": {
-        "en": "Greetings, Trailblazer! Let's take a look at the new events coming in Version 4.6!",
-        "id": "Halo, Trailblazer! Ayo kita lihat event baru Versi 4.6 yang akan segera dibuka!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/24/d4a0426b25d3772f9f92424af00175f9_4594177404711812959.jpg",
-      "url": "https://www.hoyolab.com/article/46825922",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-25T03:00:06.000Z"
-    },
-    {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
       "title": {
@@ -772,22 +804,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5513",
       "source": "Wuthering Waves",
       "publishedAt": "2026-09-24T10:20:49.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Ding-Dong, Message From Your Friend: Pearl's \"Beautiful Voice Generator\"",
-        "id": "Ding Dong, Ada Pesan Suara dari Temanmu: \"Penghasil Suara Emas\" Pearl"
-      },
-      "excerpt": {
-        "en": "\"The Master Artist Voice Changer, purchased for you by your friend Jelena, has been activated.\" \"You have received 3 transfers. Please check them.\"",
-        "id": "\"Pengubah Suara Maestro yang dibelikan oleh temanmu Jelena, telah diatur dan diaktifkan.\" \"Kamu telah menerima 3 transfer, silakan periksa\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/23/3d2f6e7ccc60250a0b73b2f3dd58a5e9_6914674523432421741.jpg",
-      "url": "https://www.hoyolab.com/article/46816599",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-24T10:00:10.000Z"
     },
     {
       "game": "gi",
