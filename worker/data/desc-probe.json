@@ -25345,7 +25345,7 @@
   "equipped": {
    "tulis": "equipped",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-27",
+   "terakhir": "2026-09-30",
    "awal": true
   },
   "stops": {
@@ -27371,7 +27371,7 @@
   "snackrooms": {
    "tulis": "Snackrooms",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-19",
+   "terakhir": "2026-09-30",
    "awal": true
   },
   "growlers": {
@@ -27448,7 +27448,7 @@
   "entity": {
    "tulis": "Entity",
    "pertama": 1786302188038,
-   "terakhir": "2026-09-15"
+   "terakhir": "2026-09-30"
   },
   "mutant": {
    "tulis": "Mutant",
@@ -27588,7 +27588,7 @@
   "booth": {
    "tulis": "Booth",
    "pertama": 1787202215421,
-   "terakhir": "2026-09-15"
+   "terakhir": "2026-09-30"
   },
   "booths": {
    "tulis": "Booths",
@@ -28004,6 +28004,41 @@
   "contribute": {
    "tulis": "contribute",
    "pertama": 1790222643127,
+   "terakhir": "2026-09-30"
+  },
+  "thalassophobia": {
+   "tulis": "Thalassophobia",
+   "pertama": 1790798688184,
+   "terakhir": "2026-09-30"
+  },
+  "stays": {
+   "tulis": "stays",
+   "pertama": 1790798688184,
+   "terakhir": "2026-09-30"
+  },
+  "sells": {
+   "tulis": "sells",
+   "pertama": 1790798688184,
+   "terakhir": "2026-09-30"
+  },
+  "unequipped": {
+   "tulis": "unequipped",
+   "pertama": 1790798688184,
+   "terakhir": "2026-09-30"
+  },
+  "rejoining": {
+   "tulis": "rejoining",
+   "pertama": 1790798688184,
+   "terakhir": "2026-09-30"
+  },
+  "edit": {
+   "tulis": "Edit",
+   "pertama": 1790798688184,
+   "terakhir": "2026-09-30"
+  },
+  "proximityprompt": {
+   "tulis": "ProximityPrompt",
+   "pertama": 1790798688184,
    "terakhir": "2026-09-30"
   }
  },
@@ -47532,7 +47567,7 @@
   "attacking": {
    "tulis": "attacking",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-24",
+   "terakhir": "2026-09-30",
    "awal": true
   },
   "hall": {
@@ -49649,7 +49684,7 @@
   "attacking": {
    "tulis": "attacking",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-24",
+   "terakhir": "2026-09-30",
    "awal": true
   },
   "plushie": {
@@ -55118,7 +55153,7 @@
   "equipped": {
    "tulis": "equipped",
    "pertama": 1786695454025,
-   "terakhir": "2026-09-27"
+   "terakhir": "2026-09-30"
   },
   "purchased": {
    "tulis": "purchased",
@@ -69019,7 +69054,7 @@
   "attacking": {
    "tulis": "ATTACKING",
    "pertama": 1789563861247,
-   "terakhir": "2026-09-24"
+   "terakhir": "2026-09-30"
   },
   "medals": {
    "tulis": "Medals",
@@ -71662,6 +71697,11 @@
   "grapple": {
    "tulis": "Grapple",
    "pertama": 1790532322908,
+   "terakhir": "2026-09-30"
+  },
+  "equipped": {
+   "tulis": "equipped",
+   "pertama": 1790798688184,
    "terakhir": "2026-09-30"
   }
  },
