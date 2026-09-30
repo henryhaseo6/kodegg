@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-09-30T01:02:20.718Z",
+  "updatedAt": "2026-09-30T02:02:53.329Z",
   "counts": {
-    "active": 105,
+    "active": 106,
     "archived": 134
   },
   "articles": [
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Patch Notes for Wuthering Waves Version 3.7: Prism's Illusion, Heart's Illumination",
+        "id": "Patch Notes for Wuthering Waves Version 3.7: Prism's Illusion, Heart's Illumination"
+      },
+      "excerpt": {
+        "en": "Dear Rovers, Thank you for your continued support. The following is a summary of content that will become available in Version 3.7: Prism's Illusion, Heart's Illumination. [Mainten",
+        "id": "Dear Rovers, Thank you for your continued support. The following is a summary of content that will become available in Version 3.7: Prism's Illusion, Heart's Illumination. [Mainten"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1790611200000/dngsdsx5ljkeowz86m-1790680670533.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5571",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-09-29T11:18:45.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
