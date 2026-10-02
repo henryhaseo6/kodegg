@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-02T04:02:26.095Z",
+  "updatedAt": "2026-10-02T05:01:54.830Z",
   "counts": {
     "active": 110,
     "archived": 134
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Swords and Secrets\" A little cultivation goes a long way... Just don't overdo it~",
+        "id": "Di \"Pedang dan Misteri\", kultivasi memang penting, tapi jangan sampai berlebihan ya~"
+      },
+      "excerpt": {
+        "en": "\"Word is, some 'flying thieves' have been causing trouble around town lately...?\" Vesna's cultivation journey still needs a little help from the Traveler!",
+        "id": "\"Kudengar belakangan ini ada 'pencuri terbang' yang membuat kekacauan di kota ...?\" Jalan pengembangan diri Vesna masih membutuhkan bantuan Traveler!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/0/f7604aae32a1707c0c644d5caefd35a2_4567148612480129008.jpeg",
+      "url": "https://www.hoyolab.com/article/46929414",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-02T04:05:06.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1124,22 +1140,6 @@
       "url": "https://www.hoyolab.com/article/46793570",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-23T03:00:07.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.1 - Editor and Miliastra Sandbox Update and Fix Notes",
-        "id": "Perbaikan dan Optimalisasi Editor dan Miliastra Sandbox Versi 7.1"
-      },
-      "excerpt": {
-        "en": "Dear Stage Creators (Craftspeople): To provide Craftspeople with a smoother workflow and better creative experience, the development team will be continuously working to optimize a",
-        "id": "Halo Kreator Stage (Pengrajin): Untuk memberikan pengalaman berkreasi yang lebih nyaman dan lebih baik bagi para Pengrajin, tim pengembang akan terus melakukan penyesuaian dan opti"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/21/0b397c47651ed3174db7c8a630f5492d_4988703329232802469.jpg",
-      "url": "https://www.hoyolab.com/article/46791966",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-23T00:00:04.000Z"
     },
     {
       "game": "gi",
