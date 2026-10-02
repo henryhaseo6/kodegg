@@ -1,5 +1,31 @@
 {
-  "generatedAt": "2026-10-02T00:02:10.968Z",
+  "generatedAt": "2026-10-02T01:02:24.508Z",
   "codes": [],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "ball-vs-ball",
+      "count": 6,
+      "fresh": []
+    },
+    {
+      "game": "1-stone-skipping",
+      "count": 5,
+      "fresh": []
+    },
+    {
+      "game": "jump-to-steal-an-egg",
+      "count": 3,
+      "fresh": []
+    },
+    {
+      "game": "pets-universe",
+      "count": 12,
+      "fresh": []
+    },
+    {
+      "game": "flip-a-house",
+      "count": 2,
+      "fresh": []
+    }
+  ]
 }
