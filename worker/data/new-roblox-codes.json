@@ -1,57 +1,46 @@
 {
-  "generatedAt": "2026-10-03T15:02:30.036Z",
+  "generatedAt": "2026-10-03T16:02:40.548Z",
   "codes": [
     {
-      "game": "asylum-life",
-      "gameName": "Asylum Life",
+      "game": "sail-and-sink-simulator",
+      "gameName": "Sail and Sink Simulator",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/asylum-life"
+        "Roblox Den": "https://robloxden.com/game-codes/sail-and-sink-simulator"
       },
-      "code": "MAGICALWAND",
-      "reward": "Developer Skin Stunstick",
+      "code": "SINKABLES",
+      "reward": "111 Anchors",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1790944968984,
+      "srcNewAt": 1790945473782,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-03T15:02:30.036Z",
-      "fetchedAt": "2026-10-03T15:02:30.036Z"
+      "firstSeenAt": "2026-10-03T16:02:40.548Z",
+      "fetchedAt": "2026-10-03T16:02:40.548Z"
     },
     {
-      "game": "1-loot-to-forge",
-      "gameName": "+1 Loot to Forge",
+      "game": "untitled-wheelie-game",
+      "gameName": "Untitled Wheelie Game",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/1-loot-to-forge"
+        "Roblox Den": "https://robloxden.com/game-codes/untitled-wheelie-game"
       },
-      "code": "100000CCU",
-      "reward": "2x Season Tickets and 2x Race Rolls",
+      "code": "Welcome",
+      "reward": "100 cash",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1790945512063,
+      "srcNewAt": 1790865114279,
       "endsAt": null,
-      "verified": true,
-      "firstSeenAt": "2026-10-03T15:02:30.036Z",
-      "fetchedAt": "2026-10-03T15:02:30.036Z"
+      "verified": false,
+      "firstSeenAt": "2026-10-03T16:02:40.548Z",
+      "fetchedAt": "2026-10-03T16:02:40.548Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "vampire-life",
-      "count": 8,
-      "fresh": []
-    },
-    {
-      "game": "steal-the-show",
-      "count": 1,
-      "fresh": []
-    }
-  ]
+  "bulkGames": []
 }
