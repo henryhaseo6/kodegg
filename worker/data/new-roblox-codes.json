@@ -1,26 +1,57 @@
 {
-  "generatedAt": "2026-10-03T14:01:55.663Z",
+  "generatedAt": "2026-10-03T15:02:30.036Z",
   "codes": [
     {
-      "game": "pets-universe",
-      "gameName": "Pets Universe",
+      "game": "asylum-life",
+      "gameName": "Asylum Life",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/pets-universe"
+        "Roblox Den": "https://robloxden.com/game-codes/asylum-life"
       },
-      "code": "update3",
-      "reward": "2x Worm, 2x Coins Potion I, 2x Luck Potion I, 1x Ruby Potion I, and 1x Hatch Potion I",
+      "code": "MAGICALWAND",
+      "reward": "Developer Skin Stunstick",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1790945514686,
+      "srcNewAt": 1790944968984,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-03T14:01:55.663Z",
-      "fetchedAt": "2026-10-03T14:01:55.663Z"
+      "firstSeenAt": "2026-10-03T15:02:30.036Z",
+      "fetchedAt": "2026-10-03T15:02:30.036Z"
+    },
+    {
+      "game": "1-loot-to-forge",
+      "gameName": "+1 Loot to Forge",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/1-loot-to-forge"
+      },
+      "code": "100000CCU",
+      "reward": "2x Season Tickets and 2x Race Rolls",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790945512063,
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-10-03T15:02:30.036Z",
+      "fetchedAt": "2026-10-03T15:02:30.036Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "vampire-life",
+      "count": 8,
+      "fresh": []
+    },
+    {
+      "game": "steal-the-show",
+      "count": 1,
+      "fresh": []
+    }
+  ]
 }
