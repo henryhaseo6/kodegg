@@ -1,11 +1,66 @@
 {
-  "generatedAt": "2026-10-03T09:22:48.969Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-10-03T10:02:04.174Z",
+  "codes": [
     {
-      "game": "drive-world",
-      "count": 30,
-      "fresh": []
+      "game": "doors",
+      "gameName": "DOORS",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/doors"
+      },
+      "code": "ACCESS GRANTED",
+      "reward": "150 Knobs",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790944569271,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-03T10:02:04.174Z",
+      "fetchedAt": "2026-10-03T10:02:04.174Z"
+    },
+    {
+      "game": "doors",
+      "gameName": "DOORS",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/doors"
+      },
+      "code": "PROTOCOL",
+      "reward": "20 Stardusts",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790944569271,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-03T10:02:04.174Z",
+      "fetchedAt": "2026-10-03T10:02:04.174Z"
+    },
+    {
+      "game": "doors",
+      "gameName": "DOORS",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/doors"
+      },
+      "code": "ACCESS DENIED",
+      "reward": "150 Knobs",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1790944569271,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-03T10:02:04.174Z",
+      "fetchedAt": "2026-10-03T10:02:04.174Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
