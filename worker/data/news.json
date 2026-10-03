@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-03T01:02:14.503Z",
+  "updatedAt": "2026-10-03T02:01:24.992Z",
   "counts": {
-    "active": 110,
-    "archived": 134
+    "active": 109,
+    "archived": 135
   },
   "articles": [
     {
@@ -694,22 +694,6 @@
       "publishedAt": "2026-09-27T04:00:07.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "You've Received a Handwritten Reply From Vodyanitsa",
-        "id": "Silakan Terima Surat Balasan dari Vodyanitsa"
-      },
-      "excerpt": {
-        "en": "During the quiet moments between performances, Vodyanitsa sits at her desk as always, writing back to every single letter from her audience... To discover more about Vodyanitsa, Tr",
-        "id": "Di sela-sela pertunjukan, Vodyanitsa seperti biasa akan duduk di depan meja dan membalas sendiri setiap surat dari para penonton ... Untuk mengetahui lebih banyak kisah tentang Vod"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/d088efe7eef38c08b0ee54d695a4ac8e_5324553449447311128.jpeg",
-      "url": "https://www.hoyolab.com/article/46850514",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-27T04:00:04.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -722,6 +706,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/26/0/f987d71990752cfa81383b2d48721ce2_8504847668261211199.jpeg",
       "url": "https://www.hoyolab.com/article/46850515",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-27T04:00:04.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "You've Received a Handwritten Reply From Vodyanitsa",
+        "id": "Silakan Terima Surat Balasan dari Vodyanitsa"
+      },
+      "excerpt": {
+        "en": "During the quiet moments between performances, Vodyanitsa sits at her desk as always, writing back to every single letter from her audience... To discover more about Vodyanitsa, Tr",
+        "id": "Di sela-sela pertunjukan, Vodyanitsa seperti biasa akan duduk di depan meja dan membalas sendiri setiap surat dari para penonton ... Untuk mengetahui lebih banyak kisah tentang Vod"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/22/0/d088efe7eef38c08b0ee54d695a4ac8e_5324553449447311128.jpeg",
+      "url": "https://www.hoyolab.com/article/46850514",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-27T04:00:04.000Z"
     },
@@ -1748,7 +1748,9 @@
       "url": "https://www.hoyolab.com/article/46570566",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-04T03:00:05.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1763,10 +1765,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/01/19aec21e9cdb2e39c6bd1b5ee28692fa_2895338545390433001.png",
       "url": "https://www.hoyolab.com/article/46559796",
       "source": "HoYoLAB",
-      "publishedAt": "2026-09-03T01:30:02.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-03T01:30:02.000Z",
+      "archivedAt": "2026-10-03T02:01:24.992Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
