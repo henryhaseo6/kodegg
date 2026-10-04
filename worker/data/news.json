@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-04T06:01:54.553Z",
+  "updatedAt": "2026-10-04T07:02:36.872Z",
   "counts": {
-    "active": 108,
-    "archived": 136
+    "active": 106,
+    "archived": 138
   },
   "articles": [
     {
@@ -438,22 +438,6 @@
       "publishedAt": "2026-09-29T04:01:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Roxy Character Teaser - \"Clockwork Knight\" | Zenless Zone Zero",
-        "id": "Kisah Karakter Roxy - Kesatria Mekanis | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "\"Little Roxy, you'll stay by my side forever, won't you?\" \"By this heart, born of blood. I swear to stay by your side forever.\" Just like that, the knight defeated the demon lord a",
-        "id": "\"Roxy, kamu akan selalu menemaniku, kan?\" \"Dengan hati yang berlumuran darah ini, aku bersumpah akan selalu ada di sisimu.\" Begitulah sang kesatria mengalahkan Raja Iblis dan memba"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
-      "url": "https://www.hoyolab.com/article/46883997",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-29T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -466,6 +450,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
       "url": "https://www.hoyolab.com/article/46883998",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-29T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Roxy Character Teaser - \"Clockwork Knight\" | Zenless Zone Zero",
+        "id": "Kisah Karakter Roxy - Kesatria Mekanis | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "\"Little Roxy, you'll stay by my side forever, won't you?\" \"By this heart, born of blood. I swear to stay by your side forever.\" Just like that, the knight defeated the demon lord a",
+        "id": "\"Roxy, kamu akan selalu menemaniku, kan?\" \"Dengan hati yang berlumuran darah ini, aku bersumpah akan selalu ada di sisimu.\" Begitulah sang kesatria mengalahkan Raja Iblis dan memba"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
+      "url": "https://www.hoyolab.com/article/46883997",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-29T04:00:06.000Z"
     },
@@ -1700,7 +1700,9 @@
       "url": "https://www.hoyolab.com/article/46603925",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-07T03:00:02.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1715,7 +1717,8 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1788451200000/ixgz3fcfn7a97x88a3-1788505998125.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5399",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-09-04T06:58:39.000Z"
+      "publishedAt": "2026-09-04T06:58:39.000Z",
+      "archivedAt": "2026-10-04T07:02:36.872Z"
     },
     {
       "game": "wuwa",
@@ -1731,10 +1734,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1788451200000/6xzzhy0ad8s4dv2toz-1788502902812.png",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5398",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-09-04T06:44:10.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-04T06:44:10.000Z",
+      "archivedAt": "2026-10-04T07:02:36.872Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
