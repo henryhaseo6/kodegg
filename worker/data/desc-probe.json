@@ -1444,7 +1444,7 @@
   "boom": {
    "tulis": "BOOM",
    "pertama": 1785996161549,
-   "terakhir": "2026-09-17",
+   "terakhir": "2026-10-05",
    "n": 1,
    "sudahPunya": true
   },
@@ -1509,7 +1509,7 @@
   "mercy": {
    "tulis": "MERCY",
    "pertama": 1785996161549,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-10-05",
    "n": 1,
    "awal": true
   },
@@ -2708,6 +2708,11 @@
    "tulis": "Spawner",
    "pertama": 1790510730418,
    "terakhir": "2026-10-05"
+  },
+  "trick": {
+   "tulis": "Trick",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
   }
  },
  "hypershot": {
@@ -3732,7 +3737,7 @@
   "trick": {
    "tulis": "Trick",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-27",
+   "terakhir": "2026-10-05",
    "awal": true
   },
   "seekers": {
@@ -4829,6 +4834,28 @@
   "chronorchid": {
    "tulis": "Chronorchid",
    "pertama": 1790427977375,
+   "terakhir": "2026-10-05"
+  },
+  "parasite": {
+   "tulis": "Parasite",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05",
+   "sudahPunya": true
+  },
+  "shockfrost": {
+   "tulis": "Shockfrost",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05",
+   "sudahPunya": true
+  },
+  "sprout": {
+   "tulis": "Sprout",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
+  },
+  "freeze": {
+   "tulis": "Freeze",
+   "pertama": 1791237872639,
    "terakhir": "2026-10-05"
   }
  },
@@ -8801,7 +8828,7 @@
   "trick": {
    "tulis": "trick",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-27",
+   "terakhir": "2026-10-05",
    "awal": true
   },
   "melees": {
@@ -9883,6 +9910,11 @@
   "newskilltree": {
    "tulis": "NewSkillTree",
    "pertama": 1790456730584,
+   "terakhir": "2026-10-05"
+  },
+  "manipulation": {
+   "tulis": "Manipulation",
+   "pertama": 1791237872639,
    "terakhir": "2026-10-05"
   }
  },
@@ -14542,7 +14574,7 @@
   "boom": {
    "tulis": "BOOM",
    "pertama": 1785996161549,
-   "terakhir": "2026-09-17",
+   "terakhir": "2026-10-05",
    "n": 1,
    "awal": true
   },
@@ -14865,7 +14897,7 @@
   "gloves": {
    "tulis": "gloves",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-12",
+   "terakhir": "2026-10-05",
    "awal": true
   },
   "surprised": {
@@ -21492,6 +21524,11 @@
   "placer": {
    "tulis": "Placer",
    "pertama": 1789247115576,
+   "terakhir": "2026-10-05"
+  },
+  "september": {
+   "tulis": "September",
+   "pertama": 1791237872639,
    "terakhir": "2026-10-05"
   }
  },
@@ -34301,7 +34338,7 @@
   "competition": {
    "tulis": "competition",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-02",
+   "terakhir": "2026-10-05",
    "awal": true
   },
   "dreams": {
@@ -35909,7 +35946,7 @@
   "mercy": {
    "tulis": "mercy",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-10-05",
    "awal": true
   },
   "criminal": {
@@ -41794,6 +41831,11 @@
    "tulis": "results",
    "pertama": 1791173183063,
    "terakhir": "2026-10-05"
+  },
+  "fair": {
+   "tulis": "fair",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
   }
  },
  "speedsters-infinite": {
@@ -41884,7 +41926,7 @@
   "competition": {
    "tulis": "Competition",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-07",
+   "terakhir": "2026-10-05",
    "awal": true
   },
   "agility": {
@@ -42201,7 +42243,7 @@
   "competition": {
    "tulis": "Competition",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-07",
+   "terakhir": "2026-10-05",
    "awal": true
   },
   "detail": {
@@ -51158,6 +51200,11 @@
    "tulis": "trailer",
    "pertama": 1791104703288,
    "terakhir": "2026-10-05"
+  },
+  "september": {
+   "tulis": "September",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
   }
  },
  "anime-fighting-simulator-kdmf": {
@@ -52564,6 +52611,11 @@
    "tulis": "appeals",
    "pertama": 1786680249966,
    "terakhir": "2026-09-02"
+  },
+  "mercy": {
+   "tulis": "mercy",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
   }
  },
  "fnaf-eternal-nights": {
@@ -53359,6 +53411,16 @@
    "tulis": "Fair",
    "pertama": 1789869837940,
    "terakhir": "2026-10-05"
+  },
+  "sniping": {
+   "tulis": "sniping",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
+  },
+  "gunplay": {
+   "tulis": "gunplay",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
   }
  },
  "art-244": {
@@ -53953,7 +54015,7 @@
   "gloves": {
    "tulis": "GLOVES",
    "pertama": 1786150926822,
-   "terakhir": "2026-09-12"
+   "terakhir": "2026-10-05"
   },
   "fists": {
    "tulis": "FISTS",
@@ -60386,6 +60448,11 @@
    "tulis": "Squads",
    "pertama": 1790600749208,
    "terakhir": "2026-10-05"
+  },
+  "september": {
+   "tulis": "September",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
   }
  },
  "burgeria-tycoon": {
@@ -63218,6 +63285,11 @@
   "v1008": {
    "tulis": "v1008",
    "pertama": 1790600749208,
+   "terakhir": "2026-10-05"
+  },
+  "stall": {
+   "tulis": "stall",
+   "pertama": 1791237872639,
    "terakhir": "2026-10-05"
   }
  },
@@ -69186,6 +69258,11 @@
    "tulis": "leads",
    "pertama": 1791223583394,
    "terakhir": "2026-10-05"
+  },
+  "gloves": {
+   "tulis": "gloves",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
   }
  },
  "the-veil": {
@@ -70657,6 +70734,11 @@
    "tulis": "goes",
    "pertama": 1791068690579,
    "terakhir": "2026-10-04"
+  },
+  "boom": {
+   "tulis": "BOOM",
+   "pertama": 1791237872639,
+   "terakhir": "2026-10-05"
   }
  },
  "build-a-country": {
