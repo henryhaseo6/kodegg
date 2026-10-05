@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T12:02:20.144Z",
+  "updatedAt": "2026-10-05T13:01:54.167Z",
   "counts": {
     "active": 106,
     "archived": 138
@@ -22,22 +22,6 @@
       "publishedAt": "2026-10-05T04:05:11.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "\"Pom-Pom Gallery | Dance With the Beast Before Moonrise\"",
-        "id": "\"Galeri Pom-Pom | Sebelum Bulan Terbit, Menari Bersama Sang Buas\""
-      },
-      "excerpt": {
-        "en": "\"My 'pearl' is right here, beating within the 'heart' of this shell.\"",
-        "id": "\"'Mutiara'-ku tepat ada di sini, berdenyut di dalam 'jantung' cangkang ini.\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/29/c28c68bae3a821ed800df93c73443195_4532516585559015210.jpg",
-      "url": "https://www.hoyolab.com/article/46972908",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-05T04:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -50,6 +34,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/8e360be55323444742ce0a1b74d8ddcf_4881764108825067952.jpeg",
       "url": "https://www.hoyolab.com/article/46972907",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-05T04:00:03.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Pom-Pom Gallery | Dance With the Beast Before Moonrise\"",
+        "id": "\"Galeri Pom-Pom | Sebelum Bulan Terbit, Menari Bersama Sang Buas\""
+      },
+      "excerpt": {
+        "en": "\"My 'pearl' is right here, beating within the 'heart' of this shell.\"",
+        "id": "\"'Mutiara'-ku tepat ada di sini, berdenyut di dalam 'jantung' cangkang ini.\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/29/c28c68bae3a821ed800df93c73443195_4532516585559015210.jpg",
+      "url": "https://www.hoyolab.com/article/46972908",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-05T04:00:03.000Z"
     },
@@ -502,22 +502,6 @@
       "publishedAt": "2026-09-29T04:01:07.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Project Astro-Warp Beta Sign-Up Reminder",
-        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
-      },
-      "excerpt": {
-        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
-        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 03/10/2"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
-      "url": "https://www.hoyolab.com/article/46883998",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-29T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -530,6 +514,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
       "url": "https://www.hoyolab.com/article/46883997",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-29T04:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+      },
+      "excerpt": {
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 03/10/2"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
+      "url": "https://www.hoyolab.com/article/46883998",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-29T04:00:06.000Z"
     },
