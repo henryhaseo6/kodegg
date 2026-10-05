@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-10-05T03:01:49.551Z",
+  "updatedAt": "2026-10-05T04:02:41.724Z",
   "counts": {
     "active": 106,
     "archived": 138
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Version 3.3 \"Journey to the Sky\" Special Program Announcement",
+        "id": "Pengumuman Acara Khusus Pra-Rilis V3.3 \"Perjalanan Kembali ke Langit\" | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "Dear Proxies, The Zenless Zone Zero Version 3.3 \"Journey to the Sky\" Special Program will begin on October 9 at 19:30 (UTC+8)! How will Phoenix, descending from the sky, rewrite th",
+        "id": "Dear Proxy: Acara Khusus Pra-Rilis Zenless Zone Zero V3.3 \"Perjalanan Kembali ke Langit\" akan resmi tayang pada 9 Oktober pukul 19:30 (UTC+8)! Bagaimana kedatangan \"Phoenix\" dari l"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/8e360be55323444742ce0a1b74d8ddcf_4881764108825067952.jpeg",
+      "url": "https://www.hoyolab.com/article/46972907",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-05T04:00:03.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Pom-Pom Gallery | Dance With the Beast Before Moonrise\"",
+        "id": "\"Galeri Pom-Pom | Sebelum Bulan Terbit, Menari Bersama Sang Buas\""
+      },
+      "excerpt": {
+        "en": "\"My 'pearl' is right here, beating within the 'heart' of this shell.\"",
+        "id": "\"'Mutiara'-ku tepat ada di sini, berdenyut di dalam 'jantung' cangkang ini.\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/29/c28c68bae3a821ed800df93c73443195_4532516585559015210.jpg",
+      "url": "https://www.hoyolab.com/article/46972908",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-05T04:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Cutscene Animation: \"The Mora Game\" | Genshin Impact",
+        "id": "Adegan Animasi \"Permainan Mora\" | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "A worthy opponent is hard to find, and when one finally appears, even a little game meant only to test the waters can become surprisingly addictive. At times like these, someone mu",
+        "id": "Saat bertemu lawan yang langka, permainan kecil yang awalnya hanya untuk coba-coba pun bisa membuat seseorang terlena. Di saat seperti ini, selalu dibutuhkan seseorang yang bisa me"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/f30f8785dc078a519404623ac2f5d415_1291807355435787277.jpeg",
+      "url": "https://www.hoyolab.com/article/46972909",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-05T04:00:03.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -438,22 +486,6 @@
       "publishedAt": "2026-09-29T04:01:07.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Project Astro-Warp Beta Sign-Up Reminder",
-        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
-      },
-      "excerpt": {
-        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
-        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 03/10/2"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
-      "url": "https://www.hoyolab.com/article/46883998",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-29T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -466,6 +498,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
       "url": "https://www.hoyolab.com/article/46883997",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-29T04:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+      },
+      "excerpt": {
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 03/10/2"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
+      "url": "https://www.hoyolab.com/article/46883998",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-29T04:00:06.000Z"
     },
@@ -774,22 +822,6 @@
       "publishedAt": "2026-09-27T04:00:04.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "The Mechatron Workshop With Skott's Engagement on the Line!",
-        "id": "Workshop Mechatron yang Pertaruhkan Pertunangan Skott!"
-      },
-      "excerpt": {
-        "en": "Run the mechatron workshop with Skott and witness the love-hate drama between him and his \"rumored girlfriend,\" Rakshmi! Participate in the event to obtain rewards such as Self-Mod",
-        "id": "Kelola workshop mechatron bersama Skott, dan saksikan lika-liku cinta dan benci antara dirinya dan \"pacarnya yang dirumorkan\", Rakshmi! Ikuti event untuk mendapatkan hadiah seperti"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/24/67dca5173834be5e99f5c34381c2735f_4798035881319090495.jpg",
-      "url": "https://www.hoyolab.com/article/46849975",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-27T03:00:06.000Z"
-    },
-    {
       "game": "tot",
       "gameName": "Tears of Themis",
       "title": {
@@ -1094,22 +1126,6 @@
       "publishedAt": "2026-09-24T02:00:03.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.1",
-        "id": "Miliastra Wonderland Inspiration Incentive Program Genshin Impact Version 7.1"
-      },
-      "excerpt": {
-        "en": "Event Duration September 23, 2026 11:00 (UTC+8) – November 3, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version ",
-        "id": "Event Duration September 23, 2026 11:00 (UTC+8) – November 3, 2026 23:59 (UTC+8) How do I gain earnings after participating in the Incentive Program? During Genshin Impact Version "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/370fc91027d47cacc5877d2bb4f4fb04_106059139353228158.jpg",
-      "url": "https://www.hoyolab.com/article/46800040",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-23T10:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -1172,22 +1188,6 @@
       "url": "https://www.hoyolab.com/article/46791577",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-22T23:00:02.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Velina | Savoring a Moment of Peace",
-        "id": "Selamat Ulang Tahun, Velina | Menikmati Momen Santai"
-      },
-      "excerpt": {
-        "en": "\"Thank you so much for taking time out of your busy schedule to join us for this little tea party, Manager~\" \"Me? Don't go thinking I'm some kind of workaholic with no rest days.\" ",
-        "id": "\"Terima kasih sudah meluangkan waktu di tengah kesibukan untuk datang ke acara minum teh ini, Manajer~\" \"Aku? Jangan-jangan Manajer mengira aku ini gila kerja yang tidak pernah lib"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/21/0/6783cf6693736a2c23a62a64a21a92f2_6452937015984222249.jpeg",
-      "url": "https://www.hoyolab.com/article/46782340",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-22T04:00:04.000Z"
     },
     {
       "game": "zzz",
