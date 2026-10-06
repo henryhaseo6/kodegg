@@ -37,6 +37,150 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "azure-latch",
+    "name": "Azure Latch",
+    "displayName": "[💀QOL🐱] Azure Latch",
+    "slug": "azure-latch",
+    "players": 12422,
+    "redeemNote": {
+      "en": "To use codes in Azure Latch, you must first join the [B:S] Azure Latch Team Roblox Community.",
+      "links": [
+        {
+          "label": "[B:S] Azure Latch Team Roblox Community",
+          "url": "https://www.roblox.com/communities/35316274/B-S-Azure-Latch-Team#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 12422,
+    "newCodes": [
+      {
+        "game": "azure-latch",
+        "gameName": "Azure Latch",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/azure-latch"
+        },
+        "code": "october",
+        "reward": "Horror Game MVP",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791178172874,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-06T01:02:53.868Z",
+        "fetchedAt": "2026-10-06T01:02:53.868Z"
+      }
+    ],
+    "activeCount": 9,
+    "fetchedAt": "2026-10-06T01:02:53.868Z",
+    "displayCodes": [
+      {
+        "code": "october",
+        "reward": "Horror Game MVP",
+        "isNew": true
+      },
+      {
+        "code": "TIMOTHYISHEREFORNAGI",
+        "reward": "10K Cash",
+        "isNew": false
+      },
+      {
+        "code": "SEALSARETHEBEST",
+        "reward": "Cash",
+        "isNew": false
+      },
+      {
+        "code": "TIMOTHYSAYSHI",
+        "reward": "10,000 Style Currency, and 15,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "NELMASTERY",
+        "reward": "15,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "KAISERISNEXTWEEKNOWORRIES",
+        "reward": "10K Cash",
+        "isNew": false
+      },
+      {
+        "code": "BAROUTSPECIAL",
+        "reward": "15,000 Style Currency and 15,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "MAYBE",
+        "reward": "2,500 Style Coins and 3,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "BROTHERNOAH",
+        "reward": "Brother Noah Emote",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "october",
+        "reward": "Horror Game MVP",
+        "isNew": true
+      },
+      {
+        "code": "TIMOTHYISHEREFORNAGI",
+        "reward": "10K Cash",
+        "isNew": false
+      },
+      {
+        "code": "SEALSARETHEBEST",
+        "reward": "Cash",
+        "isNew": false
+      },
+      {
+        "code": "TIMOTHYSAYSHI",
+        "reward": "10,000 Style Currency, and 15,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "NELMASTERY",
+        "reward": "15,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "KAISERISNEXTWEEKNOWORRIES",
+        "reward": "10K Cash",
+        "isNew": false
+      },
+      {
+        "code": "BAROUTSPECIAL",
+        "reward": "15,000 Style Currency and 15,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "MAYBE",
+        "reward": "2,500 Style Coins and 3,000 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "TIMOTHYISHEREFORNAGI",
+      "SEALSARETHEBEST",
+      "TIMOTHYSAYSHI",
+      "NELMASTERY",
+      "BROTHERNOAH",
+      "october",
+      "KAISERISNEXTWEEKNOWORRIES",
+      "BAROUTSPECIAL",
+      "MAYBE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "nfl-universe-football",
     "name": "NFL Universe Football",
     "displayName": "[🔥] NFL Universe Football",
