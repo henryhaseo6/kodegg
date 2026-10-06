@@ -1556,6 +1556,254 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "collect-all-pets",
+    "name": "Collect All Pets",
+    "displayName": "Collect All Pets!",
+    "slug": "collect-all-pets",
+    "players": 2761,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2761,
+    "newCodes": [
+      {
+        "game": "collect-all-pets",
+        "gameName": "Collect All Pets",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/collect-all-pets"
+        },
+        "code": "NightwhispWeavesThroughMoonlitTrees",
+        "reward": "2 Hours of Shiny Luck",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791195076305,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-06T04:02:14.155Z",
+        "fetchedAt": "2026-10-06T04:02:14.155Z"
+      },
+      {
+        "game": "collect-all-pets",
+        "gameName": "Collect All Pets",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/collect-all-pets"
+        },
+        "code": "GrimWalksSilentPaths",
+        "reward": "2 Hours of Gold Boost",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791195076305,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-06T04:02:14.155Z",
+        "fetchedAt": "2026-10-06T04:02:14.155Z"
+      },
+      {
+        "game": "collect-all-pets",
+        "gameName": "Collect All Pets",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/collect-all-pets"
+        },
+        "code": "nevelE-7",
+        "reward": "6 Hours of Metallic Luck",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791195076305,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-06T04:02:14.155Z",
+        "fetchedAt": "2026-10-06T04:02:14.155Z"
+      },
+      {
+        "game": "collect-all-pets",
+        "gameName": "Collect All Pets",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/collect-all-pets"
+        },
+        "code": "DarkonianWaits",
+        "reward": "2 Hours of Metallic Luck",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791195076305,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-06T04:02:14.155Z",
+        "fetchedAt": "2026-10-06T04:02:14.155Z"
+      }
+    ],
+    "activeCount": 57,
+    "fetchedAt": "2026-10-06T04:02:14.155Z",
+    "displayCodes": [
+      {
+        "code": "NightwhispWeavesThroughMoonlitTrees",
+        "reward": "2 Hours of Shiny Luck",
+        "isNew": true
+      },
+      {
+        "code": "GrimWalksSilentPaths",
+        "reward": "2 Hours of Gold Boost",
+        "isNew": true
+      },
+      {
+        "code": "nevelE-7",
+        "reward": "6 Hours of Metallic Luck",
+        "isNew": true
+      },
+      {
+        "code": "DarkonianWaits",
+        "reward": "2 Hours of Metallic Luck",
+        "isNew": true
+      },
+      {
+        "code": "IHateMondays",
+        "reward": "x2 Gold Boost (2 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "GoodGrief!",
+        "reward": "x2 Shiny Boost (2 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "RealityContinuesToRuinMyLife",
+        "reward": "x2 Metallic Boost (2 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "IsSpinalStrangerTapThingsThis",
+        "reward": "x2 Shiny Boost (2hrs)",
+        "isNew": false
+      },
+      {
+        "code": "LeftPersonLeftPath",
+        "reward": "2 Hour 2x Gold Boost",
+        "isNew": false
+      },
+      {
+        "code": "STONEHENGE",
+        "reward": "2x Gold Boost (8 Hours)",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "NightwhispWeavesThroughMoonlitTrees",
+        "reward": "2 Hours of Shiny Luck",
+        "isNew": true
+      },
+      {
+        "code": "GrimWalksSilentPaths",
+        "reward": "2 Hours of Gold Boost",
+        "isNew": true
+      },
+      {
+        "code": "nevelE-7",
+        "reward": "6 Hours of Metallic Luck",
+        "isNew": true
+      },
+      {
+        "code": "DarkonianWaits",
+        "reward": "2 Hours of Metallic Luck",
+        "isNew": true
+      },
+      {
+        "code": "IHateMondays",
+        "reward": "x2 Gold Boost (2 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "GoodGrief!",
+        "reward": "x2 Shiny Boost (2 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "RealityContinuesToRuinMyLife",
+        "reward": "x2 Metallic Boost (2 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "IsSpinalStrangerTapThingsThis",
+        "reward": "x2 Shiny Boost (2hrs)",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "ShinySubmarine",
+      "Metallicmushroom",
+      "ToInfinity",
+      "HiHatsAndRidesOnly",
+      "DroppedDropDroppage",
+      "SeniorPlanta",
+      "DividedBy",
+      "Tennessee",
+      "LeftToRight",
+      "InvestigationWeb",
+      "ThenAddThis",
+      "ToTheseLogs",
+      "Addthisstep",
+      "PentaNeoSecrets",
+      "BigHoleInTheWall",
+      "ArcticMoon",
+      "Mountaineer",
+      "ConcaveForward",
+      "buttertom_1m",
+      "Amebas",
+      "FusionIndy",
+      "CommonLoon",
+      "ChocolateMilk",
+      "Meerkat",
+      "Viper_Toffi",
+      "eaglenight222",
+      "Plasmatic_Void",
+      "4815162342",
+      "Brrrrr",
+      "FirstCodeEver",
+      "Groupie",
+      "ItsAlwaysADesert",
+      "KlausWasHere",
+      "SecretCodeWasHere",
+      "SpeedPlayzTree",
+      "TheGreatCodeInTheSky",
+      "TreeSauce",
+      "NightwhispWeavesThroughMoonlitTrees",
+      "GrimWalksSilentPaths",
+      "nevelE-7",
+      "DarkonianWaits",
+      "IHateMondays",
+      "GoodGrief!",
+      "RealityContinuesToRuinMyLife",
+      "IsSpinalStrangerTapThingsThis",
+      "LeftPersonLeftPath",
+      "STONEHENGE",
+      "on the floor",
+      "Fortune",
+      "7up",
+      "TheresMyFavoriteLeaf",
+      "PascalsFryingPan",
+      "BagesDissonance",
+      "RaceAgainstTheSinkingSun",
+      "Kesculptorec",
+      "ThreeEtherThere",
+      "DayOfRecord"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "anomaly-cafe",
     "name": "Anomaly Cafe",
     "displayName": "[UPD] Anomaly Cafe",
