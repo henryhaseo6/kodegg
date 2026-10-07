@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-07T02:02:38.330Z",
+  "updatedAt": "2026-10-07T03:02:22.772Z",
   "counts": {
     "active": 107,
-    "archived": 138
+    "archived": 139
   },
   "articles": [
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "☆☆ New Version Outfits News ☆☆",
+        "id": "☆☆ Info Outfit Versi Baru ☆☆"
+      },
+      "excerpt": {
+        "en": "Xentinel · Dawnbearing Crescent's outfit \"Vow to Daybreak\" can be obtained from Outfit Supply after the v9.1 update. Ba-Dum! Fiery Wishing Star's outfit \"Sung by the Moon and Stars",
+        "id": "Outfit untuk Xentinel · Dawnbearing Crescent \"Vow to Daybreak\" dapat diperoleh melalui event Outfit Crate setelah update v9.1. Outfit untuk Ba-Dum! Fiery Wishing Star \"Sung by the "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/ce2df3e38d683fbb2f1ae76aa3f14959_2465731601716996072.png",
+      "url": "https://www.hoyolab.com/article/46997164",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-07T03:00:05.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -1700,7 +1716,9 @@
       "url": "https://www.hoyolab.com/article/46604733",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-07T05:00:03.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1715,10 +1733,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/08/31/a4eb0b4d481e47f2ad83769e939cc544_7781248105216365468.png",
       "url": "https://www.hoyolab.com/article/46603925",
       "source": "HoYoLAB",
-      "publishedAt": "2026-09-07T03:00:02.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-07T03:00:02.000Z",
+      "archivedAt": "2026-10-07T03:02:22.772Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
