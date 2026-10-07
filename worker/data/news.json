@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-07T04:02:39.968Z",
+  "updatedAt": "2026-10-07T05:02:00.884Z",
   "counts": {
-    "active": 107,
-    "archived": 139
+    "active": 106,
+    "archived": 140
   },
   "articles": [
     {
@@ -1700,7 +1700,9 @@
       "url": "https://www.hoyolab.com/article/46614880",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-08T04:45:03.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1715,10 +1717,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/06/0/24fa782c0e9281600a6877e53d7bbe8f_3289116302344160581.jpeg",
       "url": "https://www.hoyolab.com/article/46604733",
       "source": "HoYoLAB",
-      "publishedAt": "2026-09-07T05:00:03.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-07T05:00:03.000Z",
+      "archivedAt": "2026-10-07T05:02:00.884Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
