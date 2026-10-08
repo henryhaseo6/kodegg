@@ -1,11 +1,46 @@
 {
-  "generatedAt": "2026-10-08T15:03:35.689Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-10-08T16:03:18.315Z",
+  "codes": [
     {
-      "game": "fight-in-a-streamer-university",
-      "count": 13,
-      "fresh": []
+      "game": "alliance-tower-defense",
+      "gameName": "Alliance Tower Defense",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/alliance-tower-defense"
+      },
+      "code": "SECRET",
+      "reward": "250 Coins",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1791444485921,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-08T16:03:18.315Z",
+      "fetchedAt": "2026-10-08T16:03:18.315Z"
+    },
+    {
+      "game": "shigaku",
+      "gameName": "Shigaku",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/shigaku"
+      },
+      "code": "25kMEMBERS",
+      "reward": "100 Rerolls and 500 Cash",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1791451405598,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-08T16:03:18.315Z",
+      "fetchedAt": "2026-10-08T16:03:18.315Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
