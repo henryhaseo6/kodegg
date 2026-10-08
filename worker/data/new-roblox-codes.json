@@ -1,5 +1,52 @@
 {
-  "generatedAt": "2026-10-08T00:02:05.403Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-10-08T01:01:58.212Z",
+  "codes": [
+    {
+      "game": "race-for-eggs",
+      "gameName": "Race for Eggs",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/race-for-eggs"
+      },
+      "code": "TRAIN1",
+      "reward": "Train Potion",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1791400578814,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-08T01:01:58.212Z",
+      "fetchedAt": "2026-10-08T01:01:58.212Z"
+    },
+    {
+      "game": "race-for-eggs",
+      "gameName": "Race for Eggs",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/race-for-eggs"
+      },
+      "code": "LUCK1",
+      "reward": "Luck Potion",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1791400578814,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-08T01:01:58.212Z",
+      "fetchedAt": "2026-10-08T01:01:58.212Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "anime-zero",
+      "count": 21,
+      "fresh": []
+    }
+  ]
 }
