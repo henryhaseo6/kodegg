@@ -732,7 +732,7 @@
   "mask": {
    "tulis": "Mask",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-30",
+   "terakhir": "2026-10-08",
    "awal": true
   },
   "reaper": {
@@ -7257,7 +7257,7 @@
   "accessory": {
    "tulis": "Accessory",
    "pertama": 1787414598237,
-   "terakhir": "2026-10-07"
+   "terakhir": "2026-10-08"
   },
   "removed": {
    "tulis": "removed",
@@ -18599,7 +18599,7 @@
   "black": {
    "tulis": "Black",
    "pertama": 1786132945989,
-   "terakhir": "2026-09-30"
+   "terakhir": "2026-10-08"
   },
   "element": {
    "tulis": "Element",
@@ -20575,7 +20575,7 @@
   "black": {
    "tulis": "black",
    "pertama": 1786132945989,
-   "terakhir": "2026-09-30"
+   "terakhir": "2026-10-08"
   },
   "playable": {
    "tulis": "Playable",
@@ -26234,7 +26234,7 @@
   "mask": {
    "tulis": "MASK",
    "pertama": 1789178690330,
-   "terakhir": "2026-09-30"
+   "terakhir": "2026-10-08"
   }
  },
  "reborn-skills-master": {
@@ -28539,6 +28539,21 @@
   "proximityprompt": {
    "tulis": "ProximityPrompt",
    "pertama": 1790798688184,
+   "terakhir": "2026-10-08"
+  },
+  "thing": {
+   "tulis": "Thing",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "reduced": {
+   "tulis": "reduced",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "didn": {
+   "tulis": "didn",
+   "pertama": 1791471994231,
    "terakhir": "2026-10-08"
   }
  },
@@ -38325,7 +38340,7 @@
   "mask": {
    "tulis": "mask",
    "pertama": 1785997647571,
-   "terakhir": "2026-09-30",
+   "terakhir": "2026-10-08",
    "awal": true
   },
   "april": {
@@ -58723,7 +58738,7 @@
   "accessory": {
    "tulis": "Accessory",
    "pertama": 1786695454025,
-   "terakhir": "2026-10-07"
+   "terakhir": "2026-10-08"
   },
   "increasing": {
    "tulis": "increasing",
@@ -62421,7 +62436,7 @@
   "prices": {
    "tulis": "prices",
    "pertama": 1787209441889,
-   "terakhir": "2026-09-30"
+   "terakhir": "2026-10-08"
   },
   "advance": {
    "tulis": "ADVANCE",
@@ -63249,7 +63264,7 @@
   "prices": {
    "tulis": "prices",
    "pertama": 1787493822099,
-   "terakhir": "2026-09-30"
+   "terakhir": "2026-10-08"
   },
   "payments": {
    "tulis": "payments",
@@ -65350,7 +65365,7 @@
   "prices": {
    "tulis": "prices",
    "pertama": 1788048269468,
-   "terakhir": "2026-09-30"
+   "terakhir": "2026-10-08"
   },
   "delayrng": {
    "tulis": "DELAYRNG",
@@ -71473,7 +71488,7 @@
   "accessory": {
    "tulis": "accessory",
    "pertama": 1789848262917,
-   "terakhir": "2026-09-30"
+   "terakhir": "2026-10-08"
   },
   "loosely": {
    "tulis": "loosely",
@@ -74334,6 +74349,11 @@
    "tulis": "resting",
    "pertama": 1790953489940,
    "terakhir": "2026-10-07"
+  },
+  "black": {
+   "tulis": "Black",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
   }
  },
  "shuffle-an-egg": {
@@ -74916,6 +74936,78 @@
   "mosasaurus": {
    "tulis": "Mosasaurus",
    "pertama": 1791425079016,
+   "terakhir": "2026-10-08"
+  }
+ },
+ "fight-in-a-streamer-university": {
+  "streamer": {
+   "tulis": "Streamer",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "university": {
+   "tulis": "University",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "non-stop": {
+   "tulis": "non-stop",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "hype": {
+   "tulis": "hype",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "drama": {
+   "tulis": "drama",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "hallways": {
+   "tulis": "hallways",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "rivalries": {
+   "tulis": "rivalries",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "showdowns": {
+   "tulis": "showdowns",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "all-out": {
+   "tulis": "all-out",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "cafeteria": {
+   "tulis": "cafeteria",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "brawls": {
+   "tulis": "brawls",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "stomp": {
+   "tulis": "Stomp",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "analog": {
+   "tulis": "Analog",
+   "pertama": 1791471994231,
+   "terakhir": "2026-10-08"
+  },
+  "fade": {
+   "tulis": "Fade",
+   "pertama": 1791471994231,
    "terakhir": "2026-10-08"
   }
  }
