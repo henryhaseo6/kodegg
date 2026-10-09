@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-09T04:01:44.780Z",
+  "updatedAt": "2026-10-09T05:01:53.313Z",
   "counts": {
-    "active": 99,
-    "archived": 149
+    "active": 98,
+    "archived": 150
   },
   "articles": [
     {
@@ -1572,7 +1572,9 @@
       "url": "https://www.hoyolab.com/article/46627441",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-09T11:15:21.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1587,10 +1589,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1788883200000/2ixv1b4uac73jbjpod-1788927380611.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5437",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-09-09T04:22:12.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-09T04:22:12.000Z",
+      "archivedAt": "2026-10-09T05:01:53.313Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
