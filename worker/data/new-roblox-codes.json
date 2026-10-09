@@ -1,10 +1,47 @@
 {
-  "generatedAt": "2026-10-09T03:02:01.140Z",
-  "codes": [],
+  "generatedAt": "2026-10-09T04:01:52.454Z",
+  "codes": [
+    {
+      "game": "project-baki-3",
+      "gameName": "Project Baki 3",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/project-baki-3"
+      },
+      "code": "ELDENLORD",
+      "reward": null,
+      "date": "2026-10-08T21:48:36.019Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-09T04:01:52.454Z",
+      "fetchedAt": "2026-10-09T04:01:52.454Z"
+    },
+    {
+      "game": "ultra-unfair",
+      "gameName": "Ultra unFair",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/ultra-unfair"
+      },
+      "code": "!BIGUPD",
+      "reward": null,
+      "date": "2026-10-08T21:48:33.163Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-09T04:01:52.454Z",
+      "fetchedAt": "2026-10-09T04:01:52.454Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "collect-1-million-items",
-      "count": 2,
+      "game": "1-soldier-evolution",
+      "count": 4,
       "fresh": []
     }
   ]

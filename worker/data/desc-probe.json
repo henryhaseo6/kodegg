@@ -12758,7 +12758,7 @@
   "dead": {
    "tulis": "dead",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-08",
+   "terakhir": "2026-10-09",
    "awal": true
   },
   "living": {
@@ -15247,7 +15247,7 @@
   "dead": {
    "tulis": "dead",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-08",
+   "terakhir": "2026-10-09",
    "awal": true
   },
   "hungry": {
@@ -64729,7 +64729,7 @@
   "dead": {
    "tulis": "dead",
    "pertama": 1791245195183,
-   "terakhir": "2026-10-08"
+   "terakhir": "2026-10-09"
   }
  },
  "san-diego-border-roleplay": {
@@ -75236,6 +75236,19 @@
   "pusher": {
    "tulis": "pusher",
    "pertama": 1791515073447,
+   "terakhir": "2026-10-09"
+  }
+ },
+ "1-soldier-evolution": {
+  "soldier": {
+   "tulis": "Soldier",
+   "pertama": 1791518668444,
+   "terakhir": "2026-10-09",
+   "sudahPunya": true
+  },
+  "minibosses": {
+   "tulis": "Minibosses",
+   "pertama": 1791518668444,
    "terakhir": "2026-10-09"
   }
  }
