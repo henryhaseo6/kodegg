@@ -1,42 +1,107 @@
 {
-  "generatedAt": "2026-10-09T20:02:23.898Z",
+  "generatedAt": "2026-10-09T21:01:54.653Z",
   "codes": [
     {
-      "game": "basketballzero",
-      "gameName": "Basketball Zero",
+      "game": "anime-squadron",
+      "gameName": "Anime Squadron",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/basketball-zero"
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-squadron"
       },
-      "code": "JOJORETURN",
-      "reward": "15 Lucky Spins, 50K Cash",
-      "date": "2026-10-09T19:23:30.482Z",
+      "code": "UPD5.0!",
+      "reward": null,
+      "date": "2026-10-09T20:04:18.525Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-09T20:02:23.898Z",
-      "fetchedAt": "2026-10-09T20:02:23.898Z"
+      "firstSeenAt": "2026-10-09T21:01:54.653Z",
+      "fetchedAt": "2026-10-09T21:01:54.653Z"
     },
     {
-      "game": "basketballzero",
-      "gameName": "Basketball Zero",
+      "game": "anime-squadron",
+      "gameName": "Anime Squadron",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/basketball-zero"
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-squadron"
       },
-      "code": "15JOJORETURN",
-      "reward": "10 Lucky Spins, 100K Cash",
-      "date": "2026-10-09T19:23:30.325Z",
+      "code": "GEAR5!",
+      "reward": null,
+      "date": "2026-10-09T20:04:18.338Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-09T20:02:23.898Z",
-      "fetchedAt": "2026-10-09T20:02:23.898Z"
+      "firstSeenAt": "2026-10-09T21:01:54.653Z",
+      "fetchedAt": "2026-10-09T21:01:54.653Z"
+    },
+    {
+      "game": "anime-squadron",
+      "gameName": "Anime Squadron",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-squadron"
+      },
+      "code": "DrumsOfLiberation!",
+      "reward": null,
+      "date": "2026-10-09T20:04:17.764Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-09T21:01:54.653Z",
+      "fetchedAt": "2026-10-09T21:01:54.653Z"
+    },
+    {
+      "game": "bubble-gum-simulator",
+      "gameName": "Bubble Gum Simulator",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/bubble-gum-simulator"
+      },
+      "code": "Malevolent",
+      "reward": "Boosts",
+      "date": "2026-10-09T20:04:17.455Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-09T21:01:54.653Z",
+      "fetchedAt": "2026-10-09T21:01:54.653Z"
+    },
+    {
+      "game": "bubble-gum-simulator",
+      "gameName": "Bubble Gum Simulator",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/bubble-gum-simulator"
+      },
+      "code": "Halloween26",
+      "reward": "Boosts",
+      "date": "2026-10-09T20:04:17.036Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-09T21:01:54.653Z",
+      "fetchedAt": "2026-10-09T21:01:54.653Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "turbo-soccer",
+      "count": 1,
+      "fresh": [
+        {
+          "code": "PACK",
+          "reward": "1 Exclusive Pack"
+        }
+      ]
+    }
+  ]
 }
