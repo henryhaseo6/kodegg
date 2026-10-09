@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-09T10:50:07.102Z",
+  "updatedAt": "2026-10-09T11:01:59.670Z",
   "counts": {
-    "active": 98,
+    "active": 99,
     "archived": 150
   },
   "articles": [
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "New S-rank Battlesuit \"Herrscher of Time\" for Dreamseeker Trailer — Honkai Impact 3rd",
+        "id": "Preview Battlesuit Rank-S Baru Dreamseeker \"Herrscher of Time\" — Honkai Impact 3"
+      },
+      "excerpt": {
+        "en": "\"I was once the color of night. Now, I walk alongside others. For this fledgling future, I will pause for all that we call the past and present, a thousand times over.\" New S-rank ",
+        "id": "\"Aku pernah memiliki warna yang sama dengan malam. Kini, aku melangkah bersama yang lain. Demi masa depan yang mulai berkembang, demi segala sesuatu yang disebut masa lalu dan masa"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/09/d87d4d0698e4fd90a6bf02c828f1033f_1950713799478407890.jpg",
+      "url": "https://www.hoyolab.com/article/47023133",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-09T11:00:08.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -102,22 +118,6 @@
       "publishedAt": "2026-10-08T03:00:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "\"The Laughter Outsmarts miHoYo\" Episode 2 | Interview",
-        "id": "\"The Laughter Mengecoh miHoYo\" Episode 2 | Wawancara"
-      },
-      "excerpt": {
-        "en": "\"Umm... Banana U... a Comics major grad?\" \"Nahalux... Quite the personality, huh.\" Comment on this post with your game UID to participate in the event! We will randomly select 120 ",
-        "id": "\"Emmmm ... Universitas Pisang ... Lulusan jurusan komik?\" \"Nahalux ... kepribadiannya lumayan unik ya.\" Tulis komentar di postingan ini dan tinggalkan UID game kamu untuk berpartis"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/30/4029cafccc7da3085bcdbb5924345e71_920734732001393541.jpg",
-      "url": "https://www.hoyolab.com/article/46997554",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-07T04:00:08.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -130,6 +130,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/c5c867e7b333ac30179e610e67109c4c_2361636525981436914.jpeg",
       "url": "https://www.hoyolab.com/article/46997553",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-07T04:00:08.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"The Laughter Outsmarts miHoYo\" Episode 2 | Interview",
+        "id": "\"The Laughter Mengecoh miHoYo\" Episode 2 | Wawancara"
+      },
+      "excerpt": {
+        "en": "\"Umm... Banana U... a Comics major grad?\" \"Nahalux... Quite the personality, huh.\" Comment on this post with your game UID to participate in the event! We will randomly select 120 ",
+        "id": "\"Emmmm ... Universitas Pisang ... Lulusan jurusan komik?\" \"Nahalux ... kepribadiannya lumayan unik ya.\" Tulis komentar di postingan ini dan tinggalkan UID game kamu untuk berpartis"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/30/4029cafccc7da3085bcdbb5924345e71_920734732001393541.jpg",
+      "url": "https://www.hoyolab.com/article/46997554",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-07T04:00:08.000Z"
     },
@@ -214,22 +230,6 @@
       "publishedAt": "2026-10-05T04:05:11.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "\"Pom-Pom Gallery | Dance With the Beast Before Moonrise\"",
-        "id": "\"Galeri Pom-Pom | Sebelum Bulan Terbit, Menari Bersama Sang Buas\""
-      },
-      "excerpt": {
-        "en": "\"My 'pearl' is right here, beating within the 'heart' of this shell.\"",
-        "id": "\"'Mutiara'-ku tepat ada di sini, berdenyut di dalam 'jantung' cangkang ini.\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/29/c28c68bae3a821ed800df93c73443195_4532516585559015210.jpg",
-      "url": "https://www.hoyolab.com/article/46972908",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-05T04:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -242,6 +242,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/8e360be55323444742ce0a1b74d8ddcf_4881764108825067952.jpeg",
       "url": "https://www.hoyolab.com/article/46972907",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-05T04:00:03.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Pom-Pom Gallery | Dance With the Beast Before Moonrise\"",
+        "id": "\"Galeri Pom-Pom | Sebelum Bulan Terbit, Menari Bersama Sang Buas\""
+      },
+      "excerpt": {
+        "en": "\"My 'pearl' is right here, beating within the 'heart' of this shell.\"",
+        "id": "\"'Mutiara'-ku tepat ada di sini, berdenyut di dalam 'jantung' cangkang ini.\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/29/c28c68bae3a821ed800df93c73443195_4532516585559015210.jpg",
+      "url": "https://www.hoyolab.com/article/46972908",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-05T04:00:03.000Z"
     },
@@ -694,22 +710,6 @@
       "publishedAt": "2026-09-29T04:01:07.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Project Astro-Warp Beta Sign-Up Reminder",
-        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
-      },
-      "excerpt": {
-        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
-        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 03/10/2"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
-      "url": "https://www.hoyolab.com/article/46883998",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-29T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -722,6 +722,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
       "url": "https://www.hoyolab.com/article/46883997",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-29T04:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+      },
+      "excerpt": {
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 03/10/2"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
+      "url": "https://www.hoyolab.com/article/46883998",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-29T04:00:06.000Z"
     },
