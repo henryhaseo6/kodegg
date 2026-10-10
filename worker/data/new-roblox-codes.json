@@ -1,32 +1,530 @@
 {
-  "generatedAt": "2026-10-10T15:02:13.495Z",
+  "generatedAt": "2026-10-10T16:01:51.843Z",
   "codes": [
     {
-      "game": "shigaku",
-      "gameName": "Shigaku",
+      "game": "volleyballlegends",
+      "gameName": "Volleyball Legends",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/volleyball-legends"
+      },
+      "code": "UPDATE_91",
+      "reward": "5 Lucky Style Spins",
+      "date": "2026-10-10T15:56:06.453Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "volleyballlegends",
+      "gameName": "Volleyball Legends",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/volleyball-legends"
+      },
+      "code": "REPLAYS",
+      "reward": "5 Lucky Style Spins",
+      "date": "2026-10-10T15:56:06.334Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "volleyballlegends",
+      "gameName": "Volleyball Legends",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/volleyball-legends"
+      },
+      "code": "MVP",
+      "reward": "5 Lucky Ability Spins",
+      "date": "2026-10-10T15:56:06.188Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "catch-a-monster",
+      "gameName": "Catch a Monster",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/catch-a-monster"
+      },
+      "code": "anubael",
+      "reward": null,
+      "date": "2026-10-10T15:24:54.746Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "heavyweight-fishing",
+      "gameName": "Heavyweight Fishing",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/heavyweight-fishing"
+      },
+      "code": "Welcome",
+      "reward": null,
+      "date": "2026-10-10T15:24:51.253Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "heavyweight-fishing",
+      "gameName": "Heavyweight Fishing",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/heavyweight-fishing"
+      },
+      "code": "VermilionBird",
+      "reward": null,
+      "date": "2026-10-10T15:24:50.826Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "heavyweight-fishing",
+      "gameName": "Heavyweight Fishing",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/heavyweight-fishing"
+      },
+      "code": "80KLikes",
+      "reward": null,
+      "date": "2026-10-10T15:24:50.443Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "heavyweight-fishing",
+      "gameName": "Heavyweight Fishing",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/heavyweight-fishing"
+      },
+      "code": "55MVisits",
+      "reward": null,
+      "date": "2026-10-10T15:24:50.055Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "goalbound",
+      "gameName": "Goalbound",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/goalbound"
+      },
+      "code": "NOUPDATETHISWEEK",
+      "reward": null,
+      "date": "2026-10-10T15:23:27.624Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "nfl-universe-football",
+      "gameName": "NFL Universe Football",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/nfl-universe-football"
+      },
+      "code": "NIKE",
+      "reward": null,
+      "date": "2026-10-10T15:24:32.822Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "tr-legacy",
+      "gameName": "TR Legacy",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/tr-legacy"
+      },
+      "code": "RAGDOLL",
+      "reward": null,
+      "date": "2026-10-10T15:23:18.839Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "young-street-ontario",
+      "gameName": "Young Street Ontario",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/young-street-ontario"
+      },
+      "code": "90klikes",
+      "reward": null,
+      "date": "2026-10-10T15:23:28.559Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "horse-racing-legends",
+      "gameName": "Horse Racing Legends",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/horse-racing-legends"
+      },
+      "code": "SEASON3SOON",
+      "reward": "25 Lucky Spins, 1000 Coins",
+      "date": "2026-10-10T15:24:48.249Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "capybaras-vs-plants",
+      "gameName": "Capybaras VS Plants",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/capybaras-vs-plants"
+      },
+      "code": "UPDATE12",
+      "reward": null,
+      "date": "2026-10-10T15:04:45.552Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "capybaras-vs-plants",
+      "gameName": "Capybaras VS Plants",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/capybaras-vs-plants"
+      },
+      "code": "CLOSETO1MGROUP",
+      "reward": null,
+      "date": "2026-10-10T15:04:45.389Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "brainrot-card-battles",
+      "gameName": "Brainrot Card Battles",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/brainrot-card-battles"
+      },
+      "code": "FROSTBITE",
+      "reward": "2,000 Gold, 3 5000-Roll Packs, 5 Boss Potions, 3 Trait Rerolls",
+      "date": "2026-10-10T15:27:09.989Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "brainrot-card-battles",
+      "gameName": "Brainrot Card Battles",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/brainrot-card-battles"
+      },
+      "code": "HEADLESS",
+      "reward": "1,000 Gold, 5 1000-Roll Packs, 5 Medium Rarity Potions, 2 Boss Potions",
+      "date": "2026-10-10T15:27:09.625Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "brainrot-card-battles",
+      "gameName": "Brainrot Card Battles",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/brainrot-card-battles"
+      },
+      "code": "HOLLOWMOON",
+      "reward": "500 Gold, 3 100-Roll Packs, 3 Medium Luck Potions",
+      "date": "2026-10-10T15:27:09.321Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "brainrot-card-battles",
+      "gameName": "Brainrot Card Battles",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/brainrot-card-battles"
+      },
+      "code": "HORSEMAN",
+      "reward": "100,000 Gold, 100000-Roll Pack, 2 Huge Luck Potions, 2 Huge Rarity Potions, Huge Speed Potion, 10 Trait Rerolls, 10 Cursed Shards",
+      "date": "2026-10-10T15:27:08.973Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "brainrot-card-battles",
+      "gameName": "Brainrot Card Battles",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/brainrot-card-battles"
+      },
+      "code": "RAGNONE",
+      "reward": "4,000 Gold, 25000-Roll Pack, 2 Huge Luck Potions, Huge Rarity Potion, 5 Trait Rerolls",
+      "date": "2026-10-10T15:27:08.696Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "brainrot-card-battles",
+      "gameName": "Brainrot Card Battles",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/brainrot-card-battles"
+      },
+      "code": "WORLD15",
+      "reward": "6,000 Gold, 2 25000-Roll Pack, 2 Huge Luck Potions, 2 Huge Rarity Potions, 5 Trait Rerolls, 5 Cursed Shards",
+      "date": "2026-10-10T15:27:08.280Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "nba-champions-basketball",
+      "gameName": "NBA Champions Basketball",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/nba-champions-basketball"
+      },
+      "code": "ANKLE",
+      "reward": null,
+      "date": "2026-10-10T15:23:21.105Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "ryujin",
+      "gameName": "Ryujin",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/ryujin"
+      },
+      "code": "likesmilestone29",
+      "reward": "200 Ryujin Coins, 5 Clan Rerolls, 7 Pysche Reroll, 3 Single Psyche Reroll",
+      "date": "2026-10-10T15:25:01.956Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "arcade-basketball",
+      "gameName": "Arcade Basketball",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/arcade-basketball"
+      },
+      "code": "DOLL",
+      "reward": null,
+      "date": "2026-10-10T15:23:25.235Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "football-legends",
+      "gameName": "Football Legends",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/football-legends"
+      },
+      "code": "HWTRAILS",
+      "reward": "Summer Trail Case",
+      "date": "2026-10-10T15:24:49.051Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "football-legends",
+      "gameName": "Football Legends",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/football-legends"
+      },
+      "code": "HWSKINS",
+      "reward": "Summer Skin Case",
+      "date": "2026-10-10T15:24:48.686Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "command-an-army",
+      "gameName": "Command an Army",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/command-an-army"
+      },
+      "code": "COSMETIC",
+      "reward": "2,500 Gems, 10 Skill Crystals",
+      "date": "2026-10-10T15:55:45.382Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "the-cosalazo-2",
+      "gameName": "The Cosalazo 2",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/shigaku"
+        "Roblox Den": "https://robloxden.com/game-codes/the-cosalazo-2"
       },
-      "code": "FINALSHUTDOWN4THENIGHTMAYBEIDK",
-      "reward": "25x Rerolls",
+      "code": "HALLOWEN26",
+      "reward": "150,000 Cash",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1791532787245,
+      "srcNewAt": 1791549376298,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-10T15:02:13.495Z",
-      "fetchedAt": "2026-10-10T15:02:13.495Z"
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
+    },
+    {
+      "game": "pets-universe",
+      "gameName": "Pets Universe",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/pets-universe"
+      },
+      "code": "update4",
+      "reward": "Golden Apple, Potions",
+      "date": "2026-10-10T15:32:44.523Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-10T16:01:51.843Z",
+      "fetchedAt": "2026-10-10T16:01:51.843Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "gnomes",
-      "count": 1,
-      "fresh": []
-    }
-  ]
+  "bulkGames": []
 }
