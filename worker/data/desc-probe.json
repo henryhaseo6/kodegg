@@ -14278,6 +14278,36 @@
    "tulis": "UNLIMITEDPOWER",
    "pertama": 1791039921126,
    "terakhir": "2026-10-10"
+  },
+  "dialogue": {
+   "tulis": "dialogue",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "outside": {
+   "tulis": "outside",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "decorations": {
+   "tulis": "decorations",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "peak": {
+   "tulis": "peak",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "returning": {
+   "tulis": "returning",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "hallow26part1": {
+   "tulis": "HALLOW26PART1",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
   }
  },
  "fabled-legacy": {
@@ -42846,6 +42876,16 @@
    "pertama": 1785997647571,
    "terakhir": "2026-10-10",
    "awal": true
+  },
+  "sandworm": {
+   "tulis": "Sandworm",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "riad": {
+   "tulis": "Riad",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
   }
  },
  "emergency-response-liberty-county": {
@@ -64072,6 +64112,11 @@
    "tulis": "THANKYOU",
    "pertama": 1790431492309,
    "terakhir": "2026-10-10"
+  },
+  "rain": {
+   "tulis": "Rain",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
   }
  },
  "roll-cases-for-brainrots": {
@@ -75816,6 +75861,33 @@
    "pertama": 1791597986158,
    "terakhir": "2026-10-10",
    "sudahPunya": true
+  }
+ },
+ "gnomes": {
+  "gnomes": {
+   "tulis": "GNOMES",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "homeowner": {
+   "tulis": "Homeowner",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "useful": {
+   "tulis": "useful",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "gnome": {
+   "tulis": "Gnome",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
+  },
+  "thief": {
+   "tulis": "Thief",
+   "pertama": 1791644726653,
+   "terakhir": "2026-10-10"
   }
  }
 }
