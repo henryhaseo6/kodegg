@@ -17038,7 +17038,7 @@
   "phase": {
    "tulis": "phase",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-08",
+   "terakhir": "2026-10-10",
    "awal": true
   },
   "subjected": {
@@ -33715,7 +33715,7 @@
   "phase": {
    "tulis": "phase",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-08",
+   "terakhir": "2026-10-10",
    "awal": true
   },
   "subject": {
@@ -64220,7 +64220,7 @@
   "phase": {
    "tulis": "phase",
    "pertama": 1787634222420,
-   "terakhir": "2026-10-08"
+   "terakhir": "2026-10-10"
   },
   "journal": {
    "tulis": "journal",
@@ -74799,6 +74799,32 @@
    "tulis": "Black",
    "pertama": 1791471994231,
    "terakhir": "2026-10-08"
+  },
+  "crystal": {
+   "tulis": "Crystal",
+   "pertama": 1791651885929,
+   "terakhir": "2026-10-10"
+  },
+  "mana": {
+   "tulis": "Mana",
+   "pertama": 1791651885929,
+   "terakhir": "2026-10-10"
+  },
+  "resets": {
+   "tulis": "Resets",
+   "pertama": 1791651885929,
+   "terakhir": "2026-10-10"
+  },
+  "natch": {
+   "tulis": "NATCH",
+   "pertama": 1791651885929,
+   "terakhir": "2026-10-10",
+   "sudahPunya": true
+  },
+  "notifier": {
+   "tulis": "Notifier",
+   "pertama": 1791651885929,
+   "terakhir": "2026-10-10"
   }
  },
  "shuffle-an-egg": {
