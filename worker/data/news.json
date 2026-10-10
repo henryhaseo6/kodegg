@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-10T03:01:22.082Z",
+  "updatedAt": "2026-10-10T04:02:09.693Z",
   "counts": {
-    "active": 99,
+    "active": 98,
     "archived": 151
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Cutscene Animation: \"Bequest\" | Genshin Impact",
+        "id": "Adegan Animasi \"Warisan\" | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "Only by facing death can one truly understand the feeling, and even the Ruler of Death is no exception. She leaves this \"feeling\" to the entire world, and none can stop it from spr",
+        "id": "Hanya dengan menghadapi kematian secara langsung barulah seseorang dapat memahami perasaan tersebut, tak terkecuali sang Dewa Kematian. Dia mewariskan \"perasaan\" ini kepada seluruh"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/09/0/dae6a5aeed6a29995dafcf9e83784f34_7118724018613837319.jpeg",
+      "url": "https://www.hoyolab.com/article/47031715",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-10T04:00:04.000Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -182,22 +198,6 @@
       "publishedAt": "2026-10-08T03:00:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "\"The Laughter Outsmarts miHoYo\" Episode 2 | Interview",
-        "id": "\"The Laughter Mengecoh miHoYo\" Episode 2 | Wawancara"
-      },
-      "excerpt": {
-        "en": "\"Umm... Banana U... a Comics major grad?\" \"Nahalux... Quite the personality, huh.\" Comment on this post with your game UID to participate in the event! We will randomly select 120 ",
-        "id": "\"Emmmm ... Universitas Pisang ... Lulusan jurusan komik?\" \"Nahalux ... kepribadiannya lumayan unik ya.\" Tulis komentar di postingan ini dan tinggalkan UID game kamu untuk berpartis"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/30/4029cafccc7da3085bcdbb5924345e71_920734732001393541.jpg",
-      "url": "https://www.hoyolab.com/article/46997554",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-07T04:00:08.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -210,6 +210,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/c5c867e7b333ac30179e610e67109c4c_2361636525981436914.jpeg",
       "url": "https://www.hoyolab.com/article/46997553",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-07T04:00:08.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"The Laughter Outsmarts miHoYo\" Episode 2 | Interview",
+        "id": "\"The Laughter Mengecoh miHoYo\" Episode 2 | Wawancara"
+      },
+      "excerpt": {
+        "en": "\"Umm... Banana U... a Comics major grad?\" \"Nahalux... Quite the personality, huh.\" Comment on this post with your game UID to participate in the event! We will randomly select 120 ",
+        "id": "\"Emmmm ... Universitas Pisang ... Lulusan jurusan komik?\" \"Nahalux ... kepribadiannya lumayan unik ya.\" Tulis komentar di postingan ini dan tinggalkan UID game kamu untuk berpartis"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/30/4029cafccc7da3085bcdbb5924345e71_920734732001393541.jpg",
+      "url": "https://www.hoyolab.com/article/46997554",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-07T04:00:08.000Z"
     },
@@ -294,22 +310,6 @@
       "publishedAt": "2026-10-05T04:05:11.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "\"Pom-Pom Gallery | Dance With the Beast Before Moonrise\"",
-        "id": "\"Galeri Pom-Pom | Sebelum Bulan Terbit, Menari Bersama Sang Buas\""
-      },
-      "excerpt": {
-        "en": "\"My 'pearl' is right here, beating within the 'heart' of this shell.\"",
-        "id": "\"'Mutiara'-ku tepat ada di sini, berdenyut di dalam 'jantung' cangkang ini.\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/29/c28c68bae3a821ed800df93c73443195_4532516585559015210.jpg",
-      "url": "https://www.hoyolab.com/article/46972908",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-05T04:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -322,6 +322,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/8e360be55323444742ce0a1b74d8ddcf_4881764108825067952.jpeg",
       "url": "https://www.hoyolab.com/article/46972907",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-05T04:00:03.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Pom-Pom Gallery | Dance With the Beast Before Moonrise\"",
+        "id": "\"Galeri Pom-Pom | Sebelum Bulan Terbit, Menari Bersama Sang Buas\""
+      },
+      "excerpt": {
+        "en": "\"My 'pearl' is right here, beating within the 'heart' of this shell.\"",
+        "id": "\"'Mutiara'-ku tepat ada di sini, berdenyut di dalam 'jantung' cangkang ini.\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/29/c28c68bae3a821ed800df93c73443195_4532516585559015210.jpg",
+      "url": "https://www.hoyolab.com/article/46972908",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-05T04:00:03.000Z"
     },
@@ -710,22 +726,6 @@
       "publishedAt": "2026-09-29T06:17:05.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Genshin Impact 6th Anniversary Theme Song Video Now Available",
-        "id": "Video Lagu Tema Anniversary Keenam Genshin Impact Telah Hadir"
-      },
-      "excerpt": {
-        "en": "Dear Traveler, the Genshin Impact 6th Anniversary theme song EP \"A Letter from the Wind\" is now officially released. The album is produced by the HOYO-MiX music team. From today un",
-        "id": "Dear Traveler, lagu tema anniversary keenam Genshin Impact \"A Letter from the Wind\" telah hadir. Album ini diciptakan oleh tim HOYO-MiX. Mulai hari ini hingga 3 Oktober 2026, denga"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/666bc273d979017403a198cf326ac185_755623373693224267.jpg",
-      "url": "https://www.hoyolab.com/article/46884682",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-29T05:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -758,20 +758,20 @@
       "publishedAt": "2026-09-29T04:15:07.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
       "title": {
-        "en": "Genius At Play",
-        "id": "Pikiran Cerdas, Kelakar Cerdik"
+        "en": "Roxy Character Teaser - \"Clockwork Knight\" | Zenless Zone Zero",
+        "id": "Kisah Karakter Roxy - Kesatria Mekanis | Zenless Zone Zero"
       },
       "excerpt": {
-        "en": "\"Research differs from production — efficiency is not the gold standard. I have worked alongside many gifted individuals, and I know well that talent and eccentricity tend to go ha",
-        "id": "\"Penelitian berbeda dari produksi, efisiensi bukanlah tolok ukur utama. Aku pernah bekerja dengan banyak orang yang memiliki bakat luar biasa, dan aku tahu bahwa kecerdasan dan kee"
+        "en": "\"Little Roxy, you'll stay by my side forever, won't you?\" \"By this heart, born of blood. I swear to stay by your side forever.\" Just like that, the knight defeated the demon lord a",
+        "id": "\"Roxy, kamu akan selalu menemaniku, kan?\" \"Dengan hati yang berlumuran darah ini, aku bersumpah akan selalu ada di sisimu.\" Begitulah sang kesatria mengalahkan Raja Iblis dan memba"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/8f0bde142f28b3a1133c63e695e81879_6081038353579938138.jpg",
-      "url": "https://www.hoyolab.com/article/46884007",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
+      "url": "https://www.hoyolab.com/article/46883997",
       "source": "HoYoLAB",
-      "publishedAt": "2026-09-29T04:01:07.000Z"
+      "publishedAt": "2026-09-29T04:00:06.000Z"
     },
     {
       "game": "hsr",
@@ -786,22 +786,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
       "url": "https://www.hoyolab.com/article/46883998",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-29T04:00:06.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Roxy Character Teaser - \"Clockwork Knight\" | Zenless Zone Zero",
-        "id": "Kisah Karakter Roxy - Kesatria Mekanis | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "\"Little Roxy, you'll stay by my side forever, won't you?\" \"By this heart, born of blood. I swear to stay by your side forever.\" Just like that, the knight defeated the demon lord a",
-        "id": "\"Roxy, kamu akan selalu menemaniku, kan?\" \"Dengan hati yang berlumuran darah ini, aku bersumpah akan selalu ada di sisimu.\" Begitulah sang kesatria mengalahkan Raja Iblis dan memba"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
-      "url": "https://www.hoyolab.com/article/46883997",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-29T04:00:06.000Z"
     },
