@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-11T03:01:24.894Z",
+  "updatedAt": "2026-10-11T04:01:51.328Z",
   "counts": {
     "active": 99,
     "archived": 152
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact ｜ Paimon's Paintings Set 53 Emojis Now Available!",
+        "id": "Paket Emoji Genshin Impact - Lukisan Paimon Ke-53 Hadir!"
+      },
+      "excerpt": {
+        "en": "Greetings, Travelers! The latest emojis from Genshin Impact are now available on HoYoLAB~ Paimon's Paintings include a collection of chibi emojis of various Genshin Impact characte",
+        "id": "Halo Traveler! Paket emoji terbaru Genshin Impact sudah hadir di HoYoLAB loh! Ada berbagai emoji Karakter versi chibi di dalam Paket Emoji Lukisan Paimon ini. Semoga kalian suka ya"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/87691ea480f93f0e6339e87da52f838f_7909695077714041771.jpg",
+      "url": "https://www.hoyolab.com/article/47043673",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-11T04:00:06.000Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -246,22 +262,6 @@
       "publishedAt": "2026-10-08T03:00:06.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Evelyn 丨 The User You Are Trying to Reach Is Currently Unavailable, Ehn-Neh!",
-        "id": "Selamat Ulang Tahun, Evelyn | Ehn-ne! Pengguna yang Anda Hubungi Sedang Tidak Dapat Dihubungi"
-      },
-      "excerpt": {
-        "en": "\"Miss, you really didn't have to go out of your way to buy all this...\" \"Huh? Can't I treat you on a day like this?\" \"Come to think of it, the gadgets from this studio is pretty co",
-        "id": "\"Nona, tidak perlu repot-repot membeli semua ini...\" \"Kenapa? Memangnya di hari seperti ini aku tidak boleh traktir kamu?\" \"Ngomong-ngomong, benda kecil di ruang kerja ini menarik "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/c5c867e7b333ac30179e610e67109c4c_2361636525981436914.jpeg",
-      "url": "https://www.hoyolab.com/article/46997553",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-07T04:00:08.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -274,6 +274,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/30/4029cafccc7da3085bcdbb5924345e71_920734732001393541.jpg",
       "url": "https://www.hoyolab.com/article/46997554",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-07T04:00:08.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday Evelyn 丨 The User You Are Trying to Reach Is Currently Unavailable, Ehn-Neh!",
+        "id": "Selamat Ulang Tahun, Evelyn | Ehn-ne! Pengguna yang Anda Hubungi Sedang Tidak Dapat Dihubungi"
+      },
+      "excerpt": {
+        "en": "\"Miss, you really didn't have to go out of your way to buy all this...\" \"Huh? Can't I treat you on a day like this?\" \"Come to think of it, the gadgets from this studio is pretty co",
+        "id": "\"Nona, tidak perlu repot-repot membeli semua ini...\" \"Kenapa? Memangnya di hari seperti ini aku tidak boleh traktir kamu?\" \"Ngomong-ngomong, benda kecil di ruang kerja ini menarik "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/c5c867e7b333ac30179e610e67109c4c_2361636525981436914.jpeg",
+      "url": "https://www.hoyolab.com/article/46997553",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-07T04:00:08.000Z"
     },
@@ -358,22 +374,6 @@
       "publishedAt": "2026-10-05T04:05:11.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero Version 3.3 \"Journey to the Sky\" Special Program Announcement",
-        "id": "Pengumuman Acara Khusus Pra-Rilis V3.3 \"Perjalanan Kembali ke Langit\" | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "Dear Proxies, The Zenless Zone Zero Version 3.3 \"Journey to the Sky\" Special Program will begin on October 9 at 19:30 (UTC+8)! How will Phoenix, descending from the sky, rewrite th",
-        "id": "Dear Proxy: Acara Khusus Pra-Rilis Zenless Zone Zero V3.3 \"Perjalanan Kembali ke Langit\" akan resmi tayang pada 9 Oktober pukul 19:30 (UTC+8)! Bagaimana kedatangan \"Phoenix\" dari l"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/8e360be55323444742ce0a1b74d8ddcf_4881764108825067952.jpeg",
-      "url": "https://www.hoyolab.com/article/46972907",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-05T04:00:03.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -386,6 +386,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/29/c28c68bae3a821ed800df93c73443195_4532516585559015210.jpg",
       "url": "https://www.hoyolab.com/article/46972908",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-05T04:00:03.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Version 3.3 \"Journey to the Sky\" Special Program Announcement",
+        "id": "Pengumuman Acara Khusus Pra-Rilis V3.3 \"Perjalanan Kembali ke Langit\" | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "Dear Proxies, The Zenless Zone Zero Version 3.3 \"Journey to the Sky\" Special Program will begin on October 9 at 19:30 (UTC+8)! How will Phoenix, descending from the sky, rewrite th",
+        "id": "Dear Proxy: Acara Khusus Pra-Rilis Zenless Zone Zero V3.3 \"Perjalanan Kembali ke Langit\" akan resmi tayang pada 9 Oktober pukul 19:30 (UTC+8)! Bagaimana kedatangan \"Phoenix\" dari l"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/8e360be55323444742ce0a1b74d8ddcf_4881764108825067952.jpeg",
+      "url": "https://www.hoyolab.com/article/46972907",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-05T04:00:03.000Z"
     },
@@ -484,22 +500,6 @@
       "url": "https://www.hoyolab.com/article/46929352",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-02T04:00:08.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Story Teaser: The Swallows Return | Genshin Impact",
-        "id": "Teaser Kisah: Kembalinya Sang Walet | Genshin Impact"
-      },
-      "excerpt": {
-        "en": "Where shall they return? The swallows nest together. Whither shall they meet? The silver lamps glimmer. I wake from dreams. The jade pin parted, the dark birds flown, the clouds th",
-        "id": "Ke manakah 'kan pergi? Sepasang walet bermalam bersama. Di manakah mereka kan jumpa? Lentera perak bersinar. Mimpi pun sirna. Jepit rambut giok terpisah, burung hitam t'lah pergi, "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/898514fe7873fd24a9275cd27101c8f7_817512795667797957.jpeg",
-      "url": "https://www.hoyolab.com/article/46929351",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-02T04:00:07.000Z"
     },
     {
       "game": "zzz",
@@ -790,22 +790,6 @@
       "publishedAt": "2026-09-29T04:15:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Roxy Character Teaser - \"Clockwork Knight\" | Zenless Zone Zero",
-        "id": "Kisah Karakter Roxy - Kesatria Mekanis | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "\"Little Roxy, you'll stay by my side forever, won't you?\" \"By this heart, born of blood. I swear to stay by your side forever.\" Just like that, the knight defeated the demon lord a",
-        "id": "\"Roxy, kamu akan selalu menemaniku, kan?\" \"Dengan hati yang berlumuran darah ini, aku bersumpah akan selalu ada di sisimu.\" Begitulah sang kesatria mengalahkan Raja Iblis dan memba"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
-      "url": "https://www.hoyolab.com/article/46883997",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-29T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -818,6 +802,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/28/addec2d24a1f50df8d94fec2c70705f1_3152209309419490006.webp",
       "url": "https://www.hoyolab.com/article/46883998",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-09-29T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Roxy Character Teaser - \"Clockwork Knight\" | Zenless Zone Zero",
+        "id": "Kisah Karakter Roxy - Kesatria Mekanis | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "\"Little Roxy, you'll stay by my side forever, won't you?\" \"By this heart, born of blood. I swear to stay by your side forever.\" Just like that, the knight defeated the demon lord a",
+        "id": "\"Roxy, kamu akan selalu menemaniku, kan?\" \"Dengan hati yang berlumuran darah ini, aku bersumpah akan selalu ada di sisimu.\" Begitulah sang kesatria mengalahkan Raja Iblis dan memba"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/29/c342c5dfa553380d9eeded289ff412fa_4397792160436994017.jpg",
+      "url": "https://www.hoyolab.com/article/46883997",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-29T04:00:06.000Z"
     },
