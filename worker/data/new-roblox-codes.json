@@ -1,26 +1,42 @@
 {
-  "generatedAt": "2026-10-11T04:01:58.269Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-10-11T05:02:04.395Z",
+  "codes": [
     {
-      "game": "murder-infinite",
-      "count": 1,
-      "fresh": []
+      "game": "huss-valley",
+      "gameName": "Huss Valley",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/huss-valley"
+      },
+      "code": "FIRSTCODEEVER",
+      "reward": "Penguin Walk Emote, Double Gem Boost (15 minutes), 100 Gems",
+      "date": "2026-10-11T04:12:55.568Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-11T05:02:04.395Z",
+      "fetchedAt": "2026-10-11T05:02:04.395Z"
     },
     {
-      "game": "primeval-earth",
-      "count": 5,
-      "fresh": []
-    },
-    {
-      "game": "case-simulator-rng",
-      "count": 5,
-      "fresh": []
-    },
-    {
-      "game": "my-sari-sari-store",
-      "count": 6,
-      "fresh": []
+      "game": "huss-valley",
+      "gameName": "Huss Valley",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/huss-valley"
+      },
+      "code": "HUSS4CODE",
+      "reward": "Double Coin Boost (15 minutes), Gem Boost, First Title",
+      "date": "2026-10-11T04:12:55.422Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-11T05:02:04.395Z",
+      "fetchedAt": "2026-10-11T05:02:04.395Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
