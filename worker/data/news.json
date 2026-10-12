@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-10-12T03:02:10.103Z",
+  "updatedAt": "2026-10-12T04:02:01.022Z",
   "counts": {
-    "active": 100,
+    "active": 101,
     "archived": 152
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"The Laughter Outsmarts miHoYo\" Episode 3 | Training",
+        "id": "\"The Laughter Mengecoh miHoYo\" Episode 3 | Latihan"
+      },
+      "excerpt": {
+        "en": "\"Welcome to miHoYo, everyone~ What we're handing out to you now is the employee handbook.\" \"With this, maybe I can create the rules too. Let's see how you win now, Voracity.\" Comme",
+        "id": "\"Selamat bergabung dengan miHoYo~ Sekarang yang dibagikan ke tangan kalian adalah buku panduan staf IPC.\" \"Dengan ini, mungkin aku juga bisa menciptakan aturan. Voracity, kita liha"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/10/ce8882d6b6007f109655148a27b26455_2717089125464101215.jpg",
+      "url": "https://www.hoyolab.com/article/47055659",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-12T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Data Bounty: Combat Simulation\" Event Details",
+        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
+        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
+      "url": "https://www.hoyolab.com/article/47055658",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-12T04:00:06.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "The \"Predictive Victory Dynamics\" Event Is Now Available. Participate to Obtain Primogem Rewards!",
+        "id": "Event \"Prediksi Dinamika Kemenangan\" Kini Telah Dibuka. Ikuti dan Dapatkan Hadiah Primogem!"
+      },
+      "excerpt": {
+        "en": "Hello, Traveler! Word has it that there's an event going on in Natlan where you can simulate battle scenarios using a Combat Simulator. Here's an event flyer — let's take a look to",
+        "id": "Halo, Traveler! Kabarnya di Natlan sedang ada sebuah acara di mana kamu bisa mensimulasikan pertempuran dengan Simulator Tempur. Ada brosur turnamennya di sini, yuk kita lihat bers"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/eab8ad904fc857a1eb3d0d4ddd98c00c_2119757546392807813.jpeg",
+      "url": "https://www.hoyolab.com/article/47055657",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-12T04:00:05.000Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -486,22 +534,6 @@
       "publishedAt": "2026-10-04T04:00:06.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "2026 Miliastra Wonderland Creator Face-to-Face",
-        "id": "2026 Miliastra Wonderland Creator Face-to-Face"
-      },
-      "excerpt": {
-        "en": "Dear Traveler, the 2026 Miliastra Wonderland Creator Face-to-Face has come to a successful close! Thank you to all the Craftspeople for your enthusiastic participation.",
-        "id": "Dear Traveler, the 2026 Miliastra Wonderland Creator Face-to-Face has come to a successful close! Thank you to all the Craftspeople for your enthusiastic participation."
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/131f59045055e8fc6024248266893ffe_5066989644093771833.jpg",
-      "url": "https://www.hoyolab.com/article/46944334",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-03T04:00:02.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -964,22 +996,6 @@
       "url": "https://www.hoyolab.com/article/46863847",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-28T04:15:07.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "\"The Laughter Outsmarts miHoYo\" web event is now live! Gather Wishpower to help Nihilux and unlock the story details!",
-        "id": "Event Web \"The Laughter Mengecoh miHoYo\" telah hadir, kumpulkan Wishpower untuk membantu Nihilux, dan buka informasi cerita!"
-      },
-      "excerpt": {
-        "en": "▌ Event Period During Version 4.6 ▌ About the Event During the event, Trailblazers can participate in the in-game event \"Wishpower UP! Down with Voracity!\" to accumulate server-wid",
-        "id": "▌ Waktu Event Selama periode Versi 4.6 ▌ Pengenalan Event Selama event berlangsung, Trailblazer dapat mengakumulasikan Wishpower seluruh server dengan berpartisipasi dalam event \"T"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/09/24/5823d1699d4edf164bf08d87f971bb18_519345408985411669.jpg",
-      "url": "https://www.hoyolab.com/article/46863776",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-09-28T04:10:06.000Z"
     },
     {
       "game": "zzz",
