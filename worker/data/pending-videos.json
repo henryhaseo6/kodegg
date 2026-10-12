@@ -1,271 +1,181 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "final-swarm",
-    "name": "Final Swarm",
-    "displayName": "Final Swarm [⚔️Sandworm]",
-    "slug": "final-swarm",
-    "players": 3621,
+    "id": "iron-soul-dungeon",
+    "name": "Iron Soul: Dungeon",
+    "displayName": "Iron Soul: Dungeon",
+    "slug": "iron-soul-dungeon",
+    "players": 3280,
     "redeemNote": {
-      "en": "To use codes in Final Swarm, you must first Finish The Tutorial.",
+      "en": "To unlock the codes feature in Iron Soul: Dungeon, you must first reach Level 10.",
       "links": [],
       "kind": "syarat"
     },
     "alias": null,
-    "rank": 3621,
+    "rank": 3280,
     "newCodes": [
       {
-        "code": "s4ndw0rm",
-        "reward": ""
+        "game": "iron-soul-dungeon",
+        "gameName": "Iron Soul: Dungeon",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/iron-soul-dungeon"
+        },
+        "code": "TRADEISLANDUPDATE",
+        "reward": "200 Origin Shards",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791610777403,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T16:02:59.325Z",
+        "fetchedAt": "2026-10-12T16:02:59.325Z"
+      },
+      {
+        "game": "iron-soul-dungeon",
+        "gameName": "Iron Soul: Dungeon",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/iron-soul-dungeon"
+        },
+        "code": "IRONSOULWEEKEND27",
+        "reward": "3 Race Rerolls",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791610777403,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T16:02:59.325Z",
+        "fetchedAt": "2026-10-12T16:02:59.325Z"
       }
     ],
-    "activeCount": 11,
-    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "activeCount": 24,
+    "fetchedAt": "2026-10-12T16:02:59.325Z",
     "displayCodes": [
       {
-        "code": "s4ndw0rm",
-        "reward": "",
+        "code": "TRADEISLANDUPDATE",
+        "reward": "200 Origin Shards",
         "isNew": true
       },
       {
-        "code": "w0rldw1d3",
-        "reward": "10 Golden Chests",
+        "code": "IRONSOULWEEKEND27",
+        "reward": "3 Race Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "RAGNAROK",
+        "reward": "3 Race Rerolls",
         "isNew": false
       },
       {
-        "code": "atl4nt1s",
-        "reward": "3 Mythic Chests",
+        "code": "IRONWEEKENDGIFT26",
+        "reward": "3 Race Rerolls",
         "isNew": false
       },
       {
-        "code": "Cl4ssy",
-        "reward": "1 Mythic Chest",
+        "code": "BOSSODINARRIVED",
+        "reward": "5 Season Lucky Tickets",
         "isNew": false
       },
       {
-        "code": "ADMIN",
-        "reward": "1 Mythic Chest",
+        "code": "IRONSOULBIGUPDATE",
+        "reward": "3 Race Rerolls",
         "isNew": false
       },
       {
-        "code": "ex0tic",
-        "reward": "10 Golden Chests",
+        "code": "IRONSOULWEEKEND25",
+        "reward": "",
         "isNew": false
       },
       {
-        "code": "INF3RNO",
-        "reward": "3 Inferno Chests",
+        "code": "SEASON3ENDEVENT",
+        "reward": "",
         "isNew": false
       },
       {
-        "code": "QOL2",
-        "reward": "10 Raid Chest and 150 Keys",
+        "code": "IRONSMALLUPDATE",
+        "reward": "2 Season Lucky Tickets",
         "isNew": false
       },
       {
-        "code": "RipVoid",
-        "reward": "3 Golden Chests",
-        "isNew": false
-      },
-      {
-        "code": "supdoggy",
-        "reward": "100 Keys",
+        "code": "IRONNEWUPDATE",
+        "reward": "3 Race Rerolls",
         "isNew": false
       }
     ],
     "descCodes": [
       {
-        "code": "s4ndw0rm",
-        "reward": "",
+        "code": "TRADEISLANDUPDATE",
+        "reward": "200 Origin Shards",
         "isNew": true
       },
       {
-        "code": "w0rldw1d3",
-        "reward": "10 Golden Chests",
+        "code": "IRONSOULWEEKEND27",
+        "reward": "3 Race Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "RAGNAROK",
+        "reward": "3 Race Rerolls",
         "isNew": false
       },
       {
-        "code": "atl4nt1s",
-        "reward": "3 Mythic Chests",
+        "code": "IRONWEEKENDGIFT26",
+        "reward": "3 Race Rerolls",
         "isNew": false
       },
       {
-        "code": "Cl4ssy",
-        "reward": "1 Mythic Chest",
+        "code": "BOSSODINARRIVED",
+        "reward": "5 Season Lucky Tickets",
         "isNew": false
       },
       {
-        "code": "ADMIN",
-        "reward": "1 Mythic Chest",
+        "code": "IRONSOULBIGUPDATE",
+        "reward": "3 Race Rerolls",
         "isNew": false
       },
       {
-        "code": "ex0tic",
-        "reward": "10 Golden Chests",
+        "code": "IRONSOULWEEKEND25",
+        "reward": "",
         "isNew": false
       },
       {
-        "code": "INF3RNO",
-        "reward": "3 Inferno Chests",
-        "isNew": false
-      },
-      {
-        "code": "QOL2",
-        "reward": "10 Raid Chest and 150 Keys",
+        "code": "SEASON3ENDEVENT",
+        "reward": "",
         "isNew": false
       }
     ],
     "allCodes": [
-      "s4ndw0rm",
-      "w0rldw1d3",
-      "atl4nt1s",
-      "Cl4ssy",
-      "ex0tic",
-      "INF3RNO",
-      "QOL2",
-      "firstswarm",
-      "supdoggy",
-      "ADMIN",
-      "RipVoid"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "fish-an-anime-rng",
-    "name": "Fish an Anime RNG",
-    "displayName": "Fish an Anime RNG 🎲",
-    "slug": "fish-an-anime-rng",
-    "players": 3344,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3344,
-    "newCodes": [
-      {
-        "code": "Marceline",
-        "reward": ""
-      },
-      {
-        "code": "Hallowi",
-        "reward": ""
-      }
-    ],
-    "activeCount": 20,
-    "fetchedAt": "2026-10-12T15:03:02.787Z",
-    "displayCodes": [
-      {
-        "code": "Marceline",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Incoming Mind Break",
-        "reward": "2 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "35KLIKES",
-        "reward": "5K Gems",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "Marceline",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "Marceline",
-      "Hallowi",
-      "Starfall",
-      "Luther",
-      "Halloween",
-      "15MVISITS",
-      "Toxic Wasteland",
-      "Ink Spider",
-      "Incoming Mind Break",
-      "35KLIKES",
-      "Sad Ending",
-      "Lapis Hex",
-      "Cullen",
-      "Clan Update",
-      "20KMEMBERS",
-      "30KLIKES",
-      "THANKYOUEVERYONE",
-      "20KLIKES",
-      "10KMEMBERS",
-      "10KCCU"
+      "TRADEISLANDUPDATE",
+      "IRONSOULWEEKEND27",
+      "RAGNAROK",
+      "IRONWEEKENDGIFT26",
+      "BOSSODINARRIVED",
+      "IRONSOULBIGUPDATE",
+      "IRONSOULWEEKEND25",
+      "SEASON3ENDEVENT",
+      "IRONSMALLUPDATE",
+      "IRONNEWUPDATE",
+      "IRONSOULWEEKEND24",
+      "MAP5HELL",
+      "IRONSOULWEEKEND23",
+      "MAP5COMING",
+      "IRONSOULWEEKEND22",
+      "SEASON3EXPANSION",
+      "250KMEMBERGIFT",
+      "LALAGANG",
+      "IRONSOULWEEKEND21",
+      "Ahjughh",
+      "SEASONVOUCHER",
+      "SEASON2OPEN",
+      "IRONSOULWEEKEND13",
+      "SEASON2LIVE"
     ]
   },
   {
@@ -1044,6 +954,111 @@
       "FREEREVIVE",
       "WELCOMEOPHELIA",
       "PAGEUPDATE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "blue-lock-skibidi",
+    "name": "Blue Lock Skibidi",
+    "displayName": "[NEL Isagi] Blue Lock: Skibidi",
+    "slug": "blue-lock-skibidi",
+    "players": 1397,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1397,
+    "newCodes": [
+      {
+        "game": "blue-lock-skibidi",
+        "gameName": "Blue Lock Skibidi",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/blue-lock-skibidi"
+        },
+        "code": "NEL",
+        "reward": "25,000 cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791653139285,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T16:02:59.325Z",
+        "fetchedAt": "2026-10-12T16:02:59.325Z"
+      },
+      {
+        "game": "blue-lock-skibidi",
+        "gameName": "Blue Lock Skibidi",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/blue-lock-skibidi"
+        },
+        "code": "NELISAGI",
+        "reward": "50,000 cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791653139285,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T16:02:59.325Z",
+        "fetchedAt": "2026-10-12T16:02:59.325Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-10-12T16:02:59.325Z",
+    "displayCodes": [
+      {
+        "code": "NEL",
+        "reward": "25,000 cash",
+        "isNew": true
+      },
+      {
+        "code": "NELISAGI",
+        "reward": "50,000 cash",
+        "isNew": true
+      },
+      {
+        "code": "NaoyaNerf",
+        "reward": "50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "PATCH",
+        "reward": "50,000 Cash",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "NEL",
+        "reward": "25,000 cash",
+        "isNew": true
+      },
+      {
+        "code": "NELISAGI",
+        "reward": "50,000 cash",
+        "isNew": true
+      },
+      {
+        "code": "NaoyaNerf",
+        "reward": "50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "PATCH",
+        "reward": "50,000 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "NEL",
+      "NELISAGI",
+      "NaoyaNerf",
+      "PATCH"
     ]
   },
   {
