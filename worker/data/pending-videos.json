@@ -1,6 +1,217 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "run-a-sari-sari-store",
+    "name": "Run a Sari-Sari Store",
+    "displayName": "[🛒] Run a Sari-Sari Store!",
+    "slug": "run-a-sari-sari-store",
+    "players": 4097,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 4097,
+    "newCodes": [
+      {
+        "code": "RELEASE",
+        "reward": "500 Cash + 5% Upgrade Shop Discount"
+      }
+    ],
+    "activeCount": 1,
+    "fetchedAt": "2026-10-12T17:02:58.999Z",
+    "displayCodes": [
+      {
+        "code": "RELEASE",
+        "reward": "500 Cash + 5% Upgrade Shop Discount",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "RELEASE",
+        "reward": "500 Cash + 5% Upgrade Shop Discount",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "RELEASE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "the-forge",
+    "name": "The Forge",
+    "displayName": "The Forge [📜]",
+    "slug": "the-forge",
+    "players": 3873,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3873,
+    "newCodes": [
+      {
+        "code": "WAITFORHALLOWEEN",
+        "reward": "10 Class Rerolls"
+      }
+    ],
+    "activeCount": 1,
+    "fetchedAt": "2026-10-12T17:02:58.999Z",
+    "displayCodes": [
+      {
+        "code": "WAITFORHALLOWEEN",
+        "reward": "10 Class Rerolls",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "WAITFORHALLOWEEN",
+        "reward": "10 Class Rerolls",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "WAITFORHALLOWEEN"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "fish-an-anime-rng",
+    "name": "Fish an Anime RNG",
+    "displayName": "Fish an Anime RNG 🎲",
+    "slug": "fish-an-anime-rng",
+    "players": 3449,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3449,
+    "newCodes": [
+      {
+        "code": "Marceline",
+        "reward": ""
+      },
+      {
+        "code": "Hallowi",
+        "reward": ""
+      }
+    ],
+    "activeCount": 20,
+    "fetchedAt": "2026-10-12T17:02:58.999Z",
+    "displayCodes": [
+      {
+        "code": "Marceline",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Hallowi",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Starfall",
+        "reward": "Free Gems and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "Luther",
+        "reward": "1 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "Free Gems and Potion Packs",
+        "isNew": false
+      },
+      {
+        "code": "15MVISITS",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Toxic Wasteland",
+        "reward": "5K Gems",
+        "isNew": false
+      },
+      {
+        "code": "Ink Spider",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Incoming Mind Break",
+        "reward": "2 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "35KLIKES",
+        "reward": "5K Gems",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "Marceline",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Hallowi",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Starfall",
+        "reward": "Free Gems and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "Luther",
+        "reward": "1 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "Free Gems and Potion Packs",
+        "isNew": false
+      },
+      {
+        "code": "15MVISITS",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Toxic Wasteland",
+        "reward": "5K Gems",
+        "isNew": false
+      },
+      {
+        "code": "Ink Spider",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "Marceline",
+      "Hallowi",
+      "Starfall",
+      "Luther",
+      "Halloween",
+      "15MVISITS",
+      "Toxic Wasteland",
+      "Ink Spider",
+      "Incoming Mind Break",
+      "35KLIKES",
+      "Sad Ending",
+      "Lapis Hex",
+      "Cullen",
+      "Clan Update",
+      "20KMEMBERS",
+      "30KLIKES",
+      "THANKYOUEVERYONE",
+      "20KLIKES",
+      "10KMEMBERS",
+      "10KCCU"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "iron-soul-dungeon",
     "name": "Iron Soul: Dungeon",
     "displayName": "Iron Soul: Dungeon",
@@ -176,6 +387,136 @@
       "SEASON2OPEN",
       "IRONSOULWEEKEND13",
       "SEASON2LIVE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "final-swarm",
+    "name": "Final Swarm",
+    "displayName": "Final Swarm [⚔️Sandworm]",
+    "slug": "final-swarm",
+    "players": 3203,
+    "redeemNote": {
+      "en": "To use codes in Final Swarm, you must first Finish The Tutorial.",
+      "links": [],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 3203,
+    "newCodes": [
+      {
+        "code": "s4ndw0rm",
+        "reward": ""
+      }
+    ],
+    "activeCount": 11,
+    "fetchedAt": "2026-10-12T17:02:58.999Z",
+    "displayCodes": [
+      {
+        "code": "s4ndw0rm",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "w0rldw1d3",
+        "reward": "10 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "atl4nt1s",
+        "reward": "3 Mythic Chests",
+        "isNew": false
+      },
+      {
+        "code": "Cl4ssy",
+        "reward": "1 Mythic Chest",
+        "isNew": false
+      },
+      {
+        "code": "ADMIN",
+        "reward": "1 Mythic Chest",
+        "isNew": false
+      },
+      {
+        "code": "ex0tic",
+        "reward": "10 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "INF3RNO",
+        "reward": "3 Inferno Chests",
+        "isNew": false
+      },
+      {
+        "code": "QOL2",
+        "reward": "10 Raid Chest and 150 Keys",
+        "isNew": false
+      },
+      {
+        "code": "RipVoid",
+        "reward": "3 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "supdoggy",
+        "reward": "100 Keys",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "s4ndw0rm",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "w0rldw1d3",
+        "reward": "10 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "atl4nt1s",
+        "reward": "3 Mythic Chests",
+        "isNew": false
+      },
+      {
+        "code": "Cl4ssy",
+        "reward": "1 Mythic Chest",
+        "isNew": false
+      },
+      {
+        "code": "ADMIN",
+        "reward": "1 Mythic Chest",
+        "isNew": false
+      },
+      {
+        "code": "ex0tic",
+        "reward": "10 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "INF3RNO",
+        "reward": "3 Inferno Chests",
+        "isNew": false
+      },
+      {
+        "code": "QOL2",
+        "reward": "10 Raid Chest and 150 Keys",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "s4ndw0rm",
+      "w0rldw1d3",
+      "atl4nt1s",
+      "Cl4ssy",
+      "ex0tic",
+      "INF3RNO",
+      "QOL2",
+      "firstswarm",
+      "supdoggy",
+      "ADMIN",
+      "RipVoid"
     ]
   },
   {
@@ -1380,6 +1721,124 @@
       "SYSTEMREWORK!",
       "MINING!",
       "GAMERELEASE!"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "vampire-life",
+    "name": "Vampire life",
+    "displayName": "Vampire life",
+    "slug": "vampire-life",
+    "players": 1157,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1157,
+    "newCodes": [
+      {
+        "game": "vampire-life",
+        "gameName": "Vampire life",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/vampire-life"
+        },
+        "code": "THX10KLIKES26",
+        "reward": "4x XP for (30 Minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791663384632,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T17:02:58.999Z",
+        "fetchedAt": "2026-10-12T17:02:58.999Z"
+      }
+    ],
+    "activeCount": 7,
+    "fetchedAt": "2026-10-12T17:02:58.999Z",
+    "displayCodes": [
+      {
+        "code": "THX10KLIKES26",
+        "reward": "4x XP for (30 Minutes)",
+        "isNew": true
+      },
+      {
+        "code": "THX9KLIKES",
+        "reward": "3x XP Boost (1 Hour)",
+        "isNew": false
+      },
+      {
+        "code": "WITCHESFARMSER",
+        "reward": "Double XP for 2 Hours",
+        "isNew": false
+      },
+      {
+        "code": "WFEEDVAMPS",
+        "reward": "4x XP for 1 Hour",
+        "isNew": false
+      },
+      {
+        "code": "KAISERTORTOYT",
+        "reward": "Double XP (2 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "CRYHACKERSLOL",
+        "reward": "Quadruple XP (30 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "ThankYou300",
+        "reward": "Double XP for 30 Minutes",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "THX10KLIKES26",
+        "reward": "4x XP for (30 Minutes)",
+        "isNew": true
+      },
+      {
+        "code": "THX9KLIKES",
+        "reward": "3x XP Boost (1 Hour)",
+        "isNew": false
+      },
+      {
+        "code": "WITCHESFARMSER",
+        "reward": "Double XP for 2 Hours",
+        "isNew": false
+      },
+      {
+        "code": "WFEEDVAMPS",
+        "reward": "4x XP for 1 Hour",
+        "isNew": false
+      },
+      {
+        "code": "KAISERTORTOYT",
+        "reward": "Double XP (2 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "CRYHACKERSLOL",
+        "reward": "Quadruple XP (30 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "ThankYou300",
+        "reward": "Double XP for 30 Minutes",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "THX10KLIKES26",
+      "THX9KLIKES",
+      "WITCHESFARMSER",
+      "WFEEDVAMPS",
+      "KAISERTORTOYT",
+      "CRYHACKERSLOL",
+      "ThankYou300"
     ]
   },
   {
