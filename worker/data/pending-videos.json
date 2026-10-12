@@ -1,74 +1,105 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "run-a-sari-sari-store",
-    "name": "Run a Sari-Sari Store",
-    "displayName": "[🛒] Run a Sari-Sari Store!",
-    "slug": "run-a-sari-sari-store",
-    "players": 4097,
+    "id": "race-for-eggs",
+    "name": "Race for Eggs",
+    "displayName": "Race for Eggs",
+    "slug": "race-for-eggs",
+    "players": 3521,
     "redeemNote": null,
     "alias": null,
-    "rank": 4097,
+    "rank": 3521,
     "newCodes": [
       {
-        "code": "RELEASE",
-        "reward": "500 Cash + 5% Upgrade Shop Discount"
-      }
-    ],
-    "activeCount": 1,
-    "fetchedAt": "2026-10-12T17:02:58.999Z",
-    "displayCodes": [
+        "code": "UPD3",
+        "reward": "Cash Potion"
+      },
+      {
+        "code": "UPD2",
+        "reward": "Cash Potion"
+      },
+      {
+        "code": "UPD1",
+        "reward": "Cash Potion"
+      },
       {
         "code": "RELEASE",
-        "reward": "500 Cash + 5% Upgrade Shop Discount",
+        "reward": "Lizard"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-10-12T20:01:36.307Z",
+    "displayCodes": [
+      {
+        "code": "UPD3",
+        "reward": "Cash Potion",
         "isNew": true
+      },
+      {
+        "code": "UPD2",
+        "reward": "Cash Potion",
+        "isNew": true
+      },
+      {
+        "code": "UPD1",
+        "reward": "Cash Potion",
+        "isNew": true
+      },
+      {
+        "code": "RELEASE",
+        "reward": "Lizard",
+        "isNew": true
+      },
+      {
+        "code": "TRAIN1",
+        "reward": "Train Potion",
+        "isNew": false
+      },
+      {
+        "code": "LUCK1",
+        "reward": "Luck Potion",
+        "isNew": false
       }
     ],
     "descCodes": [
       {
+        "code": "UPD3",
+        "reward": "Cash Potion",
+        "isNew": true
+      },
+      {
+        "code": "UPD2",
+        "reward": "Cash Potion",
+        "isNew": true
+      },
+      {
+        "code": "UPD1",
+        "reward": "Cash Potion",
+        "isNew": true
+      },
+      {
         "code": "RELEASE",
-        "reward": "500 Cash + 5% Upgrade Shop Discount",
+        "reward": "Lizard",
         "isNew": true
+      },
+      {
+        "code": "TRAIN1",
+        "reward": "Train Potion",
+        "isNew": false
+      },
+      {
+        "code": "LUCK1",
+        "reward": "Luck Potion",
+        "isNew": false
       }
     ],
     "allCodes": [
-      "RELEASE"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "the-forge",
-    "name": "The Forge",
-    "displayName": "The Forge [📜]",
-    "slug": "the-forge",
-    "players": 3873,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3873,
-    "newCodes": [
-      {
-        "code": "WAITFORHALLOWEEN",
-        "reward": "10 Class Rerolls"
-      }
-    ],
-    "activeCount": 1,
-    "fetchedAt": "2026-10-12T17:02:58.999Z",
-    "displayCodes": [
-      {
-        "code": "WAITFORHALLOWEEN",
-        "reward": "10 Class Rerolls",
-        "isNew": true
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "WAITFORHALLOWEEN",
-        "reward": "10 Class Rerolls",
-        "isNew": true
-      }
-    ],
-    "allCodes": [
-      "WAITFORHALLOWEEN"
+      "UPD3",
+      "UPD2",
+      "UPD1",
+      "RELEASE",
+      "TRAIN1",
+      "LUCK1"
     ]
   },
   {
@@ -208,6 +239,143 @@
       "20KLIKES",
       "10KMEMBERS",
       "10KCCU"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "it-girl",
+    "name": "IT GIRL",
+    "displayName": "IT GIRL 🏝️",
+    "slug": "it-girl",
+    "players": 3395,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3395,
+    "newCodes": [
+      {
+        "code": "HALLOWEEN26",
+        "reward": "1000 Diamonds"
+      }
+    ],
+    "activeCount": 22,
+    "fetchedAt": "2026-10-12T20:01:36.307Z",
+    "displayCodes": [
+      {
+        "code": "HALLOWEEN26",
+        "reward": "1000 Diamonds",
+        "isNew": true
+      },
+      {
+        "code": "HAPPY250M",
+        "reward": "1000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "AQUAMARINE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SORRY4THEDELAY",
+        "reward": "1,500 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "MILLIONMEMBERS",
+        "reward": "1 Million Group Members Set",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY200M",
+        "reward": "2000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "SWEETBUTEVIL",
+        "reward": "Freebies",
+        "isNew": false
+      },
+      {
+        "code": "SURPRISE",
+        "reward": "Freebies",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY150M",
+        "reward": "1500 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "S0SW33T",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "HALLOWEEN26",
+        "reward": "1000 Diamonds",
+        "isNew": true
+      },
+      {
+        "code": "HAPPY250M",
+        "reward": "1000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "AQUAMARINE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SORRY4THEDELAY",
+        "reward": "1,500 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "MILLIONMEMBERS",
+        "reward": "1 Million Group Members Set",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY200M",
+        "reward": "2000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "SWEETBUTEVIL",
+        "reward": "Freebies",
+        "isNew": false
+      },
+      {
+        "code": "SURPRISE",
+        "reward": "Freebies",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "HALLOWEEN26",
+      "HAPPY250M",
+      "AQUAMARINE",
+      "SORRY4THEDELAY",
+      "MILLIONMEMBERS",
+      "HAPPY200M",
+      "SWEETBUTEVIL",
+      "SURPRISE",
+      "HAPPY150M",
+      "S0SW33T",
+      "ITGIRLSORRY",
+      "ITGIRLWINTER",
+      "thank you diamonds",
+      "PH4NT0MM4X",
+      "TAVERSIA",
+      "RUPAULSD0LL",
+      "ITGIRL",
+      "TRICKORTREAT",
+      "MADDYAFKDRESS",
+      "AVASFX",
+      "LACROWN",
+      "MADDYAFK"
     ]
   },
   {
