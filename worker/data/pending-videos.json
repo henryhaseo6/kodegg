@@ -1,242 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "final-swarm",
-    "name": "Final Swarm",
-    "displayName": "Final Swarm [⚔️Sandworm]",
-    "slug": "final-swarm",
-    "players": 3203,
-    "redeemNote": {
-      "en": "To use codes in Final Swarm, you must first Finish The Tutorial.",
-      "links": [],
-      "kind": "syarat"
-    },
-    "alias": null,
-    "rank": 3203,
-    "newCodes": [
-      {
-        "code": "s4ndw0rm",
-        "reward": ""
-      }
-    ],
-    "activeCount": 11,
-    "fetchedAt": "2026-10-12T17:02:58.999Z",
-    "displayCodes": [
-      {
-        "code": "s4ndw0rm",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "w0rldw1d3",
-        "reward": "10 Golden Chests",
-        "isNew": false
-      },
-      {
-        "code": "atl4nt1s",
-        "reward": "3 Mythic Chests",
-        "isNew": false
-      },
-      {
-        "code": "Cl4ssy",
-        "reward": "1 Mythic Chest",
-        "isNew": false
-      },
-      {
-        "code": "ADMIN",
-        "reward": "1 Mythic Chest",
-        "isNew": false
-      },
-      {
-        "code": "ex0tic",
-        "reward": "10 Golden Chests",
-        "isNew": false
-      },
-      {
-        "code": "INF3RNO",
-        "reward": "3 Inferno Chests",
-        "isNew": false
-      },
-      {
-        "code": "QOL2",
-        "reward": "10 Raid Chest and 150 Keys",
-        "isNew": false
-      },
-      {
-        "code": "RipVoid",
-        "reward": "3 Golden Chests",
-        "isNew": false
-      },
-      {
-        "code": "supdoggy",
-        "reward": "100 Keys",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "s4ndw0rm",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "w0rldw1d3",
-        "reward": "10 Golden Chests",
-        "isNew": false
-      },
-      {
-        "code": "atl4nt1s",
-        "reward": "3 Mythic Chests",
-        "isNew": false
-      },
-      {
-        "code": "Cl4ssy",
-        "reward": "1 Mythic Chest",
-        "isNew": false
-      },
-      {
-        "code": "ADMIN",
-        "reward": "1 Mythic Chest",
-        "isNew": false
-      },
-      {
-        "code": "ex0tic",
-        "reward": "10 Golden Chests",
-        "isNew": false
-      },
-      {
-        "code": "INF3RNO",
-        "reward": "3 Inferno Chests",
-        "isNew": false
-      },
-      {
-        "code": "QOL2",
-        "reward": "10 Raid Chest and 150 Keys",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "s4ndw0rm",
-      "w0rldw1d3",
-      "atl4nt1s",
-      "Cl4ssy",
-      "ex0tic",
-      "INF3RNO",
-      "QOL2",
-      "firstswarm",
-      "supdoggy",
-      "ADMIN",
-      "RipVoid"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "immortality-incremental",
-    "name": "Immortality Incremental",
-    "displayName": "[🧪 WORLD 9 PT. 2] Immortality Incremental",
-    "slug": "immortality-incremental",
-    "players": 3069,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3069,
-    "newCodes": [
-      {
-        "code": "LASTD1UPD",
-        "reward": "10 Tickets, Potions"
-      },
-      {
-        "code": "ALCHEMY",
-        "reward": "10 Jade, 3 Mark Potions"
-      }
-    ],
-    "activeCount": 7,
-    "fetchedAt": "2026-10-12T15:03:02.787Z",
-    "displayCodes": [
-      {
-        "code": "LASTD1UPD",
-        "reward": "10 Tickets, Potions",
-        "isNew": true
-      },
-      {
-        "code": "ALCHEMY",
-        "reward": "10 Jade, 3 Mark Potions",
-        "isNew": true
-      },
-      {
-        "code": "MININGEXPANSION",
-        "reward": "10 Tickets, 10 Jade, Path Potions",
-        "isNew": false
-      },
-      {
-        "code": "MINING",
-        "reward": "Path Potion, 10 Tickets",
-        "isNew": false
-      },
-      {
-        "code": "WORLD9PT1",
-        "reward": "1 Ore Potion, 10 Jade",
-        "isNew": false
-      },
-      {
-        "code": "WORLD8PT2",
-        "reward": "5 Tickets, Path Potions",
-        "isNew": false
-      },
-      {
-        "code": "HARDTRAINING",
-        "reward": "10 Tickets, 20 Jade, 5 Potions",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "LASTD1UPD",
-        "reward": "10 Tickets, Potions",
-        "isNew": true
-      },
-      {
-        "code": "ALCHEMY",
-        "reward": "10 Jade, 3 Mark Potions",
-        "isNew": true
-      },
-      {
-        "code": "MININGEXPANSION",
-        "reward": "10 Tickets, 10 Jade, Path Potions",
-        "isNew": false
-      },
-      {
-        "code": "MINING",
-        "reward": "Path Potion, 10 Tickets",
-        "isNew": false
-      },
-      {
-        "code": "WORLD9PT1",
-        "reward": "1 Ore Potion, 10 Jade",
-        "isNew": false
-      },
-      {
-        "code": "WORLD8PT2",
-        "reward": "5 Tickets, Path Potions",
-        "isNew": false
-      },
-      {
-        "code": "HARDTRAINING",
-        "reward": "10 Tickets, 20 Jade, 5 Potions",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "LASTD1UPD",
-      "ALCHEMY",
-      "MININGEXPANSION",
-      "MINING",
-      "WORLD9PT1",
-      "WORLD8PT2",
-      "HARDTRAINING"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "fish-an-anime-rng",
     "name": "Fish an Anime RNG",
     "displayName": "Fish an Anime RNG 🎲",
@@ -562,6 +326,143 @@
       "COILRIFT",
       "STELLAWOLF",
       "xp"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "it-girl",
+    "name": "IT GIRL",
+    "displayName": "IT GIRL 🏝️",
+    "slug": "it-girl",
+    "players": 2765,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2765,
+    "newCodes": [
+      {
+        "code": "HALLOWEEN26",
+        "reward": "1000 Diamonds"
+      }
+    ],
+    "activeCount": 22,
+    "fetchedAt": "2026-10-12T23:01:55.108Z",
+    "displayCodes": [
+      {
+        "code": "HALLOWEEN26",
+        "reward": "1000 Diamonds",
+        "isNew": true
+      },
+      {
+        "code": "HAPPY250M",
+        "reward": "1000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "AQUAMARINE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SORRY4THEDELAY",
+        "reward": "1,500 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "MILLIONMEMBERS",
+        "reward": "1 Million Group Members Set",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY200M",
+        "reward": "2000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "SWEETBUTEVIL",
+        "reward": "Freebies",
+        "isNew": false
+      },
+      {
+        "code": "SURPRISE",
+        "reward": "Freebies",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY150M",
+        "reward": "1500 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "S0SW33T",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "HALLOWEEN26",
+        "reward": "1000 Diamonds",
+        "isNew": true
+      },
+      {
+        "code": "HAPPY250M",
+        "reward": "1000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "AQUAMARINE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SORRY4THEDELAY",
+        "reward": "1,500 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "MILLIONMEMBERS",
+        "reward": "1 Million Group Members Set",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY200M",
+        "reward": "2000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "SWEETBUTEVIL",
+        "reward": "Freebies",
+        "isNew": false
+      },
+      {
+        "code": "SURPRISE",
+        "reward": "Freebies",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "HALLOWEEN26",
+      "HAPPY250M",
+      "AQUAMARINE",
+      "SORRY4THEDELAY",
+      "MILLIONMEMBERS",
+      "HAPPY200M",
+      "SWEETBUTEVIL",
+      "SURPRISE",
+      "HAPPY150M",
+      "S0SW33T",
+      "ITGIRLSORRY",
+      "ITGIRLWINTER",
+      "thank you diamonds",
+      "PH4NT0MM4X",
+      "TAVERSIA",
+      "RUPAULSD0LL",
+      "ITGIRL",
+      "TRICKORTREAT",
+      "MADDYAFKDRESS",
+      "AVASFX",
+      "LACROWN",
+      "MADDYAFK"
     ]
   },
   {
@@ -1514,6 +1415,42 @@
       "6.7MVISITS",
       "67KLIKES",
       "GIGANTICUPDATE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "run-a-sari-sari-store",
+    "name": "Run a Sari-Sari Store",
+    "displayName": "[🛒] Run a Sari-Sari Store!",
+    "slug": "run-a-sari-sari-store",
+    "players": 2007,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2007,
+    "newCodes": [
+      {
+        "code": "RELEASE",
+        "reward": "500 Cash + 5% Upgrade Shop Discount"
+      }
+    ],
+    "activeCount": 1,
+    "fetchedAt": "2026-10-12T23:01:55.108Z",
+    "displayCodes": [
+      {
+        "code": "RELEASE",
+        "reward": "500 Cash + 5% Upgrade Shop Discount",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "RELEASE",
+        "reward": "500 Cash + 5% Upgrade Shop Discount",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "RELEASE"
     ]
   },
   {
