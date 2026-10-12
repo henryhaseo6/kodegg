@@ -3,739 +3,727 @@
   "game": "anime-dice",
   "slug": "anime-dice",
   "denSlug": "anime-dice",
-  "players": 66448
+  "players": 64721
  },
  {
   "game": "murderers-vs-sheriffs",
   "slug": "murderers-vs-sheriffs",
   "denSlug": "murderers-vs-sheriffs",
-  "players": 59725
+  "players": 64577
  },
  {
   "game": "lifetogether",
   "slug": "lifetogether",
   "denSlug": "lifetogether",
-  "players": 55128
- },
- {
-  "game": "anime-zero",
-  "slug": "anime-zero",
-  "denSlug": "anime-zero",
-  "players": 50187
+  "players": 52979
  },
  {
   "game": "tower-of-hell",
   "slug": "tower-of-hell",
   "denSlug": "tower-of-hell",
-  "players": 49580
+  "players": 49805
+ },
+ {
+  "game": "anime-zero",
+  "slug": "anime-zero",
+  "denSlug": "anime-zero",
+  "players": 46181
  },
  {
   "game": "1-stone-skipping",
   "slug": "1-stone-skipping",
   "denSlug": "1-stone-skipping",
-  "players": 44996
+  "players": 42185
  },
  {
   "game": "drive-a-kukirin",
   "slug": "drive-a-kukirin",
   "denSlug": "drive-a-kukirin",
-  "players": 27996
+  "players": 29862
  },
  {
   "game": "dubai-rp",
   "slug": "dubai-rp",
   "denSlug": "dubai-rp",
-  "players": 25370
+  "players": 24410
  },
  {
   "game": "conquer-europe-ww-2",
   "slug": "conquer-europe-ww-2",
   "denSlug": "conquer-europe-ww-2",
-  "players": 18634
+  "players": 19516
  },
  {
   "game": "runaways",
   "slug": "runaways",
   "denSlug": "runaways",
-  "players": 18158
- },
- {
-  "game": "san-diego-border-roleplay",
-  "slug": "san-diego-border-roleplay",
-  "denSlug": "san-diego-border-roleplay",
-  "players": 16205
- },
- {
-  "game": "knife-vs-gun-duels",
-  "slug": "knife-vs-gun-duels",
-  "denSlug": "knife-vs-gun-duels",
-  "players": 15268
- },
- {
-  "game": "build-and-kill-zombies",
-  "slug": "build-and-kill-zombies",
-  "denSlug": "build-and-kill-zombies",
-  "players": 14760
- },
- {
-  "game": "my-anime-mine",
-  "slug": "my-anime-mine",
-  "denSlug": "my-anime-mine",
-  "players": 14573
- },
- {
-  "game": "1-tongue-escape",
-  "slug": "1-tongue-escape",
-  "denSlug": "1-tongue-escape",
-  "players": 14112
- },
- {
-  "game": "anime-breaker",
-  "slug": "anime-breaker",
-  "denSlug": "anime-breaker",
-  "players": 13460
- },
- {
-  "game": "destroy-a-vault",
-  "slug": "destroy-a-vault",
-  "denSlug": "destroy-a-vault",
-  "players": 12948
- },
- {
-  "game": "blue-lock-farm",
-  "slug": "blue-lock-farm",
-  "denSlug": "blue-lock-farm",
-  "players": 12779
- },
- {
-  "game": "deagle-arena",
-  "slug": "deagle-arena",
-  "denSlug": "deagle-arena",
-  "players": 12322
- },
- {
-  "game": "murder-mystery-duels",
-  "slug": "murder-mystery-duels",
-  "denSlug": "murder-mystery-duels",
-  "players": 9431
- },
- {
-  "game": "speed-monkey-escape",
-  "slug": "speed-monkey-escape",
-  "denSlug": "speed-monkey-escape",
-  "players": 8868
- },
- {
-  "game": "tower-incremental",
-  "slug": "tower-incremental",
-  "denSlug": "tower-incremental",
-  "players": 8270
- },
- {
-  "game": "anime-fighting-simulator-kdmf",
-  "slug": "anime-fighting-simulator-kdmf",
-  "denSlug": "anime-fighting-simulator-kdmf",
-  "players": 8236
- },
- {
-  "game": "military-army-tycoon",
-  "slug": "military-army-tycoon",
-  "denSlug": "military-army-tycoon",
-  "players": 7963
- },
- {
-  "game": "karinderya",
-  "slug": "karinderya",
-  "denSlug": "karinderya",
-  "players": 7661
+  "players": 18882
  },
  {
   "game": "alliance-tower-defense",
   "slug": "alliance-tower-defense",
   "denSlug": "alliance-tower-defense",
-  "players": 7440
+  "players": 17025
+ },
+ {
+  "game": "san-diego-border-roleplay",
+  "slug": "san-diego-border-roleplay",
+  "denSlug": "san-diego-border-roleplay",
+  "players": 15281
+ },
+ {
+  "game": "knife-vs-gun-duels",
+  "slug": "knife-vs-gun-duels",
+  "denSlug": "knife-vs-gun-duels",
+  "players": 14898
+ },
+ {
+  "game": "my-anime-mine",
+  "slug": "my-anime-mine",
+  "denSlug": "my-anime-mine",
+  "players": 14139
+ },
+ {
+  "game": "build-and-kill-zombies",
+  "slug": "build-and-kill-zombies",
+  "denSlug": "build-and-kill-zombies",
+  "players": 13372
+ },
+ {
+  "game": "anime-breaker",
+  "slug": "anime-breaker",
+  "denSlug": "anime-breaker",
+  "players": 13193
+ },
+ {
+  "game": "1-tongue-escape",
+  "slug": "1-tongue-escape",
+  "denSlug": "1-tongue-escape",
+  "players": 12826
+ },
+ {
+  "game": "blue-lock-farm",
+  "slug": "blue-lock-farm",
+  "denSlug": "blue-lock-farm",
+  "players": 12279
+ },
+ {
+  "game": "destroy-a-vault",
+  "slug": "destroy-a-vault",
+  "denSlug": "destroy-a-vault",
+  "players": 12148
+ },
+ {
+  "game": "deagle-arena",
+  "slug": "deagle-arena",
+  "denSlug": "deagle-arena",
+  "players": 11955
+ },
+ {
+  "game": "murder-mystery-duels",
+  "slug": "murder-mystery-duels",
+  "denSlug": "murder-mystery-duels",
+  "players": 9370
+ },
+ {
+  "game": "speed-monkey-escape",
+  "slug": "speed-monkey-escape",
+  "denSlug": "speed-monkey-escape",
+  "players": 8800
+ },
+ {
+  "game": "tower-incremental",
+  "slug": "tower-incremental",
+  "denSlug": "tower-incremental",
+  "players": 8468
+ },
+ {
+  "game": "anime-fighting-simulator-kdmf",
+  "slug": "anime-fighting-simulator-kdmf",
+  "denSlug": "anime-fighting-simulator-kdmf",
+  "players": 8254
+ },
+ {
+  "game": "military-army-tycoon",
+  "slug": "military-army-tycoon",
+  "denSlug": "military-army-tycoon",
+  "players": 7419
  },
  {
   "game": "mm2-aim-trainer-2",
   "slug": "mm2-aim-trainer-2",
   "denSlug": "mm2-aim-trainer-2",
-  "players": 7184
+  "players": 7074
  },
  {
   "game": "last-stop",
   "slug": "last-stop",
   "denSlug": "last-stop",
-  "players": 7023
+  "players": 6789
  },
  {
   "game": "build-a-plane",
   "slug": "build-a-plane",
   "denSlug": "build-a-plane",
-  "players": 7014
+  "players": 6600
  },
  {
   "game": "anime-high-school-rp",
   "slug": "anime-high-school-rp",
   "denSlug": "anime-high-school-rp",
-  "players": 6845
- },
- {
-  "game": "clone-to-steal-eggs",
-  "slug": "clone-to-steal-eggs",
-  "denSlug": "clone-to-steal-eggs",
-  "players": 6406
- },
- {
-  "game": "1-chop-trees-for-treasure",
-  "slug": "1-chop-trees-for-treasure",
-  "denSlug": "1-chop-trees-for-treasure",
-  "players": 6318
- },
- {
-  "game": "street-soccer-2026",
-  "slug": "street-soccer-2026",
-  "denSlug": "street-soccer-2026",
-  "players": 6190
- },
- {
-  "game": "legacy-piece",
-  "slug": "legacy-piece",
-  "denSlug": "legacy-piece",
-  "players": 6120
+  "players": 6591
  },
  {
   "game": "club-roblox",
   "slug": "club-roblox",
   "denSlug": "club-roblox",
-  "players": 6018
+  "players": 6047
+ },
+ {
+  "game": "street-soccer-2026",
+  "slug": "street-soccer-2026",
+  "denSlug": "street-soccer-2026",
+  "players": 6001
+ },
+ {
+  "game": "legacy-piece",
+  "slug": "legacy-piece",
+  "denSlug": "legacy-piece",
+  "players": 5952
+ },
+ {
+  "game": "clone-to-steal-eggs",
+  "slug": "clone-to-steal-eggs",
+  "denSlug": "clone-to-steal-eggs",
+  "players": 5860
  },
  {
   "game": "paint-or-seek",
   "slug": "paint-or-seek",
   "denSlug": "paint-or-seek",
-  "players": 5605
+  "players": 5630
+ },
+ {
+  "game": "1-chop-trees-for-treasure",
+  "slug": "1-chop-trees-for-treasure",
+  "denSlug": "1-chop-trees-for-treasure",
+  "players": 5543
  },
  {
   "game": "my-jail-cell",
   "slug": "my-jail-cell",
   "denSlug": "my-jail-cell",
-  "players": 5539
- },
- {
-  "game": "open-sea-for-animals",
-  "slug": "open-sea-for-animals",
-  "denSlug": "open-sea-for-animals",
-  "players": 5446
- },
- {
-  "game": "slop-tower-defense",
-  "slug": "slop-tower-defense",
-  "denSlug": "slop-tower-defense",
-  "players": 5352
- },
- {
-  "game": "strike-warfare",
-  "slug": "strike-warfare",
-  "denSlug": "strike-warfare",
-  "players": 5265
+  "players": 5223
  },
  {
   "game": "collect-1-million-items",
   "slug": "collect-1-million-items",
   "denSlug": "collect-1-million-items",
-  "players": 5207
+  "players": 5085
+ },
+ {
+  "game": "strike-warfare",
+  "slug": "strike-warfare",
+  "denSlug": "strike-warfare",
+  "players": 5044
  },
  {
   "game": "that-freekick-challenge",
   "slug": "that-freekick-challenge",
   "denSlug": "that-freekick-challenge",
-  "players": 4776
+  "players": 4997
  },
  {
-  "game": "traitor-vs-sheriff-duels",
-  "slug": "traitor-vs-sheriff-duels",
-  "denSlug": "traitor-vs-sheriff-duels",
-  "players": 4648
+  "game": "slop-tower-defense",
+  "slug": "slop-tower-defense",
+  "denSlug": "slop-tower-defense",
+  "players": 4938
+ },
+ {
+  "game": "open-sea-for-animals",
+  "slug": "open-sea-for-animals",
+  "denSlug": "open-sea-for-animals",
+  "players": 4921
  },
  {
   "game": "neighbors-17",
   "slug": "neighbors-17",
   "denSlug": "neighbors-17",
-  "players": 4566
+  "players": 4742
  },
  {
-  "game": "2-player-raid-tycoon",
-  "slug": "2-player-raid-tycoon",
-  "denSlug": "2-player-raid-tycoon",
-  "players": 4484
- },
- {
-  "game": "idle-mafia-game",
-  "slug": "idle-mafia-game",
-  "denSlug": "idle-mafia-game",
-  "players": 4469
- },
- {
-  "game": "anomaly-cafe",
-  "slug": "anomaly-cafe",
-  "denSlug": "anomaly-cafe",
-  "players": 4469
- },
- {
-  "game": "ski",
-  "slug": "ski",
-  "denSlug": "ski",
-  "players": 4391
- },
- {
-  "game": "superhero-evolution",
-  "slug": "superhero-evolution",
-  "denSlug": "superhero-evolution",
-  "players": 4374
- },
- {
-  "game": "redcliff-city",
-  "slug": "redcliff-city",
-  "denSlug": "redcliff-city",
-  "players": 4361
- },
- {
-  "game": "1-soldier-evolution",
-  "slug": "1-soldier-evolution",
-  "denSlug": "1-soldier-evolution",
-  "players": 4242
+  "game": "karinderya",
+  "slug": "karinderya",
+  "denSlug": "karinderya",
+  "players": 4742
  },
  {
   "game": "the-cosalazo-2",
   "slug": "the-cosalazo-2",
   "denSlug": "the-cosalazo-2",
-  "players": 4026
+  "players": 4632
  },
  {
-  "game": "ping-pong-training",
-  "slug": "ping-pong-training",
-  "denSlug": "ping-pong-training",
-  "players": 3980
+  "game": "2-player-raid-tycoon",
+  "slug": "2-player-raid-tycoon",
+  "denSlug": "2-player-raid-tycoon",
+  "players": 4628
  },
  {
-  "game": "1-bite-per-click",
-  "slug": "1-bite-per-click",
-  "denSlug": "1-bite-per-click",
-  "players": 3873
+  "game": "traitor-vs-sheriff-duels",
+  "slug": "traitor-vs-sheriff-duels",
+  "denSlug": "traitor-vs-sheriff-duels",
+  "players": 4491
  },
  {
-  "game": "keep-the-door-locked",
-  "slug": "keep-the-door-locked",
-  "denSlug": "keep-the-door-locked",
-  "players": 3621
+  "game": "idle-mafia-game",
+  "slug": "idle-mafia-game",
+  "denSlug": "idle-mafia-game",
+  "players": 4440
  },
  {
-  "game": "livetopia",
-  "slug": "livetopia",
-  "denSlug": "livetopia",
-  "players": 3611
+  "game": "superhero-evolution",
+  "slug": "superhero-evolution",
+  "denSlug": "superhero-evolution",
+  "players": 4320
+ },
+ {
+  "game": "ski",
+  "slug": "ski",
+  "denSlug": "ski",
+  "players": 4301
+ },
+ {
+  "game": "anomaly-cafe",
+  "slug": "anomaly-cafe",
+  "denSlug": "anomaly-cafe",
+  "players": 4283
+ },
+ {
+  "game": "1-soldier-evolution",
+  "slug": "1-soldier-evolution",
+  "denSlug": "1-soldier-evolution",
+  "players": 4210
+ },
+ {
+  "game": "redcliff-city",
+  "slug": "redcliff-city",
+  "denSlug": "redcliff-city",
+  "players": 4155
  },
  {
   "game": "gnomes",
   "slug": "gnomes",
   "denSlug": "gnomes",
-  "players": 3561
+  "players": 4047
  },
  {
-  "game": "the-morgue-shift",
-  "slug": "the-morgue-shift",
-  "denSlug": "the-morgue-shift",
-  "players": 3499
+  "game": "ping-pong-training",
+  "slug": "ping-pong-training",
+  "denSlug": "ping-pong-training",
+  "players": 4007
  },
  {
   "game": "bloodlines",
   "slug": "bloodlines",
   "denSlug": "bloodlines",
-  "players": 3457
+  "players": 3772
+ },
+ {
+  "game": "1-bite-per-click",
+  "slug": "1-bite-per-click",
+  "denSlug": "1-bite-per-click",
+  "players": 3535
  },
  {
   "game": "phonk-slap",
   "slug": "phonk-slap",
   "denSlug": "phonk-slap",
-  "players": 3407
+  "players": 3518
  },
  {
-  "game": "my-dino-life",
-  "slug": "my-dino-life",
-  "denSlug": "my-dino-life",
-  "players": 3234
- },
- {
-  "game": "reheads-please",
-  "slug": "reheads-please",
-  "denSlug": "reheads-please",
-  "players": 3203
- },
- {
-  "game": "jump-to-steal-an-egg",
-  "slug": "jump-to-steal-an-egg",
-  "denSlug": "jump-to-steal-an-egg",
-  "players": 3183
+  "game": "keep-the-door-locked",
+  "slug": "keep-the-door-locked",
+  "denSlug": "keep-the-door-locked",
+  "players": 3386
  },
  {
   "game": "winx-the-fairy-guardians",
   "slug": "winx-the-fairy-guardians",
   "denSlug": "winx-the-fairy-guardians",
-  "players": 3158
- },
- {
-  "game": "ronopoly",
-  "slug": "ronopoly",
-  "denSlug": "ronopoly",
-  "players": 3152
- },
- {
-  "game": "car-duels",
-  "slug": "car-duels",
-  "denSlug": "car-duels",
-  "players": 3131
+  "players": 3237
  },
  {
   "game": "project-delta",
   "slug": "project-delta",
   "denSlug": "project-delta",
-  "players": 3099
+  "players": 3187
+ },
+ {
+  "game": "livetopia",
+  "slug": "livetopia",
+  "denSlug": "livetopia",
+  "players": 3180
+ },
+ {
+  "game": "jump-to-steal-an-egg",
+  "slug": "jump-to-steal-an-egg",
+  "denSlug": "jump-to-steal-an-egg",
+  "players": 3179
+ },
+ {
+  "game": "reheads-please",
+  "slug": "reheads-please",
+  "denSlug": "reheads-please",
+  "players": 3114
  },
  {
   "game": "case-simulator-rng",
   "slug": "case-simulator-rng",
   "denSlug": "case-simulator-rng",
-  "players": 3064
+  "players": 3111
+ },
+ {
+  "game": "the-morgue-shift",
+  "slug": "the-morgue-shift",
+  "denSlug": "the-morgue-shift",
+  "players": 3084
+ },
+ {
+  "game": "my-dino-life",
+  "slug": "my-dino-life",
+  "denSlug": "my-dino-life",
+  "players": 3071
+ },
+ {
+  "game": "car-duels",
+  "slug": "car-duels",
+  "denSlug": "car-duels",
+  "players": 3058
+ },
+ {
+  "game": "ronopoly",
+  "slug": "ronopoly",
+  "denSlug": "ronopoly",
+  "players": 2963
  },
  {
   "game": "dank-murder-mystery",
   "slug": "dank-murder-mystery",
   "denSlug": "dank-murder-mystery",
-  "players": 3052
- },
- {
-  "game": "duel-stars",
-  "slug": "duel-stars",
-  "denSlug": "duel-stars",
-  "players": 3026
- },
- {
-  "game": "moped-drag",
-  "slug": "moped-drag",
-  "denSlug": "moped-drag",
-  "players": 3008
- },
- {
-  "game": "iron-soul-dungeon",
-  "slug": "iron-soul-dungeon",
-  "denSlug": "iron-soul-dungeon",
-  "players": 2964
- },
- {
-  "game": "build-an-asmr-tower",
-  "slug": "build-an-asmr-tower",
-  "denSlug": "build-an-asmr-tower",
-  "players": 2950
- },
- {
-  "game": "sell-ores",
-  "slug": "sell-ores",
-  "denSlug": "sell-ores",
-  "players": 2936
- },
- {
-  "game": "mm2-of-the-locust",
-  "slug": "mm2-of-the-locust",
-  "denSlug": "mm2-of-the-locust",
-  "players": 2895
- },
- {
-  "game": "blood-zone",
-  "slug": "blood-zone",
-  "denSlug": "blood-zone",
-  "players": 2823
+  "players": 2945
  },
  {
   "game": "untitled-wheelie-game",
   "slug": "untitled-wheelie-game",
   "denSlug": "untitled-wheelie-game",
-  "players": 2805
+  "players": 2936
+ },
+ {
+  "game": "sell-ores",
+  "slug": "sell-ores",
+  "denSlug": "sell-ores",
+  "players": 2918
+ },
+ {
+  "game": "mm2-of-the-locust",
+  "slug": "mm2-of-the-locust",
+  "denSlug": "mm2-of-the-locust",
+  "players": 2851
+ },
+ {
+  "game": "build-an-asmr-tower",
+  "slug": "build-an-asmr-tower",
+  "denSlug": "build-an-asmr-tower",
+  "players": 2816
+ },
+ {
+  "game": "duel-stars",
+  "slug": "duel-stars",
+  "denSlug": "duel-stars",
+  "players": 2815
+ },
+ {
+  "game": "blood-zone",
+  "slug": "blood-zone",
+  "denSlug": "blood-zone",
+  "players": 2691
+ },
+ {
+  "game": "iron-soul-dungeon",
+  "slug": "iron-soul-dungeon",
+  "denSlug": "iron-soul-dungeon",
+  "players": 2629
  },
  {
   "game": "murder-infinite",
   "slug": "murder-infinite",
   "denSlug": "murder-infinite",
-  "players": 2766
- },
- {
-  "game": "keys",
-  "slug": "keys",
-  "denSlug": "keys",
-  "players": 2553
- },
- {
-  "game": "defend-bunker-from-zombies",
-  "slug": "defend-bunker-from-zombies",
-  "denSlug": "defend-bunker-from-zombies",
-  "players": 2547
- },
- {
-  "game": "build-base-to-survive-verity",
-  "slug": "build-base-to-survive-verity",
-  "denSlug": "build-base-to-survive-verity",
-  "players": 2540
+  "players": 2591
  },
  {
   "game": "hide-and-seek-extreme",
   "slug": "hide-and-seek-extreme",
   "denSlug": "hide-and-seek-extreme",
-  "players": 2537
- },
- {
-  "game": "beat-the-anime-boss",
-  "slug": "beat-the-anime-boss",
-  "denSlug": "beat-the-anime-boss",
-  "players": 2529
- },
- {
-  "game": "dodge-or-die",
-  "slug": "dodge-or-die",
-  "denSlug": "dodge-or-die",
-  "players": 2438
- },
- {
-  "game": "car-driving-indonesia",
-  "slug": "car-driving-indonesia",
-  "denSlug": "car-driving-indonesia",
-  "players": 2427
- },
- {
-  "game": "bombanana",
-  "slug": "bombanana",
-  "denSlug": "bombanana",
-  "players": 2392
- },
- {
-  "game": "protect-the-house-from-monsters",
-  "slug": "protect-the-house-from-monsters",
-  "denSlug": "protect-the-house-from-monsters",
-  "players": 2383
+  "players": 2590
  },
  {
   "game": "cowboy-duels",
   "slug": "cowboy-duels",
   "denSlug": "cowboy-duels",
-  "players": 2372
+  "players": 2543
  },
  {
-  "game": "dummy-counter-your-friends",
-  "slug": "dummy-counter-your-friends",
-  "denSlug": "dummy-counter-your-friends",
-  "players": 2347
+  "game": "bombanana",
+  "slug": "bombanana",
+  "denSlug": "bombanana",
+  "players": 2497
  },
  {
-  "game": "jump-for-animals",
-  "slug": "jump-for-animals",
-  "denSlug": "jump-for-animals",
-  "players": 2345
+  "game": "beat-the-anime-boss",
+  "slug": "beat-the-anime-boss",
+  "denSlug": "beat-the-anime-boss",
+  "players": 2446
  },
  {
-  "game": "happy-town-rp",
-  "slug": "happy-town-rp",
-  "denSlug": "happy-town-rp",
-  "players": 2312
+  "game": "build-base-to-survive-verity",
+  "slug": "build-base-to-survive-verity",
+  "denSlug": "build-base-to-survive-verity",
+  "players": 2417
+ },
+ {
+  "game": "dodge-or-die",
+  "slug": "dodge-or-die",
+  "denSlug": "dodge-or-die",
+  "players": 2399
+ },
+ {
+  "game": "defend-bunker-from-zombies",
+  "slug": "defend-bunker-from-zombies",
+  "denSlug": "defend-bunker-from-zombies",
+  "players": 2373
+ },
+ {
+  "game": "keys",
+  "slug": "keys",
+  "denSlug": "keys",
+  "players": 2363
  },
  {
   "game": "flip-a-house",
   "slug": "flip-a-house",
   "denSlug": "flip-a-house",
-  "players": 2273
+  "players": 2272
  },
  {
   "game": "st-blockade-reboot",
   "slug": "st-blockade-reboot",
   "denSlug": "st-blockade-reboot",
-  "players": 2270
+  "players": 2240
  },
  {
-  "game": "camper-van",
-  "slug": "camper-van",
-  "denSlug": "camper-van",
-  "players": 2152
+  "game": "protect-the-house-from-monsters",
+  "slug": "protect-the-house-from-monsters",
+  "denSlug": "protect-the-house-from-monsters",
+  "players": 2207
+ },
+ {
+  "game": "dummy-counter-your-friends",
+  "slug": "dummy-counter-your-friends",
+  "denSlug": "dummy-counter-your-friends",
+  "players": 2124
+ },
+ {
+  "game": "happy-town-rp",
+  "slug": "happy-town-rp",
+  "denSlug": "happy-town-rp",
+  "players": 2112
+ },
+ {
+  "game": "jump-for-animals",
+  "slug": "jump-for-animals",
+  "denSlug": "jump-for-animals",
+  "players": 2106
  },
  {
   "game": "divaz",
   "slug": "divaz",
   "denSlug": "divaz",
-  "players": 2047
+  "players": 2058
  },
  {
-  "game": "sail-and-sink-simulator",
-  "slug": "sail-and-sink-simulator",
-  "denSlug": "sail-and-sink-simulator",
-  "players": 2040
+  "game": "moped-drag",
+  "slug": "moped-drag",
+  "denSlug": "moped-drag",
+  "players": 2030
+ },
+ {
+  "game": "camper-van",
+  "slug": "camper-van",
+  "denSlug": "camper-van",
+  "players": 1889
  },
  {
   "game": "motorcycle-for-animals",
   "slug": "motorcycle-for-animals",
   "denSlug": "motorcycle-for-animals",
-  "players": 2020
+  "players": 1880
+ },
+ {
+  "game": "sail-and-sink-simulator",
+  "slug": "sail-and-sink-simulator",
+  "denSlug": "sail-and-sink-simulator",
+  "players": 1841
+ },
+ {
+  "game": "car-driving-indonesia",
+  "slug": "car-driving-indonesia",
+  "denSlug": "car-driving-indonesia",
+  "players": 1824
  },
  {
   "game": "my-toll-farm",
   "slug": "my-toll-farm",
   "denSlug": "my-toll-farm",
-  "players": 1841
+  "players": 1818
  },
  {
   "game": "vehicle-legends",
   "slug": "vehicle-legends",
   "denSlug": "vehicle-legends",
-  "players": 1752
- },
- {
-  "game": "build-and-hide-to-survive",
-  "slug": "build-and-hide-to-survive",
-  "denSlug": "build-and-hide-to-survive",
-  "players": 1666
- },
- {
-  "game": "mermaid-awakening",
-  "slug": "mermaid-awakening",
-  "denSlug": "mermaid-awakening",
-  "players": 1565
+  "players": 1796
  },
  {
   "game": "roblox-stock-exchange-2",
   "slug": "roblox-stock-exchange-2",
   "denSlug": "roblox-stock-exchange-2",
-  "players": 1561
- },
- {
-  "game": "burgerz",
-  "slug": "burgerz",
-  "denSlug": "burgerz",
-  "players": 1553
- },
- {
-  "game": "spider-rising-spider-man",
-  "slug": "spider-rising-spider-man",
-  "denSlug": "spider-rising-spider-man",
-  "players": 1540
+  "players": 1649
  },
  {
   "game": "cluck-or-hide",
   "slug": "cluck-or-hide",
   "denSlug": "cluck-or-hide",
-  "players": 1514
+  "players": 1596
+ },
+ {
+  "game": "build-and-hide-to-survive",
+  "slug": "build-and-hide-to-survive",
+  "denSlug": "build-and-hide-to-survive",
+  "players": 1594
+ },
+ {
+  "game": "mermaid-awakening",
+  "slug": "mermaid-awakening",
+  "denSlug": "mermaid-awakening",
+  "players": 1528
+ },
+ {
+  "game": "spider-rising-spider-man",
+  "slug": "spider-rising-spider-man",
+  "denSlug": "spider-rising-spider-man",
+  "players": 1519
+ },
+ {
+  "game": "burgerz",
+  "slug": "burgerz",
+  "denSlug": "burgerz",
+  "players": 1499
  },
  {
   "game": "pets-vs-police",
   "slug": "pets-vs-police",
   "denSlug": "pets-vs-police",
-  "players": 1502
- },
- {
-  "game": "verity-battles",
-  "slug": "verity-battles",
-  "denSlug": "verity-battles",
-  "players": 1492
+  "players": 1485
  },
  {
   "game": "launch-things-and-people",
   "slug": "launch-things-and-people",
   "denSlug": "launch-things-and-people",
-  "players": 1470
+  "players": 1479
  },
  {
   "game": "superbox-siege-defense",
   "slug": "superbox-siege-defense",
   "denSlug": "superbox-siege-defense",
-  "players": 1443
+  "players": 1477
  },
  {
   "game": "endless-games",
   "slug": "endless-games",
   "denSlug": "endless-games",
-  "players": 1441
+  "players": 1445
  },
  {
-  "game": "merge-and-dig-simulator",
-  "slug": "merge-and-dig-simulator",
-  "denSlug": "merge-and-dig-simulator",
-  "players": 1431
+  "game": "verity-battles",
+  "slug": "verity-battles",
+  "denSlug": "verity-battles",
+  "players": 1430
  },
  {
   "game": "camper-van-trip",
   "slug": "camper-van-trip",
   "denSlug": "camper-van-trip",
-  "players": 1421
- },
- {
-  "game": "catch-1-billion-ducks",
-  "slug": "catch-1-billion-ducks",
-  "denSlug": "catch-1-billion-ducks",
-  "players": 1416
- },
- {
-  "game": "kite-combat",
-  "slug": "kite-combat",
-  "denSlug": "kite-combat",
-  "players": 1394
- },
- {
-  "game": "driving-school-taipei-taiwan",
-  "slug": "driving-school-taipei-taiwan",
-  "denSlug": "driving-school-taipei-taiwan",
-  "players": 1391
- },
- {
-  "game": "skate-trickz-escape",
-  "slug": "skate-trickz-escape",
-  "denSlug": "skate-trickz-escape",
-  "players": 1384
- },
- {
-  "game": "cozy-town-rp",
-  "slug": "cozy-town-rp",
-  "denSlug": "cozy-town-rp",
-  "players": 1373
+  "players": 1413
  },
  {
   "game": "hide-the-body",
   "slug": "hide-the-body",
   "denSlug": "hide-the-body",
-  "players": 1284
- },
- {
-  "game": "fleet-empire",
-  "slug": "fleet-empire",
-  "denSlug": "fleet-empire",
-  "players": 1260
- },
- {
-  "game": "1-muscle-to-arm-wrestle",
-  "slug": "1-muscle-to-arm-wrestle",
-  "denSlug": "1-muscle-to-arm-wrestle",
-  "players": 1253
- },
- {
-  "game": "venture-aot",
-  "slug": "venture-aot",
-  "denSlug": "venture-aot",
-  "players": 1247
- },
- {
-  "game": "unbox-asmr",
-  "slug": "unbox-asmr",
-  "denSlug": "unbox-asmr",
-  "players": 1231
+  "players": 1408
  },
  {
   "game": "get-fat-to-break-tape",
   "slug": "get-fat-to-break-tape",
   "denSlug": "get-fat-to-break-tape",
-  "players": 1218
+  "players": 1399
+ },
+ {
+  "game": "merge-and-dig-simulator",
+  "slug": "merge-and-dig-simulator",
+  "denSlug": "merge-and-dig-simulator",
+  "players": 1389
+ },
+ {
+  "game": "catch-1-billion-ducks",
+  "slug": "catch-1-billion-ducks",
+  "denSlug": "catch-1-billion-ducks",
+  "players": 1377
+ },
+ {
+  "game": "venture-aot",
+  "slug": "venture-aot",
+  "denSlug": "venture-aot",
+  "players": 1297
+ },
+ {
+  "game": "cozy-town-rp",
+  "slug": "cozy-town-rp",
+  "denSlug": "cozy-town-rp",
+  "players": 1296
+ },
+ {
+  "game": "skate-trickz-escape",
+  "slug": "skate-trickz-escape",
+  "denSlug": "skate-trickz-escape",
+  "players": 1285
+ },
+ {
+  "game": "driving-school-taipei-taiwan",
+  "slug": "driving-school-taipei-taiwan",
+  "denSlug": "driving-school-taipei-taiwan",
+  "players": 1279
+ },
+ {
+  "game": "1-muscle-to-arm-wrestle",
+  "slug": "1-muscle-to-arm-wrestle",
+  "denSlug": "1-muscle-to-arm-wrestle",
+  "players": 1261
+ },
+ {
+  "game": "fleet-empire",
+  "slug": "fleet-empire",
+  "denSlug": "fleet-empire",
+  "players": 1249
  },
  {
   "game": "the-wild-west",
@@ -744,580 +732,598 @@
   "players": 1212
  },
  {
-  "game": "my-sari-sari-store",
-  "slug": "my-sari-sari-store",
-  "denSlug": "my-sari-sari-store",
-  "players": 1210
+  "game": "vampire-life",
+  "slug": "vampire-life",
+  "denSlug": "vampire-life",
+  "players": 1207
+ },
+ {
+  "game": "unbox-asmr",
+  "slug": "unbox-asmr",
+  "denSlug": "unbox-asmr",
+  "players": 1190
  },
  {
   "game": "sword-hunter",
   "slug": "sword-hunter",
   "denSlug": "sword-hunter",
-  "players": 1193
- },
- {
-  "game": "would-you-rather-mix-outfit-tower",
-  "slug": "would-you-rather-mix-outfit-tower",
-  "denSlug": "would-you-rather-mix-outfit-tower",
-  "players": 1164
- },
- {
-  "game": "vampire-life",
-  "slug": "vampire-life",
-  "denSlug": "vampire-life",
-  "players": 1157
+  "players": 1188
  },
  {
   "game": "kick-an-uma",
   "slug": "kick-an-uma",
   "denSlug": "kick-an-uma",
-  "players": 1153
+  "players": 1180
+ },
+ {
+  "game": "kite-combat",
+  "slug": "kite-combat",
+  "denSlug": "kite-combat",
+  "players": 1158
  },
  {
   "game": "build-a-blue-lock-squad",
   "slug": "build-a-blue-lock-squad",
   "denSlug": "build-a-blue-lock-squad",
-  "players": 1119
+  "players": 1066
  },
  {
   "game": "amber-alert",
   "slug": "amber-alert",
   "denSlug": "amber-alert",
-  "players": 1079
+  "players": 1060
  },
  {
   "game": "1-kitten-keyboard-escape",
   "slug": "1-kitten-keyboard-escape",
   "denSlug": "1-kitten-keyboard-escape",
-  "players": 1061
- },
- {
-  "game": "convenience-store-in-korea-asmr",
-  "slug": "convenience-store-in-korea-asmr",
-  "denSlug": "convenience-store-in-korea-asmr",
-  "players": 999
- },
- {
-  "game": "dino-hunters",
-  "slug": "dino-hunters",
-  "denSlug": "dino-hunters",
-  "players": 950
+  "players": 1025
  },
  {
   "game": "jump-off-a-building",
   "slug": "jump-off-a-building",
   "denSlug": "jump-off-a-building",
-  "players": 942
+  "players": 977
  },
  {
-  "game": "build-a-golem",
-  "slug": "build-a-golem",
-  "denSlug": "build-a-golem",
-  "players": 917
+  "game": "would-you-rather-mix-outfit-tower",
+  "slug": "would-you-rather-mix-outfit-tower",
+  "denSlug": "would-you-rather-mix-outfit-tower",
+  "players": 969
  },
  {
-  "game": "fight-in-a-streamer-university",
-  "slug": "fight-in-a-streamer-university",
-  "denSlug": "fight-in-a-streamer-university",
-  "players": 900
- },
- {
-  "game": "chinaside-tycoon",
-  "slug": "chinaside-tycoon",
-  "denSlug": "chinaside-tycoon",
-  "players": 876
- },
- {
-  "game": "killstreak",
-  "slug": "killstreak",
-  "denSlug": "killstreak",
-  "players": 861
- },
- {
-  "game": "1-backflip-keyboard-escape",
-  "slug": "1-backflip-keyboard-escape",
-  "denSlug": "1-backflip-keyboard-escape",
-  "players": 858
- },
- {
-  "game": "redfield-elementary-school",
-  "slug": "redfield-elementary-school",
-  "denSlug": "redfield-elementary-school",
-  "players": 844
- },
- {
-  "game": "typical-colors-2",
-  "slug": "typical-colors-2",
-  "denSlug": "typical-colors-2",
-  "players": 844
- },
- {
-  "game": "weird-strict-dad",
-  "slug": "weird-strict-dad",
-  "denSlug": "weird-strict-dad",
-  "players": 844
- },
- {
-  "game": "inside-brainrot-head",
-  "slug": "inside-brainrot-head",
-  "denSlug": "inside-brainrot-head",
-  "players": 835
- },
- {
-  "game": "how-to-fisch",
-  "slug": "how-to-fisch",
-  "denSlug": "how-to-fisch",
-  "players": 835
- },
- {
-  "game": "steal-a-chicken",
-  "slug": "steal-a-chicken",
-  "denSlug": "steal-a-chicken",
-  "players": 834
- },
- {
-  "game": "titans-ultra-boss-rush",
-  "slug": "titans-ultra-boss-rush",
-  "denSlug": "titans-ultra-boss-rush",
-  "players": 822
- },
- {
-  "game": "rocket-rumble",
-  "slug": "rocket-rumble",
-  "denSlug": "rocket-rumble",
-  "players": 814
- },
- {
-  "game": "become-a-billionaire",
-  "slug": "become-a-billionaire",
-  "denSlug": "become-a-billionaire",
-  "players": 812
+  "game": "dino-hunters",
+  "slug": "dino-hunters",
+  "denSlug": "dino-hunters",
+  "players": 945
  },
  {
   "game": "stop-the-timer",
   "slug": "stop-the-timer",
   "denSlug": "stop-the-timer",
-  "players": 805
+  "players": 937
  },
  {
-  "game": "noob-experiment-warzone",
-  "slug": "noob-experiment-warzone",
-  "denSlug": "noob-experiment-warzone",
-  "players": 801
+  "game": "build-a-golem",
+  "slug": "build-a-golem",
+  "denSlug": "build-a-golem",
+  "players": 934
+ },
+ {
+  "game": "chinaside-tycoon",
+  "slug": "chinaside-tycoon",
+  "denSlug": "chinaside-tycoon",
+  "players": 934
+ },
+ {
+  "game": "fight-in-a-streamer-university",
+  "slug": "fight-in-a-streamer-university",
+  "denSlug": "fight-in-a-streamer-university",
+  "players": 928
+ },
+ {
+  "game": "weird-strict-dad",
+  "slug": "weird-strict-dad",
+  "denSlug": "weird-strict-dad",
+  "players": 917
  },
  {
   "game": "where-did-i-park",
   "slug": "where-did-i-park",
   "denSlug": "where-did-i-park",
-  "players": 774
+  "players": 915
  },
  {
-  "game": "age-of-titans",
-  "slug": "age-of-titans",
-  "denSlug": "age-of-titans",
-  "players": 713
+  "game": "redfield-elementary-school",
+  "slug": "redfield-elementary-school",
+  "denSlug": "redfield-elementary-school",
+  "players": 867
  },
  {
-  "game": "build-a-country",
-  "slug": "build-a-country",
-  "denSlug": "build-a-country",
-  "players": 713
+  "game": "my-sari-sari-store",
+  "slug": "my-sari-sari-store",
+  "denSlug": "my-sari-sari-store",
+  "players": 852
  },
  {
-  "game": "reaopg",
-  "slug": "reaopg",
-  "denSlug": "reaopg",
-  "players": 706
+  "game": "convenience-store-in-korea-asmr",
+  "slug": "convenience-store-in-korea-asmr",
+  "denSlug": "convenience-store-in-korea-asmr",
+  "players": 840
  },
  {
-  "game": "steal-a-tree",
-  "slug": "steal-a-tree",
-  "denSlug": "steal-a-tree",
-  "players": 645
+  "game": "how-to-fisch",
+  "slug": "how-to-fisch",
+  "denSlug": "how-to-fisch",
+  "players": 821
  },
  {
-  "game": "1-katana-evolution",
-  "slug": "1-katana-evolution",
-  "denSlug": "1-katana-evolution",
-  "players": 642
+  "game": "1-backflip-keyboard-escape",
+  "slug": "1-backflip-keyboard-escape",
+  "denSlug": "1-backflip-keyboard-escape",
+  "players": 788
+ },
+ {
+  "game": "typical-colors-2",
+  "slug": "typical-colors-2",
+  "denSlug": "typical-colors-2",
+  "players": 778
+ },
+ {
+  "game": "titans-ultra-boss-rush",
+  "slug": "titans-ultra-boss-rush",
+  "denSlug": "titans-ultra-boss-rush",
+  "players": 778
+ },
+ {
+  "game": "killstreak",
+  "slug": "killstreak",
+  "denSlug": "killstreak",
+  "players": 755
+ },
+ {
+  "game": "inside-brainrot-head",
+  "slug": "inside-brainrot-head",
+  "denSlug": "inside-brainrot-head",
+  "players": 748
  },
  {
   "game": "outlaster",
   "slug": "outlaster",
   "denSlug": "outlaster",
-  "players": 636
+  "players": 741
+ },
+ {
+  "game": "noob-experiment-warzone",
+  "slug": "noob-experiment-warzone",
+  "denSlug": "noob-experiment-warzone",
+  "players": 733
+ },
+ {
+  "game": "become-a-billionaire",
+  "slug": "become-a-billionaire",
+  "denSlug": "become-a-billionaire",
+  "players": 731
+ },
+ {
+  "game": "steal-a-chicken",
+  "slug": "steal-a-chicken",
+  "denSlug": "steal-a-chicken",
+  "players": 718
+ },
+ {
+  "game": "age-of-titans",
+  "slug": "age-of-titans",
+  "denSlug": "age-of-titans",
+  "players": 715
+ },
+ {
+  "game": "build-a-country",
+  "slug": "build-a-country",
+  "denSlug": "build-a-country",
+  "players": 681
+ },
+ {
+  "game": "reaopg",
+  "slug": "reaopg",
+  "denSlug": "reaopg",
+  "players": 678
+ },
+ {
+  "game": "rocket-rumble",
+  "slug": "rocket-rumble",
+  "denSlug": "rocket-rumble",
+  "players": 666
+ },
+ {
+  "game": "1-katana-evolution",
+  "slug": "1-katana-evolution",
+  "denSlug": "1-katana-evolution",
+  "players": 618
  },
  {
   "game": "scp-roleplay",
   "slug": "scp-roleplay",
   "denSlug": "scp-roleplay",
-  "players": 609
- },
- {
-  "game": "get-tall-and-fall",
-  "slug": "get-tall-and-fall",
-  "denSlug": "get-tall-and-fall",
-  "players": 602
- },
- {
-  "game": "speed-training",
-  "slug": "speed-training",
-  "denSlug": "speed-training",
-  "players": 596
- },
- {
-  "game": "beyblade-x-battles",
-  "slug": "beyblade-x-battles",
-  "denSlug": "beyblade-x-battles",
-  "players": 596
+  "players": 615
  },
  {
   "game": "unlimited-battlegrounds-ngaq",
   "slug": "unlimited-battlegrounds-ngaq",
   "denSlug": "unlimited-battlegrounds-ngaq",
-  "players": 594
+  "players": 584
  },
  {
   "game": "bathtub-universe",
   "slug": "bathtub-universe",
   "denSlug": "bathtub-universe",
-  "players": 568
+  "players": 567
  },
  {
   "game": "grand-blue",
   "slug": "grand-blue",
   "denSlug": "grand-blue",
-  "players": 553
+  "players": 565
  },
  {
-  "game": "make-a-party",
-  "slug": "make-a-party",
-  "denSlug": "make-a-party",
-  "players": 540
+  "game": "steal-a-tree",
+  "slug": "steal-a-tree",
+  "denSlug": "steal-a-tree",
+  "players": 558
+ },
+ {
+  "game": "get-tall-and-fall",
+  "slug": "get-tall-and-fall",
+  "denSlug": "get-tall-and-fall",
+  "players": 555
+ },
+ {
+  "game": "speed-training",
+  "slug": "speed-training",
+  "denSlug": "speed-training",
+  "players": 551
  },
  {
   "game": "vesteria",
   "slug": "vesteria",
   "denSlug": "vesteria",
-  "players": 533
- },
- {
-  "game": "raise-an-anomaly-scp",
-  "slug": "raise-an-anomaly-scp",
-  "denSlug": "raise-an-anomaly-scp",
-  "players": 527
+  "players": 548
  },
  {
   "game": "spinjitsu-escape",
   "slug": "spinjitsu-escape",
   "denSlug": "spinjitsu-escape",
-  "players": 498
+  "players": 520
  },
  {
-  "game": "my-grass-farm",
-  "slug": "my-grass-farm",
-  "denSlug": "my-grass-farm",
-  "players": 488
+  "game": "raise-an-anomaly-scp",
+  "slug": "raise-an-anomaly-scp",
+  "denSlug": "raise-an-anomaly-scp",
+  "players": 519
+ },
+ {
+  "game": "beyblade-x-battles",
+  "slug": "beyblade-x-battles",
+  "denSlug": "beyblade-x-battles",
+  "players": 510
  },
  {
   "game": "double-jump-bike-escape",
   "slug": "double-jump-bike-escape",
   "denSlug": "double-jump-bike-escape",
-  "players": 481
+  "players": 509
  },
  {
-  "game": "merge-a-spinner",
-  "slug": "merge-a-spinner",
-  "denSlug": "merge-a-spinner",
-  "players": 470
+  "game": "make-a-party",
+  "slug": "make-a-party",
+  "denSlug": "make-a-party",
+  "players": 485
  },
  {
-  "game": "own-a-cafe",
-  "slug": "own-a-cafe",
-  "denSlug": "own-a-cafe",
-  "players": 449
- },
- {
-  "game": "mimic-the-voice",
-  "slug": "mimic-the-voice",
-  "denSlug": "mimic-the-voice",
-  "players": 439
- },
- {
-  "game": "my-dino-park",
-  "slug": "my-dino-park",
-  "denSlug": "my-dino-park",
-  "players": 417
+  "game": "my-grass-farm",
+  "slug": "my-grass-farm",
+  "denSlug": "my-grass-farm",
+  "players": 479
  },
  {
   "game": "stream-a-mukbang",
   "slug": "stream-a-mukbang",
   "denSlug": "stream-a-mukbang",
-  "players": 408
+  "players": 461
  },
  {
-  "game": "steal-the-show",
-  "slug": "steal-the-show",
-  "denSlug": "steal-the-show",
-  "players": 402
+  "game": "merge-a-spinner",
+  "slug": "merge-a-spinner",
+  "denSlug": "merge-a-spinner",
+  "players": 461
  },
  {
-  "game": "mini-race",
-  "slug": "mini-race",
-  "denSlug": "mini-race",
-  "players": 397
+  "game": "own-a-cafe",
+  "slug": "own-a-cafe",
+  "denSlug": "own-a-cafe",
+  "players": 457
  },
  {
   "game": "nebulous",
   "slug": "nebulous",
   "denSlug": "nebulous",
-  "players": 396
+  "players": 445
+ },
+ {
+  "game": "mimic-the-voice",
+  "slug": "mimic-the-voice",
+  "denSlug": "mimic-the-voice",
+  "players": 444
  },
  {
   "game": "race-your-lucky-block",
   "slug": "race-your-lucky-block",
   "denSlug": "race-your-lucky-block",
+  "players": 400
+ },
+ {
+  "game": "mini-race",
+  "slug": "mini-race",
+  "denSlug": "mini-race",
+  "players": 396
+ },
+ {
+  "game": "my-dino-park",
+  "slug": "my-dino-park",
+  "denSlug": "my-dino-park",
   "players": 392
  },
  {
   "game": "clean-crew",
   "slug": "clean-crew",
   "denSlug": "clean-crew",
-  "players": 380
+  "players": 391
  },
  {
-  "game": "luck-incremental-265l",
-  "slug": "luck-incremental-265l",
-  "denSlug": "luck-incremental-265l",
-  "players": 375
- },
- {
-  "game": "fruit-zombie-survival",
-  "slug": "fruit-zombie-survival",
-  "denSlug": "fruit-zombie-survival",
-  "players": 375
+  "game": "steal-the-show",
+  "slug": "steal-the-show",
+  "denSlug": "steal-the-show",
+  "players": 391
  },
  {
   "game": "debt-hunt",
   "slug": "debt-hunt",
   "denSlug": "debt-hunt",
-  "players": 373
- },
- {
-  "game": "bikelife-society-uggd",
-  "slug": "bikelife-society-uggd",
-  "denSlug": "bikelife-society-uggd",
-  "players": 347
- },
- {
-  "game": "make-that-sound",
-  "slug": "make-that-sound",
-  "denSlug": "make-that-sound",
-  "players": 336
+  "players": 387
  },
  {
   "game": "spin-a-catboy",
   "slug": "spin-a-catboy",
   "denSlug": "spin-a-catboy",
-  "players": 333
+  "players": 386
  },
  {
-  "game": "somnis-engine",
-  "slug": "somnis-engine",
-  "denSlug": "somnis-engine",
-  "players": 329
+  "game": "fruit-zombie-survival",
+  "slug": "fruit-zombie-survival",
+  "denSlug": "fruit-zombie-survival",
+  "players": 370
  },
  {
-  "game": "muscle-evolution",
-  "slug": "muscle-evolution",
-  "denSlug": "muscle-evolution-vy5v",
-  "players": 321
+  "game": "luck-incremental-265l",
+  "slug": "luck-incremental-265l",
+  "denSlug": "luck-incremental-265l",
+  "players": 368
+ },
+ {
+  "game": "bikelife-society-uggd",
+  "slug": "bikelife-society-uggd",
+  "denSlug": "bikelife-society-uggd",
+  "players": 352
  },
  {
   "game": "seishun-school-life-roleplay",
   "slug": "seishun-school-life-roleplay",
   "denSlug": "seishun-school-life-roleplay",
-  "players": 315
+  "players": 342
  },
  {
-  "game": "muscle-boxing-battle",
-  "slug": "muscle-boxing-battle",
-  "denSlug": "muscle-boxing-battle",
-  "players": 310
+  "game": "make-that-sound",
+  "slug": "make-that-sound",
+  "denSlug": "make-that-sound",
+  "players": 330
  },
  {
-  "game": "hatch-and-fry",
-  "slug": "hatch-and-fry",
-  "denSlug": "hatch-and-fry",
-  "players": 309
- },
- {
-  "game": "pop-bubbles",
-  "slug": "pop-bubbles",
-  "denSlug": "pop-bubbles",
-  "players": 305
- },
- {
-  "game": "ricochet-or-hide",
-  "slug": "ricochet-or-hide",
-  "denSlug": "ricochet-or-hide",
-  "players": 285
- },
- {
-  "game": "nuke-your-city",
-  "slug": "nuke-your-city",
-  "denSlug": "nuke-your-city",
-  "players": 266
+  "game": "muscle-evolution",
+  "slug": "muscle-evolution",
+  "denSlug": "muscle-evolution-vy5v",
+  "players": 313
  },
  {
   "game": "guess-my-brand",
   "slug": "guess-my-brand",
   "denSlug": "guess-my-brand",
-  "players": 266
+  "players": 312
+ },
+ {
+  "game": "pop-bubbles",
+  "slug": "pop-bubbles",
+  "denSlug": "pop-bubbles",
+  "players": 300
+ },
+ {
+  "game": "muscle-boxing-battle",
+  "slug": "muscle-boxing-battle",
+  "denSlug": "muscle-boxing-battle",
+  "players": 290
+ },
+ {
+  "game": "hatch-and-fry",
+  "slug": "hatch-and-fry",
+  "denSlug": "hatch-and-fry",
+  "players": 278
  },
  {
   "game": "wonderland",
   "slug": "wonderland",
   "denSlug": "wonderland",
-  "players": 264
+  "players": 276
  },
  {
-  "game": "protect-the-border",
-  "slug": "protect-the-border",
-  "denSlug": "protect-the-border",
-  "players": 212
+  "game": "somnis-engine",
+  "slug": "somnis-engine",
+  "denSlug": "somnis-engine",
+  "players": 275
  },
  {
-  "game": "strikeborn",
-  "slug": "strikeborn",
-  "denSlug": "strikeborn",
-  "players": 211
+  "game": "ricochet-or-hide",
+  "slug": "ricochet-or-hide",
+  "denSlug": "ricochet-or-hide",
+  "players": 271
  },
  {
-  "game": "haulers",
-  "slug": "haulers",
-  "denSlug": "haulers",
-  "players": 207
- },
- {
-  "game": "defend-your-plushie",
-  "slug": "defend-your-plushie",
-  "denSlug": "defend-your-plushie",
-  "players": 193
+  "game": "nuke-your-city",
+  "slug": "nuke-your-city",
+  "denSlug": "nuke-your-city",
+  "players": 251
  },
  {
   "game": "hood-modded",
   "slug": "hood-modded",
   "denSlug": "hood-modded",
-  "players": 187
+  "players": 234
+ },
+ {
+  "game": "strikeborn",
+  "slug": "strikeborn",
+  "denSlug": "strikeborn",
+  "players": 218
+ },
+ {
+  "game": "defend-your-plushie",
+  "slug": "defend-your-plushie",
+  "denSlug": "defend-your-plushie",
+  "players": 212
+ },
+ {
+  "game": "protect-the-border",
+  "slug": "protect-the-border",
+  "denSlug": "protect-the-border",
+  "players": 202
+ },
+ {
+  "game": "haulers",
+  "slug": "haulers",
+  "denSlug": "haulers",
+  "players": 173
  },
  {
   "game": "squishy-dumpling-trading",
   "slug": "squishy-dumpling-trading",
   "denSlug": "squishy-dumpling-trading",
-  "players": 179
- },
- {
-  "game": "monster-forest",
-  "slug": "monster-forest",
-  "denSlug": "monster-forest",
-  "players": 175
- },
- {
-  "game": "dumpling-stars",
-  "slug": "dumpling-stars",
-  "denSlug": "dumpling-stars",
   "players": 163
  },
  {
   "game": "start-your-soccer-career",
   "slug": "start-your-soccer-career",
   "denSlug": "start-your-soccer-career",
-  "players": 157
+  "players": 163
  },
  {
-  "game": "the-foundation",
-  "slug": "the-foundation",
-  "denSlug": "the-foundation",
-  "players": 145
+  "game": "dumpling-stars",
+  "slug": "dumpling-stars",
+  "denSlug": "dumpling-stars",
+  "players": 161
  },
  {
   "game": "1-op-ninja",
   "slug": "1-op-ninja",
   "denSlug": "1-op-ninja",
-  "players": 138
+  "players": 146
  },
  {
   "game": "shred",
   "slug": "shred",
   "denSlug": "shred",
-  "players": 132
+  "players": 137
+ },
+ {
+  "game": "monster-forest",
+  "slug": "monster-forest",
+  "denSlug": "monster-forest",
+  "players": 129
+ },
+ {
+  "game": "the-foundation",
+  "slug": "the-foundation",
+  "denSlug": "the-foundation",
+  "players": 128
  },
  {
   "game": "brainrot",
   "slug": "brainrot",
   "denSlug": "brainrot",
-  "players": 107
- },
- {
-  "game": "card-chronicles",
-  "slug": "card-chronicles",
-  "denSlug": "card-chronicles",
-  "players": 95
- },
- {
-  "game": "speed-boat-tsunami",
-  "slug": "speed-boat-tsunami",
-  "denSlug": "speed-boat-tsunami",
-  "players": 92
- },
- {
-  "game": "journey-to-the-watchtower",
-  "slug": "journey-to-the-watchtower",
-  "denSlug": "journey-to-the-watchtower",
-  "players": 83
- },
- {
-  "game": "1-fan-per-step",
-  "slug": "1-fan-per-step",
-  "denSlug": "1-fan-per-step",
-  "players": 82
- },
- {
-  "game": "slap-fighting",
-  "slug": "slap-fighting",
-  "denSlug": "slap-fighting",
-  "players": 81
+  "players": 116
  },
  {
   "game": "care-for-cats",
   "slug": "care-for-cats",
   "denSlug": "care-for-cats",
-  "players": 81
+  "players": 98
  },
  {
-  "game": "evolve-and-survive",
-  "slug": "evolve-and-survive",
-  "denSlug": "evolve-and-survive",
-  "players": 68
+  "game": "slap-fighting",
+  "slug": "slap-fighting",
+  "denSlug": "slap-fighting",
+  "players": 94
+ },
+ {
+  "game": "card-chronicles",
+  "slug": "card-chronicles",
+  "denSlug": "card-chronicles",
+  "players": 89
+ },
+ {
+  "game": "speed-boat-tsunami",
+  "slug": "speed-boat-tsunami",
+  "denSlug": "speed-boat-tsunami",
+  "players": 78
+ },
+ {
+  "game": "1-fan-per-step",
+  "slug": "1-fan-per-step",
+  "denSlug": "1-fan-per-step",
+  "players": 78
+ },
+ {
+  "game": "journey-to-the-watchtower",
+  "slug": "journey-to-the-watchtower",
+  "denSlug": "journey-to-the-watchtower",
+  "players": 78
  },
  {
   "game": "nuke-a-city",
   "slug": "nuke-a-city",
   "denSlug": "nuke-a-city",
-  "players": 51
+  "players": 53
  },
  {
-  "game": "build-your-soccer-squad",
-  "slug": "build-your-soccer-squad",
-  "denSlug": "build-your-soccer-squad",
-  "players": 45
+  "game": "evolve-and-survive",
+  "slug": "evolve-and-survive",
+  "denSlug": "evolve-and-survive",
+  "players": 52
  },
  {
   "game": "aura-farming-battles",
   "slug": "aura-farming-battles",
   "denSlug": "aura-farming-battles",
-  "players": 41
+  "players": 48
+ },
+ {
+  "game": "four-square",
+  "slug": "four-square",
+  "denSlug": "four-square",
+  "players": 43
+ },
+ {
+  "game": "build-your-soccer-squad",
+  "slug": "build-your-soccer-squad",
+  "denSlug": "build-your-soccer-squad",
+  "players": 43
  },
  {
   "game": "1-speed-per-click",
@@ -1326,46 +1332,40 @@
   "players": 36
  },
  {
-  "game": "four-square",
-  "slug": "four-square",
-  "denSlug": "four-square",
-  "players": 31
- },
- {
   "game": "roll-cases-for-brainrots",
   "slug": "roll-cases-for-brainrots",
   "denSlug": "roll-cases-for-brainrots",
-  "players": 25
- },
- {
-  "game": "nightmares",
-  "slug": "nightmares",
-  "denSlug": "nightmares",
-  "players": 13
- },
- {
-  "game": "brainrots",
-  "slug": "brainrots",
-  "denSlug": "brainrots",
-  "players": 8
- },
- {
-  "game": "build-a-basketball-team",
-  "slug": "build-a-basketball-team",
-  "denSlug": "build-a-basketball-team",
-  "players": 6
- },
- {
-  "game": "catch-a-brainrot",
-  "slug": "catch-a-brainrot",
-  "denSlug": "catch-a-brainrot",
-  "players": 5
+  "players": 28
  },
  {
   "game": "the-cosalazo",
   "slug": "the-cosalazo",
   "denSlug": "the-cosalazo",
-  "players": 4
+  "players": 13
+ },
+ {
+  "game": "build-a-basketball-team",
+  "slug": "build-a-basketball-team",
+  "denSlug": "build-a-basketball-team",
+  "players": 9
+ },
+ {
+  "game": "brainrots",
+  "slug": "brainrots",
+  "denSlug": "brainrots",
+  "players": 7
+ },
+ {
+  "game": "catch-a-brainrot",
+  "slug": "catch-a-brainrot",
+  "denSlug": "catch-a-brainrot",
+  "players": 6
+ },
+ {
+  "game": "nightmares",
+  "slug": "nightmares",
+  "denSlug": "nightmares",
+  "players": 3
  },
  {
   "game": "automate-a-laundromat",
@@ -1374,10 +1374,16 @@
   "players": 2
  },
  {
-  "game": "murder",
-  "slug": "murder",
-  "denSlug": "murder",
-  "players": 2
+  "game": "raygun-battle",
+  "slug": "raygun-battle",
+  "denSlug": "raygun-battle",
+  "players": 1
+ },
+ {
+  "game": "build-a-gun",
+  "slug": "build-a-gun",
+  "denSlug": "build-a-gun",
+  "players": 1
  },
  {
   "game": "animevanguards",
@@ -1410,12 +1416,6 @@
   "players": 0
  },
  {
-  "game": "raygun-battle",
-  "slug": "raygun-battle",
-  "denSlug": "raygun-battle",
-  "players": 0
- },
- {
   "game": "pokemon-brick-bronze-roria-conquest-1skh",
   "slug": "pokemon-brick-bronze-roria-conquest-1skh",
   "denSlug": "pokemon-brick-bronze-roria-conquest-1skh",
@@ -1425,12 +1425,6 @@
   "game": "zee",
   "slug": "zee",
   "denSlug": "zee",
-  "players": 0
- },
- {
-  "game": "build-a-gun",
-  "slug": "build-a-gun",
-  "denSlug": "build-a-gun",
   "players": 0
  },
  {
@@ -1467,6 +1461,12 @@
   "game": "bloxnote",
   "slug": "bloxnote",
   "denSlug": "bloxnote",
+  "players": 0
+ },
+ {
+  "game": "murder",
+  "slug": "murder",
+  "denSlug": "murder",
   "players": 0
  },
  {

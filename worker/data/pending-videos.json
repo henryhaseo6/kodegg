@@ -1,144 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "it-girl",
-    "name": "IT GIRL",
-    "displayName": "IT GIRL 🏝️",
-    "slug": "it-girl",
-    "players": 4429,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 4429,
-    "newCodes": [
-      {
-        "code": "HALLOWEEN26",
-        "reward": "1000 Diamonds"
-      }
-    ],
-    "activeCount": 23,
-    "fetchedAt": "2026-10-12T18:02:06.159Z",
-    "displayCodes": [
-      {
-        "code": "HALLOWEEN26",
-        "reward": "1000 Diamonds",
-        "isNew": true
-      },
-      {
-        "code": "HAPPY250M",
-        "reward": "1000 Diamonds",
-        "isNew": false
-      },
-      {
-        "code": "AQUAMARINE",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "SORRY4THEDELAY",
-        "reward": "1,500 Diamonds",
-        "isNew": false
-      },
-      {
-        "code": "MILLIONMEMBERS",
-        "reward": "1 Million Group Members Set",
-        "isNew": false
-      },
-      {
-        "code": "HAPPY200M",
-        "reward": "2000 Diamonds",
-        "isNew": false
-      },
-      {
-        "code": "SWEETBUTEVIL",
-        "reward": "Freebies",
-        "isNew": false
-      },
-      {
-        "code": "SURPRISE",
-        "reward": "Freebies",
-        "isNew": false
-      },
-      {
-        "code": "HAPPY150M",
-        "reward": "1500 Diamonds",
-        "isNew": false
-      },
-      {
-        "code": "S0SW33T",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "HALLOWEEN26",
-        "reward": "1000 Diamonds",
-        "isNew": true
-      },
-      {
-        "code": "HAPPY250M",
-        "reward": "1000 Diamonds",
-        "isNew": false
-      },
-      {
-        "code": "AQUAMARINE",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "SORRY4THEDELAY",
-        "reward": "1,500 Diamonds",
-        "isNew": false
-      },
-      {
-        "code": "MILLIONMEMBERS",
-        "reward": "1 Million Group Members Set",
-        "isNew": false
-      },
-      {
-        "code": "HAPPY200M",
-        "reward": "2000 Diamonds",
-        "isNew": false
-      },
-      {
-        "code": "SWEETBUTEVIL",
-        "reward": "Freebies",
-        "isNew": false
-      },
-      {
-        "code": "SURPRISE",
-        "reward": "Freebies",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "HALLOWEEN26",
-      "HAPPY250M",
-      "AQUAMARINE",
-      "SORRY4THEDELAY",
-      "MILLIONMEMBERS",
-      "HAPPY200M",
-      "SWEETBUTEVIL",
-      "SURPRISE",
-      "HAPPY150M",
-      "S0SW33T",
-      "ITGIRLSORRY",
-      "ITGIRLWINTER",
-      "thank you diamonds",
-      "PH4NT0MM4X",
-      "TAVERSIA",
-      "RUPAULSD0LL",
-      "ITGIRL",
-      "TRICKORTREAT",
-      "HAPPY100M",
-      "MADDYAFKDRESS",
-      "AVASFX",
-      "LACROWN",
-      "MADDYAFK"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "run-a-sari-sari-store",
     "name": "Run a Sari-Sari Store",
     "displayName": "[🛒] Run a Sari-Sari Store!",
@@ -1328,6 +1190,80 @@
       "THESTORMISAPPROACHING",
       "SOUL",
       "COPYCAT"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "protect-the-house-from-monsters",
+    "name": "Protect The House From Monsters",
+    "displayName": "Protect The House From Monsters",
+    "slug": "protect-the-house-from-monsters",
+    "players": 1768,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1768,
+    "newCodes": [
+      {
+        "game": "protect-the-house-from-monsters",
+        "gameName": "Protect The House From Monsters",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/protect-the-house-from-monsters"
+        },
+        "code": "NEEDCOINS",
+        "reward": "1,000 cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791643461133,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T19:03:43.165Z",
+        "fetchedAt": "2026-10-12T19:03:43.165Z"
+      }
+    ],
+    "activeCount": 3,
+    "fetchedAt": "2026-10-12T19:03:43.165Z",
+    "displayCodes": [
+      {
+        "code": "NEEDCOINS",
+        "reward": "1,000 cash",
+        "isNew": true
+      },
+      {
+        "code": "WORLD3",
+        "reward": "50 Skulls",
+        "isNew": false
+      },
+      {
+        "code": "TRAINSSS",
+        "reward": "5 Style Crates",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "NEEDCOINS",
+        "reward": "1,000 cash",
+        "isNew": true
+      },
+      {
+        "code": "WORLD3",
+        "reward": "50 Skulls",
+        "isNew": false
+      },
+      {
+        "code": "TRAINSSS",
+        "reward": "5 Style Crates",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "NEEDCOINS",
+      "WORLD3",
+      "TRAINSSS"
     ]
   },
   {
