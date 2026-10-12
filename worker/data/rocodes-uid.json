@@ -2313,13 +2313,6 @@
   "kode": 66,
   "nama": "Animatronic Nights"
  },
- "anime-vanguards": {
-  "at": 1791194555947,
-  "uid": 5578556129,
-  "place": 16146832113,
-  "kode": 15,
-  "nama": "Anime Vanguards"
- },
  "scp-architect-x": {
   "at": 1791190960746,
   "uid": 5108158764,
@@ -22306,5 +22299,12 @@
   "place": 107535308163741,
   "kode": 2,
   "nama": "Huss Valley"
+ },
+ "vanguards": {
+  "at": 1791774138852,
+  "uid": 5578556129,
+  "place": 16146832113,
+  "kode": 24,
+  "nama": "Vanguards"
  }
 }
