@@ -1,6 +1,1459 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "final-swarm",
+    "name": "Final Swarm",
+    "displayName": "Final Swarm [⚔️Sandworm]",
+    "slug": "final-swarm",
+    "players": 3621,
+    "redeemNote": {
+      "en": "To use codes in Final Swarm, you must first Finish The Tutorial.",
+      "links": [],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 3621,
+    "newCodes": [
+      {
+        "code": "s4ndw0rm",
+        "reward": ""
+      }
+    ],
+    "activeCount": 11,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "s4ndw0rm",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "w0rldw1d3",
+        "reward": "10 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "atl4nt1s",
+        "reward": "3 Mythic Chests",
+        "isNew": false
+      },
+      {
+        "code": "Cl4ssy",
+        "reward": "1 Mythic Chest",
+        "isNew": false
+      },
+      {
+        "code": "ADMIN",
+        "reward": "1 Mythic Chest",
+        "isNew": false
+      },
+      {
+        "code": "ex0tic",
+        "reward": "10 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "INF3RNO",
+        "reward": "3 Inferno Chests",
+        "isNew": false
+      },
+      {
+        "code": "QOL2",
+        "reward": "10 Raid Chest and 150 Keys",
+        "isNew": false
+      },
+      {
+        "code": "RipVoid",
+        "reward": "3 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "supdoggy",
+        "reward": "100 Keys",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "s4ndw0rm",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "w0rldw1d3",
+        "reward": "10 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "atl4nt1s",
+        "reward": "3 Mythic Chests",
+        "isNew": false
+      },
+      {
+        "code": "Cl4ssy",
+        "reward": "1 Mythic Chest",
+        "isNew": false
+      },
+      {
+        "code": "ADMIN",
+        "reward": "1 Mythic Chest",
+        "isNew": false
+      },
+      {
+        "code": "ex0tic",
+        "reward": "10 Golden Chests",
+        "isNew": false
+      },
+      {
+        "code": "INF3RNO",
+        "reward": "3 Inferno Chests",
+        "isNew": false
+      },
+      {
+        "code": "QOL2",
+        "reward": "10 Raid Chest and 150 Keys",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "s4ndw0rm",
+      "w0rldw1d3",
+      "atl4nt1s",
+      "Cl4ssy",
+      "ex0tic",
+      "INF3RNO",
+      "QOL2",
+      "firstswarm",
+      "supdoggy",
+      "ADMIN",
+      "RipVoid"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "fish-an-anime-rng",
+    "name": "Fish an Anime RNG",
+    "displayName": "Fish an Anime RNG 🎲",
+    "slug": "fish-an-anime-rng",
+    "players": 3344,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3344,
+    "newCodes": [
+      {
+        "code": "Marceline",
+        "reward": ""
+      },
+      {
+        "code": "Hallowi",
+        "reward": ""
+      }
+    ],
+    "activeCount": 20,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "Marceline",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Hallowi",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Starfall",
+        "reward": "Free Gems and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "Luther",
+        "reward": "1 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "Free Gems and Potion Packs",
+        "isNew": false
+      },
+      {
+        "code": "15MVISITS",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Toxic Wasteland",
+        "reward": "5K Gems",
+        "isNew": false
+      },
+      {
+        "code": "Ink Spider",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Incoming Mind Break",
+        "reward": "2 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "35KLIKES",
+        "reward": "5K Gems",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "Marceline",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Hallowi",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Starfall",
+        "reward": "Free Gems and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "Luther",
+        "reward": "1 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "Free Gems and Potion Packs",
+        "isNew": false
+      },
+      {
+        "code": "15MVISITS",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Toxic Wasteland",
+        "reward": "5K Gems",
+        "isNew": false
+      },
+      {
+        "code": "Ink Spider",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "Marceline",
+      "Hallowi",
+      "Starfall",
+      "Luther",
+      "Halloween",
+      "15MVISITS",
+      "Toxic Wasteland",
+      "Ink Spider",
+      "Incoming Mind Break",
+      "35KLIKES",
+      "Sad Ending",
+      "Lapis Hex",
+      "Cullen",
+      "Clan Update",
+      "20KMEMBERS",
+      "30KLIKES",
+      "THANKYOUEVERYONE",
+      "20KLIKES",
+      "10KMEMBERS",
+      "10KCCU"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "immortality-incremental",
+    "name": "Immortality Incremental",
+    "displayName": "[🧪 WORLD 9 PT. 2] Immortality Incremental",
+    "slug": "immortality-incremental",
+    "players": 3069,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3069,
+    "newCodes": [
+      {
+        "code": "LASTD1UPD",
+        "reward": "10 Tickets, Potions"
+      },
+      {
+        "code": "ALCHEMY",
+        "reward": "10 Jade, 3 Mark Potions"
+      }
+    ],
+    "activeCount": 7,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "LASTD1UPD",
+        "reward": "10 Tickets, Potions",
+        "isNew": true
+      },
+      {
+        "code": "ALCHEMY",
+        "reward": "10 Jade, 3 Mark Potions",
+        "isNew": true
+      },
+      {
+        "code": "MININGEXPANSION",
+        "reward": "10 Tickets, 10 Jade, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "MINING",
+        "reward": "Path Potion, 10 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "WORLD9PT1",
+        "reward": "1 Ore Potion, 10 Jade",
+        "isNew": false
+      },
+      {
+        "code": "WORLD8PT2",
+        "reward": "5 Tickets, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "HARDTRAINING",
+        "reward": "10 Tickets, 20 Jade, 5 Potions",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "LASTD1UPD",
+        "reward": "10 Tickets, Potions",
+        "isNew": true
+      },
+      {
+        "code": "ALCHEMY",
+        "reward": "10 Jade, 3 Mark Potions",
+        "isNew": true
+      },
+      {
+        "code": "MININGEXPANSION",
+        "reward": "10 Tickets, 10 Jade, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "MINING",
+        "reward": "Path Potion, 10 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "WORLD9PT1",
+        "reward": "1 Ore Potion, 10 Jade",
+        "isNew": false
+      },
+      {
+        "code": "WORLD8PT2",
+        "reward": "5 Tickets, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "HARDTRAINING",
+        "reward": "10 Tickets, 20 Jade, 5 Potions",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "LASTD1UPD",
+      "ALCHEMY",
+      "MININGEXPANSION",
+      "MINING",
+      "WORLD9PT1",
+      "WORLD8PT2",
+      "HARDTRAINING"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "catch-and-tame",
+    "name": "Catch And Tame",
+    "displayName": "[🏢] Catch And Tame!",
+    "slug": "catch-and-tame",
+    "players": 2743,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2743,
+    "newCodes": [
+      {
+        "code": "KAIJUEVENT",
+        "reward": ""
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "KAIJUEVENT",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "LUNAREVENT",
+        "reward": "10 Lunar Pies",
+        "isNew": false
+      },
+      {
+        "code": "FORGOTTENFARM",
+        "reward": "5 Minigames Tickets",
+        "isNew": false
+      },
+      {
+        "code": "TOYISLAND",
+        "reward": "10 Toy Cookies",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "KAIJUEVENT",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "LUNAREVENT",
+        "reward": "10 Lunar Pies",
+        "isNew": false
+      },
+      {
+        "code": "FORGOTTENFARM",
+        "reward": "5 Minigames Tickets",
+        "isNew": false
+      },
+      {
+        "code": "TOYISLAND",
+        "reward": "10 Toy Cookies",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "KAIJUEVENT",
+      "LUNAREVENT",
+      "FORGOTTENFARM",
+      "TOYISLAND"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "brainrot-evolution",
+    "name": "Brainrot Evolution",
+    "displayName": "Brainrot Evolution",
+    "slug": "brainrot-evolution",
+    "players": 2595,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2595,
+    "newCodes": [
+      {
+        "code": "Towerrr",
+        "reward": ""
+      }
+    ],
+    "activeCount": 102,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "Towerrr",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Legacy",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "Choco",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "BRAINROTHELL",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "ANUBIS",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "SHRINE",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "BUZZZ",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "Assassini",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "TRULIMERO",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "SHARKFUSION",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "Towerrr",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Legacy",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "Choco",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "BRAINROTHELL",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "ANUBIS",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "SHRINE",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "BUZZZ",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      },
+      {
+        "code": "Assassini",
+        "reward": "2 EXP Potions",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "Towerrr",
+      "Legacy",
+      "Choco",
+      "BRAINROTHELL",
+      "ANUBIS",
+      "SHRINE",
+      "TRULIMERO",
+      "SHARKFUSION",
+      "SHARKS",
+      "Bombondino",
+      "CHEDDAR",
+      "PYRO",
+      "DUCKYFUSION",
+      "DUCKS",
+      "Uncle",
+      "BWAB",
+      "ZAPYBARA",
+      "Capybara",
+      "Season10",
+      "Brainblock",
+      "Dragoni",
+      "Evil",
+      "Krang",
+      "Combinasion",
+      "Beowl",
+      "Easter2026",
+      "Patrick",
+      "Luck",
+      "Fishybara",
+      "Ding",
+      "i2Perfect",
+      "Dididididi",
+      "Love",
+      "Brainheaven",
+      "Man Man",
+      "Tsunami",
+      "Cheese",
+      "List",
+      "2026",
+      "Tower",
+      "I2W",
+      "Festive",
+      "Flushrooms",
+      "Season 7",
+      "Thankful",
+      "THANKSGIVING",
+      "CADABRA",
+      "Spooky",
+      "Trinket",
+      "Drulimero",
+      "HALLOWEEN",
+      "MTDOJO",
+      "TriTriTri",
+      "FIX12381",
+      "SECRET",
+      "Arcade",
+      "Goaaat",
+      "YONICODE7",
+      "LOLOCODE41",
+      "POTIONCODE9",
+      "Guardian",
+      "ToToToTo",
+      "SEWER",
+      "MEDUS",
+      "Eternal",
+      "HOTSPOT",
+      "release",
+      "FixedBoss31",
+      "Abyss",
+      "PIXSUMMEREVENT1",
+      "DUNGEON",
+      "FixBug91",
+      "SummerPart2",
+      "TUNG247",
+      "Glorbo",
+      "Summer2025",
+      "FIXED82",
+      "Udin Din Dun",
+      "INDEX",
+      "BrainCore",
+      "FIXED27",
+      "MATTEOOO",
+      "Ambalabu",
+      "Tralalero",
+      "EASTER",
+      "i2perfect1",
+      "lolgame1",
+      "BUZZZ",
+      "Assassini",
+      "OP",
+      "NEWCODE89",
+      "i2PerfectCode",
+      "LOLO1",
+      "Coral35",
+      "code653",
+      "Gift129",
+      "thanks_magia",
+      "Magia7",
+      "CODE897",
+      "Lukeblox2",
+      "TungTungx15",
+      "TUNGTUNG13"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "the-veil",
+    "name": "The Veil",
+    "displayName": "[🎃] The Veil",
+    "slug": "the-veil",
+    "players": 2399,
+    "redeemNote": {
+      "en": "To use codes in The Veil, you must join the BlackstarDW Studios Roblox Community.",
+      "links": [
+        {
+          "label": "BlackstarDW Studios Roblox Community",
+          "url": "https://www.roblox.com/share/g/36025827"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 2399,
+    "newCodes": [
+      {
+        "game": "the-veil",
+        "gameName": "The Veil",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/the-veil"
+        },
+        "code": "VEILOWEEN",
+        "reward": "5 Race Rerolls",
+        "date": "2026-10-12T14:34:15.089Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "VEILOWEEN",
+        "reward": "5 Race Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "LASTONE",
+        "reward": "5 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "EMERGENCY",
+        "reward": "3 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "UPDATEFINALLY",
+        "reward": "5 Race Rerolls, 1,000 Silver, 1,000 Ichor",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "VEILOWEEN",
+        "reward": "5 Race Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "LASTONE",
+        "reward": "5 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "EMERGENCY",
+        "reward": "3 Race Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "UPDATEFINALLY",
+        "reward": "5 Race Rerolls, 1,000 Silver, 1,000 Ichor",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "VEILOWEEN",
+      "LASTONE",
+      "EMERGENCY",
+      "UPDATEFINALLY"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "anime-apocalypse",
+    "name": "Anime Apocalypse",
+    "displayName": "[ASTA!] Anime Apocalypse",
+    "slug": "anime-apocalypse",
+    "players": 2260,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2260,
+    "newCodes": [
+      {
+        "game": "anime-apocalypse",
+        "gameName": "Anime Apocalypse",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/anime-apocalypse"
+        },
+        "code": "COREDEFENSE",
+        "reward": null,
+        "date": "2026-10-12T14:33:48.095Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      },
+      {
+        "game": "anime-apocalypse",
+        "gameName": "Anime Apocalypse",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/anime-apocalypse"
+        },
+        "code": "DEMONICUNION",
+        "reward": null,
+        "date": "2026-10-12T14:33:47.662Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      },
+      {
+        "game": "anime-apocalypse",
+        "gameName": "Anime Apocalypse",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/anime-apocalypse"
+        },
+        "code": "VANITYHOTFIX",
+        "reward": null,
+        "date": "2026-10-12T14:33:47.155Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      }
+    ],
+    "activeCount": 24,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "COREDEFENSE",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "DEMONICUNION",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "VANITYHOTFIX",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "HALLOWEEN",
+        "reward": "250,000 Coins, 15 Raid Tickets, 100 Candy, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins, and 2x Coins (1,800 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "CHAINSAWMAN",
+        "reward": "250,000 Coins, 15 Raid Tickets, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins, and 2x Drops (1,800 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "BUFFHOTFIX",
+        "reward": "5,000,000 Coins, 100 Lucky Ability Spins, and 50 Lucky Gadget Spins",
+        "isNew": false
+      },
+      {
+        "code": "MajesticHotfixes",
+        "reward": "100k Coins, 50 Lucky Ability Spins, and 25 Lucky Gadget Spins",
+        "isNew": false
+      },
+      {
+        "code": "CURSEDSHIBUYA",
+        "reward": "250K Coins, 15 Raid Tickets, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins, Double Drops Boost, and Double Coins Boost",
+        "isNew": false
+      },
+      {
+        "code": "COPYCAT",
+        "reward": "250K Coins, 15 Raid Tickets, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins, Double Drops Boost, and Double Coins Boost",
+        "isNew": false
+      },
+      {
+        "code": "TRANSCENDENT",
+        "reward": "250,000 Coins, 15 Raid Tickets, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins, and Double Drops (1,800 Minutes)",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "COREDEFENSE",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "DEMONICUNION",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "VANITYHOTFIX",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "HALLOWEEN",
+        "reward": "250,000 Coins, 15 Raid Tickets, 100 Candy, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins, and 2x Coins (1,800 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "CHAINSAWMAN",
+        "reward": "250,000 Coins, 15 Raid Tickets, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins, and 2x Drops (1,800 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "BUFFHOTFIX",
+        "reward": "5,000,000 Coins, 100 Lucky Ability Spins, and 50 Lucky Gadget Spins",
+        "isNew": false
+      },
+      {
+        "code": "MajesticHotfixes",
+        "reward": "100k Coins, 50 Lucky Ability Spins, and 25 Lucky Gadget Spins",
+        "isNew": false
+      },
+      {
+        "code": "CURSEDSHIBUYA",
+        "reward": "250K Coins, 15 Raid Tickets, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins, Double Drops Boost, and Double Coins Boost",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "COREDEFENSE",
+      "DEMONICUNION",
+      "VANITYHOTFIX",
+      "HALLOWEEN",
+      "CHAINSAWMAN",
+      "BUFFHOTFIX",
+      "MajesticHotfixes",
+      "CURSEDSHIBUYA",
+      "TRANSCENDENT",
+      "INVASION",
+      "STEELRIDER",
+      "JOHNNY",
+      "GUILDBATTLES",
+      "SUBARU",
+      "WORLDBOSS",
+      "ZOLTRAAK",
+      "GUILDWARS",
+      "25KINTERESTED",
+      "MAJORBUGFIX",
+      "MAJORBUGFIXES",
+      "15KINTERESTED",
+      "THESTORMISAPPROACHING",
+      "SOUL",
+      "COPYCAT"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "ophelia",
+    "name": "Ophelia",
+    "displayName": "Ophelia [HORROR]",
+    "slug": "ophelia",
+    "players": 1585,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1585,
+    "newCodes": [
+      {
+        "game": "ophelia",
+        "gameName": "Ophelia",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/ophelia"
+        },
+        "code": "FREECRATE",
+        "reward": "Common Crate",
+        "date": "2026-10-12T14:33:53.101Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "FREECRATE",
+        "reward": "Common Crate",
+        "isNew": true
+      },
+      {
+        "code": "FREEMONEY",
+        "reward": "500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "WELCOMEOPHELIA",
+        "reward": "1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "BARRYLOOKINGATYOU",
+        "reward": "250 Cash",
+        "isNew": false
+      },
+      {
+        "code": "FREEREVIVE",
+        "reward": "1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "PAGEUPDATE",
+        "reward": "500 Cash",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "FREECRATE",
+        "reward": "Common Crate",
+        "isNew": true
+      },
+      {
+        "code": "FREEMONEY",
+        "reward": "500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "WELCOMEOPHELIA",
+        "reward": "1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "BARRYLOOKINGATYOU",
+        "reward": "250 Cash",
+        "isNew": false
+      },
+      {
+        "code": "FREEREVIVE",
+        "reward": "1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "PAGEUPDATE",
+        "reward": "500 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "FREECRATE",
+      "FREEMONEY",
+      "BARRYLOOKINGATYOU",
+      "FREEREVIVE",
+      "WELCOMEOPHELIA",
+      "PAGEUPDATE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "vv-ultimatum",
+    "name": "VV: ULTIMATUM",
+    "displayName": "[⚡ SHUNKO] VV: ULTIMATUM",
+    "slug": "vv-ultimatum",
+    "players": 1379,
+    "redeemNote": {
+      "en": "To redeem codes in VV: ULTIMATUM, you must join the Midnight Continent community.",
+      "links": [
+        {
+          "label": "Midnight Continent",
+          "url": "https://www.roblox.com/communities/9233039/Midnight-Continent#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 1379,
+    "newCodes": [
+      {
+        "game": "vv-ultimatum",
+        "gameName": "VV: ULTIMATUM",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/vv-ultimatum"
+        },
+        "code": "CLANS",
+        "reward": null,
+        "date": "2026-10-12T14:33:42.499Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "CLANS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "BUILDPOINTS",
+        "reward": "1x Built Reset Token",
+        "isNew": false
+      },
+      {
+        "code": "205KLIKES",
+        "reward": "5 Ability Rerolls, 5 Clan Rerolls, and 5 Experimental Hogyoku Shards",
+        "isNew": false
+      },
+      {
+        "code": "SHUNKOVASTO",
+        "reward": "20 Clan Rerolls, 15 Ability Rerolls, 5 Experimental Hogyoku Shards, 10 Ability Variant Rerolls, 1 Build Reset Token, 10 Reiatsu Color Tokens, and 3 Player Beads",
+        "isNew": false
+      },
+      {
+        "code": "SHUNKOSATURDAY",
+        "reward": "3 Ability Rerolls, 5 Clan Rerolls, 5 Experimental Hogyoky Shards, and 5 Reiotsu Color Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SORRYFORCODEBUG",
+        "reward": "5 Experimental Hogyoky Shards and 5 Ability Rerolls",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "CLANS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "BUILDPOINTS",
+        "reward": "1x Built Reset Token",
+        "isNew": false
+      },
+      {
+        "code": "205KLIKES",
+        "reward": "5 Ability Rerolls, 5 Clan Rerolls, and 5 Experimental Hogyoku Shards",
+        "isNew": false
+      },
+      {
+        "code": "SHUNKOVASTO",
+        "reward": "20 Clan Rerolls, 15 Ability Rerolls, 5 Experimental Hogyoku Shards, 10 Ability Variant Rerolls, 1 Build Reset Token, 10 Reiatsu Color Tokens, and 3 Player Beads",
+        "isNew": false
+      },
+      {
+        "code": "SHUNKOSATURDAY",
+        "reward": "3 Ability Rerolls, 5 Clan Rerolls, 5 Experimental Hogyoky Shards, and 5 Reiotsu Color Tokens",
+        "isNew": false
+      },
+      {
+        "code": "SORRYFORCODEBUG",
+        "reward": "5 Experimental Hogyoky Shards and 5 Ability Rerolls",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "CLANS",
+      "BUILDPOINTS",
+      "SHUNKOSATURDAY",
+      "SORRYFORCODEBUG",
+      "205KLIKES",
+      "SHUNKOVASTO"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "clover-origins",
+    "name": "Clover Origins",
+    "displayName": "Clover Origins [🌑SHADOW MAGIC]",
+    "slug": "clover-origins",
+    "players": 1169,
+    "redeemNote": {
+      "en": "To use codes in Clover Origins, you must join the Funzy Labs Roblox Community.",
+      "links": [
+        {
+          "label": "Funzy Labs Roblox Community",
+          "url": "https://www.roblox.com/share/g/34007786"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 1169,
+    "newCodes": [
+      {
+        "game": "clover-origins",
+        "gameName": "Clover Origins",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/clover-origins"
+        },
+        "code": "190KLIKES",
+        "reward": "10 Trait Spins",
+        "date": "2026-10-12T14:33:55.590Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      },
+      {
+        "game": "clover-origins",
+        "gameName": "Clover Origins",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/clover-origins"
+        },
+        "code": "25MVISITS",
+        "reward": "20 Race Spins",
+        "date": "2026-10-12T14:33:54.911Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      },
+      {
+        "game": "clover-origins",
+        "gameName": "Clover Origins",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/clover-origins"
+        },
+        "code": "CHESTSYTEM",
+        "reward": null,
+        "date": "2026-10-12T14:33:53.718Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      },
+      {
+        "game": "clover-origins",
+        "gameName": "Clover Origins",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/clover-origins"
+        },
+        "code": "NATCHGRIMOIRE",
+        "reward": "15 Grimoire Spins",
+        "date": "2026-10-12T14:33:52.509Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      }
+    ],
+    "activeCount": 15,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "190KLIKES",
+        "reward": "10 Trait Spins",
+        "isNew": true
+      },
+      {
+        "code": "25MVISITS",
+        "reward": "20 Race Spins",
+        "isNew": true
+      },
+      {
+        "code": "CHESTSYTEM",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "NATCHGRIMOIRE",
+        "reward": "15 Grimoire Spins",
+        "isNew": true
+      },
+      {
+        "code": "SorryForTutorialBug",
+        "reward": "15 Grimoire Spins",
+        "isNew": false
+      },
+      {
+        "code": "maki1zn",
+        "reward": "15 Race Spins",
+        "isNew": false
+      },
+      {
+        "code": "NEXTCHAPTER!",
+        "reward": "150,000 Yen, 100 Grimoire Spins, 5 Stat Resets",
+        "isNew": false
+      },
+      {
+        "code": "ROBLOXBLOCKEDSPINS",
+        "reward": "30 Grimoire Spins",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE7",
+        "reward": "30 Small Mana Potions, 30 Small Health Potions",
+        "isNew": false
+      },
+      {
+        "code": "NEWSLOT",
+        "reward": "Character Slot",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "190KLIKES",
+        "reward": "10 Trait Spins",
+        "isNew": true
+      },
+      {
+        "code": "25MVISITS",
+        "reward": "20 Race Spins",
+        "isNew": true
+      },
+      {
+        "code": "CHESTSYTEM",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "NATCHGRIMOIRE",
+        "reward": "15 Grimoire Spins",
+        "isNew": true
+      },
+      {
+        "code": "SorryForTutorialBug",
+        "reward": "15 Grimoire Spins",
+        "isNew": false
+      },
+      {
+        "code": "maki1zn",
+        "reward": "15 Race Spins",
+        "isNew": false
+      },
+      {
+        "code": "NEXTCHAPTER!",
+        "reward": "150,000 Yen, 100 Grimoire Spins, 5 Stat Resets",
+        "isNew": false
+      },
+      {
+        "code": "ROBLOXBLOCKEDSPINS",
+        "reward": "30 Grimoire Spins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "190KLIKES",
+      "25MVISITS",
+      "CHESTSYTEM",
+      "NATCHGRIMOIRE",
+      "SorryForTutorialBug",
+      "maki1zn",
+      "NEXTCHAPTER!",
+      "ROBLOXBLOCKEDSPINS",
+      "UPDATE7",
+      "NEWSLOT",
+      "ANIMEISBACK",
+      "UPDATE0.6!",
+      "SYSTEMREWORK!",
+      "MINING!",
+      "GAMERELEASE!"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "get-tall-and-fall",
+    "name": "Get Tall and Fall",
+    "displayName": "Get Tall and Fall",
+    "slug": "get-tall-and-fall",
+    "players": 938,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 938,
+    "newCodes": [
+      {
+        "game": "get-tall-and-fall",
+        "gameName": "Get Tall and Fall",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/get-tall-and-fall"
+        },
+        "code": "UPDATE",
+        "reward": "1x Goat and 3x Coin Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791621901263,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "UPDATE",
+        "reward": "1x Goat and 3x Coin Potion",
+        "isNew": true
+      },
+      {
+        "code": "FREEPLAYCOINS",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "WEAREBACK",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "FREEPET",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "UPDATE",
+        "reward": "1x Goat and 3x Coin Potion",
+        "isNew": true
+      },
+      {
+        "code": "FREEPLAYCOINS",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "WEAREBACK",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "FREEPET",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "UPDATE",
+      "FREEPLAYCOINS",
+      "WEAREBACK",
+      "FREEPET"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "anime-stars-card-collection",
     "name": "Anime Stars Card Collection",
     "displayName": "[🌸 NEW UPDATE] Anime Stars Card Collection",
@@ -175,6 +1628,160 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "project-baki-3",
+    "name": "Project Baki 3",
+    "displayName": "[🐦‍⬛HALLOWEEN PART 2] Project Baki",
+    "slug": "project-baki-3",
+    "players": 548,
+    "redeemNote": {
+      "en": "To use codes in Project Baki 3, you must first join the Project Baki Roblox Community.",
+      "links": [
+        {
+          "label": "Project Baki Roblox Community",
+          "url": "https://www.roblox.com/communities/4626791/Project-Baki#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 548,
+    "newCodes": [
+      {
+        "game": "project-baki-3",
+        "gameName": "Project Baki 3",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/project-baki-3"
+        },
+        "code": "ITACHITIME",
+        "reward": null,
+        "date": "2026-10-12T14:33:42.910Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      }
+    ],
+    "activeCount": 16,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "ITACHITIME",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "ELDENLORD",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SOULSFOREVERYONE",
+        "reward": "30 Souls, 2M Yen and the Moon",
+        "isNew": false
+      },
+      {
+        "code": "SORRYFORHALLOWEENDELAY",
+        "reward": "2 Slasher Souls",
+        "isNew": false
+      },
+      {
+        "code": "HAPPYHALLOWEEN",
+        "reward": "2 Uroboros Reagents",
+        "isNew": false
+      },
+      {
+        "code": "SORRYFORTHEDATALOSS",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "ENJOYTHISCODE",
+        "reward": "1,000,000 Yen and 1 Valentine Essence",
+        "isNew": false
+      },
+      {
+        "code": "WTestersThankYouSoMuch",
+        "reward": "300 Summer Board Points, 4M Untradeable Yen and 300 Summer Points",
+        "isNew": false
+      },
+      {
+        "code": "FREEBALLZ",
+        "reward": "3 Dragon Balls",
+        "isNew": false
+      },
+      {
+        "code": "SAIYANWALK",
+        "reward": "1,000,000 Yen and a Quincy King Essence",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ITACHITIME",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "ELDENLORD",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SOULSFOREVERYONE",
+        "reward": "30 Souls, 2M Yen and the Moon",
+        "isNew": false
+      },
+      {
+        "code": "SORRYFORHALLOWEENDELAY",
+        "reward": "2 Slasher Souls",
+        "isNew": false
+      },
+      {
+        "code": "HAPPYHALLOWEEN",
+        "reward": "2 Uroboros Reagents",
+        "isNew": false
+      },
+      {
+        "code": "SORRYFORTHEDATALOSS",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "ENJOYTHISCODE",
+        "reward": "1,000,000 Yen and 1 Valentine Essence",
+        "isNew": false
+      },
+      {
+        "code": "WTestersThankYouSoMuch",
+        "reward": "300 Summer Board Points, 4M Untradeable Yen and 300 Summer Points",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "ITACHITIME",
+      "ELDENLORD",
+      "SOULSFOREVERYONE",
+      "SORRYFORHALLOWEENDELAY",
+      "HAPPYHALLOWEEN",
+      "SORRYFORTHEDATALOSS",
+      "ENJOYTHISCODE",
+      "WTestersThankYouSoMuch",
+      "FREEBALLZ",
+      "SAIYANWALK",
+      "DBZUPD1",
+      "DBZDELAY2",
+      "BAKIBALLZ",
+      "CELLSTYLEMAYBE",
+      "DBZDELAY",
+      "ILOVEYAKUZA"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "uma-racing",
     "name": "Uma Racing",
     "displayName": "[HISHI AMAZON + SKILL BUILDER] Uma Racing",
@@ -281,6 +1888,147 @@
       "QOLAGAINNGL",
       "QOLBIGGEST",
       "OGURICAPMASTERY"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "nightfall",
+    "name": "Nightfall",
+    "displayName": "Nightfall",
+    "slug": "nightfall",
+    "players": 518,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 518,
+    "newCodes": [
+      {
+        "game": "nightfall",
+        "gameName": "Nightfall",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/nightfall"
+        },
+        "code": "DEADLY",
+        "reward": null,
+        "date": "2026-10-12T14:33:13.483Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      },
+      {
+        "game": "nightfall",
+        "gameName": "Nightfall",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/nightfall"
+        },
+        "code": "HOST",
+        "reward": null,
+        "date": "2026-10-12T14:33:13.069Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      },
+      {
+        "game": "nightfall",
+        "gameName": "Nightfall",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/nightfall"
+        },
+        "code": "NEWFERAL",
+        "reward": null,
+        "date": "2026-10-12T14:33:12.140Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "DEADLY",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "HOST",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "NEWFERAL",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SRYFORANOTHERDELAY",
+        "reward": "20 Cash",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE",
+        "reward": "10 Cash",
+        "isNew": false
+      },
+      {
+        "code": "CHAPTER1",
+        "reward": "1 Revive",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "DEADLY",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "HOST",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "NEWFERAL",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SRYFORANOTHERDELAY",
+        "reward": "20 Cash",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE",
+        "reward": "10 Cash",
+        "isNew": false
+      },
+      {
+        "code": "CHAPTER1",
+        "reward": "1 Revive",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "DEADLY",
+      "HOST",
+      "NEWFERAL",
+      "SRYFORANOTHERDELAY",
+      "UPDATE",
+      "CHAPTER1"
     ]
   },
   {
@@ -462,6 +2210,78 @@
       "10000LIKES",
       "5000LIKES",
       "NEWYEAR2026"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "split-or-steal-brainrot",
+    "name": "Split or Steal Brainrot",
+    "displayName": "😈 Split or Steal Brainrot",
+    "slug": "split-or-steal-brainrot",
+    "players": 237,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 237,
+    "newCodes": [
+      {
+        "game": "split-or-steal-brainrot",
+        "gameName": "Split or Steal Brainrot",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/split-or-steal-brainrot"
+        },
+        "code": "HalloweenPart1",
+        "reward": null,
+        "date": "2026-10-12T14:33:40.826Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T15:03:02.787Z",
+        "fetchedAt": "2026-10-12T15:03:02.787Z"
+      }
+    ],
+    "activeCount": 3,
+    "fetchedAt": "2026-10-12T15:03:02.787Z",
+    "displayCodes": [
+      {
+        "code": "HalloweenPart1",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "RavenChair70",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "Gargantuan4000",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "HalloweenPart1",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "RavenChair70",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "Gargantuan4000",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "HalloweenPart1",
+      "RavenChair70",
+      "Gargantuan4000"
     ]
   }
 ]

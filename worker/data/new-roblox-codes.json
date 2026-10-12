@@ -1,502 +1,579 @@
 {
-  "generatedAt": "2026-10-12T14:02:28.292Z",
+  "generatedAt": "2026-10-12T15:03:02.787Z",
   "codes": [
     {
-      "game": "catch-and-tame",
-      "gameName": "Catch And Tame",
+      "game": "heroes-battlegrounds",
+      "gameName": "Heroes Battlegrounds",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/catch-and-tame"
+        "RoCodes.gg": "https://rocodes.gg/codes/heroes-battlegrounds"
       },
-      "code": "KAIJUEVENT",
+      "code": "!code RANKEDREWORKSOON",
       "reward": null,
-      "date": "2026-10-12T13:51:14.290Z",
+      "date": "2026-10-12T14:33:57.187Z",
       "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "verified": true,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     },
     {
-      "game": "final-swarm",
-      "gameName": "Final Swarm",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/final-swarm"
-      },
-      "code": "s4ndw0rm",
-      "reward": null,
-      "date": "2026-10-12T13:51:13.185Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "brainrot-evolution",
-      "gameName": "Brainrot Evolution",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/brainrot-evolution"
-      },
-      "code": "Towerrr",
-      "reward": null,
-      "date": "2026-10-12T13:50:57.011Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "anime-stars-card-collection",
-      "gameName": "Anime Stars Card Collection",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/anime-stars-card-collection"
-      },
-      "code": "CITRON",
-      "reward": null,
-      "date": "2026-10-12T13:50:53.662Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "anime-stars-card-collection",
-      "gameName": "Anime Stars Card Collection",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/anime-stars-card-collection"
-      },
-      "code": "33M",
-      "reward": null,
-      "date": "2026-10-12T13:50:52.469Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "merge-a-black-hole",
-      "gameName": "Merge a Black Hole",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/merge-a-black-hole"
-      },
-      "code": "WMEL",
-      "reward": null,
-      "date": "2026-10-12T13:51:04.061Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "merge-a-black-hole",
-      "gameName": "Merge a Black Hole",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/merge-a-black-hole"
-      },
-      "code": "HALLOWEENSOON",
-      "reward": null,
-      "date": "2026-10-12T13:51:02.722Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "spin-a-kitty",
-      "gameName": "Spin a Kitty",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/spin-a-kitty"
-      },
-      "code": "MEWO",
-      "reward": null,
-      "date": "2026-10-12T13:51:11.684Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "spin-a-kitty",
-      "gameName": "Spin a Kitty",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/spin-a-kitty"
-      },
-      "code": "QUESTSNEW",
-      "reward": null,
-      "date": "2026-10-12T13:51:10.894Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "spin-a-kitty",
-      "gameName": "Spin a Kitty",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/spin-a-kitty"
-      },
-      "code": "UPD25",
-      "reward": null,
-      "date": "2026-10-12T13:51:10.092Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "fall-for-brainrots",
-      "gameName": "Fall For Brainrots",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/fall-for-brainrots"
-      },
-      "code": "PRIMORDIALUPDATE",
-      "reward": null,
-      "date": "2026-10-12T13:51:17.209Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "fall-for-brainrots",
-      "gameName": "Fall For Brainrots",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/fall-for-brainrots"
-      },
-      "code": "60MILLVISITS",
-      "reward": null,
-      "date": "2026-10-12T13:51:08.957Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "the-forge",
-      "gameName": "The Forge",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/the-forge"
-      },
-      "code": "WAITFORHALLOWEEN",
-      "reward": "10 Class Rerolls",
-      "date": "2026-10-12T13:51:35.626Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "escape-huss-valley",
-      "gameName": "Escape Huss Valley",
+      "game": "asylum-life",
+      "gameName": "Asylum Life",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/escape-huss-valley"
+        "Roblox Den": "https://robloxden.com/game-codes/asylum-life"
       },
-      "code": "HUSS4CODE",
-      "reward": "2x Coin Boost (15 Minutes), 2x Gem Boost (15 Minutes) and a First Title",
+      "code": "THEDIVE",
+      "reward": "3x EXP Booster",
       "date": null,
       "srcNew": true,
+      "srcNewAt": 1791642223900,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     },
     {
-      "game": "escape-huss-valley",
-      "gameName": "Escape Huss Valley",
+      "game": "vv-ultimatum",
+      "gameName": "VV: ULTIMATUM",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/vv-ultimatum"
+      },
+      "code": "CLANS",
+      "reward": null,
+      "date": "2026-10-12T14:33:42.499Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "gakuran",
+      "gameName": "Gakuran",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/gakuran"
+      },
+      "code": "QOL4",
+      "reward": null,
+      "date": "2026-10-12T14:33:57.584Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "nightfall",
+      "gameName": "Nightfall",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/nightfall"
+      },
+      "code": "DEADLY",
+      "reward": null,
+      "date": "2026-10-12T14:33:13.483Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "nightfall",
+      "gameName": "Nightfall",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/nightfall"
+      },
+      "code": "HOST",
+      "reward": null,
+      "date": "2026-10-12T14:33:13.069Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "nightfall",
+      "gameName": "Nightfall",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/nightfall"
+      },
+      "code": "NEWFERAL",
+      "reward": null,
+      "date": "2026-10-12T14:33:12.140Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "anime-apocalypse",
+      "gameName": "Anime Apocalypse",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-apocalypse"
+      },
+      "code": "COREDEFENSE",
+      "reward": null,
+      "date": "2026-10-12T14:33:48.095Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "anime-apocalypse",
+      "gameName": "Anime Apocalypse",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-apocalypse"
+      },
+      "code": "DEMONICUNION",
+      "reward": null,
+      "date": "2026-10-12T14:33:47.662Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "anime-apocalypse",
+      "gameName": "Anime Apocalypse",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-apocalypse"
+      },
+      "code": "VANITYHOTFIX",
+      "reward": null,
+      "date": "2026-10-12T14:33:47.155Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "ghoul-re",
+      "gameName": "GHOUL://RE",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/ghoul-re"
+      },
+      "code": "seeyouonhalloween",
+      "reward": null,
+      "date": "2026-10-12T14:33:15.322Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "ghoul-re",
+      "gameName": "GHOUL://RE",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/ghoul-re"
+      },
+      "code": "sorryfor6amsd",
+      "reward": null,
+      "date": "2026-10-12T14:33:14.393Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "ghoul-re",
+      "gameName": "GHOUL://RE",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/ghoul-re"
+      },
+      "code": "whereupdateattho",
+      "reward": null,
+      "date": "2026-10-12T14:33:13.922Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "ghoul-re",
+      "gameName": "GHOUL://RE",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/ghoul-re"
+      },
+      "code": "halloweenlol",
+      "reward": null,
+      "date": "2026-10-12T14:33:10.059Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "project-baki-3",
+      "gameName": "Project Baki 3",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/project-baki-3"
+      },
+      "code": "ITACHITIME",
+      "reward": null,
+      "date": "2026-10-12T14:33:42.910Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "junk-mechanics",
+      "gameName": "Junk Mechanics",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/junk-mechanics"
+      },
+      "code": "HALLOWS",
+      "reward": null,
+      "date": "2026-10-12T14:33:42.059Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "junk-mechanics",
+      "gameName": "Junk Mechanics",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/junk-mechanics"
+      },
+      "code": "TRICKORTREAT",
+      "reward": null,
+      "date": "2026-10-12T14:33:41.695Z",
+      "endsAt": null,
+      "verified": true,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "clover-origins",
+      "gameName": "Clover Origins",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/clover-origins"
+      },
+      "code": "190KLIKES",
+      "reward": "10 Trait Spins",
+      "date": "2026-10-12T14:33:55.590Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "clover-origins",
+      "gameName": "Clover Origins",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/clover-origins"
+      },
+      "code": "25MVISITS",
+      "reward": "20 Race Spins",
+      "date": "2026-10-12T14:33:54.911Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "clover-origins",
+      "gameName": "Clover Origins",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/clover-origins"
+      },
+      "code": "CHESTSYTEM",
+      "reward": null,
+      "date": "2026-10-12T14:33:53.718Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "clover-origins",
+      "gameName": "Clover Origins",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/clover-origins"
+      },
+      "code": "NATCHGRIMOIRE",
+      "reward": "15 Grimoire Spins",
+      "date": "2026-10-12T14:33:52.509Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "it-girl",
+      "gameName": "IT GIRL",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/it-girl"
+      },
+      "code": "HALLOWEEN26",
+      "reward": "1000 Diamonds",
+      "date": "2026-10-12T14:33:45.307Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
+    },
+    {
+      "game": "get-tall-and-fall",
+      "gameName": "Get Tall and Fall",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/escape-huss-valley"
+        "Roblox Den": "https://robloxden.com/game-codes/get-tall-and-fall"
       },
-      "code": "FIRSTCODEEVER",
-      "reward": "2x Gem Boost (15 Minutes), +100 Gems and a random emote (e.g. E Dance Supreme Emote)",
+      "code": "UPDATE",
+      "reward": "1x Goat and 3x Coin Potion",
       "date": null,
       "srcNew": true,
+      "srcNewAt": 1791621901263,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     },
     {
-      "game": "immortality-incremental",
-      "gameName": "Immortality Incremental",
+      "game": "split-or-steal-brainrot",
+      "gameName": "Split or Steal Brainrot",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/immortality-incremental"
+        "RoCodes.gg": "https://rocodes.gg/codes/split-or-steal-brainrot"
       },
-      "code": "LASTD1UPD",
-      "reward": "10 Tickets, Potions",
-      "date": "2026-10-12T13:51:51.718Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "immortality-incremental",
-      "gameName": "Immortality Incremental",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/immortality-incremental"
-      },
-      "code": "ALCHEMY",
-      "reward": "10 Jade, 3 Mark Potions",
-      "date": "2026-10-12T13:51:51.035Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "hunt-giant-fish",
-      "gameName": "Hunt Giant Fish",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/hunt-giant-fish"
-      },
-      "code": "LUNARDRAGON",
+      "code": "HalloweenPart1",
       "reward": null,
-      "date": "2026-10-12T13:50:57.964Z",
+      "date": "2026-10-12T14:33:40.826Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     },
     {
-      "game": "hunt-giant-fish",
-      "gameName": "Hunt Giant Fish",
+      "game": "ophelia",
+      "gameName": "Ophelia",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/hunt-giant-fish"
+        "RoCodes.gg": "https://rocodes.gg/codes/ophelia"
       },
-      "code": "DRAGONMISSION",
-      "reward": null,
-      "date": "2026-10-12T13:50:57.377Z",
+      "code": "FREECRATE",
+      "reward": "Common Crate",
+      "date": "2026-10-12T14:33:53.101Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     },
     {
-      "game": "prodigy-drift",
-      "gameName": "Prodigy Drift",
+      "game": "the-veil",
+      "gameName": "The Veil",
       "source": "RoCodes.gg",
       "sources": [
         "RoCodes.gg"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/prodigy-drift"
+        "RoCodes.gg": "https://rocodes.gg/codes/the-veil"
       },
-      "code": "REFLECT",
-      "reward": "Cash",
-      "date": "2026-10-12T13:51:27.763Z",
+      "code": "VEILOWEEN",
+      "reward": "5 Race Rerolls",
+      "date": "2026-10-12T14:34:15.089Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     },
     {
-      "game": "anime-evolution-re",
-      "gameName": "Anime Evolution RE",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/anime-evolution-re"
-      },
-      "code": "HALLOWEEN2026",
-      "reward": null,
-      "date": "2026-10-12T13:50:58.492Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "uma-racing",
-      "gameName": "Uma Racing",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/uma-racing"
-      },
-      "code": "HISHIAMAZONSTUFF",
-      "reward": null,
-      "date": "2026-10-12T13:51:15.239Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "uma-racing",
-      "gameName": "Uma Racing",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/uma-racing"
-      },
-      "code": "QOLAGAINNGL",
-      "reward": null,
-      "date": "2026-10-12T13:51:14.773Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
-    },
-    {
-      "game": "drive-a-kukirin",
-      "gameName": "Drive A Kukirin",
+      "game": "anime-breaker",
+      "gameName": "Anime Breaker",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/drive-a-kukirin"
+        "Roblox Den": "https://robloxden.com/game-codes/anime-breaker"
       },
-      "code": "SPOOKY",
-      "reward": "2,000 Cash",
+      "code": "14MVISITS",
+      "reward": "200 Emeralds",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1791733900451,
+      "srcNewAt": 1791653153955,
       "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "verified": true,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     },
     {
-      "game": "drive-a-kukirin",
-      "gameName": "Drive A Kukirin",
+      "game": "anime-breaker",
+      "gameName": "Anime Breaker",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/drive-a-kukirin"
+        "Roblox Den": "https://robloxden.com/game-codes/anime-breaker"
       },
-      "code": "RESTART",
-      "reward": "2,000 cash",
+      "code": "110KFAVORITES",
+      "reward": "200 Emeralds",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1791733900451,
+      "srcNewAt": 1791653153955,
       "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "verified": true,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     },
     {
-      "game": "fleet-empire",
-      "gameName": "Fleet Empire",
+      "game": "anime-breaker",
+      "gameName": "Anime Breaker",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/fleet-empire"
+        "Roblox Den": "https://robloxden.com/game-codes/anime-breaker"
       },
-      "code": "CANDY",
-      "reward": "500x Candy",
+      "code": "NEWKAGUNE",
+      "reward": "200 Emeralds, 2x Energy Potion T2, 2x Damage Potion T2, 2x Gold Potion T2, 2x Luck Potion T2, and 2x Drop Potion T2",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1791643471336,
+      "srcNewAt": 1791653153955,
       "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "verified": true,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     },
     {
-      "game": "open-sea-for-animals",
-      "gameName": "Open Sea For Animals",
+      "game": "anime-breaker",
+      "gameName": "Anime Breaker",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/open-sea-for-animals"
+        "Roblox Den": "https://robloxden.com/game-codes/anime-breaker"
       },
-      "code": "UPD3",
-      "reward": "1 Cash Potion",
+      "code": "NEWGHOUL",
+      "reward": "200 Emeralds",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1791632397218,
+      "srcNewAt": 1791653153955,
       "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-12T14:02:28.292Z",
-      "fetchedAt": "2026-10-12T14:02:28.292Z"
+      "verified": true,
+      "firstSeenAt": "2026-10-12T15:03:02.787Z",
+      "fetchedAt": "2026-10-12T15:03:02.787Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "country-battles",
+      "count": 1,
+      "fresh": [
+        {
+          "code": "COUNTRY",
+          "reward": "Double Boosts (15 minutes)"
+        }
+      ]
+    },
+    {
+      "game": "run-a-sari-sari-store",
+      "count": 1,
+      "fresh": [
+        {
+          "code": "RELEASE",
+          "reward": "500 Cash + 5% Upgrade Shop Discount"
+        }
+      ]
+    }
+  ]
 }
