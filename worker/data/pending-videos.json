@@ -1,248 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "race-for-eggs",
-    "name": "Race for Eggs",
-    "displayName": "Race for Eggs",
-    "slug": "race-for-eggs",
-    "players": 3521,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3521,
-    "newCodes": [
-      {
-        "code": "UPD3",
-        "reward": "Cash Potion"
-      },
-      {
-        "code": "UPD2",
-        "reward": "Cash Potion"
-      },
-      {
-        "code": "UPD1",
-        "reward": "Cash Potion"
-      },
-      {
-        "code": "RELEASE",
-        "reward": "Lizard"
-      }
-    ],
-    "activeCount": 6,
-    "fetchedAt": "2026-10-12T20:01:36.307Z",
-    "displayCodes": [
-      {
-        "code": "UPD3",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "UPD2",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "UPD1",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "RELEASE",
-        "reward": "Lizard",
-        "isNew": true
-      },
-      {
-        "code": "TRAIN1",
-        "reward": "Train Potion",
-        "isNew": false
-      },
-      {
-        "code": "LUCK1",
-        "reward": "Luck Potion",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "UPD3",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "UPD2",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "UPD1",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "RELEASE",
-        "reward": "Lizard",
-        "isNew": true
-      },
-      {
-        "code": "TRAIN1",
-        "reward": "Train Potion",
-        "isNew": false
-      },
-      {
-        "code": "LUCK1",
-        "reward": "Luck Potion",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "UPD3",
-      "UPD2",
-      "UPD1",
-      "RELEASE",
-      "TRAIN1",
-      "LUCK1"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "fish-an-anime-rng",
-    "name": "Fish an Anime RNG",
-    "displayName": "Fish an Anime RNG 🎲",
-    "slug": "fish-an-anime-rng",
-    "players": 3449,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3449,
-    "newCodes": [
-      {
-        "code": "Marceline",
-        "reward": ""
-      },
-      {
-        "code": "Hallowi",
-        "reward": ""
-      }
-    ],
-    "activeCount": 20,
-    "fetchedAt": "2026-10-12T17:02:58.999Z",
-    "displayCodes": [
-      {
-        "code": "Marceline",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Incoming Mind Break",
-        "reward": "2 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "35KLIKES",
-        "reward": "5K Gems",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "Marceline",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "Marceline",
-      "Hallowi",
-      "Starfall",
-      "Luther",
-      "Halloween",
-      "15MVISITS",
-      "Toxic Wasteland",
-      "Ink Spider",
-      "Incoming Mind Break",
-      "35KLIKES",
-      "Sad Ending",
-      "Lapis Hex",
-      "Cullen",
-      "Clan Update",
-      "20KMEMBERS",
-      "30KLIKES",
-      "THANKYOUEVERYONE",
-      "20KLIKES",
-      "10KMEMBERS",
-      "10KCCU"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "it-girl",
     "name": "IT GIRL",
     "displayName": "IT GIRL 🏝️",
@@ -791,6 +549,42 @@
       "WORLD9PT1",
       "WORLD8PT2",
       "HARDTRAINING"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "the-forge",
+    "name": "The Forge",
+    "displayName": "The Forge [📜]",
+    "slug": "the-forge",
+    "players": 2979,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2979,
+    "newCodes": [
+      {
+        "code": "WAITFORHALLOWEEN",
+        "reward": "10 Class Rerolls"
+      }
+    ],
+    "activeCount": 1,
+    "fetchedAt": "2026-10-12T21:01:58.997Z",
+    "displayCodes": [
+      {
+        "code": "WAITFORHALLOWEEN",
+        "reward": "10 Class Rerolls",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "WAITFORHALLOWEEN",
+        "reward": "10 Class Rerolls",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "WAITFORHALLOWEEN"
     ]
   },
   {
@@ -1432,6 +1226,199 @@
       "NEEDCOINS",
       "WORLD3",
       "TRAINSSS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "trench-decay",
+    "name": "Trench Decay",
+    "displayName": "[🎖️BADGE & 🗡️MAJOR UPD] TRENCH: DECAY",
+    "slug": "trench-decay",
+    "players": 1735,
+    "redeemNote": {
+      "en": "To use codes in TRENCH: DECAY, you must join the studio rook. Roblox Community.",
+      "links": [
+        {
+          "label": "studio rook. Roblox Community",
+          "url": "https://www.roblox.com/share/g/680573053"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 1735,
+    "newCodes": [
+      {
+        "game": "trench-decay",
+        "gameName": "Trench Decay",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/trench-decay"
+        },
+        "code": "WOULDYOUCODER",
+        "reward": "Medals",
+        "date": "2026-10-12T14:51:19.339Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T21:01:58.997Z",
+        "fetchedAt": "2026-10-12T21:01:58.997Z"
+      },
+      {
+        "game": "trench-decay",
+        "gameName": "Trench Decay",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/trench-decay"
+        },
+        "code": "MYSTERYCODE100",
+        "reward": "Special Delivery",
+        "date": "2026-10-12T14:51:19.075Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T21:01:58.997Z",
+        "fetchedAt": "2026-10-12T21:01:58.997Z"
+      },
+      {
+        "game": "trench-decay",
+        "gameName": "Trench Decay",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/trench-decay"
+        },
+        "code": "DECISION1000",
+        "reward": "Fate of the Enlisted",
+        "date": "2026-10-12T14:51:18.867Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T21:01:58.997Z",
+        "fetchedAt": "2026-10-12T21:01:58.997Z"
+      }
+    ],
+    "activeCount": 19,
+    "fetchedAt": "2026-10-12T21:01:58.997Z",
+    "displayCodes": [
+      {
+        "code": "WOULDYOUCODER",
+        "reward": "Medals",
+        "isNew": true
+      },
+      {
+        "code": "MYSTERYCODE100",
+        "reward": "Special Delivery",
+        "isNew": true
+      },
+      {
+        "code": "DECISION1000",
+        "reward": "Fate of the Enlisted",
+        "isNew": true
+      },
+      {
+        "code": "RETURNCODE1000",
+        "reward": "Medals",
+        "isNew": false
+      },
+      {
+        "code": "SUPERCODE1000",
+        "reward": "1 Medal",
+        "isNew": false
+      },
+      {
+        "code": "100KENLISTEES",
+        "reward": "1,000 Medals",
+        "isNew": false
+      },
+      {
+        "code": "BELLSARECHIMING",
+        "reward": "Medals",
+        "isNew": false
+      },
+      {
+        "code": "LIVESTREAMBADGEHUNT",
+        "reward": "Medals",
+        "isNew": false
+      },
+      {
+        "code": "5MVISITS",
+        "reward": "800 Medals",
+        "isNew": false
+      },
+      {
+        "code": "BRAZILINDEP",
+        "reward": "Ordem Independence Dragoon and Ordem Independence Gas Mask",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "WOULDYOUCODER",
+        "reward": "Medals",
+        "isNew": true
+      },
+      {
+        "code": "MYSTERYCODE100",
+        "reward": "Special Delivery",
+        "isNew": true
+      },
+      {
+        "code": "DECISION1000",
+        "reward": "Fate of the Enlisted",
+        "isNew": true
+      },
+      {
+        "code": "RETURNCODE1000",
+        "reward": "Medals",
+        "isNew": false
+      },
+      {
+        "code": "SUPERCODE1000",
+        "reward": "1 Medal",
+        "isNew": false
+      },
+      {
+        "code": "100KENLISTEES",
+        "reward": "1,000 Medals",
+        "isNew": false
+      },
+      {
+        "code": "BELLSARECHIMING",
+        "reward": "Medals",
+        "isNew": false
+      },
+      {
+        "code": "LIVESTREAMBADGEHUNT",
+        "reward": "Medals",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "WOULDYOUCODER",
+      "RETURNCODE1000",
+      "MYSTERYCODE100",
+      "DECISION1000",
+      "BELLSARECHIMING",
+      "LIVESTREAMBADGEHUNT",
+      "5MVISITS",
+      "FINALPUSHUPDATE",
+      "SUPERCODE1000",
+      "100KENLISTEES",
+      "BRAZILINDEP",
+      "STEELBOUNDSET",
+      "JMTDECAYERS",
+      "DEFENSEWEEKENDBASH",
+      "HIDDENCODELOLUFOUNDME",
+      "THETRENCHLIFE",
+      "2KCCU",
+      "3MVISITS",
+      "HERETICHAT"
     ]
   },
   {
@@ -2166,6 +2153,58 @@
       "FREEPLAYCOINS",
       "WEAREBACK",
       "FREEPET"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "counter-blox",
+    "name": "Counter Blox",
+    "displayName": "[UPDATE!] Counter Blox",
+    "slug": "counter-blox",
+    "players": 849,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 849,
+    "newCodes": [
+      {
+        "game": "counter-blox",
+        "gameName": "Counter Blox",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/counter-blox"
+        },
+        "code": "REFUNDTHEHITREG",
+        "reward": "150 Credits",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791621875874,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-12T21:01:58.997Z",
+        "fetchedAt": "2026-10-12T21:01:58.997Z"
+      }
+    ],
+    "activeCount": 1,
+    "fetchedAt": "2026-10-12T21:01:58.997Z",
+    "displayCodes": [
+      {
+        "code": "REFUNDTHEHITREG",
+        "reward": "150 Credits",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "REFUNDTHEHITREG",
+        "reward": "150 Credits",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "REFUNDTHEHITREG"
     ]
   },
   {

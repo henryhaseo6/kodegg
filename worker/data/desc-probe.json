@@ -13164,7 +13164,7 @@
   "flow": {
    "tulis": "Flow",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-27",
+   "terakhir": "2026-10-12",
    "awal": true
   },
   "state": {
@@ -13843,7 +13843,7 @@
   "flow": {
    "tulis": "Flow",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-27",
+   "terakhir": "2026-10-12",
    "awal": true
   },
   "goalbound": {
@@ -30632,7 +30632,7 @@
   "account": {
    "tulis": "Account",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-01",
+   "terakhir": "2026-10-12",
    "awal": true
   },
   "blocking": {
@@ -44079,7 +44079,7 @@
   "account": {
    "tulis": "Account",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-01",
+   "terakhir": "2026-10-12",
    "awal": true
   },
   "weave": {
@@ -56786,6 +56786,11 @@
    "tulis": "Crunchyroll",
    "pertama": 1790845619837,
    "terakhir": "2026-10-12"
+  },
+  "account": {
+   "tulis": "account",
+   "pertama": 1791839076364,
+   "terakhir": "2026-10-12"
   }
  },
  "all-star-tower-defense": {
@@ -64961,6 +64966,26 @@
    "tulis": "advice",
    "pertama": 1787749436290,
    "terakhir": "2026-10-12"
+  },
+  "crypto": {
+   "tulis": "crypto",
+   "pertama": 1791839076364,
+   "terakhir": "2026-10-12"
+  },
+  "crashes": {
+   "tulis": "crashes",
+   "pertama": 1791839076364,
+   "terakhir": "2026-10-12"
+  },
+  "trader": {
+   "tulis": "trader",
+   "pertama": 1791839076364,
+   "terakhir": "2026-10-12"
+  },
+  "millions": {
+   "tulis": "MILLIONS",
+   "pertama": 1791839076364,
+   "terakhir": "2026-10-12"
   }
  },
  "my-grass-farm": {
@@ -66187,6 +66212,11 @@
   "approach": {
    "tulis": "Approach",
    "pertama": 1789844653548,
+   "terakhir": "2026-10-12"
+  },
+  "flow": {
+   "tulis": "flow",
+   "pertama": 1791839076364,
    "terakhir": "2026-10-12"
   }
  },
@@ -76572,6 +76602,11 @@
    "pertama": 1791824739985,
    "terakhir": "2026-10-12",
    "sudahPunya": true
+  },
+  "price": {
+   "tulis": "price",
+   "pertama": 1791839076364,
+   "terakhir": "2026-10-12"
   }
  },
  "zombie-air-force": {
@@ -76639,6 +76674,11 @@
   "tweak": {
    "tulis": "tweak",
    "pertama": 1791824739985,
+   "terakhir": "2026-10-12"
+  },
+  "provide": {
+   "tulis": "provide",
+   "pertama": 1791839076364,
    "terakhir": "2026-10-12"
   }
  }
