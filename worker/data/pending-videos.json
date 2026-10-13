@@ -1,6 +1,84 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "pixel-blade",
+    "name": "Pixel Blade",
+    "displayName": "[CHRONOS // ARC 2] Pixel Blade",
+    "slug": "pixel-blade",
+    "players": 4091,
+    "redeemNote": {
+      "en": "To use codes in Pixel Blade, you must join the Frost Blade Games Roblox Community.",
+      "links": [
+        {
+          "label": "Frost Blade Games Roblox Community",
+          "url": "https://www.roblox.com/communities/8605341/Frost-Blade-Games#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 4091,
+    "newCodes": [
+      {
+        "code": "CHRONOS",
+        "reward": ""
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-10-13T02:01:56.039Z",
+    "displayCodes": [
+      {
+        "code": "CHRONOS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "FISHINGSTASH",
+        "reward": "Golden Cod and 500 Coins",
+        "isNew": false
+      },
+      {
+        "code": "12369",
+        "reward": "2 Ominous Chests, 26 Coins, and 10 Dead Sticks",
+        "isNew": false
+      },
+      {
+        "code": "FULL RELEASE",
+        "reward": "5 Class Dice and 500 Coins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "CHRONOS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "FISHINGSTASH",
+        "reward": "Golden Cod and 500 Coins",
+        "isNew": false
+      },
+      {
+        "code": "12369",
+        "reward": "2 Ominous Chests, 26 Coins, and 10 Dead Sticks",
+        "isNew": false
+      },
+      {
+        "code": "FULL RELEASE",
+        "reward": "5 Class Dice and 500 Coins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "CHRONOS",
+      "FULL RELEASE",
+      "FISHINGSTASH",
+      "12369"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "the-forge",
     "name": "The Forge",
     "displayName": "The Forge [📜]",
@@ -2603,6 +2681,106 @@
       "KAISERTORTOYT",
       "CRYHACKERSLOL",
       "ThankYou300"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "redliner",
+    "name": "REDLINER",
+    "displayName": "[⚔️ RANKED] REDLINER",
+    "slug": "redliner",
+    "players": 1049,
+    "redeemNote": {
+      "en": "To use codes in REDLINER, you must be at least level 10.",
+      "links": [],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 1049,
+    "newCodes": [
+      {
+        "game": "redliner",
+        "gameName": "REDLINER",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/redliner"
+        },
+        "code": "HEADSUP",
+        "reward": "900 Crimson",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791653150356,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T02:01:56.039Z",
+        "fetchedAt": "2026-10-13T02:01:56.039Z"
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-10-13T02:01:56.039Z",
+    "displayCodes": [
+      {
+        "code": "HEADSUP",
+        "reward": "900 Crimson",
+        "isNew": true
+      },
+      {
+        "code": "LIBERATOR",
+        "reward": "900 Crimson",
+        "isNew": false
+      },
+      {
+        "code": "EXPOSURE",
+        "reward": "500 Crimson",
+        "isNew": false
+      },
+      {
+        "code": "RETURN",
+        "reward": "1,000 Crimson",
+        "isNew": false
+      },
+      {
+        "code": "LFINHERITORPLS",
+        "reward": "1,000 Crimson",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "HEADSUP",
+        "reward": "900 Crimson",
+        "isNew": true
+      },
+      {
+        "code": "LIBERATOR",
+        "reward": "900 Crimson",
+        "isNew": false
+      },
+      {
+        "code": "EXPOSURE",
+        "reward": "500 Crimson",
+        "isNew": false
+      },
+      {
+        "code": "RETURN",
+        "reward": "1,000 Crimson",
+        "isNew": false
+      },
+      {
+        "code": "LFINHERITORPLS",
+        "reward": "1,000 Crimson",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "LIBERATOR",
+      "EXPOSURE",
+      "RETURN",
+      "LFINHERITORPLS",
+      "HEADSUP"
     ]
   },
   {
