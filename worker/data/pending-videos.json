@@ -1,299 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "catch-a-monster",
-    "name": "Catch a Monster",
-    "displayName": "[NOW] Catch a Monster",
-    "slug": "catch-a-monster",
-    "players": 2979,
-    "redeemNote": null,
-    "alias": [
-      "tangkap monster"
-    ],
-    "rank": 2979,
-    "newCodes": [
-      {
-        "game": "catch-a-monster",
-        "gameName": "Catch a Monster",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/catch-a-monster"
-        },
-        "code": "NEWRIFT",
-        "reward": "1 Mythical Chest",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791685274187,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T22:02:07.934Z",
-        "fetchedAt": "2026-10-12T22:02:07.934Z"
-      }
-    ],
-    "activeCount": 21,
-    "fetchedAt": "2026-10-12T22:02:07.934Z",
-    "displayCodes": [
-      {
-        "code": "NEWRIFT",
-        "reward": "1 Mythical Chest",
-        "isNew": true
-      },
-      {
-        "code": "anubael",
-        "reward": "1 Holycrown Egg",
-        "isNew": false
-      },
-      {
-        "code": "rainimp",
-        "reward": "1 Spritesprout Egg",
-        "isNew": false
-      },
-      {
-        "code": "CODEBUG",
-        "reward": "5K Aether Coins",
-        "isNew": false
-      },
-      {
-        "code": "PANTHER",
-        "reward": "5 Primodial Bone Blade",
-        "isNew": false
-      },
-      {
-        "code": "berserker",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "BPFIX",
-        "reward": "3,000 Twirly Coin",
-        "isNew": false
-      },
-      {
-        "code": "worldboss",
-        "reward": "1 Copter Egg",
-        "isNew": false
-      },
-      {
-        "code": "TWIRLY",
-        "reward": "5,000 Twirly Coins",
-        "isNew": false
-      },
-      {
-        "code": "PVPFIX",
-        "reward": "12,000 Wanderer's Coins",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "NEWRIFT",
-        "reward": "1 Mythical Chest",
-        "isNew": true
-      },
-      {
-        "code": "anubael",
-        "reward": "1 Holycrown Egg",
-        "isNew": false
-      },
-      {
-        "code": "rainimp",
-        "reward": "1 Spritesprout Egg",
-        "isNew": false
-      },
-      {
-        "code": "CODEBUG",
-        "reward": "5K Aether Coins",
-        "isNew": false
-      },
-      {
-        "code": "PANTHER",
-        "reward": "5 Primodial Bone Blade",
-        "isNew": false
-      },
-      {
-        "code": "berserker",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "BPFIX",
-        "reward": "3,000 Twirly Coin",
-        "isNew": false
-      },
-      {
-        "code": "worldboss",
-        "reward": "1 Copter Egg",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "anubael",
-      "rainimp",
-      "berserker",
-      "worldboss",
-      "bigopus",
-      "nexa",
-      "coin",
-      "cam",
-      "NEWRIFT",
-      "CODEBUG",
-      "PANTHER",
-      "BPFIX",
-      "TWIRLY",
-      "PVPFIX",
-      "CORSAIR",
-      "PXPVEF",
-      "VELOROS",
-      "STOWERBUG",
-      "COILRIFT",
-      "STELLAWOLF",
-      "xp"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "fish-an-anime-rng",
-    "name": "Fish an Anime RNG",
-    "displayName": "Fish an Anime RNG 🎲",
-    "slug": "fish-an-anime-rng",
-    "players": 2943,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 2943,
-    "newCodes": [
-      {
-        "code": "Marceline",
-        "reward": ""
-      },
-      {
-        "code": "Hallowi",
-        "reward": ""
-      }
-    ],
-    "activeCount": 20,
-    "fetchedAt": "2026-10-13T01:02:08.094Z",
-    "displayCodes": [
-      {
-        "code": "Marceline",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Incoming Mind Break",
-        "reward": "2 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "35KLIKES",
-        "reward": "5K Gems",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "Marceline",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "Marceline",
-      "Hallowi",
-      "Starfall",
-      "Luther",
-      "Halloween",
-      "15MVISITS",
-      "Toxic Wasteland",
-      "Ink Spider",
-      "Incoming Mind Break",
-      "35KLIKES",
-      "Sad Ending",
-      "Lapis Hex",
-      "Cullen",
-      "Clan Update",
-      "20KMEMBERS",
-      "30KLIKES",
-      "THANKYOUEVERYONE",
-      "20KLIKES",
-      "10KMEMBERS",
-      "10KCCU"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "it-girl",
     "name": "IT GIRL",
     "displayName": "IT GIRL 🏝️",
@@ -2667,6 +2374,135 @@
       "RETURN",
       "LFINHERITORPLS",
       "HEADSUP"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "winx-the-fairy-guardians",
+    "name": "Winx - The Fairy Guardians",
+    "displayName": "[ 🎃 ] Winx - The Fairy Guardians",
+    "slug": "winx-the-fairy-guardians",
+    "players": 1017,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1017,
+    "newCodes": [
+      {
+        "game": "winx-the-fairy-guardians",
+        "gameName": "Winx - The Fairy Guardians",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/winx-the-fairy-guardians"
+        },
+        "code": "RIP",
+        "reward": "500 Candies",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791685285294,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T04:02:04.259Z",
+        "fetchedAt": "2026-10-13T04:02:04.259Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-10-13T04:02:04.259Z",
+    "displayCodes": [
+      {
+        "code": "RIP",
+        "reward": "500 Candies",
+        "isNew": true
+      },
+      {
+        "code": "NEWUPDATESEPTEMBER2026",
+        "reward": "20,000 Butterflies and 500 Tokens",
+        "isNew": false
+      },
+      {
+        "code": "NEWUPDATEJUNE2026",
+        "reward": "10,000 Butterflies",
+        "isNew": false
+      },
+      {
+        "code": "TENMILLIONVISITS",
+        "reward": "Party Popper",
+        "isNew": false
+      },
+      {
+        "code": "TWENTYMILLIONVISITS",
+        "reward": "Party Blower",
+        "isNew": false
+      },
+      {
+        "code": "BR0K3NT0K3N",
+        "reward": "50 Tokens",
+        "isNew": false
+      },
+      {
+        "code": "LUCKYD4Y",
+        "reward": "150 Tokens",
+        "isNew": false
+      },
+      {
+        "code": "TRU3KIND3LOV3",
+        "reward": "Pride Pin",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "RIP",
+        "reward": "500 Candies",
+        "isNew": true
+      },
+      {
+        "code": "NEWUPDATESEPTEMBER2026",
+        "reward": "20,000 Butterflies and 500 Tokens",
+        "isNew": false
+      },
+      {
+        "code": "NEWUPDATEJUNE2026",
+        "reward": "10,000 Butterflies",
+        "isNew": false
+      },
+      {
+        "code": "TENMILLIONVISITS",
+        "reward": "Party Popper",
+        "isNew": false
+      },
+      {
+        "code": "TWENTYMILLIONVISITS",
+        "reward": "Party Blower",
+        "isNew": false
+      },
+      {
+        "code": "BR0K3NT0K3N",
+        "reward": "50 Tokens",
+        "isNew": false
+      },
+      {
+        "code": "LUCKYD4Y",
+        "reward": "150 Tokens",
+        "isNew": false
+      },
+      {
+        "code": "TRU3KIND3LOV3",
+        "reward": "Pride Pin",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "RIP",
+      "NEWUPDATESEPTEMBER2026",
+      "NEWUPDATEJUNE2026",
+      "TENMILLIONVISITS",
+      "TWENTYMILLIONVISITS",
+      "BR0K3NT0K3N",
+      "LUCKYD4Y",
+      "TRU3KIND3LOV3"
     ]
   },
   {
