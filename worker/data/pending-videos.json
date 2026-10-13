@@ -1,145 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "fish-an-anime-rng",
-    "name": "Fish an Anime RNG",
-    "displayName": "Fish an Anime RNG 🎲",
-    "slug": "fish-an-anime-rng",
-    "players": 3049,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3049,
-    "newCodes": [
-      {
-        "code": "Marceline",
-        "reward": ""
-      },
-      {
-        "code": "Hallowi",
-        "reward": ""
-      }
-    ],
-    "activeCount": 20,
-    "fetchedAt": "2026-10-12T22:02:07.934Z",
-    "displayCodes": [
-      {
-        "code": "Marceline",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Incoming Mind Break",
-        "reward": "2 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "35KLIKES",
-        "reward": "5K Gems",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "Marceline",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "Marceline",
-      "Hallowi",
-      "Starfall",
-      "Luther",
-      "Halloween",
-      "15MVISITS",
-      "Toxic Wasteland",
-      "Ink Spider",
-      "Incoming Mind Break",
-      "35KLIKES",
-      "Sad Ending",
-      "Lapis Hex",
-      "Cullen",
-      "Clan Update",
-      "20KMEMBERS",
-      "30KLIKES",
-      "THANKYOUEVERYONE",
-      "20KLIKES",
-      "10KMEMBERS",
-      "10KCCU"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "the-forge",
     "name": "The Forge",
     "displayName": "The Forge [📜]",
@@ -852,6 +713,112 @@
       "Lukeblox2",
       "TungTungx15",
       "TUNGTUNG13"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "immortality-incremental",
+    "name": "Immortality Incremental",
+    "displayName": "[🧪 WORLD 9 PT. 2] Immortality Incremental",
+    "slug": "immortality-incremental",
+    "players": 2562,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2562,
+    "newCodes": [
+      {
+        "code": "LASTD1UPD",
+        "reward": "10 Tickets, Potions"
+      },
+      {
+        "code": "ALCHEMY",
+        "reward": "10 Jade, 3 Mark Potions"
+      }
+    ],
+    "activeCount": 7,
+    "fetchedAt": "2026-10-13T00:01:36.019Z",
+    "displayCodes": [
+      {
+        "code": "LASTD1UPD",
+        "reward": "10 Tickets, Potions",
+        "isNew": true
+      },
+      {
+        "code": "ALCHEMY",
+        "reward": "10 Jade, 3 Mark Potions",
+        "isNew": true
+      },
+      {
+        "code": "MININGEXPANSION",
+        "reward": "10 Tickets, 10 Jade, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "MINING",
+        "reward": "Path Potion, 10 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "WORLD9PT1",
+        "reward": "1 Ore Potion, 10 Jade",
+        "isNew": false
+      },
+      {
+        "code": "WORLD8PT2",
+        "reward": "5 Tickets, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "HARDTRAINING",
+        "reward": "10 Tickets, 20 Jade, 5 Potions",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "LASTD1UPD",
+        "reward": "10 Tickets, Potions",
+        "isNew": true
+      },
+      {
+        "code": "ALCHEMY",
+        "reward": "10 Jade, 3 Mark Potions",
+        "isNew": true
+      },
+      {
+        "code": "MININGEXPANSION",
+        "reward": "10 Tickets, 10 Jade, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "MINING",
+        "reward": "Path Potion, 10 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "WORLD9PT1",
+        "reward": "1 Ore Potion, 10 Jade",
+        "isNew": false
+      },
+      {
+        "code": "WORLD8PT2",
+        "reward": "5 Tickets, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "HARDTRAINING",
+        "reward": "10 Tickets, 20 Jade, 5 Potions",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "LASTD1UPD",
+      "ALCHEMY",
+      "MININGEXPANSION",
+      "MINING",
+      "WORLD9PT1",
+      "WORLD8PT2",
+      "HARDTRAINING"
     ]
   },
   {
