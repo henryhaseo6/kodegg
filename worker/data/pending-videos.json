@@ -1,6 +1,144 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "fish-an-anime-rng",
+    "name": "Fish an Anime RNG",
+    "displayName": "Fish an Anime RNG 🎲",
+    "slug": "fish-an-anime-rng",
+    "players": 3092,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3092,
+    "newCodes": [
+      {
+        "code": "Marceline",
+        "reward": "Halloween Pack II"
+      },
+      {
+        "code": "Hallowi",
+        "reward": "Halloween Pack II"
+      }
+    ],
+    "activeCount": 19,
+    "fetchedAt": "2026-10-13T10:02:26.130Z",
+    "displayCodes": [
+      {
+        "code": "Marceline",
+        "reward": "Halloween Pack II",
+        "isNew": true
+      },
+      {
+        "code": "Hallowi",
+        "reward": "Halloween Pack II",
+        "isNew": true
+      },
+      {
+        "code": "Starfall",
+        "reward": "Free Gems and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "Luther",
+        "reward": "1 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "Free Gems and Potion Packs",
+        "isNew": false
+      },
+      {
+        "code": "15MVISITS",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Toxic Wasteland",
+        "reward": "5K Gems",
+        "isNew": false
+      },
+      {
+        "code": "Ink Spider",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Incoming Mind Break",
+        "reward": "2 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Sad Ending",
+        "reward": "Potion Pack I",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "Marceline",
+        "reward": "Halloween Pack II",
+        "isNew": true
+      },
+      {
+        "code": "Hallowi",
+        "reward": "Halloween Pack II",
+        "isNew": true
+      },
+      {
+        "code": "Starfall",
+        "reward": "Free Gems and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "Luther",
+        "reward": "1 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "Free Gems and Potion Packs",
+        "isNew": false
+      },
+      {
+        "code": "15MVISITS",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Toxic Wasteland",
+        "reward": "5K Gems",
+        "isNew": false
+      },
+      {
+        "code": "Ink Spider",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "Marceline",
+      "Hallowi",
+      "Starfall",
+      "Luther",
+      "Halloween",
+      "15MVISITS",
+      "Toxic Wasteland",
+      "Ink Spider",
+      "Incoming Mind Break",
+      "Sad Ending",
+      "Lapis Hex",
+      "Cullen",
+      "Clan Update",
+      "20KMEMBERS",
+      "30KLIKES",
+      "THANKYOUEVERYONE",
+      "20KLIKES",
+      "10KMEMBERS",
+      "10KCCU"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "brainrot-evolution",
     "name": "Brainrot Evolution",
     "displayName": "Brainrot Evolution",
@@ -2395,6 +2533,73 @@
       "ERUPT",
       "Youshouldntbehere",
       "fireinthehole"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "drift-36",
+    "name": "Drift 36",
+    "displayName": "[🎃] Drift 36",
+    "slug": "drift-36",
+    "players": 971,
+    "redeemNote": {
+      "en": "To use codes in Drift 36, you must first Finish The Tutorial to unlock the settings menu.",
+      "links": [],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 971,
+    "newCodes": [
+      {
+        "game": "drift-36",
+        "gameName": "Drift 36",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/drift-36"
+        },
+        "code": "HALLOWENUPDATE",
+        "reward": "$35,000",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791715911742,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T10:02:26.130Z",
+        "fetchedAt": "2026-10-13T10:02:26.130Z"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-10-13T10:02:26.130Z",
+    "displayCodes": [
+      {
+        "code": "HALLOWENUPDATE",
+        "reward": "$35,000",
+        "isNew": true
+      },
+      {
+        "code": "DRIVEHUAYRA",
+        "reward": "20,000 Cash",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "HALLOWENUPDATE",
+        "reward": "$35,000",
+        "isNew": true
+      },
+      {
+        "code": "DRIVEHUAYRA",
+        "reward": "20,000 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "HALLOWENUPDATE",
+      "DRIVEHUAYRA"
     ]
   },
   {
