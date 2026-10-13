@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-13T02:01:52.576Z",
+  "updatedAt": "2026-10-13T03:02:10.157Z",
   "counts": {
-    "active": 101,
+    "active": 103,
     "archived": 152
   },
   "articles": [
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "Supply Events Preview",
+        "id": "Preview Event Crate"
+      },
+      "excerpt": {
+        "en": "While Carnival Spend Bonuses last, multiple Supply events will open to offer the new S-rank battlesuit \"Herrscher of Time\" for Dreamseeker and more! Let's take a look at them toget",
+        "id": "Selama event Bonus Belanja Karnaval, akan hadir Battlesuit Rank-S baru Dreamseeker \"Herrscher of Time\" dan berbagai konten Crate lainnya. Ayo kita lihat bersama-sama~"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/10/2c89cfbdfd8be40f6bb7ff86ea1fd04c_684639236963433168.jpg",
+      "url": "https://www.hoyolab.com/article/47065882",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-13T03:00:03.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -52,6 +68,22 @@
       "url": "https://www.hoyolab.com/article/47058278",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-12T10:00:08.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Post-Lament Anthropocene: Enemies — Suhsin the Inevitable",
+        "id": "Post-Lament Anthropocene: Enemies — Suhsin the Inevitable"
+      },
+      "excerpt": {
+        "en": "Reckoner of fate, revealer of one true path. The fox shadow at the deepest reach of the Civilization Capsule.",
+        "id": "Reckoner of fate, revealer of one true path. The fox shadow at the deepest reach of the Civilization Capsule."
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1791734400000/5piyoppgkyuy5tsxj1-1791796562132.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5607",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-10-12T09:30:28.000Z"
     },
     {
       "game": "hsr",
