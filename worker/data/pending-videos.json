@@ -1,6 +1,657 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "junk-mechanics",
+    "name": "Junk Mechanics",
+    "displayName": "[UPD] Junk Mechanics",
+    "slug": "junk-mechanics",
+    "players": 4717,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 4717,
+    "newCodes": [
+      {
+        "code": "HALLOWS",
+        "reward": "80,000 Cash"
+      },
+      {
+        "code": "TRICKORTREAT",
+        "reward": ""
+      }
+    ],
+    "activeCount": 3,
+    "fetchedAt": "2026-10-13T13:11:00.286Z",
+    "displayCodes": [
+      {
+        "code": "HALLOWS",
+        "reward": "80,000 Cash",
+        "isNew": true
+      },
+      {
+        "code": "TRICKORTREAT",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "WEBROKETHEGAMEAGAIN",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "HALLOWS",
+        "reward": "80,000 Cash",
+        "isNew": true
+      },
+      {
+        "code": "TRICKORTREAT",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "WEBROKETHEGAMEAGAIN",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "HALLOWS",
+      "TRICKORTREAT",
+      "WEBROKETHEGAMEAGAIN"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "heroes-battlegrounds",
+    "name": "Heroes Battlegrounds",
+    "displayName": "Heroes Battlegrounds",
+    "slug": "heroes-battlegrounds",
+    "players": 4305,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 4305,
+    "newCodes": [
+      {
+        "code": "!code RANKEDREWORKSOON",
+        "reward": ""
+      }
+    ],
+    "activeCount": 3,
+    "fetchedAt": "2026-10-13T13:11:00.286Z",
+    "displayCodes": [
+      {
+        "code": "!code RANKEDREWORKSOON",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "EXPLOSIONHEROMASTERYRELEASE",
+        "reward": "5 Mastery Progress",
+        "isNew": false
+      },
+      {
+        "code": "WELOVEDELAYSITHINK",
+        "reward": "3 Free Emotes",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "!code RANKEDREWORKSOON",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "EXPLOSIONHEROMASTERYRELEASE",
+        "reward": "5 Mastery Progress",
+        "isNew": false
+      },
+      {
+        "code": "WELOVEDELAYSITHINK",
+        "reward": "3 Free Emotes",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "!code RANKEDREWORKSOON",
+      "EXPLOSIONHEROMASTERYRELEASE",
+      "WELOVEDELAYSITHINK"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "defeat-anime-rng",
+    "name": "Defeat Anime RNG",
+    "displayName": "[UPD 8] Defeat Anime RNG",
+    "slug": "defeat-anime-rng",
+    "players": 3912,
+    "redeemNote": {
+      "en": "To use codes in Defeat Anime RNG, you must first reach the Death Castle zone.",
+      "links": [],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 3912,
+    "newCodes": [
+      {
+        "game": "defeat-anime-rng",
+        "gameName": "Defeat Anime RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/defeat-anime-rng"
+        },
+        "code": "upd8luck",
+        "reward": "X2 Luck Boost (1 Hour)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791706697412,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      },
+      {
+        "game": "defeat-anime-rng",
+        "gameName": "Defeat Anime RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/defeat-anime-rng"
+        },
+        "code": "upd8gold",
+        "reward": "X2 Gold Boost (3 Hours)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791706697412,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      },
+      {
+        "game": "defeat-anime-rng",
+        "gameName": "Defeat Anime RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/defeat-anime-rng"
+        },
+        "code": "berserk",
+        "reward": "50 Star Shards",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791706697412,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      },
+      {
+        "game": "defeat-anime-rng",
+        "gameName": "Defeat Anime RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/defeat-anime-rng"
+        },
+        "code": "meow",
+        "reward": "250 Trait Shards",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791706697412,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-10-13T13:11:00.286Z",
+    "displayCodes": [
+      {
+        "code": "upd8luck",
+        "reward": "X2 Luck Boost (1 Hour)",
+        "isNew": true
+      },
+      {
+        "code": "upd8gold",
+        "reward": "X2 Gold Boost (3 Hours)",
+        "isNew": true
+      },
+      {
+        "code": "berserk",
+        "reward": "50 Star Shards",
+        "isNew": true
+      },
+      {
+        "code": "meow",
+        "reward": "250 Trait Shards",
+        "isNew": true
+      },
+      {
+        "code": "upd7luck",
+        "reward": "X2 Luck Boost for (1 Hour)",
+        "isNew": false
+      },
+      {
+        "code": "upd7gold",
+        "reward": "X2 Gold Boost for (3 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "tokyo",
+        "reward": "50 Star Shards",
+        "isNew": false
+      },
+      {
+        "code": "ghoul",
+        "reward": "250 Trait Shards",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "upd8luck",
+        "reward": "X2 Luck Boost (1 Hour)",
+        "isNew": true
+      },
+      {
+        "code": "upd8gold",
+        "reward": "X2 Gold Boost (3 Hours)",
+        "isNew": true
+      },
+      {
+        "code": "berserk",
+        "reward": "50 Star Shards",
+        "isNew": true
+      },
+      {
+        "code": "meow",
+        "reward": "250 Trait Shards",
+        "isNew": true
+      },
+      {
+        "code": "upd7luck",
+        "reward": "X2 Luck Boost for (1 Hour)",
+        "isNew": false
+      },
+      {
+        "code": "upd7gold",
+        "reward": "X2 Gold Boost for (3 Hours)",
+        "isNew": false
+      },
+      {
+        "code": "tokyo",
+        "reward": "50 Star Shards",
+        "isNew": false
+      },
+      {
+        "code": "ghoul",
+        "reward": "250 Trait Shards",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "upd8luck",
+      "upd8gold",
+      "berserk",
+      "meow",
+      "upd7luck",
+      "upd7gold",
+      "tokyo",
+      "ghoul"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "1-bite-per-click",
+    "name": "+1 Bite Per Click",
+    "displayName": "[W6] +1 Bite Per Click",
+    "slug": "1-bite-per-click",
+    "players": 3673,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3673,
+    "newCodes": [
+      {
+        "game": "1-bite-per-click",
+        "gameName": "+1 Bite Per Click",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-bite-per-click"
+        },
+        "code": "20KPLAYERS",
+        "reward": "Mythic Block and a 2x Bite Boost (5 Minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791748522886,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      },
+      {
+        "game": "1-bite-per-click",
+        "gameName": "+1 Bite Per Click",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-bite-per-click"
+        },
+        "code": "WORLD6",
+        "reward": "2x Cash Boost (5 Minutes) and a Mythic Lucky Block",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791748522886,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      }
+    ],
+    "activeCount": 3,
+    "fetchedAt": "2026-10-13T13:11:00.286Z",
+    "displayCodes": [
+      {
+        "code": "20KPLAYERS",
+        "reward": "Mythic Block and a 2x Bite Boost (5 Minutes)",
+        "isNew": true
+      },
+      {
+        "code": "WORLD6",
+        "reward": "2x Cash Boost (5 Minutes) and a Mythic Lucky Block",
+        "isNew": true
+      },
+      {
+        "code": "ADMINABUSE",
+        "reward": "Admin Hat Charm",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "20KPLAYERS",
+        "reward": "Mythic Block and a 2x Bite Boost (5 Minutes)",
+        "isNew": true
+      },
+      {
+        "code": "WORLD6",
+        "reward": "2x Cash Boost (5 Minutes) and a Mythic Lucky Block",
+        "isNew": true
+      },
+      {
+        "code": "ADMINABUSE",
+        "reward": "Admin Hat Charm",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "20KPLAYERS",
+      "WORLD6",
+      "ADMINABUSE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "fish-an-anime-rng",
+    "name": "Fish an Anime RNG",
+    "displayName": "Fish an Anime RNG 🎲",
+    "slug": "fish-an-anime-rng",
+    "players": 3226,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3226,
+    "newCodes": [
+      {
+        "code": "Marceline",
+        "reward": "Halloween Pack II"
+      },
+      {
+        "code": "Hallowi",
+        "reward": "Halloween Pack II"
+      }
+    ],
+    "activeCount": 19,
+    "fetchedAt": "2026-10-13T13:11:00.286Z",
+    "displayCodes": [
+      {
+        "code": "Marceline",
+        "reward": "Halloween Pack II",
+        "isNew": true
+      },
+      {
+        "code": "Hallowi",
+        "reward": "Halloween Pack II",
+        "isNew": true
+      },
+      {
+        "code": "Starfall",
+        "reward": "Free Gems and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "Luther",
+        "reward": "1 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "Free Gems and Potion Packs",
+        "isNew": false
+      },
+      {
+        "code": "15MVISITS",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Toxic Wasteland",
+        "reward": "5K Gems",
+        "isNew": false
+      },
+      {
+        "code": "Ink Spider",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Incoming Mind Break",
+        "reward": "2 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Sad Ending",
+        "reward": "Potion Pack I",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "Marceline",
+        "reward": "Halloween Pack II",
+        "isNew": true
+      },
+      {
+        "code": "Hallowi",
+        "reward": "Halloween Pack II",
+        "isNew": true
+      },
+      {
+        "code": "Starfall",
+        "reward": "Free Gems and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "Luther",
+        "reward": "1 Potion Pack II",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "Free Gems and Potion Packs",
+        "isNew": false
+      },
+      {
+        "code": "15MVISITS",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      },
+      {
+        "code": "Toxic Wasteland",
+        "reward": "5K Gems",
+        "isNew": false
+      },
+      {
+        "code": "Ink Spider",
+        "reward": "1 Potion Pack I",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "Marceline",
+      "Hallowi",
+      "Starfall",
+      "Luther",
+      "Halloween",
+      "15MVISITS",
+      "Toxic Wasteland",
+      "Ink Spider",
+      "Incoming Mind Break",
+      "Sad Ending",
+      "Lapis Hex",
+      "Cullen",
+      "Clan Update",
+      "20KMEMBERS",
+      "30KLIKES",
+      "THANKYOUEVERYONE",
+      "20KLIKES",
+      "10KMEMBERS",
+      "10KCCU"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "immortality-incremental",
+    "name": "Immortality Incremental",
+    "displayName": "[🧪 WORLD 9 PT. 2] Immortality Incremental",
+    "slug": "immortality-incremental",
+    "players": 2740,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2740,
+    "newCodes": [
+      {
+        "code": "LASTD1UPD",
+        "reward": "10 Tickets, Potions"
+      },
+      {
+        "code": "ALCHEMY",
+        "reward": "10 Jade, 3 Mark Potions"
+      }
+    ],
+    "activeCount": 7,
+    "fetchedAt": "2026-10-13T13:11:00.286Z",
+    "displayCodes": [
+      {
+        "code": "LASTD1UPD",
+        "reward": "10 Tickets, Potions",
+        "isNew": true
+      },
+      {
+        "code": "ALCHEMY",
+        "reward": "10 Jade, 3 Mark Potions",
+        "isNew": true
+      },
+      {
+        "code": "MININGEXPANSION",
+        "reward": "10 Tickets, 10 Jade, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "MINING",
+        "reward": "Path Potion, 10 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "WORLD9PT1",
+        "reward": "1 Ore Potion, 10 Jade",
+        "isNew": false
+      },
+      {
+        "code": "WORLD8PT2",
+        "reward": "5 Tickets, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "HARDTRAINING",
+        "reward": "10 Tickets, 20 Jade, 5 Potions",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "LASTD1UPD",
+        "reward": "10 Tickets, Potions",
+        "isNew": true
+      },
+      {
+        "code": "ALCHEMY",
+        "reward": "10 Jade, 3 Mark Potions",
+        "isNew": true
+      },
+      {
+        "code": "MININGEXPANSION",
+        "reward": "10 Tickets, 10 Jade, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "MINING",
+        "reward": "Path Potion, 10 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "WORLD9PT1",
+        "reward": "1 Ore Potion, 10 Jade",
+        "isNew": false
+      },
+      {
+        "code": "WORLD8PT2",
+        "reward": "5 Tickets, Path Potions",
+        "isNew": false
+      },
+      {
+        "code": "HARDTRAINING",
+        "reward": "10 Tickets, 20 Jade, 5 Potions",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "LASTD1UPD",
+      "ALCHEMY",
+      "MININGEXPANSION",
+      "MINING",
+      "WORLD9PT1",
+      "WORLD8PT2",
+      "HARDTRAINING"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "brainrot-evolution",
     "name": "Brainrot Evolution",
     "displayName": "Brainrot Evolution",
@@ -306,6 +957,126 @@
       "LASTONE",
       "EMERGENCY",
       "UPDATEFINALLY"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "case-simulator-rng",
+    "name": "Case Simulator RNG",
+    "displayName": "[🎃EVENT] Case Simulator RNG",
+    "slug": "case-simulator-rng",
+    "players": 2349,
+    "redeemNote": {
+      "en": "To use codes in Case Simulator RNG, you must first reach Level 10.",
+      "links": [],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 2349,
+    "newCodes": [
+      {
+        "game": "case-simulator-rng",
+        "gameName": "Case Simulator RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/case-simulator-rng"
+        },
+        "code": "NewCase",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791890048698,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      },
+      {
+        "game": "case-simulator-rng",
+        "gameName": "Case Simulator RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/case-simulator-rng"
+        },
+        "code": "125kLikes",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791890048698,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-10-13T13:11:00.286Z",
+    "displayCodes": [
+      {
+        "code": "NewCase",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "125kLikes",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Halloween26",
+        "reward": "Free Rewards.You must reach Level 10 to use this code",
+        "isNew": false
+      },
+      {
+        "code": "NewEvents",
+        "reward": "15 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "120kLikes",
+        "reward": "15 Rerolls",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "NewCase",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "125kLikes",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "Halloween26",
+        "reward": "Free Rewards.You must reach Level 10 to use this code",
+        "isNew": false
+      },
+      {
+        "code": "NewEvents",
+        "reward": "15 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "120kLikes",
+        "reward": "15 Rerolls",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "NewCase",
+      "125kLikes",
+      "Halloween26",
+      "NewEvents",
+      "120kLikes"
     ]
   },
   {
@@ -3630,6 +4401,221 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "reaopg",
+    "name": "Re:AOPG",
+    "displayName": "[🐆 FINAL LEOPARD + x2 📈] Re:AOPG",
+    "slug": "reaopg",
+    "players": 448,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 448,
+    "newCodes": [
+      {
+        "game": "reaopg",
+        "gameName": "Re:AOPG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/reaopg"
+        },
+        "code": "ReFinalLeopard",
+        "reward": "100M Beli, 10,000 Gems, and 3 Pones",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791885671920,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      },
+      {
+        "game": "reaopg",
+        "gameName": "Re:AOPG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/reaopg"
+        },
+        "code": "FinalPhoenix",
+        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791885671920,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      },
+      {
+        "game": "reaopg",
+        "gameName": "Re:AOPG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/reaopg"
+        },
+        "code": "BuddhaTime",
+        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791885671920,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T13:11:00.286Z",
+        "fetchedAt": "2026-10-13T13:11:00.286Z"
+      }
+    ],
+    "activeCount": 44,
+    "fetchedAt": "2026-10-13T13:11:00.286Z",
+    "displayCodes": [
+      {
+        "code": "ReFinalLeopard",
+        "reward": "100M Beli, 10,000 Gems, and 3 Pones",
+        "isNew": true
+      },
+      {
+        "code": "FinalPhoenix",
+        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
+        "isNew": true
+      },
+      {
+        "code": "BuddhaTime",
+        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
+        "isNew": true
+      },
+      {
+        "code": "FinalFlame!!",
+        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
+        "isNew": false
+      },
+      {
+        "code": "ShipRework",
+        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
+        "isNew": false
+      },
+      {
+        "code": "BoatReworkSoon!",
+        "reward": "50,000 Souls, 250M Beli, and 15,000 Gems",
+        "isNew": false
+      },
+      {
+        "code": "Poneglyphs",
+        "reward": "20 Poneglyphs",
+        "isNew": false
+      },
+      {
+        "code": "Yokoso!",
+        "reward": "100M Beli, 15K Gems, 10 Poneglyphs and Kyoka Suigetsu",
+        "isNew": false
+      },
+      {
+        "code": "Muken",
+        "reward": "150M Beli and 15K Gems",
+        "isNew": false
+      },
+      {
+        "code": "QOLTime",
+        "reward": "150M Beli, 10,000 Gems, and 10 Pones",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ReFinalLeopard",
+        "reward": "100M Beli, 10,000 Gems, and 3 Pones",
+        "isNew": true
+      },
+      {
+        "code": "FinalPhoenix",
+        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
+        "isNew": true
+      },
+      {
+        "code": "BuddhaTime",
+        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
+        "isNew": true
+      },
+      {
+        "code": "FinalFlame!!",
+        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
+        "isNew": false
+      },
+      {
+        "code": "ShipRework",
+        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
+        "isNew": false
+      },
+      {
+        "code": "BoatReworkSoon!",
+        "reward": "50,000 Souls, 250M Beli, and 15,000 Gems",
+        "isNew": false
+      },
+      {
+        "code": "Poneglyphs",
+        "reward": "20 Poneglyphs",
+        "isNew": false
+      },
+      {
+        "code": "Yokoso!",
+        "reward": "100M Beli, 15K Gems, 10 Poneglyphs and Kyoka Suigetsu",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "ReFinalLeopard",
+      "FinalPhoenix",
+      "BuddhaTime",
+      "FinalFlame!!",
+      "ShipRework",
+      "BoatReworkSoon!",
+      "Poneglyphs",
+      "Yokoso!",
+      "Muken",
+      "QOLTime",
+      "Sea3IsBack!!",
+      "TheGreatRebalance",
+      "20KLikes!!",
+      "Sea3Soon",
+      "TheAlmighty",
+      "ReAOPG",
+      "ReAOPG2",
+      "ReAOPG3",
+      "Sorry4Balancing",
+      "5kLikes",
+      "2kInterested",
+      "3kInterested",
+      "ThousandYearWar",
+      "10KLIKES!!",
+      "SorryForDelay",
+      "2kLikes",
+      "1kActive",
+      "ReMultiverseSea",
+      "1Klikes",
+      "LimbusCompany!",
+      "LibraryOfRuina!",
+      "ProjectMoonHype!",
+      "E.G.O.",
+      "REALPUNK!!!",
+      "MagneticUpgrade",
+      "DBDAIMA!!!",
+      "PrimalSayian",
+      "SummerShop",
+      "WaterBreathing",
+      "Hi-no-Kokyu",
+      "InfiniteTower!",
+      "SuperWB",
+      "ReSea2",
+      "NewInventory"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "elemental-dungeons",
     "name": "Elemental Dungeons",
     "displayName": "[👾] Elemental Dungeons",
@@ -3914,78 +4900,6 @@
       "10000LIKES",
       "5000LIKES",
       "NEWYEAR2026"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "split-or-steal-brainrot",
-    "name": "Split or Steal Brainrot",
-    "displayName": "😈 Split or Steal Brainrot",
-    "slug": "split-or-steal-brainrot",
-    "players": 237,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 237,
-    "newCodes": [
-      {
-        "game": "split-or-steal-brainrot",
-        "gameName": "Split or Steal Brainrot",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/split-or-steal-brainrot"
-        },
-        "code": "HalloweenPart1",
-        "reward": null,
-        "date": "2026-10-12T14:33:40.826Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T15:03:02.787Z",
-        "fetchedAt": "2026-10-12T15:03:02.787Z"
-      }
-    ],
-    "activeCount": 3,
-    "fetchedAt": "2026-10-12T15:03:02.787Z",
-    "displayCodes": [
-      {
-        "code": "HalloweenPart1",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "RavenChair70",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "Gargantuan4000",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "HalloweenPart1",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "RavenChair70",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "Gargantuan4000",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "HalloweenPart1",
-      "RavenChair70",
-      "Gargantuan4000"
     ]
   }
 ]
