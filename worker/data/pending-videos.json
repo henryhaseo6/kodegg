@@ -1,1496 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "pixel-blade",
-    "name": "Pixel Blade",
-    "displayName": "[CHRONOS // ARC 2] Pixel Blade",
-    "slug": "pixel-blade",
-    "players": 5167,
-    "redeemNote": {
-      "en": "To use codes in Pixel Blade, you must join the Frost Blade Games Roblox Community.",
-      "links": [
-        {
-          "label": "Frost Blade Games Roblox Community",
-          "url": "https://www.roblox.com/communities/8605341/Frost-Blade-Games#!/about"
-        }
-      ],
-      "kind": "syarat"
-    },
-    "alias": null,
-    "rank": 5167,
-    "newCodes": [
-      {
-        "code": "CHRONOS",
-        "reward": "1 Wish"
-      }
-    ],
-    "activeCount": 4,
-    "fetchedAt": "2026-10-13T16:11:03.813Z",
-    "displayCodes": [
-      {
-        "code": "CHRONOS",
-        "reward": "1 Wish",
-        "isNew": true
-      },
-      {
-        "code": "FISHINGSTASH",
-        "reward": "Golden Cod and 500 Coins",
-        "isNew": false
-      },
-      {
-        "code": "12369",
-        "reward": "2 Ominous Chests, 26 Coins, and 10 Dead Sticks",
-        "isNew": false
-      },
-      {
-        "code": "FULL RELEASE",
-        "reward": "5 Class Dice and 500 Coins",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "CHRONOS",
-        "reward": "1 Wish",
-        "isNew": true
-      },
-      {
-        "code": "FISHINGSTASH",
-        "reward": "Golden Cod and 500 Coins",
-        "isNew": false
-      },
-      {
-        "code": "12369",
-        "reward": "2 Ominous Chests, 26 Coins, and 10 Dead Sticks",
-        "isNew": false
-      },
-      {
-        "code": "FULL RELEASE",
-        "reward": "5 Class Dice and 500 Coins",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "CHRONOS",
-      "FULL RELEASE",
-      "FISHINGSTASH",
-      "12369"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "clover-time",
-    "name": "Clover Time",
-    "displayName": "Clover Time [SHADOW GRIMOIRE💥]",
-    "slug": "clover-time",
-    "players": 5118,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 5118,
-    "newCodes": [
-      {
-        "game": "clover-time",
-        "gameName": "Clover Time",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/clover-time"
-        },
-        "code": "60KMEMBERS",
-        "reward": null,
-        "date": "2026-10-13T14:14:19.290Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T16:11:03.813Z",
-        "fetchedAt": "2026-10-13T16:11:03.813Z"
-      },
-      {
-        "game": "clover-time",
-        "gameName": "Clover Time",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/clover-time"
-        },
-        "code": "5MVISITS",
-        "reward": null,
-        "date": "2026-10-13T14:14:18.788Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T16:11:03.813Z",
-        "fetchedAt": "2026-10-13T16:11:03.813Z"
-      }
-    ],
-    "activeCount": 27,
-    "fetchedAt": "2026-10-13T16:11:03.813Z",
-    "displayCodes": [
-      {
-        "code": "60KMEMBERS",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "5MVISITS",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "50KLIKES",
-        "reward": "50 Spins",
-        "isNew": false
-      },
-      {
-        "code": "SHADOW",
-        "reward": "30 Crystal Mana Spins, 2 Stat Resets, +50% XP (30 minutes)",
-        "isNew": false
-      },
-      {
-        "code": "NATCH",
-        "reward": "5 Special Spins, 50 Common Spins, Crystal Notifier (1 hour)",
-        "isNew": false
-      },
-      {
-        "code": "MEGADROP",
-        "reward": "100 Spins, 1 Big Chest, 1 Special Spin",
-        "isNew": false
-      },
-      {
-        "code": "90KFAVS",
-        "reward": "2 Stat Resets, 30 Spins, 10 Crystal Mana, 2 Fishing Ease Potion V",
-        "isNew": false
-      },
-      {
-        "code": "80KFAVSWOW!",
-        "reward": "2 Big Chests",
-        "isNew": false
-      },
-      {
-        "code": "40KLIKES",
-        "reward": "30 Spins",
-        "isNew": false
-      },
-      {
-        "code": "2MVISITS",
-        "reward": "100% Luck (1 hour)",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "60KMEMBERS",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "5MVISITS",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "50KLIKES",
-        "reward": "50 Spins",
-        "isNew": false
-      },
-      {
-        "code": "SHADOW",
-        "reward": "30 Crystal Mana Spins, 2 Stat Resets, +50% XP (30 minutes)",
-        "isNew": false
-      },
-      {
-        "code": "NATCH",
-        "reward": "5 Special Spins, 50 Common Spins, Crystal Notifier (1 hour)",
-        "isNew": false
-      },
-      {
-        "code": "MEGADROP",
-        "reward": "100 Spins, 1 Big Chest, 1 Special Spin",
-        "isNew": false
-      },
-      {
-        "code": "90KFAVS",
-        "reward": "2 Stat Resets, 30 Spins, 10 Crystal Mana, 2 Fishing Ease Potion V",
-        "isNew": false
-      },
-      {
-        "code": "80KFAVSWOW!",
-        "reward": "2 Big Chests",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "60KMEMBERS",
-      "5MVISITS",
-      "50KLIKES",
-      "SHADOW",
-      "NATCH",
-      "MEGADROP",
-      "90KFAVS",
-      "80KFAVSWOW!",
-      "40KLIKES",
-      "2MVISITS",
-      "100KFAVS",
-      "70KFAVSWOW!",
-      "60KFAVSWOW!",
-      "30KLIKES",
-      "25KLIKES!",
-      "TYFOR3KPLAYERS",
-      "ANIMERETURNINGSEASON",
-      "600KVISITS",
-      "15KLIKES",
-      "FIRSTSHUTDOWN",
-      "1KLIKES",
-      "5KFAVS",
-      "BETARELEASE",
-      "10KLIKES",
-      "20KFAVS",
-      "10KFAVS",
-      "5KLIKES"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "1-soldier-evolution",
-    "name": "+1 Soldier Evolution",
-    "displayName": "[W3] +1 Soldier Evolution",
-    "slug": "1-soldier-evolution",
-    "players": 4225,
-    "redeemNote": {
-      "en": "To use codes in +1 Soldier Evolution, you must first Finish The Tutorial.",
-      "links": [],
-      "kind": "syarat"
-    },
-    "alias": null,
-    "rank": 4225,
-    "newCodes": [
-      {
-        "game": "1-soldier-evolution",
-        "gameName": "+1 Soldier Evolution",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/1-soldier-evolution"
-        },
-        "code": "10klikes",
-        "reward": "Auto Win (15 mins)",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791770986937,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T16:11:03.813Z",
-        "fetchedAt": "2026-10-13T16:11:03.813Z"
-      }
-    ],
-    "activeCount": 5,
-    "fetchedAt": "2026-10-13T16:11:03.813Z",
-    "displayCodes": [
-      {
-        "code": "10klikes",
-        "reward": "Auto Win (15 mins)",
-        "isNew": true
-      },
-      {
-        "code": "3KLIKES",
-        "reward": "2 Luck Potions",
-        "isNew": false
-      },
-      {
-        "code": "4KLIKES",
-        "reward": "1 Spin",
-        "isNew": false
-      },
-      {
-        "code": "SOLDIER",
-        "reward": "1 Luck Potion, 1 Power Potion, and 2 Spins",
-        "isNew": false
-      },
-      {
-        "code": "GROUP",
-        "reward": "2 Win Potions and 3 Spins.To use this code, you must first join the Malroh x Spil Roblox Community",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "10klikes",
-        "reward": "Auto Win (15 mins)",
-        "isNew": true
-      },
-      {
-        "code": "3KLIKES",
-        "reward": "2 Luck Potions",
-        "isNew": false
-      },
-      {
-        "code": "4KLIKES",
-        "reward": "1 Spin",
-        "isNew": false
-      },
-      {
-        "code": "SOLDIER",
-        "reward": "1 Luck Potion, 1 Power Potion, and 2 Spins",
-        "isNew": false
-      },
-      {
-        "code": "GROUP",
-        "reward": "2 Win Potions and 3 Spins.To use this code, you must first join the Malroh x Spil Roblox Community",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "10klikes",
-      "3KLIKES",
-      "4KLIKES",
-      "SOLDIER",
-      "GROUP"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "start-your-blue-lock-career",
-    "name": "Start Your Blue Lock Career",
-    "displayName": "[WORLD CUP] Start Your Blue Lock Career!",
-    "slug": "start-your-blue-lock-career",
-    "players": 4076,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 4076,
-    "newCodes": [
-      {
-        "code": "WELCOMETOINFINITEMODE",
-        "reward": "50 Skill Points"
-      },
-      {
-        "code": "ONEMILLIONVISITS",
-        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 25 Flow Spins, 25 Weapon Spins, 5 Lucky Rolls"
-      },
-      {
-        "code": "BUGFIXINGU20",
-        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 15 Weapon Spins, 40 Skill Points, 3 Lucky Rolls"
-      },
-      {
-        "code": "U20UPDATE",
-        "reward": "400 EgoCoins, 8 Lucky Flow Spins, 15 Flow Spins, 15 Weapon Spins, 8 Lucky Rolls"
-      },
-      {
-        "code": "LATENIGHTBUGFIXES",
-        "reward": "3 Lucky Flow Spins, 3 Lucky Rolls, 7 Flow Spins, 7 Weapon Spins"
-      },
-      {
-        "code": "U20DELAYLOL",
-        "reward": "250 EgoCoins, 3 Lucky Flow Spins, 3 Lucky Rolls, 20 Skill Points"
-      },
-      {
-        "code": "SERVERBOOSTS",
-        "reward": "150 EgoCoins, 3 Lucky Rolls, 15 Weapon Spins"
-      },
-      {
-        "code": "EIGHTTHOUSANDLIKES",
-        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls"
-      },
-      {
-        "code": "SEVENTHOUSANDLIKES",
-        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls"
-      },
-      {
-        "code": "ENDOFBUGS",
-        "reward": "5 Lucky Flow Spins, 3 Lucky Rolls"
-      },
-      {
-        "code": "BUGFIXING2U20",
-        "reward": "5 Lucky Flow Spins, 3 Lucky Rolls"
-      },
-      {
-        "code": "INFINITEUPDATE",
-        "reward": "10 Flow Spins, 10 Weapon Spins"
-      },
-      {
-        "code": "QOLU20",
-        "reward": "8 Flow Spins, 8 Weapon Spins"
-      },
-      {
-        "code": "GOODLUCKU20PLAYERS",
-        "reward": "30 Skill Points"
-      }
-    ],
-    "activeCount": 14,
-    "fetchedAt": "2026-10-13T16:11:03.813Z",
-    "displayCodes": [
-      {
-        "code": "WELCOMETOINFINITEMODE",
-        "reward": "50 Skill Points",
-        "isNew": true
-      },
-      {
-        "code": "ONEMILLIONVISITS",
-        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 25 Flow Spins, 25 Weapon Spins, 5 Lucky Rolls",
-        "isNew": true
-      },
-      {
-        "code": "BUGFIXINGU20",
-        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 15 Weapon Spins, 40 Skill Points, 3 Lucky Rolls",
-        "isNew": true
-      },
-      {
-        "code": "U20UPDATE",
-        "reward": "400 EgoCoins, 8 Lucky Flow Spins, 15 Flow Spins, 15 Weapon Spins, 8 Lucky Rolls",
-        "isNew": true
-      },
-      {
-        "code": "LATENIGHTBUGFIXES",
-        "reward": "3 Lucky Flow Spins, 3 Lucky Rolls, 7 Flow Spins, 7 Weapon Spins",
-        "isNew": true
-      },
-      {
-        "code": "U20DELAYLOL",
-        "reward": "250 EgoCoins, 3 Lucky Flow Spins, 3 Lucky Rolls, 20 Skill Points",
-        "isNew": true
-      },
-      {
-        "code": "SERVERBOOSTS",
-        "reward": "150 EgoCoins, 3 Lucky Rolls, 15 Weapon Spins",
-        "isNew": true
-      },
-      {
-        "code": "EIGHTTHOUSANDLIKES",
-        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls",
-        "isNew": true
-      },
-      {
-        "code": "SEVENTHOUSANDLIKES",
-        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls",
-        "isNew": true
-      },
-      {
-        "code": "ENDOFBUGS",
-        "reward": "5 Lucky Flow Spins, 3 Lucky Rolls",
-        "isNew": true
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "WELCOMETOINFINITEMODE",
-        "reward": "50 Skill Points",
-        "isNew": true
-      },
-      {
-        "code": "ONEMILLIONVISITS",
-        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 25 Flow Spins, 25 Weapon Spins, 5 Lucky Rolls",
-        "isNew": true
-      },
-      {
-        "code": "BUGFIXINGU20",
-        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 15 Weapon Spins, 40 Skill Points, 3 Lucky Rolls",
-        "isNew": true
-      },
-      {
-        "code": "U20UPDATE",
-        "reward": "400 EgoCoins, 8 Lucky Flow Spins, 15 Flow Spins, 15 Weapon Spins, 8 Lucky Rolls",
-        "isNew": true
-      },
-      {
-        "code": "LATENIGHTBUGFIXES",
-        "reward": "3 Lucky Flow Spins, 3 Lucky Rolls, 7 Flow Spins, 7 Weapon Spins",
-        "isNew": true
-      },
-      {
-        "code": "U20DELAYLOL",
-        "reward": "250 EgoCoins, 3 Lucky Flow Spins, 3 Lucky Rolls, 20 Skill Points",
-        "isNew": true
-      },
-      {
-        "code": "SERVERBOOSTS",
-        "reward": "150 EgoCoins, 3 Lucky Rolls, 15 Weapon Spins",
-        "isNew": true
-      },
-      {
-        "code": "EIGHTTHOUSANDLIKES",
-        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls",
-        "isNew": true
-      }
-    ],
-    "allCodes": [
-      "WELCOMETOINFINITEMODE",
-      "ONEMILLIONVISITS",
-      "BUGFIXINGU20",
-      "U20UPDATE",
-      "LATENIGHTBUGFIXES",
-      "U20DELAYLOL",
-      "SERVERBOOSTS",
-      "EIGHTTHOUSANDLIKES",
-      "SEVENTHOUSANDLIKES",
-      "ENDOFBUGS",
-      "BUGFIXING2U20",
-      "INFINITEUPDATE",
-      "QOLU20",
-      "GOODLUCKU20PLAYERS"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "defeat-anime-rng",
-    "name": "Defeat Anime RNG",
-    "displayName": "[UPD 8] Defeat Anime RNG",
-    "slug": "defeat-anime-rng",
-    "players": 3912,
-    "redeemNote": {
-      "en": "To use codes in Defeat Anime RNG, you must first reach the Death Castle zone.",
-      "links": [],
-      "kind": "syarat"
-    },
-    "alias": null,
-    "rank": 3912,
-    "newCodes": [
-      {
-        "game": "defeat-anime-rng",
-        "gameName": "Defeat Anime RNG",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/defeat-anime-rng"
-        },
-        "code": "upd8luck",
-        "reward": "X2 Luck Boost (1 Hour)",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791706697412,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T13:11:00.286Z",
-        "fetchedAt": "2026-10-13T13:11:00.286Z"
-      },
-      {
-        "game": "defeat-anime-rng",
-        "gameName": "Defeat Anime RNG",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/defeat-anime-rng"
-        },
-        "code": "upd8gold",
-        "reward": "X2 Gold Boost (3 Hours)",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791706697412,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T13:11:00.286Z",
-        "fetchedAt": "2026-10-13T13:11:00.286Z"
-      },
-      {
-        "game": "defeat-anime-rng",
-        "gameName": "Defeat Anime RNG",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/defeat-anime-rng"
-        },
-        "code": "berserk",
-        "reward": "50 Star Shards",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791706697412,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T13:11:00.286Z",
-        "fetchedAt": "2026-10-13T13:11:00.286Z"
-      },
-      {
-        "game": "defeat-anime-rng",
-        "gameName": "Defeat Anime RNG",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/defeat-anime-rng"
-        },
-        "code": "meow",
-        "reward": "250 Trait Shards",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791706697412,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T13:11:00.286Z",
-        "fetchedAt": "2026-10-13T13:11:00.286Z"
-      }
-    ],
-    "activeCount": 8,
-    "fetchedAt": "2026-10-13T13:11:00.286Z",
-    "displayCodes": [
-      {
-        "code": "upd8luck",
-        "reward": "X2 Luck Boost (1 Hour)",
-        "isNew": true
-      },
-      {
-        "code": "upd8gold",
-        "reward": "X2 Gold Boost (3 Hours)",
-        "isNew": true
-      },
-      {
-        "code": "berserk",
-        "reward": "50 Star Shards",
-        "isNew": true
-      },
-      {
-        "code": "meow",
-        "reward": "250 Trait Shards",
-        "isNew": true
-      },
-      {
-        "code": "upd7luck",
-        "reward": "X2 Luck Boost for (1 Hour)",
-        "isNew": false
-      },
-      {
-        "code": "upd7gold",
-        "reward": "X2 Gold Boost for (3 Hours)",
-        "isNew": false
-      },
-      {
-        "code": "tokyo",
-        "reward": "50 Star Shards",
-        "isNew": false
-      },
-      {
-        "code": "ghoul",
-        "reward": "250 Trait Shards",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "upd8luck",
-        "reward": "X2 Luck Boost (1 Hour)",
-        "isNew": true
-      },
-      {
-        "code": "upd8gold",
-        "reward": "X2 Gold Boost (3 Hours)",
-        "isNew": true
-      },
-      {
-        "code": "berserk",
-        "reward": "50 Star Shards",
-        "isNew": true
-      },
-      {
-        "code": "meow",
-        "reward": "250 Trait Shards",
-        "isNew": true
-      },
-      {
-        "code": "upd7luck",
-        "reward": "X2 Luck Boost for (1 Hour)",
-        "isNew": false
-      },
-      {
-        "code": "upd7gold",
-        "reward": "X2 Gold Boost for (3 Hours)",
-        "isNew": false
-      },
-      {
-        "code": "tokyo",
-        "reward": "50 Star Shards",
-        "isNew": false
-      },
-      {
-        "code": "ghoul",
-        "reward": "250 Trait Shards",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "upd8luck",
-      "upd8gold",
-      "berserk",
-      "meow",
-      "upd7luck",
-      "upd7gold",
-      "tokyo",
-      "ghoul"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "1-bite-per-click",
-    "name": "+1 Bite Per Click",
-    "displayName": "[W6] +1 Bite Per Click",
-    "slug": "1-bite-per-click",
-    "players": 3673,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3673,
-    "newCodes": [
-      {
-        "game": "1-bite-per-click",
-        "gameName": "+1 Bite Per Click",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/1-bite-per-click"
-        },
-        "code": "20KPLAYERS",
-        "reward": "Mythic Block and a 2x Bite Boost (5 Minutes)",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791748522886,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T13:11:00.286Z",
-        "fetchedAt": "2026-10-13T13:11:00.286Z"
-      },
-      {
-        "game": "1-bite-per-click",
-        "gameName": "+1 Bite Per Click",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/1-bite-per-click"
-        },
-        "code": "WORLD6",
-        "reward": "2x Cash Boost (5 Minutes) and a Mythic Lucky Block",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791748522886,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T13:11:00.286Z",
-        "fetchedAt": "2026-10-13T13:11:00.286Z"
-      }
-    ],
-    "activeCount": 3,
-    "fetchedAt": "2026-10-13T13:11:00.286Z",
-    "displayCodes": [
-      {
-        "code": "20KPLAYERS",
-        "reward": "Mythic Block and a 2x Bite Boost (5 Minutes)",
-        "isNew": true
-      },
-      {
-        "code": "WORLD6",
-        "reward": "2x Cash Boost (5 Minutes) and a Mythic Lucky Block",
-        "isNew": true
-      },
-      {
-        "code": "ADMINABUSE",
-        "reward": "Admin Hat Charm",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "20KPLAYERS",
-        "reward": "Mythic Block and a 2x Bite Boost (5 Minutes)",
-        "isNew": true
-      },
-      {
-        "code": "WORLD6",
-        "reward": "2x Cash Boost (5 Minutes) and a Mythic Lucky Block",
-        "isNew": true
-      },
-      {
-        "code": "ADMINABUSE",
-        "reward": "Admin Hat Charm",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "20KPLAYERS",
-      "WORLD6",
-      "ADMINABUSE"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "1-superpower-destruction",
-    "name": "+1 Superpower Destruction",
-    "displayName": "+1 Superpower Destruction",
-    "slug": "1-superpower-destruction",
-    "players": 3297,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3297,
-    "newCodes": [
-      {
-        "code": "Superpower",
-        "reward": "1000 Cash, 1000 Power"
-      },
-      {
-        "code": "Release",
-        "reward": "1000 Cash, 1000 Power"
-      }
-    ],
-    "activeCount": 2,
-    "fetchedAt": "2026-10-13T16:11:03.813Z",
-    "displayCodes": [
-      {
-        "code": "Superpower",
-        "reward": "1000 Cash, 1000 Power",
-        "isNew": true
-      },
-      {
-        "code": "Release",
-        "reward": "1000 Cash, 1000 Power",
-        "isNew": true
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "Superpower",
-        "reward": "1000 Cash, 1000 Power",
-        "isNew": true
-      },
-      {
-        "code": "Release",
-        "reward": "1000 Cash, 1000 Power",
-        "isNew": true
-      }
-    ],
-    "allCodes": [
-      "Superpower",
-      "Release"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "1-speed-evolve",
-    "name": "+1 Speed Evolve",
-    "displayName": "+1 Speed Evolve 🦊",
-    "slug": "1-speed-evolve",
-    "players": 3230,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3230,
-    "newCodes": [
-      {
-        "game": "1-speed-evolve",
-        "gameName": "+1 Speed Evolve",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/1-speed-evolve"
-        },
-        "code": "World6",
-        "reward": "Double Win Boost (10 minutes)",
-        "date": "2026-10-13T14:14:17.403Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T16:11:03.813Z",
-        "fetchedAt": "2026-10-13T16:11:03.813Z"
-      },
-      {
-        "game": "1-speed-evolve",
-        "gameName": "+1 Speed Evolve",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/1-speed-evolve"
-        },
-        "code": "6MGroupMembers",
-        "reward": "Admin Spin",
-        "date": "2026-10-13T14:14:10.225Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T16:11:03.813Z",
-        "fetchedAt": "2026-10-13T16:11:03.813Z"
-      }
-    ],
-    "activeCount": 6,
-    "fetchedAt": "2026-10-13T16:11:03.813Z",
-    "displayCodes": [
-      {
-        "code": "World6",
-        "reward": "Double Win Boost (10 minutes)",
-        "isNew": true
-      },
-      {
-        "code": "6MGroupMembers",
-        "reward": "Admin Spin",
-        "isNew": true
-      },
-      {
-        "code": "World5Complete",
-        "reward": "Admin Spin",
-        "isNew": false
-      },
-      {
-        "code": "4MFavourites",
-        "reward": "Double Wins Boost (10 minutes)",
-        "isNew": false
-      },
-      {
-        "code": "200KLikes",
-        "reward": "Admin Spin",
-        "isNew": false
-      },
-      {
-        "code": "100MVisits",
-        "reward": "Double Wins Boost (10 minutes)",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "World6",
-        "reward": "Double Win Boost (10 minutes)",
-        "isNew": true
-      },
-      {
-        "code": "6MGroupMembers",
-        "reward": "Admin Spin",
-        "isNew": true
-      },
-      {
-        "code": "World5Complete",
-        "reward": "Admin Spin",
-        "isNew": false
-      },
-      {
-        "code": "4MFavourites",
-        "reward": "Double Wins Boost (10 minutes)",
-        "isNew": false
-      },
-      {
-        "code": "200KLikes",
-        "reward": "Admin Spin",
-        "isNew": false
-      },
-      {
-        "code": "100MVisits",
-        "reward": "Double Wins Boost (10 minutes)",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "World6",
-      "6MGroupMembers",
-      "World5Complete",
-      "4MFavourites",
-      "200KLikes",
-      "100MVisits"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "fish-an-anime-rng",
-    "name": "Fish an Anime RNG",
-    "displayName": "Fish an Anime RNG 🎲",
-    "slug": "fish-an-anime-rng",
-    "players": 3226,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3226,
-    "newCodes": [
-      {
-        "code": "Marceline",
-        "reward": "Halloween Pack II"
-      },
-      {
-        "code": "Hallowi",
-        "reward": "Halloween Pack II"
-      }
-    ],
-    "activeCount": 19,
-    "fetchedAt": "2026-10-13T13:11:00.286Z",
-    "displayCodes": [
-      {
-        "code": "Marceline",
-        "reward": "Halloween Pack II",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "Halloween Pack II",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Incoming Mind Break",
-        "reward": "2 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Sad Ending",
-        "reward": "Potion Pack I",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "Marceline",
-        "reward": "Halloween Pack II",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "Halloween Pack II",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "Marceline",
-      "Hallowi",
-      "Starfall",
-      "Luther",
-      "Halloween",
-      "15MVISITS",
-      "Toxic Wasteland",
-      "Ink Spider",
-      "Incoming Mind Break",
-      "Sad Ending",
-      "Lapis Hex",
-      "Cullen",
-      "Clan Update",
-      "20KMEMBERS",
-      "30KLIKES",
-      "THANKYOUEVERYONE",
-      "20KLIKES",
-      "10KMEMBERS",
-      "10KCCU"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "dragon-generations",
-    "name": "Dragon Generations",
-    "displayName": "[PATH 2 & MOBILE] Dragon Generations",
-    "slug": "dragon-generations",
-    "players": 3126,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3126,
-    "newCodes": [
-      {
-        "game": "dragon-generations",
-        "gameName": "Dragon Generations",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/dragon-generations"
-        },
-        "code": "BadBalancingSorry",
-        "reward": "50 Mastery Points",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791703895278,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T14:06:33.298Z",
-        "fetchedAt": "2026-10-13T14:06:33.298Z"
-      },
-      {
-        "game": "dragon-generations",
-        "gameName": "Dragon Generations",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/dragon-generations"
-        },
-        "code": "BOJACKRESET",
-        "reward": "Reset Path Progress for Bojacks",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791703895278,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T14:06:33.298Z",
-        "fetchedAt": "2026-10-13T14:06:33.298Z"
-      },
-      {
-        "game": "dragon-generations",
-        "gameName": "Dragon Generations",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/dragon-generations"
-        },
-        "code": "MAJINRESET",
-        "reward": "Reset Path Progress for Majins",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791703895278,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T14:06:33.298Z",
-        "fetchedAt": "2026-10-13T14:06:33.298Z"
-      },
-      {
-        "game": "dragon-generations",
-        "gameName": "Dragon Generations",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/dragon-generations"
-        },
-        "code": "PATHSPART2CCPLS",
-        "reward": "Free Character Redesign",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791703895278,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T14:06:33.298Z",
-        "fetchedAt": "2026-10-13T14:06:33.298Z"
-      }
-    ],
-    "activeCount": 4,
-    "fetchedAt": "2026-10-13T14:06:33.298Z",
-    "displayCodes": [
-      {
-        "code": "BadBalancingSorry",
-        "reward": "50 Mastery Points",
-        "isNew": true
-      },
-      {
-        "code": "BOJACKRESET",
-        "reward": "Reset Path Progress for Bojacks",
-        "isNew": true
-      },
-      {
-        "code": "MAJINRESET",
-        "reward": "Reset Path Progress for Majins",
-        "isNew": true
-      },
-      {
-        "code": "PATHSPART2CCPLS",
-        "reward": "Free Character Redesign",
-        "isNew": true
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "BadBalancingSorry",
-        "reward": "50 Mastery Points",
-        "isNew": true
-      },
-      {
-        "code": "BOJACKRESET",
-        "reward": "Reset Path Progress for Bojacks",
-        "isNew": true
-      },
-      {
-        "code": "MAJINRESET",
-        "reward": "Reset Path Progress for Majins",
-        "isNew": true
-      },
-      {
-        "code": "PATHSPART2CCPLS",
-        "reward": "Free Character Redesign",
-        "isNew": true
-      }
-    ],
-    "allCodes": [
-      "BadBalancingSorry",
-      "BOJACKRESET",
-      "MAJINRESET",
-      "PATHSPART2CCPLS"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "immortality-incremental",
-    "name": "Immortality Incremental",
-    "displayName": "[🧪 WORLD 9 PT. 2] Immortality Incremental",
-    "slug": "immortality-incremental",
-    "players": 2740,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 2740,
-    "newCodes": [
-      {
-        "code": "LASTD1UPD",
-        "reward": "10 Tickets, Potions"
-      },
-      {
-        "code": "ALCHEMY",
-        "reward": "10 Jade, 3 Mark Potions"
-      }
-    ],
-    "activeCount": 7,
-    "fetchedAt": "2026-10-13T13:11:00.286Z",
-    "displayCodes": [
-      {
-        "code": "LASTD1UPD",
-        "reward": "10 Tickets, Potions",
-        "isNew": true
-      },
-      {
-        "code": "ALCHEMY",
-        "reward": "10 Jade, 3 Mark Potions",
-        "isNew": true
-      },
-      {
-        "code": "MININGEXPANSION",
-        "reward": "10 Tickets, 10 Jade, Path Potions",
-        "isNew": false
-      },
-      {
-        "code": "MINING",
-        "reward": "Path Potion, 10 Tickets",
-        "isNew": false
-      },
-      {
-        "code": "WORLD9PT1",
-        "reward": "1 Ore Potion, 10 Jade",
-        "isNew": false
-      },
-      {
-        "code": "WORLD8PT2",
-        "reward": "5 Tickets, Path Potions",
-        "isNew": false
-      },
-      {
-        "code": "HARDTRAINING",
-        "reward": "10 Tickets, 20 Jade, 5 Potions",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "LASTD1UPD",
-        "reward": "10 Tickets, Potions",
-        "isNew": true
-      },
-      {
-        "code": "ALCHEMY",
-        "reward": "10 Jade, 3 Mark Potions",
-        "isNew": true
-      },
-      {
-        "code": "MININGEXPANSION",
-        "reward": "10 Tickets, 10 Jade, Path Potions",
-        "isNew": false
-      },
-      {
-        "code": "MINING",
-        "reward": "Path Potion, 10 Tickets",
-        "isNew": false
-      },
-      {
-        "code": "WORLD9PT1",
-        "reward": "1 Ore Potion, 10 Jade",
-        "isNew": false
-      },
-      {
-        "code": "WORLD8PT2",
-        "reward": "5 Tickets, Path Potions",
-        "isNew": false
-      },
-      {
-        "code": "HARDTRAINING",
-        "reward": "10 Tickets, 20 Jade, 5 Potions",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "LASTD1UPD",
-      "ALCHEMY",
-      "MININGEXPANSION",
-      "MINING",
-      "WORLD9PT1",
-      "WORLD8PT2",
-      "HARDTRAINING"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "survive-the-swarm",
-    "name": "Survive the Swarm",
-    "displayName": "Survive The Swarm [CLASS COMBAT]",
-    "slug": "survive-the-swarm",
-    "players": 2677,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 2677,
-    "newCodes": [
-      {
-        "game": "survive-the-swarm",
-        "gameName": "Survive the Swarm",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/survive-the-swarm"
-        },
-        "code": "10MIL",
-        "reward": "2,470,000 Coins, 50 Essence, and 2 Gilded Eggs",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791725652646,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T14:06:33.298Z",
-        "fetchedAt": "2026-10-13T14:06:33.298Z"
-      }
-    ],
-    "activeCount": 6,
-    "fetchedAt": "2026-10-13T14:06:33.298Z",
-    "displayCodes": [
-      {
-        "code": "10MIL",
-        "reward": "2,470,000 Coins, 50 Essence, and 2 Gilded Eggs",
-        "isNew": true
-      },
-      {
-        "code": "ABILITIESHYPE",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "KUROGANE",
-        "reward": "773,810 Coins, 25 Essence, and 1 Gilded Egg",
-        "isNew": false
-      },
-      {
-        "code": "HYPETMRW",
-        "reward": "1,430,000 Coins, 25 Essence, and a Gilded Egg",
-        "isNew": false
-      },
-      {
-        "code": "CLASSES",
-        "reward": "25 Essence, 1.23M Coins",
-        "isNew": false
-      },
-      {
-        "code": "LAUNCH",
-        "reward": "25 Essence, 61.65K Coins",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "10MIL",
-        "reward": "2,470,000 Coins, 50 Essence, and 2 Gilded Eggs",
-        "isNew": true
-      },
-      {
-        "code": "ABILITIESHYPE",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "KUROGANE",
-        "reward": "773,810 Coins, 25 Essence, and 1 Gilded Egg",
-        "isNew": false
-      },
-      {
-        "code": "HYPETMRW",
-        "reward": "1,430,000 Coins, 25 Essence, and a Gilded Egg",
-        "isNew": false
-      },
-      {
-        "code": "CLASSES",
-        "reward": "25 Essence, 1.23M Coins",
-        "isNew": false
-      },
-      {
-        "code": "LAUNCH",
-        "reward": "25 Essence, 61.65K Coins",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "CLASSES",
-      "LAUNCH",
-      "10MIL",
-      "ABILITIESHYPE",
-      "KUROGANE",
-      "HYPETMRW"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "escape-the-cave",
     "name": "Escape the Cave",
     "displayName": "[🎃] Escape the Cave",
@@ -4862,6 +3372,159 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "anime-avatar-fighting",
+    "name": "Anime Avatar Fighting",
+    "displayName": "[ٍBLACK CLOVER 🍀] Anime Avatar Fighting",
+    "slug": "anime-avatar-fighting",
+    "players": 1178,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1178,
+    "newCodes": [
+      {
+        "game": "anime-avatar-fighting",
+        "gameName": "Anime Avatar Fighting",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-avatar-fighting"
+        },
+        "code": "3MVISITS",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791782265958,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T17:07:20.907Z",
+        "fetchedAt": "2026-10-13T17:07:20.907Z"
+      }
+    ],
+    "activeCount": 22,
+    "fetchedAt": "2026-10-13T17:07:20.907Z",
+    "displayCodes": [
+      {
+        "code": "3MVISITS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SOLOLEVELING",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE5",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE4.5",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "DELAYEDUPDATE",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "6KLIKES",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "ADMINABUSE2",
+        "reward": "200 F2P Tokens",
+        "isNew": false
+      },
+      {
+        "code": "FREEF2P",
+        "reward": "50 F2P Tokens",
+        "isNew": false
+      },
+      {
+        "code": "ADMINABUSE3",
+        "reward": "200 F2P Tokens",
+        "isNew": false
+      },
+      {
+        "code": "ALMIGHTY",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "3MVISITS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SOLOLEVELING",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE5",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE4.5",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "DELAYEDUPDATE",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "6KLIKES",
+        "reward": "Gems, Spins, and Potions",
+        "isNew": false
+      },
+      {
+        "code": "ADMINABUSE2",
+        "reward": "200 F2P Tokens",
+        "isNew": false
+      },
+      {
+        "code": "FREEF2P",
+        "reward": "50 F2P Tokens",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "BONUS",
+      "TRADE",
+      "HAPPYBIRTHDAYOSAMA",
+      "THANKSFORPLAYING",
+      "1KLIKES",
+      "RELEASE",
+      "3MVISITS",
+      "SOLOLEVELING",
+      "UPDATE5",
+      "UPDATE4.5",
+      "DELAYEDUPDATE",
+      "6KLIKES",
+      "ADMINABUSE2",
+      "FREEF2P",
+      "ADMINABUSE3",
+      "ALMIGHTY",
+      "UPDATE4",
+      "TITAN",
+      "2mvisits",
+      "ADMINABUSE1",
+      "5KLIKES",
+      "UPDATE3"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "clover-origins",
     "name": "Clover Origins",
     "displayName": "Clover Origins [🌑SHADOW MAGIC]",
@@ -5283,6 +3946,164 @@
       "RETURN",
       "LFINHERITORPLS",
       "HEADSUP"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "build-a-blue-lock-squad",
+    "name": "Build A Blue Lock Squad",
+    "displayName": "[👑KAISER] Build A Blue Lock Squad!",
+    "slug": "build-a-blue-lock-squad",
+    "players": 634,
+    "redeemNote": {
+      "en": "To use codes in Build A Blue Lock Squad, you must first join the The LockerRoom Roblox Community",
+      "links": [
+        {
+          "label": "The LockerRoom Roblox Community",
+          "url": "https://www.roblox.com/communities/6847005/The-LockerRoom#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 634,
+    "newCodes": [
+      {
+        "game": "build-a-blue-lock-squad",
+        "gameName": "Build A Blue Lock Squad",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/build-a-blue-lock-squad"
+        },
+        "code": "kaiserayo",
+        "reward": "150 Rerolls and 150 Refreshes",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791728126969,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T17:07:20.907Z",
+        "fetchedAt": "2026-10-13T17:07:20.907Z"
+      }
+    ],
+    "activeCount": 18,
+    "fetchedAt": "2026-10-13T17:07:20.907Z",
+    "displayCodes": [
+      {
+        "code": "kaiserayo",
+        "reward": "150 Rerolls and 150 Refreshes",
+        "isNew": true
+      },
+      {
+        "code": "LAZYGENIUS",
+        "reward": "50x Rerolls, 50x Refreshes and $50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "NEWGAMEMODE",
+        "reward": "50x Rerolls, 50x Refreshes and $50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "KITS",
+        "reward": "10x Rerolls, 10x Refreshes and $10,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "ICE",
+        "reward": "15 Rerolls, 15 Refreshes, and 50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "CROW",
+        "reward": "50 Rerolls, 50 Refreshes, and 50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "BEE",
+        "reward": "15 Rerolls and 10 Refreshes",
+        "isNew": false
+      },
+      {
+        "code": "MONSTER",
+        "reward": "200,000 Cash, 20 Rerolls, and 15 Refreshes",
+        "isNew": false
+      },
+      {
+        "code": "SPECIALGOAL",
+        "reward": "10 Rerolls, 5 Refreshes, and 100,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "ELUSIVEYAY",
+        "reward": "10 Refreshes",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "kaiserayo",
+        "reward": "150 Rerolls and 150 Refreshes",
+        "isNew": true
+      },
+      {
+        "code": "LAZYGENIUS",
+        "reward": "50x Rerolls, 50x Refreshes and $50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "NEWGAMEMODE",
+        "reward": "50x Rerolls, 50x Refreshes and $50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "KITS",
+        "reward": "10x Rerolls, 10x Refreshes and $10,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "ICE",
+        "reward": "15 Rerolls, 15 Refreshes, and 50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "CROW",
+        "reward": "50 Rerolls, 50 Refreshes, and 50,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "BEE",
+        "reward": "15 Rerolls and 10 Refreshes",
+        "isNew": false
+      },
+      {
+        "code": "MONSTER",
+        "reward": "200,000 Cash, 20 Rerolls, and 15 Refreshes",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "kaiserayo",
+      "LAZYGENIUS",
+      "NEWGAMEMODE",
+      "KITS",
+      "ICE",
+      "CROW",
+      "BEE",
+      "MONSTER",
+      "SPECIALGOAL",
+      "ELUSIVEYAY",
+      "NEWELUSIVE",
+      "KUNIGAMI",
+      "HOTFIX",
+      "REO",
+      "CUP",
+      "TROPHIES",
+      "AWAKENED",
+      "PENALTY"
     ]
   }
 ]
