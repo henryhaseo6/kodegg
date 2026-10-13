@@ -1,6 +1,539 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "pixel-blade",
+    "name": "Pixel Blade",
+    "displayName": "[CHRONOS // ARC 2] Pixel Blade",
+    "slug": "pixel-blade",
+    "players": 5167,
+    "redeemNote": {
+      "en": "To use codes in Pixel Blade, you must join the Frost Blade Games Roblox Community.",
+      "links": [
+        {
+          "label": "Frost Blade Games Roblox Community",
+          "url": "https://www.roblox.com/communities/8605341/Frost-Blade-Games#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 5167,
+    "newCodes": [
+      {
+        "code": "CHRONOS",
+        "reward": "1 Wish"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "CHRONOS",
+        "reward": "1 Wish",
+        "isNew": true
+      },
+      {
+        "code": "FISHINGSTASH",
+        "reward": "Golden Cod and 500 Coins",
+        "isNew": false
+      },
+      {
+        "code": "12369",
+        "reward": "2 Ominous Chests, 26 Coins, and 10 Dead Sticks",
+        "isNew": false
+      },
+      {
+        "code": "FULL RELEASE",
+        "reward": "5 Class Dice and 500 Coins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "CHRONOS",
+        "reward": "1 Wish",
+        "isNew": true
+      },
+      {
+        "code": "FISHINGSTASH",
+        "reward": "Golden Cod and 500 Coins",
+        "isNew": false
+      },
+      {
+        "code": "12369",
+        "reward": "2 Ominous Chests, 26 Coins, and 10 Dead Sticks",
+        "isNew": false
+      },
+      {
+        "code": "FULL RELEASE",
+        "reward": "5 Class Dice and 500 Coins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "CHRONOS",
+      "FULL RELEASE",
+      "FISHINGSTASH",
+      "12369"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "clover-time",
+    "name": "Clover Time",
+    "displayName": "Clover Time [SHADOW GRIMOIRE💥]",
+    "slug": "clover-time",
+    "players": 5118,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 5118,
+    "newCodes": [
+      {
+        "game": "clover-time",
+        "gameName": "Clover Time",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/clover-time"
+        },
+        "code": "60KMEMBERS",
+        "reward": null,
+        "date": "2026-10-13T14:14:19.290Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "clover-time",
+        "gameName": "Clover Time",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/clover-time"
+        },
+        "code": "5MVISITS",
+        "reward": null,
+        "date": "2026-10-13T14:14:18.788Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      }
+    ],
+    "activeCount": 27,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "60KMEMBERS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "5MVISITS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "50KLIKES",
+        "reward": "50 Spins",
+        "isNew": false
+      },
+      {
+        "code": "SHADOW",
+        "reward": "30 Crystal Mana Spins, 2 Stat Resets, +50% XP (30 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "NATCH",
+        "reward": "5 Special Spins, 50 Common Spins, Crystal Notifier (1 hour)",
+        "isNew": false
+      },
+      {
+        "code": "MEGADROP",
+        "reward": "100 Spins, 1 Big Chest, 1 Special Spin",
+        "isNew": false
+      },
+      {
+        "code": "90KFAVS",
+        "reward": "2 Stat Resets, 30 Spins, 10 Crystal Mana, 2 Fishing Ease Potion V",
+        "isNew": false
+      },
+      {
+        "code": "80KFAVSWOW!",
+        "reward": "2 Big Chests",
+        "isNew": false
+      },
+      {
+        "code": "40KLIKES",
+        "reward": "30 Spins",
+        "isNew": false
+      },
+      {
+        "code": "2MVISITS",
+        "reward": "100% Luck (1 hour)",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "60KMEMBERS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "5MVISITS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "50KLIKES",
+        "reward": "50 Spins",
+        "isNew": false
+      },
+      {
+        "code": "SHADOW",
+        "reward": "30 Crystal Mana Spins, 2 Stat Resets, +50% XP (30 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "NATCH",
+        "reward": "5 Special Spins, 50 Common Spins, Crystal Notifier (1 hour)",
+        "isNew": false
+      },
+      {
+        "code": "MEGADROP",
+        "reward": "100 Spins, 1 Big Chest, 1 Special Spin",
+        "isNew": false
+      },
+      {
+        "code": "90KFAVS",
+        "reward": "2 Stat Resets, 30 Spins, 10 Crystal Mana, 2 Fishing Ease Potion V",
+        "isNew": false
+      },
+      {
+        "code": "80KFAVSWOW!",
+        "reward": "2 Big Chests",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "60KMEMBERS",
+      "5MVISITS",
+      "50KLIKES",
+      "SHADOW",
+      "NATCH",
+      "MEGADROP",
+      "90KFAVS",
+      "80KFAVSWOW!",
+      "40KLIKES",
+      "2MVISITS",
+      "100KFAVS",
+      "70KFAVSWOW!",
+      "60KFAVSWOW!",
+      "30KLIKES",
+      "25KLIKES!",
+      "TYFOR3KPLAYERS",
+      "ANIMERETURNINGSEASON",
+      "600KVISITS",
+      "15KLIKES",
+      "FIRSTSHUTDOWN",
+      "1KLIKES",
+      "5KFAVS",
+      "BETARELEASE",
+      "10KLIKES",
+      "20KFAVS",
+      "10KFAVS",
+      "5KLIKES"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "1-soldier-evolution",
+    "name": "+1 Soldier Evolution",
+    "displayName": "[W3] +1 Soldier Evolution",
+    "slug": "1-soldier-evolution",
+    "players": 4225,
+    "redeemNote": {
+      "en": "To use codes in +1 Soldier Evolution, you must first Finish The Tutorial.",
+      "links": [],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 4225,
+    "newCodes": [
+      {
+        "game": "1-soldier-evolution",
+        "gameName": "+1 Soldier Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-soldier-evolution"
+        },
+        "code": "10klikes",
+        "reward": "Auto Win (15 mins)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791770986937,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "10klikes",
+        "reward": "Auto Win (15 mins)",
+        "isNew": true
+      },
+      {
+        "code": "3KLIKES",
+        "reward": "2 Luck Potions",
+        "isNew": false
+      },
+      {
+        "code": "4KLIKES",
+        "reward": "1 Spin",
+        "isNew": false
+      },
+      {
+        "code": "SOLDIER",
+        "reward": "1 Luck Potion, 1 Power Potion, and 2 Spins",
+        "isNew": false
+      },
+      {
+        "code": "GROUP",
+        "reward": "2 Win Potions and 3 Spins.To use this code, you must first join the Malroh x Spil Roblox Community",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "10klikes",
+        "reward": "Auto Win (15 mins)",
+        "isNew": true
+      },
+      {
+        "code": "3KLIKES",
+        "reward": "2 Luck Potions",
+        "isNew": false
+      },
+      {
+        "code": "4KLIKES",
+        "reward": "1 Spin",
+        "isNew": false
+      },
+      {
+        "code": "SOLDIER",
+        "reward": "1 Luck Potion, 1 Power Potion, and 2 Spins",
+        "isNew": false
+      },
+      {
+        "code": "GROUP",
+        "reward": "2 Win Potions and 3 Spins.To use this code, you must first join the Malroh x Spil Roblox Community",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "10klikes",
+      "3KLIKES",
+      "4KLIKES",
+      "SOLDIER",
+      "GROUP"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "start-your-blue-lock-career",
+    "name": "Start Your Blue Lock Career",
+    "displayName": "[WORLD CUP] Start Your Blue Lock Career!",
+    "slug": "start-your-blue-lock-career",
+    "players": 4076,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 4076,
+    "newCodes": [
+      {
+        "code": "WELCOMETOINFINITEMODE",
+        "reward": "50 Skill Points"
+      },
+      {
+        "code": "ONEMILLIONVISITS",
+        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 25 Flow Spins, 25 Weapon Spins, 5 Lucky Rolls"
+      },
+      {
+        "code": "BUGFIXINGU20",
+        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 15 Weapon Spins, 40 Skill Points, 3 Lucky Rolls"
+      },
+      {
+        "code": "U20UPDATE",
+        "reward": "400 EgoCoins, 8 Lucky Flow Spins, 15 Flow Spins, 15 Weapon Spins, 8 Lucky Rolls"
+      },
+      {
+        "code": "LATENIGHTBUGFIXES",
+        "reward": "3 Lucky Flow Spins, 3 Lucky Rolls, 7 Flow Spins, 7 Weapon Spins"
+      },
+      {
+        "code": "U20DELAYLOL",
+        "reward": "250 EgoCoins, 3 Lucky Flow Spins, 3 Lucky Rolls, 20 Skill Points"
+      },
+      {
+        "code": "SERVERBOOSTS",
+        "reward": "150 EgoCoins, 3 Lucky Rolls, 15 Weapon Spins"
+      },
+      {
+        "code": "EIGHTTHOUSANDLIKES",
+        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls"
+      },
+      {
+        "code": "SEVENTHOUSANDLIKES",
+        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls"
+      },
+      {
+        "code": "ENDOFBUGS",
+        "reward": "5 Lucky Flow Spins, 3 Lucky Rolls"
+      },
+      {
+        "code": "BUGFIXING2U20",
+        "reward": "5 Lucky Flow Spins, 3 Lucky Rolls"
+      },
+      {
+        "code": "INFINITEUPDATE",
+        "reward": "10 Flow Spins, 10 Weapon Spins"
+      },
+      {
+        "code": "QOLU20",
+        "reward": "8 Flow Spins, 8 Weapon Spins"
+      },
+      {
+        "code": "GOODLUCKU20PLAYERS",
+        "reward": "30 Skill Points"
+      }
+    ],
+    "activeCount": 14,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "WELCOMETOINFINITEMODE",
+        "reward": "50 Skill Points",
+        "isNew": true
+      },
+      {
+        "code": "ONEMILLIONVISITS",
+        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 25 Flow Spins, 25 Weapon Spins, 5 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "BUGFIXINGU20",
+        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 15 Weapon Spins, 40 Skill Points, 3 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "U20UPDATE",
+        "reward": "400 EgoCoins, 8 Lucky Flow Spins, 15 Flow Spins, 15 Weapon Spins, 8 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "LATENIGHTBUGFIXES",
+        "reward": "3 Lucky Flow Spins, 3 Lucky Rolls, 7 Flow Spins, 7 Weapon Spins",
+        "isNew": true
+      },
+      {
+        "code": "U20DELAYLOL",
+        "reward": "250 EgoCoins, 3 Lucky Flow Spins, 3 Lucky Rolls, 20 Skill Points",
+        "isNew": true
+      },
+      {
+        "code": "SERVERBOOSTS",
+        "reward": "150 EgoCoins, 3 Lucky Rolls, 15 Weapon Spins",
+        "isNew": true
+      },
+      {
+        "code": "EIGHTTHOUSANDLIKES",
+        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "SEVENTHOUSANDLIKES",
+        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "ENDOFBUGS",
+        "reward": "5 Lucky Flow Spins, 3 Lucky Rolls",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "WELCOMETOINFINITEMODE",
+        "reward": "50 Skill Points",
+        "isNew": true
+      },
+      {
+        "code": "ONEMILLIONVISITS",
+        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 25 Flow Spins, 25 Weapon Spins, 5 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "BUGFIXINGU20",
+        "reward": "350 EgoCoins, 5 Lucky Flow Spins, 15 Weapon Spins, 40 Skill Points, 3 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "U20UPDATE",
+        "reward": "400 EgoCoins, 8 Lucky Flow Spins, 15 Flow Spins, 15 Weapon Spins, 8 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "LATENIGHTBUGFIXES",
+        "reward": "3 Lucky Flow Spins, 3 Lucky Rolls, 7 Flow Spins, 7 Weapon Spins",
+        "isNew": true
+      },
+      {
+        "code": "U20DELAYLOL",
+        "reward": "250 EgoCoins, 3 Lucky Flow Spins, 3 Lucky Rolls, 20 Skill Points",
+        "isNew": true
+      },
+      {
+        "code": "SERVERBOOSTS",
+        "reward": "150 EgoCoins, 3 Lucky Rolls, 15 Weapon Spins",
+        "isNew": true
+      },
+      {
+        "code": "EIGHTTHOUSANDLIKES",
+        "reward": "5 Lucky Flow Spins, 5 Lucky Rolls",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "WELCOMETOINFINITEMODE",
+      "ONEMILLIONVISITS",
+      "BUGFIXINGU20",
+      "U20UPDATE",
+      "LATENIGHTBUGFIXES",
+      "U20DELAYLOL",
+      "SERVERBOOSTS",
+      "EIGHTTHOUSANDLIKES",
+      "SEVENTHOUSANDLIKES",
+      "ENDOFBUGS",
+      "BUGFIXING2U20",
+      "INFINITEUPDATE",
+      "QOLU20",
+      "GOODLUCKU20PLAYERS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "defeat-anime-rng",
     "name": "Defeat Anime RNG",
     "displayName": "[UPD 8] Defeat Anime RNG",
@@ -284,6 +817,180 @@
       "20KPLAYERS",
       "WORLD6",
       "ADMINABUSE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "1-superpower-destruction",
+    "name": "+1 Superpower Destruction",
+    "displayName": "+1 Superpower Destruction",
+    "slug": "1-superpower-destruction",
+    "players": 3297,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3297,
+    "newCodes": [
+      {
+        "code": "Superpower",
+        "reward": "1000 Cash, 1000 Power"
+      },
+      {
+        "code": "Release",
+        "reward": "1000 Cash, 1000 Power"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "Superpower",
+        "reward": "1000 Cash, 1000 Power",
+        "isNew": true
+      },
+      {
+        "code": "Release",
+        "reward": "1000 Cash, 1000 Power",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "Superpower",
+        "reward": "1000 Cash, 1000 Power",
+        "isNew": true
+      },
+      {
+        "code": "Release",
+        "reward": "1000 Cash, 1000 Power",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "Superpower",
+      "Release"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "1-speed-evolve",
+    "name": "+1 Speed Evolve",
+    "displayName": "+1 Speed Evolve 🦊",
+    "slug": "1-speed-evolve",
+    "players": 3230,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3230,
+    "newCodes": [
+      {
+        "game": "1-speed-evolve",
+        "gameName": "+1 Speed Evolve",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/1-speed-evolve"
+        },
+        "code": "World6",
+        "reward": "Double Win Boost (10 minutes)",
+        "date": "2026-10-13T14:14:17.403Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "1-speed-evolve",
+        "gameName": "+1 Speed Evolve",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/1-speed-evolve"
+        },
+        "code": "6MGroupMembers",
+        "reward": "Admin Spin",
+        "date": "2026-10-13T14:14:10.225Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "World6",
+        "reward": "Double Win Boost (10 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "6MGroupMembers",
+        "reward": "Admin Spin",
+        "isNew": true
+      },
+      {
+        "code": "World5Complete",
+        "reward": "Admin Spin",
+        "isNew": false
+      },
+      {
+        "code": "4MFavourites",
+        "reward": "Double Wins Boost (10 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "200KLikes",
+        "reward": "Admin Spin",
+        "isNew": false
+      },
+      {
+        "code": "100MVisits",
+        "reward": "Double Wins Boost (10 minutes)",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "World6",
+        "reward": "Double Win Boost (10 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "6MGroupMembers",
+        "reward": "Admin Spin",
+        "isNew": true
+      },
+      {
+        "code": "World5Complete",
+        "reward": "Admin Spin",
+        "isNew": false
+      },
+      {
+        "code": "4MFavourites",
+        "reward": "Double Wins Boost (10 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "200KLikes",
+        "reward": "Admin Spin",
+        "isNew": false
+      },
+      {
+        "code": "100MVisits",
+        "reward": "Double Wins Boost (10 minutes)",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "World6",
+      "6MGroupMembers",
+      "World5Complete",
+      "4MFavourites",
+      "200KLikes",
+      "100MVisits"
     ]
   },
   {
@@ -780,6 +1487,72 @@
       "ABILITIESHYPE",
       "KUROGANE",
       "HYPETMRW"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "escape-the-cave",
+    "name": "Escape the Cave",
+    "displayName": "[🎃] Escape the Cave",
+    "slug": "escape-the-cave",
+    "players": 2582,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2582,
+    "newCodes": [
+      {
+        "code": "3MVISITS",
+        "reward": "2,000 Pass XP, 300 Candy, 500 Gems"
+      },
+      {
+        "code": "HALLOWEEN",
+        "reward": "1,000 Pass XP, 200 Candy"
+      },
+      {
+        "code": "CLANS",
+        "reward": "500 Gems"
+      }
+    ],
+    "activeCount": 3,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "3MVISITS",
+        "reward": "2,000 Pass XP, 300 Candy, 500 Gems",
+        "isNew": true
+      },
+      {
+        "code": "HALLOWEEN",
+        "reward": "1,000 Pass XP, 200 Candy",
+        "isNew": true
+      },
+      {
+        "code": "CLANS",
+        "reward": "500 Gems",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "3MVISITS",
+        "reward": "2,000 Pass XP, 300 Candy, 500 Gems",
+        "isNew": true
+      },
+      {
+        "code": "HALLOWEEN",
+        "reward": "1,000 Pass XP, 200 Candy",
+        "isNew": true
+      },
+      {
+        "code": "CLANS",
+        "reward": "500 Gems",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "3MVISITS",
+      "HALLOWEEN",
+      "CLANS"
     ]
   },
   {
@@ -1339,6 +2112,390 @@
       "supdoggy",
       "ADMIN",
       "RipVoid"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "roll-your-height",
+    "name": "Roll Your Height",
+    "displayName": "Roll Your Height",
+    "slug": "roll-your-height",
+    "players": 2274,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2274,
+    "newCodes": [
+      {
+        "code": "1klikes",
+        "reward": "15000 Cash, 2 Luck Boosts, 1 Strength Boost, 1 Train Speed Boost"
+      },
+      {
+        "code": "ThirdCode",
+        "reward": "25000 Cash, 1 Super Luck Boost, 1 Strength Boost, 1 Train Speed Boost"
+      },
+      {
+        "code": "Mini",
+        "reward": "10000 Cash, 1 Luck Potion, 1 Speed Training Potion"
+      },
+      {
+        "code": "SecondCode",
+        "reward": "Raging Red Aura, 2 Luck Boosts"
+      },
+      {
+        "code": "Welcome",
+        "reward": "All Potions"
+      },
+      {
+        "code": "Release",
+        "reward": "2500 Cash"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "1klikes",
+        "reward": "15000 Cash, 2 Luck Boosts, 1 Strength Boost, 1 Train Speed Boost",
+        "isNew": true
+      },
+      {
+        "code": "ThirdCode",
+        "reward": "25000 Cash, 1 Super Luck Boost, 1 Strength Boost, 1 Train Speed Boost",
+        "isNew": true
+      },
+      {
+        "code": "Mini",
+        "reward": "10000 Cash, 1 Luck Potion, 1 Speed Training Potion",
+        "isNew": true
+      },
+      {
+        "code": "SecondCode",
+        "reward": "Raging Red Aura, 2 Luck Boosts",
+        "isNew": true
+      },
+      {
+        "code": "Welcome",
+        "reward": "All Potions",
+        "isNew": true
+      },
+      {
+        "code": "Release",
+        "reward": "2500 Cash",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "1klikes",
+        "reward": "15000 Cash, 2 Luck Boosts, 1 Strength Boost, 1 Train Speed Boost",
+        "isNew": true
+      },
+      {
+        "code": "ThirdCode",
+        "reward": "25000 Cash, 1 Super Luck Boost, 1 Strength Boost, 1 Train Speed Boost",
+        "isNew": true
+      },
+      {
+        "code": "Mini",
+        "reward": "10000 Cash, 1 Luck Potion, 1 Speed Training Potion",
+        "isNew": true
+      },
+      {
+        "code": "SecondCode",
+        "reward": "Raging Red Aura, 2 Luck Boosts",
+        "isNew": true
+      },
+      {
+        "code": "Welcome",
+        "reward": "All Potions",
+        "isNew": true
+      },
+      {
+        "code": "Release",
+        "reward": "2500 Cash",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "1klikes",
+      "ThirdCode",
+      "Mini",
+      "SecondCode",
+      "Welcome",
+      "Release"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "anime-rng-defense",
+    "name": "Anime RNG Defense",
+    "displayName": "[UPD] Anime RNG Defense",
+    "slug": "anime-rng-defense",
+    "players": 2266,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2266,
+    "newCodes": [
+      {
+        "game": "anime-rng-defense",
+        "gameName": "Anime RNG Defense",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-rng-defense"
+        },
+        "code": "UPDATESHINOBI",
+        "reward": "1,000 Crystals and a Blessed Roll",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791739320586,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "anime-rng-defense",
+        "gameName": "Anime RNG Defense",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-rng-defense"
+        },
+        "code": "HALLOWEENSOON",
+        "reward": "3 Divine Rolls",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791739320586,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "anime-rng-defense",
+        "gameName": "Anime RNG Defense",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-rng-defense"
+        },
+        "code": "SHINOBITRIALS",
+        "reward": "rewards.You need at least 100,000 Rolls to use this code",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791739320586,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "anime-rng-defense",
+        "gameName": "Anime RNG Defense",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-rng-defense"
+        },
+        "code": "TSUKUYOMI",
+        "reward": "rewards.You need at least 50,000 Rolls to use this code",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791739320586,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "anime-rng-defense",
+        "gameName": "Anime RNG Defense",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-rng-defense"
+        },
+        "code": "KAMUI",
+        "reward": "rewards.You need at least 25,000 Rolls to use this code",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791739320586,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "anime-rng-defense",
+        "gameName": "Anime RNG Defense",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-rng-defense"
+        },
+        "code": "HIDDENVILLAGE",
+        "reward": "rewards.You need at least 10,000 Rolls to use this code",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791739320586,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      }
+    ],
+    "activeCount": 42,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "UPDATESHINOBI",
+        "reward": "1,000 Crystals and a Blessed Roll",
+        "isNew": true
+      },
+      {
+        "code": "HALLOWEENSOON",
+        "reward": "3 Divine Rolls",
+        "isNew": true
+      },
+      {
+        "code": "SHINOBITRIALS",
+        "reward": "rewards.You need at least 100,000 Rolls to use this code",
+        "isNew": true
+      },
+      {
+        "code": "TSUKUYOMI",
+        "reward": "rewards.You need at least 50,000 Rolls to use this code",
+        "isNew": true
+      },
+      {
+        "code": "KAMUI",
+        "reward": "rewards.You need at least 25,000 Rolls to use this code",
+        "isNew": true
+      },
+      {
+        "code": "HIDDENVILLAGE",
+        "reward": "rewards.You need at least 10,000 Rolls to use this code",
+        "isNew": true
+      },
+      {
+        "code": "CLANRESIDENCE",
+        "reward": "Free Rewards.You need at least 10,000 Rolls to use this code",
+        "isNew": false
+      },
+      {
+        "code": "DIVINEFORTUNE",
+        "reward": "Free Rewards.You need at least 25,000 Rolls to use this code",
+        "isNew": false
+      },
+      {
+        "code": "INDEX",
+        "reward": "Free Rewards.You need at least 50,000 Rolls to use this code",
+        "isNew": false
+      },
+      {
+        "code": "THESTRONGEST",
+        "reward": "Free Rewards.You need at least 100,000 Rolls to use this code",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "UPDATESHINOBI",
+        "reward": "1,000 Crystals and a Blessed Roll",
+        "isNew": true
+      },
+      {
+        "code": "HALLOWEENSOON",
+        "reward": "3 Divine Rolls",
+        "isNew": true
+      },
+      {
+        "code": "SHINOBITRIALS",
+        "reward": "rewards.You need at least 100,000 Rolls to use this code",
+        "isNew": true
+      },
+      {
+        "code": "TSUKUYOMI",
+        "reward": "rewards.You need at least 50,000 Rolls to use this code",
+        "isNew": true
+      },
+      {
+        "code": "KAMUI",
+        "reward": "rewards.You need at least 25,000 Rolls to use this code",
+        "isNew": true
+      },
+      {
+        "code": "HIDDENVILLAGE",
+        "reward": "rewards.You need at least 10,000 Rolls to use this code",
+        "isNew": true
+      },
+      {
+        "code": "CLANRESIDENCE",
+        "reward": "Free Rewards.You need at least 10,000 Rolls to use this code",
+        "isNew": false
+      },
+      {
+        "code": "DIVINEFORTUNE",
+        "reward": "Free Rewards.You need at least 25,000 Rolls to use this code",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "THANKSFORPLAYING",
+      "TY100K",
+      "UPDATESHINOBI",
+      "HALLOWEENSOON",
+      "SHINOBITRIALS",
+      "TSUKUYOMI",
+      "KAMUI",
+      "HIDDENVILLAGE",
+      "CLANRESIDENCE",
+      "DIVINEFORTUNE",
+      "INDEX",
+      "THESTRONGEST",
+      "SHUTDOWNKAISEN",
+      "UPDATEKAISEN",
+      "UPDATESUNGOD",
+      "GIANTKINGDOM",
+      "SECRETAWAKENING",
+      "BOSSRUSH",
+      "LUFFOSUNGOD",
+      "UPDATEPUNCH",
+      "HEROASSOCIATION",
+      "MEDALS",
+      "WORLDRELICS",
+      "WORLDTOWER",
+      "BANSHOMAN",
+      "NIGHTMARERAID",
+      "EIGHTCOMPANYBASE",
+      "KINGOFDESTRUCTION",
+      "UPDATEFIRE",
+      "SORRYFORSHUTDOWNGHOUL",
+      "UPDATEGHOUL",
+      "GHOULCITY",
+      "WHITEREAPER",
+      "ONEEYEDGHOUL",
+      "INFINITYCASTLE",
+      "UPDATE10",
+      "SLIMEEVENT",
+      "DAILYCHALLENGE",
+      "PAUSEPOTIONS",
+      "AWAKENEDSLIME",
+      "10MVISITS",
+      "TYFOR10KCCU"
     ]
   },
   {
@@ -2474,6 +3631,275 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "five-nights-td-2",
+    "name": "Five Nights TD 2",
+    "displayName": "Five Nights TD 2 [NEW LOBBY]",
+    "slug": "five-nights-td-2",
+    "players": 1703,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1703,
+    "newCodes": [
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "NEWLOBBY",
+        "reward": null,
+        "date": "2026-10-13T14:14:01.959Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "PARTSANDSERVICES",
+        "reward": null,
+        "date": "2026-10-13T14:14:01.384Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "SORRY4DELAY5",
+        "reward": null,
+        "date": "2026-10-13T14:14:00.748Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "NEWINVENTORY",
+        "reward": null,
+        "date": "2026-10-13T14:13:59.011Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "MONDAYUPDATE",
+        "reward": null,
+        "date": "2026-10-13T14:13:57.845Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "DOUBLEJUMP",
+        "reward": null,
+        "date": "2026-10-13T14:13:57.459Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "five-nights-td-2",
+        "gameName": "Five Nights TD 2",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/five-nights-td-2"
+        },
+        "code": "CHIPSTACKING",
+        "reward": null,
+        "date": "2026-10-13T14:13:57.049Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      }
+    ],
+    "activeCount": 32,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "NEWLOBBY",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "PARTSANDSERVICES",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SORRY4DELAY5",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "NEWINVENTORY",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "MONDAYUPDATE",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "DOUBLEJUMP",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "CHIPSTACKING",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SOMEFREECRAFTINGMATERIALS",
+        "reward": "30 White Crying Souls, 10 of Each Color Crying Soul, and 1 Rainbow Crying Soul",
+        "isNew": false
+      },
+      {
+        "code": "YENNDO",
+        "reward": "25,000 Tokens and 2,500 Untradable Souls",
+        "isNew": false
+      },
+      {
+        "code": "TOYFOXY",
+        "reward": "50,000 Tokens, 200 AFK 2 Presents, 50 Springlocks, and 10 Remnant.This code requires you to reach 35,000 Faz-Rating",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "NEWLOBBY",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "PARTSANDSERVICES",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SORRY4DELAY5",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "NEWINVENTORY",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "MONDAYUPDATE",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "DOUBLEJUMP",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "CHIPSTACKING",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "SOMEFREECRAFTINGMATERIALS",
+        "reward": "30 White Crying Souls, 10 of Each Color Crying Soul, and 1 Rainbow Crying Soul",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "NEWLOBBY",
+      "PARTSANDSERVICES",
+      "SORRY4DELAY5",
+      "NEWINVENTORY",
+      "MONDAYUPDATE",
+      "DOUBLEJUMP",
+      "CHIPSTACKING",
+      "YENNDO",
+      "TOYFOXY",
+      "SPARKY",
+      "RAINBOWSOUL",
+      "CRAFTING",
+      "TWISTEDWOLF",
+      "SEASON7",
+      "MALHARE",
+      "GAME8",
+      "COFFEE",
+      "SILLYBEAR5",
+      "SELECTIONBANNER",
+      "RINGMASTER",
+      "MOTORIST",
+      "UPDATE46",
+      "THANKYOUFORPLAYING",
+      "SMALLEVENTSHOP",
+      "NEWAFKPRESENT",
+      "HMMMBYTES",
+      "AboutBossRaid",
+      "CHIPSNOFISH",
+      "PASSINGOFTIME",
+      "FREEBIE",
+      "SOMEFREECRAFTINGMATERIALS",
+      "SORRY4DELAY4"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "ophelia",
     "name": "Ophelia",
     "displayName": "Ophelia [HORROR]",
@@ -2978,6 +4404,310 @@
       "SORRYFORCODEBUG",
       "205KLIKES",
       "SHUNKOVASTO"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "collect-the-alphabet",
+    "name": "Collect The Alphabet",
+    "displayName": "[🇬🇷] Collect The Alphabet",
+    "slug": "collect-the-alphabet",
+    "players": 1320,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1320,
+    "newCodes": [
+      {
+        "game": "collect-the-alphabet",
+        "gameName": "Collect The Alphabet",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/collect-the-alphabet"
+        },
+        "code": "ROMAN",
+        "reward": "4 Mythic Packs",
+        "date": "2026-10-13T14:13:53.699Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "collect-the-alphabet",
+        "gameName": "Collect The Alphabet",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/collect-the-alphabet"
+        },
+        "code": "GOLDENROMAN",
+        "reward": "2 Mutation Luck Potions",
+        "date": "2026-10-13T14:13:51.040Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      }
+    ],
+    "activeCount": 12,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "ROMAN",
+        "reward": "4 Mythic Packs",
+        "isNew": true
+      },
+      {
+        "code": "GOLDENROMAN",
+        "reward": "2 Mutation Luck Potions",
+        "isNew": true
+      },
+      {
+        "code": "GALAXY",
+        "reward": "4 Mythic Packs",
+        "isNew": false
+      },
+      {
+        "code": "GOLDEN",
+        "reward": "2 Double Mutation Luck Potions",
+        "isNew": false
+      },
+      {
+        "code": "GREEK24",
+        "reward": "4 Mythic Packs",
+        "isNew": false
+      },
+      {
+        "code": "ALPHABET2",
+        "reward": "4 Mythic Packs",
+        "isNew": false
+      },
+      {
+        "code": "MASTER",
+        "reward": "3x Mythic Packs, Double Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "1MMEMBERS",
+        "reward": "Mythic Pack",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE3",
+        "reward": "3x Mythic Pack",
+        "isNew": false
+      },
+      {
+        "code": "OPCODE",
+        "reward": "3 Double Mutation Luck Potions",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ROMAN",
+        "reward": "4 Mythic Packs",
+        "isNew": true
+      },
+      {
+        "code": "GOLDENROMAN",
+        "reward": "2 Mutation Luck Potions",
+        "isNew": true
+      },
+      {
+        "code": "GALAXY",
+        "reward": "4 Mythic Packs",
+        "isNew": false
+      },
+      {
+        "code": "GOLDEN",
+        "reward": "2 Double Mutation Luck Potions",
+        "isNew": false
+      },
+      {
+        "code": "GREEK24",
+        "reward": "4 Mythic Packs",
+        "isNew": false
+      },
+      {
+        "code": "ALPHABET2",
+        "reward": "4 Mythic Packs",
+        "isNew": false
+      },
+      {
+        "code": "MASTER",
+        "reward": "3x Mythic Packs, Double Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "1MMEMBERS",
+        "reward": "Mythic Pack",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "ROMAN",
+      "GOLDENROMAN",
+      "GALAXY",
+      "GOLDEN",
+      "GREEK24",
+      "ALPHABET2",
+      "MASTER",
+      "1MMEMBERS",
+      "UPDATE3",
+      "OPCODE",
+      "VOLCANO",
+      "TIME"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "mugen",
+    "name": "MUGEN",
+    "displayName": "[INSECT🦋🪰] MUGEN",
+    "slug": "mugen",
+    "players": 1221,
+    "redeemNote": {
+      "en": "To use codes in Mugen, you must join the Pure Pure Roblox Community",
+      "links": [
+        {
+          "label": "Pure Pure Roblox Community",
+          "url": "https://www.roblox.com/communities/34122479/Pure-Pure#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 1221,
+    "newCodes": [
+      {
+        "game": "mugen",
+        "gameName": "MUGEN",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/mugen"
+        },
+        "code": "INSECTRELEASED",
+        "reward": "5 Lucky Spins and 5 Wheel Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791724643151,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "mugen",
+        "gameName": "MUGEN",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/mugen"
+        },
+        "code": "60KINTERESTED",
+        "reward": "30 Lucky Spins and 100,000 Yen",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791724643151,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      },
+      {
+        "game": "mugen",
+        "gameName": "MUGEN",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/mugen"
+        },
+        "code": "30DELAY",
+        "reward": "10 Wheel Spins and 40,000 Yen",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791724643151,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T16:11:03.813Z",
+        "fetchedAt": "2026-10-13T16:11:03.813Z"
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-10-13T16:11:03.813Z",
+    "displayCodes": [
+      {
+        "code": "INSECTRELEASED",
+        "reward": "5 Lucky Spins and 5 Wheel Spins",
+        "isNew": true
+      },
+      {
+        "code": "60KINTERESTED",
+        "reward": "30 Lucky Spins and 100,000 Yen",
+        "isNew": true
+      },
+      {
+        "code": "30DELAY",
+        "reward": "10 Wheel Spins and 40,000 Yen",
+        "isNew": true
+      },
+      {
+        "code": "FREAKYFRIDAY",
+        "reward": "7 Lucky Spins and 30,000 Yen",
+        "isNew": false
+      },
+      {
+        "code": "INSECTTOMORROW",
+        "reward": "7 Lucky Spins and 50,000 Yen",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "INSECTRELEASED",
+        "reward": "5 Lucky Spins and 5 Wheel Spins",
+        "isNew": true
+      },
+      {
+        "code": "60KINTERESTED",
+        "reward": "30 Lucky Spins and 100,000 Yen",
+        "isNew": true
+      },
+      {
+        "code": "30DELAY",
+        "reward": "10 Wheel Spins and 40,000 Yen",
+        "isNew": true
+      },
+      {
+        "code": "FREAKYFRIDAY",
+        "reward": "7 Lucky Spins and 30,000 Yen",
+        "isNew": false
+      },
+      {
+        "code": "INSECTTOMORROW",
+        "reward": "7 Lucky Spins and 50,000 Yen",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "INSECTRELEASED",
+      "60KINTERESTED",
+      "30DELAY",
+      "FREAKYFRIDAY",
+      "INSECTTOMORROW"
     ]
   },
   {
@@ -3553,1454 +5283,6 @@
       "RETURN",
       "LFINHERITORPLS",
       "HEADSUP"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "winx-the-fairy-guardians",
-    "name": "Winx - The Fairy Guardians",
-    "displayName": "[ 🎃 ] Winx - The Fairy Guardians",
-    "slug": "winx-the-fairy-guardians",
-    "players": 1017,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 1017,
-    "newCodes": [
-      {
-        "game": "winx-the-fairy-guardians",
-        "gameName": "Winx - The Fairy Guardians",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/winx-the-fairy-guardians"
-        },
-        "code": "RIP",
-        "reward": "500 Candies",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791685285294,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T04:02:04.259Z",
-        "fetchedAt": "2026-10-13T04:02:04.259Z"
-      }
-    ],
-    "activeCount": 8,
-    "fetchedAt": "2026-10-13T04:02:04.259Z",
-    "displayCodes": [
-      {
-        "code": "RIP",
-        "reward": "500 Candies",
-        "isNew": true
-      },
-      {
-        "code": "NEWUPDATESEPTEMBER2026",
-        "reward": "20,000 Butterflies and 500 Tokens",
-        "isNew": false
-      },
-      {
-        "code": "NEWUPDATEJUNE2026",
-        "reward": "10,000 Butterflies",
-        "isNew": false
-      },
-      {
-        "code": "TENMILLIONVISITS",
-        "reward": "Party Popper",
-        "isNew": false
-      },
-      {
-        "code": "TWENTYMILLIONVISITS",
-        "reward": "Party Blower",
-        "isNew": false
-      },
-      {
-        "code": "BR0K3NT0K3N",
-        "reward": "50 Tokens",
-        "isNew": false
-      },
-      {
-        "code": "LUCKYD4Y",
-        "reward": "150 Tokens",
-        "isNew": false
-      },
-      {
-        "code": "TRU3KIND3LOV3",
-        "reward": "Pride Pin",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "RIP",
-        "reward": "500 Candies",
-        "isNew": true
-      },
-      {
-        "code": "NEWUPDATESEPTEMBER2026",
-        "reward": "20,000 Butterflies and 500 Tokens",
-        "isNew": false
-      },
-      {
-        "code": "NEWUPDATEJUNE2026",
-        "reward": "10,000 Butterflies",
-        "isNew": false
-      },
-      {
-        "code": "TENMILLIONVISITS",
-        "reward": "Party Popper",
-        "isNew": false
-      },
-      {
-        "code": "TWENTYMILLIONVISITS",
-        "reward": "Party Blower",
-        "isNew": false
-      },
-      {
-        "code": "BR0K3NT0K3N",
-        "reward": "50 Tokens",
-        "isNew": false
-      },
-      {
-        "code": "LUCKYD4Y",
-        "reward": "150 Tokens",
-        "isNew": false
-      },
-      {
-        "code": "TRU3KIND3LOV3",
-        "reward": "Pride Pin",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "RIP",
-      "NEWUPDATESEPTEMBER2026",
-      "NEWUPDATEJUNE2026",
-      "TENMILLIONVISITS",
-      "TWENTYMILLIONVISITS",
-      "BR0K3NT0K3N",
-      "LUCKYD4Y",
-      "TRU3KIND3LOV3"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "bake-da-baby",
-    "name": "Bake Da Baby",
-    "displayName": "🎃 BATHE DA BABY [S14]",
-    "slug": "bake-da-baby",
-    "players": 980,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 980,
-    "newCodes": [
-      {
-        "game": "bake-da-baby",
-        "gameName": "Bake Da Baby",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/bake-da-baby"
-        },
-        "code": "Rails",
-        "reward": "1,904 Coins",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791728102279,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T08:02:08.261Z",
-        "fetchedAt": "2026-10-13T08:02:08.261Z"
-      }
-    ],
-    "activeCount": 5,
-    "fetchedAt": "2026-10-13T08:02:08.261Z",
-    "displayCodes": [
-      {
-        "code": "Rails",
-        "reward": "1,904 Coins",
-        "isNew": true
-      },
-      {
-        "code": "ERUPT",
-        "reward": "1,000 Coins",
-        "isNew": false
-      },
-      {
-        "code": "Youshouldntbehere",
-        "reward": "10K Coins",
-        "isNew": false
-      },
-      {
-        "code": "fireinthehole",
-        "reward": "5K Cash",
-        "isNew": false
-      },
-      {
-        "code": "Ermwhathesigma",
-        "reward": "690 Coins",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "Rails",
-        "reward": "1,904 Coins",
-        "isNew": true
-      },
-      {
-        "code": "ERUPT",
-        "reward": "1,000 Coins",
-        "isNew": false
-      },
-      {
-        "code": "Youshouldntbehere",
-        "reward": "10K Coins",
-        "isNew": false
-      },
-      {
-        "code": "fireinthehole",
-        "reward": "5K Cash",
-        "isNew": false
-      },
-      {
-        "code": "Ermwhathesigma",
-        "reward": "690 Coins",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "Ermwhathesigma",
-      "Rails",
-      "ERUPT",
-      "Youshouldntbehere",
-      "fireinthehole"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "drift-36",
-    "name": "Drift 36",
-    "displayName": "[🎃] Drift 36",
-    "slug": "drift-36",
-    "players": 971,
-    "redeemNote": {
-      "en": "To use codes in Drift 36, you must first Finish The Tutorial to unlock the settings menu.",
-      "links": [],
-      "kind": "syarat"
-    },
-    "alias": null,
-    "rank": 971,
-    "newCodes": [
-      {
-        "game": "drift-36",
-        "gameName": "Drift 36",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/drift-36"
-        },
-        "code": "HALLOWENUPDATE",
-        "reward": "$35,000",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791715911742,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T10:02:26.130Z",
-        "fetchedAt": "2026-10-13T10:02:26.130Z"
-      }
-    ],
-    "activeCount": 2,
-    "fetchedAt": "2026-10-13T10:02:26.130Z",
-    "displayCodes": [
-      {
-        "code": "HALLOWENUPDATE",
-        "reward": "$35,000",
-        "isNew": true
-      },
-      {
-        "code": "DRIVEHUAYRA",
-        "reward": "20,000 Cash",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "HALLOWENUPDATE",
-        "reward": "$35,000",
-        "isNew": true
-      },
-      {
-        "code": "DRIVEHUAYRA",
-        "reward": "20,000 Cash",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "HALLOWENUPDATE",
-      "DRIVEHUAYRA"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "get-tall-and-fall",
-    "name": "Get Tall and Fall",
-    "displayName": "Get Tall and Fall",
-    "slug": "get-tall-and-fall",
-    "players": 938,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 938,
-    "newCodes": [
-      {
-        "game": "get-tall-and-fall",
-        "gameName": "Get Tall and Fall",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/get-tall-and-fall"
-        },
-        "code": "UPDATE",
-        "reward": "1x Goat and 3x Coin Potion",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791621901263,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T15:03:02.787Z",
-        "fetchedAt": "2026-10-12T15:03:02.787Z"
-      }
-    ],
-    "activeCount": 4,
-    "fetchedAt": "2026-10-12T15:03:02.787Z",
-    "displayCodes": [
-      {
-        "code": "UPDATE",
-        "reward": "1x Goat and 3x Coin Potion",
-        "isNew": true
-      },
-      {
-        "code": "FREEPLAYCOINS",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "WEAREBACK",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "FREEPET",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "UPDATE",
-        "reward": "1x Goat and 3x Coin Potion",
-        "isNew": true
-      },
-      {
-        "code": "FREEPLAYCOINS",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "WEAREBACK",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "FREEPET",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "UPDATE",
-      "FREEPLAYCOINS",
-      "WEAREBACK",
-      "FREEPET"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "counter-blox",
-    "name": "Counter Blox",
-    "displayName": "[UPDATE!] Counter Blox",
-    "slug": "counter-blox",
-    "players": 849,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 849,
-    "newCodes": [
-      {
-        "game": "counter-blox",
-        "gameName": "Counter Blox",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/counter-blox"
-        },
-        "code": "REFUNDTHEHITREG",
-        "reward": "150 Credits",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791621875874,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T21:01:58.997Z",
-        "fetchedAt": "2026-10-12T21:01:58.997Z"
-      }
-    ],
-    "activeCount": 1,
-    "fetchedAt": "2026-10-12T21:01:58.997Z",
-    "displayCodes": [
-      {
-        "code": "REFUNDTHEHITREG",
-        "reward": "150 Credits",
-        "isNew": true
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "REFUNDTHEHITREG",
-        "reward": "150 Credits",
-        "isNew": true
-      }
-    ],
-    "allCodes": [
-      "REFUNDTHEHITREG"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "kaizen",
-    "name": "Kaizen",
-    "displayName": "[🌀Sky Manipulation] KAIZEN",
-    "slug": "kaizen",
-    "players": 832,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 832,
-    "newCodes": [
-      {
-        "game": "kaizen",
-        "gameName": "Kaizen",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/kaizen"
-        },
-        "code": "QOLUpd!",
-        "reward": "8 Lucky Clan Spins and 8 Binding Vows Spins",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791696169085,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T12:04:44.730Z",
-        "fetchedAt": "2026-10-13T12:04:44.730Z"
-      }
-    ],
-    "activeCount": 7,
-    "fetchedAt": "2026-10-13T12:04:44.730Z",
-    "displayCodes": [
-      {
-        "code": "QOLUpd!",
-        "reward": "8 Lucky Clan Spins and 8 Binding Vows Spins",
-        "isNew": true
-      },
-      {
-        "code": "GetoRaid",
-        "reward": "8 Lucky Clan Spins and 8 Binding Vow Spins",
-        "isNew": false
-      },
-      {
-        "code": "TodoDely",
-        "reward": "6 Lucky Clan Spins and 6 Binding Vows",
-        "isNew": false
-      },
-      {
-        "code": "TodoUpd!",
-        "reward": "10 Lucky Clan Spins and 10 Binding Vows",
-        "isNew": false
-      },
-      {
-        "code": "Unban!",
-        "reward": "5 Lucky Clan Spins and 5 Binding Vow Spins",
-        "isNew": false
-      },
-      {
-        "code": "TojiAwakens!",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "KaizenQuality!",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "QOLUpd!",
-        "reward": "8 Lucky Clan Spins and 8 Binding Vows Spins",
-        "isNew": true
-      },
-      {
-        "code": "GetoRaid",
-        "reward": "8 Lucky Clan Spins and 8 Binding Vow Spins",
-        "isNew": false
-      },
-      {
-        "code": "TodoDely",
-        "reward": "6 Lucky Clan Spins and 6 Binding Vows",
-        "isNew": false
-      },
-      {
-        "code": "TodoUpd!",
-        "reward": "10 Lucky Clan Spins and 10 Binding Vows",
-        "isNew": false
-      },
-      {
-        "code": "Unban!",
-        "reward": "5 Lucky Clan Spins and 5 Binding Vow Spins",
-        "isNew": false
-      },
-      {
-        "code": "TojiAwakens!",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "KaizenQuality!",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "TojiAwakens!",
-      "KaizenQuality!",
-      "QOLUpd!",
-      "GetoRaid",
-      "TodoDely",
-      "TodoUpd!",
-      "Unban!"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "anime-stars-card-collection",
-    "name": "Anime Stars Card Collection",
-    "displayName": "[🌸 NEW UPDATE] Anime Stars Card Collection",
-    "slug": "anime-stars-card-collection",
-    "players": 815,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 815,
-    "newCodes": [
-      {
-        "game": "anime-stars-card-collection",
-        "gameName": "Anime Stars Card Collection",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/anime-stars-card-collection"
-        },
-        "code": "CITRON",
-        "reward": null,
-        "date": "2026-10-12T13:50:53.662Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T14:02:28.292Z",
-        "fetchedAt": "2026-10-12T14:02:28.292Z"
-      },
-      {
-        "game": "anime-stars-card-collection",
-        "gameName": "Anime Stars Card Collection",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/anime-stars-card-collection"
-        },
-        "code": "33M",
-        "reward": null,
-        "date": "2026-10-12T13:50:52.469Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T14:02:28.292Z",
-        "fetchedAt": "2026-10-12T14:02:28.292Z"
-      }
-    ],
-    "activeCount": 27,
-    "fetchedAt": "2026-10-12T14:02:28.292Z",
-    "displayCodes": [
-      {
-        "code": "CITRON",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "33M",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "FAKEOUT",
-        "reward": "1 Chibi Chest",
-        "isNew": false
-      },
-      {
-        "code": "32M",
-        "reward": "1 Grade Z Token, 5 Clan Tokens, and 300 Grade Tokens",
-        "isNew": false
-      },
-      {
-        "code": "EXCLUSIVE",
-        "reward": "1 Chibi Chest",
-        "isNew": false
-      },
-      {
-        "code": "31M",
-        "reward": "1 Grade Z Token, 5 Clan Tokens, and 300 Grade Tokens",
-        "isNew": false
-      },
-      {
-        "code": "NEWCHEST",
-        "reward": "1 Chibi Chest",
-        "isNew": false
-      },
-      {
-        "code": "30M",
-        "reward": "1 Grade Z Token, 5 Clan Tokens and 300 Grade Tokens",
-        "isNew": false
-      },
-      {
-        "code": "CASOB",
-        "reward": "3 Aquarius Princess Packs",
-        "isNew": false
-      },
-      {
-        "code": "29M",
-        "reward": "1 Grade Z Token, 1 Aquarius Token, 2 Relic Chest",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "CITRON",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "33M",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "FAKEOUT",
-        "reward": "1 Chibi Chest",
-        "isNew": false
-      },
-      {
-        "code": "32M",
-        "reward": "1 Grade Z Token, 5 Clan Tokens, and 300 Grade Tokens",
-        "isNew": false
-      },
-      {
-        "code": "EXCLUSIVE",
-        "reward": "1 Chibi Chest",
-        "isNew": false
-      },
-      {
-        "code": "31M",
-        "reward": "1 Grade Z Token, 5 Clan Tokens, and 300 Grade Tokens",
-        "isNew": false
-      },
-      {
-        "code": "NEWCHEST",
-        "reward": "1 Chibi Chest",
-        "isNew": false
-      },
-      {
-        "code": "30M",
-        "reward": "1 Grade Z Token, 5 Clan Tokens and 300 Grade Tokens",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "CITRON",
-      "33M",
-      "FAKEOUT",
-      "32M",
-      "NEWCHEST",
-      "30M",
-      "CASOB",
-      "29M",
-      "1000HR",
-      "GOLDRUSH",
-      "SECRET",
-      "ALEX100",
-      "456",
-      "PVP",
-      "INFINITY",
-      "26M",
-      "CASEYBDAY",
-      "25M",
-      "NEWXP",
-      "24M",
-      "BEYONDZ",
-      "22M",
-      "RIPBEYOND",
-      "SABERLIFEBDAY",
-      "17M",
-      "EXCLUSIVE",
-      "31M"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "project-baki-3",
-    "name": "Project Baki 3",
-    "displayName": "[🐦‍⬛HALLOWEEN PART 2] Project Baki",
-    "slug": "project-baki-3",
-    "players": 548,
-    "redeemNote": {
-      "en": "To use codes in Project Baki 3, you must first join the Project Baki Roblox Community.",
-      "links": [
-        {
-          "label": "Project Baki Roblox Community",
-          "url": "https://www.roblox.com/communities/4626791/Project-Baki#!/about"
-        }
-      ],
-      "kind": "syarat"
-    },
-    "alias": null,
-    "rank": 548,
-    "newCodes": [
-      {
-        "game": "project-baki-3",
-        "gameName": "Project Baki 3",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/project-baki-3"
-        },
-        "code": "ITACHITIME",
-        "reward": null,
-        "date": "2026-10-12T14:33:42.910Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T15:03:02.787Z",
-        "fetchedAt": "2026-10-12T15:03:02.787Z"
-      }
-    ],
-    "activeCount": 16,
-    "fetchedAt": "2026-10-12T15:03:02.787Z",
-    "displayCodes": [
-      {
-        "code": "ITACHITIME",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "ELDENLORD",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "SOULSFOREVERYONE",
-        "reward": "30 Souls, 2M Yen and the Moon",
-        "isNew": false
-      },
-      {
-        "code": "SORRYFORHALLOWEENDELAY",
-        "reward": "2 Slasher Souls",
-        "isNew": false
-      },
-      {
-        "code": "HAPPYHALLOWEEN",
-        "reward": "2 Uroboros Reagents",
-        "isNew": false
-      },
-      {
-        "code": "SORRYFORTHEDATALOSS",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "ENJOYTHISCODE",
-        "reward": "1,000,000 Yen and 1 Valentine Essence",
-        "isNew": false
-      },
-      {
-        "code": "WTestersThankYouSoMuch",
-        "reward": "300 Summer Board Points, 4M Untradeable Yen and 300 Summer Points",
-        "isNew": false
-      },
-      {
-        "code": "FREEBALLZ",
-        "reward": "3 Dragon Balls",
-        "isNew": false
-      },
-      {
-        "code": "SAIYANWALK",
-        "reward": "1,000,000 Yen and a Quincy King Essence",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "ITACHITIME",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "ELDENLORD",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "SOULSFOREVERYONE",
-        "reward": "30 Souls, 2M Yen and the Moon",
-        "isNew": false
-      },
-      {
-        "code": "SORRYFORHALLOWEENDELAY",
-        "reward": "2 Slasher Souls",
-        "isNew": false
-      },
-      {
-        "code": "HAPPYHALLOWEEN",
-        "reward": "2 Uroboros Reagents",
-        "isNew": false
-      },
-      {
-        "code": "SORRYFORTHEDATALOSS",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "ENJOYTHISCODE",
-        "reward": "1,000,000 Yen and 1 Valentine Essence",
-        "isNew": false
-      },
-      {
-        "code": "WTestersThankYouSoMuch",
-        "reward": "300 Summer Board Points, 4M Untradeable Yen and 300 Summer Points",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "ITACHITIME",
-      "ELDENLORD",
-      "SOULSFOREVERYONE",
-      "SORRYFORHALLOWEENDELAY",
-      "HAPPYHALLOWEEN",
-      "SORRYFORTHEDATALOSS",
-      "ENJOYTHISCODE",
-      "WTestersThankYouSoMuch",
-      "FREEBALLZ",
-      "SAIYANWALK",
-      "DBZUPD1",
-      "DBZDELAY2",
-      "BAKIBALLZ",
-      "CELLSTYLEMAYBE",
-      "DBZDELAY",
-      "ILOVEYAKUZA"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "uma-racing",
-    "name": "Uma Racing",
-    "displayName": "[HISHI AMAZON + SKILL BUILDER] Uma Racing",
-    "slug": "uma-racing",
-    "players": 535,
-    "redeemNote": {
-      "en": "To use codes in Uma Racing, you must first join the Uma racing Roblox Community.",
-      "links": [
-        {
-          "label": "Uma racing Roblox Community",
-          "url": "https://www.roblox.com/communities/376874468/uma-racing-Community#!/about"
-        }
-      ],
-      "kind": "syarat"
-    },
-    "alias": null,
-    "rank": 535,
-    "newCodes": [
-      {
-        "game": "uma-racing",
-        "gameName": "Uma Racing",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/uma-racing"
-        },
-        "code": "HISHIAMAZONSTUFF",
-        "reward": null,
-        "date": "2026-10-12T13:51:15.239Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T14:02:28.292Z",
-        "fetchedAt": "2026-10-12T14:02:28.292Z"
-      },
-      {
-        "game": "uma-racing",
-        "gameName": "Uma Racing",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/uma-racing"
-        },
-        "code": "QOLAGAINNGL",
-        "reward": null,
-        "date": "2026-10-12T13:51:14.773Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T14:02:28.292Z",
-        "fetchedAt": "2026-10-12T14:02:28.292Z"
-      }
-    ],
-    "activeCount": 4,
-    "fetchedAt": "2026-10-12T14:02:28.292Z",
-    "displayCodes": [
-      {
-        "code": "HISHIAMAZONSTUFF",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "QOLAGAINNGL",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "QOLBIGGEST",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "OGURICAPMASTERY",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "HISHIAMAZONSTUFF",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "QOLAGAINNGL",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "QOLBIGGEST",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "OGURICAPMASTERY",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "HISHIAMAZONSTUFF",
-      "QOLAGAINNGL",
-      "QOLBIGGEST",
-      "OGURICAPMASTERY"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "nightfall",
-    "name": "Nightfall",
-    "displayName": "Nightfall",
-    "slug": "nightfall",
-    "players": 518,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 518,
-    "newCodes": [
-      {
-        "game": "nightfall",
-        "gameName": "Nightfall",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/nightfall"
-        },
-        "code": "DEADLY",
-        "reward": null,
-        "date": "2026-10-12T14:33:13.483Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T15:03:02.787Z",
-        "fetchedAt": "2026-10-12T15:03:02.787Z"
-      },
-      {
-        "game": "nightfall",
-        "gameName": "Nightfall",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/nightfall"
-        },
-        "code": "HOST",
-        "reward": null,
-        "date": "2026-10-12T14:33:13.069Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T15:03:02.787Z",
-        "fetchedAt": "2026-10-12T15:03:02.787Z"
-      },
-      {
-        "game": "nightfall",
-        "gameName": "Nightfall",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/nightfall"
-        },
-        "code": "NEWFERAL",
-        "reward": null,
-        "date": "2026-10-12T14:33:12.140Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T15:03:02.787Z",
-        "fetchedAt": "2026-10-12T15:03:02.787Z"
-      }
-    ],
-    "activeCount": 6,
-    "fetchedAt": "2026-10-12T15:03:02.787Z",
-    "displayCodes": [
-      {
-        "code": "DEADLY",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "HOST",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "NEWFERAL",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "SRYFORANOTHERDELAY",
-        "reward": "20 Cash",
-        "isNew": false
-      },
-      {
-        "code": "UPDATE",
-        "reward": "10 Cash",
-        "isNew": false
-      },
-      {
-        "code": "CHAPTER1",
-        "reward": "1 Revive",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "DEADLY",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "HOST",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "NEWFERAL",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "SRYFORANOTHERDELAY",
-        "reward": "20 Cash",
-        "isNew": false
-      },
-      {
-        "code": "UPDATE",
-        "reward": "10 Cash",
-        "isNew": false
-      },
-      {
-        "code": "CHAPTER1",
-        "reward": "1 Revive",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "DEADLY",
-      "HOST",
-      "NEWFERAL",
-      "SRYFORANOTHERDELAY",
-      "UPDATE",
-      "CHAPTER1"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "reaopg",
-    "name": "Re:AOPG",
-    "displayName": "[🐆 FINAL LEOPARD + x2 📈] Re:AOPG",
-    "slug": "reaopg",
-    "players": 448,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 448,
-    "newCodes": [
-      {
-        "game": "reaopg",
-        "gameName": "Re:AOPG",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/reaopg"
-        },
-        "code": "ReFinalLeopard",
-        "reward": "100M Beli, 10,000 Gems, and 3 Pones",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791885671920,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T13:11:00.286Z",
-        "fetchedAt": "2026-10-13T13:11:00.286Z"
-      },
-      {
-        "game": "reaopg",
-        "gameName": "Re:AOPG",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/reaopg"
-        },
-        "code": "FinalPhoenix",
-        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791885671920,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T13:11:00.286Z",
-        "fetchedAt": "2026-10-13T13:11:00.286Z"
-      },
-      {
-        "game": "reaopg",
-        "gameName": "Re:AOPG",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/reaopg"
-        },
-        "code": "BuddhaTime",
-        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791885671920,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T13:11:00.286Z",
-        "fetchedAt": "2026-10-13T13:11:00.286Z"
-      }
-    ],
-    "activeCount": 44,
-    "fetchedAt": "2026-10-13T13:11:00.286Z",
-    "displayCodes": [
-      {
-        "code": "ReFinalLeopard",
-        "reward": "100M Beli, 10,000 Gems, and 3 Pones",
-        "isNew": true
-      },
-      {
-        "code": "FinalPhoenix",
-        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
-        "isNew": true
-      },
-      {
-        "code": "BuddhaTime",
-        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
-        "isNew": true
-      },
-      {
-        "code": "FinalFlame!!",
-        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
-        "isNew": false
-      },
-      {
-        "code": "ShipRework",
-        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
-        "isNew": false
-      },
-      {
-        "code": "BoatReworkSoon!",
-        "reward": "50,000 Souls, 250M Beli, and 15,000 Gems",
-        "isNew": false
-      },
-      {
-        "code": "Poneglyphs",
-        "reward": "20 Poneglyphs",
-        "isNew": false
-      },
-      {
-        "code": "Yokoso!",
-        "reward": "100M Beli, 15K Gems, 10 Poneglyphs and Kyoka Suigetsu",
-        "isNew": false
-      },
-      {
-        "code": "Muken",
-        "reward": "150M Beli and 15K Gems",
-        "isNew": false
-      },
-      {
-        "code": "QOLTime",
-        "reward": "150M Beli, 10,000 Gems, and 10 Pones",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "ReFinalLeopard",
-        "reward": "100M Beli, 10,000 Gems, and 3 Pones",
-        "isNew": true
-      },
-      {
-        "code": "FinalPhoenix",
-        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
-        "isNew": true
-      },
-      {
-        "code": "BuddhaTime",
-        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
-        "isNew": true
-      },
-      {
-        "code": "FinalFlame!!",
-        "reward": "100M Beli, 4,000 Gems, and 2 Pones",
-        "isNew": false
-      },
-      {
-        "code": "ShipRework",
-        "reward": "200M Beli, 6,000 Gems, and 5 Pones",
-        "isNew": false
-      },
-      {
-        "code": "BoatReworkSoon!",
-        "reward": "50,000 Souls, 250M Beli, and 15,000 Gems",
-        "isNew": false
-      },
-      {
-        "code": "Poneglyphs",
-        "reward": "20 Poneglyphs",
-        "isNew": false
-      },
-      {
-        "code": "Yokoso!",
-        "reward": "100M Beli, 15K Gems, 10 Poneglyphs and Kyoka Suigetsu",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "ReFinalLeopard",
-      "FinalPhoenix",
-      "BuddhaTime",
-      "FinalFlame!!",
-      "ShipRework",
-      "BoatReworkSoon!",
-      "Poneglyphs",
-      "Yokoso!",
-      "Muken",
-      "QOLTime",
-      "Sea3IsBack!!",
-      "TheGreatRebalance",
-      "20KLikes!!",
-      "Sea3Soon",
-      "TheAlmighty",
-      "ReAOPG",
-      "ReAOPG2",
-      "ReAOPG3",
-      "Sorry4Balancing",
-      "5kLikes",
-      "2kInterested",
-      "3kInterested",
-      "ThousandYearWar",
-      "10KLIKES!!",
-      "SorryForDelay",
-      "2kLikes",
-      "1kActive",
-      "ReMultiverseSea",
-      "1Klikes",
-      "LimbusCompany!",
-      "LibraryOfRuina!",
-      "ProjectMoonHype!",
-      "E.G.O.",
-      "REALPUNK!!!",
-      "MagneticUpgrade",
-      "DBDAIMA!!!",
-      "PrimalSayian",
-      "SummerShop",
-      "WaterBreathing",
-      "Hi-no-Kokyu",
-      "InfiniteTower!",
-      "SuperWB",
-      "ReSea2",
-      "NewInventory"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "elemental-dungeons",
-    "name": "Elemental Dungeons",
-    "displayName": "[👾] Elemental Dungeons",
-    "slug": "elemental-dungeons",
-    "players": 353,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 353,
-    "newCodes": [
-      {
-        "game": "elemental-dungeons",
-        "gameName": "Elemental Dungeons",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/elemental-dungeons"
-        },
-        "code": "INVASION",
-        "reward": "250 Gems",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1791643444933,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-13T06:02:14.269Z",
-        "fetchedAt": "2026-10-13T06:02:14.269Z"
-      }
-    ],
-    "activeCount": 6,
-    "fetchedAt": "2026-10-13T06:02:14.269Z",
-    "displayCodes": [
-      {
-        "code": "INVASION",
-        "reward": "250 Gems",
-        "isNew": true
-      },
-      {
-        "code": "EARLYHALLOWEEN",
-        "reward": "Crimson Orb",
-        "isNew": false
-      },
-      {
-        "code": "BEATTHEHEAT",
-        "reward": "250 Beachballs",
-        "isNew": false
-      },
-      {
-        "code": "SUNVSMOON",
-        "reward": "200 Celestial Shards",
-        "isNew": false
-      },
-      {
-        "code": "SUMMERUPDATE",
-        "reward": "250 Gems",
-        "isNew": false
-      },
-      {
-        "code": "GALACTIC",
-        "reward": "Free Gems",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "INVASION",
-        "reward": "250 Gems",
-        "isNew": true
-      },
-      {
-        "code": "EARLYHALLOWEEN",
-        "reward": "Crimson Orb",
-        "isNew": false
-      },
-      {
-        "code": "BEATTHEHEAT",
-        "reward": "250 Beachballs",
-        "isNew": false
-      },
-      {
-        "code": "SUNVSMOON",
-        "reward": "200 Celestial Shards",
-        "isNew": false
-      },
-      {
-        "code": "SUMMERUPDATE",
-        "reward": "250 Gems",
-        "isNew": false
-      },
-      {
-        "code": "GALACTIC",
-        "reward": "Free Gems",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "INVASION",
-      "EARLYHALLOWEEN",
-      "BEATTHEHEAT",
-      "SUNVSMOON",
-      "SUMMERUPDATE",
-      "GALACTIC"
     ]
   }
 ]
