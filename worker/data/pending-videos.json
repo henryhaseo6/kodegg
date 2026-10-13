@@ -1,144 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "fish-an-anime-rng",
-    "name": "Fish an Anime RNG",
-    "displayName": "Fish an Anime RNG 🎲",
-    "slug": "fish-an-anime-rng",
-    "players": 3092,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 3092,
-    "newCodes": [
-      {
-        "code": "Marceline",
-        "reward": "Halloween Pack II"
-      },
-      {
-        "code": "Hallowi",
-        "reward": "Halloween Pack II"
-      }
-    ],
-    "activeCount": 19,
-    "fetchedAt": "2026-10-13T10:02:26.130Z",
-    "displayCodes": [
-      {
-        "code": "Marceline",
-        "reward": "Halloween Pack II",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "Halloween Pack II",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Incoming Mind Break",
-        "reward": "2 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Sad Ending",
-        "reward": "Potion Pack I",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "Marceline",
-        "reward": "Halloween Pack II",
-        "isNew": true
-      },
-      {
-        "code": "Hallowi",
-        "reward": "Halloween Pack II",
-        "isNew": true
-      },
-      {
-        "code": "Starfall",
-        "reward": "Free Gems and a Luck Potion",
-        "isNew": false
-      },
-      {
-        "code": "Luther",
-        "reward": "1 Potion Pack II",
-        "isNew": false
-      },
-      {
-        "code": "Halloween",
-        "reward": "Free Gems and Potion Packs",
-        "isNew": false
-      },
-      {
-        "code": "15MVISITS",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      },
-      {
-        "code": "Toxic Wasteland",
-        "reward": "5K Gems",
-        "isNew": false
-      },
-      {
-        "code": "Ink Spider",
-        "reward": "1 Potion Pack I",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "Marceline",
-      "Hallowi",
-      "Starfall",
-      "Luther",
-      "Halloween",
-      "15MVISITS",
-      "Toxic Wasteland",
-      "Ink Spider",
-      "Incoming Mind Break",
-      "Sad Ending",
-      "Lapis Hex",
-      "Cullen",
-      "Clan Update",
-      "20KMEMBERS",
-      "30KLIKES",
-      "THANKYOUEVERYONE",
-      "20KLIKES",
-      "10KMEMBERS",
-      "10KCCU"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "brainrot-evolution",
     "name": "Brainrot Evolution",
     "displayName": "Brainrot Evolution",
@@ -909,6 +771,42 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "the-forge",
+    "name": "The Forge",
+    "displayName": "The Forge [📜]",
+    "slug": "the-forge",
+    "players": 2093,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2093,
+    "newCodes": [
+      {
+        "code": "WAITFORHALLOWEEN",
+        "reward": "10 Class Rerolls"
+      }
+    ],
+    "activeCount": 1,
+    "fetchedAt": "2026-10-13T10:56:05.894Z",
+    "displayCodes": [
+      {
+        "code": "WAITFORHALLOWEEN",
+        "reward": "10 Class Rerolls",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "WAITFORHALLOWEEN",
+        "reward": "10 Class Rerolls",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "WAITFORHALLOWEEN"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "beat-the-anime-boss",
     "name": "Beat the Anime Boss",
     "displayName": "[🎃UPD] Beat the Anime Boss",
@@ -1187,6 +1085,144 @@
       "6.7MVISITS",
       "67KLIKES",
       "GIGANTICUPDATE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "it-girl",
+    "name": "IT GIRL",
+    "displayName": "IT GIRL 🏝️",
+    "slug": "it-girl",
+    "players": 2082,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2082,
+    "newCodes": [
+      {
+        "code": "HALLOWEEN26",
+        "reward": "1000 Diamonds"
+      }
+    ],
+    "activeCount": 23,
+    "fetchedAt": "2026-10-13T10:56:05.894Z",
+    "displayCodes": [
+      {
+        "code": "HALLOWEEN26",
+        "reward": "1000 Diamonds",
+        "isNew": true
+      },
+      {
+        "code": "HAPPY250M",
+        "reward": "1000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "AQUAMARINE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SORRY4THEDELAY",
+        "reward": "1,500 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "MILLIONMEMBERS",
+        "reward": "1 Million Group Members Set",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY200M",
+        "reward": "2000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "SWEETBUTEVIL",
+        "reward": "Freebies",
+        "isNew": false
+      },
+      {
+        "code": "SURPRISE",
+        "reward": "Freebies",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY150M",
+        "reward": "1500 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "S0SW33T",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "HALLOWEEN26",
+        "reward": "1000 Diamonds",
+        "isNew": true
+      },
+      {
+        "code": "HAPPY250M",
+        "reward": "1000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "AQUAMARINE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "SORRY4THEDELAY",
+        "reward": "1,500 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "MILLIONMEMBERS",
+        "reward": "1 Million Group Members Set",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY200M",
+        "reward": "2000 Diamonds",
+        "isNew": false
+      },
+      {
+        "code": "SWEETBUTEVIL",
+        "reward": "Freebies",
+        "isNew": false
+      },
+      {
+        "code": "SURPRISE",
+        "reward": "Freebies",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "HALLOWEEN26",
+      "HAPPY250M",
+      "AQUAMARINE",
+      "SORRY4THEDELAY",
+      "MILLIONMEMBERS",
+      "HAPPY200M",
+      "SWEETBUTEVIL",
+      "SURPRISE",
+      "HAPPY150M",
+      "S0SW33T",
+      "ITGIRLSORRY",
+      "ITGIRLWINTER",
+      "thank you diamonds",
+      "PH4NT0MM4X",
+      "TAVERSIA",
+      "RUPAULSD0LL",
+      "ITGIRL",
+      "TRICKORTREAT",
+      "HAPPY100M",
+      "MADDYAFKDRESS",
+      "AVASFX",
+      "LACROWN",
+      "MADDYAFK"
     ]
   },
   {
@@ -1664,6 +1700,190 @@
       "FREEREVIVE",
       "WELCOMEOPHELIA",
       "PAGEUPDATE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "resource-incremental",
+    "name": "Resource Incremental",
+    "displayName": "[🐻5M Event] 🔩 Resource Incremental",
+    "slug": "resource-incremental",
+    "players": 1450,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1450,
+    "newCodes": [
+      {
+        "game": "resource-incremental",
+        "gameName": "Resource Incremental",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/resource-incremental"
+        },
+        "code": "Update10",
+        "reward": "10 For All Potions",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791706692701,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T10:56:05.894Z",
+        "fetchedAt": "2026-10-13T10:56:05.894Z"
+      },
+      {
+        "game": "resource-incremental",
+        "gameName": "Resource Incremental",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/resource-incremental"
+        },
+        "code": "5MEvent",
+        "reward": "50 Tickets",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791706692701,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T10:56:05.894Z",
+        "fetchedAt": "2026-10-13T10:56:05.894Z"
+      }
+    ],
+    "activeCount": 33,
+    "fetchedAt": "2026-10-13T10:56:05.894Z",
+    "displayCodes": [
+      {
+        "code": "Update10",
+        "reward": "10 For All Potions",
+        "isNew": true
+      },
+      {
+        "code": "5MEvent",
+        "reward": "50 Tickets",
+        "isNew": true
+      },
+      {
+        "code": "Update9",
+        "reward": "5x All Potions",
+        "isNew": false
+      },
+      {
+        "code": "World3Soon",
+        "reward": "50x Tickets",
+        "isNew": false
+      },
+      {
+        "code": "superminiupdatecode",
+        "reward": "5 All Potions",
+        "isNew": false
+      },
+      {
+        "code": "cashbug",
+        "reward": "100 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "Update8",
+        "reward": "5 All Potions",
+        "isNew": false
+      },
+      {
+        "code": "MathIsEasy",
+        "reward": "50 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "Update7",
+        "reward": "3 All Potions",
+        "isNew": false
+      },
+      {
+        "code": "SuperSecretRunes",
+        "reward": "50 Tickets",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "Update10",
+        "reward": "10 For All Potions",
+        "isNew": true
+      },
+      {
+        "code": "5MEvent",
+        "reward": "50 Tickets",
+        "isNew": true
+      },
+      {
+        "code": "Update9",
+        "reward": "5x All Potions",
+        "isNew": false
+      },
+      {
+        "code": "World3Soon",
+        "reward": "50x Tickets",
+        "isNew": false
+      },
+      {
+        "code": "superminiupdatecode",
+        "reward": "5 All Potions",
+        "isNew": false
+      },
+      {
+        "code": "cashbug",
+        "reward": "100 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "Update8",
+        "reward": "5 All Potions",
+        "isNew": false
+      },
+      {
+        "code": "MathIsEasy",
+        "reward": "50 Tickets",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "Update9",
+      "World3Soon",
+      "superminiupdatecode",
+      "cashbug",
+      "Update7",
+      "SuperSecretRunes",
+      "Rarities",
+      "Update6",
+      "World2",
+      "Update5",
+      "1MVisits",
+      "10KLikes",
+      "5KLikes",
+      "2500ccu",
+      "100KVisits",
+      "SummerEvent",
+      "Update1",
+      "100Likes",
+      "Release",
+      "Update10",
+      "5MEvent",
+      "Update8",
+      "MathIsEasy",
+      "gymbronice",
+      "okgetthepotions",
+      "freecashpot23",
+      "moreshrineluck321",
+      "morecashmulti67",
+      "sandcastlewowo",
+      "niceboat",
+      "freeshellslol",
+      "nicecoconutpalm",
+      "500KVisits"
     ]
   },
   {
