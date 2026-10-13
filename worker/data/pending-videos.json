@@ -1,178 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "catch-and-tame",
-    "name": "Catch And Tame",
-    "displayName": "[🏢] Catch And Tame!",
-    "slug": "catch-and-tame",
-    "players": 2743,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 2743,
-    "newCodes": [
-      {
-        "code": "KAIJUEVENT",
-        "reward": ""
-      }
-    ],
-    "activeCount": 4,
-    "fetchedAt": "2026-10-12T15:03:02.787Z",
-    "displayCodes": [
-      {
-        "code": "KAIJUEVENT",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "LUNAREVENT",
-        "reward": "10 Lunar Pies",
-        "isNew": false
-      },
-      {
-        "code": "FORGOTTENFARM",
-        "reward": "5 Minigames Tickets",
-        "isNew": false
-      },
-      {
-        "code": "TOYISLAND",
-        "reward": "10 Toy Cookies",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "KAIJUEVENT",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "LUNAREVENT",
-        "reward": "10 Lunar Pies",
-        "isNew": false
-      },
-      {
-        "code": "FORGOTTENFARM",
-        "reward": "5 Minigames Tickets",
-        "isNew": false
-      },
-      {
-        "code": "TOYISLAND",
-        "reward": "10 Toy Cookies",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "KAIJUEVENT",
-      "LUNAREVENT",
-      "FORGOTTENFARM",
-      "TOYISLAND"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "race-for-eggs",
-    "name": "Race for Eggs",
-    "displayName": "Race for Eggs",
-    "slug": "race-for-eggs",
-    "players": 2694,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 2694,
-    "newCodes": [
-      {
-        "code": "UPD3",
-        "reward": "Cash Potion"
-      },
-      {
-        "code": "UPD2",
-        "reward": "Cash Potion"
-      },
-      {
-        "code": "UPD1",
-        "reward": "Cash Potion"
-      },
-      {
-        "code": "RELEASE",
-        "reward": "Lizard"
-      }
-    ],
-    "activeCount": 6,
-    "fetchedAt": "2026-10-12T22:02:07.934Z",
-    "displayCodes": [
-      {
-        "code": "UPD3",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "UPD2",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "UPD1",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "RELEASE",
-        "reward": "Lizard",
-        "isNew": true
-      },
-      {
-        "code": "TRAIN1",
-        "reward": "Train Potion",
-        "isNew": false
-      },
-      {
-        "code": "LUCK1",
-        "reward": "Luck Potion",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "UPD3",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "UPD2",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "UPD1",
-        "reward": "Cash Potion",
-        "isNew": true
-      },
-      {
-        "code": "RELEASE",
-        "reward": "Lizard",
-        "isNew": true
-      },
-      {
-        "code": "TRAIN1",
-        "reward": "Train Potion",
-        "isNew": false
-      },
-      {
-        "code": "LUCK1",
-        "reward": "Luck Potion",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "UPD3",
-      "UPD2",
-      "UPD1",
-      "RELEASE",
-      "TRAIN1",
-      "LUCK1"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "brainrot-evolution",
     "name": "Brainrot Evolution",
     "displayName": "Brainrot Evolution",
@@ -903,6 +731,42 @@
       "THESTORMISAPPROACHING",
       "SOUL",
       "COPYCAT"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "country-battles",
+    "name": "Country Battles",
+    "displayName": "Country Battles 🥊💪",
+    "slug": "country-battles",
+    "players": 2235,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2235,
+    "newCodes": [
+      {
+        "code": "COUNTRY",
+        "reward": "Double Boosts (15 minutes)"
+      }
+    ],
+    "activeCount": 1,
+    "fetchedAt": "2026-10-13T06:02:14.269Z",
+    "displayCodes": [
+      {
+        "code": "COUNTRY",
+        "reward": "Double Boosts (15 minutes)",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "COUNTRY",
+        "reward": "Double Boosts (15 minutes)",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "COUNTRY"
     ]
   },
   {
@@ -3082,6 +2946,113 @@
       "SRYFORANOTHERDELAY",
       "UPDATE",
       "CHAPTER1"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "elemental-dungeons",
+    "name": "Elemental Dungeons",
+    "displayName": "[👾] Elemental Dungeons",
+    "slug": "elemental-dungeons",
+    "players": 353,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 353,
+    "newCodes": [
+      {
+        "game": "elemental-dungeons",
+        "gameName": "Elemental Dungeons",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/elemental-dungeons"
+        },
+        "code": "INVASION",
+        "reward": "250 Gems",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791643444933,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T06:02:14.269Z",
+        "fetchedAt": "2026-10-13T06:02:14.269Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-10-13T06:02:14.269Z",
+    "displayCodes": [
+      {
+        "code": "INVASION",
+        "reward": "250 Gems",
+        "isNew": true
+      },
+      {
+        "code": "EARLYHALLOWEEN",
+        "reward": "Crimson Orb",
+        "isNew": false
+      },
+      {
+        "code": "BEATTHEHEAT",
+        "reward": "250 Beachballs",
+        "isNew": false
+      },
+      {
+        "code": "SUNVSMOON",
+        "reward": "200 Celestial Shards",
+        "isNew": false
+      },
+      {
+        "code": "SUMMERUPDATE",
+        "reward": "250 Gems",
+        "isNew": false
+      },
+      {
+        "code": "GALACTIC",
+        "reward": "Free Gems",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "INVASION",
+        "reward": "250 Gems",
+        "isNew": true
+      },
+      {
+        "code": "EARLYHALLOWEEN",
+        "reward": "Crimson Orb",
+        "isNew": false
+      },
+      {
+        "code": "BEATTHEHEAT",
+        "reward": "250 Beachballs",
+        "isNew": false
+      },
+      {
+        "code": "SUNVSMOON",
+        "reward": "200 Celestial Shards",
+        "isNew": false
+      },
+      {
+        "code": "SUMMERUPDATE",
+        "reward": "250 Gems",
+        "isNew": false
+      },
+      {
+        "code": "GALACTIC",
+        "reward": "Free Gems",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "INVASION",
+      "EARLYHALLOWEEN",
+      "BEATTHEHEAT",
+      "SUNVSMOON",
+      "SUMMERUPDATE",
+      "GALACTIC"
     ]
   },
   {
