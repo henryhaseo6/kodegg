@@ -1,126 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "junk-mechanics",
-    "name": "Junk Mechanics",
-    "displayName": "[UPD] Junk Mechanics",
-    "slug": "junk-mechanics",
-    "players": 4717,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 4717,
-    "newCodes": [
-      {
-        "code": "HALLOWS",
-        "reward": "80,000 Cash"
-      },
-      {
-        "code": "TRICKORTREAT",
-        "reward": ""
-      }
-    ],
-    "activeCount": 3,
-    "fetchedAt": "2026-10-13T13:11:00.286Z",
-    "displayCodes": [
-      {
-        "code": "HALLOWS",
-        "reward": "80,000 Cash",
-        "isNew": true
-      },
-      {
-        "code": "TRICKORTREAT",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "WEBROKETHEGAMEAGAIN",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "HALLOWS",
-        "reward": "80,000 Cash",
-        "isNew": true
-      },
-      {
-        "code": "TRICKORTREAT",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "WEBROKETHEGAMEAGAIN",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "HALLOWS",
-      "TRICKORTREAT",
-      "WEBROKETHEGAMEAGAIN"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "heroes-battlegrounds",
-    "name": "Heroes Battlegrounds",
-    "displayName": "Heroes Battlegrounds",
-    "slug": "heroes-battlegrounds",
-    "players": 4305,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 4305,
-    "newCodes": [
-      {
-        "code": "!code RANKEDREWORKSOON",
-        "reward": ""
-      }
-    ],
-    "activeCount": 3,
-    "fetchedAt": "2026-10-13T13:11:00.286Z",
-    "displayCodes": [
-      {
-        "code": "!code RANKEDREWORKSOON",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "EXPLOSIONHEROMASTERYRELEASE",
-        "reward": "5 Mastery Progress",
-        "isNew": false
-      },
-      {
-        "code": "WELOVEDELAYSITHINK",
-        "reward": "3 Free Emotes",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "!code RANKEDREWORKSOON",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "EXPLOSIONHEROMASTERYRELEASE",
-        "reward": "5 Mastery Progress",
-        "isNew": false
-      },
-      {
-        "code": "WELOVEDELAYSITHINK",
-        "reward": "3 Free Emotes",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "!code RANKEDREWORKSOON",
-      "EXPLOSIONHEROMASTERYRELEASE",
-      "WELOVEDELAYSITHINK"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "defeat-anime-rng",
     "name": "Defeat Anime RNG",
     "displayName": "[UPD 8] Defeat Anime RNG",
@@ -546,6 +426,151 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "dragon-generations",
+    "name": "Dragon Generations",
+    "displayName": "[PATH 2 & MOBILE] Dragon Generations",
+    "slug": "dragon-generations",
+    "players": 3126,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3126,
+    "newCodes": [
+      {
+        "game": "dragon-generations",
+        "gameName": "Dragon Generations",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/dragon-generations"
+        },
+        "code": "BadBalancingSorry",
+        "reward": "50 Mastery Points",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791703895278,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T14:06:33.298Z",
+        "fetchedAt": "2026-10-13T14:06:33.298Z"
+      },
+      {
+        "game": "dragon-generations",
+        "gameName": "Dragon Generations",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/dragon-generations"
+        },
+        "code": "BOJACKRESET",
+        "reward": "Reset Path Progress for Bojacks",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791703895278,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T14:06:33.298Z",
+        "fetchedAt": "2026-10-13T14:06:33.298Z"
+      },
+      {
+        "game": "dragon-generations",
+        "gameName": "Dragon Generations",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/dragon-generations"
+        },
+        "code": "MAJINRESET",
+        "reward": "Reset Path Progress for Majins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791703895278,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T14:06:33.298Z",
+        "fetchedAt": "2026-10-13T14:06:33.298Z"
+      },
+      {
+        "game": "dragon-generations",
+        "gameName": "Dragon Generations",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/dragon-generations"
+        },
+        "code": "PATHSPART2CCPLS",
+        "reward": "Free Character Redesign",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791703895278,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T14:06:33.298Z",
+        "fetchedAt": "2026-10-13T14:06:33.298Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-10-13T14:06:33.298Z",
+    "displayCodes": [
+      {
+        "code": "BadBalancingSorry",
+        "reward": "50 Mastery Points",
+        "isNew": true
+      },
+      {
+        "code": "BOJACKRESET",
+        "reward": "Reset Path Progress for Bojacks",
+        "isNew": true
+      },
+      {
+        "code": "MAJINRESET",
+        "reward": "Reset Path Progress for Majins",
+        "isNew": true
+      },
+      {
+        "code": "PATHSPART2CCPLS",
+        "reward": "Free Character Redesign",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "BadBalancingSorry",
+        "reward": "50 Mastery Points",
+        "isNew": true
+      },
+      {
+        "code": "BOJACKRESET",
+        "reward": "Reset Path Progress for Bojacks",
+        "isNew": true
+      },
+      {
+        "code": "MAJINRESET",
+        "reward": "Reset Path Progress for Majins",
+        "isNew": true
+      },
+      {
+        "code": "PATHSPART2CCPLS",
+        "reward": "Free Character Redesign",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "BadBalancingSorry",
+      "BOJACKRESET",
+      "MAJINRESET",
+      "PATHSPART2CCPLS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "immortality-incremental",
     "name": "Immortality Incremental",
     "displayName": "[🧪 WORLD 9 PT. 2] Immortality Incremental",
@@ -648,6 +673,113 @@
       "WORLD9PT1",
       "WORLD8PT2",
       "HARDTRAINING"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "survive-the-swarm",
+    "name": "Survive the Swarm",
+    "displayName": "Survive The Swarm [CLASS COMBAT]",
+    "slug": "survive-the-swarm",
+    "players": 2677,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2677,
+    "newCodes": [
+      {
+        "game": "survive-the-swarm",
+        "gameName": "Survive the Swarm",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/survive-the-swarm"
+        },
+        "code": "10MIL",
+        "reward": "2,470,000 Coins, 50 Essence, and 2 Gilded Eggs",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791725652646,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T14:06:33.298Z",
+        "fetchedAt": "2026-10-13T14:06:33.298Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-10-13T14:06:33.298Z",
+    "displayCodes": [
+      {
+        "code": "10MIL",
+        "reward": "2,470,000 Coins, 50 Essence, and 2 Gilded Eggs",
+        "isNew": true
+      },
+      {
+        "code": "ABILITIESHYPE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "KUROGANE",
+        "reward": "773,810 Coins, 25 Essence, and 1 Gilded Egg",
+        "isNew": false
+      },
+      {
+        "code": "HYPETMRW",
+        "reward": "1,430,000 Coins, 25 Essence, and a Gilded Egg",
+        "isNew": false
+      },
+      {
+        "code": "CLASSES",
+        "reward": "25 Essence, 1.23M Coins",
+        "isNew": false
+      },
+      {
+        "code": "LAUNCH",
+        "reward": "25 Essence, 61.65K Coins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "10MIL",
+        "reward": "2,470,000 Coins, 50 Essence, and 2 Gilded Eggs",
+        "isNew": true
+      },
+      {
+        "code": "ABILITIESHYPE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "KUROGANE",
+        "reward": "773,810 Coins, 25 Essence, and 1 Gilded Egg",
+        "isNew": false
+      },
+      {
+        "code": "HYPETMRW",
+        "reward": "1,430,000 Coins, 25 Essence, and a Gilded Egg",
+        "isNew": false
+      },
+      {
+        "code": "CLASSES",
+        "reward": "25 Essence, 1.23M Coins",
+        "isNew": false
+      },
+      {
+        "code": "LAUNCH",
+        "reward": "25 Essence, 61.65K Coins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "CLASSES",
+      "LAUNCH",
+      "10MIL",
+      "ABILITIESHYPE",
+      "KUROGANE",
+      "HYPETMRW"
     ]
   },
   {
@@ -2850,6 +2982,156 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "jailbird",
+    "name": "Jailbird",
+    "displayName": "[🎥REPLAY] Jailbird",
+    "slug": "jailbird",
+    "players": 1179,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1179,
+    "newCodes": [
+      {
+        "game": "jailbird",
+        "gameName": "Jailbird",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/jailbird"
+        },
+        "code": "DEV_CONSOLE",
+        "reward": "Codebase Set",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1791749856942,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-10-13T14:06:33.298Z",
+        "fetchedAt": "2026-10-13T14:06:33.298Z"
+      }
+    ],
+    "activeCount": 19,
+    "fetchedAt": "2026-10-13T14:06:33.298Z",
+    "displayCodes": [
+      {
+        "code": "DEV_CONSOLE",
+        "reward": "Codebase Set",
+        "isNew": true
+      },
+      {
+        "code": "OPTIMISATION",
+        "reward": "1 Elite Crate",
+        "isNew": false
+      },
+      {
+        "code": "Skirmish",
+        "reward": "Vault Crate",
+        "isNew": false
+      },
+      {
+        "code": "Sorrydelayskirmish",
+        "reward": "Cosmos Crate",
+        "isNew": false
+      },
+      {
+        "code": "Cargo",
+        "reward": "Vault Crate",
+        "isNew": false
+      },
+      {
+        "code": "REPLAYJAILBIRD",
+        "reward": "1 Locker Crate",
+        "isNew": false
+      },
+      {
+        "code": "JAILBIRDELITE",
+        "reward": "1 Elite Crate",
+        "isNew": false
+      },
+      {
+        "code": "MIRAGON",
+        "reward": "1 Elite Crate",
+        "isNew": false
+      },
+      {
+        "code": "SMILEYOVERHAUL",
+        "reward": "1 Exp Booster and 1 Cash Booster",
+        "isNew": false
+      },
+      {
+        "code": "JAILBIRDIANS",
+        "reward": "1,000 Cash and 1 Crimson Crate",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "DEV_CONSOLE",
+        "reward": "Codebase Set",
+        "isNew": true
+      },
+      {
+        "code": "OPTIMISATION",
+        "reward": "1 Elite Crate",
+        "isNew": false
+      },
+      {
+        "code": "Skirmish",
+        "reward": "Vault Crate",
+        "isNew": false
+      },
+      {
+        "code": "Sorrydelayskirmish",
+        "reward": "Cosmos Crate",
+        "isNew": false
+      },
+      {
+        "code": "Cargo",
+        "reward": "Vault Crate",
+        "isNew": false
+      },
+      {
+        "code": "REPLAYJAILBIRD",
+        "reward": "1 Locker Crate",
+        "isNew": false
+      },
+      {
+        "code": "JAILBIRDELITE",
+        "reward": "1 Elite Crate",
+        "isNew": false
+      },
+      {
+        "code": "MIRAGON",
+        "reward": "1 Elite Crate",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "DEV_CONSOLE",
+      "OPTIMISATION",
+      "Skirmish",
+      "Sorrydelayskirmish",
+      "Cargo",
+      "REPLAYJAILBIRD",
+      "JAILBIRDELITE",
+      "MIRAGON",
+      "SMILEYOVERHAUL",
+      "JAILBIRDIANS",
+      "NEWGUNSOUNDS",
+      "80KLIKESJAILBIRD",
+      "S5RELEASE",
+      "MADDERSYT",
+      "CHIVVEDYT",
+      "REMASTERED",
+      "JAILBIRD",
+      "JAILBIRDSTARTER",
+      "MADDERS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "clover-origins",
     "name": "Clover Origins",
     "displayName": "Clover Origins [🌑SHADOW MAGIC]",
@@ -4719,187 +5001,6 @@
       "SUNVSMOON",
       "SUMMERUPDATE",
       "GALACTIC"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
-    "id": "hunt-giant-fish",
-    "name": "Hunt Giant Fish",
-    "displayName": "[🏮MID AUTUMN UPD] Hunt Giant Fish",
-    "slug": "hunt-giant-fish",
-    "players": 310,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 310,
-    "newCodes": [
-      {
-        "game": "hunt-giant-fish",
-        "gameName": "Hunt Giant Fish",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/hunt-giant-fish"
-        },
-        "code": "LUNARDRAGON",
-        "reward": null,
-        "date": "2026-10-12T13:50:57.964Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T14:02:28.292Z",
-        "fetchedAt": "2026-10-12T14:02:28.292Z"
-      },
-      {
-        "game": "hunt-giant-fish",
-        "gameName": "Hunt Giant Fish",
-        "source": "RoCodes.gg",
-        "sources": [
-          "RoCodes.gg"
-        ],
-        "sourceUrls": {
-          "RoCodes.gg": "https://rocodes.gg/codes/hunt-giant-fish"
-        },
-        "code": "DRAGONMISSION",
-        "reward": null,
-        "date": "2026-10-12T13:50:57.377Z",
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-10-12T14:02:28.292Z",
-        "fetchedAt": "2026-10-12T14:02:28.292Z"
-      }
-    ],
-    "activeCount": 34,
-    "fetchedAt": "2026-10-12T14:02:28.292Z",
-    "displayCodes": [
-      {
-        "code": "LUNARDRAGON",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "DRAGONMISSION",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "MOONMISSION",
-        "reward": "a Pink Star Food Item and a VVIP Damage Potion",
-        "isNew": false
-      },
-      {
-        "code": "DRAGONRISE",
-        "reward": "10 Lucky Tickets, a 100% Crit Potion, and a VVIP Damage Potion",
-        "isNew": false
-      },
-      {
-        "code": "LAVAENDS",
-        "reward": "1 Pink Star Food Item and 1 VVIP Damage Potion",
-        "isNew": false
-      },
-      {
-        "code": "NAGAFINALE",
-        "reward": "5 Lucky Tickets and 1 100% Crit Potion",
-        "isNew": false
-      },
-      {
-        "code": "MAGMARISE",
-        "reward": "5 Lucky Tickets and 100% Crit Potion",
-        "isNew": false
-      },
-      {
-        "code": "FIRE50K",
-        "reward": "1 Pink Star Food and 1 VVIP Damage Potion",
-        "isNew": false
-      },
-      {
-        "code": "SIRENSONG",
-        "reward": "",
-        "isNew": false
-      },
-      {
-        "code": "FISH50KK",
-        "reward": "",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "LUNARDRAGON",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "DRAGONMISSION",
-        "reward": "",
-        "isNew": true
-      },
-      {
-        "code": "MOONMISSION",
-        "reward": "a Pink Star Food Item and a VVIP Damage Potion",
-        "isNew": false
-      },
-      {
-        "code": "DRAGONRISE",
-        "reward": "10 Lucky Tickets, a 100% Crit Potion, and a VVIP Damage Potion",
-        "isNew": false
-      },
-      {
-        "code": "LAVAENDS",
-        "reward": "1 Pink Star Food Item and 1 VVIP Damage Potion",
-        "isNew": false
-      },
-      {
-        "code": "NAGAFINALE",
-        "reward": "5 Lucky Tickets and 1 100% Crit Potion",
-        "isNew": false
-      },
-      {
-        "code": "MAGMARISE",
-        "reward": "5 Lucky Tickets and 100% Crit Potion",
-        "isNew": false
-      },
-      {
-        "code": "FIRE50K",
-        "reward": "1 Pink Star Food and 1 VVIP Damage Potion",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "LUNARDRAGON",
-      "DRAGONMISSION",
-      "MOONMISSION",
-      "DRAGONRISE",
-      "LAVAENDS",
-      "NAGAFINALE",
-      "MAGMARISE",
-      "FIRE50K",
-      "SIRENSONG",
-      "FISH50KK",
-      "PRISE50",
-      "LOSTCITY50K",
-      "ATLANTISRISES",
-      "OCTOMANIA",
-      "30KSUBMISSION",
-      "FISHCOLLECTIONREACH",
-      "CTHULHUMADNESS",
-      "DEEPSEA",
-      "10KCCU",
-      "5KCCU",
-      "LUNARLUCK",
-      "SPRINGUPDATE",
-      "HAPPYXMAS",
-      "1000LIKES",
-      "500LIKES",
-      "HUNTER999",
-      "100LIKES",
-      "FISH50K",
-      "CTHULHURISE",
-      "AATHANKYOU",
-      "SEADRAGON",
-      "10000LIKES",
-      "5000LIKES",
-      "NEWYEAR2026"
     ]
   }
 ]
