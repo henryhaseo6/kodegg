@@ -11896,7 +11896,7 @@
   "year": {
    "tulis": "Year",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-12",
+   "terakhir": "2026-10-15",
    "awal": true
   },
   "onwards": {
@@ -16300,7 +16300,7 @@
   "potential": {
    "tulis": "potential",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-03",
+   "terakhir": "2026-10-15",
    "awal": true
   },
   "hazards": {
@@ -22966,7 +22966,7 @@
   "potential": {
    "tulis": "potential",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-13",
+   "terakhir": "2026-10-15",
    "awal": true
   },
   "flight": {
@@ -25984,7 +25984,7 @@
   "natural": {
    "tulis": "natural",
    "pertama": 1786057644726,
-   "terakhir": "2026-10-03"
+   "terakhir": "2026-10-15"
   },
   "disaster": {
    "tulis": "disaster",
@@ -38202,7 +38202,7 @@
   "among": {
    "tulis": "Among",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-02",
+   "terakhir": "2026-10-15",
    "awal": true
   },
   "crewmates": {
@@ -40501,7 +40501,7 @@
   "natural": {
    "tulis": "Natural",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-03",
+   "terakhir": "2026-10-15",
    "awal": true
   },
   "flood": {
@@ -46754,7 +46754,7 @@
   "natural": {
    "tulis": "natural",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-03",
+   "terakhir": "2026-10-15",
    "awal": true
   },
   "spawns": {
@@ -47621,7 +47621,7 @@
   "potential": {
    "tulis": "potential",
    "pertama": 1785999727547,
-   "terakhir": "2026-10-13"
+   "terakhir": "2026-10-15"
   },
   "rely": {
    "tulis": "rely",
@@ -47908,7 +47908,7 @@
   "placing": {
    "tulis": "placing",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-03",
+   "terakhir": "2026-10-15",
    "awal": true
   },
   "grinder": {
@@ -53682,7 +53682,7 @@
   "among": {
    "tulis": "among",
    "pertama": 1786104162836,
-   "terakhir": "2026-10-02"
+   "terakhir": "2026-10-15"
   },
   "rule": {
    "tulis": "rule",
@@ -56094,7 +56094,7 @@
   "placing": {
    "tulis": "placing",
    "pertama": 1786695454025,
-   "terakhir": "2026-10-03"
+   "terakhir": "2026-10-15"
   },
   "installed": {
    "tulis": "installed",
@@ -56310,7 +56310,7 @@
   "year": {
    "tulis": "year",
    "pertama": 1786695454025,
-   "terakhir": "2026-10-12"
+   "terakhir": "2026-10-15"
   },
   "eyes": {
    "tulis": "eyes",
@@ -57545,7 +57545,7 @@
   "placing": {
    "tulis": "placing",
    "pertama": 1786695454025,
-   "terakhir": "2026-10-03"
+   "terakhir": "2026-10-15"
   },
   "plots": {
    "tulis": "plots",
@@ -70572,7 +70572,7 @@
   "among": {
    "tulis": "among",
    "pertama": 1789434244898,
-   "terakhir": "2026-10-02"
+   "terakhir": "2026-10-15"
   },
   "enthusiasts": {
    "tulis": "enthusiasts",
@@ -75599,6 +75599,21 @@
    "tulis": "potential",
    "pertama": 1791915304991,
    "terakhir": "2026-10-13"
+  },
+  "bloodthirsty": {
+   "tulis": "bloodthirsty",
+   "pertama": 1792098318547,
+   "terakhir": "2026-10-15"
+  },
+  "werewolf": {
+   "tulis": "werewolf",
+   "pertama": 1792098318547,
+   "terakhir": "2026-10-15"
+  },
+  "brutal": {
+   "tulis": "brutal",
+   "pertama": 1792098318547,
+   "terakhir": "2026-10-15"
   }
  },
  "steal-the-show": {
@@ -76871,6 +76886,11 @@
   "price": {
    "tulis": "price",
    "pertama": 1791839076364,
+   "terakhir": "2026-10-15"
+  },
+  "year": {
+   "tulis": "year",
+   "pertama": 1792098318547,
    "terakhir": "2026-10-15"
   }
  },
