@@ -1,11 +1,13 @@
 {
  "hari": "2026-10-16",
  "panggilan": {
-  "playlists.list": 180,
-  "videos.insert": 4,
-  "videos.list": 4,
-  "thumbnails.set": 4,
-  "playlistItems.list": 4,
-  "playlistItems.insert": 4
+  "playlists.list": 230,
+  "videos.insert": 8,
+  "videos.list": 8,
+  "thumbnails.set": 8,
+  "playlistItems.list": 6,
+  "playlistItems.insert": 9,
+  "playlists.update": 1,
+  "playlists.insert": 2
  }
 }

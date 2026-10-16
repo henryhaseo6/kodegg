@@ -1,5 +1,59 @@
 {
-  "generatedAt": "2026-10-16T16:02:12.639Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-10-16T17:02:45.268Z",
+  "codes": [
+    {
+      "game": "elevator-of-fun",
+      "gameName": "Elevator of Fun",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/elevator-of-fun"
+      },
+      "code": "PUMPKIN",
+      "reward": "50 Coins",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792108648120,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-16T17:02:45.268Z",
+      "fetchedAt": "2026-10-16T17:02:45.268Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "roblox-nuke-a-country",
+      "count": 2,
+      "fresh": [
+        {
+          "code": "ZEROHOUR",
+          "reward": "Free Cash & Rewards"
+        },
+        {
+          "code": "NUKE",
+          "reward": ""
+        }
+      ]
+    },
+    {
+      "game": "roblox-cat-battles",
+      "count": 3,
+      "fresh": [
+        {
+          "code": "CATS",
+          "reward": "150 Coins"
+        },
+        {
+          "code": "NEWGAME",
+          "reward": "250 Coins"
+        },
+        {
+          "code": "RELEASE",
+          "reward": "250 Coins"
+        }
+      ]
+    }
+  ]
 }
