@@ -38422,7 +38422,7 @@
   "media": {
    "tulis": "media",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-22",
+   "terakhir": "2026-10-16",
    "awal": true
   },
   "trailer": {
@@ -44590,14 +44590,14 @@
   "bbtd": {
    "tulis": "bbtd",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-15",
+   "terakhir": "2026-10-16",
    "awal": true,
    "sudahPunya": true
   },
   "announcement": {
    "tulis": "Announcement",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-15",
+   "terakhir": "2026-10-16",
    "awal": true
   },
   "italian": {
@@ -51598,7 +51598,7 @@
   "trainer": {
    "tulis": "trainer",
    "pertama": 1785999727547,
-   "terakhir": "2026-10-15"
+   "terakhir": "2026-10-16"
   }
  },
  "scp-roleplay": {
@@ -53310,7 +53310,7 @@
   "media": {
    "tulis": "media",
    "pertama": 1786079102878,
-   "terakhir": "2026-08-22"
+   "terakhir": "2026-10-16"
   },
   "microphone": {
    "tulis": "microphone",
@@ -63701,6 +63701,11 @@
    "tulis": "past",
    "pertama": 1788757488985,
    "terakhir": "2026-09-26"
+  },
+  "media": {
+   "tulis": "media",
+   "pertama": 1792112738634,
+   "terakhir": "2026-10-16"
   }
  },
  "rh2-the-journey": {
@@ -77453,6 +77458,28 @@
   "profiles": {
    "tulis": "profiles",
    "pertama": 1792065926377,
+   "terakhir": "2026-10-16"
+  }
+ },
+ "pixel-lineage": {
+  "terraria": {
+   "tulis": "terraria",
+   "pertama": 1792112738634,
+   "terakhir": "2026-10-16"
+  },
+  "roguelike": {
+   "tulis": "roguelike",
+   "pertama": 1792112738634,
+   "terakhir": "2026-10-16"
+  },
+  "breaking": {
+   "tulis": "breaking",
+   "pertama": 1792112738634,
+   "terakhir": "2026-10-16"
+  },
+  "earliest": {
+   "tulis": "earliest",
+   "pertama": 1792112738634,
    "terakhir": "2026-10-16"
   }
  }
