@@ -18050,6 +18050,11 @@
    "tulis": "Patch",
    "pertama": 1791702279920,
    "terakhir": "2026-10-17"
+  },
+  "reworks": {
+   "tulis": "Reworks",
+   "pertama": 1792263904563,
+   "terakhir": "2026-10-17"
   }
  },
  "racket-rivals": {
@@ -29914,7 +29919,7 @@
   "airport": {
    "tulis": "airport",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-09",
+   "terakhir": "2026-10-17",
    "awal": true
   },
   "landing": {
@@ -32211,6 +32216,11 @@
   "smoother": {
    "tulis": "smoother",
    "pertama": 1792253096993,
+   "terakhir": "2026-10-17"
+  },
+  "improved": {
+   "tulis": "Improved",
+   "pertama": 1792263904563,
    "terakhir": "2026-10-17"
   }
  },
@@ -38854,7 +38864,7 @@
   "reduced": {
    "tulis": "REDUCED",
    "pertama": 1788362338242,
-   "terakhir": "2026-09-05"
+   "terakhir": "2026-10-17"
   },
   "roride": {
    "tulis": "RORIDE",
@@ -38919,6 +38929,26 @@
   "stunt": {
    "tulis": "STUNT",
    "pertama": 1791043508448,
+   "terakhir": "2026-10-17"
+  },
+  "treating": {
+   "tulis": "TREATING",
+   "pertama": 1792263904563,
+   "terakhir": "2026-10-17"
+  },
+  "lt500": {
+   "tulis": "LT500",
+   "pertama": 1792263904563,
+   "terakhir": "2026-10-17"
+  },
+  "discounts": {
+   "tulis": "DISCOUNTS",
+   "pertama": 1792263904563,
+   "terakhir": "2026-10-17"
+  },
+  "cheaper": {
+   "tulis": "CHEAPER",
+   "pertama": 1792263904563,
    "terakhir": "2026-10-17"
   }
  },
@@ -41727,7 +41757,7 @@
   "optimization": {
    "tulis": "optimization",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-09",
+   "terakhir": "2026-10-17",
    "awal": true
   },
   "success": {
@@ -47997,7 +48027,7 @@
   "airport": {
    "tulis": "airport",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-09",
+   "terakhir": "2026-10-17",
    "awal": true,
    "sudahPunya": true
   },
@@ -57040,7 +57070,7 @@
   "homes": {
    "tulis": "Homes",
    "pertama": 1786695454025,
-   "terakhir": "2026-10-06"
+   "terakhir": "2026-10-17"
   },
   "attractions": {
    "tulis": "Attractions",
@@ -57060,7 +57090,7 @@
   "strollers": {
    "tulis": "Strollers",
    "pertama": 1791039921126,
-   "terakhir": "2026-10-09"
+   "terakhir": "2026-10-17"
   },
   "kids": {
    "tulis": "Kids",
@@ -57125,6 +57155,36 @@
   "host": {
    "tulis": "Host",
    "pertama": 1792166674357,
+   "terakhir": "2026-10-17"
+  },
+  "plates": {
+   "tulis": "Plates",
+   "pertama": 1792263904563,
+   "terakhir": "2026-10-17"
+  },
+  "jetpack": {
+   "tulis": "Jetpack",
+   "pertama": 1792263904563,
+   "terakhir": "2026-10-17"
+  },
+  "slots": {
+   "tulis": "Slots",
+   "pertama": 1792263904563,
+   "terakhir": "2026-10-17"
+  },
+  "mansions": {
+   "tulis": "mansions",
+   "pertama": 1792263904563,
+   "terakhir": "2026-10-17"
+  },
+  "unforgettable": {
+   "tulis": "unforgettable",
+   "pertama": 1792263904563,
+   "terakhir": "2026-10-17"
+  },
+  "memories": {
+   "tulis": "memories",
+   "pertama": 1792263904563,
    "terakhir": "2026-10-17"
   }
  },
@@ -64897,7 +64957,7 @@
   "optimization": {
    "tulis": "optimization",
    "pertama": 1787554980394,
-   "terakhir": "2026-10-09"
+   "terakhir": "2026-10-17"
   },
   "lower-end": {
    "tulis": "lower-end",
@@ -66909,7 +66969,7 @@
   "airport": {
    "tulis": "airport",
    "pertama": 1787841050167,
-   "terakhir": "2026-10-09"
+   "terakhir": "2026-10-17"
   },
   "guiding": {
    "tulis": "guiding",
@@ -75642,7 +75702,7 @@
   "optimization": {
    "tulis": "Optimization",
    "pertama": 1790694326685,
-   "terakhir": "2026-10-09",
+   "terakhir": "2026-10-17",
    "sudahPunya": true
   },
   "timedeliver": {
