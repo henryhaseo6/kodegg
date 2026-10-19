@@ -12613,6 +12613,11 @@
    "tulis": "categories",
    "pertama": 1792371877871,
    "terakhir": "2026-10-19"
+  },
+  "removed": {
+   "tulis": "removed",
+   "pertama": 1792422357581,
+   "terakhir": "2026-10-19"
   }
  },
  "daybreak": {
@@ -41858,7 +41863,7 @@
   "hook": {
    "tulis": "hook",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-15",
+   "terakhir": "2026-10-19",
    "awal": true
   },
   "harpoon": {
@@ -51572,7 +51577,7 @@
   "hook": {
    "tulis": "Hook",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-15",
+   "terakhir": "2026-10-19",
    "awal": true
   },
   "grapple": {
@@ -72734,7 +72739,7 @@
   "hook": {
    "tulis": "hook",
    "pertama": 1789607044645,
-   "terakhir": "2026-10-15"
+   "terakhir": "2026-10-19"
   },
   "unreel": {
    "tulis": "Unreel",
@@ -79057,6 +79062,33 @@
   "paddles": {
    "tulis": "paddles",
    "pertama": 1792242304820,
+   "terakhir": "2026-10-19"
+  }
+ },
+ "medved": {
+  "mutant": {
+   "tulis": "Mutant",
+   "pertama": 1792422357581,
+   "terakhir": "2026-10-19"
+  },
+  "bears": {
+   "tulis": "Bears",
+   "pertama": 1792422357581,
+   "terakhir": "2026-10-19"
+  },
+  "medveds": {
+   "tulis": "Medveds",
+   "pertama": 1792422357581,
+   "terakhir": "2026-10-19"
+  },
+  "snowy": {
+   "tulis": "snowy",
+   "pertama": 1792422357581,
+   "terakhir": "2026-10-19"
+  },
+  "bear": {
+   "tulis": "bear",
+   "pertama": 1792422357581,
    "terakhir": "2026-10-19"
   }
  }
