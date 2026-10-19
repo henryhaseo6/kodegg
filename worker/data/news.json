@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-19T05:02:38.064Z",
+  "updatedAt": "2026-10-19T06:02:38.198Z",
   "counts": {
-    "active": 104,
+    "active": 105,
     "archived": 160
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "V3.3 Limited-Time Channels (Phase I)",
+        "id": "FM Waktu Terbatas V3.3 (Tahap 1)"
+      },
+      "excerpt": {
+        "en": "Dear Proxies, The Agent and W-Engine Signal Search Event period is as follows: After the Version 3.3 Update – 2026/11/11 11:59 (server time). The Signal Search Event includes the f",
+        "id": "Dear Proxy: Waktu event Pencarian Sinyal W-Engine dan Agen Periode Ini: Setelah update V3.3 - 2026/11/11 11:59 (waktu server). Kontennya adalah sebagai berikut: \"Menuju Api Kehidup"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/0/7dbd2f9d91df40984726bb28b34b671b_3739691593154843676.jpeg",
+      "url": "https://www.hoyolab.com/article/47131668",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-19T06:00:08.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -86,22 +102,6 @@
       "publishedAt": "2026-10-18T04:30:04.000Z"
     },
     {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "✨North American Two-City Autumn Celebration Pop-Up✨",
-        "id": "✨North American Two-City Autumn Celebration Pop-Up✨"
-      },
-      "excerpt": {
-        "en": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles",
-        "id": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/4cd86c4a1b8aaf93790f79b0d65c99af_8827443909415084293.png",
-      "url": "https://www.hoyolab.com/article/47119920",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-18T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -114,6 +114,22 @@
       },
       "image": "https://vod-static.hoyolab.com/4/2026-10-18/transcoded/142110719304600670208_captions.0000000.jpg",
       "url": "https://www.hoyolab.com/article/47119919",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-18T04:00:04.000Z"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "✨North American Two-City Autumn Celebration Pop-Up✨",
+        "id": "✨North American Two-City Autumn Celebration Pop-Up✨"
+      },
+      "excerpt": {
+        "en": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles",
+        "id": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/4cd86c4a1b8aaf93790f79b0d65c99af_8827443909415084293.png",
+      "url": "https://www.hoyolab.com/article/47119920",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-18T04:00:04.000Z"
     },
