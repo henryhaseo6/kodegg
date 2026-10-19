@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-19T02:02:51.997Z",
+  "updatedAt": "2026-10-19T03:02:35.409Z",
   "counts": {
-    "active": 103,
+    "active": 104,
     "archived": 160
   },
   "articles": [
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "[Wallpaper] \"A Leaf Letter for Tomorrow\" Wallpaper Download",
+        "id": "[Wallpaper] A Leaf Letter for Tomorrow | Bagi-Bagi Wallpaper"
+      },
+      "excerpt": {
+        "en": "\"From that gentle soil grows the strength to break free from dreams one day. Go embrace the world, then caress the passing of time.\" Ai-chan hopes you love the wallpaper celebratin",
+        "id": "\"Dari tanah yang lembut itu, tumbuh kekuatan masa depan, membawa harapan untuk membebaskan diri dari dunia mimpi. Rangkullah dunia, dan sentuh lembut sang waktu.\" Semoga Kapten suk"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/9b9654cab7f1e4c33ad747f0bc9aecb1_6655206024902695775.png",
+      "url": "https://www.hoyolab.com/article/47130426",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-19T03:00:02.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -22,22 +38,6 @@
       "publishedAt": "2026-10-18T04:30:04.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Phoenix's outfits The Illness Called Life and Daydream Complex are coming soon!",
-        "id": "Phoenix's outfits The Illness Called Life and Daydream Complex are coming soon!"
-      },
-      "excerpt": {
-        "en": "",
-        "id": ""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-10-18/transcoded/142110719304600670208_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/47119919",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-18T04:00:04.000Z"
-    },
-    {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
       "title": {
@@ -50,6 +50,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/4cd86c4a1b8aaf93790f79b0d65c99af_8827443909415084293.png",
       "url": "https://www.hoyolab.com/article/47119920",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-18T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Phoenix's outfits The Illness Called Life and Daydream Complex are coming soon!",
+        "id": "Phoenix's outfits The Illness Called Life and Daydream Complex are coming soon!"
+      },
+      "excerpt": {
+        "en": "",
+        "id": ""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-10-18/transcoded/142110719304600670208_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/47119919",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-18T04:00:04.000Z"
     },
