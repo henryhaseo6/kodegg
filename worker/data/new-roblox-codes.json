@@ -1,28 +1,46 @@
 {
-  "generatedAt": "2026-10-21T01:02:20.474Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-10-21T02:02:09.340Z",
+  "codes": [
     {
-      "game": "make-rugs",
-      "count": 4,
-      "fresh": [
-        {
-          "code": "LUCKY",
-          "reward": "25 Lucky Rolls"
-        },
-        {
-          "code": "RESTART2",
-          "reward": "250 Cash, 10 Gems, 5 Tokens"
-        },
-        {
-          "code": "RESTART",
-          "reward": "500 Cash, 10 Tokens"
-        },
-        {
-          "code": "RUGS",
-          "reward": "500 Cash, 10 Gems, 10 Tokens"
-        }
-      ]
+      "game": "superhero-evolution",
+      "gameName": "Superhero Evolution",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/superhero-evolution"
+      },
+      "code": "WORLD11ISHERE",
+      "reward": "1 Admin Egg and 5x Win Boosts",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792458348825,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-21T02:02:09.340Z",
+      "fetchedAt": "2026-10-21T02:02:09.340Z"
+    },
+    {
+      "game": "superhero-evolution",
+      "gameName": "Superhero Evolution",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/superhero-evolution"
+      },
+      "code": "ESCAPETHEMAZE",
+      "reward": "5 Admin Eggs and 2x Candy Boosts",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792458348825,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-21T02:02:09.340Z",
+      "fetchedAt": "2026-10-21T02:02:09.340Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
