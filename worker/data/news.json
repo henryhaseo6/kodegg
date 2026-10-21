@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-21T09:02:15.718Z",
+  "updatedAt": "2026-10-21T10:02:42.764Z",
   "counts": {
-    "active": 109,
+    "active": 110,
     "archived": 166
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "[ZZZ × Discord] New Account Linking and Rich Presence Functions Now Available",
+        "id": "Pengumuman Perilisan Fitur Penghubungan Akun dan Rich Presence Baru ZZZ × Discord"
+      },
+      "excerpt": {
+        "en": "Dear Proxy, Zenless Zone Zero Version 3.3 now supports Discord account linking, along with the all-new Rich Presence functions for displaying your game status! After linking your a",
+        "id": "Dear Proxy: Zenless Zone Zero V3.3 kini mendukung fitur penghubungan akun Discord dan tampilan status game Rich Presence baru! Setelah menghubungkan akun, kamu tidak hanya bisa men"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/20/0/1cefc206074aa8c54e8c9cf21e3a462a_6450583642920372150.jpeg",
+      "url": "https://www.hoyolab.com/article/47154012",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-21T10:00:06.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -566,22 +582,6 @@
       "publishedAt": "2026-10-17T04:45:07.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Agent Mechanics Intro | Phoenix",
-        "id": "Pengenalan Mekanisme Agen | Phoenix"
-      },
-      "excerpt": {
-        "en": "The update is almost complete... Combat-related information for Phoenix has been recorded in the database. Key content analysis complete. Please take a look. \"Who's today's target ",
-        "id": "Update akan segera selesai... Informasi terkait pertarungan dari Agen Phoenix telah dicatat di database. Analisis informasi krusial telah selesai. Silakan diperiksa! \"Siapa target "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/16/0/f4d24700ca1672d865c05b2113f2e80d_4663463106656207114.jpeg",
-      "url": "https://www.hoyolab.com/article/47109390",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-17T04:30:09.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -820,6 +820,22 @@
       "url": "https://www.hoyolab.com/article/47065882",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-13T03:00:03.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Resonator Review | Radiant Spectrum — Lynae",
+        "id": "Resonator Review | Radiant Spectrum — Lynae"
+      },
+      "excerpt": {
+        "en": "A Startorch Academy prep student whose head-turning, electric style hides an inner focus as explosive as a coiled spring.",
+        "id": "A Startorch Academy prep student whose head-turning, electric style hides an inner focus as explosive as a coiled spring."
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1792166400000/qmxeklhslwrv9x47n7-1792207724518.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5616",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-10-12T12:08:28.000Z"
     },
     {
       "game": "wuwa",
