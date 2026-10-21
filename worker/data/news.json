@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-10-21T04:02:06.768Z",
+  "updatedAt": "2026-10-21T05:02:27.279Z",
   "counts": {
-    "active": 110,
-    "archived": 165
+    "active": 109,
+    "archived": 166
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact \"A Lyght of the Mone for Thee\" EP Album Now Available",
+        "id": "Mini Album Genshin Impact \"A Lyght of the Mone for Thee\" Resmi Dirilis"
+      },
+      "excerpt": {
+        "en": "Dear Traveler, Genshin Impact's \"A Lyght of the Mone for Thee\" EP Album is now available. You can go to the following platforms to listen to the full EP track. Spotify Apple Music ",
+        "id": "Dear Traveler, Mini Album Genshin Impact \"A Lyght of the Mone for Thee\" resmi dirilis. Traveler dapat mengunjungi platform berikut untuk mendengarkan mini albumnya. Spotify Apple M"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/21/53882d12a3aa0f6cfaedf20ad260b8c1_5471982407221077143.jpg",
+      "url": "https://www.hoyolab.com/article/47151515",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-21T05:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Spooky Funhouse Tales\" Event Details",
+        "id": "Penjelasan Event \"Teror di Rumah Misterius\""
+      },
+      "excerpt": {
+        "en": "No UFO Without Mischief. Haunted House Challenge Now Open! Hey there, Proxies! This time, we're bringing you all the details on Version 3.3's themed event \"Spooky Funhouse Tales.\" ",
+        "id": "Saatnya UFO Berulah! Tantangan Rumah Berhantu Dibuka! Halo, Proxy! Kali ini kami akan memperkenalkan event tema \"Teror di Rumah Misterius\" V3.3. Mari kita lihat bersama!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/20/0/35c5d44ffef4595e87d3ecb75c7998a7_6228162490432788147.jpeg",
+      "url": "https://www.hoyolab.com/article/47151263",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-21T04:30:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday Piper 丨 Sunset Cruising",
+        "id": "Selamat Ulang Tahun, Piper | Melaju Menembus Senja"
+      },
+      "excerpt": {
+        "en": "\"Presents? Lil ol' me is way past that age~\" \"There's no rush... Why not wait for the sun to go down first, and let lil ol' me catch a few more winks?\" \"After all, the young'uns ar",
+        "id": "\"Hadiah? Aku sudah terlalu tua untuk hal-hal begitu~\" \"Tidak perlu buru-buru. Biarkan mataharinya terbenam dulu, aku mau tidur sebentar lagi.\" \"Soalnya, anak-anak muda nanti pasti "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/20/0/45f310b4812046963bc1d7d6c6375032_2782678256293160548.png",
+      "url": "https://www.hoyolab.com/article/47151139",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-21T04:15:05.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -614,22 +662,6 @@
       "publishedAt": "2026-10-16T12:00:00.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "🎃 The Zenless Zone Zero Test of Courage is about to begin!",
-        "id": "🎃 Uji Nyali \"Zenless Zone Zero\" akan segera dimulai!"
-      },
-      "excerpt": {
-        "en": "Night falls over New Eridu, and strange things are quietly stirring... Proxies, are you ready to answer the call with bold and fantastical Zenless Zone Zero fan creations? Before t",
-        "id": "Malam di New Eridu kian larut, dan kejadian aneh diam-diam mulai terjadi... Para Proxy, sudah siap menjawab ajakan ini dengan karya kreatif Zenless Zone Zero yang menakjubkan? Sebe"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/16/0/586da3f40e45a714ad6c940b53fad766_7092864825718197798.png",
-      "url": "https://www.hoyolab.com/article/47101658",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-16T11:00:09.000Z"
-    },
-    {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
       "title": {
@@ -660,22 +692,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5644",
       "source": "Wuthering Waves",
       "publishedAt": "2026-10-16T08:19:24.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Random Play | Holographic Trial - Phoenix",
-        "id": "Random Play | Holographic Trial - Phoenix"
-      },
-      "excerpt": {
-        "en": "\"The ace arrives last — I've always wanted to say that.\"",
-        "id": "\"The ace arrives last — I've always wanted to say that.\""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-10-16/transcoded/142110700659724013568_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/47098364",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-16T04:30:02.000Z"
     },
     {
       "game": "gi",
@@ -870,22 +886,6 @@
       "publishedAt": "2026-10-12T09:30:28.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Data Bounty: Combat Simulation\" Event Details",
-        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
-        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
-      "url": "https://www.hoyolab.com/article/47055658",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-12T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -898,6 +898,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/10/ce8882d6b6007f109655148a27b26455_2717089125464101215.jpg",
       "url": "https://www.hoyolab.com/article/47055659",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-12T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Data Bounty: Combat Simulation\" Event Details",
+        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
+        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
+      "url": "https://www.hoyolab.com/article/47055658",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-12T04:00:06.000Z"
     },
@@ -1060,22 +1076,6 @@
       "url": "https://www.hoyolab.com/article/47030882",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-10T02:00:02.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Cutscene Animation: \"Death Abides No Reason\" | Genshin Impact",
-        "id": "Adegan Animasi \"Kematian Tak Mengenal Alasan\" | Genshin Impact"
-      },
-      "excerpt": {
-        "en": "One day, even death will rise to question the heavens, and the laws will be called to answer for their silence. She should have known that the power of death, and the truths that g",
-        "id": "Suatu hari nanti, bahkan kematian pun akan mempertanyakan langit, menuntut jawaban atas keheningan aturan yang ada. Seharusnya dia sudah tahu bahwa kekuatan dan alasan kematian tid"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/09/0/c48d1b082e98462a78f19a13932340ad_4798054316628394140.jpeg",
-      "url": "https://www.hoyolab.com/article/47019599",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-09T04:00:07.000Z"
     },
     {
       "game": "hsr",
@@ -1748,7 +1748,9 @@
       "url": "https://www.hoyolab.com/article/46791577",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-22T23:00:02.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1763,10 +1765,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/20/0/4addfec2aa735f0c2d16ae22af120045_6086901880462695770.png",
       "url": "https://www.hoyolab.com/article/46771839",
       "source": "HoYoLAB",
-      "publishedAt": "2026-09-21T04:30:04.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-21T04:30:04.000Z",
+      "archivedAt": "2026-10-21T05:02:27.279Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
