@@ -1,53 +1,78 @@
 {
-  "generatedAt": "2026-10-21T17:02:49.290Z",
+  "generatedAt": "2026-10-21T18:03:03.846Z",
   "codes": [
     {
-      "game": "evade",
-      "gameName": "Evade",
-      "source": "Roblox Den",
+      "game": "hunty-zombies",
+      "gameName": "Hunty Zombies",
+      "source": "RoCodes.gg",
       "sources": [
-        "Roblox Den"
+        "RoCodes.gg"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/evade"
+        "RoCodes.gg": "https://rocodes.gg/codes/hunty-zombies"
       },
-      "code": "iloveevade",
-      "reward": "15 Wisps",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1792458376164,
+      "code": "Gravedigger!",
+      "reward": null,
+      "date": "2026-10-21T18:00:36.361Z",
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-21T17:02:49.290Z",
-      "fetchedAt": "2026-10-21T17:02:49.290Z"
+      "firstSeenAt": "2026-10-21T18:03:03.846Z",
+      "fetchedAt": "2026-10-21T18:03:03.846Z"
+    },
+    {
+      "game": "hunty-zombies",
+      "gameName": "Hunty Zombies",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/hunty-zombies"
+      },
+      "code": "MidWeekUpdate!",
+      "reward": null,
+      "date": "2026-10-21T18:00:36.220Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-21T18:03:03.846Z",
+      "fetchedAt": "2026-10-21T18:03:03.846Z"
+    },
+    {
+      "game": "hunty-zombies",
+      "gameName": "Hunty Zombies",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/hunty-zombies"
+      },
+      "code": "Rebalance2.0!",
+      "reward": null,
+      "date": "2026-10-21T18:00:36.092Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-21T18:03:03.846Z",
+      "fetchedAt": "2026-10-21T18:03:03.846Z"
+    },
+    {
+      "game": "dream-car-collection",
+      "gameName": "Dream Car Collection",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/dream-car-collection"
+      },
+      "code": "INSTAGROW01",
+      "reward": null,
+      "date": "2026-10-21T17:16:02.672Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-21T18:03:03.846Z",
+      "fetchedAt": "2026-10-21T18:03:03.846Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "steal-animal-egg",
-      "count": 5,
-      "fresh": [
-        {
-          "code": "HASHTAGS",
-          "reward": "5 Cash Potions"
-        },
-        {
-          "code": "1MVISITS",
-          "reward": "Free Fanxys Egg"
-        },
-        {
-          "code": "ENDGAME",
-          "reward": "10 Minutes of Income"
-        },
-        {
-          "code": "RANDOMBAT",
-          "reward": "Random Bat"
-        },
-        {
-          "code": "DEMONIC",
-          "reward": "10 Minutes of Income"
-        }
-      ]
-    }
-  ]
+  "bulkGames": []
 }
