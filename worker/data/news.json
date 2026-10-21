@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T00:02:34.689Z",
+  "updatedAt": "2026-10-21T01:02:14.379Z",
   "counts": {
     "active": 110,
     "archived": 164
@@ -374,22 +374,6 @@
       "publishedAt": "2026-10-18T04:30:04.000Z"
     },
     {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "✨North American Two-City Autumn Celebration Pop-Up✨",
-        "id": "✨North American Two-City Autumn Celebration Pop-Up✨"
-      },
-      "excerpt": {
-        "en": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles",
-        "id": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/4cd86c4a1b8aaf93790f79b0d65c99af_8827443909415084293.png",
-      "url": "https://www.hoyolab.com/article/47119920",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-18T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -402,6 +386,22 @@
       },
       "image": "https://vod-static.hoyolab.com/4/2026-10-18/transcoded/142110719304600670208_captions.0000000.jpg",
       "url": "https://www.hoyolab.com/article/47119919",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-18T04:00:04.000Z"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "✨North American Two-City Autumn Celebration Pop-Up✨",
+        "id": "✨North American Two-City Autumn Celebration Pop-Up✨"
+      },
+      "excerpt": {
+        "en": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles",
+        "id": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/4cd86c4a1b8aaf93790f79b0d65c99af_8827443909415084293.png",
+      "url": "https://www.hoyolab.com/article/47119920",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-18T04:00:04.000Z"
     },
@@ -806,22 +806,6 @@
       "publishedAt": "2026-10-12T09:30:28.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Data Bounty: Combat Simulation\" Event Details",
-        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
-        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
-      "url": "https://www.hoyolab.com/article/47055658",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-12T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -834,6 +818,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/10/ce8882d6b6007f109655148a27b26455_2717089125464101215.jpg",
       "url": "https://www.hoyolab.com/article/47055659",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-12T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Data Bounty: Combat Simulation\" Event Details",
+        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
+        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
+      "url": "https://www.hoyolab.com/article/47055658",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-12T04:00:06.000Z"
     },
