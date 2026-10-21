@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-10-21T03:02:32.114Z",
+  "updatedAt": "2026-10-21T04:02:06.768Z",
   "counts": {
     "active": 110,
-    "archived": 164
+    "archived": 165
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Genshin Impact Version 7.2 Special Program Preview",
+        "id": "Preview Acara Khusus Versi 7.2 | Genshin Impact"
+      },
+      "excerpt": {
+        "en": "Dear Traveler, it's announcement time! The special program for Genshin Impact's new version will premiere on the official Twitch and YouTube channels on 10/23/2026 at 08:00 AM (UTC",
+        "id": "Dear Traveler, ada pengumuman baru nih! Acara Khusus untuk versi baru Genshin Impact akan ditayangkan perdana di Twitch dan YouTube pada 23 Oktober 2026 08:00 AM (UTC-4)! Acara Khu"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/21/0/41e0e3707a8c29072809dc70ddd1cdcc_3067626365641682979.jpeg",
+      "url": "https://www.hoyolab.com/article/47151000",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-21T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Version 3.3 \"Journey to the Sky\" Is Now Live!",
+        "id": "Zenless Zone Zero Version 3.3 \"Journey to the Sky\" Is Now Live!"
+      },
+      "excerpt": {
+        "en": "",
+        "id": ""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-10-21/transcoded/142112743258876071936_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/47150997",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-21T04:00:02.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -100,6 +132,22 @@
       "url": "https://www.hoyolab.com/article/47144098",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-20T10:30:04.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "[Version 3.7 Featured Resonator/Weapon Convene: Phase Ⅱ]",
+        "id": "[Version 3.7 Featured Resonator/Weapon Convene: Phase Ⅱ]"
+      },
+      "excerpt": {
+        "en": "[Tomorrow in the Frame] Featured Resonator Convene During the event, 5-Star Resonator: Lucilla, 4-Star Resonators: Lumi, Danjin, and Chixia receive boosted drop rates! ✦Duration✦ 2",
+        "id": "[Tomorrow in the Frame] Featured Resonator Convene During the event, 5-Star Resonator: Lucilla, 4-Star Resonators: Lumi, Danjin, and Chixia receive boosted drop rates! ✦Duration✦ 2"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1792425600000/xhali8ty5l43rrwp79-1792491287655.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-10-20T10:18:40.000Z"
     },
     {
       "game": "zzz",
@@ -422,22 +470,6 @@
       "publishedAt": "2026-10-18T04:30:04.000Z"
     },
     {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "✨North American Two-City Autumn Celebration Pop-Up✨",
-        "id": "✨North American Two-City Autumn Celebration Pop-Up✨"
-      },
-      "excerpt": {
-        "en": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles",
-        "id": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/4cd86c4a1b8aaf93790f79b0d65c99af_8827443909415084293.png",
-      "url": "https://www.hoyolab.com/article/47119920",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-18T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -450,6 +482,22 @@
       },
       "image": "https://vod-static.hoyolab.com/4/2026-10-18/transcoded/142110719304600670208_captions.0000000.jpg",
       "url": "https://www.hoyolab.com/article/47119919",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-18T04:00:04.000Z"
+    },
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "✨North American Two-City Autumn Celebration Pop-Up✨",
+        "id": "✨North American Two-City Autumn Celebration Pop-Up✨"
+      },
+      "excerpt": {
+        "en": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles",
+        "id": "Join the Pop-Up in Los Angeles and New York, and celebrate with fellow Captains! 💫 📅 Los Angeles Oct. 24 – Nov. 1, 2026 Mon. – Sun. | | 11 AM – 8 PM 📍330 E 2nd St A, Los Angeles"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/4cd86c4a1b8aaf93790f79b0d65c99af_8827443909415084293.png",
+      "url": "https://www.hoyolab.com/article/47119920",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-18T04:00:04.000Z"
     },
@@ -628,22 +676,6 @@
       "url": "https://www.hoyolab.com/article/47098364",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-16T04:30:02.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Phoenix Character Demo - \"Do Not Die Challenge\" | Zenless Zone Zero",
-        "id": "Demo Karakter Phoenix \"Tantangan Jangan Mati\" | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "\"So, that's a wrap on the 5,782nd 'Do Not Die Challenge'!\" \"Next up, the 5,783rd challenge...\" \"Looks like... she just completed it...\" ▼YouTube",
-        "id": "\"Kalau begitu, Tantangan Jangan Mati yang ke-5782 selesai sampai di sini ya!\" \"Selanjutnya, tantangan yang ke-5783...\" \"Sepertinya... sudah selesai juga...\" ▼YouTube"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/16/959d612dc025c3a6ae30a68216c8cff1_8019273814483097131.png",
-      "url": "https://www.hoyolab.com/article/47098031",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-16T04:00:04.000Z"
     },
     {
       "game": "gi",
@@ -838,22 +870,6 @@
       "publishedAt": "2026-10-12T09:30:28.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "\"The Laughter Outsmarts miHoYo\" Episode 3 | Training",
-        "id": "\"The Laughter Mengecoh miHoYo\" Episode 3 | Latihan"
-      },
-      "excerpt": {
-        "en": "\"Welcome to miHoYo, everyone~ What we're handing out to you now is the employee handbook.\" \"With this, maybe I can create the rules too. Let's see how you win now, Voracity.\" Comme",
-        "id": "\"Selamat bergabung dengan miHoYo~ Sekarang yang dibagikan ke tangan kalian adalah buku panduan staf IPC.\" \"Dengan ini, mungkin aku juga bisa menciptakan aturan. Voracity, kita liha"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/10/ce8882d6b6007f109655148a27b26455_2717089125464101215.jpg",
-      "url": "https://www.hoyolab.com/article/47055659",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-12T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -866,6 +882,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
       "url": "https://www.hoyolab.com/article/47055658",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-12T04:00:06.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"The Laughter Outsmarts miHoYo\" Episode 3 | Training",
+        "id": "\"The Laughter Mengecoh miHoYo\" Episode 3 | Latihan"
+      },
+      "excerpt": {
+        "en": "\"Welcome to miHoYo, everyone~ What we're handing out to you now is the employee handbook.\" \"With this, maybe I can create the rules too. Let's see how you win now, Voracity.\" Comme",
+        "id": "\"Selamat bergabung dengan miHoYo~ Sekarang yang dibagikan ke tangan kalian adalah buku panduan staf IPC.\" \"Dengan ini, mungkin aku juga bisa menciptakan aturan. Voracity, kita liha"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/10/ce8882d6b6007f109655148a27b26455_2717089125464101215.jpg",
+      "url": "https://www.hoyolab.com/article/47055659",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-12T04:00:06.000Z"
     },
@@ -1044,22 +1076,6 @@
       "url": "https://www.hoyolab.com/article/47019599",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-09T04:00:07.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.1 Event Wishes Notice - Phase II",
-        "id": "Pengumuman Event Permohonan v7.1: Edisi 2"
-      },
-      "excerpt": {
-        "en": "Event Wish \"Void Star's Advent\" - Boosted Drop Rate for \"Void Star\" Skirk (Cryo)! Travelers, stock up on weapons and characters in the event wish to make your party stronger in com",
-        "id": "Event Permohonan \"Hadirnya Bintang Kehampaan\": Persentase Perolehan \"Void Star\" Skirk (Cryo) Meningkat! Dapatkan Senjata dan Karakter di Event Permohonan untuk membuat party menjad"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/08/10aa7c59c0b92e4488496a5a27fae403_2947821425779641094.jpg",
-      "url": "https://www.hoyolab.com/article/47010361",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-08T08:00:03.000Z"
     },
     {
       "game": "hsr",
@@ -1748,7 +1764,9 @@
       "url": "https://www.hoyolab.com/article/46771839",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-21T04:30:04.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -1763,10 +1781,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/20/0/8320fa8820ace261f98ca8e2caa97cfc_6500038487422716794.jpeg",
       "url": "https://www.hoyolab.com/article/46771203",
       "source": "HoYoLAB",
-      "publishedAt": "2026-09-21T03:10:08.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-21T03:10:08.000Z",
+      "archivedAt": "2026-10-21T04:02:06.768Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
