@@ -23765,7 +23765,7 @@
   "shard": {
    "tulis": "Shard",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-10-22",
    "awal": true
   },
   "overworld": {
@@ -24089,6 +24089,31 @@
   "malevolent": {
    "tulis": "Malevolent",
    "pertama": 1791576278114,
+   "terakhir": "2026-10-22"
+  },
+  "radioactive": {
+   "tulis": "Radioactive",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "poison": {
+   "tulis": "Poison",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "gaze": {
+   "tulis": "Gaze",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "raised": {
+   "tulis": "Raised",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "dumbpumpkin": {
+   "tulis": "DumbPumpkin",
+   "pertama": 1792674314866,
    "terakhir": "2026-10-22"
   }
  },
@@ -28348,6 +28373,26 @@
   "female": {
    "tulis": "Female",
    "pertama": 1790856342034,
+   "terakhir": "2026-10-22"
+  },
+  "belt": {
+   "tulis": "Belt",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "bundles": {
+   "tulis": "Bundles",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "hallogymstar": {
+   "tulis": "HALLOGYMSTAR",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "corns": {
+   "tulis": "Corns",
+   "pertama": 1792674314866,
    "terakhir": "2026-10-22"
   }
  },
@@ -79879,6 +79924,88 @@
    "pertama": 1792591541968,
    "terakhir": "2026-10-22",
    "sudahPunya": true
+  }
+ },
+ "rally-panic": {
+  "drives": {
+   "tulis": "drives",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "navigates": {
+   "tulis": "navigates",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "2-player": {
+   "tulis": "2-player",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "steering": {
+   "tulis": "steering",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "navigator": {
+   "tulis": "navigator",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "holds": {
+   "tulis": "holds",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "dense": {
+   "tulis": "dense",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "narrow": {
+   "tulis": "narrow",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "bridges": {
+   "tulis": "bridges",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "ravines": {
+   "tulis": "ravines",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "communicate": {
+   "tulis": "Communicate",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "trust": {
+   "tulis": "trust",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "teammate": {
+   "tulis": "teammate",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "friendship": {
+   "tulis": "friendship",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "hairpin": {
+   "tulis": "hairpin",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  },
+  "stellux": {
+   "tulis": "Stellux",
+   "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
   }
  }
 }
