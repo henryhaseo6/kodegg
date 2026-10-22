@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-22T06:01:55.864Z",
+  "updatedAt": "2026-10-22T07:02:05.203Z",
   "counts": {
-    "active": 49,
+    "active": 50,
     "archived": 177
   },
   "events": [
@@ -496,6 +496,30 @@
       "rewards": [],
       "source": "HoYoverse",
       "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Dear Traveler, more content is now available in the \"Starlit Gala\" Web Event! Take part to earn in-game rewards such as Geodes of Replication, \"Miliastra Wonderland\" items, and more!",
+        "id": "Dear Traveler, konten terbaru Event Web \"Gala Langit Berbintang\" kini telah dirilis. Ikuti event dan dapatkan berbagai hadiah seperti Geode of Replication, item \"Miliastra Wonderland\", dan masih banya"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": ">> Click to Take Part in Event << 〓Eligibility〓 Travelers who have reached Adventure Rank 1 or above can participate in this event. *The data for the Wonderland Year in Review Report of the \"Starlit Gala\" event will be collected between the",
+        "id": ">> Ikuti Event << 〓 Syarat Partisipasi 〓 Traveler dengan Rank Adventure Lv. 1 ke atas dapat mengikuti event ini. *Data dalam Laporan Kilas Balik Wonderland \"Gala Langit Berbintang\" mencakup rentang pembaruan versi Candra II hingga 18 Oktobe"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/22/0/d47ad0324dc8ed26abedecf9f175f487_4405781992155324744.jpeg",
+      "startsAt": "2026-10-22T07:00:00.000Z",
+      "endsAt": "2026-11-02T20:00:00.000Z",
+      "postedAt": "2026-10-22T07:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47163124"
     },
     {
       "game": "gi",
