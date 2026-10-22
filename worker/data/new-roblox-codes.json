@@ -1,5 +1,55 @@
 {
-  "generatedAt": "2026-10-22T22:03:16.618Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-10-22T23:01:56.353Z",
+  "codes": [
+    {
+      "game": "paranormal",
+      "gameName": "PARANORMAL",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/paranormal"
+      },
+      "code": "HALLOWEEN2026",
+      "reward": "Revive",
+      "date": "2026-10-22T22:22:17.796Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-22T23:01:56.353Z",
+      "fetchedAt": "2026-10-22T23:01:56.353Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "candy-kingdom-defense",
+      "count": 6,
+      "fresh": [
+        {
+          "code": "HALLOWEENSOON",
+          "reward": "1,,000 Gems, 15 Trait Crystals"
+        },
+        {
+          "code": "THANKSFOR200LIKES",
+          "reward": "1,500 Gems, 10 Trait Crystals"
+        },
+        {
+          "code": "THANKSFOR100CCU",
+          "reward": "500 Gems, 20 Trait Crystals"
+        },
+        {
+          "code": "MATHEMATICAL",
+          "reward": "100 Gems, 3 XP Candies"
+        },
+        {
+          "code": "ALGEBRAIC",
+          "reward": "3 Trait Crystals"
+        },
+        {
+          "code": "RELEASE",
+          "reward": "1,500 Gems, 15 Trait Crystals, 5 Units of Juice"
+        }
+      ]
+    }
+  ]
 }
