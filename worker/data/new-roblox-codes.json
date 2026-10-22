@@ -1,31 +1,132 @@
 {
-  "generatedAt": "2026-10-22T16:02:13.008Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-10-22T17:02:27.251Z",
+  "codes": [
     {
-      "game": "highway-patrol",
-      "count": 2,
-      "fresh": []
+      "game": "duel-warriors",
+      "gameName": "DUEL Warriors",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/duel-warriors"
+      },
+      "code": "GOLD20261022",
+      "reward": null,
+      "date": "2026-10-22T16:13:20.799Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-22T17:02:27.251Z",
+      "fetchedAt": "2026-10-22T17:02:27.251Z"
     },
     {
-      "game": "1-money-per-click",
-      "count": 2,
-      "fresh": []
+      "game": "duel-warriors",
+      "gameName": "DUEL Warriors",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/duel-warriors"
+      },
+      "code": "GEM20261022",
+      "reward": null,
+      "date": "2026-10-22T16:13:20.318Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-22T17:02:27.251Z",
+      "fetchedAt": "2026-10-22T17:02:27.251Z"
     },
     {
-      "game": "1-assassin-leveling",
-      "count": 4,
-      "fresh": []
+      "game": "prism-runway-show",
+      "gameName": "Prism Runway Show",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/prism-runway-show"
+      },
+      "code": "PUMPKINHALLOWEEN",
+      "reward": null,
+      "date": "2026-10-22T16:13:28.352Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-22T17:02:27.251Z",
+      "fetchedAt": "2026-10-22T17:02:27.251Z"
     },
     {
-      "game": "apple-ipad-original",
-      "count": 3,
-      "fresh": []
+      "game": "immortality-incremental",
+      "gameName": "Immortality Incremental",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/immortality-incremental"
+      },
+      "code": "HALLOWEENPT2",
+      "reward": "1 Pumpkin Potion, 1 Curse Potion",
+      "date": "2026-10-22T16:13:32.373Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-22T17:02:27.251Z",
+      "fetchedAt": "2026-10-22T17:02:27.251Z"
     },
     {
-      "game": "dont-steal-my-eggs",
-      "count": 3,
-      "fresh": []
+      "game": "immortality-incremental",
+      "gameName": "Immortality Incremental",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/immortality-incremental"
+      },
+      "code": "ENCHANTS",
+      "reward": "1 Enchant Tomb Potion, 10 Tickets, 5 Jade",
+      "date": "2026-10-22T16:13:31.810Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-22T17:02:27.251Z",
+      "fetchedAt": "2026-10-22T17:02:27.251Z"
+    },
+    {
+      "game": "anime-ball-duels",
+      "gameName": "Anime Ball Duels",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-ball-duels"
+      },
+      "code": "CHATSHUTDOWN",
+      "reward": "500 Candy Corn, 3 Boss Tickets",
+      "date": "2026-10-22T16:13:27.627Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-22T17:02:27.251Z",
+      "fetchedAt": "2026-10-22T17:02:27.251Z"
+    },
+    {
+      "game": "sell-fries",
+      "gameName": "Sell Fries",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/sell-fries"
+      },
+      "code": "3000members",
+      "reward": null,
+      "date": "2026-10-22T16:13:38.757Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-22T17:02:27.251Z",
+      "fetchedAt": "2026-10-22T17:02:27.251Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
