@@ -12618,6 +12618,11 @@
    "tulis": "removed",
    "pertama": 1792422357581,
    "terakhir": "2026-10-22"
+  },
+  "resets": {
+   "tulis": "Resets",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
   }
  },
  "daybreak": {
@@ -49735,7 +49740,7 @@
   "following": {
    "tulis": "following",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-24",
+   "terakhir": "2026-10-22",
    "awal": true
   },
   "catastrophic": {
@@ -50380,6 +50385,11 @@
   "caps": {
    "tulis": "caps",
    "pertama": 1792667098079,
+   "terakhir": "2026-10-22"
+  },
+  "introducing": {
+   "tulis": "Introducing",
+   "pertama": 1792685110726,
    "terakhir": "2026-10-22"
   }
  },
@@ -52813,7 +52823,7 @@
   "following": {
    "tulis": "following",
    "pertama": 1786021440182,
-   "terakhir": "2026-08-24"
+   "terakhir": "2026-10-22"
   },
   "1klikes": {
    "tulis": "1klikes",
@@ -65543,6 +65553,41 @@
    "tulis": "issue",
    "pertama": 1788105851784,
    "terakhir": "2026-10-22"
+  },
+  "sells": {
+   "tulis": "sells",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "droppers": {
+   "tulis": "droppers",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "upgraders": {
+   "tulis": "upgraders",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "furnaces": {
+   "tulis": "furnaces",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "billions": {
+   "tulis": "billions",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "smoothly": {
+   "tulis": "smoothly",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "low-end": {
+   "tulis": "low-end",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
   }
  },
  "ultimate-town-sandbox": {
@@ -74136,7 +74181,7 @@
   "resets": {
    "tulis": "resets",
    "pertama": 1791083080622,
-   "terakhir": "2026-10-19"
+   "terakhir": "2026-10-22"
   },
   "position": {
    "tulis": "position",
@@ -74975,6 +75020,11 @@
   "drivers": {
    "tulis": "drivers",
    "pertama": 1790427977375,
+   "terakhir": "2026-10-22"
+  },
+  "following": {
+   "tulis": "following",
+   "pertama": 1792685110726,
    "terakhir": "2026-10-22"
   }
  },
@@ -76856,7 +76906,7 @@
   "resets": {
    "tulis": "Resets",
    "pertama": 1791651885929,
-   "terakhir": "2026-10-19"
+   "terakhir": "2026-10-22"
   },
   "natch": {
    "tulis": "NATCH",
@@ -80015,6 +80065,104 @@
   "stellux": {
    "tulis": "Stellux",
    "pertama": 1792674314866,
+   "terakhir": "2026-10-22"
+  }
+ },
+ "highway-patrol": {
+  "patrol": {
+   "tulis": "Patrol",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22",
+   "sudahPunya": true
+  },
+  "hostages": {
+   "tulis": "Hostages",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "mafia": {
+   "tulis": "Mafia",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "runaways": {
+   "tulis": "Runaways",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "deadrails": {
+   "tulis": "Deadrails",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  }
+ },
+ "1-money-per-click": {
+  "1500likes": {
+   "tulis": "1500LIKES",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22",
+   "sudahPunya": true
+  }
+ },
+ "1-assassin-leveling": {
+  "assassin": {
+   "tulis": "Assassin",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "daggers": {
+   "tulis": "daggers",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "world5": {
+   "tulis": "WORLD5",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22",
+   "sudahPunya": true
+  },
+  "14kccu": {
+   "tulis": "14KCCU",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22",
+   "sudahPunya": true
+  },
+  "thankyou": {
+   "tulis": "THANKYOU",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22",
+   "sudahPunya": true
+  }
+ },
+ "apple-ipad-original": {
+  "ipad": {
+   "tulis": "iPad",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "stolen": {
+   "tulis": "stolen",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "gained": {
+   "tulis": "gained",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "older": {
+   "tulis": "older",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "because": {
+   "tulis": "because",
+   "pertama": 1792685110726,
+   "terakhir": "2026-10-22"
+  },
+  "ontop": {
+   "tulis": "ontop",
+   "pertama": 1792685110726,
    "terakhir": "2026-10-22"
   }
  }
