@@ -1,24 +1,32 @@
 {
-  "generatedAt": "2026-10-23T20:02:37.811Z",
-  "codes": [
+  "generatedAt": "2026-10-23T21:02:28.851Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "100-days-at-sea",
-      "gameName": "100 Days At Sea",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/100-days-at-sea"
-      },
-      "code": "SPOOKY",
-      "reward": "20 Pearls",
-      "date": "2026-10-23T19:57:40.972Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-23T20:02:37.811Z",
-      "fetchedAt": "2026-10-23T20:02:37.811Z"
+      "game": "first-person-boxing",
+      "count": 5,
+      "fresh": [
+        {
+          "code": "FIRSTPERSON",
+          "reward": "Lucky Spin"
+        },
+        {
+          "code": "BALANCEUPD",
+          "reward": "5 Spins"
+        },
+        {
+          "code": "RANKEDUPD",
+          "reward": "1,000 Coins, 3 Spins, 1 Lucky Spin"
+        },
+        {
+          "code": "LUCK1",
+          "reward": "5 Spins"
+        },
+        {
+          "code": "FPSBOXING2",
+          "reward": "1,000 Coins, 3 Spins"
+        }
+      ]
     }
-  ],
-  "bulkGames": []
+  ]
 }
