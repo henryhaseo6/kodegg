@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-23T10:02:06.341Z",
+  "updatedAt": "2026-10-23T11:02:09.549Z",
   "counts": {
     "active": 109,
     "archived": 169
   },
   "articles": [
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "Part 2 Commemorative Trailer: Luoxing of Tomorrow — Honkai Impact 3rd",
+        "id": "Trailer Peringatan Bagian 2 \"Hari Esok Luoxing\" — Honkai Impact 3"
+      },
+      "excerpt": {
+        "en": "Someday, we will also find our own perfect ending. And the Luoxing of tomorrow will surely shine even brighter. Voice Artist: Dreamseeker: Yuki Nakashima",
+        "id": "Suatu hari nanti, kita juga akan punya akhir yang sempurna. Dan pada hari esok, Luoxing pasti akan lebih baik. Pengisi Suara: Dreamseeker: Yuki Nakashima"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/23/131f385d533de92bbd747c7ccc72a059_4377190398347280304.jpg",
+      "url": "https://www.hoyolab.com/article/47175473",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-23T11:00:04.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -54,22 +70,6 @@
       "publishedAt": "2026-10-23T04:05:04.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Agent Record | Sunbringer",
-        "id": "Profil Agen | Sunbringer"
-      },
-      "excerpt": {
-        "en": "\"'Sunbringer'... That name carries the world's hope, and the promise the three of us made while standing side by side.\" Sunbringer \"Even if the sky is destined to fall silent, Rosc",
-        "id": "\"Nama 'Sunbringer' adalah harapan dunia, sekaligus janji kami bertiga untuk berjuang bersama.\" Sunbringer \"Sekalipun langit ditakdirkan membisu, Roscaelifer tidak akan pernah menye"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/22/0/54f415f16de4ce04da7426b318475a98_8172361796058675548.jpeg",
-      "url": "https://www.hoyolab.com/article/47172159",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-23T04:00:08.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -82,6 +82,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/21/be88d9eed8e4663f973daf841c735c74_3694580175448803136.jpg",
       "url": "https://www.hoyolab.com/article/47172160",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-23T04:00:08.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Agent Record | Sunbringer",
+        "id": "Profil Agen | Sunbringer"
+      },
+      "excerpt": {
+        "en": "\"'Sunbringer'... That name carries the world's hope, and the promise the three of us made while standing side by side.\" Sunbringer \"Even if the sky is destined to fall silent, Rosc",
+        "id": "\"Nama 'Sunbringer' adalah harapan dunia, sekaligus janji kami bertiga untuk berjuang bersama.\" Sunbringer \"Sekalipun langit ditakdirkan membisu, Roscaelifer tidak akan pernah menye"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/22/0/54f415f16de4ce04da7426b318475a98_8172361796058675548.jpeg",
+      "url": "https://www.hoyolab.com/article/47172159",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-23T04:00:08.000Z"
     },
@@ -918,22 +934,6 @@
       "publishedAt": "2026-10-13T11:10:35.000Z"
     },
     {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "Supply Events Preview",
-        "id": "Preview Event Crate"
-      },
-      "excerpt": {
-        "en": "While Carnival Spend Bonuses last, multiple Supply events will open to offer the new S-rank battlesuit \"Herrscher of Time\" for Dreamseeker and more! Let's take a look at them toget",
-        "id": "Selama event Bonus Belanja Karnaval, akan hadir Battlesuit Rank-S baru Dreamseeker \"Herrscher of Time\" dan berbagai konten Crate lainnya. Ayo kita lihat bersama-sama~"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/10/2c89cfbdfd8be40f6bb7ff86ea1fd04c_684639236963433168.jpg",
-      "url": "https://www.hoyolab.com/article/47065882",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-13T03:00:03.000Z"
-    },
-    {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
       "title": {
@@ -1014,22 +1014,6 @@
       "publishedAt": "2026-10-12T09:30:28.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Data Bounty: Combat Simulation\" Event Details",
-        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
-        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
-      "url": "https://www.hoyolab.com/article/47055658",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-12T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -1042,6 +1026,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/10/ce8882d6b6007f109655148a27b26455_2717089125464101215.jpg",
       "url": "https://www.hoyolab.com/article/47055659",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-12T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Data Bounty: Combat Simulation\" Event Details",
+        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
+        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
+      "url": "https://www.hoyolab.com/article/47055658",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-12T04:00:06.000Z"
     },

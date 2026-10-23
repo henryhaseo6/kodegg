@@ -1,5 +1,47 @@
 {
-  "generatedAt": "2026-10-23T10:02:14.183Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-10-23T11:02:11.554Z",
+  "codes": [
+    {
+      "game": "moped-drag",
+      "gameName": "Moped Drag",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/moped-drag"
+      },
+      "code": "MOPEDDRAGONTOP",
+      "reward": "30,000 Cash",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792751790525,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-23T11:02:11.554Z",
+      "fetchedAt": "2026-10-23T11:02:11.554Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "rochess",
+      "count": 6,
+      "fresh": []
+    },
+    {
+      "game": "grow-a-plant",
+      "count": 6,
+      "fresh": []
+    },
+    {
+      "game": "cameraman-tower-defense",
+      "count": 9,
+      "fresh": []
+    },
+    {
+      "game": "survive-and-tame-dinos",
+      "count": 4,
+      "fresh": []
+    }
+  ]
 }
