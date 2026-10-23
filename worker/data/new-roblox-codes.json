@@ -1,39 +1,35 @@
 {
-  "generatedAt": "2026-10-23T02:01:56.172Z",
+  "generatedAt": "2026-10-23T03:02:10.510Z",
   "codes": [
     {
-      "game": "make-rugs",
-      "gameName": "Make Rugs",
+      "game": "spin-a-soccer-card",
+      "gameName": "Spin a Soccer Card",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/make-rugs"
+        "Roblox Den": "https://robloxden.com/game-codes/spin-a-soccer-card"
       },
-      "code": "geometric",
-      "reward": "50 Luck",
+      "code": "OWL-PLASMA",
+      "reward": "2x Packs and 3x Extra Spins",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1792663406827,
+      "srcNewAt": 1792651955702,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-23T02:01:56.172Z",
-      "fetchedAt": "2026-10-23T02:01:56.172Z"
+      "firstSeenAt": "2026-10-23T03:02:10.510Z",
+      "fetchedAt": "2026-10-23T03:02:10.510Z"
     }
   ],
   "bulkGames": [
     {
-      "game": "mitosis",
-      "count": 4,
+      "game": "adventure-time-rpg",
+      "count": 1,
       "fresh": [
         {
-          "code": "Update2",
-          "reward": "Mutant Crate"
-        },
-        {
-          "code": "HALLOWEEN",
-          "reward": "Halloween Crate"
+          "code": "COINS50",
+          "reward": "50 Coins"
         }
       ]
     }
