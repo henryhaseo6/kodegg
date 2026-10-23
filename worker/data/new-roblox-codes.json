@@ -1,11 +1,44 @@
 {
-  "generatedAt": "2026-10-23T13:01:36.893Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-10-23T14:02:49.010Z",
+  "codes": [
     {
-      "game": "build-a-dungeon",
-      "count": 4,
-      "fresh": []
+      "game": "pixel-blade",
+      "gameName": "Pixel Blade",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/pixel-blade"
+      },
+      "code": "FREEWISH2",
+      "reward": "1 Free Wish",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792719832964,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-23T14:02:49.010Z",
+      "fetchedAt": "2026-10-23T14:02:49.010Z"
+    },
+    {
+      "game": "anime-mysterious",
+      "gameName": "Anime Mysterious",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-mysterious"
+      },
+      "code": "SRYFORLATEUPDATE",
+      "reward": null,
+      "date": "2026-10-23T13:12:47.322Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-23T14:02:49.010Z",
+      "fetchedAt": "2026-10-23T14:02:49.010Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
