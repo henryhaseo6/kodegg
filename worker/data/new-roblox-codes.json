@@ -1,55 +1,86 @@
 {
-  "generatedAt": "2026-10-22T23:01:56.353Z",
+  "generatedAt": "2026-10-23T00:01:56.135Z",
   "codes": [
     {
-      "game": "paranormal",
-      "gameName": "PARANORMAL",
-      "source": "RoCodes.gg",
+      "game": "ride-storm",
+      "gameName": "Ride Storm",
+      "source": "Roblox Den",
       "sources": [
-        "RoCodes.gg"
+        "Roblox Den"
       ],
       "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/paranormal"
+        "Roblox Den": "https://robloxden.com/game-codes/ride-storm"
       },
-      "code": "HALLOWEEN2026",
-      "reward": "Revive",
-      "date": "2026-10-22T22:22:17.796Z",
+      "code": "90KLIKES",
+      "reward": "9,000 Cash",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792672471292,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-22T23:01:56.353Z",
-      "fetchedAt": "2026-10-22T23:01:56.353Z"
+      "firstSeenAt": "2026-10-23T00:01:56.135Z",
+      "fetchedAt": "2026-10-23T00:01:56.135Z"
+    },
+    {
+      "game": "anime-card-clash",
+      "gameName": "Anime Card Clash",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/anime-card-clash"
+      },
+      "code": "HIGHROLLERS",
+      "reward": "250,000x Instant Roll (x60)",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792672463996,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-23T00:01:56.135Z",
+      "fetchedAt": "2026-10-23T00:01:56.135Z"
+    },
+    {
+      "game": "anime-card-clash",
+      "gameName": "Anime Card Clash",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/anime-card-clash"
+      },
+      "code": "TAX REFUND",
+      "reward": "5,000,000 Instant Roll, 3 Greater Moon Cycle Reroll Potion, 2 Border Chance Potion and 100,000 Instant Roll",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792672463996,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-23T00:01:56.135Z",
+      "fetchedAt": "2026-10-23T00:01:56.135Z"
+    },
+    {
+      "game": "anime-zero",
+      "gameName": "Anime Zero",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/anime-zero"
+      },
+      "code": "MINICODE",
+      "reward": "10 Trait Rerolls, 100 Gems, and 10 Lucky Spins",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792682442209,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-23T00:01:56.135Z",
+      "fetchedAt": "2026-10-23T00:01:56.135Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "candy-kingdom-defense",
-      "count": 6,
-      "fresh": [
-        {
-          "code": "HALLOWEENSOON",
-          "reward": "1,,000 Gems, 15 Trait Crystals"
-        },
-        {
-          "code": "THANKSFOR200LIKES",
-          "reward": "1,500 Gems, 10 Trait Crystals"
-        },
-        {
-          "code": "THANKSFOR100CCU",
-          "reward": "500 Gems, 20 Trait Crystals"
-        },
-        {
-          "code": "MATHEMATICAL",
-          "reward": "100 Gems, 3 XP Candies"
-        },
-        {
-          "code": "ALGEBRAIC",
-          "reward": "3 Trait Crystals"
-        },
-        {
-          "code": "RELEASE",
-          "reward": "1,500 Gems, 15 Trait Crystals, 5 Units of Juice"
-        }
-      ]
-    }
-  ]
+  "bulkGames": []
 }
