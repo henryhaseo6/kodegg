@@ -1,36 +1,41 @@
 {
-  "generatedAt": "2026-10-23T01:02:09.696Z",
-  "codes": [],
+  "generatedAt": "2026-10-23T02:01:56.172Z",
+  "codes": [
+    {
+      "game": "make-rugs",
+      "gameName": "Make Rugs",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/make-rugs"
+      },
+      "code": "geometric",
+      "reward": "50 Luck",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1792663406827,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-23T02:01:56.172Z",
+      "fetchedAt": "2026-10-23T02:01:56.172Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "roll-a-stickman",
-      "count": 14,
-      "fresh": []
-    },
-    {
-      "game": "wrong-way",
-      "count": 6,
-      "fresh": []
-    },
-    {
-      "game": "my-chiikawa-restaurant",
+      "game": "mitosis",
       "count": 4,
-      "fresh": []
-    },
-    {
-      "game": "hush",
-      "count": 2,
-      "fresh": []
-    },
-    {
-      "game": "driven-football",
-      "count": 7,
-      "fresh": []
-    },
-    {
-      "game": "1-karate-evolution",
-      "count": 6,
-      "fresh": []
+      "fresh": [
+        {
+          "code": "Update2",
+          "reward": "Mutant Crate"
+        },
+        {
+          "code": "HALLOWEEN",
+          "reward": "Halloween Crate"
+        }
+      ]
     }
   ]
 }
