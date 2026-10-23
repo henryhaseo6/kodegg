@@ -1,32 +1,24 @@
 {
-  "generatedAt": "2026-10-23T21:02:28.851Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-10-23T22:02:11.383Z",
+  "codes": [
     {
-      "game": "first-person-boxing",
-      "count": 5,
-      "fresh": [
-        {
-          "code": "FIRSTPERSON",
-          "reward": "Lucky Spin"
-        },
-        {
-          "code": "BALANCEUPD",
-          "reward": "5 Spins"
-        },
-        {
-          "code": "RANKEDUPD",
-          "reward": "1,000 Coins, 3 Spins, 1 Lucky Spin"
-        },
-        {
-          "code": "LUCK1",
-          "reward": "5 Spins"
-        },
-        {
-          "code": "FPSBOXING2",
-          "reward": "1,000 Coins, 3 Spins"
-        }
-      ]
+      "game": "jujutsu-infinite",
+      "gameName": "Jujutsu Infinite",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/jujutsu-infinite"
+      },
+      "code": "UNDEAD_MONARCH",
+      "reward": "50 Spins",
+      "date": "2026-10-23T21:46:10.302Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-23T22:02:11.383Z",
+      "fetchedAt": "2026-10-23T22:02:11.383Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
