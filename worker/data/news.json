@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-23T07:01:46.920Z",
+  "updatedAt": "2026-10-23T08:01:28.818Z",
   "counts": {
     "active": 109,
     "archived": 169
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Lindverne Sunbringer",
+        "id": "Lindverne Sunbringer"
+      },
+      "excerpt": {
+        "en": "",
+        "id": ""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-10-23/transcoded/142113540841766375424_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/47174033",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-23T08:01:09.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -84,22 +100,6 @@
       "url": "https://www.hoyolab.com/article/47172014",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-23T03:45:03.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Lindverne Sunbringer",
-        "id": "Lindverne Sunbringer"
-      },
-      "excerpt": {
-        "en": "",
-        "id": ""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-10-23/transcoded/142113326155228041216_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/47171910",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-23T03:30:03.000Z"
     },
     {
       "game": "zzz",
