@@ -1,46 +1,32 @@
 {
-  "generatedAt": "2026-10-24T05:01:37.696Z",
-  "codes": [
+  "generatedAt": "2026-10-24T06:02:14.901Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "young-street-ontario",
-      "gameName": "Young Street Ontario",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/young-street-ontario"
-      },
-      "code": "110klikes",
-      "reward": "30,000 Cash",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1792741759503,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-24T05:01:37.696Z",
-      "fetchedAt": "2026-10-24T05:01:37.696Z"
-    },
-    {
-      "game": "young-street-ontario",
-      "gameName": "Young Street Ontario",
-      "source": "Roblox Den",
-      "sources": [
-        "Roblox Den"
-      ],
-      "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/young-street-ontario"
-      },
-      "code": "120klikes",
-      "reward": "30,000 Cash",
-      "date": null,
-      "srcNew": true,
-      "srcNewAt": 1792741759503,
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-10-24T05:01:37.696Z",
-      "fetchedAt": "2026-10-24T05:01:37.696Z"
+      "game": "1-mog-battle",
+      "count": 5,
+      "fresh": [
+        {
+          "code": "MOREWINS",
+          "reward": "Double Wins Boost (10 minutes)"
+        },
+        {
+          "code": "WORLD3",
+          "reward": "Double Mog Boost (10 minutes)"
+        },
+        {
+          "code": "ALIEN",
+          "reward": "Double Mog Boost (10 minutes)"
+        },
+        {
+          "code": "WORLD2",
+          "reward": "Double Mog Boost (10 minutes)"
+        },
+        {
+          "code": "RELEASE",
+          "reward": "Double Mog & Wins Boost (10 minutes)"
+        }
+      ]
     }
-  ],
-  "bulkGames": []
+  ]
 }
