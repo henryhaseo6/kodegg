@@ -1,32 +1,5 @@
 {
-  "generatedAt": "2026-10-24T06:02:14.901Z",
+  "generatedAt": "2026-10-24T07:01:40.118Z",
   "codes": [],
-  "bulkGames": [
-    {
-      "game": "1-mog-battle",
-      "count": 5,
-      "fresh": [
-        {
-          "code": "MOREWINS",
-          "reward": "Double Wins Boost (10 minutes)"
-        },
-        {
-          "code": "WORLD3",
-          "reward": "Double Mog Boost (10 minutes)"
-        },
-        {
-          "code": "ALIEN",
-          "reward": "Double Mog Boost (10 minutes)"
-        },
-        {
-          "code": "WORLD2",
-          "reward": "Double Mog Boost (10 minutes)"
-        },
-        {
-          "code": "RELEASE",
-          "reward": "Double Mog & Wins Boost (10 minutes)"
-        }
-      ]
-    }
-  ]
+  "bulkGames": []
 }
