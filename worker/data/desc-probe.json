@@ -7448,7 +7448,7 @@
   "overworld": {
    "tulis": "overworld",
    "pertama": 1786204966995,
-   "terakhir": "2026-09-05"
+   "terakhir": "2026-10-24"
   },
   "technique": {
    "tulis": "Technique",
@@ -7838,6 +7838,56 @@
   "additional": {
    "tulis": "additional",
    "pertama": 1792307100439,
+   "terakhir": "2026-10-24"
+  },
+  "hallo": {
+   "tulis": "HALLO",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
+  },
+  "scythe": {
+   "tulis": "SCYTHE",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
+  },
+  "transfiguration": {
+   "tulis": "TRANSFIGURATION",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
+  },
+  "cycle": {
+   "tulis": "cycle",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
+  },
+  "interactions": {
+   "tulis": "interactions",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
+  },
+  "10-quest": {
+   "tulis": "10-Quest",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
+  },
+  "questline": {
+   "tulis": "Questline",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
+  },
+  "curtain": {
+   "tulis": "Curtain",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
+  },
+  "stitched": {
+   "tulis": "Stitched",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
+  },
+  "placeholder": {
+   "tulis": "PLACEHOLDER",
+   "pertama": 1792865237645,
    "terakhir": "2026-10-24"
   }
  },
@@ -13953,7 +14003,7 @@
   "slot": {
    "tulis": "Slot",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-10",
+   "terakhir": "2026-10-24",
    "awal": true
   },
   "storage": {
@@ -27803,7 +27853,7 @@
   "slot": {
    "tulis": "slot",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-10",
+   "terakhir": "2026-10-24",
    "awal": true
   },
   "wield": {
@@ -59675,7 +59725,7 @@
   "slot": {
    "tulis": "Slot",
    "pertama": 1786734618317,
-   "terakhir": "2026-10-10"
+   "terakhir": "2026-10-24"
   },
   "fortune": {
    "tulis": "Fortune",
@@ -67859,6 +67909,11 @@
    "tulis": "clan",
    "pertama": 1788362338242,
    "terakhir": "2026-09-02"
+  },
+  "decorations": {
+   "tulis": "decorations",
+   "pertama": 1792865237645,
+   "terakhir": "2026-10-24"
   }
  },
  "breakdoor": {
