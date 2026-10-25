@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T04:01:43.683Z",
+  "updatedAt": "2026-10-25T05:01:50.175Z",
   "counts": {
     "active": 50,
     "archived": 180
@@ -665,30 +665,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "The Version 7.1 Genius Column Submission Event Begins! Share Your Stage Insights to Win Handsome Rewards!",
-        "id": "Event Kontes Kolom Bakat Versi 7.1 dimulai! Bagikan wawasanmu dan menangkan hadiah!"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Hello, Traveler! Version 7.1 is now live! Share your stage insights for a chance to win Primogems and Arcane Keystones! Event Duration September 23, 2026 – November 3, 2026 23:59 (UTC+8) Results: The list of winners will be updated in this ",
-        "id": "Halo, Traveler! Versi 7.1 sudah hadir! Ayo bagikan pendapatmu tentang stage-nya untuk mendapatkan Primogem dan Arcane Keystone~ [Waktu Event] 23 September 2026 - 3 November 2026 23:59 (UTC+8) Pengumuman Pemenang: Daftar pemenang akan diperb"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/265e312614f23e6c3e163fc1e9583d37_3750953171846611652.png",
-      "startsAt": "2026-09-23T10:00:00.000Z",
-      "endsAt": "2026-11-03T15:59:59.000Z",
-      "postedAt": "2026-09-23T10:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46800042"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "Version 7.1 Share HoYoverse Top-Up Center Event: Win Primogems, Phase 2",
         "id": "Event Berbagi Top-Up Center HoYoverse Versi 7.1 untuk Memenangkan Primogem — Tahap 2"
       },
@@ -706,6 +682,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/47066240"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "The Version 7.1 Genius Column Submission Event Begins! Share Your Stage Insights to Win Handsome Rewards!",
+        "id": "Event Kontes Kolom Bakat Versi 7.1 dimulai! Bagikan wawasanmu dan menangkan hadiah!"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Hello, Traveler! Version 7.1 is now live! Share your stage insights for a chance to win Primogems and Arcane Keystones! Event Duration September 23, 2026 – November 3, 2026 23:59 (UTC+8) Results: The list of winners will be updated in this ",
+        "id": "Halo, Traveler! Versi 7.1 sudah hadir! Ayo bagikan pendapatmu tentang stage-nya untuk mendapatkan Primogem dan Arcane Keystone~ [Waktu Event] 23 September 2026 - 3 November 2026 23:59 (UTC+8) Pengumuman Pemenang: Daftar pemenang akan diperb"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/23/265e312614f23e6c3e163fc1e9583d37_3750953171846611652.png",
+      "startsAt": "2026-09-23T10:00:00.000Z",
+      "endsAt": "2026-11-03T15:59:59.000Z",
+      "postedAt": "2026-09-23T10:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46800042"
     },
     {
       "game": "gi",
