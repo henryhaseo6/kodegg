@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-10-26T05:01:39.321Z",
+  "updatedAt": "2026-10-26T06:02:08.039Z",
   "counts": {
-    "active": 100,
-    "archived": 179
+    "active": 99,
+    "archived": 180
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Version 7.2 - Chronicles/Epic of the Realms Elite Cosmetics",
+        "id": "Version 7.2 - Chronicles/Epic of the Realms Elite Cosmetics"
+      },
+      "excerpt": {
+        "en": "★Elite Cosmetics | Harmonic Insight With its ornate elegance and intricate patterns, the \"Harmonic Insight\" set brings a lively grace to formal performance attire. Put it on and mo",
+        "id": "★Elite Cosmetics | Harmonic Insight With its ornate elegance and intricate patterns, the \"Harmonic Insight\" set brings a lively grace to formal performance attire. Put it on and mo"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/26/b3fde80ed6a92ac4c5fe0813ee1a9081_591397663722233746.jpg",
+      "url": "https://www.hoyolab.com/article/47209123",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-26T06:00:01.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1030,22 +1046,6 @@
       "publishedAt": "2026-10-14T09:06:43.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "The \"A Rekviem for the Underworld\" wallpaper collection is now available!",
-        "id": "Wallpaper seri \"Rekuiem bagi Alam Baka\" sudah dirilis!"
-      },
-      "excerpt": {
-        "en": "Click the link to download the wallpapers in different dimensions! https://hoyo.link/LJO5P9v7S",
-        "id": "Traveler bisa mengunduh wallpaper-nya dengan ukuran lain melalui link ini, loh~ https://hoyo.link/LJO5P9v7S"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/12/f806000a2760ccfed7326d95c0d2ae10_7181575818468975532.jpg",
-      "url": "https://www.hoyolab.com/article/47078404",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-14T04:05:07.000Z"
-    },
-    {
       "game": "tot",
       "gameName": "Tears of Themis",
       "title": {
@@ -1588,7 +1588,9 @@
       "url": "https://www.hoyolab.com/article/46841518",
       "source": "HoYoLAB",
       "publishedAt": "2026-09-26T10:00:02.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1603,10 +1605,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1790352000000/r91mvk48mbsl1q730y-1790399204157.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5521",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-09-26T05:08:39.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-26T05:08:39.000Z",
+      "archivedAt": "2026-10-26T06:02:08.039Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
