@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-28T04:02:03.779Z",
+  "updatedAt": "2026-10-28T05:03:00.961Z",
   "counts": {
-    "active": 98,
-    "archived": 183
+    "active": 96,
+    "archived": 185
   },
   "articles": [
     {
@@ -1540,7 +1540,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5529",
       "source": "Wuthering Waves",
       "publishedAt": "2026-09-28T06:54:24.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1555,7 +1557,8 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/25/0/033555ac5c2a232cac7d89a433038deb_465779436057506297.jpeg",
       "url": "https://www.hoyolab.com/article/46864094",
       "source": "HoYoLAB",
-      "publishedAt": "2026-09-28T04:30:07.000Z"
+      "publishedAt": "2026-09-28T04:30:07.000Z",
+      "archivedAt": "2026-10-28T05:03:00.961Z"
     },
     {
       "game": "zzz",
@@ -1571,10 +1574,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/25/0/0c94a6a97d8e62ca9da4bfa83eab5cfc_7768848063412125898.jpeg",
       "url": "https://www.hoyolab.com/article/46863847",
       "source": "HoYoLAB",
-      "publishedAt": "2026-09-28T04:15:07.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-28T04:15:07.000Z",
+      "archivedAt": "2026-10-28T05:03:00.961Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
