@@ -12778,7 +12778,7 @@
   "dimension": {
    "tulis": "DIMENSION",
    "pertama": 1792371877871,
-   "terakhir": "2026-10-26"
+   "terakhir": "2026-10-28"
   },
   "entry": {
    "tulis": "Entry",
@@ -12858,6 +12858,11 @@
   "gifting": {
    "tulis": "GIFTING",
    "pertama": 1793048742815,
+   "terakhir": "2026-10-28"
+  },
+  "accessory": {
+   "tulis": "Accessory",
+   "pertama": 1793174681904,
    "terakhir": "2026-10-28"
   }
  },
@@ -81185,6 +81190,11 @@
    "pertama": 1792685110726,
    "terakhir": "2026-10-28",
    "sudahPunya": true
+  },
+  "5000likes": {
+   "tulis": "5000LIKES",
+   "pertama": 1793174681904,
+   "terakhir": "2026-10-28"
   }
  },
  "1-assassin-leveling": {
