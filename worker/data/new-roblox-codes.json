@@ -1,37 +1,62 @@
 {
-  "generatedAt": "2026-10-29T16:02:40.607Z",
+  "generatedAt": "2026-10-29T17:02:19.156Z",
   "codes": [
     {
-      "game": "evomon",
-      "gameName": "Evomon",
+      "game": "freestyle-football",
+      "gameName": "Freestyle Football",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/freestyle-football"
+      },
+      "code": "SORRYFORHITBOXES!",
+      "reward": "25000 Coins",
+      "date": "2026-10-29T16:32:26.611Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-29T17:02:19.156Z",
+      "fetchedAt": "2026-10-29T17:02:19.156Z"
+    },
+    {
+      "game": "yeet-a-friend",
+      "gameName": "Yeet a Friend!",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/yeet-a-friend"
+      },
+      "code": "MADYEET",
+      "reward": "3 Wheel Spins",
+      "date": "2026-10-29T16:26:40.847Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-29T17:02:19.156Z",
+      "fetchedAt": "2026-10-29T17:02:19.156Z"
+    },
+    {
+      "game": "eat-everything-in-a-grocery-store",
+      "gameName": "Eat Everything In A Grocery Store",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/evomon"
+        "Roblox Den": "https://robloxden.com/game-codes/eat-everything-in-a-grocery-store"
       },
-      "code": "EVOS4LIVE",
-      "reward": "5 Trait Reroll Potions, 3 Nature Reroll Potions, and 3 Talent Vector Potions",
+      "code": "SUPERSNACK",
+      "reward": "5M Cash",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1793272195990,
+      "srcNewAt": 1793267445317,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-10-29T16:02:40.607Z",
-      "fetchedAt": "2026-10-29T16:02:40.607Z"
+      "firstSeenAt": "2026-10-29T17:02:19.156Z",
+      "fetchedAt": "2026-10-29T17:02:19.156Z"
     }
   ],
-  "bulkGames": [
-    {
-      "game": "ragdoll-boxing",
-      "count": 1,
-      "fresh": [
-        {
-          "code": "FAVORITES1K",
-          "reward": "2,000 Cash, 1 Reset Token"
-        }
-      ]
-    }
-  ]
+  "bulkGames": []
 }
