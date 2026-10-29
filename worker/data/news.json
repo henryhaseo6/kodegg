@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-29T11:02:26.272Z",
+  "updatedAt": "2026-10-29T12:02:27.814Z",
   "counts": {
-    "active": 92,
-    "archived": 190
+    "active": 91,
+    "archived": 191
   },
   "articles": [
     {
@@ -1460,7 +1460,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5573",
       "source": "Wuthering Waves",
       "publishedAt": "2026-09-30T03:51:44.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1475,10 +1477,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1790611200000/dngsdsx5ljkeowz86m-1790680670533.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5571",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-09-29T11:18:45.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-09-29T11:18:45.000Z",
+      "archivedAt": "2026-10-29T12:02:27.814Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
