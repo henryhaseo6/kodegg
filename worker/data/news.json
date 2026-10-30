@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-10-30T09:02:56.767Z",
+  "updatedAt": "2026-10-30T10:02:09.822Z",
   "counts": {
-    "active": 90,
+    "active": 91,
     "archived": 195
   },
   "articles": [
+    {
+      "game": "tot",
+      "gameName": "Tears of Themis",
+      "title": {
+        "en": "✦Between Us System Update✦",
+        "id": "✦Between Us System Update✦"
+      },
+      "excerpt": {
+        "en": "On 2026/11/1 at 11:00, the Between Us system content will be updated! ✦Between Us System Update ✧ System update time: 2026/11/1 11:00 (UTC+9) 1. New Encounter Events, Outing Events",
+        "id": "On 2026/11/1 at 11:00, the Between Us system content will be updated! ✦Between Us System Update ✧ System update time: 2026/11/1 11:00 (UTC+9) 1. New Encounter Events, Outing Events"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/29/49075542ff416eadedc0d8684264faec_2781613162207541616.jpg",
+      "url": "https://www.hoyolab.com/article/47250718",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-30T10:00:05.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Genshin Impact Miliastra Wonderland\" Polyphonic Season Overview",
+        "id": "\"Genshin Impact Miliastra Wonderland\" Polyphonic Season Overview"
+      },
+      "excerpt": {
+        "en": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Polyphonic Season\" is about to begin, so let's check out the benefits and events in this new version update!",
+        "id": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Polyphonic Season\" is about to begin, so let's check out the benefits and events in this new version update!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/30/eef5fb1e6b58e694ad8a5cf24f2fc340_7207417910782973547.jpg",
+      "url": "https://www.hoyolab.com/article/47250717",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-30T10:00:05.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -390,22 +422,6 @@
       "publishedAt": "2026-10-26T04:00:07.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.2 - Event Ode Legendary Cosmetics",
-        "id": "Version 7.2 - Event Ode Legendary Cosmetics"
-      },
-      "excerpt": {
-        "en": "★Legendary Cosmetic | Polyphonic Variations Melody finds its form in measured order, and all sounds rise in waves of resonance. Profound dark blue pairs with clear, shifting light,",
-        "id": "★Legendary Cosmetic | Polyphonic Variations Melody finds its form in measured order, and all sounds rise in waves of resonance. Profound dark blue pairs with clear, shifting light,"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/26/6cfadc89954ba0bbe7825f5f24217b07_1051027402049740105.jpg",
-      "url": "https://www.hoyolab.com/article/47208256",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-26T04:00:04.000Z"
-    },
-    {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
       "title": {
@@ -630,22 +646,6 @@
       "publishedAt": "2026-10-23T04:05:04.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Agent Record | Sunbringer",
-        "id": "Profil Agen | Sunbringer"
-      },
-      "excerpt": {
-        "en": "\"'Sunbringer'... That name carries the world's hope, and the promise the three of us made while standing side by side.\" Sunbringer \"Even if the sky is destined to fall silent, Rosc",
-        "id": "\"Nama 'Sunbringer' adalah harapan dunia, sekaligus janji kami bertiga untuk berjuang bersama.\" Sunbringer \"Sekalipun langit ditakdirkan membisu, Roscaelifer tidak akan pernah menye"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/22/0/54f415f16de4ce04da7426b318475a98_8172361796058675548.jpeg",
-      "url": "https://www.hoyolab.com/article/47172159",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-23T04:00:08.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -658,6 +658,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/21/be88d9eed8e4663f973daf841c735c74_3694580175448803136.jpg",
       "url": "https://www.hoyolab.com/article/47172160",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-23T04:00:08.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Agent Record | Sunbringer",
+        "id": "Profil Agen | Sunbringer"
+      },
+      "excerpt": {
+        "en": "\"'Sunbringer'... That name carries the world's hope, and the promise the three of us made while standing side by side.\" Sunbringer \"Even if the sky is destined to fall silent, Rosc",
+        "id": "\"Nama 'Sunbringer' adalah harapan dunia, sekaligus janji kami bertiga untuk berjuang bersama.\" Sunbringer \"Sekalipun langit ditakdirkan membisu, Roscaelifer tidak akan pernah menye"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/22/0/54f415f16de4ce04da7426b318475a98_8172361796058675548.jpeg",
+      "url": "https://www.hoyolab.com/article/47172159",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-23T04:00:08.000Z"
     },
@@ -1302,22 +1318,6 @@
       "publishedAt": "2026-10-12T09:30:28.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Data Bounty: Combat Simulation\" Event Details",
-        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
-        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
-      "url": "https://www.hoyolab.com/article/47055658",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-12T04:00:06.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -1330,6 +1330,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/10/ce8882d6b6007f109655148a27b26455_2717089125464101215.jpg",
       "url": "https://www.hoyolab.com/article/47055659",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-12T04:00:06.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Data Bounty: Combat Simulation\" Event Details",
+        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
+        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
+      "url": "https://www.hoyolab.com/article/47055658",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-12T04:00:06.000Z"
     },
