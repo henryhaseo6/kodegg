@@ -1,58 +1,10 @@
 {
-  "updatedAt": "2026-10-30T18:02:38.343Z",
+  "updatedAt": "2026-10-30T19:02:09.239Z",
   "counts": {
-    "active": 56,
-    "archived": 179
+    "active": 54,
+    "archived": 181
   },
   "events": [
-    {
-      "game": "tot",
-      "gameName": "Tears of Themis",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Special Consultation Vyn Limited-Time Rerun",
-        "id": "Special Consultation Vyn Limited-Time Rerun"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Complete Special Consultation to claim rich rewards. The Special Consultation Vyn Limited-Time Rerun event starts on 2026/10/24 11:00 (UTC+9)! ✦ Special Consultation Limited-Time Event ✧Event Period: 2026/10/24 11:00 - 2026/10/31 04:00 (UTC",
-        "id": "Complete Special Consultation to claim rich rewards. The Special Consultation Vyn Limited-Time Rerun event starts on 2026/10/24 11:00 (UTC+9)! ✦ Special Consultation Limited-Time Event ✧Event Period: 2026/10/24 11:00 - 2026/10/31 04:00 (UTC"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/19/14c4501c871d0ec0f27c64eb80613ada_154476691593246262.jpg",
-      "startsAt": "2026-10-24T02:00:00.000Z",
-      "endsAt": "2026-10-30T19:00:00.000Z",
-      "postedAt": "2026-10-21T10:00:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/47154010"
-    },
-    {
-      "game": "tot",
-      "gameName": "Tears of Themis",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Treasures of Wing Limited-Time Rerun",
-        "id": "Treasures of Wing Limited-Time Rerun"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "As moonlight fades into the night, their gazes lock in a moment of profound connection. ✦ Event Period 2026/10/24 11:00 - 10/31 04:00 (UTC+9) ✦ Event Access Point Main Screen > Event > Treasures of Wing",
-        "id": "As moonlight fades into the night, their gazes lock in a moment of profound connection. ✦ Event Period 2026/10/24 11:00 - 10/31 04:00 (UTC+9) ✦ Event Access Point Main Screen > Event > Treasures of Wing"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/19/2ec2a473a401d25588372f9e0ee51f3f_9061274212061241649.jpg",
-      "startsAt": "2026-10-24T02:00:00.000Z",
-      "endsAt": "2026-10-30T19:00:00.000Z",
-      "postedAt": "2026-10-21T02:00:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/47150243"
-    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -617,30 +569,6 @@
       "type": "event",
       "typeName": null,
       "title": {
-        "en": "Version 7.1 Share HoYoverse Top-Up Center Event: Win Primogems, Phase 2",
-        "id": "Event Berbagi Top-Up Center HoYoverse Versi 7.1 untuk Memenangkan Primogem — Tahap 2"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Olah! Hello, Traveler~ Bonus Rewards Are Here for the Version 7.1 HoYoverse Top-Up Center Sharing Event! Make a top-up at the Top-Up Center and you'll receive Primogems ×300 if this is your first purchase since the release of Version \"Luna ",
-        "id": "Olah! Apa kabar, Traveler? Event Berbagi HoYoverse Top-Up Center Versi 7.1 hadir dengan hadiah tambahan! Kunjungi Top-Up Center dan dapatkan Primogem ×300 untuk top-up pertamamu sejak Versi \"Candra VI\" dirilis! Kamu juga bisa menikmati"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/519bc76d605dcc0ef676af5e94605b74_3853398692464654951.jpg",
-      "startsAt": "2026-10-13T04:00:00.000Z",
-      "endsAt": "2026-11-03T15:59:59.000Z",
-      "postedAt": "2026-10-13T04:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/47066240"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
         "en": "The Version 7.1 Genius Column Submission Event Begins! Share Your Stage Insights to Win Handsome Rewards!",
         "id": "Event Kontes Kolom Bakat Versi 7.1 dimulai! Bagikan wawasanmu dan menangkan hadiah!"
       },
@@ -658,6 +586,30 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/46800042"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Version 7.1 Share HoYoverse Top-Up Center Event: Win Primogems, Phase 2",
+        "id": "Event Berbagi Top-Up Center HoYoverse Versi 7.1 untuk Memenangkan Primogem — Tahap 2"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Olah! Hello, Traveler~ Bonus Rewards Are Here for the Version 7.1 HoYoverse Top-Up Center Sharing Event! Make a top-up at the Top-Up Center and you'll receive Primogems ×300 if this is your first purchase since the release of Version \"Luna ",
+        "id": "Olah! Apa kabar, Traveler? Event Berbagi HoYoverse Top-Up Center Versi 7.1 hadir dengan hadiah tambahan! Kunjungi Top-Up Center dan dapatkan Primogem ×300 untuk top-up pertamamu sejak Versi \"Candra VI\" dirilis! Kamu juga bisa menikmati"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/519bc76d605dcc0ef676af5e94605b74_3853398692464654951.jpg",
+      "startsAt": "2026-10-13T04:00:00.000Z",
+      "endsAt": "2026-11-03T15:59:59.000Z",
+      "postedAt": "2026-10-13T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47066240"
     },
     {
       "game": "gi",
@@ -1471,6 +1423,56 @@
     }
   ],
   "archive": [
+    {
+      "game": "tot",
+      "gameName": "Tears of Themis",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Special Consultation Vyn Limited-Time Rerun",
+        "id": "Special Consultation Vyn Limited-Time Rerun"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Complete Special Consultation to claim rich rewards. The Special Consultation Vyn Limited-Time Rerun event starts on 2026/10/24 11:00 (UTC+9)! ✦ Special Consultation Limited-Time Event ✧Event Period: 2026/10/24 11:00 - 2026/10/31 04:00 (UTC",
+        "id": "Complete Special Consultation to claim rich rewards. The Special Consultation Vyn Limited-Time Rerun event starts on 2026/10/24 11:00 (UTC+9)! ✦ Special Consultation Limited-Time Event ✧Event Period: 2026/10/24 11:00 - 2026/10/31 04:00 (UTC"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/19/14c4501c871d0ec0f27c64eb80613ada_154476691593246262.jpg",
+      "startsAt": "2026-10-24T02:00:00.000Z",
+      "endsAt": "2026-10-30T19:00:00.000Z",
+      "postedAt": "2026-10-21T10:00:05.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47154010",
+      "archivedAt": "2026-10-30T19:02:09.239Z"
+    },
+    {
+      "game": "tot",
+      "gameName": "Tears of Themis",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Treasures of Wing Limited-Time Rerun",
+        "id": "Treasures of Wing Limited-Time Rerun"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "As moonlight fades into the night, their gazes lock in a moment of profound connection. ✦ Event Period 2026/10/24 11:00 - 10/31 04:00 (UTC+9) ✦ Event Access Point Main Screen > Event > Treasures of Wing",
+        "id": "As moonlight fades into the night, their gazes lock in a moment of profound connection. ✦ Event Period 2026/10/24 11:00 - 10/31 04:00 (UTC+9) ✦ Event Access Point Main Screen > Event > Treasures of Wing"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/19/2ec2a473a401d25588372f9e0ee51f3f_9061274212061241649.jpg",
+      "startsAt": "2026-10-24T02:00:00.000Z",
+      "endsAt": "2026-10-30T19:00:00.000Z",
+      "postedAt": "2026-10-21T02:00:05.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47150243",
+      "archivedAt": "2026-10-30T19:02:09.239Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
