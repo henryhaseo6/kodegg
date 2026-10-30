@@ -1,5 +1,121 @@
 {
-  "generatedAt": "2026-10-30T19:02:11.349Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-10-30T20:02:46.688Z",
+  "codes": [
+    {
+      "game": "1-anime-eyes",
+      "gameName": "+1 Anime Eyes",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/1-anime-eyes"
+      },
+      "code": "1MILLIONVISITS",
+      "reward": "Infernal Egg",
+      "date": "2026-10-30T19:24:40.777Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-30T20:02:46.688Z",
+      "fetchedAt": "2026-10-30T20:02:46.688Z"
+    },
+    {
+      "game": "1-anime-eyes",
+      "gameName": "+1 Anime Eyes",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/1-anime-eyes"
+      },
+      "code": "KURUMA",
+      "reward": "15 Kyubi Coins",
+      "date": "2026-10-30T19:24:40.611Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-30T20:02:46.688Z",
+      "fetchedAt": "2026-10-30T20:02:46.688Z"
+    },
+    {
+      "game": "1-anime-eyes",
+      "gameName": "+1 Anime Eyes",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/1-anime-eyes"
+      },
+      "code": "UPDATE2",
+      "reward": "15 Kyubi Coins",
+      "date": "2026-10-30T19:24:40.466Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-10-30T20:02:46.688Z",
+      "fetchedAt": "2026-10-30T20:02:46.688Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "punch-walls-to-escape",
+      "count": 1,
+      "fresh": [
+        {
+          "code": "IRONBRASS",
+          "reward": "Iron Brass Crates (Brass Skins), Janitor Suit"
+        }
+      ]
+    },
+    {
+      "game": "anime-vs-anime",
+      "count": 11,
+      "fresh": [
+        {
+          "code": "200CCU!",
+          "reward": "10,000 Coins"
+        },
+        {
+          "code": "SLIME!",
+          "reward": "5,000 Coins"
+        },
+        {
+          "code": "xennsei",
+          "reward": "20 Emeralds"
+        },
+        {
+          "code": "goatedpat",
+          "reward": "5,000 Coins"
+        },
+        {
+          "code": "aaa503m",
+          "reward": "5,000 Coins"
+        },
+        {
+          "code": "Kizaru",
+          "reward": "5,000 Coins"
+        },
+        {
+          "code": "ABSTRAKT",
+          "reward": "5,000 Coins"
+        },
+        {
+          "code": "DokiDoki",
+          "reward": "Apex Pack"
+        },
+        {
+          "code": "LfGhostin",
+          "reward": "Apex Pack"
+        },
+        {
+          "code": "SauDeep",
+          "reward": "Apex Pack"
+        },
+        {
+          "code": "87_Star",
+          "reward": "Apex Pack"
+        }
+      ]
+    }
+  ]
 }
