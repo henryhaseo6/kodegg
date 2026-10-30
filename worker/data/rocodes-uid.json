@@ -17456,5 +17456,26 @@
   "place": 106521346673466,
   "kode": 3,
   "nama": "Ragdoll Playground"
+ },
+ "1-upgrade-per-kill": {
+  "at": 1793397751777,
+  "uid": 10768372920,
+  "place": 113273588963037,
+  "kode": 1,
+  "nama": "+1 Upgrade Per Kill"
+ },
+ "1-money-per-click": {
+  "at": 1793397751777,
+  "uid": 10766212164,
+  "place": 79039639963203,
+  "kode": 1,
+  "nama": "+1 Money Per Click"
+ },
+ "fake-dead-or-die": {
+  "at": 1793397751777,
+  "uid": 10770458796,
+  "place": 98570521143306,
+  "kode": 1,
+  "nama": "Fake Dead or Die"
  }
 }
