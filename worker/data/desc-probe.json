@@ -5437,12 +5437,12 @@
   "a-10": {
    "tulis": "A-10",
    "pertama": 1789229082646,
-   "terakhir": "2026-09-19"
+   "terakhir": "2026-10-31"
   },
   "warthog": {
    "tulis": "Warthog",
    "pertama": 1789229082646,
-   "terakhir": "2026-09-19"
+   "terakhir": "2026-10-31"
   },
   "challenger": {
    "tulis": "Challenger",
@@ -5572,6 +5572,36 @@
   "bespoke": {
    "tulis": "Bespoke",
    "pertama": 1792857909461,
+   "terakhir": "2026-10-31"
+  },
+  "mh-60l": {
+   "tulis": "MH-60L",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "hawk": {
+   "tulis": "Hawk",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "snake": {
+   "tulis": "Snake",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "uh-60": {
+   "tulis": "UH-60",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "medevac": {
+   "tulis": "MEDEVAC",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "phase": {
+   "tulis": "phase",
+   "pertama": 1793459147042,
    "terakhir": "2026-10-31"
   }
  },
@@ -12269,7 +12299,7 @@
   "devil": {
    "tulis": "Devil",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-16",
+   "terakhir": "2026-10-31",
    "awal": true
   },
   "fiend": {
@@ -25270,7 +25300,7 @@
   "devil": {
    "tulis": "Devil",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-16",
+   "terakhir": "2026-10-31",
    "awal": true
   },
   "makima": {
@@ -59388,6 +59418,26 @@
    "tulis": "HAUNTEDBARN",
    "pertama": 1792850650513,
    "terakhir": "2026-10-31"
+  },
+  "ufos": {
+   "tulis": "UFOS",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "chapters": {
+   "tulis": "CHAPTERS",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "improved": {
+   "tulis": "IMPROVED",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "easter": {
+   "tulis": "EASTER",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
   }
  },
  "restaurant-tycoon-2": {
@@ -68002,6 +68052,11 @@
    "tulis": "Immortal",
    "pertama": 1792119926724,
    "terakhir": "2026-10-31"
+  },
+  "battra": {
+   "tulis": "Battra",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
   }
  },
  "1-skill-point-legends": {
@@ -75199,7 +75254,7 @@
   "devil": {
    "tulis": "Devil",
    "pertama": 1789866248690,
-   "terakhir": "2026-10-16"
+   "terakhir": "2026-10-31"
   },
   "horde": {
    "tulis": "horde",
@@ -85539,6 +85594,129 @@
   "guaranteed": {
    "tulis": "guaranteed",
    "pertama": 1793451954835,
+   "terakhir": "2026-10-31"
+  }
+ },
+ "wheelie-a-kukirin-escooter-simulator": {
+  "sur-ron": {
+   "tulis": "Sur-Ron",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "dealer": {
+   "tulis": "dealer",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "kukirin": {
+   "tulis": "KUKIRIN",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31",
+   "sudahPunya": true
+  },
+  "escooter": {
+   "tulis": "Escooter",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "dualtron": {
+   "tulis": "Dualtron",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "kaabo": {
+   "tulis": "Kaabo",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "ninebot": {
+   "tulis": "Ninebot",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "e-scooter": {
+   "tulis": "e-scooter",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "scooter": {
+   "tulis": "scooter",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "outrun": {
+   "tulis": "outrun",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "g800": {
+   "tulis": "G800",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "e-scooters": {
+   "tulis": "e-scooters",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "vsett": {
+   "tulis": "VSETT",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "trials": {
+   "tulis": "trials",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "courses": {
+   "tulis": "courses",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "chases": {
+   "tulis": "chases",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "bounty": {
+   "tulis": "bounty",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "tune": {
+   "tulis": "Tune",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "motor": {
+   "tulis": "motor",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "port": {
+   "tulis": "Port",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "suburbs": {
+   "tulis": "Suburbs",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "hills": {
+   "tulis": "Hills",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "airfield": {
+   "tulis": "Airfield",
+   "pertama": 1793459147042,
+   "terakhir": "2026-10-31"
+  },
+  "strip": {
+   "tulis": "strip",
+   "pertama": 1793459147042,
    "terakhir": "2026-10-31"
   }
  }
