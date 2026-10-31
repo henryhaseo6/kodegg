@@ -7560,7 +7560,7 @@
   "variant": {
    "tulis": "Variant",
    "pertama": 1786204966995,
-   "terakhir": "2026-08-14"
+   "terakhir": "2026-10-31"
   },
   "overworld": {
    "tulis": "overworld",
@@ -7920,7 +7920,7 @@
   "gamemode": {
    "tulis": "Gamemode",
    "pertama": 1791057904552,
-   "terakhir": "2026-10-10"
+   "terakhir": "2026-10-31"
   },
   "passives": {
    "tulis": "PASSIVES",
@@ -8011,6 +8011,61 @@
    "tulis": "Treat",
    "pertama": 1792926270422,
    "terakhir": "2026-10-27"
+  },
+  "mahito": {
+   "tulis": "MAHITO",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "3-phase": {
+   "tulis": "3-phase",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "subway": {
+   "tulis": "subway",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "enhanced": {
+   "tulis": "Enhanced",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "nodes": {
+   "tulis": "Nodes",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "siege": {
+   "tulis": "Siege",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "wave-based": {
+   "tulis": "wave-based",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "ailment": {
+   "tulis": "Ailment",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "fear": {
+   "tulis": "Fear",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "guesser": {
+   "tulis": "Guesser",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "happyhalloween": {
+   "tulis": "HAPPYHalloween",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
   }
  },
  "midnight-chasers-highway-racing": {
@@ -39883,6 +39938,16 @@
    "tulis": "CHEAPER",
    "pertama": 1792263904563,
    "terakhir": "2026-10-31"
+  },
+  "tractor": {
+   "tulis": "TRACTOR",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "trucking": {
+   "tulis": "trucking",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
   }
  },
  "project-new-world": {
@@ -57256,6 +57321,16 @@
   "laying": {
    "tulis": "laying",
    "pertama": 1786170888435,
+   "terakhir": "2026-10-31"
+  },
+  "pumpkinlord": {
+   "tulis": "PUMPKINLORD",
+   "pertama": 1793466370564,
+   "terakhir": "2026-10-31"
+  },
+  "8mclucks": {
+   "tulis": "8MCLUCKS",
+   "pertama": 1793466370564,
    "terakhir": "2026-10-31"
   }
  },
@@ -74931,6 +75006,11 @@
   "qtes": {
    "tulis": "QTEs",
    "pertama": 1789743922524,
+   "terakhir": "2026-10-31"
+  },
+  "300k": {
+   "tulis": "300K",
+   "pertama": 1793466370564,
    "terakhir": "2026-10-31"
   }
  },
