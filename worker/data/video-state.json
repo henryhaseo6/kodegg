@@ -1,9 +1,7 @@
 {
   "date": "2026-11-01",
-  "todayCount": 17,
+  "todayCount": 19,
   "posted": {
-    "resource-incremental:Update10": true,
-    "resource-incremental:5MEvent": true,
     "resource-incremental:Update8": true,
     "resource-incremental:MathIsEasy": true,
     "resource-incremental:gymbronice": true,
@@ -4001,9 +3999,27 @@
     "case-simulator-rng:125kLikes": true,
     "case-simulator-rng:Halloween26": true,
     "case-simulator-rng:120kLikes": true,
-    "roll-a-barber-rng:2MVISITS": true
+    "roll-a-barber-rng:2MVISITS": true,
+    "pa-deliber:1MVISIT": true,
+    "world-zero:FALLENINSANE": true
   },
   "log": [
+    {
+      "at": "2026-11-01T12:06:10.692Z",
+      "game": "world-zero",
+      "name": "World Zero",
+      "videoId": "hqFkRZ894LM",
+      "title": "World Zero Codes (November 2026) 🎁 Kode Terbaru Update 1 November 2026 — KodeGG",
+      "mode": "upload"
+    },
+    {
+      "at": "2026-11-01T12:06:10.692Z",
+      "game": "pa-deliber",
+      "name": "Pa Deliber",
+      "videoId": "6EQss7cTiGU",
+      "title": "Pa Deliber Codes (November 2026) 🎁 Kode Terbaru Update 1 November 2026 — KodeGG",
+      "mode": "upload"
+    },
     {
       "at": "2026-11-01T11:08:28.894Z",
       "game": "roll-a-barber-rng",
@@ -6386,22 +6402,6 @@
       "name": "Trench Decay",
       "videoId": "9GoUOSCK-Tg",
       "title": "Trench Decay Codes (October 2026) 🎁 Kode Terbaru Update 25 Oktober 2026 — KodeGG",
-      "mode": "upload"
-    },
-    {
-      "at": "2026-10-25T01:06:24.440Z",
-      "game": "brainrot-evolution",
-      "name": "Brainrot Evolution",
-      "videoId": "sn8aixPKtXM",
-      "title": "Brainrot Evolution Codes (October 2026) 🎁 Kode Terbaru Update 25 Oktober 2026 — KodeGG",
-      "mode": "upload"
-    },
-    {
-      "at": "2026-10-25T01:06:24.440Z",
-      "game": "monsterverze",
-      "name": "MonsterVerze",
-      "videoId": "yXaiSTrAZeo",
-      "title": "MonsterVerze Codes (October 2026) 🎁 Kode Terbaru Update 25 Oktober 2026 — KodeGG",
       "mode": "upload"
     }
   ],
