@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-11-02T04:02:33.338Z",
+  "updatedAt": "2026-11-02T05:02:14.809Z",
   "counts": {
     "active": 95,
     "archived": 196
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday, Yuzuha 丨 Golden Windfall",
+        "id": "Selamat Ulang Tahun, Yuzuha | Keberuntungan Beruntun"
+      },
+      "excerpt": {
+        "en": "\"Triple jackpot! Sorry, but it seems like my luck's taking center stage today again!\" \"I'll use one ticket to treat all members of Spook Shack some tasty desserts. No playing trick",
+        "id": "Tiga jackpot sekaligus! Maaf ya, hari ini lagi-lagi keberuntungan berpihak padaku. \"Aku mau pakai satu buat traktir semua anggota Spook Shack menikmati hidangan penutup. Tenang, ti"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/5671c99dbcce7bac91aad2bcbdcc3a04_1086993548761778305.png",
+      "url": "https://www.hoyolab.com/article/47284265",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-02T04:15:08.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Hour of Ruin\" Version 7.2 Events Overview - Phase I",
+        "id": "Preview Event Versi 7.2 \"Detik-Detik Awal Kehancuran\" - Edisi 1"
+      },
+      "excerpt": {
+        "en": "Hello, Traveler~ Version 7.2 \"Hour of Ruin\" is coming! Let's take a look at what kind of benefits and events will be in this new Version update~ *Please refer to Version 7.2 notice",
+        "id": "Halo Traveler~ Versi 7.2 \"Detik-Detik Awal Kehancuran\" sudah mau hadir nih! Yuk kita simak bersama ada hadiah dan event apa saja di versi kali ini! *Silakan kunjungi pengumuman Ver"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/01/0/e7104489aba58b781041b029283bebf7_8024249708117836741.jpeg",
+      "url": "https://www.hoyolab.com/article/47284233",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-02T04:10:08.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -486,22 +518,6 @@
       "publishedAt": "2026-10-30T12:15:07.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"Genshin Impact Miliastra Wonderland\" Polyphonic Season Overview",
-        "id": "\"Genshin Impact Miliastra Wonderland\" Polyphonic Season Overview"
-      },
-      "excerpt": {
-        "en": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Polyphonic Season\" is about to begin, so let's check out the benefits and events in this new version update!",
-        "id": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Polyphonic Season\" is about to begin, so let's check out the benefits and events in this new version update!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/30/eef5fb1e6b58e694ad8a5cf24f2fc340_7207417910782973547.jpg",
-      "url": "https://www.hoyolab.com/article/47250717",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-30T10:00:05.000Z"
-    },
-    {
       "game": "tot",
       "gameName": "Tears of Themis",
       "title": {
@@ -514,6 +530,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/29/49075542ff416eadedc0d8684264faec_2781613162207541616.jpg",
       "url": "https://www.hoyolab.com/article/47250718",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-10-30T10:00:05.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Genshin Impact Miliastra Wonderland\" Polyphonic Season Overview",
+        "id": "\"Genshin Impact Miliastra Wonderland\" Polyphonic Season Overview"
+      },
+      "excerpt": {
+        "en": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Polyphonic Season\" is about to begin, so let's check out the benefits and events in this new version update!",
+        "id": "Hello, Traveler! Welcome to Miliastra Wonderland. The \"Polyphonic Season\" is about to begin, so let's check out the benefits and events in this new version update!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/30/eef5fb1e6b58e694ad8a5cf24f2fc340_7207417910782973547.jpg",
+      "url": "https://www.hoyolab.com/article/47250717",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-30T10:00:05.000Z"
     },
@@ -580,22 +612,6 @@
       "url": "https://www.hoyolab.com/article/47240756",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-29T10:00:05.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Version 7.2: Paimon's Version Update Notes",
-        "id": "Catatan Update Versi 7.2 Paimon"
-      },
-      "excerpt": {
-        "en": "Dear Travelers, Version 7.2 arrives on November 4! Along with new characters, new story content, and more, this update also brings a host of quality-of-life improvements, including",
-        "id": "Dear Traveler, Update versi 7.2 akan segera hadir pada 4 November. Dalam update kali ini, selain Karakter baru, kisah baru, serta konten lainnya, game juga akan menghadirkan berbag"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/28/f35e9b2041b778a8edd215e385230fad_2000713158619103537.jpg",
-      "url": "https://www.hoyolab.com/article/47240755",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-29T10:00:04.000Z"
     },
     {
       "game": "hsr",
@@ -948,22 +964,6 @@
       "url": "https://www.hoyolab.com/article/47172159",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-23T04:00:08.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Eldreda Sunbringer",
-        "id": "Eldreda Sunbringer"
-      },
-      "excerpt": {
-        "en": "",
-        "id": ""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-10-23/transcoded/142113327566046875648_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/47172014",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-23T03:45:03.000Z"
     },
     {
       "game": "hi3",
