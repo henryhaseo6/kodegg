@@ -1,139 +1,10 @@
 {
-  "updatedAt": "2026-11-02T19:02:29.597Z",
+  "updatedAt": "2026-11-02T20:02:23.070Z",
   "counts": {
-    "active": 63,
-    "archived": 183
+    "active": 58,
+    "archived": 185
   },
   "events": [
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": "Event",
-      "title": {
-        "en": "Stygian Onslaught Event: Disturbance-affected Ley Line challenges",
-        "id": "Event \"Stygian Onslaught\": Tantangan Ley Line yang Tidak Stabil"
-      },
-      "subtitle": {
-        "en": "Stygian Onslaught",
-        "id": "Stygian Onslaught"
-      },
-      "desc": {
-        "en": "〓Event Rewards〓 〓Event Duration〓 Event Duration: 2026/09/30 10:00 - 2026/11/03 03:59 Disturbance Outbreak: 2026/09/30 10:00 - 2026/10/10 03:59 〓Eligibility〓 Adventure Rank 20 or above And complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" ※ Complete Archon Quest \"Perilous Trail\" first to get the best experience from this event. 〓Event Details〓 ● Challenge gameplay: You must select a difficulty first. After you enter a challenge, you must complete 3 phases, for a total of 3 time-limited battles. The challenge is considered complete once all opponents in all 3 battles are beaten. ● Difficulty: difficulty levels in ascending order are \"Normal,\" \"Advancing,\" \"Hard,\" \"Menacing,\" \"Fearless,\" and \"Dire.\" The higher the initial difficulty selected, the more restrictive the rules applied during the challenge, and the tougher enemies will be. From the \"Hard\" difficulty onward, you can only unlock the next difficulty by clearing the current one. ● \"Exalted Ones\": There can be a maximum of 16 \"Exalted Ones\" at any one time during the challenge. \"Exalted Ones\" will obtain buff effects; adding them to your party will help you complete the challenge. There can be a maximum of 16 \"Exalted Ones\" at any one time during the challenge, and their number is subject to change. Under the \"Dire\" difficulty, \"Exalted Ones\" no longer obtain buff effects. ● Disturbance Outbreak: In the first 10 days from when the challenge is available, the Ley Line disturbance will be in an \"Outbreak\" state. During the Disturbance Outbreak, players with Adventure Rank 45 and above can challenge stages at \"Hard\" difficulty onwards, and upon completing them, can consume Resin to earn the rewards from their chosen Domains of Blessing, while also accumulating Dire Prestige. Accumulate a certain amount of Dire Prestige to receive extra Artifact rewards and Dust of Enlightenment . After the Disturbance Outbreak ends, players will not be able to consume Resins to claim rewards from their selected Domain of Blessing. ● Completing a more difficult challenge will also let you obtain the rewards from the difficulties below that one. Rewards for \"Fearless\" and \"Dire\" difficulties can only be claimed upon completing the single-player challenge. ● Co-Op Mode: All difficulty levels support Co-Op Mode of up to 4 players. \"Normal,\" \"Advancing,\" and \"Hard\" difficulties support matchmaking or Co-Op Mode within the same world. \"Menacing,\" \"Fearless,\" and \"Dire\" difficulties only support Co-Op challenges within the same world.",
-        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 Waktu Event: 2026/09/30 10:00 - 2026/11/03 03:59 Disturbance Outbreak: 2026/09/30 10:00 - 2026/10/10 03:59 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Dan telah menyelesaikan Quest Archon Prolog: Bag. III \"Lagu Naga dan Kebebasan\" ※ Selesaikan Quest Archon \"Jalur Berbahaya\" terlebih dahulu untuk pengalaman bermain yang lebih baik. 〓 Penjelasan Event 〓 ● Gameplay tantangan: Traveler harus memilih 1 tingkat kesulitan sebelum memasuki tantangan. Setelah memasuki tantangan, Traveler harus menyelesaikan 3 pertempuran dan mengalahkan semua musuh dalam batas waktu. Traveler akan dianggap berhasil setelah berhasil menyelesaikan ketiga tantangan. ● Tingkat kesulitan：Mulai dari \"Normal\", \"Lanjutan\", \"Sulit\", \"Mengancam\", \"Ekstra Sulit\", dan \"Ekstrem\". Semakin tinggi tingkat kesulitan yang dipilih, semakin banyak batasan yang ada dalam tantangannya, dan semakin kuat pula musuhnya. Mulai dari tingkat \"Sulit\", Traveler harus menyelesaikan tingkat kesulitan tersebut untuk membuka tingkat kesulitan berikutnya. ● \"Exalted One\": Dalam tantangan, maksimum 16 Karakter dapat menjadi \"Exalted One\" di saat yang sama. \"Exalted One\" bisa mendapatkan buff, jadi ayo tambahkan ke dalam party-mu untuk menyelesaikan tantangannya dengan lebih mudah. Maksimum bisa ada 16 \"Exalted One\" di saat yang sama dalam suatu tantangan, dan jumlahnya dapat berubah tergantung pada situasi. Dalam tingkat kesulitan \"Ekstrem\", \"Exalted One\" tidak akan mendapatkan buff. ● Disturbance Outbreak: Selama 10 hari setelah tantangan dibuka, Gangguan Ley Line akan berada di dalam status \"Outbreak\" Selama Disturbance Outbreak, pemain dengan Rank Adventure 45 ke atas dapat menantang tingkat kesulitan \"Sulit\" atau lebih tinggi, dan dapat menggunakan Original Resin untuk mengambil hadiah dari Domain of Blessing yang dipilih, serta mengakumulasi Dire Prestige. Akumulasi \"Dire Prestige\" hingga jumlah tertentu untuk mendapatkan hadiah Artefak tambahan dan Dust of Enlightenment . Setelah Disturbance Outbreak berakhir, Traveler tidak dapat mengonsumsi Original Resin lagi untuk mengambil hadiah dari Domain of Blessing yang dipilih. ● Pengambilan Hadiah: Menyelesaikan tantangan di tingkat kesulitan yang lebih tinggi juga akan memberikanmu semua hadiah dari tingkat kesulitan di bawahnya. Hadiah untuk tingkat kesulitan \"Ekstra Sulit\" dan \"Ekstrem\" hanya bisa diambil setelah menyelesaikan tantangan dalam Mode Solo. ● Mode Co-Op: Semua tingkat kesulitan mendukung Mode Co-Op 4 orang. Tingkat kesulitan \"Normal\", \"Lanjutan\", dan \"Sulit\" mendukung Mode Matchmaking atau Co-Op di dunia yang sama. Tingkat kesulitan \"Mengancam\", \"Ekstra Sulit\", dan \"Ekstrem\" hanya mendukung Mode Co-Op di dunia yang sama."
-      },
-      "image": "https://sdk.hoyoverse.com/upload/ann/2025/10/23/40da7ab1ce17afd008e7a10c6ee6e67b_3372052251159312794_transformed.jpg",
-      "startsAt": "2026-09-28T04:00:00.000Z",
-      "endsAt": "2026-11-02T19:59:59.000Z",
-      "postedAt": "2026-09-28T04:00:00.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoverse",
-      "url": "https://genshin.hoyoverse.com/en/news"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Genshin Impact Miliastra Wonderland \"Starlit Gala\" Web Event Now Live for a Limited Time!",
-        "id": "Event Web \"Gala Langit Berbintang\" Miliastra Wonderland Genshin Impact Hadir untuk Waktu Terbatas!"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": ">> Click to Take Part in Event << 〓Event Duration〓 October 1, 2026 – November 3, 2026 04:00:00 (UTC +8) *Rewards cannot be claimed after the event ends. Please claim them in time. 〓Eligibility〓 Travelers who have reached Adventure Rank 1 or",
-        "id": ">> Ikuti Event << 〓 Waktu Event 〓 1 Oktober 2026 - 3 November 2026 4:00:00 (UTC+8) * Hadiah tidak dapat diambil setelah event berakhir. Harap Traveler segera mengambilnya ya~ 〓 Syarat Partisipasi 〓"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/a8af53fafc255295172eff4b8dd9cfc3_1491427254591636197.jpeg",
-      "startsAt": "2026-10-01T04:00:00.000Z",
-      "endsAt": "2026-11-02T19:59:59.000Z",
-      "postedAt": "2026-10-02T02:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/46928428"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": "Miliastra Wonderland",
-      "title": {
-        "en": "Visit the Starlit Gala Web Event to Unlock Your Wonderland Year in Review Report!",
-        "id": "Kunjungi Event Web \"Gala Langit Berbintang\" untuk Membuka Laporan Kilas Balik Wonderland!"
-      },
-      "subtitle": {
-        "en": "Starlit Gala: Genshin Impact Miliastra Wonderland Web Event Update!",
-        "id": "\"Gala Langit Berbintang\" — Event Web Miliastra Wonderland Genshin Impact Telah Diperbarui!"
-      },
-      "desc": {
-        "en": "Dear Traveler, more content is now available in the Starlit Gala web event. Unlock your Wonderland Year in Review Report and claim more rewards! Celebrate the Starlit Gala together and make your own memories! >> Click to Take Part in Event 〓Event Duration〓 Start Time: America Server: October 21, 2026 (UTC+8) Asia & TW, HK, MO & Europe Servers: October 22, 2026 (UTC+8) End Time: November 3, 2026 04:00 (UTC+8) ※ Rewards cannot be claimed after the event ends. Please claim them in time. 〓Eligibility〓 Travelers who have reached Adventure Rank 1 or above can participate in this event. ※ The data for the Wonderland Year in Review Report of the \"Starlit Gala\" event will be collected between the Version Luna II update and October 18, 2026, 00:00 (UTC+8) (there may be a margin of error of about 30 minutes). 〓Event Description〓 During the event, Travelers can click to view their Wonderland Year in Review Report and look back on their exclusive memories in Miliastra Wonderland~ Once you have finished viewing the full Wonderland Year in Review Report, your Wonderland Report Summary page will be generated, and you can share it freely! 〓Event Rewards〓 View the entire Wonderland Year in Review Report and share it to claim Geode of Replication ×100 and the Facial Makeup \"Delicate Heart.\" Complete more event tasks to claim Geodes of Replication, the Manekin Action \"V for Victory,\" and Mora ×20,000. 〓Event Notes〓 1. Please log in to the event using your HoYoverse Account and select your corresponding character in Genshin Impact to take part. This will ensure that your rewards can be sent and claimed correctly. 2. After the event ends, you will no longer be able to take part and claim the rewards, so remember to take part in time. 3. The in-game rewards will be distributed via in-game mail. The mail will expire after 30 days, so don't forget to claim the rewards in time. 4. This web event is provided purely for entertainment. The content of the event does not represent any actual story or settings in the game. It is not indicative of any related gameplay features in Genshin Impact.",
-        "id": "Traveler yang terhormat, konten Event Web \"Gala Langit Berbintang\" kini telah hadir! Buka Laporan Kilas Balik Wonderland milikmu dan dapatkan lebih banyak hadiah! Rayakan Gala Langit Berbintang bersama dan dapatkan kenangan eksklusifmu! >>Ikuti Event 〓 Waktu Event 〓 Waktu Mulai: Server America: 21 Oktober 2026 (UTC+8) Server Asia & TW, HK, MO & Europe: 22 Oktober 2026 (UTC+8) Waktu Berakhir: 3 November 2026 04:00 (UTC+8) ※ Hadiah tidak dapat diambil setelah event berakhir. Harap Traveler segera mengambilnya. 〓 Syarat Partisipasi 〓 Traveler dengan Rank Adventure Lv. 1 ke atas dapat mengikuti event ini. ※ Data dalam Laporan Kilas Balik Wonderland \"Gala Langit Berbintang\" mencakup rentang waktu dari update versi Candra II hingga 18 Oktober 2026 pukul 00.00 (UTC+8), dengan kemungkinan keterlambatan sekitar 30 menit. 〓 Pengenalan Event 〓 Selama event berlangsung, Traveler dapat menekan untuk melihat Laporan Kilas Balik Wonderland miliknya sendiri dan mendapatkan kenangan eksklusif di Miliastra Wonderland~ Setelah selesai menonton semua Laporan Kilas Balik Wonderland, halaman ringkasan laporan Wonderland akan dibuat dan Pengembara bebas untuk membagikannya! 〓 Hadiah Event 〓 Tonton hingga selesai Laporan Kilas Balik Wonderland dan bagikan untuk mendapatkan Geode of Replication ×100, Riasan \"Delicate Heart\"; Selesaikan lebih banyak Quest Event untuk mendapatkan juga Geode of Replication, Aksi Manekin \"Pose Kemenangan\", serta Mora ×20000. 〓 Catatan Event 〓 1. Silakan log in ke akun HoYoverse dan hubungkan Karaktermu di Genshin Impact untuk berpartisipasi di dalam event dan menjamin bahwa kamu bisa menerima dan mengambil hadiah event. 2. Setelah event berakhir, kamu tidak dapat mengikuti event dan mengambil hadiah lagi. Jadi ingat untuk mengikutinya tepat waktu ya. 3. Hadiah dalam game akan dikirim ke kotak pesan dalam game. Pesan berlaku selama 30 hari, jangan lupa ambil hadiahnya ya. 4. Event web ini hanya untuk hiburan semata, dan tidak mewakili cerita dan pengaturan sebenarnya dalam game, serta tidak berhubungan sama sekali dengan situasi dan kondisi dalam game Genshin Impact."
-      },
-      "image": "https://sdk.hoyoverse.com/upload/ann/2026/10/15/17ce4718f54a3a21719e7d07731a1b21_1092535759659879610_transformed.jpg",
-      "startsAt": "2026-10-22T04:00:00.000Z",
-      "endsAt": "2026-11-02T20:00:00.000Z",
-      "postedAt": "2026-10-22T04:00:00.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoverse",
-      "url": "https://genshin.hoyoverse.com/en/news"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": "Miliastra Wonderland",
-      "title": {
-        "en": "Starlit Gala",
-        "id": "Gala Langit Berbintang"
-      },
-      "subtitle": {
-        "en": "Starlit Gala",
-        "id": "Gala Langit Berbintang"
-      },
-      "desc": {
-        "en": "〓Event Duration〓 After Version 7.1 Update – 2026/11/03 04:00 〓Event Rewards〓 Headwear \"Unusual Hilichurl Mask,\" \"Cryo Slime Hat,\" Primogems, Geodes of Replication, Prismatic Crystals, Actions, Expressions, and more. 〓Event Details〓 ● During the Starlit Gala event, Travelers can claim the Cosmetic gift \"Unusual Hilichurl Mask,\" visit the Miliastra Shop to check out related content, and participate in Amongst the Thousand Stars: Wonderland Creator Contest, Starlit Gala: Wonderland Selects, and the Starlit Gala web event. ● During the creation and submission period for Amongst the Thousand Stars: Wonderland Creator Contest (After the Version 7.1 update – 2026/11/02 11:59 ), check the option to enter Amongst the Thousand Stars: Wonderland Creator Contest when first publishing a Wonderland for a chance to obtain Creation Ticket No.1, Primogems, and other rewards! More event details are available on the contest website. ● After the Starlit Gala: Wonderland Selects event begins, Travelers can participate during the event period (2026/10/01 12:00 – 2026/10/22 03:59 ). Play the featured Wonderlands and complete Celebration Objectives to accumulate Festive Fever and obtain rewards including the \"Cryo Slime Hat\" cosmetic, Primogems, Geodes of Replication, Prismatic Crystals, Actions, and Expressions. You can also vote for your favorite Wonderlands and help select the 20 \"Wonderlands of the Year\" of the first Starlit Gala event! ● After the special Starlit Gala web event begins, Travelers can participate during the event period (2026/10/01 12:00 – 2026/11/03 04:00 ), complete missions, and obtain Primogems, Geodes of Replication, Miliastra Wonderland items, and other rewards! ※ The Wonderland Selects event only features Wonderlands published before 2026/09/25 23:59 (GMT+8) that are of high overall quality and are not in Early Access. Wonderlands of the Year will be selected based on multiple factors, including total votes and overall quality. ※ During the Wonderland Selects event, Travelers can also access the Starlit Gala web event directly from the Wonderland Selects event screen.",
-        "id": "〓 Waktu Event 〓 Setelah Versi 7.1 - 2026/11/03 04:00 〓 Hadiah Event 〓 Kostum Hiasan kepala \"Unusual Hilichurl Mask\", \"Cryo Slime Hat\", Primogem, Geode of Replication, Prismatic Crystal, aksi, ekspresi, dan lain-lain. 〓 Penjelasan Event 〓 ● Dalam Event \"Gala Langit Berbintang\", Traveler dapat langsung mengklaim hadiah kostum \"Unusual Hilichurl Mask\". Kunjungi Toko Miliastra untuk melihat konten terkait, lalu berpartisipasi dalam event \"Di Antara Seribu Bintang: Kontes Kreasi Wonderland\", \"Gala Langit Berbintang: Pilihan Terbaik Wonderland\", dan event web spesial \"Gala Langit Berbintang\". ● Selama periode pengajuan karya untuk event \"Di Antara Seribu Bintang: Kontes Kreasi Wonderland\" (Setelah update v7.1 - 2026/11/02 11:59 ), centang pilihan untuk mengikuti \"Di Antara Seribu Bintang: Kontes Kreasi Wonderland\" saat pertama kali mempublikasikan Wonderland, dan kamu akan berkesempatan mendapatkan hadiah berupa Tiket Kreasi No. 1, Primogem, dan lainnya! Detail event selengkapnya dapat dilihat melalui situs web event. ● Setelah event \"Gala Langit Berbintang: Pilihan Terbaik Wonderland\" dibuka, Traveler dapat berpartisipasi dalam event ini selama periode gameplay berlangsung (2026/10/01 12:00 - 2026/10/22 03:59 ). Mainkan Wonderland yang tercatat dalam event, selesaikan berbagai \"Target Perayaan\" untuk mengumpulkan \"Festive Fever\", dan mendapatkan hadiah berupa kostum \"Cryo Slime Hat\", Primogem, Geode of Replication, Prismatic Crystal, aksi, dan ekspresi. Traveler juga dapat memberikan voting untuk Wonderland favoritmu dan berpartisipasi dalam pemilihan 20 \"Wonderland of the Year\" dalam event \"Gala Langit Berbintang\" perdana! ● Setelah event halaman web spesial \"Gala Langit Berbintang\" dibuka, Traveler dapat berpartisipasi dalam event ini selama periode event berlangsung (2026/10/01 12:00 - 2026/11/03 04:00 ). Selesaikan berbagai misi untuk mendapatkan hadiah Primogem, Geode of Replication, item \"Miliastra Wonderland\", serta hadiah lainnya! ※ Event \"Pilihan Terbaik Wonderland\" hanya mencakup Wonderland yang diterbitkan sebelum 2026/09/25 23:59 (GMT+8) , memiliki kualitas keseluruhan yang tinggi, dan sudah tidak berada dalam tahap \"Akses Awal\". Wonderland of the Year akan dipilih berdasarkan berbagai faktor seperti jumlah voting dan kualitas keseluruhan. ※ Selama gameplay \"Pilihan Terbaik Wonderland\" berlangsung, Traveler juga dapat langsung mengakses halaman event web \"Gala Langit Berbintang\" melalui menu event \"Pilihan Terbaik Wonderland\"."
-      },
-      "image": "https://sdk.hoyoverse.com/upload/ann/2026/09/17/a0a4a0cff37b7e26fe0e4faf3c009df9_6381299032088306271_transformed.jpg",
-      "startsAt": "2026-09-21T16:00:00.000Z",
-      "endsAt": "2026-11-02T20:00:00.000Z",
-      "postedAt": "2026-09-21T16:00:00.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoverse",
-      "url": "https://genshin.hoyoverse.com/en/news"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Dear Traveler, more content is now available in the \"Starlit Gala\" Web Event! Take part to earn in-game rewards such as Geodes of Replication, \"Miliastra Wonderland\" items, and more!",
-        "id": "Dear Traveler, konten terbaru Event Web \"Gala Langit Berbintang\" kini telah dirilis. Ikuti event dan dapatkan berbagai hadiah seperti Geode of Replication, item \"Miliastra Wonderland\", dan masih banya"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": ">> Click to Take Part in Event << 〓Eligibility〓 Travelers who have reached Adventure Rank 1 or above can participate in this event. *The data for the Wonderland Year in Review Report of the \"Starlit Gala\" event will be collected between the",
-        "id": ">> Ikuti Event << 〓 Syarat Partisipasi 〓 Traveler dengan Rank Adventure Lv. 1 ke atas dapat mengikuti event ini. *Data dalam Laporan Kilas Balik Wonderland \"Gala Langit Berbintang\" mencakup rentang pembaruan versi Candra II hingga 18 Oktobe"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/22/0/d47ad0324dc8ed26abedecf9f175f487_4405781992155324744.jpeg",
-      "startsAt": "2026-10-22T07:00:00.000Z",
-      "endsAt": "2026-11-02T20:00:00.000Z",
-      "postedAt": "2026-10-22T07:00:06.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/47163124"
-    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -1666,6 +1537,56 @@
     }
   ],
   "archive": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Dear Traveler, more content is now available in the \"Starlit Gala\" Web Event! Take part to earn in-game rewards such as Geodes of Replication, \"Miliastra Wonderland\" items, and more!",
+        "id": "Dear Traveler, konten terbaru Event Web \"Gala Langit Berbintang\" kini telah dirilis. Ikuti event dan dapatkan berbagai hadiah seperti Geode of Replication, item \"Miliastra Wonderland\", dan masih banya"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": ">> Click to Take Part in Event << 〓Eligibility〓 Travelers who have reached Adventure Rank 1 or above can participate in this event. *The data for the Wonderland Year in Review Report of the \"Starlit Gala\" event will be collected between the",
+        "id": ">> Ikuti Event << 〓 Syarat Partisipasi 〓 Traveler dengan Rank Adventure Lv. 1 ke atas dapat mengikuti event ini. *Data dalam Laporan Kilas Balik Wonderland \"Gala Langit Berbintang\" mencakup rentang pembaruan versi Candra II hingga 18 Oktobe"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/22/0/d47ad0324dc8ed26abedecf9f175f487_4405781992155324744.jpeg",
+      "startsAt": "2026-10-22T07:00:00.000Z",
+      "endsAt": "2026-11-02T20:00:00.000Z",
+      "postedAt": "2026-10-22T07:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47163124",
+      "archivedAt": "2026-11-02T20:02:23.070Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Genshin Impact Miliastra Wonderland \"Starlit Gala\" Web Event Now Live for a Limited Time!",
+        "id": "Event Web \"Gala Langit Berbintang\" Miliastra Wonderland Genshin Impact Hadir untuk Waktu Terbatas!"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": ">> Click to Take Part in Event << 〓Event Duration〓 October 1, 2026 – November 3, 2026 04:00:00 (UTC +8) *Rewards cannot be claimed after the event ends. Please claim them in time. 〓Eligibility〓 Travelers who have reached Adventure Rank 1 or",
+        "id": ">> Ikuti Event << 〓 Waktu Event 〓 1 Oktober 2026 - 3 November 2026 4:00:00 (UTC+8) * Hadiah tidak dapat diambil setelah event berakhir. Harap Traveler segera mengambilnya ya~ 〓 Syarat Partisipasi 〓"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/30/0/a8af53fafc255295172eff4b8dd9cfc3_1491427254591636197.jpeg",
+      "startsAt": "2026-10-01T04:00:00.000Z",
+      "endsAt": "2026-11-02T19:59:59.000Z",
+      "postedAt": "2026-10-02T02:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/46928428",
+      "archivedAt": "2026-11-02T20:02:23.070Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
