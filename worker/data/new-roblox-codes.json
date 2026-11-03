@@ -1,42 +1,24 @@
 {
-  "generatedAt": "2026-11-03T15:02:35.445Z",
-  "codes": [
+  "generatedAt": "2026-11-03T16:02:48.045Z",
+  "codes": [],
+  "bulkGames": [
     {
-      "game": "build-a-military-base",
-      "gameName": "Build a Military Base",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/build-a-military-base"
-      },
-      "code": "SORRYANOTHERBUG",
-      "reward": null,
-      "date": "2026-11-03T14:27:28.899Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-11-03T15:02:35.445Z",
-      "fetchedAt": "2026-11-03T15:02:35.445Z"
-    },
-    {
-      "game": "coach-a-fighter",
-      "gameName": "Coach a Fighter",
-      "source": "RoCodes.gg",
-      "sources": [
-        "RoCodes.gg"
-      ],
-      "sourceUrls": {
-        "RoCodes.gg": "https://rocodes.gg/codes/coach-a-fighter"
-      },
-      "code": "Finally!",
-      "reward": null,
-      "date": "2026-11-03T14:27:28.233Z",
-      "endsAt": null,
-      "verified": false,
-      "firstSeenAt": "2026-11-03T15:02:35.445Z",
-      "fetchedAt": "2026-11-03T15:02:35.445Z"
+      "game": "punch-out-of-prison",
+      "count": 3,
+      "fresh": [
+        {
+          "code": "YARDCREW",
+          "reward": "200 Gems"
+        },
+        {
+          "code": "1MVISITS",
+          "reward": "300 Gems"
+        },
+        {
+          "code": "RELEASE",
+          "reward": "150 Gems"
+        }
+      ]
     }
-  ],
-  "bulkGames": []
+  ]
 }
