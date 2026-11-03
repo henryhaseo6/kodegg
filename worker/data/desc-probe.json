@@ -3883,6 +3883,11 @@
    "tulis": "AQUARIUM",
    "pertama": 1793495114042,
    "terakhir": "2026-11-03"
+  },
+  "arrived": {
+   "tulis": "ARRIVED",
+   "pertama": 1793714718660,
+   "terakhir": "2026-11-03"
   }
  },
  "chameleon": {
@@ -25266,7 +25271,7 @@
   "arrived": {
    "tulis": "arrived",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-11",
+   "terakhir": "2026-11-03",
    "awal": true
   },
   "activity": {
@@ -56960,7 +56965,7 @@
   "arrived": {
    "tulis": "arrived",
    "pertama": 1789769048726,
-   "terakhir": "2026-10-11"
+   "terakhir": "2026-11-03"
   }
  },
  "neighbors-17": {
@@ -80350,6 +80355,16 @@
    "pertama": 1793232329426,
    "terakhir": "2026-11-03",
    "sudahPunya": true
+  },
+  "13mvisits": {
+   "tulis": "13MVISITS",
+   "pertama": 1793714718660,
+   "terakhir": "2026-11-03"
+  },
+  "650kmembers": {
+   "tulis": "650KMEMBERS",
+   "pertama": 1793714718660,
+   "terakhir": "2026-11-03"
   }
  },
  "build-a-phone-empire": {
