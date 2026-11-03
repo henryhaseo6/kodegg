@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-11-03T22:06:52.138Z",
+  "updatedAt": "2026-11-03T23:02:59.799Z",
   "counts": {
-    "active": 96,
+    "active": 97,
     "archived": 196
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "\"Hour of Ruin\" Version 7.2 Update Details",
+        "id": "Penjelasan Update Versi 7.2 \"Detik-Detik Awal Kehancuran\""
+      },
+      "excerpt": {
+        "en": "Dear Traveler, Below are the details of the Version 7.2 update \"Hour of Ruin\" and the update compensation. 〓Compensation Details〓 Maintenance Compensation: Primogems ×300 (60 Primo",
+        "id": "Dear Traveler, Berikut adalah konten dan isi kompensasi untuk update Versi 7.2 \"Detik-Detik Awal Kehancuran\". 〓 Isi Kompensasi 〓 Kompensasi Maintenance: Primogem ×300 (Kompensasi b"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/4fb6643771f39afd98e992be24db7c2a_1890517915922016676.jpeg",
+      "url": "https://www.hoyolab.com/article/47306125",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-03T23:00:05.000Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -86,22 +102,6 @@
       "publishedAt": "2026-11-03T04:05:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Orphie & Magus 丨 Special Approval",
-        "id": "Selamat Ulang Tahun, Orphie & Magus | Persetujuan Khusus"
-      },
-      "excerpt": {
-        "en": "\"Magus... there's a cat on the cardboard box. It—It's looking at me.\" \"I see it. Your eyes are shining even brighter than it is. Mind your expression, squad member Orphie.\" \"Captai",
-        "id": "\"Magus... ada kucing di atas kardus. Dia... sedang melihatku.\" \"Aku melihatnya. Matamu bahkan lebih berbinar darinya. Jaga ekspresimu, Prajurit Orphie.\" \"Kapten, apa kita boleh mem"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
-      "url": "https://www.hoyolab.com/article/47296176",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-03T04:00:05.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -114,6 +114,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
       "url": "https://www.hoyolab.com/article/47296174",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-03T04:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday Orphie & Magus 丨 Special Approval",
+        "id": "Selamat Ulang Tahun, Orphie & Magus | Persetujuan Khusus"
+      },
+      "excerpt": {
+        "en": "\"Magus... there's a cat on the cardboard box. It—It's looking at me.\" \"I see it. Your eyes are shining even brighter than it is. Mind your expression, squad member Orphie.\" \"Captai",
+        "id": "\"Magus... ada kucing di atas kardus. Dia... sedang melihatku.\" \"Aku melihatnya. Matamu bahkan lebih berbinar darinya. Jaga ekspresimu, Prajurit Orphie.\" \"Kapten, apa kita boleh mem"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
+      "url": "https://www.hoyolab.com/article/47296176",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-03T04:00:05.000Z"
     },
@@ -576,7 +592,7 @@
         "en": "The Laughter arrives, Aha brings treats. Snuck into Hoyo, starts showering gifts. Click to check out the bonuses from Aha~",
         "id": "The Laughter tiba, nantikan hadiah dari Aha. Aku telah menyelinap ke HoYo, saatnya memberi kejutan! Tekan untuk melihat bonus yang disiapkan Aha!"
       },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/30/f693a89e1b431fe702981487010099df_8060090796902205412.jpg",
+      "image": null,
       "url": "https://www.hoyolab.com/article/47252073",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-30T12:20:08.000Z"
