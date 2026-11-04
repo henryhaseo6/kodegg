@@ -1,9 +1,7 @@
 {
   "date": "2026-11-04",
-  "todayCount": 7,
+  "todayCount": 8,
   "posted": {
-    "arm-wrestle-simulator:tokenstore": true,
-    "arm-wrestle-simulator:captain": true,
     "arm-wrestle-simulator:snowops": true,
     "arm-wrestle-simulator:cosmic": true,
     "arm-wrestle-simulator:stocking": true,
@@ -4001,9 +3999,19 @@
     "sailor-piece:GEAR5UPDATE": true,
     "sailor-piece:MAINTENANCE": true,
     "sailor-piece:HUGEBUGFIX": true,
-    "sailor-piece:2XLUCKMASTERYEVENT": true
+    "sailor-piece:2XLUCKMASTERYEVENT": true,
+    "iron-soul-dungeon:SIEGEENDS": true,
+    "iron-soul-dungeon:LALAGANG": true
   },
   "log": [
+    {
+      "at": "2026-11-04T19:06:41.688Z",
+      "game": "iron-soul-dungeon",
+      "name": "Iron Soul Dungeon",
+      "videoId": "O_DMo7M6wSo",
+      "title": "Iron Soul Dungeon Codes (November 2026) 🎁 Kode Terbaru Update 5 November 2026 — KodeGG",
+      "mode": "upload"
+    },
     {
       "at": "2026-11-04T16:06:30.165Z",
       "game": "sailor-piece",
@@ -6394,14 +6402,6 @@
       "name": "Anime Ball Duels",
       "videoId": "oTh6hayWBj4",
       "title": "Anime Ball Duels Codes (October 2026) 🎁 Kode Terbaru Update 30 Oktober 2026 — KodeGG",
-      "mode": "upload"
-    },
-    {
-      "at": "2026-10-30T13:05:16.352Z",
-      "game": "roll-a-stickman",
-      "name": "Roll A Stickman",
-      "videoId": "CPIFag9kpLs",
-      "title": "Roll A Stickman Codes (October 2026) 🎁 Kode Terbaru Update 30 Oktober 2026 — KodeGG",
       "mode": "upload"
     }
   ],
