@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-11-04T07:02:58.544Z",
+  "updatedAt": "2026-11-04T08:01:57.770Z",
   "counts": {
-    "active": 97,
+    "active": 98,
     "archived": 196
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "V7.2 Known Issues & Update",
+        "id": "V7.2 Perbaikan dan Optimalisasi Versi"
+      },
+      "excerpt": {
+        "en": "Dear Travelers: To ensure that all Travelers have the best-possible Genshin Impact experience, our developers continually make optimizations and bug fixes to the game based on Trav",
+        "id": "Dear Traveler: Untuk meningkatkan pengalaman bermain yang lebih baik dalam Genshin Impact, dengan berdasarkan masukan dari para Traveler, tim kami akan terus melakukan optimalisasi"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/04/0/4f1a3f167c3d0da42fbef4ec84f17a54_6696428006059291001.webp",
+      "url": "https://www.hoyolab.com/article/47312224",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-04T07:16:27.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -198,22 +214,6 @@
       "publishedAt": "2026-11-03T04:05:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Orphie & Magus 丨 Special Approval",
-        "id": "Selamat Ulang Tahun, Orphie & Magus | Persetujuan Khusus"
-      },
-      "excerpt": {
-        "en": "\"Magus... there's a cat on the cardboard box. It—It's looking at me.\" \"I see it. Your eyes are shining even brighter than it is. Mind your expression, squad member Orphie.\" \"Captai",
-        "id": "\"Magus... ada kucing di atas kardus. Dia... sedang melihatku.\" \"Aku melihatnya. Matamu bahkan lebih berbinar darinya. Jaga ekspresimu, Prajurit Orphie.\" \"Kapten, apa kita boleh mem"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
-      "url": "https://www.hoyolab.com/article/47296176",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-03T04:00:05.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -226,6 +226,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
       "url": "https://www.hoyolab.com/article/47296174",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-03T04:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday Orphie & Magus 丨 Special Approval",
+        "id": "Selamat Ulang Tahun, Orphie & Magus | Persetujuan Khusus"
+      },
+      "excerpt": {
+        "en": "\"Magus... there's a cat on the cardboard box. It—It's looking at me.\" \"I see it. Your eyes are shining even brighter than it is. Mind your expression, squad member Orphie.\" \"Captai",
+        "id": "\"Magus... ada kucing di atas kardus. Dia... sedang melihatku.\" \"Aku melihatnya. Matamu bahkan lebih berbinar darinya. Jaga ekspresimu, Prajurit Orphie.\" \"Kapten, apa kita boleh mem"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
+      "url": "https://www.hoyolab.com/article/47296176",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-03T04:00:05.000Z"
     },
