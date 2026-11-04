@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-11-04T04:02:31.327Z",
+  "updatedAt": "2026-11-04T05:01:46.799Z",
   "counts": {
     "active": 97,
     "archived": 196
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Light Cone Preview | Version 4.7 \"Now, Lay Laughter to All Stars\"",
+        "id": "Preview Light Cone | Versi 4.7 \"Kini, Sematkan Tawa pada Seluruh Bintang\""
+      },
+      "excerpt": {
+        "en": "Hello, Trailblazers! Come have a look at the new Light Cone \"See You at the World's End! (Elation)\" in Version 4.7 \"Now, Lay Laughter to All Stars\"~",
+        "id": "Halo Trailblazer, ayo kita lihat Light Cone baru \"See You at the World's End! (Elation)\" di Versi 4.7 \"Kini, Sematkan Tawa pada Seluruh Bintang\"~"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/03/be98c0c669d319f47c0c665d94578419_3982206031955735010.jpg",
+      "url": "https://www.hoyolab.com/article/47310096",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-04T05:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Unarchived Agent Footage | Severian",
+        "id": "Video Agen Non-Arsip: Severian"
+      },
+      "excerpt": {
+        "en": "\"When necessary, a little damage is acceptable.\"",
+        "id": "\"Jika diperlukan, sedikit kekerasan bukanlah masalah besar\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/02/0/699516b9c3a80dd7c8a1b92c382baa77_2645016534725863522.jpeg",
+      "url": "https://www.hoyolab.com/article/47309557",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-04T04:30:09.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -262,22 +294,6 @@
       "publishedAt": "2026-11-02T04:10:08.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Advanced Bounty: Area Patrol\" Event Details",
-        "id": "\"Hadiah Bounty di Muka - Patroli Area\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration 2026/11/04 04:00 (server time) – 2026/11/09 03:59 (server time) Requirements Reach Inter-Knot Lv. 21, complete the Reputation Rank-Up Mission \"Path of the Proxy I\", ",
-        "id": "[Waktu Event] 2026/11/04 04:00 (waktu server) - 2026/11/09 03:59 (waktu server) [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 21, menyelesaikan mi"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/a866d954ca3dc099b3c064ab5ae93480_8632829555776325924.png",
-      "url": "https://www.hoyolab.com/article/47284170",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-02T04:00:07.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -290,6 +306,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/30/1dddd0078afab51e56e4e10b21c7f6ed_4197844202925492840.jpg",
       "url": "https://www.hoyolab.com/article/47284168",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-02T04:00:07.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Advanced Bounty: Area Patrol\" Event Details",
+        "id": "\"Hadiah Bounty di Muka - Patroli Area\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/11/04 04:00 (server time) – 2026/11/09 03:59 (server time) Requirements Reach Inter-Knot Lv. 21, complete the Reputation Rank-Up Mission \"Path of the Proxy I\", ",
+        "id": "[Waktu Event] 2026/11/04 04:00 (waktu server) - 2026/11/09 03:59 (waktu server) [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 21, menyelesaikan mi"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/a866d954ca3dc099b3c064ab5ae93480_8632829555776325924.png",
+      "url": "https://www.hoyolab.com/article/47284170",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-02T04:00:07.000Z"
     },
@@ -778,32 +810,16 @@
       "gameName": "Honkai: Star Rail",
       "title": {
         "en": "Extraterrestrial Satellite Communication | Astra Yao",
-        "id": "\"Komunikasi Satelit Luar Angkasa\" | Astra Yao"
+        "id": "Extraterrestrial Satellite Communication | Astra Yao"
       },
       "excerpt": {
         "en": "\"I'm Astra Yao, a singer from New Eridu. If you like my music, we'll definitely hit it off. And if you're not a fan yet... just give me one track to win you over!\" The stars take t",
-        "id": "\"Aku Astra Yao, penyanyi dari New Eridu. Kalau kamu suka musikku, kita berdua pasti cocok. Kalau kamu belum jadi penggemarku, maka ... beri aku satu lagu saja untuk membuatmu jatuh"
+        "id": "\"I'm Astra Yao, a singer from New Eridu. If you like my music, we'll definitely hit it off. And if you're not a fan yet... just give me one track to win you over!\" The stars take t"
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/26/14ab33dbc78de84b8970f5d103a6dcc7_6351797617886405560.png",
       "url": "https://www.hoyolab.com/article/47228524",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-28T04:00:08.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Extraterrestrial Satellite Communication | Ellen",
-        "id": "Extraterrestrial Satellite Communication | Ellen"
-      },
-      "excerpt": {
-        "en": "\"Thanks for requesting me. Ellen Joe, subpar employee of Victoria Housekeeping, at your service. You need me to make omurice, cast a deliciousness spell on your coffee, or... clean",
-        "id": "\"Thanks for requesting me. Ellen Joe, subpar employee of Victoria Housekeeping, at your service. You need me to make omurice, cast a deliciousness spell on your coffee, or... clean"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/26/bb67cff5361fb8292d10de1b2ad3ae44_4040524368184372781.png",
-      "url": "https://www.hoyolab.com/article/47218607",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-27T04:00:06.000Z"
     },
     {
       "game": "zzz",
@@ -996,22 +1012,6 @@
       "url": "https://www.hoyolab.com/article/47174033",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-23T08:01:09.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero Version 3.3 Character Avatars",
-        "id": "Foto Profil Karakter V3.3 | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "Thank you for supporting Version 3.3 \"Journey to the Sky,\" Proxies! Phoenix & Severian's avatars are now available. Feel free to give them a try~ ▼ Download https://hoyo.link/mN4Gw",
-        "id": "Terima kasih atas dukungan para Proxy terhadap V3.3 \"Perjalanan Kembali ke Langit\"! Foto Profil Karakter Phoenix & Severian telah dirilis. Silakan dipakai ya, Proxy~ ▼ Unduh https:"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/22/0/5c458dfed1b32002e22f63ef4ff1015c_5208143125483523251.png",
-      "url": "https://www.hoyolab.com/article/47172488",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-23T04:30:08.000Z"
     },
     {
       "game": "hi3",
