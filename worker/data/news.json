@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-11-05T05:01:40.436Z",
+  "updatedAt": "2026-11-05T06:02:28.257Z",
   "counts": {
-    "active": 98,
+    "active": 99,
     "archived": 197
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Zenless Zone Zero Compatibility Notice for iPhone Duo Models",
+        "id": "Penjelasan kompatibilitas Zenless Zone Zero untuk model iPhone Duo"
+      },
+      "excerpt": {
+        "en": "Dear Proxies, Zenless Zone Zero now supports iPhone Duo models. If needed, Proxies can go to the App Store, search for \"Zenless Zone Zero,\" and manually update to Version 3.3.1 to ",
+        "id": "Dear Proxy: Zenless Zone Zero kini mendukung perangkat iPhone Duo. Proxy yang ingin menggunakan fitur ini dapat mencari Zenless Zone Zero di App Store, lalu memperbarui game secara"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/04/0/3b4d363ec6595fc008e6e2e661ea45e4_1000293181309266995.png",
+      "url": "https://www.hoyolab.com/article/47328314",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-05T06:00:05.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -278,22 +294,6 @@
       "publishedAt": "2026-11-03T04:05:02.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Aeon ★ Aha: Claiming to be an Aeon to Dodge Deadlines? | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Aeon ★ Aha: Demi Tunda Naskah, Ngaku-ngaku Dirinya Aeon?\"| Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "Now that Fluffy Across the Blue, Vol. 1 has officially wrapped up, we've reached out to a few prominent public figures to hear their thoughts on the matter. \"Chief Manuscript Chase",
-        "id": "Kini setelah \"Bululu Melintasi Biru Angkasa: Bagian 1\" resmi berakhir, kami telah menghubungi beberapa tokoh publik terkemuka untuk meminta pendapat mereka mengenai hal tersebut. \""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
-      "url": "https://www.hoyolab.com/article/47296174",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-03T04:00:05.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -306,6 +306,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
       "url": "https://www.hoyolab.com/article/47296176",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-03T04:00:05.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — Aeon ★ Aha: Claiming to be an Aeon to Dodge Deadlines? | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — \"Aeon ★ Aha: Demi Tunda Naskah, Ngaku-ngaku Dirinya Aeon?\"| Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "Now that Fluffy Across the Blue, Vol. 1 has officially wrapped up, we've reached out to a few prominent public figures to hear their thoughts on the matter. \"Chief Manuscript Chase",
+        "id": "Kini setelah \"Bululu Melintasi Biru Angkasa: Bagian 1\" resmi berakhir, kami telah menghubungi beberapa tokoh publik terkemuka untuk meminta pendapat mereka mengenai hal tersebut. \""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
+      "url": "https://www.hoyolab.com/article/47296174",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-03T04:00:05.000Z"
     },
