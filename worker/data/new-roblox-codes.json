@@ -1,15 +1,91 @@
 {
-  "generatedAt": "2026-11-06T02:01:37.669Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-11-06T03:01:40.813Z",
+  "codes": [
     {
-      "game": "crazy-8-ball",
-      "count": 4,
-      "fresh": []
+      "game": "kanom-tokyo",
+      "gameName": "Kanom Tokyo",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/kanom-tokyo"
+      },
+      "code": "SomeTicket4Free",
+      "reward": "1 Battlepass Ticket:VI",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1793832599466,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-06T03:01:40.813Z",
+      "fetchedAt": "2026-11-06T03:01:40.813Z"
     },
     {
-      "game": "steal-a-superpower",
-      "count": 7,
+      "game": "kanom-tokyo",
+      "gameName": "Kanom Tokyo",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/kanom-tokyo"
+      },
+      "code": "Sry4SkipWeekendAbuse",
+      "reward": "100,000 Yen and 5 EventPoint",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1793832599466,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-06T03:01:40.813Z",
+      "fetchedAt": "2026-11-06T03:01:40.813Z"
+    },
+    {
+      "game": "kanom-tokyo",
+      "gameName": "Kanom Tokyo",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/kanom-tokyo"
+      },
+      "code": "BlahBlahBlahCode",
+      "reward": "10 Mythic Gacha",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1793832599466,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-06T03:01:40.813Z",
+      "fetchedAt": "2026-11-06T03:01:40.813Z"
+    },
+    {
+      "game": "1-upgrade-per-kill",
+      "gameName": "+1 Upgrade Per Kill",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/1-upgrade-per-kill"
+      },
+      "code": "xp",
+      "reward": "XP Boost (1 hour)",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1793898287045,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-06T03:01:40.813Z",
+      "fetchedAt": "2026-11-06T03:01:40.813Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "firefighting-sim",
+      "count": 1,
       "fresh": []
     }
   ]
