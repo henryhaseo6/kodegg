@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T07:02:18.779Z",
+  "updatedAt": "2026-11-06T08:02:16.694Z",
   "counts": {
     "active": 99,
     "archived": 197
@@ -22,22 +22,6 @@
       "publishedAt": "2026-11-06T05:00:07.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "She cuts through the snow and parts the night, until dawn breaks clear at last",
-        "id": "Ia menembus salju dan membelah malam, hingga fajar datang merekah."
-      },
-      "excerpt": {
-        "en": "\"...I still recall the first time I played chess against Her Majesty — in the pauses between her moves, my mind would wander... 'My liege, my cold and austere Tsaritsa, why do your",
-        "id": "\"...Aku masih ingat saat pertama kali bermain catur melawan Yang Mulia, aku sempat melamun di sela-sela giliran beliau mengambil langkah... 'Yang Mulia, Tsaritsa-ku yang dingin dan"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/141f3707ca9af1f5aeff959a6c55ce0f_3132425623498928193.jpg",
-      "url": "https://www.hoyolab.com/article/47339559",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-06T04:00:04.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -50,6 +34,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/4695a51225d638091ebed478522a7006_6509276100703147467.png",
       "url": "https://www.hoyolab.com/article/47339558",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-06T04:00:04.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "She cuts through the snow and parts the night, until dawn breaks clear at last",
+        "id": "Ia menembus salju dan membelah malam, hingga fajar datang merekah."
+      },
+      "excerpt": {
+        "en": "\"...I still recall the first time I played chess against Her Majesty — in the pauses between her moves, my mind would wander... 'My liege, my cold and austere Tsaritsa, why do your",
+        "id": "\"...Aku masih ingat saat pertama kali bermain catur melawan Yang Mulia, aku sempat melamun di sela-sela giliran beliau mengambil langkah... 'Yang Mulia, Tsaritsa-ku yang dingin dan"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/141f3707ca9af1f5aeff959a6c55ce0f_3132425623498928193.jpg",
+      "url": "https://www.hoyolab.com/article/47339559",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-06T04:00:04.000Z"
     },
@@ -374,22 +374,6 @@
       "publishedAt": "2026-11-03T04:05:02.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Aeon ★ Aha: Claiming to be an Aeon to Dodge Deadlines? | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Aeon ★ Aha: Demi Tunda Naskah, Ngaku-ngaku Dirinya Aeon?\"| Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "Now that Fluffy Across the Blue, Vol. 1 has officially wrapped up, we've reached out to a few prominent public figures to hear their thoughts on the matter. \"Chief Manuscript Chase",
-        "id": "Kini setelah \"Bululu Melintasi Biru Angkasa: Bagian 1\" resmi berakhir, kami telah menghubungi beberapa tokoh publik terkemuka untuk meminta pendapat mereka mengenai hal tersebut. \""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
-      "url": "https://www.hoyolab.com/article/47296174",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-03T04:00:05.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -402,6 +386,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
       "url": "https://www.hoyolab.com/article/47296176",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-03T04:00:05.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — Aeon ★ Aha: Claiming to be an Aeon to Dodge Deadlines? | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — \"Aeon ★ Aha: Demi Tunda Naskah, Ngaku-ngaku Dirinya Aeon?\"| Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "Now that Fluffy Across the Blue, Vol. 1 has officially wrapped up, we've reached out to a few prominent public figures to hear their thoughts on the matter. \"Chief Manuscript Chase",
+        "id": "Kini setelah \"Bululu Melintasi Biru Angkasa: Bagian 1\" resmi berakhir, kami telah menghubungi beberapa tokoh publik terkemuka untuk meminta pendapat mereka mengenai hal tersebut. \""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
+      "url": "https://www.hoyolab.com/article/47296174",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-03T04:00:05.000Z"
     },
