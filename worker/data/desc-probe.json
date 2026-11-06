@@ -18571,6 +18571,11 @@
    "tulis": "Commanders",
    "pertama": 1793894708011,
    "terakhir": "2026-11-06"
+  },
+  "optimization": {
+   "tulis": "optimization",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
   }
  },
  "jujutsu-randomizer": {
@@ -32627,7 +32632,7 @@
   "cleaner": {
    "tulis": "cleaner",
    "pertama": 1790442352532,
-   "terakhir": "2026-11-01"
+   "terakhir": "2026-11-06"
   },
   "streamlined": {
    "tulis": "streamlined",
@@ -43297,7 +43302,7 @@
   "optimization": {
    "tulis": "optimization",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-05",
+   "terakhir": "2026-11-06",
    "awal": true
   },
   "success": {
@@ -52710,7 +52715,7 @@
   "cleaner": {
    "tulis": "cleaner",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-01",
+   "terakhir": "2026-11-06",
    "awal": true
   },
   "relaxation": {
@@ -59757,6 +59762,21 @@
   "loads": {
    "tulis": "loads",
    "pertama": 1793505924194,
+   "terakhir": "2026-11-06"
+  },
+  "rebalance": {
+   "tulis": "REBALANCE",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
+  },
+  "epics": {
+   "tulis": "epics",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
+  },
+  "removed": {
+   "tulis": "removed",
+   "pertama": 1793991918013,
    "terakhir": "2026-11-06"
   }
  },
@@ -69393,7 +69413,7 @@
   "cleaner": {
    "tulis": "cleaner",
    "pertama": 1789869837940,
-   "terakhir": "2026-11-01"
+   "terakhir": "2026-11-06"
   },
   "intuitive": {
    "tulis": "intuitive",
@@ -78538,7 +78558,7 @@
   "optimization": {
    "tulis": "Optimization",
    "pertama": 1790694326685,
-   "terakhir": "2026-11-05",
+   "terakhir": "2026-11-06",
    "sudahPunya": true
   },
   "timedeliver": {
@@ -87020,6 +87040,41 @@
    "tulis": "ForgeGUI",
    "pertama": 1793685894862,
    "terakhir": "2026-11-06"
+  },
+  "matter": {
+   "tulis": "MATTER",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
+  },
+  "careers": {
+   "tulis": "Careers",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
+  },
+  "seconds": {
+   "tulis": "seconds",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
+  },
+  "offside": {
+   "tulis": "offside",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
+  },
+  "smarter": {
+   "tulis": "smarter",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
+  },
+  "full-volume": {
+   "tulis": "full-volume",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
+  },
+  "darkmatter": {
+   "tulis": "DARKMATTER",
+   "pertama": 1793991918013,
+   "terakhir": "2026-11-06"
   }
  },
  "practical-basketball": {
@@ -88107,6 +88162,11 @@
   "swipes": {
    "tulis": "swipes",
    "pertama": 1793937960358,
+   "terakhir": "2026-11-06"
+  },
+  "shots": {
+   "tulis": "shots",
+   "pertama": 1793991918013,
    "terakhir": "2026-11-06"
   }
  },
