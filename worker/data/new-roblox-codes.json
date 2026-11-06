@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-11-06T14:01:26.375Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-11-06T15:01:51.247Z",
+  "codes": [
     {
-      "game": "machine-party",
-      "count": 10,
-      "fresh": []
+      "game": "1-loot-to-forge",
+      "gameName": "+1 Loot to Forge",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/1-loot-to-forge"
+      },
+      "code": "1BVISITS",
+      "reward": "300 Ember Stones",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1793918900618,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-06T15:01:51.247Z",
+      "fetchedAt": "2026-11-06T15:01:51.247Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
