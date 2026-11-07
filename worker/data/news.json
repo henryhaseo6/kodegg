@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-11-07T04:02:18.407Z",
+  "updatedAt": "2026-11-07T05:01:41.798Z",
   "counts": {
-    "active": 101,
+    "active": 102,
     "archived": 197
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Incarcerating Grip W-Engine Showcase",
+        "id": "Incarcerating Grip W-Engine Showcase"
+      },
+      "excerpt": {
+        "en": "The \"Incarcerating Grip\" Signal Search event is about to begin! From 2026/11/11 12:00 (server time) – 2026/12/01 14:59 (server time), reception rate for the limited S-Rank W-Engine",
+        "id": "The \"Incarcerating Grip\" Signal Search event is about to begin! From 2026/11/11 12:00 (server time) – 2026/12/01 14:59 (server time), reception rate for the limited S-Rank W-Engine"
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-11-07/transcoded/142118617240280027136_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/47352196",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-07T05:00:05.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Version 4.7 \"Nameless Honor\" Update",
+        "id": "Update \"Kehormatan Tanpa Nama\" Versi 4.7"
+      },
+      "excerpt": {
+        "en": "Hello, Trailblazers! During the event, Trailblazers can increase their Nameless Honor level to obtain rewards such as Star Rail Passes, Self-Modeling Resins, and Tracks of Destiny.",
+        "id": "Halo, Trailblazer! Selama event berlangsung, Trailblazer dapat meningkatkan level \"Kehormatan Tanpa Nama\" untuk memperoleh Star Rail Pass, Self-Modeling Resin, Tracks of Destiny da"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/06/68fd9ce3c1468e22ef6a797def913917_3276151572975679299.png",
+      "url": "https://www.hoyolab.com/article/47351677",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-07T04:05:06.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -502,22 +534,6 @@
       "publishedAt": "2026-11-03T04:05:02.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Aeon ★ Aha: Claiming to be an Aeon to Dodge Deadlines? | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Aeon ★ Aha: Demi Tunda Naskah, Ngaku-ngaku Dirinya Aeon?\"| Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "Now that Fluffy Across the Blue, Vol. 1 has officially wrapped up, we've reached out to a few prominent public figures to hear their thoughts on the matter. \"Chief Manuscript Chase",
-        "id": "Kini setelah \"Bululu Melintasi Biru Angkasa: Bagian 1\" resmi berakhir, kami telah menghubungi beberapa tokoh publik terkemuka untuk meminta pendapat mereka mengenai hal tersebut. \""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
-      "url": "https://www.hoyolab.com/article/47296174",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-03T04:00:05.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -530,6 +546,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
       "url": "https://www.hoyolab.com/article/47296176",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-03T04:00:05.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — Aeon ★ Aha: Claiming to be an Aeon to Dodge Deadlines? | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — \"Aeon ★ Aha: Demi Tunda Naskah, Ngaku-ngaku Dirinya Aeon?\"| Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "Now that Fluffy Across the Blue, Vol. 1 has officially wrapped up, we've reached out to a few prominent public figures to hear their thoughts on the matter. \"Chief Manuscript Chase",
+        "id": "Kini setelah \"Bululu Melintasi Biru Angkasa: Bagian 1\" resmi berakhir, kami telah menghubungi beberapa tokoh publik terkemuka untuk meminta pendapat mereka mengenai hal tersebut. \""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
+      "url": "https://www.hoyolab.com/article/47296174",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-03T04:00:05.000Z"
     },
@@ -1076,22 +1108,6 @@
       "url": "https://www.hoyolab.com/article/47185774",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-24T04:35:05.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Agent Record | Robin",
-        "id": "Profil Agen | Robin"
-      },
-      "excerpt": {
-        "en": "\"Don't be afraid of the stage — try to feel it instead. Start by counting your breaths. One, two, three... Feeling any better?\" Robin \"If you ever need someone more experienced to ",
-        "id": "\"Jangan takut dengan panggung, cobalah rasakan suasananya. Tarik napas dan hitung pelan-pelan, satu, dua, tiga... Sudah merasa baikan?\" Robin \"Kalau perlu bantuan di lokasi syuting"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/09/0/82bee20acafe657c8eb1b488b8bb3877_1480586869993456625.jpeg",
-      "url": "https://www.hoyolab.com/article/47185723",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-24T04:30:07.000Z"
     },
     {
       "game": "hi3",
