@@ -15198,7 +15198,7 @@
   "changelog": {
    "tulis": "Changelog",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-31",
+   "terakhir": "2026-11-07",
    "awal": true
   },
   "tier": {
@@ -15418,7 +15418,7 @@
   "removed": {
    "tulis": "Removed",
    "pertama": 1789229082646,
-   "terakhir": "2026-10-02"
+   "terakhir": "2026-11-07"
   },
   "katyusha": {
    "tulis": "Katyusha",
@@ -15543,6 +15543,21 @@
   "repetitions": {
    "tulis": "Repetitions",
    "pertama": 1793473478567,
+   "terakhir": "2026-11-07"
+  },
+  "decoration": {
+   "tulis": "Decoration",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
+  },
+  "lowriding": {
+   "tulis": "LOWRIDING",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
+  },
+  "ended": {
+   "tulis": "Ended",
+   "pertama": 1794063913072,
    "terakhir": "2026-11-07"
   }
  },
@@ -60238,7 +60253,7 @@
   "pumpkins": {
    "tulis": "PUMPKINS",
    "pertama": 1792245853764,
-   "terakhir": "2026-10-31",
+   "terakhir": "2026-11-07",
    "sudahPunya": true
   },
   "maze": {
@@ -60290,6 +60305,46 @@
   "easter": {
    "tulis": "EASTER",
    "pertama": 1793459147042,
+   "terakhir": "2026-11-07"
+  },
+  "steering": {
+   "tulis": "STEERING",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
+  },
+  "braking": {
+   "tulis": "BRAKING",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
+  },
+  "acceleration": {
+   "tulis": "ACCELERATION",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
+  },
+  "launches": {
+   "tulis": "LAUNCHES",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
+  },
+  "incomes": {
+   "tulis": "INCOMES",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
+  },
+  "rebalanced": {
+   "tulis": "REBALANCED",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
+  },
+  "value": {
+   "tulis": "VALUE",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
+  },
+  "newschool": {
+   "tulis": "NEWSCHOOL",
+   "pertama": 1794063913072,
    "terakhir": "2026-11-07"
   }
  },
@@ -66261,7 +66316,7 @@
   "chapters": {
    "tulis": "chapters",
    "pertama": 1791504267404,
-   "terakhir": "2026-11-03"
+   "terakhir": "2026-11-07"
   },
   "disappearances": {
    "tulis": "disappearances",
@@ -85052,7 +85107,7 @@
   "chapters": {
    "tulis": "chapters",
    "pertama": 1793279173129,
-   "terakhir": "2026-11-05"
+   "terakhir": "2026-11-07"
   },
   "hasbro": {
    "tulis": "Hasbro",
@@ -87643,6 +87698,11 @@
    "pertama": 1793642864459,
    "terakhir": "2026-11-07",
    "sudahPunya": true
+  },
+  "chapter3": {
+   "tulis": "CHAPTER3",
+   "pertama": 1794063913072,
+   "terakhir": "2026-11-07"
   }
  },
  "steal-a-balut": {
@@ -87886,7 +87946,7 @@
   "chapters": {
    "tulis": "chapters",
    "pertama": 1793840847384,
-   "terakhir": "2026-11-05"
+   "terakhir": "2026-11-07"
   },
   "sewers": {
    "tulis": "SEWERS",
