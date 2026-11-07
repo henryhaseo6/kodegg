@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-11-07T03:02:20.320Z",
+  "updatedAt": "2026-11-07T04:02:18.407Z",
   "counts": {
-    "active": 100,
+    "active": 101,
     "archived": 197
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "\"Now, Lay Laughter to All Stars\" Version 4.7 Preview",
+        "id": "Preview Versi 4.7 \"Kini, Sematkan Tawa pada Seluruh Bintang\""
+      },
+      "excerpt": {
+        "en": "Greetings, Trailblazer! Let's take a look at the new events coming in Version 4.7!",
+        "id": "Halo, Trailblazer! Ayo kita lihat event baru yang akan segera hadir di Versi 4.7!"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/06/47a6a974c73e15b2284bb441dda70d0f_4005566568712660945.jpg",
+      "url": "https://www.hoyolab.com/article/47351625",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-07T04:00:09.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Steel Sheathed in Courtly Poise",
+        "id": "Melaksanakan setiap ritual dengan sempurna, sambil menyembunyikan ketajamannya di balik penampilan tenang."
+      },
+      "excerpt": {
+        "en": "\"Well, well, if it isn't our dearest head maid! Off to buy groceries? Ooh, tight-lipped today, are we...? Hehe, a se~cret mis~sion. I get it, I get it! Let me give you a lift. It's",
+        "id": "\"Hei, bukankah ini Kepala Pelayan kita yang tersayang? Mau belanja kah? Wah diam saja... hihihi, misi rahasia nih ye? Aku ngerti kok~ Ikut sama aku saja sini? Di luar dingin banget"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/07/6af52d7bd1e132c6db3a8fa861a46f4e_4265746443981239609.jpg",
+      "url": "https://www.hoyolab.com/article/47351623",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-07T04:00:06.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -132,6 +164,22 @@
       "url": "https://www.hoyolab.com/article/47339123",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-06T03:00:05.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Hiyuki's Deluxe Outfit \"Lune Noire\" will be permanently available",
+        "id": "Hiyuki's Deluxe Outfit \"Lune Noire\" will be permanently available"
+      },
+      "excerpt": {
+        "en": "\"A costume Hiyuki wore while filming a movie with Startorch Academy students. Her gaze has lost none of its resolve or compassion, nor her movements their grace. With blade and fro",
+        "id": "\"A costume Hiyuki wore while filming a movie with Startorch Academy students. Her gaze has lost none of its resolve or compassion, nor her movements their grace. With blade and fro"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1793808000000/2emgq3oj8q21gjyg2j-1793878574727.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5698",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-11-05T11:42:30.000Z"
     },
     {
       "game": "hsr",
@@ -454,22 +502,6 @@
       "publishedAt": "2026-11-03T04:05:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Happy Birthday Orphie & Magus 丨 Special Approval",
-        "id": "Selamat Ulang Tahun, Orphie & Magus | Persetujuan Khusus"
-      },
-      "excerpt": {
-        "en": "\"Magus... there's a cat on the cardboard box. It—It's looking at me.\" \"I see it. Your eyes are shining even brighter than it is. Mind your expression, squad member Orphie.\" \"Captai",
-        "id": "\"Magus... ada kucing di atas kardus. Dia... sedang melihatku.\" \"Aku melihatnya. Matamu bahkan lebih berbinar darinya. Jaga ekspresimu, Prajurit Orphie.\" \"Kapten, apa kita boleh mem"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
-      "url": "https://www.hoyolab.com/article/47296176",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-03T04:00:05.000Z"
-    },
-    {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
       "title": {
@@ -482,6 +514,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
       "url": "https://www.hoyolab.com/article/47296174",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-03T04:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Happy Birthday Orphie & Magus 丨 Special Approval",
+        "id": "Selamat Ulang Tahun, Orphie & Magus | Persetujuan Khusus"
+      },
+      "excerpt": {
+        "en": "\"Magus... there's a cat on the cardboard box. It—It's looking at me.\" \"I see it. Your eyes are shining even brighter than it is. Mind your expression, squad member Orphie.\" \"Captai",
+        "id": "\"Magus... ada kucing di atas kardus. Dia... sedang melihatku.\" \"Aku melihatnya. Matamu bahkan lebih berbinar darinya. Jaga ekspresimu, Prajurit Orphie.\" \"Kapten, apa kita boleh mem"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
+      "url": "https://www.hoyolab.com/article/47296176",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-03T04:00:05.000Z"
     },
@@ -594,22 +642,6 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/30/537714f9a2caf9483166a9145e1998fe_8281667593677979000.png",
       "url": "https://www.hoyolab.com/article/47284165",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-02T04:00:06.000Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "\"The Grand Defense: Defy the Unjust Judgment\" Event: Participate to Invite a 4-Star Character of Your Choice",
-        "id": "Event \"Pertahanan Total: Menentang Penghakiman Lalim\": Ikuti dan Undang Karakter 4★ Pilihan Sendiri"
-      },
-      "excerpt": {
-        "en": "〓Event Rewards〓 〓Event Duration〓 Available throughout the entirety of Version 7.2 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Chapter VII: Act IV \"A Rekviem for ",
-        "id": "〓 Hadiah Event 〓 〓 Waktu Event 〓 Dibuka selama Versi 7.2 berlangsung 〓 Syarat Partisipasi 〓 Rank Adventure Lv. 20 ke atas Selesaikan Quest Archon Chapter VII: Bag. IV \"Rekuiem bagi"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/30/24d48be1e7998ca6e5f43f6771aedff5_2882931133646307125.png",
-      "url": "https://www.hoyolab.com/article/47284166",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-02T04:00:06.000Z"
     },
@@ -842,32 +874,16 @@
       "gameName": "Honkai: Star Rail",
       "title": {
         "en": "A Brief on the Version 4.7 Special Program",
-        "id": "Ringkasan Informasi Program Khusus 4.7"
+        "id": "A Brief on the Version 4.7 Special Program"
       },
       "excerpt": {
         "en": "The Honkai: Star Rail Version 4.7 \"Now, Lay Laughter to All Stars\" Special Program has concluded. Brand-new characters, maps, and events are about to come online. Please board the ",
-        "id": "Program Khusus \"Honkai: Star Rail\" Versi 4.7 \"Kini, Sematkan Tawa pada Seluruh Bintang\" telah berakhir. Karakter baru, latar tempat baru, dan event baru akan segera hadir. Ayo naik"
+        "id": "The Honkai: Star Rail Version 4.7 \"Now, Lay Laughter to All Stars\" Special Program has concluded. Brand-new characters, maps, and events are about to come online. Please board the "
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/30/1dc1a517f87654a9f62d72611049e8b3_3804821155720646976.jpg",
       "url": "https://www.hoyolab.com/article/47252183",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-30T12:25:09.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Version 4.7 Bonuses Available!",
-        "id": "Version 4.7 Bonuses Available!"
-      },
-      "excerpt": {
-        "en": "The Laughter arrives, Aha brings treats. Snuck into Hoyo, starts showering gifts. Click to check out the bonuses from Aha~",
-        "id": "The Laughter arrives, Aha brings treats. Snuck into Hoyo, starts showering gifts. Click to check out the bonuses from Aha~"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/30/f693a89e1b431fe702981487010099df_8060090796902205412.jpg",
-      "url": "https://www.hoyolab.com/article/47252073",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-30T12:20:08.000Z"
     },
     {
       "game": "hsr",
