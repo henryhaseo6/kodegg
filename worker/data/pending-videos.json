@@ -1,5 +1,702 @@
 [
   {
+    "platform": "MOBILE",
+    "id": "gi",
+    "name": "Genshin Impact",
+    "slug": "genshin-impact",
+    "players": 0,
+    "rank": 1000000000,
+    "newCodes": [
+      {
+        "code": "QYJWFB784MFL",
+        "game": "gi",
+        "gameName": "Genshin Impact",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5"
+      }
+    ],
+    "activeCount": 23,
+    "fetchedAt": "2026-11-09T06:01:51.509Z",
+    "displayCodes": [
+      {
+        "code": "QYJWFB784MFL",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": true
+      },
+      {
+        "code": "QYJW92K1DS3X",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      },
+      {
+        "code": "QYJW21ZVV5Z8",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      },
+      {
+        "code": "CDOF4X83H7X2",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Stir-Fried Fish Noodles ×5 · Jueyun Chili Chicken ×5",
+        "isNew": false
+      },
+      {
+        "code": "MIJIQ23V2437",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Stir-Fried Fish Noodles ×5 · Jueyun Chili Chicken ×5",
+        "isNew": false
+      },
+      {
+        "code": "KeepUpWithMitya",
+        "reward": "Guide to Charity ×3 · \"Energy-Replenishing Meal\" ×3 · Kristallfold ×3",
+        "isNew": false
+      },
+      {
+        "code": "QYJWQVRI39BE",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      },
+      {
+        "code": "PJ2KEBRAYSRM",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      },
+      {
+        "code": "OKTCV81F9H8D",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Stir-Fried Fish Noodles ×5 · Jueyun Chili Chicken ×5",
+        "isNew": false
+      },
+      {
+        "code": "NEEI986K5X6R",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "QYJWFB784MFL",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": true
+      },
+      {
+        "code": "QYJW92K1DS3X",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      },
+      {
+        "code": "QYJW21ZVV5Z8",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      },
+      {
+        "code": "CDOF4X83H7X2",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Stir-Fried Fish Noodles ×5 · Jueyun Chili Chicken ×5",
+        "isNew": false
+      },
+      {
+        "code": "MIJIQ23V2437",
+        "reward": "Mora ×10000 · Adventurer's Experience ×10 · Fine Enhancement Ore ×5 · Stir-Fried Fish Noodles ×5 · Jueyun Chili Chicken ×5",
+        "isNew": false
+      },
+      {
+        "code": "KeepUpWithMitya",
+        "reward": "Guide to Charity ×3 · \"Energy-Replenishing Meal\" ×3 · Kristallfold ×3",
+        "isNew": false
+      },
+      {
+        "code": "QYJWQVRI39BE",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      },
+      {
+        "code": "PJ2KEBRAYSRM",
+        "reward": "Primogem ×60 · Adventurer's Experience ×5",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "NEEIJB764CA3",
+      "NEEI8A8341OW",
+      "Y6JYMKV6JKSL",
+      "PNKZ3WLNN8G6",
+      "PJ2KEBRAYSRM",
+      "MIJIQ23V2437",
+      "CDOF4X83H7X2",
+      "KeepUpWithMitya",
+      "NEEI986K5X6R",
+      "QYJWQVRI39BE",
+      "QYJW21ZVV5Z8",
+      "QYJW92K1DS3X",
+      "QYJWFB784MFL",
+      "EPIC2026",
+      "OKTCV81F9H8D",
+      "6LS3F3LS5K87",
+      "DATG5HG1PL89",
+      "OPERACOLLAB",
+      "YOAL3V36XHS7",
+      "DUGODWKRHAKDNJ",
+      "BALLETCOLLAB",
+      "2BJ64QRZ7RT8",
+      "GENSHINGIFT"
+    ]
+  },
+  {
+    "platform": "MOBILE",
+    "id": "nikki",
+    "name": "Infinity Nikki",
+    "slug": "infinity-nikki",
+    "players": 0,
+    "rank": 1000000000,
+    "newCodes": [
+      {
+        "code": "nAtWVM6UP2nj",
+        "game": "nikki",
+        "gameName": "Infinity Nikki",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000"
+      }
+    ],
+    "activeCount": 30,
+    "fetchedAt": "2026-11-09T06:01:51.509Z",
+    "displayCodes": [
+      {
+        "code": "nAtWVM6UP2nj",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": true
+      },
+      {
+        "code": "nAtWmPn5Rw8j",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtd8nDTXrRs",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtW4kFd2xjV",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtWYfN72XkC",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtdnEC9De2k",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtWC453jnuQ",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtWm3CWUc8D",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtWDpXHrwMP",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtWcbBRQqtH",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "nAtWVM6UP2nj",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": true
+      },
+      {
+        "code": "nAtWmPn5Rw8j",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtd8nDTXrRs",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtW4kFd2xjV",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtWYfN72XkC",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtdnEC9De2k",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtWC453jnuQ",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      },
+      {
+        "code": "nAtWm3CWUc8D",
+        "reward": "Shiny Bubbles ×30 · Bling ×20000",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "nAtWVM6UP2nj",
+      "nAtWmPn5Rw8j",
+      "nAtd8nDTXrRs",
+      "nAtW4kFd2xjV",
+      "nAtWYfN72XkC",
+      "nAtdnEC9De2k",
+      "nAtWC453jnuQ",
+      "nAtWm3CWUc8D",
+      "nAtWDpXHrwMP",
+      "nAtWcbBRQqtH",
+      "nAtWFk8JYHmq",
+      "nAtWYUkwmb7a",
+      "nAtW9RdPJSNh",
+      "nAtW3vQFTBJk",
+      "nAtdykfUqHdx",
+      "nAtWHUKt5VA7",
+      "nAtWxKKVqvuW",
+      "nAtWcpDfyxYP",
+      "nAtWQnqDm639",
+      "nAtWQxW8qWYM",
+      "nAtWwDf734Xq",
+      "nAtW67RecxCA",
+      "nAtWbdu7JTyh",
+      "nAtKxes85ed7",
+      "nAtPbSsMyCPx",
+      "nAtWvdJ9UFSb",
+      "nAtWdxyxEsdU",
+      "nAtNrahmypWt",
+      "EYESONTHEGOLDENFEAST",
+      "MOMOWISHESNIKKILISTENS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "1-venom-evolution",
+    "name": "+1 Venom Evolution",
+    "displayName": "[⚔️UPD] +1 Venom Evolution",
+    "slug": "1-venom-evolution",
+    "players": 20938,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 20938,
+    "newCodes": [
+      {
+        "game": "1-venom-evolution",
+        "gameName": "+1 Venom Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
+        },
+        "code": "VOIDKING",
+        "reward": "2x Venom (30 mins), 2x Wins (30 mins), and 1 Revive",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794151894019,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      },
+      {
+        "game": "1-venom-evolution",
+        "gameName": "+1 Venom Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
+        },
+        "code": "HAPPY100K",
+        "reward": "2x Venom (45 mins), 2x Wins (45 mins), 1 Mega Chest, and 1 Revive",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794151894019,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      },
+      {
+        "game": "1-venom-evolution",
+        "gameName": "+1 Venom Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
+        },
+        "code": "ALTAREGO",
+        "reward": "2x Venom (30 mins) and 1 Mega Chest",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794151894019,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      },
+      {
+        "game": "1-venom-evolution",
+        "gameName": "+1 Venom Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
+        },
+        "code": "DUNGEON",
+        "reward": "2x Mutagen (10 mins)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794151894019,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      }
+    ],
+    "activeCount": 10,
+    "fetchedAt": "2026-11-09T06:02:04.779Z",
+    "displayCodes": [
+      {
+        "code": "VOIDKING",
+        "reward": "2x Venom (30 mins), 2x Wins (30 mins), and 1 Revive",
+        "isNew": true
+      },
+      {
+        "code": "HAPPY100K",
+        "reward": "2x Venom (45 mins), 2x Wins (45 mins), 1 Mega Chest, and 1 Revive",
+        "isNew": true
+      },
+      {
+        "code": "ALTAREGO",
+        "reward": "2x Venom (30 mins) and 1 Mega Chest",
+        "isNew": true
+      },
+      {
+        "code": "DUNGEON",
+        "reward": "2x Mutagen (10 mins)",
+        "isNew": true
+      },
+      {
+        "code": "BONEAPPETIT",
+        "reward": "x2 Venom (30 mins) and 1 Mega Chest",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY50K",
+        "reward": "x2 Venom (45 mins), x2 Wins (45 mins), 1 Mega Chest, and 2 Revives",
+        "isNew": false
+      },
+      {
+        "code": "WORLD3",
+        "reward": "x2 Venom (30 mins), x2 Wins (30 mins), and 1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY30K",
+        "reward": "2x Venom, 2x Wins (30 mins), 1 Mega Chest, and 1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "HALLOWEEN",
+        "reward": "1 Halloween Chest and 1 Tower Ticket",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE2",
+        "reward": "1 Halloween Chest",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "VOIDKING",
+        "reward": "2x Venom (30 mins), 2x Wins (30 mins), and 1 Revive",
+        "isNew": true
+      },
+      {
+        "code": "HAPPY100K",
+        "reward": "2x Venom (45 mins), 2x Wins (45 mins), 1 Mega Chest, and 1 Revive",
+        "isNew": true
+      },
+      {
+        "code": "ALTAREGO",
+        "reward": "2x Venom (30 mins) and 1 Mega Chest",
+        "isNew": true
+      },
+      {
+        "code": "DUNGEON",
+        "reward": "2x Mutagen (10 mins)",
+        "isNew": true
+      },
+      {
+        "code": "BONEAPPETIT",
+        "reward": "x2 Venom (30 mins) and 1 Mega Chest",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY50K",
+        "reward": "x2 Venom (45 mins), x2 Wins (45 mins), 1 Mega Chest, and 2 Revives",
+        "isNew": false
+      },
+      {
+        "code": "WORLD3",
+        "reward": "x2 Venom (30 mins), x2 Wins (30 mins), and 1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY30K",
+        "reward": "2x Venom, 2x Wins (30 mins), 1 Mega Chest, and 1 Revive",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "VOIDKING",
+      "HAPPY100K",
+      "ALTAREGO",
+      "DUNGEON",
+      "BONEAPPETIT",
+      "HAPPY50K",
+      "WORLD3",
+      "HAPPY30K",
+      "HALLOWEEN",
+      "UPDATE2"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "huss-valley",
+    "name": "Huss Valley",
+    "displayName": "[RANKED] Huss Valley",
+    "slug": "huss-valley",
+    "players": 17146,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 17146,
+    "newCodes": [
+      {
+        "game": "huss-valley",
+        "gameName": "Huss Valley",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/huss-valley-3v9n"
+        },
+        "code": "ITSGYMTIME",
+        "reward": "1 Emote Crate",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794178461384,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      }
+    ],
+    "activeCount": 10,
+    "fetchedAt": "2026-11-09T06:02:04.779Z",
+    "displayCodes": [
+      {
+        "code": "ITSGYMTIME",
+        "reward": "1 Emote Crate",
+        "isNew": true
+      },
+      {
+        "code": "creatorexchange",
+        "reward": "1 Wheel Spin, 50 Gems, and 100 Coins",
+        "isNew": false
+      },
+      {
+        "code": "GhostKey",
+        "reward": "1 Ghost Key, 250 Candy",
+        "isNew": false
+      },
+      {
+        "code": "TRICKORTREAT",
+        "reward": "150 Candy Corn",
+        "isNew": false
+      },
+      {
+        "code": "SPOOKYSEASON",
+        "reward": "200 Candy Corn, 2 Wheel Spins",
+        "isNew": false
+      },
+      {
+        "code": "INFECTION",
+        "reward": "500 Coins, 150 Candy Corn",
+        "isNew": false
+      },
+      {
+        "code": "CANDY",
+        "reward": "500 Coins, 150 Candy Corn",
+        "isNew": false
+      },
+      {
+        "code": "Tuesdaysrock",
+        "reward": "5 Wheel Spins",
+        "isNew": false
+      },
+      {
+        "code": "FIRSTCODEEVER",
+        "reward": "Penguin Walk Emote, Double Gem Boost (15 minutes), 100 Gems",
+        "isNew": false
+      },
+      {
+        "code": "HUSS4CODE",
+        "reward": "Double Coin Boost (15 minutes), Gem Boost, First Title",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ITSGYMTIME",
+        "reward": "1 Emote Crate",
+        "isNew": true
+      },
+      {
+        "code": "creatorexchange",
+        "reward": "1 Wheel Spin, 50 Gems, and 100 Coins",
+        "isNew": false
+      },
+      {
+        "code": "GhostKey",
+        "reward": "1 Ghost Key, 250 Candy",
+        "isNew": false
+      },
+      {
+        "code": "TRICKORTREAT",
+        "reward": "150 Candy Corn",
+        "isNew": false
+      },
+      {
+        "code": "SPOOKYSEASON",
+        "reward": "200 Candy Corn, 2 Wheel Spins",
+        "isNew": false
+      },
+      {
+        "code": "INFECTION",
+        "reward": "500 Coins, 150 Candy Corn",
+        "isNew": false
+      },
+      {
+        "code": "CANDY",
+        "reward": "500 Coins, 150 Candy Corn",
+        "isNew": false
+      },
+      {
+        "code": "Tuesdaysrock",
+        "reward": "5 Wheel Spins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "GhostKey",
+      "TRICKORTREAT",
+      "SPOOKYSEASON",
+      "INFECTION",
+      "CANDY",
+      "Tuesdaysrock",
+      "FIRSTCODEEVER",
+      "HUSS4CODE",
+      "ITSGYMTIME",
+      "creatorexchange"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "criminal-simulator",
+    "name": "Criminal Simulator",
+    "displayName": "[🏘️CITY] Criminal Simulator 💰",
+    "slug": "criminal-simulator",
+    "players": 15613,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 15613,
+    "newCodes": [
+      {
+        "game": "criminal-simulator",
+        "gameName": "Criminal Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/criminal-simulator"
+        },
+        "code": "ADMIN",
+        "reward": "1 God Mode Use.Limited to 1,000 uses!",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794167521453,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      }
+    ],
+    "activeCount": 3,
+    "fetchedAt": "2026-11-09T06:02:04.779Z",
+    "displayCodes": [
+      {
+        "code": "ADMIN",
+        "reward": "1 God Mode Use.Limited to 1,000 uses!",
+        "isNew": true
+      },
+      {
+        "code": "CITY",
+        "reward": "1,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "POLICE",
+        "reward": "1,500 Cash",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ADMIN",
+        "reward": "1 God Mode Use.Limited to 1,000 uses!",
+        "isNew": true
+      },
+      {
+        "code": "CITY",
+        "reward": "1,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "POLICE",
+        "reward": "1,500 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "ADMIN",
+      "CITY",
+      "POLICE"
+    ]
+  },
+  {
     "platform": "ROBLOX",
     "id": "carolina-leaners",
     "name": "Carolina Leaners",
@@ -186,6 +883,91 @@
     ],
     "allCodes": [
       "COMMANDERRR"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "jujutsu-zero",
+    "name": "Jujutsu Zero",
+    "displayName": "[🎃 HALLOWEEN] Jujutsu: Zero",
+    "slug": "jujutsu-zero",
+    "players": 3190,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3190,
+    "newCodes": [
+      {
+        "game": "jujutsu-zero",
+        "gameName": "Jujutsu Zero",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/jujutsu-zero"
+        },
+        "code": "November!",
+        "reward": "1 Spooky Halloween Scythe Skin Token, 1 Xp Clan Token and 3k Candies",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794178443131,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-11-09T06:02:04.779Z",
+    "displayCodes": [
+      {
+        "code": "November!",
+        "reward": "1 Spooky Halloween Scythe Skin Token, 1 Xp Clan Token and 3k Candies",
+        "isNew": true
+      },
+      {
+        "code": "HAPPYHalloween",
+        "reward": "750 Spooky Candy, 1K Crystals, 5K Lumens",
+        "isNew": false
+      },
+      {
+        "code": "220KLIKES",
+        "reward": "5K Lumens, 500 Crystals, 50 Clan Rolls",
+        "isNew": false
+      },
+      {
+        "code": "210KLIKES",
+        "reward": "3.5K Lumens, 300 Crystals, and 35 Clan Rerolls",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "November!",
+        "reward": "1 Spooky Halloween Scythe Skin Token, 1 Xp Clan Token and 3k Candies",
+        "isNew": true
+      },
+      {
+        "code": "HAPPYHalloween",
+        "reward": "750 Spooky Candy, 1K Crystals, 5K Lumens",
+        "isNew": false
+      },
+      {
+        "code": "220KLIKES",
+        "reward": "5K Lumens, 500 Crystals, 50 Clan Rolls",
+        "isNew": false
+      },
+      {
+        "code": "210KLIKES",
+        "reward": "3.5K Lumens, 300 Crystals, and 35 Clan Rerolls",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "HAPPYHalloween",
+      "220KLIKES",
+      "210KLIKES",
+      "November!"
     ]
   },
   {
@@ -643,6 +1425,102 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "analog",
+    "name": "Analog",
+    "displayName": "ANALOG 📂[HORROR]",
+    "slug": "analog",
+    "players": 641,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 641,
+    "newCodes": [
+      {
+        "game": "analog",
+        "gameName": "Analog",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/analog"
+        },
+        "code": "6KLIKES",
+        "reward": "1.5K Cash and 2 Lucky Rolls",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794156866979,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-11-09T06:02:04.779Z",
+    "displayCodes": [
+      {
+        "code": "6KLIKES",
+        "reward": "1.5K Cash and 2 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "WINFORICAT",
+        "reward": "1,000 Cash, 1,000 XP, and 3 Lucky Rolls",
+        "isNew": false
+      },
+      {
+        "code": "COSMETICS",
+        "reward": "3 Lucky Rolls",
+        "isNew": false
+      },
+      {
+        "code": "ALICEISBETTER",
+        "reward": "1,000 Cash and 5 Lucky Rolls",
+        "isNew": false
+      },
+      {
+        "code": "6MILVISITS",
+        "reward": "1K Cash and 4 Lucky Rolls",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "6KLIKES",
+        "reward": "1.5K Cash and 2 Lucky Rolls",
+        "isNew": true
+      },
+      {
+        "code": "WINFORICAT",
+        "reward": "1,000 Cash, 1,000 XP, and 3 Lucky Rolls",
+        "isNew": false
+      },
+      {
+        "code": "COSMETICS",
+        "reward": "3 Lucky Rolls",
+        "isNew": false
+      },
+      {
+        "code": "ALICEISBETTER",
+        "reward": "1,000 Cash and 5 Lucky Rolls",
+        "isNew": false
+      },
+      {
+        "code": "6MILVISITS",
+        "reward": "1K Cash and 4 Lucky Rolls",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "WINFORICAT",
+      "COSMETICS",
+      "ALICEISBETTER",
+      "6MILVISITS",
+      "6KLIKES"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "murder-infinite",
     "name": "Murder Infinite",
     "displayName": "[📦NEW] Murder Mystery Infinite",
@@ -711,6 +1589,242 @@
     "allCodes": [
       "SPLASH",
       "UPD2"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "spin-to-upgrade",
+    "name": "Spin To Upgrade!",
+    "displayName": "[🍀] Spin To Upgrade! [REBIRTHS]",
+    "slug": "spin-to-upgrade",
+    "players": 219,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 219,
+    "newCodes": [
+      {
+        "game": "spin-to-upgrade",
+        "gameName": "Spin To Upgrade!",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/spin-to-upgrade"
+        },
+        "code": "NEXUS",
+        "reward": "5 Gems and 25% Luck Boost (30 mins)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794156993150,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      }
+    ],
+    "activeCount": 7,
+    "fetchedAt": "2026-11-09T06:02:04.779Z",
+    "displayCodes": [
+      {
+        "code": "NEXUS",
+        "reward": "5 Gems and 25% Luck Boost (30 mins)",
+        "isNew": true
+      },
+      {
+        "code": "GUILDS",
+        "reward": "25% Luck and 1.25x Ores (30 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "GIFTING",
+        "reward": "5 Gems.Can only be redeemed on new servers",
+        "isNew": false
+      },
+      {
+        "code": "SPINTOUPGRADE",
+        "reward": "10 Iron and a Luck Boost",
+        "isNew": false
+      },
+      {
+        "code": "1kCCU",
+        "reward": "5 Gems, 250 Candies, and +125% Variant Luck Boost (15 mins)",
+        "isNew": false
+      },
+      {
+        "code": "250PLAYERS",
+        "reward": "1 Speed Boost (10 mins), 1 Variant Luck Boost (10 mins), 1 Luck Boost (10 mins), and 1 Ore Boost (10 mins)",
+        "isNew": false
+      },
+      {
+        "code": "SPINTOHALLOWEEN",
+        "reward": "150 Candy, 1 Halloween Luck Boost (30 mins), and 1 Candy Boost (30 mins)",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "NEXUS",
+        "reward": "5 Gems and 25% Luck Boost (30 mins)",
+        "isNew": true
+      },
+      {
+        "code": "GUILDS",
+        "reward": "25% Luck and 1.25x Ores (30 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "GIFTING",
+        "reward": "5 Gems.Can only be redeemed on new servers",
+        "isNew": false
+      },
+      {
+        "code": "SPINTOUPGRADE",
+        "reward": "10 Iron and a Luck Boost",
+        "isNew": false
+      },
+      {
+        "code": "1kCCU",
+        "reward": "5 Gems, 250 Candies, and +125% Variant Luck Boost (15 mins)",
+        "isNew": false
+      },
+      {
+        "code": "250PLAYERS",
+        "reward": "1 Speed Boost (10 mins), 1 Variant Luck Boost (10 mins), 1 Luck Boost (10 mins), and 1 Ore Boost (10 mins)",
+        "isNew": false
+      },
+      {
+        "code": "SPINTOHALLOWEEN",
+        "reward": "150 Candy, 1 Halloween Luck Boost (30 mins), and 1 Candy Boost (30 mins)",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "NEXUS",
+      "GUILDS",
+      "GIFTING",
+      "SPINTOUPGRADE",
+      "1kCCU",
+      "250PLAYERS",
+      "SPINTOHALLOWEEN"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "escape-the-cave",
+    "name": "Escape the Cave",
+    "displayName": "[CH4] Escape the Cave",
+    "slug": "escape-the-cave",
+    "players": 148,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 148,
+    "newCodes": [
+      {
+        "game": "escape-the-cave",
+        "gameName": "Escape the Cave",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/escape-the-cave"
+        },
+        "code": "LUCK",
+        "reward": "10 Lucky Spins, 1,000 Pass XP, and 1,000 Gems",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794104059160,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-09T06:02:04.779Z",
+        "fetchedAt": "2026-11-09T06:02:04.779Z"
+      }
+    ],
+    "activeCount": 7,
+    "fetchedAt": "2026-11-09T06:02:04.779Z",
+    "displayCodes": [
+      {
+        "code": "LUCK",
+        "reward": "10 Lucky Spins, 1,000 Pass XP, and 1,000 Gems",
+        "isNew": true
+      },
+      {
+        "code": "VOIDBREAKER",
+        "reward": "400 Candy, 1500 Gems",
+        "isNew": false
+      },
+      {
+        "code": "5MVISITS",
+        "reward": "1,000 Pass XP, 500 Gems",
+        "isNew": false
+      },
+      {
+        "code": "ENDLESS",
+        "reward": "1,000 Pass XP, 1,000 Gems",
+        "isNew": false
+      },
+      {
+        "code": "update1",
+        "reward": "450 Coins, 100 Luck Boost (10 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "3MVISITS",
+        "reward": "2,000 Pass XP, 300 Candy, 500 Gems",
+        "isNew": false
+      },
+      {
+        "code": "CLANS",
+        "reward": "500 Gems",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "LUCK",
+        "reward": "10 Lucky Spins, 1,000 Pass XP, and 1,000 Gems",
+        "isNew": true
+      },
+      {
+        "code": "VOIDBREAKER",
+        "reward": "400 Candy, 1500 Gems",
+        "isNew": false
+      },
+      {
+        "code": "5MVISITS",
+        "reward": "1,000 Pass XP, 500 Gems",
+        "isNew": false
+      },
+      {
+        "code": "ENDLESS",
+        "reward": "1,000 Pass XP, 1,000 Gems",
+        "isNew": false
+      },
+      {
+        "code": "update1",
+        "reward": "450 Coins, 100 Luck Boost (10 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "3MVISITS",
+        "reward": "2,000 Pass XP, 300 Candy, 500 Gems",
+        "isNew": false
+      },
+      {
+        "code": "CLANS",
+        "reward": "500 Gems",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "VOIDBREAKER",
+      "5MVISITS",
+      "ENDLESS",
+      "update1",
+      "3MVISITS",
+      "CLANS",
+      "LUCK"
     ]
   }
 ]
