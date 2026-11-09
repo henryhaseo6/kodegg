@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-09T06:01:55.688Z",
+  "updatedAt": "2026-11-09T07:02:28.571Z",
   "counts": {
-    "active": 47,
+    "active": 49,
     "archived": 199
   },
   "events": [
@@ -476,6 +476,33 @@
       "type": "event",
       "typeName": "Announcements",
       "title": {
+        "en": "\"Trails of the Hobbling Crow\" Event Details",
+        "id": "\"Jejak si Gagak Pincang\" | Penjelasan Event"
+      },
+      "subtitle": {
+        "en": "\"Trails of the Hobbling Crow\" Event Details",
+        "id": "\"Jejak si Gagak Pincang\" | Penjelasan Event"
+      },
+      "desc": {
+        "en": "Event Duration 2026/11/11 10:00 (server time) – 2026/11/30 03:59 (server time) Event Rewards Requirements Reach Inter-Knot Lv. 20 and complete Main Story Chapter 1 - Intermission to participate Gameplay Details • During the event, Proxies will once again act as temporary detective assistants for The Hobbling Crow Detective Agency to investigate a poisoning case and the strange events behind it. • The event includes 5 commission incidents: \"Poison Before Sleep,\" \"Crow's Footprints,\" \"The Nonexistent Server,\" \"Scarecrow and Crow,\" and \"Shadows in the Cup.\" Complete the previous commission incident and reach the specified time to unlock the next one. • Complete the event commissions to obtain Tuning Calibrator, Polychromes, and various upgrade materials as rewards.",
+        "id": "[Waktu Event] 2026/11/11 10:00 (waktu server) - 2026/11/30 03:59 (waktu server) [Hadiah Event] [Syarat Partisipasi] Capai Inter-Knot Lv. 20 dan selesaikan Cerita Utama Chapter 1 - Intermission. [Penjelasan Gameplay] • Selama event berlangsung, Proxy akan kembali mengemban tanggung jawab sebagai Asisten Detektif Sementara di Biro Detektif Si Gagak Pincang dan menyelidiki serangkaian peristiwa aneh yang bermula dari kasus peracunan. • Event mencakup 5 kontrak insiden: \"Racun Sebelum Tidur\", \"Jejak sang Gagak\", \"Pelayan yang Tak Pernah Ada\", \"Orang-orangan Sawah dan Gagak\", dan \"Bayangan dalam Cangkir\". Kontrak insiden berikutnya akan terbuka setelah menyelesaikan kontrak insiden sebelumnya dan mencapai waktu yang ditentukan. • Selesaikan Kontrak Event untuk mendapatkan Tuning Calibrator, Polychrome dan berbagai hadiah material pengembangan."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/06/40ab1673a65094220ed9c3e1da82202d_1647191806937138590_transformed.png",
+      "startsAt": "2026-11-08T23:15:00.000Z",
+      "endsAt": "2026-11-29T19:59:00.000Z",
+      "postedAt": "2026-11-08T23:15:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://zenless.hoyoverse.com/en/news"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": "Announcements",
+      "title": {
         "en": "Version 3.3 New Eridu City Fund Details",
         "id": "Penjelasan Dana Kota New Eridu V3.3"
       },
@@ -491,6 +518,33 @@
       "startsAt": "2026-10-19T23:00:00.000Z",
       "endsAt": "2026-11-29T19:59:59.000Z",
       "postedAt": "2026-10-19T23:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://zenless.hoyoverse.com/en/news"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": "Announcements",
+      "title": {
+        "en": "\"'En-Nah' Into Your Lap\" Event Details",
+        "id": "\"Ehn-Nah\" Jatuh dari Langit | Penjelasan Event"
+      },
+      "subtitle": {
+        "en": "\"'En-Nah' Into Your Lap\" Event Details",
+        "id": "\"Ehn-Nah\" Jatuh dari Langit | Penjelasan Event"
+      },
+      "desc": {
+        "en": "Event Duration 2026/11/11 10:00 (server time) – 2026/12/01 03:59 (server time) Requirements Reach Inter-Knot Lv. 5, and unlock the Event feature in the Main Story Prologue \"The Hare and the Proxy\" Event Details During the \"'En-Nah' Into Your Lap\" event, log in for a total of 7 days to obtain Boopon ×10!",
+        "id": "[Waktu Event] 2026/11/11 10:00 (waktu server) - 2026/12/01 03:59 (waktu server) [Syarat Partisipasi] Capai Inter-Knot Lv. 5 dan selesaikan Prolog Cerita Utama \"Kelinci dan Proxy\", serta buka fitur Event untuk berpartisipasi. [Penjelasan Event] Selama event \"Ehn-Nah\" Jatuh dari Langit berlangsung, login total 7 hari untuk mendapatkan Boopon ×10!"
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/06/126f78ba13d1695009b28d546da27439_2475502624270743603_transformed.jpg",
+      "startsAt": "2026-11-08T23:30:00.000Z",
+      "endsAt": "2026-11-30T19:59:00.000Z",
+      "postedAt": "2026-11-08T23:30:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
