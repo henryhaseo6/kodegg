@@ -2862,7 +2862,7 @@
   "rims": {
    "tulis": "Rims",
    "pertama": 1790510730418,
-   "terakhir": "2026-10-24"
+   "terakhir": "2026-11-09"
   },
   "material": {
    "tulis": "Material",
@@ -7535,7 +7535,7 @@
   "frozen": {
    "tulis": "frozen",
    "pertama": 1794009960515,
-   "terakhir": "2026-11-07"
+   "terakhir": "2026-11-09"
   },
   "freeze": {
    "tulis": "freeze",
@@ -16772,7 +16772,7 @@
   "rims": {
    "tulis": "rims",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-24",
+   "terakhir": "2026-11-09",
    "awal": true
   },
   "tint": {
@@ -25419,7 +25419,7 @@
   "passes": {
    "tulis": "passes",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-20",
+   "terakhir": "2026-11-09",
    "awal": true
   },
   "modify": {
@@ -35186,7 +35186,7 @@
   "frozen": {
    "tulis": "Frozen",
    "pertama": 1790107442312,
-   "terakhir": "2026-11-07"
+   "terakhir": "2026-11-09"
   },
   "ghosts": {
    "tulis": "ghosts",
@@ -49800,7 +49800,7 @@
   "passes": {
    "tulis": "Passes",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-20",
+   "terakhir": "2026-11-09",
    "awal": true
   },
   "admiration": {
@@ -59962,7 +59962,7 @@
   "rims": {
    "tulis": "rims",
    "pertama": 1786695454025,
-   "terakhir": "2026-10-24"
+   "terakhir": "2026-11-09"
   },
   "ornaments": {
    "tulis": "ornaments",
@@ -76387,7 +76387,7 @@
   "forests": {
    "tulis": "forests",
    "pertama": 1789765474808,
-   "terakhir": "2026-10-22"
+   "terakhir": "2026-11-09"
   },
   "distant": {
    "tulis": "distant",
@@ -82585,7 +82585,7 @@
   "forests": {
    "tulis": "forests",
    "pertama": 1792508860403,
-   "terakhir": "2026-10-22"
+   "terakhir": "2026-11-09"
   },
   "snowy": {
    "tulis": "snowy",
@@ -82626,6 +82626,11 @@
    "tulis": "Rain",
    "pertama": 1792616727711,
    "terakhir": "2026-10-30"
+  },
+  "passes": {
+   "tulis": "passes",
+   "pertama": 1794197163639,
+   "terakhir": "2026-11-09"
   }
  },
  "build-the-great-wall": {
@@ -83439,6 +83444,11 @@
   "touge": {
    "tulis": "Touge",
    "pertama": 1793401543314,
+   "terakhir": "2026-11-09"
+  },
+  "crews": {
+   "tulis": "crews",
+   "pertama": 1794197163639,
    "terakhir": "2026-11-09"
   }
  },
@@ -84893,6 +84903,11 @@
    "tulis": "Mage",
    "pertama": 1794078315815,
    "terakhir": "2026-11-09"
+  },
+  "forests": {
+   "tulis": "forests",
+   "pertama": 1794197163639,
+   "terakhir": "2026-11-09"
   }
  },
  "tame-an-animal": {
@@ -85151,6 +85166,11 @@
    "pertama": 1792929900644,
    "terakhir": "2026-10-31",
    "sudahPunya": true
+  },
+  "bees": {
+   "tulis": "BEES",
+   "pertama": 1794197163639,
+   "terakhir": "2026-11-09"
   }
  },
  "a-long-flight": {
@@ -89682,6 +89702,11 @@
   "freezing": {
    "tulis": "freezing",
    "pertama": 1794024316672,
+   "terakhir": "2026-11-09"
+  },
+  "frozen": {
+   "tulis": "frozen",
+   "pertama": 1794197163639,
    "terakhir": "2026-11-09"
   }
  },
