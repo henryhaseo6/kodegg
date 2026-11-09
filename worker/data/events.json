@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-09T04:02:39.192Z",
+  "updatedAt": "2026-11-09T05:02:23.047Z",
   "counts": {
-    "active": 43,
+    "active": 44,
     "archived": 199
   },
   "events": [
@@ -992,6 +992,33 @@
       "startsAt": "2026-11-07T04:00:00.000Z",
       "endsAt": "2026-12-20T19:59:00.000Z",
       "postedAt": "2026-11-07T04:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://hsr.hoyoverse.com/en/news"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "type": "event",
+      "typeName": "Notices",
+      "title": {
+        "en": "\"Now, Lay Laughter to All Stars\" Mission Description",
+        "id": "Penjelasan Misi \"Kini, Sematkan Tawa pada Seluruh Bintang\""
+      },
+      "subtitle": {
+        "en": "\"Now, Lay Laughter to All Stars\" Mission Description",
+        "id": "Penjelasan Misi \"Kini, Sematkan Tawa pada Seluruh Bintang\""
+      },
+      "desc": {
+        "en": "In the maddening silence, a voice said: \"Laugh, and let THEM hear your existence.\" And thus, the stars were silent no more, pouring all their radiance into a single burst of laughter. Availability Permanently available after the Version 4.7 update Unlock Requirement Trailblaze Level ≥ 21 ※ During Version 4.7, this content can be experienced in advance through the Finality's Vision function. ※ It is recommended that Trailblazers complete the Trailblaze Mission \"Astropolis — Dance With the Beast Before Moonrise\" before experiencing this content. Mission Rewards ※ Complete the Version 4.7 Trailblaze Mission to receive the Superimposition Lv. 5 Light Cone \"See You at the World's End! (Elation)\" ×1.",
+        "id": "Di tengah keheningan kegilaan, terdengar sebuah suara: \"Tertawalah, biarkan 'Dia' mendengar keberadaanmu.\" Maka, bintang-bintang tak lagi membisu. Mereka mempersembahkan seluruh cahaya mereka dalam satu tawa riang. Waktu Dibuka Dibuka secara permanen setelah update Versi 4.7 Syarat Dibuka Level Trailblaze ≥ Lv. 21 ※ Selama periode Versi 4.7, konten ini dapat dimainkan lebih awal melalui fitur \"Pandangan Finality\". ※ Trailblazer disarankan untuk memainkan konten ini setelah menyelesaikan Misi Trailblaze \"Astropolis\" - \"Sebelum Bulan Terbit, Menari Bersama Sang Buas\". Hadiah Misi ※ Selesaikan Misi Trailblaze Versi 4.7 untuk memperoleh hadiah Light Cone Superimpose Lv. 5 \"See You at the World's End! (Elation)\" ×1."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/10/18/594367f09c80c0926412e8dc054fa8dc_487455522214050056_transformed.png",
+      "startsAt": "2026-11-09T05:00:00.000Z",
+      "endsAt": "2026-12-22T22:00:00.000Z",
+      "postedAt": "2026-11-09T05:00:00.000Z",
       "characters": [],
       "weapons": [],
       "rewards": [],
