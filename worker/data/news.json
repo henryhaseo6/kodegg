@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-11-10T03:02:49.699Z",
+  "updatedAt": "2026-11-10T04:02:08.201Z",
   "counts": {
     "active": 110,
     "archived": 197
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — \"Currency Wars: Voyage Into the Canvas\" Special Program | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — Program Khusus \"Perang Mata Uang: Petualangan ke Dalam Lukisan\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "Breaking news! \"Fluffy Across the Blue\" is about to launch a major collaboration with \"Currency Wars\"! The Fluffy crew joins the fray in \"Currency Wars\"! Paired with the brand-new ",
+        "id": "Berita Gembira! \"Bululu Melintasi Biru Angkasa\" akan segera menjalin kolaborasi besar dengan \"Perang Mata Uang\"! Rekan Bululu turut bergabung dalam \"Perang Mata Uang\", dilengkapi d"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/10/0/a0302fec3c4e5227c5eb766ac8333fe8_4837567322925059125.png",
+      "url": "https://www.hoyolab.com/article/47385591",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-10T04:00:07.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Version 3.3 New Stock in the Store",
+        "id": "Toko V3.3 | Detail Update"
+      },
+      "excerpt": {
+        "en": "Dear Proxies, Exciting new items will be available in the Store in the second half of the Version 3.3 update! New Agent outfit arrivals in \"Today's Outfit\" Severian: Solemnly Impec",
+        "id": "Dear Proxy: Setelah update tahap kedua dari V3.3, akan ada item baru di toko loh! Menambahkan Outfit Agen Baru di \"Outfit Hari Ini\" Outfit \"Severian - Wibawa Tanpa Cela\" • Waktu Pe"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/09/0/01854eb260886f581b3be18945d70b86_4858957075812757203.jpeg",
+      "url": "https://www.hoyolab.com/article/47385589",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-10T04:00:06.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -854,22 +886,6 @@
       "publishedAt": "2026-11-03T04:05:02.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Keeping Up With Star Rail — Aeon ★ Aha: Claiming to be an Aeon to Dodge Deadlines? | Honkai: Star Rail",
-        "id": "Mendekati Star Rail — \"Aeon ★ Aha: Demi Tunda Naskah, Ngaku-ngaku Dirinya Aeon?\"| Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "Now that Fluffy Across the Blue, Vol. 1 has officially wrapped up, we've reached out to a few prominent public figures to hear their thoughts on the matter. \"Chief Manuscript Chase",
-        "id": "Kini setelah \"Bululu Melintasi Biru Angkasa: Bagian 1\" resmi berakhir, kami telah menghubungi beberapa tokoh publik terkemuka untuk meminta pendapat mereka mengenai hal tersebut. \""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
-      "url": "https://www.hoyolab.com/article/47296174",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-03T04:00:05.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -882,6 +898,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/31/0/94bcdcd2bf34c990ffde805e9687de59_3589969867261598205.png",
       "url": "https://www.hoyolab.com/article/47296176",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-03T04:00:05.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Keeping Up With Star Rail — Aeon ★ Aha: Claiming to be an Aeon to Dodge Deadlines? | Honkai: Star Rail",
+        "id": "Mendekati Star Rail — \"Aeon ★ Aha: Demi Tunda Naskah, Ngaku-ngaku Dirinya Aeon?\"| Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "Now that Fluffy Across the Blue, Vol. 1 has officially wrapped up, we've reached out to a few prominent public figures to hear their thoughts on the matter. \"Chief Manuscript Chase",
+        "id": "Kini setelah \"Bululu Melintasi Biru Angkasa: Bagian 1\" resmi berakhir, kami telah menghubungi beberapa tokoh publik terkemuka untuk meminta pendapat mereka mengenai hal tersebut. \""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/03/0/e7586616ee3d3ba4e137395e475cb41b_8754302882898828785.jpeg",
+      "url": "https://www.hoyolab.com/article/47296174",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-03T04:00:05.000Z"
     },
@@ -1050,32 +1082,16 @@
       "gameName": "Honkai: Star Rail",
       "title": {
         "en": "Stellar Journey Diary | Let's prepare a little prank~",
-        "id": "Catatan Perjalanan Bintang | Ayo Siapkan Sebuah \"Kejahilan\" Kecil~"
+        "id": "Stellar Journey Diary | Let's prepare a little prank~"
       },
       "excerpt": {
         "en": "Let's prepare a little prank~ Mix up some unconventional drinks... Or sneak waging chips into the candy basket... Maybe even draw everyone when they're totally in the zone? Next, w",
-        "id": "Ayo siapkan sebuah \"kejahilan\" kecil~ Meracik beberapa minuman spesial yang tidak biasa, atau mencampurkan chip ke dalam keranjang permen. Bisa juga menggambar sisi paling fokus da"
+        "id": "Let's prepare a little prank~ Mix up some unconventional drinks... Or sneak waging chips into the candy basket... Maybe even draw everyone when they're totally in the zone? Next, w"
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/30/3e16be98a041cf29ca513f35d0bc62dc_35607363425236679.png",
       "url": "https://www.hoyolab.com/article/47259176",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-31T02:00:07.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Affinitive Eidolon Coming Soon!",
-        "id": "Affinitive Eidolon Coming Soon!"
-      },
-      "excerpt": {
-        "en": "Hello, Trailblazers! Affinitive Eidolon will go live after the Version 4.7 update! This issue will bring an introduction to the Affinitive Eidolon, along with a sneak peek at Acher",
-        "id": "Hello, Trailblazers! Affinitive Eidolon will go live after the Version 4.7 update! This issue will bring an introduction to the Affinitive Eidolon, along with a sneak peek at Acher"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/30/1fd7c9d04ef6d86c04f11be86a13920f_8159899789697907322.jpg",
-      "url": "https://www.hoyolab.com/article/47252651",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-30T12:55:05.000Z"
     },
     {
       "game": "hsr",
@@ -1748,22 +1764,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5607",
       "source": "Wuthering Waves",
       "publishedAt": "2026-10-12T09:30:28.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Data Bounty: Combat Simulation\" Event Details",
-        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration 2026/10/14 04:00 (server time) – 2026/10/19 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
-        "id": "[Waktu Event] 2026/10/14 04:00 (waktu server) - 2026/10/19 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/0/4cde49db74e4409d89b172b9f25bf7a1_2026513355199788801.jpeg",
-      "url": "https://www.hoyolab.com/article/47055658",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-10-12T04:00:06.000Z"
     }
   ],
   "archive": [
