@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-11T11:21:17.103Z",
+  "updatedAt": "2026-11-11T12:01:45.387Z",
   "counts": {
     "active": 114,
-    "archived": 199
+    "archived": 200
   },
   "articles": [
     {
@@ -164,6 +164,22 @@
       "url": "https://www.hoyolab.com/article/47394097",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-10T23:00:03.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Wuthering Waves Fan Creation Event Winners Reveal",
+        "id": "Wuthering Waves Fan Creation Event Winners Reveal"
+      },
+      "excerpt": {
+        "en": "Wuthering Waves Fan Creation Event \"Prism's Illusion, Heart's Illumination\" has concluded, and we want to express our heartfelt appreciation to all participants for their dedicatio",
+        "id": "Wuthering Waves Fan Creation Event \"Prism's Illusion, Heart's Illumination\" has concluded, and we want to express our heartfelt appreciation to all participants for their dedicatio"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1794326400000/qpdp6aatwhc42vqwct-1794384348716.png",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5769",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-11-10T12:59:16.000Z"
     },
     {
       "game": "hsr",
@@ -1812,7 +1828,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5616",
       "source": "Wuthering Waves",
       "publishedAt": "2026-10-12T12:08:28.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1827,10 +1845,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1791734400000/hkbm7pcp8gurgihc69-1791807905497.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5615",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-10-12T11:58:21.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-12T11:58:21.000Z",
+      "archivedAt": "2026-11-11T12:01:45.387Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
