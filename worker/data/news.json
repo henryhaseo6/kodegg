@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-11T10:02:03.920Z",
+  "updatedAt": "2026-11-11T11:02:30.382Z",
   "counts": {
-    "active": 113,
+    "active": 114,
     "archived": 199
   },
   "articles": [
@@ -438,6 +438,22 @@
       "publishedAt": "2026-11-09T04:30:07.000Z"
     },
     {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Event Preview | [Second Coming of Solaris: Unwritten Dreams] Leisure Event Coming Soon!",
+        "id": "Event Preview | [Second Coming of Solaris: Unwritten Dreams] Leisure Event Coming Soon!"
+      },
+      "excerpt": {
+        "en": "✦Event Duration✦ After the Version 3.8 update - 2026-12-21 11:59 (Server Time) ✦Rewards✦ Astrite x1200, Graduation Season (Event Sigil), Between Classes (Event Avatar), Selfie Pose",
+        "id": "✦Event Duration✦ After the Version 3.8 update - 2026-12-21 11:59 (Server Time) ✦Rewards✦ Astrite x1200, Graduation Season (Event Sigil), Between Classes (Event Avatar), Selfie Pose"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1794153600000/2zvhls3odz3hiiw8av-1794196911333.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5741",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-11-09T04:04:50.000Z"
+    },
+    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -678,22 +694,6 @@
       "publishedAt": "2026-11-07T02:00:04.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "For Display Only | Severian",
-        "id": "For Display Only | Severian"
-      },
-      "excerpt": {
-        "en": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\"",
-        "id": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-11-06/transcoded/142118597346062815232_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/47342929",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-06T10:00:05.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -706,6 +706,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/bc2fc1c077096bd4bbb5c04e6c146c54_5193667494320394504.jpg",
       "url": "https://www.hoyolab.com/article/47342930",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-06T10:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "For Display Only | Severian",
+        "id": "For Display Only | Severian"
+      },
+      "excerpt": {
+        "en": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\"",
+        "id": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-11-06/transcoded/142118597346062815232_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/47342929",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-06T10:00:05.000Z"
     },
@@ -726,22 +742,6 @@
       "publishedAt": "2026-11-06T07:17:24.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Severian Character Demo - \"The Making of a Commissioner\" | Zenless Zone Zero",
-        "id": "Demo Karakter Severian - \"Proses Menjadi Komisaris\" | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "\"Commissioner Lowell... He's regarded as one of our most dependable officers.\" \"While I've got the chance, I do have one suggestion for Commissioner Lowell: give junior officers mo",
-        "id": "\"Komisaris Lowell... Dia adalah salah satu petugas yang paling bisa diandalkan di Public Security.\" \"Selagi ada kesempatan, aku ingin mengusulkan agar Komisaris Lowell memberi lebi"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/4695a51225d638091ebed478522a7006_6509276100703147467.png",
-      "url": "https://www.hoyolab.com/article/47339558",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-06T04:00:04.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -754,6 +754,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/141f3707ca9af1f5aeff959a6c55ce0f_3132425623498928193.jpg",
       "url": "https://www.hoyolab.com/article/47339559",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-06T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Severian Character Demo - \"The Making of a Commissioner\" | Zenless Zone Zero",
+        "id": "Demo Karakter Severian - \"Proses Menjadi Komisaris\" | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "\"Commissioner Lowell... He's regarded as one of our most dependable officers.\" \"While I've got the chance, I do have one suggestion for Commissioner Lowell: give junior officers mo",
+        "id": "\"Komisaris Lowell... Dia adalah salah satu petugas yang paling bisa diandalkan di Public Security.\" \"Selagi ada kesempatan, aku ingin mengusulkan agar Komisaris Lowell memberi lebi"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/4695a51225d638091ebed478522a7006_6509276100703147467.png",
+      "url": "https://www.hoyolab.com/article/47339558",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-06T04:00:04.000Z"
     },
