@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-11-11T09:01:55.708Z",
+  "updatedAt": "2026-11-11T10:02:03.920Z",
   "counts": {
-    "active": 114,
-    "archived": 197
+    "active": 113,
+    "archived": 199
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "A Moment Among the Stars — \"All's Well That Ends Well\" | Honkai: Star Rail",
+        "id": "Momen Perjalanan Antarbintang: \"Akhir yang Bahagia untuk Semua\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "All the universe is a stage, And everyone merely players. They have their exits and their entrances. And one in their time plays many parts. Until the show ends, and then An antici",
+        "id": "Seluruh alam semesta adalah sebuah panggung, setiap orang hanyalah aktor. Mereka naik dan turun panggung sesuai waktunya. Terkadang satu orang memainkan banyak peran di sepanjang h"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/11/0/ff7a734634c9446ddd60ff05031fff04_8513200727923580871.jpeg",
+      "url": "https://www.hoyolab.com/article/47401368",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-11T10:00:06.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -228,6 +244,22 @@
       "url": "https://www.hoyolab.com/article/47385589",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-10T04:00:06.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Resonator Review | Bambooscape — Qiuyuan",
+        "id": "Resonator Review | Bambooscape — Qiuyuan"
+      },
+      "excerpt": {
+        "en": "Former senior agent of Mingting's Internal Security Agency. Though enmity filled his younger days, loyalty defined his later years. However, scapegoated for a murder, he is now but",
+        "id": "Former senior agent of Mingting's Internal Security Agency. Though enmity filled his younger days, loyalty defined his later years. However, scapegoated for a murder, he is now but"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1794240000000/x1f73xpdrhaxjd5gzq-1794280239689.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5757",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-11-10T03:16:20.000Z"
     },
     {
       "game": "hsr",
@@ -644,22 +676,6 @@
       "url": "https://www.hoyolab.com/article/47350776",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-07T02:00:04.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Aha All-Stars | \"Dunelation\"",
-        "id": "Aha All-Stars | \"Ahune\""
-      },
-      "excerpt": {
-        "en": "✧ World's End Tavern FUN-tastic Watch Party ✧ [Trending] Sparxie × Trailblazer × Aeon ★ Aha [Even] Comedy | Adventure | Drama [Before] Annual HAMAX Blockbuster [Release] Exclusive ",
-        "id": "✧ Nobar FUN di Bar Ujung Dunia ✧ [Belum] Sparxie × Trailblazer × Aeon ★ Aha [Tayang] Komedi | Petualangan | Drama [Sudah] Produksi Spektakuler HAMAX Tahun Ini [Viral] Eksklusif \"Ho"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/06/b41258ded411f8d8eaba79d3a0682fe3_1283279401499872592.jpg",
-      "url": "https://www.hoyolab.com/article/47342931",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-06T10:00:07.000Z"
     },
     {
       "game": "zzz",
@@ -1796,7 +1812,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5615",
       "source": "Wuthering Waves",
       "publishedAt": "2026-10-12T11:58:21.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1811,7 +1829,8 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1791734400000/ybezed6jv3gdaisjd8-1791797555598.png",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5608",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-10-12T09:36:36.000Z"
+      "publishedAt": "2026-10-12T09:36:36.000Z",
+      "archivedAt": "2026-11-11T10:02:03.920Z"
     },
     {
       "game": "wuwa",
@@ -1827,10 +1846,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1791734400000/5piyoppgkyuy5tsxj1-1791796562132.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5607",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-10-12T09:30:28.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-12T09:30:28.000Z",
+      "archivedAt": "2026-11-11T10:02:03.920Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
