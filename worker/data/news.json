@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-11T12:01:45.387Z",
+  "updatedAt": "2026-11-11T13:01:58.915Z",
   "counts": {
-    "active": 114,
+    "active": 113,
     "archived": 200
   },
   "articles": [
@@ -1812,7 +1812,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5625",
       "source": "Wuthering Waves",
       "publishedAt": "2026-10-13T11:10:35.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1827,10 +1829,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1792166400000/qmxeklhslwrv9x47n7-1792207724518.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5616",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-10-12T12:08:28.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-12T12:08:28.000Z",
+      "archivedAt": "2026-11-11T13:01:58.915Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -5212,23 +5213,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4852",
       "source": "Wuthering Waves",
       "publishedAt": "2026-06-08T09:27:58.000Z",
-      "archivedAt": "2026-07-18T11:04:10.000Z"
-    },
-    {
-      "game": "wuwa",
-      "gameName": "Wuthering Waves",
-      "title": {
-        "en": "[Spectral Trigger] Collab Weapon Convene",
-        "id": "[Spectral Trigger] Collab Weapon Convene"
-      },
-      "excerpt": {
-        "en": "During the event, 5-Star Weapon: Spectral Trigger, 4-Star Weapons: Relativistic Jet, Cadenza, and Fusion Accretion receive boosted drop rates! ✦Duration✦ Version 3.4 Update - 2026-",
-        "id": "During the event, 5-Star Weapon: Spectral Trigger, 4-Star Weapons: Relativistic Jet, Cadenza, and Fusion Accretion receive boosted drop rates! ✦Duration✦ Version 3.4 Update - 2026-"
-      },
-      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1780848000000/4szfs6jywb5yd3w76i-1780910415682.jpg",
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4844",
-      "source": "Wuthering Waves",
-      "publishedAt": "2026-06-08T09:20:34.000Z",
       "archivedAt": "2026-07-18T11:04:10.000Z"
     }
   ]
