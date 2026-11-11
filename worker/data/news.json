@@ -1,10 +1,58 @@
 {
-  "updatedAt": "2026-11-11T03:02:08.494Z",
+  "updatedAt": "2026-11-11T04:01:46.928Z",
   "counts": {
-    "active": 113,
+    "active": 114,
     "archived": 197
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Journey to the Sky | Version 3.3 Content Overview (Phase II)",
+        "id": "Perjalanan Kembali ke Langit | Preview Konten Versi 3.3 (Tahap 2)"
+      },
+      "excerpt": {
+        "en": "Hey Proxies, the second half of Version 3.3 is now live! S-Rank Agents Severian (Wind - Attack) and Norma (Fire - Stun), as well as S-Rank W-Engines Incarcerating Grip (Attack) and",
+        "id": "Halo Proxy, tahap kedua versi 3.3 telah hadir! Agen Tier-S Severian (Wind - Attack) & Norma (Fire - Stun), serta W-Engine Tier-S Incarcerating Grip (Attack) & Chief Sidekick (Stun)"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/10/0/a89d1489f9cd57c38ae3d6717e7b0272_5575685725633461502.jpeg",
+      "url": "https://www.hoyolab.com/article/47396372",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-11T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Project Astro-Warp Beta Sign-Up Reminder",
+        "id": "Pengingat Pendaftaran Tes Beta \"Proyek Warp Antargalaksi\""
+      },
+      "excerpt": {
+        "en": "The Honkai: Star Rail Project Astro-Warp is about to begin a new round of small-scale full-wipe confidential beta testing. Trailblazers who have successfully signed up before 2026/",
+        "id": "\"Proyek Warp Antargalaksi\" dari \"Honkai: Star Rail\" akan segera memulai tes beta tertutup batch baru. Trailblazer yang berhasil mendaftar \"Proyek Warp Antargalaksi\" sebelum 16/11/2"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/10/addec2d24a1f50df8d94fec2c70705f1_359826799021973590.png",
+      "url": "https://www.hoyolab.com/article/47396370",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-11T04:00:03.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Animated Short: \"A Joyful Funeral Beneath the Moon\" | Honkai: Star Rail",
+        "id": "Video Animasi: \"Upacara Pemakaman Ceria di Bawah Rembulan\" | Honkai: Star Rail"
+      },
+      "excerpt": {
+        "en": "Dearest travelers from afar, \"Why not try starting a game once more? Savor the pain it brings once more, tremble at its cruelty once more, and wander through the hell within yourse",
+        "id": "Salam, tamu yang datang dari jauh. \"Kenapa tidak coba mulai permainan ini sekali lagi? Nikmati kembali rasa sakit, gemetarlah sekali lagi di hadapan kekejamannya, dan mengembara se"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/11/0/8ef30e5a7d2074fb0abb63bd8b42d8dc_7929374346152601504.jpeg",
+      "url": "https://www.hoyolab.com/article/47396371",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-11T04:00:03.000Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
@@ -148,6 +196,22 @@
       "url": "https://www.hoyolab.com/article/47377831",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-09T10:00:07.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "[Version 3.8 Featured Resonator/Weapon Convene: Phase Ⅰ]",
+        "id": "[Version 3.8 Featured Resonator/Weapon Convene: Phase Ⅰ]"
+      },
+      "excerpt": {
+        "en": "[When the Runes Glitter] Featured Resonator Convene During the event, 5-Star Resonator: Sigrika, 4-Star Resonators: Youhu, Aalto, and Yangyang receive boosted drop rates! ✦Duration",
+        "id": "[When the Runes Glitter] Featured Resonator Convene During the event, 5-Star Resonator: Sigrika, 4-Star Resonators: Youhu, Aalto, and Yangyang receive boosted drop rates! ✦Duration"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1794153600000/0tcfl26uutu87ic3ii-1794217188451.jpg",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5754",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-11-09T09:49:24.000Z"
     },
     {
       "game": "zzz",
@@ -822,22 +886,6 @@
       "publishedAt": "2026-11-04T04:30:09.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Improv Tour Trailer: \"When Aha Comes Knocking\" | Honkai: Star Rail",
-        "id": "Trailer Tur Impromptu: \"Saat Aha Mengetuk Pintu\" | Honkai: Star Rail"
-      },
-      "excerpt": {
-        "en": "If life plays a cruel joke on you, don't fret, and don't despair... Aha is watching over every moment of your dejection. English Voice: Aeon ★ Aha — Amber Lee Connors",
-        "id": "Jika hidup mempermainkanmu dengan kejam, jangan cemas dan jangan berputus asa— Aha selalu mengawasimu di setiap momen sedihmu. CV Bahasa Inggris: Aeon ★ Aha — Amber Lee Connors"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/04/0/5f84a71dbc7a9db59ece4f36722bb4df_8602696741357095087.jpeg",
-      "url": "https://www.hoyolab.com/article/47309012",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-04T04:00:06.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -852,22 +900,6 @@
       "url": "https://www.hoyolab.com/article/47309009",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-04T04:00:04.000Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Aeon Preview | Aeon ★ Aha",
-        "id": "Preview Aeon | Aeon ★ Aha"
-      },
-      "excerpt": {
-        "en": "Hello, Trailblazers~ Today, we bring you the preview for the Aeon, Aeon ★ Aha (Elation: Quantum), and the Light Cone, \"Upon the First Echo of 'Aha' (Elation)\"!",
-        "id": "Halo Trailblazer~ Hari ini kami membawakan preview Aeon \"Aeon ★ Aha (Elation: Quantum)\" dan Light Cone \"Upon the First Echo of 'Aha' (Elation)\"!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/03/edb29fb7cf64b5eb1797f1747ad27593_4343287217262303725.jpg",
-      "url": "https://www.hoyolab.com/article/47307963",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-04T03:00:10.000Z"
     },
     {
       "game": "gi",
@@ -1108,22 +1140,6 @@
       "url": "https://www.hoyolab.com/article/47271769",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-01T04:00:05.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "ZZZ Nov 2026 Calendar Wallpaper",
-        "id": "Kalender Wallpaper ZZZ November 2026"
-      },
-      "excerpt": {
-        "en": "\"Manager, do you have any trendy gifts in stock lately?\" \"Tonight's the usual family event, and... someone just called again to hurry me along.\" Dear Proxies, feel free to download",
-        "id": "\"Manajer, belakangan ini apa ada hadiah yang sedang tren?\" \"Malam ini ada agenda keluarga rutin... barusan ada yang menelepon lagi untuk menyuruhku buru-buru.\" Dear Proxy, silakan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/30/0/9843e3eef5280b1d6a8779c4ad3ec90b_5118589938070605077.jpeg",
-      "url": "https://www.hoyolab.com/article/47271767",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-01T04:00:04.000Z"
     },
     {
       "game": "hi3",
