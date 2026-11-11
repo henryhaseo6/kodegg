@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-11T06:01:34.989Z",
+  "updatedAt": "2026-11-11T07:01:50.029Z",
   "counts": {
-    "active": 46,
+    "active": 47,
     "archived": 200
   },
   "events": [
@@ -124,6 +124,33 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/47307204"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "type": "event",
+      "typeName": "Notices",
+      "title": {
+        "en": "Version 4.7 Now, Lay Laughter to All Stars Discord Quest Event",
+        "id": "Event Quest Discord Versi 4.7 \"Kini, Sematkan Tawa pada Seluruh Bintang\""
+      },
+      "subtitle": {
+        "en": "Version 4.7 Now, Lay Laughter to All Stars Discord Quest Event",
+        "id": "Event Quest Discord Versi 4.7 \"Kini, Sematkan Tawa pada Seluruh Bintang\""
+      },
+      "desc": {
+        "en": "Hello, Trailblazers! The Version 4.7 Now, Lay Laughter to All Stars Discord Quest event is now open! Launch the Discord desktop app and play Honkai: Star Rail for 15 minutes or more to experience the Version 4.7 content, and you can get in-game rewards (including Stellar Jades). Go claim yours now! Learn More Note: Rewards are limited. Rewards will be distributed in the order that the redemption codes are claimed after completing the quest, on a first-come, first-served basis.",
+        "id": "Halo, Trailblazer: Event Quest Discord \"Honkai: Star Rail\" Versi 4.7 \"Kini, Sematkan Tawa pada Seluruh Bintang\" sudah dimulai! Buka client Discord di PC, dan mainkan \"Honkai: Star Rail\" setidaknya selama 15 menit untuk mencoba konten Versi 4.7 dan memperoleh hadiah dalam game (termasuk Stellar Jade). Ayo ambil sekarang! Tekan untuk info lebih lanjut Catatan: Hadiah terbatas. Pengiriman hadiah diurutkan berdasarkan waktu pengambilan kode penukaran setelah menyelesaikan Quest. Siapa cepat, dia dapat."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/7cf04fa1755ecaca8da5a09da5109f7b_2047135704375057628_transformed.png",
+      "startsAt": "2026-11-10T17:05:00.000Z",
+      "endsAt": "2026-11-15T17:00:00.000Z",
+      "postedAt": "2026-11-10T17:05:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://hsr.hoyoverse.com/en/news"
     },
     {
       "game": "zzz",
