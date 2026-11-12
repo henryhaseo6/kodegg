@@ -734,7 +734,7 @@
   "outfit": {
    "tulis": "outfit",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-03",
+   "terakhir": "2026-11-12",
    "awal": true
   },
   "impress": {
@@ -11917,7 +11917,7 @@
   "door": {
    "tulis": "door",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-10",
+   "terakhir": "2026-11-12",
    "awal": true
   },
   "terror": {
@@ -52364,7 +52364,7 @@
   "outfit": {
    "tulis": "outfit",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-03",
+   "terakhir": "2026-11-12",
    "awal": true
   },
   "catalog": {
@@ -66705,7 +66705,7 @@
   "door": {
    "tulis": "door",
    "pertama": 1787144935969,
-   "terakhir": "2026-11-10"
+   "terakhir": "2026-11-12"
   },
   "lying": {
    "tulis": "lying",
@@ -80291,6 +80291,11 @@
    "tulis": "theme",
    "pertama": 1792191958825,
    "terakhir": "2026-10-18"
+  },
+  "outfit": {
+   "tulis": "outfit",
+   "pertama": 1794495931501,
+   "terakhir": "2026-11-12"
   }
  },
  "build-an-ant-empire": {
@@ -80309,7 +80314,7 @@
   "door": {
    "tulis": "DOOR",
    "pertama": 1791291993654,
-   "terakhir": "2026-11-10"
+   "terakhir": "2026-11-12"
   },
   "freecoins": {
    "tulis": "FREECOINS",
@@ -91845,6 +91850,43 @@
   "cubes": {
    "tulis": "CUBES",
    "pertama": 1794492339012,
+   "terakhir": "2026-11-12"
+  }
+ },
+ "project-souls": {
+  "undertale": {
+   "tulis": "Undertale",
+   "pertama": 1794495931501,
+   "terakhir": "2026-11-12"
+  },
+  "noctyra": {
+   "tulis": "Noctyra",
+   "pertama": 1794495931501,
+   "terakhir": "2026-11-12"
+  },
+  "toby": {
+   "tulis": "Toby",
+   "pertama": 1794495931501,
+   "terakhir": "2026-11-12"
+  },
+  "utsr": {
+   "tulis": "UTSR",
+   "pertama": 1794495931501,
+   "terakhir": "2026-11-12"
+  },
+  "utsrx": {
+   "tulis": "UTSRX",
+   "pertama": 1794495931501,
+   "terakhir": "2026-11-12"
+  },
+  "utrpg": {
+   "tulis": "UTRPG",
+   "pertama": 1794495931501,
+   "terakhir": "2026-11-12"
+  },
+  "deltarune": {
+   "tulis": "Deltarune",
+   "pertama": 1794495931501,
    "terakhir": "2026-11-12"
   }
  }
