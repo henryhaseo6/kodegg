@@ -26901,7 +26901,7 @@
   "california": {
    "tulis": "California",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-10",
+   "terakhir": "2026-11-12",
    "awal": true
   },
   "real-life": {
@@ -44365,7 +44365,7 @@
   "sign": {
    "tulis": "Sign",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-06",
+   "terakhir": "2026-11-12",
    "awal": true
   }
  },
@@ -59114,7 +59114,7 @@
   "california": {
    "tulis": "California",
    "pertama": 1786695454025,
-   "terakhir": "2026-11-10"
+   "terakhir": "2026-11-12"
   },
   "loyalty": {
    "tulis": "loyalty",
@@ -62366,7 +62366,7 @@
   "sign": {
    "tulis": "Sign",
    "pertama": 1786695454025,
-   "terakhir": "2026-11-06"
+   "terakhir": "2026-11-12"
   },
   "stadium": {
    "tulis": "stadium",
@@ -69550,6 +69550,46 @@
   "authorities": {
    "tulis": "authorities",
    "pertama": 1788584721280,
+   "terakhir": "2026-11-12"
+  },
+  "civilian": {
+   "tulis": "civilian",
+   "pertama": 1794510315649,
+   "terakhir": "2026-11-12"
+  },
+  "enforcement": {
+   "tulis": "enforcement",
+   "pertama": 1794510315649,
+   "terakhir": "2026-11-12"
+  },
+  "smuggle": {
+   "tulis": "smuggle",
+   "pertama": 1794510315649,
+   "terakhir": "2026-11-12"
+  },
+  "heists": {
+   "tulis": "heists",
+   "pertama": 1794510315649,
+   "terakhir": "2026-11-12"
+  },
+  "civilians": {
+   "tulis": "CIVILIANS",
+   "pertama": 1794510315649,
+   "terakhir": "2026-11-12"
+  },
+  "trucking": {
+   "tulis": "trucking",
+   "pertama": 1794510315649,
+   "terakhir": "2026-11-12"
+  },
+  "unauthorized": {
+   "tulis": "unauthorized",
+   "pertama": 1794510315649,
+   "terakhir": "2026-11-12"
+  },
+  "entry": {
+   "tulis": "entry",
+   "pertama": 1794510315649,
    "terakhir": "2026-11-12"
   }
  },
@@ -89419,6 +89459,11 @@
    "tulis": "leagues",
    "pertama": 1793937960358,
    "terakhir": "2026-11-07"
+  },
+  "sign": {
+   "tulis": "sign",
+   "pertama": 1794510315649,
+   "terakhir": "2026-11-12"
   }
  },
  "slice-a-dummy": {
@@ -91144,6 +91189,11 @@
   "spots": {
    "tulis": "spots",
    "pertama": 1794315960326,
+   "terakhir": "2026-11-12"
+  },
+  "california": {
+   "tulis": "California",
+   "pertama": 1794510315649,
    "terakhir": "2026-11-12"
   }
  },
