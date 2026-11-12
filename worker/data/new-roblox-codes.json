@@ -1,10 +1,93 @@
 {
-  "generatedAt": "2026-11-12T15:02:18.155Z",
-  "codes": [],
+  "generatedAt": "2026-11-12T16:01:51.524Z",
+  "codes": [
+    {
+      "game": "arise-shadow-hunt",
+      "gameName": "Arise-Shadow Hunt",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/arise-shadow-hunt"
+      },
+      "code": "DEJ02D",
+      "reward": null,
+      "date": "2026-11-12T15:55:23.562Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-12T16:01:51.524Z",
+      "fetchedAt": "2026-11-12T16:01:51.524Z"
+    },
+    {
+      "game": "fire-force-reignition",
+      "gameName": "Fire Force Reignition",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/fire-force-reignition"
+      },
+      "code": "SMALLCODE",
+      "reward": null,
+      "date": "2026-11-12T15:55:28.978Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-12T16:01:51.524Z",
+      "fetchedAt": "2026-11-12T16:01:51.524Z"
+    },
+    {
+      "game": "destroy-a-vault",
+      "gameName": "Destroy a Vault",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/destroy-a-vault"
+      },
+      "code": "FREECASH25",
+      "reward": null,
+      "date": "2026-11-12T15:55:30.548Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-12T16:01:51.524Z",
+      "fetchedAt": "2026-11-12T16:01:51.524Z"
+    },
+    {
+      "game": "destroy-a-vault",
+      "gameName": "Destroy a Vault",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/destroy-a-vault"
+      },
+      "code": "EVENMOREGEMS",
+      "reward": null,
+      "date": "2026-11-12T15:55:30.316Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-12T16:01:51.524Z",
+      "fetchedAt": "2026-11-12T16:01:51.524Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "project-souls",
-      "count": 7,
+      "game": "ride-a-dragon",
+      "count": 9,
+      "fresh": []
+    },
+    {
+      "game": "run-a-farm",
+      "count": 1,
+      "fresh": []
+    },
+    {
+      "game": "pumpkin-playground",
+      "count": 3,
       "fresh": []
     }
   ]
