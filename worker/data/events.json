@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-12T03:01:32.864Z",
+  "updatedAt": "2026-11-12T04:02:13.658Z",
   "counts": {
-    "active": 48,
+    "active": 51,
     "archived": 200
   },
   "events": [
@@ -134,6 +134,33 @@
       "type": "event",
       "typeName": "Notices",
       "title": {
+        "en": "EP: \"Ex Nihilo\"",
+        "id": "EP: \"Ex Nihilo\""
+      },
+      "subtitle": {
+        "en": "EP: \"Ex Nihilo\"",
+        "id": "EP: \"Ex Nihilo\""
+      },
+      "desc": {
+        "en": "Upon the first echo of \"Aha\", the Elation shall be born anew. Let's dance on the edge of illusion and reality! Tonight, a miracle will be created by all! Watch now",
+        "id": "Saat gema pertama \"Aha\" terdengar, \"Elation\" akan terlahir kembali. Menarilah di batas ilusi dan realita! Malam ini, keajaiban akan diciptakan oleh semua makhluk! Tonton di Sini"
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/a31cb3608f69ad125fffb7ed29aaf136_4113149653152038742_transformed.png",
+      "startsAt": "2026-11-12T04:00:00.000Z",
+      "endsAt": "2026-11-15T16:00:00.000Z",
+      "postedAt": "2026-11-12T04:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://hsr.hoyoverse.com/en/news"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "type": "event",
+      "typeName": "Notices",
+      "title": {
         "en": "Razer | Honkai: Star Rail Collaboration Collection Is Officially Live",
         "id": "Koleksi Kolaborasi Razer | Honkai: Star Rail Resmi Dirilis"
       },
@@ -208,6 +235,57 @@
       "rewards": [],
       "source": "HoYoverse",
       "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "type": "event",
+      "typeName": "Notices",
+      "title": {
+        "en": "Planarcadia Brand-New OST \"Let There Be Laughter (Part 3)\" Now Online",
+        "id": "OST Baru Planarcadia \"Let There Be Laughter (Bagian 3)\" Resmi Dirilis"
+      },
+      "subtitle": {
+        "en": "Planarcadia Brand-New OST \"Let There Be Laughter (Part 3)\" Now Online",
+        "id": "OST Baru Planarcadia \"Let There Be Laughter (Bagian 3)\" Resmi Dirilis"
+      },
+      "desc": {
+        "en": "Hello, Trailblazers! The Honkai: Star Rail Planarcadia OST, \"Let There Be Laughter (Part 3),\" is now officially online. The album includes 48 original tracks created by the HOYO-MiX music team for Honkai: Star Rail, including \"Ex Nihilo,\" the combat background music for the battle against the Divine Skull of Indulgence. Please give it a listen! Check it out",
+        "id": "Halo, Trailblazer: OST Tema Planarcadia \"Honkai: Star Rail\", \"Let There Be Laughter (Bagian 3)\" telah resmi dirilis. Album terdiri dari 48 musik orisinal yang diciptakan oleh tim musik HOYO-MiX untuk \"Honkai: Star Rail\", termasuk musik latar pertempuran melawan \"Divine Skull of Indulgence\", yaitu \"Ex Nihilo\". Kami mengundang semua Trailblazer untuk mendengar dan menikmatinya! Dengarkan Lagu"
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/1e69c4301b7a61762076c79475ee8aa6_3283176396531917610_transformed.jpg",
+      "startsAt": "2026-11-12T04:00:00.000Z",
+      "endsAt": "2026-11-18T16:00:00.000Z",
+      "postedAt": "2026-11-12T04:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://hsr.hoyoverse.com/en/news"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "[Prize Event]Gift From Severian",
+        "id": "[Event Berhadiah] Hadiah dari Severian"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "You're telling me that the cool and aloof commissioner would actually take the initiative to prepare a gift for someone?! Go on, take a guess — who do you think this gift is for? ▼ How to Participate",
+        "id": "Maksudmu, komisaris yang tenang dan dingin itu mau menyiapkan hadiah untuk orang lain?! Coba tebak, hadiah ini untuk siapa? ▼ Cara Partisipasi Tulis komentar mengenai siapa menurutmu penerima hadiah dan apa hadiahnya ▼ Hadiah"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/10/92ffc9955a88445ddca75bc6c6d5e914_2483019007003303930.jpg",
+      "startsAt": "2026-11-12T04:00:00.000Z",
+      "endsAt": "2026-11-19T15:59:59.000Z",
+      "postedAt": "2026-11-12T04:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47413472"
     },
     {
       "game": "tot",
