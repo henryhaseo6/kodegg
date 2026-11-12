@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-11-12T01:02:35.033Z",
+  "updatedAt": "2026-11-12T02:01:29.533Z",
   "counts": {
-    "active": 113,
+    "active": 114,
     "archived": 200
   },
   "articles": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Razer | Honkai: Star Rail Collaboration Collection Is Officially Live",
+        "id": "Koleksi Kolaborasi Razer | Honkai: Star Rail Resmi Dirilis"
+      },
+      "excerpt": {
+        "en": "Ctrl + Alt + Win. Control, alter, and win the battle! Inspired by Silver Wolf Lv.999's meta-breaking spirit, the Razer | Honkai: Star Rail collaboration collection is now for sale.",
+        "id": "Ctrl + Alt + Win. Kendalikan, ubah, dan menangkan pertempuran! Terinspirasi oleh semangat Silver Wolf LV.999 yang mendobrak meta, koleksi kolaborasi Razer | Honkai: Star Rail kini "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/11/6faa50394eedf24ddd385d7533e54409_7697111409745255445.png",
+      "url": "https://www.hoyolab.com/article/47412533",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-12T02:00:04.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Patch Notes for Version 3.8: Lilies in a Dying Dream",
+        "id": "Patch Notes for Version 3.8: Lilies in a Dying Dream"
+      },
+      "excerpt": {
+        "en": "Dear Rovers, Thank you for your continued support. The following is a summary of content that will become available in Version 3.8: Lilies in a Dying Dream. [Maintenance Time & Com",
+        "id": "Dear Rovers, Thank you for your continued support. The following is a summary of content that will become available in Version 3.8: Lilies in a Dying Dream. [Maintenance Time & Com"
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1794326400000/cselekr70qwkawu0tn-1794391345509.png",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5783",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-11-11T10:04:37.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -646,22 +678,6 @@
       "publishedAt": "2026-11-07T04:05:06.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "\"Now, Lay Laughter to All Stars\" Version 4.7 Preview",
-        "id": "Preview Versi 4.7 \"Kini, Sematkan Tawa pada Seluruh Bintang\""
-      },
-      "excerpt": {
-        "en": "Greetings, Trailblazer! Let's take a look at the new events coming in Version 4.7!",
-        "id": "Halo, Trailblazer! Ayo kita lihat event baru yang akan segera hadir di Versi 4.7!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/06/47a6a974c73e15b2284bb441dda70d0f_4005566568712660945.jpg",
-      "url": "https://www.hoyolab.com/article/47351625",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-07T04:00:09.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -710,22 +726,6 @@
       "publishedAt": "2026-11-07T02:00:04.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "For Display Only | Severian",
-        "id": "For Display Only | Severian"
-      },
-      "excerpt": {
-        "en": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\"",
-        "id": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-11-06/transcoded/142118597346062815232_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/47342929",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-06T10:00:05.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -738,6 +738,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/bc2fc1c077096bd4bbb5c04e6c146c54_5193667494320394504.jpg",
       "url": "https://www.hoyolab.com/article/47342930",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-06T10:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "For Display Only | Severian",
+        "id": "For Display Only | Severian"
+      },
+      "excerpt": {
+        "en": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\"",
+        "id": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-11-06/transcoded/142118597346062815232_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/47342929",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-06T10:00:05.000Z"
     },
@@ -758,22 +774,6 @@
       "publishedAt": "2026-11-06T07:17:24.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Severian Character Demo - \"The Making of a Commissioner\" | Zenless Zone Zero",
-        "id": "Demo Karakter Severian - \"Proses Menjadi Komisaris\" | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "\"Commissioner Lowell... He's regarded as one of our most dependable officers.\" \"While I've got the chance, I do have one suggestion for Commissioner Lowell: give junior officers mo",
-        "id": "\"Komisaris Lowell... Dia adalah salah satu petugas yang paling bisa diandalkan di Public Security.\" \"Selagi ada kesempatan, aku ingin mengusulkan agar Komisaris Lowell memberi lebi"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/4695a51225d638091ebed478522a7006_6509276100703147467.png",
-      "url": "https://www.hoyolab.com/article/47339558",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-06T04:00:04.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -786,6 +786,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/141f3707ca9af1f5aeff959a6c55ce0f_3132425623498928193.jpg",
       "url": "https://www.hoyolab.com/article/47339559",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-06T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Severian Character Demo - \"The Making of a Commissioner\" | Zenless Zone Zero",
+        "id": "Demo Karakter Severian - \"Proses Menjadi Komisaris\" | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "\"Commissioner Lowell... He's regarded as one of our most dependable officers.\" \"While I've got the chance, I do have one suggestion for Commissioner Lowell: give junior officers mo",
+        "id": "\"Komisaris Lowell... Dia adalah salah satu petugas yang paling bisa diandalkan di Public Security.\" \"Selagi ada kesempatan, aku ingin mengusulkan agar Komisaris Lowell memberi lebi"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/4695a51225d638091ebed478522a7006_6509276100703147467.png",
+      "url": "https://www.hoyolab.com/article/47339558",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-06T04:00:04.000Z"
     },
