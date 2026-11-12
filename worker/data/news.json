@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-12T11:02:08.017Z",
+  "updatedAt": "2026-11-12T11:40:49.282Z",
   "counts": {
-    "active": 116,
+    "active": 115,
     "archived": 200
   },
   "articles": [
@@ -1844,7 +1844,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5626",
       "source": "Wuthering Waves",
       "publishedAt": "2026-10-14T09:06:43.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1859,10 +1861,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1791820800000/qd896gmi8vbx2y88u4-1791889690987.png",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5625",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-10-13T11:10:35.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-13T11:10:35.000Z",
+      "archivedAt": "2026-11-12T11:40:49.282Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -5244,23 +5245,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4860",
       "source": "Wuthering Waves",
       "publishedAt": "2026-06-08T09:36:59.000Z",
-      "archivedAt": "2026-07-18T11:04:10.000Z"
-    },
-    {
-      "game": "wuwa",
-      "gameName": "Wuthering Waves",
-      "title": {
-        "en": "[Rekindled Embers of Rage] Collab Resonator Convene",
-        "id": "[Rekindled Embers of Rage] Collab Resonator Convene"
-      },
-      "excerpt": {
-        "en": "During the event, 5-Star Resonator: Rebecca, 4-Star Resonators: Lumi, Youhu, and Taoqi receive boosted drop rates! ✦Duration✦ Version 3.4 Update - 2026-07-09 11:59 (server time) ✦E",
-        "id": "During the event, 5-Star Resonator: Rebecca, 4-Star Resonators: Lumi, Youhu, and Taoqi receive boosted drop rates! ✦Duration✦ Version 3.4 Update - 2026-07-09 11:59 (server time) ✦E"
-      },
-      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1780848000000/5zydhd3qhedgwupa80-1780910853700.jpg",
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4852",
-      "source": "Wuthering Waves",
-      "publishedAt": "2026-06-08T09:27:58.000Z",
       "archivedAt": "2026-07-18T11:04:10.000Z"
     }
   ]
