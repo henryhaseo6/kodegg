@@ -1,5 +1,52 @@
 {
-  "generatedAt": "2026-11-13T02:01:59.124Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-11-13T03:02:07.970Z",
+  "codes": [
+    {
+      "game": "my-anime-mine",
+      "gameName": "My Anime Mine",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/my-anime-mine"
+      },
+      "code": "ChristmasIsComing",
+      "reward": "1 Character Luck Potion, 1 Enchanted Dice, 1 Mythic Luck Potion and 1 Ore Elixir III",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1794405125231,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-13T03:02:07.970Z",
+      "fetchedAt": "2026-11-13T03:02:07.970Z"
+    },
+    {
+      "game": "steal-a-superpower",
+      "gameName": "Steal a Superpower",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/steal-a-superpower"
+      },
+      "code": "50KLIKES",
+      "reward": "1 Luck Potion III, 1 Strength Potion III, 1 Power Potion III, and 1 Health Potion III",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1794483721054,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-13T03:02:07.970Z",
+      "fetchedAt": "2026-11-13T03:02:07.970Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "the-ditch-hotel",
+      "count": 11,
+      "fresh": []
+    }
+  ]
 }
