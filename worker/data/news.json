@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-13T09:02:09.112Z",
+  "updatedAt": "2026-11-13T10:02:09.565Z",
   "counts": {
-    "active": 115,
+    "active": 114,
     "archived": 200
   },
   "articles": [
@@ -1828,7 +1828,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5644",
       "source": "Wuthering Waves",
       "publishedAt": "2026-10-16T08:19:24.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1843,10 +1845,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1792166400000/sgkj4fwuwzyzct5ou2-1792207561469.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5626",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-10-14T09:06:43.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-14T09:06:43.000Z",
+      "archivedAt": "2026-11-13T10:02:09.565Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -5229,23 +5230,6 @@
       "source": "HoYoLAB",
       "publishedAt": "2026-06-09T03:00:07.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "wuwa",
-      "gameName": "Wuthering Waves",
-      "title": {
-        "en": "[Skull Thrasher] Collab Weapon Convene",
-        "id": "[Skull Thrasher] Collab Weapon Convene"
-      },
-      "excerpt": {
-        "en": "During the event, 5-Star Weapon: Skull Thrasher, 4-Star Weapons: Relativistic Jet, Cadenza, and Fusion Accretion receive boosted drop rates! ✦Duration✦ Version 3.4 Update - 2026-07",
-        "id": "During the event, 5-Star Weapon: Skull Thrasher, 4-Star Weapons: Relativistic Jet, Cadenza, and Fusion Accretion receive boosted drop rates! ✦Duration✦ Version 3.4 Update - 2026-07"
-      },
-      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1780848000000/5zroodwo2x0eap50l7-1780911396613.jpg",
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4860",
-      "source": "Wuthering Waves",
-      "publishedAt": "2026-06-08T09:36:59.000Z",
-      "archivedAt": "2026-07-18T11:04:10.000Z"
     }
   ]
 }
