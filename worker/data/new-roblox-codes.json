@@ -1,26 +1,37 @@
 {
-  "generatedAt": "2026-11-14T13:01:59.769Z",
+  "generatedAt": "2026-11-14T14:01:49.048Z",
   "codes": [
     {
-      "game": "loomian-legacy",
-      "gameName": "Loomian Legacy",
+      "game": "elemental-magic-arena",
+      "gameName": "Elemental Magic Arena",
       "source": "Roblox Den",
       "sources": [
         "Roblox Den"
       ],
       "sourceUrls": {
-        "Roblox Den": "https://robloxden.com/game-codes/loomian-legacy"
+        "Roblox Den": "https://robloxden.com/game-codes/elemental-magic-arena"
       },
-      "code": "5Storage",
-      "reward": "5 Loomian Care Groups",
+      "code": "170KLIKES",
+      "reward": "3 Souls",
       "date": null,
       "srcNew": true,
-      "srcNewAt": 1794593347617,
+      "srcNewAt": 1794550165489,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-11-14T13:01:59.769Z",
-      "fetchedAt": "2026-11-14T13:01:59.769Z"
+      "firstSeenAt": "2026-11-14T14:01:49.048Z",
+      "fetchedAt": "2026-11-14T14:01:49.048Z"
     }
   ],
-  "bulkGames": []
+  "bulkGames": [
+    {
+      "game": "build-and-defend-your-raft",
+      "count": 1,
+      "fresh": []
+    },
+    {
+      "game": "build-your-own-idol-group",
+      "count": 1,
+      "fresh": []
+    }
+  ]
 }
