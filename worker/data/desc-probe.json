@@ -2252,7 +2252,7 @@
   "aquarium": {
    "tulis": "Aquarium",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-14",
+   "terakhir": "2026-11-15",
    "awal": true
   },
   "mutation": {
@@ -3988,6 +3988,11 @@
   "cutscene": {
    "tulis": "CUTSCENE",
    "pertama": 1794103507828,
+   "terakhir": "2026-11-15"
+  },
+  "machodon": {
+   "tulis": "MACHODON",
+   "pertama": 1794708368698,
    "terakhir": "2026-11-15"
   }
  },
@@ -26033,7 +26038,7 @@
   "arrived": {
    "tulis": "arrived",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-14",
+   "terakhir": "2026-11-15",
    "awal": true
   },
   "activity": {
@@ -35123,6 +35128,11 @@
   "stepmon": {
    "tulis": "Stepmon",
    "pertama": 1794665093740,
+   "terakhir": "2026-11-15"
+  },
+  "aquarium": {
+   "tulis": "Aquarium",
+   "pertama": 1794708368698,
    "terakhir": "2026-11-15"
   }
  },
@@ -58228,7 +58238,7 @@
   "arrived": {
    "tulis": "arrived",
    "pertama": 1789769048726,
-   "terakhir": "2026-11-14"
+   "terakhir": "2026-11-15"
   }
  },
  "neighbors-17": {
@@ -61282,6 +61292,11 @@
   "motor": {
    "tulis": "Motor",
    "pertama": 1794665093740,
+   "terakhir": "2026-11-15"
+  },
+  "arrived": {
+   "tulis": "arrived",
+   "pertama": 1794708368698,
    "terakhir": "2026-11-15"
   }
  },
@@ -83640,7 +83655,7 @@
   "aquarium": {
    "tulis": "aquarium",
    "pertama": 1792508860403,
-   "terakhir": "2026-11-14"
+   "terakhir": "2026-11-15"
   }
  },
  "nba-heroes": {
