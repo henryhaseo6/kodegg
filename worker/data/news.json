@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-15T08:02:27.293Z",
+  "updatedAt": "2026-11-15T09:02:38.586Z",
   "counts": {
-    "active": 114,
+    "active": 113,
     "archived": 200
   },
   "articles": [
@@ -1812,7 +1812,9 @@
       "url": "https://www.hoyolab.com/article/47108545",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-17T02:30:02.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1827,10 +1829,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1792080000000/pschl2zbs6d2meg84m-1792137929039.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5644",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-10-16T08:19:24.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-16T08:19:24.000Z",
+      "archivedAt": "2026-11-15T09:02:38.586Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -5213,23 +5214,6 @@
       "source": "Wuthering Waves",
       "publishedAt": "2026-06-09T03:37:24.000Z",
       "archivedAt": "2026-07-18T11:04:10.000Z"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "Wings of Panacea Files",
-        "id": "Wings of Panacea | Arsip"
-      },
-      "excerpt": {
-        "en": "\"As long as I am here, life's final chapter won't be written so carelessly.\" Seele's new S-Rank battlesuit \"Wings of Panacea\" is debuting in v8.9. Stay tuned!",
-        "id": "\"Selama aku masih ada, titik akhir kehidupan ini tidak akan ditentukan begitu saja.\" Battlesuit Rank-S baru Seele \"Wings of Panacea\" akan debut di v8.9. Nantikan ya!"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/08/2281145e7e5878b0fc4475a27b8563eb_8145585518580525564.png",
-      "url": "https://www.hoyolab.com/article/45389063",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-09T03:00:07.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
 }
