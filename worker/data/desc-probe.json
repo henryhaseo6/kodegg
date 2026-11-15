@@ -25829,6 +25829,11 @@
    "tulis": "highways",
    "pertama": 1788362338242,
    "terakhir": "2026-09-02"
+  },
+  "remodels": {
+   "tulis": "remodels",
+   "pertama": 1794747977984,
+   "terakhir": "2026-11-15"
   }
  },
  "flood-escape-2": {
@@ -94813,6 +94818,44 @@
   "everyday": {
    "tulis": "everyday",
    "pertama": 1794711963363,
+   "terakhir": "2026-11-15"
+  }
+ },
+ "pull-a-dino": {
+  "lantern": {
+   "tulis": "LANTERN",
+   "pertama": 1794747977984,
+   "terakhir": "2026-11-15"
+  },
+  "giants": {
+   "tulis": "GIANTS",
+   "pertama": 1794747977984,
+   "terakhir": "2026-11-15"
+  },
+  "dinos": {
+   "tulis": "dinos",
+   "pertama": 1794747977984,
+   "terakhir": "2026-11-15"
+  },
+  "newupdate": {
+   "tulis": "NEWUPDATE",
+   "pertama": 1794747977984,
+   "terakhir": "2026-11-15",
+   "sudahPunya": true
+  },
+  "slider": {
+   "tulis": "slider",
+   "pertama": 1794747977984,
+   "terakhir": "2026-11-15"
+  },
+  "benches": {
+   "tulis": "benches",
+   "pertama": 1794747977984,
+   "terakhir": "2026-11-15"
+  },
+  "polish": {
+   "tulis": "Polish",
+   "pertama": 1794747977984,
    "terakhir": "2026-11-15"
   }
  }
