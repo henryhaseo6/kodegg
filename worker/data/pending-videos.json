@@ -1,5 +1,242 @@
 [
   {
+    "platform": "MOBILE",
+    "id": "dtrav",
+    "name": "Dragon Traveler",
+    "slug": "dragon-traveler",
+    "players": 0,
+    "rank": 1000000000,
+    "newCodes": [
+      {
+        "code": "BZGOLDENNIGHT",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10"
+      },
+      {
+        "code": "DANCERSLM",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10"
+      },
+      {
+        "code": "SALOME",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10"
+      },
+      {
+        "code": "GXGGSALOME",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": "Gold ×3000 · Summoning Ticket ×1 · Dragonblood ×1"
+      },
+      {
+        "code": "FIRETHIEFGODDESS",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": "Gold ×3000 · Legacy Dragon Crystals ×3 · Fresh Apple ×1"
+      },
+      {
+        "code": "QSWNGuide",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": ""
+      },
+      {
+        "code": "GXMNCJ88",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": "Gold ×3000 · Summoning Ticket ×1 · Dragonblood ×1"
+      },
+      {
+        "code": "LilithGuide",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": ""
+      },
+      {
+        "code": "JSNCArtemis",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10"
+      },
+      {
+        "code": "RinLBM",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10"
+      },
+      {
+        "code": "DHZSGuide",
+        "game": "dtrav",
+        "gameName": "Dragon Traveler",
+        "reward": ""
+      }
+    ],
+    "activeCount": 63,
+    "fetchedAt": "2026-11-16T13:02:47.193Z",
+    "displayCodes": [
+      {
+        "code": "BZGOLDENNIGHT",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10",
+        "isNew": true
+      },
+      {
+        "code": "DANCERSLM",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10",
+        "isNew": true
+      },
+      {
+        "code": "SALOME",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10",
+        "isNew": true
+      },
+      {
+        "code": "GXGGSALOME",
+        "reward": "Gold ×3000 · Summoning Ticket ×1 · Dragonblood ×1",
+        "isNew": true
+      },
+      {
+        "code": "FIRETHIEFGODDESS",
+        "reward": "Gold ×3000 · Legacy Dragon Crystals ×3 · Fresh Apple ×1",
+        "isNew": true
+      },
+      {
+        "code": "QSWNGuide",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "GXMNCJ88",
+        "reward": "Gold ×3000 · Summoning Ticket ×1 · Dragonblood ×1",
+        "isNew": true
+      },
+      {
+        "code": "LilithGuide",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "JSNCArtemis",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10",
+        "isNew": true
+      },
+      {
+        "code": "RinLBM",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "BZGOLDENNIGHT",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10",
+        "isNew": true
+      },
+      {
+        "code": "DANCERSLM",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10",
+        "isNew": true
+      },
+      {
+        "code": "SALOME",
+        "reward": "Legacy Dragon Crystals ×3 · Golden Horn ×1 · SR Luminary Shards ×10",
+        "isNew": true
+      },
+      {
+        "code": "GXGGSALOME",
+        "reward": "Gold ×3000 · Summoning Ticket ×1 · Dragonblood ×1",
+        "isNew": true
+      },
+      {
+        "code": "FIRETHIEFGODDESS",
+        "reward": "Gold ×3000 · Legacy Dragon Crystals ×3 · Fresh Apple ×1",
+        "isNew": true
+      },
+      {
+        "code": "QSWNGuide",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "GXMNCJ88",
+        "reward": "Gold ×3000 · Summoning Ticket ×1 · Dragonblood ×1",
+        "isNew": true
+      },
+      {
+        "code": "LilithGuide",
+        "reward": "",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "BZGOLDENNIGHT",
+      "DANCERSLM",
+      "SALOME",
+      "GXGGSALOME",
+      "FIRETHIEFGODDESS",
+      "QSWNGuide",
+      "GXMNCJ88",
+      "LilithGuide",
+      "JSNCArtemis",
+      "RinLBM",
+      "RinPFSX",
+      "DHZSPLMXS",
+      "Prometheus",
+      "GoldenNight",
+      "LilithLLS",
+      "CTNFLilith",
+      "Fortunebringer",
+      "XJZMGullveig",
+      "DHZSGuide",
+      "GXGGMNBBLB",
+      "RinGuide",
+      "BUFFetBZ88",
+      "GXGGlsmwlbm",
+      "VIP5555",
+      "VIP6666",
+      "VIP9999",
+      "NOXVIPDT777",
+      "DTGIFT",
+      "DTGCKL888",
+      "DTOB321",
+      "DTOBT666",
+      "DTFDC321",
+      "BASEBALLHERO",
+      "ChaosWarlord",
+      "LSMWGuide",
+      "Hitomi",
+      "GIFT5555",
+      "GIFT9999",
+      "GIFT6666",
+      "BUFFetVideo",
+      "CosYuZaoQ",
+      "CosIfrit",
+      "CosVVA",
+      "CosVns",
+      "BUFFBUFF",
+      "ARTEMIS",
+      "BUFFet",
+      "FOXENCHANTRESS",
+      "YUZAOQIAN",
+      "BUFFetVivienne",
+      "Flamefiend",
+      "ArtemisGuide",
+      "BRONZEGODDESS",
+      "BACKLINEBREAKER",
+      "BSVIPDT",
+      "STARLIGHTWITCH",
+      "GXGGYLNS",
+      "MimirGuide",
+      "NewWallpaper",
+      "GXGGTalos",
+      "GXGGTLS",
+      "GXGGEYMW",
+      "HuangGXGG"
+    ]
+  },
+  {
     "platform": "ROBLOX",
     "id": "1-venom-evolution",
     "name": "+1 Venom Evolution",
@@ -277,6 +514,362 @@
       "30MVisits",
       "JELLY!",
       "CUSTOM"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "crazy-8-ball",
+    "name": "CRAZY 8 Ball",
+    "displayName": "[ABILITIES] CRAZY 8 Ball",
+    "slug": "crazy-8-ball",
+    "players": 6478,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 6478,
+    "newCodes": [
+      {
+        "game": "crazy-8-ball",
+        "gameName": "CRAZY 8 Ball",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/crazy-8-ball"
+        },
+        "code": "100KLIKES",
+        "reward": "10 Ability Spins and 1 Epic Lucky Block",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794771687744,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T13:02:59.444Z",
+        "fetchedAt": "2026-11-16T13:02:59.444Z"
+      },
+      {
+        "game": "crazy-8-ball",
+        "gameName": "CRAZY 8 Ball",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/crazy-8-ball"
+        },
+        "code": "TRICKSHOT",
+        "reward": "5 Ability Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794771687744,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T13:02:59.444Z",
+        "fetchedAt": "2026-11-16T13:02:59.444Z"
+      }
+    ],
+    "activeCount": 12,
+    "fetchedAt": "2026-11-16T13:02:59.444Z",
+    "displayCodes": [
+      {
+        "code": "100KLIKES",
+        "reward": "10 Ability Spins and 1 Epic Lucky Block",
+        "isNew": true
+      },
+      {
+        "code": "TRICKSHOT",
+        "reward": "5 Ability Spins",
+        "isNew": true
+      },
+      {
+        "code": "90KLIKES",
+        "reward": "5 Ability Spins and 5,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "80KLIKES",
+        "reward": "5 Ability Spins and 1 Mystery Lucky Block",
+        "isNew": false
+      },
+      {
+        "code": "BLACKEIGHT",
+        "reward": "8 Ball Cue",
+        "isNew": false
+      },
+      {
+        "code": "CUEBALL",
+        "reward": "5 Ability Spins",
+        "isNew": false
+      },
+      {
+        "code": "ROOFTOP",
+        "reward": "2,500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "8BALL",
+        "reward": "2,500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "FREESPINS",
+        "reward": "5 Ability Spins",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "3 Ability Spins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "100KLIKES",
+        "reward": "10 Ability Spins and 1 Epic Lucky Block",
+        "isNew": true
+      },
+      {
+        "code": "TRICKSHOT",
+        "reward": "5 Ability Spins",
+        "isNew": true
+      },
+      {
+        "code": "90KLIKES",
+        "reward": "5 Ability Spins and 5,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "80KLIKES",
+        "reward": "5 Ability Spins and 1 Mystery Lucky Block",
+        "isNew": false
+      },
+      {
+        "code": "BLACKEIGHT",
+        "reward": "8 Ball Cue",
+        "isNew": false
+      },
+      {
+        "code": "CUEBALL",
+        "reward": "5 Ability Spins",
+        "isNew": false
+      },
+      {
+        "code": "ROOFTOP",
+        "reward": "2,500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "8BALL",
+        "reward": "2,500 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "100KLIKES",
+      "TRICKSHOT",
+      "90KLIKES",
+      "80KLIKES",
+      "BLACKEIGHT",
+      "CUEBALL",
+      "ROOFTOP",
+      "8BALL",
+      "FREESPINS",
+      "RELEASE",
+      "WELCOME",
+      "70KLIKES"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "bey-rivals",
+    "name": "Bey Rivals",
+    "displayName": "[UPDATE] Bey Rivals",
+    "slug": "bey-rivals",
+    "players": 5747,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 5747,
+    "newCodes": [
+      {
+        "game": "bey-rivals",
+        "gameName": "Bey Rivals",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/bey-rivals"
+        },
+        "code": "DIVINESWAP",
+        "reward": "50,000 BP, 25 Spin Tickets, and 8 Lucky Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794637601907,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T13:02:59.444Z",
+        "fetchedAt": "2026-11-16T13:02:59.444Z"
+      },
+      {
+        "game": "bey-rivals",
+        "gameName": "Bey Rivals",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/bey-rivals"
+        },
+        "code": "BOSSEVENT",
+        "reward": "40 Trait Tokens and 40,000 BP",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794637601907,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T13:02:59.444Z",
+        "fetchedAt": "2026-11-16T13:02:59.444Z"
+      }
+    ],
+    "activeCount": 42,
+    "fetchedAt": "2026-11-16T13:02:59.444Z",
+    "displayCodes": [
+      {
+        "code": "DIVINESWAP",
+        "reward": "50,000 BP, 25 Spin Tickets, and 8 Lucky Spins",
+        "isNew": true
+      },
+      {
+        "code": "BOSSEVENT",
+        "reward": "40 Trait Tokens and 40,000 BP",
+        "isNew": true
+      },
+      {
+        "code": "WORTHTHEDELAY",
+        "reward": "40,000 Bey Points, 15 Spin Tickets, and 5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "DELAYISOVER",
+        "reward": "30,000 Bey Points, 10 Tickets, and 20 Trait Tokens",
+        "isNew": false
+      },
+      {
+        "code": "KREISRETURNS",
+        "reward": "25 Tickets and 5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "RANKEDISBACK",
+        "reward": "60,000 Bey Ppints, 10 Lucky Spins, and 25 Trait Tokens.For level 10+ only",
+        "isNew": false
+      },
+      {
+        "code": "GIFTING",
+        "reward": "30 Tickets, 30 Trait Tokens, and 8 Lucky Spins.For level 10+ only",
+        "isNew": false
+      },
+      {
+        "code": "PARRYFIX",
+        "reward": "30,000 BP and 10 Tickets",
+        "isNew": false
+      },
+      {
+        "code": "LESSLAG",
+        "reward": "25 Bey Points and 10 Spin Tickets",
+        "isNew": false
+      },
+      {
+        "code": "CLASHCOUNTS",
+        "reward": "20 Spin Tickets and 25 Trait Tokens.For level 10+ only",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "DIVINESWAP",
+        "reward": "50,000 BP, 25 Spin Tickets, and 8 Lucky Spins",
+        "isNew": true
+      },
+      {
+        "code": "BOSSEVENT",
+        "reward": "40 Trait Tokens and 40,000 BP",
+        "isNew": true
+      },
+      {
+        "code": "WORTHTHEDELAY",
+        "reward": "40,000 Bey Points, 15 Spin Tickets, and 5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "DELAYISOVER",
+        "reward": "30,000 Bey Points, 10 Tickets, and 20 Trait Tokens",
+        "isNew": false
+      },
+      {
+        "code": "KREISRETURNS",
+        "reward": "25 Tickets and 5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "RANKEDISBACK",
+        "reward": "60,000 Bey Ppints, 10 Lucky Spins, and 25 Trait Tokens.For level 10+ only",
+        "isNew": false
+      },
+      {
+        "code": "GIFTING",
+        "reward": "30 Tickets, 30 Trait Tokens, and 8 Lucky Spins.For level 10+ only",
+        "isNew": false
+      },
+      {
+        "code": "PARRYFIX",
+        "reward": "30,000 BP and 10 Tickets",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "DIVINESWAP",
+      "BOSSEVENT",
+      "WORTHTHEDELAY",
+      "DELAYISOVER",
+      "KREISRETURNS",
+      "RANKEDISBACK",
+      "GIFTING",
+      "PARRYFIX",
+      "LESSLAG",
+      "CLASHCOUNTS",
+      "FAIRPLAY",
+      "CRIMSONEYE",
+      "BOSSBALANCE",
+      "HARDMODEFIX",
+      "ULTIMATEHIT",
+      "LIMITBREAKER",
+      "SMARTRIVALS",
+      "SMOOTHCLASH",
+      "SORRY4DELAY",
+      "SrryForDelay",
+      "RankedRehaul",
+      "NERFLONGINOX",
+      "EVOLUTION",
+      "PRELAUNCH",
+      "SPINSTEALNERF",
+      "BUGSWEEP",
+      "SOULCOINS",
+      "RINGOUTNERF",
+      "NEWCLASH",
+      "HORSEMANRAGE",
+      "TRAITGRIND",
+      "CONTROLLERFIX",
+      "HEADLESS",
+      "TRAITLAB",
+      "SOUL",
+      "ELORESET",
+      "TOP100",
+      "SOULREEL",
+      "TRAINWITHRUI",
+      "BUGHUNTER",
+      "FLAMEHAIR",
+      "CLASHKING"
     ]
   },
   {
