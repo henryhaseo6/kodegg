@@ -9271,7 +9271,7 @@
   "happen": {
    "tulis": "happen",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-10",
+   "terakhir": "2026-11-16",
    "awal": true
   },
   "disaster-survival": {
@@ -38258,7 +38258,7 @@
   "happen": {
    "tulis": "happen",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-10",
+   "terakhir": "2026-11-16",
    "awal": true
   },
   "doctor": {
@@ -48434,7 +48434,7 @@
   "happen": {
    "tulis": "happen",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-10",
+   "terakhir": "2026-11-16",
    "awal": true
   },
   "farms": {
@@ -91584,6 +91584,11 @@
    "tulis": "350K",
    "pertama": 1794809164043,
    "terakhir": "2026-11-16"
+  },
+  "adding": {
+   "tulis": "ADDING",
+   "pertama": 1794867102490,
+   "terakhir": "2026-11-16"
   }
  },
  "make-ramen-to-get-rich": {
@@ -91898,11 +91903,21 @@
   "auto-sell": {
    "tulis": "auto-sell",
    "pertama": 1794323172677,
-   "terakhir": "2026-11-13"
+   "terakhir": "2026-11-16"
   },
   "update3": {
    "tulis": "UPDATE3",
    "pertama": 1794323172677,
+   "terakhir": "2026-11-16"
+  },
+  "pricier": {
+   "tulis": "pricier",
+   "pertama": 1794867102490,
+   "terakhir": "2026-11-16"
+  },
+  "auto-roll": {
+   "tulis": "auto-roll",
+   "pertama": 1794867102490,
    "terakhir": "2026-11-16"
   }
  },
