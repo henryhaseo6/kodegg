@@ -1,14 +1,294 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "1-venom-evolution",
+    "name": "+1 Venom Evolution",
+    "displayName": "[🌍UPD 5] +1 Venom Evolution",
+    "slug": "1-venom-evolution",
+    "players": 18785,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 18785,
+    "newCodes": [
+      {
+        "game": "1-venom-evolution",
+        "gameName": "+1 Venom Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
+        },
+        "code": "REDPLANET",
+        "reward": "2x Venom (30 minutes), 2x Wins (30 minutes), and 1 Revive",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794544443684,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
+      },
+      {
+        "game": "1-venom-evolution",
+        "gameName": "+1 Venom Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
+        },
+        "code": "GOOSTRONAUT",
+        "reward": "2x Venom (30 minutes) and 1 Mega Chest",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794544443684,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
+      },
+      {
+        "game": "1-venom-evolution",
+        "gameName": "+1 Venom Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
+        },
+        "code": "STARDUST",
+        "reward": "2x Mutagen (15 minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794544443684,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
+      }
+    ],
+    "activeCount": 9,
+    "fetchedAt": "2026-11-16T12:32:25.011Z",
+    "displayCodes": [
+      {
+        "code": "REDPLANET",
+        "reward": "2x Venom (30 minutes), 2x Wins (30 minutes), and 1 Revive",
+        "isNew": true
+      },
+      {
+        "code": "GOOSTRONAUT",
+        "reward": "2x Venom (30 minutes) and 1 Mega Chest",
+        "isNew": true
+      },
+      {
+        "code": "STARDUST",
+        "reward": "2x Mutagen (15 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "VOIDKING",
+        "reward": "2x Venom (30 mins), 2x Wins (30 mins), and 1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY100K",
+        "reward": "2x Venom (45 mins), 2x Wins (45 mins), 1 Mega Chest, and 1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "ALTAREGO",
+        "reward": "2x Venom (30 mins) and 1 Mega Chest",
+        "isNew": false
+      },
+      {
+        "code": "DUNGEON",
+        "reward": "2x Mutagen (10 mins)",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY50K",
+        "reward": "x2 Venom (45 mins), x2 Wins (45 mins), 1 Mega Chest, and 2 Revives",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY30K",
+        "reward": "2x Venom, 2x Wins (30 mins), 1 Mega Chest, and 1 Revive",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "REDPLANET",
+        "reward": "2x Venom (30 minutes), 2x Wins (30 minutes), and 1 Revive",
+        "isNew": true
+      },
+      {
+        "code": "GOOSTRONAUT",
+        "reward": "2x Venom (30 minutes) and 1 Mega Chest",
+        "isNew": true
+      },
+      {
+        "code": "STARDUST",
+        "reward": "2x Mutagen (15 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "VOIDKING",
+        "reward": "2x Venom (30 mins), 2x Wins (30 mins), and 1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY100K",
+        "reward": "2x Venom (45 mins), 2x Wins (45 mins), 1 Mega Chest, and 1 Revive",
+        "isNew": false
+      },
+      {
+        "code": "ALTAREGO",
+        "reward": "2x Venom (30 mins) and 1 Mega Chest",
+        "isNew": false
+      },
+      {
+        "code": "DUNGEON",
+        "reward": "2x Mutagen (10 mins)",
+        "isNew": false
+      },
+      {
+        "code": "HAPPY50K",
+        "reward": "x2 Venom (45 mins), x2 Wins (45 mins), 1 Mega Chest, and 2 Revives",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "REDPLANET",
+      "GOOSTRONAUT",
+      "STARDUST",
+      "VOIDKING",
+      "HAPPY100K",
+      "ALTAREGO",
+      "DUNGEON",
+      "HAPPY50K",
+      "HAPPY30K"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "ragdoll-playground",
+    "name": "Ragdoll Playground",
+    "displayName": "[PHYSICS] Ragdoll Playground",
+    "slug": "ragdoll-playground",
+    "players": 10986,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 10986,
+    "newCodes": [
+      {
+        "game": "ragdoll-playground",
+        "gameName": "Ragdoll Playground",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/ragdoll-playground"
+        },
+        "code": "30MVisits",
+        "reward": "Quake Power and 1 Crate Spin",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794671986515,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
+      },
+      {
+        "game": "ragdoll-playground",
+        "gameName": "Ragdoll Playground",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/ragdoll-playground"
+        },
+        "code": "JELLY!",
+        "reward": "Rainbow Alien Skin and 1 Crate Spin",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794671986515,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-11-16T12:32:25.011Z",
+    "displayCodes": [
+      {
+        "code": "30MVisits",
+        "reward": "Quake Power and 1 Crate Spin",
+        "isNew": true
+      },
+      {
+        "code": "JELLY!",
+        "reward": "Rainbow Alien Skin and 1 Crate Spin",
+        "isNew": true
+      },
+      {
+        "code": "CUSTOM",
+        "reward": "Susanoo, Rainbow Vampire and 1 Crate Spin",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "Rainbow Skeleton",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "30MVisits",
+        "reward": "Quake Power and 1 Crate Spin",
+        "isNew": true
+      },
+      {
+        "code": "JELLY!",
+        "reward": "Rainbow Alien Skin and 1 Crate Spin",
+        "isNew": true
+      },
+      {
+        "code": "CUSTOM",
+        "reward": "Susanoo, Rainbow Vampire and 1 Crate Spin",
+        "isNew": false
+      },
+      {
+        "code": "RELEASE",
+        "reward": "Rainbow Skeleton",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "RELEASE",
+      "30MVisits",
+      "JELLY!",
+      "CUSTOM"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "1-stone-skipping",
     "name": "+1 Stone Skipping",
     "displayName": "[🌅] +1 Stone Skipping",
     "slug": "1-stone-skipping",
-    "players": 2627,
+    "players": 2799,
     "redeemNote": null,
     "alias": null,
-    "rank": 2627,
+    "rank": 2799,
     "newCodes": [
       {
         "game": "1-stone-skipping",
@@ -27,8 +307,8 @@
         "srcNewAt": 1794661041786,
         "endsAt": null,
         "verified": false,
-        "firstSeenAt": "2026-11-16T11:55:49.268Z",
-        "fetchedAt": "2026-11-16T11:55:49.268Z"
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
       },
       {
         "game": "1-stone-skipping",
@@ -47,12 +327,12 @@
         "srcNewAt": 1794661041786,
         "endsAt": null,
         "verified": false,
-        "firstSeenAt": "2026-11-16T11:55:49.268Z",
-        "fetchedAt": "2026-11-16T11:55:49.268Z"
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
       }
     ],
     "activeCount": 13,
-    "fetchedAt": "2026-11-16T11:55:49.268Z",
+    "fetchedAt": "2026-11-16T12:32:25.011Z",
     "displayCodes": [
       {
         "code": "PHARAOH",
@@ -169,11 +449,31 @@
     "name": "My Trading Card Shop",
     "displayName": "[TRADE PLAZA🃏] My Trading Card Shop! [BETA]",
     "slug": "my-trading-card-shop",
-    "players": 1796,
+    "players": 2060,
     "redeemNote": null,
     "alias": null,
-    "rank": 1796,
+    "rank": 2060,
     "newCodes": [
+      {
+        "game": "my-trading-card-shop",
+        "gameName": "My Trading Card Shop",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/my-trading-card-shop"
+        },
+        "code": "FIRSTAA",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794776900950,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
+      },
       {
         "game": "my-trading-card-shop",
         "gameName": "My Trading Card Shop",
@@ -191,8 +491,8 @@
         "srcNewAt": 1794776900950,
         "endsAt": null,
         "verified": false,
-        "firstSeenAt": "2026-11-16T11:55:49.268Z",
-        "fetchedAt": "2026-11-16T11:55:49.268Z"
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
       },
       {
         "game": "my-trading-card-shop",
@@ -211,13 +511,18 @@
         "srcNewAt": 1794776900950,
         "endsAt": null,
         "verified": false,
-        "firstSeenAt": "2026-11-16T11:55:49.268Z",
-        "fetchedAt": "2026-11-16T11:55:49.268Z"
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
       }
     ],
-    "activeCount": 4,
-    "fetchedAt": "2026-11-16T11:55:49.268Z",
+    "activeCount": 5,
+    "fetchedAt": "2026-11-16T12:32:25.011Z",
     "displayCodes": [
+      {
+        "code": "FIRSTAA",
+        "reward": "",
+        "isNew": true
+      },
       {
         "code": "3million",
         "reward": "",
@@ -241,6 +546,11 @@
     ],
     "descCodes": [
       {
+        "code": "FIRSTAA",
+        "reward": "",
+        "isNew": true
+      },
+      {
         "code": "3million",
         "reward": "",
         "isNew": true
@@ -262,6 +572,7 @@
       }
     ],
     "allCodes": [
+      "FIRSTAA",
       "3million",
       "1KDC",
       "DC2026",
@@ -274,7 +585,7 @@
     "name": "Pixel Blade",
     "displayName": "[MYTHICALS // SERPENT] Pixel Blade",
     "slug": "pixel-blade",
-    "players": 1708,
+    "players": 1810,
     "redeemNote": {
       "en": "To use codes in Pixel Blade, you must join the Frost Blade Games Roblox Community.",
       "links": [
@@ -286,7 +597,7 @@
       "kind": "syarat"
     },
     "alias": null,
-    "rank": 1708,
+    "rank": 1810,
     "newCodes": [
       {
         "game": "pixel-blade",
@@ -305,12 +616,12 @@
         "srcNewAt": 1794724774813,
         "endsAt": null,
         "verified": false,
-        "firstSeenAt": "2026-11-16T11:55:49.268Z",
-        "fetchedAt": "2026-11-16T11:55:49.268Z"
+        "firstSeenAt": "2026-11-16T12:32:25.011Z",
+        "fetchedAt": "2026-11-16T12:32:25.011Z"
       }
     ],
     "activeCount": 11,
-    "fetchedAt": "2026-11-16T11:55:49.268Z",
+    "fetchedAt": "2026-11-16T12:32:25.011Z",
     "displayCodes": [
       {
         "code": "SERPENT",
