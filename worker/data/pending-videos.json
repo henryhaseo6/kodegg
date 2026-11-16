@@ -518,6 +518,131 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "ragdoll-sandbox",
+    "name": "Ragdoll Sandbox",
+    "displayName": "[🎃] Ragdoll Sandbox",
+    "slug": "ragdoll-sandbox",
+    "players": 7908,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 7908,
+    "newCodes": [
+      {
+        "game": "ragdoll-sandbox",
+        "gameName": "Ragdoll Sandbox",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/ragdoll-sandbox"
+        },
+        "code": "MILITARY",
+        "reward": "$500 Cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794771687405,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T14:02:53.422Z",
+        "fetchedAt": "2026-11-16T14:02:53.422Z"
+      },
+      {
+        "game": "ragdoll-sandbox",
+        "gameName": "Ragdoll Sandbox",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/ragdoll-sandbox"
+        },
+        "code": "TANKS",
+        "reward": "$250 Cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794771687405,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T14:02:53.422Z",
+        "fetchedAt": "2026-11-16T14:02:53.422Z"
+      },
+      {
+        "game": "ragdoll-sandbox",
+        "gameName": "Ragdoll Sandbox",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/ragdoll-sandbox"
+        },
+        "code": "JETS",
+        "reward": "$250 Cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794771687405,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T14:02:53.422Z",
+        "fetchedAt": "2026-11-16T14:02:53.422Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-11-16T14:02:53.422Z",
+    "displayCodes": [
+      {
+        "code": "MILITARY",
+        "reward": "$500 Cash",
+        "isNew": true
+      },
+      {
+        "code": "TANKS",
+        "reward": "$250 Cash",
+        "isNew": true
+      },
+      {
+        "code": "JETS",
+        "reward": "$250 Cash",
+        "isNew": true
+      },
+      {
+        "code": "SANDBOX",
+        "reward": "1,000 Cash",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "MILITARY",
+        "reward": "$500 Cash",
+        "isNew": true
+      },
+      {
+        "code": "TANKS",
+        "reward": "$250 Cash",
+        "isNew": true
+      },
+      {
+        "code": "JETS",
+        "reward": "$250 Cash",
+        "isNew": true
+      },
+      {
+        "code": "SANDBOX",
+        "reward": "1,000 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "SANDBOX",
+      "MILITARY",
+      "TANKS",
+      "JETS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "crazy-8-ball",
     "name": "CRAZY 8 Ball",
     "displayName": "[ABILITIES] CRAZY 8 Ball",
@@ -1170,6 +1295,91 @@
       "1KDC",
       "DC2026",
       "BETA"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "grab-and-decorate",
+    "name": "Grab and Decorate",
+    "displayName": "Grab and Decorate",
+    "slug": "grab-and-decorate",
+    "players": 1941,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1941,
+    "newCodes": [
+      {
+        "game": "grab-and-decorate",
+        "gameName": "Grab and Decorate",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/grab-and-decorate"
+        },
+        "code": "FIVEMILLIONGIFT",
+        "reward": "5 Furniture Items",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794760587680,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T14:02:53.422Z",
+        "fetchedAt": "2026-11-16T14:02:53.422Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-11-16T14:02:53.422Z",
+    "displayCodes": [
+      {
+        "code": "FIVEMILLIONGIFT",
+        "reward": "5 Furniture Items",
+        "isNew": true
+      },
+      {
+        "code": "GOBBLE26",
+        "reward": "One of Every Common Thanksgiving Furniture",
+        "isNew": false
+      },
+      {
+        "code": "BLURPLE",
+        "reward": "5 Unique Exclusive-tier Furniture",
+        "isNew": false
+      },
+      {
+        "code": "BEGINNER",
+        "reward": "3 Shelf Table and 4 Coffee Table",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "FIVEMILLIONGIFT",
+        "reward": "5 Furniture Items",
+        "isNew": true
+      },
+      {
+        "code": "GOBBLE26",
+        "reward": "One of Every Common Thanksgiving Furniture",
+        "isNew": false
+      },
+      {
+        "code": "BLURPLE",
+        "reward": "5 Unique Exclusive-tier Furniture",
+        "isNew": false
+      },
+      {
+        "code": "BEGINNER",
+        "reward": "3 Shelf Table and 4 Coffee Table",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "FIVEMILLIONGIFT",
+      "GOBBLE26",
+      "BLURPLE",
+      "BEGINNER"
     ]
   },
   {
