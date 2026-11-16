@@ -1,181 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "1-venom-evolution",
-    "name": "+1 Venom Evolution",
-    "displayName": "[🌍UPD 5] +1 Venom Evolution",
-    "slug": "1-venom-evolution",
-    "players": 18785,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 18785,
-    "newCodes": [
-      {
-        "game": "1-venom-evolution",
-        "gameName": "+1 Venom Evolution",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
-        },
-        "code": "REDPLANET",
-        "reward": "2x Venom (30 minutes), 2x Wins (30 minutes), and 1 Revive",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1794544443684,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-16T12:32:25.011Z",
-        "fetchedAt": "2026-11-16T12:32:25.011Z"
-      },
-      {
-        "game": "1-venom-evolution",
-        "gameName": "+1 Venom Evolution",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
-        },
-        "code": "GOOSTRONAUT",
-        "reward": "2x Venom (30 minutes) and 1 Mega Chest",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1794544443684,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-16T12:32:25.011Z",
-        "fetchedAt": "2026-11-16T12:32:25.011Z"
-      },
-      {
-        "game": "1-venom-evolution",
-        "gameName": "+1 Venom Evolution",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/1-venom-evolution"
-        },
-        "code": "STARDUST",
-        "reward": "2x Mutagen (15 minutes)",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1794544443684,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-16T12:32:25.011Z",
-        "fetchedAt": "2026-11-16T12:32:25.011Z"
-      }
-    ],
-    "activeCount": 9,
-    "fetchedAt": "2026-11-16T12:32:25.011Z",
-    "displayCodes": [
-      {
-        "code": "REDPLANET",
-        "reward": "2x Venom (30 minutes), 2x Wins (30 minutes), and 1 Revive",
-        "isNew": true
-      },
-      {
-        "code": "GOOSTRONAUT",
-        "reward": "2x Venom (30 minutes) and 1 Mega Chest",
-        "isNew": true
-      },
-      {
-        "code": "STARDUST",
-        "reward": "2x Mutagen (15 minutes)",
-        "isNew": true
-      },
-      {
-        "code": "VOIDKING",
-        "reward": "2x Venom (30 mins), 2x Wins (30 mins), and 1 Revive",
-        "isNew": false
-      },
-      {
-        "code": "HAPPY100K",
-        "reward": "2x Venom (45 mins), 2x Wins (45 mins), 1 Mega Chest, and 1 Revive",
-        "isNew": false
-      },
-      {
-        "code": "ALTAREGO",
-        "reward": "2x Venom (30 mins) and 1 Mega Chest",
-        "isNew": false
-      },
-      {
-        "code": "DUNGEON",
-        "reward": "2x Mutagen (10 mins)",
-        "isNew": false
-      },
-      {
-        "code": "HAPPY50K",
-        "reward": "x2 Venom (45 mins), x2 Wins (45 mins), 1 Mega Chest, and 2 Revives",
-        "isNew": false
-      },
-      {
-        "code": "HAPPY30K",
-        "reward": "2x Venom, 2x Wins (30 mins), 1 Mega Chest, and 1 Revive",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "REDPLANET",
-        "reward": "2x Venom (30 minutes), 2x Wins (30 minutes), and 1 Revive",
-        "isNew": true
-      },
-      {
-        "code": "GOOSTRONAUT",
-        "reward": "2x Venom (30 minutes) and 1 Mega Chest",
-        "isNew": true
-      },
-      {
-        "code": "STARDUST",
-        "reward": "2x Mutagen (15 minutes)",
-        "isNew": true
-      },
-      {
-        "code": "VOIDKING",
-        "reward": "2x Venom (30 mins), 2x Wins (30 mins), and 1 Revive",
-        "isNew": false
-      },
-      {
-        "code": "HAPPY100K",
-        "reward": "2x Venom (45 mins), 2x Wins (45 mins), 1 Mega Chest, and 1 Revive",
-        "isNew": false
-      },
-      {
-        "code": "ALTAREGO",
-        "reward": "2x Venom (30 mins) and 1 Mega Chest",
-        "isNew": false
-      },
-      {
-        "code": "DUNGEON",
-        "reward": "2x Mutagen (10 mins)",
-        "isNew": false
-      },
-      {
-        "code": "HAPPY50K",
-        "reward": "x2 Venom (45 mins), x2 Wins (45 mins), 1 Mega Chest, and 2 Revives",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "REDPLANET",
-      "GOOSTRONAUT",
-      "STARDUST",
-      "VOIDKING",
-      "HAPPY100K",
-      "ALTAREGO",
-      "DUNGEON",
-      "HAPPY50K",
-      "HAPPY30K"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "ragdoll-playground",
     "name": "Ragdoll Playground",
     "displayName": "[PHYSICS] Ragdoll Playground",
@@ -2067,6 +1892,135 @@
       "GOBBLE26",
       "BLURPLE",
       "BEGINNER"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "my-chiikawa-restaurant",
+    "name": "My Chiikawa Restaurant",
+    "displayName": "My Chiikawa Restaurant! 🎃",
+    "slug": "my-chiikawa-restaurant",
+    "players": 1872,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1872,
+    "newCodes": [
+      {
+        "game": "my-chiikawa-restaurant",
+        "gameName": "My Chiikawa Restaurant",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/my-chiikawa-restaurant"
+        },
+        "code": "shutdown2",
+        "reward": "Rewards.Requires a 4-star restaurant and 2,000 dishes served",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794701232883,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-16T17:04:05.410Z",
+        "fetchedAt": "2026-11-16T17:04:05.410Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-11-16T17:04:05.410Z",
+    "displayCodes": [
+      {
+        "code": "shutdown2",
+        "reward": "Rewards.Requires a 4-star restaurant and 2,000 dishes served",
+        "isNew": true
+      },
+      {
+        "code": "TURKEYDAY",
+        "reward": "10 Harvest Packs.Requires a 4-star restaurant and 2,000 dishes served",
+        "isNew": false
+      },
+      {
+        "code": "HUGE REVAMP",
+        "reward": "15 Komorebi Packs.Requires a 4-star restaurant and 2,000 dishes served",
+        "isNew": false
+      },
+      {
+        "code": "sryforshutdown",
+        "reward": "30 Harvest Packs.Requires a 4-star restaurant and 2,000 dishes served",
+        "isNew": false
+      },
+      {
+        "code": "EARLYUPDATE",
+        "reward": "Rewards.You must Reach day 10 and Serve 500 dishes to use this code",
+        "isNew": false
+      },
+      {
+        "code": "CHIIKAWATRADING",
+        "reward": "Rewards.You must Reach day 10 and Serve 500 dishes to use this code",
+        "isNew": false
+      },
+      {
+        "code": "CHIKALLOWEEN",
+        "reward": "2 Halloween Eggs and 2 Halloween Skin Packs",
+        "isNew": false
+      },
+      {
+        "code": "WELCOME",
+        "reward": "1,500 Cash",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "shutdown2",
+        "reward": "Rewards.Requires a 4-star restaurant and 2,000 dishes served",
+        "isNew": true
+      },
+      {
+        "code": "TURKEYDAY",
+        "reward": "10 Harvest Packs.Requires a 4-star restaurant and 2,000 dishes served",
+        "isNew": false
+      },
+      {
+        "code": "HUGE REVAMP",
+        "reward": "15 Komorebi Packs.Requires a 4-star restaurant and 2,000 dishes served",
+        "isNew": false
+      },
+      {
+        "code": "sryforshutdown",
+        "reward": "30 Harvest Packs.Requires a 4-star restaurant and 2,000 dishes served",
+        "isNew": false
+      },
+      {
+        "code": "EARLYUPDATE",
+        "reward": "Rewards.You must Reach day 10 and Serve 500 dishes to use this code",
+        "isNew": false
+      },
+      {
+        "code": "CHIIKAWATRADING",
+        "reward": "Rewards.You must Reach day 10 and Serve 500 dishes to use this code",
+        "isNew": false
+      },
+      {
+        "code": "CHIKALLOWEEN",
+        "reward": "2 Halloween Eggs and 2 Halloween Skin Packs",
+        "isNew": false
+      },
+      {
+        "code": "WELCOME",
+        "reward": "1,500 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "shutdown2",
+      "TURKEYDAY",
+      "HUGE REVAMP",
+      "sryforshutdown",
+      "EARLYUPDATE",
+      "CHIIKAWATRADING",
+      "CHIKALLOWEEN",
+      "WELCOME"
     ]
   },
   {
