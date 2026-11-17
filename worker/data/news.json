@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-11-17T03:01:48.786Z",
+  "updatedAt": "2026-11-17T04:02:36.410Z",
   "counts": {
     "active": 111,
     "archived": 200
   },
   "articles": [
+    {
+      "game": "hi3",
+      "gameName": "Honkai Impact 3rd",
+      "title": {
+        "en": "★ Looking Back from Beyond the Future & Songs Rippling Through Memories - Original Soundtrack Albums Released ★",
+        "id": "★ Album OST \"Looking Back from Beyond the Future\" dan \"Songs Rippling Through Memories\" Telah Dirilis ★"
+      },
+      "excerpt": {
+        "en": "Honkai Impact 3rd - Looking Back from Beyond the Future - Original Soundtrack and Honkai Impact 3rd - Songs Rippling Through Memories - Original Soundtrack, two original soundtrack",
+        "id": "Album musik \"Honkai Impact 3 - Looking Back from Beyond the Future - OST\" dan \"Honkai Impact 3 - Songs Rippling Through Memories - OST\" telah dirilis! Kedua album masing-masing ber"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/16/4c3e6940adf3b39a614417cdfc28226c_120763908412349313.jpg",
+      "url": "https://www.hoyolab.com/article/47472245",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-17T04:00:03.000Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1764,7 +1780,9 @@
       "url": "https://www.hoyolab.com/article/47130426",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-19T03:00:02.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1779,10 +1797,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/4cd86c4a1b8aaf93790f79b0d65c99af_8827443909415084293.png",
       "url": "https://www.hoyolab.com/article/47119920",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-18T04:00:04.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-18T04:00:04.000Z",
+      "archivedAt": "2026-11-17T04:02:36.410Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -5164,23 +5181,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4894",
       "source": "Wuthering Waves",
       "publishedAt": "2026-06-12T02:50:16.000Z",
-      "archivedAt": "2026-07-18T11:04:10.000Z"
-    },
-    {
-      "game": "wuwa",
-      "gameName": "Wuthering Waves",
-      "title": {
-        "en": "[Tomorrow in the Frame] Featured Resonator Convene",
-        "id": "[Tomorrow in the Frame] Featured Resonator Convene"
-      },
-      "excerpt": {
-        "en": "During the event, 5-Star Resonator: Lucilla, 4-Star Resonators: Lumi, Youhu, and Taoqi receive boosted drop rates! ✦Duration✦ 2026-06-13 10:00 - 2026-07-09 11:59 (server time) ✦Eli",
-        "id": "During the event, 5-Star Resonator: Lucilla, 4-Star Resonators: Lumi, Youhu, and Taoqi receive boosted drop rates! ✦Duration✦ 2026-06-13 10:00 - 2026-07-09 11:59 (server time) ✦Eli"
-      },
-      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1781193600000/7n9r5skh3q79xmlv0u-1781231798288.jpg",
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4885",
-      "source": "Wuthering Waves",
-      "publishedAt": "2026-06-12T02:37:02.000Z",
       "archivedAt": "2026-07-18T11:04:10.000Z"
     }
   ]
