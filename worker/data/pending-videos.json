@@ -1,91 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "evermore-high",
-    "name": "Evermore High",
-    "displayName": "Evermore High 🦢",
-    "slug": "evermore-high",
-    "players": 9882,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 9882,
-    "newCodes": [
-      {
-        "game": "evermore-high",
-        "gameName": "Evermore High",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/evermore-high"
-        },
-        "code": "ROOMMATES",
-        "reward": "250 Morebucks",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1794858749672,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-17T04:02:42.753Z",
-        "fetchedAt": "2026-11-17T04:02:42.753Z"
-      }
-    ],
-    "activeCount": 4,
-    "fetchedAt": "2026-11-17T04:02:42.753Z",
-    "displayCodes": [
-      {
-        "code": "ROOMMATES",
-        "reward": "250 Morebucks",
-        "isNew": true
-      },
-      {
-        "code": "ROLEPLAY",
-        "reward": "250 Morebucks",
-        "isNew": false
-      },
-      {
-        "code": "Fall",
-        "reward": "100 Morebucks",
-        "isNew": false
-      },
-      {
-        "code": "RELEASE",
-        "reward": "250 Morebucks",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "ROOMMATES",
-        "reward": "250 Morebucks",
-        "isNew": true
-      },
-      {
-        "code": "ROLEPLAY",
-        "reward": "250 Morebucks",
-        "isNew": false
-      },
-      {
-        "code": "Fall",
-        "reward": "100 Morebucks",
-        "isNew": false
-      },
-      {
-        "code": "RELEASE",
-        "reward": "250 Morebucks",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "ROOMMATES",
-      "ROLEPLAY",
-      "Fall",
-      "RELEASE"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "tr-legacy",
     "name": "TR Legacy",
     "displayName": "🔥🔊[EXHAUSTS/FULL SOUND UPD] TR Legacy",
@@ -1350,6 +1265,102 @@
       "GOBBLE26",
       "BLURPLE",
       "BEGINNER"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "army-commander-tycoon",
+    "name": "Army Commander Tycoon",
+    "displayName": "Army Commander Tycoon [UPDATE 7]",
+    "slug": "army-commander-tycoon",
+    "players": 1900,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1900,
+    "newCodes": [
+      {
+        "game": "army-commander-tycoon",
+        "gameName": "Army Commander Tycoon",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/army-commander-tycoon"
+        },
+        "code": "REDTIDE",
+        "reward": "25 Gold",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794836290515,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-17T05:01:56.964Z",
+        "fetchedAt": "2026-11-17T05:01:56.964Z"
+      }
+    ],
+    "activeCount": 5,
+    "fetchedAt": "2026-11-17T05:01:56.964Z",
+    "displayCodes": [
+      {
+        "code": "REDTIDE",
+        "reward": "25 Gold",
+        "isNew": true
+      },
+      {
+        "code": "FRONTLINE",
+        "reward": "25 Gold",
+        "isNew": false
+      },
+      {
+        "code": "COMMANDER",
+        "reward": "25 Gold",
+        "isNew": false
+      },
+      {
+        "code": "SEAPOWER",
+        "reward": "25 Gold",
+        "isNew": false
+      },
+      {
+        "code": "INVASION",
+        "reward": "25 Gold",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "REDTIDE",
+        "reward": "25 Gold",
+        "isNew": true
+      },
+      {
+        "code": "FRONTLINE",
+        "reward": "25 Gold",
+        "isNew": false
+      },
+      {
+        "code": "COMMANDER",
+        "reward": "25 Gold",
+        "isNew": false
+      },
+      {
+        "code": "SEAPOWER",
+        "reward": "25 Gold",
+        "isNew": false
+      },
+      {
+        "code": "INVASION",
+        "reward": "25 Gold",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "REDTIDE",
+      "FRONTLINE",
+      "COMMANDER",
+      "SEAPOWER",
+      "INVASION"
     ]
   },
   {
