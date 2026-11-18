@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-18T06:02:40.136Z",
+  "updatedAt": "2026-11-18T07:02:25.311Z",
   "counts": {
-    "active": 108,
+    "active": 106,
     "archived": 200
   },
   "articles": [
@@ -950,22 +950,6 @@
       "publishedAt": "2026-11-07T02:00:04.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "For Display Only | Severian",
-        "id": "For Display Only | Severian"
-      },
-      "excerpt": {
-        "en": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\"",
-        "id": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\""
-      },
-      "image": "https://vod-static.hoyolab.com/4/2026-11-06/transcoded/142118597346062815232_captions.0000000.jpg",
-      "url": "https://www.hoyolab.com/article/47342929",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-06T10:00:05.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -978,6 +962,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/bc2fc1c077096bd4bbb5c04e6c146c54_5193667494320394504.jpg",
       "url": "https://www.hoyolab.com/article/47342930",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-06T10:00:05.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "For Display Only | Severian",
+        "id": "For Display Only | Severian"
+      },
+      "excerpt": {
+        "en": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\"",
+        "id": "\"I'm placing you under arrest for disturbing public order.\" \"You have the right to remain silent. But anything you say can and will be used against you in court.\""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-11-06/transcoded/142118597346062815232_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/47342929",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-06T10:00:05.000Z"
     },
@@ -998,22 +998,6 @@
       "publishedAt": "2026-11-06T07:17:24.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Severian Character Demo - \"The Making of a Commissioner\" | Zenless Zone Zero",
-        "id": "Demo Karakter Severian - \"Proses Menjadi Komisaris\" | Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "\"Commissioner Lowell... He's regarded as one of our most dependable officers.\" \"While I've got the chance, I do have one suggestion for Commissioner Lowell: give junior officers mo",
-        "id": "\"Komisaris Lowell... Dia adalah salah satu petugas yang paling bisa diandalkan di Public Security.\" \"Selagi ada kesempatan, aku ingin mengusulkan agar Komisaris Lowell memberi lebi"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/4695a51225d638091ebed478522a7006_6509276100703147467.png",
-      "url": "https://www.hoyolab.com/article/47339558",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-06T04:00:04.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -1026,6 +1010,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/141f3707ca9af1f5aeff959a6c55ce0f_3132425623498928193.jpg",
       "url": "https://www.hoyolab.com/article/47339559",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-06T04:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Severian Character Demo - \"The Making of a Commissioner\" | Zenless Zone Zero",
+        "id": "Demo Karakter Severian - \"Proses Menjadi Komisaris\" | Zenless Zone Zero"
+      },
+      "excerpt": {
+        "en": "\"Commissioner Lowell... He's regarded as one of our most dependable officers.\" \"While I've got the chance, I do have one suggestion for Commissioner Lowell: give junior officers mo",
+        "id": "\"Komisaris Lowell... Dia adalah salah satu petugas yang paling bisa diandalkan di Public Security.\" \"Selagi ada kesempatan, aku ingin mengusulkan agar Komisaris Lowell memberi lebi"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/06/4695a51225d638091ebed478522a7006_6509276100703147467.png",
+      "url": "https://www.hoyolab.com/article/47339558",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-06T04:00:04.000Z"
     },
@@ -1700,7 +1700,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5653",
       "source": "Wuthering Waves",
       "publishedAt": "2026-10-20T01:40:28.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1715,7 +1717,8 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/0/c243cb0e9681da17a048dfbf2df82421_4820938224092101885.png",
       "url": "https://www.hoyolab.com/article/47131894",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-19T06:30:05.000Z"
+      "publishedAt": "2026-10-19T06:30:05.000Z",
+      "archivedAt": "2026-11-18T07:02:25.311Z"
     },
     {
       "game": "zzz",
@@ -1731,10 +1734,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/0/147c67cbebd18be9228bc8c9825635cb_3742364041296432822.png",
       "url": "https://www.hoyolab.com/article/47131792",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-19T06:15:09.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-19T06:15:09.000Z",
+      "archivedAt": "2026-11-18T07:02:25.311Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -5100,40 +5102,6 @@
       "source": "HoYoLAB",
       "publishedAt": "2026-06-13T03:00:09.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "Seele's New S-rank Battlesuit \"Wings of Panacea\" Trailer – Honkai Impact 3rd",
-        "id": "Preview Battlesuit Rank-S Baru Seele \"Wings of Panacea\" — Honkai Impact 3"
-      },
-      "excerpt": {
-        "en": "She loathes disease, for it withers lives like fragile flowers, leaving only grief to grow in its wake. She despises suffering, for it weighs upon the spirit like a crushing burden",
-        "id": "Dia membenci penyakit, karena penyakit merenggut kehidupan layaknya bunga rapuh yang layu, hanya menyisakan kesedihan. Dia membenci rasa sakit, karena rasa itu membuat tekad terasa"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/09/db8991e6d414d8bf5f45bd1edda48173_7098365433871644527.jpg",
-      "url": "https://www.hoyolab.com/article/45436230",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-12T12:00:04.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "wuwa",
-      "gameName": "Wuthering Waves",
-      "title": {
-        "en": "Version 3.4 Wuthering Waves Wallpaper",
-        "id": "Version 3.4 Wuthering Waves Wallpaper"
-      },
-      "excerpt": {
-        "en": "\"Yeah... Think I... Think I had a dream.\" \"...Can't remember, it's kinda fuzzy.\" \"But it was a good dream... That I know.\"",
-        "id": "\"Yeah... Think I... Think I had a dream.\" \"...Can't remember, it's kinda fuzzy.\" \"But it was a good dream... That I know.\""
-      },
-      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1781193600000/6gcz076gkbpmkf4w61-1781259683101.jpg",
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4910",
-      "source": "Wuthering Waves",
-      "publishedAt": "2026-06-12T10:23:54.000Z",
-      "archivedAt": "2026-07-18T11:04:10.000Z"
     }
   ]
 }
