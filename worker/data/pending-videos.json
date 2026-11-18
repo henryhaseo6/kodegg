@@ -520,5 +520,180 @@
     "allCodes": [
       "REWORKTIME"
     ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "make-soaps",
+    "name": "Make Soaps",
+    "displayName": "[🍂] Make Soaps! 🧼",
+    "slug": "make-soaps",
+    "players": 1717,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1717,
+    "newCodes": [
+      {
+        "game": "make-soaps",
+        "gameName": "Make Soaps",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/make-soaps"
+        },
+        "code": "GIA",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 67 Acorns",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794932898974,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-18T03:02:47.240Z",
+        "fetchedAt": "2026-11-18T03:02:47.240Z"
+      },
+      {
+        "game": "make-soaps",
+        "gameName": "Make Soaps",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/make-soaps"
+        },
+        "code": "QUESTIONMARK",
+        "reward": "50 Scent Capsules, 1,000 Coins, and 200 Acorns",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794932898974,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-18T03:02:47.240Z",
+        "fetchedAt": "2026-11-18T03:02:47.240Z"
+      },
+      {
+        "game": "make-soaps",
+        "gameName": "Make Soaps",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/make-soaps"
+        },
+        "code": "SEB",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 150 Acorns",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1794932898974,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-18T03:02:47.240Z",
+        "fetchedAt": "2026-11-18T03:02:47.240Z"
+      }
+    ],
+    "activeCount": 9,
+    "fetchedAt": "2026-11-18T03:02:47.240Z",
+    "displayCodes": [
+      {
+        "code": "GIA",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 67 Acorns",
+        "isNew": true
+      },
+      {
+        "code": "QUESTIONMARK",
+        "reward": "50 Scent Capsules, 1,000 Coins, and 200 Acorns",
+        "isNew": true
+      },
+      {
+        "code": "SEB",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 150 Acorns",
+        "isNew": true
+      },
+      {
+        "code": "LATHERMORE",
+        "reward": "25 Scent Capsules and 1,000 Coins",
+        "isNew": false
+      },
+      {
+        "code": "Refund",
+        "reward": "200 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "SUNDAYBRUNCH",
+        "reward": "25 Scent Capsules, 150 Acorns, and 1,000 Coins",
+        "isNew": false
+      },
+      {
+        "code": "SPECIALDELIVERY",
+        "reward": "50 Acorns and 10 Scent Capsules",
+        "isNew": false
+      },
+      {
+        "code": "1MILLION",
+        "reward": "100 Scent Capsules, 2.5K Coins and 250 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "SOAPCLUB",
+        "reward": "25 Scent Capsules and a Lather Lane Local Title",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "GIA",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 67 Acorns",
+        "isNew": true
+      },
+      {
+        "code": "QUESTIONMARK",
+        "reward": "50 Scent Capsules, 1,000 Coins, and 200 Acorns",
+        "isNew": true
+      },
+      {
+        "code": "SEB",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 150 Acorns",
+        "isNew": true
+      },
+      {
+        "code": "LATHERMORE",
+        "reward": "25 Scent Capsules and 1,000 Coins",
+        "isNew": false
+      },
+      {
+        "code": "Refund",
+        "reward": "200 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "SUNDAYBRUNCH",
+        "reward": "25 Scent Capsules, 150 Acorns, and 1,000 Coins",
+        "isNew": false
+      },
+      {
+        "code": "SPECIALDELIVERY",
+        "reward": "50 Acorns and 10 Scent Capsules",
+        "isNew": false
+      },
+      {
+        "code": "1MILLION",
+        "reward": "100 Scent Capsules, 2.5K Coins and 250 Acorns",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "GIA",
+      "QUESTIONMARK",
+      "SEB",
+      "LATHERMORE",
+      "Refund",
+      "SUNDAYBRUNCH",
+      "SPECIALDELIVERY",
+      "1MILLION",
+      "SOAPCLUB"
+    ]
   }
 ]
