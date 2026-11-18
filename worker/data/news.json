@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-18T05:02:47.420Z",
+  "updatedAt": "2026-11-18T06:02:40.136Z",
   "counts": {
-    "active": 109,
+    "active": 108,
     "archived": 200
   },
   "articles": [
@@ -1732,7 +1732,9 @@
       "url": "https://www.hoyolab.com/article/47131792",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-19T06:15:09.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1747,10 +1749,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/0/7dbd2f9d91df40984726bb28b34b671b_3739691593154843676.jpeg",
       "url": "https://www.hoyolab.com/article/47131668",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-19T06:00:08.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-19T06:00:08.000Z",
+      "archivedAt": "2026-11-18T06:02:40.136Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -5132,23 +5133,6 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4910",
       "source": "Wuthering Waves",
       "publishedAt": "2026-06-12T10:23:54.000Z",
-      "archivedAt": "2026-07-18T11:04:10.000Z"
-    },
-    {
-      "game": "wuwa",
-      "gameName": "Wuthering Waves",
-      "title": {
-        "en": "Wuthering Waves × Cyberpunk: Edgerunners | New Enemy — Nightmare: Adam Smasher",
-        "id": "Wuthering Waves × Cyberpunk: Edgerunners | New Enemy — Nightmare: Adam Smasher"
-      },
-      "excerpt": {
-        "en": "A Nightmare Tacet Discord that is hunting down Lucy. The data torrent that plates its body scrambles local detection and offers immunity to most attacks from Resonators.",
-        "id": "A Nightmare Tacet Discord that is hunting down Lucy. The data torrent that plates its body scrambles local detection and offers immunity to most attacks from Resonators."
-      },
-      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1781193600000/iei3it2kfja5rqn35h-1781255501882.png",
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4906",
-      "source": "Wuthering Waves",
-      "publishedAt": "2026-06-12T09:14:23.000Z",
       "archivedAt": "2026-07-18T11:04:10.000Z"
     }
   ]
