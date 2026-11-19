@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-19T02:02:11.164Z",
+  "updatedAt": "2026-11-19T03:02:12.685Z",
   "counts": {
-    "active": 105,
+    "active": 104,
     "archived": 200
   },
   "articles": [
@@ -1668,7 +1668,9 @@
       "url": "https://www.hoyolab.com/article/47142214",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-20T06:00:07.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1683,10 +1685,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/4ae3ee4b0c3abe04eb423a249b2b9543_4175876825878376365.jpg",
       "url": "https://www.hoyolab.com/article/47140956",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-20T02:30:01.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-20T02:30:01.000Z",
+      "archivedAt": "2026-11-19T03:02:12.685Z"
+    },
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -5068,23 +5069,6 @@
       "url": "https://www.hoyolab.com/article/45478130",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-16T03:00:07.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "☆☆ New Version Outfits News ☆☆",
-        "id": "☆☆ Info Outfit Versi Baru ☆☆"
-      },
-      "excerpt": {
-        "en": "Planar Armament: Warped Spacetime's outfit Summer Tactical Gear can be obtained from the spend bonuses event Iridescent Bazaar after the v8.9 update. Mad Pleasure: Shadowbringer's ",
-        "id": "Outfit untuk Planar Armament: Warped Spacetime \"Summer Tactical Gear\" dapat diperoleh melalui Event Belanja \"Bazar Kilau Pelangi\" setelah update v8.9. Outfit baru Mad Pleasure: Sha"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/11/89e69f07e33a8d7e363959994304a9f5_6821058182887790031.png",
-      "url": "https://www.hoyolab.com/article/45455413",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-14T03:00:04.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
