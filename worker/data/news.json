@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-19T06:02:16.408Z",
+  "updatedAt": "2026-11-19T07:02:31.716Z",
   "counts": {
-    "active": 102,
+    "active": 100,
     "archived": 200
   },
   "articles": [
@@ -1604,7 +1604,9 @@
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
       "source": "Wuthering Waves",
       "publishedAt": "2026-10-20T10:18:40.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1619,7 +1621,8 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/19/0/91965d79167e7dfd1519188257833f76_3804144771172822657.png",
       "url": "https://www.hoyolab.com/article/47142378",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-20T06:30:04.000Z"
+      "publishedAt": "2026-10-20T06:30:04.000Z",
+      "archivedAt": "2026-11-19T07:02:31.716Z"
     },
     {
       "game": "zzz",
@@ -1635,10 +1638,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/19/0/018eecf86bbf908609417b81d0dd0e7c_9047008900194579065.png",
       "url": "https://www.hoyolab.com/article/47142288",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-20T06:15:09.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-20T06:15:09.000Z",
+      "archivedAt": "2026-11-19T07:02:31.716Z"
+    },
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -5004,40 +5006,6 @@
       "source": "HoYoLAB",
       "publishedAt": "2026-06-16T04:24:47.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "wuwa",
-      "gameName": "Wuthering Waves",
-      "title": {
-        "en": "Resonator Review | Feathered Tempest — Cartethyia",
-        "id": "Resonator Review | Feathered Tempest — Cartethyia"
-      },
-      "excerpt": {
-        "en": "Cartethyia, the wandering knight who travels across Rinascita. Formerly known as the Blessed Maiden, the vessel of Divinity, and the Queen of Gale and Tide, she went by the name Fl",
-        "id": "Cartethyia, the wandering knight who travels across Rinascita. Formerly known as the Blessed Maiden, the vessel of Divinity, and the Queen of Gale and Tide, she went by the name Fl"
-      },
-      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1781539200000/uprxxpqnns1gb49t08-1781604977811.jpg",
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4918",
-      "source": "Wuthering Waves",
-      "publishedAt": "2026-06-16T04:16:29.000Z",
-      "archivedAt": "2026-07-18T11:04:10.000Z"
-    },
-    {
-      "game": "wuwa",
-      "gameName": "Wuthering Waves",
-      "title": {
-        "en": "Upcoming Events in Wuthering Waves Version 3.4",
-        "id": "Upcoming Events in Wuthering Waves Version 3.4"
-      },
-      "excerpt": {
-        "en": "Here is a compilation of the upcoming events in Version 3.4. Don't miss out!",
-        "id": "Here is a compilation of the upcoming events in Version 3.4. Don't miss out!"
-      },
-      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1781539200000/1fv4jr90qgb4wwjk3y-1781601547229.jpg",
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4917",
-      "source": "Wuthering Waves",
-      "publishedAt": "2026-06-16T04:15:51.000Z",
-      "archivedAt": "2026-07-18T11:04:10.000Z"
     }
   ]
 }
