@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-19T01:02:38.801Z",
+  "updatedAt": "2026-11-19T02:02:11.164Z",
   "counts": {
-    "active": 106,
+    "active": 105,
     "archived": 200
   },
   "articles": [
@@ -1684,7 +1684,9 @@
       "url": "https://www.hoyolab.com/article/47140956",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-20T02:30:01.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "wuwa",
       "gameName": "Wuthering Waves",
@@ -1699,10 +1701,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1792425600000/1xox7ovygipiiwnsnc-1792460373670.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5653",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-10-20T01:40:28.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-20T01:40:28.000Z",
+      "archivedAt": "2026-11-19T02:02:11.164Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -5084,23 +5085,6 @@
       "url": "https://www.hoyolab.com/article/45455413",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-14T03:00:04.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "Seele's New S-Rank Battlesuit \"Wings of Panacea\" Debuts",
-        "id": "Battlesuit Rank-S Baru Seele \"Wings of Panacea\" Debut"
-      },
-      "excerpt": {
-        "en": "Hello, Captains! Seele's new S-rank battlesuit Wings of Panacea is debuting in v8.9. Read on to learn more! ☆☆☆☆☆ Wings of Panacea ☆☆☆☆☆ She loathes disease, for it withers lives l",
-        "id": "Halo, Kapten! Battlesuit Rank-S baru Seele \"Wings of Panacea\" akan debut di v8.9. Ayo kita lihat info terbarunya sama-sama! ☆☆☆☆☆ Wings of Panacea ☆☆☆☆☆ Dia membenci penyakit, kare"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/10/3e53a9628bbbd14b049c423c713a4afd_8761363883055911237.png",
-      "url": "https://www.hoyolab.com/article/45443139",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-13T03:00:09.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
