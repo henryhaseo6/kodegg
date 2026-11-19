@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-19T07:02:27.211Z",
+  "updatedAt": "2026-11-19T08:02:11.526Z",
   "counts": {
-    "active": 46,
+    "active": 50,
     "archived": 200
   },
   "events": [
@@ -760,6 +760,114 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/47375132"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "banner",
+      "typeName": "Event",
+      "title": {
+        "en": "Event Wish \"Harmonious Abundance\" - Boosted Drop Rate for \"White Horse's Fleeting Spring\" Zibai (Geo)!",
+        "id": "Event Permohonan \"Harmoni Kelimpahan\": Persentase Perolehan \"White Horse's Fleeting Spring\" Zibai (Geo) Meningkat!"
+      },
+      "subtitle": {
+        "en": "Event Wish \"Harmonious Abundance\"",
+        "id": "Event Permohonan \"Harmoni Kelimpahan\""
+      },
+      "desc": {
+        "en": "Travelers, stock up on weapons and characters in the event wish to make your party stronger in combat! 〓Event Wish Details〓 Event Wish Duration Promotional Character (5-Star) Featured Characters (4-Star) 2026/11/24 18:00 - 2026/12/15 14:59 \"White Horse's Fleeting Spring\" Zibai (Geo) \"Nightmare's Burning Heart\" Illuga (Geo) \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) \"Eclipsing Star\" Ningguang (Geo) ● During this event wish, the event-exclusive 5-star character \"White Horse's Fleeting Spring\" Zibai (Geo) will receive a huge drop-rate boost ! ● During this event wish, the 4-star characters \"Nightmare's Burning Heart\" Illuga (Geo), \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro), and \"Eclipsing Star\" Ningguang (Geo) will receive a huge drop-rate boost ! ※ Of the above characters, the event-exclusive character will not be available in the standard wish \"Wanderlust Invocation.\" ※ This is for \"Character Event Wish.\" The wish guarantee count for \"Character Event Wish\" and \"Character Event Wish-2\" is shared, and is accumulated between both \"Character Event Wish\" and \"Character Event Wish-2.\" This wish guarantee count is independent of the guarantee counts of other types of wishes. ※ The \"Test Run\" trial event will be open during this event wish. Travelers may use fixed lineups containing the selected trial characters to enter specific stages and test them out. Travelers who complete the challenges will receive the corresponding rewards! ※ For more information, go to the Wish screen and select Details in the bottom-left corner.",
+        "id": "Dapatkan Senjata dan Karakter di Event Permohonan untuk membuat party menjadi lebih kuat dalam pertarungan! 〓 Keterangan Permohonan 〓 Waktu Permohonan Karakter UP (5★) Karakter UP (4★) 2026/11/24 18:00 - 2026/12/15 14:59 \"White Horse's Fleeting Spring\" Zibai (Geo) \"Nightmare's Burning Heart\" Illuga (Geo) \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) \"Eclipsing Star\" Ningguang (Geo) ● Selama event berlangsung, persentase perolehan Karakter 5★ Eksklusif \"White Horse's Fleeting Spring\" Zibai (Geo) akan meningkat drastis ! ● Selama event berlangsung, persentase perolehan Karakter 4★ \"Nightmare's Burning Heart\" Illuga (Geo), \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro), dan \"Eclipsing Star\" Ningguang (Geo) akan meningkat drastis ! ※ Karakter Eksklusif di atas tidak akan masuk ke Permohonan Standar \"Wanderlust Invocation\". ※ Permohonan ini termasuk Event Permohonan Karakter. Hitungan jaminan Permohonan pada \"Event Permohonan Karakter\" dan \"Event Permohonan Karakter - 2\" akan dihitung bersama, diakumulasi bersama, terpisah dari hitungan jaminan untuk kategori Permohonan lain, serta tidak memengaruhi jaminan kategori Permohonan lain. ※ Selama Event Permohonan dibuka, Traveler juga dapat mencoba Karakter bersangkutan di event \"Coba Karakter\" dengan menggunakan susunan party yang telah ditentukan. Selesaikan tantangan tersebut untuk mendapatkan hadiah! ※ Untuk keterangan lebih lanjut, silakan mengacu pada halaman Permohonan dan pilih Rincian pada pojok kiri bawah."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/10/e2c619b94dd87549d0d47868b71b60ef_6572500111887862760_transformed.png",
+      "startsAt": "2026-11-19T08:00:00.000Z",
+      "endsAt": "2026-12-15T06:59:59.000Z",
+      "postedAt": "2026-11-19T08:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "banner",
+      "typeName": "Event",
+      "title": {
+        "en": "Event Wish \"Ya-hoho! Compendium\" - Boosted Drop Rate for \"Augur of Wonders\" Linnea (Geo)!",
+        "id": "Permohonan \"Kompendium Ya-hoho!\": Persentase Perolehan \"Augur of Wonders\" Linnea (Geo) Meningkat!"
+      },
+      "subtitle": {
+        "en": "Event Wish \"Ya-hoho! Compendium\"",
+        "id": "Event Permohonan \"Kompendium Ya-hoho!\""
+      },
+      "desc": {
+        "en": "Travelers, stock up on weapons and characters in the event wish to make your party stronger in combat! 〓Event Wish Details〓 Event Wish Duration Promotional Character (5-Star) Featured Characters (4-Star) 2026/11/24 18:00 - 2026/12/15 14:59 \"Augur of Wonders\" Linnea (Geo) \"Nightmare's Burning Heart\" Illuga (Geo) \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) \"Eclipsing Star\" Ningguang (Geo) ● During this Event Wish, the event-exclusive 5-star character \"Augur of Wonders\" Linnea (Geo) will receive a huge drop rate boost ! ● During this event wish, the 4-star characters \"Nightmare's Burning Heart\" Illuga (Geo), \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro), and \"Eclipsing Star\" Ningguang (Geo) will receive a huge drop-rate boost ! ※ Of the above characters, the event-exclusive character will not be available in the standard wish \"Wanderlust Invocation.\" ※ This is for \"Character Event Wish-2.\" The wish guarantee count for \"Character Event Wish\" and \"Character Event Wish-2\" is shared, and is accumulated between both \"Character Event Wish\" and \"Character Event Wish-2.\" This wish guarantee count is independent of the guarantee counts of other types of wishes. ※ The \"Test Run\" trial event will be open during this event wish. Travelers may use fixed lineups containing the selected trial characters to enter specific stages and test them out. Travelers who complete the challenges will receive the corresponding rewards! ※ For more information, go to the Wish screen and select Details in the bottom-left corner.",
+        "id": "Dapatkan Senjata dan Karakter di Event Permohonan untuk membuat party menjadi lebih kuat dalam pertarungan! 〓 Keterangan Permohonan 〓 Waktu Permohonan Karakter UP (5★) Karakter UP (4★) 2026/11/24 18:00 - 2026/12/15 14:59 \"Augur of Wonders\" Linnea (Geo) \"Nightmare's Burning Heart\" Illuga (Geo) \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) \"Eclipsing Star\" Ningguang (Geo) ● Selama event berlangsung, persentase perolehan Karakter 5★ Eksklusif \"Augur of Wonders\" Linnea (Geo) akan meningkat drastis ! ● Selama event berlangsung, persentase perolehan Karakter 4★ \"Nightmare's Burning Heart\" Illuga (Geo), \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro), dan \"Eclipsing Star\" Ningguang (Geo) akan meningkat drastis ! ※ Karakter Eksklusif di atas tidak akan masuk ke Permohonan Standar \"Wanderlust Invocation\". ※ Permohonan ini termasuk Event Permohonan Karakter - 2. Hitungan jaminan Permohonan pada \"Event Permohonan Karakter\" dan \"Event Permohonan Karakter - 2\" akan dihitung bersama, diakumulasi bersama, terpisah dari hitungan jaminan untuk kategori Permohonan lain, serta tidak memengaruhi jaminan kategori Permohonan lain. ※ Selama Event Permohonan dibuka, Traveler juga dapat mencoba Karakter bersangkutan di event \"Coba Karakter\" dengan menggunakan susunan party yang telah ditentukan. Selesaikan tantangan tersebut untuk mendapatkan hadiah! ※ Untuk keterangan lebih lanjut, silakan mengacu pada halaman Permohonan dan pilih Rincian pada pojok kiri bawah."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/10/265a5b94d4bb4c579478a2af5074649c_574905966576030019_transformed.png",
+      "startsAt": "2026-11-19T08:00:00.000Z",
+      "endsAt": "2026-12-15T06:59:59.000Z",
+      "postedAt": "2026-11-19T08:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "banner",
+      "typeName": "Event",
+      "title": {
+        "en": "Event Wish \"Epitome Invocation\" - Boosted Drop Rate for Lightbearing Moonshard (Sword) and Golden Frostbound Oath (Bow)!",
+        "id": "Event Permohonan \"Epitome Invocation\": Perolehan Lightbearing Moonshard (Sword) dan Golden Frostbound Oath (Bow) Meningkat!"
+      },
+      "subtitle": {
+        "en": "Event Wish \"Epitome Invocation\"",
+        "id": "Event Permohonan \"Epitome Invocation\""
+      },
+      "desc": {
+        "en": "Travelers, stock up on weapons and characters in \"Epitome Invocation\" to make your party stronger in combat! 〓Event Wish Details〓 Event Wish Duration Promotional Weapons (5-Star) Featured Weapons (4-Star) 2026/11/24 18:00 - 2026/12/15 14:59 Lightbearing Moonshard (Sword) Golden Frostbound Oath (Bow) Portable Power Saw (Claymore) Range Gauge (Bow) Sacrificial Sword (Sword) Favonius Lance (Polearm) Eye of Perception (Catalyst) ● During this event wish, the event-exclusive 5-star weapons Lightbearing Moonshard (Sword) and Golden Frostbound Oath (Bow) will receive a huge drop-rate boost ! ● During the event, the event-exclusive 4-star weapons Portable Power Saw (Claymore) and Range Gauge (Bow) , as well as the 4-star weapons Sacrificial Sword (Sword), Favonius Lance (Polearm), and Eye of Perception (Catalyst) will receive a huge drop rate boost ! ● During this event wish, use Epitomized Path to chart a course towards a promotional 5-star weapon, such as Lightbearing Moonshard (Sword) or Golden Frostbound Oath (Bow) . For more information on Epitomized Path, go to the Wish screen and select Details in the bottom-left corner. ※ Of the above weapons, the event-exclusive weapons will not be available in the standard wish \"Wanderlust Invocation.\" ※ For more information, go to the Wish screen and select Details in the bottom-left corner.",
+        "id": "Dapatkan Senjata dan Karakter di Event Permohonan \"Epitome Invocation\" untuk membuat party menjadi lebih kuat! 〓 Keterangan Permohonan 〓 Waktu Permohonan Senjata UP (5★) Senjata UP (4★) 2026/11/24 18:00 - 2026/12/15 14:59 Lightbearing Moonshard (Sword) Golden Frostbound Oath (Bow) Portable Power Saw (Claymore) Range Gauge (Bow) Sacrificial Sword (Sword) Favonius Lance (Polearm) Eye of Perception (Catalyst) ● Selama event berlangsung, persentase perolehan Senjata 5★ Eksklusif Lightbearing Moonshard (Sword) dan Golden Frostbound Oath (Bow) akan meningkat drastis ! ● Selama event berlangsung, persentase perolehan Senjata 4★ Eksklusif Portable Power Saw (Claymore) dan Range Gauge (Bow) , serta Senjata 4★ Sacrificial Sword (Sword), Favonius Lance (Polearm), dan Eye of Perception (Catalyst) akan meningkat drastis ! ● Selama event berlangsung, Traveler bisa menggunakan fitur \"Epitomized Path\" untuk memilih salah satu dari Senjata 5★ UP, yaitu: Lightbearing Moonshard (Sword) atau Golden Frostbound Oath (Bow) . Untuk keterangan lebih lanjut mengenai \"Epitomized Path\", silakan mengacu ke halaman Rincian yang dapat diakses dari pojok kiri bawah halaman Permohonan. ※ Senjata Eksklusif di atas tidak akan masuk ke Permohonan Standar \"Wanderlust Invocation\". ※ Untuk keterangan lebih lanjut, silakan mengacu pada halaman Permohonan dan pilih Rincian pada pojok kiri bawah."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/10/15fb09b86109a9517beb9183e89e1906_4296343326285390127_transformed.png",
+      "startsAt": "2026-11-19T08:00:00.000Z",
+      "endsAt": "2026-12-15T06:59:59.000Z",
+      "postedAt": "2026-11-19T08:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "banner",
+      "typeName": "Event",
+      "title": {
+        "en": "Event Wish \"Names Forged Beneath Blazing Skies\" - Chronicled Wish Now Available!",
+        "id": "Event Permohonan \"Nama yang Ditempa Langit Membara\": Chronicled Wish Telah Dimulai!"
+      },
+      "subtitle": {
+        "en": "Event Wish \"Names Forged Beneath Blazing Skies\"",
+        "id": "Event Permohonan \"Nama yang Ditempa Langit Membara\""
+      },
+      "desc": {
+        "en": "Travelers, stock up on weapons and characters in the Chronicled Wish to make your party stronger in combat! 〓Event Wish Details〓 Event Wish Duration Designatable 5-Star Characters Designatable 5-Star Weapons 2026/11/24 18:00 - 2026/12/15 14:59 \"Strength in Serenity\" Varesa (Electro) \"Skyborne Arbiter\" Chasca (Anemo) \"Ardent Flames Forge the Soul\" Xilonen (Geo) \"Splish-Splash Wavechaser\" Mualani (Hydro) \"Turnfire Hunt\" Kinich (Dendro) Vivid Notions (Catalyst) Astral Vulture's Crimson Plumage (Bow) Peak Patrol Song (Sword) Surf's Up (Catalyst) Fang of the Mountain King (Claymore) ● During this Event Wish, you can freely select and chart a course towards your chosen boosted 5-star character or weapon amongst all 5-star items in the \"Names Forged Beneath Blazing Skies\" Event Wish of this period! ● During this event, the event-exclusive 5-star Characters \"Strength in Serenity\" Varesa (Electro), \"Skyborne Arbiter\" Chasca (Anemo), \"Ardent Flames Forge the Soul\" Xilonen (Geo), \"Splish-Splash Wavechaser\" Mualani\" (Hydro), \"Turnfire Hunt\" Kinich (Dendro) , as well as the event-exclusive 5-star Weapons Vivid Notions (Catalyst), Astral Vulture's Crimson Plumage (Bow), Peak Patrol Song (Sword), Surf's Up (Catalyst), Fang of the Mountain King (Claymore) , and event-exclusive 4-star Weapons Sturdy Bone (Sword), Fruitful Hook (Claymore), Mountain-Bracing Bolt (Polearm), Waveriding Whirl (Catalyst), and Flower-Wreathed Feathers (Bow) will be available for a limited time only. ● All 5-star and 4-star items in this Chronicled Wish: 5-Star Characters: Varesa/Chasca/Xilonen/Mualani/Kinich 5-Star Weapons: Vivid Notions/Astral Vulture's Crimson Plumage/Peak Patrol Song/Surf's Up/Fang of the Mountain King 4-Star Characters: Ifa/Iansan/Ororon/Kachina 4-Star Weapons: Flower-Wreathed Feathers/Waveriding Whirl/Mountain-Bracing Bolt/Fruitful Hook/Sturdy Bone/Rust/Sacrificial Bow/The Stringless/Favonius Warbow/Eye of Perception/Sacrificial Fragments/The Widsith/Favonius Codex/Favonius Lance/Dragon's Bane/Rainslasher/Sacrificial Greatsword/The Bell/Favonius Greatsword/Lion's Roar/Sacrificial Sword/The Flute/Favonius Sword ※ This is for \"Chronicled Wish.\" The wish guarantee count for \"Chronicled Wish\" and \"Lightrace Wish\" is shared, and is accumulated between both \"Chronicled Wish\" and \"Lightrace Wish.\" This wish guarantee count is independent of the guarantee counts of other types of wishes. ※ For more information, go to the Wish screen and select Details in the bottom-left corner.",
+        "id": "Selama event berlangsung, Traveler dapat memperoleh lebih banyak Karakter dan Senjata di Chronicled Wish untuk membentuk party yang kuat! 〓 Keterangan Permohonan 〓 Waktu Permohonan Karakter 5★ yang Bisa Dipilih Senjata 5★ yang Bisa Dipilih 2026/11/24 18:00 - 2026/12/15 14:59 \"Strength in Serenity\" Varesa (Electro) \"Skyborne Arbiter\" Chasca (Anemo) \"Ardent Flames Forge the Soul\" Xilonen (Geo) \"Splish-Splash Wavechaser\" Mualani (Hydro) \"Turnfire Hunt\" Kinich (Dendro) Vivid Notions (Catalyst) Astral Vulture's Crimson Plumage (Bow) Peak Patrol Song (Sword) Surf's Up (Catalyst) Fang of the Mountain King (Claymore) ● Selama Permohonan ini berlangsung, Traveler dapat memilih satu Karakter 5★ atau Senjata 5★ untuk mendapatkan peningkatan persentase perolehan dari semua Item 5★ yang ada di Event Permohonan \"Nama yang Ditempa Langit Membara\" periode ini! ●Selama event berlangsung, Karakter 5★ Eksklusif \"Strength in Serenity\" Varesa (Electro), \"Skyborne Arbiter\" Chasca (Anemo), \"Ardent Flames Forge the Soul\" Xilonen (Geo), \"Splish-Splash Wavechaser\" Mualani (Hydro), \"Turnfire Hunt\" Kinich (Dendro) , dan juga Senjata 5★ Eksklusif Vivid Notions (Catalyst), Astral Vulture's Crimson Plumage (Bow), Peak Patrol Song (Sword), Surf's Up (Catalyst), Fang of the Mountain King (Claymore) , dan Senjata 4★ Eksklusif Sturdy Bone (Sword), Fruitful Hook (Claymore), Mountain-Bracing Bolt (Polearm), Waveriding Whirl (Catalyst), Flower-Wreathed Feathers (Bow) akan hadir untuk waktu terbatas. ● Semua Item 5★ dan 4★ yang ada di Chronicled Wish kali ini: Karakter 5★: Varesa/Chasca/Xilonen/Mualani/Kinich 5★ Senjata: Vivid Notions/Astral Vulture's Crimson Plumage/Peak Patrol Song/Surf's Up/Fang of the Mountain King Karakter 4★: Ifa/Iansan/Ororon/Kachina Senjata 4★: Flower-Wreathed Feathers/Waveriding Whirl/Mountain-Bracing Bolt/Fruitful Hook/Sturdy Bone/Rust/Sacrificial Bow/The Stringless/Favonius Warbow/Eye of Perception/Sacrificial Fragments/The Widsith/Favonius Codex/Favonius Lance/Dragon's Bane/Rainslasher/Sacrificial Greatsword/The Bell/Favonius Greatsword/Lion's Roar/Sacrificial Sword/The Flute/Favonius Sword ※ Permohonan ini termasuk \"Chronicled Wish\". Hitungan jaminan Permohonan pada \"Chronicled Wish\" dan \"Lightrace Wish\" akan dihitung bersama, diakumulasi bersama, terpisah dari hitungan jaminan untuk kategori Permohonan lain, serta tidak memengaruhi jaminan kategori Permohonan lain. ※ Untuk keterangan lebih lanjut, silakan mengacu pada halaman Permohonan dan pilih Rincian pada pojok kiri bawah."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/10/cd78c33a1e5fc32fec8f2879ed0e582b_8764352741366149233_transformed.png",
+      "startsAt": "2026-11-19T08:00:00.000Z",
+      "endsAt": "2026-12-15T06:59:59.000Z",
+      "postedAt": "2026-11-19T08:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
     },
     {
       "game": "gi",
