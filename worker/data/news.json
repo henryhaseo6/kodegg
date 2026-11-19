@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-19T10:01:53.635Z",
+  "updatedAt": "2026-11-19T11:02:35.581Z",
   "counts": {
-    "active": 100,
+    "active": 98,
     "archived": 200
   },
   "articles": [
@@ -1572,7 +1572,9 @@
       "url": "https://www.hoyolab.com/article/47149468",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-20T23:00:04.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1587,7 +1589,8 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/20/0447c9bc0890ef4bd66083271c55e75b_2401357598664455822.jpg",
       "url": "https://www.hoyolab.com/article/47144334",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-20T11:00:02.000Z"
+      "publishedAt": "2026-10-20T11:00:02.000Z",
+      "archivedAt": "2026-11-19T11:02:35.581Z"
     },
     {
       "game": "wuwa",
@@ -1603,10 +1606,9 @@
       "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1792425600000/xhali8ty5l43rrwp79-1792491287655.jpg",
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
       "source": "Wuthering Waves",
-      "publishedAt": "2026-10-20T10:18:40.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-20T10:18:40.000Z",
+      "archivedAt": "2026-11-19T11:02:35.581Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -4971,40 +4973,6 @@
       "url": "https://www.hoyolab.com/article/45481635",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-16T10:15:07.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "New Arrival in \"An Outstanding Partner\"",
-        "id": "\"Partner Terbaik\" | Detail Update"
-      },
-      "excerpt": {
-        "en": "New Bangboo available in \"An Outstanding Partner\"! After the Version 3.0 update, the S-Rank Bangboo Ultra Jake will permanently join the Bangboo Channel. Signal Search Details • Be",
-        "id": "Bangboo baru akan hadir di FM \"Partner Terbaik\"! Setelah update V3.0, Bangboo Tier-S Ultra Jake akan tersedia di FM Bangboo secara permanen. [Penjelasan FM] • Sebelum melakukan Pen"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/15/0/37178660ebbbb59231a9a864aa40509e_5177556554668526696.png",
-      "url": "https://www.hoyolab.com/article/45479153",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-16T05:15:06.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "X Login Failure Issue Summary",
-        "id": "Penjelasan Masalah Gagal Log In"
-      },
-      "excerpt": {
-        "en": "Dear Travelers, The issue of login errors has been fixed, and the game can be played normally after logging in again. We thank all Travelers for your patience and support, and sinc",
-        "id": "Dear Traveler, permasalahan login telah diperbaiki, game dapat dimainkan dengan normal setelah log in kembali. Terima kasih untuk kesabaran dan dukungan para Traveler, dan kami moh"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/16/fe7e72baa8e4ac5e237f027a819b212e_5099851276924958286.jpg",
-      "url": "https://www.hoyolab.com/article/45478660",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-16T04:24:47.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
