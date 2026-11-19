@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-19T22:01:47.945Z",
+  "updatedAt": "2026-11-19T23:01:49.289Z",
   "counts": {
-    "active": 98,
+    "active": 97,
     "archived": 200
   },
   "articles": [
@@ -1556,7 +1556,9 @@
       "url": "https://www.hoyolab.com/article/47150315",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-21T02:18:40.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1571,10 +1573,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/20/0/37a154a8f356e778fd7a95a790aa5467_8623242835154030745.png",
       "url": "https://www.hoyolab.com/article/47149468",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-20T23:00:04.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-20T23:00:04.000Z",
+      "archivedAt": "2026-11-19T23:01:49.289Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -4956,23 +4957,6 @@
       "url": "https://www.hoyolab.com/article/45481775",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-16T10:30:08.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Bangbang! The Genius and the Miracle Chip\" Event Details",
-        "id": "\"Bangbang! Si Jenius dan Chip Ajaib!\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration After the Version 3.0 update – 2026/07/29 05:59 (UTC+8) Requirements Unlock the Central Computing Hub in the Main Story Season 3, Chapter 1 Mission \"Celestial Nexus\"",
-        "id": "[Waktu Event] Setelah update V3.0 - 2026/07/29 05:59 (UTC+8) [Syarat Partisipasi] Telah membuka \"Pusat Komputasi\" dalam misi \"Celestial Nexus\" di Cerita Utama Season 3 Chapter 1. ["
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/15/0/3dd9f34d828dcfb7e01bf0efb90c96f7_3306574377515416183.png",
-      "url": "https://www.hoyolab.com/article/45481635",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-16T10:15:07.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
