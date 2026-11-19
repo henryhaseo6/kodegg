@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-19T05:02:14.693Z",
+  "updatedAt": "2026-11-19T06:02:16.408Z",
   "counts": {
-    "active": 104,
+    "active": 102,
     "archived": 200
   },
   "articles": [
@@ -1636,7 +1636,9 @@
       "url": "https://www.hoyolab.com/article/47142288",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-20T06:15:09.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1651,7 +1653,8 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/16/c4ad4cf76730b8e15324610efd9c22c3_8253529473331117229.png",
       "url": "https://www.hoyolab.com/article/47142215",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-20T06:00:08.000Z"
+      "publishedAt": "2026-10-20T06:00:08.000Z",
+      "archivedAt": "2026-11-19T06:02:16.408Z"
     },
     {
       "game": "zzz",
@@ -1667,10 +1670,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/19/0/97bb651ef12bd808d757df78e52d34cf_7198845148706964650.jpeg",
       "url": "https://www.hoyolab.com/article/47142214",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-20T06:00:07.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-20T06:00:07.000Z",
+      "archivedAt": "2026-11-19T06:02:16.408Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -5036,40 +5038,6 @@
       "source": "Wuthering Waves",
       "publishedAt": "2026-06-16T04:15:51.000Z",
       "archivedAt": "2026-07-18T11:04:10.000Z"
-    },
-    {
-      "game": "wuwa",
-      "gameName": "Wuthering Waves",
-      "title": {
-        "en": "[Version 3.4 Featured Resonator/Weapon Convene: Phase II]",
-        "id": "[Version 3.4 Featured Resonator/Weapon Convene: Phase II]"
-      },
-      "excerpt": {
-        "en": "[Dance in the Storm's Wake] Featured Resonator Convene During the event, 5-Star Resonator: Cartethyia, 4-Star Resonators: Yangyang, Yuanwu, and Mortefi receive boosted drop rates! ",
-        "id": "[Dance in the Storm's Wake] Featured Resonator Convene During the event, 5-Star Resonator: Cartethyia, 4-Star Resonators: Yangyang, Yuanwu, and Mortefi receive boosted drop rates! "
-      },
-      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1781539200000/6sizazj2j31jkmmw92-1781581202332.jpg",
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/4916",
-      "source": "Wuthering Waves",
-      "publishedAt": "2026-06-16T03:42:12.000Z",
-      "archivedAt": "2026-07-18T11:04:10.000Z"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "Update Content Preview: v8.9 Events",
-        "id": "Preview Konten Baru: Event v8.9"
-      },
-      "excerpt": {
-        "en": "Hello Captains, here's a preview of the content coming in v8.9 Lives Flourish Where Feathers Fall! Find out more about Main Story Part 2 Chapter XIII: A Rose in a Curtsy, the featu",
-        "id": "Hai Kapten, ini adalah preview konten update v8.9 Gugurnya Bulu, Mekarnya Kehidupan! Story Chapter XIII Bagian 2: Sekuntum Mawar Penghormatan, event pilihan \"Kecepatan Maksimum: Ku"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/11/3439a1dfabd2fcd288b79e4ec5f39d5f_6801952202515235136.png",
-      "url": "https://www.hoyolab.com/article/45478130",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-16T03:00:07.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
 }
