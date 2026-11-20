@@ -499,6 +499,26 @@
    "tulis": "Fourth",
    "pertama": 1795194359234,
    "terakhir": "2026-11-20"
+  },
+  "pose": {
+   "tulis": "Pose",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
+  },
+  "profiles": {
+   "tulis": "Profiles",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
+  },
+  "displays": {
+   "tulis": "Displays",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
+  },
+  "salon": {
+   "tulis": "Salon",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
   }
  },
  "bladeball": {
@@ -10354,7 +10374,7 @@
   "fragments": {
    "tulis": "Fragments",
    "pertama": 1786212169529,
-   "terakhir": "2026-10-31"
+   "terakhir": "2026-11-20"
   },
   "rift": {
    "tulis": "Rift",
@@ -10656,6 +10676,26 @@
   "flavor": {
    "tulis": "Flavor",
    "pertama": 1794593124742,
+   "terakhir": "2026-11-20"
+  },
+  "bgsi": {
+   "tulis": "BGSI",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
+  },
+  "mini-area": {
+   "tulis": "Mini-Area",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
+  },
+  "turkey": {
+   "tulis": "Turkey",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
+  },
+  "lasts": {
+   "tulis": "lasts",
+   "pertama": 1795208732628,
    "terakhir": "2026-11-20"
   }
  },
@@ -18597,7 +18637,7 @@
   "shutdowns": {
    "tulis": "shutdowns",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-28",
+   "terakhir": "2026-11-20",
    "awal": true
   },
   "occur": {
@@ -22679,7 +22719,7 @@
   "shutdowns": {
    "tulis": "shutdowns",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-28",
+   "terakhir": "2026-11-20",
    "awal": true
   },
   "active": {
@@ -24015,6 +24055,11 @@
   "140klikes": {
    "tulis": "140KLIKES",
    "pertama": 1794603959478,
+   "terakhir": "2026-11-20"
+  },
+  "150klikes": {
+   "tulis": "150KLIKES",
+   "pertama": 1795208732628,
    "terakhir": "2026-11-20"
   }
  },
@@ -26017,7 +26062,7 @@
   "costs": {
    "tulis": "costs",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-13",
+   "terakhir": "2026-11-20",
    "awal": true
   },
   "community-made": {
@@ -54155,7 +54200,7 @@
   "remodel": {
    "tulis": "Remodel",
    "pertama": 1786136585497,
-   "terakhir": "2026-10-30"
+   "terakhir": "2026-11-20"
   },
   "gubbin": {
    "tulis": "Gubbin",
@@ -54365,6 +54410,21 @@
   "firflea": {
    "tulis": "Firflea",
    "pertama": 1794791164156,
+   "terakhir": "2026-11-20"
+  },
+  "cairnhusk": {
+   "tulis": "Cairnhusk",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
+  },
+  "supporter": {
+   "tulis": "Supporter",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
+  },
+  "nytoltalus": {
+   "tulis": "Nytoltalus",
+   "pertama": 1795208732628,
    "terakhir": "2026-11-20"
   }
  },
@@ -54661,7 +54721,7 @@
   "costs": {
    "tulis": "costs",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-13",
+   "terakhir": "2026-11-20",
    "awal": true
   },
   "freecrate": {
@@ -59444,6 +59504,11 @@
    "tulis": "Editor",
    "pertama": 1792861521989,
    "terakhir": "2026-10-24"
+  },
+  "civil": {
+   "tulis": "Civil",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
   }
  },
  "kite-combat": {
@@ -71869,6 +71934,11 @@
    "tulis": "occur",
    "pertama": 1788023040138,
    "terakhir": "2026-09-05"
+  },
+  "shutdowns": {
+   "tulis": "shutdowns",
+   "pertama": 1795208732628,
+   "terakhir": "2026-11-20"
   }
  },
  "build-a-pet-factory": {
@@ -82235,7 +82305,7 @@
   "costs": {
    "tulis": "costs",
    "pertama": 1791993907963,
-   "terakhir": "2026-11-13"
+   "terakhir": "2026-11-20"
   }
  },
  "destroy-a-vault": {
