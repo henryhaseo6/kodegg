@@ -1,25 +1,31 @@
 {
-  "generatedAt": "2026-11-20T14:02:37.269Z",
-  "codes": [],
+  "generatedAt": "2026-11-20T15:02:06.224Z",
+  "codes": [
+    {
+      "game": "clover-retribution",
+      "gameName": "Clover Retribution",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/clover-retribution"
+      },
+      "code": "!imbackfromthetrip",
+      "reward": "200 Spins.You need to be at least Level 40 to use this code",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1795179550599,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-20T15:02:06.224Z",
+      "fetchedAt": "2026-11-20T15:02:06.224Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "kit-pvp-ffa",
+      "game": "stay-alive",
       "count": 1,
-      "fresh": []
-    },
-    {
-      "game": "1-jump-to-reach-the-sky",
-      "count": 6,
-      "fresh": []
-    },
-    {
-      "game": "growblox",
-      "count": 5,
-      "fresh": []
-    },
-    {
-      "game": "raise-a-catboy",
-      "count": 9,
       "fresh": []
     }
   ]
