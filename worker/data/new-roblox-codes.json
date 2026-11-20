@@ -1,40 +1,51 @@
 {
-  "generatedAt": "2026-11-20T04:02:21.686Z",
-  "codes": [],
+  "generatedAt": "2026-11-20T05:02:02.486Z",
+  "codes": [
+    {
+      "game": "rally-panic",
+      "gameName": "Rally Panic!",
+      "source": "Roblox Den",
+      "sources": [
+        "Roblox Den"
+      ],
+      "sourceUrls": {
+        "Roblox Den": "https://robloxden.com/game-codes/rally-panic"
+      },
+      "code": "10k",
+      "reward": "1,000 Coins",
+      "date": null,
+      "srcNew": true,
+      "srcNewAt": 1795115374640,
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-20T05:02:02.486Z",
+      "fetchedAt": "2026-11-20T05:02:02.486Z"
+    }
+  ],
   "bulkGames": [
     {
-      "game": "fish-for-secret-animals",
-      "count": 1,
+      "game": "simple-drift",
+      "count": 6,
       "fresh": []
     },
     {
-      "game": "dummy-lab",
-      "count": 1,
-      "fresh": []
-    },
-    {
-      "game": "dragon-arena",
+      "game": "swim-for-eggs",
       "count": 2,
       "fresh": []
     },
     {
-      "game": "steal-a-sanrio-egg",
-      "count": 3,
+      "game": "highway-racing",
+      "count": 4,
       "fresh": []
     },
     {
-      "game": "block-tower",
-      "count": 1,
+      "game": "cars-overboard",
+      "count": 14,
       "fresh": []
     },
     {
-      "game": "light-up-christmas",
-      "count": 5,
-      "fresh": []
-    },
-    {
-      "game": "raise-an-ant-colony",
-      "count": 1,
+      "game": "cast-a-magnet",
+      "count": 8,
       "fresh": []
     }
   ]
