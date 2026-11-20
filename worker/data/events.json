@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-20T11:01:35.955Z",
+  "updatedAt": "2026-11-20T12:10:46.797Z",
   "counts": {
-    "active": 50,
+    "active": 51,
     "archived": 200
   },
   "events": [
@@ -445,6 +445,30 @@
       "rewards": [],
       "source": "HoYoverse",
       "url": "https://zenless.hoyoverse.com/en/news"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "[Prize Event] The Final Battle Before Dawn",
+        "id": "[Event Berhadiah] Pertarungan Penentuan Menjelang Fajar"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Dear Proxies, the pre-registration & returning event for Zenless Zone Zero Version 3.4 \"The Final Battle Before Dawn\" is now underway. Participate Now >> https://hoyo.link/5yqHKFHnS Pre-register on the webpage to get Polychrome ×160 and an ",
+        "id": "Dear Proxy, event pra-registrasi & event kembali Zenless Zone Zero V3.4 \"Pertarungan Penentuan Menjelang Fajar\" telah dimulai! Ikuti Sekarang >> https://hoyo.link/5yqHKFHnS Ikuti event pra-registrasi di halaman web untuk mendapatkan 160 Pol"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/17/e237136405f4ace22b5b912de59e75cc_9109829099105197246.jpg",
+      "startsAt": "2026-11-20T11:30:00.000Z",
+      "endsAt": "2026-12-01T21:59:59.000Z",
+      "postedAt": "2026-11-20T11:30:08.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47507184"
     },
     {
       "game": "zzz",
