@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-20T02:02:35.253Z",
+  "updatedAt": "2026-11-20T03:02:43.755Z",
   "counts": {
-    "active": 97,
+    "active": 95,
     "archived": 200
   },
   "articles": [
@@ -1524,7 +1524,9 @@
       "url": "https://www.hoyolab.com/article/47161660",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-22T03:00:02.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1539,7 +1541,8 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/19/a4f089a9813665f6b63c8ca7da57adae_6637109470880400359.jpg",
       "url": "https://www.hoyolab.com/article/47150539",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-21T03:00:01.000Z"
+      "publishedAt": "2026-10-21T03:00:01.000Z",
+      "archivedAt": "2026-11-20T03:02:43.755Z"
     },
     {
       "game": "zzz",
@@ -1555,10 +1558,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/21/a4844a7383592f90ab0681e2fe02f557_2519251645562145079.png",
       "url": "https://www.hoyolab.com/article/47150315",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-21T02:18:40.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-21T02:18:40.000Z",
+      "archivedAt": "2026-11-20T03:02:43.755Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -4923,40 +4925,6 @@
       "url": "https://www.hoyolab.com/article/45488578",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-16T23:00:04.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Log-in Issue Resolved",
-        "id": "Penjelasan Perbaikan Masalah Log in"
-      },
-      "excerpt": {
-        "en": "Hello, Trailblazers, Due to an issue with X(Twitter) services, some Trailblazers are experiencing difficulties with logging into the game. Please note that this problem has been fi",
-        "id": "Dear Trailblazer, Berhubung adanya masalah layanan X(Twitter), beberapa Trailblazer mengalami masalah kesulitan log in ke dalam game. Masalah ini sudah selesai diperbaiki dan Trail"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/01/17/4cee5cc4078ff2a4f3b311dc248dac30_6092386687403500689.png",
-      "url": "https://www.hoyolab.com/article/45485248",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-16T15:30:04.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Commemorative Gift\" Event Details",
-        "id": "\"Hadiah dari Dunia Baru\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration After the Version 3.0 update – 2026/07/29 05:59 (UTC+8) Requirements Reach Inter-Knot Lv. 5, and unlock the Event feature in the Main Story Prologue \"The Hare and th",
-        "id": "[Waktu Event] Setelah update V3.0 - 2026/07/29 05:59 (UTC+8) [Syarat Partisipasi] Capai Inter-Knot Lv. 5 dan selesaikan Prolog Cerita Utama \"Kelinci dan Proxy\", serta buka fitur Ev"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/15/0/7062e3f614e60ed9ee9cbe13ab7935c2_4291529960290922721.png",
-      "url": "https://www.hoyolab.com/article/45481775",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-16T10:30:08.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
