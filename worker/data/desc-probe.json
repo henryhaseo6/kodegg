@@ -13892,7 +13892,7 @@
   "loop": {
    "tulis": "loop",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-20",
+   "terakhir": "2026-11-21",
    "awal": true
   },
   "stealth": {
@@ -19870,7 +19870,7 @@
   "loop": {
    "tulis": "loop",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-20",
+   "terakhir": "2026-11-21",
    "awal": true
   },
   "darkness": {
@@ -91122,6 +91122,12 @@
    "tulis": "3million",
    "pertama": 1794726355599,
    "terakhir": "2026-11-21"
+  },
+  "4million": {
+   "tulis": "4million",
+   "pertama": 1795237536086,
+   "terakhir": "2026-11-21",
+   "sudahPunya": true
   }
  },
  "ragdoll-boxing-3d": {
@@ -95715,6 +95721,16 @@
    "tulis": "Throwables",
    "pertama": 1794704768439,
    "terakhir": "2026-11-21"
+  },
+  "rospect": {
+   "tulis": "rospect",
+   "pertama": 1795237536086,
+   "terakhir": "2026-11-21"
+  },
+  "spruce": {
+   "tulis": "spruce",
+   "pertama": 1795237536086,
+   "terakhir": "2026-11-21"
   }
  },
  "throw-a-seed": {
@@ -97553,7 +97569,7 @@
   "loop": {
    "tulis": "Loop",
    "pertama": 1795151205052,
-   "terakhir": "2026-11-20"
+   "terakhir": "2026-11-21"
   },
   "nurburg": {
    "tulis": "Nurburg",
