@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-21T02:01:59.035Z",
+  "updatedAt": "2026-11-21T03:02:01.150Z",
   "counts": {
-    "active": 95,
+    "active": 94,
     "archived": 200
   },
   "articles": [
@@ -1508,7 +1508,9 @@
       "url": "https://www.hoyolab.com/article/47163475",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-22T07:50:04.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1523,10 +1525,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/19/ddc632949fcad99bde5483b120860def_6036780591988762401.png",
       "url": "https://www.hoyolab.com/article/47161660",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-22T03:00:02.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-22T03:00:02.000Z",
+      "archivedAt": "2026-11-21T03:02:01.150Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -4908,23 +4909,6 @@
       "url": "https://www.hoyolab.com/article/45489659",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-17T02:18:47.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Version 3.0 \"A Sleepwalker's Confession\" Update Announcement",
-        "id": "Pengumuman Update Versi 3.0 \"Pengakuan Seorang Parasomnia\""
-      },
-      "excerpt": {
-        "en": "Dear Proxies, Below is the updated content and compensation for Version 3.0 \"A Sleepwalker's Confession.\" [Update Start Time] 2026/06/17 06:00 (UTC+8) It will take about five hours",
-        "id": "Dear Proxy: Berikut adalah konten update dan kompensasi untuk V3.0 \"Pengakuan Seorang Parasomnia\". [Waktu Update] 2026/06/17 06:00 (UTC+8) Update diperkirakan akan selesai dalam wa"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/16/0/a1d9c2146c7c421114c7f82cca9b5785_1095257484072971406.png",
-      "url": "https://www.hoyolab.com/article/45488578",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-16T23:00:04.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
