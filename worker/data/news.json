@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-21T07:02:50.972Z",
+  "updatedAt": "2026-11-21T08:02:30.214Z",
   "counts": {
-    "active": 94,
+    "active": 93,
     "archived": 200
   },
   "articles": [
@@ -1492,7 +1492,9 @@
       "url": "https://www.hoyolab.com/article/47164587",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-22T10:00:02.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1507,10 +1509,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/22/f899efd47abbb9391f28ca25bd258714_126981035069414469.jpg",
       "url": "https://www.hoyolab.com/article/47163475",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-22T07:50:04.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-22T07:50:04.000Z",
+      "archivedAt": "2026-11-21T08:02:30.214Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -4892,23 +4893,6 @@
       "url": "https://www.hoyolab.com/article/45490247",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-17T03:31:40.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Known Issues & Game Optimizations in Version 3.0 (Updating)",
-        "id": "Penjelasan Optimalisasi Game dan Masalah yang Sudah Teridentifikasi di Versi 3.0 (Dalam Proses Pembaruan)"
-      },
-      "excerpt": {
-        "en": "Dear Proxies, To reduce the impact brought about by abnormal Hollow fluctuations and ensure Proxies can live happily in New Eridu, we will make sure to take everyone's feedback int",
-        "id": "Dear Proxy: Demi mengurangi dampak dari fluktuasi anomali Hollow, kami akan memastikan untuk selalu mendengarkan masukan dari kalian. Kami juga akan merespons dan menangani berbaga"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/17/a4844a7383592f90ab0681e2fe02f557_7894638254023996472.png",
-      "url": "https://www.hoyolab.com/article/45489659",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-17T02:18:47.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
