@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-21T09:02:09.165Z",
+  "updatedAt": "2026-11-21T10:03:13.685Z",
   "counts": {
-    "active": 93,
+    "active": 92,
     "archived": 200
   },
   "articles": [
@@ -1476,7 +1476,9 @@
       "url": "https://www.hoyolab.com/article/47171732",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-23T03:00:03.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1491,10 +1493,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/21/d44da1a0cac4d2ba12e9ad25469e53eb_4821728589073475614.png",
       "url": "https://www.hoyolab.com/article/47164587",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-22T10:00:02.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-22T10:00:02.000Z",
+      "archivedAt": "2026-11-21T10:03:13.685Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -4876,23 +4877,6 @@
       "url": "https://www.hoyolab.com/article/45490503",
       "source": "HoYoLAB",
       "publishedAt": "2026-06-17T04:00:04.000Z",
-      "archivedAt": "2026-07-17T10:14:33.535Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Zenless Zone Zero PC Visual Experience Upgrade FAQ",
-        "id": "FAQ Fitur Peningkatan Pengalaman Visual Versi PC Zenless Zone Zero"
-      },
-      "excerpt": {
-        "en": "Dear Proxies, with the Version 3.0 update, the PC visual experience gets a major upgrade — featuring Global Illumination upgrades, Ray Tracing, Super Resolution & Frame Generation.",
-        "id": "Dear Proxy: setelah update versi 3.0, pengalaman visual versi PC akan ditingkatkan dengan menambahkan fitur peningkatan pencahayaan menyeluruh, Ray Tracing, serta Super Resolution "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/17/0/c1eeda2f8b0a174a49fbbae15eec75cb_9173677377195198715.png",
-      "url": "https://www.hoyolab.com/article/45490247",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-17T03:31:40.000Z",
       "archivedAt": "2026-07-17T10:14:33.535Z"
     }
   ]
