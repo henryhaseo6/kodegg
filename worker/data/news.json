@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-11-22T03:02:51.965Z",
+  "updatedAt": "2026-11-22T04:02:52.729Z",
   "counts": {
-    "active": 90,
+    "active": 91,
     "archived": 200
   },
   "articles": [
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "The end may have already been marked out for us, but there is more than one path that leads to it | Notes on Linnea",
+        "id": "Garis akhir memang ada di sana, tapi jalan menuju ke sana ada banyak | Fakta Tentang Linnea"
+      },
+      "excerpt": {
+        "en": "Life is meant to be lived in every passing moment, not held in reserve for some distant day. While fate itself cannot be changed, there are things just as eternal, such as the bond",
+        "id": "Hidup harus dijalani di masa kini, bukan hanya dengan menunggu suatu hari di masa depan. Takdir memang tidak dapat diubah, tapi yang juga sama dengan itu adalah ikatan antar anggot"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/0/6acf60d09463b3128af2391e6205fee6_8278289404686278285.jpeg",
+      "url": "https://www.hoyolab.com/article/47526860",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-22T04:00:04.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -22,22 +38,6 @@
       "publishedAt": "2026-11-21T11:00:02.000Z"
     },
     {
-      "game": "gi",
-      "gameName": "Genshin Impact",
-      "title": {
-        "en": "Before the Holy Soil Phenomenon Resumes - Interlude: \"Resistance\"",
-        "id": "Sebelum Penyucian Tanah Dimulai Kembali - Interlude \"Perlawanan\""
-      },
-      "excerpt": {
-        "en": "Nod-Krai, Snezhnaya... The fate of Teyvat rests upon the battles raging on every front. Following the will of heaven can only lead us to a dead end. We must fight till the very las",
-        "id": "Nod-Krai, Snezhnaya .... Nasib Teyvat kini bergantung pada setiap garis depan yang masih bertarung sengit. Mengikuti kehendak langit tidak akan membawa kita ke jalan keluar. Kita h"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/0/a6a5de5104e1eeb4e29ddd70941e0057_4130115114924420591.jpeg",
-      "url": "https://www.hoyolab.com/article/47515888",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-21T04:00:03.000Z"
-    },
-    {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
       "title": {
@@ -50,6 +50,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/3021a40464dacb1edba08d7f86748803_5656726008288408285.png",
       "url": "https://www.hoyolab.com/article/47515889",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-21T04:00:03.000Z"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "title": {
+        "en": "Before the Holy Soil Phenomenon Resumes - Interlude: \"Resistance\"",
+        "id": "Sebelum Penyucian Tanah Dimulai Kembali - Interlude \"Perlawanan\""
+      },
+      "excerpt": {
+        "en": "Nod-Krai, Snezhnaya... The fate of Teyvat rests upon the battles raging on every front. Following the will of heaven can only lead us to a dead end. We must fight till the very las",
+        "id": "Nod-Krai, Snezhnaya .... Nasib Teyvat kini bergantung pada setiap garis depan yang masih bertarung sengit. Mengikuti kehendak langit tidak akan membawa kita ke jalan keluar. Kita h"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/0/a6a5de5104e1eeb4e29ddd70941e0057_4130115114924420591.jpeg",
+      "url": "https://www.hoyolab.com/article/47515888",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-21T04:00:03.000Z"
     },

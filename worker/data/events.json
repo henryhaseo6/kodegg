@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-22T03:02:49.071Z",
+  "updatedAt": "2026-11-22T04:02:50.104Z",
   "counts": {
-    "active": 54,
+    "active": 55,
     "archived": 200
   },
   "events": [
@@ -648,6 +648,33 @@
       "url": "https://www.hoyolab.com/article/47238003"
     },
     {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "type": "event",
+      "typeName": "Notices",
+      "title": {
+        "en": "Planar Fissure Event: Planar Ornaments Drop Rate Doubled for a Limited Time",
+        "id": "Event \"Retakan Planar\": Hadiah Ganda Planar Ornament untuk Waktu Terbatas"
+      },
+      "subtitle": {
+        "en": "Planar Fissure Event Details",
+        "id": "Penjelasan Event \"Retakan Planar\""
+      },
+      "desc": {
+        "en": "Event Period 2026/11/23 04:00:00 - 2026/12/07 03:59:00 Participation Requirement Unlock Planar Ornament Event Details During the Planar Fissure event, receive double rewards when obtaining Immersion Rewards or performing Ornament Extraction in the Simulated Universe. You will get additional rewards on top of default drops after consuming an event double reward opportunity and Immersifiers (or Trailblaze Power). During the event, the number of double reward opportunities is limited and can be viewed in the Planar Fissure event page. The double reward count will not reset during the event. Be sure to schedule your time for this challenge accordingly, Trailblazers.",
+        "id": "Waktu Event 2026/11/23 04:00:00 - 2026/12/07 03:59:00 Syarat Partisipasi Buka \"Planar Ornament\" Penjelasan Event Selama event \"Retakan Planar\", saat mendapatkan Hadiah Immersion atau melakukan \"Ekstraksi Ornament\" di \"Simulated Universe\", Trailblazer dapat memperoleh hadiah ganda. Setelah mengonsumsi Immersifier (atau Trailblaze Power) dan jumlah kesempatan hadiah ganda event, Trailblazer akan mendapatkan 1 kali hadiah ekstra dari hadiah yang biasanya diperoleh. Selama event berlangsung, jumlah kesempatan hadiah ganda terbatas. Sisa dan batas jumlah kesempatan dapat dilihat di antarmuka event \"Retakan Planar\". Jumlah kesempatan hadiah ganda tidak akan direset selama event berlangsung. Silakan Trailblazer atur waktu bermain untuk melakukan tantangan ini."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/06/22/7d5eeebab1c60716249e3c8e3bcdcac6_3528540804291998260_transformed.png",
+      "startsAt": "2026-11-22T04:00:00.000Z",
+      "endsAt": "2026-12-06T19:59:00.000Z",
+      "postedAt": "2026-11-22T04:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47526861"
+    },
+    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "type": "event",
@@ -830,8 +857,8 @@
       "characters": [],
       "weapons": [],
       "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/47375132"
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
     },
     {
       "game": "gi",
