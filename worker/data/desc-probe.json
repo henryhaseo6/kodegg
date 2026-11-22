@@ -24627,6 +24627,11 @@
    "tulis": "Flightspeed",
    "pertama": 1787148481288,
    "terakhir": "2026-11-22"
+  },
+  "location": {
+   "tulis": "Location",
+   "pertama": 1795352757828,
+   "terakhir": "2026-11-22"
   }
  },
  "wheelie-district": {
@@ -24908,7 +24913,7 @@
   "location": {
    "tulis": "Location",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-11-22",
    "awal": true
   },
   "icons": {
@@ -27659,7 +27664,7 @@
   "location": {
    "tulis": "location",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-14",
+   "terakhir": "2026-11-22",
    "awal": true
   },
   "intertwined": {
@@ -60165,7 +60170,7 @@
   "restart": {
    "tulis": "restart",
    "pertama": 1786212169529,
-   "terakhir": "2026-10-13"
+   "terakhir": "2026-11-22"
   },
   "blockade": {
    "tulis": "Blockade",
@@ -63659,6 +63664,16 @@
   "lower": {
    "tulis": "lower",
    "pertama": 1794899102120,
+   "terakhir": "2026-11-22"
+  },
+  "chaser": {
+   "tulis": "Chaser",
+   "pertama": 1795352757828,
+   "terakhir": "2026-11-22"
+  },
+  "skate": {
+   "tulis": "SKATE",
+   "pertama": 1795352757828,
    "terakhir": "2026-11-22"
   }
  },
@@ -75638,7 +75653,7 @@
   "restart": {
    "tulis": "Restart",
    "pertama": 1789981462622,
-   "terakhir": "2026-10-13"
+   "terakhir": "2026-11-22"
   },
   "mutation": {
    "tulis": "Mutation",
@@ -83979,6 +83994,11 @@
    "tulis": "recreation",
    "pertama": 1791908001693,
    "terakhir": "2026-11-09"
+  },
+  "restart": {
+   "tulis": "restart",
+   "pertama": 1795352757828,
+   "terakhir": "2026-11-22"
   }
  },
  "smash-the-city": {
