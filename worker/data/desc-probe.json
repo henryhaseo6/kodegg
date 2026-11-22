@@ -3983,7 +3983,7 @@
   "mutation": {
    "tulis": "MUTATION",
    "pertama": 1789873570219,
-   "terakhir": "2026-10-03"
+   "terakhir": "2026-11-22"
   },
   "alien": {
    "tulis": "ALIEN",
@@ -4023,6 +4023,16 @@
   "machodon": {
    "tulis": "MACHODON",
    "pertama": 1794708368698,
+   "terakhir": "2026-11-22"
+  },
+  "removing": {
+   "tulis": "REMOVING",
+   "pertama": 1795316795076,
+   "terakhir": "2026-11-22"
+  },
+  "filters": {
+   "tulis": "FILTERS",
+   "pertama": 1795316795076,
    "terakhir": "2026-11-22"
   }
  },
@@ -31655,7 +31665,7 @@
   "phonk": {
    "tulis": "Phonk",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-21",
+   "terakhir": "2026-11-22",
    "awal": true
   },
   "songs": {
@@ -76029,7 +76039,7 @@
   "phonk": {
    "tulis": "Phonk",
    "pertama": 1789218295094,
-   "terakhir": "2026-11-21"
+   "terakhir": "2026-11-22"
   },
   "slap": {
    "tulis": "Slap",
@@ -88104,7 +88114,7 @@
   "phonk": {
    "tulis": "phonk",
    "pertama": 1794049523779,
-   "terakhir": "2026-11-21"
+   "terakhir": "2026-11-22"
   },
   "edit": {
    "tulis": "edit",
@@ -99363,6 +99373,53 @@
   "polish": {
    "tulis": "Polish",
    "pertama": 1795280772791,
+   "terakhir": "2026-11-22"
+  }
+ },
+ "cyberpsychosis": {
+  "chrome": {
+   "tulis": "Chrome",
+   "pertama": 1795316795076,
+   "terakhir": "2026-11-22"
+  },
+  "snap": {
+   "tulis": "snap",
+   "pertama": 1795316795076,
+   "terakhir": "2026-11-22"
+  },
+  "remembers": {
+   "tulis": "remembers",
+   "pertama": 1795316795076,
+   "terakhir": "2026-11-22"
+  },
+  "keo1c": {
+   "tulis": "Keo1C",
+   "pertama": 1795316795076,
+   "terakhir": "2026-11-22"
+  },
+  "semerre1c": {
+   "tulis": "Semerre1C",
+   "pertama": 1795316795076,
+   "terakhir": "2026-11-22"
+  },
+  "dolo1c": {
+   "tulis": "Dolo1C",
+   "pertama": 1795316795076,
+   "terakhir": "2026-11-22"
+  },
+  "extraction": {
+   "tulis": "EXTRACTION",
+   "pertama": 1795316795076,
+   "terakhir": "2026-11-22"
+  },
+  "cyberpunk": {
+   "tulis": "CYBERPUNK",
+   "pertama": 1795316795076,
+   "terakhir": "2026-11-22"
+  },
+  "cyberpsychosis": {
+   "tulis": "CYBERPSYCHOSIS",
+   "pertama": 1795316795076,
    "terakhir": "2026-11-22"
   }
  }
