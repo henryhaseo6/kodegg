@@ -11787,7 +11787,7 @@
   "caves": {
    "tulis": "caves",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-20",
+   "terakhir": "2026-11-22",
    "awal": true
   },
   "tribes": {
@@ -47242,7 +47242,7 @@
   "caves": {
    "tulis": "caves",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-20",
+   "terakhir": "2026-11-22",
    "awal": true
   },
   "sites": {
@@ -77421,7 +77421,7 @@
   "update1": {
    "tulis": "UPDATE1",
    "pertama": 1789603506968,
-   "terakhir": "2026-11-21",
+   "terakhir": "2026-11-22",
    "sudahPunya": true
   },
   "1millionvisits": {
@@ -80809,6 +80809,61 @@
   "sold": {
    "tulis": "sold",
    "pertama": 1794776818774,
+   "terakhir": "2026-11-22"
+  },
+  "shipwrecks": {
+   "tulis": "SHIPWRECKS",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "pirates": {
+   "tulis": "PIRATES",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "cannons": {
+   "tulis": "cannons",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "raider": {
+   "tulis": "Raider",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "bottles": {
+   "tulis": "Bottles",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "whirlpools": {
+   "tulis": "Whirlpools",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "flaming": {
+   "tulis": "Flaming",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "wreck": {
+   "tulis": "wreck",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "harbor": {
+   "tulis": "harbor",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "requests": {
+   "tulis": "requests",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
+  },
+  "ahoy": {
+   "tulis": "AHOY",
+   "pertama": 1795381599925,
    "terakhir": "2026-11-22"
   }
  },
@@ -92937,7 +92992,7 @@
   "update1": {
    "tulis": "UPDATE1",
    "pertama": 1794103507828,
-   "terakhir": "2026-11-21",
+   "terakhir": "2026-11-22",
    "sudahPunya": true
   },
   "update3": {
@@ -98812,6 +98867,11 @@
    "tulis": "tough",
    "pertama": 1795363609225,
    "terakhir": "2026-11-22"
+  },
+  "caves": {
+   "tulis": "caves",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22"
   }
  },
  "krn-crosshair": {
@@ -98991,6 +99051,12 @@
    "tulis": "1M5VISIT",
    "pertama": 1795277200599,
    "terakhir": "2026-11-22"
+  },
+  "update1": {
+   "tulis": "UPDATE1",
+   "pertama": 1795381599925,
+   "terakhir": "2026-11-22",
+   "sudahPunya": true
   }
  },
  "kit-pvp-ffa": {
