@@ -1,5 +1,66 @@
 {
-  "generatedAt": "2026-11-22T16:03:16.323Z",
-  "codes": [],
-  "bulkGames": []
+  "generatedAt": "2026-11-22T17:02:54.356Z",
+  "codes": [
+    {
+      "game": "sailor-piece",
+      "gameName": "Sailor Piece",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/sailor-piece"
+      },
+      "code": "RIMURUUPDATE",
+      "reward": null,
+      "date": "2026-11-22T16:57:53.477Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-22T17:02:54.356Z",
+      "fetchedAt": "2026-11-22T17:02:54.356Z"
+    },
+    {
+      "game": "sailor-piece",
+      "gameName": "Sailor Piece",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/sailor-piece"
+      },
+      "code": "DEMONLORDUPDATE",
+      "reward": null,
+      "date": "2026-11-22T16:57:53.158Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-22T17:02:54.356Z",
+      "fetchedAt": "2026-11-22T17:02:54.356Z"
+    },
+    {
+      "game": "catch-dragons-to-defend",
+      "gameName": "Catch Dragons To Defend",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/catch-dragons-to-defend"
+      },
+      "code": "Racing",
+      "reward": "Charm Capsule",
+      "date": "2026-11-22T16:57:44.976Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-22T17:02:54.356Z",
+      "fetchedAt": "2026-11-22T17:02:54.356Z"
+    }
+  ],
+  "bulkGames": [
+    {
+      "game": "build-a-mech",
+      "count": 3,
+      "fresh": []
+    }
+  ]
 }
