@@ -1,6 +1,938 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "beyond-nen",
+    "name": "Beyond Nen",
+    "displayName": "[CHAINS!] Beyond Nen",
+    "slug": "beyond-nen",
+    "players": 8160,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 8160,
+    "newCodes": [
+      {
+        "game": "beyond-nen",
+        "gameName": "Beyond Nen",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/beyond-nen"
+        },
+        "code": "SORRY4DELAY",
+        "reward": "30 Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328874834,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "beyond-nen",
+        "gameName": "Beyond Nen",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/beyond-nen"
+        },
+        "code": "CHAINSUPDATE",
+        "reward": "30 Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328874834,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "beyond-nen",
+        "gameName": "Beyond Nen",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/beyond-nen"
+        },
+        "code": "GOATDUO",
+        "reward": "5 Spins and 1 Reset Orb",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328874834,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "beyond-nen",
+        "gameName": "Beyond Nen",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/beyond-nen"
+        },
+        "code": "HOTFIX",
+        "reward": "10 Spins and 2 Reset Orbs",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328874834,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      }
+    ],
+    "activeCount": 11,
+    "fetchedAt": "2026-11-22T22:03:03.101Z",
+    "displayCodes": [
+      {
+        "code": "SORRY4DELAY",
+        "reward": "30 Spins",
+        "isNew": true
+      },
+      {
+        "code": "CHAINSUPDATE",
+        "reward": "30 Spins",
+        "isNew": true
+      },
+      {
+        "code": "GOATDUO",
+        "reward": "5 Spins and 1 Reset Orb",
+        "isNew": true
+      },
+      {
+        "code": "HOTFIX",
+        "reward": "10 Spins and 2 Reset Orbs",
+        "isNew": true
+      },
+      {
+        "code": "50KLIKES",
+        "reward": "20 Spins and a Nen Color Reroll Orb.You must redeem this code in the shop",
+        "isNew": false
+      },
+      {
+        "code": "2XDROPS",
+        "reward": "30 Spins.You must redeem this code in the shop",
+        "isNew": false
+      },
+      {
+        "code": "UPDATEINCOMING",
+        "reward": "50 Spins",
+        "isNew": false
+      },
+      {
+        "code": "PATCH3!",
+        "reward": "5 Spins, 2 Reset Orbs, and 1 Nen Color Orb.You must redeem this code in the shop",
+        "isNew": false
+      },
+      {
+        "code": "RANKED!",
+        "reward": "15 Spins and the Reset Orb.You must redeem this code in the shop",
+        "isNew": false
+      },
+      {
+        "code": "1MVISITS",
+        "reward": "20 Spins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "SORRY4DELAY",
+        "reward": "30 Spins",
+        "isNew": true
+      },
+      {
+        "code": "CHAINSUPDATE",
+        "reward": "30 Spins",
+        "isNew": true
+      },
+      {
+        "code": "GOATDUO",
+        "reward": "5 Spins and 1 Reset Orb",
+        "isNew": true
+      },
+      {
+        "code": "HOTFIX",
+        "reward": "10 Spins and 2 Reset Orbs",
+        "isNew": true
+      },
+      {
+        "code": "50KLIKES",
+        "reward": "20 Spins and a Nen Color Reroll Orb.You must redeem this code in the shop",
+        "isNew": false
+      },
+      {
+        "code": "2XDROPS",
+        "reward": "30 Spins.You must redeem this code in the shop",
+        "isNew": false
+      },
+      {
+        "code": "UPDATEINCOMING",
+        "reward": "50 Spins",
+        "isNew": false
+      },
+      {
+        "code": "PATCH3!",
+        "reward": "5 Spins, 2 Reset Orbs, and 1 Nen Color Orb.You must redeem this code in the shop",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "SORRY4DELAY",
+      "CHAINSUPDATE",
+      "GOATDUO",
+      "HOTFIX",
+      "50KLIKES",
+      "2XDROPS",
+      "UPDATEINCOMING",
+      "PATCH3!",
+      "RANKED!",
+      "1MVISITS",
+      "50KFAVS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "anime-brawlers-simulator",
+    "name": "Anime Brawlers Simulator",
+    "displayName": "[UPD3!] Anime Brawlers Simulator",
+    "slug": "anime-brawlers-simulator",
+    "players": 7462,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 7462,
+    "newCodes": [
+      {
+        "game": "anime-brawlers-simulator",
+        "gameName": "Anime Brawlers Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-brawlers-simulator"
+        },
+        "code": "Upd3",
+        "reward": "1 2x Damage Potion (30 minutes), 1 2x Yen Potion (30 minutes), and 1 +2 Luck Potion (30 minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328877321,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "anime-brawlers-simulator",
+        "gameName": "Anime Brawlers Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-brawlers-simulator"
+        },
+        "code": "TY8KCCU",
+        "reward": "1 2x Yen Potion (60 minutes), 1 +2 Luck Potion (60 minutes), and 1 2x Damage Potion (60 minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328877321,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "anime-brawlers-simulator",
+        "gameName": "Anime Brawlers Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-brawlers-simulator"
+        },
+        "code": "RIFTBUG",
+        "reward": "300 Oni Crystals and 300 Ghoul Crystals",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328877321,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "anime-brawlers-simulator",
+        "gameName": "Anime Brawlers Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-brawlers-simulator"
+        },
+        "code": "8KMEMBERS",
+        "reward": "100 Ghoul Crystals",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328877321,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "anime-brawlers-simulator",
+        "gameName": "Anime Brawlers Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-brawlers-simulator"
+        },
+        "code": "1MVISITS",
+        "reward": "50 Universal Crystals",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328877321,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "anime-brawlers-simulator",
+        "gameName": "Anime Brawlers Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-brawlers-simulator"
+        },
+        "code": "TY6KCCU",
+        "reward": "1 2x Yen Potion (60 minutes), 1 +2 Luck Potion (60 minutes), and 1 2x Damage Potion (60 minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328877321,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "anime-brawlers-simulator",
+        "gameName": "Anime Brawlers Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-brawlers-simulator"
+        },
+        "code": "FlashRblx",
+        "reward": "20 Universal Crystals",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328877321,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "anime-brawlers-simulator",
+        "gameName": "Anime Brawlers Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-brawlers-simulator"
+        },
+        "code": "SammucssDev",
+        "reward": "1 2x Damage Potion (30 minutes) and 15 Universal Crystals",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328877321,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "anime-brawlers-simulator",
+        "gameName": "Anime Brawlers Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-brawlers-simulator"
+        },
+        "code": "OkiyoDelay",
+        "reward": "1 2x Damage Potion (30 minutes) and 1 2x Yen Potion (15 minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328877321,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      }
+    ],
+    "activeCount": 23,
+    "fetchedAt": "2026-11-22T22:03:03.101Z",
+    "displayCodes": [
+      {
+        "code": "Upd3",
+        "reward": "1 2x Damage Potion (30 minutes), 1 2x Yen Potion (30 minutes), and 1 +2 Luck Potion (30 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "TY8KCCU",
+        "reward": "1 2x Yen Potion (60 minutes), 1 +2 Luck Potion (60 minutes), and 1 2x Damage Potion (60 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "RIFTBUG",
+        "reward": "300 Oni Crystals and 300 Ghoul Crystals",
+        "isNew": true
+      },
+      {
+        "code": "8KMEMBERS",
+        "reward": "100 Ghoul Crystals",
+        "isNew": true
+      },
+      {
+        "code": "1MVISITS",
+        "reward": "50 Universal Crystals",
+        "isNew": true
+      },
+      {
+        "code": "TY6KCCU",
+        "reward": "1 2x Yen Potion (60 minutes), 1 +2 Luck Potion (60 minutes), and 1 2x Damage Potion (60 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "FlashRblx",
+        "reward": "20 Universal Crystals",
+        "isNew": true
+      },
+      {
+        "code": "SammucssDev",
+        "reward": "1 2x Damage Potion (30 minutes) and 15 Universal Crystals",
+        "isNew": true
+      },
+      {
+        "code": "OkiyoDelay",
+        "reward": "1 2x Damage Potion (30 minutes) and 1 2x Yen Potion (15 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "SorryForCastle",
+        "reward": "100 Universal Crystals",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "Upd3",
+        "reward": "1 2x Damage Potion (30 minutes), 1 2x Yen Potion (30 minutes), and 1 +2 Luck Potion (30 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "TY8KCCU",
+        "reward": "1 2x Yen Potion (60 minutes), 1 +2 Luck Potion (60 minutes), and 1 2x Damage Potion (60 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "RIFTBUG",
+        "reward": "300 Oni Crystals and 300 Ghoul Crystals",
+        "isNew": true
+      },
+      {
+        "code": "8KMEMBERS",
+        "reward": "100 Ghoul Crystals",
+        "isNew": true
+      },
+      {
+        "code": "1MVISITS",
+        "reward": "50 Universal Crystals",
+        "isNew": true
+      },
+      {
+        "code": "TY6KCCU",
+        "reward": "1 2x Yen Potion (60 minutes), 1 +2 Luck Potion (60 minutes), and 1 2x Damage Potion (60 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "FlashRblx",
+        "reward": "20 Universal Crystals",
+        "isNew": true
+      },
+      {
+        "code": "SammucssDev",
+        "reward": "1 2x Damage Potion (30 minutes) and 15 Universal Crystals",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "Upd3",
+      "TY8KCCU",
+      "RIFTBUG",
+      "8KMEMBERS",
+      "1MVISITS",
+      "TY6KCCU",
+      "FlashRblx",
+      "SammucssDev",
+      "OkiyoDelay",
+      "SorryForCastle",
+      "Milkshake",
+      "SORRYDELAY3",
+      "UPD2",
+      "THX1KLIKES",
+      "ROLL",
+      "DELAY",
+      "RIFT",
+      "SORRYCODEBUG",
+      "50KVISIT",
+      "SORRYFORSHUTDOWN",
+      "1KCCU",
+      "SORRYDELAY2",
+      "SORRYDELAY1"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "deep-fishing",
+    "name": "Deep Fishing",
+    "displayName": "[UPD] Deep Fishing🎣",
+    "slug": "deep-fishing",
+    "players": 7027,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 7027,
+    "newCodes": [
+      {
+        "game": "deep-fishing",
+        "gameName": "Deep Fishing",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/deep-fishing"
+        },
+        "code": "thanksgiving",
+        "reward": "5 Meadow Baits",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328864785,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "deep-fishing",
+        "gameName": "Deep Fishing",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/deep-fishing"
+        },
+        "code": "update16",
+        "reward": "3 Tide Baits and 1 Luck Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328864785,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "deep-fishing",
+        "gameName": "Deep Fishing",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/deep-fishing"
+        },
+        "code": "crews",
+        "reward": "5 Meadow Baits",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328864785,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      }
+    ],
+    "activeCount": 33,
+    "fetchedAt": "2026-11-22T22:03:03.101Z",
+    "displayCodes": [
+      {
+        "code": "thanksgiving",
+        "reward": "5 Meadow Baits",
+        "isNew": true
+      },
+      {
+        "code": "update16",
+        "reward": "3 Tide Baits and 1 Luck Potion",
+        "isNew": true
+      },
+      {
+        "code": "crews",
+        "reward": "5 Meadow Baits",
+        "isNew": true
+      },
+      {
+        "code": "update15",
+        "reward": "3 Tide Baits and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "riptide",
+        "reward": "5 Meadow Baits",
+        "isNew": false
+      },
+      {
+        "code": "power",
+        "reward": "5 Meadow Baits",
+        "isNew": false
+      },
+      {
+        "code": "yinyang",
+        "reward": "5 Meadow Bait",
+        "isNew": false
+      },
+      {
+        "code": "ice",
+        "reward": "5 Meadow Bait",
+        "isNew": false
+      },
+      {
+        "code": "update14",
+        "reward": "3 Tide Bait and 1 Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "update13",
+        "reward": "3 Tide Baits and 1 Luck Potion",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "thanksgiving",
+        "reward": "5 Meadow Baits",
+        "isNew": true
+      },
+      {
+        "code": "update16",
+        "reward": "3 Tide Baits and 1 Luck Potion",
+        "isNew": true
+      },
+      {
+        "code": "crews",
+        "reward": "5 Meadow Baits",
+        "isNew": true
+      },
+      {
+        "code": "update15",
+        "reward": "3 Tide Baits and a Luck Potion",
+        "isNew": false
+      },
+      {
+        "code": "riptide",
+        "reward": "5 Meadow Baits",
+        "isNew": false
+      },
+      {
+        "code": "power",
+        "reward": "5 Meadow Baits",
+        "isNew": false
+      },
+      {
+        "code": "yinyang",
+        "reward": "5 Meadow Bait",
+        "isNew": false
+      },
+      {
+        "code": "ice",
+        "reward": "5 Meadow Bait",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "update9",
+      "volcano",
+      "boats",
+      "sunkencrown",
+      "keys",
+      "kraken",
+      "Frostmere",
+      "Fishing",
+      "ThanksforPlaying",
+      "Gifting",
+      "Mutations",
+      "BigFish",
+      "pond",
+      "skins",
+      "release",
+      "thanksgiving",
+      "update16",
+      "crews",
+      "update15",
+      "riptide",
+      "power",
+      "yinyang",
+      "ice",
+      "update14",
+      "update13",
+      "verdant",
+      "divine",
+      "trading",
+      "harpoon",
+      "update11",
+      "halloween",
+      "pets",
+      "update10"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "cave-casualties",
+    "name": "Cave Casualties",
+    "displayName": "[🧊SEA] Cave Casualties",
+    "slug": "cave-casualties",
+    "players": 6577,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 6577,
+    "newCodes": [
+      {
+        "game": "cave-casualties",
+        "gameName": "Cave Casualties",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/cave-casualties"
+        },
+        "code": "BIOMESBIOMES",
+        "reward": "1 Free Trait Roll, Makeshift Drill, Warm Fur Armor, and 500 Coins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795326174403,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-11-22T22:03:03.101Z",
+    "displayCodes": [
+      {
+        "code": "BIOMESBIOMES",
+        "reward": "1 Free Trait Roll, Makeshift Drill, Warm Fur Armor, and 500 Coins",
+        "isNew": true
+      },
+      {
+        "code": "LILFIX",
+        "reward": "1 Golden Katana, 1 Lasso and 1 Cake",
+        "isNew": false
+      },
+      {
+        "code": "TRAITSTIME",
+        "reward": "Trait Roll",
+        "isNew": false
+      },
+      {
+        "code": "OVERHAUL",
+        "reward": "1,000 Coins, the Golden Katana, and the Psychotic Dose",
+        "isNew": false
+      },
+      {
+        "code": "FERALMODE",
+        "reward": "Feral Dose",
+        "isNew": false
+      },
+      {
+        "code": "LAIRLAIR",
+        "reward": "Lair’s Special",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "BIOMESBIOMES",
+        "reward": "1 Free Trait Roll, Makeshift Drill, Warm Fur Armor, and 500 Coins",
+        "isNew": true
+      },
+      {
+        "code": "LILFIX",
+        "reward": "1 Golden Katana, 1 Lasso and 1 Cake",
+        "isNew": false
+      },
+      {
+        "code": "TRAITSTIME",
+        "reward": "Trait Roll",
+        "isNew": false
+      },
+      {
+        "code": "OVERHAUL",
+        "reward": "1,000 Coins, the Golden Katana, and the Psychotic Dose",
+        "isNew": false
+      },
+      {
+        "code": "FERALMODE",
+        "reward": "Feral Dose",
+        "isNew": false
+      },
+      {
+        "code": "LAIRLAIR",
+        "reward": "Lair’s Special",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "BIOMESBIOMES",
+      "LILFIX",
+      "TRAITSTIME",
+      "OVERHAUL",
+      "FERALMODE",
+      "LAIRLAIR"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "gakusen",
+    "name": "Gakusen",
+    "displayName": "Gakusen",
+    "slug": "gakusen",
+    "players": 2171,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2171,
+    "newCodes": [
+      {
+        "game": "gakusen",
+        "gameName": "Gakusen",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/gakusen"
+        },
+        "code": "UPDATE2",
+        "reward": "15 Rerolls",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795337977292,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      },
+      {
+        "game": "gakusen",
+        "gameName": "Gakusen",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/gakusen"
+        },
+        "code": "BONUS",
+        "reward": "1,000 Yen and 10 Rerolls",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795337977292,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-22T22:03:03.101Z",
+        "fetchedAt": "2026-11-22T22:03:03.101Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-11-22T22:03:03.101Z",
+    "displayCodes": [
+      {
+        "code": "UPDATE2",
+        "reward": "15 Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "BONUS",
+        "reward": "1,000 Yen and 10 Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "DISCORD",
+        "reward": "15 Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE",
+        "reward": "30 Rerolls",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "UPDATE2",
+        "reward": "15 Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "BONUS",
+        "reward": "1,000 Yen and 10 Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "DISCORD",
+        "reward": "15 Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE",
+        "reward": "30 Rerolls",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "UPDATE2",
+      "BONUS",
+      "DISCORD",
+      "UPDATE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "anime-ball-duels",
     "name": "Anime Ball Duels",
     "displayName": "Anime Ball Duels [💥SKILL]",
