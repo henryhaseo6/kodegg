@@ -1,6 +1,193 @@
 [
   {
     "platform": "ROBLOX",
+    "id": "raise-a-catboy",
+    "name": "Raise A Catboy",
+    "displayName": "Raise A Catboy",
+    "slug": "raise-a-catboy",
+    "players": 10206,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 10206,
+    "newCodes": [
+      {
+        "game": "raise-a-catboy",
+        "gameName": "Raise A Catboy",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/raise-a-catboy"
+        },
+        "code": "CATGIRLS",
+        "reward": "5,000 Cash and 1 Rare Egg",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328878155,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "raise-a-catboy",
+        "gameName": "Raise A Catboy",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/raise-a-catboy"
+        },
+        "code": "BOSSARENA",
+        "reward": "10,000 Cash and 2 Instant Hatches",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328878155,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "raise-a-catboy",
+        "gameName": "Raise A Catboy",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/raise-a-catboy"
+        },
+        "code": "BONK",
+        "reward": "2x Speed (30 minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795328878155,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      }
+    ],
+    "activeCount": 16,
+    "fetchedAt": "2026-11-23T01:02:47.745Z",
+    "displayCodes": [
+      {
+        "code": "CATGIRLS",
+        "reward": "5,000 Cash and 1 Rare Egg",
+        "isNew": true
+      },
+      {
+        "code": "BOSSARENA",
+        "reward": "10,000 Cash and 2 Instant Hatches",
+        "isNew": true
+      },
+      {
+        "code": "BONK",
+        "reward": "2x Speed (30 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "SUMMER",
+        "reward": "10,000 Cash and 2 Instant Hatches",
+        "isNew": false
+      },
+      {
+        "code": "PAINT",
+        "reward": "7,500 Cash and 3 Treats",
+        "isNew": false
+      },
+      {
+        "code": "BEACHCLUB",
+        "reward": "2x Speed (30 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "SORRY",
+        "reward": "$25,000, 2 Instant Hatches, and 2x Speed (10 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "Catboys",
+        "reward": "5,000 Cash and 3 Treats",
+        "isNew": false
+      },
+      {
+        "code": "Crystal",
+        "reward": "10,000 Cash",
+        "isNew": false
+      },
+      {
+        "code": "Maid2",
+        "reward": "7,500 Cash and 3 Parfaits",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "CATGIRLS",
+        "reward": "5,000 Cash and 1 Rare Egg",
+        "isNew": true
+      },
+      {
+        "code": "BOSSARENA",
+        "reward": "10,000 Cash and 2 Instant Hatches",
+        "isNew": true
+      },
+      {
+        "code": "BONK",
+        "reward": "2x Speed (30 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "SUMMER",
+        "reward": "10,000 Cash and 2 Instant Hatches",
+        "isNew": false
+      },
+      {
+        "code": "PAINT",
+        "reward": "7,500 Cash and 3 Treats",
+        "isNew": false
+      },
+      {
+        "code": "BEACHCLUB",
+        "reward": "2x Speed (30 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "SORRY",
+        "reward": "$25,000, 2 Instant Hatches, and 2x Speed (10 Minutes)",
+        "isNew": false
+      },
+      {
+        "code": "Catboys",
+        "reward": "5,000 Cash and 3 Treats",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "CATGIRLS",
+      "BOSSARENA",
+      "BONK",
+      "SUMMER",
+      "PAINT",
+      "BEACHCLUB",
+      "SORRY",
+      "Catboys",
+      "Crystal",
+      "Maid2",
+      "Trading",
+      "Meow",
+      "Thankyou",
+      "Hatch",
+      "C4TB0Y",
+      "BUGFIX"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "beyond-nen",
     "name": "Beyond Nen",
     "displayName": "[CHAINS!] Beyond Nen",
@@ -828,6 +1015,410 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "anime-astral-simulator",
+    "name": "Anime Astral Simulator",
+    "displayName": "[CHAINSAW] Anime Astral Simulator",
+    "slug": "anime-astral-simulator",
+    "players": 3659,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3659,
+    "newCodes": [
+      {
+        "game": "anime-astral-simulator",
+        "gameName": "Anime Astral Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-astral-simulator"
+        },
+        "code": "POCHITA",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795310012989,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "anime-astral-simulator",
+        "gameName": "Anime Astral Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-astral-simulator"
+        },
+        "code": "DEVILCONTRACTS",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795310012989,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "anime-astral-simulator",
+        "gameName": "Anime Astral Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-astral-simulator"
+        },
+        "code": "PUBLICSAFETY",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795310012989,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "anime-astral-simulator",
+        "gameName": "Anime Astral Simulator",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-astral-simulator"
+        },
+        "code": "UPDATE24",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795310012989,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      }
+    ],
+    "activeCount": 213,
+    "fetchedAt": "2026-11-23T01:02:47.745Z",
+    "displayCodes": [
+      {
+        "code": "POCHITA",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": true
+      },
+      {
+        "code": "DEVILCONTRACTS",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": true
+      },
+      {
+        "code": "PUBLICSAFETY",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": true
+      },
+      {
+        "code": "UPDATE24",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": true
+      },
+      {
+        "code": "MAPBONUS",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      },
+      {
+        "code": "SUPPORTUNITS",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      },
+      {
+        "code": "COMMANDSEALS",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      },
+      {
+        "code": "MINIUPDATE23.5",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE23",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      },
+      {
+        "code": "SHADOWGARDEN",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "POCHITA",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": true
+      },
+      {
+        "code": "DEVILCONTRACTS",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": true
+      },
+      {
+        "code": "PUBLICSAFETY",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": true
+      },
+      {
+        "code": "UPDATE24",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": true
+      },
+      {
+        "code": "MAPBONUS",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      },
+      {
+        "code": "SUPPORTUNITS",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      },
+      {
+        "code": "COMMANDSEALS",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      },
+      {
+        "code": "MINIUPDATE23.5",
+        "reward": "250 F2P Tickets, 1 Damage II Potion, 1 Power II Potion, 1 XP II Potion, 1 Yen II Potion, and 1 Luck II Potion",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "UPDATE23",
+      "SHADOWGARDEN",
+      "EMINENCE",
+      "ATOMIC",
+      "MINIUPDATE22.5",
+      "VICTORYTRIBUTE",
+      "DIVINECHRONICLES",
+      "PRIMORDIALPASSIVE",
+      "UPDATE22",
+      "RAGNAROK",
+      "VALHALLA",
+      "GODSTONES",
+      "MINIUPDATE21.5",
+      "REDGATE",
+      "HUNTERSCOLLECTION",
+      "HALLOWTREE",
+      "UPDATE21",
+      "GACHIAKUTA",
+      "ABYSSDIVE",
+      "HALLOWEENPART2",
+      "EXCHANGE",
+      "UPDATE1",
+      "NPCNERF",
+      "UPDATE1.5",
+      "UPDATE2",
+      "BATTLEPASS",
+      "REWARDSFIXED",
+      "UPDATE2.5",
+      "MOUNTS",
+      "GRIMOIRES",
+      "UPDATE3",
+      "WAIFU",
+      "TRACKER",
+      "TRIALMEDIUM",
+      "UPDATE3.5",
+      "UPDATE4",
+      "SUMMERMOUNT",
+      "UPDATE4.5",
+      "DIVINEPASSIVES",
+      "MINIUPDATE4.75",
+      "UPDATE5",
+      "UPDATE5.5",
+      "SKILLTREE",
+      "PETPASSIVES",
+      "DUNGEONS",
+      "UPDATE6RELEASE",
+      "LIKES3KNEW",
+      "LIKES5K",
+      "10KLIKESALREADY",
+      "2MVISITSNEW",
+      "5MVISITSINGAME",
+      "VISITSASTRAL10M",
+      "20KACTIVE",
+      "30KACTIVE",
+      "7.5KFAVORITES",
+      "10KFAVORITESINTHEGAME",
+      "ASTRAL20KFAVORITES",
+      "!ASTRAL40KCCU!",
+      "FIXEDAVATAR",
+      "UPDATE6FIXES",
+      "UPDATE6EXTRAFIXES",
+      "UPDATE6.1",
+      "KIEVOLUTION",
+      "UPDATE6.2",
+      "PROMOTION",
+      "TOMBRAID",
+      "UPD6.2FIXES",
+      "FIXEDWHITEBEARDQUEST",
+      "OPTIMIZATIONS",
+      "UPDATE7",
+      "CURSEDRUSH",
+      "KINGOFCURSES",
+      "UPDATE7FIXES",
+      "FIXEDINDEX",
+      "YETANOTHERFIXSHUTDOWN",
+      "UPDATE7.5",
+      "AUTOCOLLECTFINGER",
+      "GATESNOTCLOSINGANYMORE",
+      "!FIXEDABUG!",
+      "UPDATE8",
+      "COMMANDMENTS",
+      "LIONKINGDOM",
+      "FIXEDRANKS",
+      "UPDATE8FIXES",
+      "UPDATE8.5",
+      "GODDESS",
+      "DEMONKING",
+      "UPDATE9",
+      "ONIPUNCHI",
+      "MONSTERS",
+      "UPD9FIXE",
+      "UPDATE9.5",
+      "SPAWNBOSS",
+      "HEROTEST",
+      "SORRYFORUPGRADES",
+      "UPDATE10",
+      "PRIMORDIALS",
+      "TITANPASSIVES",
+      "SORRY4DEL4Y!",
+      "UPDATE10FIXES",
+      "UPD10PATCH",
+      "MINI10.5",
+      "AUTOENTERGAMEMODE",
+      "GAMEBOOSTS",
+      "UPDATE11",
+      "ASTRALRARITY",
+      "NENHXH",
+      "UPD11FIXES",
+      "UPDATE11.5",
+      "AUTOSPAWNBOSS",
+      "HUNTERLICENSE",
+      "UPDATE12",
+      "KAGUNES",
+      "FRIENDSLEADERBOARD",
+      "MINI12.5",
+      "QUINQUE",
+      "2GACHAS",
+      "SORRYRELICS",
+      "12.5FIXES",
+      "UPDATE13",
+      "SPIRITS",
+      "SANCTUARY",
+      "SORRYFORKEYS",
+      "SORRYFORKEYS2",
+      "UPDATE13.5",
+      "SORRYFORLAG",
+      "DROPRATESPIRITBUFFED",
+      "FIXEDPETAVATARS",
+      "UPDATE14",
+      "KARMA",
+      "CHAKRA",
+      "NINJAEXAM",
+      "MINI14.5",
+      "VESSEL",
+      "SCIENTIFICMODIFICATIONS",
+      "TAILEDBEASTS",
+      "FIXEDEXCHANGE",
+      "UPDATE15",
+      "SERVANTS",
+      "SHADOWPASSIVE",
+      "ZENKAI",
+      "FIXESFORUPDATE15",
+      "MINI15.5",
+      "HOLYGRAIL",
+      "BANKAI",
+      "PRANATREE",
+      "UPDATE16",
+      "GUILDS",
+      "MAGNOLIA",
+      "CELESTIALKEYS",
+      "GUILDSFASTER",
+      "EVENFASTERGUILDS",
+      "MINIUPDATE16.5",
+      "GUILDMISSIONS",
+      "DRAGONSLAYER",
+      "GUILDPOINTS",
+      "UPDATE17",
+      "NIGHTCITY",
+      "CYBERDECK",
+      "SANDEVISTAN",
+      "MINIUPDATE17.5",
+      "SERVERBOOSTS",
+      "FIXERGIGS",
+      "OVERCLOCK",
+      "GLOBALBOOSTS",
+      "UPDATE18",
+      "MORIOHTOWN",
+      "STANDRUSH",
+      "LEGACYRAID",
+      "LEGACYRAIDACCESSIBLE",
+      "25MVISITS",
+      "50MVISITS",
+      "75MVISITS",
+      "85MVISITS",
+      "25KFAVORITES",
+      "50KFAVORITES",
+      "75KFAVORITES",
+      "100KFAVORITES",
+      "1MGROUPMEMBERS",
+      "1.25MGROUP",
+      "MINIUPDATE18.5",
+      "TAROTBLESSINGS",
+      "BIZARREMODS",
+      "FIGHTINGSTYLES",
+      "UPDATE19",
+      "TOURNAMENTOFPOWER",
+      "CAPSULEDEFENSE",
+      "TRANSFORMATIONS",
+      "UPDATE19FIXES",
+      "MINIUPDATE19.5",
+      "HITSCONTRACT",
+      "MAFUBASEALING",
+      "NENARTIFACTS",
+      "UPDATE20",
+      "HALLOWEEN",
+      "TOKYOREVENGERS",
+      "ABRACADABRA",
+      "UPDATE20.1",
+      "LESSLAG",
+      "MINIUPDATE20.5",
+      "GANGWANTED",
+      "SPINMANAGER",
+      "SOULLANTERN",
+      "RELEASE",
+      "POCHITA",
+      "DEVILCONTRACTS",
+      "PUBLICSAFETY",
+      "UPDATE24",
+      "MAPBONUS",
+      "SUPPORTUNITS",
+      "COMMANDSEALS",
+      "MINIUPDATE23.5",
+      "YETANOTHERFIXSHUTDOWNOPTIMIZATIONS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "skate-tree",
     "name": "Skate Tree",
     "displayName": "[🥩HALL OF MEAT] Skate Tree",
@@ -1040,6 +1631,173 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "anime-ragdoll",
+    "name": "Anime Ragdoll",
+    "displayName": "Anime Ragdoll🩸",
+    "slug": "anime-ragdoll",
+    "players": 2272,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2272,
+    "newCodes": [
+      {
+        "game": "anime-ragdoll",
+        "gameName": "Anime Ragdoll",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-ragdoll"
+        },
+        "code": "REDMOON",
+        "reward": "3,000 Cash and 2x KO (10 minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795254214449,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "anime-ragdoll",
+        "gameName": "Anime Ragdoll",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-ragdoll"
+        },
+        "code": "MADARA",
+        "reward": "50 Boss Tokens",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795254214449,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "anime-ragdoll",
+        "gameName": "Anime Ragdoll",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-ragdoll"
+        },
+        "code": "Dio",
+        "reward": "2x Damage (5 minutes)",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795254214449,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "anime-ragdoll",
+        "gameName": "Anime Ragdoll",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-ragdoll"
+        },
+        "code": "DioCash",
+        "reward": "5,000 Cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795254214449,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-11-23T01:02:47.745Z",
+    "displayCodes": [
+      {
+        "code": "REDMOON",
+        "reward": "3,000 Cash and 2x KO (10 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "MADARA",
+        "reward": "50 Boss Tokens",
+        "isNew": true
+      },
+      {
+        "code": "Dio",
+        "reward": "2x Damage (5 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "DioCash",
+        "reward": "5,000 Cash",
+        "isNew": true
+      },
+      {
+        "code": "ROGER",
+        "reward": "2x KO (5 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE1",
+        "reward": "150 Souls",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "REDMOON",
+        "reward": "3,000 Cash and 2x KO (10 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "MADARA",
+        "reward": "50 Boss Tokens",
+        "isNew": true
+      },
+      {
+        "code": "Dio",
+        "reward": "2x Damage (5 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "DioCash",
+        "reward": "5,000 Cash",
+        "isNew": true
+      },
+      {
+        "code": "ROGER",
+        "reward": "2x KO (5 minutes)",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE1",
+        "reward": "150 Souls",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "REDMOON",
+      "MADARA",
+      "Dio",
+      "DioCash",
+      "ROGER",
+      "UPDATE1"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "gakusen",
     "name": "Gakusen",
     "displayName": "Gakusen",
@@ -1141,6 +1899,200 @@
       "BONUS",
       "DISCORD",
       "UPDATE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "1-sukuna-evolution",
+    "name": "+1 Sukuna Evolution",
+    "displayName": "[🏴‍☠️W4] +1 Sukuna Evolution",
+    "slug": "1-sukuna-evolution",
+    "players": 2067,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2067,
+    "newCodes": [
+      {
+        "game": "1-sukuna-evolution",
+        "gameName": "+1 Sukuna Evolution",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/1-sukuna-evolution"
+        },
+        "code": "ONEPIECE",
+        "reward": "Super OP Egg, Double Luck & Wins (15 minutes)",
+        "date": "2026-11-23T00:30:10.487Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "1-sukuna-evolution",
+        "gameName": "+1 Sukuna Evolution",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/1-sukuna-evolution"
+        },
+        "code": "LOADINGFIX",
+        "reward": "Super OP Egg, Double Luck & Wins (15 minutes)",
+        "date": "2026-11-23T00:30:10.051Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "1-sukuna-evolution",
+        "gameName": "+1 Sukuna Evolution",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/1-sukuna-evolution"
+        },
+        "code": "SETSAIL",
+        "reward": "x5 Cursed Energy (1 hour)",
+        "date": "2026-11-23T00:29:38.887Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      },
+      {
+        "game": "1-sukuna-evolution",
+        "gameName": "+1 Sukuna Evolution",
+        "source": "RoCodes.gg",
+        "sources": [
+          "RoCodes.gg"
+        ],
+        "sourceUrls": {
+          "RoCodes.gg": "https://rocodes.gg/codes/1-sukuna-evolution"
+        },
+        "code": "SORRY2",
+        "reward": "Super OP Egg, Double Luck & Wins (15 minutes)",
+        "date": "2026-11-23T00:29:29.908Z",
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T01:02:47.745Z",
+        "fetchedAt": "2026-11-23T01:02:47.745Z"
+      }
+    ],
+    "activeCount": 11,
+    "fetchedAt": "2026-11-23T01:02:47.745Z",
+    "displayCodes": [
+      {
+        "code": "ONEPIECE",
+        "reward": "Super OP Egg, Double Luck & Wins (15 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "LOADINGFIX",
+        "reward": "Super OP Egg, Double Luck & Wins (15 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "SETSAIL",
+        "reward": "x5 Cursed Energy (1 hour)",
+        "isNew": true
+      },
+      {
+        "code": "SORRY2",
+        "reward": "Super OP Egg, Double Luck & Wins (15 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "NARUTOWORLD",
+        "reward": "Free Egg (Current World)",
+        "isNew": false
+      },
+      {
+        "code": "GOJO",
+        "reward": "SUPER OP egg + Wins + x2 Wins (30 min)",
+        "isNew": false
+      },
+      {
+        "code": "THESTRONGEST",
+        "reward": "3 eggs + x2 Cursed Energy (30 min)",
+        "isNew": false
+      },
+      {
+        "code": "SLAYER",
+        "reward": "SUPER OP egg + Wins + x2 Wins (10 min)",
+        "isNew": false
+      },
+      {
+        "code": "DEMONSLAYER",
+        "reward": "3 eggs + x2 Energy (10 min)",
+        "isNew": false
+      },
+      {
+        "code": "KINGOFCURSES",
+        "reward": "Cursed Egg, Wins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ONEPIECE",
+        "reward": "Super OP Egg, Double Luck & Wins (15 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "LOADINGFIX",
+        "reward": "Super OP Egg, Double Luck & Wins (15 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "SETSAIL",
+        "reward": "x5 Cursed Energy (1 hour)",
+        "isNew": true
+      },
+      {
+        "code": "SORRY2",
+        "reward": "Super OP Egg, Double Luck & Wins (15 minutes)",
+        "isNew": true
+      },
+      {
+        "code": "NARUTOWORLD",
+        "reward": "Free Egg (Current World)",
+        "isNew": false
+      },
+      {
+        "code": "GOJO",
+        "reward": "SUPER OP egg + Wins + x2 Wins (30 min)",
+        "isNew": false
+      },
+      {
+        "code": "THESTRONGEST",
+        "reward": "3 eggs + x2 Cursed Energy (30 min)",
+        "isNew": false
+      },
+      {
+        "code": "SLAYER",
+        "reward": "SUPER OP egg + Wins + x2 Wins (10 min)",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "ONEPIECE",
+      "LOADINGFIX",
+      "SETSAIL",
+      "SORRY2",
+      "NARUTOWORLD",
+      "GOJO",
+      "THESTRONGEST",
+      "SLAYER",
+      "DEMONSLAYER",
+      "KINGOFCURSES",
+      "SUKUNA"
     ]
   },
   {
