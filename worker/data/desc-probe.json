@@ -4059,13 +4059,13 @@
   "seekers": {
    "tulis": "seekers",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-06",
+   "terakhir": "2026-11-23",
    "awal": true
   },
   "painting": {
    "tulis": "painting",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-18",
+   "terakhir": "2026-11-23",
    "awal": true
   },
   "meccha": {
@@ -4167,7 +4167,7 @@
   "seeker": {
    "tulis": "seeker",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-29",
+   "terakhir": "2026-11-23",
    "awal": true
   },
   "hider": {
@@ -4179,7 +4179,7 @@
   "prop": {
    "tulis": "prop",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-15",
+   "terakhir": "2026-11-23",
    "awal": true
   },
   "fill": {
@@ -26921,7 +26921,7 @@
   "invisible": {
    "tulis": "Invisible",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-29",
+   "terakhir": "2026-11-23",
    "awal": true
   },
   "kilo": {
@@ -30002,7 +30002,7 @@
   "invisible": {
    "tulis": "invisible",
    "pertama": 1785997647571,
-   "terakhir": "2026-08-29",
+   "terakhir": "2026-11-23",
    "awal": true
   },
   "stamina": {
@@ -47604,7 +47604,7 @@
   "seekers": {
    "tulis": "seekers",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-06",
+   "terakhir": "2026-11-23",
    "awal": true
   },
   "alike": {
@@ -54109,7 +54109,7 @@
   "painting": {
    "tulis": "painting",
    "pertama": 1785997647571,
-   "terakhir": "2026-10-18",
+   "terakhir": "2026-11-23",
    "awal": true
   },
   "workbenches": {
@@ -58378,7 +58378,7 @@
   "painting": {
    "tulis": "Painting",
    "pertama": 1787447030666,
-   "terakhir": "2026-10-06"
+   "terakhir": "2026-11-23"
   },
   "vindo": {
    "tulis": "Vindo",
@@ -59484,7 +59484,7 @@
   "prop": {
    "tulis": "prop",
    "pertama": 1786165328752,
-   "terakhir": "2026-11-15"
+   "terakhir": "2026-11-23"
   },
   "previously": {
    "tulis": "previously",
@@ -59514,7 +59514,7 @@
   "seeker": {
    "tulis": "SEEKER",
    "pertama": 1786165328752,
-   "terakhir": "2026-10-29"
+   "terakhir": "2026-11-23"
   },
   "hiders": {
    "tulis": "hiders",
@@ -59564,7 +59564,7 @@
   "seekers": {
    "tulis": "seekers",
    "pertama": 1787447030666,
-   "terakhir": "2026-10-06"
+   "terakhir": "2026-11-23"
   }
  },
  "grow-a-chicken-fighter": {
@@ -62844,7 +62844,7 @@
   "invisible": {
    "tulis": "Invisible",
    "pertama": 1786695454025,
-   "terakhir": "2026-08-29"
+   "terakhir": "2026-11-23"
   },
   "uncommon": {
    "tulis": "Uncommon",
@@ -88421,6 +88421,11 @@
    "tulis": "setting",
    "pertama": 1794049523779,
    "terakhir": "2026-11-23"
+  },
+  "seeker": {
+   "tulis": "SEEKER",
+   "pertama": 1795440882384,
+   "terakhir": "2026-11-23"
   }
  },
  "grapple-strike": {
@@ -96532,6 +96537,11 @@
   "spruce": {
    "tulis": "spruce",
    "pertama": 1795237536086,
+   "terakhir": "2026-11-23"
+  },
+  "prop": {
+   "tulis": "prop",
+   "pertama": 1795440882384,
    "terakhir": "2026-11-23"
   }
  },
