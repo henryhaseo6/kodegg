@@ -1,208 +1,6 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "beyond-nen",
-    "name": "Beyond Nen",
-    "displayName": "[CHAINS!] Beyond Nen",
-    "slug": "beyond-nen",
-    "players": 8160,
-    "redeemNote": null,
-    "alias": null,
-    "rank": 8160,
-    "newCodes": [
-      {
-        "game": "beyond-nen",
-        "gameName": "Beyond Nen",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/beyond-nen"
-        },
-        "code": "SORRY4DELAY",
-        "reward": "30 Spins",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1795328874834,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-22T22:03:03.101Z",
-        "fetchedAt": "2026-11-22T22:03:03.101Z"
-      },
-      {
-        "game": "beyond-nen",
-        "gameName": "Beyond Nen",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/beyond-nen"
-        },
-        "code": "CHAINSUPDATE",
-        "reward": "30 Spins",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1795328874834,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-22T22:03:03.101Z",
-        "fetchedAt": "2026-11-22T22:03:03.101Z"
-      },
-      {
-        "game": "beyond-nen",
-        "gameName": "Beyond Nen",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/beyond-nen"
-        },
-        "code": "GOATDUO",
-        "reward": "5 Spins and 1 Reset Orb",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1795328874834,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-22T22:03:03.101Z",
-        "fetchedAt": "2026-11-22T22:03:03.101Z"
-      },
-      {
-        "game": "beyond-nen",
-        "gameName": "Beyond Nen",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/beyond-nen"
-        },
-        "code": "HOTFIX",
-        "reward": "10 Spins and 2 Reset Orbs",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1795328874834,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-22T22:03:03.101Z",
-        "fetchedAt": "2026-11-22T22:03:03.101Z"
-      }
-    ],
-    "activeCount": 11,
-    "fetchedAt": "2026-11-22T22:03:03.101Z",
-    "displayCodes": [
-      {
-        "code": "SORRY4DELAY",
-        "reward": "30 Spins",
-        "isNew": true
-      },
-      {
-        "code": "CHAINSUPDATE",
-        "reward": "30 Spins",
-        "isNew": true
-      },
-      {
-        "code": "GOATDUO",
-        "reward": "5 Spins and 1 Reset Orb",
-        "isNew": true
-      },
-      {
-        "code": "HOTFIX",
-        "reward": "10 Spins and 2 Reset Orbs",
-        "isNew": true
-      },
-      {
-        "code": "50KLIKES",
-        "reward": "20 Spins and a Nen Color Reroll Orb.You must redeem this code in the shop",
-        "isNew": false
-      },
-      {
-        "code": "2XDROPS",
-        "reward": "30 Spins.You must redeem this code in the shop",
-        "isNew": false
-      },
-      {
-        "code": "UPDATEINCOMING",
-        "reward": "50 Spins",
-        "isNew": false
-      },
-      {
-        "code": "PATCH3!",
-        "reward": "5 Spins, 2 Reset Orbs, and 1 Nen Color Orb.You must redeem this code in the shop",
-        "isNew": false
-      },
-      {
-        "code": "RANKED!",
-        "reward": "15 Spins and the Reset Orb.You must redeem this code in the shop",
-        "isNew": false
-      },
-      {
-        "code": "1MVISITS",
-        "reward": "20 Spins",
-        "isNew": false
-      }
-    ],
-    "descCodes": [
-      {
-        "code": "SORRY4DELAY",
-        "reward": "30 Spins",
-        "isNew": true
-      },
-      {
-        "code": "CHAINSUPDATE",
-        "reward": "30 Spins",
-        "isNew": true
-      },
-      {
-        "code": "GOATDUO",
-        "reward": "5 Spins and 1 Reset Orb",
-        "isNew": true
-      },
-      {
-        "code": "HOTFIX",
-        "reward": "10 Spins and 2 Reset Orbs",
-        "isNew": true
-      },
-      {
-        "code": "50KLIKES",
-        "reward": "20 Spins and a Nen Color Reroll Orb.You must redeem this code in the shop",
-        "isNew": false
-      },
-      {
-        "code": "2XDROPS",
-        "reward": "30 Spins.You must redeem this code in the shop",
-        "isNew": false
-      },
-      {
-        "code": "UPDATEINCOMING",
-        "reward": "50 Spins",
-        "isNew": false
-      },
-      {
-        "code": "PATCH3!",
-        "reward": "5 Spins, 2 Reset Orbs, and 1 Nen Color Orb.You must redeem this code in the shop",
-        "isNew": false
-      }
-    ],
-    "allCodes": [
-      "SORRY4DELAY",
-      "CHAINSUPDATE",
-      "GOATDUO",
-      "HOTFIX",
-      "50KLIKES",
-      "2XDROPS",
-      "UPDATEINCOMING",
-      "PATCH3!",
-      "RANKED!",
-      "1MVISITS",
-      "50KFAVS"
-    ]
-  },
-  {
-    "platform": "ROBLOX",
     "id": "anime-brawlers-simulator",
     "name": "Anime Brawlers Simulator",
     "displayName": "[UPD3!] Anime Brawlers Simulator",
@@ -824,6 +622,192 @@
       "OVERHAUL",
       "FERALMODE",
       "LAIRLAIR"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "1-power-fruit-evolution",
+    "name": "+1 Power Fruit Evolution",
+    "displayName": "+1 Power Fruit Evolution",
+    "slug": "1-power-fruit-evolution",
+    "players": 3923,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3923,
+    "newCodes": [
+      {
+        "game": "1-power-fruit-evolution",
+        "gameName": "+1 Power Fruit Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-power-fruit-evolution"
+        },
+        "code": "SEATRIALS",
+        "reward": "3,000 Gold, 2,000 Power, 1 Berry Seed, 1 Clover Seed, 1 Bamboo Seed, and 1 Bean Seed",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795254211647,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T04:02:31.310Z",
+        "fetchedAt": "2026-11-23T04:02:31.310Z"
+      },
+      {
+        "game": "1-power-fruit-evolution",
+        "gameName": "+1 Power Fruit Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-power-fruit-evolution"
+        },
+        "code": "ENDLESS",
+        "reward": "5 Summoning Scroll",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795254211647,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T04:02:31.310Z",
+        "fetchedAt": "2026-11-23T04:02:31.310Z"
+      },
+      {
+        "game": "1-power-fruit-evolution",
+        "gameName": "+1 Power Fruit Evolution",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/1-power-fruit-evolution"
+        },
+        "code": "AWAKENING",
+        "reward": "1,500 Gold, 1 Nut Seed, 2 Bean Seeds, 2 Wheat Seeds, and 1 Basic Seed",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795254211647,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T04:02:31.310Z",
+        "fetchedAt": "2026-11-23T04:02:31.310Z"
+      }
+    ],
+    "activeCount": 15,
+    "fetchedAt": "2026-11-23T04:02:31.310Z",
+    "displayCodes": [
+      {
+        "code": "SEATRIALS",
+        "reward": "3,000 Gold, 2,000 Power, 1 Berry Seed, 1 Clover Seed, 1 Bamboo Seed, and 1 Bean Seed",
+        "isNew": true
+      },
+      {
+        "code": "ENDLESS",
+        "reward": "5 Summoning Scroll",
+        "isNew": true
+      },
+      {
+        "code": "AWAKENING",
+        "reward": "1,500 Gold, 1 Nut Seed, 2 Bean Seeds, 2 Wheat Seeds, and 1 Basic Seed",
+        "isNew": true
+      },
+      {
+        "code": "WORLD6",
+        "reward": "3,000 Gold, 2,000 Power, 1 Cotton Seed, 1 Onion Seed, 1 Melon Seed, and 1 Bamboo Seed",
+        "isNew": false
+      },
+      {
+        "code": "WORLD4",
+        "reward": "3,000 Gold, 2,000 Power, 2 Acorn Seeds, 1 Nut Seed, and 1 Wheat Seed",
+        "isNew": false
+      },
+      {
+        "code": "WORLD5",
+        "reward": "1,500 Gold, 1 Melon Seed, 1 Leaf Seed, 1 Sprout Seed, 2 Bean Seeds, and 1 Basic Seed",
+        "isNew": false
+      },
+      {
+        "code": "GRANDLADY",
+        "reward": "5 Summoning Scroll",
+        "isNew": false
+      },
+      {
+        "code": "WORLD3",
+        "reward": "3,000 Gold, 2,000 Power, 1 Cactus Seed, 1 Melon Seed, 1 Leaf Seed, and 1 Sprout Seed",
+        "isNew": false
+      },
+      {
+        "code": "SCROLLS",
+        "reward": "5 Summoning Scrolls",
+        "isNew": false
+      },
+      {
+        "code": "SEEDS",
+        "reward": "1,500 Gold, 1 Leaf Seed, 1 Sprout Seed, 3 Bean Seeds, and 1 Basic Seed",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "SEATRIALS",
+        "reward": "3,000 Gold, 2,000 Power, 1 Berry Seed, 1 Clover Seed, 1 Bamboo Seed, and 1 Bean Seed",
+        "isNew": true
+      },
+      {
+        "code": "ENDLESS",
+        "reward": "5 Summoning Scroll",
+        "isNew": true
+      },
+      {
+        "code": "AWAKENING",
+        "reward": "1,500 Gold, 1 Nut Seed, 2 Bean Seeds, 2 Wheat Seeds, and 1 Basic Seed",
+        "isNew": true
+      },
+      {
+        "code": "WORLD6",
+        "reward": "3,000 Gold, 2,000 Power, 1 Cotton Seed, 1 Onion Seed, 1 Melon Seed, and 1 Bamboo Seed",
+        "isNew": false
+      },
+      {
+        "code": "WORLD4",
+        "reward": "3,000 Gold, 2,000 Power, 2 Acorn Seeds, 1 Nut Seed, and 1 Wheat Seed",
+        "isNew": false
+      },
+      {
+        "code": "WORLD5",
+        "reward": "1,500 Gold, 1 Melon Seed, 1 Leaf Seed, 1 Sprout Seed, 2 Bean Seeds, and 1 Basic Seed",
+        "isNew": false
+      },
+      {
+        "code": "GRANDLADY",
+        "reward": "5 Summoning Scroll",
+        "isNew": false
+      },
+      {
+        "code": "WORLD3",
+        "reward": "3,000 Gold, 2,000 Power, 1 Cactus Seed, 1 Melon Seed, 1 Leaf Seed, and 1 Sprout Seed",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "SEATRIALS",
+      "ENDLESS",
+      "AWAKENING",
+      "WORLD6",
+      "WORLD4",
+      "WORLD5",
+      "GRANDLADY",
+      "WORLD3",
+      "SCROLLS",
+      "SEEDS",
+      "WORLD2",
+      "SUMMON",
+      "SECRETCODE",
+      "WELCOME5000",
+      "POWER"
     ]
   },
   {
@@ -1819,6 +1803,176 @@
       "BONUS",
       "DISCORD",
       "UPDATE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "malam-sama-kembar",
+    "name": "Malam Sama Kembar",
+    "displayName": "Malam Sama Kembar",
+    "slug": "malam-sama-kembar",
+    "players": 2119,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2119,
+    "newCodes": [
+      {
+        "game": "malam-sama-kembar",
+        "gameName": "Malam Sama Kembar",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/malam-sama-kembar"
+        },
+        "code": "MALAMJUMAAT",
+        "reward": "200 Coins and 5 Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795254212796,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T04:02:31.310Z",
+        "fetchedAt": "2026-11-23T04:02:31.310Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-11-23T04:02:31.310Z",
+    "displayCodes": [
+      {
+        "code": "MALAMJUMAAT",
+        "reward": "200 Coins and 5 Spins",
+        "isNew": true
+      },
+      {
+        "code": "EXPANSION",
+        "reward": "67 Coins, 3 Spins, 3 Lucky Spins, 3 Ayam Goreng Boxes",
+        "isNew": false
+      },
+      {
+        "code": "SORRYFORDELAY",
+        "reward": "500 Coins, 5 Spins, and 3 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "AyamGoreng",
+        "reward": "100 Coins and 1 Lucky Spins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "MALAMJUMAAT",
+        "reward": "200 Coins and 5 Spins",
+        "isNew": true
+      },
+      {
+        "code": "EXPANSION",
+        "reward": "67 Coins, 3 Spins, 3 Lucky Spins, 3 Ayam Goreng Boxes",
+        "isNew": false
+      },
+      {
+        "code": "SORRYFORDELAY",
+        "reward": "500 Coins, 5 Spins, and 3 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "AyamGoreng",
+        "reward": "100 Coins and 1 Lucky Spins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "MALAMJUMAAT",
+      "EXPANSION",
+      "SORRYFORDELAY",
+      "AyamGoreng"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "sf-bike",
+    "name": "SF BIKE",
+    "displayName": "SF BIKE [NEW BIKE]",
+    "slug": "sf-bike",
+    "players": 2101,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2101,
+    "newCodes": [
+      {
+        "game": "sf-bike",
+        "gameName": "SF BIKE",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/sf-bike"
+        },
+        "code": "10millionvisits",
+        "reward": "7,500 Cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795349505149,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T04:02:31.310Z",
+        "fetchedAt": "2026-11-23T04:02:31.310Z"
+      }
+    ],
+    "activeCount": 4,
+    "fetchedAt": "2026-11-23T04:02:31.310Z",
+    "displayCodes": [
+      {
+        "code": "10millionvisits",
+        "reward": "7,500 Cash",
+        "isNew": true
+      },
+      {
+        "code": "7MILLIONVISITS",
+        "reward": "7,500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "700KVISITS",
+        "reward": "7,500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "1MILLIONVISITS",
+        "reward": "8,500 Cash",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "10millionvisits",
+        "reward": "7,500 Cash",
+        "isNew": true
+      },
+      {
+        "code": "7MILLIONVISITS",
+        "reward": "7,500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "700KVISITS",
+        "reward": "7,500 Cash",
+        "isNew": false
+      },
+      {
+        "code": "1MILLIONVISITS",
+        "reward": "8,500 Cash",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "10millionvisits",
+      "7MILLIONVISITS",
+      "700KVISITS",
+      "1MILLIONVISITS"
     ]
   },
   {
@@ -3672,6 +3826,171 @@
       "MESI",
       "INSTANT100",
       "WELCOME"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "ragdoll-boxing-3d",
+    "name": "Ragdoll Boxing 3D",
+    "displayName": "[STYLES] Ragdoll Boxing 3D",
+    "slug": "ragdoll-boxing-3d",
+    "players": 890,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 890,
+    "newCodes": [
+      {
+        "game": "ragdoll-boxing-3d",
+        "gameName": "Ragdoll Boxing 3D",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/ragdoll-boxing-3d"
+        },
+        "code": "ENTRANCE",
+        "reward": "10 Lucky Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795337790545,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T04:02:31.310Z",
+        "fetchedAt": "2026-11-23T04:02:31.310Z"
+      },
+      {
+        "game": "ragdoll-boxing-3d",
+        "gameName": "Ragdoll Boxing 3D",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/ragdoll-boxing-3d"
+        },
+        "code": "10KLIKES",
+        "reward": "$10,000",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795337790545,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T04:02:31.310Z",
+        "fetchedAt": "2026-11-23T04:02:31.310Z"
+      }
+    ],
+    "activeCount": 14,
+    "fetchedAt": "2026-11-23T04:02:31.310Z",
+    "displayCodes": [
+      {
+        "code": "ENTRANCE",
+        "reward": "10 Lucky Spins",
+        "isNew": true
+      },
+      {
+        "code": "10KLIKES",
+        "reward": "$10,000",
+        "isNew": true
+      },
+      {
+        "code": "STYLES",
+        "reward": "10 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "JAB",
+        "reward": "5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "CROSS",
+        "reward": "5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE_3",
+        "reward": "$10,000",
+        "isNew": false
+      },
+      {
+        "code": "REVAMP",
+        "reward": "5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "RANKEDREWARDS",
+        "reward": "5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "NEWMAP",
+        "reward": "5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "BUGFIXES",
+        "reward": "10,000 Cash",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ENTRANCE",
+        "reward": "10 Lucky Spins",
+        "isNew": true
+      },
+      {
+        "code": "10KLIKES",
+        "reward": "$10,000",
+        "isNew": true
+      },
+      {
+        "code": "STYLES",
+        "reward": "10 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "JAB",
+        "reward": "5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "CROSS",
+        "reward": "5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "UPDATE_3",
+        "reward": "$10,000",
+        "isNew": false
+      },
+      {
+        "code": "REVAMP",
+        "reward": "5 Lucky Spins",
+        "isNew": false
+      },
+      {
+        "code": "RANKEDREWARDS",
+        "reward": "5 Lucky Spins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "ENTRANCE",
+      "10KLIKES",
+      "STYLES",
+      "JAB",
+      "CROSS",
+      "UPDATE_3",
+      "REVAMP",
+      "RANKEDREWARDS",
+      "NEWMAP",
+      "BUGFIXES",
+      "NEWCODEAT10KLIKES",
+      "CODE_AT_2K_VISITS",
+      "UPDATE_2",
+      "1MVISITS"
     ]
   },
   {

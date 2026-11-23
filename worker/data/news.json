@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-11-23T03:02:15.971Z",
+  "updatedAt": "2026-11-23T04:02:23.950Z",
   "counts": {
-    "active": 91,
+    "active": 93,
     "archived": 200
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "\"Data Bounty: Combat Simulation\" Event Details",
+        "id": "\"Bounty Data: Simulasi Pertempuran\" | Penjelasan Event"
+      },
+      "excerpt": {
+        "en": "Event Duration 2026/11/25 04:00 (server time) – 2026/11/30 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • Du",
+        "id": "[Waktu Event] 2026/11/25 04:00 (waktu server) - 2026/11/30 03:59 (waktu server) [Syarat Partisipasi] Buka \"Ruang Simulasi Pertempuran\" di Cerita Utama Chapter 1 \"Di Balik Harta si "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/21/0/9f3f969fd884bd79716ced967d775601_4438442277493840095.jpeg",
+      "url": "https://www.hoyolab.com/article/47537269",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-23T04:00:07.000Z"
+    },
+    {
+      "game": "wuwa",
+      "gameName": "Wuthering Waves",
+      "title": {
+        "en": "Version 3.8 Story Cinematics Wallpaper",
+        "id": "Version 3.8 Story Cinematics Wallpaper"
+      },
+      "excerpt": {
+        "en": "",
+        "id": ""
+      },
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1795363200000/9gsi4ihsvtg1g9xgv6-1795402351852.png",
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5799",
+      "source": "Wuthering Waves",
+      "publishedAt": "2026-11-23T02:50:58.000Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
