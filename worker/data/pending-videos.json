@@ -1,189 +1,54 @@
 [
   {
     "platform": "ROBLOX",
-    "id": "raise-a-catboy",
-    "name": "Raise A Catboy",
-    "displayName": "Raise A Catboy",
-    "slug": "raise-a-catboy",
-    "players": 10206,
+    "id": "30-floors-up",
+    "name": "30 Floors Up",
+    "displayName": "[NEW GUNS] 30 Floors Up",
+    "slug": "30-floors-up",
+    "players": 9307,
     "redeemNote": null,
     "alias": null,
-    "rank": 10206,
+    "rank": 9307,
     "newCodes": [
       {
-        "game": "raise-a-catboy",
-        "gameName": "Raise A Catboy",
+        "game": "30-floors-up",
+        "gameName": "30 Floors Up",
         "source": "Roblox Den",
         "sources": [
           "Roblox Den"
         ],
         "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/raise-a-catboy"
+          "Roblox Den": "https://robloxden.com/game-codes/30-floors-up"
         },
-        "code": "CATGIRLS",
-        "reward": "5,000 Cash and 1 Rare Egg",
+        "code": "ILOVEGUNS",
+        "reward": "250 Cash",
         "date": null,
         "srcNew": true,
-        "srcNewAt": 1795328878155,
+        "srcNewAt": 1795338197488,
         "endsAt": null,
         "verified": false,
-        "firstSeenAt": "2026-11-23T01:02:47.745Z",
-        "fetchedAt": "2026-11-23T01:02:47.745Z"
-      },
-      {
-        "game": "raise-a-catboy",
-        "gameName": "Raise A Catboy",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/raise-a-catboy"
-        },
-        "code": "BOSSARENA",
-        "reward": "10,000 Cash and 2 Instant Hatches",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1795328878155,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-23T01:02:47.745Z",
-        "fetchedAt": "2026-11-23T01:02:47.745Z"
-      },
-      {
-        "game": "raise-a-catboy",
-        "gameName": "Raise A Catboy",
-        "source": "Roblox Den",
-        "sources": [
-          "Roblox Den"
-        ],
-        "sourceUrls": {
-          "Roblox Den": "https://robloxden.com/game-codes/raise-a-catboy"
-        },
-        "code": "BONK",
-        "reward": "2x Speed (30 minutes)",
-        "date": null,
-        "srcNew": true,
-        "srcNewAt": 1795328878155,
-        "endsAt": null,
-        "verified": false,
-        "firstSeenAt": "2026-11-23T01:02:47.745Z",
-        "fetchedAt": "2026-11-23T01:02:47.745Z"
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
       }
     ],
-    "activeCount": 16,
-    "fetchedAt": "2026-11-23T01:02:47.745Z",
+    "activeCount": 1,
+    "fetchedAt": "2026-11-23T02:02:24.512Z",
     "displayCodes": [
       {
-        "code": "CATGIRLS",
-        "reward": "5,000 Cash and 1 Rare Egg",
+        "code": "ILOVEGUNS",
+        "reward": "250 Cash",
         "isNew": true
-      },
-      {
-        "code": "BOSSARENA",
-        "reward": "10,000 Cash and 2 Instant Hatches",
-        "isNew": true
-      },
-      {
-        "code": "BONK",
-        "reward": "2x Speed (30 minutes)",
-        "isNew": true
-      },
-      {
-        "code": "SUMMER",
-        "reward": "10,000 Cash and 2 Instant Hatches",
-        "isNew": false
-      },
-      {
-        "code": "PAINT",
-        "reward": "7,500 Cash and 3 Treats",
-        "isNew": false
-      },
-      {
-        "code": "BEACHCLUB",
-        "reward": "2x Speed (30 minutes)",
-        "isNew": false
-      },
-      {
-        "code": "SORRY",
-        "reward": "$25,000, 2 Instant Hatches, and 2x Speed (10 Minutes)",
-        "isNew": false
-      },
-      {
-        "code": "Catboys",
-        "reward": "5,000 Cash and 3 Treats",
-        "isNew": false
-      },
-      {
-        "code": "Crystal",
-        "reward": "10,000 Cash",
-        "isNew": false
-      },
-      {
-        "code": "Maid2",
-        "reward": "7,500 Cash and 3 Parfaits",
-        "isNew": false
       }
     ],
     "descCodes": [
       {
-        "code": "CATGIRLS",
-        "reward": "5,000 Cash and 1 Rare Egg",
+        "code": "ILOVEGUNS",
+        "reward": "250 Cash",
         "isNew": true
-      },
-      {
-        "code": "BOSSARENA",
-        "reward": "10,000 Cash and 2 Instant Hatches",
-        "isNew": true
-      },
-      {
-        "code": "BONK",
-        "reward": "2x Speed (30 minutes)",
-        "isNew": true
-      },
-      {
-        "code": "SUMMER",
-        "reward": "10,000 Cash and 2 Instant Hatches",
-        "isNew": false
-      },
-      {
-        "code": "PAINT",
-        "reward": "7,500 Cash and 3 Treats",
-        "isNew": false
-      },
-      {
-        "code": "BEACHCLUB",
-        "reward": "2x Speed (30 minutes)",
-        "isNew": false
-      },
-      {
-        "code": "SORRY",
-        "reward": "$25,000, 2 Instant Hatches, and 2x Speed (10 Minutes)",
-        "isNew": false
-      },
-      {
-        "code": "Catboys",
-        "reward": "5,000 Cash and 3 Treats",
-        "isNew": false
       }
     ],
     "allCodes": [
-      "CATGIRLS",
-      "BOSSARENA",
-      "BONK",
-      "SUMMER",
-      "PAINT",
-      "BEACHCLUB",
-      "SORRY",
-      "Catboys",
-      "Crystal",
-      "Maid2",
-      "Trading",
-      "Meow",
-      "Thankyou",
-      "Hatch",
-      "C4TB0Y",
-      "BUGFIX"
+      "ILOVEGUNS"
     ]
   },
   {
@@ -1631,6 +1496,113 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "weak-legacy-2",
+    "name": "Weak Legacy 2",
+    "displayName": "Weak Legacy 2 [UPDATE]",
+    "slug": "weak-legacy-2",
+    "players": 2616,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2616,
+    "newCodes": [
+      {
+        "game": "weak-legacy-2",
+        "gameName": "Weak Legacy 2",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/weak-legacy-2"
+        },
+        "code": "4000CCU",
+        "reward": "50 Clan Spins, 10 Fate Spins, and 1 Breathing/Art Reset",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795385373036,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-11-23T02:02:24.512Z",
+    "displayCodes": [
+      {
+        "code": "4000CCU",
+        "reward": "50 Clan Spins, 10 Fate Spins, and 1 Breathing/Art Reset",
+        "isNew": true
+      },
+      {
+        "code": "SWORDSMITHRAID",
+        "reward": "50 Clan Spins, 10 Fate Spins, 1 Breathing or Art Reset Potion",
+        "isNew": false
+      },
+      {
+        "code": "2000CCU",
+        "reward": "50 Clan Spins",
+        "isNew": false
+      },
+      {
+        "code": "LETSGO",
+        "reward": "150 Clan Spins",
+        "isNew": false
+      },
+      {
+        "code": "FATESPINS",
+        "reward": "20 Fate Spins",
+        "isNew": false
+      },
+      {
+        "code": "ENTDISTRICTUPD",
+        "reward": "100,000 Yen, 15 Spins, and 1 Crystal Essence",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "4000CCU",
+        "reward": "50 Clan Spins, 10 Fate Spins, and 1 Breathing/Art Reset",
+        "isNew": true
+      },
+      {
+        "code": "SWORDSMITHRAID",
+        "reward": "50 Clan Spins, 10 Fate Spins, 1 Breathing or Art Reset Potion",
+        "isNew": false
+      },
+      {
+        "code": "2000CCU",
+        "reward": "50 Clan Spins",
+        "isNew": false
+      },
+      {
+        "code": "LETSGO",
+        "reward": "150 Clan Spins",
+        "isNew": false
+      },
+      {
+        "code": "FATESPINS",
+        "reward": "20 Fate Spins",
+        "isNew": false
+      },
+      {
+        "code": "ENTDISTRICTUPD",
+        "reward": "100,000 Yen, 15 Spins, and 1 Crystal Essence",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "SWORDSMITHRAID",
+      "2000CCU",
+      "LETSGO",
+      "FATESPINS",
+      "ENTDISTRICTUPD",
+      "4000CCU"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "anime-ragdoll",
     "name": "Anime Ragdoll",
     "displayName": "Anime Ragdoll🩸",
@@ -2244,6 +2216,708 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "anime-breaker",
+    "name": "Anime Breaker",
+    "displayName": "[👊ONE PUNCH] Anime Breaker",
+    "slug": "anime-breaker",
+    "players": 1580,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1580,
+    "newCodes": [
+      {
+        "game": "anime-breaker",
+        "gameName": "Anime Breaker",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-breaker"
+        },
+        "code": "29MVISITS",
+        "reward": "200 Emeralds",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795385711623,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      },
+      {
+        "game": "anime-breaker",
+        "gameName": "Anime Breaker",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-breaker"
+        },
+        "code": "PUNCHCITY",
+        "reward": "200 Emeralds",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795385711623,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      },
+      {
+        "game": "anime-breaker",
+        "gameName": "Anime Breaker",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-breaker"
+        },
+        "code": "DISASTER",
+        "reward": "200 Emeralds",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795385711623,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      },
+      {
+        "game": "anime-breaker",
+        "gameName": "Anime Breaker",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-breaker"
+        },
+        "code": "METEORTOTEM",
+        "reward": "200 Emeralds",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795385711623,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      },
+      {
+        "game": "anime-breaker",
+        "gameName": "Anime Breaker",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/anime-breaker"
+        },
+        "code": "ORIGINS",
+        "reward": "200 Emeralds",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795385711623,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      }
+    ],
+    "activeCount": 77,
+    "fetchedAt": "2026-11-23T02:02:24.512Z",
+    "displayCodes": [
+      {
+        "code": "29MVISITS",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "PUNCHCITY",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "DISASTER",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "METEORTOTEM",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "ORIGINS",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "126KFAVS",
+        "reward": "200 Emeralds",
+        "isNew": false
+      },
+      {
+        "code": "NEWBP",
+        "reward": "200 Emeralds",
+        "isNew": false
+      },
+      {
+        "code": "BEASTS",
+        "reward": "200 Emeralds, 2 Energy Potion (T3), 2 Damage Potion (T3), 2 Gold Potion (T3), 2 Luck Potion (T3), and 2 Drop Potion (T3)",
+        "isNew": false
+      },
+      {
+        "code": "AVATARPASSIVE",
+        "reward": "200 Emeralds",
+        "isNew": false
+      },
+      {
+        "code": "EXTRAMASCOT",
+        "reward": "200 Emeralds",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "29MVISITS",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "PUNCHCITY",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "DISASTER",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "METEORTOTEM",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "ORIGINS",
+        "reward": "200 Emeralds",
+        "isNew": true
+      },
+      {
+        "code": "126KFAVS",
+        "reward": "200 Emeralds",
+        "isNew": false
+      },
+      {
+        "code": "NEWBP",
+        "reward": "200 Emeralds",
+        "isNew": false
+      },
+      {
+        "code": "BEASTS",
+        "reward": "200 Emeralds, 2 Energy Potion (T3), 2 Damage Potion (T3), 2 Gold Potion (T3), 2 Luck Potion (T3), and 2 Drop Potion (T3)",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "126KFAVS",
+      "NEWBP",
+      "BEASTS",
+      "AVATARPASSIVE",
+      "EXTRAMASCOT",
+      "28MVISITS",
+      "DEVILCITY",
+      "CONTRACTS",
+      "RELICS",
+      "BROKEN",
+      "STAND",
+      "ROGERSTATS",
+      "HOLYKNIGHT",
+      "BIZARREPASSIVE",
+      "30KLIKES",
+      "HORSESTABLE",
+      "BIZARREDESERT",
+      "BIZARRECRAFT",
+      "AUTOTRIAL",
+      "27MVISITS",
+      "26MVISITS",
+      "COLLECTION",
+      "ENDLESSCASTLE",
+      "TRIALHARD",
+      "KURAMA",
+      "SHUTZOMBIES",
+      "25MVISITS",
+      "125KFAVORITES",
+      "HALLOWEENZONE3",
+      "BREATHING",
+      "NICHIRIN",
+      "ZANPAKUTOS",
+      "ESDEATH",
+      "23MVISITS",
+      "123KFAVORITES",
+      "HOLLOW",
+      "HALLOWEENZONE2",
+      "22MVISITS",
+      "122KFAVORITES",
+      "20MVISITS",
+      "18MVISITS",
+      "16MVISITS",
+      "14MVISITS",
+      "12MVISITS",
+      "10MVISITS",
+      "7MVISITS",
+      "120KFAVORITES",
+      "115KFAVORITES",
+      "110KFAVORITES",
+      "100KFAVORITES",
+      "90KFAVORITES",
+      "80KFAVORITES",
+      "17KCCU",
+      "16KCCU",
+      "NEWJEWELS",
+      "NEWCOMPANIONS",
+      "NEWGHOUL",
+      "NEWDEFENSE",
+      "CURSEDHIGH",
+      "SORRYFORGRIMS",
+      "NEWCRAFT",
+      "NEWTOWER",
+      "NEWKAGUNE",
+      "NEWGRIMOIRE",
+      "NEWTITAN",
+      "NEWCHIMERA",
+      "TALISMANS",
+      "HALLOWEEN",
+      "SHUTDOWN",
+      "TRIALMEDIUM",
+      "NEWAURA",
+      "29MVISITS",
+      "PUNCHCITY",
+      "DISASTER",
+      "METEORTOTEM",
+      "ORIGINS",
+      "SHUTSHUT"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "clover-adventure",
+    "name": "Clover Adventure",
+    "displayName": "[🖌️PAINT GRIMOIRE] Clover Adventure",
+    "slug": "clover-adventure",
+    "players": 1466,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1466,
+    "newCodes": [
+      {
+        "game": "clover-adventure",
+        "gameName": "Clover Adventure",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/clover-adventure"
+        },
+        "code": "RIDDLE",
+        "reward": "25 Grimoire Spins and 15 Gems",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795386034773,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      },
+      {
+        "game": "clover-adventure",
+        "gameName": "Clover Adventure",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/clover-adventure"
+        },
+        "code": "PAINT",
+        "reward": "10 Clan Spins, 25 Grimoire Spins, 10 Bloodline Spins, and 10 Gems",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795386034773,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-11-23T02:02:24.512Z",
+    "displayCodes": [
+      {
+        "code": "RIDDLE",
+        "reward": "25 Grimoire Spins and 15 Gems",
+        "isNew": true
+      },
+      {
+        "code": "PAINT",
+        "reward": "10 Clan Spins, 25 Grimoire Spins, 10 Bloodline Spins, and 10 Gems",
+        "isNew": true
+      },
+      {
+        "code": "HEART",
+        "reward": "10 Grimoire Spins, 10 Clan Spins, 10 Bloodline Spins, and 10 Gems",
+        "isNew": false
+      },
+      {
+        "code": "SPIRIT",
+        "reward": "20 Grimoire Spins",
+        "isNew": false
+      },
+      {
+        "code": "THANKYOU3",
+        "reward": "20 Grimoire Spins, 20 Clan Spins, and 20 Bloodline Spins",
+        "isNew": false
+      },
+      {
+        "code": "THANKYOU4",
+        "reward": "25 Grimoire Spins, 25 Clan Spins, 25 Bloodline Spins, and 10 Gems",
+        "isNew": false
+      },
+      {
+        "code": "SPINS1",
+        "reward": "15 Clan Spins, 15 Grimoire Spins, and 15 Bloodline Spins",
+        "isNew": false
+      },
+      {
+        "code": "GRIMOIRE1",
+        "reward": "20 Grimoire Spins",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "RIDDLE",
+        "reward": "25 Grimoire Spins and 15 Gems",
+        "isNew": true
+      },
+      {
+        "code": "PAINT",
+        "reward": "10 Clan Spins, 25 Grimoire Spins, 10 Bloodline Spins, and 10 Gems",
+        "isNew": true
+      },
+      {
+        "code": "HEART",
+        "reward": "10 Grimoire Spins, 10 Clan Spins, 10 Bloodline Spins, and 10 Gems",
+        "isNew": false
+      },
+      {
+        "code": "SPIRIT",
+        "reward": "20 Grimoire Spins",
+        "isNew": false
+      },
+      {
+        "code": "THANKYOU3",
+        "reward": "20 Grimoire Spins, 20 Clan Spins, and 20 Bloodline Spins",
+        "isNew": false
+      },
+      {
+        "code": "THANKYOU4",
+        "reward": "25 Grimoire Spins, 25 Clan Spins, 25 Bloodline Spins, and 10 Gems",
+        "isNew": false
+      },
+      {
+        "code": "SPINS1",
+        "reward": "15 Clan Spins, 15 Grimoire Spins, and 15 Bloodline Spins",
+        "isNew": false
+      },
+      {
+        "code": "GRIMOIRE1",
+        "reward": "20 Grimoire Spins",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "RIDDLE",
+      "PAINT",
+      "HEART",
+      "SPIRIT",
+      "THANKYOU3",
+      "THANKYOU4",
+      "SPINS1",
+      "GRIMOIRE1"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "make-soaps",
+    "name": "Make Soaps",
+    "displayName": "[Co-Op] Make Soaps! 🧼",
+    "slug": "make-soaps",
+    "players": 1423,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 1423,
+    "newCodes": [
+      {
+        "game": "make-soaps",
+        "gameName": "Make Soaps",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/make-soaps"
+        },
+        "code": "SWEATERWEATHER",
+        "reward": "15 Scent Capsules, 1,000 Coins, and 100 Acorns",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795383167724,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      }
+    ],
+    "activeCount": 6,
+    "fetchedAt": "2026-11-23T02:02:24.512Z",
+    "displayCodes": [
+      {
+        "code": "SWEATERWEATHER",
+        "reward": "15 Scent Capsules, 1,000 Coins, and 100 Acorns",
+        "isNew": true
+      },
+      {
+        "code": "NOVA",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 100 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "GIA",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 67 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "QUESTIONMARK",
+        "reward": "50 Scent Capsules, 1,000 Coins, and 200 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "SEB",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 150 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "SOAPCLUB",
+        "reward": "25 Scent Capsules and a Lather Lane Local Title",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "SWEATERWEATHER",
+        "reward": "15 Scent Capsules, 1,000 Coins, and 100 Acorns",
+        "isNew": true
+      },
+      {
+        "code": "NOVA",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 100 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "GIA",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 67 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "QUESTIONMARK",
+        "reward": "50 Scent Capsules, 1,000 Coins, and 200 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "SEB",
+        "reward": "50 Scent Capsules, 1,500 Coins, and 150 Acorns",
+        "isNew": false
+      },
+      {
+        "code": "SOAPCLUB",
+        "reward": "25 Scent Capsules and a Lather Lane Local Title",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "SWEATERWEATHER",
+      "NOVA",
+      "GIA",
+      "QUESTIONMARK",
+      "SEB",
+      "SOAPCLUB"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "subterra",
+    "name": "Subterra",
+    "displayName": "Subterra ⛏️ [HUGE UPDATE]",
+    "slug": "subterra",
+    "players": 1407,
+    "redeemNote": {
+      "en": "To use codes in Subterra, you must first join the Polyworks Studio community.",
+      "links": [
+        {
+          "label": "Polyworks Studio",
+          "url": "https://www.roblox.com/communities/5851851/Polyworks-Studio#!/about"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 1407,
+    "newCodes": [
+      {
+        "game": "subterra",
+        "gameName": "Subterra",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/subterra"
+        },
+        "code": "200KMEMBERS",
+        "reward": "420 Chrono Shards, 10 Wormhole Potions, and 10 Return by Death Potions",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795388995089,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      },
+      {
+        "game": "subterra",
+        "gameName": "Subterra",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/subterra"
+        },
+        "code": "EVERGREEN",
+        "reward": "140 Chrono Shards",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795388995089,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-11-23T02:02:24.512Z",
+    "displayCodes": [
+      {
+        "code": "200KMEMBERS",
+        "reward": "420 Chrono Shards, 10 Wormhole Potions, and 10 Return by Death Potions",
+        "isNew": true
+      },
+      {
+        "code": "EVERGREEN",
+        "reward": "140 Chrono Shards",
+        "isNew": true
+      },
+      {
+        "code": "UPDATE",
+        "reward": "Chrono Shards",
+        "isNew": false
+      },
+      {
+        "code": "HOTFIX1.4.60",
+        "reward": "Chrono Shards",
+        "isNew": false
+      },
+      {
+        "code": "100KMEMBERS",
+        "reward": "10 Wormhole Potions, 10 Return by Death Potion, 420 Chrono Shards",
+        "isNew": false
+      },
+      {
+        "code": "1YEAR",
+        "reward": "1,400 Chrono Shards",
+        "isNew": false
+      },
+      {
+        "code": "FEATURED",
+        "reward": "32 TNT Blocks",
+        "isNew": false
+      },
+      {
+        "code": "30KLIKES",
+        "reward": "2 Hours of Double Experience",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "200KMEMBERS",
+        "reward": "420 Chrono Shards, 10 Wormhole Potions, and 10 Return by Death Potions",
+        "isNew": true
+      },
+      {
+        "code": "EVERGREEN",
+        "reward": "140 Chrono Shards",
+        "isNew": true
+      },
+      {
+        "code": "UPDATE",
+        "reward": "Chrono Shards",
+        "isNew": false
+      },
+      {
+        "code": "HOTFIX1.4.60",
+        "reward": "Chrono Shards",
+        "isNew": false
+      },
+      {
+        "code": "100KMEMBERS",
+        "reward": "10 Wormhole Potions, 10 Return by Death Potion, 420 Chrono Shards",
+        "isNew": false
+      },
+      {
+        "code": "1YEAR",
+        "reward": "1,400 Chrono Shards",
+        "isNew": false
+      },
+      {
+        "code": "FEATURED",
+        "reward": "32 TNT Blocks",
+        "isNew": false
+      },
+      {
+        "code": "30KLIKES",
+        "reward": "2 Hours of Double Experience",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "UPDATE",
+      "HOTFIX1.4.60",
+      "100KMEMBERS",
+      "1YEAR",
+      "FEATURED",
+      "30KLIKES",
+      "200KMEMBERS",
+      "EVERGREEN"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "my-dino-empire",
     "name": "My Dino Empire",
     "displayName": "[🦖] My Dino Empire",
@@ -2669,6 +3343,159 @@
       "2KCCU",
       "3MVISITS",
       "HERETICHAT"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "case-simulator-rng",
+    "name": "Case Simulator RNG",
+    "displayName": "Case Simulator RNG",
+    "slug": "case-simulator-rng",
+    "players": 1062,
+    "redeemNote": {
+      "en": "To use codes in Case Simulator RNG, you must first reach Level 10.",
+      "links": [],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 1062,
+    "newCodes": [
+      {
+        "game": "case-simulator-rng",
+        "gameName": "Case Simulator RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/case-simulator-rng"
+        },
+        "code": "marketisback",
+        "reward": "10 Trait Rerolls",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795389488112,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      },
+      {
+        "game": "case-simulator-rng",
+        "gameName": "Case Simulator RNG",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/case-simulator-rng"
+        },
+        "code": "newspins",
+        "reward": "5 Spins",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795389488112,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T02:02:24.512Z",
+        "fetchedAt": "2026-11-23T02:02:24.512Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-11-23T02:02:24.512Z",
+    "displayCodes": [
+      {
+        "code": "marketisback",
+        "reward": "10 Trait Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "newspins",
+        "reward": "5 Spins",
+        "isNew": true
+      },
+      {
+        "code": "NewLeaderboards",
+        "reward": "10 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "MoreBugFixes",
+        "reward": "10 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "2v2battle",
+        "reward": "10 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "skilltree",
+        "reward": "10 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "Crownwood",
+        "reward": "15 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "120kLikes",
+        "reward": "15 Rerolls",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "marketisback",
+        "reward": "10 Trait Rerolls",
+        "isNew": true
+      },
+      {
+        "code": "newspins",
+        "reward": "5 Spins",
+        "isNew": true
+      },
+      {
+        "code": "NewLeaderboards",
+        "reward": "10 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "MoreBugFixes",
+        "reward": "10 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "2v2battle",
+        "reward": "10 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "skilltree",
+        "reward": "10 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "Crownwood",
+        "reward": "15 Trait Rerolls",
+        "isNew": false
+      },
+      {
+        "code": "120kLikes",
+        "reward": "15 Rerolls",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "marketisback",
+      "newspins",
+      "NewLeaderboards",
+      "MoreBugFixes",
+      "2v2battle",
+      "skilltree",
+      "Crownwood",
+      "120kLikes"
     ]
   },
   {
