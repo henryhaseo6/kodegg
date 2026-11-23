@@ -828,6 +828,218 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "skate-tree",
+    "name": "Skate Tree",
+    "displayName": "[🥩HALL OF MEAT] Skate Tree",
+    "slug": "skate-tree",
+    "players": 3542,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 3542,
+    "newCodes": [
+      {
+        "game": "skate-tree",
+        "gameName": "Skate Tree",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/skate-tree"
+        },
+        "code": "HALLOFMEAT",
+        "reward": "5 Crate Keys",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795319756015,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-11-23T00:02:51.453Z",
+    "displayCodes": [
+      {
+        "code": "HALLOFMEAT",
+        "reward": "5 Crate Keys",
+        "isNew": true
+      },
+      {
+        "code": "GTA6",
+        "reward": "6 Crate Keys",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "HALLOFMEAT",
+        "reward": "5 Crate Keys",
+        "isNew": true
+      },
+      {
+        "code": "GTA6",
+        "reward": "6 Crate Keys",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "HALLOFMEAT",
+      "GTA6"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "junk-mechanics",
+    "name": "Junk Mechanics",
+    "displayName": "[🦃UPD] Junk Mechanics",
+    "slug": "junk-mechanics",
+    "players": 2864,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 2864,
+    "newCodes": [
+      {
+        "game": "junk-mechanics",
+        "gameName": "Junk Mechanics",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/junk-mechanics"
+        },
+        "code": "THANKS",
+        "reward": null,
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795310019125,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      },
+      {
+        "game": "junk-mechanics",
+        "gameName": "Junk Mechanics",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/junk-mechanics"
+        },
+        "code": "TURKEY",
+        "reward": "86,700 Cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795310019125,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-11-23T00:02:51.453Z",
+    "displayCodes": [
+      {
+        "code": "THANKS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "TURKEY",
+        "reward": "86,700 Cash",
+        "isNew": true
+      },
+      {
+        "code": "WINCEUPD",
+        "reward": "4 Keys",
+        "isNew": false
+      },
+      {
+        "code": "CONNORLOST",
+        "reward": "3 Keys",
+        "isNew": false
+      },
+      {
+        "code": "SECRETNIGHTCODE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "RACES",
+        "reward": "Cash",
+        "isNew": false
+      },
+      {
+        "code": "MEI",
+        "reward": "2 Premium Keys",
+        "isNew": false
+      },
+      {
+        "code": "LCONNOR",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "THANKS",
+        "reward": "",
+        "isNew": true
+      },
+      {
+        "code": "TURKEY",
+        "reward": "86,700 Cash",
+        "isNew": true
+      },
+      {
+        "code": "WINCEUPD",
+        "reward": "4 Keys",
+        "isNew": false
+      },
+      {
+        "code": "CONNORLOST",
+        "reward": "3 Keys",
+        "isNew": false
+      },
+      {
+        "code": "SECRETNIGHTCODE",
+        "reward": "",
+        "isNew": false
+      },
+      {
+        "code": "RACES",
+        "reward": "Cash",
+        "isNew": false
+      },
+      {
+        "code": "MEI",
+        "reward": "2 Premium Keys",
+        "isNew": false
+      },
+      {
+        "code": "LCONNOR",
+        "reward": "",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "RACES",
+      "MEI",
+      "LCONNOR",
+      "THANKS",
+      "TURKEY",
+      "WINCEUPD",
+      "CONNORLOST",
+      "SECRETNIGHTCODE"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "gakusen",
     "name": "Gakusen",
     "displayName": "Gakusen",
@@ -1223,6 +1435,292 @@
   },
   {
     "platform": "ROBLOX",
+    "id": "trench-decay",
+    "name": "Trench Decay",
+    "displayName": "[THANKSGIVING UPD🦃] TRENCH: DECAY",
+    "slug": "trench-decay",
+    "players": 1273,
+    "redeemNote": {
+      "en": "To use codes in TRENCH: DECAY, you must join the studio rook. Roblox Community.",
+      "links": [
+        {
+          "label": "studio rook. Roblox Community",
+          "url": "https://www.roblox.com/share/g/680573053"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 1273,
+    "newCodes": [
+      {
+        "game": "trench-decay",
+        "gameName": "Trench Decay",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/trench-ww1"
+        },
+        "code": "CODEWORKYPRIVATEPROPERTEH",
+        "reward": "500 Medals.This code requires you to sign up for 2 events",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795232503229,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      },
+      {
+        "game": "trench-decay",
+        "gameName": "Trench Decay",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/trench-ww1"
+        },
+        "code": "THANKSGIVINGMANIFEST",
+        "reward": "50 Turkey Legs.This code requires you to sign up for 2 events",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795232503229,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      },
+      {
+        "game": "trench-decay",
+        "gameName": "Trench Decay",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/trench-ww1"
+        },
+        "code": "THANKSGIVINGDANCE",
+        "reward": "2 Emote Crates.This code requires you to sign up for 2 events",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795232503229,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      },
+      {
+        "game": "trench-decay",
+        "gameName": "Trench Decay",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/trench-ww1"
+        },
+        "code": "THANKSGIVINGRAFFLE",
+        "reward": "20 Vouchers.This code requires you to sign up for 2 events",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795232503229,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      },
+      {
+        "game": "trench-decay",
+        "gameName": "Trench Decay",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/trench-ww1"
+        },
+        "code": "THANKSGIVINGFEAST",
+        "reward": "50 Turkey Legs.This code requires you to sign up for 2 events",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795232503229,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      },
+      {
+        "game": "trench-decay",
+        "gameName": "Trench Decay",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/trench-ww1"
+        },
+        "code": "THANKSGIVINGBOUNTY",
+        "reward": "2,000 Medals.This code requires you to sign up for 2 events",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795232503229,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      }
+    ],
+    "activeCount": 46,
+    "fetchedAt": "2026-11-23T00:02:51.453Z",
+    "displayCodes": [
+      {
+        "code": "CODEWORKYPRIVATEPROPERTEH",
+        "reward": "500 Medals.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGMANIFEST",
+        "reward": "50 Turkey Legs.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGDANCE",
+        "reward": "2 Emote Crates.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGRAFFLE",
+        "reward": "20 Vouchers.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGFEAST",
+        "reward": "50 Turkey Legs.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGBOUNTY",
+        "reward": "2,000 Medals.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "QOLFINALLYUPDATE",
+        "reward": "Tarot Card",
+        "isNew": false
+      },
+      {
+        "code": "LIVEANDLETLIVE",
+        "reward": "2,000 Medals",
+        "isNew": false
+      },
+      {
+        "code": "10MVISITS",
+        "reward": "1,000 Medals",
+        "isNew": false
+      },
+      {
+        "code": "BOSSTOKENHEADSTART",
+        "reward": "12 Boss Tokens",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "CODEWORKYPRIVATEPROPERTEH",
+        "reward": "500 Medals.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGMANIFEST",
+        "reward": "50 Turkey Legs.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGDANCE",
+        "reward": "2 Emote Crates.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGRAFFLE",
+        "reward": "20 Vouchers.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGFEAST",
+        "reward": "50 Turkey Legs.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "THANKSGIVINGBOUNTY",
+        "reward": "2,000 Medals.This code requires you to sign up for 2 events",
+        "isNew": true
+      },
+      {
+        "code": "QOLFINALLYUPDATE",
+        "reward": "Tarot Card",
+        "isNew": false
+      },
+      {
+        "code": "LIVEANDLETLIVE",
+        "reward": "2,000 Medals",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "QOLFINALLYUPDATE",
+      "LIVEANDLETLIVE",
+      "10MVISITS",
+      "BOSSTOKENHEADSTART",
+      "20KENLISTEES",
+      "TARTARUSTARTARSAUCE",
+      "REGARDINGREGALIA",
+      "PUMPKINPLEASE",
+      "HEAVYMEDAL",
+      "OKAYONEMORECODE",
+      "PUMPKINPARTY",
+      "WHATISMYFUTURE",
+      "LETSGETTHISPARTYSTARTED",
+      "GIVEMEMYHAND",
+      "FINALMEDALCODE",
+      "COSMETICSNEW",
+      "THECODEXBADGE",
+      "WOULDYOUCODER",
+      "RETURNCODE1000",
+      "MYSTERYCODE100",
+      "DECISION1000",
+      "BELLSARECHIMING",
+      "LIVESTREAMBADGEHUNT",
+      "5MVISITS",
+      "FINALPUSHUPDATE",
+      "CODEWORKYPRIVATEPROPERTEH",
+      "THANKSGIVINGMANIFEST",
+      "THANKSGIVINGDANCE",
+      "THANKSGIVINGRAFFLE",
+      "THANKSGIVINGFEAST",
+      "THANKSGIVINGBOUNTY",
+      "ITSALLOURBIRTHDAYS",
+      "SOMEHOWSTANDOUT",
+      "FIXESAREDONE",
+      "PROTOTYPECLAIMCODE",
+      "SUPERCODE1000",
+      "100KENLISTEES",
+      "BRAZILINDEP",
+      "STEELBOUNDSET",
+      "JMTDECAYERS",
+      "DEFENSEWEEKENDBASH",
+      "HIDDENCODELOLUFOUNDME",
+      "THETRENCHLIFE",
+      "2KCCU",
+      "3MVISITS",
+      "HERETICHAT"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
     "id": "driven-football",
     "name": "Driven Football",
     "displayName": "🏈 Driven Football [LEAGUE MODE🔥] 🦃",
@@ -1362,6 +1860,135 @@
       "1MILLIONVISITS",
       "500KVISITS",
       "400KVISITS"
+    ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "catch-and-tame",
+    "name": "Catch And Tame",
+    "displayName": "[🎮] Catch And Tame!",
+    "slug": "catch-and-tame",
+    "players": 667,
+    "redeemNote": null,
+    "alias": null,
+    "rank": 667,
+    "newCodes": [
+      {
+        "game": "catch-and-tame",
+        "gameName": "Catch And Tame",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/catch-and-tame"
+        },
+        "code": "ARCADEISLAND",
+        "reward": "25 Arcade Apples",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795337952296,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-23T00:02:51.453Z",
+        "fetchedAt": "2026-11-23T00:02:51.453Z"
+      }
+    ],
+    "activeCount": 8,
+    "fetchedAt": "2026-11-23T00:02:51.453Z",
+    "displayCodes": [
+      {
+        "code": "ARCADEISLAND",
+        "reward": "25 Arcade Apples",
+        "isNew": true
+      },
+      {
+        "code": "COOKIEISLAND",
+        "reward": "25 Cookies",
+        "isNew": false
+      },
+      {
+        "code": "LOSTISLANDS",
+        "reward": "25 Rainbow Apples",
+        "isNew": false
+      },
+      {
+        "code": "UPSIDEDOWN",
+        "reward": "25 Corrupted Berry",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "25 Spooky Pumpkins",
+        "isNew": false
+      },
+      {
+        "code": "SPOOKY",
+        "reward": "10 Spooky Pumpkins",
+        "isNew": false
+      },
+      {
+        "code": "COVEUPDATE",
+        "reward": "10 Spooky Pumpkins",
+        "isNew": false
+      },
+      {
+        "code": "KAIJUEVENT",
+        "reward": "10 Pizza",
+        "isNew": false
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "ARCADEISLAND",
+        "reward": "25 Arcade Apples",
+        "isNew": true
+      },
+      {
+        "code": "COOKIEISLAND",
+        "reward": "25 Cookies",
+        "isNew": false
+      },
+      {
+        "code": "LOSTISLANDS",
+        "reward": "25 Rainbow Apples",
+        "isNew": false
+      },
+      {
+        "code": "UPSIDEDOWN",
+        "reward": "25 Corrupted Berry",
+        "isNew": false
+      },
+      {
+        "code": "Halloween",
+        "reward": "25 Spooky Pumpkins",
+        "isNew": false
+      },
+      {
+        "code": "SPOOKY",
+        "reward": "10 Spooky Pumpkins",
+        "isNew": false
+      },
+      {
+        "code": "COVEUPDATE",
+        "reward": "10 Spooky Pumpkins",
+        "isNew": false
+      },
+      {
+        "code": "KAIJUEVENT",
+        "reward": "10 Pizza",
+        "isNew": false
+      }
+    ],
+    "allCodes": [
+      "COOKIEISLAND",
+      "LOSTISLANDS",
+      "UPSIDEDOWN",
+      "Halloween",
+      "SPOOKY",
+      "COVEUPDATE",
+      "KAIJUEVENT",
+      "ARCADEISLAND"
     ]
   },
   {
