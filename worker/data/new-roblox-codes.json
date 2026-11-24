@@ -1,21 +1,528 @@
 {
-  "generatedAt": "2026-11-24T15:03:01.199Z",
-  "codes": [],
-  "bulkGames": [
+  "generatedAt": "2026-11-24T16:02:24.022Z",
+  "codes": [
     {
-      "game": "brick-a-house",
-      "count": 3,
-      "fresh": []
+      "game": "gakuran",
+      "gameName": "Gakuran",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/gakuran"
+      },
+      "code": "Unbound",
+      "reward": null,
+      "date": "2026-11-24T15:46:31.993Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
     },
     {
-      "game": "climb-keyboard-dumpling-tower",
-      "count": 1,
-      "fresh": []
+      "game": "gakuran",
+      "gameName": "Gakuran",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/gakuran"
+      },
+      "code": "Singularity",
+      "reward": null,
+      "date": "2026-11-24T15:46:31.594Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
     },
     {
-      "game": "tumble-dash",
-      "count": 1,
-      "fresh": []
+      "game": "gakuran",
+      "gameName": "Gakuran",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/gakuran"
+      },
+      "code": "RuningCharacters",
+      "reward": null,
+      "date": "2026-11-24T15:46:31.211Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "gakuran",
+      "gameName": "Gakuran",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/gakuran"
+      },
+      "code": "Paradox",
+      "reward": null,
+      "date": "2026-11-24T15:46:30.848Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "gakuran",
+      "gameName": "Gakuran",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/gakuran"
+      },
+      "code": "GrowYourGardens",
+      "reward": null,
+      "date": "2026-11-24T15:46:30.346Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "build-a-military-base",
+      "gameName": "Build a Military Base",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/build-a-military-base"
+      },
+      "code": "THANKSGIVING",
+      "reward": null,
+      "date": "2026-11-24T15:47:25.939Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "build-a-military-base",
+      "gameName": "Build a Military Base",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/build-a-military-base"
+      },
+      "code": "LONGBOW",
+      "reward": null,
+      "date": "2026-11-24T15:47:25.415Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "build-a-military-base",
+      "gameName": "Build a Military Base",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/build-a-military-base"
+      },
+      "code": "BASTION",
+      "reward": null,
+      "date": "2026-11-24T15:47:23.855Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "build-a-military-base",
+      "gameName": "Build a Military Base",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/build-a-military-base"
+      },
+      "code": "BLACKHOLE",
+      "reward": null,
+      "date": "2026-11-24T15:47:23.368Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "build-a-military-base",
+      "gameName": "Build a Military Base",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/build-a-military-base"
+      },
+      "code": "SINGULARITY",
+      "reward": null,
+      "date": "2026-11-24T15:47:22.935Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "merge-a-black-hole",
+      "gameName": "Merge a Black Hole",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/merge-a-black-hole"
+      },
+      "code": "SAVEEARTH",
+      "reward": null,
+      "date": "2026-11-24T15:45:49.709Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "slime-card-collection",
+      "gameName": "Slime Card Collection",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/slime-card-collection"
+      },
+      "code": "Steampunk",
+      "reward": "Hatch Tokens",
+      "date": "2026-11-24T15:47:27.708Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "superstar-baseball",
+      "gameName": "Superstar Baseball",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/superstar-baseball"
+      },
+      "code": "NAUTILUS",
+      "reward": "Lucky Spins",
+      "date": "2026-11-24T15:45:56.815Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "fall-for-brainrots",
+      "gameName": "Fall For Brainrots",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/fall-for-brainrots"
+      },
+      "code": "ALIENUPDATE",
+      "reward": null,
+      "date": "2026-11-24T15:47:17.136Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "fall-for-brainrots",
+      "gameName": "Fall For Brainrots",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/fall-for-brainrots"
+      },
+      "code": "4POINT5MILLMEMBERS",
+      "reward": null,
+      "date": "2026-11-24T15:47:16.559Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "supermarket-together",
+      "gameName": "Surpermarket Together",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/surpermarket-together"
+      },
+      "code": "Thanksgiving2026",
+      "reward": null,
+      "date": "2026-11-24T15:45:48.914Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "anime-card-battle-x",
+      "gameName": "Anime Card Battle Rebirth",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-card-battle-rebirth"
+      },
+      "code": "TOMAISSICK!",
+      "reward": "20 Tickets",
+      "date": "2026-11-24T15:46:36.633Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "anime-card-battle-x",
+      "gameName": "Anime Card Battle Rebirth",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-card-battle-rebirth"
+      },
+      "code": "PORTALS!",
+      "reward": null,
+      "date": "2026-11-24T15:46:33.485Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "anime-card-battle-x",
+      "gameName": "Anime Card Battle Rebirth",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-card-battle-rebirth"
+      },
+      "code": "PETS!",
+      "reward": null,
+      "date": "2026-11-24T15:46:32.974Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "anime-card-battle-x",
+      "gameName": "Anime Card Battle Rebirth",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-card-battle-rebirth"
+      },
+      "code": "FISHINGBOSS!",
+      "reward": null,
+      "date": "2026-11-24T15:46:32.449Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "collect-the-alphabet",
+      "gameName": "Collect The Alphabet",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/collect-the-alphabet"
+      },
+      "code": "WINTERSOON",
+      "reward": null,
+      "date": "2026-11-24T15:48:16.276Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "arcade-basketball",
+      "gameName": "Arcade Basketball",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/arcade-basketball"
+      },
+      "code": "DORK",
+      "reward": "Dorky Emote",
+      "date": "2026-11-24T15:46:46.183Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "arcade-basketball",
+      "gameName": "Arcade Basketball",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/arcade-basketball"
+      },
+      "code": "FOODIE",
+      "reward": "Foodie Crate Spin",
+      "date": "2026-11-24T15:46:45.825Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "roll-a-fisherman",
+      "gameName": "Roll a Fisherman",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/roll-a-fisherman"
+      },
+      "code": "AHOY!",
+      "reward": null,
+      "date": "2026-11-24T15:47:20.855Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "pets-universe",
+      "gameName": "Pets Universe",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/pets-universe"
+      },
+      "code": "ViBee",
+      "reward": "Fruit, Boosts Potions",
+      "date": "2026-11-24T15:47:03.550Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "anime-zero",
+      "gameName": "Anime Zero",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-zero"
+      },
+      "code": "REBORN",
+      "reward": null,
+      "date": "2026-11-24T15:45:40.735Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "undertale-adventures",
+      "gameName": "Undertale Adventures TD",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/undertale-adventures-td"
+      },
+      "code": "TRUELAB!!!",
+      "reward": null,
+      "date": "2026-11-24T15:48:17.210Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "undertale-adventures",
+      "gameName": "Undertale Adventures TD",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/undertale-adventures-td"
+      },
+      "code": "GAUNTLET!!!",
+      "reward": null,
+      "date": "2026-11-24T15:48:16.628Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
+    },
+    {
+      "game": "anime-galaxies",
+      "gameName": "Anime Galaxies",
+      "source": "RoCodes.gg",
+      "sources": [
+        "RoCodes.gg"
+      ],
+      "sourceUrls": {
+        "RoCodes.gg": "https://rocodes.gg/codes/anime-galaxies"
+      },
+      "code": "RAIDSIMULATOR",
+      "reward": "5,000 Gems, 200 Trait Crystals",
+      "date": "2026-11-24T15:47:13.499Z",
+      "endsAt": null,
+      "verified": false,
+      "firstSeenAt": "2026-11-24T16:02:24.022Z",
+      "fetchedAt": "2026-11-24T16:02:24.022Z"
     }
-  ]
+  ],
+  "bulkGames": []
 }
