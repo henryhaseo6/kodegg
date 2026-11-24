@@ -564,5 +564,97 @@
       "!imbackfromthetrip",
       "!freeracestorage5"
     ]
+  },
+  {
+    "platform": "ROBLOX",
+    "id": "ro-bassfishing",
+    "name": "Ro-BassFishing",
+    "displayName": "Ro-BassFishing [🍂TRUCKS&TRAILERS🍂]",
+    "slug": "ro-bassfishing",
+    "players": 758,
+    "redeemNote": {
+      "en": "To use codes in Ro-BassFishing, you must join the Ro-Bass Studios Roblox Community.",
+      "links": [
+        {
+          "label": "Ro-Bass Studios Roblox Community",
+          "url": "https://www.roblox.com/share/g/614402365"
+        }
+      ],
+      "kind": "syarat"
+    },
+    "alias": null,
+    "rank": 758,
+    "newCodes": [
+      {
+        "game": "ro-bassfishing",
+        "gameName": "Ro-BassFishing",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/ro-bassfishing"
+        },
+        "code": "TRAILER",
+        "reward": "3,000 Cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795446854346,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-24T07:02:59.980Z",
+        "fetchedAt": "2026-11-24T07:02:59.980Z"
+      },
+      {
+        "game": "ro-bassfishing",
+        "gameName": "Ro-BassFishing",
+        "source": "Roblox Den",
+        "sources": [
+          "Roblox Den"
+        ],
+        "sourceUrls": {
+          "Roblox Den": "https://robloxden.com/game-codes/ro-bassfishing"
+        },
+        "code": "TRUCKS",
+        "reward": "5,000 Cash",
+        "date": null,
+        "srcNew": true,
+        "srcNewAt": 1795446854346,
+        "endsAt": null,
+        "verified": false,
+        "firstSeenAt": "2026-11-24T07:02:59.980Z",
+        "fetchedAt": "2026-11-24T07:02:59.980Z"
+      }
+    ],
+    "activeCount": 2,
+    "fetchedAt": "2026-11-24T07:02:59.980Z",
+    "displayCodes": [
+      {
+        "code": "TRAILER",
+        "reward": "3,000 Cash",
+        "isNew": true
+      },
+      {
+        "code": "TRUCKS",
+        "reward": "5,000 Cash",
+        "isNew": true
+      }
+    ],
+    "descCodes": [
+      {
+        "code": "TRAILER",
+        "reward": "3,000 Cash",
+        "isNew": true
+      },
+      {
+        "code": "TRUCKS",
+        "reward": "5,000 Cash",
+        "isNew": true
+      }
+    ],
+    "allCodes": [
+      "TRAILER",
+      "TRUCKS"
+    ]
   }
 ]
