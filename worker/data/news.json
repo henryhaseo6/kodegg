@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-24T02:02:28.957Z",
+  "updatedAt": "2026-11-24T03:02:29.465Z",
   "counts": {
-    "active": 94,
+    "active": 93,
     "archived": 200
   },
   "articles": [
@@ -1492,7 +1492,9 @@
       "url": "https://www.hoyolab.com/article/47207875",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-26T03:00:03.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1507,10 +1509,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/20/1a6651ede01a6d0ac6566cc07fc11969_6580848522966961337.png",
       "url": "https://www.hoyolab.com/article/47196776",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-25T03:00:03.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-25T03:00:03.000Z",
+      "archivedAt": "2026-11-24T03:02:29.465Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -4893,23 +4894,6 @@
       "source": "HoYoLAB",
       "publishedAt": "2026-06-19T11:00:04.000Z",
       "archivedAt": "2026-07-19T11:01:08.764Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "\"Gleaming Shadow Team Battle\" Event Details",
-        "id": "\"Pertarungan dalam Bayangan\" | Penjelasan Event"
-      },
-      "excerpt": {
-        "en": "Event Duration 2026/06/19 10:00 (server time) – 2026/07/13 03:59 (server time) Requirements Reach Inter-Knot Lv. 20 and complete Main Story Chapter 1 - Intermission to participate ",
-        "id": "[Waktu Event] 2026/06/19 10:00 (waktu server) - 2026/07/13 03:59 (waktu server) [Syarat Partisipasi] Proxy dapat berpartisipasi setelah mencapai Inter-Knot Lv. 20 dan menyelesaikan"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/17/0/c36efb95bbd82e61d0c17316dfbe9ee2_6605215020566997442.png",
-      "url": "https://www.hoyolab.com/article/45503735",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-18T04:30:06.000Z",
-      "archivedAt": "2026-07-18T05:28:02.642Z"
     }
   ]
 }
