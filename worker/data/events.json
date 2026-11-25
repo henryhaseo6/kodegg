@@ -1,34 +1,10 @@
 {
-  "updatedAt": "2026-11-25T15:02:32.369Z",
+  "updatedAt": "2026-11-25T16:03:15.639Z",
   "counts": {
-    "active": 53,
+    "active": 52,
     "archived": 200
   },
   "events": [
-    {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "[Stellar Jade Rewards] Take Part in the Discussions for Aeon ★ Aha's Debut and Win Stellar Jades",
-        "id": "[Hadiah Stellar Jade] Ikuti Diskusi Tentang Debut Karakter Aeon ★ Aha dan Menangkan Stellar Jade"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Greetings, Trailblazers! Stepping back onto the stage of the Path, I tear off the god's mask. Who is Aha? The Trailblazer has also come to witness... an improv tour where humans and gods dance as one! Participate in the event to get a guara",
-        "id": "Mi~ Hai, Trailblazer! Naik sekali lagi ke atas panggung Path dan merobek topeng para dewa. Siapakah Aha? Trailblazer juga turut menjadi saksi — pertunjukan improvisasi di mana dewa dan manusia menari bersama! Ayo ikuti event untuk mendapatk"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/10/0d476c0ed4f5bb6d5b76aa5ab8c6effa_5437050378744027369.png",
-      "startsAt": "2026-11-11T02:00:00.000Z",
-      "endsAt": "2026-11-25T15:59:59.000Z",
-      "postedAt": "2026-11-11T02:00:07.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/47395082"
-    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
@@ -1396,6 +1372,31 @@
     }
   ],
   "archive": [
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "[Stellar Jade Rewards] Take Part in the Discussions for Aeon ★ Aha's Debut and Win Stellar Jades",
+        "id": "[Hadiah Stellar Jade] Ikuti Diskusi Tentang Debut Karakter Aeon ★ Aha dan Menangkan Stellar Jade"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Greetings, Trailblazers! Stepping back onto the stage of the Path, I tear off the god's mask. Who is Aha? The Trailblazer has also come to witness... an improv tour where humans and gods dance as one! Participate in the event to get a guara",
+        "id": "Mi~ Hai, Trailblazer! Naik sekali lagi ke atas panggung Path dan merobek topeng para dewa. Siapakah Aha? Trailblazer juga turut menjadi saksi — pertunjukan improvisasi di mana dewa dan manusia menari bersama! Ayo ikuti event untuk mendapatk"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/10/0d476c0ed4f5bb6d5b76aa5ab8c6effa_5437050378744027369.png",
+      "startsAt": "2026-11-11T02:00:00.000Z",
+      "endsAt": "2026-11-25T15:59:59.000Z",
+      "postedAt": "2026-11-11T02:00:07.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47395082",
+      "archivedAt": "2026-11-25T16:03:15.639Z"
+    },
     {
       "game": "gi",
       "gameName": "Genshin Impact",
@@ -6596,31 +6597,6 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45490823",
-      "archivedAt": "2026-07-17T10:14:30.147Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "[Prize Event] Explore! Roscaelifer!",
-        "id": "[Event Berhadiah] Eksplorasi! Roscaelifer!"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "A brand-new adventure awaits you at the Celestial Nexus, a city soaring high above the clouds! So, how are you gonna explore the city today? ▼ How to Participate Share the new gameplay feature that impressed you the most in the comments ▼ E",
-        "id": "Petualangan baru menantimu di \"Celestial Nexus\" yang melayang tinggi di langit! Hari ini, bagaimana kamu akan menjelajahi kota? ▼ Cara Partisipasi Berikan komentar tentang gameplay baru yang paling berkesan bagimu ▼ Hadiah Event"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/24/81689d4eb33fae338ef36e180dcb9032_4657460004934325413.jpg",
-      "startsAt": "2026-06-25T04:00:00.000Z",
-      "endsAt": "2026-07-02T15:59:59.000Z",
-      "postedAt": "2026-06-25T04:00:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45594249",
       "archivedAt": "2026-07-17T10:14:30.147Z"
     }
   ]
