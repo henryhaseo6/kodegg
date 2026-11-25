@@ -7811,7 +7811,7 @@
   "valley": {
    "tulis": "valley",
    "pertama": 1794009960515,
-   "terakhir": "2026-11-10"
+   "terakhir": "2026-11-25"
   },
   "cabin": {
    "tulis": "cabin",
@@ -27690,7 +27690,7 @@
   "valley": {
    "tulis": "Valley",
    "pertama": 1785997647571,
-   "terakhir": "2026-11-10",
+   "terakhir": "2026-11-25",
    "awal": true
   },
   "experimental": {
@@ -77409,7 +77409,7 @@
   "crown": {
    "tulis": "crown",
    "pertama": 1789581880745,
-   "terakhir": "2026-11-14"
+   "terakhir": "2026-11-25"
   },
   "villager": {
    "tulis": "Villager",
@@ -77556,7 +77556,7 @@
   "crown": {
    "tulis": "crown",
    "pertama": 1789603506968,
-   "terakhir": "2026-11-14"
+   "terakhir": "2026-11-25"
   },
   "update1": {
    "tulis": "UPDATE1",
@@ -92003,7 +92003,7 @@
   "crown": {
    "tulis": "crown",
    "pertama": 1793937960358,
-   "terakhir": "2026-11-14"
+   "terakhir": "2026-11-25"
   },
   "belt": {
    "tulis": "belt",
@@ -93207,6 +93207,11 @@
    "pertama": 1794661507881,
    "terakhir": "2026-11-25",
    "sudahPunya": true
+  },
+  "update4": {
+   "tulis": "UPDATE4",
+   "pertama": 1795640848231,
+   "terakhir": "2026-11-25"
   }
  },
  "draw-spells-magic-arena": {
@@ -95104,6 +95109,11 @@
    "tulis": "spinning",
    "pertama": 1794492339012,
    "terakhir": "2026-11-13"
+  },
+  "valley": {
+   "tulis": "valley",
+   "pertama": 1795640848231,
+   "terakhir": "2026-11-25"
   }
  },
  "jujutsu-farm": {
