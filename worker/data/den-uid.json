@@ -29341,12 +29341,6 @@
   "kode": 6,
   "nama": "Steal Animal Egg"
  },
- "forest-donations": {
-  "at": 1795345357412,
-  "place": 122345940779204,
-  "kode": 6,
-  "nama": "Forest Donations"
- },
  "shoot-for-eggs": {
   "at": 1795345357412,
   "place": 135911818477576,
@@ -29426,16 +29420,14 @@
   "nama": "Sisyphus for Eggs"
  },
  "holloway-she-hears": {
-  "at": 1793019714064,
+  "at": 1795611872602,
   "place": 82478699647567,
   "kode": 7,
   "nama": "Holloway: She Hears"
  },
  "a-long-flight": {
-  "at": 1793019714064,
-  "place": 129631837832236,
-  "kode": 2,
-  "nama": "A Long Flight"
+  "at": 1795611872602,
+  "gagal": true
  },
  "ride-a-dragon": {
   "at": 1793106108869,
@@ -32554,5 +32546,57 @@
   "place": 134030636172931,
   "kode": 3,
   "nama": "Skibidi Astro Tower Defense"
+ },
+ "kawaii-claw-machine-arcade": {
+  "at": 1795611872602,
+  "place": 124965214217779,
+  "kode": 2,
+  "nama": "Kawaii Claw Machine Arcade"
+ },
+ "bettereh": {
+  "at": 1795611872602,
+  "place": 106605940421527,
+  "kode": 2,
+  "nama": "BetterEH"
+ },
+ "rule-the-globe": {
+  "at": 1795611872602,
+  "place": 127135425701849,
+  "kode": 1,
+  "nama": "Rule The Globe"
+ },
+ "roll-your-heroes": {
+  "at": 1795611872602,
+  "place": 116401445503772,
+  "kode": 3,
+  "nama": "Roll Your Heroes"
+ },
+ "realistic-ragdoll-mma": {
+  "at": 1795611872602,
+  "place": 124780003623150,
+  "kode": 2,
+  "nama": "Realistic Ragdoll MMA"
+ },
+ "shake-bottles-for-animals": {
+  "at": 1795611872602,
+  "place": 77457624242137,
+  "kode": 5,
+  "nama": "Shake Bottles For Animals"
+ },
+ "anime-divine": {
+  "at": 1795611872602,
+  "place": 133024150942295,
+  "kode": 13,
+  "nama": "Anime Divine"
+ },
+ "rusaken": {
+  "at": 1795611872602,
+  "gagal": true
+ },
+ "forest-donations-a5j0": {
+  "at": 1795611872602,
+  "place": 78571457183315,
+  "kode": 6,
+  "nama": "Forest Donations"
  }
 }
