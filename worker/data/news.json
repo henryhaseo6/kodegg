@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-25T02:03:28.970Z",
+  "updatedAt": "2026-11-25T03:02:39.322Z",
   "counts": {
-    "active": 93,
+    "active": 92,
     "archived": 200
   },
   "articles": [
@@ -1476,7 +1476,9 @@
       "url": "https://www.hoyolab.com/article/47208493",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-26T04:30:07.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -1491,10 +1493,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/20/0a41591949a77a66728d82b13864a831_6262325022873069605.png",
       "url": "https://www.hoyolab.com/article/47207875",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-26T03:00:03.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-26T03:00:03.000Z",
+      "archivedAt": "2026-11-25T03:02:39.322Z"
+    },
     {
       "game": "hi3",
       "gameName": "Honkai Impact 3rd",
@@ -4877,23 +4878,6 @@
       "source": "HoYoLAB",
       "publishedAt": "2026-06-19T12:00:06.000Z",
       "archivedAt": "2026-07-19T12:01:14.259Z"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "Honkai Impact 3rd v8.9 Hyperion Lounge",
-        "id": "Hyperion Lounge v8.9 Honkai Impact 3"
-      },
-      "excerpt": {
-        "en": "Honkai Impact 3rd v8.9 \"Lives Flourish Where Feathers Fall\" coming soon! Seele Vollerei's new S-rank battlesuit \"Wings of Panacea\" debuts! Main Story Part 2 Chapter XIII \"A Rose in",
-        "id": "Honkai Impact 3 v8.9 \"Gugurnya Bulu, Mekarnya Kehidupan\" segera hadir. Battlesuit Rank-S baru Seele Vollerei \"Wings of Panacea\" debut! Berbagai info update untuk Story Chapter XIII"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/18/b626093e59c8800218208ae43b960e23_7729831501750515339.jpg",
-      "url": "https://www.hoyolab.com/article/45522813",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-19T11:00:04.000Z",
-      "archivedAt": "2026-07-19T11:01:08.764Z"
     }
   ]
 }
