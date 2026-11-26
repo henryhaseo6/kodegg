@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T13:00:57.023Z",
+  "generatedAt": "2026-11-26T13:15:04.590Z",
   "codes": [
     {
       "game": "project-egoist",
@@ -18,8 +18,8 @@
       "srcNewAt": 1795690366866,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-11-26T13:00:57.023Z",
-      "fetchedAt": "2026-11-26T13:00:57.023Z"
+      "firstSeenAt": "2026-11-26T13:15:04.590Z",
+      "fetchedAt": "2026-11-26T13:15:04.590Z"
     },
     {
       "game": "project-egoist",
@@ -38,8 +38,8 @@
       "srcNewAt": 1795690366866,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-11-26T13:00:57.023Z",
-      "fetchedAt": "2026-11-26T13:00:57.023Z"
+      "firstSeenAt": "2026-11-26T13:15:04.590Z",
+      "fetchedAt": "2026-11-26T13:15:04.590Z"
     },
     {
       "game": "sail-and-sink-simulator",
@@ -58,8 +58,8 @@
       "srcNewAt": 1795690129222,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-11-26T13:00:57.023Z",
-      "fetchedAt": "2026-11-26T13:00:57.023Z"
+      "firstSeenAt": "2026-11-26T13:15:04.590Z",
+      "fetchedAt": "2026-11-26T13:15:04.590Z"
     },
     {
       "game": "hots-rng",
@@ -78,8 +78,8 @@
       "srcNewAt": 1795689935239,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-11-26T13:00:57.023Z",
-      "fetchedAt": "2026-11-26T13:00:57.023Z"
+      "firstSeenAt": "2026-11-26T13:15:04.590Z",
+      "fetchedAt": "2026-11-26T13:15:04.590Z"
     },
     {
       "game": "facecard-makeup-showdown",
@@ -98,8 +98,8 @@
       "srcNewAt": 1795694224543,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-11-26T13:00:57.023Z",
-      "fetchedAt": "2026-11-26T13:00:57.023Z"
+      "firstSeenAt": "2026-11-26T13:15:04.590Z",
+      "fetchedAt": "2026-11-26T13:15:04.590Z"
     },
     {
       "game": "beyond-nen",
@@ -118,8 +118,8 @@
       "srcNewAt": 1795652982546,
       "endsAt": null,
       "verified": false,
-      "firstSeenAt": "2026-11-26T13:00:57.023Z",
-      "fetchedAt": "2026-11-26T13:00:57.023Z"
+      "firstSeenAt": "2026-11-26T13:15:04.590Z",
+      "fetchedAt": "2026-11-26T13:15:04.590Z"
     }
   ],
   "bulkGames": [
@@ -131,6 +131,11 @@
     {
       "game": "wake-up-an-animal",
       "count": 1,
+      "fresh": []
+    },
+    {
+      "game": "1-shadow-army",
+      "count": 8,
       "fresh": []
     },
     {
