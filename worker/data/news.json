@@ -1,10 +1,26 @@
 {
-  "updatedAt": "2026-11-26T10:02:54.692Z",
+  "updatedAt": "2026-11-26T11:02:49.155Z",
   "counts": {
     "active": 90,
     "archived": 200
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Unarchived Agent Footage | Robin",
+        "id": "Video Agen Non-Arsip: Robin"
+      },
+      "excerpt": {
+        "en": "\"Hi, I'm Robin. It's a pleasure to meet you.\"",
+        "id": "\"Halo, aku Robin. Senang bisa bertemu denganmu.\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/25/0/d69716845f8e43fa1becbaa8facd4178_3015519273111927755.jpeg",
+      "url": "https://www.hoyolab.com/article/47570535",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-26T10:15:09.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -134,22 +150,6 @@
       "publishedAt": "2026-11-25T04:15:04.000Z"
     },
     {
-      "game": "hsr",
-      "gameName": "Honkai: Star Rail",
-      "title": {
-        "en": "Pom-Pom Gallery | Now, Lay Laughter to All Stars (I)",
-        "id": "\"Galeri Pom-Pom | Kini, Sematkan Tawa pada Seluruh Bintang (I)\""
-      },
-      "excerpt": {
-        "en": "\"After today, the cosmos will know that standing behind the Astral Express are two gods, joining hands and setting out once more.\"",
-        "id": "\"Setelah hari ini, seluruh galaksi akan tahu bahwa di balik Astral Express terdapat dua dewa yang kembali bergandengan tangan dan memulai perjalanannya.\""
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/24/e791f3415cf7106454960a4605113285_7501755532425701972.jpg",
-      "url": "https://www.hoyolab.com/article/47558482",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-25T04:00:04.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -162,6 +162,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/24/58dcbfdd24ce599adc18f80cc24f5fac_2416004435941657702.jpg",
       "url": "https://www.hoyolab.com/article/47558483",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-25T04:00:04.000Z"
+    },
+    {
+      "game": "hsr",
+      "gameName": "Honkai: Star Rail",
+      "title": {
+        "en": "Pom-Pom Gallery | Now, Lay Laughter to All Stars (I)",
+        "id": "\"Galeri Pom-Pom | Kini, Sematkan Tawa pada Seluruh Bintang (I)\""
+      },
+      "excerpt": {
+        "en": "\"After today, the cosmos will know that standing behind the Astral Express are two gods, joining hands and setting out once more.\"",
+        "id": "\"Setelah hari ini, seluruh galaksi akan tahu bahwa di balik Astral Express terdapat dua dewa yang kembali bergandengan tangan dan memulai perjalanannya.\""
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/11/24/e791f3415cf7106454960a4605113285_7501755532425701972.jpg",
+      "url": "https://www.hoyolab.com/article/47558482",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-25T04:00:04.000Z"
     },
@@ -310,22 +326,6 @@
       "publishedAt": "2026-11-21T11:00:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Season 3 Retrospective - The Eve of a New World | Zenless Zone Zero",
-        "id": "Kilas Balik Season 3 Zenless Zone Zero | Menjelang Dunia Baru"
-      },
-      "excerpt": {
-        "en": "\"Yes. One mistake. One crisis...\" \"A mistake that dates back over a century... to the very beginning of Helios Academy.\" \"And a crisis that is only now about to erupt on Roscaelife",
-        "id": "\"Ya. Satu kesalahan. Satu krisis...\" \"Sebuah kesalahan yang bermula lebih dari satu abad yang lalu... sejak awal berdirinya Helios Academy.\" \"Dan sebuah krisis yang baru saja akan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/3021a40464dacb1edba08d7f86748803_5656726008288408285.png",
-      "url": "https://www.hoyolab.com/article/47515889",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-21T04:00:03.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -338,6 +338,22 @@
       },
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/0/a6a5de5104e1eeb4e29ddd70941e0057_4130115114924420591.jpeg",
       "url": "https://www.hoyolab.com/article/47515888",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-21T04:00:03.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Season 3 Retrospective - The Eve of a New World | Zenless Zone Zero",
+        "id": "Kilas Balik Season 3 Zenless Zone Zero | Menjelang Dunia Baru"
+      },
+      "excerpt": {
+        "en": "\"Yes. One mistake. One crisis...\" \"A mistake that dates back over a century... to the very beginning of Helios Academy.\" \"And a crisis that is only now about to erupt on Roscaelife",
+        "id": "\"Ya. Satu kesalahan. Satu krisis...\" \"Sebuah kesalahan yang bermula lebih dari satu abad yang lalu... sejak awal berdirinya Helios Academy.\" \"Dan sebuah krisis yang baru saja akan "
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/3021a40464dacb1edba08d7f86748803_5656726008288408285.png",
+      "url": "https://www.hoyolab.com/article/47515889",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-21T04:00:03.000Z"
     },
@@ -404,22 +420,6 @@
       "url": "https://www.hoyolab.com/article/47507109",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-20T11:25:02.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "The Official Zenless Zone Zero Signal Search Statistical Tool Is Here!",
-        "id": "Alat Penghitung Statistik Pencarian Sinyal Resmi Zenless Zone Zero Telah Hadir!"
-      },
-      "excerpt": {
-        "en": "Head to the tool webpage or HoYoLAB and log in to view your Signal Search records. Feel free to try it out, Proxies! ▌Web Portal https://hoyo.link/QEZlGIL0R",
-        "id": "Kunjungi halaman peralatan atau HoYoLAB, lalu login untuk melihat riwayat Pencarian Sinyal. Ayo coba fitur barunya, Proxy! ▌Portal Web https://hoyo.link/QEZlGIL0R"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/0/81d41ab0fa3d342898ddff0380b96a87_1979892285773515118.jpeg",
-      "url": "https://www.hoyolab.com/article/47507076",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-20T11:22:03.000Z"
     },
     {
       "game": "hsr",
