@@ -34749,7 +34749,7 @@
   "seats": {
    "tulis": "seats",
    "pertama": 1791450307228,
-   "terakhir": "2026-11-24"
+   "terakhir": "2026-11-27"
   },
   "dine-in": {
    "tulis": "dine-in",
@@ -68780,7 +68780,7 @@
   "seats": {
    "tulis": "seats",
    "pertama": 1787209441889,
-   "terakhir": "2026-11-24"
+   "terakhir": "2026-11-27"
   },
   "prices": {
    "tulis": "prices",
@@ -75271,7 +75271,7 @@
   "seats": {
    "tulis": "seats",
    "pertama": 1793149525424,
-   "terakhir": "2026-11-24"
+   "terakhir": "2026-11-27"
   },
   "month": {
    "tulis": "month",
@@ -99434,6 +99434,11 @@
    "pertama": 1795151205052,
    "terakhir": "2026-11-27",
    "sudahPunya": true
+  },
+  "000likes": {
+   "tulis": "000LIKES",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
   }
  },
  "cast-a-magnet": {
@@ -101627,6 +101632,92 @@
   "rearm": {
    "tulis": "Rearm",
    "pertama": 1795525716076,
+   "terakhir": "2026-11-27"
+  },
+  "warplanes": {
+   "tulis": "warplanes",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "bombers": {
+   "tulis": "bombers",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27",
+   "sudahPunya": true
+  },
+  "spitfire": {
+   "tulis": "Spitfire",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "p-51": {
+   "tulis": "P-51",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "mustang": {
+   "tulis": "Mustang",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "corsair": {
+   "tulis": "Corsair",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "p-47": {
+   "tulis": "P-47",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "gladiator": {
+   "tulis": "Gladiator",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "i-16": {
+   "tulis": "I-16",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "j-20": {
+   "tulis": "J-20",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "rafale": {
+   "tulis": "Rafale",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "b-52h": {
+   "tulis": "B-52H",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "b-1b": {
+   "tulis": "B-1B",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "b-2a": {
+   "tulis": "B-2A",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "tu-22m3": {
+   "tulis": "Tu-22M3",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "sams": {
+   "tulis": "SAMs",
+   "pertama": 1795791933213,
+   "terakhir": "2026-11-27"
+  },
+  "defence": {
+   "tulis": "Defence",
+   "pertama": 1795791933213,
    "terakhir": "2026-11-27"
   }
  },
