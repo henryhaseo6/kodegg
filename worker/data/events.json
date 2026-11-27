@@ -1,34 +1,10 @@
 {
-  "updatedAt": "2026-11-27T15:01:48.751Z",
+  "updatedAt": "2026-11-27T16:02:25.559Z",
   "counts": {
-    "active": 51,
+    "active": 50,
     "archived": 200
   },
   "events": [
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Zenless Zone Zero × Discord ｜ Inter-Knot Annual Decoration Showcase",
-        "id": "Zenless Zone Zero × Discord Pameran Dekorasi Tahunan Inter-Knot"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Dear Proxies, If you want to make a name for yourself on the Inter-Knot, your skills matter — but showing off some fashion attitude is just as essential! Take part in the Inter-Knot Annual Decoration Showcase now for a chance to win generou",
-        "id": "Dear Proxy: Kalau ingin dikenal di Inter-Knot, bukan cuma kemampuan yang penting. Penampilan penuh gaya juga tak kalah penting! Ikuti \"Pameran Dekorasi Tahunan Inter-Knot\" sekarang untuk kesempatan mendapatkan hadiah melimpah seperti Polych"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/12/8ac4b10d6ed9a2467f72fac1fc486cfa_5070886352616112833.jpg",
-      "startsAt": "2026-11-13T11:00:00.000Z",
-      "endsAt": "2026-11-27T15:59:59.000Z",
-      "postedAt": "2026-11-13T11:00:07.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/47428577"
-    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -1351,6 +1327,31 @@
     }
   ],
   "archive": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "Zenless Zone Zero × Discord ｜ Inter-Knot Annual Decoration Showcase",
+        "id": "Zenless Zone Zero × Discord Pameran Dekorasi Tahunan Inter-Knot"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": "Dear Proxies, If you want to make a name for yourself on the Inter-Knot, your skills matter — but showing off some fashion attitude is just as essential! Take part in the Inter-Knot Annual Decoration Showcase now for a chance to win generou",
+        "id": "Dear Proxy: Kalau ingin dikenal di Inter-Knot, bukan cuma kemampuan yang penting. Penampilan penuh gaya juga tak kalah penting! Ikuti \"Pameran Dekorasi Tahunan Inter-Knot\" sekarang untuk kesempatan mendapatkan hadiah melimpah seperti Polych"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/12/8ac4b10d6ed9a2467f72fac1fc486cfa_5070886352616112833.jpg",
+      "startsAt": "2026-11-13T11:00:00.000Z",
+      "endsAt": "2026-11-27T15:59:59.000Z",
+      "postedAt": "2026-11-13T11:00:07.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47428577",
+      "archivedAt": "2026-11-27T16:02:25.559Z"
+    },
     {
       "game": "tot",
       "gameName": "Tears of Themis",
@@ -6551,31 +6552,6 @@
       "rewards": [],
       "source": "HoYoLAB",
       "url": "https://www.hoyolab.com/article/45612985",
-      "archivedAt": "2026-07-17T10:14:30.147Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "type": "event",
-      "typeName": null,
-      "title": {
-        "en": "Version 3.0 Twitch Drops Event Now Live",
-        "id": "Event Twitch Drops Ver.3.0 sudah dibuka!"
-      },
-      "subtitle": "",
-      "desc": {
-        "en": "Watch streams, win Polychrome! Join the Twitch Drops event and unlock your viewer rewards! ▼ Event Rewards Watch for 15 mins in total >> Denny ×12,000 Watch for 30 mins in total >> Senior Investigator Log ×2 Watch for 45 mins in total >> W-",
-        "id": "Tonton siaran langsungnya dan menangkan Polychrome! Ayo ikuti event Twitch Drops untuk mendapatkan hadiah~ ▼ Hadiah Event Tonton total 15 menit >> Denny ×12.000 Tonton total 30 menit >> Senior Investigator Log ×2 Tonton total 45 menit >> W-"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/16/0/9aaa215d99240b580a037e6bde854285_2351974020719574556.jpeg",
-      "startsAt": "2026-06-17T03:00:00.000Z",
-      "endsAt": "2026-07-08T15:59:59.000Z",
-      "postedAt": "2026-06-17T02:00:05.000Z",
-      "characters": [],
-      "weapons": [],
-      "rewards": [],
-      "source": "HoYoLAB",
-      "url": "https://www.hoyolab.com/article/45489552",
       "archivedAt": "2026-07-17T10:14:30.147Z"
     }
   ]
