@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-27T08:02:07.268Z",
+  "updatedAt": "2026-11-27T09:02:56.265Z",
   "counts": {
-    "active": 48,
+    "active": 50,
     "archived": 200
   },
   "events": [
@@ -526,6 +526,57 @@
       "rewards": [],
       "source": "HoYoverse",
       "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": "Miliastra Wonderland",
+      "title": {
+        "en": "The \"Miliastra Wonderland: Moments to Treasure\" Web Event Now Live: Take Part and Claim Limited-Time Rewards!",
+        "id": "Event Web \"Miliastra Wonderland: Momen-Momen Berharga\" Telah Dibuka! Ikuti Event Ini untuk Mendapatkan Hadiah Terbatas!"
+      },
+      "subtitle": {
+        "en": "\"Miliastra Wonderland: Moments to Treasure\" — Genshin Impact Web Event Now Available!",
+        "id": "Event Web \"Miliastra Wonderland: Momen-Momen Berharga\" Telah Dibuka!"
+      },
+      "desc": {
+        "en": "The \"Miliastra Wonderland: Moments to Treasure\" web event is now live for a limited time! >> Click to Take Part in Event 〓Event Duration〓 2026/11/27 – 2026/12/08 03:59 *Rewards cannot be claimed after the event ends. Please claim them in time. 〓Eligibility〓 Travelers who have reached Adventure Rank 1 or above can participate in this event. 〓Event Description〓 During the event, Travelers can complete web tasks to claim rewards such as Geodes of Replication, \"Miliastra Wonderland\" items, and more. For quest details, please refer to the event page. ※ There may be a delay of 1 to 2 hours in the data collection process. If the mission progress is not updated, please refresh the page or wait patiently. 〓Event Notes〓 1. Please log in to the event using your HoYoverse Account and select your corresponding character in Genshin Impact to take part. This will ensure that your rewards can be sent and claimed correctly. 2. After the event ends, you will no longer be able to take part and claim the rewards, so remember to take part in time. 3. The in-game rewards will be distributed via in-game mail. The mail will expire after 30 days, so don't forget to claim the rewards in time. 4. This web event is provided purely for entertainment. The content of the event does not represent any actual story or settings in the game. It is not indicative of any related gameplay features in Genshin Impact.",
+        "id": "Event Web \"Miliastra Wonderland: Momen-Momen Berharga\" telah dibuka untuk waktu terbatas! >>Ikuti Event 〓 Waktu Event 〓 2026/11/27 -2026/12/08 03:59 *Hadiah tidak dapat diambil setelah event berakhir. Harap Traveler segera mengambilnya ya.* 〓 Syarat Partisipasi 〓 Traveler dengan Rank Adventure Lv. 1 ke atas dapat mengikuti event ini. 〓 Pengenalan Event 〓 Selama event berlangsung, Traveler dapat menyelesaikan quest di halaman web untuk mendapatkan Geode of Replication, item Miliastra Wonderland, dan hadiah lainnya. Untuk penjelasan lebih lanjut tentang quest, silakan kunjungi halaman event. ※ Pengumpulan data mungkin mengalami penundaan 1-2 jam. Jika kemajuan misi belum diperbarui, silakan perbarui halaman atau tunggu beberapa saat. 〓 Catatan Event 〓 1. Silakan log in ke akun HoYoverse dan hubungkan Karaktermu di Genshin Impact untuk berpartisipasi di dalam event dan menjamin bahwa kamu bisa menerima dan mengambil hadiah event. 2. Setelah event berakhir, kamu tidak dapat mengikuti event dan mengambil hadiah lagi. Jadi ingat untuk mengikutinya tepat waktu ya. 3. Hadiah dalam game akan dikirim ke kotak pesan dalam game. Pesan berlaku selama 30 hari, jangan lupa ambil hadiahnya ya. 4. Event web ini hanya untuk hiburan semata, dan tidak mewakili cerita dan pengaturan sebenarnya dalam game, serta tidak berhubungan sama sekali dengan situasi dan kondisi dalam game Genshin Impact."
+      },
+      "image": "https://sdk.hoyoverse.com/upload/ann/2026/11/26/09f8bbc31a68840a209ce8d30e838cd0_7082059181795738566_transformed.png",
+      "startsAt": "2026-11-27T09:00:00.000Z",
+      "endsAt": "2026-12-07T19:59:59.000Z",
+      "postedAt": "2026-11-27T09:00:00.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoverse",
+      "url": "https://genshin.hoyoverse.com/en/news"
+    },
+    {
+      "game": "gi",
+      "gameName": "Genshin Impact",
+      "type": "event",
+      "typeName": null,
+      "title": {
+        "en": "The \"Miliastra Wonderland: Moments to Treasure\" web event is now live for a limited time!",
+        "id": "Event Web \"Miliastra Wonderland: Momen-Momen Berharga\" Telah Dibuka"
+      },
+      "subtitle": "",
+      "desc": {
+        "en": ">> Click to Take Part in Event << 〓Event Duration〓 November 27, 2026 – December 8, 2026 03:59:59 (UTC+8) *Rewards cannot be claimed after the event ends. Please claim them in time. 〓Eligibility〓 Travelers who have reached Adventure Rank 1 o",
+        "id": ">> Ikuti Event << 〓 Waktu Event 〓 27 November 2026 - 8 Desember 2026 03:59:59 (UTC+8) * Hadiah tidak dapat diambil setelah event berakhir. Harap Traveler segera mengambilnya ya~ 〓 Syarat Partisipasi 〓"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/26/0/cd4bce0d30b56abf246c50307d26e2c3_2504396631793008013.png",
+      "startsAt": "2026-11-27T09:00:00.000Z",
+      "endsAt": "2026-12-07T19:59:59.000Z",
+      "postedAt": "2026-11-27T09:00:06.000Z",
+      "characters": [],
+      "weapons": [],
+      "rewards": [],
+      "source": "HoYoLAB",
+      "url": "https://www.hoyolab.com/article/47579095"
     },
     {
       "game": "gi",
