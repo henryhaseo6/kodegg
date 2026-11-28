@@ -1,10 +1,42 @@
 {
-  "updatedAt": "2026-11-28T02:03:02.416Z",
+  "updatedAt": "2026-11-28T03:02:53.566Z",
   "counts": {
-    "active": 90,
+    "active": 89,
     "archived": 200
   },
   "articles": [
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "(Catchy) Agent Record | Hugie",
+        "id": "(Bombastis) Profil Agen | Hugie"
+      },
+      "excerpt": {
+        "en": "\"A clickbaity demon who loves stirring up trouble?\" Aww, thanks for the compliment! The slander from my fellow journalists is still every bit as meek as their articles~ Hugie Hermo",
+        "id": "\"'Iblis clickbait yang haus sensasi'? Terima kasih atas pujiannya! Cibiran dari rekan ternyata sama saja dengan berita mereka, sama sekali tidak berbobot~\" Hugie Hermond \"Hah? 'Pro"
+      },
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/27/0/2e342cc121a7f951e95d78db10aaa4d3_4225093367157622202.png",
+      "url": "https://www.hoyolab.com/article/47586385",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-28T03:00:04.000Z"
+    },
+    {
+      "game": "zzz",
+      "gameName": "Zenless Zone Zero",
+      "title": {
+        "en": "Agent Record | Cecilia",
+        "id": "Agent Record | Cecilia"
+      },
+      "excerpt": {
+        "en": "",
+        "id": ""
+      },
+      "image": "https://vod-static.hoyolab.com/4/2026-11-28/transcoded/142126308778514632704_captions.0000000.jpg",
+      "url": "https://www.hoyolab.com/article/47586020",
+      "source": "HoYoLAB",
+      "publishedAt": "2026-11-28T02:05:04.000Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -406,22 +438,6 @@
       "publishedAt": "2026-11-21T11:00:02.000Z"
     },
     {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Season 3 Retrospective - The Eve of a New World | Zenless Zone Zero",
-        "id": "Kilas Balik Season 3 Zenless Zone Zero | Menjelang Dunia Baru"
-      },
-      "excerpt": {
-        "en": "\"Yes. One mistake. One crisis...\" \"A mistake that dates back over a century... to the very beginning of Helios Academy.\" \"And a crisis that is only now about to erupt on Roscaelife",
-        "id": "\"Ya. Satu kesalahan. Satu krisis...\" \"Sebuah kesalahan yang bermula lebih dari satu abad yang lalu... sejak awal berdirinya Helios Academy.\" \"Dan sebuah krisis yang baru saja akan "
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/3021a40464dacb1edba08d7f86748803_5656726008288408285.png",
-      "url": "https://www.hoyolab.com/article/47515889",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-21T04:00:03.000Z"
-    },
-    {
       "game": "gi",
       "gameName": "Genshin Impact",
       "title": {
@@ -436,22 +452,6 @@
       "url": "https://www.hoyolab.com/article/47515888",
       "source": "HoYoLAB",
       "publishedAt": "2026-11-21T04:00:03.000Z"
-    },
-    {
-      "game": "zzz",
-      "gameName": "Zenless Zone Zero",
-      "title": {
-        "en": "Version 3.4 \"The Finality of the Day\" Benefits Express",
-        "id": "Panduan Bonus V3.4 \"Senjakala Hari Itu\""
-      },
-      "excerpt": {
-        "en": "Version 3.4 \"The Finality of the Day\" officially launches on December 2, featuring a brand-new Void Hunter and the first Enchainer Agent, Sunbringer! ● Log in during the event peri",
-        "id": "Versi 3.4 \"Senjakala Hari Itu\" akan resmi dirilis pada 2 Desember. Void Hunter baru dan Agen Enchainer pertama \"Sunbringer\" telah hadir! ● Selama event berlangsung, login dan dapat"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/11/20/0/dbc384e785fdbc20ab4548afff51ea23_1405403112419149294.jpeg",
-      "url": "https://www.hoyolab.com/article/47507327",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-11-20T11:40:04.000Z"
     },
     {
       "game": "hsr",
@@ -1428,7 +1428,9 @@
       "url": "https://www.hoyolab.com/article/47247786",
       "source": "HoYoLAB",
       "publishedAt": "2026-10-30T03:30:07.000Z"
-    },
+    }
+  ],
+  "archive": [
     {
       "game": "hsr",
       "gameName": "Honkai: Star Rail",
@@ -1443,10 +1445,9 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/community/2026/10/27/997c5b2d0a629cabbdfc5b31a9f3b489_2045029242702547151.png",
       "url": "https://www.hoyolab.com/article/47238004",
       "source": "HoYoLAB",
-      "publishedAt": "2026-10-29T03:00:06.000Z"
-    }
-  ],
-  "archive": [
+      "publishedAt": "2026-10-29T03:00:06.000Z",
+      "archivedAt": "2026-11-28T03:02:53.566Z"
+    },
     {
       "game": "zzz",
       "gameName": "Zenless Zone Zero",
@@ -4829,23 +4830,6 @@
       "source": "HoYoLAB",
       "publishedAt": "2026-06-23T06:00:03.000Z",
       "archivedAt": "2026-07-23T06:00:42.064Z"
-    },
-    {
-      "game": "hi3",
-      "gameName": "Honkai Impact 3rd",
-      "title": {
-        "en": "v8.9 Lives Flourish Where Feathers Fall | New Version Preview",
-        "id": "v8.9 Gugurnya Bulu, Mekarnya Kehidupan | Preview Konten Versi Baru"
-      },
-      "excerpt": {
-        "en": "v8.9 Lives Flourish Where Feathers Fall is coming soon! New S-rank battlesuit Wings of Panacea debuts! 50% off the first 10x Wings of Panacea Battlesuit Supply drops. Tap the link ",
-        "id": "v8.9 Gugurnya Bulu, Mekarnya Kehidupan segera hadir! Battlesuit Rank-S baru \"Wings of Panacea\" debut! Dapatkan diskon 50% untuk 10 pembukaan pertama Battlesuit Crate \"Wings of Pana"
-      },
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/06/15/7e60be640410e7fefb6a5e165e677493_6144413754517439072.png",
-      "url": "https://www.hoyolab.com/article/45531236",
-      "source": "HoYoLAB",
-      "publishedAt": "2026-06-20T03:00:07.000Z",
-      "archivedAt": "2026-07-20T03:01:14.576Z"
     }
   ]
 }
